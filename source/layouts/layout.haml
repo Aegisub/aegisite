@@ -7,7 +7,7 @@
     %meta{name: 'Author', content: 'http://www.aegisub.org/'}
     %meta{name: 'Copyright', content: 'Copyright (C) 2012 Aegisub Project.'}
     %link{rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon'}
-    %link{href: 'http://static.aegisub.org/css/bootstrap.min.css', rel: 'stylesheet'}
+    = stylesheet_link_tag 'bootstrap.min'
     :css
       body {
         padding-top: 60px;
@@ -30,6 +30,6 @@
         Hosting kindly provided by
         %a{href: 'http://www.networkredux.com'} NetworkRedux
 
-    %script{src: 'http://code.jquery.com/jquery-latest.js'}
-    %script{src: 'http://static.aegisub.org/js/bootstrap.min.js'}
+    = javascript_include_tag 'jquery.min'
+    = javascript_include_tag 'bootstrap.min'
 
