@@ -8,4 +8,5 @@ set :images_dir, 'images'
 configure :build do
   activate :minify_javascript
   activate :cache_buster
+  activate :gzip
 end
