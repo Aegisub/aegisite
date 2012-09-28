@@ -1,0 +1,21 @@
+nav_items:
+  - url:  /
+    name: Home
+
+  - url:  http://blog.aegisub.org
+    name: News
+
+  - url:  /#downloads
+    name: Downloads
+
+  - url:  http://docs.aegisub.org
+    name: Manual
+
+  - url:  http://devel.aegisub.org
+    name: Bug Tracker
+
+  - url:  http://forum.aegisub.org
+    name: Forum
+
+  - url:  irc://irc.rizon.net/aegisub
+    name: IRC
