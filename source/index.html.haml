@@ -13,8 +13,8 @@ nav_group: Home
 .row-fluid
   .span8.offset2
     %h2#downloads Downloads
-    %p The latest version is <strong>3.0.0</strong>, released September 30, 2012.
-    %p See the <a href="/changelog/3.0.0/">changelog</a> for a list of changes.
+    %p The latest version is <strong>#{data.version.current}</strong>, released #{data.version.release_date}
+    %p See the <a href="/changelog/#{data.version.current}/">changelog</a> for a list of changes.
 
     %table.table.table-bordered.table-condensed
       %tr
@@ -25,14 +25,14 @@ nav_group: Home
 
       %tr
         %td Windows
-        %td <a href="http://ftp.aegisub.org/pub/releases/Aegsiub-3.0.0-setup.exe">Full Install</a>
-        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-3.0.0-setup.exe.md5">MD5</a> | <a href="http://ftp2.aegisub.org/pub/releases/Aegisub-3.0.0-setup.exe.sha">SHA</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/Aegsiub-#{data.version.current}-setup.exe">Full Install</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-setup.exe.md5">MD5</a> | <a href="http://ftp2.aegisub.org/pub/releases/Aegisub-3.0.0-setup.exe.sha">SHA</a>
         %td 16MB
 
       %tr
         %td Windows
-        %td <a href="http://ftp.aegisub.org/pub/releases/Aegsiub-3.0.0-portable.exe">Portable Version</a>
-        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-3.0.0-portable.exe.md5">MD5</a> | <a href="http://ftp2.aegisub.org/pub/releases/Aegisub-3.0.0-portable.exe.sha">SHA</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/Aegsiub-#{data.version.current}-portable.exe">Portable Version</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-portable.exe.md5">MD5</a> | <a href="http://ftp2.aegisub.org/pub/releases/Aegisub-3.0.0-portable.exe.sha">SHA</a>
         %td 7MB
 
       %tr
@@ -42,18 +42,18 @@ nav_group: Home
 
       %tr
         %td OS X 10.6+
-        %td <a href="http://ftp.aegisub.org/pub/releases/Aegsiub-3.0.0.dmg">Full Install</a>
-        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-3.0.0.dmg.md5">MD5</a> | <a href="http://ftp2.aegisub.org/pub/releases/Aegisub-3.0.0.dmg.sha">SHA</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/Aegsiub-#{data.version.current}.dmg">Full Install</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}.dmg.md5">MD5</a> | <a href="http://ftp2.aegisub.org/pub/releases/Aegisub-3.0.0.dmg.sha">SHA</a>
         %td 13MB
 
       %tr
         %td All
-        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub-3.0.0.tar.gz">Source</a>
-        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub-3.0.0.tar.gz.md5">MD5</a> | <a href="http://ftp2.aegisub.org/pub/releases/aegisub-3.0.0.tar.gz.sha">SHA</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub-#{data.version.current}.tar.gz">Source</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub-#{data.version.current}.tar.gz.md5">MD5</a> | <a href="http://ftp2.aegisub.org/pub/releases/aegisub-3.0.0.tar.gz.sha">SHA</a>
         %td 2.4MB
 
     %p <strong>Note:</strong> An experimental x64 version for Windows is available on <a href="http://ftp.aegisub.org/pub/releases/">the FTP site</a>. It is not listed here as it is generally slower than the 32-bit version and is missing a few features.
-    %p <strong>Note:</strong> Unlike previous versions, 3.0.0 is fairly stable and mostly functional on OS X. However, it is still the least-tested platform.
+    %p <strong>Note:</strong> Unlike previous versions, #{data.version.current} is fairly stable and mostly functional on OS X. However, it is still the least-tested platform.
     %p <strong>Note:</strong> We currently do not have prebuilt binaries for any Linux systems. Many distributions now have packages for Aegisub; if yours does not consider requesting or creating one.
 
     %h2 Previous Releases
