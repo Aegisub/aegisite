@@ -1,14 +1,14 @@
 nav_items:
-  - url:  /
+  - url:  /www/index.html
     name: Home
 
   - url:  http://blog.aegisub.org
     name: News
 
-  - url:  /#downloads
+  - url:  /www/index.html#downloads
     name: Downloads
 
-  - url:  http://docs.aegisub.org
+  - url:  /docs/index.html
     name: Manual
 
   - url:  http://devel.aegisub.org

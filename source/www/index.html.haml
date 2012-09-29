@@ -14,7 +14,7 @@ nav_group: Home
   .span8.offset2
     %h2#downloads Downloads
     %p The latest version is <strong>#{data.version.current}</strong>, released #{data.version.release_date}
-    %p See the <a href="/changelog/#{data.version.current}/">changelog</a> for a list of changes.
+    %p See the <a href="changelog/#{data.version.current}/">changelog</a> for a list of changes.
 
     %table.table.table-bordered.table-condensed
       %tr
@@ -65,7 +65,7 @@ nav_group: Home
         .span4
           %h3= p.name
           - data.screenshots.files.each do |f|
-            %a{href: "/img/screenshots/#{p.path}/#{f}.png"}
+            = link_to "/static/img/screenshots/#{p.path}/#{f}.png" do
               = image_tag "screenshots/#{p.path}/#{f}-thumb.png", alt: '', class: 'img-polaroid'
 
     %h2 Update Checker Disclosure

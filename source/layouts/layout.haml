@@ -16,12 +16,12 @@
     .navbar.navbar-inverse.navbar-fixed-top
       .navbar-inner
         .container-fluid
-          %a.brand{href: '/', style: 'padding: 3px 10px'}
+          = link_to '/www/index.html', class: 'brand', style: 'padding: 3px 10px' do
             = image_tag 'logo-top-bar.png', alt: 'Aegisub'
           %ul.nav
             - data.top_bar.nav_items.each do |item|
               %li{class: item.name == current_page.data.nav_group ? 'active' : nil}
-                %a{href: item.url}= item.name
+                = link_to item.name, item.url
 
     = yield
 
