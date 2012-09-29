@@ -3,7 +3,7 @@ activate :automatic_image_sizes
 
 set :css_dir, 'css'
 set :js_dir, 'js'
-set :images_dir, 'images'
+set :images_dir, 'img'
 
 page "/changelog/*", layout: 'changelog'
 

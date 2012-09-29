@@ -1,0 +1,12 @@
+platforms:
+  - name: Windows
+    path: win
+  - name: OS X
+    path: osx
+  - name: Unix
+    path: unix
+
+files:
+  - typesetting
+  - audio-video
+  - audio-timing

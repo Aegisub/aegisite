@@ -6,7 +6,7 @@ nav_group: Home
   .row-fluid
     .span10.offset1
       %h1{style: 'text-align: center'}
-        %img{src: 'http://static.aegisub.org/img/logo-large.png', alt: ''}
+        = image_tag 'logo-large.png'
       %p Welcome to our <em>temporary</em> website where you will find a simple list of possible destinations and downloads for the latest version of <strong>Aegisub</strong>.
       %p Aegisub is a free, cross-platform open source tool for creating and modifying subtitles. Aegisub features a built-in real-time video preview of the subtitles, along with many powerful tools for timing them to audio and manipulating their appearance.
 
@@ -61,23 +61,12 @@ nav_group: Home
 
     %h2 Screenshots
     .row-fluid.screenshots
-      .span4
-        %h3 Windows
-        <a href="/screenshots/win/typesetting.png"><img src="/screenshots/win/typesetting-thumb.png" alt="" class="img-polaroid"></a>
-        <a href="/screenshots/win/audio-video.png"><img src="/screenshots/win/audio-video-thumb.png" alt="" class="img-polaroid"></a>
-        <a href="/screenshots/win/audio-timing.png"><img src="/screenshots/win/audio-timing-thumb.png" alt="" class="img-polaroid"></a>
-
-      .span4
-        %h3 OS X
-        <a href="/screenshots/osx/typesetting.png"><img src="/screenshots/osx/typesetting-thumb.png" alt="" class="img-polaroid"></a>
-        <a href="/screenshots/osx/audio-video.png"><img src="/screenshots/osx/audio-video-thumb.png" alt="" class="img-polaroid"></a>
-        <a href="/screenshots/osx/audio-timing.png"><img src="/screenshots/osx/audio-timing-thumb.png" alt="" class="img-polaroid"></a>
-
-      .span4
-        %h3 Unix
-        <a href="/screenshots/unix/typesetting.png"><img src="/screenshots/unix/typesetting-thumb.png" alt="" class="img-polaroid"></a>
-        <a href="/screenshots/unix/audio-video.png"><img src="/screenshots/unix/audio-video-thumb.png" alt="" class="img-polaroid"></a>
-        <a href="/screenshots/unix/audio-timing.png"><img src="/screenshots/unix/audio-timing-thumb.png" alt="" class="img-polaroid"></a>
+      - data.screenshots.platforms.each do |p|
+        .span4
+          %h3= p.name
+          - data.screenshots.files.each do |f|
+            %a{href: "/img/screenshots/#{p.path}/#{f}.png"}
+              = image_tag "screenshots/#{p.path}/#{f}-thumb.png", alt: '', class: 'img-polaroid'
 
     %h2 Update Checker Disclosure
     %p Please read <a href="/disclosure.html">Full disclosure: Statistics collected by the update checker</a> for information on our update checker.
