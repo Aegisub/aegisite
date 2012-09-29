@@ -1,0 +1,24 @@
+- active_version = current_resource.path.gsub /changelog\/(\d.\d.\d).html/, '\1'
+- @title = "Aegisub #{active_version} Changelog"
+- wrap_layout :layout do
+  :css
+    dd {
+      border-top: 1px solid #CCC;
+    }
+
+  .fluid-row
+    .span2{:style => "padding-top: 20px"}
+      %ul.nav.nav-list.well
+        - prev_header = ''
+        - sitemap.resources.select{ |p| p.path.include? 'changelog'}.map{ |p| p.path.gsub /changelog\/(\d.\d.\d).html/, '\1'}.reverse.each do |version|
+          - header = version[0,3]
+          - if header != prev_header
+            - unless prev_header.empty?
+              %li.divider
+            %li.nav-header= header
+            - prev_header = header
+          %li{class: version == active_version ? 'active' : nil}
+            %a{href: "/changelog/#{version}/"}= version
+    .span10
+      %h1.page-header= @title
+      = yield

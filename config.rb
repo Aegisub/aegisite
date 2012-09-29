@@ -5,6 +5,8 @@ set :css_dir, 'css'
 set :js_dir, 'js'
 set :images_dir, 'images'
 
+page "/changelog/*", layout: 'changelog'
+
 configure :build do
   activate :minify_javascript
   activate :asset_hash
