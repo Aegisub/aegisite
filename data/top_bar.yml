@@ -5,7 +5,7 @@ nav_items:
   - url:  http://blog.aegisub.org
     name: News
 
-  - url:  /www/index.html#downloads
+  - url:  /www/downloads/index.html
     name: Downloads
 
   - url:  /docs/index.html
