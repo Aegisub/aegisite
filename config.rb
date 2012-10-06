@@ -1,3 +1,5 @@
+require 'bootstrap-sass'
+
 activate :directory_indexes
 activate :automatic_image_sizes
 
