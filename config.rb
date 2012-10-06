@@ -11,6 +11,7 @@ page "/www/changelog/*", layout: 'changelog'
 
 configure :build do
   activate :minify_javascript
+  activate :minify_css
   activate :asset_hash
   activate :gzip
   set :haml, { ugly: true }
