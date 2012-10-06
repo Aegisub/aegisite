@@ -1,11 +1,6 @@
 - active_version = current_resource.path.gsub /www\/changelog\/(\d.\d.\d).html/, '\1'
 - @title = "Aegisub #{active_version} Changelog"
 - wrap_layout :layout do
-  :css
-    dd {
-      border-top: 1px solid #CCC;
-    }
-
   .fluid-row
     .span2{:style => "padding-top: 20px"}
       %ul.nav.nav-list.well
@@ -19,6 +14,6 @@
             - prev_header = header
           %li{class: version == active_version ? 'active' : nil}
             = link_to version, "/www/changelog/#{version}.html"
-    .span10
+    .span10.changelog
       %h1.page-header= @title
       = yield
