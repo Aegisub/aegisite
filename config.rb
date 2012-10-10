@@ -9,6 +9,12 @@ set :images_dir, 'static/img'
 
 page "/www/changelog/*", layout: 'changelog'
 
+helpers do
+  def ticket id
+    "<a href='http://devel.aegisub.org/ticket/#{id}'>##{id}</a>"
+  end
+end
+
 configure :build do
   activate :minify_javascript
   activate :minify_css
