@@ -152,7 +152,7 @@ versions:
 ---
 
 .fluid-row
-  .span2{:style => "padding-top: 20px"}
+  .span2{style: "padding-top: 20px; position: fixed"}
     %ul.nav.nav-list.well
       %li
         %a{href: '#current'} Current Version
@@ -166,11 +166,11 @@ versions:
         %a{href: '#osx'} OS X
       %li
         %a{href: '#source'} Source
-  .span10
+  .span10.offset2
     %h1.page-header#current Downloads
 
     %p The latest version is <strong>#{data.version.current}</strong>, released #{data.version.release_date}
-    %p See the <a href="changelog/#{data.version.current}/">changelog</a> for a list of changes.
+    %p See the <a href="../changelog/#{data.version.current}/">changelog</a> for a list of changes.
 
     %table.table.table-bordered.table-condensed
       %tr
