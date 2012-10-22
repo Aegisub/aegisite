@@ -17,6 +17,14 @@ module MarkdownExtensions
       @src.pos += @src.matched_size
 
       page, text = link_target_and_text(@src[1], @src[2])
+
+      if page.start_with? 'img'
+        img = Element.new :img
+        img.attr['src'] = page
+        @tree.children << img
+        return
+      end
+
       url = find_page page
       if url
         link = Element.new :a
