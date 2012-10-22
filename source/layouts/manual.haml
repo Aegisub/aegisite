@@ -1,8 +1,8 @@
 - @title = "Aegisub Manual"
 - wrap_layout :layout do
   .fluid-row
-    .span3{:style => "padding-top: 20px"}
-      %ul.nav.nav-list.well
+    .span3
+      %ul#manual-sidebar
         - data.manual_sidebar.each do |group|
           %li.nav-header= group.name
           - group[:entries].each do |page|
