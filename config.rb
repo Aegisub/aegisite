@@ -17,6 +17,8 @@ helpers do
   end
 end
 
+set :markdown_engine, :kramdown
+
 configure :build do
   activate :minify_javascript
   activate :minify_css
