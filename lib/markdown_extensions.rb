@@ -51,4 +51,11 @@ module MarkdownExtensions
 
     define_parser(:wiki_link, /\[\[([^|#]*)\|?([^|#]*)(#?[^#|]*)\]\]/, '\\[\\[')
   end
+
+  class Kramdown::Converter::Html
+    def convert_img(el, indent)
+      el.attr['src'].prepend '/docs/3.0/'
+      "<img#{html_attributes(el.attr)} />"
+    end
+  end
 end
