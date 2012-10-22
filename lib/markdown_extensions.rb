@@ -57,7 +57,7 @@ module MarkdownExtensions
       nil
     end
 
-    define_parser(:wiki_link, /\[\[([^|#]*)\|?([^|#]*)(#?[^#|]*)\]\]/, '\\[\\[')
+    define_parser(:wiki_link, /\[\[([^!][^|#]*)\|?([^|#]*)(#?[^#|]*)\]\]/, '\\[\\[[^!]')
   end
 
   class Kramdown::Converter::Html
