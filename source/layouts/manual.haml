@@ -4,10 +4,13 @@
   .fluid-row
     .span3
       %ul#manual-sidebar
+        - current_url = current_page.url
         - data.manual_sidebar.each do |group|
           %li.nav-header= group.name
           - group[:entries].each do |page|
-            %li= link_to page[:name], "/docs/3.0/#{page[:url]}/"
+            - url = "/docs/3.0/#{page[:url]}/"
+            %li{class: current_url == url ? 'active' : nil}
+              = link_to page[:name], url
     .span9
       %h1.page-header= @title
       = yield
