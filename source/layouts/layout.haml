@@ -15,8 +15,9 @@
           = link_to '/www/index.html', class: 'brand', style: 'padding: 3px 10px' do
             = image_tag 'logo-top-bar.png', alt: 'Aegisub'
           %ul.nav
+            - nav_group = @nav_group || current_page.data.nav_group
             - data.top_bar.nav_items.each do |item|
-              %li{class: item.name == current_page.data.nav_group ? 'active' : nil}
+              %li{class: item.name == nav_group ? 'active' : nil}
                 = link_to item.name, item.url
           %ul.nav.pull-right
             %li
