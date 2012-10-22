@@ -1,4 +1,5 @@
 require 'bootstrap-sass'
+require 'lib/markdown_extensions'
 
 activate :directory_indexes
 activate :automatic_image_sizes
@@ -18,6 +19,7 @@ helpers do
 end
 
 set :markdown_engine, :kramdown
+set :markdown, input: 'WikiKramdown'
 
 configure :build do
   activate :minify_javascript
