@@ -1,5 +1,6 @@
 - @nav_group = 'Manual'
-- @title = "Aegisub Manual"
+- page_name = current_page.url.gsub(/^.*\/([^\/]+)\/$/, '\1').gsub('_', ' ')
+- @title = "#{page_name} - Aegisub Manual"
 - wrap_layout :layout do
   .fluid-row
     .span3
@@ -12,5 +13,5 @@
             %li{class: current_url == url ? 'active' : nil}
               = link_to page[:name], url
     .span9
-      %h1.page-header= @title
+      %h1.page-header= page_name
       = yield
