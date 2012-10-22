@@ -72,7 +72,7 @@ edit box and the grid normally modify all selected lines, and not just the
 line displayed in the edit box.
 
 ### The subtitles edit box ###
-<center>[[img/subs_edit_box.png]]</center>
+![](img/subs_edit_box.png)
 
 The edit box is just a plain editing area with a number of associated controls.
 They are:
@@ -130,7 +130,7 @@ They are:
     how times are actually stored in the script.
 
 If you right-click anywhere in the edit box, you get the following menu:
-<center>[[img/Subs_Edit_Context.png]]</center>
+![](img/Subs_Edit_Context.png)
 
 Select all, undo, copy, cut and paste all do what you'd expect them to.
 
@@ -146,7 +146,7 @@ Select all, undo, copy, cut and paste all do what you'd expect them to.
   the text on each side of the cursor.
 
 ### The subtitles grid ###
-<center>[[img/Subs_grid.png]]</center>
+![](img/Subs_grid.png)
 
 The subtitles grid shows all lines (comments and otherwise) in the entire
 file.
@@ -163,7 +163,7 @@ Some common controls:
 * To change the way [[override tags|ASS_Tags]] are displayed in the grid,
   click the "cycle through tag hiding modes" button on the toolbar.
 
-<center>[[img/Subs_grid_tags.png]]</center>
+![](img/Subs_grid_tags.png)
 
 The lines have different (configurable) colors representing different
 things; see the [[subtitles grid section of the options
@@ -213,7 +213,7 @@ names) to manually select which columns you want to be visible.
 Right-clicking any other line in the grid gives you the following menu
 (many of the options are also available in other menus):
 
-<center>[[img/grid_context_menu.png]]</center>
+![](img/grid_context_menu.png)
 
 **Insert (before/after)**
 : Inserts a new empty line before or after the selected line. The new line
@@ -268,11 +268,11 @@ of them, creates one line per text fragment instead. This is mostly useful
 for correcting subs ripped from DVDs, which frequently look something like
 this:
 
-    [[img/Recombine_01.png]]
+    ![](img/Recombine_01.png)
 
     After recombine lines, the result is:
 
-    [[img/Recombine_02.png]]
+    ![](img/Recombine_02.png)
 
 **Create audio clip**
 : Saves a segment of the loaded audio corresponding to the timing of the
