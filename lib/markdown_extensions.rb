@@ -45,6 +45,16 @@ module MarkdownExtensions
     end
 
     define_parser(:wiki_link, /\[\[([^!][^|#]*)\|?([^|#]*)(#?[^#|]*)\]\]/, '\\[\\[[^!]')
+
+    def handle_extension(name, opts, body, type)
+      case name
+      when 'template'
+        @tree.children << Element.new(:raw, @app.partial(opts['name']))
+        true
+      else
+        super(name, opts, body, type)
+      end
+    end
   end
 
   class Kramdown::Converter::Html
