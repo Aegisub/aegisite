@@ -14,6 +14,7 @@ add attachments, "Extract" extracts existing attachments into separate files,
 and "Delete" deletes attachments from the subtitles file.
 
 ## Limitations and downsides  ##
+
 ### Supported formats  ###
 The SSA format specification only allows certain filetypes to be attached. For
 fonts, only .ttf is allowed. For pictures, .bmp, .gif, .ico, .jpg and .wmf are

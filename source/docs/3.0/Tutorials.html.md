@@ -3,6 +3,7 @@
 The following tutorials are available for Aegisub:
 
 ## Video Tutorials (Screencasts)  ##
+
 ### Dialogue Timing  ###
 
 [[!template id=Todo text="actually do this"]]

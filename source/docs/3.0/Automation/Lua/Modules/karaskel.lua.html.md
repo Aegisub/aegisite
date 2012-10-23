@@ -15,7 +15,8 @@ Using `karaskel.lua` is strongly recommended when creating karaoke effects,
 and it can also be useful for other tasks as it contains several text
 layouting functions.
 
-## Functions  ##
+## Functions ##
+
 ### karaskel.collect_head  ###
 
 Synopsis: `meta, styles = karaskel.collect_head(subtitles, generate_furigana)`

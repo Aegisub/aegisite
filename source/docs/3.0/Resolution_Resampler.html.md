@@ -5,7 +5,6 @@ value. Uses include merging two scripts with different resolutions, converting
 a script for a 4:3 video to its 16:9 equivalent, and converting between 1:1 and
 anamorphic pixel formats.
 
-
 ## Overview  ##
 <center>[[img/resolution_resampler.png]]</center>
 
@@ -28,6 +27,7 @@ aspect ratio change. This is useful when converting between anamorphic and 1:1
 formats.
 
 ## Examples  ##
+
 ### 4:3 SD to 16:9 HD  ###
 For example, if you have subtitles typeset to a 640x480 video, and want to
 apply the same subtitles to a 1280x720 video (which is widescreen, therefore
