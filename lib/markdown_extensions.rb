@@ -49,7 +49,9 @@ module MarkdownExtensions
     def handle_extension(name, opts, body, type)
       case name
       when 'template'
-        @tree.children << Element.new(:raw, @app.partial(opts['name']))
+        template_name = opts.delete('name')
+        opts['body'] = body
+        @tree.children << Element.new(:raw, @app.partial(template_name, locals: opts))
         true
       else
         super(name, opts, body, type)
