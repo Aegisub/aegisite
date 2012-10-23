@@ -1,4 +1,5 @@
-[[!template id=toc depth=2]]
+1. TOC
+{: toc}
 
 The Automation 4 `karaskel.lua` include file contains several functions
 intended to help the development of karaoke effects with Automation 4 Lua.
@@ -478,6 +479,4 @@ contain the following fields:
 * `hl.duration` - Duration of the highlight in milliseconds.
 
 [[!template id=Automation_navbox]]
-
-
 
