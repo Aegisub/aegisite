@@ -72,5 +72,5 @@ If the syllable duration is longer than 100 ms the first sub-expression is true,
 
 In Lua, `and` binds stronger than `or` meaning that `and` expressions are evaluated first. In the above expression the effective grouping is like this: `((syl.duration > 100) and "f") or ""`
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}
 

@@ -34,4 +34,4 @@ Synopsis: `val = unicode.codepoint(instring)`
 
 Calculate the Unicode codepoint for the first character in `instring`.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

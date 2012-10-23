@@ -378,4 +378,4 @@ Add one to each \k duration:
     {\k11}a{\k16}b{\k31}c
 """]]
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

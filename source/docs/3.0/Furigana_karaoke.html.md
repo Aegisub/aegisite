@@ -206,4 +206,4 @@ Multi-highlight data are stored in `syl.highlights`.
 
 [[!template id=Todo text="more details"]]
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

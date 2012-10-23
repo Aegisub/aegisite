@@ -242,4 +242,4 @@ control. The control classes map to types in the following manner:
 : A VB colorstring following the same scheme as for setting the
   **`value`** property.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

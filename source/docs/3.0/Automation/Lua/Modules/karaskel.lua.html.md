@@ -478,5 +478,5 @@ contain the following fields:
   milliseconds, relative to the start of the line.
 * `hl.duration` - Duration of the highlight in milliseconds.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}
 

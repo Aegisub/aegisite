@@ -114,4 +114,4 @@ possible inline-fx. When the effect has to be applied, the right function
 is looked up in the effect table and then called.
 """]]
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

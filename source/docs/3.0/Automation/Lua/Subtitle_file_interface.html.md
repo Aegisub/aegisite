@@ -286,4 +286,4 @@ with these lines unless you really know what you're doing. Deleting, modifying
 and inserting `unknown` lines has undefined consequences. (That means, even if
 it works today it might not work tomorrow or in the next version of Aegisub.)
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

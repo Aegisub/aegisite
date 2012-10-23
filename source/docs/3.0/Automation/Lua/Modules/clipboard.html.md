@@ -16,4 +16,4 @@ Synopsis: `clipboard.set(new_text)`
 Set the clipboard contents to a string. Returns true if the clipboard could
 be set, and false if an error occurred.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

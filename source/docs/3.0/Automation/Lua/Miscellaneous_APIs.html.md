@@ -159,4 +159,4 @@ to an absolute path.
     a string that is unlikely to be useful in any way. Any other strings are
     passed through untouched.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

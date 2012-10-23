@@ -99,4 +99,4 @@ algorithm. The furigana layout algorithm also produces data structures so
 similar to syllable structures you can in effect use exactly the same code to
 produce effects for both main syllables and furigana.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

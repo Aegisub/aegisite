@@ -323,4 +323,4 @@ Running a single template:
 
 [[!template id=Todo text="Turn this into something more reasonable?"]]
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

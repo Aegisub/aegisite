@@ -18,4 +18,4 @@ ask you for more information, and some work only on the selected subtitle
 lines. Always remember to read the documentation that came with macros you
 downloaded from the Internet.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

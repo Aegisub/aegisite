@@ -117,4 +117,4 @@ contents.
 : Extremely verbose information about what the script is doing, such as a
 message for each single step done with lots of variable dumps.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

@@ -153,4 +153,4 @@ Select all lines which begin while another line is still active. This can be
 useful for catching timing errors, or for setting an alternate style for these
 lines, which improves readability.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

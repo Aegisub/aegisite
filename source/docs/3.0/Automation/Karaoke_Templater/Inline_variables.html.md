@@ -76,5 +76,5 @@ The line variables that also exist as automatic variants all start with a lowerc
 | width, height                  | width and height of line/syllable in pixels, this is rounded and might not match exactly with the positioning variables                                                  
 
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}
 

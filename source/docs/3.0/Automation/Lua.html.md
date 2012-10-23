@@ -74,4 +74,4 @@ providing a configuration interface for export filters.
 : for e.g. getting the rendered size of text and getting video frame rate
 information.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

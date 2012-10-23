@@ -46,4 +46,4 @@ for this. A number of helper functions are provided here.
 has full Unicode support and more features than Lua's built in regular
 expression.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

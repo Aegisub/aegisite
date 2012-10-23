@@ -158,4 +158,4 @@ Synopsis: `outalpha = interpolate_alpha(t, alpha1, alpha2)`
 Similar to `interpolate_color`, but interpolates alpha values instead. Also
 works on colour strings, and will return an alpha override string.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

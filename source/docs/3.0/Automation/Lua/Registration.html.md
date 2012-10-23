@@ -230,6 +230,6 @@ A configuration dialogue table. See the page on
 [[configuration dialogues|Automation/Lua/Dialogs]] for
 more information on the format of this table.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}
 
 

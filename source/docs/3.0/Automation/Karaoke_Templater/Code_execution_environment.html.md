@@ -316,4 +316,4 @@ because the zero'th syllable's duration is too short for the fxgroup to be
 enabled.
 """]]
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

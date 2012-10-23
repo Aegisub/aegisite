@@ -96,4 +96,4 @@ You may wonder where several of the functions that were previously in the Automa
   a macro instead. It's available directly from the Automation menu and you
   can easily reload using one of the methods listed above.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}

@@ -50,4 +50,4 @@ several pitfalls. Some of them are:
 * Lots of more fancy features. Check the tutorials or read the reference to
   learn about it all.
 
-[[!template id=Automation_navbox]]
+{::template name="automation_navbox" /}
