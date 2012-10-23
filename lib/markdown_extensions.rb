@@ -25,14 +25,13 @@ module MarkdownExtensions
         return
       end
 
-      url = find_page page
+      url = @app.page_url page
       if url
         link = Element.new :a
         link.attr['href'] = url + @src[3]
         add_text(text, link)
         @tree.children << link
       else
-        print "Page not found: #{page}\n"
         add_text(text)
       end
     end
@@ -43,18 +42,6 @@ module MarkdownExtensions
       else
         return b, a
       end
-    end
-
-    def find_page name
-      suffix = "/#{name}/"
-      resource = @app.current_resource
-      while resource
-        resource.children.each do |r|
-          return r.url if r.url.end_with? suffix
-        end
-        resource = resource.parent
-      end
-      nil
     end
 
     define_parser(:wiki_link, /\[\[([^!][^|#]*)\|?([^|#]*)(#?[^#|]*)\]\]/, '\\[\\[[^!]')
