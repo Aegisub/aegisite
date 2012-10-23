@@ -1,4 +1,4 @@
-[[!template id=toc depth=2]]
+{::options toc_levels="2,3" /}
 
 Editing subtitles is what Aegisub is made for. This page will deal with basic
 text editing of subtitle lines; for more information on the typography of

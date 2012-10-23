@@ -1,4 +1,4 @@
-[[!template id=toc depth=2]]
+{::options toc_levels="2,3" /}
 
 In digital encoding, there are two main ways of including subtitles in a video:
 softsubbing and hardsubbing. Both methods has unique advantages and

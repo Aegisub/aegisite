@@ -1,4 +1,4 @@
-[[!template id=toc depth=2]]
+{::options toc_levels="2,3" /}
 
 The `re` module is a wrapper around wxRegex, intended as a full replacement for
 Lua's built in regular expressions. It has two main advantages over Lua's:

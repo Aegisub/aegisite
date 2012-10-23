@@ -1,4 +1,4 @@
-[[!template id=toc]]
+{::options toc_levels="2" /}
 
 [[!template id=Todo text="A lot of this is outdated"]]
 

@@ -1,4 +1,4 @@
-[[!template id=toc depth=2]]
+{::options toc_levels="2,3" /}
 
 The following is a list of every tag supported by the Advanced Substation
 Alpha format. This is basically a detailed version of ass-quickref.txt. See

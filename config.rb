@@ -19,7 +19,9 @@ helpers do
 end
 
 set :markdown_engine, :kramdown
-set :markdown, input: 'WikiKramdown'
+set :markdown,
+  input: 'WikiKramdown',
+  toc_levels: []
 
 configure :build do
   activate :minify_javascript

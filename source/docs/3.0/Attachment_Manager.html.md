@@ -1,4 +1,4 @@
-[[!template id=toc depth=2]]
+{::options toc_levels="2,3" /}
 
 The attachment manager allows you to attach fonts and/or pictures to your
 script (by encoding them as text). This is occasionally useful for sharing

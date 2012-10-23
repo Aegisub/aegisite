@@ -1,4 +1,4 @@
-[[!template id=toc depth=2]]
+{::options toc_levels="2,3" /}
 
 [[!template id=Todo text="Screenshots need to be updated"]]
 

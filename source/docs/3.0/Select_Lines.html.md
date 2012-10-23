@@ -1,4 +1,4 @@
-[[!template id=toc start=3]]
+{::options toc_levels="2,3" /}
 
 The **select lines** tool is useful for finding and selecting all lines in the
 script that matches certain criteria. This can be useful from a number of

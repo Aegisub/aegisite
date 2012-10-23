@@ -1,4 +1,4 @@
-[[!template id=toc start=3]]
+{::options toc_levels="2,3" /}
 
 Do you want to support Aegisub? Well, it's easy! 
 

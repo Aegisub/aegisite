@@ -61,6 +61,15 @@ module MarkdownExtensions
   end
 
   class Kramdown::Converter::Html
+    alias_method :old_convert_root, :convert_root
+
+    def convert_root(el, indent)
+      result = old_convert_root(el, indent)
+      toc_tree = generate_toc_tree(@toc, :ol, {})
+      result.prepend convert(toc_tree, 0) unless toc_tree.children.empty?
+      result
+    end
+
     def convert_img(el, indent)
       el.attr['src'].prepend '/docs/3.0/'
       "<img#{html_attributes(el.attr)} />"

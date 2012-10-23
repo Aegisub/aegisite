@@ -1,4 +1,4 @@
-[[!template id=toc depth=2]]
+{::options toc_levels="2,3" /}
 
 Aegisub is highly customizable and hence has a large amount of user-changeable
 options. These are available in the options dialog box, found in the View menu.

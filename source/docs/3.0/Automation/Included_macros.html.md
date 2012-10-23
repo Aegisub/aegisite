@@ -1,4 +1,4 @@
-[[!template id=toc]]
+{::options toc_levels="2..6" /}
 
 Aegisub includes several macros. Here's a line-up of them.
 

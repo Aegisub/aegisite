@@ -1,4 +1,4 @@
-[[!template id=toc depth=2]]
+{::options toc_levels="2,3" /}
 
 The timing postprocessor is a highly useful tool for automatically correcting
 timing in various ways.
