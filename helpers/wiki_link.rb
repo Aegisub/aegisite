@@ -3,9 +3,9 @@ module WikiLink
     path_parts = page.split '/'
     resource = current_resource
 
-    url   = check_node(resource, path_parts)
-    url ||= check_node(resource.parent, path_parts)
-    url ||= check_node(root_resource(resource), path_parts)
+    url   = check_node(resource.children, path_parts)
+    url ||= check_node(resource.siblings, path_parts)
+    url ||= check_node(sitemap.resources, path_parts)
 
     print "Page not found: #{page}\n" unless url
     url
@@ -17,20 +17,14 @@ module WikiLink
   end
 
   private
-  def check_node node, parts
-    return node.url + parts[0] if parts[0].start_with? '#'
-
-    node.children.each do |c|
+  def check_node nodes, parts
+    nodes.each do |c|
       if c.url.split('/').last == parts[0]
         return c.url if parts.length == 1
-        return check_node c, parts.drop(1)
+        return c.url + parts[1] if parts[1].start_with? '#'
+        return check_node c.children, parts.drop(1)
       end
     end
     nil
-  end
-
-  def root_resource node
-    node = node.parent while node.parent
-    node
   end
 end
