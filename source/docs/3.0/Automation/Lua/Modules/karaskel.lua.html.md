@@ -461,11 +461,12 @@ Additions by `karaskel.preproc_line_pos`:
   `syl.right` for one syllable is equal to `syl.left` for the next
   syllable.
 
-[[!template id=Examplebox data="""<pre>line.left + syl.center</pre>
+{::template name="examplebox"}
+<pre>line.left + syl.center</pre>
 
 Calculates the default X position of a syllable, suitable for use with
 `\an2`, `\an5` or `\an8` alignment.
-"""]]
+{:/}
 
 #### Highlight table  ####
 A highlight table defines one highlight of a multi-highlight timed

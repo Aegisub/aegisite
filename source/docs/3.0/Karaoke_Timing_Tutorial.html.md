@@ -172,11 +172,11 @@ Repeat.}}
 ## Styling  ##
 
 
-[[!template id=Todo text="a bit about styles, how basic karaoke looks, and the \kf and \ko effects"]]
+{::template name="todo"}a bit about styles, how basic karaoke looks, and the \kf and \ko effects{:/}
 
 
 ## Wrapping up  ##
 
 
-[[!template id=Todo text="mention the video tutorial again and point to other relevant topics"]]
+{::template name="todo"}mention the video tutorial again and point to other relevant topics{:/}
 

@@ -1,6 +1,6 @@
 {::options toc_levels="2,3" /}
 
-[[!template id=Todo text="Screenshots need to be updated"]]
+{::template name="todo"}Screenshots need to be updated{:/}
 
 **A video tutorial for this feature is available at [[the tutorials
 section|Tutorials]].**
@@ -29,8 +29,7 @@ video frame" (Ctrl-4) to set the time to something different than what is
 displayed here, as setting times to exactly the frame's time tends to result
 in rounding errors.
 
-[[!template id=Todo text="Is the main toolbar actually documented
-anywhere?"]]
+{::template name="todo"}Is the main toolbar actually documented anywhere?{:/}
 
 ### Subs relative time ###
 Displays the time to the start and end time of the active subtitle line.

@@ -1,6 +1,6 @@
 {::options toc_levels="2" /}
 
-[[!template id=Todo text="A lot of this is outdated"]]
+{::template name="todo"}A lot of this is outdated{:/}
 
 ## Programming ##
 * Main Programmers:

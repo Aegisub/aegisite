@@ -73,11 +73,11 @@ colour string. Unused values (depends on the format of the colour string)
 are assigned 0 (zero.) If an unrecognised colour string is passed, `nil` is
 returned.
 
-[[!template id=Examplebox data="""
+{::template name="examplebox"}
     r, g, b, a = extract_color("&H7F&")
 
 `r`, `g`, and `b` will be 0; `a` will be 127.
-"""]]
+{:/}
 
 ### alpha_from_style  ###
 Synopsis: `alphastring = alpha_from_style(coloralphastring)`

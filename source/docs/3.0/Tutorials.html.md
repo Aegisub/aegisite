@@ -6,7 +6,7 @@ The following tutorials are available for Aegisub:
 
 ### Dialogue Timing  ###
 
-[[!template id=Todo text="actually do this"]]
+{::template name="todo"}actually do this{:/}
 
 * By: Karl Blomster
 
@@ -17,7 +17,7 @@ The following tutorials are available for Aegisub:
 * Link: <http://jfs.itcamefromjapan.net/aegisub/demovids/kanji-timer.avi>
 
 ### Karaoke Timing  ###
-[[!template id=Todo text="Actually do this"]]
+{::template name="todo"}Actually do this{:/}
 
 * By: Niels Martin Hansen
 

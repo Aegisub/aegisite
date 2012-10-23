@@ -62,7 +62,7 @@ follow.
 1. Find the _Effect_ field, it's to the right of the _Style_ and _Actor_ fields. Put the text "`template line`" into it. (Without the quotes!) Press the _Enter_ key on your keyboard to save the Effect field.
 1. Finally, enter this text for the main text of your template line. Finish off with _Enter_ again. `{\r\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)}`
 
-[[!template id=Todo text="Insert a screenshot of how it should look after the steps."]]
+{::template name="todo"}Insert a screenshot of how it should look after the steps.{:/}
 
 Now look at the _Automation_ menu again. If you made the template line
 correctly, _Apply karaoke template_ will now be available. If it isn't review
@@ -70,7 +70,7 @@ the steps above again.
 
 Select _Apply karaoke templates_ and watch Karaoke Templater do its work.
 
-[[!template id=Todo text="Another screenshot, this time after applying templates."]]
+{::template name="todo"}Another screenshot, this time after applying templates.{:/}
 
 If you have a video open you can view the effect right now, inside Aegisub.
 
@@ -86,7 +86,7 @@ Continuing right on from above, now try doing this:
 1. Change the text of the template line to: `{\r\k$kdur\t($start,$end,\1c&H00FF00&)\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)}`
 1. Apply templates again
 
-[[!template id=Todo text="More screenshot"]]
+{::template name="todo"}More screenshot{:/}
 
 Karaoke Templater re-used the commented out timed karaoke and changed the
 styled karaoke to match the new effect instead. You can also try changing the

@@ -1,6 +1,6 @@
 In [[the previous tutorial|Automation/Karaoke_Templater/Tutorial_1]] we saw how to use the basic features of Karaoke Templater to make simple karaoke effects. We'll continue where we left off here, by expanding on the basics from last tutorial.
 
-[[!template id=Todo text="make and insert screenshots"]]
+{::template name="todo"}make and insert screenshots{:/}
 
 
 ## Preparations  ##

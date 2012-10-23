@@ -130,7 +130,7 @@ It is important to note that the syllables and furigana syllables looped
 through are the parsed-stored syllables, not multi-highlight virtual syllables,
 not per-character virtual syllables and not a combination.
 
-[[!template id=Examplebox data="""
+{::template name="examplebox"}
 Assume there are three `syl` class templates: A, B and C.
 
 * A is a regular template with neither _multi_ nor _char_ modifier.
@@ -157,7 +157,7 @@ Now these templates are applied against a line with 2 syllables. This happens in
         * Processing proceeds similar to syllable 1.
 
 Also see later down for more details on multi-highlight and per-character pseudo-syllables.
-"""]]
+{:/}
 
 If any template matches at any time during the three steps above the (original)
 line is marked as "timed karaoke" and is then made into a comment with
@@ -174,10 +174,10 @@ otherwise.
 * Otherwise the template does not match the line.
 
 ## Applying _line_ class templates  ##
-[[!template id=Todo text=" write this"]]
+{::template name="todo"} write this{:/}
 
 ## Applying _syl_ and _furi_ class templates  ##
-[[!template id=Todo text=" write this"]]
+{::template name="todo"} write this{:/}
 
 ## Old mid-level description  ##
 <pre>Main kara-templater process:
@@ -321,6 +321,6 @@ Running a single template:
       b. Else:
          1. Replace match with result of running the function</pre>
 
-[[!template id=Todo text="Turn this into something more reasonable?"]]
+{::template name="todo"}Turn this into something more reasonable?{:/}
 
 {::template name="automation_navbox" /}

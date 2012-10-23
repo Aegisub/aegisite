@@ -366,7 +366,7 @@ between the existing hotkeys and the auto-complete you can probably guess the
 command name for the thing you want to do. Everything on any of the menus or
 any of the toolbars *except* the subtitles edit box toolbar has a command.
 
-[[!template id=Todo text="Add a list of commands available"]]
+{::template name="todo"}Add a list of commands available{:/}
 
 ## Backup ##
 
@@ -524,7 +524,7 @@ one minute of audio uses this much memory at the different settings:
 
 > : The amount of memory used does not depend on the number of channels (Aegisub always works in mono) or the bit-depth (the spectrum is always calculated in 32 bit floating point) of the audio.
 
-[[!template id=Todo text="this is probably wrong"]]
+{::template name="todo"}this is probably wrong{:/}
 
 **Cache memory max**
 : The maximum amount of memory to use for audio spectrum caching. The results

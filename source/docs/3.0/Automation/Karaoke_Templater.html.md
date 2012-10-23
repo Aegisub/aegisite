@@ -9,7 +9,7 @@ installed and ready to use along with Aegisub.
 * [[Using multiple template lines|Automation/Karaoke_Templater/Tutorial_3]]
 * [[More advanced effects with positioned syllables|Automation/Karaoke_Templater/Tutorial_4]]
 
-[[!template id=Todo text="Plan more tutorials. Also actually write those above."]]
+{::template name="todo"}Plan more tutorials. Also actually write those above.{:/}
 
 ## Reference  ##
 * [[Declaring template and code lines|Automation/Karaoke_Templater/Declaring_template_and_code_lines]]

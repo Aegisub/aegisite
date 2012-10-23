@@ -16,7 +16,7 @@ inline-fx tag in it.
 
 At the start of each line the inline-fx is reset to nothing.
 
-[[!template id=Examplebox data="""
+{::template name="examplebox"}
 Here is a timed karaoke line with inline-fx markup:
 
 <pre><code>{\k40}zu{\k20}t{\k42}to {\k32<u>\-paint</u>}e{\k17}ga{\k45}i{\k32}te{\k26}ta {\k24<u>\-cloud</u>}yu{\k55}me</code></pre>
@@ -35,7 +35,7 @@ These syllables get inline-fx assigned like this:
 | ta       | `paint`
 | yu       | `cloud`
 | me       | `cloud`
-"""]]
+{:/}
 
 ## Usage in Karaoke Templater  ##
 If you use [[Karaoke Templater|Automation/Karaoke_Templater]] to create
@@ -43,7 +43,7 @@ effects, you can use the _fx_ modifier on templates to make that template
 affect only syllables with a specific inline-fx. It isn't possible
 (directly) to match only syllables with blank inline-fx.
 
-[[!template id=Examplebox data="""
+{::template name="examplebox"}
 With the sample timed karaoke from above, you could have the following templates:
 
 <code><pre>template syl: {base effect applied for all syllables}
@@ -52,8 +52,8 @@ template syl <u>fx cloud</u>: {overlay effect applied only to the 'cloud' syllab
 
 The idea here is to have a base effect and then some of the syllables get
 some more effects on top of that.
-"""]]
-[[!template id=Examplebox data="""
+{:/}
+{::template name="examplebox"}
 It is possible to match only syllables with blank inline-fx in
 kara-templater by using an _fxgroup_ that enables or disables basing on
 inline-fx. You can also use _fxgroup_s to have templates that run for
@@ -64,7 +64,7 @@ template syl <u>fxgroup blankfx</u>: {effect only applied on blank inline-fx syl
 
 The important thing is that the code line runs per syllable and runs before
 any per-syllable templates that must use it.
-"""]]
+{:/}
 
 ## Usage in Lua scripts  ##
 The inline-fx tags are parsed by
@@ -75,7 +75,7 @@ pre-processing on your subtitle lines.
 The inline-fx for a syllable is then available as `syl.inline_fx`, which
 you can compare to a string to conditionally apply effects.
 
-[[!template id=Examplebox data="""
+{::template name="examplebox"}
 In some code that runs per-syllable in your script:
 
     if syl.inline_fx == "" then
@@ -88,8 +88,8 @@ In some code that runs per-syllable in your script:
 
 Simply compare the inline-fx name to the various possibilities and run the
 right effect code.
-"""]]
-[[!template id=Examplebox data="""
+{:/}
+{::template name="examplebox"}
 In some code that runs per-syllable in your script:
 At top-level of your script:
 
@@ -112,6 +112,6 @@ First, a table is created and filled with functions for applying the
 different effects. The keys used for the table are the names of the
 possible inline-fx. When the effect has to be applied, the right function
 is looked up in the effect table and then called.
-"""]]
+{:/}
 
 {::template name="automation_navbox" /}
