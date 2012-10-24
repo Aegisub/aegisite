@@ -19,7 +19,7 @@ module WikiLink
   private
   def check_node nodes, parts
     nodes.each do |c|
-      if c.url.split('/').last == parts[0]
+      if c.url.split('/').last.casecmp(parts[0]) == 0
         return c.url if parts.length == 1
         return c.url + parts[1] if parts[1].start_with? '#'
         return check_node c.children, parts.drop(1)
