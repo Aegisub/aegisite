@@ -4,7 +4,7 @@ located under _Timing_ -> _Shift Times_.
 
 It looks like this:
 
-<center>[[img/shift_times.png]]</center>
+[[img/shift_times.png]]{: class="center"}
 
 The left part of the window contain the options.
 

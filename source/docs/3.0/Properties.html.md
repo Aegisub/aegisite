@@ -1,6 +1,6 @@
 The **script properties** are some headers and other options that affect the entire script in various ways. They can be accessed from the _File menu_ -> _Properties_.
 
-<center>[[img/Properties.png]]</center>
+[[img/Properties.png]]{: class="center"}
 
 The properties are:
 

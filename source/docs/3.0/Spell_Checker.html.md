@@ -7,7 +7,7 @@ and can to some degree be controlled from the subtitle edit box's
 right-click menu (see [[editing subtitles|Editing_Subtitles]]).
 
 ### The spell checker dialog ###
-<center>[[img/spell_checker.png]]</center>
+[[img/spell_checker.png]]{: class="center"}
 
 The spell checker dialog will go through all misspelled words it can find in
 your script. The area in the lower left of the box displays suggestions to

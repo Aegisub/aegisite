@@ -7,7 +7,7 @@ fonts as separate files. However, it is quite limited and is prone to causing
 problems.
 
 ## Overview  ##
-<center>[[img/Attachment_list.png]]</center>
+[[img/Attachment_list.png]]{: class="center"}
 
 The entire dialogue is fairly self-explanatory. The two "Attach ..." buttons
 add attachments, "Extract" extracts existing attachments into separate files,

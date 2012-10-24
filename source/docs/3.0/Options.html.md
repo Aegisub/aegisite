@@ -11,7 +11,7 @@ program, you can just delete config.json and restart Aegisub.
 
 ## General ##
 
-<center>[[img/preferences-general.png]]</center>
+[[img/preferences-general.png]]{: class="center"}
 **Auto Check for Updates**
 : If enabled, Aegisub will periodically check whether there is a newer version
 available, and alert you if there is. Requires a working connection to the
@@ -44,7 +44,7 @@ larger lists may get unwieldy to use.
 
 ## Audio ##
 
-<center>[[img/preferences-audio.png]]</center>
+[[img/preferences-audio.png]]{: class="center"}
 **Lock scroll on cursor**
 : When enabled, the audio waveform view will automatically scroll to follow the
 playback cursor if it gets too close to either of the edges.
@@ -149,7 +149,7 @@ karaoke syllables.
 
 ## Video ##
 
-<center>[[img/preferences-video.png]]</center>
+[[img/preferences-video.png]]{: class="center"}
 **Show keyframes in slider**
 : When enabled, Aegisub will draw keyframe markers on the video seek slider.
 
@@ -200,7 +200,7 @@ likely break existing typesetting.
 
 ## Interface ##
 
-<center>[[img/preferences-interface.png]]</center>
+[[img/preferences-interface.png]]{: class="center"}
 
 **Enable call tips**
 : When enabled, Aegisub will detect when you are writing an [[override
@@ -256,7 +256,7 @@ so desire.
 
 ### Colors ###
 
-<center>[[img/preferences-colours.png]]</center>
+[[img/preferences-colours.png]]{: class="center"}
 
 #### Audio Display ####
 
@@ -336,7 +336,7 @@ respectively.
 
 ## Hotkeys ##
 
-<center>[[img/preferences-hotkeys.png]]</center>
+[[img/preferences-hotkeys.png]]{: class="center"}
 
 This page lists all hotkeys currently set in Aegisub, and allows you to add,
 remove or change them.
@@ -370,7 +370,7 @@ any of the toolbars *except* the subtitles edit box toolbar has a command.
 
 ## Backup ##
 
-<center>[[img/preferences-backup.png]]</center>
+[[img/preferences-backup.png]]{: class="center"}
 
 ### Automatic Save ###
 
@@ -404,7 +404,7 @@ this can be changed (see below).
 
 ## Automation ##
 
-<center>[[img/preferences-automation.png]]</center>
+[[img/preferences-automation.png]]{: class="center"}
 
 **Base path**
 : A base directory where you put non-autoloaded automation scripts. Used only
@@ -438,7 +438,7 @@ dialogue is opened. In that case you will have to enter the
 
 ## Advanced Audio ##
 
-<center>[[img/preferences-advanced-audio.png]]</center>
+[[img/preferences-advanced-audio.png]]{: class="center"}
 
 **Audio provider**
 : What backend to to use for loading audio. Currently there are only two
@@ -578,7 +578,7 @@ you to reindex the file to open audio tracks from the same file.
 
 ## Advanced Video ##
 
-<center>[[img/preferences-advanced-video.png]]</center>
+[[img/preferences-advanced-video.png]]{: class="center"}
 
 **Video provider**
 : Decides what method Aegisub should use to load video. What options you have

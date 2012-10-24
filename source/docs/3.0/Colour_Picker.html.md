@@ -4,7 +4,7 @@ Aegisub introduces a more advanced color picker than the default Windows one. It
 ## Overview ##
 
 
-<center>[[img/Colour_picker.png]]</center>
+[[img/Colour_picker.png]]{: class="center"}
 
 The color picker has the following components:
 

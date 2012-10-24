@@ -3,7 +3,7 @@
 In addition to the normal "Save" and "Save as" functions, Aegisub also has an "Export" feature, which can transform the entire script through various export filters. This is used for a number of things ranging from framerate conversions over karaoke effect generation to just saving to other formats and/or character sets.
 
 ## The export dialog ##
-<center>[[img/Export.png]]</center>
+[[img/Export.png]]{: class="center"}
 
 The upper half of the window contains the available filters. Ticking one or more of them will apply them in the order they are listed; use the move up/down buttons to change the order. The lower half contains a brief description of the selected filter.
 

@@ -8,7 +8,7 @@ all the overrides for each line.
 Aegisub's styles manager tool (accessed from the Subtitles menu) provides
 various means of organizing, saving and editing styles. It looks like this:
 
-<center>[[img/Style_manager.png]]</center>
+[[img/Style_manager.png]]{: class="center"}
 
 As you can see, the window is divided into two halves. The right half displays
 all styles that you currently have accessible in your currently loaded script;
@@ -48,7 +48,7 @@ limitation.
 
 To return to the style editor:
 
-<center>[[img/Style_editor.png]]</center>
+[[img/Style_editor.png]]{: class="center"}
 
 
 * **Style name** - The name of the style. You can't have two styles with the
