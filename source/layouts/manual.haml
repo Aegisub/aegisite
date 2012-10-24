@@ -13,5 +13,5 @@
             %li{class: current_url == url ? 'active' : nil}
               = link_to page[:name], url
     .span9
-      %h1.page-header= page_name
+      %h1.page-header= wiki_page_name current_page
       = yield

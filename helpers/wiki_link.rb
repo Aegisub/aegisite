@@ -16,6 +16,15 @@ module WikiLink
     link_to(text, page_url(page))
   end
 
+  def wiki_page_name page
+    parts = [clean_name(page.url)]
+    while page.parent
+      parts << link_to(clean_name(page.parent.url), page.parent.url)
+      page = page.parent
+    end
+    parts.reverse.drop(2).join ' / '
+  end
+
   private
   def check_node nodes, parts
     nodes.each do |c|
@@ -26,5 +35,9 @@ module WikiLink
       end
     end
     nil
+  end
+
+  def clean_name name
+    name.gsub(/^.*\/([^\/]+)\/$/, '\1').gsub('_', ' ')
   end
 end
