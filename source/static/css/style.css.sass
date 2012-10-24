@@ -34,17 +34,16 @@ footer
   font-size: 95%
 
 .navbox
-  border-top: 2px solid #448
-  border-bottom: 1px solid #448
-  background: #f0f0ff
-  margin: 1em
-  padding: 0.5em
+  @extend .well
   div
     text-align: center
     font-weight: bold
-    background: #ddf
+    border-bottom: 1px solid black
   table
     font-size: smaller
+    th
+      text-align: right
+      white-space: nowrap
     td
       text-align: center
 
