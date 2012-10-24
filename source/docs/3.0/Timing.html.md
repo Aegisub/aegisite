@@ -88,7 +88,7 @@ amount of time, there's some things you should note:
   than fix bad timing, due to that fixing bad timing requires spending a small
   amount of time thinking about each line.
 * If you want to delete all timing data and start over, a simple way is to use
-  the [[shift times dialog|Shift times]] to shift all lines backwards by
+  the [[shift times dialog|Shift_Times]] to shift all lines backwards by
   9:59:59.99.
 
 One common timing style (preferred by the author of this page) goes something
