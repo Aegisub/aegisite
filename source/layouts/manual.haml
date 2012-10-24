@@ -12,6 +12,6 @@
             - url = "/docs/3.0/#{page[:url]}/"
             %li{class: current_url == url ? 'active' : nil}
               = link_to page[:name], url
-    .span9
+    .span9#manual-body
       %h1.page-header= wiki_page_name current_page
       = yield

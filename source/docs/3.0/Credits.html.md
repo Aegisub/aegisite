@@ -6,7 +6,7 @@
 * Main Programmers:
   * [[img/Flag_of_Brazil.gif]] **Rodrigo Braz Monteiro** (ArchMage ZeratuL) - Lead developer, video system, audio system, subtitles I/O, tools
   * [[img/Flag_of_Denmark.gif]] **Niels Martin Hansen** (jfs) - Automation, Lua automation, audio system, tools
-  * [[img/Flag_of_United-States.gif]] **Thomas Goyne (Plorkyeran)**
+  * [[img/Flag_of_United-States.gif]] **Thomas Goyne (Plorkyeran)** - Lead developer for 3.0 onwards.
 
 * Staff Contributors:
   * [[img/Flag_of_Sweden.gif]] **Karl Blomster** (TheFluff) - General code, FFmpegSource video provider

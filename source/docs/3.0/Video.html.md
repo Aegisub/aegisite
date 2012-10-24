@@ -24,34 +24,45 @@ On Windows, [Avisynth](http://avisynth.org/mediawiki/Main_Page) can be used
 instead of FFMS2. When opening via _Avisynth_, Aegisub will try several source
 functions to find the best choice:
 
-* **Import()** - Avisynth builtin function. Used to load Avisynth scripts,
-  never used for anything else.
-* **AviSource()** - Avisynth builtin function. AviSource uses the system's
-  Video for Windows (VfW) decoder to open the video, which for some esoteric
-  formats may be the best or only way to open a file. Only supports .avi files,
-  for obvious reasons. If AviSource cannot open a file, DSS2 is tried, followed
-  by DirectShowSource.
-* **MPEG2Source()** - Only used to load .d2v files (DVD2AVI project files;
-  otherwise known as indexed .VOB's ripped from DVD's). Tries to use neuron2's
-  [DGDecode](http://neuron2.net/dgmpgdec/dgmpgdec.html) to open the file; if
-  Aegisub can't find or load that it'll try the old mpeg2dec3.dll instead; if
-  that too fails, returns an error. This is the most reliable way to open DVD
-  video in Aegisub.
-* **DSS2()** - Tries to find, load and use Haali's DirectShowSource2 plugin
-  (comes with the [Haali Media Splitter](http://haali.cs.msu.ru/mkv/) package
-  and with the [CCCP](http://cccp-project.net); the Avisynth plugin is
-  _avss.dll_, you need to manually put it somewhere where Aegisub or Avisynth
-  can find it, see below). That will in turn try to use your computer's
-  DirectShow environment to open the file. Theoretically any file renderable by
-  DirectShow should be supported, but since you are at the mercy of third-party
-  splitters and decoders, your mileage may vary. As a rule of thumb, if it's
-  playable in Windows Media Player, Aegisub should be able to load it. Do note
-  that DSS2 converts variable framerate files to constant.  Usually this is what
-  you want and expect but if you're doing proper VFR subtitles, it isn't.
-* **DirectShowSource()** - Uses DirectShowSource() (which ships with Avisynth)
-  to try to load the file. Basically the same as DSS2, but far less reliable
-  and it doesn't convert VFR to CFR. **Warning:** DSS is known to have problems
-  with frame-accurate seeking. Do not use it if you can avoid it.
+Import()
+: Avisynth builtin function. Used to load Avisynth scripts, never used
+for anything else.
+
+AviSource()
+: Avisynth builtin function. AviSource uses the system's Video for
+Windows (VfW) decoder to open the video, which for some esoteric
+formats may be the best or only way to open a file. Only supports .avi
+files, for obvious reasons. If AviSource cannot open a file, DSS2 is
+tried, followed by DirectShowSource.
+
+MPEG2Source()
+: Only used to load .d2v files (DVD2AVI project files; otherwise known
+as indexed .VOB's ripped from DVD's). Tries to use neuron2's
+[DGDecode](http://neuron2.net/dgmpgdec/dgmpgdec.html) to open the file;
+if Aegisub can't find or load that it'll try the old mpeg2dec3.dll
+instead; if that too fails, returns an error. This is the most
+reliable way to open DVD video in Aegisub.
+
+DSS2()
+: Tries to find, load and use Haali's DirectShowSource2 plugin (comes
+with the [Haali Media Splitter](http://haali.cs.msu.ru/mkv/) package
+and with the [CCCP](http://cccp-project.net); the Avisynth plugin is
+_avss.dll_, you need to manually put it somewhere where Aegisub or
+Avisynth can find it, see below). That will in turn try to use your
+computer's DirectShow environment to open the file. Theoretically any
+file renderable by DirectShow should be supported, but since you are at
+the mercy of third-party splitters and decoders, your mileage may vary.
+As a rule of thumb, if it's playable in Windows Media Player, Aegisub
+should be able to load it. Do note that DSS2 converts variable
+framerate files to constant.  Usually this is what you want and expect
+but if you're doing proper VFR subtitles, it isn't.
+
+DirectShowSource()
+: Uses DirectShowSource() (which ships with Avisynth) to try to load
+the file. Basically the same as DSS2, but far less reliable and it
+doesn't convert VFR to CFR. Warning: DSS is known to have problems with
+frame-accurate seeking. Do not use it if you can avoid it.
+{: .horizontal-wide}
 
 Note that [[VFR|Video#variableframeratevideo]] is not supported by the
 Avisynth provider. In some cases loading [[external timecodes|Video#timecodes]]
@@ -70,24 +81,25 @@ looks like this:
 
 [[img/Dummy_video.png]]{: class="center"}
 
-* **Resolution**
->  The resolution of the dummy video in pixels. There are a few pre-defined
->  choices in the dropdown menu; you can also specify the size yourself. Note
->  that since the dummy video is RGB there are no particular restrictions with
->  regards to odd widths/heights.
+Resolution
+: The resolution of the dummy video in pixels. There are a few
+pre-defined choices in the dropdown menu; you can also specify the size
+yourself. Note that since the dummy video is RGB there are no
+particular restrictions with regards to odd widths/heights.
 
-* **Colour**
->  The colour of the video surface. The color is solid by default; tick the box
->  "checkerboard pattern" if you want some more variation.
+Colour
+: The colour of the video surface. The color is solid by default; tick
+the box "checkerboard pattern" if you want some more variation.
 
-* **Frame rate**
->  Determines how long each frame is displayed by setting the number of frames
->  per second (fps). Note that it is in fact possible to load VFR timecodes
->  with dummy video.
+Frame rate
+: Determines how long each frame is displayed by setting the number of
+frames per second (fps). Note that it is in fact possible to load VFR
+timecodes with dummy video.
 
-* **Duration**
->  The duration of the video in frames. Below this number is shown the
->  resulting duration in hours/minutes/seconds.
+Duration
+: The duration of the video in frames. Below this number is shown the
+resulting duration in hours/minutes/seconds.
+{: .horizontal-narrow}
 
 
 ## Playing video ##
@@ -158,6 +170,7 @@ which can be useful to avoid passing video files around in certain situations
 
 A keyframes file is a plain ASCII-encoded text file; both \n and \r\n is
 understood to mean a linebreak. Syntax example:
+
     # keyframe format v1
     fps 0
     0
@@ -166,6 +179,7 @@ understood to mean a linebreak. Syntax example:
     82
     130
     131
+
 The first line is the format specification; the string
 `# keyframe format v1`. The second line contains the FPS of the video used to
 generate the keyframe data; however no programs (Aegisub included) actually
@@ -206,6 +220,7 @@ go to the _File_ menu and press _Export_. Untick everything except the
 _Transform Framerate_ filter. Choose the _Variable_ output mode. It needs to
 know the FPS of the video you're going to hardsub the subtitles on; if you have
 video loaded Aegisub will assume that's it and insert it in the box for you.
+
 **Note:** if you have a Matroska or other VFR file loaded, remember that the
 FPS value Aegisub reports might not be the same as the one of the video you are
 going to hardsub the subtitles on.
@@ -245,9 +260,13 @@ direction.
 Example: we have a 704x480 image that we know will be displayed as 16:9 (or
 1.7777...:1). If we assume that the player will stretch the width but leave the
 height untouched, this means that the new width will be:
+
     (16 / 9) * 480 = 853.333...
+
 which in percent is:
+
     853.333... / 704 = 1.212121...
+
 i.e. 121%. Hence, to compensate for this horizontal (X-direction) stretch we
 set ScaleY in all our styles to 121% to stretch the subtitles by the same
 amount, and after rendering they now no longer look stretched.
@@ -300,89 +319,93 @@ The following options are available from the video menu:
 
 ### Sourcefile-related ###
 
+Open video
+: Opens video. Note that if you try to open another video with video
+already loaded, the original video will be closed first.
 
-* **Open video**
->  Opens video. Note that if you try to open another video with video already
->  loaded, the original video will be closed first.
+Close video
+: Unloads the currently open video.
 
-* **Close video**
->  Unloads the currently open video.
+Recent
+: Shows list of recently opened videos.
 
-* **Recent**
->  Shows list of recently opened videos.
+Use dummy video
+: Opens a dummy video (see above).
 
-* **Use dummy video**
->  Opens a dummy video (see above).
-
-* **Show video details**
->  Shows some information about the currently open video. Details shown are
->  filename, frames per second (for VFR files the average FPS is displayed),
->  resolution and aspect ratio, length and decoder. Decoder being what
->  filter/method Aegisub used to open the file.
+Show video details
+: Shows some information about the currently open video. Details shown
+are filename, frames per second (for VFR files the average FPS is
+displayed), resolution and aspect ratio, length and decoder. Decoder
+being what filter/method Aegisub used to open the file.
+{: .horizontal-wide}
 
 ### Timecodes-related ###
-* **Open timecodes file**
->  Loads a timecodes file and applies it to the video, changing the
->  video/subtitle synchronization.
+Open timecodes file
+: Loads a timecodes file and applies it to the video, changing the
+video/subtitle synchronization.
 
-* **Save timecodes file**
->  Saves the currently loaded timecodes as a new v2 timecodes file.
+Save timecodes file
+: Saves the currently loaded timecodes as a new v2 timecodes file.
 
-* **Close timecodes file**
->  Unloads the currently loaded timecodes.
+Close timecodes file
+: Unloads the currently loaded timecodes.
 
-* **Recent**
->  Shows list of recently opened timecodes files.
+Recent
+: Shows list of recently opened timecodes files.
+{: .horizontal-wide}
 
 ### Keyframes-related ###
-* **Open keyframes**
->  Loads keyframe data from the given file. If you already have keyframe data
->  loaded, it will be replaced by the one read from the file.
+Open keyframes
+: Loads keyframe data from the given file. If you already have keyframe
+data loaded, it will be replaced by the one read from the file.
 
-* **Save keyframes**
->  Saves the currently loaded keyframes data to a keyframes file.
+Save keyframes
+: Saves the currently loaded keyframes data to a keyframes file.
 
-* **Close keyframes**
->  Unloads the currently loaded keyframe data, if any. Note that it is not
->  possible to unload keyframe data that was directly loaded from the video
->  file; if you want to get rid of that for some reason, load a keyframes file
->  with only frame 0 being marked as a keyframe.
+Close keyframes
+: Unloads the currently loaded keyframe data, if any. Note that it is
+not possible to unload keyframe data that was directly loaded from the
+video file; if you want to get rid of that for some reason, load a
+keyframes file with only frame 0 being marked as a keyframe.
 
-* **Recent**
->  Shows list of recently loaded keyframe files.
+Recent
+: Shows list of recently loaded keyframe files.
+{: .horizontal-wide}
 
 ### Display-related ###
-* **Detach video**
->  Detaches the video display and related controls from the Aegisub main window
->  and moves it into its own window. To reattach the video to the main window,
->  close the detached window. This feature can be particularly useful on
->  multi-monitor setups.
+Detach video
+: Detaches the video display and related controls from the Aegisub main
+window and moves it into its own window. To reattach the video to the
+main window, close the detached window. This feature can be
+particularly useful on multi-monitor setups.
 
-* **Set zoom**
->  Sets the video zoom level.
+Set zoom
+: Sets the video zoom level.
 
-* **Override aspect ratio**
->  Stretches the video to the specified aspect ratio by modifying the video
->  width. Useful for anamorphic video (see above).
+Override aspect ratio
+: Stretches the video to the specified aspect ratio by modifying the
+video width. Useful for anamorphic video (see above).
 
-* **Show overscan mask**
->  Draws a blue "mask" over the image, indicating the edges of the action safe
->  (dark blue) and title safe (light blue) areas. Useful if you plan on showing
->  your subtitles on a TV without adjustable overscan correction. For more
->  information, see the Wikipedia pages on
->  [overscan](http://en.wikipedia.org/wiki/Overscan), [safe
->  areas](http://en.wikipedia.org/wiki/Safe_area) and [overscan
->  amounts](http://en.wikipedia.org/wiki/Overscan_amounts). Aegisub follows the
->  [BBC
->  guidelines](http://www.bbc.co.uk/guidelines/dq/pdf/tv/tv_standards_london.pdf)
->  on how big the safe areas should be.
+Show overscan mask
+: Draws a blue "mask" over the image, indicating the edges of the
+action safe (dark blue) and title safe (light blue) areas. Useful if
+you plan on showing your subtitles on a TV without adjustable overscan
+correction. For more information, see the Wikipedia pages on
+[overscan](http://en.wikipedia.org/wiki/Overscan), [safe
+areas](http://en.wikipedia.org/wiki/Safe_area) and [overscan
+amounts](http://en.wikipedia.org/wiki/Overscan_amounts). Aegisub
+follows the [BBC
+guidelines](http://www.bbc.co.uk/guidelines/dq/pdf/tv/tv_standards_london.pdf)
+on how big the safe areas should be.
+{: .horizontal-wide}
 
 ### Seeking-related ###
-* **Jump to**
->  Seeks the video to the given time or frame.
+Jump to
+: Seeks the video to the given time or frame.
 
-* **Jump video to start**
->  Seeks the video to the start time of the currently active line.
+Jump video to start
+: Seeks the video to the start time of the currently active line.
 
-* **Jump video to end**
->  Seeks the video to the end time of the currently active line.
+Jump video to end
+: Seeks the video to the end time of the currently active line.
+{: .horizontal-wide}

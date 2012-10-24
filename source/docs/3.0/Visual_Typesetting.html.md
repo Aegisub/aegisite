@@ -7,6 +7,7 @@ section|Tutorials]].**
 
 ## Overview  ##
 [[img/video_display.png]]{: class="center"}
+
 ### Play ###
 Play the video and, starting at the currently displayed frame. See
 [[Video#playingvideo]] for comments on playing video in Aegisub.
@@ -53,18 +54,24 @@ You can right click to bring a context menu with other options:
 
 [[img/Visual_menu.png]]{: class="center"}
 
-* Save PNG snapshot: Saves a PNG snapshot of the current frame to the path
-  specified in the [[options]]. This snapshot will be in the real video size,
-  and WON'T be affected by zooming or aspect ratio overriding.
-* Copy image to clipboard: Same as above, but copies the frame to the
-  clipboard, instead of saving as a PNG. You can then paste it in any image
-  editing software.
-* Save PNG snapshot (no subtitles): Same as the previous option, but subtitles
-  won't be visible in the image.
-* Copy image to clipboard (no subtitles): Same as above, but copying to
-  clipboard.
-* Copy coordinates to clipboard: Copies the current mouse coordinates to
-  clipboard, e.g. "230,152"
+Save PNG snapshot
+: Saves a PNG snapshot of the current frame to the path specified in
+the [[options]]. This snapshot will be in the real video size, and
+WON'T be affected by zooming or aspect ratio overriding.
+
+Copy image to clipboard
+: Same as above, but copies the frame to the clipboard, instead of
+saving as a PNG. You can then paste it in any image editing software.
+
+Save PNG snapshot (no subtitles)
+: Same as the previous option, but subtitles won't be visible in the
+image.
+
+Copy image to clipboard (no subtitles)
+: Same as above, but copying to clipboard.
+
+Copy coordinates to clipboard
+: Copies the current mouse coordinates to clipboard, e.g. "230,152"
 
 ## Tool Descriptions  ##
 There are currently seven different visual typesetting tools: crosshair,

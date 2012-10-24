@@ -15,6 +15,25 @@ footer
 .changelog dd:not(:nth-child(2))
   border-top: 1px solid #CCC
 
+dl.horizontal-narrow
+  @extend .dl-horizontal
+  dt
+    width: 80px
+  dd
+    margin-left: 90px
+
+dl.horizontal-wide
+  @extend .dl-horizontal
+  dt
+    width: 200px
+  dd
+    margin-left: 210px
+
+#manual-body
+  .dl-horizontal, .horizontal-narrow, .horizontal-wide
+    dt, dd
+      margin-bottom: 10px
+
 #manual-sidebar
   @extend .nav
   @extend .nav-list

@@ -517,12 +517,16 @@ result in larger CPU and RAM use. Each consecutive setting uses a bit more CPU
 than the previous, and double the amount of RAM.  For 48 kHz sample rate audio,
 one minute of audio uses this much memory at the different settings:
 
-> 0 "regular" - 11 MB
-> 1 "better" - 22 MB
-> 2 "high" - 44 MB
-> 3 "insane" - 88 MB
+    <table class="table table-bordered table-condensed">
+      <tr><th>0 "regular"</th><td>11 MB</td>
+      <tr><th>1 "better"</th><td>22 MB</td>
+      <tr><th>2 "high"</th><td>44 MB</td>
+      <tr><th>3 "insane"</th><td>88 MB</td>
+    </table>
 
-> : The amount of memory used does not depend on the number of channels (Aegisub always works in mono) or the bit-depth (the spectrum is always calculated in 32 bit floating point) of the audio.
+    The amount of memory used does not depend on the number of channels
+    (Aegisub always works in mono) or the bit-depth (the spectrum is always
+    calculated in 32 bit floating point) of the audio.
 
 {::template name="todo"}this is probably wrong{:/}
 

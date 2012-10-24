@@ -12,15 +12,22 @@ subtitle lines, see [[working with audio|Audio]].
 In the _File_ menu, there are four menu choices that relate to opening or
 creating subtitles:
 
-* **New subtitles** - Creates a new, blank script.
-* **Open subtitles** - Opens an existing subtitles file or imports subtitles
-  from a [Matroska container file](http://www.matroska.org).
-* **Open subtitles with charset** - Opens subtitles but lets you choose what
-  character set Aegisub will use to interpret the file. Usually not needed, but
-  if you have a file in an unusual charset Aegisub will occasionally misdetect
-  it.
-* **Open subtitles from video** - Open the subtitles muxed into the currently
-  open video file.
+New subtitles
+: Create a new, blank script (i.e. close the current file).
+
+Open subtitles
+: Open an existing subtitles file or import subtitles from a [Matroska
+container file](http://www.matroska.org).
+
+Open subtitles with charset
+: Opens subtitles but lets you choose what character set Aegisub will
+use to interpret the file. Usually not needed, but if you have a file
+in an unusual charset Aegisub will occasionally misdetect it.
+
+Open subtitles from video
+: Open the subtitles muxed into the currently open video file. This
+currently only works with Matroska video files.
+{: class="horizontal-wide"}
 
 When you open a subtitles file that is not detected as Unicode, Aegisub will
 attempt to guess what character set it is encoded with. If it is unsure, it
@@ -134,16 +141,23 @@ If you right-click anywhere in the edit box, you get the following menu:
 
 Select all, undo, copy, cut and paste all do what you'd expect them to.
 
-* **Spell checker:** if you right-click on a word that has been detected as
-  misspelled, the spell checker will suggest some likely alternative. You
-  can also set which language it will use for checking from this menu, or
-  add words that it doesn't recognize but you know to be correctly spelled
-  to the dictionary.
-* **Thesaurus:** suggests alternative ways to write the highlighted word.
-* **Split line:** splits the line into two new lines at the cursor
-  position. Preserve times keeps the old line's timing for both lines,
-  estimate times tries to guess where the split is based on the length of
-  the text on each side of the cursor.
+Spell checker
+: If you right-click on a word that has been detected as misspelled,
+the spell checker will suggest some likely alternative. You can also
+set which language it will use for checking from this menu, or add
+words that it doesn't recognize but you know to be correctly spelled to
+the dictionary. For more information on spell checking in Aegisub, see
+the [[Spell Checker]] page.
+
+Thesaurus
+: Suggests alternative words similar to the highlighted word.
+
+Split line
+: Splits the line into two new lines at the cursor position. Preserve
+times keeps the old line's timing for both lines. Estimate times tries
+to guess where the split is based on the length of the text on each
+side of the cursor.
+{: class="dl-horizontal"}
 
 ### The subtitles grid ###
 ![](img/Subs_grid.png)
@@ -175,37 +189,39 @@ By default, the following columns are visible:
 **#**
 : The line number.
 
-**Start**
+Start
 : The start time of the line.
 
-**End**
+End
 : The end time of the line.
 
-**Style**
+Style
 : The style used for this line.
 
-**Text**
+Text
 : The text of the line (this is what will be displayed on the video).
+{: class="horizontal-narrow"}
 
 The following columns will be displayed if any line in the script uses them:
 
-**L**
+L
 : The layer of the line (see above).
 
-**Actor**
+Actor
 : The actor speaking the line.
 
-**Effect**
+Effect
 : The effect for this line.
 
-**Left**
+Left
 : The left margin.
 
-**Right**
+Right
 : The right margin.
 
-**Vert**
+Vert
 : The vertical margin.
+{: class="horizontal-narrow"}
 
 You can also right-click the top line of the grid (the one with the column
 names) to manually select which columns you want to be visible.
@@ -249,7 +265,7 @@ selected.
 
 **Join (concatenate)**
 : Same as above, but concatenates the text of all selected lines instead. A
-newline override (`\N`) is inserted between the texts of each source line.
+space is inserted between the texts of each source line.
 
 **Join (as karaoke)**
 : Does the inverse of _Split (by karaoke)_, i.e.  the same as _Join
