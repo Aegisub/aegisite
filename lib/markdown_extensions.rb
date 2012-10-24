@@ -44,7 +44,7 @@ module MarkdownExtensions
       end
     end
 
-    define_parser(:wiki_link, /\[\[([^!][^|#]*)\|?([^|#]*)(#?[^#|]*)\]\]/, '\\[\\[[^!]')
+    define_parser(:wiki_link, /\[\[([^!][^\]|#]*)\|?([^\]|#]*)(#?[^\]#|]*)\]\]/, '\\[\\[[^!]')
 
     def handle_extension(name, opts, body, type)
       case name
