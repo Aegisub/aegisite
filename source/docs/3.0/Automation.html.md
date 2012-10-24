@@ -36,7 +36,7 @@ dialog|Exporting]]. Some scripts even appear in both places.
 Automation supports scripts in [Lua 5.1](http://www.lua.org). Other languages
 used to be supported, but no one used them.
 
-There is several example scripts included with Aegisub to give you a head start
+There are several example scripts included with Aegisub to give you a head start
 on writing your own ones. A word of warning: Unless you are an experienced
 programmer the _kara-templater.lua_ script is a very bad place to start!
 
