@@ -54,6 +54,9 @@ currently. This number only changes by using the other operations on the
 subtitle object. It cannot change spontaneously during the execution of a
 script.
 
+Note that this is not a constant-time lookup, but lua does cache the value if
+used in `for i = 1, #subs`.
+
 **`num_lines`** (`number`)
 : Number of lines in the subtitle file.
 
@@ -86,8 +89,9 @@ Synopsis:
 * `subtitles.append(line)`
 * `subtitles.append(line1, line2, ...)`
 
-Append one or more lines to the end of the subtitles file. In the first syntax,
-it is the number 0 (zero) used for index. (Setting index 0 causes an append
+Append one or more lines to the end of the appropriate section of the subtitles
+file. If the section does not exist, it will be created. In the first syntax, it
+is the number 0 (zero) used for index. (Setting index 0 causes an append
 operation.)
 
 The third syntax supports appending multiple lines with one single operation.
@@ -98,8 +102,8 @@ The third syntax supports appending multiple lines with one single operation.
 The latter function-call syntax is preferred for readability. The table index
 setting syntax is slightly faster.
 
-Appending a line always runs in constant time, and does not move the cursor
-otherwise used to optimise sequential access.
+Appending a line does not move the cursor otherwise used to optimise sequential
+access.
 
 ### Insert line  ###
 Synopsis:
@@ -114,6 +118,9 @@ line 5 you supply index -5 (negative 5.)
 
 Inserting lines will move lines after the inserted lines to move down in index,
 such that old indexes will no longer be valid.
+
+Inserting lines into the wrong section of the subtitle file has undefined
+results, and may break in weird ways.
 
 **`i`** (`number`)
 : Index to insert before.
@@ -139,6 +146,9 @@ Delete the indexed line and insert the given line in its stead.
 
 Replacing lines uses the list cursor and will move it.
 
+Replacing lines with lines of a different type has undefined results, and may
+break in weird ways.
+
 ### Delete line  ###
 Synopsis:
 
@@ -154,6 +164,8 @@ valid.
 The third syntax supports deleting multiple indexed lines in one call. The
 indexes given must all be correct for the subtitle file's state before any
 lines are deleted.
+
+Trying to delete a nonexistent line is an error, except for with deleterange.
 
 The fourth syntax deletes a range of lines, both indexed lines inclusive.
 
@@ -198,24 +210,8 @@ The line data objects are regular Lua tables with some specific fields defined.
 
 Here's a list of the different classes of lines:
 
-**`clear`**
-: A blank line. These are normally stripped by Aegisub's ASS parser, but they
-can potentially show up when importing non-ASS files, or if you add them via a
-macro.
-
-**`comment`**
-: A line starting with a semicolon. Usually ignored and only useful for storing
-unimportant metadata, as they're often stripped.
-
-**`head`**
-: A section heading in the file, such as `[Script Info]`
-
 **`info`**
 : A key/value pair in the Script Info section of the file
-
-**`format`**
-: A Format line in the file. Ignored by nearly everything as VSFilter never
-implemented support for them.
 
 **`style`**
 : a regular style definition line
@@ -239,20 +235,6 @@ There's three fields that always exist in all line data tables:
 : Which section of the file the line belongs to. If the line is placed before
 the first section heading, this field is `nil`.
 
-### `clear` class  ###
-This class doesn't define any additional fields.
-
-### `comment` class  ###
-This class defines one additional field:
-
-**`text`** (`string`)
-: The text that follows the semicolon. Basically the same as the `raw` field
-with the first character chopped off.
-
-### `head` class  ###
-The `head` class doesn't define any additional fields, but the `section` field
-contains the name of the new section started.
-
 ### `info` class  ###
 This class defines two additional fields:
 
@@ -263,9 +245,6 @@ removed.
 **`value`** (`string`)
 : Everything after the first colon on the line, also with leading and trailing
 spaces removed.
-
-### `format` class  ###
-This class doesn't define any additional fields.
 
 ### `style` class  ###
 This class defines a large number of additional fields. It's usually processed
