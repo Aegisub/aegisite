@@ -103,6 +103,7 @@ otherwise used to optimise sequential access.
 
 ### Insert line  ###
 Synopsis:
+
 * `subtitles[-i] = line`
 * `subtitles.insert(i, line)`
 * `subtitles.insert(i, line1, line2, ...)`
