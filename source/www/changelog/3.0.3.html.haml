@@ -1,0 +1,39 @@
+%dl.dl-horizontal
+
+  %dt Audio
+  %dd
+    %p Fix crash when playing audio before time 0 (#{ticket 1556})
+    %p Round syllable durations to centiseconds when splitting syllables
+
+  %dt File IO
+  %dd
+    %p Give temporary files proper extensions to make it easier to open them when something goes wrong
+    %p Show an error message when writing a file fails
+    %p Fix reading subtitles from Matroska
+    %p Fix a case where unicode characters would result in inconsistent and baffling errors when loading Lua scripts (#{1576})
+    %p Fix loading non-ascii actor names from plain-text files
+
+  %dt Linux
+  %dd
+    %p Disable Ubuntu's global menu bar for Aegisub, since there's a pile of issues with it (#{ticket 1531})
+    %p Use Lua 5.1 when both it and 5.2 are available (#{1559})
+
+  %dt OS X
+  %dd
+    %p Fix a capitalization error in Info.plist (#{ticket 1547})
+
+  %dt Subtitles Editing
+  %dd
+    %p Commit pending audio changes on Enter in the edit box (#{ticket 1544})
+
+  %dt Translation
+  %dd
+    %p Update Finnish translation
+    %p Update Arabic translation
+
+  %dt Video
+  %dd
+    %p Fix some cases where the detached video dialog would get set to bogus sizes
+    %p Add .m4v to the list of video file extensions
+    %p Fix loading y4m files
+    %p Release mouse capture from the visual tools when the zoom is changed
