@@ -78,13 +78,15 @@ you can compare to a string to conditionally apply effects.
 {::template name="examplebox"}
 In some code that runs per-syllable in your script:
 
-    if syl.inline_fx == "" then
-        apply_base_effect(subs, meta, line, syl)
-    elseif syl.inline_fx == "paint" then
-        apply_paint_effect(subs, meta, line, syl)
-    elseif syl.inline_fx == "cloud" then
-        apply_cloud_effect(subs, meta, line, syl)
-    end
+~~~ lua
+if syl.inline_fx == "" then
+    apply_base_effect(subs, meta, line, syl)
+elseif syl.inline_fx == "paint" then
+    apply_paint_effect(subs, meta, line, syl)
+elseif syl.inline_fx == "cloud" then
+    apply_cloud_effect(subs, meta, line, syl)
+end
+~~~
 
 Simply compare the inline-fx name to the various possibilities and run the
 right effect code.
@@ -93,20 +95,24 @@ right effect code.
 In some code that runs per-syllable in your script:
 At top-level of your script:
 
-    effects = {}
-    effects[""] = function(subs, meta, line, syl)
-        -- base effect code here
-    end
-    effects.paint = function(subs, meta, line, syl)
-        -- paint effect code here
-    end
-    effects.cloud = function(subs, meta, line, syl)
-        -- cloud effect code here
-    end
+~~~ lua
+effects = {}
+effects[""] = function(subs, meta, line, syl)
+    -- base effect code here
+end
+effects.paint = function(subs, meta, line, syl)
+    -- paint effect code here
+end
+effects.cloud = function(subs, meta, line, syl)
+    -- cloud effect code here
+end
+~~~
 
 Then later, in some per-syllable processing code:
 
-    effects[syl.inline_fx](subs, meta, line, syl)
+~~~ lua
+effects[syl.inline_fx](subs, meta, line, syl)
+~~~
 
 First, a table is created and filled with functions for applying the
 different effects. The keys used for the table are the names of the
