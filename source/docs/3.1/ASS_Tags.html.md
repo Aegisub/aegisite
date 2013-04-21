@@ -315,11 +315,11 @@ Perform an animation where the text performs 10 full revolutions on the Z axis. 
 {::template name="examplebox"}
 The following screenshots illustrate the effect of rotating on the different axes:
 
-[[img/fr_sample01.jpg]]
+[[img/Fr_sample01.jpg]]
 
-[[img/fr_sample02.jpg]]
+[[img/Fr_sample02.jpg]]
 
-[[img/fr_sample03.jpg]]
+[[img/Fr_sample03.jpg]]
 {:/}
 
 {::template name="tag_def_box" title="Text shearing"}
@@ -556,9 +556,9 @@ given.
 The following screenshots illustrate the way alignment affects positioning.
 The green cross marks the point (320,240) on the video.  
 
-[[img/pos_sample01.jpg]]  
-[[img/pos_sample02.jpg]]  
-[[img/pos_sample03.jpg]]
+[[img/Pos_sample01.jpg]]  
+[[img/Pos_sample02.jpg]]  
+[[img/Pos_sample03.jpg]]
 {:/}
 
 {::template name="tag_def_box" title="Movement"}
@@ -794,7 +794,7 @@ quadrant is hidden.
 {:/}
 {::template name="examplebox"}
 Example of `\clip(0,0,704,245)` on a 704x480 video:  
-[[img/clip_sample01.jpg]]
+[[img/Clip_sample01.jpg]]
 {:/}
 
 {::template name="tag_def_box" title="Clip (vector drawing)"}
