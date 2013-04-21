@@ -82,7 +82,7 @@ be shown.
 : Severity level of the message. This parameter is optional. If you leave it
 out (by entirely skipping it) the message will always be shown.
 
-**'msg`** (`string`)
+**`msg`** (`string`)
 : A format string specifying the message. See the Lua standard string library
 `string.format` function for details on format strings.
 

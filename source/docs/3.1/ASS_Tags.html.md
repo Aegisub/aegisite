@@ -716,9 +716,8 @@ Perform a gradual, animated transformation from one style to another. The
 _style modifiers_ are other override tags as specified in this reference. Only
 a limited set of the override tags are animateable with `\t`:
 
-[[!table data="""
-Font | Geometry | Other effects
-\fs<br>\fsp<br>\c<br>\1c<br>\2c<br>\3c<br>\4c<br>\alpha<br>\1a<br>\2a<br>\3a<br>\4a | \fscx<br>\fscy<br>\frx<br>\fry<br>\frz<br>\fr<br>\fax<br>\fay | \bord<br>\xbord<br>\ybord<br>\shad<br>\xshad<br>\yshad<br>\clip<br>\iclip<br>\be<br>\blur
+| Font | Geometry | Other effects
+| \fs<br>\fsp<br>\c<br>\1c<br>\2c<br>\3c<br>\4c<br>\alpha<br>\1a<br>\2a<br>\3a<br>\4a | \fscx<br>\fscy<br>\frx<br>\fry<br>\frz<br>\fr<br>\fax<br>\fay | \bord<br>\xbord<br>\ybord<br>\shad<br>\xshad<br>\yshad<br>\clip<br>\iclip<br>\be<br>\blur
 {:/}
 
 _Note: For `\clip` and `\iclip`, only the rectangle versions can be animated. The
@@ -840,14 +839,22 @@ behavior. When turning on, the value might be any integer larger than zero,
 and will be interpreted as the scale, in 2^(value-1) mode. This is done to
 allow sub-pixel accuracy.
 e.g.:
+
     \p1
+
 (Enables drawing with normal coordinates)
+
     \p0
+
 (Disables drawing)
+
     \p2
+
 (Enables drawing, and resolution is doubled. So drawing to 200,200 will
 actually draw to 100,100)
+
     \p4
+
 (Enables drawing, and resolution is 8x larger (2^(4-1)). So drawing to 400,400
 will actually draw to 50,50)
 
@@ -857,9 +864,13 @@ will actually draw to 50,50)
 Defines baseline offset for drawing. This is basically an Y offset to all
 coordinates.
 e.g.:
+
     \pbo-50
+
 (Draws everything 50 pixels above specified)
+
     \pbo100
+
 (Draws everything 100 pixels below specified)
 
 
@@ -871,20 +882,19 @@ from the ASS specs):
 
 * Square:
 
-<div></div>
     {\p1}m 0 0 l 100 0 100 100 0 100{\p0}
 
 * Rounded square:
 
-<div></div>
     {\p1}m 0 0 s 100 0 100 100 0 100 c{\p0}
-> (c equals to "p 0 0 100 0 100 100" in this case)
+
+    (c equals to "p 0 0 100 0 100 100" in this case)
 
 * Circle (almost):
 
-<div></div>
     {\p1}m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0{\p0}
-> (note that the 2nd 'b' is optional here)
+
+    (note that the 2nd 'b' is optional here)
 
 Drawing commands use the primary color for fill and outline color for borders.
 They also display shadow. The idea of drawing vectors is that there is an
