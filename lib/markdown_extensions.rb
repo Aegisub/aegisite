@@ -50,6 +50,7 @@ module MarkdownExtensions
       case name
       when 'template'
         template_name = opts.delete 'name'
+        opts['rawbody'] = body
         opts['body'] = Kramdown::Document.new(body).to_html if body
         @tree.children << Element.new(:raw, @app.partial(template_name, locals: opts))
         true
