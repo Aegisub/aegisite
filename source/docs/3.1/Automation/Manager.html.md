@@ -71,29 +71,4 @@ The Automation Manager won't open when any of there methods are used, but
 you will get an error message window if a script failed to load. Note that
 you can double-click on the rows in the error dialog for more information.
 
-## For users of Aegisub 1.10 and earlier  ##
-
-You may wonder where several of the functions that were previously in the Automation Manager have gone.
-
-* The **Create** and **Edit** buttons were removed since they never worked
-  fully as intended. You're encouraged to instead use your favourite file
-  manager or editor to find and open the scripts you want to edit. Creating
-  new scripts is also a bit easier since the formal requirements for
-  Automation 4 scripts are much looser than for Automation 3 scripts.
-  Another otherwise commonly used method to create new scripts is just to
-  copy an existing script and edit that instead; the Create button wouldn't
-  be much help there either way.
-* The **Apply now** button was removed for two reasons. The first and most
-  important is that it doesn't fit into the Automation 4 design at all. In
-  Automation 3 every script file only did one thing so it was obvious what
-  it meant to "apply" it. This isn't the case with Automation 4, one script
-  file can have several functions (features), so which of them should be
-  applied? The other, and rather minor reason, is that burying the button
-  inside a dialog is just not a good place. You would have to cancel out of
-  the Automation Manager window to undo the effect of the script if you
-  decided you weren't satisfied, just to immediately return to it, reload
-  the script and Apply again. The Automation 4 solution to this is to create
-  a macro instead. It's available directly from the Automation menu and you
-  can easily reload using one of the methods listed above.
-
 {::template name="automation_navbox" /}
