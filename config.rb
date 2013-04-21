@@ -2,6 +2,7 @@ require 'bootstrap-sass'
 
 activate :directory_indexes
 activate :automatic_image_sizes
+activate :livereload
 
 set :css_dir, 'static/css'
 set :js_dir, 'static/js'
