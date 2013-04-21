@@ -51,7 +51,7 @@ module MarkdownExtensions
       when 'template'
         template_name = opts.delete 'name'
         opts['rawbody'] = body
-        opts['body'] = Kramdown::Document.new(body).to_html if body
+        opts['body'] = lambda { Kramdown::Document.new(body).to_html }
         @tree.children << Element.new(:raw, @app.partial(template_name, locals: opts))
         true
       else
