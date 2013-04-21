@@ -6,8 +6,6 @@ module MarkdownExtensions
     def initialize(source, options)
       super
       @app = options[:app]
-      # Table parser matches [[a|b]
-      @block_parsers.delete :table
       @span_parsers.unshift :wiki_link
     end
 
