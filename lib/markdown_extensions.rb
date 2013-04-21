@@ -49,8 +49,8 @@ module MarkdownExtensions
     def handle_extension(name, opts, body, type)
       case name
       when 'template'
-        template_name = opts.delete('name')
-        opts['body'] = body
+        template_name = opts.delete 'name'
+        opts['body'] = Kramdown::Document.new(body).to_html if body
         @tree.children << Element.new(:raw, @app.partial(template_name, locals: opts))
         true
       else
