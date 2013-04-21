@@ -70,7 +70,7 @@ module MarkdownExtensions
     end
 
     def convert_img(el, indent)
-      el.attr['src'].prepend '/docs/3.0/'
+      el.attr['src'].prepend '/docs/3.1/'
       "<img#{html_attributes(el.attr)} />"
     end
   end
