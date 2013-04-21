@@ -14,8 +14,9 @@ override blocks (i.e. not between { and }).
 Insert a forced line break, but only when in wrapping mode 2. (See
 [[the \q tag|ASS_Tags#wrapstyle]]). Note that this is a lowercase n.
 
-In all other wrapping modes, this is replaced by a regular space. If you're
-not sure whether you want this or \N, you probably want \N.
+In all other wrapping modes, this is replaced by a regular space. This is
+rarely (if ever) actually useful. If you're not sure whether you want this or
+\N, you probably want \N.
 
 {::template name="tag_def_box" title="Hard line break"}\N{:/}
 Insert a forced line break, regardless of wrapping mode. Note that this is an
@@ -226,12 +227,12 @@ text modifies the text shape after hinting. As a result, this should always be
 used with `\t` rather than `\fs`, as animating changing font hinting is very
 rarely desirable.
 
-These tags also affect [[vector drawings|ASS_Tags#vectordrawings]].
+These tags also affect [[vector drawings|ASS_Tags#drawing-commands]].
 
 You can use font scaling to correct for anamorphic rendering and to specify
 text size more precisely than with [[\fs|ASS_Tags#fontsize]].
 
-Only integer scales are supported.
+Note that older versions of VSFitler will truncate non-integer scales.
 
 {::template name="examplebox"}
 <pre>\fscx150</pre>
@@ -542,10 +543,6 @@ Set the position of the line. The _X_ and _Y_ coordinates must be integers and
 are given in the script resolution coordinate system. The meaning of _X_ and
 _Y_ changes slightly depending on [[alignment|ASS_Tags#linealignment]].
 
-> _In VSFilter 2.39 and later, you can use non-integer numbers for
-> coordinates, for sub-pixel precision to to one eighth of a pixel. Note that
-> this might not be safe for softsubbing._
-
 The alignment of the subtitle line is used as anchor point for the position.
 I.e. when you have a line with alignment top-left, the top-left corner of the
 subtitle is placed at the coordinates given to `\pos`, and for bottom-center
@@ -578,9 +575,6 @@ coordinate system, like `\pos`. The subtitle starts out at point (_x1_,_y1_)
 and moves with constant speed so it ends up at (_x2_,_y2_).
 [[Alignment|ASS_Tags#linealignment]] influences movement coordinates the same
 way as it influences `\pos` coordinates.
-
-> _In VSFilter 2.39 and later, you can use non-integer numbers for the X and Y
-> coordinates. Note that this might not be safe for softsubbing._
 
 In the second version, the times _t1_ and _t2_ are given in milliseconds, ie.
 one thousandth of a second, and are relative to the start time of the
@@ -947,5 +941,5 @@ pair of coordinates at the end of s.
 Closes the b-spline.
 
 _Note: The [[vector clip visual typesetting
-tool|Visual_Typesetting#vectorialclip]] only supports the m, l and b
+tool|Visual_Typesetting#vectorial-clip]] only supports the m, l and b
 commands, and may corrupt drawings which use the other commands._
