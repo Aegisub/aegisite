@@ -25,6 +25,8 @@ set :markdown,
 set :haml,
   ugly: true
 
+activate :syntax
+
 configure :build do
   activate :minify_javascript
   activate :minify_css
