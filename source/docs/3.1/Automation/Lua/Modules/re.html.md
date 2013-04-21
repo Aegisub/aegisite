@@ -1,22 +1,26 @@
 {::options toc_levels="2,3" /}
 
-The `re` module is a wrapper around wxRegex, intended as a full replacement for
-Lua's built in regular expressions. It has two main advantages over Lua's:
+The `re` module is a wrapper around boost::regex, intended as a full
+replacement for Lua's built in regular expressions. It has two main advantages
+over Lua's:
 
 1. Full Unicode support. Lua regular expressions operate on bytes rather than
     characters, which frequently causes problems with multibyte characters.
-2. A more powerful and flexible syntax. Lua's regular expressions are fairly
-    minimal (out of necessity; [PCRE](http://www.pcre.org/) is larger than all
-    of Lua combined). wxRegex on the other hand, uses Henry Spencer's regex
-    library.
+2. A more powerful and flexible syntax. Properly speaking, Lua does not support
+    regular expressions; rather it has a basic pattern matching language that
+    supports a small subset of what can be done with regular expressions.
+    boost::regex, on the other hand, supports perl-compatible regular
+    expressions.
 
 ## Usage ##
-Import this module with `require "re"`.
+Import this module with `re = require 're'`.
 
-See [wx's
-documentation](http://docs.wxwidgets.org/trunk/overview_resyntax.html) for
-information about the regular expression syntax. Note that Aegisub uses
-*advanced regular expressions* (ARE).
+See [boost.regex's
+documentation](http://www.boost.org/doc/libs/1_53_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html)
+for information about the regular expression syntax. In general any resources
+on the web that refer to Perl regular expressions or PCRE will apply to
+this module's regular expressions.
+
 
 ### Match Tables ###
 Several of the functions below return Match Tables, which are tables containing
@@ -36,14 +40,16 @@ applied to it. Note that this index is one-based, inclusive, and is in bytes,
 rather than characters, to match Lua's string indexing.
 
 {::template name="examplebox"}
-    >>> re.match("b", "abc")
+~~~ lua
+>>> re.match("b", "abc")
+{
     {
-        {
-            ["str"] = "b",
-            ["first"] = 2,
-            ["last"] = 2
-        }
+        ["str"] = "b",
+        ["first"] = 2,
+        ["last"] = 2
     }
+}
+~~~
 {:/}
 
 ### Flags ###
@@ -58,8 +64,21 @@ re.NOSUB:
 :   Don't set backreferences and capture groups. Can improve performance when
 they aren't needed.
 
-re.NEWLINE:
+re.NEWLINE_ALT:
+:   Treat newline characters as the alternation operator (|).
+
+re.NO_MOD_M:
+:   ^ and $ only match the beginning and end of the string rather than newlines.
+
+re.MOD_S:
 :   Treat newlines as normal characters, matched by '.'.
+
+re.MOD_X:
+:   Ignore unescaped whitespace in the expression, making it possible to write
+regular expressions that *aren't* write-only.
+
+re.NO_EMPTY_SUBEXPRESSION:
+:   Don't match empty expressions/alternatives.
 
 {::template name="examplebox"}
     >>> re.match("a", "A")
