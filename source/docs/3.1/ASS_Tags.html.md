@@ -893,22 +893,22 @@ as a pen moving through the image) on the video frame, and you tell it to move
 to other positions. As it moves, it draws on the area behind it, and when you
 close the line formed, it fills it with the primary color.
 
-### m <x> <y> - Move ###
+### m &lt;x&gt; &lt;y&gt; - Move ###
 
 Moves the cursor to x,y. If you have an unclosed shape, it will automatically
 be closed, as the program assumes that you are now drawing a new, independent
 shape. All drawing routines must start with this command.
 
-### n <x> <y> - Move (no closing) ###
+### n &lt;x&gt; &lt;y&gt; - Move (no closing) ###
 
 Moves the cursor to x,y, without closing the current shape.
 
-### l <x> <y> - Line ###
+### l &lt;x&gt; &lt;y&gt; - Line ###
 
 Draws a line from the current cursor position to x,y, and moves the cursor
 there afterwards.
 
-### b <x1> <y1> <x2> <y2> <x3> <y3> - Cubic Bézier curve ###
+### b &lt;x1&gt; &lt;y1&gt; &lt;x2&gt; &lt;y2&gt; &lt;x3&gt; &lt;y3&gt; - Cubic Bézier curve ###
 
 Draws a cubic (3rd degree) Bézier curve from the cursor position to (x3,y3),
 using (x1,y1) and (x2,y2) as the control points. Check the [article on
@@ -920,14 +920,14 @@ Note that the curve begins at P0, heads towards P1, then arrives at P3 coming
 from P2's direction.
 
 
-### s <x1> <y1> <x2> <y2> <x3> <y3> .. <xN> <yN> - Cubic b-spline ###
+### s &lt;x1&gt; &lt;y1&gt; &lt;x2&gt; &lt;y2&gt; &lt;x3&gt; &lt;y3&gt; .. &lt;xN&gt; &lt;yN&gt; - Cubic b-spline ###
 
 Draws a cubic (3rd degree) uniform b-spline to point N. This must contain at
 least 3 coordinates (and is, in that case, the same as b). This basically lets
 you chain several cubic Bézier curves together. Check this other article on
 Wikipedia for more information.
 
-### p <x> <y> - Extend b-spline ###
+### p &lt;x&gt; &lt;y&gt; - Extend b-spline ###
 
 Extends the b-spline to x,y. This is essentially the same as adding another
 pair of coordinates at the end of s.
