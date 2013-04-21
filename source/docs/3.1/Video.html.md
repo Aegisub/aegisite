@@ -180,7 +180,7 @@ understood to mean a linebreak. Syntax example:
     130
     131
 
-The first line is the format specification; the string
+The first line is the format specification: the string
 `# keyframe format v1`. The second line contains the FPS of the video used to
 generate the keyframe data; however no programs (Aegisub included) actually
 support this and so it is typically just `0`. Finally, after the fps line
