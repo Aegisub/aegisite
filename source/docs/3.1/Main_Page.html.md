@@ -4,7 +4,7 @@ information on the program, or browse the topics on the left bar.
 Documentation related to delopment of Aegisub and building Aegisub is located
 at [the bug tracker](http://devel.aegisub.org).
 
-## Starting points  ##
+## Starting points
 
 [[Quick overview of Aegisub|Overview]]
 
