@@ -13,7 +13,7 @@ over Lua's:
     expressions.
 
 ## Usage ##
-Import this module with `re = require 're'`.
+Import this module with `re = require 'aegisub.re'`.
 
 See [boost.regex's
 documentation](http://www.boost.org/doc/libs/1_53_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html)
