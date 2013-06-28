@@ -189,54 +189,54 @@ versions:
       %tr
         %td Windows 32-bit
         %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-32.exe">Full Install</a>
-        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-32.exe.md5">MD5</a> | <a href="http://ftp.aegisub.org/pub/releases/Aegisub-3.0.0-32.exe.sha">SHA</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-32.exe.md5">MD5</a> | <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-32.exe.sha">SHA</a>
         %td 21MB
 
       %tr
         %td Windows 32-bit
         %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-portable-32.exe">Portable Version</a>
-        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-portable-32.exe.md5">MD5</a> | <a href="http://ftp.aegisub.org/pub/releases/Aegisub-3.0.0-portable-32.exe.sha">SHA</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-portable-32.exe.md5">MD5</a> | <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-portable-32.exe.sha">SHA</a>
         %td 10MB
 
       %tr
         %td Windows 64-bit
         %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-64.exe">Full Install</a>
-        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-64.exe.md5">MD5</a> | <a href="http://ftp.aegisub.org/pub/releases/Aegisub-3.0.0-64.exe.sha">SHA</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-64.exe.md5">MD5</a> | <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-64.exe.sha">SHA</a>
         %td 21MB
 
       %tr
         %td Windows 64-bit
         %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-portable-64.exe">Portable Version</a>
-        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-portable-64.exe.md5">MD5</a> | <a href="http://ftp.aegisub.org/pub/releases/Aegisub-3.0.0-portable-64.exe.sha">SHA</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-portable-64.exe.md5">MD5</a> | <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-portable-64.exe.sha">SHA</a>
         %td 10MB
 
       %tr
         %td OS X 10.6+
         %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}.dmg">Full Install</a>
-        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}.dmg.md5">MD5</a> | <a href="http://ftp2.aegisub.org/pub/releases/Aegisub-3.0.0.dmg.sha">SHA</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}.dmg.md5">MD5</a> | <a href="http://ftp2.aegisub.org/pub/releases/Aegisub-#{data.version.current}.dmg.sha">SHA</a>
         %td 39MB
+
+      %tr
+        %td Debian/Ubuntu 32-bit
+        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub_#{data.version.current}-1_i386.deb">Full Install</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub_#{data.version.current}-1_i386.deb.md5">MD5</a> | <a href="http://ftp2.aegisub.org/pub/releases/aegisub_#{data.version.current}-1_i386.deb.sha">SHA</a>
+        %td 7MB
+
+      %tr
+        %td Debian/Ubuntu 64-bit
+        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub_#{data.version.current}-1_amd64.deb">Full Install</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub_#{data.version.current}-1_amd64.deb.md5">MD5</a> | <a href="http://ftp2.aegisub.org/pub/releases/aegisub_#{data.version.current}-1_amd64.deb.sha">SHA</a>
+        %td 7MB
 
       %tr
         %td All
         %td <a href="http://ftp.aegisub.org/pub/releases/aegisub-#{data.version.current}.tar.xz">Source</a>
-        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub-#{data.version.current}.tar.xz.md5">MD5</a> | <a href="http://ftp.aegisub.org/pub/releases/aegisub-3.0.0.tar.xz.sha">SHA</a>
+        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub-#{data.version.current}.tar.xz.md5">MD5</a> | <a href="http://ftp.aegisub.org/pub/releases/aegisub-#{data.version.current}.tar.xz.sha">SHA</a>
         %td 4MB
 
     %p <strong>Note:</strong> The 64-bit version is not recommended even on 64-bit versions of Windows. It does not include support for Avisynth or xy-VSFilter, is often slower, and has had occasional bugs not present in the 32-bit version.
     %p <strong>Note:</strong> Unlike previous versions, #{data.version.current} is fairly stable and mostly functional on OS X. However, there are still some broken things and it is still the least-tested platform.
-
-    %h2 Linux
-
-    %h3 Arch Linux
-    %p Arch Linux packages stable versions of Aegisub, and has an AUR package for unstable versions.
-
-    %h3 Debian, Ubuntu, and derivatives
-    %p Debian packages a several-year-old version of wxWidgets, so the Aegisub package is severly out of date as well. The below .debs have statically link many of Aegisub's dependencies and so should work on any relatively recent version of Debian or Debian-derivative.
-    %p <a href="http://ftp.aegisub.org/pub/releases/aegisub_#{data.version.current}-1_i386.deb">32-bit</a> | <a href="http://ftp.aegisub.org/pub/releases/aegisub_#{data.version.current}-1_x86_64.deb">64-bit</a>
-
-    %h3 OpenSUSE
-    %p OpenSUSE has an Aegisub <a href="http://software.opensuse.org/package/aegisub">package</a>.
-
+    %p <strong>Note:</strong> The Debian/Ubuntu should work in any relatively recent Debian-based distribution. However, it is somewhat experimental. Please report any issues with installing it.
 
     %h2#dictionaries Dictionaries
 
