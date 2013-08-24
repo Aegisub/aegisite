@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Overview of changes from Automation 3 - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../../">Aegisub</a> / <a href="../">Automation</a> / 
+                        Overview of changes from Automation 3
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>To put it short, the changes from Automation 3 to Automation 4 are huge, almost
+everything has been completely redesigned and rewritten. You should however
+find that many things still work the same, and the rest work better, hopefully.</p>
+
+<h2 id="architecturalchanges">Architectural changes</h2>
+
+<p>These are the changes in how the scripting engine integrates with Aegisub,
+i.e. how scripts are loaded and managed and not as much what happens when they
+are running.</p>
+
+<p>Actually, what is called Automation 4 is only the architecture described here.
+When you use Automation 4 to run scripts written in Lua (and are not Automation
+3 scripts) it's called Automation 4 Lua.</p>
+
+<p>Automation 4 now supports &quot;plugging in&quot; script functionality in several
+different places. Each different kind of functionality a script can support is
+called a &quot;feature&quot;. Currently this really only means the export filters
+supported by Automation 3 and then macros. Export filters appear in the Export
+dialogue and are intended for large batch-operations. Macros appear in the
+Automation menu and are intended for smaller tasks.</p>
+
+<p>Macro features can retrieve the current selection in the subtitle grid, modify
+the subtitles in-line and change the selection upon return. They can also set
+one or more Undo points. Last but not least, they can show dialogue boxes to
+get more information from the user.</p>
+
+<p>Finally, one script file can provide more than one feature, also more than one
+of each kind of supported feature. A script file can also provide no features
+at all, though that's not very useful.</p>
+
+<h2 id="theluascriptingengine">The Lua scripting engine</h2>
+
+<p>The probably single biggest and most important change from Automation 3 to
+Automation 4 Lua is that the Lua version has been upgraded from 5.0 to 5.1.
+While there are a large number of changes between the two versions, the perhaps
+most important for writing Automation 4 Lua scripts is the modulo operator that
+has finally been introduced into the language. You can see more details at <a href="http://www.lua.org/versions.html">the
+Lua homepage</a>.</p>
+
+<p>The rest of the changes to Lua scripting interface can best be summed up as:
+Give as much control as possible to the script and don't do any unrequested
+data generation.</p>
+
+<p>In more detail, these are the main points of the changes from Automation 3 to
+Automation 4 Lua. They are discussed in more detail below.</p>
+
+<ul>
+<li>No more a fixed entry point; script entry points are instead defined with
+ <code>register_xxx</code> functions</li>
+<li>Direct manipulation of the subtitle file rather than manipulating a large Lua
+ table</li>
+<li>Much more direct control over the entire execution process</li>
+<li>Various changes in the data structures used</li>
+<li>More complete Unicode support in include files</li>
+<li>More advanced layout calculations in karaskel include file</li>
+</ul>
+
+<p>You no longer need to name your functions anything specific. Instead, you tell
+Aegisub what your entry point functions are called. What you do is register
+each feature you want, using the <code>aegisub.register_macro</code> and
+<code>aegisub.register_filter</code> functions. (Exception: If you use the <a href="../Lua/Modules/karaskel.lua/#karaokeskeletons">karaoke
+skeleton functions</a> you
+do need to follow some specific naming schemes and should not register any
+features.)</p>
+
+<p>Instead of getting a huge table with all lines in the subtitle file, Automation
+4 Lua provides your script with a &quot;user data object&quot; you can use to get, save
+and replace lines in the subtitle file with. (This object is usually called the
+<em>subs object</em>.) Using this subs object you can not only get the dialogue lines
+in the subtitle file, but also manipulate the style lines and the Script Info
+section. On the other hand, you are no longer given a <em>styles</em> or <em>meta</em> table
+directly, but the karaskel include has <a href="../Lua/Modules/karaskel.lua/#karaskel.collect_head">a
+function</a> to extract
+that information.</p>
+
+<p>As a result of the direct manipulation of the subtitle file you can now do, you
+also have much more control over what happens when during script execution.
+Automation 3 always split the script execution up in three phases: Generate
+input, run processing, read output. Using the subs object you can instead
+intermix those three phases freely, or just do as usual. This is especially
+convenient for macros, since they only need to touch the lines they actually
+modify, rather than needing to import the entire file and having it re-read by
+Aegisub when done. The skeletons provided by karaskel.lua can to an extent
+automate managing the execution process.</p>
+
+<p>The data structures used have also been changed to better support the more
+complete subtitle file representation and to better reflect the philosophy of
+doing as little as possible before requested. For example, the karaoke data
+tables that were an inherent part of the line data structure in Automation 3
+are no longer automatically generated, instead you use a separate function to
+have them generated. If you use karaskel, you will however not need to worry
+about that. The actual changes are too many to list here.</p>
+
+<p>A new <em><a href="../Lua/Modules/unicode.lua/">unicode.lua</a></em> include file has
+been introduced. This file provides a much more clean and usable interface for
+manipulating UTF-8 encoded text than the old <code>next_utf_char</code> and <code>utf_len</code>
+functions.</p>
+
+<p>Last but not least, the text layout algorithms used in karaskel have been
+improved a lot and now, among other things, support sub-pixel positioned text,
+proper handling of inter-syllable spaces and an advanced furigana layout
+algorithm. The furigana layout algorithm also produces data structures so
+similar to syllable structures you can in effect use exactly the same code to
+produce effects for both main syllables and furigana.</p>
+
+<div class="navbox">
+<div><a href="../">Automation 4</a></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><a href="../Manager/">Automation Manager</a> • <a href="../Running_macros/">Running macros</a> • <a href="../../Exporting/">Using export filters</a> • <a href="../Included_macros/">Standard macros</a> • <span class="selflink">Changes from Automation 3</span></td>
+        </tr>
+        <tr>
+            <th><a href="../Karaoke_Templater/">Karaoke Templater</a> reference: </th>
+            <td><a href="../Karaoke_Templater/Declaring_template_and_code_lines/">Declaring templates</a> • <a href="../Karaoke_Templater/Template_execution_rules_and_order/">Execution order</a> • <a href="../Karaoke_Templater/Template_modifiers/">Modifiers</a> • <a href="../Karaoke_Templater/Inline_variables/">Inline-variables ($-variables)</a> <br> <a href="../Karaoke_Templater/Code_lines_and_blocks/">Code lines and blocks</a> • <a href="../Karaoke_Templater/Code_execution_environment/">Execution envirionment</a></td>
+        </tr>
+        <tr>
+            <th><a href="../Lua/">Lua API</a> reference: </th>
+            <td><a href="../Lua/Registration/">Registration</a> • <a href="../Lua/Subtitle_file_interface/">Subtitles object</a> • <a href="../Lua/Progress_reporting/">Progress reporting</a> • <a href="../Lua/Dialogs/">Dialogs</a> • <a href="../Lua/Miscellaneous_APIs/">Misc. APIs</a></td>
+        </tr>
+        <tr>
+            <th><a href="../Lua/Modules/">Lua Modules</a>: </th>
+            <td><a href="../Lua/Modules/karaskel.lua/">karaskel.lua</a> • <a href="../Lua/Modules/utils.lua/">utils.lua</a> • <a href="../Lua/Modules/unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="../Lua/Modules/clipboard/">clipboard</a> • <a href="../Lua/Modules/re/">re</a></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="../Lua/Modules/karaskel.lua/#Style_table">Style tables</a> • <a href="../Lua/Modules/karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="../Lua/Modules/karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../Karaoke_inline-fx/">Inline effects</a> • <a href="../../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../../About/">What is Aegisub?</a></li>
+    <li><a href="../../Highlights/">Highlights</a></li>
+    <li><a href="../../Credits/">Credits</a></li>
+    <li><a href="../../Support/">Support Aegisub</a></li>
+    <li><a href="../../FAQ/">FAQ</a></li>
+    <li><a href="../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../../Typesetting/">Introduction</a></li>
+    <li><a href="../../Video/">Working with Video</a></li>
+    <li><a href="../../Styles/">Editing styles</a></li>
+    <li><a href="../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../../Audio/">Working with Audio</a></li>
+    <li><a href="../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../">Overview</a></li>
+    <li><a href="../Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../Options/">Aegisub Options</a></li>
+    <li><a href="../../Properties/">Script Properties</a></li>
+    <li><a href="../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../">Automation</a>
+                    
+                    <a href="../../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Sat 25 Feb 2012 08:06:40 AM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>
