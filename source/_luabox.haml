@@ -1,4 +1,4 @@
 .examplebox
   .exampleheader Example
-  .examplecontents= Pygments.highlight(rawbody, options: { lexer: 'lua' })
+  .examplecontents= Rouge.highlight(rawbody, 'lua', 'html')
 
