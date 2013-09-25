@@ -3,11 +3,14 @@ require 'middleman-core/sitemap'
 
 module MarkdownExtensions
   class Kramdown::Parser::WikiKramdown < Kramdown::Parser::Kramdown
+    TABLE_START = /^\|/
+
     def initialize(source, options)
       super
       @app = options[:app]
-      @block_parsers.delete :table
       @span_parsers.unshift :wiki_link
+
+      @@parsers[:table].start_re = TABLE_START
     end
 
     Kramdown::Options.define(:app, Object, nil, '') { |o| o }
