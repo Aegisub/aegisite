@@ -96,7 +96,8 @@ They are:
 1. Effect for this line. There are a few predefined effects which can be
     applied via this field, but renderer support for them is spotty and using
     [[override tags|ASS_Tags]] is nearly always a better idea. This is commonly
-    uses as a metadata field for automation scripts.
+    used as a metadata field for automation scripts.
+1. The number of characters on the longest line of this subtitle.
 1. Layer for this line. If you override positioning with an [[override
     tag|ASS_Tags]] so that two or more lines are displayed on top of each
     other, this field controls which one is drawn where; higher layer numbers
@@ -140,6 +141,32 @@ They are:
 1. Changes display between times and frames. Note that this does not change
     how times are actually stored in the script.
 
+#### Show Original
+
+Checking the Show Original box switches the edit box to the following mode:
+
+![](img/subs_edit_box_original.png)
+
+The top half of the edit box is read-only, and show the text that the currently
+selected line had when it was first selected. This can be useful for
+translating subtitles into another language, or just for editing subtitles.
+
+Revert
+: Replace the text of the line with the text shown in the upper box. A simple
+way to undo all the changes you made to the line if you change your mind.
+
+Clear
+: Clear the line.
+
+Clear Text
+: Clear the text of the line, but leave all override tags in place. Can help
+with translating typeset signs to another language.
+
+Insert Original
+: Insert the original text of the line at the cursor position.
+
+#### Context menu
+
 If you right-click anywhere in the edit box, you get the following menu:
 ![](img/Subs_Edit_Context.png)
 
@@ -151,7 +178,7 @@ the spell checker will suggest some likely alternative. You can also
 set which language it will use for checking from this menu, or add
 words that it doesn't recognize but you know to be correctly spelled to
 the dictionary. For more information on spell checking in Aegisub, see
-the [[Spell Checker]] page.
+the [[Spell Checker|Spell_Checker]] page.
 
 Thesaurus
 : Suggests alternative words similar to the highlighted word.
@@ -176,6 +203,8 @@ Some common controls:
 * To select multiple lines, hold down either Ctrl or Shift and click.
   Ctrl-click selects one more line per click; Shift-click selects all the
   lines between the first clicked and the last clicked.
+* To change the active line shown in the edit box without changing the
+  selection, hold down alt and click on the new line.
 * To sort all lines in the grid, open the _Subtitle_ menu, and under _Sort
   Lines_ select the field to sort the lines on.
 * To change the way [[override tags|ASS_Tags]] are displayed in the grid,
