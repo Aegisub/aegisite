@@ -21,12 +21,12 @@ playing audio results in no sound, switching to a [[different audio
 player|Options#advancedaudio]] may help.
 
 ### Supported formats ###
-Aegisub normally uses FFMS2 to open audio, which can reliably open audio is
-nearly any format you an think of. On Windows, Aegisub can also use
-DirectShow (via Avisynth), which can be faster as it does not have to index
-the audio files before opening them. However, DirectShow is considerably
-less reliable, and extremely insane things may happen if you open a file
-with multiple audio tracks via Avisynth.
+Aegisub normally uses [FFMS2](https://github.com/FFMS/ffms2) to open audio,
+which can reliably open audio is nearly any format you can think of. On
+Windows, Aegisub can also use DirectShow (via Avisynth), which can be faster as
+it does not have to index the audio files before opening them. However,
+DirectShow is considerably less reliable, and extremely insane things may
+happen if you open a file with multiple audio tracks via Avisynth.
 
 Aegisub only supports mono audio. Multichannel audio will be automatically
 downmixed, but the results may be of poor quality for sources of more than
