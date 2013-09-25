@@ -30,9 +30,4 @@ Other languages used to be supported, but no one used them.
 There are several example scripts included with Aegisub to give you a head start on writing your own ones.
 A word of warning: Unless you are an experienced programmer the _kara-templater.lua_ script is a very bad place to start!
 
-### Future goals  ###
-In future versions of Aegisub (perhaps 3.1), Automation will be replaced with a
-backwards-compatible scripting interface to the full capabilities of Aegisub,
-rather than being limited to merely manipulating subtitle files.
-
 {::template name="automation_navbox" /}
