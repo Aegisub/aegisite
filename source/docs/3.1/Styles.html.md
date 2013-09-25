@@ -77,7 +77,7 @@ The meaning of each of them is as follows:
 
     Secondary
     : Secondary fill color, used for karaoke effects (see `\k` and its
-    relatives on the [[override tags page|ASSTags#karaokeeffect]]).
+    relatives on the [[override tags page|ASS_Tags#karaokeeffect]]).
 
     Outline
     : The border color of the text.
@@ -141,7 +141,7 @@ Miscellaneous
     : Controls rotation of the text. The value is the angle of the rotation in
     degrees (360 degrees to a full circle) and may be negative or larger than
     360 (setting it to 360, 720 etc. is the same as setting it to 0 except for
-    when [[animated transforms|ASSTags#animatedtransform]] are involved).
+    when [[animated transforms|ASS_Tags#animatedtransform]] are involved).
 
     Spacing
     : Controls the horizontal spacing between letters. 0 means the font
