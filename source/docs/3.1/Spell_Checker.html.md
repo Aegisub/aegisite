@@ -19,6 +19,11 @@ Skip Comments
 when your comments are mostly things like karaoke scripts or the
 original script which you're translating to a new language.
 
+Ignore UPPERCASE words
+: Skip over words written in all caps. Useful if your subtitles have a sea of
+made-up acronyms and you don't feel like spending the time adding them all to
+the dictionary.
+
 Replace
 : Replaces the found misspelled word with the chosen replacement. Note
 that the list box can be double-clicked to do this as well.
@@ -37,8 +42,12 @@ but continue to check for it in the future.
 
 Add to dictionary
 : Add the found word to the dictionary so it will not be detected as
-misspelled again. Note that it is currently not possible to remove
-words added from within Aegisub.
+misspelled again.
+
+Remove from dictionary
+: Remove the word currently in the **Replace with** field from the dictionary.
+Can only remove words which were added with the **Add to dictionary** function
+and not words in the standard dictionary.
 {: class="dl-horizontal"}
 
 At the bottom of the dialog box there is a dropdown box to choose the spell
@@ -50,7 +59,9 @@ Installers for many other languages are available [on our
 website](http://www.aegisub.org/downloads/#dictionaries). If we don't
 supply a dictionary for your language, check [Mozilla's set of
 dictionaries](https://wiki.mozilla.org/L10n:Dictionaries), or simply
-Google for "hunspell <i>&lt;language&gt;</i> dictionary".
+Google for "hunspell <i>&lt;language&gt;</i> dictionary". We welcome
+submissions of additional dictionaries to package - it can sometimes be hard
+for us to find dictionaries for languages which none of the developers speak.
 
 The OS X version of Aegisub includes all of the dictionaries we have.
 
