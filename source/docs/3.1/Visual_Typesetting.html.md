@@ -237,4 +237,5 @@ This mode has 8 sub-tools:
 As with the drag tool, multiple control points can be selected at one by
 ctrl-clicking on the anchors to be added or removed from the selection. By
 default all control points are selected; to deselect them all click on a
-blank spot when in Drag mode.
+blank spot when in Drag mode. Multiple control points can be selected at once
+by clicking and dragging in move mode to perform a box selection.
