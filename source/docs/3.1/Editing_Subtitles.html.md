@@ -27,6 +27,10 @@ in an unusual charset Aegisub will occasionally misdetect it.
 Open subtitles from video
 : Open the subtitles muxed into the currently open video file. This
 currently only works with Matroska video files.
+
+Open [[Autosaved Subtitles|Autosave]]
+: Open a file created by Aegisub's autosave. Useful if Aegisub crashes when you
+had unsaved changes or just if you want to open an older version of a file.
 {: class="horizontal-wide"}
 
 When you open a subtitles file that is not detected as Unicode, Aegisub will
