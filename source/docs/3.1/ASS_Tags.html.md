@@ -459,6 +459,9 @@ Specify the alignment of the line using legacy alignment codes from SubStation
 Alpha. This tag is supported but considered deprecated; you should usually use
 `\an` in new scripts instead, as it is more intuitive.
 
+The exception is that `\a6` should be used for lazy sign translating, because
+if you're going to be lazy you should do it right and save the extra character.
+
 Calculate _pos_ as follows: Use 1 for left-alignment, 2 for center alignment
 and 3 for right-alignment. If you want sub-titles you're done. To get
 top-titles, add 4 to the number, to get mid-titles add 8 to the number:
