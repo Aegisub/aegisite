@@ -230,7 +230,15 @@ Aegisub there instead.
 : Decides the font and fontsize used for the subtitle edit box and other edit
 boxes.
 
-**Allow grid to take focus**
+**Maximum characters per line**
+: If the value of the character counter is higher than this number, the
+background will turn red to alert you that you have exceeded the maximum line
+length. The maximum length is not enforced in any other way.
+
+**Ignore whitespace**
+: If enabled, whitespace will not be included in the character count.
+
+**Focus grid on click**
 : When enabled, the subtitles grid acts as its own area of the program and it
 can have focus, just like the audio or the video can, and while it does you can
 use the arrow keys/mouse wheel to scroll around it etc. On the other hand, if
