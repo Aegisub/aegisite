@@ -32,7 +32,6 @@ configure :build do
   # Needs to be before asset_hash
   activate :subdomain_rewriter
 
-  activate :minify_javascript
   activate :minify_css
   activate :asset_hash
   activate :gzip
