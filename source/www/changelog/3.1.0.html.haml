@@ -1,15 +1,28 @@
 %dl.dl-horizontal
-
-  %dt Audio
+  %dt Audio and Timing
   %dd
     %p Greatly improved downmixing for audio with more than 2 channels
     %p Also move karaoke markers after the dragged marker if Ctrl is held down (#{ticket 1557})
+    %p Improve Unicode support in the karaoke split/join bar
+    %p Report a more useful line number for bad lines in the Timing Post Processor (#{ticket 1596})
+    %p Default to only showing the maximum in the waveform view
+    %p When zooming the audio display with the scroll wheel, zoom into the mouse's position rather than the center of the display
+    %p Significantly improve the automatic matching in the kanji timer
+    %p Skip empty lines when copying karaoke timing
 
   %dt Automation
   %dd
     %p Fix crash when something other than a string is passed to error()
     %p Match HTML colors in a way that actually works in extract_color (#{ticket 1575})
     %p Implement the "coloralpha" automation control type
+    %p Switch the re module from wxRegex to boost.regex and fix a bunch of bugs
+    %p Drop support for non-UTF-8 scripts
+    %p The subtitles object can now be iterated over with ipairs as if it were a normal table
+    %p Add native support for MoonScript
+    %p Add support for using standard button ID in dialogs (#{ticket 1609})
+    %p Load autoloaded automation scripts in parallel for slightly faster startup
+    %p Improve error reporting and actually include a stack trace
+    %p Double the size of the log window
 
   %dt Autosave
   %dd
@@ -36,17 +49,35 @@
     %p Vastly cut down on memory usage with large subtitle files
     %p Speed up committing changes a bit
     %p More work is done on background threads to avoid blocking the UI
+    %p Improve indexing performance
+    %p Prefetch the font list for the style editor to make it open much faster on systems with large numbers of fonts installed
 
   %dt OS X
   %dd
     %p Add partial HiDPI support
     %p Use the native placeholder text functionality rather than the custom logic which worked slightly differently
+    %p Make it sort of possible but awkward to set hotkeys (#{ticket 1589})
+    %p Properly handle dead keys in the edit box (but still not IMEs)
 
   %dt Spellchecking
   %dd
     %p Updated from hunspell 1.2.1 to 1.3.2 on Windows
     %p Improve spellchecker word splitting (#{ticket 1206})
     %p Allow removing added words from the dictionary (#{ticket 1184})
+    %p Add an option to ignore uppercase words (#{ticket 1460})
+
+  %dt Stuff
+  %dd
+    %p Fix changing the MRU limit for subtitle files (#{ticket 1592})
+    %p Actually select the correct lines in the select overlaps macro (#{ticket 1594})
+    %p Fix loading keyframe files with Windows newlines on non-Windows platforms
+    %p Add support for ffmpeg/avconv's keyframe format
+    %p Add support for the scroll wheel to the video slider
+    %p Eliminate a bogus limit of 100 for a bunch of rarely-used options
+    %p Add Backspace to the keys that commands can be bound to (#{ticket 1631})
+    %p Add support for the Windows 7 taskbar progress bar
+    %p Make saving transient UI state in the file optional (#{ticket 1535})
+    %p Improve support for locales which use a comma as the decimal separator
 
   %dt Subs Edit Box
   %dd
@@ -59,26 +90,40 @@
     %p Always add the spellchecker language list to the context menu
     %p "Split line at cursor" can be hotkeyed
     %p Change the Effect box to a combobox like the Actor box (#{ticket 1461})
+    %p Be less dumb when subtitles lines are pasted into the edit box
 
   %dt Subtitles Grid
   %dd
     %p Insert new lines before/after the active line rather than the first selected line
     %p The grid can be scrolled past the end of the file
     %p Paste over now replaces the selection if multiple lines are selected, since that's what most people seem to expect it to do
+    %p Do a better job of picking a new active line after deleting lines (#{ticket 1595})
+    %p Only paint the margin values in the grid if they're non-zero
+    %p Add "Duplicate and shift one line backwards" to the grid context menu
 
   %dt Subtitle Formats
   %dd
     %p Drop support for ASS2 since it didn't really work and no one used it
+    %p Drop support for the "Collisions" property in ASS file since VSFilter doesn't support it
     %p Fix loading subtitles from Matroska files without track names
     %p Improve behavior when character set detection fails
     %p Add an option to not skip blank lines when importing plain text files
-    %p Fix double-prompting to pick a character set in some cases (#{1512})
+    %p Fix double-prompting to pick a character set in some cases (#{ticket 1512})
+    %p Make the SRT parser more forgiving of malformed files (#{ticket 1614})
+    %p Support loading subtitles from improperly concatenated matroska files
+    %p Fix some issues with writing EBU STL files
 
   %dt Video
   %dd
     %p Drop MPC-HC VSFitler and default to xy-VSFilter now that CCCP has switched
+    %p Honor the color matrix tag from the subtitles file when appropriate (#{ticket 1649})
+    %p Update the title of the detached video dialog when videos are opened (#{ticket 1607})
 
   %dt Visual Typesetting Tools
   %dd
     %p Fix some cases where tags other than the one(s) being actively manipulated were being modified (#{ticket 1513})
     %p Update all selected rows in the clip tools rather than just the active line
+    %p Lock aspect ratio in the scale tool when alt is held down
+    %p Add box selection to the move mode of the vector clip tool (#{ticket 1404})
+    %p Significantly speed up dragging lots of vector clip control points
+
