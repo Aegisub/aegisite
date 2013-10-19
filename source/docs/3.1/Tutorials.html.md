@@ -5,13 +5,16 @@ The following tutorials are available for Aegisub:
 ## Video Tutorials (Screencasts)  ##
 
 ### Dialogue Timing  ###
-
-{::template name="todo"}actually do this{:/}
-
+* Description: A video describing how to time using Aegisub.
 * By: Karl Blomster
+* Link: <http://mod16.org/aegisub/timingtutorialimprovisation.mkv>
+
+* Description: A video showing an experienced user timing at full speed in Aegisub.
+* By: Karl Blomster
+* Link: <http://mod16.org/aegisub/timing-fullspeed.mkv>
 
 ### Kanji Timer  ###
-* Description: A video tutorial demonstrating how the kanji timer can be used to synchronize kanji timing to roomaji timing.
+* Description: A video tutorial demonstrating how the kanji timer can be used to synchronize kanji timing to romaji timing.
 * By: Niels Martin Hansen
 * Details: XviD MP3 AVI, 5 min 20 sec, 12 MB
 * Link: <http://jfs.itcamefromjapan.net/aegisub/demovids/kanji-timer.avi>
