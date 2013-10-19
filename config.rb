@@ -1,5 +1,6 @@
 require 'bootstrap-sass'
 require 'lib/markdown_extensions'
+require 'lib/subdomain_rewriter'
 
 activate :directory_indexes
 activate :automatic_image_sizes
@@ -33,11 +34,5 @@ configure :build do
   activate :asset_hash
   activate :gzip
 
-  class Middleman::Sitemap::Resource
-    def url
-      subdomain, _, path = destination_path.partition '/'
-      path.sub! 'index.html', ''
-      "http://#{subdomain}.aegisub.org/#{path}"
-    end
-  end
+  activate :subdomain_rewriter
 end
