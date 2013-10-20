@@ -28,6 +28,17 @@ set :haml,
 
 activate :syntax
 
+# middleman-synax doesn't highlight code spans by itself
+Kramdown::Converter::Html.class_eval do
+  def convert_codespan(el, indent)
+    language = extract_code_language!(el.attr)
+    lexer = Rouge::Lexer.find_fancy(language, el.value) || Rouge::Lexers::Text
+    formatter = Rouge::Formatters::HTML.new css_class: "highlight #{lexer.tag}", wrap: false
+    result = formatter.format(lexer.lex(el.value, {}))
+    format_as_span_html('code', el.attr, result)
+  end
+end
+
 configure :build do
   # Needs to be before asset_hash
   activate :subdomain_rewriter
