@@ -26,8 +26,7 @@ functions|Automation/Lua/Registration#macroprocessingfunction]] can set undo
 points, as it makes no sense to do so at any other time.
 
 To allow the most flexibility, the subtitles object represents a complete ASS
-format file, line by line, including all meta-lines such as section headers and
-semicolon comments.
+format file, line by line, including all meta-lines such as section headers.
 
 The subtitles object supports the following operations:
 

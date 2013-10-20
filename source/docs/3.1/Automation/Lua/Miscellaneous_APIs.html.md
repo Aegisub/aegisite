@@ -40,7 +40,7 @@ given **text** when using the **style**.
 :   Length of descenders in the font. This may be
     non-integer.
 
-**ext_lead** (number)
+**`ext_lead`** (`number`)
 :   External leading for the font. This may be non-integer.
 
 You should only feed plain text strings without line breaks into this
@@ -90,7 +90,7 @@ Use loaded frame rate data to convert an absolute time given in
 :   Frame number corresponding to the time in ms, or `nil` if there is no
     frame rate data loaded.
 
-If the time is in the middle of the frame it is "rounded down" to the frame
+If the time is in the middle of the frame it is **rounded down** to the frame
 number that contains the given time.
 
 ### aegisub.ms_from_frame  ###

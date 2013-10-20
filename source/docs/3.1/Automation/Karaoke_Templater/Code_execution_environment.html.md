@@ -68,8 +68,8 @@ available libraries.
 
 For backwards compatibility, several of the included modules
 ([[karaskel.lua|Automation/Lua/Modules/karaskel.lua]],
-[[unicode.lua|Automation/Lua/Modules/unicode.lua]] and
-[[utils.lua|Automation/Lua/Modules/utils.lua]]) are automatically loaded
+[[unicode.lua|Automation/Lua/Modules/unicode]] and
+[[utils.lua|Automation/Lua/Modules/util]]) are automatically loaded
 and will be accessible via `_G` by default. All others must be explicitly
 `require`d on a code line.
 

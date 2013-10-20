@@ -5,7 +5,7 @@ These functions are used to display dialogs for the user to interact with.
 ## Display dialog functions ##
 
 ### aegisub.dialog.display ###
-Synopsis: `button, result_table = aegisub.dialog.display(dialog, buttons)`
+Synopsis: `button, result_table = aegisub.dialog.display(dialog, buttons, button_ids)`
 
 This function displays a configuration dialog to the user and waits for it to
 close. It then returns whether the user accepted or cancelled the dialog, and
@@ -23,6 +23,11 @@ what values were input.
   The strings in this table are used as labels on the buttons, and for
   identifying them in the return values of the function.
 
+**`@button_ids`** (`table`)
+: Optional. A table which maps button labels to [[platform button
+IDs|Dialogs#button_ids]], making it possible to specify which button will be
+triggered if the user hits Enter or ESC.
+
 **`button`** (`boolean` or `string`)
 :   If no custom buttons were specified, this is a boolean telling whether
     Ok (true) or Cancel (false) were clicked in the dialog. If custom buttons
@@ -34,6 +39,19 @@ what values were input.
 :   The [[Dialog Result
     table|Dialogs#dialogresulttableformat]] corresponding to
     the values the user input in the dialog.
+
+{::template name="examplebox"}
+    config = {
+        {class="label", text="Times to frobulate", x=0, y=0},
+        {class="intedit", name="times", value=20, x=0, y=1}
+    }
+    btn, result = aegisub.dialog.display(config,
+                                         {"Frobulate", "Nevermind"},
+                                         {"Frobulate"="ok", "Nevermind"="cancel"})
+    if btn then
+        frobulate(result.times)
+    end
+{:/}
 
 ### aegisub.dialog.open ###
 Synopsis: `file_name = aegisub.dialog.open(title, default_file, default_dir, wildcards, allow_multiple=false, must_exist=true)`
@@ -166,7 +184,7 @@ Keys defined only for the "intedit" and "floatedit" classes:
 : If one of these are nil, the other must also be nil. (i.e. undefined.) If
   both are present, the control gets a spin button that the user can click
   to update the value of the control. The user won't be able to enter
-  values outsize the (inclusive) range between `min` and `max`.
+  values outside the (inclusive) range between `min` and `max`.
 
 Key defined only for the "floatedit" class:
 
@@ -185,7 +203,7 @@ Keys defined only for the "dropdown" class:
   distinguish non-unique strings from each other.)
 
 **`value`** (`string`)
-: Determines which item is selected when the dialog id first displayed. If
+: Determines which item is selected when the dialog is first displayed. If
   this is not one of the items specified, no item is selected. This is case-
   sensitive.
 
@@ -210,7 +228,7 @@ The Dialog Definition table is simply an array of Dialog Control tables.
 Note, however, that while the visual ordering of the controls are decided
 entirely by the "x", "y", "width" and "height" of the controls, the
 "tab order" of the controls is decided by their ordering in the Dialog
-Definition table.
+Definition table. Your users will thank you if you make these match up.
 
 ### Dialog Result table format ###
 
@@ -241,5 +259,34 @@ control. The control classes map to types in the following manner:
 **`color`**, **`coloralpha`**, **`alpha`**: `string`
 : A VB colorstring following the same scheme as for setting the
   **`value`** property.
+
+Dialog result tables are purely output from the dialog. Changing them and then
+redisplaying the dialog will not have any effect.
+
+### Dialog button IDs
+Legal values for button IDs are:
+        ok
+        yes
+        save
+        apply
+        close
+        no
+        cancel
+        help
+        context_help
+
+Note that many combinations of button IDs do not make sense and may have
+strange effects. For example, having both `cancel` and `close` buttons is a bad
+idea.
+
+Buttons with an ID of `cancel` return false, as if ESC was pressed. A
+button with an ID of `close` results in that button being triggered on
+ESC rather than cancel.
+
+Buttons with an ID of `ok`, `yes` and `save` are set as the default
+affirmative button for the dialog.
+
+Buttons with the ID `help` will be displayed as a question mark in a circle on
+the left side of the dialog on OS X.
 
 {::template name="automation_navbox" /}

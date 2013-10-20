@@ -6,8 +6,8 @@ It also defines several new data structures, and extensions to those
 defined by Automation 4 Lua itself.
 
 `karaskel.lua` itself includes
-[[`utils.lua`|Automation/Lua/Modules/utils.lua]] and
-[[`unicode.lua`|Automation/Lua/Modules/unicode.lua]] so you do not need to
+[[`utils.lua`|Automation/Lua/Modules/util]] and
+[[`unicode.lua`|Automation/Lua/Modules/unicode]] so you do not need to
 include those yourself when using `karaskel.lua`.
 
 Using `karaskel.lua` is strongly recommended when creating karaoke effects,
@@ -69,7 +69,7 @@ table. The following fields are added:
   drawings removed.
 * `line.duration` - Duration of the line in milliseconds
 * `line.kara` and `line.furi` - Extended [[karaoke and furigana
-  tables|#karaokeandfuriganasyllabletables]], without sizing and
+  tables|karaskel.lua#karaoke-and-furigana-syllable-tables]], without sizing and
   position data.
 
 This function does not calculate any text sizing or positioning

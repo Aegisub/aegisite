@@ -26,7 +26,10 @@ once. You can put variable initialisations and such at the top level, but
 what you usually will do is define some of the script information globals,
 import some modules, write some functions that do the script's work and
 then call the feature registration functions. This is described on the
-**[[Registration|Automation/Lua/Registration]]** page.
+**[[Registration|Automation/Lua/Registration]]** page. The only fields of the
+`aegisub` object that should be touched during script loading are
+`lua_automation_version` and the registration functions. Most others will
+simply do nothing and return `nil`.
 
 When the user activates a feature from the Aegisub interface (such as by
 selecting a macro from the Automation menu) the registered script function

@@ -32,7 +32,7 @@ passed to the processing function when it is run.
 
 A script can set a few global variables to provide metadata about the script
 to Aegisub. The information given with these variables are displayed in the
-[[Automation/Manager]] dialogue and the Script Info dialogue.
+[[Automation Manager|Automation/Manager]] dialogue and the Script Info dialogue.
 
 * **script_name** (string) - Name of the script. This should be short.
 * **script_description** (string) - Description of the purpose of the
@@ -53,7 +53,7 @@ these in the top level, at the very bottom of your script.
 
 ### aegisub.register_macro  ###
 
-Synopsis: `aegisub.register_macro(name, description, processing_function, validation_function)`
+Synopsis: `aegisub.register_macro(name, description, processing_function, validation_function, is_active_function)`
 
 Register a macro feature.
 
@@ -71,6 +71,10 @@ Register a macro feature.
   (Grayed out or not.) If no validation function is provided the macro is
   always available. This function must follow the [[macro validation
   function API|Automation/Lua/Registration#macrovalidationfunction]].
+* **is_active_function** (function, optional) - This function is called to
+  determine whether the menu item should be shown with a check mark next to it.
+  If no function is provided the macro is never checked. This function uses the
+  same API as validation functions, and all of the same caveats apply.
 
 ### aegisub.register_filter  ###
 
