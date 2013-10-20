@@ -1,101 +1,127 @@
 {::options toc_levels="2" /}
 
-{::template name="todo"}A lot of this is outdated{:/}
+Aegisub was originally written by Rodrigo Braz Monteiro with significant contributions from Niels Martin Hansen.
+Development was lead by Monteiro through 2008, Hansen through 2010, and by Thomas Goyne  from 2011 onward.
 
 ## Programming ##
 * Main Programmers:
-  * [[img/Flag_of_Brazil.gif]] **Rodrigo Braz Monteiro** (ArchMage ZeratuL) - Lead developer, video system, audio system, subtitles I/O, tools
-  * [[img/Flag_of_Denmark.gif]] **Niels Martin Hansen** (jfs) - Automation, Lua automation, audio system, tools
-  * [[img/Flag_of_United-States.gif]] **Thomas Goyne (Plorkyeran)** - Lead developer for 3.0 onwards.
+  * **Rodrigo Braz Monteiro** (ArchMage ZeratuL) - Lead developer, video system, audio system, subtitles I/O, tools
+  * **Niels Martin Hansen** (jfs) - Automation, Lua automation, audio system, tools
+  * **Thomas Goyne (Plorkyeran)** - Lead developer for 3.0 onwards.
 
 * Staff Contributors:
-  * [[img/Flag_of_Sweden.gif]] **Karl Blomster** (TheFluff) - General code, FFmpegSource video provider
-  * [[img/Flag_of_Sweden.gif]] **Fredrik Mellbin** (Myrsloik) - FFmpegSource and Avisynth-related code
-  * [[img/Flag_of_Canada.gif]] **Amar Takhar** (verm) - New unix build system
-  * [[img/Flag_of_Germany.gif]] **David Lamparter** (equinox) - Unix port
-  * [[img/Flag_of_Brazil.gif]] **Alysson Souza e Silva** (demi_alucard) - General code
+  * **Karl Blomster** (TheFluff) - General code, FFmpegSource video provider
+  * **Fredrik Mellbin** (Myrsloik) - FFmpegSource and Avisynth-related code
+  * **Amar Takhar** (verm) - New unix build system
+  * **David Lamparter** (equinox) - Unix port
+  * **Alysson Souza e Silva** (demi_alucard) - General code
 
 * Other contributors:
-  * [[img/Flag_of_United-States.gif]] **Dan Donovan** (Dansolo) - Miscellaneous tools
-  * [[img/Flag_of_Poland.gif]] **Patryk Pomykalski** (Pomyk) - Miscellaneous patching
-  * [[img/Flag_of_Malaysia.gif]] **ai-chan** - ASSDraw3
-  * [[img/Flag_of_Russia.gif]] **Evgeniy Stepanov** (Azzy) - Some Linux patches, libass
-  * [[img/Flag_of_Russia.gif]] **Mike Matsnev** (Haali) - Some DirectShow code and Matroska Parser library
+  * **Dan Donovan** (Dansolo) - Miscellaneous tools
+  * **Patryk Pomykalski** (Pomyk) - Miscellaneous patching
+  * **ai-chan** - ASSDraw3
+  * **Evgeniy Stepanov** (Azzy) - Some Linux patches, libass
+  * **Mike Matsnev** (Haali) - Some DirectShow code and Matroska Parser library
   * **2points** - Linux patches
-  * [[img/Flag_of_United-States.gif]] **p-static** - Linux patches
+  * **p-static** - Linux patches
   * **David Conrad** (Yuvi) - Mac patches
-  * [[img/Flag_of_Netherlands.gif]] **Daniel Moscoviter** (Mosc) - General patches
-  * [[img/Flag_of_United-States.gif]] **Harukalover** - Usability, various patches
-  * [[img/Flag_of_China.gif]] **SAPikachu** - General patches
+  * **Daniel Moscoviter** (Mosc) - General patches
+  * **Harukalover** - Usability, various patches
+  * **SAPikachu** - General patches
+  * **tophf** - General patches
+  * **nodame** - General patches
 
 ## Installer ##
 * 2.x:
-  * [[img/Flag_of_Denmark.gif]] **Niels Martin Hansen** (jfs)
-  * [[img/Flag_of_Sweden.gif]] **Fredrik Mellbin** (Myrsloik)
-  * [[img/Flag_of_Brazil.gif]] **Rodrigo Braz Monteiro** (ArchMage ZeratuL)
+  * **Niels Martin Hansen** (jfs)
+  * **Fredrik Mellbin** (Myrsloik)
+  * **Rodrigo Braz Monteiro** (ArchMage ZeratuL)
 
 * Previous:
-  * [[img/Flag_of_United-States.gif]] movax
+  * movax
 
 ## Manual ##
 * 3.x:
-  * [[img/Flag_of_United-States.gif]] **Thomas Goyne (Plorkyeran)**
+  * **Thomas Goyne (Plorkyeran)**
 
 * 2.x:
-  * [[img/Flag_of_Sweden.gif]] **Karl Blomster** (TheFluff)
-  * [[img/Flag_of_Denmark.gif]] **Niels Martin Hansen** (jfs)
-  * [[img/Flag_of_Brazil.gif]] **Rodrigo Braz Monteiro** (ArchMage ZeratuL)
+  * **Karl Blomster** (TheFluff)
+  * **Niels Martin Hansen** (jfs)
+  * **Rodrigo Braz Monteiro** (ArchMage ZeratuL)
 
 * Previous:
-  * [[img/Flag_of_United-States.gif]] Motoko-chan
-  * [[img/Flag_of_Slovenia.gif]] Kobi
-  * [[img/Flag_of_United-States.gif]] movax
-  * [[img/Flag_of_United-States.gif]] Jcubed
+  * Motoko-chan
+  * Kobi
+  * movax
+  * Jcubed
 
 ## Hosting ##
 * Current:
-  * [[img/Flags_of_Japan.gif]][[img/Flag_of_France.gif]] **DeathWolf**: SVN repository for versions 2.1.2+
-  * [[img/Flag_of_Denmark.gif]] **Sigurd Tao Lyngse** (Bot1): Forums and Main Wiki
-  * [[img/Flag_of_Denmark.gif]] **Niels Martin Hansen** (jfs): Bug Tracker
-  * [[img/Flag_of_United-States.gif]] **Marcello Bastéa-Forte**: Documentation Wiki
-  * [[img/Flag_of_Brazil.gif]] **Rodrigo Braz Monteiro** (ArchMage ZeratuL): Domain administration
+  * **DeathWolf**: SVN repository for versions 2.1.2+
+  * **Sigurd Tao Lyngse** (Bot1): Forums and Main Wiki
+  * **Niels Martin Hansen** (jfs): Bug Tracker
+  * **Marcello Bastéa-Forte**: Documentation Wiki
+  * **Rodrigo Braz Monteiro** (ArchMage ZeratuL): Domain administration
 
 * Previous:
-  * [[img/Flag_of_Germany.gif]] **David Lamparter** (equinox): SVN repository for versions 2.00 - 2.1.2
-  * [[img/Flag_of_Germany.gif]] BerliOS: SVN repository for version 1.10
-  * [[img/Flag_of_Germany.gif]] Mentar: SVN repository up to version 1.09
-  * [[img/Flag_of_Denmark.gif]] Bot1: Bug Tracker
+  * **David Lamparter** (equinox): SVN repository for versions 2.00 - 2.1.2
+  * BerliOS: SVN repository for version 1.10
+  * Mentar: SVN repository up to version 1.09
+  * Bot1: Bug Tracker
 
 ## Localization files ##
 * 2.00 translations:
-  * [[img/Flag_of_Brazil.gif]] ArchMage ZeratuL: Brazilian Portuguese
-  * [[img/Flag_of_Catalonia.png]] Ereza: Catalan
-  * [[img/Flag_of_Hungary.gif]] Yuri: Hungarian
-  * [[img/Flags_of_Japan.gif]] Hiroshi: Japanese
-  * [[img/Flag_of_Finland.gif]] Jeroi: Finnish
+  * ArchMage ZeratuL: Brazilian Portuguese
+  * Ereza: Catalan
+  * Yuri: Hungarian
+  * Hiroshi: Japanese
+  * Jeroi: Finnish
 
 * 1.11 translations:
-  * [[img/Flag_of_Taiwan.gif]] Karasu: Traditional Chinese
+  * Karasu: Traditional Chinese
 
 * 1.10 translations:
-  * [[img/Flag_of_Canada.gif]] TechNiko: French
-  * [[img/Flag_of_France.gif]] Crysral: French
-  * [[img/Flag_of_Russia.gif]] thrash-sensei: Russian
-  * [[img/Flag_of_Germany.gif]] equinox: German
-  * [[img/Flag_of_Spain.gif]] Nesukun: Spanish
-  * [[img/Flag_of_Italy.gif]] EmBolo: Italian
-  * [[img/Flag_of_Italy.gif]] Mazinga: Italian
-  * [[img/Flag_of_Korea.gif]] oblisk: Korean
-  * [[img/Flag_of_Denmark.gif]] mulrich: Danish
+  * TechNiko: French
+  * Crysral: French
+  * thrash-sensei: Russian
+  * equinox: German
+  * Nesukun: Spanish
+  * EmBolo: Italian
+  * Mazinga: Italian
+  * oblisk: Korean
+  * mulrich: Danish
 
 ## Additional thanks ##
-* [[img/Soviet_flag.gif]] [Combined Community Codec Pack](http://www.cccp-project.net) staff
-* [[img/Flag_of_Hungary.gif]] Gabest for VSFilter
+* [Combined Community Codec Pack](http://www.cccp-project.net) staff
+* Gabest for VSFilter
 * squid_80 for the x64 builds of Avisynth and CSRI-enabled VSFilter
-* [[img/Flag_of_United-States.gif]] Firebird for some of the toolbar icons
-* [[img/Flag_of_United-States.gif]] Kayle for help with Win32 VfW interface
-* [[img/Flag_of_Slovenia.gif]] ender for yawning a lot
-* Alpha testers: [[img/Flag_of_United-States.gif]] b0nk, [[img/Flag_of_Denmark.gif]] Bot1, [[img/Flag_of_United-States.gif]] deathbygirl, [[img/Flag_of_United-States.gif]] DoGfOoD, [[img/Flag_of_United-States.gif]] grimlock, [[img/Flag_of_United-States.gif]] Jagobah, [[img/Flag_of_United-States.gif]] Jcubed, [[img/Flag_of_Germany.gif]] Kintaro, [[img/Flag_of_Slovenia.gif]] Kobi, [[img/Flag_of_United-States.gif]] kodachrome, [[img/Flag_of_Finland.gif]] maxx-, [[img/Flag_of_Germany.gif]] mASSIVe, [[img/Flag_of_Brazil.gif]] Maya, [[img/Flag_of_Germany.gif]] Mentar, [[img/Flag_of_United-States.gif]] movax, msb, [[img/Flag_of_Germany.gif]] neo2sonic, [[img/Flag_of_Brazil.gif]] nich, [[img/Flag_of_Estonia.gif]] nwa, [[img/Flag_of_Slovenia.gif]] omgifos, [[img/Flag_of_Singapore.gif]] SOzuken, [[img/Flag_of_Sweden.gif]] TheFluff, [[img/Flag_of_Russia.gif]] thrash_sensei, [[img/Flag_of_United-States.gif]] Vincent, [[img/Flag_of_United-States.gif]] zegnat
+* Firebird for some of the toolbar icons
+* Kayle for help with Win32 VfW interface
+* ender for yawning a lot
+* Alpha testers: b0nk, Bot1, deathbygirl, DoGfOoD, grimlock, Jagobah, Jcubed, Kintaro, Kobi, kodachrome, maxx-, mASSIVe, Maya, Mentar, movax, msb, neo2sonic, nich, nwa, omgifos, SOzuken, TheFluff, thrash_sensei, Vincent, zegnat
 
 ## About ##
-Aegisub 2 was developed using Microsoft Visual Studio 2005 and wxWidgets 2.8. The Automation module also uses the Lua, Perl and Ruby programming languages. The Regular Expressions code used in this program was written by Henry Spencer and included in wxWidgets. Some builds of Aegisub also uses the PortAudio, OpenAL, PulseAudio, libpng, zlib, Hunspell, universalchardet, CSRI, asa, libass, Freetype 2 and ffmpeg libraries.
+Aegisub includes portions from the following other projects:
+
+* Avisynth 2.5 - Copyright (c) Ben Rudiak-Gould et al
+* FFMS2 - Copyright (c) Fredrik Mellbin
+* FFTW - Copyright (c) Matteo Frigo, Massachusetts Institute of Technology
+* FFmpeg - Copyright (c) Fabrice Bellard
+* Freetype - Copyright (c) David Turner, Robert Wilhelm, Werner Lemberg
+* GNU FriBidi - Copyright (c) Dov Grobgeld, Behdad Esfahbod
+* GNU iconv - Copyright (c) Bruno Haible
+* Hunspell - Copyright (c) Kevin Hendricks
+* ICU - Copyright (c) International Business Machines Corporation et al
+* Lua - Copyright (c) Lua.org, PUC-Rio
+* Matroska Parser - Copyright (c) Mike Matsnev
+* PortAudio - Copyright (c) Ross Bencina, Phil Burk
+* Scintilla - Copyright (c) Neil Hodgson
+* UniversalCharDet - Copyright (c) Netscape Communications Corp.
+* csri - Copyright (c) David Lamparter
+* fontconfig - Copyright (c) Keith Packard, Patrick Lam
+* libass - Copyright (c) Evgeniy Stepanov, Grigori Goronzy
+* vsfilter - Copyright (c) Gabest
+* wxStyledTextCtrl - Copyright (c) Robin Dunn, Neil Hodgson
+* wxWidgets - Copyright (c) Julian Smart, Robert Roebling et al
+* zlib - Copyright (c) Jean-loup Gailly and Mark Adler
+
