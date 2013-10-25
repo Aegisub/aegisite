@@ -7,7 +7,7 @@
 
     - name: am/meta
       display: 'Automation'
-      help: 'Open automation manager'
+      help: 'Open automation manager. Ctrl: Rescan autoload folder. Ctrl+Shift: Rescan autoload folder and reload all automation scripts'
 
     - name: am/reload
       display: 'Reload Automation scripts'
@@ -23,19 +23,19 @@
 
     - name: app/display/audio_subs
       display: 'Audio+Subs View'
-      help: 'Display audio and subtitles only'
+      help: 'Display audio and the subtitles grid only'
 
     - name: app/display/full
       display: 'Full view'
-      help: 'Display audio, video and subtitles'
+      help: 'Display audio, video and then subtitles grid'
 
     - name: app/display/subs
       display: 'Subs Only View'
-      help: 'Display subtitles only'
+      help: 'Display the subtitles grid only'
 
     - name: app/display/video_subs
       display: 'Video+Subs View'
-      help: 'Display video and subtitles only'
+      help: 'Display video and the subtitles grid only'
 
     - name: app/exit
       display: 'Exit'
@@ -59,7 +59,7 @@
 
     - name: app/toggle/global_hotkeys
       display: 'Toggle global hotkey overrides'
-      help: 'Toggle global hotkey overrides'
+      help: 'Toggle global hotkey overrides (Medusa Mode)'
 
     - name: app/toggle/toolbar
       display: 'Hide Toolbar'
@@ -71,7 +71,7 @@
 
     - name: audio/close
       display: 'Close Audio'
-      help: 'Closes the currently open audio file'
+      help: 'Close the currently open audio file'
 
     - name: audio/commit
       display: 'Commit'
@@ -91,7 +91,7 @@
 
     - name: audio/go_to
       display: 'Go to selection'
-      help: 'Go to selection'
+      help: 'Scroll the audio display to center on the current audio selection'
 
     - name: audio/karaoke
       display: 'Toggle karaoke mode'
@@ -99,7 +99,7 @@
 
     - name: audio/open
       display: 'Open Audio File'
-      help: 'Opens an audio file'
+      help: 'Open an audio file'
 
     - name: audio/open/blank
       display: 'Open 2h30 Blank Audio'
@@ -111,19 +111,19 @@
 
     - name: audio/open/video
       display: 'Open Audio from Video'
-      help: 'Opens the audio from the current video file'
+      help: 'Open the audio from the current video file'
 
     - name: audio/opt/autocommit
       display: 'Automatically commit all changes'
       help: 'Automatically commit all changes'
 
     - name: audio/opt/autonext
-      display: 'Auto goes to next line on commit'
-      help: 'Auto goes to next line on commit'
+      display: 'Auto go to next line on commit'
+      help: 'Automatically go to next line on commit'
 
     - name: audio/opt/autoscroll
-      display: 'Auto scrolls audio display to selected line'
-      help: 'Auto scrolls audio display to selected line'
+      display: 'Auto scroll audio display to selected line'
+      help: 'Auto scroll audio display to selected line'
 
     - name: audio/opt/spectrum
       display: 'Spectrum analyzer mode'
@@ -139,7 +139,7 @@
 
     - name: audio/play/line
       display: 'Play current line'
-      help: 'Play current line'
+      help: 'Play the audio for the current line'
 
     - name: audio/play/selection
       display: 'Play audio selection'
@@ -167,11 +167,11 @@
 
     - name: audio/play/toggle
       display: 'Play audio selection or stop'
-      help: "Play selection or stop playback if it's already playing"
+      help: "Play selection, or stop playback if it's already playing"
 
     - name: audio/save/clip
       display: 'Create audio clip'
-      help: 'Create an audio clip of the selected line'
+      help: 'Save an audio clip of the selected line'
 
     - name: audio/scroll/left
       display: 'Scroll left'
@@ -183,7 +183,7 @@
 
     - name: audio/stop
       display: 'Stop playing'
-      help: 'Stop'
+      help: 'Stop audio and video playback'
 
     - name: audio/view/spectrum
       display: 'Spectrum Display'
@@ -263,7 +263,7 @@
 
     - name: edit/line/copy
       display: 'Copy Lines'
-      help: 'Copy subtitles'
+      help: 'Copy subtitles to the clipboard'
 
     - name: edit/line/cut
       display: 'Cut Lines'
@@ -287,15 +287,15 @@
 
     - name: edit/line/join/as_karaoke
       display: 'As Karaoke'
-      help: 'Joins selected lines in a single one, as karaoke'
+      help: 'Join selected lines in a single one, as karaoke'
 
     - name: edit/line/join/concatenate
       display: 'Concatenate'
-      help: 'Joins selected lines in a single one, concatenating text together'
+      help: 'Join selected lines in a single one, concatenating text together'
 
     - name: edit/line/join/keep_first
       display: 'Keep First'
-      help: 'Joins selected lines in a single one, keeping text of first and discarding remaining'
+      help: 'Join selected lines in a single one, keeping text of first and discarding remaining'
 
     - name: edit/line/paste
       display: 'Paste Lines'
@@ -307,11 +307,11 @@
 
     - name: edit/line/recombine
       display: 'Recombine Lines'
-      help: 'Recombine subtitles when they have been split and merged'
+      help: 'Recombine subtitles which have been split and merged'
 
     - name: edit/line/split/by_karaoke
       display: 'Split Lines (by karaoke)'
-      help: 'Uses karaoke timing to split line into multiple smaller lines'
+      help: 'Use karaoke timing to split line into multiple smaller lines'
 
     - name: edit/line/split/estimate
       display: 'Split at cursor (estimate times)'
@@ -323,7 +323,7 @@
 
     - name: edit/redo
       display: 'Nothing to redo'
-      help: 'Redoes last action'
+      help: 'Redo last undone action'
 
     - name: edit/revert
       display: 'Revert'
@@ -347,7 +347,7 @@
 
     - name: edit/undo
       display: 'Nothing to undo'
-      help: 'Undoes last action'
+      help: 'Undo last action'
 
     - name: grid/line/next
       display: 'Next Line'
@@ -419,7 +419,7 @@
 
     - name: grid/swap
       display: 'Swap Lines'
-      help: 'Swaps the two selected lines'
+      help: 'Swap the two selected lines'
 
     - name: grid/tag/cycle_hiding
       display: 'Cycle Tag Hiding Mode'
@@ -445,10 +445,6 @@
       display: 'Contents'
       help: 'Help topics'
 
-    - name: help/files
-      display: 'All Files'
-      help: 'Resource files'
-
     - name: help/forums
       display: 'Forums'
       help: "Visit Aegisub's forums"
@@ -467,15 +463,15 @@
 
     - name: keyframe/close
       display: 'Close Keyframes'
-      help: 'Closes the currently open keyframes list'
+      help: 'Discard the currently loaded keyframes and use those from the video, if any'
 
     - name: keyframe/open
       display: 'Open Keyframes'
-      help: 'Opens a keyframe list file'
+      help: 'Open a keyframe list file'
 
     - name: keyframe/save
       display: 'Save Keyframes'
-      help: 'Saves the current keyframe list'
+      help: 'Save the current list of keyframes to a file'
 
     - name: recent/audio
       display: 'Recent'
@@ -819,31 +815,31 @@
 
     - name: subtitle/attachment
       display: 'Attachments'
-      help: 'Open the attachment list'
+      help: 'Open the attachment manager dialog'
 
     - name: subtitle/find
       display: 'Find'
-      help: 'Find words in subtitles'
+      help: 'Search for text the in subtitles'
 
     - name: subtitle/find/next
       display: 'Find Next'
-      help: 'Find next match of last word'
+      help: 'Find next match of last search'
 
     - name: subtitle/insert/after
       display: 'After Current'
-      help: 'Inserts a line after current'
+      help: 'Insert a new line after the current one'
 
     - name: subtitle/insert/after/videotime
       display: 'After Current, at Video Time'
-      help: 'Inserts a line after current, starting at video time'
+      help: 'Insert a new line after the current one, starting at video time'
 
     - name: subtitle/insert/before
       display: 'Before Current'
-      help: 'Inserts a line before current'
+      help: 'Insert a new line before the current one'
 
     - name: subtitle/insert/before/videotime
       display: 'Before Current, at Video Time'
-      help: 'Inserts a line before current, starting at video time'
+      help: 'Insert a new line before the current one, starting at video time'
 
     - name: subtitle/new
       display: 'New Subtitles'
@@ -851,7 +847,7 @@
 
     - name: subtitle/open
       display: 'Open Subtitles'
-      help: 'Opens a subtitles file'
+      help: 'Open a subtitles file'
 
     - name: subtitle/open/autosave
       display: 'Open Autosaved Subtitles'
@@ -859,11 +855,11 @@
 
     - name: subtitle/open/charset
       display: 'Open Subtitles with Charset'
-      help: 'Opens a subtitles file with a specific charset'
+      help: 'Open a subtitles file with a specific file encoding'
 
     - name: subtitle/open/video
       display: 'Open Subtitles from Video'
-      help: 'Opens the subtitles from the current video file'
+      help: 'Open the subtitles from the current video file'
 
     - name: subtitle/properties
       display: 'Properties'
@@ -871,19 +867,19 @@
 
     - name: subtitle/save
       display: 'Save Subtitles'
-      help: 'Saves subtitles'
+      help: 'Save the current subtitles'
 
     - name: subtitle/save/as
       display: 'Save Subtitles as'
-      help: 'Saves subtitles with another name'
+      help: 'Save subtitles with another name'
 
     - name: subtitle/select/all
       display: 'Select All'
-      help: 'Selects all dialogue lines'
+      help: 'Select all dialogue lines'
 
     - name: subtitle/select/visible
       display: 'Select Visible'
-      help: 'Selects all lines that are currently visible on video frame'
+      help: 'Select all dialogue lines that visible on the current video frame'
 
     - name: subtitle/spellcheck
       display: 'Spell Checker'
@@ -891,11 +887,11 @@
 
     - name: time/continuous/end
       display: 'Change End'
-      help: "Changes times of subs so end times begin on next's start time"
+      help: "Change end times of lines to the next line's start time"
 
     - name: time/continuous/start
       display: 'Change Start'
-      help: "Changes times of subs so start times begin on previous's end time"
+      help: "Change start times of lines to the previous line's end time"
 
     - name: time/frame/current
       display: 'Shift to Current Frame'
@@ -903,15 +899,15 @@
 
     - name: time/lead/both
       display: 'Add lead in and out'
-      help: 'Add lead in and out'
+      help: 'Add both lead in and out to the selected lines'
 
     - name: time/lead/in
       display: 'Add lead in'
-      help: 'Add lead in'
+      help: 'Add the lead in time to the selected lines'
 
     - name: time/lead/out
       display: 'Add lead out'
-      help: 'Add lead out'
+      help: 'Add the lead out time to the selected lines'
 
     - name: time/length/decrease
       display: 'Decrease length'
@@ -963,19 +959,19 @@
 
     - name: timecode/close
       display: 'Close Timecodes File'
-      help: 'Closes the currently open timecodes file'
+      help: 'Close the currently open timecodes file'
 
     - name: timecode/open
       display: 'Open Timecodes File'
-      help: 'Opens a VFR timecodes v1 or v2 file'
+      help: 'Open a VFR timecodes v1 or v2 file'
 
     - name: timecode/save
       display: 'Save Timecodes File'
-      help: 'Saves a VFR timecodes v2 file'
+      help: 'Save a VFR timecodes v2 file'
 
     - name: tool/export
       display: 'Export Subtitles'
-      help: 'Saves a copy of subtitles with processing applied to it'
+      help: 'Save a copy of subtitles in a different format or with processing applied to it'
 
     - name: tool/font_collector
       display: 'Fonts Collector'
@@ -983,11 +979,11 @@
 
     - name: tool/line/select
       display: 'Select Lines'
-      help: 'Selects lines based on defined criteria'
+      help: 'Select lines based on defined criteria'
 
     - name: tool/resampleres
       display: 'Resample Resolution'
-      help: 'Changes resolution and modifies subtitles to conform to change'
+      help: 'Resample subtitles to maintain their current appearance at a different script resolution'
 
     - name: tool/style/assistant
       display: 'Styling Assistant'
@@ -995,7 +991,7 @@
 
     - name: tool/style/manager
       display: 'Styles Manager'
-      help: 'Open styles manager'
+      help: 'Open the styles manager'
 
     - name: tool/styling_assistant/commit
       display: 'Accept changes'
@@ -1007,11 +1003,11 @@
 
     - name: tool/time/kanji
       display: 'Kanji Timer'
-      help: 'Open Kanji timer'
+      help: 'Open the Kanji timer copier'
 
     - name: tool/time/postprocess
       display: 'Timing Post-Processor'
-      help: 'Runs a post-processor for timing to deal with lead-ins, lead-outs, scene timing and etc'
+      help: 'Post-process the subtitle timing to add lead-ins and lead-outs, snap timing to scene changes, etc.'
 
     - name: tool/translation_assistant
       display: 'Translation Assistant'
@@ -1039,27 +1035,27 @@
 
     - name: video/aspect/cinematic
       display: 'Cinematic (2.35)'
-      help: 'Forces video to 2.35 aspect ratio'
+      help: 'Force video to 2.35 aspect ratio'
 
     - name: video/aspect/custom
       display: 'Custom'
-      help: 'Forces video to a custom aspect ratio'
+      help: 'Force video to a custom aspect ratio'
 
     - name: video/aspect/default
       display: 'Default'
-      help: 'Leave video on original aspect ratio'
+      help: "Use video's original aspect ratio"
 
     - name: video/aspect/full
       display: 'Fullscreen (4:3)'
-      help: 'Forces video to 4:3 aspect ratio'
+      help: 'Force video to 4:3 aspect ratio'
 
     - name: video/aspect/wide
       display: 'Widescreen (16:9)'
-      help: 'Forces video to 16:9 aspect ratio'
+      help: 'Force video to 16:9 aspect ratio'
 
     - name: video/close
       display: 'Close Video'
-      help: 'Closes the currently open video file'
+      help: 'Close the currently open video file'
 
     - name: video/copy_coordinates
       display: 'Copy coordinates to Clipboard'
@@ -1067,15 +1063,15 @@
 
     - name: video/detach
       display: 'Detach Video'
-      help: 'Detach video, displaying it in a separate Window'
+      help: 'Detach the video display from the main window, displaying it in a separate Window'
 
     - name: video/details
       display: 'Show Video Details'
-      help: 'Shows video details'
+      help: 'Show video details'
 
     - name: video/focus_seek
       display: 'Toggle video slider focus'
-      help: 'Toggle focus between the video slider and other things'
+      help: 'Toggle focus between the video slider and the previous thing to have focus'
 
     - name: video/frame/copy
       display: 'Copy image to Clipboard'
@@ -1091,7 +1087,7 @@
 
     - name: video/frame/next/boundary
       display: 'Next Boundary'
-      help: 'Seek to the next subtitle boundary'
+      help: 'Seek to the next beginning or end of a subtitle'
 
     - name: video/frame/next/keyframe
       display: 'Next Keyframe'
@@ -1107,7 +1103,7 @@
 
     - name: video/frame/prev/boundary
       display: 'Previous Boundary'
-      help: 'Seek to the previous subtitle boundary'
+      help: 'Seek to the previous beginning or end of a subtitle'
 
     - name: video/frame/prev/keyframe
       display: 'Previous Keyframe'
@@ -1131,23 +1127,23 @@
 
     - name: video/jump/end
       display: 'Jump Video to End'
-      help: 'Jumps the video to the end frame of current subtitle'
+      help: 'Jump the video to the end frame of current subtitle'
 
     - name: video/jump/start
       display: 'Jump Video to Start'
-      help: 'Jumps the video to the start frame of current subtitle'
+      help: 'Jump the video to the start frame of current subtitle'
 
     - name: video/open
       display: 'Open Video'
-      help: 'Opens a video file'
+      help: 'Open a video file'
 
     - name: video/open/dummy
       display: 'Use Dummy Video'
-      help: 'Opens a video clip with solid color'
+      help: 'Open a placeholder video clip with solid color'
 
     - name: video/opt/autoscroll
       display: 'Toggle autoscroll of video'
-      help: 'Toggle autoscroll of video'
+      help: 'Toggle automatically seeking video to the start time of selected lines'
 
     - name: video/play
       display: 'Play'
@@ -1167,7 +1163,7 @@
 
     - name: video/subtitles_provider/cycle
       display: 'Cycle active subtitles provider'
-      help: 'Cycle active subtitles provider'
+      help: 'Cycle through the available subtitles providers'
 
     - name: video/tool/clip
       display: 'Clip'
