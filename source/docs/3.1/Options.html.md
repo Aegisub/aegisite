@@ -369,12 +369,8 @@ hotkey field in the row, then press the key(s) that should trigger the command.
 Accept the new hotkey by clicking on another row.
 
 To add a new hotkey, select the context you want to add the hotkey to, then
-click the New button. There is currently no list of commands available, but
-between the existing hotkeys and the auto-complete you can probably guess the
-command name for the thing you want to do. Everything on any of the menus or
-any of the toolbars *except* the subtitles edit box toolbar has a command.
-
-{::template name="todo"}Add a list of commands available{:/}
+click the New button. Enter the [[command name|Commands]], then set the hotkey
+as when editing them.
 
 ## Backup ##
 
