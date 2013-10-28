@@ -278,12 +278,12 @@
       help: 'Duplicate the selected lines'
 
     - name: edit/line/duplicate/shift
-      display: 'Duplicate and Shift by 1 Frame'
-      help: 'Duplicate lines and shift them to the frame after the original end frame'
+      display: 'Duplicate and Shift'
+      help: 'Duplicate lines and shift them to start the frame after the original end frame'
 
     - name: edit/line/duplicate/shift_back
-      display: 'Duplicate and Shift by 1 Frame Backwards'
-      help: 'Duplicate selected lines and shift them to the frame before the original start frame'
+      display: 'Duplicate and Shift Backwards'
+      help: 'Duplicate selected lines and shift them to end the frame before the original start frame'
 
     - name: edit/line/join/as_karaoke
       display: 'As Karaoke'
