@@ -24,9 +24,9 @@ what values were input.
   identifying them in the return values of the function.
 
 **`@button_ids`** (`table`)
-: Optional. A table which maps button labels to [[platform button
-IDs|Dialogs#button_ids]], making it possible to specify which button will be
-triggered if the user hits Enter or ESC.
+: Optional. A table which specifies which buttons in the dialog correspond to
+which [[platform button IDs|Dialogs#dialog-button-ids]], making it possible to
+specify which button will be triggered if the user hits Enter or ESC.
 
 **`button`** (`boolean` or `string`)
 :   If no custom buttons were specified, this is a boolean telling whether
@@ -48,7 +48,7 @@ config = {
 }
 btn, result = aegisub.dialog.display(config,
         {"Frobulate", "Nevermind"},
-        {"Frobulate"="ok", "Nevermind"="cancel"})
+        {"ok"="Frobulate", "cancel"="Nevermind"})
 if btn then
     frobulate(result.times)
 end
