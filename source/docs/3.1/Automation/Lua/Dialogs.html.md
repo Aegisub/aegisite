@@ -13,7 +13,7 @@ what values were input.
 
 **`@dialog`** (`table`)
 : A [[Dialog Definition
-  table|Dialogs#dialogdefinitiontableformat]] containing
+  table|Dialogs#dialog-definition-table-format]] containing
   the controls to be in the dialog.
 
 **`@buttons`** (`table`)
@@ -37,7 +37,7 @@ specify which button will be triggered if the user hits Enter or ESC.
 
 **`result_table`** (`table`)
 :   The [[Dialog Result
-    table|Dialogs#dialogresulttableformat]] corresponding to
+    table|Dialogs#dialog-result-table-format]] corresponding to
     the values the user input in the dialog.
 
 {::template name="examplebox"}
