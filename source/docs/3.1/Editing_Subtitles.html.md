@@ -5,8 +5,6 @@ text editing of subtitle lines; for more information on the typography of
 subtitles, see [[typesetting|Typesetting]]. For information on the timing of
 subtitle lines, see [[working with audio|Audio]].
 
-{::template name="todo"}This page should probably be split into several smaller ones to make it easier to digest, easier to link, less confusing and wall-of-text and to promote going more in depth with the separate topics.{:/}
-
 ## Opening subtitles ##
 
 In the _File_ menu, there are four menu choices that relate to opening or
