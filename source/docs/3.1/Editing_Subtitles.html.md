@@ -276,10 +276,18 @@ video frame. Not enabled unless you have video loaded.
 **Duplicate**
 : Duplicates the selected line(s).
 
-**Duplicate and shift by 1 frame**
-: Duplicates the selected line(s) and shifts the start and end times one
-frame forward. Useful for frame-by-frame typesetting. Only enabled if you
-have video or timecodes loaded.
+**Split lines before current frame**
+: Duplicate the selected line(s), set the end time of the original line
+to the frame before the current video frame, and set the start time of
+the copy to the current video frame. Useful for frame-by-frame
+typesetting and for splitting a line at a scene change to let it move
+down if it collided with a no-longer-visible line. Only enabled if you
+have video loaded.
+
+**Split lines after current frame**
+: As above, but it splits off the portion of the line after the current
+frame rather than the potion before the current frame, for when doing
+frame-by-frame typesetting from the last to the first frame of a line.
 
 **Split (by karaoke)**
 : Splits the line into one new line per syllable, as delimited by karaoke
