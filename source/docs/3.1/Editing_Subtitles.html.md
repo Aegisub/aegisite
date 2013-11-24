@@ -170,7 +170,7 @@ Insert Original
 If you right-click anywhere in the edit box, you get the following menu:
 ![](img/Subs_Edit_Context.png)
 
-Select all, undo, copy, cut and paste all do what you'd expect them to.
+Select all, copy, cut and paste all do what you'd expect them to.
 
 Spell checker
 : If you right-click on a word that has been detected as misspelled,
@@ -187,7 +187,8 @@ Split line
 : Splits the line into two new lines at the cursor position. Preserve
 times keeps the old line's timing for both lines. Estimate times tries
 to guess where the split is based on the length of the text on each
-side of the cursor.
+side of the cursor. At video frame makes the first half of the line end
+on the previous frame, and the second half start on the current frame.
 {: class="dl-horizontal"}
 
 ### The subtitles grid ###
