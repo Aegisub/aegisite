@@ -12,6 +12,7 @@ set :images_dir, 'static/img'
 
 page "/www/changelog/*", layout: 'changelog'
 page "/docs/3.1/*", layout: 'manual', app: self
+page "/docs/api/0.1/*", layout: 'api', app: self
 
 helpers do
   def ticket id

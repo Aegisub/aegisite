@@ -1,0 +1,19 @@
+ - name: Overview
+   entries:
+    - Introduction
+    - Tutorials
+    - Simple Macros
+    - Subtitle Formats
+    - Advanced Scripting
+
+ - name: Modules
+   entries:
+    - aegisub.app
+    - aegisub.audio
+    - aegisub.clipboard
+    - aegisub.gui
+    - aegisub.re
+    - aegisub.subtitles
+    - aegisub.util
+    - aegisub.video
+
