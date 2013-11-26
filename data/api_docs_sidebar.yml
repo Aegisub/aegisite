@@ -14,6 +14,7 @@
     - aegisub.gui
     - aegisub.re
     - aegisub.subtitles
+    - aegisub.unicode
     - aegisub.util
     - aegisub.video
 
