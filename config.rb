@@ -18,6 +18,15 @@ helpers do
   def ticket id
     "<a href='http://devel.aegisub.org/ticket/#{id}'>##{id}</a>"
   end
+  def pretty_name str
+    str = str.gsub(/^.*\/([^\/]+)\/$/, '\1').gsub('_', ' ')
+    str.capitalize
+  end
+  def pages_matching patt
+    sitemap.resources
+      .select{ |p| p.path.include? patt}
+      .map{ |p| {pretty: pretty_name(p.path.gsub(patt, '').gsub('.html', '')), raw: p} }
+  end
 end
 
 set :markdown_engine, :kramdown

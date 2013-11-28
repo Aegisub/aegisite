@@ -1,17 +1,25 @@
 - @nav_group = 'Manual'
-- page_name = current_page.url.gsub(/^.*\/([^\/]+)\/$/, '\1').gsub('_', ' ')
+- page_name = pretty_name current_page.url
 - @title = "#{page_name} - Aegisub Manual"
+- helpers do
+  - def overview_link_to page
+    - link_to page, "/docs/api/0.1/overview#{page.downcase.gsub(' ', '_')}"
 - wrap_layout :layout do
   .fluid-row
     .span3
       %ul#manual-sidebar
         - current_url = current_page.url
-        - data.api_docs_sidebar.each do |group|
-          %li.nav-header= group.name
-          - group[:entries].each do |page|
-            - url = "/docs/api/0.1/#{page.downcase.gsub(' ', '_')}/"
-            %li{class: current_url == url ? 'active' : nil}
-              = link_to page, url
+        %li.nav-header Overview
+        %li= overview_link_to 'Introduction'
+        %li= overview_link_to 'Simple Macros'
+        %li= overview_link_to 'Subtitle Formats'
+        %li= overview_link_to 'Advanced Scripting'
+
+        %li.nav-header Modules
+        - pages_matching('docs/api/0.1/modules/').each do |page|
+          %li{class: page[:pretty] == current_url ? 'active' : nil}
+            = link_to "aegisub.#{page[:pretty].downcase}", page[:raw]
+
     .span9#manual-body
       %h1.page-header= wiki_page_name current_page
       = yield
