@@ -4,6 +4,7 @@
 - helpers do
   - def overview_link_to page
     - link_to page, "/docs/api/0.1/overview#{page.downcase.gsub(' ', '_')}"
+- _, toc = Kramdown::Parser::TocReader.parse(template_data_for_file(current_page.source_file), {})
 - wrap_layout :layout do
   .fluid-row
     .span3
@@ -19,6 +20,14 @@
         - pages_matching('docs/api/0.1/modules/').each do |page|
           %li{class: page[:pretty] == current_url ? 'active' : nil}
             = link_to "aegisub.#{page[:pretty].downcase}", page[:raw]
+
+        %li.divider
+        %li.nav-header Data Types
+        - toc[:types].each do |type|
+          %li= link_to type, "##{type.downcase}"
+        %li.nav-header Functions
+        - toc[:functions].each do |func|
+          %li= link_to func, "##{func.downcase}"
 
     .span9
       = yield

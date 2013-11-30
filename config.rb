@@ -1,6 +1,7 @@
 require 'bootstrap-sass'
 require 'lib/markdown_extensions'
 require 'lib/subdomain_rewriter'
+require 'lib/toc_reader'
 
 activate :directory_indexes
 activate :automatic_image_sizes
