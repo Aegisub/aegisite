@@ -48,14 +48,57 @@ module MarkdownExtensions
 
     define_parser(:wiki_link, /\[\[([^!][^\]|#]*)\|?([^\]|#]*)(#?[^\]#|]*)\]\]/, '\\[\\[[^!]')
 
+    def process_body body
+      lambda { Kramdown::Document.new(body, input: 'WikiKramdown', app: @app).to_html }
+    end
+
+    def use_partial name, locals
+        Element.new(:raw, @app.partial(name, locals: locals))
+    end
+
+    def dl_element opts, body, partial
+        if not @tree.children.last or @tree.children.last.type != :dl
+          @tree.children << new_block_el(:dl, nil, class: 'dl-horizontal')
+        end
+
+        opts['body'] = self.process_body body
+        @tree.children.last.children << self.use_partial("docs/api/0.1/modules/#{partial}", opts)
+        true
+    end
+
+    def make_header level, text
+      el = new_block_el(:header, nil, nil, level: level, raw_text: text)
+      add_text(text, el)
+      el
+    end
+
     def handle_extension(name, opts, body, type)
       case name
       when 'template'
         template_name = opts.delete 'name'
         opts['rawbody'] = body
-        opts['body'] = lambda { Kramdown::Document.new(body, input: 'WikiKramdown', app: @app).to_html }
-        @tree.children << Element.new(:raw, @app.partial(template_name, locals: opts))
+        opts['body'] = self.process_body body
+        @tree.children << self.use_partial(template_name, opts)
         true
+      when 'type'
+        @tree.children << self.make_header(3, opts.delete('name'))
+        @tree.children << Element.new(:raw, self.process_body(body).call)
+        true
+      when 'field'
+        self.dl_element(opts, body, 'field')
+      when 'arg'
+        opts['name'] = '@' + opts['name']
+        self.dl_element(opts, body, 'field')
+      when 'return'
+        self.dl_element(opts, body, 'field')
+      when 'function'
+        @tree.children << self.make_header(3, opts.delete('name'))
+        @tree.children << new_block_el(:p)
+        add_text('Synopsis: ', @tree.children.last)
+        cs = Element.new(:codespan, opts['synopsis'])
+        cs.attr['class'] = 'language-lua'
+        @tree.children.last.children << cs
+        @tree.children << Element.new(:raw, self.process_body(body).call)
       else
         super(name, opts, body, type)
       end

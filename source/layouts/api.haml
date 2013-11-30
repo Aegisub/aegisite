@@ -20,7 +20,6 @@
           %li{class: page[:pretty] == current_url ? 'active' : nil}
             = link_to "aegisub.#{page[:pretty].downcase}", page[:raw]
 
-    .span9#manual-body
-      %h1.page-header= wiki_page_name current_page
+    .span9
       = yield
 
