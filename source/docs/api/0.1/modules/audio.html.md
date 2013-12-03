@@ -1,11 +1,6 @@
 Import this module with `local audio = require 'aegisub.audio'`{:.language-lua}.
 
 {::type name='File'}
-{::template name='luabox'}
->>> file = audio.File.open('audio.mp3')
->>> file.provider
-{:/template}
-
 ### Class Methods
 {::function name='open' synopsis='file, error = audio.File.open(filename, track=0)'}
 Open an audio file.
