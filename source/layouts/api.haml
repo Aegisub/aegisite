@@ -3,7 +3,7 @@
 - @title = "#{page_name} - Aegisub Manual"
 - helpers do
   - def overview_link_to page
-    - link_to page, "/docs/api/0.1/overview#{page.downcase.gsub(' ', '_')}"
+    - link_to page, "/docs/api/0.1/overview/#{page.downcase.gsub(' ', '_')}/"
 - _, toc = Kramdown::Parser::TocReader.parse(template_data_for_file(current_page.source_file), {})
 - wrap_layout :layout do
   .fluid-row

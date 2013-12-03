@@ -12,7 +12,7 @@ Returns the number of bytes occupied by the UTF-8 encoded code point starting
 at position `index` in `instring`. The character pointed to is assumed to be a
 prefix byte (i.e. the first byte of the code point).
 
-The `index` parameter is optional abd defaults to 1 (one) when left out,
+The `index` parameter is optional and defaults to 1 (one) when left out,
 meaning the width of the first character in `instring` will be returned.
 {:/function}
 
