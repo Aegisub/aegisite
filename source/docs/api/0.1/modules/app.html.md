@@ -115,7 +115,7 @@ end
 #### Optional for Reader
 {::field name='can_read_file' type='function'}
 A function which checks if this reader can read a file.
-It is passed an absolute path to a file and the file encoding to use, and should boolean indicating whether the file is in this reader's format.
+It is passed an absolute path to a file and the file encoding to use, and should return a boolean indicating whether the file is in this reader's format.
 If not supplied, it is assumed that a reader can read any file with one of its extensions.
 This only needs to check if the file is in the format supported by this reader, and not necessarily whether it's a valid file of that format.
 
@@ -137,28 +137,84 @@ A function which writes a file in this writer's format.
 It is passed a file to write, an absolute path to write to, and the file encoding to use.
 
 {::template name='luabox'}
-local io = require 'aegisub.io'
-local re = require 'aegisub.re'
-local subtitles = require 'aegisub.subtitles'
-local unicode = require 'aegisub.unicode'
+local function write_file(writer, subs, path, encoding)
+  local file = io.open(path, encoding, 'w')
+  for _, line in ipairs(subs.dialogue)
+    file:write_line(string.format('%s\t%s\t%s',
+                                  line.start_time,
+                                  line.end_time,
+                                  line.text))
+end
+{:/template}
+{:/field}
 
-local function read_file(reader, path, encoding)
-    local ret = subtitles.File.create_default()
-    local file = io.open(path, encoding)
-    local splitter = re.compile('\t')
+{::field name='write_extensions' type='function'}
+A function which returns a table of file extensions, without leading dots, which this writer can write.
 
-    for line in unicode.lines(file) do
-        local fields = splitter:split(line)
-        if #fields == 3 then
-            file.append(file.Dialogue{start=fields[1],
-                                      end=fields[2],
-                                      text=fields[3]})
-        else
-            error(subtitles.BadFormatError('Invalid line: ' .. line))
-        end
+{::template name='luabox'}
+local function write_extensions(writer)
+  return ['tsv']
+end
+{:/template}
+{:/field}
+
+#### Optional for Writer
+{::field name='can_write_file' type='function'}
+A function which checks if a given path corresponds to this writer.
+It is passed an absolute path to a file should return a boolean indicating whether the file's name suggests it is in this writer's format.
+If not supplied, it simply checks if the file has one of this writer's extensions.
+
+This is used to infer the subtitle format to use based on the extension the user gives the file rather than forcing the user to always pick one.
+You will probably not need to ever override this function.
+
+{::template name='luabox'}
+-- This is the default behavior if you do not supply this function
+local function can_write_file(writer, path, encoding)
+  for _, extension in ipairs(writer:write_extensions()) do
+    if unicode.iends_with(path, '.' .. extension) then
+      return true
     end
+  end
+end
+{:/template}
+{:/field}
 
-    return ret
+{::field name='can_save_file' type='function'}
+A function which reports if a subtitles file can be losslessly saved in this writer's format.
+
+If a user opens a subtitles file in a non-ASS format, Aegisub does not limit the user to the functionality supported by that format.
+When they try to resave that file, Aegisub calls this function to check if the user has used functionality not supported by the format.
+If they have, Aegisub asks them to save the file as ASS and use Export if they want to save the file in the original format.
+
+You only need to implement this function if you support both reading and writing your format.
+By default, this checks for the following:
+
+1. Has the user customized the styles?
+2. Has the user attached any files?
+3. Has the user used any override tags?
+
+If you support a mapping some override tags to your format, you should override this function to instead check for tags other than those.
+
+{::template name='luabox'}
+local function can_save_File(writer, subs)
+  if #subs.attachments then return false end
+
+  for _, style in ipairs(subs.styles) do
+    if not style.is_default() then
+      return false
+    end
+  end
+
+  -- Actor and effect aren't considered very important
+  -- so the default function doesn't bother checking
+  -- for them.
+  for _, line in ipairs(subs.dialogue) do
+    if line.actor:len() ~= 0 or line.effect:len() ~= 0 then
+      return false
+    end
+  end
+
+  return true
 end
 {:/template}
 {:/field}
