@@ -23,6 +23,8 @@
     %p Load autoloaded automation scripts in parallel for slightly faster startup
     %p Improve error reporting and actually include a stack trace
     %p Double the size of the log window
+    %p Make it harder to break the included modules by defining a global function with the same name as a lua built-in
+    %p Trying to log a string which could be converted to a number now works correctly
 
   %dt Autosave
   %dd
@@ -34,7 +36,7 @@
     %p Case insensitive find now works for all languages rather than just things sufficiently English-like (#{ticket 1342})
     %p Add an option to skip override tags (##{ticket 104})
     %p Add an option to skip comments (##{ticket 683})
-    %p Actually obey the "In Selection" option for things other than Replace All
+    %p Actually obey the "In Selection" option for things other than Replace All if multiple lines are selected
     %p Search from the position of the character rather than the position of the last thing found
     %p Remove the "update video" option since it didn't actually do anything
 
@@ -42,6 +44,7 @@
   %dd
     %p Improve reporting when a font is missing a whitespace character used in the script (#{ticket 1553})
     %p Fix some cases where the wrong font was being selected
+    %p Show a more useful error message when the style used by a subtitle doesn't exist
 
   %dt Performance
   %dd
@@ -58,6 +61,8 @@
     %p Use the native placeholder text functionality rather than the custom logic which worked slightly differently
     %p Make it sort of possible but awkward to set hotkeys (#{ticket 1589})
     %p Properly handle dead keys in the edit box (but still not IMEs)
+    %p Fix a bunch of CoreText warnings on 10.9
+    %p Sign the binary to avoid Gatekeeper warnings on 10.8+
 
   %dt Spellchecking
   %dd
@@ -99,7 +104,7 @@
     %p Paste over now replaces the selection if multiple lines are selected, since that's what most people seem to expect it to do
     %p Do a better job of picking a new active line after deleting lines (#{ticket 1595})
     %p Only paint the margin values in the grid if they're non-zero
-    %p Add "Duplicate and shift one line backwards" to the grid context menu
+    %p Replace "Duplicate and Shift by 1 Frame" with "Split lines at video position"
 
   %dt Subtitle Formats
   %dd
@@ -113,11 +118,16 @@
     %p Support loading subtitles from improperly concatenated matroska files
     %p Fix some issues with writing EBU STL files
 
+  %dt Translations
+  %dd
+    %p Add Galician translation by Nuria Andión
+
   %dt Video
   %dd
     %p Drop MPC-HC VSFitler and default to xy-VSFilter now that CCCP has switched
     %p Honor the color matrix tag from the subtitles file when appropriate (#{ticket 1649})
     %p Update the title of the detached video dialog when videos are opened (#{ticket 1607})
+    %p Add the command video/subtitles_provider/cycle, which can be hotkeyed to quickly switch between VSFilter and libass on Windows
 
   %dt Visual Typesetting Tools
   %dd
@@ -126,4 +136,6 @@
     %p Lock aspect ratio in the scale tool when alt is held down
     %p Add box selection to the move mode of the vector clip tool (#{ticket 1404})
     %p Significantly speed up dragging lots of vector clip control points
+    %p Make the X/Y rotation grid much bigger
+    %p Apply the line's shear to the x/y rotation grid
 
