@@ -713,9 +713,22 @@ Perform a gradual, animated transformation from one style to another. The
 _style modifiers_ are other override tags as specified in this reference. Only
 a limited set of the override tags are animateable with `\t`:
 
-| Font | Geometry | Other effects
-| \fs<br>\fsp<br>\c<br>\1c<br>\2c<br>\3c<br>\4c<br>\alpha<br>\1a<br>\2a<br>\3a<br>\4a | \fscx<br>\fscy<br>\frx<br>\fry<br>\frz<br>\fr<br>\fax<br>\fay | \bord<br>\xbord<br>\ybord<br>\shad<br>\xshad<br>\yshad<br>\clip<br>\iclip<br>\be<br>\blur
-{:/}
+|--------|----------|---------------|
+|  Font  | Geometry | Other effects |
+|--------|----------|---------------|
+| \fs    | \fscx    | \bord         |
+| \fsp   | \fscy    | \xbord        |
+| \c     | \frx     | \ybord        |
+| \1c    | \fry     | \shad         |
+| \2c    | \frz     | \xshad        |
+| \3c    | \fr      | \yshad        |
+| \4c    | \fax     | \clip         |
+| \alpha | \fay     | \iclip        |
+| \1a    |          | \be           |
+| \2a    |          | \blur         |
+| \3a    |          |               |
+| \4a    |          |               |
+|--------|----------|---------------|
 
 _Note: For `\clip` and `\iclip`, only the rectangle versions can be animated. The
 vector drawing versions cannot be animated._
