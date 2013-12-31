@@ -14,7 +14,6 @@ nav_group: Home
     %h2#downloads Downloads
     %p The latest stable version is <strong>#{data.version.current}</strong>, released #{data.version.release_date}
     %p See the <a href="changelog/#{data.version.current}/">changelog</a> for a list of changes.
-    %p <a href="https://github.com/Aegisub/Aegisub/releases/tag/v3.1.0-beta">3.1.0 is currently in beta</a>
 
     %table.table.table-bordered.table-condensed
       %tr
@@ -23,45 +22,32 @@ nav_group: Home
         %th Checksum
         %th Size
 
+      - dl_root = 'http://ftp.aegisub.org/pub/archives/releases/'
       %tr
         %td Windows
-        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-32.exe">Full Install</a>
-        %td <a href="ftp://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-32.exe.md5">MD5</a> | <a href="ftp://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-32.exe.sha">SHA</a>
-        %td 21MB
+        %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-32.exe">Full Install</a>
+        %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-32.exe.md5">MD5</a> | <a href="#{dl_root}windows/Aegisub-#{data.version.current}-32.exe.sha">SHA</a>
+        %td 29MB
 
       %tr
         %td Windows
-        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-portable-32.exe">Portable Version</a>
-        %td <a href="ftp://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-portable-32.exe.md5">MD5</a> | <a href="ftp://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}-portable-32.exe.sha">SHA</a>
-        %td 10MB
+        %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-portable-32.exe">Portable Version</a>
+        %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-portable-32.exe.md5">MD5</a> | <a href="#{dl_root}windows/Aegisub-#{data.version.current}-portable-32.exe.sha">SHA</a>
+        %td 15MB
 
       %tr
-        %td OS X 10.6+
-        %td <a href="http://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}.dmg">Full Install</a>
-        %td <a href="ftp://ftp.aegisub.org/pub/releases/Aegisub-#{data.version.current}.dmg.md5">MD5</a> | <a href="ftp://ftp2.aegisub.org/pub/releases/Aegisub-#{data.version.current}.dmg.sha">SHA</a>
-        %td 39MB
-
-      %tr
-        %td Debian/Ubuntu 32-bit
-        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub_#{data.version.current}-1_i386.deb">Full Install</a>
-        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub_#{data.version.current}-1_i386.deb.md5">MD5</a> | <a href="http://ftp2.aegisub.org/pub/releases/aegisub_#{data.version.current}-1_i386.deb.sha">SHA</a>
-        %td 7MB
-
-      %tr
-        %td Debian/Ubuntu 64-bit
-        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub_#{data.version.current}-1_amd64.deb">Full Install</a>
-        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub_#{data.version.current}-1_amd64.deb.md5">MD5</a> | <a href="http://ftp2.aegisub.org/pub/releases/aegisub_#{data.version.current}-1_amd64.deb.sha">SHA</a>
-        %td 7MB
+        %td OS X 10.7+
+        %td <a href="#{dl_root}osx/Aegisub-#{data.version.current}.dmg">Full Install</a>
+        %td <a href="#{dl_root}osx/Aegisub-#{data.version.current}.dmg.md5">MD5</a> | <a href="#{dl_root}osx/Aegisub-#{data.version.current}.dmg.sha">SHA</a>
+        %td 36MB
 
       %tr
         %td All
-        %td <a href="http://ftp.aegisub.org/pub/releases/aegisub-#{data.version.current}.tar.xz">Source</a>
-        %td <a href="ftp://ftp.aegisub.org/pub/releases/aegisub-#{data.version.current}.tar.xz.md5">MD5</a> | <a href="ftp://ftp.aegisub.org/pub/releases/aegisub-#{data.version.current}.tar.xz.sha">SHA</a>
+        %td <a href="#{dl_root}source/aegisub-#{data.version.current}.tar.xz">Source</a>
+        %td <a href="#{dl_root}source/aegisub-#{data.version.current}.tar.xz.md5">MD5</a> | <a href="#{dl_root}source/aegisub-#{data.version.current}.tar.xz.sha">SHA</a>
         %td 4MB
 
-    %p <strong>Note:</strong> Spellchecker dictionaries, x64 builds for Windows, Linux builds, and other versions can be found on the #{link_to 'downloads page', 'downloads/'}.
-    %p <strong>Note:</strong> Unlike previous versions, #{data.version.current} is fairly stable and mostly functional on OS X. However, there are still some broken things and it is still the least-tested platform.
-    %p <strong>Note:</strong> The Debian/Ubuntu should work in any relatively recent Debian-based distribution. However, it is somewhat experimental. Please report any issues with installing it.
+    %p <strong>Note:</strong> Spellchecker dictionaries, x64 builds for Windows, and other versions can be found on the #{link_to 'downloads page', 'downloads/'}.
 
     %h2 Screenshots
     .row-fluid.screenshots
