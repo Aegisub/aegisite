@@ -12,10 +12,10 @@ The character pointed to is assumed to be a prefix byte (i.e. the first byte of 
 The `index` parameter is optional abd defaults to 1 (one) when left out, meaning the width of the first character in `instring` will be returned.
 
 ## unicode.chars  ##
-Synopsis: `for char = unicode.chars(instring) do ... end`{:.language-lua}
+Synopsis: `for char in unicode.chars(instring) do ... end`{:.language-lua}
 
 Returns an iterator function for looping over all code points in the given UTF-8 encoded string.
-For each iteration of the loop, `char` will contain a string representing the next code points in the string (which may be more than one byte long).
+For each iteration of the loop, `char` will contain a string representing the next code point in the string. This string may be more than one byte long.
 
 ## unicode.len  ##
 Synopsis: `length = unicode.len(instring)`{:.language-lua}
