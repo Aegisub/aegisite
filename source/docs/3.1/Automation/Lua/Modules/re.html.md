@@ -115,16 +115,16 @@ and flags arguments.
 {:/}
 
 ### re.split ###
-Synopsis: `chunks = re.split(pattern, str, skip_empty=false, max_splits=0)`{:.language-lua}
+Synopsis: `chunks = re.split(str, pattern, skip_empty=false, max_splits=0)`{:.language-lua}
 
 Split the string at each of the occurrences of `pattern`.
+
+**`@str`** (`string`)
+: String to split.
 
 **`@pattern`** (`string`)
 : Regular expression to split the string on. Capturing groups in the pattern
 are ignored.
-
-**`@str`** (`string`)
-: String to split.
 
 **`@skip_empty`** (`boolean`)
 : Do not include zero-length chunks in the results.
@@ -163,16 +163,16 @@ are ignored.
 {:/}
 
 ### re.gsplit ###
-Synopsis: `iter = re.gsplit(pattern, str, skip_empty=false, max_splits=0)`{:.language-lua}
+Synopsis: `iter = re.gsplit(str, pattern, skip_empty=false, max_splits=0)`{:.language-lua}
 
 Iterator version of re.split.
+
+**`@str`** (`string`)
+: String to split.
 
 **`@pattern`** (`string`)
 : Regular expression to split the string on. Capturing groups in the pattern
 are ignored.
-
-**`@str`** (`string`)
-: String to split.
 
 **`@skip_empty`** (`boolean`)
 : Do not include zero-length chunks in the results.
@@ -211,18 +211,18 @@ a
 {:/}
 
 ### re.find ###
-Synopsis: `matches = re.find(pattern, str)`{:.language-lua}
+Synopsis: `matches = re.find(str, pattern)`{:.language-lua}
 
 Find all non-overlapping substrings of `str` which match `pattern`.
-
-**`@pattern`** (`string`)
-: Pattern to search for. Capturing groups in the pattern are ignored.
 
 **`@str`** (`string`)
 : String to search for the pattern in.
 
+**`@pattern`** (`string`)
+: Pattern to search for. Capturing groups in the pattern are ignored.
+
 **`matches`** (`table` or `nil`)
-: A table of [[Match Tables|re#matchtables]] for all matches, or `nil` if
+: A table of [[Match Tables|re#match-tables]] for all matches, or `nil` if
 there were none.
 
 {::template name="luabox"}
@@ -255,15 +255,15 @@ Doesn't have an a
 {:/}
 
 ### re.gfind ###
-Synopsis: `iter = re.gfind(pattern, str)`{:.language-lua}
+Synopsis: `iter = re.gfind(str, pattern)`{:.language-lua}
 
 Iterate over all non-overlapping substrings of `str` which match `pattern`.
 
-**`@pattern`** (`string`)
-: Pattern to search for. Capturing groups in the pattern are ignored.
-
 **`@str`** (`string`)
 : String to search for the pattern in.
+
+**`@pattern`** (`string`)
+: Pattern to search for. Capturing groups in the pattern are ignored.
 
 **`iter`** (`iterator over string, number, number`)
 : An iterator which produces three values at each step: a matched string, the
@@ -279,22 +279,22 @@ the match in the source string.
 {:/}
 
 ### re.match ###
-Synopsis: `matches = re.match(pattern, str)`{:.language-lua}
+Synopsis: `matches = re.match(str, pattern)`{:.language-lua}
 
 Match a pattern against a string. This differs from `find` in that `find`
 returns all matches and does not capture subgroups, while this returns only a
 single match along with the captured subgroups.
 
-**`@pattern`** (`string`)
-: Pattern to search for.
-
 **`@str`** (`string`)
 : String to search for the pattern in.
 
+**`@pattern`** (`string`)
+: Pattern to search for.
+
 **`matches`** (`table` or `nil`)
 : `nil` if the pattern did not match the string. Otherwise, a table containing
-a [[Match Table|re#matchtables]] for the full match, followed by a [[Match
-Table|re#matchtables]] for each capturing subexpression in the pattern (if
+a [[Match Table|re#match-tables]] for the full match, followed by a [[Match
+Table|re#match-tables]] for each capturing subexpression in the pattern (if
 any).
 
 {::template name="luabox"}
@@ -324,24 +324,24 @@ any).
 {:/}
 
 ### re.gmatch ###
-Synopsis: `iter = re.gmatch(pattern, str)`{:.language-lua}
+Synopsis: `iter = re.gmatch(str, pattern)`{:.language-lua}
 
 Iterator version of [[`re.match`|re#re.match]].
-
-**`@pattern`** (`string`)
-: Pattern to search for.
 
 **`@str`** (`string`)
 : String to search for the pattern in.
 
+**`@pattern`** (`string`)
+: Pattern to search for.
+
 **`matches`** (`iterator over table`)
 : An iterator which returns a table containing a [[Match
-Table|re#matchtables]] for the full match (if it matched), followed by a
-[[Match Table|re#matchtables]] for each capturing subexpression in the pattern
+Table|re#match-tables]] for the full match (if it matched), followed by a
+[[Match Table|re#match-tables]] for each capturing subexpression in the pattern
 (if any).
 
 ### re.sub ###
-Synopsis: `out_str, rep_count = re.sub(pattern, replace, str, max_count=0)`{:.language-lua}
+Synopsis: `out_str, rep_count = re.sub(str, replace, pattern, max_count=0)`{:.language-lua}
 
 Replace each occurrence of `pattern` in `str` with `replace`.
 
