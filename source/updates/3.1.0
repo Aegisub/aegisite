@@ -1,0 +1,1 @@
+stable|7948|all|http://www.aegisub.org/|Aegisub 3.1.1|Updates to Spanish, Simplified Chinese and Hungarian translations#0AFix spellchecker dictionary listing on Vista%0AReenable shift-enter to insert \N in the translation assistant%0ADon't modify the "YCbCr Matrix" header when dummy video is opened%0AFix constant codecvt errors on OS X%0A
