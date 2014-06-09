@@ -1,0 +1,23 @@
+- require 'enumerator'
+
+%table{style: 'width: 100%; margin-bottom: 2em'}
+  - data.commands_31.each_slice(6) do |slice|
+    %tr
+      - slice.each do |locale|
+        %td
+          %a{href: "/docs/3.2/Commands/#{locale[:locale]}/"}= locale[:name]
+
+- if not defined? commands
+  - commands = data.commands_31[0][:commands]
+
+%table.karatable
+  %tr
+    %th Name
+    %th Display
+    %th Help
+  - commands.each do |command|
+    - unless command.name.start_with? 'recent/'
+      %tr
+        %td= command.name
+        %td= command['display']
+        %td= command.help
