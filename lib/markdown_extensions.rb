@@ -20,14 +20,14 @@ module MarkdownExtensions
 
       page, text = link_target_and_text(@src[1], @src[2])
 
+      url = @app.page_url page
       if page.start_with? 'img'
         img = Element.new :img
-        img.attr['src'] = page
+        img.attr['src'] = url
         @tree.children << img
         return
       end
 
-      url = @app.page_url page
       if url
         link = Element.new :a
         link.attr['href'] = url + @src[3]
@@ -113,11 +113,6 @@ module MarkdownExtensions
       toc_tree = generate_toc_tree(@toc, :ol, {})
       result.prepend convert(toc_tree, 0) unless toc_tree.children.empty?
       result
-    end
-
-    def convert_img(el, indent)
-      el.attr['src'].prepend '/docs/3.1/'
-      "<img#{html_attributes(el.attr)} />"
     end
   end
 end

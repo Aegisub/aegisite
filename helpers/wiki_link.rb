@@ -1,8 +1,12 @@
 module WikiLink
   def page_url page
-    path_parts = page.split '/'
     resource = current_resource
     prefix = current_resource.url.match(/\/docs\/[^\/]+\//)[0]
+
+    path_parts = page.split '/'
+    if path_parts[0] == 'img'
+      return prefix + page
+    end
 
     url   = check_node(resource.children, path_parts, prefix)
     url ||= check_node(resource.siblings, path_parts, prefix)
