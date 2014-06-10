@@ -64,6 +64,12 @@ listen to parts of the selection or the audio surrounding it. When you are
 satisfied with the timing, press commit to save the line and move onto the next
 one. Then repeat once for every line; it's as simple as that.
 
+Holding shift will make line boundaries snap to other lines and keyframes (or disable snapping if you've set the option to snap by default).
+Holding ctrl will let you drag multiple overlapping boundaries at once.
+For example, if you have two lines already snapped to each other but want to shift the transition between the lines back a little, you can select both lines in the grid, then hold ctrl and drag the boundary between them to change both the end time of the first line and the start time of the second line.
+
+Holding alt will make you drag all selected lines (both start and end times).
+
 ### Timing protips ###
 If you want to finish timing your movie or episode within any reasonable
 amount of time, there's some things you should note:

@@ -56,5 +56,5 @@ _l_ is the length of the audio (in seconds).
 For example, for a 25 minute audio clip at 48 kHz, you will need (16 * 48000
 * 25 * 60)/8 = 144000000 bytes ~= 137 MB.
 
-Loading and decompressing the audio into the cache will take a few seconds;
-Aegisub will display a progress indicator while loading the audio.
+Loading and decompressing the audio into the cache takes some time.
+A progress bar is shown in the scroll bar of the audio display while audio is loading.
