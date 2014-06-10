@@ -88,10 +88,7 @@ The meaning of each of them is as follows:
     {: .horizontal-narrow }
 
     The four colored boxes show you the current color for each of the four text
-    colors; clicking on them opens the [[color picker|Colour_Picker]]. The spin
-    controls/number boxes below each colored box controls the transparency of
-    that color. The transparency (or "alpha") is given as a number between 0
-    (opaque) and 255 (completely transparent).
+    colors; clicking on them opens the [[color picker|Colour_Picker]].
 
 Margins
 : Controls how close to the borders of the video frame the text will be
