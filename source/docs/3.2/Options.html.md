@@ -14,11 +14,17 @@ program, you can just delete config.json and restart Aegisub.
 [[img/preferences-general.png]]{: class="center"}
 **Auto Check for Updates**
 : If enabled, Aegisub will periodically check whether there is a newer version
-available, and alert you if there is. Requires a working connection to the
-internet.
+available, and alert you if there is.
+Requires a working connection to the internet, naturally.
 
 **Show main toolbar**
 : If disabled, Aegisub's main toolbar is hidden.
+
+**Save UI state in subtitles files**
+: By default, Aegisub saves things like the current scroll position of the subtitles grid and active
+row number in the subtitles file so that it can be automatically restored when you reopen the file.
+However, if you're using source control for your subtitle files you may want to disable this to
+reduce the noise in the changes.
 
 **Toolbar icon size**
 : The size of icons to use in all of the toolbars in Aegisub. Currently the
@@ -41,6 +47,10 @@ more memory Aegisub will use.
 : Maximum number of items to remember for all of the various lists of recently
 used items in Aegisub. The memory impact from increasing these is trivial, but
 larger lists may get unwieldy to use.
+
+### Default Styles
+
+[[img/preferences-default-styles.png]]{: class="center"}
 
 ## Audio ##
 
@@ -193,10 +203,8 @@ configurable default.
 If set to "never", Aegisub will do nothing if the script resolution doesn't
 match the video resolution. If set to "ask", Aegisub will ask you if you want
 to change the script resolution to match the video resolution if they don't
-match. If set to "always", Aegisub will always change the script resolution to
-match the video resolution automatically. "always" is not recommended since it
-just changes script resolution without resampling anything, so it will most
-likely break existing typesetting.
+match. If set to "always", Aegisub will always resample the script to
+match the video resolution automatically.
 
 ## Interface ##
 
@@ -235,8 +243,16 @@ boxes.
 background will turn red to alert you that you have exceeded the maximum line
 length. The maximum length is not enforced in any other way.
 
+**Characters Per Second Warning Threshold**
+**Characters Per Second Error Threshold**
+: The thresholds at which the background CPS column begins to be colored and when the error color is
+reached.
+
 **Ignore whitespace**
 : If enabled, whitespace will not be included in the character count.
+
+**Ignore punctuation**
+: If enabled, punctuation will not be included in the character count.
 
 **Focus grid on click**
 : When enabled, the subtitles grid acts as its own area of the program and it
