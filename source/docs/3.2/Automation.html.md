@@ -24,8 +24,8 @@ Some appear as [[macros in the Automation menu|Running_macros]] and others appea
 Some scripts even appear in both places.
 
 ## Automation for programmers  ##
-Automation supports scripts in [Lua 5.1](http://www.lua.org) and [MoonScript](http://www.moonscript.org).
-Other languages used to be supported, but no one used them.
+Automation uses [LuaJIT 2.0](http://luajit.org/) compiled in [Lua 5.2 mode](http://www.lua.org/manual/5.2/).
+[MoonScript](http://www.moonscript.org) is natively supported (and in fact parts of the Aegisub libraries are written in it).
 
 There are several example scripts included with Aegisub to give you a head start on writing your own ones.
 A word of warning: Unless you are an experienced programmer the _kara-templater.lua_ script is a very bad place to start!

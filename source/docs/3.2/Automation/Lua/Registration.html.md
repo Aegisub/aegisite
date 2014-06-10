@@ -58,7 +58,17 @@ Synopsis: `aegisub.register_macro(name, description, processing_function, valida
 Register a macro feature.
 
 * **name** (string) - The name displayed on the Automation menu. This should
-  be very short, try three words or less, and should be in command tense.
+  be very short, try three words or less, and should be in command
+  tense.
+
+  If forward slashes (/) are included in the name, the name will be
+  split on the slash, with the portion before the slash used as the name
+  of the submenu to place the macro in. For example, if you register a
+  macro named "Foo/Bar" and a macro named "Foo/Baz", the automation menu
+  will have a submenu named "Foo" with "Bar" and "Baz" entries.
+
+  Menus can be nested to whatever depth is supported by the OS, but
+  nesting more than one level deep is unlikely to be a good idea.
 * **description** (string) - The description displayed on the status bar
   when the user hovers the mouse over the menu item. This should be a
   concise description of what the macro does. Try to keep it at most 60

@@ -154,6 +154,7 @@ Synopsis:
 * `subtitles[i] = nil`
 * `subtitles.delete(i)`
 * `subtitles.delete(i1, i2, ...)`
+* `subtitles.delete({i1, i2, ...})`
 * `subtitles.deleterange(first, last)`
 
 Remove one or more from the subtitles file. All lines after the deleted line(s)
@@ -164,9 +165,13 @@ The third syntax supports deleting multiple indexed lines in one call. The
 indexes given must all be correct for the subtitle file's state before any
 lines are deleted.
 
+The fourth syntax is identical to `subtitles.delete(unpack(tbl))`, but
+supports tables which are too large to unpack and will be slightly
+faster if you have the lines in a table anyway.
+
 Trying to delete a nonexistent line is an error, except for with deleterange.
 
-The fourth syntax deletes a range of lines, both indexed lines inclusive.
+The fifth syntax deletes a range of lines, both indexed lines inclusive.
 
 **`i`** (`number`)
 : Index of the line to delete.

@@ -24,10 +24,28 @@ Determine the length in code points of the given UTF-8 encoded string.
 
 Be aware that this function does not run in constant time, but in linear time (O(N)) proportional to the number of Unicode code points in `instring`.
 
-
 ## unicode.codepoint  ##
 Synopsis: `val = unicode.codepoint(instring)`{:.language-lua}
 
 Read the first unicode codepoint from `instring`.
+
+## unicode.to_upper_case
+Synopsis: `upper = unicode.to_upper_case(instring)`{:.language-lua}
+
+Convert a string to upper case.
+This function handles accents, non-latin scripts, and the like.
+
+## unicode.to_lower_case
+Synopsis: `lower = unicode.to_lower_case(instring)`{:.language-lua}
+
+Convert a string to lower case.
+This function handles accents, non-latin scripts, and the like.
+
+## unicode.to_fold_case
+Synopsis: `folded = unicode.to_fold_case(instring)`{:.language-lua}
+
+Convert a string to fold case.
+This is similar to lower case, but is locale-insensitive and gives better results for case-insensitive comparisons.
+
 
 {::template name="automation_navbox" /}

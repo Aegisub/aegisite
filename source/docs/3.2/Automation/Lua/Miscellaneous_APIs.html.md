@@ -159,4 +159,10 @@ to an absolute path.
     a string that is unlikely to be useful in any way. Any other strings are
     passed through untouched.
 
+## aegisub.project_properties
+Synopsis `properties = aegisub.project_properties()`
+
+Get a table containing information about what files the user currently has open.
+The exact contents of this table are deliberately undocumented, and may change without warning.
+
 {::template name="automation_navbox" /}

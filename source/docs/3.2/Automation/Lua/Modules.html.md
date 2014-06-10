@@ -36,4 +36,13 @@ Several helper functions are provided here.
 [[re]]
 : Bindings for ICU regular expressions via [boost.regex](http://www.boost.org/doc/libs/1_53_0/libs/regex/doc/html/index.html), which has full Unicode support and more features than Lua's built in regular expression.
 
+[lpeg](http://www.inf.puc-rio.br/~roberto/lpeg/)
+: PEG library for writing parsers.
+
+[luabins](https://github.com/agladysh/luabins)
+: A serialization library for saving tables to extradata or config files
+
+[lfs](http://keplerproject.github.io/luafilesystem/)
+: Some assorted filesystem functionality not supported by the Lua standard library.
+
 {::template name="automation_navbox" /}
