@@ -44,6 +44,10 @@ data.commands_31.each do |locale|
   proxy "/docs/3.1/Commands/#{locale[:locale]}.html", '/docs/3.1/Commands.html', locals: locale
 end
 
+data.commands_32.each do |locale|
+  proxy "/docs/3.2/Commands/#{locale[:locale]}.html", '/docs/3.2/Commands.html', locals: locale
+end
+
 # middleman-synax doesn't highlight code spans by itself
 Kramdown::Converter::Html.class_eval do
   def convert_codespan(el, indent)
