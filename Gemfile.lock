@@ -69,6 +69,9 @@ GEM
       multi_json (~> 1.0)
       rack-livereload
     middleman-more (3.1.5)
+    middleman-pry (0.0.2)
+      middleman-core (>= 3.1.0)
+      pry (>= 0.9.12)
     middleman-sprockets (3.1.4)
       middleman-core (>= 3.0.14)
       middleman-more (>= 3.0.14)
@@ -119,6 +122,7 @@ DEPENDENCIES
   kramdown
   middleman (~> 3.1.0)
   middleman-livereload
+  middleman-pry
   middleman-syntax!
   pry
   rb-fsevent
