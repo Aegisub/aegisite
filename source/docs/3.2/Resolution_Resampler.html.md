@@ -5,43 +5,38 @@ value. Uses include merging two scripts with different resolutions, converting
 a script for a 4:3 video to its 16:9 equivalent, and converting between 1:1 and
 anamorphic pixel formats.
 
-## Overview  ##
+## Overview
 [[img/resolution_resampler.png]]{: class="center"}
 
-There are two static boxes in the dialog, "margin offset" and "resolution". The
-upper box controls how much you want to increase each margin by. The second box
-indicates the final resolution to which the script is resized.
+There are three main parts to the resolution resampler: the source
+resolution, destination resolution, and what to do if the source and
+destination have different aspect ratios.
 
-It's important to keep in mind that margin offset happens BEFORE the resolution
-is changed, so the values are relative to the current script resolution. If you
-check the "symmetrical" checkbox, then the left and right values will be
-identical, and the same for top and bottom. Positive values indicate an
-increase in margin (that is, subtitles farther from the video border), and
-negative values a decrease.
+By default, the source resolution is set to the current script properties and the destination resolution is set to the video's properties, which is normally what you want.
+Changing the source settings is typically only useful to repair previous incorrect resampling or scripts typeset incorrectly.
 
-After the margins were offset, the resolution is then resampled to the final
-value provided. You can click the "From video" button to copy the actual video
-resolution to the two fields. The "Change aspect ratio" check box indicates
-whether the horizontal size of subtitles should be affected to conform to the
-aspect ratio change. This is useful when converting between anamorphic and 1:1
-formats.
+If you're resampling from SD to HD resolutions, you probably want to convert the YCbCr matrix from TV.601 to TV.709, and vice-versa when converting from HD to SD.
 
-## Examples  ##
+If the new resolution and old resolution don't have the same aspect ratio, you have four options:
 
-### 4:3 SD to 16:9 HD  ###
+1. Stretch the subtitles to the new AR.
+   This is intended for when one or both of the resolutions is anamorphic, and actually represent the same picture.
+1. Automatically add the required margins to center the old video within the new video.
+   Use this if your new video has black borders or shows more of the picture than the old one.
+1. Automatically remove the required margins to center the old video within the new video.
+   Use this if the source video has black borders and your new video does not.
+1. Manually set the margins to offset all lines by.
+   Note that margins are added *before* rescaling, not after.
+
+## Examples
+
+### 4:3 SD to 16:9 HD
 For example, if you have subtitles typeset to a 640x480 video, and want to
 apply the same subtitles to a 1280x720 video (which is widescreen, therefore
-showing more video on the left and right margins), you would set margin left to
-107, while leaving top at 0 and "symmetrical" checked. Then you would set final
-resolution to 1280x720 (leave "Change aspect ratio" unchecked), and hit OK.
+either showing more video on the left and right margins or with black
+borders), you'd set the resampler to the settings shown in the
+screenshot above.
 
-[[img/Resample_diagram.png]]{: class="center"}
-
-The above 107 value for the left/right margins was obtained with the following formula:
-
-    (OrigH * FinalW/FinalH - OrigW)/2
-
-Which results in:
-
-    (480 * 1280/720 - 640)/2 = 107
-
+### Anamorphic 720x480 to 640x480
+For this, you'd set source resolution to 720x480, destination resolution
+to 640x480, and select the "Stretch" aspect ratio handling
