@@ -33,10 +33,11 @@
     %p Improve HiDPI support
     %p Add support for IMEs in the main edit box (#{ticket 1247}, #{ticket 1672}, #{ticket 1695})
     %p Fix crash when pasting emoji into the edit box
+    %p Use the OS spellchecker service rather than Hunspell.
 
   %dt Performance
   %dd
-    %p Make fontconfig indexing about twice as fast
+    %p Make fontconfig indexing about four times as fast
     %p Significantly speed up passing subtitles to the subtitle renderer (as much as 10x faster), making the video display less laggy with large files
     %p Speed up indexing Matroska files
     %p Significantly speed up reading subtitles from Matroska files
@@ -87,4 +88,5 @@
   %dd
     %p Several of the tools have been somewhat restyled to make them less obstructive
     %p Hide drag handles for commented lines
+    %p Don't automatically select all control handle in the vector clip tool when switching to it, as there's now box selection of handles
 
