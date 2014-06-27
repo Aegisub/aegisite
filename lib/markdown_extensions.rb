@@ -40,7 +40,7 @@ module MarkdownExtensions
 
     def link_target_and_text(a, b)
       if b.empty?
-        return a, a.gsub('_', ' ')
+        return a.gsub(' ', '_'), a.gsub('_', ' ')
       else
         return b, a
       end

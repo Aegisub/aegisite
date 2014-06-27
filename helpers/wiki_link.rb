@@ -17,7 +17,10 @@ module WikiLink
   end
 
   def wiki_link page, text
-    text = page.gsub('_', ' ') if text.blank?
+    if text.blank?
+      text = page.gsub('_', ' ')
+      page = page.gsub(' ', '_')
+    end
     link_to(text, page_url(page))
   end
 
