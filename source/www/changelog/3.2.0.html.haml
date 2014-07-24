@@ -16,6 +16,8 @@
     %p Add unicode case conversion functions to the automation module (unicode.to_upper_case, unicode.to_lower_case, unicode.to_fold_case)
     %p Only process selected lines in the Select Overlaps macro if more than one line is selected (#{ticket 1751})
     %p Add aegisub.project_properties() to get a table with stuff that used to be in the script info section of the file (but unlike the old script info entries, it's actually always up to date) (#{ticket 1747})
+    %p Fix loading automation scripts when Aegisub is installed to a path with non-ascii characters in it (#{ticket 1760})
+    %p Lua functions which take a path have been patched to support UTF-8 on Windows
 
   %dt Fonts Collector
   %dd
@@ -68,6 +70,7 @@
     %p Add Comment to the files which can be pasted over
     %p Insert \N on shift-enter in the edit box
     %p Fix incorrect cursor positions when using non-BMP unicode characters
+    %p The edit box's background color is now customizable
 
   %dt Subtitle Formats
   %dd
@@ -89,4 +92,5 @@
     %p Several of the tools have been somewhat restyled to make them less obstructive
     %p Hide drag handles for commented lines
     %p Don't automatically select all control handle in the vector clip tool when switching to it, as there's now box selection of handles
+    %p Update all selected lines when the origin is dragged in the rotate tools
 
