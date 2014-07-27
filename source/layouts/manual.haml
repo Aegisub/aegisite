@@ -1,6 +1,7 @@
 - @nav_group = 'Manual'
 - page_name = current_page.url.gsub(/^.*\/([^\/]+)\/$/, '\1').gsub('_', ' ')
 - @title = "#{page_name} - Aegisub Manual"
+- @canonical = current_page.url.gsub(/3.\d/, '3.2')
 - wrap_layout :layout do
   .fluid-row
     .span3

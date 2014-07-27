@@ -6,6 +6,8 @@
     %meta{name: 'Keywords', content: 'Aegisub, Subtitles, VSFilter, Medusa, Sabbu, '}
     %meta{name: 'Author', content: 'http://www.aegisub.org/'}
     %meta{name: 'Copyright', content: 'Copyright (C) 2012 Aegisub Project.'}
+    - if @canonical
+      %link{rel: 'canonical', href: @canonical}
     = favicon_tag 'favicon.ico'
     = stylesheet_link_tag 'style'
   %body
