@@ -193,10 +193,6 @@
       display: 'Waveform Display'
       help: 'Display audio as a linear amplitude graph'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -1411,10 +1407,6 @@
     - name: audio/view/waveform
       display: 'عرض موجي'
       help: 'يعرض الصوت كرسم بياني خطي المدى'
-
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
 
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
@@ -2631,10 +2623,6 @@
       display: 'Осциллограма'
       help: 'Показва звука като линеен график на амплитудата'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -3849,10 +3837,6 @@
     - name: audio/view/waveform
       display: 'Waveform Display'
       help: 'Display audio as a linear amplitude graph'
-
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
 
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
@@ -5069,10 +5053,6 @@
       display: 'Zobrazení zvukové vlny'
       help: 'Zobrazit audio jako amplitudový graf'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -6287,10 +6267,6 @@
     - name: audio/view/waveform
       display: 'Waveform Display'
       help: 'Display audio as a linear amplitude graph'
-
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
 
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
@@ -7507,10 +7483,6 @@
       display: 'Wellenform anzeigen'
       help: 'Zeige Audio als linearen Amplitudengrafen an'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -8540,7 +8512,7 @@
 
     - name: am/meta
       display: 'Αυτοματοποίηση'
-      help: 'Open automation manager. Ctrl: Rescan autoload folder. Ctrl+Shift: Rescan autoload folder and reload all automation scripts'
+      help: 'Άνοιγμα της Διαχείρισης Αυτοματοποίησης. Ctrl: Επανέλεγχος του φακέλου αυτόματης φόρτωσης. Ctrl+Shift: Επανέλεγχος του φακέλου αυτόματης φόρτωσης και επαναφόρτωση όλων των script αυτοματοποίησης'
 
     - name: am/reload
       display: 'Επαναφόρτωση των script Αυτοματοποίησης'
@@ -8556,19 +8528,19 @@
 
     - name: app/display/audio_subs
       display: 'Προβολή Ήχου+Υποτίτλων'
-      help: 'Display audio and the subtitles grid only'
+      help: 'Εμφάνιση μόνο του ήχου και των υποτίτλων'
 
     - name: app/display/full
       display: 'Πλήρης Προβολή'
-      help: 'Display audio, video and then subtitles grid'
+      help: 'Εμφάνιση ήχου, βίντεο και υπότιτλων'
 
     - name: app/display/subs
       display: 'Προβολή Μόνο Υποτίτλων'
-      help: 'Display the subtitles grid only'
+      help: 'Εμφάνιση μόνο των υπότιτλων'
 
     - name: app/display/video_subs
       display: 'Προβολή Βίντεο+Υποτίτλων'
-      help: 'Display video and the subtitles grid only'
+      help: 'Εμφάνιση μόνο του βίντεο και των υπότιτλων'
 
     - name: app/exit
       display: 'Έξοδος'
@@ -8592,7 +8564,7 @@
 
     - name: app/toggle/global_hotkeys
       display: 'Εναλλαγή παράκαμψης των γενικών πλήκτρων συντόμευσης'
-      help: 'Toggle global hotkey overrides (Medusa Mode)'
+      help: 'Εναλλαγή παράκαμψης των γενικών πλήκτρων συντόμευσης (Λειτουργία Medusa)'
 
     - name: app/toggle/toolbar
       display: 'Απόκρυψη της Γραμμής Εργαλείων'
@@ -8604,7 +8576,7 @@
 
     - name: audio/close
       display: 'Κλείσιμο Ήχου'
-      help: 'Close the currently open audio file'
+      help: 'Κλείσιμο του ανοιχτού αρχείου ήχου'
 
     - name: audio/commit
       display: 'Υποβολή'
@@ -8624,7 +8596,7 @@
 
     - name: audio/go_to
       display: 'Μετατόπιση στην επιλογή'
-      help: 'Scroll the audio display to center on the current audio selection'
+      help: 'Κύλιση της προβολής ήχου στο κέντρο της τρέχουσας επιλογής ήχου'
 
     - name: audio/karaoke
       display: 'Εναλλαγή λειτουργίας καραόκε'
@@ -8632,7 +8604,7 @@
 
     - name: audio/open
       display: 'Άνοιγμα Αρχείου Ήχου'
-      help: 'Open an audio file'
+      help: 'Άνοιγμα ενός αρχείου ήχου'
 
     - name: audio/open/blank
       display: 'Άνοιγμα κενού ήχου 2μιση ωρών'
@@ -8644,19 +8616,19 @@
 
     - name: audio/open/video
       display: 'Άνοιγμα Ήχου από Βίντεο'
-      help: 'Open the audio from the current video file'
+      help: 'Άνοιγμα του ήχου από το τρέχον αρχείο βίντεο'
 
     - name: audio/opt/autocommit
       display: 'Αυτόματη υποβολή όλων των αλλαγών'
       help: 'Αυτόματη υποβολή όλων των αλλαγών'
 
     - name: audio/opt/autonext
-      display: 'Auto go to next line on commit'
-      help: 'Automatically go to next line on commit'
+      display: 'Αυτόματη μετάβαση στην επόμενη γραμμή μετά την υποβολή'
+      help: 'Αυτόματη μετάβαση στην επόμενη γραμμή μετά την υποβολή'
 
     - name: audio/opt/autoscroll
-      display: 'Auto scroll audio display to selected line'
-      help: 'Auto scroll audio display to selected line'
+      display: 'Αυτόματη κύλιση της προβολής ήχου στην επιλεγμένη γραμμή'
+      help: 'Αυτόματη κύλιση της προβολής ήχου στην επιλεγμένη γραμμή'
 
     - name: audio/opt/spectrum
       display: 'Λειτουργία ανάλυσης φάσματος'
@@ -8672,7 +8644,7 @@
 
     - name: audio/play/line
       display: 'Αναπαραγωγή τρέχουσας γραμμής'
-      help: 'Play the audio for the current line'
+      help: 'Αναπαραγωγή του ήχου για την τρέχουσα γραμμή'
 
     - name: audio/play/selection
       display: 'Αναπαραγωγή επιλεγμένου ήχου'
@@ -8700,11 +8672,11 @@
 
     - name: audio/play/toggle
       display: 'Αναπαραγωγή ή διακοπή επιλεγμένου ήχου'
-      help: "Play selection, or stop playback if it's already playing"
+      help: 'Αναπαραγωγή της επιλογής, ή διακοπή της αναπαραγωγής'
 
     - name: audio/save/clip
       display: 'Δημιουργία ήχου'
-      help: 'Save an audio clip of the selected line'
+      help: 'Αποθήκευση του ήχου της επιλεγμένης γραμμής'
 
     - name: audio/scroll/left
       display: 'Κύλιση προς τα αριστερά'
@@ -8716,7 +8688,7 @@
 
     - name: audio/stop
       display: 'Διακοπή αναπαραγωγής'
-      help: 'Stop audio and video playback'
+      help: 'Διακοπή αναπαραγωγής βίντεο και ήχου'
 
     - name: audio/view/spectrum
       display: 'Προβολή Φάσματος'
@@ -8725,10 +8697,6 @@
     - name: audio/view/waveform
       display: 'Προβολή Κυμματομορφής'
       help: 'Εμφάνιση του ήχου ως γραμμικό γράφημα έντασης'
-
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
 
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
@@ -8760,27 +8728,27 @@
 
     - name: edit/clear
       display: 'Εκκαθάριση'
-      help: "Clear the current line's text"
+      help: 'Καθάρισμα του κειμένου της τρέχουσας γραμμής'
 
     - name: edit/clear/text
-      display: 'Clear Text'
-      help: "Clear the current line's text, leaving override tags"
+      display: 'Καθάρισμα Κειμένου'
+      help: 'Καθαρισμός του κειμένου της τρέχουσας γραμμής, αφήνοντας τις ετικέτες παράκαμψης'
 
     - name: edit/color/outline
-      display: 'Outline Color'
-      help: 'Set the outline color (\3c) at the cursor position'
+      display: 'Χρώμα Περιγράμματος'
+      help: 'Ορισμός του χρώματος του περιγράμματος (\3c) στη θέση του κέρσορα'
 
     - name: edit/color/primary
-      display: 'Primary Color'
-      help: 'Set the primary fill color (\c) at the cursor position'
+      display: 'Βασικό Χρώμα'
+      help: 'Ορισμός του βασικού χρώματος (\c) στη θέση του κέρσορα'
 
     - name: edit/color/secondary
-      display: 'Secondary Color'
-      help: 'Set the secondary (karaoke) fill color (\2c) at the cursor position'
+      display: 'Συμπληρωματικό Χρώμα'
+      help: 'Ορισμός του συμπληρωματικού (καραόκε) χρώματος (\2c) στη θέση του κέρσορα'
 
     - name: edit/color/shadow
-      display: 'Shadow Color'
-      help: 'Set the shadow color (\4c) at the cursor position'
+      display: 'Χρώμα Σκιάς'
+      help: 'Ορισμός του χρώματος της σκιάς (\4c) στη θέση του κέρσορα'
 
     - name: edit/find_replace
       display: 'Εύρεση κι Αντικατάσταση'
@@ -8788,15 +8756,15 @@
 
     - name: edit/font
       display: 'Όνομα γραμματοσειράς'
-      help: 'Select a font face and size'
+      help: 'Επιλoγή ονόματος και μεγέθους γραμματοσειράς'
 
     - name: edit/insert_original
       display: 'Εισαγωγή Αρχικής'
-      help: 'Insert the original line text at the cursor'
+      help: 'Εισαγωγή του αρχικού κειμένου της γραμμής στον κέρσορα'
 
     - name: edit/line/copy
       display: 'Αντιγραφή Γραμμών'
-      help: 'Copy subtitles to the clipboard'
+      help: 'Αντιγραφή υπότιτλων στη μνήμη προχείρου'
 
     - name: edit/line/cut
       display: 'Αποκοπή Γραμμών'
@@ -8812,15 +8780,15 @@
 
     - name: edit/line/join/as_karaoke
       display: 'Ως Καραόκε'
-      help: 'Join selected lines in a single one, as karaoke'
+      help: 'Ένωση των επιλεγμένων γραμμών σε μία, ως καραόκε'
 
     - name: edit/line/join/concatenate
       display: 'Συνένωση'
-      help: 'Join selected lines in a single one, concatenating text together'
+      help: 'Ένωση των επιλεγμένων γραμμών σε μία, συνενώνοντας τα κείμενα'
 
     - name: edit/line/join/keep_first
       display: 'Διατήρηση του Πρώτου'
-      help: 'Join selected lines in a single one, keeping text of first and discarding remaining'
+      help: 'Ένωση των επιλεγμένων γραμμών σε μία, διατηρώντας το κείμενο της πρώτης και απορρίπτοντας το υπόλοιπο'
 
     - name: edit/line/paste
       display: 'Επικόλληση Γραμμών'
@@ -8832,59 +8800,59 @@
 
     - name: edit/line/recombine
       display: 'Ανασυνδυασμός Γραμμών'
-      help: 'Recombine subtitles which have been split and merged'
+      help: 'Ανασυνδυασμός υπότιτλων που έχουν διασπαστεί και συγχωνευθεί'
 
     - name: edit/line/split/after
-      display: 'Split lines after current frame'
-      help: 'Split the current line into a line which ends on the current frame and a line which starts on the next frame'
+      display: 'Διάσπαση γραμμών μετά το τρέχον frame του βίντεο'
+      help: 'Διάσπαση της τρέχουσας γραμμής σε μία γραμμή που τελειώνει στο τρέχον frame και σε μία γραμμή που αρχίζει στο επόμενο frame'
 
     - name: edit/line/split/before
-      display: 'Split lines before current frame'
-      help: 'Split the current line into a line which ends on the previous frame and a line which starts on the current frame'
+      display: 'Διάσπαση γραμμών πριν το τρέχον frame του βίντεο'
+      help: 'Διάσπαση της τρέχουσας γραμμής σε μία γραμμή που τελειώνει στο προηγούμενο frame και σε μία γραμμή που αρχίζει στο τρέχον frame'
 
     - name: edit/line/split/by_karaoke
       display: 'Διάσπαση Γραμμών (μέσω καραόκε)'
-      help: 'Use karaoke timing to split line into multiple smaller lines'
+      help: 'Χρήση του χρονισμού καραόκε για τη διάσπαση της γραμμής σε πολλές μικρότερες γραμμές'
 
     - name: edit/line/split/estimate
       display: 'Διάσπαση στο σημείο του κέρσορα (προσέγγιση χρόνων)'
-      help: "Split the current line at the cursor, dividing the original line's duration between the new ones"
+      help: 'Διάσπαση της τρέχουσας γραμμής στον κέρσορα, μοιράζοντας τη διάρκεια της αρχικής γραμμής στις καινούριες'
 
     - name: edit/line/split/preserve
       display: 'Διάσπαση στο σημείο του κέρσορα (διατήρηση χρόνων)'
-      help: "Split the current line at the cursor, setting both lines to the original line's times"
+      help: 'Διάσπαση της τρέχουσας γραμμής στον κέρσορα, ορίζοντας στις καινούριες γραμμές τη διάρκεια της αρχικής γραμμής'
 
     - name: edit/line/split/video
-      display: 'Split at cursor (at video frame)'
-      help: "Split the current line at the cursor, dividing the line's duration at the current video frame"
+      display: 'Διάσπαση στον κέρσορα (στο frame του βίντεο)'
+      help: 'Διάσπαση της τρέχουσας γραμμής στον κέρσορα, μοιράζοντας τη διάρκεια της γραμμής στο τρέχον frame του βίντεο'
 
     - name: edit/redo
       display: 'Τίποτα προς επαναφορά'
-      help: 'Redo last undone action'
+      help: 'Επαναφορά της τελευταίας ενέργειας που αναιρέθηκε'
 
     - name: edit/revert
-      display: 'Revert'
-      help: 'Revert the active line to its initial state (shown in the upper editor)'
+      display: 'Επαναφορά'
+      help: 'Επαναφορά της τρέχουσας γραμμής στην αρχική της κατάσταση (όπως φαίνεται στον επάνω επεξεργαστή κειμένου)'
 
     - name: edit/style/bold
-      display: 'Toggle Bold'
-      help: 'Toggle bold (\b) for the current selection or at the current cursor position'
+      display: 'Εναλλαγή Έντονης Γραφής'
+      help: 'Εναλλαγή της έντονης γραφής (\b) για την τρέχουσα επιλογή ή στην τρέχουσα θέση του κέρσορα'
 
     - name: edit/style/italic
-      display: 'Toggle Italics'
-      help: 'Toggle italics (\i) for the current selection or at the current cursor position'
+      display: 'Εναλλαγή Πλάγιας Γραφής'
+      help: 'Εναλλαγή της πλάγιας γραφής (\i) για την τρέχουσα επιλογή ή στην τρέχουσα θέση του κέρσορα'
 
     - name: edit/style/strikeout
-      display: 'Toggle Strikeout'
-      help: 'Toggle strikeout (\s) for the current selection or at the current cursor position'
+      display: 'Εναλλαγή Διακριτής Διαγραφής'
+      help: 'Εναλλαγή της διακριτής διαγραφής (\s) για την τρέχουσα επιλογή ή στην τρέχουσα θέση του κέρσορα'
 
     - name: edit/style/underline
-      display: 'Toggle Underline'
-      help: 'Toggle underline (\u) for the current selection or at the current cursor position'
+      display: 'Εναλλαγή Υπογράμμισης'
+      help: 'Εναλλαγή της υπογράμμισης (\u) για την τρέχουσα επιλογή ή στην τρέχουσα θέση του κέρσορα'
 
     - name: edit/undo
       display: 'Τίποτα προς αναίρεση'
-      help: 'Undo last action'
+      help: 'Αναίρεση της τελευταίας ενέργειας'
 
     - name: grid/line/next
       display: 'Επόμενη Γραμμή'
@@ -8956,7 +8924,7 @@
 
     - name: grid/swap
       display: 'Ανταλλαγή Γραμμών'
-      help: 'Swap the two selected lines'
+      help: 'Ανταλλαγή των δύο επιλεγμένων γραμμών'
 
     - name: grid/tag/cycle_hiding
       display: 'Κυκλική Eναλλαγή Λειτουργίας Απόκρυψης των Ετικετών'
@@ -9000,15 +8968,15 @@
 
     - name: keyframe/close
       display: 'Κλείσιμο Keyframes'
-      help: 'Discard the currently loaded keyframes and use those from the video, if any'
+      help: 'Απόρριψη των τρεχόντων keyframe και χρήση αυτών του βίντεο, εάν υπάρχουν'
 
     - name: keyframe/open
       display: 'Άνοιγμα Keyframes'
-      help: 'Open a keyframe list file'
+      help: 'Άνοιγμα ενός αρχείου με λίστα keyframe'
 
     - name: keyframe/save
       display: 'Αποθήκευση Keyframes'
-      help: 'Save the current list of keyframes to a file'
+      help: 'Αποθήκευση του τρέχοντος αρχείου με λίστα keyframe'
 
     - name: recent/audio
       display: 'Πρόσφατα'
@@ -9352,31 +9320,31 @@
 
     - name: subtitle/attachment
       display: 'Συνημμένα'
-      help: 'Open the attachment manager dialog'
+      help: 'Άνοιγμα της διαχείρισης συνημμένων'
 
     - name: subtitle/find
       display: 'Αναζήτηση'
-      help: 'Search for text in the subtitles'
+      help: 'Αναζήτηση για κείμενο στους υπότιτλους'
 
     - name: subtitle/find/next
       display: 'Αναζήτηση Επόμενου'
-      help: 'Find next match of last search'
+      help: 'Αναζήτηση της επόμενης ταύτισης της τελευταίας αναζήτησης'
 
     - name: subtitle/insert/after
       display: 'Μετά την Τρέχουσα'
-      help: 'Insert a new line after the current one'
+      help: 'Εισαγωγής καινούριας γραμμής μετά την τρέχουσα'
 
     - name: subtitle/insert/after/videotime
       display: 'Μετά την Τρέχουσα, στον Χρόνο του Βίντεο'
-      help: 'Insert a new line after the current one, starting at video time'
+      help: 'Εισαγωγής καινούριας γραμμής μετά την τρέχουσα, ξεκινώντας στον χρόνο του βίντεο'
 
     - name: subtitle/insert/before
       display: 'Πριν την Τρέχουσα'
-      help: 'Insert a new line before the current one'
+      help: 'Εισαγωγής καινούριας γραμμής πριν την τρέχουσα'
 
     - name: subtitle/insert/before/videotime
       display: 'Πριν την Τρέχουσα, στον Χρόνο του Βίντεο'
-      help: 'Insert a new line before the current one, starting at video time'
+      help: 'Εισαγωγής καινούριας γραμμής πριν την τρέχουσα, με έναρξη τον χρόνο του βίντεο'
 
     - name: subtitle/new
       display: 'Νέοι Υπότιτλοι'
@@ -9384,19 +9352,19 @@
 
     - name: subtitle/open
       display: 'Άνοιγμα Υπότιτλων'
-      help: 'Open a subtitles file'
+      help: 'Άνοιγμα ενός αρχείου υπότιτλων'
 
     - name: subtitle/open/autosave
-      display: 'Open Autosaved Subtitles'
-      help: 'Open a previous version of a file which was autosaved by Aegisub'
+      display: 'Άνοιγμα Υπότιτλων Αυτόματα Αποθηκευμένων'
+      help: 'Άνοιγμα μιας προηγούμενης έκδοσης του αρχείου που αποθηκεύτηκε αυτόματα από το Aegisub'
 
     - name: subtitle/open/charset
       display: 'Άνοιγμα Υπότιτλων με Σετ Χαρακτήρων'
-      help: 'Open a subtitles file with a specific file encoding'
+      help: 'Άνοιγμα ενός αρχείου υπότιτλων με συγκεκριμένο σετ χαρακτήρων'
 
     - name: subtitle/open/video
       display: 'Άνοιγμα Υπότιτλων από Βίντεο'
-      help: 'Open the subtitles from the current video file'
+      help: 'Άνοιγμα υπότιτλων από το τρέχον αρχείο βίντεο'
 
     - name: subtitle/properties
       display: 'Ιδιότητες'
@@ -9404,19 +9372,19 @@
 
     - name: subtitle/save
       display: 'Αποθήκευση Υπότιτλων'
-      help: 'Save the current subtitles'
+      help: 'Αποθήκευση του τρέχοντος αρχείου υπότιτλων'
 
     - name: subtitle/save/as
       display: 'Αποθήκευση Υπότιτλων ως...'
-      help: 'Save subtitles with another name'
+      help: 'Αποθήκευση των υπότιτλων με άλλο όνομα'
 
     - name: subtitle/select/all
       display: 'Επιλογή Όλων'
-      help: 'Select all dialogue lines'
+      help: 'Επιλογή όλων των γραμμών διαλόγων'
 
     - name: subtitle/select/visible
       display: 'Επιλογή ορατών'
-      help: 'Select all dialogue lines that are visible on the current video frame'
+      help: 'Επιλογή όλων των γραμμών που είναι ορατές στο τρέχον frame του βίντεο'
 
     - name: subtitle/spellcheck
       display: 'Ορθογραφικός Έλεγχος'
@@ -9424,11 +9392,11 @@
 
     - name: time/continuous/end
       display: 'Αλλαγή Λήξης'
-      help: "Change end times of lines to the next line's start time"
+      help: 'Αλλαγή των χρόνων λήξης των γραμμών στους χρόνους έναρξης των επόμενων'
 
     - name: time/continuous/start
       display: 'Αλλαγή Έναρξης'
-      help: "Change start times of lines to the previous line's end time"
+      help: 'Αλλαγή των χρόνων έναρξης των γραμμών στους χρόνους λήξης των προηγούμενων'
 
     - name: time/frame/current
       display: 'Μετατόπιση στο Τρέχον Frame'
@@ -9436,15 +9404,15 @@
 
     - name: time/lead/both
       display: 'Προσθήκη lead in και lead out'
-      help: 'Add both lead in and out to the selected lines'
+      help: 'Προσθήκη χρόνων lead in και lead out στις επιλεγμένες γραμμές'
 
     - name: time/lead/in
       display: 'Προσθήκη lead in'
-      help: 'Add the lead in time to the selected lines'
+      help: 'Προσθήκη χρόνου lead in στις επιλεγμένες γραμμές'
 
     - name: time/lead/out
       display: 'Προσθήκη lead out'
-      help: 'Add the lead out time to the selected lines'
+      help: 'Προσθήκη χρόνου lead out στις επιλεγμένες γραμμές'
 
     - name: time/length/decrease
       display: 'Μείωση διάρκειας'
@@ -9496,19 +9464,19 @@
 
     - name: timecode/close
       display: 'Κλείσιμο Αρχείου Timecodes'
-      help: 'Close the currently open timecodes file'
+      help: 'Κλείσιμο του ανοιχτού αρχείου timecode'
 
     - name: timecode/open
       display: 'Άνοιγμα Αρχείου Timecodes'
-      help: 'Open a VFR timecodes v1 or v2 file'
+      help: 'Άνοιγμα ενός αρχείου με VFR timecode έκδοσης 1 ή 2'
 
     - name: timecode/save
       display: 'Αποθήκευση Αρχείου Timecodes'
-      help: 'Save a VFR timecodes v2 file'
+      help: 'Αποθήκευση ενός αρχείου με VFR Timecode έκδοσης 2'
 
     - name: tool/export
       display: 'Εξαγωγή Υπότιτλων...'
-      help: 'Save a copy of subtitles in a different format or with processing applied to it'
+      help: 'Αποθήκευση ενός αντίγραφου των υπότιτλων σε διαφορετική μορφή ή μετά από επεξεργασία'
 
     - name: tool/font_collector
       display: 'Συλλογή Γραμματοσειρών'
@@ -9516,11 +9484,11 @@
 
     - name: tool/line/select
       display: 'Επιλογή γραμμών'
-      help: 'Select lines based on defined criteria'
+      help: 'Επιλογή γραμμών σύμφωνα με κριτήρια'
 
     - name: tool/resampleres
       display: 'Μετατροπή Ανάλυσης'
-      help: 'Resample subtitles to maintain their current appearance at a different script resolution'
+      help: 'Μετατροπή των υπότιτλων ώστε να διατηρήσουν την τρέχουσα εμφάνισή τους σε διαφορετική ανάλυση script'
 
     - name: tool/style/assistant
       display: 'Βοηθός Στυλ'
@@ -9528,7 +9496,7 @@
 
     - name: tool/style/manager
       display: 'Διαχείριση Στυλ'
-      help: 'Open the styles manager'
+      help: 'Άνοιγμα διαχείρισης στυλ'
 
     - name: tool/styling_assistant/commit
       display: 'Αποδοχή αλλαγών'
@@ -9540,11 +9508,11 @@
 
     - name: tool/time/kanji
       display: 'Χρονιστής Kanji'
-      help: 'Open the Kanji timer copier'
+      help: 'Άνοιγμα Χρονιστή Kanji'
 
     - name: tool/time/postprocess
       display: 'Επεξεργαστής Χρονισμών'
-      help: 'Post-process the subtitle timing to add lead-ins and lead-outs, snap timing to scene changes, etc.'
+      help: 'Επεξεργασία των χρονισμών για την προσθήκη lead-in, lead-out, χρονισμό σκηνών, κτλ.'
 
     - name: tool/translation_assistant
       display: 'Βοηθός Μετάφρασης'
@@ -9572,27 +9540,27 @@
 
     - name: video/aspect/cinematic
       display: 'Σινεματίκ (2.35)'
-      help: 'Force video to 2.35 aspect ratio'
+      help: 'Επιβάλλει στο βίντεο αναλογία εικόνας 2.35'
 
     - name: video/aspect/custom
       display: 'Προσαρμογή'
-      help: 'Force video to a custom aspect ratio'
+      help: 'Επιβολή προσαρμοσμένης αναλογίας εικόνας'
 
     - name: video/aspect/default
       display: 'Προκαθορισμένο'
-      help: "Use video's original aspect ratio"
+      help: 'Διατήρηση αρχικής αναλογίας εικόνας στο βίντεο'
 
     - name: video/aspect/full
       display: 'Πλήρης Οθόνη (4:3)'
-      help: 'Force video to 4:3 aspect ratio'
+      help: 'Επιβάλλει στο βίντεο αναλογία εικόνας 4:3'
 
     - name: video/aspect/wide
       display: 'Ευρεία Οθόνη (16:9)'
-      help: 'Force video to 16:9 aspect ratio'
+      help: 'Επιβάλλει στο βίντεο αναλογία εικόνας 16:9'
 
     - name: video/close
       display: 'Κλείσιμο Βίντεο'
-      help: 'Close the currently open video file'
+      help: 'Κλείσιμο του ανοιχτού αρχείου βίντεο'
 
     - name: video/copy_coordinates
       display: 'Αντιγραφή συντεταγμένων στη μνήμη προχείρου'
@@ -9600,15 +9568,15 @@
 
     - name: video/detach
       display: 'Απόσπαση του Βίντεο'
-      help: 'Detach the video display from the main window, displaying it in a separate Window'
+      help: 'Απόσπαση της προβολής βίντεο από το κεντρικό παράθυρο, και εμφάνισή του σε ξεχωριστό Παράθυρο'
 
     - name: video/details
       display: 'Εμφάνιση Λεπτομερειών Βίντεο'
-      help: 'Show video details'
+      help: 'Εμφάνιση των λεπτομερειών του βίντεο'
 
     - name: video/focus_seek
       display: 'Εναλλαγή της εστίασης του ρυθμιστή βίντεο'
-      help: 'Toggle focus between the video slider and the previous thing to have focus'
+      help: 'Εναλλαγή της εστίασης ανάμεσα στον ρυθμιστή του βίντεο και το προηγούμενο κομμάτι που είχε εστίαση'
 
     - name: video/frame/copy
       display: 'Αντιγραφή εικόνας στη μνήμη προχείρου'
@@ -9624,7 +9592,7 @@
 
     - name: video/frame/next/boundary
       display: 'Επόμενο Όριο'
-      help: 'Seek to the next beginning or end of a subtitle'
+      help: 'Μετακίνηση στην επόμενη αρχή ή τέλος υπότιτλου'
 
     - name: video/frame/next/keyframe
       display: 'Επόμενο Keyframe'
@@ -9640,7 +9608,7 @@
 
     - name: video/frame/prev/boundary
       display: 'Προηγούμενο Όριο'
-      help: 'Seek to the previous beginning or end of a subtitle'
+      help: 'Μετακίνηση στην προηγούμενη αρχή ή τέλος υπότιτλου'
 
     - name: video/frame/prev/keyframe
       display: 'Προηγούμενο Keyframe'
@@ -9664,23 +9632,23 @@
 
     - name: video/jump/end
       display: 'Άλμα του Βίντεο στη Λήξη'
-      help: 'Jump the video to the end frame of current subtitle'
+      help: 'Άλμα του βίντεο στο τελευταίο frame του τρέχοντος υπότιτλου'
 
     - name: video/jump/start
       display: 'Άλμα του Βίντεο στην Έναρξη'
-      help: 'Jump the video to the start frame of current subtitle'
+      help: 'Άλμα του βίντεο στο πρώτο frame του τρέχοντος υπότιτλου'
 
     - name: video/open
       display: 'Άνοιγμα Βίντεο'
-      help: 'Open a video file'
+      help: 'Άνοιγμα ενός αρχείου βίντεο'
 
     - name: video/open/dummy
       display: 'Χρήση Πλαστού Βίντεο...'
-      help: 'Open a placeholder video clip with solid color'
+      help: 'Άνοιγμα ενός βίντεο με ενιαίο χρώμα'
 
     - name: video/opt/autoscroll
       display: 'Εναλλαγή λειτουργίας αυτόματης κύλισης του βίντεο'
-      help: 'Toggle automatically seeking video to the start time of selected lines'
+      help: 'Εναλλαγή της αυτόματης μετακίνησης του βίντεο στον χρόνο έναρξης των επιλεγμένων γραμμών'
 
     - name: video/play
       display: 'Αναπαραγωγή'
@@ -9699,8 +9667,8 @@
       help: 'Διακοπή αναπαραγωγής βίντεο'
 
     - name: video/subtitles_provider/cycle
-      display: 'Cycle active subtitles provider'
-      help: 'Cycle through the available subtitles providers'
+      display: 'Εναλλαγή ενεργού παροχέα υπότιτλων'
+      help: 'Εναλλαγή των διαθέσιμων παροχέων υπότιτλων'
 
     - name: video/tool/clip
       display: 'Αποκοπή'
@@ -9944,10 +9912,6 @@
     - name: audio/view/waveform
       display: 'Vista de forma de onda'
       help: 'Muestra el audio como un gráfico de amplitud lineal'
-
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
 
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
@@ -11164,10 +11128,6 @@
       display: 'Uhinera Erakuspena'
       help: 'Erakutsi audioa zabalera lerrokatu grafika bezala'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -11854,7 +11814,7 @@
 
     - name: subtitle/select/visible
       display: 'Hautatu Ikusgarri'
-      help: 'Select all dialogue lines that are visible on the current video frame'
+      help: 'Hautatu orain bideo framean ikusgarri dauden elkarrizketa lerro guztiak'
 
     - name: subtitle/spellcheck
       display: 'Idaz Egiaztatzailea'
@@ -12382,10 +12342,6 @@
     - name: audio/view/waveform
       display: 'Waveform Display'
       help: 'Display audio as a linear amplitude graph'
-
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
 
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
@@ -13432,19 +13388,19 @@
 
     - name: app/display/audio_subs
       display: 'Näytä ääniraita ja tekstitys'
-      help: 'Display audio and the subtitles grid only'
+      help: 'Näytä näkymässä ääniraita ja tekstitykset'
 
     - name: app/display/full
       display: 'Näytä kaikki'
-      help: 'Display audio, video and then subtitles grid'
+      help: 'Näytä näkymässä kaikki eli video, ääniraita ja tekstitykset'
 
     - name: app/display/subs
       display: 'Näytä vain tekstitys'
-      help: 'Display the subtitles grid only'
+      help: 'Näytä näkymässä vain tekstitys'
 
     - name: app/display/video_subs
       display: 'Näytä video ja tekstitys'
-      help: 'Display video and the subtitles grid only'
+      help: 'Näytä näkymässä video ja tekstitykset'
 
     - name: app/exit
       display: 'Lopeta'
@@ -13468,11 +13424,11 @@
 
     - name: app/toggle/global_hotkeys
       display: 'Globaalit pikanäppäinkorvaukset päälle/pois'
-      help: 'Toggle global hotkey overrides (Medusa Mode)'
+      help: 'Globaalit pikanäppäinkorvaukset päälle/pois (Medusa Mode)'
 
     - name: app/toggle/toolbar
       display: 'Piilota työkalurivi'
-      help: 'Näyttää tai piilottaa työkalurivin'
+      help: 'Näytä tai piilota työkalurivi'
 
     - name: app/updates
       display: 'Tarkista päivitykset'
@@ -13480,7 +13436,7 @@
 
     - name: audio/close
       display: 'Sulje ääniraita'
-      help: 'Close the currently open audio file'
+      help: 'Sulje avattu ääniraita'
 
     - name: audio/commit
       display: 'Hyväksy'
@@ -13508,7 +13464,7 @@
 
     - name: audio/open
       display: 'Avaa äänitiedosto'
-      help: 'Open an audio file'
+      help: 'Avaa ääniraita tiedostosta'
 
     - name: audio/open/blank
       display: 'Avaa 2 h 30 min tyhjä ääniraita'
@@ -13520,19 +13476,19 @@
 
     - name: audio/open/video
       display: 'Avaa videosta'
-      help: 'Open the audio from the current video file'
+      help: 'Avaa ääniraita avatusta videosta'
 
     - name: audio/opt/autocommit
       display: 'Hyväksyy automaattisesti kaikki muutokset'
       help: 'Hyväksyy automaattisesti kaikki muutokset'
 
     - name: audio/opt/autonext
-      display: 'Auto go to next line on commit'
-      help: 'Automatically go to next line on commit'
+      display: 'Siirry hyväksyttäessä automaattisesti seuraavalle riville'
+      help: 'Siirry hyväksyttäessä automaattisesti seuraavalle riville'
 
     - name: audio/opt/autoscroll
-      display: 'Auto scroll audio display to selected line'
-      help: 'Auto scroll audio display to selected line'
+      display: 'Selaa ääniraitaa automaattisesti valitun rivin mukaan'
+      help: 'Selaa ääniraitaa automaattisesti valitun rivin mukaan'
 
     - name: audio/opt/spectrum
       display: 'Aallokon analysointitapa'
@@ -13548,7 +13504,7 @@
 
     - name: audio/play/line
       display: 'Toista valittu rivi'
-      help: 'Play the audio for the current line'
+      help: 'Toista nykyisen rivin ääni'
 
     - name: audio/play/selection
       display: 'Toista äänivalinta'
@@ -13576,11 +13532,11 @@
 
     - name: audio/play/toggle
       display: 'Toista äänivalinta tai pysäytä'
-      help: "Play selection, or stop playback if it's already playing"
+      help: 'Toista valinta tai pysäytä toisto, jos ääntä toistetaan jo'
 
     - name: audio/save/clip
       display: 'Luo ääniraita'
-      help: 'Save an audio clip of the selected line'
+      help: 'Tallenna ääniraita valitun rivin ajoituksesta'
 
     - name: audio/scroll/left
       display: 'Selaa vasemmalle'
@@ -13592,7 +13548,7 @@
 
     - name: audio/stop
       display: 'Pysäytä toisto'
-      help: 'Stop audio and video playback'
+      help: 'Pysäytä äänen ja videon toisto'
 
     - name: audio/view/spectrum
       display: 'Spektrinäyttö'
@@ -13601,10 +13557,6 @@
     - name: audio/view/waveform
       display: 'Aaltomuotonäyttö'
       help: 'Näytä ääniraita lineaarisena amplitudikaaviona'
-
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
 
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
@@ -13636,43 +13588,43 @@
 
     - name: edit/clear
       display: 'Tyhjennä'
-      help: "Clear the current line's text"
+      help: 'Tyhjennä nykyisen rivin teksti'
 
     - name: edit/clear/text
-      display: 'Clear Text'
+      display: 'Tyhjennä teksti'
       help: "Clear the current line's text, leaving override tags"
 
     - name: edit/color/outline
-      display: 'Outline Color'
+      display: 'Reunaviivan väri'
       help: 'Set the outline color (\3c) at the cursor position'
 
     - name: edit/color/primary
-      display: 'Primary Color'
+      display: 'Ensisijainen väri'
       help: 'Set the primary fill color (\c) at the cursor position'
 
     - name: edit/color/secondary
-      display: 'Secondary Color'
+      display: 'Toissijainen väri'
       help: 'Set the secondary (karaoke) fill color (\2c) at the cursor position'
 
     - name: edit/color/shadow
-      display: 'Shadow Color'
+      display: 'Varjon väri'
       help: 'Set the shadow color (\4c) at the cursor position'
 
     - name: edit/find_replace
       display: 'Etsi ja korvaa'
-      help: 'Etsii ja korvaa sanoja riveistä'
+      help: 'Etsi ja korvaa sanoja riveistä'
 
     - name: edit/font
       display: 'Fontti'
-      help: 'Select a font face and size'
+      help: 'Valitse fontti ja fonttikoko'
 
     - name: edit/insert_original
       display: 'Lisää alkuteksti'
-      help: 'Insert the original line text at the cursor'
+      help: 'Lisää rivin alkuperäinen teksti kohdistimen kohtaan'
 
     - name: edit/line/copy
       display: 'Kopioi rivit'
-      help: 'Copy subtitles to the clipboard'
+      help: 'Kopioi tekstitykset leikepöydälle'
 
     - name: edit/line/cut
       display: 'Leikkaa rivit'
@@ -13680,7 +13632,7 @@
 
     - name: edit/line/delete
       display: 'Poista rivit'
-      help: 'Poistaa valitut rivit'
+      help: 'Poista valitut rivit'
 
     - name: edit/line/duplicate
       display: 'Monista rivit'
@@ -13688,27 +13640,27 @@
 
     - name: edit/line/join/as_karaoke
       display: 'Karaokena'
-      help: 'Join selected lines in a single one, as karaoke'
+      help: 'Yhdistä rivit yhteen karaoketavuttaen sanat'
 
     - name: edit/line/join/concatenate
       display: 'Yhteen'
-      help: 'Join selected lines in a single one, concatenating text together'
+      help: 'Yhdistä rivit ja liitä jälkimmäisen teksti ensimmäisen perään'
 
     - name: edit/line/join/keep_first
       display: 'Pidä ensimmäinen'
-      help: 'Join selected lines in a single one, keeping text of first and discarding remaining'
+      help: 'Yhdistä rivit ja pidä vain ensimmäisen teksti'
 
     - name: edit/line/paste
       display: 'Liitä rivit'
-      help: 'Liittää rivejä'
+      help: 'Liitä rivejä'
 
     - name: edit/line/paste/over
       display: 'Liitä rivit korvaten'
-      help: 'Liittää rivejä toisten rivien päälle'
+      help: 'Liitä rivejä toisten rivien päälle'
 
     - name: edit/line/recombine
       display: 'Koosta rivit'
-      help: 'Recombine subtitles which have been split and merged'
+      help: 'Koosta uudelleen (recombine) rivit, jotka on ensin jaettu ja sitten yhdistetty'
 
     - name: edit/line/split/after
       display: 'Split lines after current frame'
@@ -13720,7 +13672,7 @@
 
     - name: edit/line/split/by_karaoke
       display: 'Jaa rivit (karaoketavujen kohdalta)'
-      help: 'Use karaoke timing to split line into multiple smaller lines'
+      help: 'Jaa rivit lyhyemmiksi karaokeajoituksessa määrätyistä kohdista'
 
     - name: edit/line/split/estimate
       display: 'Jaa kohdistimen kohdalta (arvioi ajat)'
@@ -13736,31 +13688,31 @@
 
     - name: edit/redo
       display: 'Ei voi tehdä uudelleen'
-      help: 'Redo last undone action'
+      help: 'Tee viimeisin toiminto uudelleen'
 
     - name: edit/revert
       display: 'Revert'
       help: 'Revert the active line to its initial state (shown in the upper editor)'
 
     - name: edit/style/bold
-      display: 'Toggle Bold'
+      display: 'Lihavointi päälle/pois'
       help: 'Toggle bold (\b) for the current selection or at the current cursor position'
 
     - name: edit/style/italic
-      display: 'Toggle Italics'
+      display: 'Kursivointi päälle/pois'
       help: 'Toggle italics (\i) for the current selection or at the current cursor position'
 
     - name: edit/style/strikeout
-      display: 'Toggle Strikeout'
+      display: 'Yliviivaus päälle/pois'
       help: 'Toggle strikeout (\s) for the current selection or at the current cursor position'
 
     - name: edit/style/underline
-      display: 'Toggle Underline'
+      display: 'Alleviivaus päälle/pois'
       help: 'Toggle underline (\u) for the current selection or at the current cursor position'
 
     - name: edit/undo
       display: 'Ei voi kumota'
-      help: 'Undo last action'
+      help: 'Kumoa viimeisin toiminto'
 
     - name: grid/line/next
       display: 'Seuraava rivi'
@@ -13832,7 +13784,7 @@
 
     - name: grid/swap
       display: 'Vaihda rivien paikat'
-      help: 'Swap the two selected lines'
+      help: 'Vaihda kahden valitun rivin paikat'
 
     - name: grid/tag/cycle_hiding
       display: 'Tagien piilotus, kuvio tai näyttö '
@@ -13880,11 +13832,11 @@
 
     - name: keyframe/open
       display: 'Avaa avainkuvat'
-      help: 'Open a keyframe list file'
+      help: 'Avaa avainkuvalista'
 
     - name: keyframe/save
       display: 'Tallenna avainkuvat'
-      help: 'Save the current list of keyframes to a file'
+      help: 'Tallenna nykyinen avainkuvalista tiedostoon'
 
     - name: recent/audio
       display: 'Äskeiset'
@@ -14228,31 +14180,31 @@
 
     - name: subtitle/attachment
       display: 'Liitteet'
-      help: 'Open the attachment manager dialog'
+      help: 'Avaa tekstitystiedostoon liitettyjen tiedostojen hallintaikkuna'
 
     - name: subtitle/find
       display: 'Etsi'
-      help: 'Search for text in the subtitles'
+      help: 'Etsiä tekstiä tekstityksistä'
 
     - name: subtitle/find/next
       display: 'Etsi seuraava'
-      help: 'Find next match of last search'
+      help: 'Etsi viimeisimmän haun seuraava osuma'
 
     - name: subtitle/insert/after
       display: 'Jälkeen'
-      help: 'Insert a new line after the current one'
+      help: 'Lisää uusi rivi valitun rivin jälkeen'
 
     - name: subtitle/insert/after/videotime
       display: 'Jälkeen, videokuvan ajalla'
-      help: 'Insert a new line after the current one, starting at video time'
+      help: 'Lisää rivi valitun rivin jälkeen, videon ajalla'
 
     - name: subtitle/insert/before
       display: 'Ennen'
-      help: 'Insert a new line before the current one'
+      help: 'Lisää uusi rivi ennen valittua riviä'
 
     - name: subtitle/insert/before/videotime
       display: 'Ennen, videokuvan ajalla'
-      help: 'Insert a new line before the current one, starting at video time'
+      help: 'Lisää uusi rivi ennen valittua riviä, videon ajalla'
 
     - name: subtitle/new
       display: 'Uusi tekstitys'
@@ -14260,19 +14212,19 @@
 
     - name: subtitle/open
       display: 'Avaa tekstitys'
-      help: 'Open a subtitles file'
+      help: 'Avaa tekstitystiedosto'
 
     - name: subtitle/open/autosave
-      display: 'Open Autosaved Subtitles'
-      help: 'Open a previous version of a file which was autosaved by Aegisub'
+      display: 'Avaa automaattisesti tallennettu tekstitys'
+      help: 'Avaa Aegisubin automaattisesti tallentama aiempi versio tiedostosta'
 
     - name: subtitle/open/charset
       display: 'Avaa tekstitys merkistöllä'
-      help: 'Open a subtitles file with a specific file encoding'
+      help: 'Avaa tekstitystiedosto tietyllä merkistöllä'
 
     - name: subtitle/open/video
       display: 'Avaa tekstitys videosta'
-      help: 'Open the subtitles from the current video file'
+      help: 'Avaa tekstitys avatusta videotiedostosta'
 
     - name: subtitle/properties
       display: 'Asetukset'
@@ -14280,15 +14232,15 @@
 
     - name: subtitle/save
       display: 'Tallenna tekstitys'
-      help: 'Save the current subtitles'
+      help: 'Tallenna nykyinen tekstitys'
 
     - name: subtitle/save/as
       display: 'Tallenna tekstitys nimellä'
-      help: 'Save subtitles with another name'
+      help: 'Tallenna tekstitystiedosto toisella nimellä'
 
     - name: subtitle/select/all
       display: 'Valitse kaikki'
-      help: 'Select all dialogue lines'
+      help: 'Valitse kaikki tekstitysrivit'
 
     - name: subtitle/select/visible
       display: 'Valitse näkyvät'
@@ -14332,7 +14284,7 @@
 
     - name: time/length/increase
       display: 'Pidennä'
-      help: 'Pidennnä nykyistä ajoitusyksikköä'
+      help: 'Pidennä nykyistä ajoitusyksikköä'
 
     - name: time/length/increase/shift
       display: 'Pidennä yksikköä ja siirrä'
@@ -14372,15 +14324,15 @@
 
     - name: timecode/close
       display: 'Sulje aikakoodit'
-      help: 'Close the currently open timecodes file'
+      help: 'Sulje avattu aikakooditiedosto'
 
     - name: timecode/open
       display: 'Avaa aikakoodit'
-      help: 'Open a VFR timecodes v1 or v2 file'
+      help: 'Avaa VFR aikakoodit v1 tai v2 tiedosto'
 
     - name: timecode/save
       display: 'Tallenna aikakoodit'
-      help: 'Save a VFR timecodes v2 file'
+      help: 'Tallenna VFR aikakoodi v2 tiedosto'
 
     - name: tool/export
       display: 'Vie tekstitys'
@@ -14392,7 +14344,7 @@
 
     - name: tool/line/select
       display: 'Valitse rivejä'
-      help: 'Select lines based on defined criteria'
+      help: 'Valitse rivit annettujen tietojen perusteella'
 
     - name: tool/resampleres
       display: 'Muuta tarkkuutta'
@@ -14404,7 +14356,7 @@
 
     - name: tool/style/manager
       display: 'Tyylien hallinta'
-      help: 'Open the styles manager'
+      help: 'Avaa tyylien hallinta'
 
     - name: tool/styling_assistant/commit
       display: 'Hyväksy muutokset'
@@ -14416,7 +14368,7 @@
 
     - name: tool/time/kanji
       display: 'Kanjiajoitin'
-      help: 'Open the Kanji timer copier'
+      help: 'Avaa kanjiajoitin'
 
     - name: tool/time/postprocess
       display: 'Ajoituksen jälkikäsittely'
@@ -14448,27 +14400,27 @@
 
     - name: video/aspect/cinematic
       display: 'Elokuvateatterimainen (2.35)'
-      help: 'Force video to 2.35 aspect ratio'
+      help: 'Pakota video 2.35 kuvasuhteeseen'
 
     - name: video/aspect/custom
       display: 'Erikoinen'
-      help: 'Force video to a custom aspect ratio'
+      help: 'Pakota video erikoiseen kuvasuhteeseen'
 
     - name: video/aspect/default
       display: 'Oletus'
-      help: "Use video's original aspect ratio"
+      help: 'Käytä videon alkuperäistä kuvasuhdetta'
 
     - name: video/aspect/full
       display: 'Kokoruutu (4:3)'
-      help: 'Force video to 4:3 aspect ratio'
+      help: 'Pakota video 4:3 kuvasuhteeseen'
 
     - name: video/aspect/wide
       display: 'Laajakuva (16:9)'
-      help: 'Force video to 16:9 aspect ratio'
+      help: 'Pakota video 16:9 kuvasuhteeseen'
 
     - name: video/close
       display: 'Sulje video'
-      help: 'Close the currently open video file'
+      help: 'Sulje avattu video'
 
     - name: video/copy_coordinates
       display: 'Kopioi koordinaatit'
@@ -14476,15 +14428,15 @@
 
     - name: video/detach
       display: 'Irrota video'
-      help: 'Detach the video display from the main window, displaying it in a separate Window'
+      help: 'Irrota videonäkymä pääikkunasta omaksi ikkunakseen'
 
     - name: video/details
       display: 'Näytä videon tiedot'
-      help: 'Show video details'
+      help: 'Näytä videon tiedot'
 
     - name: video/focus_seek
       display: 'Kohdista kuvaselainta tai poista sen kohdistus'
-      help: 'Toggle focus between the video slider and the previous thing to have focus'
+      help: 'Vaihda kohdistusta kuvaselaimen ja viimeksi kohdistetun elementin välillä'
 
     - name: video/frame/copy
       display: 'Kopioi'
@@ -14500,7 +14452,7 @@
 
     - name: video/frame/next/boundary
       display: 'Seuraava raja'
-      help: 'Seek to the next beginning or end of a subtitle'
+      help: 'Siirry seuraavaan tekstityksen alkuun tai loppuun'
 
     - name: video/frame/next/keyframe
       display: 'Seuraava avainkuva'
@@ -14516,7 +14468,7 @@
 
     - name: video/frame/prev/boundary
       display: 'Edellinen raja'
-      help: 'Seek to the previous beginning or end of a subtitle'
+      help: 'Siirry edelliseen tekstityksen alkuun tai loppuun'
 
     - name: video/frame/prev/keyframe
       display: 'Edellinen avainkuva'
@@ -14540,19 +14492,19 @@
 
     - name: video/jump/end
       display: 'Siirrä video rivin loppuun'
-      help: 'Jump the video to the end frame of current subtitle'
+      help: 'Siirrä video valitun tekstitysrivin loppukuvaan'
 
     - name: video/jump/start
       display: 'Siirrä video rivin alkuun'
-      help: 'Jump the video to the start frame of current subtitle'
+      help: 'Siirrä video valitun tekstitysrivin alkukuvaan'
 
     - name: video/open
       display: 'Avaa video'
-      help: 'Open a video file'
+      help: 'Avaa videotiedosto'
 
     - name: video/open/dummy
       display: 'Käytä tyhjää kuvaa'
-      help: 'Open a placeholder video clip with solid color'
+      help: 'Avaa yksivärinen tyhjä videoleike'
 
     - name: video/opt/autoscroll
       display: 'Välitön kuvaselaus valitun tekstirivin mukaan'
@@ -14820,10 +14772,6 @@
     - name: audio/view/waveform
       display: 'Affichage ondulaire'
       help: "Afficher l'audio en graphique linéaire d'amplitude"
-
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
 
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
@@ -16040,10 +15988,6 @@
       display: 'Amosar en forma de onda'
       help: 'Amosa o audio como un gráfico de amplitude de onda'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -17259,10 +17203,6 @@
       display: 'Hullámforma megjelenés'
       help: 'Audió megjelenítése lineáris amplitúdó formában.'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -18312,7 +18252,7 @@
 
     - name: app/display/full
       display: 'Semua'
-      help: 'Tampilkan audio, video dan baris takarir'
+      help: 'Tampilkan audio, video dan kemudian baris takarir'
 
     - name: app/display/subs
       display: 'Lihat Takarir'
@@ -18332,7 +18272,7 @@
 
     - name: app/log
       display: 'Jendela Log'
-      help: 'Lihat log Aegisub'
+      help: 'Lihat log'
 
     - name: app/new_window
       display: 'Jendela baru'
@@ -18477,10 +18417,6 @@
     - name: audio/view/waveform
       display: 'Tampilkan Gelombang'
       help: 'Tampilkan grafis audio dengan mode gelombang'
-
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
 
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
@@ -18716,7 +18652,7 @@
 
     - name: grid/tags/hide
       display: 'Sembunyikan Label'
-      help: 'Sembunyikan label ASS di dalam baris takarir'
+      help: 'Lambang label ASS di dalam baris takarir'
 
     - name: grid/tags/show
       display: 'Tampilkan Semua Label'
@@ -18743,8 +18679,8 @@
       help: 'Kunjungi saluran resmi IRC Aegisub'
 
     - name: help/video
-      display: 'Penata Huruf Visual'
-      help: 'Buka halaman bantuan Penata Huruf Visual'
+      display: 'Tata Huruf Visual'
+      help: 'Buka halaman bantuan Tata Huruf Visual'
 
     - name: help/website
       display: 'Situs'
@@ -19168,7 +19104,7 @@
 
     - name: subtitle/select/visible
       display: 'Pilih yang terlihat'
-      help: 'Select all dialogue lines that are visible on the current video frame'
+      help: 'Pilih semua baris dialo yang terlihat dalam video'
 
     - name: subtitle/spellcheck
       display: 'Pemeriksa Ejaan'
@@ -19696,10 +19632,6 @@
     - name: audio/view/waveform
       display: "Mostra Forma dell'onda"
       help: 'Mostra audio come grafico lineare di ampiezza'
-
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
 
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
@@ -20916,10 +20848,6 @@
       display: 'Waveform Display'
       help: 'Display audio as a linear amplitude graph'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -22134,10 +22062,6 @@
     - name: audio/view/waveform
       display: 'Waveform Display'
       help: 'Display audio as a linear amplitude graph'
-
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
 
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
@@ -23354,10 +23278,6 @@
       display: 'Golfvormweergave'
       help: 'Audio weergeven als een lineaire amplitudegrafiek'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -24572,10 +24492,6 @@
     - name: audio/view/waveform
       display: 'Waveform Display'
       help: 'Display audio as a linear amplitude graph'
-
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
 
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
@@ -25792,10 +25708,6 @@
       display: 'Waveform Display'
       help: 'Display audio as a linear amplitude graph'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -27011,10 +26923,6 @@
       display: 'Modo Amplitude de Onda'
       help: 'Exibir áudio via gráfico unidimensional de amplitude'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -27701,7 +27609,7 @@
 
     - name: subtitle/select/visible
       display: 'Seleccionar Visíveis'
-      help: 'Select all dialogue lines that are visible on the current video frame'
+      help: 'Selecciona todas as linhas de diálogo que estão actualmente visíveis no vídeo'
 
     - name: subtitle/spellcheck
       display: 'Corrector Ortográfico'
@@ -28229,10 +28137,6 @@
     - name: audio/view/waveform
       display: 'Осциллограмма'
       help: 'Показывать звук как линейный график амплитуды'
-
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
 
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
@@ -29448,10 +29352,6 @@
     - name: audio/view/waveform
       display: 'Приказ таласног облика'
       help: 'Прикажите звук као графикон линеарних амплитуда.'
-
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
 
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
@@ -30669,10 +30569,6 @@
       display: 'Prikaz talasnog oblika'
       help: 'Prikažite zvuk kao grafikon linearnih amplituda.'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -31889,10 +31785,6 @@ oblasti koje mogu biti isečene na televizorima.'
       display: 'Waveform Display'
       help: 'Display audio as a linear amplitude graph'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -33108,10 +33000,6 @@ oblasti koje mogu biti isečene na televizorima.'
       display: '显示波形'
       help: '以波形方式显示音频'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -33142,7 +33030,7 @@ oblasti koje mogu biti isečene na televizorima.'
 
     - name: edit/clear
       display: '清除'
-      help: '清除当前行的文本'
+      help: '清除当前行的所有文本'
 
     - name: edit/clear/text
       display: '清除文本'
@@ -34156,7 +34044,7 @@ oblasti koje mogu biti isečene na televizorima.'
       help: '關於 Aegisub'
 
     - name: app/display/audio_subs
-      display: '音效+字幕模式'
+      display: '音訊+字幕模式'
       help: '僅顯示音訊和字幕'
 
     - name: app/display/full
@@ -34204,7 +34092,7 @@ oblasti koje mogu biti isečene na televizorima.'
       help: '檢查是否有可用的新版Aegisub'
 
     - name: audio/close
-      display: '關閉音效'
+      display: '關閉音訊'
       help: '關閉當前開啟的音訊檔案'
 
     - name: audio/commit
@@ -34327,10 +34215,6 @@ oblasti koje mogu biti isečene na televizorima.'
       display: '顯示波形'
       help: '以波形方式顯示音訊'
 
-    - name: automation/lua/clean-info/Clean Script Info
-      display: 'Clean Script Info'
-      help: 'Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.'
-
     - name: automation/lua/cleantags-autoload/Clean Tags
       display: 'Clean Tags'
       help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within the lines'
@@ -34361,7 +34245,7 @@ oblasti koje mogu biti isečene na televizorima.'
 
     - name: edit/clear
       display: '清除'
-      help: '清除當前行的文本'
+      help: '清除當前行的所有文本'
 
     - name: edit/clear/text
       display: '清除文本'
