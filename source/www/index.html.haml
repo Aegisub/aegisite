@@ -12,7 +12,7 @@ nav_group: Home
 .row-fluid
   .span8.offset2
     %h2#downloads Downloads
-    %p The latest stable version is <strong>#{data.version.current}</strong>, released #{data.version.release_date}
+    %p The latest stable version is <a href="https://github.com/Aegisub/Aegisub/releases/tag/v3.2.0"><strong>#{data.version.current}</strong></a>, released #{data.version.release_date}
     %p See the <a href="changelog/#{data.version.current}/">changelog</a> for a list of changes.
 
     %table.table.table-bordered.table-condensed
@@ -27,25 +27,25 @@ nav_group: Home
         %td Windows
         %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-32.exe">Full Install</a>
         %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-32.exe.md5">MD5</a> | <a href="#{dl_root}windows/Aegisub-#{data.version.current}-32.exe.sha">SHA</a>
-        %td 29MB
+        %td 19MB
 
       %tr
         %td Windows
         %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-portable-32.exe">Portable Version</a>
         %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-portable-32.exe.md5">MD5</a> | <a href="#{dl_root}windows/Aegisub-#{data.version.current}-portable-32.exe.sha">SHA</a>
-        %td 15MB
+        %td 14MB
 
       %tr
         %td OS X 10.7+
         %td <a href="#{dl_root}osx/Aegisub-#{data.version.current}.dmg">Full Install</a>
         %td <a href="#{dl_root}osx/Aegisub-#{data.version.current}.dmg.md5">MD5</a> | <a href="#{dl_root}osx/Aegisub-#{data.version.current}.dmg.sha">SHA</a>
-        %td 36MB
+        %td 22MB
 
       %tr
         %td All
         %td <a href="#{dl_root}source/aegisub-#{data.version.current}.tar.xz">Source</a>
         %td <a href="#{dl_root}source/aegisub-#{data.version.current}.tar.xz.md5">MD5</a> | <a href="#{dl_root}source/aegisub-#{data.version.current}.tar.xz.sha">SHA</a>
-        %td 4MB
+        %td 5MB
 
     %p <strong>Note:</strong> Spellchecker dictionaries, x64 builds for Windows, and other versions can be found on the #{link_to 'downloads page', 'downloads/'}.
 
