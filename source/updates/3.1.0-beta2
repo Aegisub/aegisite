@@ -1,1 +1,1 @@
-stable|7948|all|http://www.aegisub.org/|Aegisub 3.1.1|The final release of 3.1.0, with some bug fixes from the beta versions.
+stable|8612|all|http://www.aegisub.org/|Aegisub 3.2.0|Add a Characters Per Second column to the grid#0ADecode audio data in the background so that audio files open instantly#0AImprove editing multiple lines at once#0AMostly fix Japanese input on OS X#0AMany more bug fixes and improvements
