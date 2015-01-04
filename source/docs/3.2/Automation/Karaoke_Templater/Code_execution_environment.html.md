@@ -232,6 +232,67 @@ _newj_ sets the new value of `tenv.j` and _newmaxj_ sets the new value of
 
 No example because the function has limited use.
 
+### remember and recall ###
+Synopsis:
+* `remember(name, value)`
+* `remember_if(name, value, condition)`
+* `recall(name)`
+* `recall(name, default)`
+
+This suite of functions lets you calculate a value in one template and re-use
+it in later templates. This is especially useful together with the
+`math.random` function, since remember/recall will let you choose a random
+value in one template and use the same random value in a later template for the
+same syllable.
+
+_name_ is a user-chosen name to identify the saved value. It should be a string,
+so usually written as a string literal with quotes.
+
+_value_ is the value to store. It can be any Lua value, although string and
+number values are the most useful.
+
+_default_ is a value to recall if nothing has been stored with the name yet.
+
+_condition_ controls whether the value will actually get stored or not.
+
+The `remember` and `remember_if` functions both return the given _value_
+unchanged. This means you can put a `remember` call anywhere you would put
+the bare value.
+
+The `remember_if` function will only store the value if the given _condition_
+is a truthy value (i.e. not `nil` or `false`.) It still returns the value even
+if the condition is falsey.
+
+{::template name="examplebox"}
+    template syl: {\frz!remember("entryrotation",math.random(100,200))!\fscx300\fscy300\t(0,300,\frz0\fscx100\fscy100)\pos($x,$y)}
+    template syl: {\frz-!recall("entryrotation")!\fscx300\fscy300\t(0,300,\frz0\fscx100\fscy100)\pos($x,$y)\fad(300,0)}
+
+The first line chooses a random number between 100 and 200 degrees, and stores
+the chosen value with the name `"entryrotation"`. It then uses that number to set
+a rotation and transform it to 0, causing the syllable to rotate to its correct
+position.
+
+The second line loads the same number back, since it uses the name
+`"entryrotation"` for recall. It places a minus sign in front of it, but
+otherwise does the same effect. The result is two copies of the syllable
+rotating opposite each other, but the same amount.
+{:/}
+{::template name="examplebox"}
+    template syl: {\fscx!remember_if("longsyllables", recall("longsyllables", 100)+10, #syl.duration>200)!}
+
+Here `remember_if` and `recall` are combined, together with a default value,
+to set up a value that updates itself every time it is used.
+
+The name "longsyllables" is attempted recalled, innermost, but if it doesn't
+exist yet the value 100 is used instead. Then 10 is added to it, and if the
+syllable has a duration longer than 200 ms, the value (recalled + 10) gets
+stored back.
+
+The effect is that the `\fscx` gets 10 bigger for all syllables, every time
+a "long" syllable is encountered.
+{:/}
+
+
 ## Template execution data  ##
 These variables either give some further information on the status of the
 executing template or modify the rules for template execution in some way.
