@@ -16,9 +16,12 @@ class SubdomainRewriter < Middleman::Extension
       if @middleman_app.full_path(env['PATH_INFO']) =~ /(^\/$)|(\.(html|css|js)$)/
         body = ::Middleman::Util.extract_response_text(response)
         if body
-          body = body.gsub(/((?:href|src|link)=[\'\"])\/(static|www|docs|update)\//) do |match|
-            "#{$1}http://#{$2}.aegisub.org/"
-          end
+          body = body.gsub(/((?:href|src|link)=[\'\"])\/(static|docs|update)\//) do |match|
+            "#{$1}http://aegi.vmoe.info/#{$2}/"
+			end
+		  body = body.gsub(/((?:href|src|link)=[\'\"])\/(www)\//) do |match|
+            "#{$1}http://aegi.vmoe.info/"
+            end
           return Rack::Response.new(body, status, headers).finish
         end
       end

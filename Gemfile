@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'therubyracer',  platforms: :ruby
 gem 'compass'
 gem 'bootstrap-sass', '~> 2.1.0.0'
 

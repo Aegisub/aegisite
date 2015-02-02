@@ -1,5 +1,5 @@
 ---
-nav_group: Home
+nav_group: 主页
 ---
 
 .row-fluid
@@ -7,49 +7,49 @@ nav_group: Home
     .hero-unit{style: 'margin-top: -60px'}
       %h1{style: 'text-align: center'}
         = image_tag 'logo-large.png'
-      %p Aegisub is a free, cross-platform open source tool for creating and modifying subtitles. Aegisub makes it quick and easy to time subtitles to audio, and features many powerful tools for styling them, including a built-in real-time video preview.
+      %p Aegisub是一个免费，跨平台且开源的用于创建和修改字幕的工具。您可以使用Aegisub轻松地通过音频制作时间轴，并使用多种功能强大的工具，来修改字幕的样式，同时您还可以看到实时的视频预览。
 
 .row-fluid
   .span8.offset2
-    %h2#downloads Downloads
-    %p The latest stable version is <strong>#{data.version.current}</strong>, released #{data.version.release_date}
-    %p See the <a href="changelog/#{data.version.current}/">changelog</a> for a list of changes.
+    %h2#downloads 下载
+    %p 最新的正式版是 <strong>#{data.version.current}</strong>，发布于#{data.version.release_date}
+    %p 更新内容请参阅<a href="changelog/#{data.version.current}/">更新日志</a>。
 
     %table.table.table-bordered.table-condensed
       %tr
-        %th Platform
-        %th Install Type
-        %th Checksum
-        %th Size
+        %th 平台
+        %th 安装类型
+        %th 校验
+        %th 大小
 
       - dl_root = 'http://ftp.aegisub.org/pub/archives/releases/'
       %tr
         %td Windows
-        %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-32.exe">Full Install</a>
+        %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-32.exe">完整版</a>
         %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-32.exe.md5">MD5</a> | <a href="#{dl_root}windows/Aegisub-#{data.version.current}-32.exe.sha">SHA</a>
         %td 19MB
 
       %tr
         %td Windows
-        %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-portable-32.exe">Portable Version</a>
+        %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-portable-32.exe">便携版</a>
         %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-portable-32.exe.md5">MD5</a> | <a href="#{dl_root}windows/Aegisub-#{data.version.current}-portable-32.exe.sha">SHA</a>
         %td 14MB
 
       %tr
         %td OS X 10.7+
-        %td <a href="#{dl_root}osx/Aegisub-#{data.version.current}.dmg">Full Install</a>
+        %td <a href="#{dl_root}osx/Aegisub-#{data.version.current}.dmg">完整版</a>
         %td <a href="#{dl_root}osx/Aegisub-#{data.version.current}.dmg.md5">MD5</a> | <a href="#{dl_root}osx/Aegisub-#{data.version.current}.dmg.sha">SHA</a>
         %td 22MB
 
       %tr
         %td All
-        %td <a href="#{dl_root}source/aegisub-#{data.version.current}.tar.xz">Source</a>
+        %td <a href="#{dl_root}source/aegisub-#{data.version.current}.tar.xz">源代码</a>
         %td <a href="#{dl_root}source/aegisub-#{data.version.current}.tar.xz.md5">MD5</a> | <a href="#{dl_root}source/aegisub-#{data.version.current}.tar.xz.sha">SHA</a>
         %td 5MB
 
-    %p <strong>Note:</strong> Spellchecker dictionaries, x64 builds for Windows, and other versions can be found on the #{link_to 'downloads page', 'downloads/'}.
+    %p <strong>注：</strong> 拼写检查词典、64位Windows的版本以及其他版本可以在#{link_to '下载页面', 'downloads/'}找到。
 
-    %h2 Screenshots
+    %h2 截图
     .row-fluid.screenshots
       - data.screenshots.platforms.each do |p|
         .span4
@@ -58,6 +58,6 @@ nav_group: Home
             = link_to "/static/img/screenshots/#{p.path}/#{f}.png" do
               = image_tag "screenshots/#{p.path}/#{f}-thumb.png", alt: '', class: 'img-polaroid'
 
-    %h2 Update Checker Disclosure
-    %p Please read <a href="/disclosure.html">Full disclosure: Statistics collected by the update checker</a> for information on our update checker.
+    %h2 了解更新检查器收集的信息
+    %p 请您阅读 <a href="/disclosure.html">《完全公开：更新检查器所收集的统计数据》</a> 来了解我们的更新检查器的信息。
 
