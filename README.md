@@ -1,3 +1,6 @@
 # Chinese-aegisite
-Aegisub非官方中文网站 http://aegi.vmoe.info/
-Aegisub's unofficial Chinese website http://aegi.vmoe.info/
+Aegisub非官方简体中文网站
+
+欢迎各路大神帮忙翻译~
+
+Aegisub's unofficial Chinese website.
