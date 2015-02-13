@@ -1,38 +1,38 @@
 {::options toc_levels="2,3" /}
 
-The following tutorials are available for Aegisub:
+下面的教程可供学习Aegisub（全英文）：
 
-## Video Tutorials (Screencasts)  ##
+## 视频教程（屏幕录像）  ##
 
-### Dialogue Timing  ###
-* Description: A video describing how to time using Aegisub.
+### 给对话打轴  ###
+* 说明：描述如何使用Aegisub打轴的视频。
 * By: Karl Blomster
-* Link: <http://mod16.org/aegisub/timingtutorialimprovisation.mkv>
+* 链接：<http://mod16.org/aegisub/timingtutorialimprovisation.mkv>
 
-* Description: A video showing an experienced user timing at full speed in Aegisub.
+* 说明：展示一位经验丰富的用户使用Aegisub全速打轴。
 * By: Karl Blomster
-* Link: <http://mod16.org/aegisub/timing-fullspeed.mkv>
+* 链接：<http://mod16.org/aegisub/timing-fullspeed.mkv>
 
-### Kanji Timer  ###
-* Description: A video tutorial demonstrating how the kanji timer can be used to synchronize kanji timing to romaji timing.
+### 汉字计时器  ###
+* 说明：视频教程演示了如何将汉字计时器用于把汉字的时间轴同步到罗马字的时间轴。
 * By: Niels Martin Hansen
-* Details: XviD MP3 AVI, 5 min 20 sec, 12 MB
-* Link: <http://jfs.itcamefromjapan.net/aegisub/demovids/kanji-timer.avi>
+* 详细信息：XviD MP3 AVI, 5 分 20 秒, 12 MB
+* 链接：<http://jfs.itcamefromjapan.net/aegisub/demovids/kanji-timer.avi>
 
-### Karaoke Timing  ###
+### 卡拉OK计时  ###
 {::template name="todo"}Actually do this{:/}
 
 * By: Niels Martin Hansen
 
-### Visual Typesetting  ###
-* Description: A video tutorial demonstrating how to use Aegisub 2's new Visual Typesetting features.
+### 可视化排版  ###
+* 说明：视频教程演示如何使用Aegisub 2的新的可视化排版功能。
 * By: Rodrigo Braz Monteiro
-* Details: Matroska/XviD/Vorbis, 10 min 22 sec, 25 MB
-* Subtitles: English, Portuguese (Brazil) (by amz), French (by shawurai), German (by Sqall)
-* Link: [malakith.net](http://www.malakith.net/amz/blah/screencast/%5bAegisub%5d_Visual_Typesetting_Tutorial_%5b8B24834E%5d.mkv)
+* 详细信息: Matroska/XviD/Vorbis, 10 分 22 秒, 25 MB
+* 字幕：葡萄牙语（巴西）（by AMZ），法语（by shawurai），德国（by Sqall）
+* 链接：[malakith.net](http://www.malakith.net/amz/blah/screencast/%5bAegisub%5d_Visual_Typesetting_Tutorial_%5b8B24834E%5d.mkv)
 
-## Text tutorials  ##
-* [[Karaoke timing|Karaoke_Timing_Tutorial]] (work in progress) — Enter the words for a song and add time-codes to the words
-* [[Karaoke Templater|Automation/Karaoke_Templater]] (incomplete) — Easy way to add special effects to karaoke, ranging from the most basic effects to very advanced ones.
+## 文章教程  ##
+* [[kalaOK计时|Karaoke_Timing_Tutorial]]（未完工） — 输入歌曲的字，并为字添加时间码
+* [[卡拉OK模版|Automation/Karaoke_Templater]]（不完整） — 简单的添加卡拉OK特效的方法，包括从最基础的效果到非常高级的特效。
 
 
