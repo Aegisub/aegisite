@@ -32,7 +32,7 @@
 * 链接：[malakith.net](http://www.malakith.net/amz/blah/screencast/%5bAegisub%5d_Visual_Typesetting_Tutorial_%5b8B24834E%5d.mkv)
 
 ## 文章教程  ##
-* [[kalaOK计时|Karaoke_Timing_Tutorial]]（未完工） — 输入歌曲的字，并为字添加时间码
+* [[卡拉OK计时|Karaoke_Timing_Tutorial]]（未完工） — 输入歌曲的字，并为字添加时间码
 * [[卡拉OK模版|Automation/Karaoke_Templater]]（不完整） — 简单的添加卡拉OK特效的方法，包括从最基础的效果到非常高级的特效。
 
 
