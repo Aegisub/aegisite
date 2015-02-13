@@ -1,18 +1,16 @@
 {::options toc_levels="2,3" /}
 
-A small collection of Frequently Asked Questions about Aegisub - mostly
-stuff that didn't fit anywhere else.
+Aegisub常见问题解答 —— 不一定适合其他地方。
 
-### Karaoke effects? ###
+### 卡拉OK特效？ ###
 
-See the [[Karaoke Templater tutorials|Automation/Karaoke_Templater/Tutorial_1]].
+参阅[[卡拉OK模版教程|Automation/Karaoke_Templater/Tutorial_1]]。
 
-### Can I create DVD subtitles with Aegisub? ###
+### 我能用Aegisub制作DVD字幕吗？ ###
 
-Not directly, but there's a nifty program called
-[MaestroSBT](http://sourceforge.net/projects/maestrosbt/) that can
-convert SSA to VOBSubs. It does have quite a bunch of restrictions on
-what tags and other things may be used, so reading its manual first is
+不能直接做，不过有个不错的程序
+[MaestroSBT](http://sourceforge.net/projects/maestrosbt/)，可以把SSA字幕转为VOBSubs。
+它确实有很多关于标签和其他方面的限制， so reading its manual first is
 advised. Also note that it does not accept ASS - only SSA. You can use
 Aegisub's File -> Export... dialog to save real SSA files.
 
