@@ -10,40 +10,31 @@ Aegisub常见问题解答 —— 不一定适合其他地方。
 
 不能直接做，不过有个不错的程序
 [MaestroSBT](http://sourceforge.net/projects/maestrosbt/)，可以把SSA字幕转为VOBSubs。
-它确实有很多关于标签和其他方面的限制， so reading its manual first is
-advised. Also note that it does not accept ASS - only SSA. You can use
-Aegisub's File -> Export... dialog to save real SSA files.
+它确实有很多关于标签和其他方面的限制，所以建议先阅读它的说明。还要注意的是它不支持ASS——只支持SSA。您可以使用
+Aegisub的文件 -> 导出…对话框来保存成SSA文件。
 
-### Does Aegisub allow saving to SRT? ###
+### Aegisub可以保存SRT文件吗？ ###
 
-Yes, but only if it means that no information will be lost. In other
-words, if you have any override tags that aren't \1c, \b, or \i,
-Aegisub won't allow saving directly to SRT. However, you can still
-export to SRT by using the File -> Export... dialog box. Just uncheck
-all the checkboxes (clean script info, VFR transform etc.).
+可以的，但只意味着没有信息丢失。换句话说，如果有\1c, \b, 或 \i 之外的标签，
+Aegisub不允许直接保存到SRT。但是，您仍可导出成SRT文件通过文件 -> 导出…对话框。只需取消所有复选框（clean script info, VFR transform 等等。）。
 
-### I've found a bug!? ###
+### 我发现了个Bug！？ ###
 
-Report it on the [bug tracker](http://devel.aegisub.org/). Please
-include as many details as possible in your report! Remember that if a
-bug is not on the bug tracker, it _does not exist_ as far as we are
-concerned.
+把它报告到[bug跟踪系统](http://devel.aegisub.org/)。请在您的报告中描述尽可能多的细节。
+请记住，如果Bug不在Bug跟踪系统上，就我们而言它_并不存在_。
 
-### Why doesn't Aegisub have &lt;feature X&gt;? &lt;Program Y&gt; has it! ###
+### 为什么Aegisub没有 &lt;X 功能&gt;？ &lt;Y 软件&gt; 却有！ ###
 
-Quite possibly because we didn't know you wanted it. Request it on the
-[bug tracker](http://devel.aegisub.org/) and see what happens.
+很可能是我们不清楚您需要这个功能。
+请到[bug跟踪系统](http://devel.aegisub.org/)提出请求，并看看会发生什么。
 
-### Where can I find more information and/or get help? ###
+### 我在哪里可以得到更多的信息和帮助？ ###
 
-For Aegisub-related stuff, the [forums](http://forums.aegisub.org) and
-the [IRC channel](irc://irc.rizon.net/aegisub) are good places to ask
-questions. The Aegisub [devel wiki](http://devel.aegisub.org) also
-contains some more obscure information not included in the manual for
-various reasons, and so does the forums.  For general video-related
-questions, [Doom9.org](http://www.doom9.org) and [its
-forums](http://forum.doom9.org) is generally the place to go.
+对于Aegisub相关的东西，[论坛](http://forums.aegisub.org) 和
+ [IRC 频道](irc://irc.rizon.net/aegisub) 是很好的提问的地方。
+Aegisub [devel wiki](http://devel.aegisub.org) 也包含了一些因各种原因没有收录在手册中的比较模糊的信息，
+论坛也是如此。对于一般的视频相关的问题，一般可以去[Doom9.org](http://www.doom9.org) 和 [它的论坛](http://forum.doom9.org)。
 
-### Are there any VSFilter bugs I should know about? ###
+### 是否有一些我该知道的VSFliter的Bug？ ###
 
-In one word: [yes](http://asa.diac24.net/VSFilter#BUGS).
+一个字：[是](http://asa.diac24.net/VSFilter#BUGS)。
