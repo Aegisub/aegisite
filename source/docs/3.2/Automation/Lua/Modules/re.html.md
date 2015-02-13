@@ -1,3 +1,4 @@
+# encoding: utf-8
 {::options toc_levels="2,3" /}
 
 The `re` module is a wrapper around boost::regex, intended as a full
