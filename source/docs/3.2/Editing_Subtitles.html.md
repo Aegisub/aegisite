@@ -1,63 +1,50 @@
 {::options toc_levels="2,3" /}
 
-Editing subtitles is what Aegisub is made for. This page will deal with basic
-text editing of subtitle lines; for more information on the typography of
-subtitles, see [[typesetting|Typesetting]]. For information on the timing of
-subtitle lines, see [[working with audio|Audio]].
+开发Aegisub是为了编辑字幕. 本页面会讲述字幕中的基本文本编辑; 若想了解更多关于字幕排版的信息, 请看[[排版|Typesetting]].有关字幕时间的编辑，请看[[载入音频|Audio]].
 
-## Opening subtitles ##
+## 打开字幕 ##
 
-In the _File_ menu, there are four menu choices that relate to opening or
-creating subtitles:
+在 _文件_ 菜单中, 有四种方式用来打开或创建字幕:
 
-New subtitles
-: Create a new, blank script (i.e. close the current file).
+新建字幕
+: 建立一个新的,空白的字幕脚本 (同时也会关闭当前文件).
 
-Open subtitles
-: Open an existing subtitles file or import subtitles from a [Matroska
-container file](http://www.matroska.org).
+打开字幕
+: 打开一个现有的字幕文件，或者从其他容器如[Matroska
+container file](http://www.matroska.org)中导入字幕文件.
 
-Open subtitles with charset
-: Opens subtitles but lets you choose what character set Aegisub will
-use to interpret the file. Usually not needed, but if you have a file
-in an unusual charset Aegisub will occasionally misdetect it.
+打开字幕并指定编码
+: 打开字幕的同时允许指定编码，Aegisub将以该编码读取字幕文件. 通常不需要这么做,但如果你有不常编码的字幕文件，Aegisub可能会无法正常读取它.
 
-Open subtitles from video
-: Open the subtitles muxed into the currently open video file. This
-currently only works with Matroska video files.
+从视频中打开字幕
+: 打开封装在视频文件中的字幕. 这个方式目前只在Matroska视频文件中有效.
 
-Open [[Autosaved Subtitles|Autosave]]
-: Open a file created by Aegisub's autosave. Useful if Aegisub crashes when you
-had unsaved changes or just if you want to open an older version of a file.
+打开自动保存的字幕 [[自动保存的字幕|Autosave]]
+: 打开由Aegisub自动保存功能生成的字幕. 这一项很有用，尤其是编辑字幕忘记保存而Aegisub崩溃时，或者你当想查看字幕文件的历史版本时.
 {: class="horizontal-wide"}
 
-When you open a subtitles file that is not detected as Unicode, Aegisub will
-attempt to guess what character set it is encoded with. If it is unsure, it
-will ask you to choose from two or more likely alternatives. If the result
-looks garbled or otherwise incorrect, try reopening it with another character
-set.
+当你打开一个不是以Unicode方式编码的字幕文件时, Aegisub将会试图猜测它的编码方式.如无法确认,Aegisub将会要求你从可能的选项中选择编码.如果打开的结果是乱码或者有其他形式的错误,请尝试以其他编码方式重新打开文件.
 
-### Supported formats ###
-Aegisub supports reading the following subtitle formats:
+### 支持的格式 ###
+Aegisub支持读取以下字幕格式:
 
-* Advanced Substation Alpha, also known as SSA v4+ (.ass)
+* Advanced Substation Alpha, 也称 SSA v4+ (.ass)
 * Substation Alpha v4 (.ssa)
-* [SubRip](http://zuggy.wz.cz/) Text (.srt)
-* MPEG4 Timed Text (limited support at best; broken at worst), also known as
+* [SubRip](http://zuggy.wz.cz/) 文本 (.srt)
+* MPEG4 Timed Text (最佳可能兼容，也有可能支持不佳而崩溃), 也称
   ISO/IEC 14496-17, MPEG-4 Part 17 or just TTXT (.ttxt)
 * MicroDVD (.sub)
-* Plain "dialog script" formatted text (see below)
+* 明显的"对话脚本"格式的文本 (见下方)
 
-### Importing subtitles from MKV ###
-Loading subtitles directly from Matroska files can also be done. The following
-CodecIDs are supported:
+### 从MKV中读取字幕 ###
+可以直接从Matroska文件中读取字幕.以下CodecIDs被支持:
 
 * S_TEXT/UTF8 (SRT)
 * S_TEXT/ASS (ASS/SSA v4+)
 * S_TEXT/SSA (SSA v4)
 
-### Importing plain text scripts ###
-Aegisub also supports importing "dialogue-formatted" plain text scripts. For example:
+### 导入明显的对话文字 ###
+Aegisub也支持导入"对话格式"的文本.例如:
 
     Actor 1: Well do I understand your speech, yet few strangers do so.
              Why then do you not speak in the Common Tongue,
@@ -65,11 +52,9 @@ Aegisub also supports importing "dialogue-formatted" plain text scripts. For exa
     # TL check: The above seems to be a quote from the lord of the rings, look it up later
     Actor 2: What are you babbling about?
 
-This will result in five subtitle lines, one being commented out. The first
-three will have the actor field set to "Actor 1", and the fifth will have it
-set to "Actor 2" (the comment line's actor field will be blank).
+导入该文本将会产生5行字幕,其中一是注释. 前三行说话人被设置为 "Actor 1", 第五行说话人被设置为 "Actor 2" (注释行的说话人栏为空白).
 
-When you open a file with the extension .txt, Aegisub will ask you about what
+当你直接打开.txt文本的时候, Aegisub会询问用哪个字符作为区分说话注释的
 characters it should use as the actor separator and comment starter,
 respectively. In the example above, the actor separator is a colon
 ("`:`") and the comment starter is a hash ("`#`").
