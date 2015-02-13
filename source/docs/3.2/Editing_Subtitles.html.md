@@ -54,131 +54,85 @@ Aegisub也支持导入"对话格式"的文本.例如:
 
 导入该文本将会产生5行字幕,其中一是注释. 前三行说话人被设置为 "Actor 1", 第五行说话人被设置为 "Actor 2" (注释行的说话人栏为空白).
 
-当你直接打开.txt文本的时候, Aegisub会询问用哪个字符作为区分说话注释的
-characters it should use as the actor separator and comment starter,
-respectively. In the example above, the actor separator is a colon
-("`:`") and the comment starter is a hash ("`#`").
+当你直接打开.txt文本的时候, Aegisub会分别询问用哪个字符作为区分说话人分隔符或注释开端.上方的例子中,使用了冒号(半角)
+("`:`")作为说话人分隔符，用井号作为注释开端 ("`#`").
 
-## Editing subtitles ##
-Editing subtitles in Aegisub is done in two areas: the subtitle edit box (where
-you type in or edit text) and the subtitles grid. Changes made in both the
-edit box and the grid normally modify all selected lines, and not just the
-line displayed in the edit box.
+## 编辑字幕 ##
+在Aegisub中有两个区域可用于编辑字幕:字幕编辑框(你打字或者编辑文本的地方)和字幕栏. 在这两处对字幕进行的更改会作用于所有选择的行，不只是出现在字幕编辑框里的那一行.
 
-### The subtitles edit box ###
+### 字幕编辑框 ###
 [[img/subs_edit_box.png]]
 
-The edit box is just a plain editing area with a number of associated controls.
-They are:
+字幕编辑框是直观的编辑区域，它带有一些附属控制功能.
+它们是:
 
-1. Flags the line as a comment. Comment lines will not be displayed on the
-    video.
-1. The [[style|Styles]] used for this line.
-1. The actor speaking this line. Has no actual effect on subtitle display but
-    can be useful for editing purposes.
-1. Effect for this line. There are a few predefined effects which can be
-    applied via this field, but renderer support for them is spotty and using
-    [[override tags|ASS_Tags]] is nearly always a better idea. This is commonly
-    used as a metadata field for automation scripts.
-1. The number of characters on the longest line of this subtitle.
-1. Layer for this line. If you override positioning with an [[override
-    tag|ASS_Tags]] so that two or more lines are displayed on top of each
-    other, this field controls which one is drawn where; higher layer numbers
-    are drawn on top of lower ones.
-1. Start time for the line.
-1. End time for the line.
-1. Duration for the line. If you modify this field, the end time will be
-    modified as a result.
-1. Left margin for this line. 0 means use the margin specified in the
-    style.
-1. Right margin for this line. 0 means use the margin specified in the
-    style.
-1. Vertical margin for this line. 0 means use the margin specified in the
-    style.
-1. Inserts a bold override tag (`\b1`) at the cursor position. If the text
-    is already bold, inserts a corresponding closing tag (`\b0`).
-1. Inserts an italics override tag (`\i1`) at the cursor position. If the
-    text is already italic, inserts a corresponding closing tag (`\i0`).
-1. Inserts an underline override tag (`\u1`) at the cursor position. If the
-    text is already italic, inserts a corresponding closing tag (`\u0`).
-1. Inserts an strikeout override tag (`\s1`) at the cursor position. If the
-    text is already italic, inserts a corresponding closing tag (`\s0`).
-1. Brings up a font selection window and inserts a font face name tag
-    (`\fnFontName`) with the given font name, as well as the chosen effect
-    tags.
-1. Brings up the [[color picker|Colour_Picker]] and lets you choose a
-    color; then inserts a primary color override tag (`\c`) with the chosen
-    color at the cursor position.
-1. Brings up the [[color picker|Colour_Picker]] and lets you choose a
-    color; then inserts a secondary color override tag (`\2c`) with the chosen
-    color at the cursor position.
-1. Brings up the [[color picker|Colour_Picker]] and lets you choose a
-    color; then inserts an outline color override tag (`\3c`) with the chosen
-    color at the cursor position.
-1. Brings up the [[color picker|Colour_Picker]] and lets you choose a
-    color; then inserts a shadow color override tag (`\4c`) with the chosen
-    color at the cursor position.
-1. Move to the next line, creating a new one at the end of the file if
-    needed. Note that unlike in previous versions of Aegisub, changes do
-    not need to be committed using this button.
-1. Changes display between times and frames. Note that this does not change
-    how times are actually stored in the script.
+1. 将该行设为注释. 注释行不会显示在屏幕上.
+1. 该行的[[样式|Styles]].
+1. 该行的说话人名. 对字幕显并无影响，但是能方便编辑.
+1. 该行的特效.通过该区域可以应用预定义的特效, 但渲染器的支持不够完善，使用
+    [[特效标签|ASS_Tags]] 更佳. 多为了使用自动化脚本而用在元数据区域.
+1. 在当前字幕行的最长行的字符数.
+1. 该行的层次编号. 如果你使用了[[特效标签|ASS_Tags]]将两字幕定位重合到了一块，两行至多行都互相覆盖显示,这个区域控制这些行的    上下关系;层次编号大的行会被“拖”到层次编号小的行上方.
+1. 行的开始时间.
+1. 行的结束时间.
+1. 行的持续时间. 如果你修改这里的数值,行的结束时间会被更改.
+1. 该行的左边距. 0意味着使用样式中设置的数值.
+1. 该行的右边距. 0意味着使用样式中设置的数值.
+1. 该行的垂直边距. 0意味着使用样式中设置的数值.
+1. 在光标位置插入“加粗”(Blod)特效标签(`\b1`). 如果文本已经被加粗, 会插入取消加粗的特效标签(`\b0`).
+1. 在光标位置插入“斜体”(Italic)特效标签(`\i1`). 如果文本已经是斜体, 会插入取消斜体的特效标签(`\i0`).
+1. 在光标位置插入“下划线”(Underline)特效标签(`\u1`). 如果文本已经有下划线, 会插入取消下划线的特效标签(`\u0`).
+1. 在光标位置插入“删除线”(Strikeout)特效标签(`\s1`). 如果文本已经有删除线, 会插入取消删除线的特效标签(`\s0`).
+1. 打开字体选择窗口，选择字体后插入一个“字体名称”特效标签(`\fnFontName`) ,其他标签也会同时插入.
+1. 打开[[取色器|Colour_Picker]]选择颜色后，在光标位置插入插入一个“主要颜色”特效标签(`\c`) .
+1. 打开[[取色器|Colour_Picker]]选择颜色后，在光标位置插入插入一个“次要颜色”特效标签(`\2c`) .
+1. 打开[[取色器|Colour_Picker]]选择颜色后，在光标位置插入插入一个“边框颜色”特效标签(`\3c`) .
+1. 打开[[取色器|Colour_Picker]]选择颜色后，在光标位置插入插入一个“阴影颜色”特效标签(`\c`) .
+1. 移动到下一行, 如果需要会创建新的一行.注意，和之前版本的Aegisub不同,更改不需要被提交.
+1. 改变时间的定位方式，是以时间为单位还是以帧为单位.注意，更改这项不会影响已经存储在脚本中的时间信息.
 
-#### Show Original
+#### 显示原始字幕
 
-Checking the Show Original box switches the edit box to the following mode:
+“显示原始字幕”选项是把字幕编辑变成以下模式的开关:
 
 [[img/subs_edit_box_original.png]]
 
-The top half of the edit box is read-only, and show the text that the currently
-selected line had when it was first selected. This can be useful for
-translating subtitles into another language, or just for editing subtitles.
+上半个编辑框是只读的,显示当前行被第一次选中时的原始内容.这个功能在翻译或者编辑字幕时很有用.
 
-Revert
-: Replace the text of the line with the text shown in the upper box. A simple
-way to undo all the changes you made to the line if you change your mind.
+还原
+: 恢复下半编辑框到上半编辑框的状态.如果你改变主意了，这比撤销更快速的还原方法.
 
-Clear
-: Clear the line.
+清除
+: 清空该行.
 
-Clear Text
-: Clear the text of the line, but leave all override tags in place. Can help
-with translating typeset signs to another language.
+清空文本
+: 清空该行文本,但会留下所有的特效标签.保留排版方式的同时翻译成另一种语言.
 
-Insert Original
-: Insert the original text of the line at the cursor position.
+插入原文
+: 在光标处插入原文.
 
-#### Context menu
+#### 背景菜单
 
-If you right-click anywhere in the edit box, you get the following menu:
+如果你在编辑框的任意位置右键单击, 你会看见以下菜单:
 [[img/Subs_Edit_Context.png]]
 
-Select all, copy, cut and paste all do what you'd expect them to.
+全选、复制、剪切和粘贴，基本功能应有尽有.
 
-Spell checker
-: If you right-click on a word that has been detected as misspelled,
-the spell checker will suggest some likely alternative. You can also
-set which language it will use for checking from this menu, or add
-words that it doesn't recognize but you know to be correctly spelled to
-the dictionary. For more information on spell checking in Aegisub, see
-the [[Spell Checker|Spell_Checker]] page.
+拼写检查器
+: 如果你在一个可能拼写错了的单词上单击右键,拼写检查器会向你提供一些选项.你也可以在菜单中设置拼写检查语言,或者向字典中添加无法正确识别的单词. 想了解更多有关拼写检查器的信息, 请看
+ [[拼写检查器|Spell_Checker]] 页面.
 
-Thesaurus
-: Suggests alternative words similar to the highlighted word.
+拼写检查器建议
+: 提供和以选择单词接近的备选项.
 
-Split line
-: Splits the line into two new lines at the cursor position. Preserve
-times keeps the old line's timing for both lines. Estimate times tries
-to guess where the split is based on the length of the text on each
-side of the cursor. At video frame makes the first half of the line end
-on the previous frame, and the second half start on the current frame.
+分割行
+:在光标处分割行. 保留原计时会生成时间一样的一行.概略计时会按照光标前后字符数量计算分割行.以视频帧会把光标前内容的结束时间设为当前帧的前一帧，光标后内容的开始时间设为当前帧.
 {: class="dl-horizontal"}
 
-### The subtitles grid ###
+### 字幕栏 ###
 [[img/Subs_grid.png]]
 
-The subtitles grid shows all lines (comments and otherwise) in the entire
-file.
+字幕栏显示出所有行 (包括注释行和其他) 在整个文件中.
 
 Some common controls:
 
