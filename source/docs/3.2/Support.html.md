@@ -1,61 +1,41 @@
 {::options toc_levels="2,3" /}
 
-Do you want to support Aegisub? Well, it's easy!
+您想要支持Aegisub吗？很好，这很容易！
 
-### Feedback ###
+### 反馈 ###
 
-You can give us feedback - comments, critiques, suggestions, etc. Bug
-reports and feature requests are always welcome. Check out our
-[forums](http://forums.aegisub.org) and the [bug
-tracker](http://devel.aegisub.org/), or stop by for a chat in the [IRC
-channel](irc://irc.rizon.net/aegisub).
+您可以给我们反馈——评论、批评或是意见等等。也欢迎报告Bug或是要求新的功能。来看看我们的
+[论坛](http://forums.aegisub.org) 和 [Bug跟踪器](http://devel.aegisub.org/)，或者在[IRC
+频道](irc://irc.rizon.net/aegisub)交流。
 
-### Spreading the word ###
+### 把这个词告诉您的朋友 ###
 
-Like Aegisub? Tell your friends about it! Spreading the word is a good
-way of helping Aegisub to be the best subtitle editor around.
+喜欢Aegisub？把它推荐给您的朋友！传播“Aegisub”这个词是帮助它成为最好的字幕编辑器的一个很好的方式。
 
-### Donating ###
+### 捐赠 ###
 
-Feeling generous? Consider giving us a donation! We do this in our
-spare time, you know.
+您是壕？请考虑给我们捐款！我们在课余时间维护着它，您懂的。
 
-### Programming ###
+### 程序设计 ###
 
-> "Given enough eyes, all bugs are shallow."
+> "有足够多的眼睛的话，一切Bug都不在话下。（Given enough eyes, all bugs are shallow.）"
 
 _-- Linus Torvalds_
 
-Feel like really helping out, or do you just have some code you want to
-donate? Some advice from readme.txt in the source tree:
+感觉非常想要帮忙，或者你只想捐赠一些代码？源代码tree的readme.txt里的一些建议：
 
-First, some of the code is pretty readable, some is decent, and some is
-patched up crap. Good luck. ;)
+第一，一些代码可读性很好，一些是还可以看的，一些是补充的废话。祝好运。 ;)
 
-Before coding up a new feature you should probably hop on IRC and check
-with a developer to verify that we agree it's a feature that Aegisub
-should have, or you run the risk of wasting some work. Unsolicited bug
-fixes are usually welcome, though.
+在您为一个新功能打代码前，您应该登入IRC并和开发者们一起确定新功能是否是Aegisub需要的，不然可能会使您白费功夫。不过我们欢迎不请自来的Bug修复工作。
 
-Second, if you want to code anything for Aegisub, you will need to
-agree to these terms:
+第二，如果您想要为Aegisub提供一些代码，您需要同意这些条款：
 
-1.  You will release the patch to the public domain or give its
-    copyright to one of the developers. This is to stop a source file from
-    being owned by too many people. (Exception: MAJOR changes might be
-    accepted under BSD license under your name. Consult the developers)
-1.  Make SURE it compiles and works fine before submitting to developers.
-1.  Patches should normally be against git master, unless it's for a bug
-    present in stable but not master.
-1.  Pull requests should be rebased onto git master (or stable, if
-    applicable), and you should have a topic branch per pull request.
-    Please don't have any merge commits in your history.
-1.  Aegisub doesn't have a single cohesive coding style, but do try to
-    follow a style that's already present somewhere in the program (and
-    preferable that of the code you're touching).
+1.  您需要将补丁发布到公共区域，或把它的版权给予一位该软件开发者。这是防止源码被太多人同时拥有。（例外： MAJOR changes might be accepted under BSD license under your name. Consult the developers）
+1.  请确保把它提交给开发者之前编译过并工作正常。
+1.  补丁通常针对git的master分支，除非补丁是针对存在于非master的stable版的Bug。
+1.  Pull请求应发到git的master分支（或stable，如果适用），并且每个Pull请求应有topic branch。
+    请不要在您的历史上有任何merge的提交。
+1.  Aegisub没有统一的编码风格，但请尝试按照已经存在与程序某处的风格（和您碰过的最好的代码）来编码。
 
-Third, this is all available under the BSD license. According to GNU
-itself, BSD is GPL-compatible, meaning that you can link GPL code to
-BSD code. Keep in mind, though, that if a source file has mixed BSD and
-GPL content, it becomes ruled by GPL.
+第三，所有的一切都遵循BSD许可。根据GNU本身，BSD与GPL是兼容的，这意味着你可以把GPL的代码插入到BSD的代码。请记住，如果源文件混合了BSD和GPL的内容，它会变成受GPL限制的内容。
 
