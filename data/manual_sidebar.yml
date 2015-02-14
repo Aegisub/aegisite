@@ -70,7 +70,7 @@
       url: Automation
     - name: 卡拉OK模版
       url: Automation/Karaoke_Templater
-    - name: Lua 参考
+    - name: Lua 相关
       url: Automation/Lua
  - name: 杂项
    entries:
