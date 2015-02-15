@@ -33,27 +33,17 @@ Aegisub的样式管理器工具 (字幕菜单下可找到) 提供了多种多样
 
 ## 样式编辑器 ##
 
-按"编辑"按button or double clicking a style name will bring up the
-style editor, which lets you tweak all the parameters available. **Note**: some
-parameters that are available as override tags (i.e. `\be`) are _not_ available
-as style parameters; conversely, some parameters that are available in the
-styles editor (i.e. the "opaque box" outline option) are _not_ available as a
-style override. This is an unfortunate and occasionally annoying format
-limitation.
+按"编辑"按钮或双击一个样式的名称，会打开样式编辑器窗口,在这里你可以调整所有可调节的参数. **注意**: 一些参数是以特效标签的形式存在的 (如 `\be`) ，它们 _并不是_ 样式参数;反过来, 一些样式编辑器中的参数也_没有_相应的特效标签相对应 (如"不透明背景"边框选项)。这是一个不幸且偶然的缺陷。
 
-To return to the style editor:
+接着说样式编辑器:
 
 [[img/Style_editor.png]]{: class="center"}
 
-Style name
-: The name of the style. You can't have two styles with the same name in the
-same script.
+样式名称
+: 样式的名称. 在一栏中两个样式的名称不能重复.
 
-Font
-: This section controls the font settings. The drop down menu lets you choose
-the typeface (any font installed on your system will show up in this list) and
-the number to the right controls the size in points. The check boxes below set
-the bold/italic/underline/strikeout parameters.
+字体
+: 这部分控制着字体。下拉菜单允许你选择系统中所有已经安装的字体，右边的数字用于控制字的大小(字号)。下方的复选框可以调节加粗/斜体/下划线/删除线参数。
 
 Colors
 : This controls the four text colors (primary, secondary, outline and shadow).
