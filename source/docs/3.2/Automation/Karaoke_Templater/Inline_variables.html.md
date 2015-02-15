@@ -1,153 +1,128 @@
-This page describes the **inline variables** also known as **dollar variables**
-available in Karaoke Templater.
+本文档讲解在卡拉OK模板自动化时可用的**内联变量**（**$变量**）。
 
-## How to use inline variables  ##
+## 如何使用内联变量（inline variables）  ##
 
-All inline variables start with a dollar-sign. They only work in template
-lines, not in code lines. You can, however, use them in code blocks on template
-lines.
+所有的内联变量头部都是一个$符号。内联变量只能用在template行，而不能用于code行。不过你可以在模板行的code区使用它们。
 
-Here is an example of how a template text using inline variables could look:
+下面是一个在模板中使用内联变量的例子：
 
     {\pos(**$x**,**$y**)\t(**$start**,**$end**,\bord0)}
 
-The highlighted parts are the inline variables in the template.
+高亮部分为内联变量。
 
-When a template is applied, the first thing that happens is that all inline
-variables are found and replaced with their value. E.g. in the above example
-`$x` and `$y` are replaced with the X and Y coordinates of the syllable the
-template is being applied to, and `$start` and `$end` are replaced by the start
-and end times of the syllable.
+当一个模板被应用时，首先要做的就是把所有的内联变量都找到，然后把它们替换成对应的值。例如在上面的模板中`$x`和`$y`就被每个音节的位置属性(坐标x,y)替代, `$start`和`$end`分别被音节的开始时间和结束时间替代。
 
-Case does not matter for inline variables. `$start`, `$START` and `$StArT` all
-work and give the same result.
+字母的大小写对于内联变量的使用没有影响，`$start`, `$START` 或是 `$StArT` 都会起作用。
 
 
-### Limitations  ###
+### 限制  ###
 
-Inline variables are not "intelligent": they do the same no matter where you
-place them or use them and don't "know" what tag it's being used with. Not
-every variable can be used with success in all places, and the meaning of some
-are affected by usage of e.g. the
-[[retime|Automation/Karaoke_Templater/Code_execution_environment#retime]]
-function. In these cases, inline variables may not be appropriate and you need
-to use code blocks.
+内联变量并不“聪明”：无论你把它们放在哪或是如何使用它们，都只会生成同样的代码，它也不知道自己被用在了什么标签上。不是每个变量都能在所有的地方成功使用，某些变量的含义受用法的影响，例如 retime 函数。这些情况下，内联变量也许不适合使用，而你需要使用code区。
 
-Because inline variables have their values determined as the very first thing
-when a template is applied you can't affect their values in any way.
+因为内联变量是在你应用模版时首先被赋值的，所以你无法通过任何方式来改变它的值。
 
-Using inline variables is an easy way to get started with an effect, but for
-many advanced effects they might not be the best choice.
+对于做特效来说，使用内联变量是一个简便的方式，但对于多数高级特效来说，使用它们也许不是最好的选择。
 
-All positioning and sizing inline variables (such as `$y`, `$right` and
-`$width` are rounded to the nearest whole pixel, unlike the values in the
-internal data structures which you can get in code blocks, which have sub-pixel
-precision.
+所有的位置、大小内联变量（例如`$y` `$right` `$width`）都约取最近的数据（像素数取整）,不像你通过code区从内部数据结构得到的值，可精确到亚像素精度。（即小数点后面有数字）
 
-## Line and syllable variables  ##
+## 行（Line）变量和 音节（Syllable）变量  ##
 
-The inline variables exist in both "line" and "syllable" variants. The "line"
-variants contain information about the entire line being processed, the
-"syllable" variants contain information about the current syllable being
-processed.
+内联变量同时适用“line”和“syllable”两种模式。“line”模式时，变量为被处理行的信息，“syl”模式时，则为被处理的音节的信息。
 
-There are also "automatic" variants of most of the variables, there are either
-the line or the syllable variant depending on what kind of template they are
-used in. In pre-line templates the automatic inline variables refer to the line
-variants, and everywhere else they refer to the syllable variants.
+内联变量中也有很多变量能够自动适应，它们既能变成line模式，也能变成syl模式，这取决于它们的template修饰语。
+自适应变量只有在pre-line中，会自动为行变量，其它地方将自动为音节变量
 
 
-## The variables  ##
+## 变量  ##
 
-The line variables that also exist as automatic variants all start with a
-lowercase L ("ell") letter. The syllable variants start with the letter S.
+记忆方法：行变量开头是小写l，音节变量开头是小写s
 
-####  Line variants
+####  行变量  Line variants
 
 layer
-: line layer
+: 行所在层数
 
 lstart, lend, ldur, lmid
-: line start time, end time, duration and midway, all absolute times in milliseconds
+: 行的开始时间、结束时间、持续时间、中点时间（=0.5*[开始时间+结束时间]）, 都以毫秒(ms)为单位
 
 style
-: name of the line style
+: 行的样式名称
 
 actor
-: name of the line actor
+: 说话人名称
 
 margin_l, margin_r
-: effective left and right margin (line if nonzero, otherwise style)
+: 有效左边距和右边距（如该行值为非零数，否则将取决于样式）
 
 margin_v, margin_t, margin_b
-: effective vertical, top and bottom margin, vertical and top is same
+: 有效垂直边距、顶部和底部边距, 垂直边距和顶部边距含义相同
 
 syln
-: number of syllables on line
+: 行内音节的个数
 
 li
-: line index (first physical line in file is 1)
+: 行数（文件中的第一个自然行对应数值为1)
 
 lleft, lcenter, lright
-: line left, horizontal center and right edges, taking margins and alignment into account, rounded to an integer value
+: 行的左边缘、水平中心和右边缘距离, 会将设置好的边距和对齐方式算在内, 取整数
 
 ltop, lmiddle, lbottom
-: line top, vertical middle and bottom edges, taking margins and alignment into account, rounded
+: 行的上边缘、垂直中心和下边缘距离，会将设置好的边距和对齐方式算在内，取整数
 
 lx, ly
-: line x and y position suitable for a \pos command when alignment is not overridden
+: 对\pos代码使用的x,y坐标（当对齐方式未被重写时）
 
 lwidth, lheight
-: line width and height in pixels, this is rounded and might not match exactly with the positioning variables
+: 行的宽度和高度（以像素为单位）, 这两个变量会被取整，所以也许和位置变量（positioning variables）不完全吻合
 {: .horizontal-wide}
 
-#### Syllable variants
+#### 音节变量  Syllable variants
 
 sstart, send, smid
-: syllable start, end and midway times relative to start of line, suitable for putting into \t and \move
+: 音节（相对于行）的开始时间、结束时间、中点时间，适合配合\t和\move使用
 
 sdur, skdur
-: syllable duration in milliseconds and centiseconds
+: 音节的持续时间，前者以毫秒为单位，后者以厘秒为单位
 
 si
-: syllable index from start of line
+: 该行的第几个音节
 
 sleft, scenter, sright
-: absolute left, horizontal center and right edges for syllable from left edge of screen, suitable directly for \pos and \move
+: 音节的绝对的左边缘、水平中心和右边缘距离,从屏幕左边缘开始计算, 配合\pos和\move
 
 sbottom, smiddle, stop
-: absolute bottom, vertical middle and top edges for syllable from top edge of screen, suitable directly for \pos and \move, adjusted for furigana positioning if needed
+: 音节的绝对的下边缘、垂直中心和上边缘距离,从屏幕左边缘开始计算, 配合\pos和\move, 可根据假名定位进行调整
 
 sx, sy
-: syllable absolute x and y position in default alignment, suitable for using directly in \pos and \move
+: 音节在默认对齐方式下的绝对位置(x,y)，配合\pos和\move
 
 swidth, sheight
-: syllable width and height in pixelsthis is rounded and might not match exactly with the positioning variables
+: 音节的宽度和高度（以像素为单位）这两个变量会被取整，所以也许和位置变量不完全吻合
 {: .horizontal-wide}
 
 
-#### Automatic variants
+#### 自适应变量  Automatic variants
 
 start, end, mid
-: start and and midway time for line/syllable; absolute for lines and relative for syllables
+: 行或音节的开始时间、结束时间、中点时间，行是绝对时间，音节是相对行的时间（通用，自动进行判断）
 
 dur, kdur
-: duration in milliseconds and centiseconds of line/syllable
+: 行或音节的持续时间，前者以1ms为单位1，后者以10ms为单位1
 
 i
-: line or syllable index
+: 行数或音节数
 
 left, center, right
-: left, center and right edges of line/syllable, absolute from left screen edge
+: 行或音节的绝对的左边缘、水平中心和右边缘距离, 从屏幕左边缘开始计算
 
 top, middle, bottom
-: top middle and bottom edges of line/syllable, absolute from top screen edge
+: 行或音节的绝对的上边缘、垂直中心和下边缘距离，从屏幕左边缘开始计算
 
 x, y
-: x and y position of line/syllable when using default alignment
+: 行或音节的默认对齐方式下的坐标（x,y）
 
 width, height
-: width and height of line/syllable in pixels, this is rounded and might not match exactly with the positioning variables
+: 行或音节的宽度和高度，这两个变量会被取整，所以也许和位置变量不完全吻合
 {: .horizontal-wide}
 
 {::template name="automation_navbox" /}
