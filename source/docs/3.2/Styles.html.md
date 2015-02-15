@@ -1,9 +1,7 @@
-A **style** in the ASS format is a set of typographic formatting rules that is
-applied to dialogue lines. The style parameters can be overridden with
-[[override tags|ASS_Tags]]; the styles exist so that you won't have to type out
-all the overrides for each line.
+  **样式** 在ASS格式中是指一套固定的字幕排版方案。样式可以在单独的行里被
+[[特效标签|ASS_Tags]]覆写;由于样式的存在，你不必再单独为每一行进行排版。
 
-## The styles manager ##
+## 样式管理器 ##
 
 Aegisub's styles manager tool (accessed from the Subtitles menu) provides
 various means of organizing, saving and editing styles. It looks like this:
