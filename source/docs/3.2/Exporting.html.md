@@ -1,40 +1,38 @@
-{::options toc_levels="2,3" /}
+在常见的 "保存字幕" 和 "另存为字幕" 功能外，Aegisub还有一项 "导出字幕"功能， 它可以通过输出滤镜筛选保存你想要的信息。它可以达到许多目的，例如 输出帧率转换后的脚本、卡拉OK特效脚本为其他支持的格式。
 
-In addition to the normal "Save" and "Save as" functions, Aegisub also has an "Export" feature, which can transform the entire script through various export filters. This is used for a number of things ranging from framerate conversions over karaoke effect generation to just saving to other formats and/or character sets.
-
-## The export dialog ##
+## 导出 对话框 ##
 [[img/Export.png]]{: class="center"}
 
-The upper half of the window contains the available filters. Ticking one or more of them will apply them in the order they are listed; use the move up/down buttons to change the order. The lower half contains a brief description of the selected filter.
+对话框的上半显示的是可用的滤镜。如果选择一个以上的滤镜，在应用它们的时候会按照列表顺序进行;使用上移/下移按钮来改变顺序。下半部分显示的是当前选择滤镜的简要说明。
 
-Some filters have configuration parameters; those that do will extend the window to the right and put any settings controls there.
+有些滤镜具有配置参数;它们会向右拓展窗口并且你会看到所有的设置。
 
-The dropdown menu at the bottom controls what text encoding will be used for the exported file. May be useful for exporting to legacy programs that do not support Unicode.
+保存时有下拉菜单，用于选择输出文件的编码方式。导出的文件可能可以被用于不支持Unicode的旧式程序。
 
-When you click the "Export" button, do note that you can choose other formats than ASS to save to. Also note that this will almost always mean that a lot of formatting tags will be stripped.
+当你点击"导出"按钮，请注意你可以选择ASS以外的格式进行保存。 不过这也总是意味着许多格式标签会因不支持而被清除。
 
-## Filters ##
-The following filters are available in the default installation:
+## 滤镜 ##
+以下滤镜在默认配置下是可用的:
 
-### Limit to visible lines ###
-Exports only the lines that are currently visible on the active video frame. Does nothing if you do not have video loaded. Script headers and styles etc. are also exported.
+### 输出可见行 ###
+只输出在当前视频帧可见的字幕行。若未读取视频则该滤镜无效。脚本头部信息例如样式等也会被输出。
 
-### Karaoke template ###
-Filters the script through the automation script "karaoke templater" to generate karaoke effects. See the [[karaoke templater|Automation/Karaoke_Templater]] and [[automation overview|Automation]] pages for further details.
+### 卡拉OK模板 ###
+滤镜通过自动化脚本 "卡拉OK模板"生成卡拉OK特效。详见[[卡拉OK模板|Automation/Karaoke_Templater]] 和 [[自动化|Automation]] 。
 
-### Transform framerate ###
-In "constant" output mode, recalculates every single timestamp in the script (including ones contained in [[override tags|ASS_Tags]]) to work with a new framerate. Note that this means that the entire script will be "sped up" or "slowed down". Can be used for NTSC->PAL conversions or vice versa.
+### 帧率转换 ###
+在"固定" 输出模式下，以新的帧率重新计算脚本内的每一个时间标记(包含特效标签中的[[\k|ASS_Tags]])。 这意味着整个脚本被“加速”或“减速”。例如NTSC->PAL 的帧率转换，反之亦然。
 
-In "variable" output mode, uses the framerate of the loaded video (or the specified one, if different from the video's) and the loaded timecodes to recalculate every single timestamp in the script so that the exported subtitles can be hardsubbed on the loaded video and still sync up after timecodes are taken into account. Does nothing if you do not have timecodes loaded. See [[variable framerate video|Video#variableframeratevideo]] for further details.
-
-
-### Clean tags ###
-Filters the script through the "clean tags" automation script, which tries to clean up the override tag blocks by concatenating adjacent blocks and removing redundant tags (more specifically, the second instance of tags that can only be specified once per line).
+在"可变"输出模式下，会使用当前被读取视频的帧率(或指定值，如果和视频帧率不同)和时间码，然后单独计算字幕脚本中的每个时间标记，这样导出的字幕脚本可以被用于压制硬字幕。如果不读取时间码则没有作用。 详见 [[可变帧率视频|Video#variableframeratevideo]] 。
 
 
-### Clean script info ###
-Cleans the script headers by removing all lines that are not absolutely essential for proper display of the script. If you're paranoid, you should consider using this for scripts that you plan on distributing in the original form, since Aegisub stores things like the path to the last opened video/audio etc. in the script headers.
+### 整理特效标签 ###
+使用 "整理特效标签" 自动化脚本处理字幕脚本，通过对行内重新排列ASS标签以及覆盖模块，来清理字幕行。 (更确切地说， 相同标签一行内只被指定一次)。
 
 
-### Fix styles ###
-Goes through all the lines of the script and checks what style they use; any lines that use a style that isn't available in the current script is replaced with Default.
+### 清除脚本信息 ###
+清除脚本头部的所有信息，方式为清除一些对字幕显示不是绝对必要的行。 如果你有强迫症，你可以考虑用此功能把脚本变成未加载任何文件的初始格式， 因为Aegisub会将最近一次打开的视频/音频等信息保存在字幕脚本头部。
+
+
+### 修正样式 ###
+修正样式将文件中不存在的样式以默认样式 (Default) 替代。

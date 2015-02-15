@@ -1,21 +1,21 @@
 nav_items:
   - url:  /www/index.html
-    name: Home
+    name: 主页
 
   - url:  http://blog.aegisub.org
-    name: News
+    name: 新闻
 
   - url:  /www/downloads/index.html
-    name: Downloads
+    name: 下载
 
   - url:  /docs/index.html
-    name: Manual
+    name: 手册
 
   - url:  http://devel.aegisub.org
-    name: Bug Tracker
+    name: 报告Bug
 
   - url:  http://forum.aegisub.org
-    name: Forum
+    name: 论坛
 
   - url:  irc://irc.rizon.net/aegisub
     name: IRC

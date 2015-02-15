@@ -1,16 +1,5 @@
-Aegisub was originally created as a tool to make typesetting,
-particularly in anime fansubs, a less painful experience. At the time
-of the start of the project, many other programs that supported the
-Advanced Substation Alpha format lacked (and in many cases, still lack;
-development on several competing programs have since been dropped for
-various reasons completely unrelated to Aegisub) many vital functions,
-or were too buggy and/or unreliable to be really useful.
+Aegisub最初被创造出来是为了能够使得排版，特别是在动漫字幕组中，变成不再是一件痛苦的事。在这个项目刚开始时，许多其它支持ASS格式字幕的软件缺乏（在很多情况下依然是缺乏；数个竞争软件的研发也因各种和Aegisub完全无关的原因而停止了）许多重要的功能，或是因Bug太多和/或不够可靠使得它们并不实用。
 
-Since then, Aegisub has grown into a fully fledged, highly customizable
-subtitle editor. It features a lot of convenient tools to help you with
-timing, typesetting, editing and translating subtitles, as well as a
-powerful [[scripting environment|Automation]] called Automation
-(originally mostly intended for creating karaoke effects, Automation
-can now be used much else, including creating macros and various other
-convenient tools).
+从那时起，Aegisub已逐渐成长为一个成熟的，可高度定制的字幕编辑器。它具有很多方便的工具来帮助你打轴、排版、编辑和翻译字幕，以及一个强大的名为自动化的[[脚本运行环境|Automation]]
+（原本主要是用于制作卡拉OK的特效，自动化现在也有了更多的用处，包括创建宏和各种其他的方便的工具）。
 

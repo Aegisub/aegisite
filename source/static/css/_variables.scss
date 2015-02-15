@@ -49,11 +49,11 @@ $serifFontFamily:       Georgia, "Times New Roman", Times, serif;
 $monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace;
 
 $baseFontSize:          14px;
-$baseFontFamily:        $sansFontFamily;
+$baseFontFamily:        "Microsoft YaHei";
 $baseLineHeight:        20px;
-$altFontFamily:         $serifFontFamily;
+$altFontFamily:         "Microsoft YaHei";
 
-$headingsFontFamily:    "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; // empty to use BS default, $baseFontFamily
+$headingsFontFamily:    "Microsoft YaHei", "STHeiti", SimHei, Arial; // empty to use BS default, $baseFontFamily
 $headingsFontWeight:    bold;    // instead of browser default, bold
 $headingsColor:         inherit; // empty to use BS default, $textColor
 

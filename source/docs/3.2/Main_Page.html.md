@@ -1,25 +1,23 @@
-Welcome to the Aegisub manual. See our [[about|About]] page for more
-information on the program, or browse the topics on the left bar.
+欢迎来到Aegisub手册。要获得关于这个程序的更多信息，请参阅我们的[[关于|About]]页面，或浏览左边栏的文章。
 
-Documentation related to delopment of Aegisub and building Aegisub is located
-at [the bug tracker](http://devel.aegisub.org).
+关于开发Aegisub和编译Aegisub的文章位于[Bug跟踪器](http://devel.aegisub.org)上。
 
-## Starting points
+## 开始
 
-[[Quick overview of Aegisub|Overview]]
+[[Aegisub的简要概述|Overview]]
 
-**Common tasks:**
+**常见任务：**
 
-* [[Timing a translated script to audio|Audio]]
-* [[Basic typesetting of on-screen signs|Tutorials#visualtypesetting]]
-* [[Putting your finished subtitles onto the video|Attaching_subtitles_to_video]] (for viewing or distribution)
+* [[为一个已翻译的脚本打轴|Audio]]
+* [[使用可视化工具进行简单的排版|Tutorials#visualtypesetting]]
+* [[把你做好的字幕放到视频上|Attaching_subtitles_to_video]] （来观看或发布）
 
 ^
 
-* [[Translating a subtitle file from one language to another|Translation_Assistant]]
-* [[Correcting a subtitle that's not properly synchronised to the video|Fix_Timing_Tutorial]]
+* [[把字幕文件翻译成另一种语言|Translation_Assistant]]
+* [[校正和视频不同步的字幕|Fix_Timing_Tutorial]]
 
 ^
 
-* [[Timing karaoke to a song|Tutorials#karaoketiming]]
-* [[Creating fancy karaoke effects|Automation/Karaoke_Templater/Tutorial_1]]
+* [[给一首歌打卡拉OK时间轴|Tutorials#karaoketiming]]
+* [[制作华丽的卡拉OK特效字幕|Automation/Karaoke_Templater/Tutorial_1]]

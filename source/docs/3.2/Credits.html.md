@@ -1,98 +1,99 @@
 {::options toc_levels="2" /}
 
-Aegisub was originally written by Rodrigo Braz Monteiro with significant contributions from Niels Martin Hansen.
-Development was lead by Monteiro through 2008, Hansen through 2010, and by Thomas Goyne  from 2011 onward.
+Aegisub最初是由Rodrigo Braz Monteiro与有显著贡献的Niels Martin Hansen编写的。
+至2008年由Monteiro领导开发，Hansen至2010，以及从2011年开始由Thomas Goyne领导。
 
-## Programming ##
-* Main Programmers:
-  * **Rodrigo Braz Monteiro** (ArchMage ZeratuL) - Lead developer, video system, audio system, subtitles I/O, tools
-  * **Niels Martin Hansen** (jfs) - Automation, Lua automation, audio system, tools
-  * **Thomas Goyne (Plorkyeran)** - Lead developer for 3.0 onwards.
+## 程序 ##
+* 主要程序员：
+  * **Rodrigo Braz Monteiro** (ArchMage ZeratuL) - 首席开发者，视频系统，音频系统，字幕 I/O，工具
+  * **Niels Martin Hansen** (jfs) - 自动化，自动化 Lua，音频系统，工具
+  * **Thomas Goyne (Plorkyeran)** - 从3.0起的首席开发者
 
-* Staff Contributors:
-  * **Karl Blomster** (TheFluff) - General code, FFmpegSource video provider
-  * **Fredrik Mellbin** (Myrsloik) - FFmpegSource and Avisynth-related code
-  * **Amar Takhar** (verm) - New unix build system
-  * **David Lamparter** (equinox) - Unix port
-  * **Alysson Souza e Silva** (demi_alucard) - General code
+* 职员贡献者：
+  * **Karl Blomster** (TheFluff) - 常规代码，FFmpegSource视频提供者
+  * **Fredrik Mellbin** (Myrsloik) - FFmpegSource和Avisynth相关的代码
+  * **Amar Takhar** (verm) - 新的Unix编译系统
+  * **David Lamparter** (equinox) - Unix接口
+  * **Alysson Souza e Silva** (demi_alucard) - 常规代码
 
-* Other contributors:
-  * **Dan Donovan** (Dansolo) - Miscellaneous tools
-  * **Patryk Pomykalski** (Pomyk) - Miscellaneous patching
+* 其他贡献者:
+  * **Dan Donovan** (Dansolo) - 各种工具
+  * **Patryk Pomykalski** (Pomyk) - 各种补丁
   * **ai-chan** - ASSDraw3
-  * **Evgeniy Stepanov** (Azzy) - Some Linux patches, libass
-  * **Mike Matsnev** (Haali) - Some DirectShow code and Matroska Parser library
-  * **2points** - Linux patches
-  * **p-static** - Linux patches
-  * **David Conrad** (Yuvi) - Mac patches
-  * **Daniel Moscoviter** (Mosc) - General patches
-  * **Harukalover** - Usability, various patches
-  * **SAPikachu** - General patches
-  * **tophf** - General patches
-  * **nodame** - General patches
+  * **Evgeniy Stepanov** (Azzy) - 一些Linux修补程序，libass
+  * **Mike Matsnev** (Haali) - 一些DirectShow的代码和Matroska的解析器库
+  * **2points** - Linux修补程序
+  * **p-static** - Linux修补程序
+  * **David Conrad** (Yuvi) - Mac补丁
+  * **Daniel Moscoviter** (Mosc) - 常规补丁
+  * **Harukalover** - 可用性，各种补丁
+  * **SAPikachu** - 常规补丁
+  * **tophf** - 常规补丁
+  * **nodame** - 常规补丁
 
-## Installer ##
+## 安装程序 ##
 * 2.x:
   * **Niels Martin Hansen** (jfs)
   * **Fredrik Mellbin** (Myrsloik)
   * **Rodrigo Braz Monteiro** (ArchMage ZeratuL)
 
-* Previous:
+* 之前的版本:
   * movax
 
-## Manual ##
+## 手册 ##
 * 3.x:
   * **Thomas Goyne (Plorkyeran)**
+  * **Vmoe字幕组的电脑迷、domo、奶茶** - 手册中文翻译
 
 * 2.x:
   * **Karl Blomster** (TheFluff)
   * **Niels Martin Hansen** (jfs)
   * **Rodrigo Braz Monteiro** (ArchMage ZeratuL)
 
-* Previous:
+* 之前的版本:
   * Motoko-chan
   * Kobi
   * movax
   * Jcubed
 
-## Hosting ##
-* Current:
-  * **DeathWolf**: SVN repository for versions 2.1.2+
-  * **Sigurd Tao Lyngse** (Bot1): Forums and Main Wiki
-  * **Niels Martin Hansen** (jfs): Bug Tracker
-  * **Marcello Bastéa-Forte**: Documentation Wiki
-  * **Rodrigo Braz Monteiro** (ArchMage ZeratuL): Domain administration
+## 网站托管 ##
+* 当前:
+  * **DeathWolf**: 2.1.2+ 版本 SVN 信息库
+  * **Sigurd Tao Lyngse** (Bot1): 论坛和主要的Wiki
+  * **Niels Martin Hansen** (jfs): Bug跟踪器
+  * **Marcello Bastéa-Forte**: Wiki文档
+  * **Rodrigo Braz Monteiro** (ArchMage ZeratuL): 域名管理
 
-* Previous:
-  * **David Lamparter** (equinox): SVN repository for versions 2.00 - 2.1.2
-  * BerliOS: SVN repository for version 1.10
-  * Mentar: SVN repository up to version 1.09
-  * Bot1: Bug Tracker
+* 之前:
+  * **David Lamparter** (equinox): 2.00 - 2.1.2 版本 SVN 信息库
+  * BerliOS: 1.10 版本 SVN 信息库
+  * Mentar: 1.09 及之前版本 SVN 信息库
+  * Bot1: Bug跟踪器
 
-## Localization files ##
-* 2.00 translations:
-  * ArchMage ZeratuL: Brazilian Portuguese
-  * Ereza: Catalan
-  * Yuri: Hungarian
-  * Hiroshi: Japanese
-  * Jeroi: Finnish
+## 本地化文件 ##
+* 2.00 翻译:
+  * ArchMage ZeratuL: 巴西葡萄牙语
+  * Ereza: 加泰罗尼亚语
+  * Yuri: 匈牙利语
+  * Hiroshi: 日语
+  * Jeroi: 芬兰语
 
-* 1.11 translations:
-  * Karasu: Traditional Chinese
+* 1.11 翻译:
+  * Karasu: 繁体中文
 
-* 1.10 translations:
-  * TechNiko: French
-  * Crysral: French
-  * thrash-sensei: Russian
-  * equinox: German
-  * Nesukun: Spanish
-  * EmBolo: Italian
-  * Mazinga: Italian
-  * oblisk: Korean
-  * mulrich: Danish
+* 1.10 翻译:
+  * TechNiko: 法语
+  * Crysral: 法语
+  * thrash-sensei: 俄语
+  * equinox: 德语
+  * Nesukun: 西班牙语
+  * EmBolo: 意大利语
+  * Mazinga: 意大利语
+  * oblisk: 韩语
+  * mulrich: 丹麦语
 
-## Additional thanks ##
-* [Combined Community Codec Pack](http://www.cccp-project.net) staff
+## 额外的感谢 ##
+* [Combined Community Codec Pack](http://www.cccp-project.net)的工作人员
 * Gabest for VSFilter
 * squid_80 for the x64 builds of Avisynth and CSRI-enabled VSFilter
 * Firebird for some of the toolbar icons
@@ -100,8 +101,8 @@ Development was lead by Monteiro through 2008, Hansen through 2010, and by Thoma
 * ender for yawning a lot
 * Alpha testers: b0nk, Bot1, deathbygirl, DoGfOoD, grimlock, Jagobah, Jcubed, Kintaro, Kobi, kodachrome, maxx-, mASSIVe, Maya, Mentar, movax, msb, neo2sonic, nich, nwa, omgifos, SOzuken, TheFluff, thrash_sensei, Vincent, zegnat
 
-## About ##
-Aegisub includes portions from the following other projects:
+## 关于 ##
+Aegisub包括来自以下的其他项目的部分：
 
 * Avisynth 2.5 - Copyright (c) Ben Rudiak-Gould et al
 * FFMS2 - Copyright (c) Fredrik Mellbin

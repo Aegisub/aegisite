@@ -1,63 +1,50 @@
 {::options toc_levels="2,3" /}
 
-Editing subtitles is what Aegisub is made for. This page will deal with basic
-text editing of subtitle lines; for more information on the typography of
-subtitles, see [[typesetting|Typesetting]]. For information on the timing of
-subtitle lines, see [[working with audio|Audio]].
+开发Aegisub是为了编辑字幕。 本页面会讲述字幕中的基本文本编辑; 若想了解更多关于字幕排版的信息, 请看[[排版|Typesetting]]。有关字幕时间的编辑，请看[[载入音频|Audio]]。
 
-## Opening subtitles ##
+## 打开字幕 ##
 
-In the _File_ menu, there are four menu choices that relate to opening or
-creating subtitles:
+在 _文件_ 菜单中, 有四种方式用来打开或创建字幕:
 
-New subtitles
-: Create a new, blank script (i.e. close the current file).
+新建字幕
+: 建立一个新的,空白的字幕脚本 (同时也会关闭当前文件)。
 
-Open subtitles
-: Open an existing subtitles file or import subtitles from a [Matroska
-container file](http://www.matroska.org).
+打开字幕
+: 打开一个现有的字幕文件，或者从其他容器如[Matroska
+container file](http://www.matroska.org)中导入字幕文件。
 
-Open subtitles with charset
-: Opens subtitles but lets you choose what character set Aegisub will
-use to interpret the file. Usually not needed, but if you have a file
-in an unusual charset Aegisub will occasionally misdetect it.
+打开字幕并指定编码
+: 打开字幕的同时允许指定编码，Aegisub将以该编码读取字幕文件。 通常不需要这么做,但如果你有不常编码的字幕文件，Aegisub可能会无法正常读取它。
 
-Open subtitles from video
-: Open the subtitles muxed into the currently open video file. This
-currently only works with Matroska video files.
+从视频中打开字幕
+: 打开封装在视频文件中的字幕。 这个方式目前只在Matroska视频文件中有效。
 
-Open [[Autosaved Subtitles|Autosave]]
-: Open a file created by Aegisub's autosave. Useful if Aegisub crashes when you
-had unsaved changes or just if you want to open an older version of a file.
+打开自动保存的字幕 [[自动保存的字幕|Autosave]]
+: 打开由Aegisub自动保存功能生成的字幕。 这一项很有用，尤其是编辑字幕忘记保存而Aegisub崩溃时，或者你当想查看字幕文件的历史版本时。
 {: class="horizontal-wide"}
 
-When you open a subtitles file that is not detected as Unicode, Aegisub will
-attempt to guess what character set it is encoded with. If it is unsure, it
-will ask you to choose from two or more likely alternatives. If the result
-looks garbled or otherwise incorrect, try reopening it with another character
-set.
+当你打开一个不是以Unicode方式编码的字幕文件时, Aegisub将会试图猜测它的编码方式。如无法确认,Aegisub将会要求你从可能的选项中选择编码。如果打开的结果是乱码或者有其他形式的错误,请尝试以其他编码方式重新打开文件。
 
-### Supported formats ###
-Aegisub supports reading the following subtitle formats:
+### 支持的格式 ###
+Aegisub支持读取以下字幕格式:
 
-* Advanced Substation Alpha, also known as SSA v4+ (.ass)
+* Advanced Substation Alpha, 也称 SSA v4+ (.ass)
 * Substation Alpha v4 (.ssa)
-* [SubRip](http://zuggy.wz.cz/) Text (.srt)
-* MPEG4 Timed Text (limited support at best; broken at worst), also known as
+* [SubRip](http://zuggy.wz.cz/) 文本 (.srt)
+* MPEG4 Timed Text (最佳可能兼容，也有可能支持不佳而崩溃), 也称
   ISO/IEC 14496-17, MPEG-4 Part 17 or just TTXT (.ttxt)
 * MicroDVD (.sub)
-* Plain "dialog script" formatted text (see below)
+* 明显的"对话脚本"格式的文本 (见下方)
 
-### Importing subtitles from MKV ###
-Loading subtitles directly from Matroska files can also be done. The following
-CodecIDs are supported:
+### 从MKV中读取字幕 ###
+可以直接从Matroska文件中读取字幕。以下CodecIDs被支持：
 
 * S_TEXT/UTF8 (SRT)
 * S_TEXT/ASS (ASS/SSA v4+)
 * S_TEXT/SSA (SSA v4)
 
-### Importing plain text scripts ###
-Aegisub also supports importing "dialogue-formatted" plain text scripts. For example:
+### 导入明显的对话文字 ###
+Aegisub也支持导入"对话格式"的文本。例如:
 
     Actor 1: Well do I understand your speech, yet few strangers do so.
              Why then do you not speak in the Common Tongue,
@@ -65,284 +52,200 @@ Aegisub also supports importing "dialogue-formatted" plain text scripts. For exa
     # TL check: The above seems to be a quote from the lord of the rings, look it up later
     Actor 2: What are you babbling about?
 
-This will result in five subtitle lines, one being commented out. The first
-three will have the actor field set to "Actor 1", and the fifth will have it
-set to "Actor 2" (the comment line's actor field will be blank).
+导入该文本将会产生5行字幕,其中一是注释。 前三行说话人被设置为 "Actor 1", 第五行说话人被设置为 "Actor 2" (注释行的说话人栏为空白)。
 
-When you open a file with the extension .txt, Aegisub will ask you about what
-characters it should use as the actor separator and comment starter,
-respectively. In the example above, the actor separator is a colon
-("`:`") and the comment starter is a hash ("`#`").
+当你直接打开。txt文本的时候, Aegisub会分别询问用哪个字符作为区分说话人分隔符或注释开端。上方的例子中,使用了冒号(半角)
+("`:`")作为说话人分隔符，用井号作为注释开端 ("`#`")。
 
-## Editing subtitles ##
-Editing subtitles in Aegisub is done in two areas: the subtitle edit box (where
-you type in or edit text) and the subtitles grid. Changes made in both the
-edit box and the grid normally modify all selected lines, and not just the
-line displayed in the edit box.
+## 编辑字幕 ##
+在Aegisub中有两个区域可用于编辑字幕:字幕编辑框(你打字或者编辑文本的地方)和字幕栏。 在这两处对字幕进行的更改会作用于所有选择的行，不只是出现在字幕编辑框里的那一行。
 
-### The subtitles edit box ###
+### 字幕编辑框 ###
 [[img/subs_edit_box.png]]
 
-The edit box is just a plain editing area with a number of associated controls.
-They are:
+字幕编辑框是直观的编辑区域，它带有一些附属控制功能。
+它们是:
 
-1. Flags the line as a comment. Comment lines will not be displayed on the
-    video.
-1. The [[style|Styles]] used for this line.
-1. The actor speaking this line. Has no actual effect on subtitle display but
-    can be useful for editing purposes.
-1. Effect for this line. There are a few predefined effects which can be
-    applied via this field, but renderer support for them is spotty and using
-    [[override tags|ASS_Tags]] is nearly always a better idea. This is commonly
-    used as a metadata field for automation scripts.
-1. The number of characters on the longest line of this subtitle.
-1. Layer for this line. If you override positioning with an [[override
-    tag|ASS_Tags]] so that two or more lines are displayed on top of each
-    other, this field controls which one is drawn where; higher layer numbers
-    are drawn on top of lower ones.
-1. Start time for the line.
-1. End time for the line.
-1. Duration for the line. If you modify this field, the end time will be
-    modified as a result.
-1. Left margin for this line. 0 means use the margin specified in the
-    style.
-1. Right margin for this line. 0 means use the margin specified in the
-    style.
-1. Vertical margin for this line. 0 means use the margin specified in the
-    style.
-1. Inserts a bold override tag (`\b1`) at the cursor position. If the text
-    is already bold, inserts a corresponding closing tag (`\b0`).
-1. Inserts an italics override tag (`\i1`) at the cursor position. If the
-    text is already italic, inserts a corresponding closing tag (`\i0`).
-1. Inserts an underline override tag (`\u1`) at the cursor position. If the
-    text is already italic, inserts a corresponding closing tag (`\u0`).
-1. Inserts an strikeout override tag (`\s1`) at the cursor position. If the
-    text is already italic, inserts a corresponding closing tag (`\s0`).
-1. Brings up a font selection window and inserts a font face name tag
-    (`\fnFontName`) with the given font name, as well as the chosen effect
-    tags.
-1. Brings up the [[color picker|Colour_Picker]] and lets you choose a
-    color; then inserts a primary color override tag (`\c`) with the chosen
-    color at the cursor position.
-1. Brings up the [[color picker|Colour_Picker]] and lets you choose a
-    color; then inserts a secondary color override tag (`\2c`) with the chosen
-    color at the cursor position.
-1. Brings up the [[color picker|Colour_Picker]] and lets you choose a
-    color; then inserts an outline color override tag (`\3c`) with the chosen
-    color at the cursor position.
-1. Brings up the [[color picker|Colour_Picker]] and lets you choose a
-    color; then inserts a shadow color override tag (`\4c`) with the chosen
-    color at the cursor position.
-1. Move to the next line, creating a new one at the end of the file if
-    needed. Note that unlike in previous versions of Aegisub, changes do
-    not need to be committed using this button.
-1. Changes display between times and frames. Note that this does not change
-    how times are actually stored in the script.
+1. 将该行设为注释。 注释行不会显示在屏幕上。
+1. 该行的[[样式|Styles]]。
+1. 该行的说话人名。 对字幕显并无影响，但是能方便编辑。
+1. 该行的特效。通过该区域可以应用预定义的特效, 但渲染器的支持不够完善，使用
+    [[特效标签|ASS_Tags]] 更佳。 多为了使用自动化脚本而用在元数据区域。
+1. 在当前字幕行的最长行的字符数。
+1. 该行的层次编号。 如果你使用了[[特效标签|ASS_Tags]]将两字幕定位重合到了一块，两行至多行都互相覆盖显示,这个区域控制这些行的    上下关系;层次编号大的行会被“拖”到层次编号小的行上方。
+1. 行的开始时间。
+1. 行的结束时间。
+1. 行的持续时间。 如果你修改这里的数值,行的结束时间会被更改。
+1. 该行的左边距。 0意味着使用样式中设置的数值。
+1. 该行的右边距。 0意味着使用样式中设置的数值。
+1. 该行的垂直边距。 0意味着使用样式中设置的数值。
+1. 在光标位置插入“加粗”(Blod)特效标签(`\b1`)。 如果文本已经被加粗, 会插入取消加粗的特效标签(`\b0`)。
+1. 在光标位置插入“斜体”(Italic)特效标签(`\i1`)。 如果文本已经是斜体, 会插入取消斜体的特效标签(`\i0`)。
+1. 在光标位置插入“下划线”(Underline)特效标签(`\u1`)。 如果文本已经有下划线, 会插入取消下划线的特效标签(`\u0`)。
+1. 在光标位置插入“删除线”(Strikeout)特效标签(`\s1`)。 如果文本已经有删除线, 会插入取消删除线的特效标签(`\s0`)。
+1. 打开字体选择窗口，选择字体后插入一个“字体名称”特效标签(`\fnFontName`) ,其他标签也会同时插入。
+1. 打开[[取色器|Colour_Picker]]选择颜色后，在光标位置插入插入一个“主要颜色”特效标签(`\c`) 。
+1. 打开[[取色器|Colour_Picker]]选择颜色后，在光标位置插入插入一个“次要颜色”特效标签(`\2c`) 。
+1. 打开[[取色器|Colour_Picker]]选择颜色后，在光标位置插入插入一个“边框颜色”特效标签(`\3c`) 。
+1. 打开[[取色器|Colour_Picker]]选择颜色后，在光标位置插入插入一个“阴影颜色”特效标签(`\4c`) 。
+1. 移动到下一行, 如果需要会创建新的一行。注意，和之前版本的Aegisub不同,更改不需要被提交。
+1. 改变时间的定位方式，是以时间为单位还是以帧为单位。注意，更改这项不会影响已经存储在脚本中的时间信息。
 
-#### Show Original
+#### 显示原始字幕
 
-Checking the Show Original box switches the edit box to the following mode:
+“显示原始字幕”选项是把字幕编辑变成以下模式的开关:
 
 [[img/subs_edit_box_original.png]]
 
-The top half of the edit box is read-only, and show the text that the currently
-selected line had when it was first selected. This can be useful for
-translating subtitles into another language, or just for editing subtitles.
+上半个编辑框是只读的,显示当前行被第一次选中时的原始内容。这个功能在翻译或者编辑字幕时很有用。
 
-Revert
-: Replace the text of the line with the text shown in the upper box. A simple
-way to undo all the changes you made to the line if you change your mind.
+还原
+: 恢复下半编辑框到上半编辑框的状态。如果你改变主意了，这比撤销更快速的还原方法。
 
-Clear
-: Clear the line.
+清除
+: 清空该行。
 
-Clear Text
-: Clear the text of the line, but leave all override tags in place. Can help
-with translating typeset signs to another language.
+清空文本
+: 清空该行文本,但会留下所有的特效标签。保留排版方式的同时翻译成另一种语言。
 
-Insert Original
-: Insert the original text of the line at the cursor position.
+插入原文
+: 在光标处插入原文。
 
-#### Context menu
+#### 背景菜单
 
-If you right-click anywhere in the edit box, you get the following menu:
+如果你在编辑框的任意位置右键单击, 你会看见以下菜单:
 [[img/Subs_Edit_Context.png]]
 
-Select all, copy, cut and paste all do what you'd expect them to.
+全选、复制、剪切和粘贴，基本功能应有尽有。
 
-Spell checker
-: If you right-click on a word that has been detected as misspelled,
-the spell checker will suggest some likely alternative. You can also
-set which language it will use for checking from this menu, or add
-words that it doesn't recognize but you know to be correctly spelled to
-the dictionary. For more information on spell checking in Aegisub, see
-the [[Spell Checker|Spell_Checker]] page.
+拼写检查器
+: 如果你在一个可能拼写错了的单词上单击右键,拼写检查器会向你提供一些选项。你也可以在菜单中设置拼写检查语言,或者向字典中添加无法正确识别的单词。 想了解更多有关拼写检查器的信息, 请看
+ [[拼写检查器|Spell_Checker]] 页面。
 
-Thesaurus
-: Suggests alternative words similar to the highlighted word.
+拼写检查器建议
+: 提供和以选择单词接近的备选项。
 
-Split line
-: Splits the line into two new lines at the cursor position. Preserve
-times keeps the old line's timing for both lines. Estimate times tries
-to guess where the split is based on the length of the text on each
-side of the cursor. At video frame makes the first half of the line end
-on the previous frame, and the second half start on the current frame.
+分割行
+:在光标处分割行。 保留原计时会生成时间一样的一行。概略计时会按照光标前后字符数量计算分割行。以视频帧会把光标前内容的结束时间设为当前帧的前一帧，光标后内容的开始时间设为当前帧。
 {: class="dl-horizontal"}
 
-### The subtitles grid ###
+### 字幕栏 ###
 [[img/Subs_grid.png]]
 
-The subtitles grid shows all lines (comments and otherwise) in the entire
-file.
+字幕栏显示出所有行 (包括注释行和其他) 在整个文件中。
 
-Some common controls:
+一些通用的操作:
 
-* To move lines up or down in the grid, select them, hold down the Alt key
-  and press the up- or down-arrow keys.
-* To select multiple lines, hold down either Ctrl or Shift and click.
-  Ctrl-click selects one more line per click; Shift-click selects all the
-  lines between the first clicked and the last clicked.
-* To change the active line shown in the edit box without changing the
-  selection, hold down alt and click on the new line.
-* To sort all lines in the grid, open the _Subtitle_ menu, and under _Sort
-  Lines_ select the field to sort the lines on.
-* To change the way [[override tags|ASS_Tags]] are displayed in the grid,
-  click the "cycle through tag hiding modes" button on the toolbar.
+* 在字幕栏将字幕行上移/下移, 选择字幕行,按住Alt键，同时按↑或↓键。
+* 多选行,按住Ctrl或Shift然后点击。
+  Ctrl方式为点选；Shift方式会选择起始行和结束行之间的所有行。
+* 按住Alt点击字幕行，只会改变字幕编辑框内显示的内容，而不会改变选择的行。
+* 打开 _字幕_ menu, 在_选择行_ 区域可以筛选字幕行进行选择。
+* 想改变 [[特效标签|ASS_Tags]]在字幕栏的显示方式，在工具条点击"切换标签隐藏方式"。
 
 [[img/Subs_grid_tags.png]]
 
-The lines have different (configurable) colors representing different
-things; see the [[subtitles grid section of the options
-page|Options#General_-.3E_Subtitles_grid]] for details on what the colors
-mean.
+字幕行有不同的(可自定义的)颜色，用以表示不同的含义
+; 具体见[[字幕栏设置页|Options#General_-.3E_Subtitles_grid]]。
 
-By default, the following columns are visible:
+默认情况下,以下内容在字幕栏可见:
 
 **#**
-: The line number.
+: 行编号。
 
-Start
-: The start time of the line.
+开始时间
+: 该行的开始时间。
 
-End
-: The end time of the line.
+结束时间
+: 该行的结束时间。
 
-Style
-: The style used for this line.
+样式
+: 该行的样式。
 
-Text
-: The text of the line (this is what will be displayed on the video).
+文本
+: 该行的文本内容 (即在视频上显示的内容)。
 {: class="horizontal-narrow"}
 
-The following columns will be displayed if any line in the script uses them:
+如果使用了以下内容，将会在字幕栏中显示:
 
-L
-: The layer of the line (see above).
+层数
+: 该行层数。
 
-Actor
-: The actor speaking the line.
+说话人
+: 该行的说话人。
 
-Effect
-: The effect for this line.
+特效
+: 该行使用的特效。
 
-Left
-: The left margin.
+左
+: 左边距。
 
-Right
-: The right margin.
+右
+: 右边距。
 
-Vert
-: The vertical margin.
+垂直
+:垂直边距。
 {: class="horizontal-narrow"}
 
-You can also right-click the top line of the grid (the one with the column
-names) to manually select which columns you want to be visible.
+你也可以在字幕栏最上方右键单击，自定义哪些内容是可见的。
 
-Right-clicking any other line in the grid gives you the following menu
-(many of the options are also available in other menus):
+在字幕栏的行上右键单击可以看见以下菜单(在其它菜单中也可以调节这些选项):
 
 [[img/grid_context_menu.png]]
 
-**Insert (before/after)**
-: Inserts a new empty line before or after the selected line. The new line
-will be timed start at 0:00:00.00 and go to 0:00:05.00.
+**插入(之前/之后)**
+: 在所选行的之前/之后插入空白行。空白行的开始时间为0:00:00。00结束时间为0:00:05。00。
 
-**Insert at video time (before/after)**
-: Same as the above, but the new line will be timed to start at the current
-video frame. Not enabled unless you have video loaded.
+**以视频时间插入(之前/之后)**
+: 和上面功能一样,不过新生成行的开始时间被设置为当前帧。如果未读取视频则不可用。
 
-**Duplicate**
-: Duplicates the selected line(s).
+**重复行**
+: 重复选择的行(可多行)。
 
-**Split lines before current frame**
-: Duplicate the selected line(s), set the end time of the original line
-to the frame before the current video frame, and set the start time of
-the copy to the current video frame. Useful for frame-by-frame
-typesetting and for splitting a line at a scene change to let it move
-down if it collided with a no-longer-visible line. Only enabled if you
-have video loaded.
+**以当前帧前分割行**
+: 分割所选的行(可多行),原始行的结束时间被设置为当前帧的前一帧,新生成行的开始时间被设为当前帧。 在编辑逐帧字幕时很有用。需要读取视频。
 
-**Split lines after current frame**
-: As above, but it splits off the portion of the line after the current
-frame rather than the potion before the current frame, for when doing
-frame-by-frame typesetting from the last to the first frame of a line.
+**以当前帧后分割行**
+: 和上面一样,不过原始行的开始时间被设置为当前帧的后一帧，新生成行的结束时间被设为当前帧。
 
-**Split (by karaoke)**
-: Splits the line into one new line per syllable, as delimited by karaoke
-override tags (`\k` and its relatives). The timing of the first line will
-start at the original line's start time and end at that time plus the
-length of the first syllable; the following lines will start at the end of
-the previous and last for the duration of the syllable.
+**分割行(按卡拉OK)**
+: 按音节分割为新的行,同时删除卡拉OK特效标签(`\k`与其拓展)。 新生成的第一行开始时间与原始行相同，第一行结束时间=原始行开始时间+第一个音节持续时间，新生成的第二行开始时间=第一行结束时间;依此类推。
 
-**Swap**
-: Swaps the places (in the grid) of two selected lines.
+**交换行**
+: 交换两行的位置(在字幕栏)。
 
-**Join (keep first)**
-: Joins two or more lines, discarding the text of all but the first. The
-new line will be timed to start at the first line's start time and end at
-the last line's end time. Only enabled if you have more than one line
-selected.
+**合并行(保留首行)**
+: 合并两行或以上行,只保留第一行文本。新行的开始时间为所选行中时间的最小值，结束时间为所选行中时间的最大值。只有选择了多行才有效。
 
-**Join (concatenate)**
-: Same as above, but concatenates the text of all selected lines instead. A
-space is inserted between the texts of each source line.
+**合并行(连接)**
+: 和上方相同,不过会同时连接行内的文本（合并后两行文本间会自动加入一个半角空格）。
 
-**Join (as karaoke)**
-: Does the inverse of _Split (by karaoke)_, i.e.  the same as _Join
-(concatenate)_ but inserts `\k` tags with the timing of each source line in
-the joined line.
+**合并行(视为卡拉OK)**
+: 与 _分割行(按卡拉OK)_功能相反,也就是在_合并行(连接)_ 的基础上按照被合并各行的时间加入`\k`标签。
 
-**Make times continuous (change start/change end)**
-: Modifies the timing of the selected lines so that the end time of each
-line is the same as the start time of the next line. Change start/change
-end determines whether the function changes the end time or the start time
-of each line. Only  enabled when you have more than one line selected.
 
-**Recombine lines**
-: Given two or more lines with the same text being partially present in all
-of them, creates one line per text fragment instead. This is mostly useful
-for correcting subs ripped from DVDs, which frequently look something like
-this:
+**使时间连续(改变开始/结束时间)**
+: 更改所选行的开始或结束时间，使两行“无缝衔接”。如果所选行存在前后行，更改开始时间会参照前一行结束时间，更改结束时间会参照后一行的开始时间。
+
+**重组行**
+: 如果两行或多行含有相同部分的文本，那么就会按片段生成行来代替它们。这在纠正DVD rip的字幕时很有用，通常会像下面这样：
 
     [[img/Recombine_01.png]]
 
-    After recombine lines, the result is:
+    行重组后，会是这样：
 
     [[img/Recombine_02.png]]
 
-**Create audio clip**
-: Saves a segment of the loaded audio corresponding to the timing of the
-selected lines (starting at the earliest start time and ending at the
-latest end time) as an uncompressed WAV file. Only enabled if you have
-audio loaded.
+**创建音频剪辑**
+: 按照所选行（可多行）的最早开始时间和最晚结束时间截取音频片段，输出为wav文件。只有读取音频后才可用。
 
-**Cut/Copy/Paste**
-: Cuts/copies/pastes entire lines. Note that the lines are copied as plain
-text and can be copied and pasted freely between text editors, chat
-programs, web browsers, other instances of Aegisub etc.
+**剪切行/复制行/粘贴行**
+: 剪切/复制/粘贴整行。将所选行以纯文本方式进行复制，可以粘贴到文本编辑器、聊天软件，网页浏览器或、另一个Aegisub进程等。
 
-**Paste Lines Over...**
-: Open the [[Paste Over]] dialog.
 
-**Delete**
-: Deletes the selected lines.
+**选择性粘贴…**
+: 打开[[选择性粘贴|Paste Over]]对话框。
+
+**删除行**
+: 删除所选行。
+

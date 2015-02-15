@@ -1,82 +1,82 @@
- - name: Navigation
+ - name: 导航
    entries:
-    - name: Main Page
+    - name: 主页
       url: Main_Page
- - name: Introduction
+ - name: 介绍
    entries:
-    - name: What is Aegisub?
+    - name: 什么是Aegisub？
       url: About
-    - name: Highlights
+    - name: 亮点
       url: Highlights
-    - name: Credits
+    - name: 贡献
       url: Credits
-    - name: Support Aegisub
+    - name: 支持Aegisub
       url: Support
     - name: FAQ
       url: FAQ
-    - name: Tutorials
+    - name: 教程
       url: Tutorials
- - name: Working with Subtitles
+ - name: 制作字幕
    entries:
-    - name: Editing Subtitles
+    - name: 编辑字幕
       url: Editing_Subtitles
-    - name: Exporting Subtitles
+    - name: 导出字幕
       url: Exporting
-    - name: Applying Subtitles
+    - name: 应用字幕
       url: Attaching_subtitles_to_video
-    - name: Spell Checker
+    - name: 拼写检查器
       url: Spell_Checker
-    - name: Translation Assistant
+    - name: 翻译助手
       url: Translation_Assistant
-    - name: Paste Over
+    - name: 选择性粘贴
       url: Paste_Over
-    - name: Select Lines
+    - name: 选择多行
       url: Select_Lines
- - name: Typesetting
+ - name: 排版
    entries:
-    - name: Introduction
+    - name: 介绍
       url: Typesetting
-    - name: Working with Video
+    - name: 使用视频
       url: Video
-    - name: Editing styles
+    - name: 编辑样式
       url: Styles
-    - name: Visual Typesetting
+    - name: 可视化排版
       url: Visual_Typesetting
-    - name: ASS Override Tags
+    - name: ASS特效标签
       url: ASS_Tags
-    - name: Colour Picker
+    - name: 颜色选择器
       url: Colour_Picker
-    - name: Styling Assistant
+    - name: 样式助手
       url: Styling_Assistant
-    - name: Resolution Resampler
+    - name: 重设分辨率
       url: Resolution_Resampler
-    - name: Fonts Collector
+    - name: 字体收集器
       url: Fonts_Collector
- - name: Timing
+ - name: 时间轴
    entries:
-    - name: Working with Audio
+    - name: 载入音频
       url: Audio
-    - name: Timing subtitles to audio
+    - name: 使用音频打轴
       url: Timing
-    - name: Shift times
+    - name: 平移时间
       url: Shift_Times
-    - name: Timing Post-Processor
+    - name: 时间后续处理器
       url: Timing_Post-Processor
-    - name: Kanji Timer
+    - name: 汉字计时器
       url: Kanji_Timer
- - name: Automation
+ - name: 自动化
    entries:
-    - name: Overview
+    - name: 概述
       url: Automation
-    - name: Karaoke Templater
+    - name: 卡拉OK模版
       url: Automation/Karaoke_Templater
-    - name: Lua Reference
+    - name: Lua 相关
       url: Automation/Lua
- - name: Miscellaneous
+ - name: 杂项
    entries:
-    - name: Aegisub Options
+    - name: Aegisub选项
       url: Options
-    - name: Script Properties
+    - name: 脚本配置
       url: Properties
-    - name: Attachment Manager
+    - name: 附件管理器
       url: Attachment_Manager

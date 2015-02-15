@@ -638,7 +638,7 @@ you to reindex the file to open audio tracks from the same file.
         libass is far faster than VSFilter and (somewhat) cross-platform, but
         unfortunately still has some rendering differences from VSFilter and
         font-related issues on Windows. If you are doing complex typesetting
-        that will be [[softsubbed|Attaching subtitles to video#softsubbing]] it
+        that will be [[softsubbed|Attaching_subtitles_to_video#softsubbing]] it
         is a good idea to check your work with both VSFilter and libass, as an
         increasing number of users are using libass.
 

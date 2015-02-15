@@ -1,72 +1,49 @@
-A **style** in the ASS format is a set of typographic formatting rules that is
-applied to dialogue lines. The style parameters can be overridden with
-[[override tags|ASS_Tags]]; the styles exist so that you won't have to type out
-all the overrides for each line.
+  **样式** 在ASS格式中是指一套固定的字幕排版方案。样式可以在单独的行里被
+[[特效标签|ASS_Tags]]覆写;由于样式的存在，你不必再单独为每一行进行排版。
 
-## The styles manager ##
+## 样式管理器 ##
 
-Aegisub's styles manager tool (accessed from the Subtitles menu) provides
-various means of organizing, saving and editing styles. It looks like this:
+Aegisub的样式管理器工具 (字幕菜单下可找到) 提供了多种多样的方式以便组织保存和编辑字幕样式，它看起来是这个样子:
 
 [[img/Style_manager.png]]{: class="center"}
 
-As you can see, the window is divided into two halves. The right half displays
-all styles that you currently have accessible in your currently loaded script;
-the left represents a style storage. Style storages are used by Aegisub to let
-you save styles and quickly import them into scripts. You can have as many
-storages as you want; some people prefer to keep all their styles in one
-storage, others sort their styles by font, by show or alphabetically. The drop
-down menu at the top lets you choose what storage you want to view.
+如你所见, 窗口被分为两半。右半窗口显示的是目前脚本所有可用的样式;左半窗口显示的是样式库中的样式。样式库的存在是为了方便您从其他字幕文件中快速导入样式到当前字幕文件中。 你想建立多少个样式库就可以建多少个（译者注：目前版已知bug，样式库名称不能含有中文）; 一些人喜欢把他们使用的样式都存在一个样式库中,其他人喜欢按照字体、外观或者首字母顺序存储样式库。 通过顶部的下拉菜单可以切换样式库，样式库内容显示在左半窗口。
 
-In the bottom part of the window there's two almost identical sets of buttons;
-one set for the storage and one for the current script. They are:
+在底部有两排几乎一样的按钮;一排用于样式库，一排用于当前脚本。它们是:
 
-New
-: Create a new style, either in the storage or in the current script.
+新建
+: 新建样式,在样式库或当前脚本中皆可.
 
-Edit
-: Edit the selected style using the style editor (see below).
+编辑
+: 在样式编辑器(见下方)编辑已选择的样式。
 
-Copy
-: Create a copy of the selected style and bring up the style editor for it.
+复制
+: 建立已选样式的副本，同时会打开样式编辑器窗口.
 
-Delete
-: Delete the selected style(s).
+删除
+: 删除已选的样式(可多选).
 
-Copy to script and Copy to storage
-: Copies the selected styles between the storage and the current script.
+复制到当前脚本和复制到样式库
+: 在当前脚本和样式库之间复制已选的样式。
 
-Import from script
-: Import one or more styles from another script to the current one.
+从脚本中导入
+: 从其它脚本中导入样式到当前脚本。
 
-Pressing Ctrl-C in the styles manager will copy the selected style(s) to the
-clipboard as a text string. This also works the other way around; you can copy
-one or more style lines from another program and press Ctrl-V (paste) in the
-styles manager; this will insert them into the current script.
+在样式管理器中按 Ctrl-C 会复制已选的样式(可多选)到剪切板（文本形式）。你可以在另一个脚本的样式管理器按 Ctrl-V (粘贴)，此举会导入你刚才复制的样式到当前脚本。
 
-## The style editor ##
+## 样式编辑器 ##
 
-Pressing the "Edit" button or double clicking a style name will bring up the
-style editor, which lets you tweak all the parameters available. **Note**: some
-parameters that are available as override tags (i.e. `\be`) are _not_ available
-as style parameters; conversely, some parameters that are available in the
-styles editor (i.e. the "opaque box" outline option) are _not_ available as a
-style override. This is an unfortunate and occasionally annoying format
-limitation.
+按"编辑"按钮或双击一个样式的名称，会打开样式编辑器窗口,在这里你可以调整所有可调节的参数. **注意**: 一些参数是以特效标签的形式存在的 (如 `\be`) ，它们 _并不是_ 样式参数;反过来, 一些样式编辑器中的参数也_没有_相应的特效标签相对应 (如"不透明背景"边框选项)。这是一个不幸且偶然的缺陷。
 
-To return to the style editor:
+接着说样式编辑器:
 
 [[img/Style_editor.png]]{: class="center"}
 
-Style name
-: The name of the style. You can't have two styles with the same name in the
-same script.
+样式名称
+: 样式的名称. 在一栏中两个样式的名称不能重复.
 
-Font
-: This section controls the font settings. The drop down menu lets you choose
-the typeface (any font installed on your system will show up in this list) and
-the number to the right controls the size in points. The check boxes below set
-the bold/italic/underline/strikeout parameters.
+字体
+: 这部分控制着字体。下拉菜单允许你选择系统中所有已经安装的字体，右边的数字用于控制字的大小(字号)。下方的复选框可以调节加粗/斜体/下划线/删除线参数。
 
 Colors
 : This controls the four text colors (primary, secondary, outline and shadow).
