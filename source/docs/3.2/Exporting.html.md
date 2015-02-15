@@ -1,11 +1,11 @@
 {::options toc_levels="2,3" /}
 
-In addition to the normal "Save" and "Save as" functions, Aegisub also has an "Export" feature, which can transform the entire script through various export filters. This is used for a number of things ranging from framerate conversions over karaoke effect generation to just saving to other formats and/or character sets.
+在常见的 "保存字幕" 和 "另存为字幕" 功能外，Aegisub还有一项 "导出字幕"功能， 它可以通过输出滤镜筛选保存你想要的信息.它可以达到许多目的，例如 输出帧率转换后的脚本、卡拉OK特效脚本为其他支持的格式.
 
-## The export dialog ##
+## 导出 对话框 ##
 [[img/Export.png]]{: class="center"}
 
-The upper half of the window contains the available filters. Ticking one or more of them will apply them in the order they are listed; use the move up/down buttons to change the order. The lower half contains a brief description of the selected filter.
+对话框的上半显示的是可用的滤镜.如果选择一个以上的滤镜，在应用它们的时候会按照列表顺序进行;使用上移/下移按钮来改变顺序.下半部分显示的是当前选择滤镜的简要说明.
 
 Some filters have configuration parameters; those that do will extend the window to the right and put any settings controls there.
 
