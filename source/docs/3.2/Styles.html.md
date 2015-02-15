@@ -3,48 +3,37 @@
 
 ## 样式管理器 ##
 
-Aegisub's styles manager tool (accessed from the Subtitles menu) provides
-various means of organizing, saving and editing styles. It looks like this:
+Aegisub的样式管理器工具 (字幕菜单下可找到) 提供了多种多样的方式以便组织保存和编辑字幕样式，它看起来是这个样子:
 
 [[img/Style_manager.png]]{: class="center"}
 
-As you can see, the window is divided into two halves. The right half displays
-all styles that you currently have accessible in your currently loaded script;
-the left represents a style storage. Style storages are used by Aegisub to let
-you save styles and quickly import them into scripts. You can have as many
-storages as you want; some people prefer to keep all their styles in one
-storage, others sort their styles by font, by show or alphabetically. The drop
-down menu at the top lets you choose what storage you want to view.
+如你所见, 窗口被分为两半。右半窗口显示的是目前脚本所有可用的样式;左半窗口显示的是样式库中的样式。样式库的存在是为了方便您从其他字幕文件中快速导入样式到当前字幕文件中。 你想建立多少个样式库就可以建多少个（译者注：目前版已知bug，样式库名称不能含有中文）; 一些人喜欢把他们使用的样式都存在一个样式库中,其他人喜欢按照字体、外观或者首字母顺序存储样式库。 通过顶部的下拉菜单可以切换样式库，样式库内容显示在左半窗口。
 
-In the bottom part of the window there's two almost identical sets of buttons;
-one set for the storage and one for the current script. They are:
+在底部有两排几乎一样的按钮;一排用于样式库，一排用于当前脚本。它们是:
 
-New
-: Create a new style, either in the storage or in the current script.
+新建
+: 新建样式,在样式库或当前脚本中皆可.
 
-Edit
-: Edit the selected style using the style editor (see below).
+编辑
+: 在样式编辑器(见下方)编辑已选择的样式。
 
-Copy
-: Create a copy of the selected style and bring up the style editor for it.
+复制
+: 建立已选样式的副本，同时会打开样式编辑器窗口.
 
-Delete
-: Delete the selected style(s).
+删除
+: 删除已选的样式(可多选).
 
-Copy to script and Copy to storage
-: Copies the selected styles between the storage and the current script.
+复制到当前脚本和复制到样式库
+: 在当前脚本和样式库之间复制已选的样式。
 
-Import from script
-: Import one or more styles from another script to the current one.
+从脚本中导入
+: 从其它脚本中导入样式到当前脚本。
 
-Pressing Ctrl-C in the styles manager will copy the selected style(s) to the
-clipboard as a text string. This also works the other way around; you can copy
-one or more style lines from another program and press Ctrl-V (paste) in the
-styles manager; this will insert them into the current script.
+在样式管理器中按 Ctrl-C 会复制已选的样式(可多选)到剪切板（文本形式）。你可以在另一个脚本的样式管理器按 Ctrl-V (粘贴)，此举会导入你刚才复制的样式到当前脚本。
 
-## The style editor ##
+## 样式编辑器 ##
 
-Pressing the "Edit" button or double clicking a style name will bring up the
+按"编辑"按button or double clicking a style name will bring up the
 style editor, which lets you tweak all the parameters available. **Note**: some
 parameters that are available as override tags (i.e. `\be`) are _not_ available
 as style parameters; conversely, some parameters that are available in the
