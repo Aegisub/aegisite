@@ -187,7 +187,7 @@ versions:
     %p The latest version is <strong>#{data.version.current}</strong>, released #{data.version.release_date}
     %p See the <a href="../changelog/#{data.version.current}/">changelog</a> for a list of changes.
 
-    - dl_root = 'http://ftp.aegisub.org/pub/archives/releases/'
+    - dl_root = #{download_release_url}
     %table.table.table-bordered.table-condensed
       %tr
         %th Platform
@@ -245,8 +245,8 @@ versions:
 
       - current_page.data.dicts.each do |dict|
         %tr
-          %td <a href="http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-#{dict.lang}.exe">#{dict.name}</a>
-          %td <a href="http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-#{dict.lang}.exe.md5">MD5</a> | <a href="http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-#{dict.lang}.exe.sha">SHA</a>
+          %td <a href="#{download_release_url "dictionaries/Aegisub-3.0-dict-#{dict.lang}.exe"}">#{dict.name}</a>
+          %td <a href="#{download_release_url "dictionaries/Aegisub-3.0-dict-#{dict.lang}.exe.md5"}">MD5</a> | <a href="#{download_release_url "dictionaries/Aegisub-3.0-dict-#{dict.lang}.exe.sha"}">SHA</a>
           %td #{dict.notes}
 
     %h2#prerelease Upcoming Versions
@@ -289,12 +289,12 @@ versions:
         %th Version
         %th Checksum
       - current_page.data.versions.modern.each do |v|
-        - url = "http://ftp.aegisub.org/pub/archives/releases/source/aegisub-#{v}.tar.xz"
+        - url = #{download_release_url "source/aegisub-#{v}.tar.xz"}
         %tr
           %td <a href="#{url}">#{v}</a>
           %td <a href="#{url}.md5">MD5</a> | <a href="#{url}.sha">SHA</a>
       - current_page.data.versions.source.each do |v|
-        - url = "http://ftp.aegisub.org/pub/archives/releases/source/aegisub-#{v}.tar.gz"
+        - url = #{download_release_url "source/aegisub-#{v}.tar.gz"}
         %tr
           %td <a href="#{url}">#{v}</a>
           %td <a href="#{url}.md5">MD5</a> | <a href="#{url}.sha">SHA</a>

@@ -22,7 +22,7 @@ nav_group: Home
         %th Checksum
         %th Size
 
-      - dl_root = 'http://ftp.aegisub.org/pub/archives/releases/'
+      - dl_root = #{download_release_url}
       %tr
         %td Windows
         %td <a href="#{dl_root}windows/Aegisub-#{data.version.current}-32.exe">Full Install</a>
@@ -60,4 +60,3 @@ nav_group: Home
 
     %h2 Update Checker Disclosure
     %p Please read <a href="/disclosure.html">Full disclosure: Statistics collected by the update checker</a> for information on our update checker.
-
