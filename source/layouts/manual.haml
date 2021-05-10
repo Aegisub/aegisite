@@ -9,7 +9,7 @@
         - current_url = current_page.url
         - data.manual_sidebar.each do |group|
           %li.nav-header= group.name
-          - group[:entries].each do |page|
+          - group[:groups].each do |page|
             - url = page_url page[:url]
             %li{class: current_url == url ? 'active' : nil}
               = link_to page[:name], url
