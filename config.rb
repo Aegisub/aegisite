@@ -1,3 +1,5 @@
+require 'middleman-livereload'
+require 'middleman-syntax'
 require 'bootstrap-sass'
 require 'lib/markdown_extensions'
 require 'lib/subdomain_rewriter'
@@ -64,6 +66,9 @@ Kramdown::Converter::Html.class_eval do
     format_as_span_html('code', el.attr, result)
   end
 end
+
+# register Bootstrap Sass
+::SassC.load_paths << ::Bootstrap.stylesheets_path
 
 configure :build do
   # Needs to be before asset_hash

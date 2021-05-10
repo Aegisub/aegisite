@@ -1,5 +1,4 @@
 require 'kramdown/parser/kramdown'
-require 'middleman-core/sitemap'
 
 module MarkdownExtensions
   class Kramdown::Parser::WikiKramdown < Kramdown::Parser::Kramdown
