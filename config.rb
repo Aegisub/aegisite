@@ -14,9 +14,9 @@ set :js_dir, 'static/js'
 set :images_dir, 'static/img'
 
 page "/www/changelog/*", layout: 'changelog'
-page "/docs/3.1/*", layout: 'manual', app: self
-page "/docs/3.2/*", layout: 'manual', app: self
-page "/docs/api/0.1/*", layout: 'api', app: self
+page "/docs/3.1/*", layout: 'manual'
+page "/docs/3.2/*", layout: 'manual'
+page "/docs/api/0.1/*", layout: 'api'
 
 helpers do
   def ticket id
@@ -43,8 +43,7 @@ set :markdown_engine, :kramdown
 set :markdown,
   input: 'WikiKramdown',
   toc_levels: []
-set :haml,
-  ugly: true
+set :haml, { :format => :html5 }
 
 activate :syntax
 
