@@ -5,13 +5,6 @@
 
 $boxShadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 
-
-@mixin border-radius($radius: 1px) {
-	-webkit-border-radius: $radius;
-	   -moz-border-radius: $radius;
-			border-radius: $radius;
-  }
-
 // TYPOGRAPHY
 // -----------------------------------------------------
 

@@ -67,7 +67,8 @@ Kramdown::Converter::Html.class_eval do
 end
 
 # register Bootstrap Sass
-::SassC.load_paths << ::Bootstrap.stylesheets_path
+#   ref: https://github.com/twbs/bootstrap-sass/blob/061ef32807/lib/bootstrap-sass.rb#L43
+::SassC.load_paths << ::Compass::Frameworks['bootstrap'].stylesheets_directory
 
 configure :build do
   # Needs to be before asset_hash

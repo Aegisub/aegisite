@@ -6,5 +6,9 @@ group :middleman_plugins do
     gem 'middleman-syntax'
 end
 
-gem 'bootstrap-sass', '~> 3.4.1'
+group :bootstrap_css do
+    gem 'compass'  # not used, only for include saas load_paths
+    gem 'bootstrap-sass', '~> 2.3.2'  # + BootWatch 2.1.1
+end
+
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
