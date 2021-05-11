@@ -1,5 +1,6 @@
 require 'middleman-livereload'
 require 'middleman-syntax'
+require 'compass'
 require 'bootstrap-sass'
 require 'lib/markdown_extensions'
 require 'lib/subdomain_rewriter'
