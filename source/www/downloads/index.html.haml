@@ -289,12 +289,12 @@ versions:
         %th Version
         %th Checksum
       - current_page.data.versions.modern.each do |v|
-        - url = #{download_release_url "source/aegisub-#{v}.tar.xz"}
+        - url = download_release_url("source/aegisub-#{v}.tar.xz")
         %tr
           %td <a href="#{url}">#{v}</a>
           %td <a href="#{url}.md5">MD5</a> | <a href="#{url}.sha">SHA</a>
       - current_page.data.versions.source.each do |v|
-        - url = #{download_release_url "source/aegisub-#{v}.tar.gz"}
+        - url = download_release_url("source/aegisub-#{v}.tar.gz")
         %tr
           %td <a href="#{url}">#{v}</a>
           %td <a href="#{url}.md5">MD5</a> | <a href="#{url}.sha">SHA</a>
