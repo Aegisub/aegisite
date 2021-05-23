@@ -36,10 +36,10 @@ GEM
       http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
     eventmachine (1.2.7-x64-mingw32)
-    execjs (2.8.0)
+    execjs (2.8.1)
     fast_blank (1.0.0)
     fastimage (2.2.3)
-    ffi (1.15.0-x64-mingw32)
+    ffi (1.15.1-x64-mingw32)
     haml (5.2.1)
       temple (>= 0.8.0)
       tilt
