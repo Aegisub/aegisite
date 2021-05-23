@@ -81,7 +81,7 @@ edit box and the grid normally modify all selected lines, and not just the
 line displayed in the edit box.
 
 ### The subtitles edit box ###
-[[img/subs_edit_box.png]]
+![subs_edit_box.png](img/subs_edit_box.png)
 
 The edit box is just a plain editing area with a number of associated controls.
 They are:
@@ -143,7 +143,7 @@ They are:
 
 Checking the Show Original box switches the edit box to the following mode:
 
-[[img/subs_edit_box_original.png]]
+![subs_edit_box_original.png](img/subs_edit_box_original.png)
 
 The top half of the edit box is read-only, and show the text that the currently
 selected line had when it was first selected. This can be useful for
@@ -166,7 +166,7 @@ Insert Original
 #### Context menu
 
 If you right-click anywhere in the edit box, you get the following menu:
-[[img/Subs_Edit_Context.png]]
+![Subs_Edit_Context.png](img/Subs_Edit_Context.png)
 
 Select all, copy, cut and paste all do what you'd expect them to.
 
@@ -190,7 +190,7 @@ on the previous frame, and the second half start on the current frame.
 {: class="dl-horizontal"}
 
 ### The subtitles grid ###
-[[img/Subs_grid.png]]
+![Subs_grid.png](img/Subs_grid.png)
 
 The subtitles grid shows all lines (comments and otherwise) in the entire
 file.
@@ -209,7 +209,7 @@ Some common controls:
 * To change the way [[override tags|ASS_Tags]] are displayed in the grid,
   click the "cycle through tag hiding modes" button on the toolbar.
 
-[[img/Subs_grid_tags.png]]
+![Subs_grid_tags.png](img/Subs_grid_tags.png)
 
 The lines have different (configurable) colors representing different
 things; see the [[subtitles grid section of the options
@@ -261,7 +261,7 @@ names) to manually select which columns you want to be visible.
 Right-clicking any other line in the grid gives you the following menu
 (many of the options are also available in other menus):
 
-[[img/grid_context_menu.png]]
+![grid_context_menu.png](img/grid_context_menu.png)
 
 **Insert (before/after)**
 : Inserts a new empty line before or after the selected line. The new line
@@ -324,11 +324,11 @@ of them, creates one line per text fragment instead. This is mostly useful
 for correcting subs ripped from DVDs, which frequently look something like
 this:
 
-    [[img/Recombine_01.png]]
+    ![Recombine_01.png](img/Recombine_01.png)
 
     After recombine lines, the result is:
 
-    [[img/Recombine_02.png]]
+    ![Recombine_02.png](img/Recombine_02.png)
 
 **Create audio clip**
 : Saves a segment of the loaded audio corresponding to the timing of the

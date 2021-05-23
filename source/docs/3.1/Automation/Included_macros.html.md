@@ -35,7 +35,7 @@ Now after running this macro on the line:
 
 This is what it looks before and after running the macro:
 
-[[img/StackedSign1.png]] [[img/StackedSign2.png]]
+![StackedSign1.png](img/StackedSign1.png) ![StackedSign2.png](img/StackedSign2.png)
 {:/}
 
 ## Automatic karaoke lead-in  ##

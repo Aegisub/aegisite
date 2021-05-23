@@ -5,7 +5,7 @@ script that matches certain criteria. This can be useful from a number of
 things ranging from deleting all comment lines to finding all lines said by a
 certain actor. The tool can be found in the _Subtitles_ menu -> _Select lines_.
 
-[[img/Select_lines.png]]{: class="center"}
+![Select_lines.png](img/Select_lines.png){: class="center"}
 
 ### Match ###
 These controls what criteria will be used for selecting the lines.

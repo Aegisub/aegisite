@@ -3,7 +3,7 @@ current script, scans your system's fonts folder(s) and copies all the
 relevant fonts to a destination of your choosing. The dialog box looks like
 so:
 
-[[img/fonts_collector.png]]{: class="center"}
+![fonts_collector.png](img/fonts_collector.png){: class="center"}
 
 The collector can perform any of the following actions:
 

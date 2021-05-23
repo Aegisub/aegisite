@@ -4,7 +4,7 @@ The Automation system in Aegisub has evolved from a very basic and hardly useful
 ## Automation 1, really just Karaoke Effector  ##
 
 
-[[img/Effector_screenshot.png]]
+![Effector_screenshot.png](img/Effector_screenshot.png)
 
 The _Karaoke Effector_ program was originally created for making karaoke effects for a small translation project, that later died. It was written in Borland Delphi and used Lua 5.0 for scripting. This use of Lua is the primary reason I even call it "Automation 1" today. It basically allowed creating effects similar to what the _simple-k-replacer_ script from Automation 3 does, but in a more complicated and not as usable way.
 
@@ -30,7 +30,7 @@ In the end Automation 3 did prove very successful though and has done a great jo
 ## Automation 4, unlimited feature works?  ##
 
 
-[[img/Hello-auto4.png]]
+![Hello-auto4.png](img/Hello-auto4.png)
 
 As the flaws of Automation 3 started showing through the design of Automation 4 begun. Lots of people had been crying for other languages, especially Perl and Python, so support for multiple scripting languages went into the core design. The development of Automation 4 was much on and off, standing still for months at a time. Originally it was planned for Aegisub 1.09, then got pushed to 1.10 and then finally to 1.11, which then grew into Aegisub 2 because of the load of new features and major redesigns in that version, Automation 4 one of them.
 

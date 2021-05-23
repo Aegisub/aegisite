@@ -6,7 +6,7 @@ resolutions, converting a script for a 4:3 video to its 16:9 equivalent, and
 converting between 1:1 and anamorphic pixel formats.
 
 ## Overview
-[[img/resolution_resampler.png]]{: class="center"}
+![resolution_resampler.png](img/resolution_resampler.png){: class="center"}
 
 There are three main parts to the resolution resampler: the source
 resolution, destination resolution, and what to do if the source and

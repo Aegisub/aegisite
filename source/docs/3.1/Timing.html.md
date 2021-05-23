@@ -4,7 +4,7 @@
 
 When your audio file has loaded, Aegisub will transform into something like
 the screenshot below:
-[[img/audio_display.png]]
+![audio_display.png](img/audio_display.png)
 
 You can click and drag just below the audio timeline to change the height of
 the audio waveform/spectrum display.
@@ -119,7 +119,7 @@ experiment with other timing styles before deciding which one is best for
 you.
 
 ### The spectrum analyzer mode ###
-[[img/spectrum.png]]
+![spectrum.png](img/spectrum.png)
 
 When you press the spectrum analyzer button, the waveform does no longer
 show amplitude (signal strength) on the vertical axis - instead it shows

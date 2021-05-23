@@ -316,11 +316,11 @@ Perform an animation where the text performs 10 full revolutions on the Z axis. 
 {::template name="examplebox"}
 The following screenshots illustrate the effect of rotating on the different axes:
 
-[[img/Fr_sample01.jpg]]
+![Fr_sample01.jpg](img/Fr_sample01.jpg)
 
-[[img/Fr_sample02.jpg]]
+![Fr_sample02.jpg](img/Fr_sample02.jpg)
 
-[[img/Fr_sample03.jpg]]
+![Fr_sample03.jpg](img/Fr_sample03.jpg)
 {:/}
 
 {::template name="tag_def_box" title="Text shearing" id="\fax"}
@@ -338,7 +338,7 @@ coordinate system used for shearing is not affected by the [[rotation
 origin|ASS_Tags#rotationorigin]].
 
 {::template name="examplebox"}
-[[img/shearing.png]]
+![shearing.png](img/shearing.png)
 {:/}
 
 {::template name="tag_def_box" title="Font encoding" id="\fe"}\fe<i>&lt;id&gt;</i>{:/}
@@ -398,7 +398,7 @@ The color codes are given in
 order. Note that this is the opposite order of HTML color codes. Color codes
 must always start with `&H` and end with `&`.
 
-The Pick Color toolbar buttons [[img/pick-color-toolbar-buttons.png]] can
+The Pick Color toolbar buttons ![pick-color-toolbar-buttons.png](img/pick-color-toolbar-buttons.png) can
 assist in picking colors and entering the color codes.
 
 {::template name="tag_def_box" title="Set alpha" id="\alpha"}
@@ -556,9 +556,9 @@ given.
 The following screenshots illustrate the way alignment affects positioning.
 The green cross marks the point (320,240) on the video.  
 
-[[img/Pos_sample01.jpg]]  
-[[img/Pos_sample02.jpg]]  
-[[img/Pos_sample03.jpg]]
+![Pos_sample01.jpg](img/Pos_sample01.jpg)  
+![Pos_sample02.jpg](img/Pos_sample02.jpg)  
+![Pos_sample03.jpg](img/Pos_sample03.jpg)
 {:/}
 
 {::template name="tag_def_box" title="Movement" id="\move"}
@@ -803,7 +803,7 @@ quadrant is hidden.
 {:/}
 {::template name="examplebox"}
 Example of `\clip(0,0,704,245)` on a 704x480 video:  
-[[img/Clip_sample01.jpg]]
+![Clip_sample01.jpg](img/Clip_sample01.jpg)
 {:/}
 
 {::template name="tag_def_box" title="Clip (vector drawing)" id=""}
@@ -935,7 +935,7 @@ using (x1,y1) and (x2,y2) as the control points. Check the [article on
 Wikipedia](http://en.wikipedia.org/wiki/B%C3%A9zier_curve) for more
 information about Bézier curves. In this picture taken from that article, P0
 is the cursor position, P1 is x1,y1, P2 is x2,y2 and P3 is x3,y3:  
-[[img/Bezier.png]]  
+![Bezier.png](img/Bezier.png)  
 Note that the curve begins at P0, heads towards P1, then arrives at P3 coming
 from P2's direction.
 

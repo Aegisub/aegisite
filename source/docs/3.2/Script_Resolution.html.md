@@ -41,7 +41,7 @@ When opening a video which has a different resolution from the script's resoluti
 
 If the video and the script have the same aspect ratio, you'll get the following dialog:
 
-[[img/resolution-mismatch.png]]{: class="center"}
+![resolution-mismatch.png](img/resolution-mismatch.png){: class="center"}
 
 "Resample script" will resample the subtitles to the new video's resolution as if you had used the [[Resolution Resampler]], and is normally what you want if you're updating pre-existing subtitles for the video you just opened.
 
@@ -55,7 +55,7 @@ You want to do this if you are opening a lower-resolution work raw after the sub
 
 If the video's aspect ratio is different from the script's, you'll get the following dialog:
 
-[[img/resolution-mismatch-ar.png]]{: class="center"}
+![resolution-mismatch-ar.png](img/resolution-mismatch-ar.png){: class="center"}
 
 There are a few common scnarios where the aspect ratio will have changed:
 

@@ -6,7 +6,7 @@ a script for a 4:3 video to its 16:9 equivalent, and converting between 1:1 and
 anamorphic pixel formats.
 
 ## Overview  ##
-[[img/resolution_resampler.png]]{: class="center"}
+![resolution_resampler.png](img/resolution_resampler.png){: class="center"}
 
 There are two static boxes in the dialog, "margin offset" and "resolution". The
 upper box controls how much you want to increase each margin by. The second box
@@ -35,7 +35,7 @@ showing more video on the left and right margins), you would set margin left to
 107, while leaving top at 0 and "symmetrical" checked. Then you would set final
 resolution to 1280x720 (leave "Change aspect ratio" unchecked), and hit OK.
 
-[[img/Resample_diagram.png]]{: class="center"}
+![Resample_diagram.png](img/Resample_diagram.png){: class="center"}
 
 The above 107 value for the left/right margins was obtained with the following formula:
 

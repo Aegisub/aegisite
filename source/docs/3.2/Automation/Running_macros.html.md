@@ -1,7 +1,7 @@
 [[Automation]] [[macros|Glossary/Macro]] appear as options in the Automation
 menu.
 
-[[img/automation_menu.png]]
+![automation_menu.png](img/automation_menu.png)
 
 The first option in the Automation menu, before the separator, always opens
 the [[Automation/Manager]] window.

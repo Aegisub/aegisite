@@ -9,7 +9,7 @@ To use it, first copy one or more lines with the familiar copy function
 and click _paste lines over_ (or press Ctrl-Shift-v). You will then get a
 dialog box that looks like this:
 
-[[img/Paste_over.png]]{: class="center"}
+![Paste_over.png](img/Paste_over.png){: class="center"}
 
 Tick the fields you want to paste (the buttons below the checkboxes can be used
 to select all fields (in which case paste over is almost the same as normal

@@ -1,4 +1,4 @@
-[[img/Main-window-overview.png]]
+![Main-window-overview.png](img/Main-window-overview.png)
 
 This screenshot shows the Aegisub main window with everything open:
 
