@@ -11,4 +11,5 @@ group :bootstrap_css do
     gem 'bootstrap-sass', '~> 2.3.2'  # + BootWatch 2.1.1
 end
 
+gem 'kramdown'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?

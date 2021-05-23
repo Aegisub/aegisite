@@ -131,6 +131,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 2.3.2)
   compass
+  kramdown
   middleman (~> 4.3.0)
   middleman-livereload
   middleman-syntax
