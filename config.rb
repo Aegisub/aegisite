@@ -41,9 +41,9 @@ helpers do
 end
 
 set :markdown_engine, :kramdown
-set :markdown,
-  input: 'WikiKramdown',
-  toc_levels: []
+# kramdown Options: https://kramdown.gettalong.org/options.html
+set :markdown, { :toc_levels => [] }
+# haml Options: https://haml.info/docs/yardoc/file.REFERENCE.html#options
 set :haml, { :format => :html5 }
 
 activate :syntax
