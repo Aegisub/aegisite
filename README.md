@@ -1,7 +1,7 @@
-AegiSite with Hugo
-==================
+AegiSite
+========
 
-> New AegiSite
+> New AegiSite Powered by Hugo
 
 
 ## run
