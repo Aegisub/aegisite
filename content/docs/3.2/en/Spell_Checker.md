@@ -66,6 +66,5 @@ for us to find dictionaries for languages which none of the developers speak.
 The OS X version of Aegisub includes all of the dictionaries we have.
 
 On Linux your distribution's package manager should have hunspell
-dictionaries. You may need to set the [[dictionary
-path|Options#interface]] to the location where they are installed; one
+dictionaries. You may need to set the [[dictionary path|Options#interface]] to the location where they are installed; one
 common location is `/usr/share/hunspell`.

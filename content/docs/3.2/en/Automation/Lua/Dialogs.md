@@ -11,8 +11,7 @@ close. It then returns whether the user accepted or cancelled the dialog, and
 what values were input.
 
 **`@dialog`** (`table`)
-: A [[Dialog Definition
-  table|Dialogs#dialog-definition-table-format]] containing
+: A [[Dialog Definition table|Dialogs#dialog-definition-table-format]] containing
   the controls to be in the dialog.
 
 **`@buttons`** (`table`)
@@ -35,8 +34,7 @@ specify which button will be triggered if the user hits Enter or ESC.
     closes the dialog without pressing any button.
 
 **`result_table`** (`table`)
-:   The [[Dialog Result
-    table|Dialogs#dialog-result-table-format]] corresponding to
+:   The [[Dialog Result table|Dialogs#dialog-result-table-format]] corresponding to
     the values the user input in the dialog.
 
 {::template name="examplebox"}
@@ -129,8 +127,7 @@ the path to the selected file, or nil if the user canceled.
 ## Configuration Dialog interface ##
 
 This section describes the tables passed to and received from
-`aegisub.dialog.display` and the [[export filter configuration
-panel|Registration#exportfilterconfigurationpanelprovider]].
+`aegisub.dialog.display` and the [[export filter configuration panel|Registration#exportfilterconfigurationpanelprovider]].
 
 This file describes the functions and data structures used for the
 Configuration Dialog functionality in Automation 4.

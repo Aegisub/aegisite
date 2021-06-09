@@ -1,8 +1,7 @@
 
 template name="todo" Screenshots need to be updated
 
-**A video tutorial for this feature is available at [[the tutorials
-section|Tutorials]].**
+**A video tutorial for this feature is available at [[the tutorials section|Tutorials]].**
 
 ## Overview  ##
 ![video_display](/img/3.2/video_display.png){: class="center"}

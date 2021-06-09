@@ -16,15 +16,13 @@ To load an audio file into Aegisub, just go to the _Audio_ menu and press
 _Open audio file_. If you have a video file (with an included audio track)
 already loaded, you can use _Open audio from video_ instead, which obviously
 will load the audio track from the video file you currently have loaded. You
-can open any type of audio file that your [[audio
-provider|Options#advancedaudio]] can decode (more on this below). In
+can open any type of audio file that your [[audio provider|Options#advancedaudio]] can decode (more on this below). In
 addition, if you simply wish to use the audio display without loading any
 real audio, you can choose _Open 2h30 Blank Audio_ or _Open 2h30 Noise
 Audio_.
 
 If opening audio fails with an error that mentions the audio player, or if
-playing audio results in no sound, switching to a [[different audio
-player|Options#advancedaudio]] may help.
+playing audio results in no sound, switching to a [[different audio player|Options#advancedaudio]] may help.
 
 ### Supported formats ###
 Aegisub normally uses [FFMS2](https://github.com/FFMS/ffms2) to open audio,
@@ -41,13 +39,11 @@ two channels.
 ### Audio caching ###
 If you're loading any audio format that isn't an uncompressed (PCM)
 Microsoft WAV file, Aegisub needs to decode and cache it first. When loaded,
-the audio is downmixed to mono (see the [[audio downmixer
-option|Options#avisynthwindowsonly]] if you want to grab one channel only
+the audio is downmixed to mono (see the [[audio downmixer option|Options#avisynthwindowsonly]] if you want to grab one channel only
 instead), decompressed to PCM (a.k.a. WAV), and (by default) loaded into a
 RAM cache. This means that you will need a _large amount_ of RAM to open a
 long compressed audio file. If your computer doesn't have a lot of RAM, or
-if you're working with a full-length movie, refer to the [[audio cache
-option|Options#cache]] for instructions on how to make Aegisub use its
+if you're working with a full-length movie, refer to the [[audio cache option|Options#cache]] for instructions on how to make Aegisub use its
 (slower) hard drive cache instead; or decompress the file to WAV first since
 Aegisub can read from WAVs directly without need for caching.
 

@@ -23,8 +23,7 @@ Reads the subtitle file to collect all header information and style
 definitions, and optionally also generates new styles for furigana layouts.
 
 * `subtitles` is the Subtitle File object defined by Automation 4 Lua.
-* `generate_furigana` is a boolean: if it is true a style for [[furigana
-  layout|Furigana_karaoke]] is generated for each style that does not have
+* `generate_furigana` is a boolean: if it is true a style for [[furigana layout|Furigana_karaoke]] is generated for each style that does not have
   one already. Generation of furigana styles will never overwrite existing
   styles, create double style definitions or create meaningless furigana
   styles for other furigana styles.
@@ -67,8 +66,7 @@ table. The following fields are added:
 * `line.text_stripped` - Line text with all override tags and vector
   drawings removed.
 * `line.duration` - Duration of the line in milliseconds
-* `line.kara` and `line.furi` - Extended [[karaoke and furigana
-  tables|karaskel.lua#karaoke-and-furigana-syllable-tables]], without sizing and
+* `line.kara` and `line.furi` - Extended [[karaoke and furigana tables|karaskel.lua#karaoke-and-furigana-syllable-tables]], without sizing and
   position data.
 
 This function does not calculate any text sizing or positioning

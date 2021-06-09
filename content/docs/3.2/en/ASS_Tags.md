@@ -333,8 +333,7 @@ Usually _factor_ will be a small number; values outside the range -2 to 2 are
 unlikely to have desireable results.
 
 Shearing is performed after rotation, on the rotated coordinates. The
-coordinate system used for shearing is not affected by the [[rotation
-origin|ASS_Tags#rotationorigin]].
+coordinate system used for shearing is not affected by the [[rotation origin|ASS_Tags#rotationorigin]].
 
 {::template name="examplebox"}
 ![shearing](/img/3.2/shearing.png)
@@ -491,8 +490,7 @@ the line.
 
 The _duration_ is given in centiseconds, ie. a _duration_ of 100 is equivalent
 to 1 second. You generally don't enter `\k` tags manually but rather use
-karaoke timing tools such as [[Aegisub's karaoke
-mode|Tutorials#karaoketiming]].
+karaoke timing tools such as [[Aegisub's karaoke mode|Tutorials#karaoketiming]].
 
 The different `\k` tags create various effects:
 
@@ -955,6 +953,5 @@ pair of coordinates at the end of s.
 
 Closes the b-spline.
 
-_Note: The [[vector clip visual typesetting
-tool|Visual_Typesetting#vectorial-clip]] only supports the m, l and b
+_Note: The [[vector clip visual typesetting tool|Visual_Typesetting#vectorial-clip]] only supports the m, l and b
 commands, and may corrupt drawings which use the other commands._

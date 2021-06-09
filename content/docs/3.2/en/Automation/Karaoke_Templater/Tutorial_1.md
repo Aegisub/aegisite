@@ -1,5 +1,4 @@
-Welcome to the first tutorial in using Karaoke Templater to create [[karaoke
-effects|Glossary/Karaoke_effect]]. We'll start out with something simple and
+Welcome to the first tutorial in using Karaoke Templater to create [[karaoke effects|Glossary/Karaoke_effect]]. We'll start out with something simple and
 then continue on to more advanced effects throughout the series.
 
 ## Finding Karaoke Templater  ##
@@ -141,7 +140,6 @@ now.
 With this knowledge, you should already be able to create lots of effects. You
 may also want to refer to the page on [[ASS override tags|ASS_Tags]].
 
-You can also [[continue to the next
-tutorial|Automation/Karaoke_Templater/Tutorial_2]], where we'll look at how to
+You can also [[continue to the next tutorial|Automation/Karaoke_Templater/Tutorial_2]], where we'll look at how to
 do math with variables to get more variation.
 

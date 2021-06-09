@@ -1,5 +1,4 @@
-Karaoke inline-fx (inline effects) is a way of marking up [[timed
-karaoke|Timing#karaoketiming]] to assign different effects to different
+Karaoke inline-fx (inline effects) is a way of marking up [[timed karaoke|Timing#karaoketiming]] to assign different effects to different
 parts of a line.
 
 By itself, inline-fx markup doesn't do anything, it only has an effect when

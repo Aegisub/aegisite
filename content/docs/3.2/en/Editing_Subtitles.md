@@ -102,8 +102,7 @@ They are:
     [[override tags|ASS_Tags]] is nearly always a better idea. This is commonly
     used as a metadata field for automation scripts.
 1. The number of characters on the longest line of this subtitle.
-1. Layer for this line. If you override positioning with an [[override
-    tag|ASS_Tags]] so that two or more lines are displayed on top of each
+1. Layer for this line. If you override positioning with an [[override tag|ASS_Tags]] so that two or more lines are displayed on top of each
     other, this field controls which one is drawn where; higher layer numbers
     are drawn on top of lower ones.
 1. Start time for the line.
@@ -218,8 +217,7 @@ Some common controls:
 ![Subs_grid_tags](/img/3.2/Subs_grid_tags.png)
 
 The lines have different (configurable) colors representing different
-things; see the [[subtitles grid section of the options
-page|Options#General_-.3E_Subtitles_grid]] for details on what the colors
+things; see the [[subtitles grid section of the options page|Options#General_-.3E_Subtitles_grid]] for details on what the colors
 mean.
 
 By default, the following columns are visible:

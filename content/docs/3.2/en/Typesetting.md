@@ -52,8 +52,7 @@ so ease of recognition is vital. Some guidelines for good legibility:
   (since the viewing distance on a TV is usually 2-3 meters, compared to
   0.3-0.6m for a computer screen). If you plan on showing your subtitles on a
   TV you also need to take [overscan](http://en.wikipedia.org/wiki/Overscan)
-  into account; Aegisub has an overscan mask feature (see [[working with
-  video|Video]]) that can help you with this. Even if the end result isn't
+  into account; Aegisub has an overscan mask feature (see [[working with video|Video]]) that can help you with this. Even if the end result isn't
   going to be viewed on a TV, subtitles which are in the overscan area are
   usually not very readable anyway. Also consider the aspect ratio of the
   video; 16:9 or wider aspect ratios give you the opportunity to have longer

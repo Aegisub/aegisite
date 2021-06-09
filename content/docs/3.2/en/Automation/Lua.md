@@ -39,8 +39,7 @@ manipulate. To some extent, the subtitles object works as an
 integer-indexed array, but it exposes some special interfaces to add,
 remove and modify subtitle lines. The subtitles object allows you to access
 every line in the subtitle file, including headers, style definitions,
-dialogue lines and comment lines. This is described on the **[[Subtitle
-file interface|Automation/Lua/Subtitle_file_interface]]** page.
+dialogue lines and comment lines. This is described on the **[[Subtitle file interface|Automation/Lua/Subtitle_file_interface]]** page.
 
 Automation 4 Lua also provides a number of helper functions in the core API
 for getting information on e.g. the video frame timestamps and how large a

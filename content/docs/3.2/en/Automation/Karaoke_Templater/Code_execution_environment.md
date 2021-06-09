@@ -26,8 +26,7 @@ You should treat all of these except `line` as read-only. If you change the
 other ones, the kara-templater script might start misbehaving.
 
 * **line** - The line currently being produced. Changing this will affect
-  the resulting line in the file. See the **[[reference for dialogue line
-  tables|Automation/Lua/Modules/karaskel.lua#dialoguelinetable]]**.
+  the resulting line in the file. See the **[[reference for dialogue line tables|Automation/Lua/Modules/karaskel.lua#dialoguelinetable]]**.
 * **orgline** - The original line. This is the source line the current
   syllable is located on.
 * **syl** - The current syllable structure. If the current template is a
@@ -35,8 +34,7 @@ other ones, the kara-templater script might start misbehaving.
   template has one or both of the _char_ or _multi_ modifiers, this is a
   pseudo-syllable structure, a copy of the original syllable structure with
   several values changed to look like the current part of the syllable
-  being processed. Also see the **[[reference for syllable
-  tables|Automation/Lua/Modules/karaskel.lua#karaokeandfuriganasyllabletables]]**.
+  being processed. Also see the **[[reference for syllable tables|Automation/Lua/Modules/karaskel.lua#karaokeandfuriganasyllabletables]]**.
 * **basesyl** - Usually the same as `syl`, except when the template has the
   _char_ or _multi_ modifier, then this is the original syllable. (If `syl
   == basesyl` is true, then the current template is neither _char_ nor
@@ -60,8 +58,7 @@ generally useful.
 
 You can also access the main execution environment of the kara-templater
 script itself using the **`_G`** (underscore capital-G) variable and
-through that access the rest of the Lua standard library and any [[loaded
-modules|Automation/Lua/Modules]]. For example, `_G.table.sort` refers to
+through that access the rest of the Lua standard library and any [[loaded modules|Automation/Lua/Modules]]. For example, `_G.table.sort` refers to
 the regular `table.sort` function. See the [Lua 5.1
 manual](http://www.lua.org/manual/5.1/manual.html#5) for details on the
 available libraries.

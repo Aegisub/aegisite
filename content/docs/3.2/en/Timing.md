@@ -25,10 +25,8 @@ turned off. The buttons and controls are as follows (many of these have
 1. Play first 500ms of selection
 1. Play last 500ms of selection
 1. Play from selection start to end of file (or until pause is pressed)
-1. Add lead-in (how much is determined by the [[audio lead in
-  setting|Options#audio]])
-1. Add lead-out (exactly like the above, but the setting is called [[audio
-  lead out|Options#audio]], logically enough)
+1. Add lead-in (how much is determined by the [[audio lead in setting|Options#audio]])
+1. Add lead-out (exactly like the above, but the setting is called [[audio lead out|Options#audio]], logically enough)
 1. Commit (save) changes
 1. Scroll view to selection/go to selection
 1. Toggle auto-commit (if enabled, all timing changes are committed

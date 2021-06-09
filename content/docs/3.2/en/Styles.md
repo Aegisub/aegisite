@@ -94,8 +94,7 @@ Margins
 : Controls how close to the borders of the video frame the text will be
 positioned (and hence also when automatic line breaking will kick in; but do
 note that there is no option for text justification). Each value (left, right,
-vertical) is given in script resolution pixels (see [[script
-properties|Properties]]). For alignments (`\an`) 1-3, the vertical margin is
+vertical) is given in script resolution pixels (see [[script properties|Properties]]). For alignments (`\an`) 1-3, the vertical margin is
 relative to the bottom of the video frame; for 4-6 it doesn't have any meaning,
 and for 7-9 it is relative to the top of the video frame.
 

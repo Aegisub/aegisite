@@ -18,8 +18,7 @@ Obtain system font metrics and determine the rendered size in pixels of the
 given **text** when using the **style**.
 
 **`@style`** (`table`)
-:   A [[style
-    table|Automation/Lua/Subtitle_file_interface#styletable]] as defined by
+:   A [[style table|Automation/Lua/Subtitle_file_interface#styletable]] as defined by
     the subtitle interface. The font name, size, weight, style, spacing and
     encoding is used to determine the size of the text.
 
@@ -152,8 +151,7 @@ to an absolute path.
 :   A string which may optionally begin with an Aegisub [[path specifier|Aegisub_path_specifiers]].
 
 **`@path`** (`string`)
-:   If `encoded_path` began with a valid [[path
-    specifier|Aegisub_path_specifiers]], an absolute path. If it began with an
+:   If `encoded_path` began with a valid [[path specifier|Aegisub_path_specifiers]], an absolute path. If it began with an
     invalid path specifier (such as if ?video was used when no video is open),
     a string that is unlikely to be useful in any way. Any other strings are
     passed through untouched.

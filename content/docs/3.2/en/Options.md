@@ -89,8 +89,7 @@ automatically give it focus (as opposed to requiring a click).
 **Default lead-in length**
 **Default lead-out length**
 : The duration added to the start of a line by the "add lead-in" and "add
-lead-out" functions. Also used in (and set by) the [[timing
-postprocessor|Timing_Post-Processor]].
+lead-out" functions. Also used in (and set by) the [[timing postprocessor|Timing_Post-Processor]].
 
 **Marker drag-start sensitivity**
 : The distance in pixels that a marker must be dragged for it to register as a
@@ -217,8 +216,7 @@ match the video resolution automatically.
 ![preferences-interface](/img/3.2/preferences-interface.png){: class="center"}
 
 **Enable call tips**
-: When enabled, Aegisub will detect when you are writing an [[override
-tag|ASS_Tags]] and display a small box with a brief reference of the syntax of
+: When enabled, Aegisub will detect when you are writing an [[override tag|ASS_Tags]] and display a small box with a brief reference of the syntax of
 the tag in question until you close the tag. This is called a "call tip" and
 the feature may be familiar to users of various programming IDEs.
 
