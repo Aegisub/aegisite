@@ -8,7 +8,7 @@ main:
     url: /downloads/main/
     weight: 10
   - name: Docs
-    url: /docs/Main_Page/
+    url: /docs/3.2/en/Main_Page/
     weight: 20
   - name: Bug Tracker
     url: https://github.com/Aegisub/Aegisub/issues
