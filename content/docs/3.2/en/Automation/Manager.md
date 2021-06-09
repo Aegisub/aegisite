@@ -58,7 +58,7 @@ Automation Manager often to reload your script. There are also faster ways
 to reload scripts though:
 
 * When the [Export]({{< relref "Exporting" >}}) dialog is opened all local scripts are
-  reloaded. You can change this in the [Options]({{< relref "Automation_options" >}})
+  reloaded. You can change this in the [Options]({{< relref "Options" >}})
   dialog.
 * Hold the Ctrl key and click the Automation toolbar button to rescan the
   autoload folders.

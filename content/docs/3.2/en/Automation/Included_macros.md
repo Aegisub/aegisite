@@ -104,7 +104,7 @@ lines.
 This macro is also available as an export filter.
 
 The main intended function of this macro is to make
-[karaskel.lua]({{< relref "./Lua/Modules/karaskel.lua" >}}) split karaoke lines more
+[karaskel.lua]({{< relref "./Lua/Modules/karaskel.lua.md" >}}) split karaoke lines more
 sensibly into syllable structures, see the example.
 
 This macro modifies all selected lines in the grid, re-writing all tag

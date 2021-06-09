@@ -58,7 +58,7 @@ table. See below for more information.
 Synopsis: `karaskel.preproc_line_text(meta, styles, line)`{:.language-lua}
 
 Preprocess the text of a single line. `meta` and `styles` are the tables
-returned by `[karaskel.collect_head]({{< relref "karaskel.lua#karaskel.collect_head" >}})`.
+returned by `[karaskel.collect_head]({{< relref "karaskel.lua.md#karaskel.collect_head" >}})`.
 
 This function does not return a value, but rather modifies the `line`
 table. The following fields are added:
@@ -66,7 +66,7 @@ table. The following fields are added:
 * `line.text_stripped` - Line text with all override tags and vector
   drawings removed.
 * `line.duration` - Duration of the line in milliseconds
-* `line.kara` and `line.furi` - Extended [karaoke and furigana tables]({{< relref "karaskel.lua#karaoke-and-furigana-syllable-tables" >}}), without sizing and
+* `line.kara` and `line.furi` - Extended [karaoke and furigana tables]({{< relref "karaskel.lua.md#karaoke-and-furigana-syllable-tables" >}}), without sizing and
   position data.
 
 This function does not calculate any text sizing or positioning
@@ -140,7 +140,7 @@ table. The following fields are added:
 Furthermore, the `line.kara` and `line.furi` tables are modified by the
 layout function called, adding positioning information.
 
-See the part on [data structures]({{< relref "karaskel.lua#datastructures" >}}) later on
+See the part on [data structures]({{< relref "karaskel.lua.md#datastructures" >}}) later on
 this page for more details on the various fields that are added.
 
 If no line sizing information is found, `karaskel.preproc_line_size` will
