@@ -1,3 +1,11 @@
+---
+title: Overview
+menu:
+  docs:
+    parent: Automation
+weight: 610
+---
+
 The name **Automation** covers the entire scripting functionality of Aegisub.
 
 ## About Automation
