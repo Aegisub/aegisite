@@ -4,7 +4,7 @@ menu:
   docs:
     parent: Typesetting
     name: Typesetting Introduction
-weight: 410
+weight: 405
 ---
 
 Wikipedia's definition of

@@ -1,3 +1,10 @@
+---
+title: Visual Typesetting
+menu:
+  docs:
+    parent: Typesetting
+weight: 420
+---
 
 template name="todo" Screenshots need to be updated
 

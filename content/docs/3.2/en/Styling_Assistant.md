@@ -1,3 +1,11 @@
+---
+title: Styling Assistant
+menu:
+  docs:
+    parent: Typesetting
+weight: 435
+---
+
 The Styling assistant is a powerful tool for subtitles that have multiple
 styles, such as cases when several actors have their own style, or for some
 other reason you have many different styles for dialog lines.

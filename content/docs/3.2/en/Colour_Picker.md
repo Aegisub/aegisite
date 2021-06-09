@@ -1,3 +1,11 @@
+---
+title: Colour Picker
+menu:
+  docs:
+    parent: Typesetting
+weight: 430
+---
+
 Aegisub introduces a more advanced color picker than the default Windows one. It allows you to enter color values using various color spaces, in both HTML and ASS hex, pick colors from a mini-screenshot and use three different color spectrums for graphically picking colors.
 
 

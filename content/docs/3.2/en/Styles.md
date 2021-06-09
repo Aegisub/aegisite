@@ -1,3 +1,11 @@
+---
+title: Editing styles
+menu:
+  docs:
+    parent: Typesetting
+weight: 415
+---
+
 A **style** in the ASS format is a set of typographic formatting rules that is
 applied to dialogue lines. The style parameters can be overridden with
 [override tags]({{< relref "ASS_Tags" >}}); the styles exist so that you won't have to type out

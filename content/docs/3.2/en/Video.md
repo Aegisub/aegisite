@@ -1,3 +1,10 @@
+---
+title: Working with Video
+menu:
+  docs:
+    parent: Typesetting
+weight: 405
+---
 
 Aegisub isn't a video (or media) player, but it still supports loading and
 working with video in various ways. This page is a reference of how Aegisub's

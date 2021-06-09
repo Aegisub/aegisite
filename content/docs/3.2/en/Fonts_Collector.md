@@ -1,3 +1,11 @@
+---
+title: Fonts Collector
+menu:
+  docs:
+    parent: Typesetting
+weight: 445
+---
+
 The fonts collector is an automated tool that finds all fonts used in the
 current script, scans your system's fonts folder(s) and copies all the
 relevant fonts to a destination of your choosing. The dialog box looks like
