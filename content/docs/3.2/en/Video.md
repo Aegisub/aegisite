@@ -78,7 +78,7 @@ Aegisub also supports providing a bogus video surface for you to render
 subtitles on without having any actual video loaded. The dummy video dialog box
 looks like this:
 
-[[img/Dummy_video.png]]{: class="center"}
+![Dummy_video](/img/3.2/Dummy_video.png){: class="center"}
 
 Resolution
 : The resolution of the dummy video in pixels. There are a few

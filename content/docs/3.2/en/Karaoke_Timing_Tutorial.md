@@ -26,23 +26,23 @@ I am using an English song for demonstration here, but many of the more advanced
 
 We'll start by creating a new file. You already have that if you have just started Aegisub.
 
-[[img/Karatiming-1.png]]
+![Karatiming-1](/img/3.2/Karatiming-1.png)
 
 Now open your song. Select **Open Audio** from the **Audio** menu...
 
-[[img/Karatiming-2.png]]
+![Karatiming-2](/img/3.2/Karatiming-2.png)
 
 ...then select your song file.
 
-[[img/Karatiming-3.png]]
+![Karatiming-3](/img/3.2/Karatiming-3.png)
 
 Aegisub will now spend a short while reading the audio file.
 
-[[img/Karatiming-4.png]]
+![Karatiming-4](/img/3.2/Karatiming-4.png)
 
 When it's done, you should have a waveform display (the audio display) at the top of the Aegisub window. If you've used Aegisub before things might look a little different, it might be easier to follow the rest of this tutorial if you set things to look like on this picture.
 
-[[img/Karatiming-5.png]]
+![Karatiming-5](/img/3.2/Karatiming-5.png)
 
 We'll look at how to use the audio display for timing in a moment, but first let's get the lyrics for the song loaded.
 
@@ -60,13 +60,13 @@ We'll look at how to use the audio display for timing in a moment, but first let
 
 Now, to get the text in, we could just start typing it in...
 
-[[img/Karatiming-6.png]]
+![Karatiming-6](/img/3.2/Karatiming-6.png)
 
 **But don't do that!** You'll get much huger success if you have it all in a text file, copy it from there and paste it into Aegisub. (You can often also just copy-paste directly from your favourite lyrics website.)
 
 I have the lyrics in a text file, so I open that, select the text and copy it to the clipboard.
 
-[[img/Karatiming-7.png]]
+![Karatiming-7](/img/3.2/Karatiming-7.png)
 
 Now things get a little complicated, but don't worry, it really isn't hard :-)
 
@@ -74,21 +74,21 @@ There are two different places you can paste into Aegisub: The subtitles grid an
 
 We want to make sure we paste into the subtitles grid, so click once inside the grid area (at the bottom of the window) to set the input focus to that.
 
-[[img/Karatiming-8.png]]
+![Karatiming-8](/img/3.2/Karatiming-8.png)
 
 And now we can paste in the lyrics.
 
-[[img/Karatiming-9.png]]
+![Karatiming-9](/img/3.2/Karatiming-9.png)
 
 They should appear immediately as lines in the grid. Notice that they all have start and end times set to zero. This makes it easier when we're going to time each line of the lyrics to the song.
 
-[[img/Karatiming-10.png]]
+![Karatiming-10](/img/3.2/Karatiming-10.png)
 
 It might be a good idea to save your file now, just so you can easily save it later on without having to give it a name.
 
 Remember that Aegisub automatically saves a copy of your file every minute, even if you haven't given it a name yet, so you rarely lose much work if something goes wrong.
 
-[[img/Karatiming-11.png]]
+![Karatiming-11](/img/3.2/Karatiming-11.png)
 
 Now we're ready to time the individual lines in the lyrics.
 
@@ -100,7 +100,7 @@ Before we start with timing, you should know that the way presented here is just
 
 First let's look at how to get around the audio display and play the audio. You might already have noticed that there's no less than 6 different "Play" buttons. Usually you'll just use one of them, though: The one with the blue outward-pointing brackets around. That one is Play Selection, and plays the part of the audio that's currently highlighted.
 
-[[img/Karatiming-12.png]]
+![Karatiming-12](/img/3.2/Karatiming-12.png)
 
 Try pressing the Play Selection button, you should hear the first 5 seconds of the song played. (Aegisub selects the first 5 seconds by default.)
 
@@ -110,7 +110,7 @@ Let's time the first line. Find the start and end of the first line of the song 
 
 To commit the timing and store it back to the subtitle line, just press the Commit button, the green check mark.
 
-[[img/Karatiming-13.png]]
+![Karatiming-13](/img/3.2/Karatiming-13.png)
 
 When you commit, you will also be sent to the next line automatically, so you can immediately continue timing that.
 
@@ -126,7 +126,7 @@ Timing from audio isn't hard at all, but here's some tips to make it even easier
 
 **Hotkeys:** There's a number of keyboard shortcuts that can make audio timing much faster to work with.
 
-[[img/Karatiming-14.png]]
+![Karatiming-14](/img/3.2/Karatiming-14.png)
 
 The most important ones are:
 
@@ -145,7 +145,7 @@ For example, when looking for the start of the first line, you can just start pl
 
 **Spectrum mode:** Usually the audio display is in waveform mode, this is what I've shown on all the screenshots so far. But actually Aegisub has a much cooler way of showing the audio: Spectrum mode.
 
-[[img/Karatiming-15.png]]
+![Karatiming-15](/img/3.2/Karatiming-15.png)
 
 The spectrum mode takes more CPU and RAM than waveform mode, but it gives a better picture of the audio and with a bit of training you can learn to tell singing from music and even how different sounds look. For example, S sounds are very easy to recognise.
 

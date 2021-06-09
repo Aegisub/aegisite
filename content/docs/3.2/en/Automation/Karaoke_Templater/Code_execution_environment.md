@@ -84,7 +84,7 @@ These functions help do more complex modifications of the output line (the
 ### retime  ###
 Synopsis: `retime(mode, startadjust, endadjust)`
 
-[[img/Auto4-kara-templater-retime-explanation.png]]
+![Auto4-kara-templater-retime-explanation](/img/3.2/Auto4-kara-templater-retime-explanation.png)
 
 This function is usually used once in a template in a code block by itself.
 It adjusts the start and end time of the output line in various ways.

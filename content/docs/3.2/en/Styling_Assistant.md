@@ -3,14 +3,14 @@ styles, such as cases when several actors have their own style, or for some
 other reason you have many different styles for dialog lines.
 
 ## Overview  ##
-[[img/styling_assistant.png]]{: class="center"}
+![styling_assistant](/img/3.2/styling_assistant.png){: class="center"}
 
 As seen from the image above, the assistant is composed of the following:
 
-* Current line field 
-* Styles available field 
-* Set style window 
-* Keys field 
+* Current line field
+* Styles available field
+* Set style window
+* Keys field
 * Seek video to line start time checkbox
 * Play audio button
 * Play video button
@@ -39,14 +39,14 @@ The play audio and video buttons play the audio or video for the current
 line, to aid in determining what character is saying the line.
 
 ## The autocomplete function  ##
-[[img/Styling_autocomplete.png]]{: class="center"}
+![Styling_autocomplete](/img/3.2/Styling_autocomplete.png){: class="center"}
 
 This window displays how the autocomplete function works. The characters
 that were typed are on the white background and the rest of the name is
 displayed as being selected. The selected part is what autocomplete sets as
 the style that matches with the typed characters.
 
-[[img/Styling_invalid.png]]{: class="center"}
+![Styling_invalid](/img/3.2/Styling_invalid.png){: class="center"}
 
 This image shows the response to a name that doesn't exist. The background
 of the window is colored red to show that no style on the list of selected

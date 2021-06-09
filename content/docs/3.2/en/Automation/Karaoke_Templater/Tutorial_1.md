@@ -9,7 +9,7 @@ concentrate on one of them.
 
 Look under the Automation menu in Aegisub.
 
-[[img/Automation-menu-kara-templater-gray.png]]
+![Automation-menu-kara-templater-gray](/img/3.2/Automation-menu-kara-templater-gray.png)
 
 You should see the option called _Apply karaoke template_, though it will be
 unavailable. This is what you'll select to use the "templates" we'll be writing

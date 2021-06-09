@@ -2,9 +2,9 @@ The Automation Manager window is used to view, load and unload
 [[Automation]] scripts.
 
 The Automation Manager window is opened from the _Automation_ menu or with
-the [[img/Automation-toolbar-icon.png]] toolbar button.
+the ![Automation-toolbar-icon](/img/3.2/Automation-toolbar-icon.png) toolbar button.
 
-[[img/automation_manager.png]]
+![automation_manager](/img/3.2/automation_manager.png)
 
 ## The script list  ##
 

@@ -1,5 +1,5 @@
 
-[[img/Furigana-demo-1.png]]
+![Furigana-demo-1](/img/3.2/Furigana-demo-1.png)
 
 _Furigana_ (in Aegisub often shortened to _furi_) refers to little phonetic
 guide characters written along the main text in Japanese, specifically using
@@ -131,9 +131,9 @@ overlap.
 Here is the same (rather contrived) sample text shown without layout control
 and with each of the two layout control characters:
 
-| [[img/Furigana-demo-4.png]] | `{\k10}`中\|ちゅ`{\k10}`#\|う`{\k10}`国\|ご`{\k10}`#\|く<br>`{\k10}`<u>魂\|た</u>`{\k10}`#\|ま`{\k10}`#\|し`{\k10}`#\|い
-| [[img/Furigana-demo-3.png]] | `{\k10}`中\|ちゅ`{\k10}`#\|う`{\k10}`国\|ご`{\k10}`#\|く<br>`{\k10}`<u>魂\|!た</u>`{\k10}`#\|ま`{\k10}`#\|し`{\k10}`#\|い
-| [[img/Furigana-demo-2.png]] | `{\k10}`中\|ちゅ`{\k10}`#\|う`{\k10}`国\|ご`{\k10}`#\|く<br>`{\k10}`<u>魂\|&lt;た</u>`{\k10}`#\|ま`{\k10}`#\|し`{\k10}`#\|い
+| ![Furigana-demo-4](/img/3.2/Furigana-demo-4.png) | `{\k10}`中\|ちゅ`{\k10}`#\|う`{\k10}`国\|ご`{\k10}`#\|く<br>`{\k10}`<u>魂\|た</u>`{\k10}`#\|ま`{\k10}`#\|し`{\k10}`#\|い
+| ![Furigana-demo-3](/img/3.2/Furigana-demo-3.png) | `{\k10}`中\|ちゅ`{\k10}`#\|う`{\k10}`国\|ご`{\k10}`#\|く<br>`{\k10}`<u>魂\|!た</u>`{\k10}`#\|ま`{\k10}`#\|し`{\k10}`#\|い
+| ![Furigana-demo-2](/img/3.2/Furigana-demo-2.png) | `{\k10}`中\|ちゅ`{\k10}`#\|う`{\k10}`国\|ご`{\k10}`#\|く<br>`{\k10}`<u>魂\|&lt;た</u>`{\k10}`#\|ま`{\k10}`#\|し`{\k10}`#\|い
 
 It _is_ very hard to tell the difference between the two first as the
 difference is only a few pixels, but it is there. In the first sample, the た

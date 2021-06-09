@@ -17,7 +17,7 @@ program, you can just delete config.json and restart Aegisub.
 
 ## General ##
 
-[[img/preferences-general.png]]{: class="center"}
+![preferences-general](/img/3.2/preferences-general.png){: class="center"}
 **Auto Check for Updates**
 : If enabled, Aegisub will periodically check whether there is a newer version
 available, and alert you if there is.
@@ -56,11 +56,11 @@ larger lists may get unwieldy to use.
 
 ### Default Styles
 
-[[img/preferences-default-styles.png]]{: class="center"}
+![preferences-default-styles](/img/3.2/preferences-default-styles.png){: class="center"}
 
 ## Audio ##
 
-[[img/preferences-audio.png]]{: class="center"}
+![preferences-audio](/img/3.2/preferences-audio.png){: class="center"}
 **Lock scroll on cursor**
 : When enabled, the audio waveform view will automatically scroll to follow the
 playback cursor if it gets too close to either of the edges.
@@ -165,7 +165,7 @@ karaoke syllables.
 
 ## Video ##
 
-[[img/preferences-video.png]]{: class="center"}
+![preferences-video](/img/3.2/preferences-video.png){: class="center"}
 **Show keyframes in slider**
 : When enabled, Aegisub will draw keyframe markers on the video seek slider.
 
@@ -214,7 +214,7 @@ match the video resolution automatically.
 
 ## Interface ##
 
-[[img/preferences-interface.png]]{: class="center"}
+![preferences-interface](/img/3.2/preferences-interface.png){: class="center"}
 
 **Enable call tips**
 : When enabled, Aegisub will detect when you are writing an [[override
@@ -286,7 +286,7 @@ so desire.
 
 ### Colors ###
 
-[[img/preferences-colours.png]]{: class="center"}
+![preferences-colours](/img/3.2/preferences-colours.png){: class="center"}
 
 #### Audio Display ####
 
@@ -366,7 +366,7 @@ respectively.
 
 ## Hotkeys ##
 
-[[img/preferences-hotkeys.png]]{: class="center"}
+![preferences-hotkeys](/img/3.2/preferences-hotkeys.png){: class="center"}
 
 This page lists all hotkeys currently set in Aegisub, and allows you to add,
 remove or change them.
@@ -396,7 +396,7 @@ as when editing them.
 
 ## Backup ##
 
-[[img/preferences-backup.png]]{: class="center"}
+![preferences-backup](/img/3.2/preferences-backup.png){: class="center"}
 
 ### Automatic Save ###
 
@@ -430,7 +430,7 @@ this can be changed (see below).
 
 ## Automation ##
 
-[[img/preferences-automation.png]]{: class="center"}
+![preferences-automation](/img/3.2/preferences-automation.png){: class="center"}
 
 **Base path**
 : A base directory where you put non-autoloaded automation scripts. Used only
@@ -464,7 +464,7 @@ dialogue is opened. In that case you will have to enter the
 
 ## Advanced Audio ##
 
-[[img/preferences-advanced-audio.png]]{: class="center"}
+![preferences-advanced-audio](/img/3.2/preferences-advanced-audio.png){: class="center"}
 
 **Audio provider**
 : What backend to to use for loading audio. Currently there are only two
@@ -608,7 +608,7 @@ you to reindex the file to open audio tracks from the same file.
 
 ## Advanced Video ##
 
-[[img/preferences-advanced-video.png]]{: class="center"}
+![preferences-advanced-video](/img/3.2/preferences-advanced-video.png){: class="center"}
 
 **Video provider**
 : Decides what method Aegisub should use to load video. What options you have
@@ -667,7 +667,7 @@ you to reindex the file to open audio tracks from the same file.
 
     This comparison may make this clearer:
 
-    [[img/bt601.png]]
+    ![bt601](/img/3.2/bt601.png)
 
     Aegisub now writes what colorspace should be used for RGB -> YUV
     conversions to the subtitle file, so hopefully this mess will be resolved
