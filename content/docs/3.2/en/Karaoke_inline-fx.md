@@ -1,8 +1,8 @@
-Karaoke inline-fx (inline effects) is a way of marking up [[timed karaoke|Timing#karaoketiming]] to assign different effects to different
+Karaoke inline-fx (inline effects) is a way of marking up [timed karaoke]({{< relref "Timing#karaoketiming" >}}) to assign different effects to different
 parts of a line.
 
 By itself, inline-fx markup doesn't do anything, it only has an effect when
-a [[karaoke effect script|Automation]] that understands it is applied to
+a [karaoke effect script]({{< relref "Automation" >}}) that understands it is applied to
 the timed karaoke.
 
 ## The markup  ##
@@ -37,7 +37,7 @@ These syllables get inline-fx assigned like this:
 {:/}
 
 ## Usage in Karaoke Templater  ##
-If you use [[Karaoke Templater|Automation/Karaoke_Templater]] to create
+If you use [Karaoke Templater]({{< relref "Automation/Karaoke_Templater" >}}) to create
 effects, you can use the _fx_ modifier on templates to make that template
 affect only syllables with a specific inline-fx. It isn't possible
 (directly) to match only syllables with blank inline-fx.

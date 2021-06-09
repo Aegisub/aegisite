@@ -23,7 +23,7 @@ Reads the subtitle file to collect all header information and style
 definitions, and optionally also generates new styles for furigana layouts.
 
 * `subtitles` is the Subtitle File object defined by Automation 4 Lua.
-* `generate_furigana` is a boolean: if it is true a style for [[furigana layout|Furigana_karaoke]] is generated for each style that does not have
+* `generate_furigana` is a boolean: if it is true a style for [furigana layout]({{< relref "Furigana_karaoke" >}}) is generated for each style that does not have
   one already. Generation of furigana styles will never overwrite existing
   styles, create double style definitions or create meaningless furigana
   styles for other furigana styles.
@@ -58,7 +58,7 @@ table. See below for more information.
 Synopsis: `karaskel.preproc_line_text(meta, styles, line)`{:.language-lua}
 
 Preprocess the text of a single line. `meta` and `styles` are the tables
-returned by `[[karaskel.collect_head|karaskel.lua#karaskel.collect_head]]`.
+returned by `[karaskel.collect_head]({{< relref "karaskel.lua#karaskel.collect_head" >}})`.
 
 This function does not return a value, but rather modifies the `line`
 table. The following fields are added:
@@ -66,7 +66,7 @@ table. The following fields are added:
 * `line.text_stripped` - Line text with all override tags and vector
   drawings removed.
 * `line.duration` - Duration of the line in milliseconds
-* `line.kara` and `line.furi` - Extended [[karaoke and furigana tables|karaskel.lua#karaoke-and-furigana-syllable-tables]], without sizing and
+* `line.kara` and `line.furi` - Extended [karaoke and furigana tables]({{< relref "karaskel.lua#karaoke-and-furigana-syllable-tables" >}}), without sizing and
   position data.
 
 This function does not calculate any text sizing or positioning
@@ -140,7 +140,7 @@ table. The following fields are added:
 Furthermore, the `line.kara` and `line.furi` tables are modified by the
 layout function called, adding positioning information.
 
-See the part on [[data structures|karaskel.lua#datastructures]] later on
+See the part on [data structures]({{< relref "karaskel.lua#datastructures" >}}) later on
 this page for more details on the various fields that are added.
 
 If no line sizing information is found, `karaskel.preproc_line_size` will
@@ -290,7 +290,7 @@ Full list of fields:
 * `style.fontsize` - Font size for the style.
 * `style.color1`, `style.color2`, `style.color3` and `style.color4` - The
   four colours used by the style, in regular order. Use
-  `[[extract_color|Automation/Lua/Modules/#extractcolor]]` and family to
+  `[extract_color]({{< relref "Automation/Lua/Modules/#extractcolor" >}})` and family to
   manipulate these.
 * `style.bold` - `true`/`false` to specify bold/non-bold font face. Can
   also be a number to specify font weight, but this is not well supported
@@ -419,7 +419,7 @@ Additions by `karaskel.preproc_line_text`:
 * `syl.kdur` - Syllable duration in centiseconds, suitable for use in `\k`
   tags.
 * `syl.line` - Back reference to the line table containing this syllable.
-* `syl.inline_fx` - Name of the [[_inline-fx_|Karaoke_inline-fx]] for this
+* `syl.inline_fx` - Name of the [_inline-fx_]({{< relref "Karaoke_inline-fx" >}}) for this
   syllable.
 * `syl.i` - Index number of this syllable.
 * `syl.prespace`, `syl.postspace` - Space characaters at the start/end of

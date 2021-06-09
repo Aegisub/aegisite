@@ -29,7 +29,7 @@ Inline variables are not "intelligent": they do the same no matter where you
 place them or use them and don't "know" what tag it's being used with. Not
 every variable can be used with success in all places, and the meaning of some
 are affected by usage of e.g. the
-[[retime|Automation/Karaoke_Templater/Code_execution_environment#retime]]
+[retime]({{< relref "Automation/Karaoke_Templater/Code_execution_environment#retime" >}})
 function. In these cases, inline variables may not be appropriate and you need
 to use code blocks.
 

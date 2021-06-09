@@ -1,6 +1,6 @@
 A **style** in the ASS format is a set of typographic formatting rules that is
 applied to dialogue lines. The style parameters can be overridden with
-[[override tags|ASS_Tags]]; the styles exist so that you won't have to type out
+[override tags]({{< relref "ASS_Tags" >}}); the styles exist so that you won't have to type out
 all the overrides for each line.
 
 ## The styles manager ##
@@ -77,7 +77,7 @@ The meaning of each of them is as follows:
 
     Secondary
     : Secondary fill color, used for karaoke effects (see `\k` and its
-    relatives on the [[override tags page|ASS_Tags#karaokeeffect]]).
+    relatives on the [override tags page]({{< relref "ASS_Tags#karaokeeffect" >}})).
 
     Outline
     : The border color of the text.
@@ -88,13 +88,13 @@ The meaning of each of them is as follows:
     {: .horizontal-narrow }
 
     The four colored boxes show you the current color for each of the four text
-    colors; clicking on them opens the [[color picker|Colour_Picker]].
+    colors; clicking on them opens the [color picker]({{< relref "Colour_Picker" >}}).
 
 Margins
 : Controls how close to the borders of the video frame the text will be
 positioned (and hence also when automatic line breaking will kick in; but do
 note that there is no option for text justification). Each value (left, right,
-vertical) is given in script resolution pixels (see [[script properties|Properties]]). For alignments (`\an`) 1-3, the vertical margin is
+vertical) is given in script resolution pixels (see [script properties]({{< relref "Properties" >}})). For alignments (`\an`) 1-3, the vertical margin is
 relative to the bottom of the video frame; for 4-6 it doesn't have any meaning,
 and for 7-9 it is relative to the top of the video frame.
 
@@ -111,7 +111,7 @@ Outline
 : Controls the outline (border) thickness (and style) and the shadow offset.
 
   * For the outline, the number is the thickness of the border in script pixels
-    if ScaledBorderAndShadow is enabled (see [[script properties|Properties]]);
+    if ScaledBorderAndShadow is enabled (see [script properties]({{< relref "Properties" >}}));
     if it is disabled the thickness is given in video pixels instead. Setting
     it to 0 disables the outline.
   * The shadow on the other hand is a copy of the main text, shifted down and
@@ -137,7 +137,7 @@ Miscellaneous
     : Controls rotation of the text. The value is the angle of the rotation in
     degrees (360 degrees to a full circle) and may be negative or larger than
     360 (setting it to 360, 720 etc. is the same as setting it to 0 except for
-    when [[animated transforms|ASS_Tags#animatedtransform]] are involved).
+    when [animated transforms]({{< relref "ASS_Tags#animatedtransform" >}}) are involved).
 
     Spacing
     : Controls the horizontal spacing between letters. 0 means the font

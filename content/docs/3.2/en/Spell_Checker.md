@@ -4,7 +4,7 @@ based on OpenOffice.org's MySpell, which means it's at least as good as one
 you'd find in a sophisticated word processing program. It can be found in
 the _Subtitles_ menu -> _Spell Checker_. It also spell-checks as you type
 and can to some degree be controlled from the subtitle edit box's
-right-click menu (see [[editing subtitles|Editing_Subtitles]]).
+right-click menu (see [editing subtitles]({{< relref "Editing_Subtitles" >}})).
 
 ### The spell checker dialog ###
 ![spell_checker](/img/3.2/spell_checker.png){: class="center"}
@@ -66,5 +66,5 @@ for us to find dictionaries for languages which none of the developers speak.
 The OS X version of Aegisub includes all of the dictionaries we have.
 
 On Linux your distribution's package manager should have hunspell
-dictionaries. You may need to set the [[dictionary path|Options#interface]] to the location where they are installed; one
+dictionaries. You may need to set the [dictionary path]({{< relref "Options#interface" >}}) to the location where they are installed; one
 common location is `/usr/share/hunspell`.

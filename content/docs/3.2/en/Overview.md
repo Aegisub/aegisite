@@ -18,24 +18,24 @@ The **edit box** is where you can edit the text and other properties of a subtit
 
 Use the **audio box** to time subtitles (synchronize them to audio) in a fast and accurate way.  The **audio display** can show the audio you have loaded in two different ways, waveform and spectrum, the screenshot above shows it in spectrum mode.
 
-* [[Working with Audio|Audio]]
+* [Working with Audio]({{< relref "Audio" >}})
 
 <div></div>
 
 The **video box** allows you to see how the subtitles will look on the video, but it also allows you to select specific video frames a subtitle line should start/end on, and it allows you to use the mouse to position, rotate and crop a subtitle line to for example match an onscreen sign in the video.
 
-* [[Working with Video|Video]]
+* [Working with Video]({{< relref "Video" >}})
 
 <div></div>
 
 Finally, there are three bars in the program: the **status bar** is used to show status messages to you, and the **menu bar** and **tool bar** are used to access Aegisub's myriad of tools:
 
-* [[Export|Exporting]]
+* [Export]({{< relref "Exporting" >}})
 * [Spell_Checker]({{< relref "Spell_Checker" >}})
 * [Translation_Assistant]({{< relref "Translation_Assistant" >}})
 * [Paste_Over]({{< relref "Paste_Over" >}})
 * [Select_Lines]({{< relref "Select_Lines" >}})
-* [[Styles Manager|Styles]]
+* [Styles Manager]({{< relref "Styles" >}})
 * [Colour_Picker]({{< relref "Colour_Picker" >}})
 * [Styling_Assistant]({{< relref "Styling_Assistant" >}})
 * [Resolution_Resampler]({{< relref "Resolution_Resampler" >}})
@@ -43,9 +43,9 @@ Finally, there are three bars in the program: the **status bar** is used to show
 * [Shift_Times]({{< relref "Shift_Times" >}})
 * [Timing_Post-Processor]({{< relref "Timing_Post-Processor" >}})
 * [Kanji_Timer]({{< relref "Kanji_Timer" >}})
-* [[Automation Manager|Automation]]
+* [Automation Manager]({{< relref "Automation" >}})
 * [Options]({{< relref "Options" >}})
-* [[Script Properties|Properties]]
+* [Script Properties]({{< relref "Properties" >}})
 * [Attachment_Manager]({{< relref "Attachment_Manager" >}})
 <div></div>
 

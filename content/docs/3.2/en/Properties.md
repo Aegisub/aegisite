@@ -24,5 +24,5 @@ The properties are:
   * 3 - Same as mode 0, but prefers the bottom line to be wider. Note that for a long time VSFilter's implementation of this was buggy and would sometimes insert extra blank lines or have lines with a single word on them.
 
 The wrapping mode should almost always be zero.
-Mode two is sometimes useful for long lines which are scrolled or manually line-broken, but should be set on a per-line basis with the [[\q|ASS_Tags#\q]] tag.
+Mode two is sometimes useful for long lines which are scrolled or manually line-broken, but should be set on a per-line basis with the [\q]({{< relref "ASS_Tags#\q" >}}) tag.
 

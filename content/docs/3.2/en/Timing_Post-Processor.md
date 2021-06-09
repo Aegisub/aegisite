@@ -62,7 +62,7 @@ applied before the overlap elimination.
 ## Keyframe snapping  ##
 The keyframe snapping function is a kind of automatic scenetimer. It is
 probably the most useful of the three, but will only work if there is a video
-or keyframe loaded, because of its dependency on keyframes. See the [[keyframes section of the working with video page|Video#keyframes]].
+or keyframe loaded, because of its dependency on keyframes. See the [keyframes section of the working with video page]({{< relref "Video#keyframes" >}}).
 
 The keyframe snapping function will look at how close the start and end of
 lines are to the nearest keyframe, and if they are closer than the given

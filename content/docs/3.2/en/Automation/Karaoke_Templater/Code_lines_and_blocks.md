@@ -6,7 +6,7 @@ example could generate various shapes in cycling colours.
 Both code lines and code blocks are run in a separate semi-closed execution
 environment, meaning they are mostly undisturbed by the primary Lua environment
 the Karaoke Templater script itself runs in. For an overview of what variables
-are available in the code line/block execution environment see: [[Code execution environment|Automation/Karaoke_Templater/Code_execution_environment]].
+are available in the code line/block execution environment see: [Code execution environment]({{< relref "Automation/Karaoke_Templater/Code_execution_environment" >}}).
 
 ## Code lines  ##
 
@@ -63,7 +63,7 @@ Templater.
 ## Code blocks  ##
 
 A code block is a block of Lua code within a template line. Code blocks are
-used to insert more complex things than can be expressed with [[inline variables|Automation/Karaoke_Templater/Inline_variables]].
+used to insert more complex things than can be expressed with [inline variables]({{< relref "Automation/Karaoke_Templater/Inline_variables" >}}).
 
 Code blocks are required to be single Lua expressions, since a `return`
 statement is automatically prepended to the code. This means you (among other

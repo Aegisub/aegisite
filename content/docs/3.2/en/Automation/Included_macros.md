@@ -104,7 +104,7 @@ lines.
 This macro is also available as an export filter.
 
 The main intended function of this macro is to make
-[[karaskel.lua|Automation/Lua/Modules/karaskel.lua]] split karaoke lines more
+[karaskel.lua]({{< relref "Automation/Lua/Modules/karaskel.lua" >}}) split karaoke lines more
 sensibly into syllable structures, see the example.
 
 This macro modifies all selected lines in the grid, re-writing all tag
@@ -140,7 +140,7 @@ override tags inside the syllables they affect.
 ## Add Edgeblur ##
 Add [[`\be1`|ASS_Tags#bluredges]] to all selected lines. Lightly blurring the
 edges of all dialogue lines can noticeably improve compressibility when
-[[hardsubbing|Attaching_subtitles_to_video]] (especially when using older
+[hardsubbing]({{< relref "Attaching_subtitles_to_video" >}}) (especially when using older
 codecs such as XviD), but edgeblur cannot be set in the style due to format
 limitations.
 

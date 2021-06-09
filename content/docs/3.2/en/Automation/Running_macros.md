@@ -1,4 +1,4 @@
-[Automation]({{< relref "Automation" >}}) [[macros|Glossary/Macro]] appear as options in the Automation
+[Automation]({{< relref "Automation" >}}) [macros]({{< relref "Glossary/Macro" >}}) appear as options in the Automation
 menu.
 
 ![automation_menu](/img/3.2/automation_menu.png)
@@ -11,7 +11,7 @@ seven macros are loaded. The third, [Karaoke_Templater]({{< relref "Karaoke_Temp
 though, because the macro has determined it can't be run on the subtitles.
 In this case, because the subtitle file has no karaoke templates. Other
 macros might be unavailable for other reasons. The fourth has had a hotkey
-set in the [[preferences dialog|Options#hotkeys]]
+set in the [preferences dialog]({{< relref "Options#hotkeys" >}})
 
 To run a macro, just select it from the Automation menu. Some macros might
 ask you for more information, and some work only on the selected subtitle

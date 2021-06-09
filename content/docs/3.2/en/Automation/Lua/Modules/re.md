@@ -221,7 +221,7 @@ Find all non-overlapping substrings of `str` which match `pattern`.
 : Pattern to search for. Capturing groups in the pattern are ignored.
 
 **`matches`** (`table` or `nil`)
-: A table of [[Match Tables|re#match-tables]] for all matches, or `nil` if
+: A table of [Match Tables]({{< relref "re#match-tables" >}}) for all matches, or `nil` if
 there were none.
 
 {::template name="luabox"}
@@ -292,7 +292,7 @@ single match along with the captured subgroups.
 
 **`matches`** (`table` or `nil`)
 : `nil` if the pattern did not match the string. Otherwise, a table containing
-a [[Match Table|re#match-tables]] for the full match, followed by a [[Match Table|re#match-tables]] for each capturing subexpression in the pattern (if
+a [Match Table|re#match-tables]] for the full match, followed by a [[Match Table]({{< relref "re#match-tables" >}}) for each capturing subexpression in the pattern (if
 any).
 
 {::template name="luabox"}
@@ -333,8 +333,8 @@ Iterator version of [[`re.match`|re#re.match]].
 : Pattern to search for.
 
 **`matches`** (`iterator over table`)
-: An iterator which returns a table containing a [[Match Table|re#match-tables]] for the full match (if it matched), followed by a
-[[Match Table|re#match-tables]] for each capturing subexpression in the pattern
+: An iterator which returns a table containing a [Match Table]({{< relref "re#match-tables" >}}) for the full match (if it matched), followed by a
+[Match Table]({{< relref "re#match-tables" >}}) for each capturing subexpression in the pattern
 (if any).
 
 ### re.sub ###

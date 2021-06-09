@@ -11,7 +11,7 @@ implementation discussed here is designed specifically with Japanese furigana
 in mind, the ruby text is also referred to as furigana everywhere.
 
 None of the subtitle formats Aegisub supports natively support ruby text or
-furigana, however the [[karaskel|Automation/Lua/Modules/karaskel.lua]] standard include
+furigana, however the [karaskel]({{< relref "Automation/Lua/Modules/karaskel.lua" >}}) standard include
 implements an algorithm that can create basic furigana layouts by calculating
 the position of every individual character.
 
@@ -19,11 +19,11 @@ This page describes the syntax the Automation 4 karaskel.lua script understands
 for furigana text, and how to use the layout information it calculates to
 actually create positioned characters.
 
-[[Karaoke Templater|Automation/Karaoke_Templater]] also implements support for
+[Karaoke Templater]({{< relref "Automation/Karaoke_Templater" >}}) also implements support for
 furigana using the karaskel.lua algorithm and syntax.
 
 It's important to note that the syntax is designed for karaoke, and revolves
-around [[karaoke timed|Karaoke_timing]] text. It isn't suited for typesetting
+around [karaoke timed]({{< relref "Karaoke_timing" >}}) text. It isn't suited for typesetting
 regular text (e.g. dialogue lines) with general purpose ruby text. A more
 elaborate syntax and more complex layout engine would be required for that.
 
@@ -38,7 +38,7 @@ syllable. You can have multiple number sign syllables in a row, adding up
 multiple timings in that way.
 
 The timings of the individual number sign syllables are still stored in the
-[[highlight table|Automation/Lua/Modules/karaskel.lua#highlighttable]] of the
+[highlight table]({{< relref "Automation/Lua/Modules/karaskel.lua#highlighttable" >}}) of the
 generated syllable structure, but the main timing (`start_time` and `end_time`)
 of the syllable structure reflects only the added-together timings of the
 number sign syllables.
@@ -164,9 +164,9 @@ again. Therefore both the half width (ASCII) and full width versions of the
 characters are accepted.
 
 ## Usage in Karaoke Templater  ##
-Furigana: [[The _furi_ template class|Automation/Karaoke_Templater/Template_modifiers#furi]]
+Furigana: [The _furi_ template class]({{< relref "Automation/Karaoke_Templater/Template_modifiers#furi" >}})
 
-Multi-highlight: [[The _multi_ modifier|Automation/Karaoke_Templater/Template_modifiers#multi]]
+Multi-highlight: [The _multi_ modifier]({{< relref "Automation/Karaoke_Templater/Template_modifiers#multi" >}})
 
 {::template name="examplebox"}
 The examples used earlier on this page are all generated using this kara-templater snippet:
@@ -183,7 +183,7 @@ The font used in MS PMincho 30 pt with the furigana being 15 pt.
 
 
 ## Usage in Lua scripts  ##
-It's all in [[karaskel|Automation/Lua/Modules/karaskel.lua]].
+It's all in [karaskel]({{< relref "Automation/Lua/Modules/karaskel.lua" >}}).
 
 Furigana layout is automatically invoked by `karaskel.preproc_line_pos` if a
 furigana style exists for a line main style. The furigana style for a main

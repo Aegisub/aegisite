@@ -11,7 +11,7 @@ options. These are available in the options dialog box, found in the View menu.
 This page is a reference of all the available options.
 
 Aegisub stores all its configuration in a plain text file called _config.json_
-which by default is stored in the [[?user|Aegisub_path_specifiers]] directory.
+which by default is stored in the [?user]({{< relref "Aegisub_path_specifiers" >}}) directory.
 If you want to reset Aegisub to its default options without reinstalling the
 program, you can just delete config.json and restart Aegisub.
 
@@ -89,7 +89,7 @@ automatically give it focus (as opposed to requiring a click).
 **Default lead-in length**
 **Default lead-out length**
 : The duration added to the start of a line by the "add lead-in" and "add
-lead-out" functions. Also used in (and set by) the [[timing postprocessor|Timing_Post-Processor]].
+lead-out" functions. Also used in (and set by) the [timing postprocessor]({{< relref "Timing_Post-Processor" >}}).
 
 **Marker drag-start sensitivity**
 : The distance in pixels that a marker must be dragged for it to register as a
@@ -216,7 +216,7 @@ match the video resolution automatically.
 ![preferences-interface](/img/3.2/preferences-interface.png){: class="center"}
 
 **Enable call tips**
-: When enabled, Aegisub will detect when you are writing an [[override tag|ASS_Tags]] and display a small box with a brief reference of the syntax of
+: When enabled, Aegisub will detect when you are writing an [override tag]({{< relref "ASS_Tags" >}}) and display a small box with a brief reference of the syntax of
 the tag in question until you close the tag. This is called a "call tip" and
 the feature may be familiar to users of various programming IDEs.
 
@@ -389,7 +389,7 @@ hotkey field in the row, then press the key(s) that should trigger the command.
 Accept the new hotkey by clicking on another row.
 
 To add a new hotkey, select the context you want to add the hotkey to, then
-click the New button. Enter the [[command name|Commands]], then set the hotkey
+click the New button. Enter the [command name]({{< relref "Commands" >}}), then set the hotkey
 as when editing them.
 
 ## Backup ##

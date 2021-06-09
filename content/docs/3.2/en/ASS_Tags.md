@@ -1,7 +1,7 @@
 
 The following is a list of every tag supported by the Advanced Substation
 Alpha format. This is basically a detailed version of ass-quickref.txt. See
-the [[tutorial|Visual_Typesetting]] for an introduction to typesetting,
+the [tutorial]({{< relref "Visual_Typesetting" >}}) for an introduction to typesetting,
 using some basic tags.
 
 ## Special characters ##
@@ -101,7 +101,7 @@ the following text and `\s0` to disable strikeout again.
 Change the width of the border around the text. Set the size to 0 (zero) to
 disable the border entirely.
 
-If "scale border and shadow" (see [[script properties|Properties]]) is
+If "scale border and shadow" (see [script properties]({{< relref "Properties" >}})) is
 enabled, the value is given in script resolution pixels, otherwise it is given
 in video resolution pixels (which means the border thickness will vary
 depending on the resolution of the video on which the subtitles are rendered.)
@@ -136,7 +136,7 @@ disable border in that direction.
 
 {::template name="tag_def_box" title="Shadow distance" id="\shad"}\shad<i>&lt;depth&gt;</i>{:/}
 Set the distance from the text to position the shadow. Set the depth to 0
-(zero) to disable shadow entirely. Works similar to [[\bord|ASS_Tags#bordersize]].
+(zero) to disable shadow entirely. Works similar to [\bord]({{< relref "ASS_Tags#bordersize" >}}).
 
 The shadow distance can not be negative with this tag.
 
@@ -161,7 +161,7 @@ effect isn't always very visible, but it can in some cases make the text look
 better. It is usually more visible at smaller text sizes.
 
 Be aware that this tag blurs the _edges_ of the text, not everything. This
-means that if the text has a border (set with [[\bord|ASS_Tags#borderwidth]]) the
+means that if the text has a border (set with [\bord]({{< relref "ASS_Tags#borderwidth" >}})) the
 border will be blurred, but if there is no border, the main text will be
 blurred instead.
 
@@ -226,10 +226,10 @@ text modifies the text shape after hinting. As a result, this should always be
 used with `\t` rather than `\fs`, as animating changing font hinting is very
 rarely desirable.
 
-These tags also affect [[vector drawings|ASS_Tags#drawing-commands]].
+These tags also affect [vector drawings]({{< relref "ASS_Tags#drawing-commands" >}}).
 
 You can use font scaling to correct for anamorphic rendering and to specify
-text size more precisely than with [[\fs|ASS_Tags#fontsize]].
+text size more precisely than with [\fs]({{< relref "ASS_Tags#fontsize" >}}).
 
 Note that older versions of VSFitler will truncate non-integer scales.
 
@@ -281,9 +281,9 @@ rotating. It is legal to specify negative rotation amounts, as well as amounts
 larger than 360 degrees.
 
 The rotation is performed around the subtitle line origin point, this is
-described with the [[\org|ASS_Tags#rotationorigin]] tag.
+described with the [\org]({{< relref "ASS_Tags#rotationorigin" >}}) tag.
 
-These tags also affect [[vector drawings|ASS_Tags#vectordrawings]].
+These tags also affect [vector drawings]({{< relref "ASS_Tags#vectordrawings" >}}).
 
 {::template name="examplebox"}
 <pre>\frx45</pre>
@@ -310,7 +310,7 @@ This is because 330 degrees is 30 degrees less than a full rotation of 360 degre
 {::template name="examplebox"}
 <pre>\t(\frz3600)</pre>
 
-Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the [[\t|ASS_Tags#animatedtransform]] tag.
+Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the [\t]({{< relref "ASS_Tags#animatedtransform" >}}) tag.
 {:/}
 {::template name="examplebox"}
 The following screenshots illustrate the effect of rotating on the different axes:
@@ -333,7 +333,7 @@ Usually _factor_ will be a small number; values outside the range -2 to 2 are
 unlikely to have desireable results.
 
 Shearing is performed after rotation, on the rotated coordinates. The
-coordinate system used for shearing is not affected by the [[rotation origin|ASS_Tags#rotationorigin]].
+coordinate system used for shearing is not affected by the [rotation origin]({{< relref "ASS_Tags#rotationorigin" >}}).
 
 {::template name="examplebox"}
 ![shearing](/img/3.2/shearing.png)
@@ -367,7 +367,7 @@ Some common font encoding IDs are:
 
 {::template name="todo"}Is that really correct?{:/}
 
-A more complete list can be seen the [[style editor|Styles#thestyleeditor]]
+A more complete list can be seen the [style editor]({{< relref "Styles#thestyleeditor" >}})
 dialog box.
 
 In ASS files stored in non-Unicode encodings, this tag also affects what
@@ -434,8 +434,8 @@ and effectively leaving only the border and shadow.
 
 {::template name="tag_def_box" title="Line alignment" id="\an"}\an<i>&lt;pos&gt;</i>{:/}
 Specify the alignment of the line. The alignment specifies the position of the
-line when no [[position override|ASS_Tags#setposition]] or
-[[movement|ASS_Tags#movement]] is in effect, and otherwise specifies the
+line when no [position override]({{< relref "ASS_Tags#setposition" >}}) or
+[movement]({{< relref "ASS_Tags#movement" >}}) is in effect, and otherwise specifies the
 anchor point of positioning and rotation.
 
 The `\an` tag uses "numpad" values for the _pos_, ie. the alignment values
@@ -490,7 +490,7 @@ the line.
 
 The _duration_ is given in centiseconds, ie. a _duration_ of 100 is equivalent
 to 1 second. You generally don't enter `\k` tags manually but rather use
-karaoke timing tools such as [[Aegisub's karaoke mode|Tutorials#karaoketiming]].
+karaoke timing tools such as [Aegisub's karaoke mode]({{< relref "Tutorials#karaoketiming" >}}).
 
 The different `\k` tags create various effects:
 
@@ -523,7 +523,7 @@ _style_s are available:
 
 {::template name="tag_def_box" title="Reset style" id="\r"}\r<br>\r<i>&lt;style&gt;</i>{:/}
 Reset the style. This cancels all style overrides in effect, including
-[[animations|ASS_Tags#animatedtransform]], for all following text.
+[animations]({{< relref "ASS_Tags#animatedtransform" >}}), for all following text.
 
 The first form that does not specify a _style_ will reset to the style defined
 for the entire line, while the second form, that specifies the name of a
@@ -541,7 +541,7 @@ text.
 {::template name="tag_def_box" title="Set position" id="\pos"}\pos(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>){:/}
 Set the position of the line. The _X_ and _Y_ coordinates must be integers and
 are given in the script resolution coordinate system. The meaning of _X_ and
-_Y_ changes slightly depending on [[alignment|ASS_Tags#linealignment]].
+_Y_ changes slightly depending on [alignment]({{< relref "ASS_Tags#linealignment" >}}).
 
 The alignment of the subtitle line is used as anchor point for the position.
 I.e. when you have a line with alignment top-left, the top-left corner of the
@@ -573,7 +573,7 @@ over which the movement occurs.
 The coordinates _x1_, _y1_, _x2_ and _y2_ are given in the script resolution
 coordinate system, like `\pos`. The subtitle starts out at point (_x1_,_y1_)
 and moves with constant speed so it ends up at (_x2_,_y2_).
-[[Alignment|ASS_Tags#linealignment]] influences movement coordinates the same
+[Alignment]({{< relref "ASS_Tags#linealignment" >}}) influences movement coordinates the same
 way as it influences `\pos` coordinates.
 
 In the second version, the times _t1_ and _t2_ are given in milliseconds, ie.
@@ -622,12 +622,12 @@ first appeared on screen.
 {:/}
 
 {::template name="tag_def_box" title="Rotation origin" id="\org"}\org(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>){:/}
-Set the origin point used for [[rotation|ASS_Tags#textrotation]]. This
+Set the origin point used for [rotation]({{< relref "ASS_Tags#textrotation" >}}). This
 affects all rotations of the line. The _X_ and _Y_ coordinates are given in
 integer script resolution pixels.
 
 When there is no `\org` tag in a line, the rotation origin is implicitly the
-same as the [[position anchor point|ASS_Tags#setposition]]. This means that
+same as the [position anchor point]({{< relref "ASS_Tags#setposition" >}}). This means that
 the rotation origin will move if the line moves and there is no origin set
 with `\org`. Note that you can _not_ animate the `\org` tag, you are limited
 to a fixed origin if you use it.
@@ -684,7 +684,7 @@ times _t1_, _t2_, _t3_ and _t4_.
 The alpha values are given in _decimal_ and are between 0 and 255, with 0
 being fully visible and 255 being invisible. The time values are given in
 milliseconds after the start of the line. All seven parameters are required.
-(For most common fade effects the `[[\fad|ASS_Tags#fade]]` tag works fine.)
+(For most common fade effects the `[\fad]({{< relref "ASS_Tags#fade" >}})` tag works fine.)
 
 * Before _t1_, the line has alpha _a1_.
 * Between _t1_ and _t2_ the line fades from alpha _a1_ to alpha _a2_.
@@ -953,5 +953,5 @@ pair of coordinates at the end of s.
 
 Closes the b-spline.
 
-_Note: The [[vector clip visual typesetting tool|Visual_Typesetting#vectorial-clip]] only supports the m, l and b
+_Note: The [vector clip visual typesetting tool]({{< relref "Visual_Typesetting#vectorial-clip" >}}) only supports the m, l and b
 commands, and may corrupt drawings which use the other commands._

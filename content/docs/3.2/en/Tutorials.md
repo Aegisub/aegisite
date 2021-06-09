@@ -38,7 +38,7 @@ The following tutorials are available for Aegisub:
 * Link: [malakith.net](http://www.malakith.net/amz/blah/screencast/%5bAegisub%5d_Visual_Typesetting_Tutorial_%5b8B24834E%5d.mkv)
 
 ## Text tutorials  ##
-* [[Karaoke timing|Karaoke_Timing_Tutorial]] (work in progress) — Enter the words for a song and add time-codes to the words
-* [[Karaoke Templater|Automation/Karaoke_Templater]] (incomplete) — Easy way to add special effects to karaoke, ranging from the most basic effects to very advanced ones.
+* [Karaoke timing]({{< relref "Karaoke_Timing_Tutorial" >}}) (work in progress) — Enter the words for a song and add time-codes to the words
+* [Karaoke Templater]({{< relref "Automation/Karaoke_Templater" >}}) (incomplete) — Easy way to add special effects to karaoke, ranging from the most basic effects to very advanced ones.
 
 

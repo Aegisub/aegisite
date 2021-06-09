@@ -35,7 +35,7 @@ This page describes how a template line or code line is declared.
 
 <div></div>
 
-Template lines and code lines can have additional text after the `template` or `code` keywords. This text is parsed as a series of space-separated words and is called modifiers. See [[Template modifiers|Automation/Karaoke_Templater/Template_modifiers]] for more information on this.
+Template lines and code lines can have additional text after the `template` or `code` keywords. This text is parsed as a series of space-separated words and is called modifiers. See [Template modifiers]({{< relref "Automation/Karaoke_Templater/Template_modifiers" >}}) for more information on this.
 
 {::template name="automation_navbox" /}
 

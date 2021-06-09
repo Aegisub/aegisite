@@ -8,8 +8,8 @@ weight: 310
 
 Editing subtitles is what Aegisub is made for. This page will deal with basic
 text editing of subtitle lines; for more information on the typography of
-subtitles, see [[typesetting|Typesetting]]. For information on the timing of
-subtitle lines, see [[working with audio|Audio]].
+subtitles, see [typesetting]({{< relref "Typesetting" >}}). For information on the timing of
+subtitle lines, see [working with audio]({{< relref "Audio" >}}).
 
 ## Opening subtitles ##
 
@@ -32,7 +32,7 @@ Open subtitles from video
 : Open the subtitles muxed into the currently open video file. This
 currently only works with Matroska video files.
 
-Open [[Autosaved Subtitles|Autosave]]
+Open [Autosaved Subtitles]({{< relref "Autosave" >}})
 : Open a file created by Aegisub's autosave. Useful if Aegisub crashes when you
 had unsaved changes or just if you want to open an older version of a file.
 {: class="horizontal-wide"}
@@ -94,15 +94,15 @@ They are:
 
 1. Flags the line as a comment. Comment lines will not be displayed on the
     video.
-1. The [[style|Styles]] used for this line.
+1. The [style]({{< relref "Styles" >}}) used for this line.
 1. The actor speaking this line. Has no actual effect on subtitle display but
     can be useful for editing purposes.
 1. Effect for this line. There are a few predefined effects which can be
     applied via this field, but renderer support for them is spotty and using
-    [[override tags|ASS_Tags]] is nearly always a better idea. This is commonly
+    [override tags]({{< relref "ASS_Tags" >}}) is nearly always a better idea. This is commonly
     used as a metadata field for automation scripts.
 1. The number of characters on the longest line of this subtitle.
-1. Layer for this line. If you override positioning with an [[override tag|ASS_Tags]] so that two or more lines are displayed on top of each
+1. Layer for this line. If you override positioning with an [override tag]({{< relref "ASS_Tags" >}}) so that two or more lines are displayed on top of each
     other, this field controls which one is drawn where; higher layer numbers
     are drawn on top of lower ones.
 1. Start time for the line.
@@ -126,16 +126,16 @@ They are:
 1. Brings up a font selection window and inserts a font face name tag
     (`\fnFontName`) with the given font name, as well as the chosen effect
     tags.
-1. Brings up the [[color picker|Colour_Picker]] and lets you choose a
+1. Brings up the [color picker]({{< relref "Colour_Picker" >}}) and lets you choose a
     color; then inserts a primary color override tag (`\c`) with the chosen
     color at the cursor position.
-1. Brings up the [[color picker|Colour_Picker]] and lets you choose a
+1. Brings up the [color picker]({{< relref "Colour_Picker" >}}) and lets you choose a
     color; then inserts a secondary color override tag (`\2c`) with the chosen
     color at the cursor position.
-1. Brings up the [[color picker|Colour_Picker]] and lets you choose a
+1. Brings up the [color picker]({{< relref "Colour_Picker" >}}) and lets you choose a
     color; then inserts an outline color override tag (`\3c`) with the chosen
     color at the cursor position.
-1. Brings up the [[color picker|Colour_Picker]] and lets you choose a
+1. Brings up the [color picker]({{< relref "Colour_Picker" >}}) and lets you choose a
     color; then inserts a shadow color override tag (`\4c`) with the chosen
     color at the cursor position.
 1. Move to the next line, creating a new one at the end of the file if
@@ -181,7 +181,7 @@ the spell checker will suggest some likely alternative. You can also
 set which language it will use for checking from this menu, or add
 words that it doesn't recognize but you know to be correctly spelled to
 the dictionary. For more information on spell checking in Aegisub, see
-the [[Spell Checker|Spell_Checker]] page.
+the [Spell Checker]({{< relref "Spell_Checker" >}}) page.
 
 Thesaurus
 : Suggests alternative words similar to the highlighted word.
@@ -211,13 +211,13 @@ Some common controls:
   selection, hold down alt and click on the new line.
 * To sort all lines in the grid, open the _Subtitle_ menu, and under _Sort
   Lines_ select the field to sort the lines on.
-* To change the way [[override tags|ASS_Tags]] are displayed in the grid,
+* To change the way [override tags]({{< relref "ASS_Tags" >}}) are displayed in the grid,
   click the "cycle through tag hiding modes" button on the toolbar.
 
 ![Subs_grid_tags](/img/3.2/Subs_grid_tags.png)
 
 The lines have different (configurable) colors representing different
-things; see the [[subtitles grid section of the options page|Options#General_-.3E_Subtitles_grid]] for details on what the colors
+things; see the [subtitles grid section of the options page]({{< relref "Options#General_-.3E_Subtitles_grid" >}}) for details on what the colors
 mean.
 
 By default, the following columns are visible:

@@ -9,8 +9,8 @@ For example, to include the [re]({{< relref "re" >}}) modules, `re = require 'ae
 Note that if you look at older scripts you will probably see several other methods for including modules, such as `include`.
 These have been deprecated in favor of following the modern lua module style introduced with Lua 5.2.
 
-To use modules in [[Karaoke Templater|Automation/Karaoke_Templater]], place the require statement in a [[code once|Automation/Karaoke_Templater/Code_lines_and_blocks#classesofcodelines]] line.
-Note that `karaskel.lua`, `utils.lua` and `unicode.lua` do not have to be `require`d in [[Karaoke Templater|Automation/Karaoke_Templater]], as they are automatically imported.
+To use modules in [Karaoke Templater|Automation/Karaoke_Templater]], place the require statement in a [[code once]({{< relref "Automation/Karaoke_Templater/Code_lines_and_blocks#classesofcodelines" >}}) line.
+Note that `karaskel.lua`, `utils.lua` and `unicode.lua` do not have to be `require`d in [Karaoke Templater]({{< relref "Automation/Karaoke_Templater" >}}), as they are automatically imported.
 
 ## Modules reference ##
 
