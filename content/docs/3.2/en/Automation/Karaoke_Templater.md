@@ -19,7 +19,7 @@ installed and ready to use along with Aegisub.
 * [Rules for code blocks and code lines]({{< relref "./Karaoke_Templater/Code_lines_and_blocks" >}})
 * [Contents of the code block/line execution environment]({{< relref "./Karaoke_Templater/Code_execution_environment" >}})
 
-Also see the [[Automation/Lua/Modules/karaskel.lua]] section for more
+Also see the [`Automation/Lua/Modules/karaskel.lua`]({{< relref "Lua/Modules/karaskel.lua.md" >}}) section for more
 information on what's in the `line` and `syl` variables, and more.
 
 ## For users of _multi-template_  ##
