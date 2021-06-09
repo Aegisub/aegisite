@@ -1,3 +1,13 @@
+---
+title: Commands
+menu:
+  docs:
+    parent: Miscellaneous
+weight: 799
+---
+
+
+```haml
 - require 'enumerator'
 
 %table{style: 'width: 100%; margin-bottom: 2em'}
@@ -21,3 +31,4 @@
         %td= command.name
         %td= command['display']
         %td= command.help
+```

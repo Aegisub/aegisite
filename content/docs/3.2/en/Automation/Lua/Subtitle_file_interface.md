@@ -14,11 +14,11 @@ is created for:
 
 **Read-only**
 : Some feature functions must not be allowed to modify the subtitle file at
-all. This includes for example [macro validation functions|Automation/Lua/Registration#macrovalidationfunction]] and [[export filter configuration panel providers]({{< relref "Automation/Lua/Registration#_export_filter_configuration_panel_provider" >}}),
+all. This includes for example [macro validation functions|Automation/Lua/Registration#macrovalidationfunction]] and [[export filter configuration panel providers]({{< relref "Registration#_export_filter_configuration_panel_provider" >}}),
 because this would be outside user expectations.
 
 **Allow undo points**
-: Only [macro processing functions]({{< relref "Automation/Lua/Registration#macroprocessingfunction" >}}) can set undo
+: Only [macro processing functions]({{< relref "Registration#macroprocessingfunction" >}}) can set undo
 points, as it makes no sense to do so at any other time.
 
 To allow the most flexibility, the subtitles object represents a complete ASS
@@ -249,13 +249,13 @@ spaces removed.
 ### `style` class  ###
 This class defines a large number of additional fields. It's usually processed
 by the _karaskel_ and modified a bit by that. See the _karaskel.lua_ section on
-[style tables]({{< relref "Automation/Lua/Modules/karaskel.lua#styletable" >}}) for more
+[style tables]({{< relref "Modules/karaskel.lua#styletable" >}}) for more
 information about this class.
 
 ### `dialogue` class  ###
 This class defines a large number of additional fields. It's usually processed
 by the _karaskel_ and has many calculated fields added by that. See the
-_karaskel.lua_ section on [dialogue line tables]({{< relref "Automation/Lua/Modules/karaskel.lua#dialoguelinetable" >}}) for more
+_karaskel.lua_ section on [dialogue line tables]({{< relref "Modules/karaskel.lua#dialoguelinetable" >}}) for more
 information on this class.
 
 ### `unknown` class  ###

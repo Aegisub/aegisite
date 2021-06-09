@@ -1,4 +1,4 @@
-In [the previous tutorial]({{< relref "Automation/Karaoke_Templater/Tutorial_1" >}}) we saw how to use the basic features of Karaoke Templater to make simple karaoke effects. We'll continue where we left off here, by expanding on the basics from last tutorial.
+In [the previous tutorial]({{< relref "./Tutorial_1" >}}) we saw how to use the basic features of Karaoke Templater to make simple karaoke effects. We'll continue where we left off here, by expanding on the basics from last tutorial.
 
 {::template name="todo"}make and insert screenshots{:/}
 
@@ -37,5 +37,5 @@ With this, the growing-part will only take the first three-tenths of the syllabl
 
 Note that I removed the fadeout from here, it's just to make the line shorter and easier to read. You can add it back if you want.
 
-Hopefully this tutorial has given you some more ideas of what you can do. In [the next one]({{< relref "Automation/Karaoke_Templater/Tutorial_3" >}}) we'll add another layer to the effect by using multiple templates!
+Hopefully this tutorial has given you some more ideas of what you can do. In [the next one](#) we'll add another layer to the effect by using multiple templates!
 

@@ -1,4 +1,4 @@
-[Automation]({{< relref "Automation" >}}) [macros]({{< relref "Glossary/Macro" >}}) appear as options in the Automation
+[Automation]({{< relref "Automation" >}}) [macros]({{< relref "../Glossary/Macro" >}}) appear as options in the Automation
 menu.
 
 ![automation_menu](/img/3.2/automation_menu.png)

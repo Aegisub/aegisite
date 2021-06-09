@@ -23,7 +23,7 @@ actually create positioned characters.
 furigana using the karaskel.lua algorithm and syntax.
 
 It's important to note that the syntax is designed for karaoke, and revolves
-around [karaoke timed]({{< relref "Karaoke_timing" >}}) text. It isn't suited for typesetting
+around [karaoke timed]({{< relref "Karaoke_Timing_Tutorial" >}}) text. It isn't suited for typesetting
 regular text (e.g. dialogue lines) with general purpose ruby text. A more
 elaborate syntax and more complex layout engine would be required for that.
 

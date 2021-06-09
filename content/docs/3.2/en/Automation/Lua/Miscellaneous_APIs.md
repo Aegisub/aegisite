@@ -18,7 +18,7 @@ Obtain system font metrics and determine the rendered size in pixels of the
 given **text** when using the **style**.
 
 **`@style`** (`table`)
-:   A [style table]({{< relref "Automation/Lua/Subtitle_file_interface#styletable" >}}) as defined by
+:   A [style table]({{< relref "Subtitle_file_interface#styletable" >}}) as defined by
     the subtitle interface. The font name, size, weight, style, spacing and
     encoding is used to determine the size of the text.
 

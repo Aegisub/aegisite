@@ -10,8 +10,8 @@ the ![Automation-toolbar-icon](/img/3.2/Automation-toolbar-icon.png) toolbar but
 
 The main area of the window is a list of all _script files_ loaded. It's
 important to remember that one script file can contain several
-[features]({{< relref "Glossary/Automation_script_feature" >}}), for example one script file
-can define two [macros]({{< relref "Glossary/Macro" >}}) and one export filter.
+[features]({{< relref "../Glossary/Automation_script_feature" >}}), for example one script file
+can define two [macros]({{< relref "../Glossary/Macro" >}}) and one export filter.
 
 Scripts can be loaded in one of two ways. In the screenshot above, most of
 the scripts are _global_ (autoloaded), as indicated by the "G" in the

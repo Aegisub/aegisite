@@ -11,11 +11,11 @@ These are some terms and concepts used throughout the description. The names
 are close to or the same as those used in the actual script.
 
 **`tenv`**
-: The **t**emplate **env**ironment, or [code execution environment]({{< relref "Automation/Karaoke_Templater/Code_execution_environment" >}}).
+: The **t**emplate **env**ironment, or [code execution environment]({{< relref "./Code_execution_environment" >}}).
 
 **`varctx`**
 : The inline **var**iable **c**on**t**e**x**t, the storage for the actual
-values of the [inline variables]({{< relref "Automation/Karaoke_Templater/Inline_variables" >}}).
+values of the [inline variables]({{< relref "./Inline_variables" >}}).
 
 **`template`**
 : The basic "execution unit" of kara-templater, a template is essentially a
@@ -50,7 +50,7 @@ _pre-line text_.
 
 ## Startup  ##
 The first thing kara-templater does is simply use
-[karaskel]({{< relref "Automation/Lua/Modules/karaskel.lua" >}}) to collect some basic
+[karaskel]({{< relref "../Lua/Modules/karaskel.lua" >}}) to collect some basic
 information on the subtitle file. It always passes `true` for
 _generate_furigana_ in the `karaskel.collect_head` function, meaning that
 [furigana]({{< relref "Furigana_karaoke" >}}) styles are always generated, unless they already
@@ -89,7 +89,7 @@ run of kara-templater, so they should be replaced in this new run.
 ### Initialising the _tenv_  ###
 The last thing done before starting actually running the templates is
 initialising the runtime environment for the templates. Basically, as much as
-possible before any templates are run, is put into _tenv_. See [Code execution environment]({{< relref "Automation/Karaoke_Templater/Code_execution_environment" >}}) for more
+possible before any templates are run, is put into _tenv_. See [Code execution environment]({{< relref "./Code_execution_environment" >}}) for more
 details on what's in there. (Basically everything but `line`, `orgline`, `syl`
 and `basesyl`.)
 

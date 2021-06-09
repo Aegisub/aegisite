@@ -290,7 +290,7 @@ Full list of fields:
 * `style.fontsize` - Font size for the style.
 * `style.color1`, `style.color2`, `style.color3` and `style.color4` - The
   four colours used by the style, in regular order. Use
-  `[extract_color]({{< relref "Automation/Lua/Modules/#extractcolor" >}})` and family to
+  `[extract_color]({{< relref "../Modules#extractcolor" >}})` and family to
   manipulate these.
 * `style.bold` - `true`/`false` to specify bold/non-bold font face. Can
   also be a number to specify font weight, but this is not well supported
