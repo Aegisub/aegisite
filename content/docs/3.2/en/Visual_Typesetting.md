@@ -1,5 +1,5 @@
 
-{::template name="todo"}Screenshots need to be updated{:/}
+template name="todo" Screenshots need to be updated
 
 **A video tutorial for this feature is available at [[the tutorials
 section|Tutorials]].**
