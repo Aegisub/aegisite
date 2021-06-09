@@ -1,3 +1,10 @@
+---
+title: Editing Subtitles
+menu:
+  docs:
+    parent: Working with Subtitles
+weight: 310
+---
 
 Editing subtitles is what Aegisub is made for. This page will deal with basic
 text editing of subtitle lines; for more information on the typography of
