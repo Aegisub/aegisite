@@ -1,3 +1,12 @@
+---
+title: What is Aegisub?
+menu:
+  docs:
+    parent: Introduction
+    name: What is Aegisub?
+weight: 210
+---
+
 Aegisub was originally created as a tool to make typesetting,
 particularly in anime fansubs, a less painful experience. At the time
 of the start of the project, many other programs that supported the

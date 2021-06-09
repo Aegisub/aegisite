@@ -1,3 +1,10 @@
+---
+title: Tutorials
+menu:
+  docs:
+    parent: Introduction
+weight: 260
+---
 
 The following tutorials are available for Aegisub:
 

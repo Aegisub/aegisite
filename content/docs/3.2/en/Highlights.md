@@ -1,3 +1,11 @@
+---
+title: Highlights
+menu:
+  docs:
+    parent: Introduction
+weight: 220
+---
+
 Some highlights of Aegisub:
 
 Simple and intuitive yet powerful interface for editing subtitles

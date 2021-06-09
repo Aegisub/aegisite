@@ -1,3 +1,10 @@
+---
+title: Credits
+menu:
+  docs:
+    parent: Introduction
+weight: 230
+---
 
 Aegisub was originally written by Rodrigo Braz Monteiro with significant contributions from Niels Martin Hansen.
 Development was lead by Monteiro through 2008, Hansen through 2010, and by Thomas Goyne  from 2011 onward.

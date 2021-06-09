@@ -1,3 +1,10 @@
+---
+title: FAQ
+menu:
+  docs:
+    parent: Introduction
+weight: 250
+---
 
 A small collection of Frequently Asked Questions about Aegisub - mostly
 stuff that didn't fit anywhere else.
