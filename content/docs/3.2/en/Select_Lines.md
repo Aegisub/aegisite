@@ -1,3 +1,10 @@
+---
+title: Select Lines
+menu:
+  docs:
+    parent: Working with Subtitles
+weight: 370
+---
 
 The **select lines** tool is useful for finding and selecting all lines in the
 script that matches certain criteria. This can be useful from a number of

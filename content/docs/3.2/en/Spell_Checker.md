@@ -1,3 +1,11 @@
+---
+title: Spell Checker
+menu:
+  docs:
+    parent: Working with Subtitles
+weight: 340
+---
+
 To help you with quality assurance of your subtitle scripts, Aegisub
 features a complete spell checker. It uses the Hunspell library, which is
 based on OpenOffice.org's MySpell, which means it's at least as good as one

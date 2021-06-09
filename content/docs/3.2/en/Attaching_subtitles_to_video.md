@@ -1,3 +1,10 @@
+---
+title: Applying Subtitles
+menu:
+  docs:
+    parent: Working with Subtitles
+weight: 330
+---
 
 In digital encoding, there are two main ways of including subtitles in a video:
 softsubbing and hardsubbing. Both methods has unique advantages and

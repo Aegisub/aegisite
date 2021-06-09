@@ -1,3 +1,11 @@
+---
+title: Paste Over
+menu:
+  docs:
+    parent: Working with Subtitles
+weight: 360
+---
+
 The **paste over** tool is a "smart" variant of the good old Ctrl-c Ctrl-v
 combo. It allows you to paste any given field(s) of one or more lines to the
 corresponding fields of other lines, without affecting the other fields. It can
