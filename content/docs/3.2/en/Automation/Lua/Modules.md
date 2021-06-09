@@ -1,4 +1,3 @@
-{::options toc_levels="2,3" /}
 
 A number of Lua modules are included with Aegisub.
 Some of these, such as [[karaskel.lua]] implement subtitle-specific functionality, while others such as [[re]] fill holes in the Lua standard library.

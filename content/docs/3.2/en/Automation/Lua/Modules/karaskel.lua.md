@@ -1,4 +1,3 @@
-{::options toc_levels="1..6" /}
 
 The Automation 4 `karaskel.lua` include file contains several functions
 intended to help the development of karaoke effects with Automation 4 Lua.

@@ -1,4 +1,3 @@
-{::options toc_levels="2,3" /}
 
 These functions are used to display dialogs for the user to interact with.
 
@@ -19,7 +18,7 @@ what values were input.
 **`@buttons`** (`table`)
 : Optional. This is an array of strings defining the buttons that appear in
   the dialog. If this is left out, empty or is otherwise not a table, the
-  standard Ok and Cancel buttons appear.  
+  standard Ok and Cancel buttons appear.
   The strings in this table are used as labels on the buttons, and for
   identifying them in the return values of the function.
 
@@ -72,7 +71,7 @@ the path to the selected file(s), or nil if the user canceled.
     last used directory is shown.
 
 **`@wildcards`** (`string`)
-:   File filters to show. If empty, a sane default will be used.  
+:   File filters to show. If empty, a sane default will be used.
     E.g. "All Files (*.*)|*.*|XYZ files (*.xyz)|*.xyz"
 
 **`@allow_multiple`** (`boolean`)
@@ -116,7 +115,7 @@ the path to the selected file, or nil if the user canceled.
     last used directory is shown.
 
 **`@wildcards`** (`string`)
-:   File filters to show. If empty, a sane default will be used.  
+:   File filters to show. If empty, a sane default will be used.
     E.g. "All Files (*.*)|*.*|XYZ files (*.xyz)|*.xyz"
 
 **`@dont_prompt_for_overwrite`** (`boolean`)

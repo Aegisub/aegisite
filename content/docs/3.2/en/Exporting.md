@@ -1,4 +1,3 @@
-{::options toc_levels="2,3" /}
 
 In addition to the normal "Save" and "Save as" functions, Aegisub also has an "Export" feature, which can transform the entire script through various export filters. This is used for a number of things ranging from framerate conversions over karaoke effect generation to just saving to other formats and/or character sets.
 

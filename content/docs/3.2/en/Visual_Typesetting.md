@@ -1,4 +1,3 @@
-{::options toc_levels="2,3" /}
 
 {::template name="todo"}Screenshots need to be updated{:/}
 

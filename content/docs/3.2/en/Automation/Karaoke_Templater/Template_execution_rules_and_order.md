@@ -1,4 +1,3 @@
-{::options toc_levels="2,3" /}
 
 This page describes various technical details about how Karaoke Templater
 (_kara-templater_) works and will try to explain why various things work as

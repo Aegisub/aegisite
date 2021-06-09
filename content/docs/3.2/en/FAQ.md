@@ -1,4 +1,3 @@
-{::options toc_levels="2,3" /}
 
 A small collection of Frequently Asked Questions about Aegisub - mostly
 stuff that didn't fit anywhere else.

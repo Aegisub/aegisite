@@ -1,4 +1,3 @@
-{::options toc_levels="2,3" /}
 
 This page documents **miscellaneous APIs useful for working with
 subtitles**. These can't be clearly placed into any of the other main

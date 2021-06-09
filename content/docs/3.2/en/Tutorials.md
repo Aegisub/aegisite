@@ -1,4 +1,3 @@
-{::options toc_levels="2,3" /}
 
 The following tutorials are available for Aegisub:
 

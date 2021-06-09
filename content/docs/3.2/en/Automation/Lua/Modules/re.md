@@ -1,4 +1,3 @@
-{::options toc_levels="2,3" /}
 
 The `re` module is a wrapper around boost::regex, intended as a full
 replacement for Lua's built in regular expressions. It has two main advantages

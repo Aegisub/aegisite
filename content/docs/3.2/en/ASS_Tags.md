@@ -1,4 +1,3 @@
-{::options toc_levels="2" /}
 
 The following is a list of every tag supported by the Advanced Substation
 Alpha format. This is basically a detailed version of ass-quickref.txt. See
@@ -52,7 +51,7 @@ parameter is omitted, the default value from the line's style is used.
 Some tags are "complex" and take more than one parameter. In these cases,
 parameters are put inside parentheses with commas between the parameters.
 
-**Note on typography:**  
+**Note on typography:**
 On this page, everything written in _italics_ with `<` angle brackets `>`
 around it is a parameter and you must enter a value instead of it. The angle
 brackets are not part of the value you should enter. Use the examples as a
@@ -64,8 +63,8 @@ Switch _italics_ text on or off. Use `\i1` to enable italics for the following
 text and `\i0` to disable italics again.
 
 {::template name="tag_def_box" title="Bold" id="\b"}
-\b1  
-\b0  
+\b1
+\b0
 \b<i>&lt;weight&gt;</i>
 {:/}
 Switch **boldface** text on or off. Use `\b1` to enable boldface for the
@@ -122,7 +121,7 @@ Set the border width to 3.7 pixels
 {:/}
 
 {::template name="tag_def_box" title="Border size (extended)" id="\xbord"}
-\xbord<i>&lt;size&gt;</i>  
+\xbord<i>&lt;size&gt;</i>
 \ybord<i>&lt;size&gt;</i>
 {:/}
 Use the `\xbord` `\ybord` tags to set the border size in X and Y direction
@@ -142,7 +141,7 @@ Set the distance from the text to position the shadow. Set the depth to 0
 The shadow distance can not be negative with this tag.
 
 {::template name="tag_def_box" title="Shadow distance (extended)" id="\xshad"}
-\xshad<i>&lt;depth&gt;</i>  
+\xshad<i>&lt;depth&gt;</i>
 \yshad<i>&lt;depth&gt;</i>
 {:/}
 Set the distance from the text to position the shadow at, with X and Y
@@ -153,8 +152,8 @@ Note that unlike \shad, you can set the distance negative with these tags to
 position the shadow to the top or left of the text.
 
 {::template name="tag_def_box" title="Blur edges" id="\be"}
-\be0  
-\be1  
+\be0
+\be1
 \be<i>&lt;strength&gt;</i>
 {:/}
 Enable or disable a subtle softening-effect for the edges of the text. The
@@ -215,7 +214,7 @@ The following text will use a size 10 font.
 {:/}
 
 {::template name="tag_def_box" title="Font scale" id="\fscx"}
-\fscx<i>&lt;scale&gt;</i>  
+\fscx<i>&lt;scale&gt;</i>
 \fscy<i>&lt;scale&gt;</i>
 {:/}
 Adjust the size of the text in X (`\fscx` or Y (`\fscy`) direction. The
@@ -258,9 +257,9 @@ resolution pixels.
 Spacing can be negative and can have decimals.
 
 {::template name="tag_def_box" title="Text rotation" id="\frx"}
-\frx<i>&lt;amount&gt;</i>  
-\fry<i>&lt;amount&gt;</i>  
-\frz<i>&lt;amount&gt;</i>  
+\frx<i>&lt;amount&gt;</i>
+\fry<i>&lt;amount&gt;</i>
+\frz<i>&lt;amount&gt;</i>
 \fr<i>&lt;amount&gt;</i>
 {:/}
 Rotates the text along the X, Y or Z axis. The `\fr` tag is a shortcut for `\frz`.
@@ -324,7 +323,7 @@ The following screenshots illustrate the effect of rotating on the different axe
 {:/}
 
 {::template name="tag_def_box" title="Text shearing" id="\fax"}
-\fax<i>&lt;factor&gt;</i>  
+\fax<i>&lt;factor&gt;</i>
 \fay<i>&lt;factor&gt;</i>
 {:/}
 Perform a shearing (perspective distortion) transformation of the text. A
@@ -379,10 +378,10 @@ recommended you do not rely on this and instead always store your files in a
 Unicode encoding. (Aegisub stores files in Unicode UTF-8 by default.)
 
 {::template name="tag_def_box" title="Set color" id="\c"}
-\c&H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&  
-\1c&H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&  
-\2c&H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&  
-\3c&H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&  
+\c&H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&
+\1c&H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&
+\2c&H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&
+\3c&H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&
 \4c&H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&
 {:/}
 Set the color of the following text. The `\c` tag is an abbreviation of `\1c`.
@@ -402,10 +401,10 @@ The Pick Color toolbar buttons [[img/pick-color-toolbar-buttons.png]] can
 assist in picking colors and entering the color codes.
 
 {::template name="tag_def_box" title="Set alpha" id="\alpha"}
-\alpha&H<i>&lt;aa&gt;</i>  
-\1a&H<i>&lt;aa&gt;</i>  
-\2a&H<i>&lt;aa&gt;</i>  
-\3a&H<i>&lt;aa&gt;</i>  
+\alpha&H<i>&lt;aa&gt;</i>
+\1a&H<i>&lt;aa&gt;</i>
+\2a&H<i>&lt;aa&gt;</i>
+\3a&H<i>&lt;aa&gt;</i>
 \4a&H<i>&lt;aa&gt;</i>
 {:/}
 Set the alpha (transparency) of the text.
@@ -477,9 +476,9 @@ top-titles, add 4 to the number, to get mid-titles add 8 to the number:
 * 11: Middle right
 
 {::template name="tag_def_box" title="Karaoke effect" id="\k"}
-\k<i>&lt;duration&gt;</i>  
-\K<i>&lt;duration&gt;</i>  
-\kf<i>&lt;duration&gt;</i>  
+\k<i>&lt;duration&gt;</i>
+\K<i>&lt;duration&gt;</i>
+\kf<i>&lt;duration&gt;</i>
 \ko<i>&lt;duration&gt;</i>
 {:/}
 > _Please note that these tags alone only create some very specific effects
@@ -554,15 +553,15 @@ given.
 
 {::template name="examplebox"}
 The following screenshots illustrate the way alignment affects positioning.
-The green cross marks the point (320,240) on the video.  
+The green cross marks the point (320,240) on the video.
 
-[[img/Pos_sample01.jpg]]  
-[[img/Pos_sample02.jpg]]  
+[[img/Pos_sample01.jpg]]
+[[img/Pos_sample02.jpg]]
 [[img/Pos_sample03.jpg]]
 {:/}
 
 {::template name="tag_def_box" title="Movement" id="\move"}
-\move(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)  
+\move(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)
 \move(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;,<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;)
 {:/}
 The `\move` tag works similar to [[`\pos`|ASS_Tags#setposition]] in that it
@@ -704,9 +703,9 @@ Second fade starts 1500 milliseconds later, and lasts 200 milliseconds.
 {:/}
 
 {::template name="tag_def_box" title="Animated transform" id="\t"}
-\t(<i>&lt;style modifiers&gt;</i>)  
-\t(<i>&lt;accel&gt;</i>,<i>&lt;style modifiers&gt;</i>)  
-\t(<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;style modifiers&gt;</i>)  
+\t(<i>&lt;style modifiers&gt;</i>)
+\t(<i>&lt;accel&gt;</i>,<i>&lt;style modifiers&gt;</i>)
+\t(<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;style modifiers&gt;</i>)
 \t(<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;accel&gt;</i>,<i>&lt;style modifiers&gt;</i>)
 {:/}
 Perform a gradual, animated transformation from one style to another. The
@@ -776,7 +775,7 @@ Text starts at zero size, i.e. invisible, then grows to 100% size in both X and 
 {:/}
 
 {::template name="tag_def_box" title="Clip (rectangle)" id="\clip"}
-\clip(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)  
+\clip(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)
 \iclip(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)
 {:/}
 Define a rectangle to clip the line, only the part of the line that is inside
@@ -802,14 +801,14 @@ Similar to above, but instead the part of the line within the top left
 quadrant is hidden.
 {:/}
 {::template name="examplebox"}
-Example of `\clip(0,0,704,245)` on a 704x480 video:  
+Example of `\clip(0,0,704,245)` on a 704x480 video:
 [[img/Clip_sample01.jpg]]
 {:/}
 
 {::template name="tag_def_box" title="Clip (vector drawing)" id=""}
-\clip(<i>&lt;drawing commands&gt;</i>)  
-\clip(<i>&lt;scale&gt;</i>,<i>&lt;drawing commands&gt;</i>)  
-\iclip(<i>&lt;drawing commands&gt;</i>)  
+\clip(<i>&lt;drawing commands&gt;</i>)
+\clip(<i>&lt;scale&gt;</i>,<i>&lt;drawing commands&gt;</i>)
+\iclip(<i>&lt;drawing commands&gt;</i>)
 \iclip(<i>&lt;scale&gt;</i>,<i>&lt;drawing commands&gt;</i>)
 {:/}
 Use the shape defined by a vector drawing to selectively display (`\clip`) or
@@ -934,8 +933,8 @@ Draws a cubic (3rd degree) Bézier curve from the cursor position to (x3,y3),
 using (x1,y1) and (x2,y2) as the control points. Check the [article on
 Wikipedia](http://en.wikipedia.org/wiki/B%C3%A9zier_curve) for more
 information about Bézier curves. In this picture taken from that article, P0
-is the cursor position, P1 is x1,y1, P2 is x2,y2 and P3 is x3,y3:  
-[[img/Bezier.png]]  
+is the cursor position, P1 is x1,y1, P2 is x2,y2 and P3 is x3,y3:
+[[img/Bezier.png]]
 Note that the curve begins at P0, heads towards P1, then arrives at P3 coming
 from P2's direction.
 

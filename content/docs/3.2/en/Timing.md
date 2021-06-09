@@ -1,4 +1,3 @@
-{::options toc_levels="2,3" /}
 
 ## The main audio view ##
 

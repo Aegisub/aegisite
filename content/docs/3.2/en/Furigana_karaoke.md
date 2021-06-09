@@ -1,4 +1,3 @@
-{::options toc_levels="1..6" /}
 
 [[img/Furigana-demo-1.png]]
 

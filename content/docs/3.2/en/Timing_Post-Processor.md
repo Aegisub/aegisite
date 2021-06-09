@@ -1,4 +1,3 @@
-{::options toc_levels="2,3" /}
 
 The timing postprocessor is a highly useful tool for automatically correcting
 timing in various ways.
@@ -6,7 +5,7 @@ timing in various ways.
 ## Overview  ##
 As shown in the screenshot, there are three functions:
 
-* Add lead-in and/or lead-out 
+* Add lead-in and/or lead-out
 * Make lines that start close to each other continuous by extending or
     contracting their start and/or end times
 * Snapping line starts/ends to video keyframes (only available if a video is

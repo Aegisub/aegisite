@@ -1,4 +1,3 @@
-{::options toc_levels="2,3" /}
 
 Aegisub has a fairly advanced, customizable audio mode with both the
 traditional waveform display as well as an alternative spectrum display.
