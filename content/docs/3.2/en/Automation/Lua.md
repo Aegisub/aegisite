@@ -13,7 +13,7 @@ be able to do anything interesting.
 
 There's a number of global variables a script can set to provide
 information about itself. This information will be displayed in the
-[[Automation/Manager]] window: `script_name`, `script_description`,
+[Automation/Manager]({{< relref "./Manager" >}}) window: `script_name`, `script_description`,
 `script_author` and `script_version`.
 
 Automation 4 Lua implements both of the currently defined "features" of

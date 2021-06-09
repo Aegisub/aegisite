@@ -4,7 +4,7 @@ menu.
 ![automation_menu](/img/3.2/automation_menu.png)
 
 The first option in the Automation menu, before the separator, always opens
-the [[Automation/Manager]] window.
+the [Automation/Manager]({{< relref "./Manager" >}}) window.
 
 Below the separator is a list of all macros loaded. In the example above
 seven macros are loaded. The third, [Karaoke_Templater]({{< relref "Karaoke_Templater" >}}) is unavailable

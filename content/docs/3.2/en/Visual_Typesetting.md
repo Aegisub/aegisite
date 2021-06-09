@@ -8,7 +8,7 @@ template name="todo" Screenshots need to be updated
 
 ### Play ###
 Play the video and, starting at the currently displayed frame. See
-[[Video#playingvideo]] for comments on playing video in Aegisub.
+[Video#playingvideo]({{< relref "Video#playingvideo" >}}) for comments on playing video in Aegisub.
 
 ### Play line ###
 Play the video starting at the first frame of the currently active line,

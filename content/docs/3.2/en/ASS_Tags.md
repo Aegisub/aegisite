@@ -11,7 +11,7 @@ override blocks (i.e. not between { and }).
 
 {::template name="tag_def_box" title="Soft line break" id="\n"}\n{:/}
 Insert a forced line break, but only when in wrapping mode 2. (See
-[[the \q tag|ASS_Tags#wrapstyle]]). Note that this is a lowercase n.
+[the \q tag]({{< relref "ASS_Tags#wrapstyle" >}})). Note that this is a lowercase n.
 
 In all other wrapping modes, this is replaced by a regular space. This is
 rarely (if ever) actually useful. If you're not sure whether you want this or

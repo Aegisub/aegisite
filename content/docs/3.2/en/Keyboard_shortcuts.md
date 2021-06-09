@@ -1,2 +1,2 @@
 
-1. REDIRECT [[Options#hotkeys]]
+1. REDIRECT [Options#hotkeys]({{< relref "Options#hotkeys" >}})

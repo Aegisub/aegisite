@@ -1,2 +1,2 @@
 
-1. REDIRECT [[Audio#basicaudiotiming]]
+1. REDIRECT [Audio#basicaudiotiming]({{< relref "Audio#basicaudiotiming" >}})

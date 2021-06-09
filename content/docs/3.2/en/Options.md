@@ -458,7 +458,7 @@ programs more responsive while long-running scripts are active.
 **Autoreload on Export**
 : Automatically reloads the specified sets of scripts when the [Exporting]({{< relref "Exporting" >}})
 dialogue is opened. In that case you will have to enter the
-[[Automation/Manager]] window and determine the cause of the error.
+[Automation/Manager]({{< relref "Automation/Manager" >}}) window and determine the cause of the error.
 
 ## Advanced Audio ##
 
@@ -642,7 +642,7 @@ you to reindex the file to open audio tracks from the same file.
         libass is far faster than VSFilter and (somewhat) cross-platform, but
         unfortunately still has some rendering differences from VSFilter and
         font-related issues on Windows. If you are doing complex typesetting
-        that will be [[softsubbed|Attaching subtitles to video#softsubbing]] it
+        that will be [softsubbed]({{< relref "Attaching_subtitles_to_video#softsubbing" >}}) it
         is a good idea to check your work with both VSFilter and libass, as an
         increasing number of users are using libass.
 

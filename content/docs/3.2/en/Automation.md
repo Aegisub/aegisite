@@ -25,7 +25,7 @@ Aegisub comes with several Automation scripts already packaged and ready to use.
 This includes the advanced **[Karaoke_Templater]({{< relref "Karaoke_Templater" >}})** script and a **[collection of macros]({{< relref "Included_macros" >}})** to simplify some editing tasks.
 
 Aegisub almost always has several Automation scripts loaded at a time.
-You can see what scripts are loaded, and load/unload more from the **[[Automation/Manager]]** window.
+You can see what scripts are loaded, and load/unload more from the **[Automation/Manager]({{< relref "Automation/Manager" >}})** window.
 
 All Automation scripts also present themselves in Aegisub in one way or another.
 Some appear as [macros in the Automation menu|Running_macros]] and others appear as [[filters in the Export dialog]({{< relref "Exporting" >}}).
