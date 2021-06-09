@@ -1,3 +1,12 @@
+---
+title: Typesetting Introduction
+menu:
+  docs:
+    parent: Typesetting
+    name: Typesetting Introduction
+weight: 410
+---
+
 Wikipedia's definition of
 [typesetting](http://en.wikipedia.org/wiki/Typesetting): "**Typesetting**
 involves the presentation of textual material in graphic form on paper or some
