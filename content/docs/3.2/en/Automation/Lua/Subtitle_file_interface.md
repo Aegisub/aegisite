@@ -14,7 +14,7 @@ is created for:
 
 **Read-only**
 : Some feature functions must not be allowed to modify the subtitle file at
-all. This includes for example [macro validation functions|Automation/Lua/Registration#macrovalidationfunction]] and [[export filter configuration panel providers]({{< relref "Registration#_export_filter_configuration_panel_provider" >}}),
+all. This includes for example [macro validation functions]({{< relref "Registration#macrovalidationfunction" >}}) and [export filter configuration panel providers]({{< relref "Registration#_export_filter_configuration_panel_provider" >}}),
 because this would be outside user expectations.
 
 **Allow undo points**

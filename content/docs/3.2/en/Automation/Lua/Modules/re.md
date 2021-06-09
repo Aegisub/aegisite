@@ -292,7 +292,7 @@ single match along with the captured subgroups.
 
 **`matches`** (`table` or `nil`)
 : `nil` if the pattern did not match the string. Otherwise, a table containing
-a [Match Table|re#match-tables]] for the full match, followed by a [[Match Table]({{< relref "re#match-tables" >}}) for each capturing subexpression in the pattern (if
+a [Match Table]({{< relref "re#match-tables" >}}) for the full match, followed by a [Match Table]({{< relref "re#match-tables" >}}) for each capturing subexpression in the pattern (if
 any).
 
 {::template name="luabox"}

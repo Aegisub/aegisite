@@ -19,7 +19,7 @@ The following filters are available in the default installation:
 Exports only the lines that are currently visible on the active video frame. Does nothing if you do not have video loaded. Script headers and styles etc. are also exported.
 
 ### Karaoke template ###
-Filters the script through the automation script "karaoke templater" to generate karaoke effects. See the [karaoke templater|Automation/Karaoke_Templater]] and [[automation overview]({{< relref "Automation" >}}) pages for further details.
+Filters the script through the automation script "karaoke templater" to generate karaoke effects. See the [karaoke templater]({{< relref "Automation/Karaoke_Templater" >}}) and [automation overview]({{< relref "Automation" >}}) pages for further details.
 
 ### Transform framerate ###
 In "constant" output mode, recalculates every single timestamp in the script (including ones contained in [override tags]({{< relref "ASS_Tags" >}})) to work with a new framerate. Note that this means that the entire script will be "sped up" or "slowed down". Can be used for NTSC->PAL conversions or vice versa.

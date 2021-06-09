@@ -208,7 +208,7 @@ The _notags_ modifier ensures that the special colour of the special syllable ge
 ### multi  ###
 
 
-Make the template apply per-highlight in [multi-highlight|Furigana_karaoke]] timed karaoke. This changes application order semantics in a significant way, see [[Template execution and order]({{< relref "./Template_execution_rules_and_order" >}}) for details.
+Make the template apply per-highlight in [multi-highlight]({{< relref "Furigana_karaoke" >}}) timed karaoke. This changes application order semantics in a significant way, see [Template execution and order]({{< relref "./Template_execution_rules_and_order" >}}) for details.
 
 While this will work on code lines, it is generally not useful, see the discussion on execution order.
 
