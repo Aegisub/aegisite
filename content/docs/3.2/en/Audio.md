@@ -1,3 +1,10 @@
+---
+title: Working with Audio
+menu:
+  docs:
+    parent: Timing
+weight: 510
+---
 
 Aegisub has a fairly advanced, customizable audio mode with both the
 traditional waveform display as well as an alternative spectrum display.
