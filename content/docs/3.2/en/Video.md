@@ -3,7 +3,7 @@ Aegisub isn't a video (or media) player, but it still supports loading and
 working with video in various ways. This page is a reference of how Aegisub's
 loading and handling of video works; for a gentler introduction on how to just
 get things to display properly you may want to read the
-[[Typesetting_Tutorial]] or [[Visual_Typesetting]] pages.
+[Typesetting_Tutorial]({{< relref "Typesetting_Tutorial" >}}) or [Visual_Typesetting]({{< relref "Visual_Typesetting" >}}) pages.
 
 ## Opening video ##
 

@@ -26,7 +26,7 @@ But there is something else to make sure of first.
 Karaoke Templater can do many things for you, but it can't guess the lyrics for
 your song, or how they're synchronised with the music. You'll have to time the
 lyrics yourself, or get someone else to do it. You can learn how to time
-karaoke at the [[Karaoke_Timing_Tutorial]].
+karaoke at the [Karaoke_Timing_Tutorial]({{< relref "Karaoke_Timing_Tutorial" >}}).
 
 We'll call song lyrics with basic karaoke timing (\k timing), but no other
 special effects, for _timed karaoke_. When an effect has been applied to the

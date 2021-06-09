@@ -6,13 +6,13 @@ The two most important areas are the **Subtitles Grid** and **Edit Box**.
 
 **The grid** shows all the subtitle lines in the file you're working with. Lines are marked with different colours depending on their properties. For example, lines with green background are selected. Lines with blue background are marked as comments and won't be shown on screen. Lines with a light yellow background are visible on the current video frame. Lines with red text overlap in time with a currently selected line. Click a line here to select it for editing.
 
-* [[Editing_Subtitles]]
+* [Editing_Subtitles]({{< relref "Editing_Subtitles" >}})
 
 <div></div>
 
 The **edit box** is where you can edit the text and other properties of a subtitle line directly. While you can enter times in the time boxes here, you will rarely need to, as it's much faster to time lines using the **audio box**. You can also time to video. You can use the formatting toolbar to insert formatting codes into the current line. The four "AB" buttons change the colours of different elements of the line. Change the text for the subtitle and press Enter to commit the changes and go to the next line. Holding Ctrl while pressing Enter will stay on the line instead of going to the next, but still commit the changes.
 
-* [[Editing_Subtitles]]
+* [Editing_Subtitles]({{< relref "Editing_Subtitles" >}})
 
 <div></div>
 
@@ -31,22 +31,22 @@ The **video box** allows you to see how the subtitles will look on the video, bu
 Finally, there are three bars in the program: the **status bar** is used to show status messages to you, and the **menu bar** and **tool bar** are used to access Aegisub's myriad of tools:
 
 * [[Export|Exporting]]
-* [[Spell_Checker]]
-* [[Translation_Assistant]]
-* [[Paste_Over]]
-* [[Select_Lines]]
+* [Spell_Checker]({{< relref "Spell_Checker" >}})
+* [Translation_Assistant]({{< relref "Translation_Assistant" >}})
+* [Paste_Over]({{< relref "Paste_Over" >}})
+* [Select_Lines]({{< relref "Select_Lines" >}})
 * [[Styles Manager|Styles]]
-* [[Colour_Picker]]
-* [[Styling_Assistant]]
-* [[Resolution_Resampler]]
-* [[Fonts_Collector]]
-* [[Shift_Times]]
-* [[Timing_Post-Processor]]
-* [[Kanji_Timer]]
+* [Colour_Picker]({{< relref "Colour_Picker" >}})
+* [Styling_Assistant]({{< relref "Styling_Assistant" >}})
+* [Resolution_Resampler]({{< relref "Resolution_Resampler" >}})
+* [Fonts_Collector]({{< relref "Fonts_Collector" >}})
+* [Shift_Times]({{< relref "Shift_Times" >}})
+* [Timing_Post-Processor]({{< relref "Timing_Post-Processor" >}})
+* [Kanji_Timer]({{< relref "Kanji_Timer" >}})
 * [[Automation Manager|Automation]]
-* [[Options]]
+* [Options]({{< relref "Options" >}})
 * [[Script Properties|Properties]]
-* [[Attachment_Manager]]
+* [Attachment_Manager]({{< relref "Attachment_Manager" >}})
 <div></div>
 
 

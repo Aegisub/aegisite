@@ -346,7 +346,7 @@ text and can be copied and pasted freely between text editors, chat
 programs, web browsers, other instances of Aegisub etc.
 
 **Paste Lines Over...**
-: Open the [[Paste Over]] dialog.
+: Open the [Paste Over]({{< relref "Paste Over" >}}) dialog.
 
 **Delete**
 : Deletes the selected lines.

@@ -54,7 +54,7 @@ You can right click to bring a context menu with other options:
 
 Save PNG snapshot
 : Saves a PNG snapshot of the current frame to the path specified in
-the [[options]]. This snapshot will be in the real video size, and
+the [options]({{< relref "options" >}}). This snapshot will be in the real video size, and
 WON'T be affected by zooming or aspect ratio overriding.
 
 Copy image to clipboard

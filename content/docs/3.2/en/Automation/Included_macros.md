@@ -3,7 +3,7 @@ Aegisub includes several macros. Here's a line-up of them.
 
 ## Apply karaoke template  ##
 This is the macro incantation of Karaoke Templater. See the page on
-[[Karaoke_Templater]] for how to use this.
+[Karaoke_Templater]({{< relref "Karaoke_Templater" >}}) for how to use this.
 
 This macro is only available when there is at least one template line in the
 subtitle file.

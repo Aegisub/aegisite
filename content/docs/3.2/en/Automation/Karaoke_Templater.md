@@ -1,4 +1,4 @@
-**Karaoke Templater** is an [[Automation]] script that ships with Aegisub. Its
+**Karaoke Templater** is an [Automation]({{< relref "Automation" >}}) script that ships with Aegisub. Its
 primary purpose is to help creating [[karaoke effects|Glossary/Karaoke_effect]]
 with a specially designed template language. Karaoke Templater is already
 installed and ready to use along with Aegisub.

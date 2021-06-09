@@ -96,7 +96,7 @@ Output range of `r`, `g` and `b` are 0..255.
 
 ## String functions  ##
 Because the Lua standard `string` library is fairly limited, a few additional helper functions are provided.
-See also [[unicode]].
+See also [unicode]({{< relref "unicode" >}}).
 
 ### string.trim  ###
 Synopsis: `outstring = util.trim(instring)`{:.language-lua}

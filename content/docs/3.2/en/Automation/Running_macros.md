@@ -1,4 +1,4 @@
-[[Automation]] [[macros|Glossary/Macro]] appear as options in the Automation
+[Automation]({{< relref "Automation" >}}) [[macros|Glossary/Macro]] appear as options in the Automation
 menu.
 
 ![automation_menu](/img/3.2/automation_menu.png)
@@ -7,7 +7,7 @@ The first option in the Automation menu, before the separator, always opens
 the [[Automation/Manager]] window.
 
 Below the separator is a list of all macros loaded. In the example above
-seven macros are loaded. The third, [[Karaoke_Templater]] is unavailable
+seven macros are loaded. The third, [Karaoke_Templater]({{< relref "Karaoke_Templater" >}}) is unavailable
 though, because the macro has determined it can't be run on the subtitles.
 In this case, because the subtitle file has no karaoke templates. Other
 macros might be unavailable for other reasons. The fourth has had a hotkey

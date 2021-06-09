@@ -191,7 +191,7 @@ will automatically load the audio.
 **Screenshot save path**
 : Decides where Aegisub should save screenshots. The default is `?video`, which
 means they are saved to wherever the video is, but you can change it to any
-path you like. [[Aegisub_path_specifiers]] are supported; another option
+path you like. [Aegisub_path_specifiers]({{< relref "Aegisub_path_specifiers" >}}) are supported; another option
 directly available in the dropdown is `?script`, which is wherever the script
 is.
 
@@ -408,7 +408,7 @@ working on to the autosave path.
 **Path**
 : Decides where to save autosaved copies of scripts you are working on. By
 default set to `autosave` in your Aegisub `?user` directory (see the
-[[Aegisub_path_specifiers]] page for details).
+[Aegisub_path_specifiers]({{< relref "Aegisub_path_specifiers" >}}) page for details).
 
 **Autosave after every change**
 : If enabled, Aegisub will save the file after every change made to it. Note
@@ -456,7 +456,7 @@ single-core/single-CPU system having this on lower than normal will make other
 programs more responsive while long-running scripts are active.
 
 **Autoreload on Export**
-: Automatically reloads the specified sets of scripts when the [[Exporting]]
+: Automatically reloads the specified sets of scripts when the [Exporting]({{< relref "Exporting" >}})
 dialogue is opened. In that case you will have to enter the
 [[Automation/Manager]] window and determine the cause of the error.
 
