@@ -1,3 +1,11 @@
+---
+title: Lua Reference
+menu:
+  docs:
+    parent: Automation
+weight: 630
+---
+
 The Automation 4 Lua scripting engine is based on the version 5.1 series of
 [the Lua scripting language](http://www.lua.org).
 
