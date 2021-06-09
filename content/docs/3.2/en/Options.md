@@ -1,3 +1,10 @@
+---
+title: Aegisub Options
+menu:
+  docs:
+    parent: Miscellaneous
+weight: 710
+---
 
 Aegisub is highly customizable and hence has a large amount of user-changeable
 options. These are available in the options dialog box, found in the View menu.

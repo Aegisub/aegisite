@@ -1,3 +1,11 @@
+---
+title: Script Properties
+menu:
+  docs:
+    parent: Miscellaneous
+weight: 720
+---
+
 The **script properties** are some headers and other options that affect the
 entire script in various ways. They can be accessed from the _File menu_ ->
 _Properties_.
