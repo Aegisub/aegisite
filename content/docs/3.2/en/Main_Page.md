@@ -1,3 +1,11 @@
+---
+title: Main Page
+menu:
+  docs:
+    parent: Navigation
+weight: 110
+---
+
 Welcome to the Aegisub manual. See our [[about|About]] page for more
 information on the program, or browse the topics on the left bar.
 
