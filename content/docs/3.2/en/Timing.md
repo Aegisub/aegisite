@@ -1,3 +1,10 @@
+---
+title: Timing subtitles to audio
+menu:
+  docs:
+    parent: Timing
+weight: 520
+---
 
 ## The main audio view ##
 

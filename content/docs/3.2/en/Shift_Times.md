@@ -1,3 +1,11 @@
+---
+title: Shift times
+menu:
+  docs:
+    parent: Timing
+weight: 530
+---
+
 The **shift times** tool is a batch processor for timestamps; it adjusts the
 start/end timestamps of many subtitle lines at once in various ways. It is
 located under _Timing_ -> _Shift Times_.

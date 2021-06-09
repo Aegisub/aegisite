@@ -1,3 +1,11 @@
+---
+title: Kanji Timer
+menu:
+  docs:
+    parent: Timing
+weight: 550
+---
+
 The kanji timer makes it easy to copy timed karaoke from one set of already karaoke timed lines to another set of yet untimed lines. Primarily intended for adding karaoke to Japanese songs.
 
 Here is a video demonstration of the kanji timer in action: [Download demonstration video](http://www.animereactor.dk/aegisub/demovids/kanji-timer.avi) (XviD MP3 AVI, 5 min 20 sec, 12 MB)
