@@ -1,7 +1,7 @@
 
 The following is a list of every tag supported by the Advanced Substation
 Alpha format. This is basically a detailed version of ass-quickref.txt. See
-the [[tutorial|Typesetting_Tutorial]] for an introduction to typesetting,
+the [[tutorial|Visual_Typesetting]] for an introduction to typesetting,
 using some basic tags.
 
 ## Special characters ##

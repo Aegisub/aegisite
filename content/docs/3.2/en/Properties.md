@@ -15,7 +15,7 @@ _Properties_.
 The properties are:
 
 * **Title**, **Original script**, **Translation**, **Editing**, **Timing**, **Synch point**, **Updated by** and **Update details** - These are for informational purposes only and do not affect rendering in any way. Set them to appropriate values if you find them useful.
-* **Resolution**, **YCbCr Matrix**, **Scale border and shadow** - See the [Script Resolution]({{< relref "Script Resolution" >}}) page for the meaning of these fields.
+* **Resolution**, **YCbCr Matrix**, **Scale border and shadow** - See the [Script Resolution]({{< relref "Script_Resolution" >}}) page for the meaning of these fields.
 * **Wrap style** - Controls how the subtitle renderer will break lines that are too long to fit on one line. The modes are:
 
   * 0 - The default mode. "Smart" wrapping; if a line is too long to fit on a line by itself, breaks it into two roughly evenly long lines, but prefers the top line to be wider. <tt>\N</tt> (note capital N) can be used to insert a manual linebreak.

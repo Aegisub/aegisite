@@ -16,7 +16,7 @@ can define two [[macros|Glossary/Macro]] and one export filter.
 Scripts can be loaded in one of two ways. In the screenshot above, most of
 the scripts are _global_ (autoloaded), as indicated by the "G" in the
 leftmost column. Global scripts are automatically loaded along with Aegisub.
-They are put in one of the [Automation_autoload_folders]({{< relref "Automation_autoload_folders" >}}). You can not
+They are put in one of the [Automation_autoload_folders](#). You can not
 unload global scripts; you must remove them from the autoload directory, and
 then rescan the autoload directory.
 

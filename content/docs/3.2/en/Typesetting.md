@@ -71,7 +71,7 @@ accomplished with ASS, but for more complex effects commercial programs like
 Adobe AfterEffects are sometimes used, since the holy grail of sign typesetting
 is to make the subtitle look like it's a part of the image that was always
 there. How to get there from here will not be discussed in detail on this page
-(see the [[typesetting tutorial|Typesetting_Tutorial]]), but here are some
+(see the [[typesetting tutorial|Visual_Typesetting]]), but here are some
 pointers:
 
 * Is the sign actually important to the plot? Trying to translate every single
