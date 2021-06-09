@@ -1,2 +1,2 @@
-baseurl = "https://aeg-dev.github.io/AegSite-hugo/"
+baseurl = "https://aeg-dev.github.io/AegiSite/"
 canonifyURLs = true
