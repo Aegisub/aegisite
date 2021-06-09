@@ -171,14 +171,14 @@ nothingness, and generally isn't very useful. For strong blurs, `\blur` is
 generally more useful as a result. The _strength_ must be an integer number.
 
 {::template name="tag_def_box" title="Blur edges (Gaussian kernel)" id="\blur"}\blur<i>&lt;strength&gt;</i>{:/}
-In general, this has the same function as the [[`\be`|ASS_Tags#bluredges]] tag, but
+In general, this has the same function as the [`\be`]({{< relref "ASS_Tags#bluredges" >}}) tag, but
 uses a more advanced algorithm that looks better at high strengths. Unlike
 `\be`, the _strength_ can be non-integer here. Set _strength_ to 0 (zero) to
 disable the effect. Be careful, setting _strength_ too high can take a lot of
 CPU time to render.
 
 Be aware that this tag blurs the _edges_ of the text, not everything. This
-means that if the text has a border (set with [[`\bord`|ASS_Tags#borderwidth]]) the
+means that if the text has a border (set with [`\bord`]({{< relref "ASS_Tags#borderwidth" >}})) the
 border will be blurred, but if there is no border, the main text will be
 blurred instead.
 
@@ -562,7 +562,7 @@ The green cross marks the point (320,240) on the video.
 \move(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)
 \move(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;,<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;)
 {:/}
-The `\move` tag works similar to [[`\pos`|ASS_Tags#setposition]] in that it
+The `\move` tag works similar to [`\pos`]({{< relref "ASS_Tags#setposition" >}}) in that it
 positions the subtitle line, the difference is that `\move` makes the subtitle
 move.
 

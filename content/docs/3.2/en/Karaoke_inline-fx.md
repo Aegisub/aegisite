@@ -67,7 +67,7 @@ any per-syllable templates that must use it.
 
 ## Usage in Lua scripts  ##
 The inline-fx tags are parsed by
-[[`karaskel.preproc_line_text`|Automation/Lua/Modules/karaskel.lua.md#karaskel.preproc_line_text]]
+[`karaskel.preproc_line_text`]({{< relref "Automation/Lua/Modules/karaskel.lua.md#karaskel.preproc_line_text" >}})
 so they will only work if you have applied at least that much karaskel
 pre-processing on your subtitle lines.
 

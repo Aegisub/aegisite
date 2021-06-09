@@ -122,7 +122,7 @@ These are the callback functions you provide to the registration functions.
 Signature: `process_macro(subtitles, selected_lines, active_line)`
 
 Macro processing functions passed to
-[[`aegisub.register_macro`|Automation/Lua/Registration#aegisub.register_macro]]
+[`aegisub.register_macro`]({{< relref "Registration#aegisub.register_macro" >}})
 must have this signature. The name `process_macro` is a placeholder for your
 own function name.
 
@@ -148,7 +148,7 @@ set, the new active line index must be one of the lines in the new
 Signature: `validate_macro(subtitles, selected_lines, active_line)`
 
 Macro validation functions passed to
-[[`aegisub.register_macro`|Automation/Lua/Registration#aegisub.register_macro]]
+[`aegisub.register_macro`]({{< relref "Registration#aegisub.register_macro" >}})
 must have this signature. The name `validate_macro` is a placeholder for
 your own function name.
 
@@ -184,7 +184,7 @@ cannot be run, but there may be more uses for it.
 Signature: `process_filter(subtitles, settings)`
 
 Export filter processing functions passed to
-[[`aegisub.register_filter`|Automation/Lua/Registration#aegisub.register_filter]]
+[`aegisub.register_filter`]({{< relref "Registration#aegisub.register_filter" >}})
 must have this signature. The name `process_filter` is a placeholder for
 your own function name.
 
@@ -208,7 +208,7 @@ Nothing.
 Signature: `get_filter_configuration_panel(subtitles, old_settings)`
 
 Export filter configuration panel providers passed to
-[[`aegisub.register_filter`|Automation/Lua/Registration#aegisub.register_filter]]
+[`aegisub.register_filter`]({{< relref "Registration#aegisub.register_filter" >}})
 must have this signature. The name `get_filter_configuration_panel` is a
 placeholder for your own function name.
 

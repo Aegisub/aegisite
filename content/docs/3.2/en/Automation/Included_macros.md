@@ -138,7 +138,7 @@ override tags inside the syllables they affect.
 {:/}
 
 ## Add Edgeblur ##
-Add [[`\be1`|ASS_Tags#bluredges]] to all selected lines. Lightly blurring the
+Add [`\be1`]({{< relref "../ASS_Tags#bluredges" >}}) to all selected lines. Lightly blurring the
 edges of all dialogue lines can noticeably improve compressibility when
 [hardsubbing]({{< relref "Attaching_subtitles_to_video" >}}) (especially when using older
 codecs such as XviD), but edgeblur cannot be set in the style due to format

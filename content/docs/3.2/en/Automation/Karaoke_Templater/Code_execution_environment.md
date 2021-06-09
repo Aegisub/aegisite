@@ -307,7 +307,7 @@ variables are introduced in the code execution environment, **`j`** and
 
 If you change `j` or `maxj` while a template is executing, you can affect
 the number of iterations the loop makes. The
-[[`maxloop`|Code_execution_environment#maxloop]]
+[`maxloop`]({{< relref "Code_execution_environment#maxloop" >}})
 function is convenient for making dynamic loops.
 
 {::template name="examplebox"}

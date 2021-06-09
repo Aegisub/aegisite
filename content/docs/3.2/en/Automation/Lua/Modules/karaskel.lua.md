@@ -5,8 +5,8 @@ It also defines several new data structures, and extensions to those
 defined by Automation 4 Lua itself.
 
 `karaskel.lua` itself includes
-[[`utils.lua`|Automation/Lua/Modules/util]] and
-[[`unicode.lua`|Automation/Lua/Modules/unicode]] so you do not need to
+[`utils.lua`]({{< relref "util" >}}) and
+[`unicode.lua`]({{< relref "unicode" >}}) so you do not need to
 include those yourself when using `karaskel.lua`.
 
 Using `karaskel.lua` is strongly recommended when creating karaoke effects,
@@ -89,7 +89,7 @@ table. The following fields are added:
   this field is `false` instead.
 * `line.width`, `line.height`, `line.descent` and `line.extlead` - Sizing
 * information for the stripped line text, as returned by
-* [[`aegisub.text_extents`|Automation/Lua/Miscellaneous_APIs#aegisub.text_extents]].
+* [`aegisub.text_extents`]({{< relref "../Miscellaneous_APIs#aegisub.text_extents" >}}).
 
 Also, this function modifies the `line.kara` and `line.furi` tables, adding
 sizing information.

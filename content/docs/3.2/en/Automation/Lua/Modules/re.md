@@ -324,7 +324,7 @@ any).
 ### re.gmatch ###
 Synopsis: `iter = re.gmatch(str, pattern)`{:.language-lua}
 
-Iterator version of [[`re.match`|re#re.match]].
+Iterator version of [`re.match`]({{< relref "re#re.match" >}}).
 
 **`@str`** (`string`)
 : String to search for the pattern in.
