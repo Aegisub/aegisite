@@ -713,11 +713,12 @@ Second fade starts 1500 milliseconds later, and lasts 200 milliseconds.
 \t(<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;style modifiers&gt;</i>)
 \t(<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;accel&gt;</i>,<i>&lt;style modifiers&gt;</i>)
 {{</tag-def-box>}}
+
 Perform a gradual, animated transformation from one style to another. The
 _style modifiers_ are other override tags as specified in this reference. Only
 a limited set of the override tags are animateable with `\t`:
 
-|--------|----------|---------------|
+
 |  Font  | Geometry | Other effects |
 |--------|----------|---------------|
 | \fs    | \fscx    | \bord         |
@@ -732,7 +733,7 @@ a limited set of the override tags are animateable with `\t`:
 | \2a    |          | \blur         |
 | \3a    |          |               |
 | \4a    |          |               |
-|--------|----------|---------------|
+
 
 _Note: For `\clip` and `\iclip`, only the rectangle versions can be animated. The
 vector drawing versions cannot be animated._
@@ -935,11 +936,12 @@ there afterwards.
 ### b &lt;x1&gt; &lt;y1&gt; &lt;x2&gt; &lt;y2&gt; &lt;x3&gt; &lt;y3&gt; - Cubic Bézier curve ###
 
 Draws a cubic (3rd degree) Bézier curve from the cursor position to (x3,y3),
-using (x1,y1) and (x2,y2) as the control points. Check the [article on
-Wikipedia](http://en.wikipedia.org/wiki/B%C3%A9zier_curve) for more
+using (x1,y1) and (x2,y2) as the control points. Check the [article on Wikipedia](http://en.wikipedia.org/wiki/B%C3%A9zier_curve) for more
 information about Bézier curves. In this picture taken from that article, P0
 is the cursor position, P1 is x1,y1, P2 is x2,y2 and P3 is x3,y3:
+
 ![Bezier](/img/3.2/Bezier.png)
+
 Note that the curve begins at P0, heads towards P1, then arrives at P3 coming
 from P2's direction.
 
