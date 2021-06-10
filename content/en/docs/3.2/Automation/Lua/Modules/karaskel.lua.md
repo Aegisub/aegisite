@@ -458,14 +458,14 @@ Additions by `karaskel.preproc_line_pos`:
   `syl.right` for one syllable is equal to `syl.left` for the next
   syllable.
 
-{::template name="examplebox"}
+{{<example-box>}}
 ~~~ lua
 line.left + syl.center
 ~~~
 
 Calculates the default X position of a syllable, suitable for use with
 `\an2`, `\an5` or `\an8` alignment.
-{:/}
+{{</example-box>}}
 
 #### Highlight table  ####
 A highlight table defines one highlight of a multi-highlight timed

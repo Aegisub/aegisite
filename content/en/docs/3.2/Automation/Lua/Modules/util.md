@@ -63,13 +63,13 @@ Note that this function always returns four numbers when passed a valid colour s
 Unused values (depends on the format of the colour string) are assigned 0 (zero).
 If an unrecognised colour string is passed, `nil` is returned.
 
-{::template name="examplebox"}
+{{<example-box>}}
 ~~~ lua
 r, g, b, a = extract_color("&H7F&")
 ~~~
 
 `r`, `g`, and `b` will be 0; `a` will be 127.
-{:/}
+{{</example-box>}}
 
 ### alpha_from_style  ###
 Synopsis: `alphastring = util.alpha_from_style(coloralphastring)`{:.language-lua}

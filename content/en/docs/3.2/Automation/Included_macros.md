@@ -17,7 +17,7 @@ such that the letters are "stacked".
 This macro modifies all lines that are currently selected in the subtitles
 grid.
 
-{::template name="examplebox"}
+{{<example-box>}}
 Here's a typeset sign:
 
     {\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&H25485A&\c&HDEEBF1&\pos(456,184)\frz-90}Sign text
@@ -35,7 +35,7 @@ Now after running this macro on the line:
 This is what it looks before and after running the macro:
 
 ![StackedSign1](/img/3.2/StackedSign1.png) ![StackedSign2](/img/3.2/StackedSign2.png)
-{:/}
+{{</example-box>}}
 
 ## Automatic karaoke lead-in  ##
 Automatically join several karaoke-timed lines up timing-wise and add
@@ -51,7 +51,7 @@ start-time of the selected line that comes before it. It changes the timing
 of the selected lines and adds `\k` tags at the start of them except the
 first.
 
-{::template name="examplebox"}
+{{<example-box>}}
 Here's two lines of "tightly" timed karaoke:
 
     Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
@@ -80,7 +80,7 @@ This simply says that the smallest duration between two lines it found, was
 290 milliseconds, or 0.29 seconds, so that's as much time you have to make
 fade-in, fade-out and other transition effects, if you want every
 syllable-highlight to be fully visible.
-{:/}
+{{</example-box>}}
 
 ## Clean tags  ##
 This macro does various cleaning up on the override tags in all selected
@@ -110,7 +110,7 @@ sensibly into syllable structures, see the example.
 This macro modifies all selected lines in the grid, re-writing all tag
 blocks in them.
 
-{::template name="examplebox"}
+{{<example-box>}}
 Original line:
 
     {\r\frz90\k80}Test {\r\fry180\k60}me
@@ -135,7 +135,7 @@ Now karaskel creates these syllable structures:
 
 The cleaned up version is generally what you'd want since it places the
 override tags inside the syllables they affect.
-{:/}
+{{</example-box>}}
 
 ## Add Edgeblur ##
 Add [`\be1`]({{< relref "../ASS_Tags#bluredges" >}}) to all selected lines. Lightly blurring the

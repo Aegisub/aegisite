@@ -43,7 +43,7 @@ generated syllable structure, but the main timing (`start_time` and `end_time`)
 of the syllable structure reflects only the added-together timings of the
 number sign syllables.
 
-{::template name="examplebox"}
+{{<example-box>}}
 This line shows how multi-highlight syntax is used to mark up kanji and groups
 of kanji that cover multiple syllables:
 
@@ -63,8 +63,7 @@ It generates the following syllable structures:
     <tr><td rowspan="2">時</td><td rowspan="2">20</td><td>6</td></tr>
     <tr><td>14</td></tr>
 </table>
-
-{:/}
+{{</example-box>}}
 
 ## Basic furigana  ##
 To add furigana to a syllable, you add a pipe character (|, ASCII 124, Unicode
@@ -79,7 +78,7 @@ syllables they belong to. If the string of furigana is wider than the main text
 the furigana is left-aligned with the main text. You can control this behaviour
 with special control characters, see below.
 
-{::template name="examplebox"}
+{{<example-box>}}
 Adding furigana to the example above:
 
     {\k5}明日|あ{\k10}#|し{\k5}#|た{\k10}ま{\k7}た{\k10}会|あ{\k4}う{\k6}時|と{\k14}#|き
@@ -98,7 +97,7 @@ The following syllables, highlights and furigana are produced:
     <tr><td rowspan="2">時</td><td rowspan="2">20</td><td>6</td><td>と</td></tr>
     <tr><td>14</td><td>き</td></tr>
 </table>
-{:/}
+{{</example-box>}}
 
 ## Controlling the layout  ##
 Often the layout produced with the plain furigana syntax isn't exactly what you
@@ -127,7 +126,7 @@ In all cases, if two furigana sequences extend beyond their main text such that
 they would overlap, the main text is moved such that the furigana won't
 overlap.
 
-{::template name="examplebox"}
+{{<example-box>}}
 Here is the same (rather contrived) sample text shown without layout control
 and with each of the two layout control characters:
 
@@ -140,7 +139,7 @@ difference is only a few pixels, but it is there. In the first sample, the た
 extends a bit over the left edge of 魂 and above 国 while it exactly
 left-aligns with 魂 in the second. In the second, ちゅうごく is also centered
 above 中国 while it isn't in the first.
-{:/}
+{{</example-box>}}
 
 ## Summary  ##
 
@@ -168,7 +167,7 @@ Furigana: [The _furi_ template class]({{< relref "Automation/Karaoke_Templater/T
 
 Multi-highlight: [The _multi_ modifier]({{< relref "Automation/Karaoke_Templater/Template_modifiers#multi" >}})
 
-{::template name="examplebox"}
+{{<example-box>}}
 The examples used earlier on this page are all generated using this kara-templater snippet:
 
     Comment: 0,0:00:00.00,0:00:00.00,Default,,0000,0000,0000,template syl,{\pos(!line.left+syl.center!,!line.middle!)\an5\k!syl.start_time/10!\k$kdur}
@@ -179,7 +178,7 @@ The examples used earlier on this page are all generated using this kara-templat
     Comment: 0,0:00:06.00,0:00:08.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|た{\k10}#|ま{\k10}#|し{\k10}#|い
 
 The font used in MS PMincho 30 pt with the furigana being 15 pt.
-{:/}
+{{</example-box>}}
 
 
 ## Usage in Lua scripts  ##

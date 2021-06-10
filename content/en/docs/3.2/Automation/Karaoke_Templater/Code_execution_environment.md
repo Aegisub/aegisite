@@ -133,7 +133,7 @@ The `retime` function always returns the empty string (`""`) which will
 cause it to output nothing when used in code blocks, but still evaluate to
 true if used in boolean expressions.
 
-{::template name="examplebox"}
+{{<example-box>}}
     template syl: !retime("preline", -1000, 0)!{\pos($scenter,$smiddle)\an5\fscx0\fscy0\t(\fscx100\fscy100)}
 
 This creates a kind of "pop-in" effect for the syllables that lasts 1
@@ -141,8 +141,8 @@ second (1000 milliseconds) before the actual line timing. The two important
 things to code: Quotation marks around `"preline"` and that the start
 offset is negative, -1000, because the start time needs to be moved
 backwards.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
     template syl: !retime("syl", 0, 0)!{\pos($x,$y)\t(\fscx360)}
 
 Makes the syllable spin around itself during its highlight. Unless you also
@@ -151,8 +151,8 @@ syllable will only be visible during its highlight. Note how retiming a
 syllable line to just the syllable time makes it unneeded to put start and
 end times in the `\t` tag, as they default to the duration of the entire
 line and here the duration of the line is the duration of the syllable.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
     template syl: !retime("sylpct", 0, 50)!{\move($x,$y,$x,!$y-10!)}
     template syl: !retime("sylpct", 50, 100)!{\move($x,!$y-10!,$x,$y)}
 
@@ -162,7 +162,7 @@ Using `retime` is an easy way to get multiple `\move` tags to affect the
 same syllable; there can only be one `\move` tag on one line, but if you
 split the line into many "chained" times you can create an effect of the
 same syllable moving in several directions.
-{:/}
+{{</example-box>}}
 
 ### relayer  ###
 Synopsis: `relayer(newlayer)`
@@ -174,13 +174,13 @@ layer number, you do not need to use this function. You can just set the
 Layer field on the template line, and it will transfer to the generated
 lines. This function is only needed when the layer number is dynamic.
 
-{::template name="examplebox"}
+{{<example-box>}}
     template syl: !relayer(syl.i*5+20)!
 
 Each syllable generated from the line gets a progressively higher layer
 number. The first syllable gets in layer 25, the second in layer 30 and so
 on, each syllable getting a layer 5 larger than the previous.
-{:/}
+{{</example-box>}}
 
 ### restyle  ###
 Synopsis: `restyle(newstyle)`
@@ -206,18 +206,18 @@ Dynamically control the number of times a template will be looped.
 
 You do not need to use the loop modifier on templates to use this function.
 
-{::template name="examplebox"}
+{{<example-box>}}
     template syl: !maxloop(syl.width + 2*line.styleref.outline)!{\clip(!line.left+syl.left-line.styleref.outline+j-1!,0,!line.left+syl.left-line.styleref.outline+j!,!meta.res_y!)\an5\move(!line.left+syl.center!,!line.middle!,!line.left+syl.center!,!line.middle+math.random(-20,20)!,$start,$end)\shad0}
 
 Cut each syllable into a number of slivers, depending on the size of the
 syllable. Each sliver moves randomly on highlight.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
     template syl: !maxloop(j+1)!
 
 Makes an infinite loop. It continually sets `j` one higher, making the loop
 never complete.
-{:/}
+{{</example-box>}}
 
 ### loopctl  ###
 Synopsis: `loopctl(newj, newmaxj)`
@@ -260,7 +260,7 @@ The `remember_if` function will only store the value if the given _condition_
 is a truthy value (i.e. not `nil` or `false`.) It still returns the value even
 if the condition is falsey.
 
-{::template name="examplebox"}
+{{<example-box>}}
     template syl: {\frz!remember("entryrotation",math.random(100,200))!\fscx300\fscy300\t(0,300,\frz0\fscx100\fscy100)\pos($x,$y)}
     template syl: {\frz-!recall("entryrotation")!\fscx300\fscy300\t(0,300,\frz0\fscx100\fscy100)\pos($x,$y)\fad(300,0)}
 
@@ -273,8 +273,8 @@ The second line loads the same number back, since it uses the name
 `"entryrotation"` for recall. It places a minus sign in front of it, but
 otherwise does the same effect. The result is two copies of the syllable
 rotating opposite each other, but the same amount.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
     template syl: {\fscx!remember_if("longsyllables", recall("longsyllables", 100)+10, #syl.duration>200)!}
 
 Here `remember_if` and `recall` are combined, together with a default value,
@@ -287,7 +287,7 @@ stored back.
 
 The effect is that the `\fscx` gets 10 bigger for all syllables, every time
 a "long" syllable is encountered.
-{:/}
+{{</example-box>}}
 
 
 ## Template execution data  ##
@@ -310,7 +310,7 @@ the number of iterations the loop makes. The
 [`maxloop`]({{< relref "Code_execution_environment#maxloop" >}})
 function is convenient for making dynamic loops.
 
-{::template name="examplebox"}
+{{<example-box>}}
 <code><pre>template syl loop 5: {\an5\pos($scenter,$smiddle)\1a&HFF&\3a&Hcc&\t($start,$end,\fscx!100+<u>j</u>\*10!\fscy!100+<u>j</u>\*10!\3a&HFF&)}</pre></code>
 
 The syllable fill is hidden so only the border is visible, then several
@@ -319,8 +319,9 @@ copies of the that border-only line is made through the loop, and made to
 
 This example assumes that the style definition has shadow disabled but it
 does have a border.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+
+{{<example-box>}}
 <code><pre>template syl loop 20: {\move($x,$y,!$x+15\*math.cos(math.pi\*2\*<u>j</u>/<u>maxj</u>)!,!$y+15\*math.sin(math.pi\*2\*<u>j</u>/<u>maxj</u>)!,$start,$end)\t($start,$end,\alpha&HFF&)}</code></pre>
 
 Here looping is used to [calculate several points on a
@@ -329,7 +330,7 @@ with radius 15 and make the syllables move out to those. Just by changing
 the number of loops in the Effect field you can make a more detailed circle
 because `j/maxj` is used to calculate how large a portion of the total
 number of loops have been completed.
-{:/}
+{{</example-box>}}
 
 ### Conditional templates with fxgroup  ###
 The _fxgroup_ modifier uses a special table **`fxgroup`** in the code
@@ -346,7 +347,7 @@ While you can technically use any text string for fxgroup names, because
 they're used in Lua code it's best to avoid ones that overlap with Lua
 reserved words such as `end`, `break`, `return` and several more.
 
-{::template name="examplebox"}
+{{<example-box>}}
 <code><pre>code syl: <u>fxgroup.long = (syl.duration > 200)</u>
 template syl noblank: all here:
 template syl <u>fxgroup long</u>: is long:
@@ -372,6 +373,6 @@ Neither of the two templates will output anything for the zeroth syllable.
 The first template, because it has the "noblank" modifier, and the second
 because the zero'th syllable's duration is too short for the fxgroup to be
 enabled.
-{:/}
+{{</example-box>}}
 
 {::template name="automation_navbox" /}

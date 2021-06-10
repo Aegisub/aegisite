@@ -82,19 +82,19 @@ explicit weight to use. Note that most fonts only support one or two weights
 so you rarely need to use this. Font weights are multiples of 100, such that
 100 is the lowest, 400 is "normal", 700 is "bold" and 900 is the heaviest.
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>I am {\b1}not[\b0} amused.</pre>
 
 The word "not" is written in boldface.
-{:/}
+{{</example-box>}}
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>{\b100}How {\b300}bold {\b500}can {\b700}you {\b900}get?</pre>
 
 The words are written with increasingly greater weight. Note that most fonts
 do not have more than one or two different weights and you will only be able
 to see "not bold" and "bold" in that case.
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Underline" id="\u"}\u1<br>\u0{:/}
 Switch <u>underlined</u> text on or off. Use `\u1` to enable underlining for
@@ -116,16 +116,16 @@ depending on the resolution of the video on which the subtitles are rendered.)
 The value is not limited to whole integer pixels and can have decimal places.
 Border width cannot be negative.
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>\bord0</pre>
 
 Disable border entirely.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 <pre>bord3.7</pre>
 
 Set the border width to 3.7 pixels
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Border size (extended)" id="\xbord"}
 \xbord<i>&lt;size&gt;</i>
@@ -194,16 +194,16 @@ Set the font face to use for the following text. There should be no space
 between `\fn` and the font name, and you should not put parentheses or similar
 around the font name either.
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>\fnArial</pre>
 
 The text following this tag will be in Arial font.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 <pre>\fnTimes New Roman</pre>
 
 The text following this tag will be in Times New Roman font.
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Font size" id="\fs"}\fs<i>&lt;size&gt;</i>{:/}
 Set the size of the font. The size specified is the height in script pixels,
@@ -214,11 +214,11 @@ point ends up being exactly equal to one script resolution pixel.)
 
 You can only specify integer font sizes.
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>\fs10</pre>
 
 The following text will use a size 10 font.
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Font scale" id="\fscx"}
 \fscx<i>&lt;scale&gt;</i>
@@ -240,21 +240,21 @@ text size more precisely than with [\fs]({{< relref "ASS_Tags#fontsize" >}}).
 
 Note that older versions of VSFitler will truncate non-integer scales.
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>\fscx150</pre>
 
 Make the text 50% wider than normal.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 <pre>\fscy50</pre>
 
 Make the text half height.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 <pre>\fscx200\fscy200</pre>
 
 Make the text double size.
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Letter spacing" id="\fsp"}\fsp<i>&lt;spacing&gt;</i>{:/}
 Changes the spacing between the individual letters in the text. You can use
@@ -292,34 +292,34 @@ described with the [\org]({{< relref "ASS_Tags#rotationorigin" >}}) tag.
 
 These tags also affect [vector drawings]({{< relref "ASS_Tags#vectordrawings" >}}).
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>\frx45</pre>
 
 Rotate the text 45 degrees on the X axis.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 <pre>\fry-45</pre>
 
 Rotate the text 45 degrees in opposite direction on the Y axis.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 <pre>\frz180</pre>
 
 Rotate the text 180 degrees on the Z axis, making it upside-down.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 The following two rotations produce the same result:
 <pre>\frz-30
 \frz330</pre>
 
 This is because 330 degrees is 30 degrees less than a full rotation of 360 degrees.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 <pre>\t(\frz3600)</pre>
 
 Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the [\t]({{< relref "ASS_Tags#animatedtransform" >}}) tag.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 The following screenshots illustrate the effect of rotating on the different axes:
 
 ![Fr_sample01](/img/3.2/Fr_sample01.jpg)
@@ -327,7 +327,7 @@ The following screenshots illustrate the effect of rotating on the different axe
 ![Fr_sample02](/img/3.2/Fr_sample02.jpg)
 
 ![Fr_sample03](/img/3.2/Fr_sample03.jpg)
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Text shearing" id="\fax"}
 \fax<i>&lt;factor&gt;</i>
@@ -342,9 +342,9 @@ unlikely to have desireable results.
 Shearing is performed after rotation, on the rotated coordinates. The
 coordinate system used for shearing is not affected by the [rotation origin]({{< relref "ASS_Tags#rotationorigin" >}}).
 
-{::template name="examplebox"}
+{{<example-box>}}
 ![shearing](/img/3.2/shearing.png)
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Font encoding" id="\fe"}\fe<i>&lt;id&gt;</i>{:/}
 Set the Windows font encoding used to select the font mapping table used to
@@ -426,18 +426,18 @@ Set the alpha (transparency) of the text.
 An alpha of 00 (zero) means opaque/fully visible, and an alpha of FF (ie. 255
 in decimal) is fully transparent/invisible.
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>\alpha&H80&</pre>
 
 Set the alpha of all components to hexadecimal 80, decimal 128, making the
 text 50% transparent in general.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 <pre>\1a&HFF&</pre>
 
 Set the primary fill alpha to hexadecimal FF, decimal 255, making it invisible
 and effectively leaving only the border and shadow.
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Line alignment" id="\an"}\an<i>&lt;pos&gt;</i>{:/}
 Specify the alignment of the line. The alignment specifies the position of the
@@ -536,14 +536,14 @@ The first form that does not specify a _style_ will reset to the style defined
 for the entire line, while the second form, that specifies the name of a
 _style_, will reset the style to that specific style.
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>-Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?</pre>
 
 Assuming the current line style is "Default", this has first "Hey" in the
 Default style, then follows on next line "Huh?" in the style "Alternate", and
 on the third line the style is reset to "Default" for the "Who are you?"
 text.
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Set position" id="\pos"}\pos(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>){:/}
 Set the position of the line. The _X_ and _Y_ coordinates must be integers and
@@ -556,14 +556,14 @@ subtitle is placed at the coordinates given to `\pos`, and for bottom-center
 alignment, the bottom center of the subtitle is placed at the coordinates
 given.
 
-{::template name="examplebox"}
+{{<example-box>}}
 The following screenshots illustrate the way alignment affects positioning.
 The green cross marks the point (320,240) on the video.
 
 ![Pos_sample01](/img/3.2/Pos_sample01.jpg)
 ![Pos_sample02](/img/3.2/Pos_sample02.jpg)
 ![Pos_sample03](/img/3.2/Pos_sample03.jpg)
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Movement" id="\move"}
 \move(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)
@@ -612,21 +612,21 @@ If you need to do do any of those two you will need to split the movement into
 segments that are done on separate subtitle lines. (How to do this is outside
 the scope of this page.)
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>\move(100,150,300,350)</pre>
 
 When the line appears on screen, the subtitle is at (100,150). While the
 subtitle is displayed, it moves at constant speed such that it will arrive at
 point (300,350) at the same time it disappears.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 <pre>\move(100,150,300,350,500,1500)</pre>
 
 The line appears at (100,150). After the line has been displayed for half a
 second (500 milliseconds) it begins moving towards (300,350) such that it will
 arrive at the point a second and a half (1500 milliseconds) after the line
 first appeared on screen.
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Rotation origin" id="\org"}\org(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>){:/}
 Set the origin point used for [rotation]({{< relref "ASS_Tags#textrotation" >}}). This
@@ -653,18 +653,18 @@ the inability to do accelerated moves or several moves per line.
 There can be at most one `\org` tag in a single line, if you put more than one
 in a single line, only the first is used.
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>\org(320,240)</pre>
 
 Fix the rotation origin at point (320,240).
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 <pre>\org(10000,0)</pre>
 
 Placing the rotation origin at a far away point allows you to use slight
 `\frz` rotations to produce "jumping" effects; the text will move up or down
 without seeming to rotate.
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Fade" id="\fad"}\fad(<i>&lt;fadein&gt;</i>,<i>&lt;fadeout&gt;</i>){:/}
 Produce a fade-in and fade-out effect. The _fadein_ and _fadeout_ times are
@@ -677,12 +677,12 @@ reason, you should be careful that _fadein_+_fadeout_ is not greater than the
 duration of the line. For example, for a line displayed for 4 seconds, the sum
 of _fadein_+_fadeout_ should not be greater than 4000.
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>\fad(1200,250)</pre>
 
 Fade in the line in the first 1.2 seconds it is to be displayed, and fade it
 out for the last one quarter second it is displayed.
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Fade (complex)" id="\fade"}\fade(<i>&lt;a1</i>&gt;,<i>&lt;a2</i>&gt;,<i>&lt;a3</i>&gt;,<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;t3</i>&gt;,<i>&lt;t4</i>&gt;){:/}
 Perform a five-part fade using three alpha values _a1_, _a2_ and _a3_ and four
@@ -699,13 +699,13 @@ milliseconds after the start of the line. All seven parameters are required.
 * Between _t3_ and _t4_ the line fades from alpha _a2_ to alpha _a3_.
 * After _t4_ the line has alpha _a3_.
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>\fade(255,32,224,0,500,2000,2200)</pre>
 
 Starts invisible, fades to almost totally opaque, then fades to almost totally
 invisible. First fade starts when the line starts and lasts 500 milliseconds.
 Second fade starts 1500 milliseconds later, and lasts 200 milliseconds.
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Animated transform" id="\t"}
 \t(<i>&lt;style modifiers&gt;</i>)
@@ -758,26 +758,26 @@ the style is as all tags before the `\t` tag, and further overridden by the
 given _style overrides_. Between _t1_ and _t2_ the style is gradually animated
 between those two points, following the acceleration function described above.
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>{\1c&HFF0000&\t(\1c&H0000FF&)}Hello!</pre>
 
 The text starts out blue, but fades towards red so it is completely red when the line ends.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 <pre>{\an5\t(0,5000,\frz3600)}Wheee</pre>
 
 Makes the text rotate 10 times, counterclockwise, lasting for 5 seconds.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 <pre>{\an5\t(0,5000,0.5,\frz3600)}Wheee</pre>
 
 Same as above, but it will start fast and slow down, still doing the 10 rotations in 5 seconds.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 <pre>{\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}Boo!</pre>
 
 Text starts at zero size, i.e. invisible, then grows to 100% size in both X and Y direction.
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Clip (rectangle)" id="\clip"}
 \clip(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)
@@ -793,22 +793,22 @@ must be integers, there is no possibility to use non-integer coordinates.
 (Increasing the script resolution will not increase the precision, the
 clipping always happens on video pixel boundaries.)
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>\clip(0,0,320,240)</pre>
 
 Assuming 640x480 script resolution, only the part of the line within the top
 left quadrant is visible.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 <pre>\iclip(0,0,320,240)</pre>
 
 Similar to above, but instead the part of the line within the top left
 quadrant is hidden.
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 Example of `\clip(0,0,704,245)` on a 704x480 video:
 ![Clip_sample01](/img/3.2/Clip_sample01.jpg)
-{:/}
+{{</example-box>}}
 
 {::template name="tag_def_box" title="Clip (vector drawing)" id=""}
 \clip(<i>&lt;drawing commands&gt;</i>)
@@ -832,11 +832,11 @@ with `\t`. If you need to animate a vector drawing clip, you must create
 multiple similar subtitle lines with each their own "frame" of the clipping
 animation.
 
-{::template name="examplebox"}
+{{<example-box>}}
 <pre>\clip(1,m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0)</pre>
 
 Only show the portion of the line within the defined pseudo-circle.
-{:/}
+{{</example-box>}}
 
 ## Drawing tags ##
 

@@ -369,15 +369,15 @@ Replace each occurrence of `pattern` in `str` with `replace`.
 **`rep_count`** (`number`)
 : The number of replacements that were made.
 
-{::template name="examplebox"}
+{{<example-box>}}
 Replace all instances of \k with \kf:
 
 ~~~ lua
 >>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k", "\\kf")
 {\kf10}a{\kf15}b{\kf30}c
 ~~~
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 Replace all instances of \k and \K with \kf:
 
 ~~~ lua
@@ -385,8 +385,8 @@ Replace all instances of \k and \K with \kf:
 {\kf10}a{\kf15}b{\kf30}c
 ~~~
 
-{:/}
-{::template name="examplebox"}
+{{</example-box>}}
+{{<example-box>}}
 Add one to each \k duration:
 
 ~~~ lua
@@ -396,6 +396,6 @@ end
 >>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k(\[[:digit:]]+)", add_one)
 {\k11}a{\k16}b{\k31}c
 ~~~
-{:/}
+{{</example-box>}}
 
 {::template name="automation_navbox" /}
