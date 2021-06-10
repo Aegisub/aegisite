@@ -20,7 +20,17 @@
 			{{ end }}
 			<h1>{{ .Title }}</h1>
 			<p class="lead">{{ .Params.lead | safeHTML }}</p>
+
+      <p> The <a href="https://github.com/Aegisub/Aegisub/releases/latest">Latest Release</a>
+        version is <strong>{{.Site.Data.version.current}}</strong>, released {{.Site.Data.version.release_date}}
+      </p>
+      <p>See the
+        <a href="{{ "changelog/" | relLangURL }}/{{.Site.Data.version.current}}">changelog</a>
+        for a list of changes.
+      </p>
+
 			{{ partial "main/headline-hash.html" .Content }}
+
 			{{ if .Site.Params.editPage -}}
 				{{ partial "main/edit-page.html" . }}
 			{{ end -}}
