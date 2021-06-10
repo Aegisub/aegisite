@@ -4,3 +4,9 @@ en:
   contentDir: content/en
   languageName: English
   weight: 10
+
+zh-cn:
+  languageCode: zh-cn
+  contentDir: content/zh-cn
+  languageName: 简体中文
+  weight: 15
