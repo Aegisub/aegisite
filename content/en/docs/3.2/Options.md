@@ -552,7 +552,7 @@ one minute of audio uses this much memory at the different settings:
     (Aegisub always works in mono) or the bit-depth (the spectrum is always
     calculated in 32 bit floating point) of the audio.
 
-{::template name="todo"}this is probably wrong{:/}
+{{<todo>}}this is probably wrong {{</todo>}}
 
 **Cache memory max**
 : The maximum amount of memory to use for audio spectrum caching. The results

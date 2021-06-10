@@ -26,7 +26,7 @@ The following tutorials are available for Aegisub:
 * Link: <http://jfs.itcamefromjapan.net/aegisub/demovids/kanji-timer.avi>
 
 ### Karaoke Timing  ###
-{::template name="todo"}Actually do this{:/}
+{{<todo>}}Actually do this {{</todo>}}
 
 * By: Niels Martin Hansen
 

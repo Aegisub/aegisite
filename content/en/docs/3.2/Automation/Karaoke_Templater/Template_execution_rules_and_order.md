@@ -170,10 +170,10 @@ otherwise.
 * Otherwise the template does not match the line.
 
 ## Applying _line_ class templates  ##
-{::template name="todo"} write this{:/}
+{{<todo>}} write this {{</todo>}}
 
 ## Applying _syl_ and _furi_ class templates  ##
-{::template name="todo"} write this{:/}
+{{<todo>}} write this {{</todo>}}
 
 ## Old mid-level description  ##
 <pre>Main kara-templater process:
@@ -317,6 +317,6 @@ Running a single template:
       b. Else:
          1. Replace match with result of running the function</pre>
 
-{::template name="todo"}Turn this into something more reasonable?{:/}
+{{<todo>}}Turn this into something more reasonable? {{</todo>}}
 
 {::template name="automation_navbox" /}

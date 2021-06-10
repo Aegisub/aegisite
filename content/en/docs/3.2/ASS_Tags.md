@@ -372,7 +372,7 @@ Some common font encoding IDs are:
 * 177 - Hebrew.
 * 178 - Arabic.
 
-{::template name="todo"}Is that really correct?{:/}
+{{<todo>}}Is that really correct? {{</todo>}}
 
 A more complete list can be seen the [style editor]({{< relref "Styles#thestyleeditor" >}})
 dialog box.

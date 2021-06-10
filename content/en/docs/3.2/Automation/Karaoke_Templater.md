@@ -17,7 +17,7 @@ installed and ready to use along with Aegisub.
 * [Using multiple template lines](#)
 * [More advanced effects with positioned syllables](#)
 
-{::template name="todo"}Plan more tutorials. Also actually write those above.{:/}
+{{<todo>}}Plan more tutorials. Also actually write those above. {{</todo>}}
 
 ## Reference  ##
 * [Declaring template and code lines]({{< relref "./Karaoke_Templater/Declaring_template_and_code_lines" >}})

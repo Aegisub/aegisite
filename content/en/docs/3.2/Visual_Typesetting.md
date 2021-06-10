@@ -35,7 +35,7 @@ video frame" (Ctrl-4) to set the time to something different than what is
 displayed here, as setting times to exactly the frame's time tends to result
 in rounding errors.
 
-{::template name="todo"}Is the main toolbar actually documented anywhere?{:/}
+{{<todo>}}Is the main toolbar actually documented anywhere? {{</todo>}}
 
 ### Subs relative time ###
 Displays the time to the start and end time of the active subtitle line.

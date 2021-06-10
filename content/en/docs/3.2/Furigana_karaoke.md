@@ -202,6 +202,6 @@ generate to the furigana style.
 Multi-highlights are always processed even when furigana layout isn't done.
 Multi-highlight data are stored in `syl.highlights`.
 
-{::template name="todo"}more details{:/}
+{{<todo>}}more details {{</todo>}}
 
 {::template name="automation_navbox" /}

@@ -63,7 +63,7 @@ so ease of recognition is vital. Some guidelines for good legibility:
   squeeze it in; at other times you just have to split the text block into two
   different lines and display one after the other.
 
-{::template name="todo"}examples{:/}
+{{<todo>}}examples {{</todo>}}
 
 ## "Sign" typesetting ##
 Sign typesetting (translating various background text) can usually be
@@ -86,7 +86,7 @@ pointers:
   have very little space available to squeeze it in on, consider putting a
   translation note as a normal "toptitle" instead.
 
-{::template name="todo"}images{:/}
+{{<todo>}}images {{</todo>}}
 
 ## Further reading ##
 The Wikipedia page on [typography](http://en.wikipedia.org/wiki/Typography) has
