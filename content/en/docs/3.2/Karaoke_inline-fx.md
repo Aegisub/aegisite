@@ -78,7 +78,7 @@ you can compare to a string to conditionally apply effects.
 {{<example-box>}}
 In some code that runs per-syllable in your script:
 
-~~~ lua
+``` lua
 if syl.inline_fx == "" then
     apply_base_effect(subs, meta, line, syl)
 elseif syl.inline_fx == "paint" then
@@ -86,7 +86,7 @@ elseif syl.inline_fx == "paint" then
 elseif syl.inline_fx == "cloud" then
     apply_cloud_effect(subs, meta, line, syl)
 end
-~~~
+```
 
 Simply compare the inline-fx name to the various possibilities and run the
 right effect code.
@@ -95,7 +95,7 @@ right effect code.
 In some code that runs per-syllable in your script:
 At top-level of your script:
 
-~~~ lua
+``` lua
 effects = {}
 effects[""] = function(subs, meta, line, syl)
     -- base effect code here
@@ -106,13 +106,13 @@ end
 effects.cloud = function(subs, meta, line, syl)
     -- cloud effect code here
 end
-~~~
+```
 
 Then later, in some per-syllable processing code:
 
-~~~ lua
+``` lua
 effects[syl.inline_fx](subs, meta, line, syl)
-~~~
+```
 
 First, a table is created and filled with functions for applying the
 different effects. The keys used for the table are the names of the

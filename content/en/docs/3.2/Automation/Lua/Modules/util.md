@@ -64,9 +64,9 @@ Unused values (depends on the format of the colour string) are assigned 0 (zero)
 If an unrecognised colour string is passed, `nil` is returned.
 
 {{<example-box>}}
-~~~ lua
+``` lua
 r, g, b, a = extract_color("&H7F&")
-~~~
+```
 
 `r`, `g`, and `b` will be 0; `a` will be 127.
 {{</example-box>}}

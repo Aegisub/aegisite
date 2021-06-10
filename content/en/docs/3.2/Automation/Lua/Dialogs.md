@@ -38,7 +38,7 @@ specify which button will be triggered if the user hits Enter or ESC.
     the values the user input in the dialog.
 
 {{<example-box>}}
-~~~ lua
+``` lua
 config = {
     {class="label", text="Times to frobulate", x=0, y=0},
     {class="intedit", name="times", value=20, x=0, y=1}
@@ -49,7 +49,7 @@ btn, result = aegisub.dialog.display(config,
 if btn then
     frobulate(result.times)
 end
-~~~
+```
 {{</example-box>}}
 
 ### aegisub.dialog.open ###
@@ -86,14 +86,14 @@ the path to the selected file(s), or nil if the user canceled.
     paths to all selected files if `allow_multiple` is true.
 
 {{<example-box>}}
-~~~ lua
+``` lua
 filename = aegisub.dialog.open('Select file to read', '', '',
                                'Text files (.txt)|*.txt', false, true)
 if not filename then aegisub.cancel() end
 
 file = io.open(filename, 'rb')
 ....
-~~~
+```
 {{</example-box>}}
 
 ### aegisub.dialog.save ###

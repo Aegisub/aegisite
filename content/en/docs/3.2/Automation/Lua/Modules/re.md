@@ -372,30 +372,30 @@ Replace each occurrence of `pattern` in `str` with `replace`.
 {{<example-box>}}
 Replace all instances of \k with \kf:
 
-~~~ lua
+``` lua
 >>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k", "\\kf")
 {\kf10}a{\kf15}b{\kf30}c
-~~~
+```
 {{</example-box>}}
 {{<example-box>}}
 Replace all instances of \k and \K with \kf:
 
-~~~ lua
+``` lua
 >>> re.sub("{\\K10}a{\\K15}b{\\k30}c", "\\\\k", "\\kf", re.ICASE)
 {\kf10}a{\kf15}b{\kf30}c
-~~~
+```
 
 {{</example-box>}}
 {{<example-box>}}
 Add one to each \k duration:
 
-~~~ lua
+``` lua
 function add_one(str)
     return tostring(tonumber(str) + 1)
 end
 >>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k(\[[:digit:]]+)", add_one)
 {\k11}a{\k16}b{\k31}c
-~~~
+```
 {{</example-box>}}
 
 {::template name="automation_navbox" /}

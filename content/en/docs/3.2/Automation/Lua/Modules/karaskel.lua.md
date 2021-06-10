@@ -459,9 +459,9 @@ Additions by `karaskel.preproc_line_pos`:
   syllable.
 
 {{<example-box>}}
-~~~ lua
+``` lua
 line.left + syl.center
-~~~
+```
 
 Calculates the default X position of a syllable, suitable for use with
 `\an2`, `\an5` or `\an8` alignment.
