@@ -4,7 +4,7 @@ type: "simple-page"
 ---
 
 <br />
-<a href="3.2/en" class="btn btn-success" role="button">3.2 Manual</a> User manual for 3.2.
+<a href="3.2" class="btn btn-success" role="button">3.2 Manual</a> User manual for 3.2.
 
 <!-- <a href="3.1" class="btn btn-light" role="button">3.1 Manual</a>User manual for 3.1. -->
 
