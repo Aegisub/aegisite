@@ -1,0 +1,6 @@
+# i18n languages config
+en:
+  languageCode: en-us
+  contentDir: content/en
+  languageName: English
+  weight: 10

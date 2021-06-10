@@ -5,9 +5,12 @@ disableHugoGeneratorInject = true
 enableEmoji = true
 enableGitInfo = false
 enableRobotsTXT = true
-languageCode = "en-US"
 paginate = 7
 rssLimit = 10
+
+# i18n
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
 
 # add redirects/headers
 [outputs]
