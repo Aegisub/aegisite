@@ -3,7 +3,7 @@
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 {{ if $.Scratch.Get "paginator" -}}
   {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Section" "blog" ) -}}
-  <meta property="og:url" content="{{ .Paginator.URL | relURL }}">
+  <meta property="og:url" content="{{ .Paginator.URL | relLangURL }}">
 {{ else -}}
   <meta property="og:url" content="{{ .RelPermalink }}">
 {{ end -}}
@@ -22,7 +22,7 @@
     <meta property="og:image" content="{{ $featured.RelPermalink }}"/>
   {{ else -}}
     {{ with $.Site.Params.images -}}
-      <meta property="og:image" content="{{ index . 0 | relURL }}"/>
+      <meta property="og:image" content="{{ index . 0 | relLangURL }}"/>
     {{ end -}}
   {{ end -}}
 {{ end -}}
@@ -54,7 +54,7 @@
 {{ end -}}
 {{ with .Params.videos -}}
   {{ range . -}}
-    <meta property="og:video" content="{{ . | relURL }}">
+    <meta property="og:video" content="{{ . | relLangURL }}">
   {{ end -}}
 {{ end -}}
 
