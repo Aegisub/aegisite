@@ -10,7 +10,7 @@ rssLimit: 10
 
 # i18n
 defaultContentLanguage: en
-defaultContentLanguageInSubdir: true
+defaultContentLanguageInSubdir: false
 
 # add redirects/headers
 outputs:
