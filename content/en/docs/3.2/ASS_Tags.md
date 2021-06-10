@@ -16,7 +16,7 @@ using some basic tags.
 The following tags are written in the middle of the text, and not inside
 override blocks (i.e. not between { and }).
 
-{::template name="tag_def_box" title="Soft line break" id="\n"}\n{:/}
+{{<tag-def-box title="Soft line break" id="\n">}}\n{{</tag-def-box>}}
 Insert a forced line break, but only when in wrapping mode 2. (See
 [the \q tag]({{< relref "ASS_Tags#wrapstyle" >}})). Note that this is a lowercase n.
 
@@ -24,11 +24,11 @@ In all other wrapping modes, this is replaced by a regular space. This is
 rarely (if ever) actually useful. If you're not sure whether you want this or
 \N, you probably want \N.
 
-{::template name="tag_def_box" title="Hard line break" id="\N"}\N{:/}
+{{<tag-def-box title="Hard line break" id="\N">}}\N{{</tag-def-box>}}
 Insert a forced line break, regardless of wrapping mode. Note that this is an
 uppercase N.
 
-{::template name="tag_def_box" title="Hard space" id="\h"}\h{:/}
+{{<tag-def-box title="Hard space" id="\h">}}\h{{</tag-def-box>}}
 Insert a non-breaking "hard" space. The line will never break automatically
 right before or after a hard space, and hard spaces are not folded when they
 appear at the start or end of a displayed line.
@@ -65,15 +65,15 @@ brackets are not part of the value you should enter. Use the examples as a
 guide to how the tags should be entered. In general, the same rules apply to
 all tags in how they look.
 
-{::template name="tag_def_box" title="Italics" id="\i"}\i1<br>\i0{:/}
+{{<tag-def-box title="Italics" id="\i">}}\i1<br>\i0{{</tag-def-box>}}
 Switch _italics_ text on or off. Use `\i1` to enable italics for the following
 text and `\i0` to disable italics again.
 
-{::template name="tag_def_box" title="Bold" id="\b"}
+{{<tag-def-box title="Bold" id="\b">}}
 \b1
 \b0
 \b<i>&lt;weight&gt;</i>
-{:/}
+{{</tag-def-box>}}
 Switch **boldface** text on or off. Use `\b1` to enable boldface for the
 following text and `\b0` to disable boldface again.
 
@@ -96,15 +96,15 @@ do not have more than one or two different weights and you will only be able
 to see "not bold" and "bold" in that case.
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Underline" id="\u"}\u1<br>\u0{:/}
+{{<tag-def-box title="Underline" id="\u">}}\u1<br>\u0{{</tag-def-box>}}
 Switch <u>underlined</u> text on or off. Use `\u1` to enable underlining for
 the following text and `\u0` to disable underlining again.
 
-{::template name="tag_def_box" title="Strikeout" id="\s"}\s1<br>\s0{:/}
+{{<tag-def-box title="Strikeout" id="\s">}}\s1<br>\s0{{</tag-def-box>}}
 Switch <s>striked out</s> text on or off. Use `\s1` to enable strikeout for
 the following text and `\s0` to disable strikeout again.
 
-{::template name="tag_def_box" title="Border size" id="\bord"}\bord<i>&lt;size&gt;</i>{:/}
+{{<tag-def-box title="Border size" id="\bord">}}\bord<i>&lt;size&gt;</i>{{</tag-def-box>}}
 Change the width of the border around the text. Set the size to 0 (zero) to
 disable the border entirely.
 
@@ -127,10 +127,10 @@ Disable border entirely.
 Set the border width to 3.7 pixels
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Border size (extended)" id="\xbord"}
+{{<tag-def-box title="Border size (extended)" id="\xbord">}}
 \xbord<i>&lt;size&gt;</i>
 \ybord<i>&lt;size&gt;</i>
-{:/}
+{{</tag-def-box>}}
 Use the `\xbord` `\ybord` tags to set the border size in X and Y direction
 separately. This can be useful for correcting the border size for anamorphic
 rendering of subtitles.
@@ -141,16 +141,16 @@ override both of them.
 You can set the border width to 0 (zero) in one of the directions to entirely
 disable border in that direction.
 
-{::template name="tag_def_box" title="Shadow distance" id="\shad"}\shad<i>&lt;depth&gt;</i>{:/}
+{{<tag-def-box title="Shadow distance" id="\shad">}}\shad<i>&lt;depth&gt;</i>{{</tag-def-box>}}
 Set the distance from the text to position the shadow. Set the depth to 0
 (zero) to disable shadow entirely. Works similar to [\bord]({{< relref "ASS_Tags#bordersize" >}}).
 
 The shadow distance can not be negative with this tag.
 
-{::template name="tag_def_box" title="Shadow distance (extended)" id="\xshad"}
+{{<tag-def-box title="Shadow distance (extended)" id="\xshad">}}
 \xshad<i>&lt;depth&gt;</i>
 \yshad<i>&lt;depth&gt;</i>
-{:/}
+{{</tag-def-box>}}
 Set the distance from the text to position the shadow at, with X and Y
 position set separately. Shadow is only disabled if both X and Y distance is
 0.
@@ -158,11 +158,11 @@ position set separately. Shadow is only disabled if both X and Y distance is
 Note that unlike \shad, you can set the distance negative with these tags to
 position the shadow to the top or left of the text.
 
-{::template name="tag_def_box" title="Blur edges" id="\be"}
+{{<tag-def-box title="Blur edges" id="\be">}}
 \be0
 \be1
 \be<i>&lt;strength&gt;</i>
-{:/}
+{{</tag-def-box>}}
 Enable or disable a subtle softening-effect for the edges of the text. The
 effect isn't always very visible, but it can in some cases make the text look
 better. It is usually more visible at smaller text sizes.
@@ -177,7 +177,7 @@ regular effect. Note that at high values the effect de-generates into
 nothingness, and generally isn't very useful. For strong blurs, `\blur` is
 generally more useful as a result. The _strength_ must be an integer number.
 
-{::template name="tag_def_box" title="Blur edges (Gaussian kernel)" id="\blur"}\blur<i>&lt;strength&gt;</i>{:/}
+{{<tag-def-box title="Blur edges (Gaussian kernel)" id="\blur">}}\blur<i>&lt;strength&gt;</i>{{</tag-def-box>}}
 In general, this has the same function as the [`\be`]({{< relref "ASS_Tags#bluredges" >}}) tag, but
 uses a more advanced algorithm that looks better at high strengths. Unlike
 `\be`, the _strength_ can be non-integer here. Set _strength_ to 0 (zero) to
@@ -189,7 +189,7 @@ means that if the text has a border (set with [`\bord`]({{< relref "ASS_Tags#bor
 border will be blurred, but if there is no border, the main text will be
 blurred instead.
 
-{::template name="tag_def_box" title="Font name" id="\fn"}\fn<i>&lt;name&gt;</i>{:/}
+{{<tag-def-box title="Font name" id="\fn">}}\fn<i>&lt;name&gt;</i>{{</tag-def-box>}}
 Set the font face to use for the following text. There should be no space
 between `\fn` and the font name, and you should not put parentheses or similar
 around the font name either.
@@ -205,7 +205,7 @@ The text following this tag will be in Arial font.
 The text following this tag will be in Times New Roman font.
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Font size" id="\fs"}\fs<i>&lt;size&gt;</i>{:/}
+{{<tag-def-box title="Font size" id="\fs">}}\fs<i>&lt;size&gt;</i>{{</tag-def-box>}}
 Set the size of the font. The size specified is the height in script pixels,
 so at font size 40 one line of text is 40 pixels tall. (Technical note: it's
 really typographic (desktop publishing) points, not script pixels, but since
@@ -220,10 +220,10 @@ You can only specify integer font sizes.
 The following text will use a size 10 font.
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Font scale" id="\fscx"}
+{{<tag-def-box title="Font scale" id="\fscx">}}
 \fscx<i>&lt;scale&gt;</i>
 \fscy<i>&lt;scale&gt;</i>
-{:/}
+{{</tag-def-box>}}
 Adjust the size of the text in X (`\fscx` or Y (`\fscy`) direction. The
 _scale_ given is in percent, so 100 means "original size".
 
@@ -256,19 +256,19 @@ Make the text half height.
 Make the text double size.
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Letter spacing" id="\fsp"}\fsp<i>&lt;spacing&gt;</i>{:/}
+{{<tag-def-box title="Letter spacing" id="\fsp">}}\fsp<i>&lt;spacing&gt;</i>{{</tag-def-box>}}
 Changes the spacing between the individual letters in the text. You can use
 this to spread the text more out visually. The _spacing_ is given in script
 resolution pixels.
 
 Spacing can be negative and can have decimals.
 
-{::template name="tag_def_box" title="Text rotation" id="\frx"}
+{{<tag-def-box title="Text rotation" id="\frx">}}
 \frx<i>&lt;amount&gt;</i>
 \fry<i>&lt;amount&gt;</i>
 \frz<i>&lt;amount&gt;</i>
 \fr<i>&lt;amount&gt;</i>
-{:/}
+{{</tag-def-box>}}
 Rotates the text along the X, Y or Z axis. The `\fr` tag is a shortcut for `\frz`.
 
 
@@ -329,10 +329,10 @@ The following screenshots illustrate the effect of rotating on the different axe
 ![Fr_sample03](/img/3.2/Fr_sample03.jpg)
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Text shearing" id="\fax"}
+{{<tag-def-box title="Text shearing" id="\fax">}}
 \fax<i>&lt;factor&gt;</i>
 \fay<i>&lt;factor&gt;</i>
-{:/}
+{{</tag-def-box>}}
 Perform a shearing (perspective distortion) transformation of the text. A
 _factor_ of 0 (zero) means no distortion.
 
@@ -346,7 +346,7 @@ coordinate system used for shearing is not affected by the [rotation origin]({{<
 ![shearing](/img/3.2/shearing.png)
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Font encoding" id="\fe"}\fe<i>&lt;id&gt;</i>{:/}
+{{<tag-def-box title="Font encoding" id="\fe">}}\fe<i>&lt;id&gt;</i>{{</tag-def-box>}}
 Set the Windows font encoding used to select the font mapping table used to
 translate Unicode codepoints to glyph indices in the font. For some fonts
 without a Unicode mapping table this might be required to get text in certain
@@ -383,13 +383,13 @@ support this use and some renderers might not support it either. It is
 recommended you do not rely on this and instead always store your files in a
 Unicode encoding. (Aegisub stores files in Unicode UTF-8 by default.)
 
-{::template name="tag_def_box" title="Set color" id="\c"}
+{{<tag-def-box title="Set color" id="\c">}}
 \c&H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&
 \1c&H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&
 \2c&H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&
 \3c&H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&
 \4c&H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&
-{:/}
+{{</tag-def-box>}}
 Set the color of the following text. The `\c` tag is an abbreviation of `\1c`.
 
 * `\1c` sets the primary fill color.
@@ -406,13 +406,13 @@ must always start with `&H` and end with `&`.
 The Pick Color toolbar buttons ![pick-color-toolbar-buttons](/img/3.2/pick-color-toolbar-buttons.png) can
 assist in picking colors and entering the color codes.
 
-{::template name="tag_def_box" title="Set alpha" id="\alpha"}
+{{<tag-def-box title="Set alpha" id="\alpha">}}
 \alpha&H<i>&lt;aa&gt;</i>
 \1a&H<i>&lt;aa&gt;</i>
 \2a&H<i>&lt;aa&gt;</i>
 \3a&H<i>&lt;aa&gt;</i>
 \4a&H<i>&lt;aa&gt;</i>
-{:/}
+{{</tag-def-box>}}
 Set the alpha (transparency) of the text.
 
 
@@ -439,7 +439,7 @@ Set the primary fill alpha to hexadecimal FF, decimal 255, making it invisible
 and effectively leaving only the border and shadow.
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Line alignment" id="\an"}\an<i>&lt;pos&gt;</i>{:/}
+{{<tag-def-box title="Line alignment" id="\an">}}\an<i>&lt;pos&gt;</i>{{</tag-def-box>}}
 Specify the alignment of the line. The alignment specifies the position of the
 line when no [position override]({{< relref "ASS_Tags#setposition" >}}) or
 [movement]({{< relref "ASS_Tags#movement" >}}) is in effect, and otherwise specifies the
@@ -459,7 +459,7 @@ keyboard:
 8. Top center
 9. Top right
 
-{::template name="tag_def_box" title="Line alignment (legacy)" id="\a"}\a<i>&lt;pos&gt;</i>{:/}
+{{<tag-def-box title="Line alignment (legacy)" id="\a">}}\a<i>&lt;pos&gt;</i>{{</tag-def-box>}}
 Specify the alignment of the line using legacy alignment codes from SubStation
 Alpha. This tag is supported but considered deprecated; you should usually use
 `\an` in new scripts instead, as it is more intuitive.
@@ -481,12 +481,12 @@ top-titles, add 4 to the number, to get mid-titles add 8 to the number:
 * 10: Middle center
 * 11: Middle right
 
-{::template name="tag_def_box" title="Karaoke effect" id="\k"}
+{{<tag-def-box title="Karaoke effect" id="\k">}}
 \k<i>&lt;duration&gt;</i>
 \K<i>&lt;duration&gt;</i>
 \kf<i>&lt;duration&gt;</i>
 \ko<i>&lt;duration&gt;</i>
-{:/}
+{{</tag-def-box>}}
 > _Please note that these tags alone only create some very specific effects
 > and all other effects are created with a combination of multiple different
 > tags._
@@ -516,7 +516,7 @@ _Note: There is an additional karaoke tag, `\kt`, which is very different from
 the other ones. It is rarely useful and Aegisub does not support that tag, so
 it is not documented._
 
-{::template name="tag_def_box" title="Wrap style" id="\q"}\q<i>&lt;style&gt;</i>{:/}
+{{<tag-def-box title="Wrap style" id="\q">}}\q<i>&lt;style&gt;</i>{{</tag-def-box>}}
 Determine how line breaking is applied to the subtitle line. The following
 _style_s are available:
 
@@ -528,7 +528,7 @@ _style_s are available:
   Both `\n` and `\N` force line breaks.
 * 3: Smart wrapping, similar to style 0, but bottom lines are made wider.
 
-{::template name="tag_def_box" title="Reset style" id="\r"}\r<br>\r<i>&lt;style&gt;</i>{:/}
+{{<tag-def-box title="Reset style" id="\r">}}\r<br>\r<i>&lt;style&gt;</i>{{</tag-def-box>}}
 Reset the style. This cancels all style overrides in effect, including
 [animations]({{< relref "ASS_Tags#animatedtransform" >}}), for all following text.
 
@@ -545,7 +545,7 @@ on the third line the style is reset to "Default" for the "Who are you?"
 text.
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Set position" id="\pos"}\pos(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>){:/}
+{{<tag-def-box title="Set position" id="\pos">}}\pos(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>){{</tag-def-box>}}
 Set the position of the line. The _X_ and _Y_ coordinates must be integers and
 are given in the script resolution coordinate system. The meaning of _X_ and
 _Y_ changes slightly depending on [alignment]({{< relref "ASS_Tags#linealignment" >}}).
@@ -565,10 +565,10 @@ The green cross marks the point (320,240) on the video.
 ![Pos_sample03](/img/3.2/Pos_sample03.jpg)
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Movement" id="\move"}
+{{<tag-def-box title="Movement" id="\move">}}
 \move(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)
 \move(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;,<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;)
-{:/}
+{{</tag-def-box>}}
 The `\move` tag works similar to [`\pos`]({{< relref "ASS_Tags#setposition" >}}) in that it
 positions the subtitle line, the difference is that `\move` makes the subtitle
 move.
@@ -628,7 +628,7 @@ arrive at the point a second and a half (1500 milliseconds) after the line
 first appeared on screen.
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Rotation origin" id="\org"}\org(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>){:/}
+{{<tag-def-box title="Rotation origin" id="\org">}}\org(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>){{</tag-def-box>}}
 Set the origin point used for [rotation]({{< relref "ASS_Tags#textrotation" >}}). This
 affects all rotations of the line. The _X_ and _Y_ coordinates are given in
 integer script resolution pixels.
@@ -666,7 +666,7 @@ Placing the rotation origin at a far away point allows you to use slight
 without seeming to rotate.
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Fade" id="\fad"}\fad(<i>&lt;fadein&gt;</i>,<i>&lt;fadeout&gt;</i>){:/}
+{{<tag-def-box title="Fade" id="\fad">}}\fad(<i>&lt;fadein&gt;</i>,<i>&lt;fadeout&gt;</i>){{</tag-def-box>}}
 Produce a fade-in and fade-out effect. The _fadein_ and _fadeout_ times are
 given in milliseconds, ie. 1000 means one second. You can specify _fadein_ or
 _fadeout_ as 0 (zero) to not have any fade effect on that end.
@@ -684,7 +684,7 @@ Fade in the line in the first 1.2 seconds it is to be displayed, and fade it
 out for the last one quarter second it is displayed.
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Fade (complex)" id="\fade"}\fade(<i>&lt;a1</i>&gt;,<i>&lt;a2</i>&gt;,<i>&lt;a3</i>&gt;,<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;t3</i>&gt;,<i>&lt;t4</i>&gt;){:/}
+{{<tag-def-box title="Fade (complex)" id="\fade">}}\fade(<i>&lt;a1</i>&gt;,<i>&lt;a2</i>&gt;,<i>&lt;a3</i>&gt;,<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;t3</i>&gt;,<i>&lt;t4</i>&gt;){{</tag-def-box>}}
 Perform a five-part fade using three alpha values _a1_, _a2_ and _a3_ and four
 times _t1_, _t2_, _t3_ and _t4_.
 
@@ -707,12 +707,12 @@ invisible. First fade starts when the line starts and lasts 500 milliseconds.
 Second fade starts 1500 milliseconds later, and lasts 200 milliseconds.
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Animated transform" id="\t"}
+{{<tag-def-box title="Animated transform" id="\t">}}
 \t(<i>&lt;style modifiers&gt;</i>)
 \t(<i>&lt;accel&gt;</i>,<i>&lt;style modifiers&gt;</i>)
 \t(<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;style modifiers&gt;</i>)
 \t(<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;accel&gt;</i>,<i>&lt;style modifiers&gt;</i>)
-{:/}
+{{</tag-def-box>}}
 Perform a gradual, animated transformation from one style to another. The
 _style modifiers_ are other override tags as specified in this reference. Only
 a limited set of the override tags are animateable with `\t`:
@@ -779,10 +779,10 @@ Same as above, but it will start fast and slow down, still doing the 10 rotation
 Text starts at zero size, i.e. invisible, then grows to 100% size in both X and Y direction.
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Clip (rectangle)" id="\clip"}
+{{<tag-def-box title="Clip (rectangle)" id="\clip">}}
 \clip(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)
 \iclip(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)
-{:/}
+{{</tag-def-box>}}
 Define a rectangle to clip the line, only the part of the line that is inside
 the rectangle is visible. The `\iclip` tag has the opposite effect, it defines
 a rectangle where the line is not shown.
@@ -810,12 +810,12 @@ Example of `\clip(0,0,704,245)` on a 704x480 video:
 ![Clip_sample01](/img/3.2/Clip_sample01.jpg)
 {{</example-box>}}
 
-{::template name="tag_def_box" title="Clip (vector drawing)" id=""}
+{{<tag-def-box title="Clip (vector drawing)" id="">}}
 \clip(<i>&lt;drawing commands&gt;</i>)
 \clip(<i>&lt;scale&gt;</i>,<i>&lt;drawing commands&gt;</i>)
 \iclip(<i>&lt;drawing commands&gt;</i>)
 \iclip(<i>&lt;scale&gt;</i>,<i>&lt;drawing commands&gt;</i>)
-{:/}
+{{</tag-def-box>}}
 Use the shape defined by a vector drawing to selectively display (`\clip`) or
 hide (`\iclip`) parts of the line.
 
