@@ -1,0 +1,24 @@
+{{ if and .Site.IsMultiLingual (not .Site.Params.DisableLanguageSwitchingButton)}}
+
+<!-- language-switching-button -->
+<div class="input-group">
+  <select class="custom-select" id="inputGroupSelect-language-switching" onchange="location = this.value;">
+    {{ $siteLanguages := .Site.Languages}}
+      {{ $pageLang := .Page.Lang}}
+      {{ range .Page.AllTranslations }}
+        {{ $translation := .}}
+        {{ range $siteLanguages }}
+          {{ if eq $translation.Lang .Lang }}
+            {{ $selected := false }}
+            {{ if eq $pageLang .Lang}}
+              <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" selected>{{ .LanguageName }}</option>
+            {{ else }}
+              <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}">{{ .LanguageName }}</option>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+  </select>
+</div>
+
+{{end}}
