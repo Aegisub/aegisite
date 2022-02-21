@@ -28,7 +28,8 @@ This is the description that I posted on the Wiki article (a little modified):
 
 I even attempted to draw her myself. This is my pathetic attempt:
 
-[![](http://2.bp.blogspot.com/_oAqERGqLKEw/SItXf_Ct2EI/AAAAAAAAAAU/q4ewasQroUw/s320/aegitan3.jpg)](http://2.bp.blogspot.com/_oAqERGqLKEw/SItXf_Ct2EI/AAAAAAAAAAU/q4ewasQroUw/s1600-h/aegitan3.jpg)
+![](/img/blog/old/aegitan3.jpg)
+
 At this moment, many people lost hope in an Aegisub-tan. We even considered paying an artist to draw her, but nobody was really interested in donating money to the cause.
 
 In conclusion: does anyone feel like drawing her? What we really need at first, I believe, is a high-resolution concept art, to go on splash, logo, t-shirts, etc. After that, we would need several small vectors of her doing many different things, but it'll be much easier to find artists to draw THOSE after we have a final concept drawn.

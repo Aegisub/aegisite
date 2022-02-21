@@ -17,9 +17,9 @@ tags:
 - japanese
 - roomaji
 ---
-A while ago, I posted about [Kanamemo](http://www.aegisub.net/2008/07/kanamemo-tool-for-apprentice-weeaboo.html), a tool that I made to help me learn Hiragana and Katakana. Another tool that I've made to help me in the learning of the Japanese language was TrayDict:
+A while ago, I posted about [Kanamemo](/blog/2008-07-24-kanamemo_a_tool_for_the_apprentice_weeaboo/), a tool that I made to help me learn Hiragana and Katakana. Another tool that I've made to help me in the learning of the Japanese language was TrayDict:
 
-[![](http://1.bp.blogspot.com/_oAqERGqLKEw/SKNgmA6rhvI/AAAAAAAAAAc/8NEbT1Gyxaw/s320-R/traydict.png)](http://1.bp.blogspot.com/_oAqERGqLKEw/SKNgmA6rhvI/AAAAAAAAAAc/WLuxxnoAWMg/s1600-h/traydict.png) 
+![](/img/blog/old/traydict.png)
 
 
 TrayDict is a very simple application that sits on your systray until you bring it up with WinKey+Z. Then it lets you type a word in Kanji, Kana, Rōmaji or English, and it will search for it in EDICT (or any of the other supported dictionaries), returning every match, ordered by relevance.
@@ -31,5 +31,5 @@ The catch is: it's a complete hack. I made it in just a few days, without worryi
  For a long time, I've been meaning to rewrite it, with less bugs, more customization, support for regular expressions, rendering with HTML+CSS, Kanji information, etc... But, alas, I wanted to use HTML to render this, and my experience with Trident, Gecko and WebKit were all catastrophic, so I've lost some interest. But maybe, if there is a demand for it, I'll pick this project up again.
 
 Anyway, here is the Win32 binary: [Link](http://www.malakith.net/amz/aegisub/traydict.rar)
-The source is available [here](http://svn.aegisub.net/trunk/traydict/), but the HEAD is completely broken (result of my experimentation with Gecko), so you'll have to dig the repository for an older version.
+The source is available [here](https://github.com/Aegisub/traydict), but the HEAD is completely broken (result of my experimentation with Gecko), so you'll have to dig the repository for an older version.
 

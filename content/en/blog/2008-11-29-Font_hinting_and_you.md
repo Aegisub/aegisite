@@ -11,7 +11,9 @@ tags:
 - vsfilter
 - ass
 ---
-![Image showing the difference between Arial size 8 scaled 40x and Arial size 320.](http://www.animereactor.dk/aegisub/blogimg/font-hinting.png)... or why you should not use animation on the `\fs` override tag.
+![Image showing the difference between Arial size 8 scaled 40x and Arial size 320.](/img/blog/old/font-hinting.png)
+
+... or why you should not use animation on the `\fs` override tag.
 
 Do you know what font hinting is? If you haven't worked with digital typography you might not, but it's a technique used by (almost) all font rendering systems to make vector fonts (such as True Type, Open Type and Adobe Type 1) appear better on low-resolution mediums like computer monitors. (Actually CRT TV screens are even worse.)
 
@@ -19,7 +21,8 @@ Usually glyphs ("characters") in outline fonts have quite some detail in them, b
 
 So what does that have to do with subtitles? Well, the amount of hinting applied to a glyph depends on the point size of it. The bigger the point size, the less strong the hinting needs to be. For example, here's some text in Verdana at different sizes:
 
-Verdana 8 pixels Verdana 12 pixels Verdana 30 pixels
+<div style="font-family: Verdana; padding: 1em; border: 1px solid black; background: #fed; margin: 0;"><div style="font-size: 8px; margin: 0; padding: 0;">Verdana 8 pixels</div> <div style="font-size: 12px; margin: 0; padding: 0;">Verdana 12 pixels</div> <div style="font-size: 30px; margin: 0; padding: 0;">Verdana 30 pixels</div></div>
+
 
 Depending on your font rendering system it might look different (eg. Windows and Macintosh OS X render quite differently) but at least if you're on Windows you should be able to see that the shapes of the letters actually change a bit. The smaller the text size, the more drastic the change.
 

@@ -28,7 +28,7 @@ This is what its page on CoreForge has to say:
 While I can certainly understand "flexibility" and "portability", I don't see why you need XML to have a portable format, or Unicode support. But they go ahead and claim human readability and easier management. Is that supposed to be a joke? It sure is human readable - compared to binary formats. But it's still an incredibly verbose format that no sane person would try to edit by hand. And how is it easier to manage? Only if they mean that it's easier to avoid horribly misshapen subtitle files (you know, the kind of file that's always floating around the community and that VSFilter will happily eat). And what's with "hierarchical system"? It is true, but isn't it also completely irrelevant? Subtitles are NOT intrinsically hierarchical - forcing them to be only complicates matters.
 
 But let's have a look at the format itself. This is a simple "Hello World" in USF:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DOCTYPE USFSubtitles SYSTEM "USFV100.dtd" -->
 <?xml-stylesheet type="text/xsl" href="USFV100.xsl"?>

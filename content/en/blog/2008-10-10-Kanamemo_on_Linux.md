@@ -10,8 +10,8 @@ tags:
 - kanamemo
 - linux
 ---
-Tomman has figured out how to build [Kanamemo](http://www.aegisub.net/2008/07/kanamemo-tool-for-apprentice-weeaboo.html) on Linux... So, in case you're interested:
+Tomman has figured out how to build [Kanamemo](/blog/2008-07-24-kanamemo_a_tool_for_the_apprentice_weeaboo/) on Linux... So, in case you're interested:
 
 <http://tomman.monkeeh.com/temp/linux_build_instruc.txt>
 
-[![](http://3.bp.blogspot.com/_oAqERGqLKEw/SPK0O77H03I/AAAAAAAAABI/v7WraC9vz5A/s320/kanamemo_linux_icon.png)](http://3.bp.blogspot.com/_oAqERGqLKEw/SPK0O77H03I/AAAAAAAAABI/v7WraC9vz5A/s1600-h/kanamemo_linux_icon.png)
+![](/img/blog/old/kanamemo_linux_icon.png)

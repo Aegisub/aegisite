@@ -28,13 +28,13 @@ First what does "Kumaji" even mean? It's derived from Japanese where it would be
 
 The key goals are:
 
-2. Portable code without sacrificing compatibility
+1. Portable code without sacrificing compatibility
 
-4. Maintainable and hackable code
+2. Maintainable and hackable code
 
-6. Speed
+3. Speed
 
-8. Flexibility
+4. Flexibility
 
 
 Portability is the first and foremost goal. All current subtitle renderers have major problems with this. Those that do compile and work on multiple platforms (*libass* and the abandoned *asa*) are strongly tied to details of text and font handling on UNIX-like systems, which means they fail on Windows and Mac platforms because those have much different ways of handling fonts which FontConfig doesn't wrap properly or over-complicates. The result is very sub-optimal. VSFilter depends on not just Win32 (and Wine doesn't implement everything it requires yet) as well as MFC and COM. Perian's subtitle rendrer is Objective-C and entirely dependant on Cocoa text API's. Kumaji will achieve portability by plugging in platform-specific code where appropriate. The motto would be *doing the right thing on each platform, whatever the cost*.

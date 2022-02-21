@@ -19,11 +19,9 @@ I have seen this countless times. Every time, it has bothered me. Please, don't 
 
 When the screen fades to black (or white, or any other solid colour, for that matter), DON'T use the \fad tag to fade the text along with it. When you use \fad, you're making the text translucent, and not darker. The result is that it will blend with the background - including all the usual associated bugs if you have borders and shadows - and get somewhat darker because the background itself is getting darker - it just won't get as dark as it SHOULD be, and the visual effect is that the text is getting brighter, relative to the background.
 
-|  |  |  |
+| ![](/img/blog/old/fade0.png) | ![](/img/blog/old/fade1.png) | ![](/img/blog/old/fade2.png) |
 | --- | --- | --- |
-| Original |
- With \fad |
- With \t(\c) |
+| Original | With \fad | With \t(\c) |
 
 
 

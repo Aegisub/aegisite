@@ -15,7 +15,7 @@ Recently [Youtube](http://www.youtube.com/) got a new features: [Subtitles and c
 
 So what format are those subtitles in? "Anything that reminds of SRT and SUB goes."
 
-So: Yes, Aegisub supports Youtube subtitles. Just export to SRT when you are done.
+So: **Yes, Aegisub supports Youtube subtitles.** Just export to SRT when you are done.
 
 Remember that while Aegisub doesn't show SRT (and other formats) as an option in the regular Save As dialogue box, you can still save directly to those formats. Just add the appropriate file extension yourself to the filename, and Aegisub will pick the right format automagically.
-You can also just pick regular "Save" if the filename (as displayed in the window title bar) already ends with eg. .srt.
+You can also just pick regular "Save" if the filename (as displayed in the window title bar) already ends with eg. *.srt*.

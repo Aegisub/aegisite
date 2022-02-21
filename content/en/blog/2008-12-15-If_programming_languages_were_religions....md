@@ -18,19 +18,19 @@ And now, for some off-topic:
 (Inspired by "[If programming languages were cars](http://www.cs.caltech.edu/%7Emvanier/hacking/rants/cars.html)")
 
 
-C would be Judaism - it's old and restrictive, but most of the world is familiar with its laws and respects them. The catch is, you can't convert into it - you're either into it from the start, or you will think that it's insanity. Also, when things go wrong, many people are willing to blame the problems of the world on it.
+**C** would be **Judaism** - it's old and restrictive, but most of the world is familiar with its laws and respects them. The catch is, you can't convert into it - you're either into it from the start, or you will think that it's insanity. Also, when things go wrong, many people are willing to blame the problems of the world on it.
 
-Java would be Fundamentalist Christianity - it's theoretically based on C, but it voids so many of the old laws that it doesn't feel like the original at all. Instead, it adds its own set of rigid rules, which its followers believe to be far superior to the original. Not only are they certain that it's the best language in the world, but they're willing to burn those who disagree at the stake.
+**Java** would be **Fundamentalist Christianity** - it's theoretically based on C, but it voids so many of the old laws that it doesn't feel like the original at all. Instead, it adds its own set of rigid rules, which its followers believe to be far superior to the original. Not only are they certain that it's the best language in the world, but they're willing to burn those who disagree at the stake.
 
 **PHP** would be **Cafeteria Christianity** - Fights with Java for the web market. It draws a few concepts from C and Java, but only those that it really likes. Maybe it's not as coherent as other languages, but at least it leaves you with much more freedom and ostensibly keeps the core idea of the whole thing. Also, the whole concept of "goto hell" was abandoned.
 
-C++ would be Islam - It takes C and not only keeps all its laws, but adds a very complex new set of laws on top of it. It's so versatile that it can be used to be the foundation of anything, from great atrocities to beautiful works of art. Its followers are convinced that it is the ultimate universal language, and may be angered by those who disagree. Also, if you insult it or its founder, you'll probably be threatened with death by more radical followers.
+**C++** would be **Islam** - It takes C and not only keeps all its laws, but adds a very complex new set of laws on top of it. It's so versatile that it can be used to be the foundation of anything, from great atrocities to beautiful works of art. Its followers are convinced that it is the ultimate universal language, and may be angered by those who disagree. Also, if you insult it or its founder, you'll probably be threatened with death by more radical followers.
 
-C# would be Mormonism - At first glance, it's the same as Java, but at a closer look you realize that it's controlled by a single corporation (which many Java followers believe to be evil), and that many theological concepts are quite different. You suspect that it'd probably be nice, if only all the followers of Java wouldn't discriminate so much against you for following it.
+**C#** would be **Mormonism** - At first glance, it's the same as Java, but at a closer look you realize that it's controlled by a single corporation (which many Java followers believe to be evil), and that many theological concepts are quite different. You suspect that it'd probably be nice, if only all the followers of Java wouldn't discriminate so much against you for following it.
 
-Lisp would be Zen Buddhism - There is no syntax, there is no centralization of dogma, there are no deities to worship. The entire universe is there at your reach - if only you are enlightened enough to grasp it. Some say that it's not a language at all; others say that it's the only language that makes sense.
+**Lisp** would be **Zen Buddhism** - There is no syntax, there is no centralization of dogma, there are no deities to worship. The entire universe is there at your reach - if only you are enlightened enough to grasp it. Some say that it's not a language at all; others say that it's the only language that makes sense.
 
-Haskell would be Taoism - It is so different from other languages that many people don't understand how can anyone use it to produce anything useful. Its followers believe that it's the true path to wisdom, but that wisdom is beyond the grasp of most mortals.
+**Haskell** would be **Taoism** - It is so different from other languages that many people don't understand how can anyone use it to produce anything useful. Its followers believe that it's the true path to wisdom, but that wisdom is beyond the grasp of most mortals.
 
 **Erlang** would be **Hinduism** - It's another strange language that doesn't look like it could be used for anything, but unlike most other modern languages, it's built around the concept of multiple simultaneous deities.
 
@@ -53,11 +53,11 @@ Haskell would be Taoism - It is so different from other languages that many peop
 Thanks to jfs and other people on #aegisub for the suggestions. Keep in mind, this list is a joke, and is not meant to offend anyone. Also, if you're a Muslim, please don't kill me. ;)
 
 
-Note: I wrote a [follow-up](http://www.aegisub.net/2008/12/if-programming-languages-were-religions_20.html) to this article, regarding the overwhelming reaction that it received.
+Note: I wrote a [follow-up](/blog/2008-12-20-if_programming_languages_were_religions_the_aftermath/) to this article, regarding the overwhelming reaction that it received.
 
- Note 2: This article is also hosted at my official blog [here](http://higherorderfun.com/blog/2011/02/16/if-programming-languages-were-religions/).
+Note 2: This article is also hosted at my official blog [here](http://higherorderfun.com/blog/2011/02/16/if-programming-languages-were-religions/).
 
- **Comments closed as of April 2011.** This post has started attracting more spam than useful comments, so commenting has been closed now. Thank you for the many responses.
+**Comments closed as of April 2011.** This post has started attracting more spam than useful comments, so commenting has been closed now. Thank you for the many responses.
 
 
 

@@ -14,11 +14,11 @@ tags:
 - kanjimemo
 - japanese
 ---
-漢字メモ？
+<p style="font-size:40pt;text-align: center;">漢字メモ？</p>
 
 *[Text above added to try to attract some attention to this post]*
 
-Ever since I've posted about [Kanamemo](http://www.aegisub.net/2008/07/kanamemo-tool-for-apprentice-weeaboo.html), there have been quite a few requests for a "Kanjimemo", a tool based on the same idea, but for Kanji.
+Ever since I've posted about [Kanamemo](/blog/2008-07-24-kanamemo_a_tool_for_the_apprentice_weeaboo/), there have been quite a few requests for a "Kanjimemo", a tool based on the same idea, but for Kanji.
 
 Even before, I had considered writing something like that... But I never started because I couldn't quite figure out all the details on how it'd work. On this post, I'll talk about some of the ideas that I had for it. If you're interested in a "Kanjimemo", please leave your feedback and suggestions in the comments!
 

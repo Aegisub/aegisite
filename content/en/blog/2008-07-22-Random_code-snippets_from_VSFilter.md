@@ -14,14 +14,14 @@ I've been reading and hacking on the VSFilter code more than is probably healthy
 
 For example, this line in GFN.cpp (Get File Name):
 
-```
+```cpp
 CString filename = title + \_T(".nooneexpectsthespanishinquisition");
 ```
 
 
 In VSFilter.cpp you can find this gem:
 
-```
+```cpp
 /*removeme*/
 JajDeGonoszVagyok();
 ```
@@ -30,7 +30,7 @@ JajDeGonoszVagyok();
 
 Do you know the "opaque box" background style supported? As an alternative to wide outlines? Well here's how it's created:
 
-```
+```cpp
 CStringW str;
 str.Format(L"m %d %d l %d %d %d %d %d %d",
  -w, -w,
@@ -45,14 +45,14 @@ Yup, it creates a drawing object, by a string. While it is a bit clever (the alt
 
 I wonder how long this line has been sitting there:
 
-```
+```cpp
 // TODO: handle collisions == 1 (reversed collisions)
 ```
 
 
 Maybe pre-buffering could be more useful if this was actually implemented:
 
-```
+```cpp
 STDMETHODIMP\_(bool) CRenderedTextSubtitle::IsAnimated(POSITION pos)
 {
  // TODO
@@ -63,7 +63,7 @@ STDMETHODIMP\_(bool) CRenderedTextSubtitle::IsAnimated(POSITION pos)
 
 I still find this the weirddest part... there is a CPP file with a stange name. It contains among other things this function:
 
-```
+```cpp
 #define LEN1 (countof(str1))
 #define LEN11 (countof(str1[0]))
 #define LEN2 (countof(str2))

@@ -12,7 +12,7 @@ tags:
 - karaoke
 - optimisation
 ---
-This is a repost of something I wrote earlier [on the AnimeSuki forums](http://forums.animesuki.com/showpost.php?p=1629372&postcount=72), in relation to a discussion of how much CPU time various kinds of karaoke effects take to render.
+*This is a repost of something I wrote earlier [on the AnimeSuki forums](http://forums.animesuki.com/showpost.php?p=1629372&postcount=72), in relation to a discussion of how much CPU time various kinds of karaoke effects take to render.*
 
 This discussion only covers TextSub (VSFilter), I don't know what other renderers do and their use is still very limited. Also, everything that goes for \k also goes for \kf, \K and \ko. They use the same rendering technique.
 This will also explain a funny "artifact" some karaokers might have seen when using \kf with vertical karaoke.
