@@ -6,7 +6,7 @@ menu:
 weight: 420
 ---
 
-template name="todo" Screenshots need to be updated
+{{<todo>}}Screenshots need to be updated {{</todo>}}
 
 **A video tutorial for this feature is available at [the tutorials section]({{< relref "Tutorials" >}}).**
 
