@@ -10,6 +10,7 @@ import markdown from 'highlight.js/lib/languages/markdown';
 import xml from 'highlight.js/lib/languages/xml';
 import cpp from 'highlight.js/lib/languages/cpp';
 import java from 'highlight.js/lib/languages/java';
+import lua from 'highlight.js/lib/languages/lua';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('json', json);
@@ -22,6 +23,7 @@ hljs.registerLanguage('md', markdown);
 hljs.registerLanguage('xml', xml);
 hljs.registerLanguage('cpp', cpp);
 hljs.registerLanguage('java', java);
+hljs.registerLanguage('lua', lua);
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('pre code').forEach((block) => {
