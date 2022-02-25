@@ -38,7 +38,8 @@ rather than characters, to match Lua's string indexing.
 applied to it. Note that this index is one-based, inclusive, and is in bytes,
 rather than characters, to match Lua's string indexing.
 
-{::template name="luabox"}
+{{<example-box>}}
+``` lua
 >>> re.match("b", "abc")
 {
     {
@@ -47,7 +48,8 @@ rather than characters, to match Lua's string indexing.
         ["last"] = 2
     }
 }
-{:/}
+```
+{{</example-box>}}
 
 ### Flags ###
 The following flags may be passed to all of the static functions (including
@@ -77,7 +79,8 @@ regular expressions that *aren't* write-only.
 re.NO_EMPTY_SUBEXPRESSION:
 :   Don't match empty expressions/alternatives.
 
-{::template name="luabox"}
+{{<example-box>}}
+``` lua
 >>> re.match("a", "A")
 nil
 >>> re.match("a", "A", re.ICASE, re.NOSUB)
@@ -88,7 +91,8 @@ nil
         ["last"] = 1
     }
 }
-{:/}
+```
+{{</example-box>}}
 
 ### re.compile ###
 Synopsis: `expr = re.compile(pattern, [FLAGS])`{:.language-lua}
@@ -103,7 +107,8 @@ than recompiling it each time it is used, and is usually more readable as well.
 : A table with all of the functions listed below, except without the pattern
 and flags arguments.
 
-{::template name="luabox"}
+{{<example-box>}}
+``` lua
 >>> expr = re.compile("a")
 >>> expr:split("banana")
 {
@@ -111,7 +116,8 @@ and flags arguments.
     "n",
     "n"
 }
-{:/}
+```
+{{</example-box>}}
 
 ### re.split ###
 Synopsis: `chunks = re.split(str, pattern, skip_empty=false, max_splits=0)`{:.language-lua}
@@ -136,7 +142,8 @@ are ignored.
 : A table containing each of the sections of `str` between the matches of
 `pattern`.
 
-{::template name="luabox"}
+{{<example-box>}}
+``` lua
 >>> re.split(",", "a,,b,c")
 {
     "a",
@@ -144,22 +151,27 @@ are ignored.
     "b",
     "c"
 }
-{:/}
-{::template name="luabox"}
+```
+{{</example-box>}}
+{{<example-box>}}
+``` lua
 >>> re.split(",", "a,,b,c", true)
 {
     "a",
     "b",
     "c"
 }
-{:/}
-{::template name="luabox"}
+```
+{{</example-box>}}
+{{<example-box>}}
+``` lua
 >>> re.split(",", "a,,b,c", false, 1)
 {
     "a",
     ",b,c",
 }
-{:/}
+```
+{{</example-box>}}
 
 ### re.gsplit ###
 Synopsis: `iter = re.gsplit(str, pattern, skip_empty=false, max_splits=0)`{:.language-lua}
@@ -184,7 +196,8 @@ are ignored.
 : An iterator over each of the sections of `str` between the matches of
 `pattern`.
 
-{::template name="luabox"}
+{{<example-box>}}
+``` lua
 >>> for str in re.gsplit(",", "a,,b,c") do
 >>>     print str
 >>> end
@@ -192,22 +205,27 @@ a
 
 b
 c
-{:/}
-{::template name="luabox"}
+```
+{{</example-box>}}
+{{<example-box>}}
+``` lua
 >>> for str in re.gsplit(",", "a,,b,c", true) do
 >>>     print str
 >>> end
 a
 b
 c
-{:/}
-{::template name="luabox"}
+```
+{{</example-box>}}
+{{<example-box>}}
+``` lua
 >>> for str in re.gsplit(",", "a,,b,c", false, 1) do
 >>>     print str
 >>> end
 a
 ,b,c
-{:/}
+```
+{{</example-box>}}
 
 ### re.find ###
 Synopsis: `matches = re.find(str, pattern)`{:.language-lua}
@@ -224,7 +242,8 @@ Find all non-overlapping substrings of `str` which match `pattern`.
 : A table of [Match Tables]({{< relref "re#match-tables" >}}) for all matches, or `nil` if
 there were none.
 
-{::template name="luabox"}
+{{<example-box>}}
+``` lua
 >>> re.find(".", "☃☃")
 {
     {
@@ -238,8 +257,10 @@ there were none.
         ["last"] = 6
     }
 }
-{:/}
-{::template name="luabox"}
+```
+{{</example-box>}}
+{{<example-box>}}
+``` lua
 function contains_an_a(str)
     if re.find("a", str)
         print "Has an a"
@@ -251,7 +272,8 @@ end
 Has an a
 >>> contains_an_a("def")
 Doesn't have an a
-{:/}
+```
+{{</example-box>}}
 
 ### re.gfind ###
 Synopsis: `iter = re.gfind(str, pattern)`{:.language-lua}
@@ -269,13 +291,15 @@ Iterate over all non-overlapping substrings of `str` which match `pattern`.
 started index of the match in the source string, and the inclusive end index of
 the match in the source string.
 
-{::template name="luabox"}
+{{<example-box>}}
+``` lua
 >>> for str, start_idx, end_idx in re.gfind(".", "☃☃") do
 >>>     print string.format("%d-%d: %s", start_idx, end_idx, str)
 >>> end
 1-3: ☃
 4-6: ☃
-{:/}
+```
+{{</example-box>}}
 
 ### re.match ###
 Synopsis: `matches = re.match(str, pattern)`{:.language-lua}
@@ -295,7 +319,8 @@ single match along with the captured subgroups.
 a [Match Table]({{< relref "re#match-tables" >}}) for the full match, followed by a [Match Table]({{< relref "re#match-tables" >}}) for each capturing subexpression in the pattern (if
 any).
 
-{::template name="luabox"}
+{{<example-box>}}
+``` lua
 >>> re.match("(\d+) (\d+) (\d+)", "{250 1173 380}Help!")
 {
     {
@@ -319,7 +344,8 @@ any).
         ["last"] = 13
     }
 }
-{:/}
+```
+{{</example-box>}}
 
 ### re.gmatch ###
 Synopsis: `iter = re.gmatch(str, pattern)`{:.language-lua}
