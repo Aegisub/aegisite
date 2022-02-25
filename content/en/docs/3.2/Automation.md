@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Automation Overview
 menu:
   docs:
     parent: Automation
@@ -37,5 +37,3 @@ Automation uses [LuaJIT 2.0](http://luajit.org/) compiled in [Lua 5.2 mode](http
 
 There are several example scripts included with Aegisub to give you a head start on writing your own ones.
 A word of warning: Unless you are an experienced programmer the _kara-templater.lua_ script is a very bad place to start!
-
-{::template name="automation_navbox" /}

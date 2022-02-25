@@ -1,3 +1,11 @@
+---
+title: utils.lua
+menu:
+  docs:
+    parent: Lua Modules
+weight: 200
+---
+
 The Automation 4 Lua include file `utils.lua` contains various support functions to aid writing Lua scripts.
 There is no general theme for the file.
 
@@ -145,5 +153,3 @@ Synopsis: `outalpha = util.interpolate_alpha(t, alpha1, alpha2)`{:.language-lua}
 
 Similar to `interpolate_color`, but interpolates alpha values instead.
 Also works on colour strings, and will return an alpha override string.
-
-{::template name="automation_navbox" /}

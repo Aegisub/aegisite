@@ -1,3 +1,11 @@
+---
+title: A simple example
+menu:
+  docs:
+    parent: Automation Tutorials
+weight: 710
+---
+
 Welcome to the first tutorial in using Karaoke Templater to create [karaoke effects]({{< relref "../../Glossary/Karaoke_effect" >}}). We'll start out with something simple and
 then continue on to more advanced effects throughout the series.
 

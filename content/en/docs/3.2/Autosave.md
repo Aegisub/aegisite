@@ -1,3 +1,11 @@
+---
+title: Autosave
+menu:
+  docs:
+    parent: Miscellaneous
+weight: 715
+---
+
 By default Aegisub automatically saves a backup copy of every subtitle file you
 open, along with another copy every minute (if any changes have been made in
 the last minute). These copies can be found in %APPDATA%\Aegisub\autosave on

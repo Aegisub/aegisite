@@ -1,3 +1,11 @@
+---
+title: unicode.lua
+menu:
+  docs:
+    parent: Lua Modules
+weight: 300
+---
+
 The `unicode` module for Automation 4 Lua contains various helper functions for working with UTF-8 encoded text.
 
 ## Usage ##
@@ -46,6 +54,3 @@ Synopsis: `folded = unicode.to_fold_case(instring)`{:.language-lua}
 
 Convert a string to fold case.
 This is similar to lower case, but is locale-insensitive and gives better results for case-insensitive comparisons.
-
-
-{::template name="automation_navbox" /}

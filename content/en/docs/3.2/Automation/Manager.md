@@ -1,3 +1,11 @@
+---
+title: Automation Manager
+menu:
+  docs:
+    parent: Automation
+weight: 640
+---
+
 The Automation Manager window is used to view, load and unload
 [Automation]({{< relref "Automation" >}}) scripts.
 
@@ -70,5 +78,3 @@ to reload scripts though:
 The Automation Manager won't open when any of there methods are used, but
 you will get an error message window if a script failed to load. Note that
 you can double-click on the rows in the error dialog for more information.
-
-{::template name="automation_navbox" /}

@@ -4,9 +4,43 @@
   {{ if .HasChildren -}}
   <ul class="list-unstyled">
     {{ range .Children -}}
-      {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
-      {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
-      <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+      {{ if .HasChildren -}}
+        <li>
+          {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
+          {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
+          <a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+        </li>
+        {{ if .HasChildren -}}
+          <ul class="list-unstyled ms-3">
+            {{ range .Children -}}
+              {{ if .HasChildren -}}
+                <li>
+                  {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
+                  {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
+                  <a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+                </li>
+                {{ if .HasChildren -}}
+                  <ul class="list-unstyled ms-3">
+                    {{ range .Children -}}
+                      {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
+                      {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
+                      <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+                    {{ end -}}
+                  </ul>
+                {{ end -}}
+              {{ else -}}
+                {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
+                {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
+                <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+              {{ end -}}
+            {{ end -}}
+          </ul>
+        {{ end -}}
+      {{ else -}}
+        {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
+        {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
+        <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+      {{ end -}}
     {{ end -}}
   </ul>
   {{ end -}}

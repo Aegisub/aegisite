@@ -1,3 +1,11 @@
+---
+title: Karaoke Timing Tutorial
+menu:
+  docs:
+    parent: Tutorials
+weight: 730
+---
+
 This tutorial will teach you how to load a song into Aegisub, how to enter the words for the song and how to add time-codes to the words to synchronise them with the song.
 
 You don't need to have used Aegisub before to follow this tutorial.

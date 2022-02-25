@@ -1,3 +1,11 @@
+---
+title: Registration
+menu:
+  docs:
+    parent: Lua Reference
+weight: 100
+---
+
 **Registration** covers presenting your [Automation 4 Lua]({{< relref "Lua" >}})
 script to Aegisub, providing information about it and registering what
 _features_ it provides.
@@ -234,7 +242,3 @@ open. Don't block the UI.
 A configuration dialogue table. See the page on
 [configuration dialogues]({{< relref "Dialogs" >}}) for
 more information on the format of this table.
-
-{::template name="automation_navbox" /}
-
-

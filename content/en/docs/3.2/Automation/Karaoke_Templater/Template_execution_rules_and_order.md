@@ -1,3 +1,10 @@
+---
+title: Execution order
+menu:
+  docs:
+    parent: Karaoke Templater
+weight: 200
+---
 
 This page describes various technical details about how Karaoke Templater
 (_kara-templater_) works and will try to explain why various things work as
@@ -318,5 +325,3 @@ Running a single template:
          1. Replace match with result of running the function</pre>
 
 {{<todo>}}Turn this into something more reasonable? {{</todo>}}
-
-{::template name="automation_navbox" /}

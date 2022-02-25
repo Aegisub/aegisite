@@ -1,3 +1,10 @@
+---
+title: Furigana
+menu:
+  docs:
+    parent: karaskel.lua
+weight: 100
+---
 
 ![Furigana-demo-1](/img/3.2/Furigana-demo-1.png)
 
@@ -202,5 +209,3 @@ Multi-highlights are always processed even when furigana layout isn't done.
 Multi-highlight data are stored in `syl.highlights`.
 
 {{<todo>}}more details {{</todo>}}
-
-{::template name="automation_navbox" /}

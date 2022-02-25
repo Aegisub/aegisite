@@ -83,5 +83,3 @@ providing a configuration interface for export filters.
 [Miscellaneous APIs]({{< relref "./Lua/Miscellaneous_APIs" >}})
 : for e.g. getting the rendered size of text and getting video frame rate
 information.
-
-{::template name="automation_navbox" /}

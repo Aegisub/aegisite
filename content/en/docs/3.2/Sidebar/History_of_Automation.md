@@ -1,3 +1,11 @@
+---
+title: History of Automation
+menu:
+  docs:
+    parent: Automation
+weight: 670
+---
+
 The Automation system in Aegisub has evolved from a very basic and hardly useful stand-alone system for creating basic karaoke effects into a very powerful extension mechanism. Here's a short account of its history, from the principal author of the systems.
 
 

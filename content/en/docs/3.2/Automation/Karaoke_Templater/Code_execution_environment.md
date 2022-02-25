@@ -1,3 +1,12 @@
+---
+title: Execution envirionment
+menu:
+  docs:
+    parent: Karaoke Templater
+weight: 600
+---
+
+
 The Lua code in code blocks and on code lines is run in a separate global
 environment such that it won't accidentally disturb the main script
 function.
@@ -374,5 +383,3 @@ The first template, because it has the "noblank" modifier, and the second
 because the zero'th syllable's duration is too short for the fxgroup to be
 enabled.
 {{</example-box>}}
-
-{::template name="automation_navbox" /}

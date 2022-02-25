@@ -1,3 +1,10 @@
+---
+title: re
+menu:
+  docs:
+    parent: Lua Modules
+weight: 600
+---
 
 The `re` module is a wrapper around boost::regex, intended as a full
 replacement for Lua's built in regular expressions. It has two main advantages
@@ -423,5 +430,3 @@ end
 {\k11}a{\k16}b{\k31}c
 ```
 {{</example-box>}}
-
-{::template name="automation_navbox" /}

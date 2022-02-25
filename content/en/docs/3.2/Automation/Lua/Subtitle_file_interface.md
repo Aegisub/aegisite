@@ -1,3 +1,11 @@
+---
+title: Subtitles object
+menu:
+  docs:
+    parent: Lua Reference
+weight: 200
+---
+
 This page describes the **subtitle file interface** use in Automation 4 Lua
 scripts to manipulate subtitle files.
 
@@ -264,5 +272,3 @@ be things like files embedded into the subtitles. You shouldn't try to work
 with these lines unless you really know what you're doing. Deleting, modifying
 and inserting `unknown` lines has undefined consequences. (That means, even if
 it works today it might not work tomorrow or in the next version of Aegisub.)
-
-{::template name="automation_navbox" /}

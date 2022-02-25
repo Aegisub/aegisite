@@ -57,5 +57,3 @@ several pitfalls. Some of them are:
   the start and end times of your generated lines.
 * Lots of more fancy features. Check the tutorials or read the reference to
   learn about it all.
-
-{::template name="automation_navbox" /}

@@ -1,3 +1,11 @@
+---
+title: Script Resolution
+menu:
+  docs:
+    parent: Miscellaneous
+weight: 720
+---
+
 ASS subtitle files are, to some extent, video independant and can be used with video files other than the one they were created with.
 This is achieved by using a virtual video resolution which controls how font sizes and coordinates are interpreted, which is commonly known as the "script resolution".
 Unfortunately, due to some bugs in the reference implementation of the subtitle format (VSFilter), rendering subtitles whose script resolution is not equal to the actual video resolution works poorly.

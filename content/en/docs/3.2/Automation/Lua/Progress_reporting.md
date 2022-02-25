@@ -1,3 +1,11 @@
+---
+title: Progress reporting
+menu:
+  docs:
+    parent: Lua Reference
+weight: 300
+---
+
 There functions are used to report various status and progress back to the GUI
 while a script is running.
 
@@ -116,5 +124,3 @@ contents.
 5: "trace"
 : Extremely verbose information about what the script is doing, such as a
 message for each single step done with lots of variable dumps.
-
-{::template name="automation_navbox" /}

@@ -1,3 +1,11 @@
+---
+title: Path Specifiers
+menu:
+  docs:
+    parent: Miscellaneous
+weight: 715
+---
+
 Aegisub uses a simple system for denoting file locations. Most pathnames in
 Aegisub can be written starting with special variables that each refer to
 specific locations. Note that path specifiers should always have a trailing

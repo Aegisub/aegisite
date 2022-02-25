@@ -1,3 +1,11 @@
+---
+title: Code lines and blocks
+menu:
+  docs:
+    parent: Karaoke Templater
+weight: 500
+---
+
 Code lines and blocks in Karaoke Templater allows you to create advanced
 effects by incorporating small snippets of Lua code. This can range from simple
 mathematical expressions adding two numbers to complex functions that for
@@ -102,6 +110,3 @@ returned.
 In Lua, `and` binds stronger than `or` meaning that `and` expressions are
 evaluated first. In the above expression the effective grouping is like this:
 `((syl.duration > 100) and "f") or ""`
-
-{::template name="automation_navbox" /}
-

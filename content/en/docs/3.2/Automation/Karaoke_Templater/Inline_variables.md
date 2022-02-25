@@ -1,3 +1,12 @@
+---
+title: Inline-variables ($-variables)
+menu:
+  docs:
+    parent: Karaoke Templater
+weight: 400
+---
+
+
 This page describes the **inline variables** also known as **dollar variables**
 available in Karaoke Templater.
 
@@ -149,5 +158,3 @@ x, y
 width, height
 : width and height of line/syllable in pixels, this is rounded and might not match exactly with the positioning variables
 {: .horizontal-wide}
-
-{::template name="automation_navbox" /}

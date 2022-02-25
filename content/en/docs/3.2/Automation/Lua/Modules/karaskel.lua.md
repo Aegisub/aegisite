@@ -1,3 +1,10 @@
+---
+title: karaskel.lua
+menu:
+  docs:
+    parent: Lua Modules
+weight: 100
+---
 
 The Automation 4 `karaskel.lua` include file contains several functions
 intended to help the development of karaoke effects with Automation 4 Lua.
@@ -477,6 +484,3 @@ contain the following fields:
 * `hl.start_time`, `hl.end_time` - Start and end time of the highlight, in
   milliseconds, relative to the start of the line.
 * `hl.duration` - Duration of the highlight in milliseconds.
-
-{::template name="automation_navbox" /}
-

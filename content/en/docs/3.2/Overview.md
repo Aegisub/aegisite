@@ -1,3 +1,11 @@
+---
+title: Overview
+menu:
+  docs:
+    parent: Introduction
+weight: 215
+---
+
 ![Main-window-overview](/img/3.2/Main-window-overview.png)
 
 This screenshot shows the Aegisub main window with everything open:

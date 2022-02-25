@@ -1,3 +1,11 @@
+---
+title: Modifiers
+menu:
+  docs:
+    parent: Karaoke Templater
+weight: 300
+---
+
 Template lines and code lines can take a number of modifiers.
 
 This is a space-separated list of words in the Effect field following the `template` or `code` keyword.
@@ -266,6 +274,3 @@ The _loop_ modifier is used to created 4 copies of the syllable for each time th
 The starting alpha for each copy, `&Hc0` is chosen as 256 - (256 / 4), 4 being the number of loops made. This way, the opacity for each copy adds up to exactly 256. (Technically it should be 255, but that can't be achieved with an even number of loops.)
 }}
 > _Also see the examples on the [Code execution environment]({{< relref "./Code_execution_environment#loopingtemplates" >}}) page for more advanced usage._
-
-{::template name="automation_navbox" /}
-

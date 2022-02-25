@@ -1,3 +1,10 @@
+---
+title: Standard macros
+menu:
+  docs:
+    parent: Automation
+weight: 660
+---
 
 Aegisub includes several macros. Here's a line-up of them.
 
@@ -152,4 +159,3 @@ Select all lines which begin while another line is still active. This can be
 useful for catching timing errors, or for setting an alternate style for these
 lines, which improves readability.
 
-{::template name="automation_navbox" /}

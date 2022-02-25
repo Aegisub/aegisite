@@ -1,3 +1,11 @@
+---
+title: clipboard
+menu:
+  docs:
+    parent: Lua Modules
+weight: 500
+---
+
 The `clipboard` module supplies functions for reading from and writing to the clipboard.
 
 ## Usage ##
@@ -14,5 +22,3 @@ Synopsis: `clipboard.set(new_text)`{:.language-lua}
 
 Set the clipboard contents to a string.
 Returns true if the clipboard could be set, and false if an error occurred.
-
-{::template name="automation_navbox" /}

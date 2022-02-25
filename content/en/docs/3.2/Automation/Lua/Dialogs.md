@@ -1,3 +1,10 @@
+---
+title: Dialogs
+menu:
+  docs:
+    parent: Lua Reference
+weight: 400
+---
 
 These functions are used to display dialogs for the user to interact with.
 
@@ -297,5 +304,3 @@ affirmative button for the dialog.
 
 Buttons with the ID `help` will be displayed as a question mark in a circle on
 the left side of the dialog on OS X.
-
-{::template name="automation_navbox" /}
