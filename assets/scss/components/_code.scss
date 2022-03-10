@@ -27,6 +27,11 @@ pre code {
   scrollbar-color: transparent transparent;
 }
 
+code.inline-code {
+  padding: 0.25rem 0.5rem !important;
+  display: inline;
+}
+
 .hljs {
   padding: 1.5rem !important;
 }

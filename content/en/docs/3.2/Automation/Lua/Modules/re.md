@@ -19,7 +19,7 @@ over Lua's:
     expressions.
 
 ## Usage ##
-Import this module with `re = require 'aegisub.re'`{:.language-lua}.
+Import this module with {{< lua `re = require 'aegisub.re'` >}}.
 
 See [boost.regex's
 documentation](http://www.boost.org/doc/libs/1_53_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html)
@@ -102,7 +102,7 @@ nil
 {{</example-box>}}
 
 ### re.compile ###
-Synopsis: `expr = re.compile(pattern, [FLAGS])`{:.language-lua}
+Synopsis: {{< lua `expr = re.compile(pattern, [FLAGS])` >}}
 
 Compile a regular expression. Reusing a compiled regular expression is faster
 than recompiling it each time it is used, and is usually more readable as well.
@@ -127,7 +127,7 @@ and flags arguments.
 {{</example-box>}}
 
 ### re.split ###
-Synopsis: `chunks = re.split(str, pattern, skip_empty=false, max_splits=0)`{:.language-lua}
+Synopsis: {{< lua `chunks = re.split(str, pattern, skip_empty=false, max_splits=0)` >}}
 
 Split the string at each of the occurrences of `pattern`.
 
@@ -181,7 +181,7 @@ are ignored.
 {{</example-box>}}
 
 ### re.gsplit ###
-Synopsis: `iter = re.gsplit(str, pattern, skip_empty=false, max_splits=0)`{:.language-lua}
+Synopsis: {{< lua `iter = re.gsplit(str, pattern, skip_empty=false, max_splits=0)` >}}
 
 Iterator version of re.split.
 
@@ -235,7 +235,7 @@ a
 {{</example-box>}}
 
 ### re.find ###
-Synopsis: `matches = re.find(str, pattern)`{:.language-lua}
+Synopsis: {{< lua `matches = re.find(str, pattern)` >}}
 
 Find all non-overlapping substrings of `str` which match `pattern`.
 
@@ -283,7 +283,7 @@ Doesn't have an a
 {{</example-box>}}
 
 ### re.gfind ###
-Synopsis: `iter = re.gfind(str, pattern)`{:.language-lua}
+Synopsis: {{< lua `iter = re.gfind(str, pattern)` >}}
 
 Iterate over all non-overlapping substrings of `str` which match `pattern`.
 
@@ -309,7 +309,7 @@ the match in the source string.
 {{</example-box>}}
 
 ### re.match ###
-Synopsis: `matches = re.match(str, pattern)`{:.language-lua}
+Synopsis: {{< lua `matches = re.match(str, pattern)` >}}
 
 Match a pattern against a string. This differs from `find` in that `find`
 returns all matches and does not capture subgroups, while this returns only a
@@ -355,7 +355,7 @@ any).
 {{</example-box>}}
 
 ### re.gmatch ###
-Synopsis: `iter = re.gmatch(str, pattern)`{:.language-lua}
+Synopsis: {{< lua `iter = re.gmatch(str, pattern)` >}}
 
 Iterator version of [`re.match`]({{< relref "re#re.match" >}}).
 
@@ -371,7 +371,7 @@ Iterator version of [`re.match`]({{< relref "re#re.match" >}}).
 (if any).
 
 ### re.sub ###
-Synopsis: `out_str, rep_count = re.sub(str, replace, pattern, max_count=0)`{:.language-lua}
+Synopsis: {{< lua `out_str, rep_count = re.sub(str, replace, pattern, max_count=0)` >}}
 
 Replace each occurrence of `pattern` in `str` with `replace`.
 

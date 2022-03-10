@@ -24,7 +24,7 @@ layouting functions.
 
 ### karaskel.collect_head  ###
 
-Synopsis: `meta, styles = karaskel.collect_head(subtitles, generate_furigana)`{:.language-lua}
+Synopsis: {{< lua `meta, styles = karaskel.collect_head(subtitles, generate_furigana)` >}}
 
 Reads the subtitle file to collect all header information and style
 definitions, and optionally also generates new styles for furigana layouts.
@@ -52,7 +52,7 @@ this table have one added field, `style.margin_v` which is an alias for
 number of styles stored, and `styles[1]` is the first style defined.
 
 ### karaskel.preproc_line  ###
-Synopsis: `karaskel.preproc_line(subtitles, meta, styles, line)`{:.language-lua}
+Synopsis: {{< lua `karaskel.preproc_line(subtitles, meta, styles, line)` >}}
 
 Calculate sizing, positioning and various other information for a single
 subtitle line. This function calls `karaskel.preproc_line_text`,
@@ -62,7 +62,7 @@ This function does not return a value, but rather modifies the `line`
 table. See below for more information.
 
 ### karaskel.preproc_line_text  ###
-Synopsis: `karaskel.preproc_line_text(meta, styles, line)`{:.language-lua}
+Synopsis: {{< lua `karaskel.preproc_line_text(meta, styles, line)` >}}
 
 Preprocess the text of a single line. `meta` and `styles` are the tables
 returned by `[karaskel.collect_head]({{< relref "karaskel.lua.md#karaskel.collect_head" >}})`.
@@ -81,7 +81,7 @@ information. (In fact it currently doesn't use the `meta` or `styles`
 arguments at all.)
 
 ### karaskel.preproc_line_size  ###
-Synopsis: `karaskel.preproc_line_size(meta, styles, line)`{:.language-lua}
+Synopsis: {{< lua `karaskel.preproc_line_size(meta, styles, line)` >}}
 
 Calculate sizing data for a line and all karaoke syllables and furigana
 parts. Also adds a reference to the line style.
@@ -107,7 +107,7 @@ If the `line` table does not seem to have been processed with
 `karaskel.preproc_line_text` yet, this will be done automatically.
 
 ### karaskel.preproc_line_pos  ###
-Synopsis: `karaskel.preproc_line_pos(meta, styles, line)`{:.language-lua}
+Synopsis: {{< lua `karaskel.preproc_line_pos(meta, styles, line)` >}}
 
 Calculate line, karaoke and furigana position information.
 
