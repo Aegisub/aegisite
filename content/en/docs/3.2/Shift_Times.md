@@ -12,7 +12,7 @@ located under _Timing_ -> _Shift Times_.
 
 It looks like this:
 
-![shift_times](/img/3.2/shift_times.png){: class="center"}
+![shift_times](/img/3.2/shift_times.png#center)
 
 The left part of the window contain the options.
 

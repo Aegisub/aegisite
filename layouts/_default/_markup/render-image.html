@@ -1,13 +1,14 @@
 {{ $image := "" -}}
 {{ $simpleImage := false }}
+{{ $Destination := index (split .Destination "#") 0 }}
 {{ if (urls.Parse .Destination).IsAbs }}
   {{ $image = resources.GetRemote .Destination -}}
 {{ else if (hasPrefix .Destination "/") -}}
-  {{ $image = resources.Get .Destination -}}
+  {{ $image = resources.Get $Destination -}}
   <img class="img-fluid lazyload blur-up" src="{{ print .Page.Site.BaseURL (substr .Destination 1)}}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $.Text }}">
   {{ $simpleImage = true }}
 {{ else -}}
-  {{ $image = .Page.Resources.GetMatch .Destination -}}
+  {{ $image = .Page.Resources.GetMatch $Destination -}}
 {{ end -}}
 {{ if not $simpleImage }}
 {{ with $image -}}

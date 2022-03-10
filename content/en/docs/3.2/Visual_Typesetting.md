@@ -11,7 +11,7 @@ weight: 4300
 **A video tutorial for this feature is available at [the tutorials section]({{< relref "Tutorials" >}}).**
 
 ## Overview  ##
-![video_display](/img/3.2/video_display.png){: class="center"}
+![video_display](/img/3.2/video_display.png#center)
 
 ### Play ###
 Play the video and, starting at the currently displayed frame. See
@@ -57,7 +57,7 @@ control that last had it.
 ## Video context menu ##
 You can right click to bring a context menu with other options:
 
-![Visual_menu](/img/3.2/Visual_menu.png){: class="center"}
+![Visual_menu](/img/3.2/Visual_menu.png#center)
 
 Save PNG snapshot
 : Saves a PNG snapshot of the current frame to the path specified in
@@ -94,14 +94,14 @@ that position.  If alt is held down while double-clicking, all other selected
 lines will be shifted by the same distance as the active line, including lines
 not visible on the current frame.
 
-![Visual_crosshair](/img/3.2/Visual_crosshair.png){: class="center"}
+![Visual_crosshair](/img/3.2/Visual_crosshair.png#center)
 
 ### Drag  ###
 
 The drag tool has two modes. You can toggle between them by clicking the button
 on the auxiliary visual typesetting bar.
 
-![Visual_drag](/img/3.2/Visual_drag.png){: class="center"}
+![Visual_drag](/img/3.2/Visual_drag.png#center)
 
 On the positioning mode, you can simply click-and-drag subtitles across the
 video surface by dragging their anchor (the square). They will be positioned
@@ -139,7 +139,7 @@ On this mode, you will see a circle centered around the subtitle's pivot
 (either it's position, or the origin point, if defined). The circle is
 surrounded by 6 arcs that help mark and measure angles.
 
-![Visual_rotate_1](/img/3.2/Visual_rotate_1.png){: class="center"}
+![Visual_rotate_1](/img/3.2/Visual_rotate_1.png#center)
 
 There are two functionalities in this mode. You can either drag the origin
 point (the triangle at the center of the circle) to move it (and insert a
@@ -159,7 +159,7 @@ it.
 If multiple lines are selected, all selected lines are set to the new rotation
 (and not rotated relative to each other as in the drag and crosshair tools).
 
-![Visual_rotate_2](/img/3.2/Visual_rotate_2.png){: class="center"}
+![Visual_rotate_2](/img/3.2/Visual_rotate_2.png#center)
 
 ### Rotate on XY axes  ###
 This mode is somewhat similar to the previous mode, although there are a few
@@ -171,7 +171,7 @@ the subtitles lie, and you rotate that grid. There are also three arrows
 pointing from the center, indicating the direction and orientation of the three
 axes.
 
-![Visual_rotate_xy](/img/3.2/Visual_rotate_xy.png){: class="center"}
+![Visual_rotate_xy](/img/3.2/Visual_rotate_xy.png#center)
 
 To use this tool, simply hold the mouse button anywhere on the screen and move
 it. As you move it left and right, it will rotate the line on the Y axis, and
@@ -191,7 +191,7 @@ This is the simplest tool, and allows you to scale subtitles on the X and Y
 axes. It will show one bar for each axis, showing not only the 100% size, but
 also the current scale.
 
-![Visual_scale](/img/3.2/Visual_scale.png){: class="center"}
+![Visual_scale](/img/3.2/Visual_scale.png#center)
 
 To use this tool, simply hold down the mouse button and drag the mouse up and
 down (to scale on the Y axis) or left and right (to scale on the X axis). You
@@ -203,7 +203,7 @@ The rectangular clip tool allows you to clip the subtitles so that nothing
 OUTSIDE an axis-aligned rectangle can be displayed (in essence, the
 `\clip(x1,y1,x2,y2)` tag).
 
-![Visual_clip](/img/3.2/Visual_clip.png){: class="center"}
+![Visual_clip](/img/3.2/Visual_clip.png#center)
 
 There are two ways to use this tool. You can either click and grab one of the
 four vertices of the rectangle, to resize an already-existing clip, or you can
@@ -216,11 +216,11 @@ so that nothing outside it will be rendered. The difference, however, is that
 this area can have any arbitrary shape defined by a path of lines and bézier
 curves.
 
-![Visual_vector_clip](/img/3.2/Visual_vector_clip.png){: class="center"}
+![Visual_vector_clip](/img/3.2/Visual_vector_clip.png#center)
 
 This mode has 8 sub-tools:
 
-![Visual_vector_toolbar](/img/3.2/Visual_vector_toolbar.png){: class="center"}
+![Visual_vector_toolbar](/img/3.2/Visual_vector_toolbar.png#center)
 
 1. Drag - Allows you to drag a control point
 1. Insert line - Allows you to insert a straight line from the last point to

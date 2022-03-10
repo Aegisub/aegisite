@@ -15,7 +15,7 @@ and can to some degree be controlled from the subtitle edit box's
 right-click menu (see [editing subtitles]({{< relref "Editing_Subtitles" >}})).
 
 ### The spell checker dialog ###
-![spell_checker](/img/3.2/spell_checker.png){: class="center"}
+![spell_checker](/img/3.2/spell_checker.png#center)
 
 The spell checker dialog will go through all misspelled words it can find in
 your script. The area in the lower left of the box displays suggestions to

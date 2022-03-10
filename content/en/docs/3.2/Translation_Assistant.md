@@ -12,7 +12,7 @@ The translation assistant is a valuable tool for translating subtitles from one 
 ## Overview  ##
 
 
-![Translation_Assistant](/img/3.2/Translation_Assistant.png){: class="center"}
+![Translation_Assistant](/img/3.2/Translation_Assistant.png#center)
 
 The assistant window is simple: it shows you the original raw line, and a box where you can type the translation. There is also a list of hotkeys specific to this window, and a checkbox to enable previewing, if you have the corresponding video set up. Having this option enabled will automatically jump to the current line when you change it.
 

@@ -18,7 +18,7 @@ As shown in the screenshot, there are three functions:
 * Snapping line starts/ends to video keyframes (only available if a video is
     loaded)
 
-![Dialog_timing_processor](/img/3.2/Dialog_timing_processor.png){: class="center"}
+![Dialog_timing_processor](/img/3.2/Dialog_timing_processor.png#center)
 
 The processing gets applied in the order it is displayed in the dialogue box.
 That is to say, first lead-in/outs are added, then a check for adjascent lines

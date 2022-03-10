@@ -10,7 +10,7 @@ The **script properties** are some headers and other options that affect the
 entire script in various ways. They can be accessed from the _File menu_ ->
 _Properties_.
 
-![Properties](/img/3.2/Properties.png){: class="center"}
+![Properties](/img/3.2/Properties.png#center)
 
 The properties are:
 
