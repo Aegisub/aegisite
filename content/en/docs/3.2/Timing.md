@@ -3,7 +3,7 @@ title: Timing subtitles to audio
 menu:
   docs:
     parent: Timing
-weight: 520
+weight: 5100
 ---
 
 ## The main audio view ##

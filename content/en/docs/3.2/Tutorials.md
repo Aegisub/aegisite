@@ -3,7 +3,7 @@ title: Tutorials
 menu:
   docs:
     parent: Introduction
-weight: 260
+weight: 2700
 ---
 
 The following tutorials are available for Aegisub:
@@ -39,6 +39,6 @@ The following tutorials are available for Aegisub:
 
 ## Text tutorials  ##
 * [Karaoke timing]({{< relref "Karaoke_Timing_Tutorial" >}}) (work in progress) — Enter the words for a song and add time-codes to the words
+* [Karaoke Inline effects Tutorial]({{< relref "Karaoke_inline-fx" >}})
+* [Karaoke Furigana Tutorial]({{< relref "Furigana_karaoke" >}})
 * [Karaoke Templater]({{< relref "Automation/Karaoke_Templater" >}}) (incomplete) — Easy way to add special effects to karaoke, ranging from the most basic effects to very advanced ones.
-
-

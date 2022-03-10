@@ -3,7 +3,7 @@ title: Select Lines
 menu:
   docs:
     parent: Working with Subtitles
-weight: 370
+weight: 3600
 ---
 
 The **select lines** tool is useful for finding and selecting all lines in the

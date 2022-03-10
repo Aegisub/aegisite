@@ -3,7 +3,7 @@ title: Fonts Collector
 menu:
   docs:
     parent: Typesetting
-weight: 445
+weight: 4800
 ---
 
 The fonts collector is an automated tool that finds all fonts used in the

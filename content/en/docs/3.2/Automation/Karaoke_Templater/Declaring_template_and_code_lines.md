@@ -3,7 +3,7 @@ title: Declaring templates
 menu:
   docs:
     parent: Karaoke Templater
-weight: 100
+weight: 6110
 ---
 
 This page describes how a template line or code line is declared.

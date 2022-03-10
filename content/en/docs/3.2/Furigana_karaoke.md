@@ -1,9 +1,9 @@
 ---
-title: Furigana
+title: Furigana Tutorial
 menu:
   docs:
-    parent: karaskel.lua
-weight: 100
+    parent: Tutorials
+weight: 2730
 ---
 
 ![Furigana-demo-1](/img/3.2/Furigana-demo-1.png)

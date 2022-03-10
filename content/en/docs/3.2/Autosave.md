@@ -3,7 +3,7 @@ title: Autosave
 menu:
   docs:
     parent: Miscellaneous
-weight: 715
+weight: 7100
 ---
 
 By default Aegisub automatically saves a backup copy of every subtitle file you

@@ -3,7 +3,7 @@ title: Editing styles
 menu:
   docs:
     parent: Typesetting
-weight: 415
+weight: 4200
 ---
 
 A **style** in the ASS format is a set of typographic formatting rules that is

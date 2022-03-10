@@ -3,7 +3,7 @@ title: Automation Manager
 menu:
   docs:
     parent: Automation
-weight: 640
+weight: 6300
 ---
 
 The Automation Manager window is used to view, load and unload

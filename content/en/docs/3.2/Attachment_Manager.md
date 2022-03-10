@@ -3,7 +3,7 @@ title: Attachment Manager
 menu:
   docs:
     parent: Miscellaneous
-weight: 730
+weight: 7500
 ---
 
 The attachment manager allows you to attach fonts and/or pictures to your

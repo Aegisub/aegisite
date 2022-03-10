@@ -3,7 +3,7 @@ title: Running macros
 menu:
   docs:
     parent: Automation
-weight: 650
+weight: 6400
 ---
 
 [Automation]({{< relref "Automation" >}}) [macros]({{< relref "../Glossary/Macro" >}}) appear as options in the Automation

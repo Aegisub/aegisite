@@ -3,7 +3,7 @@ title: Karaoke Templater
 menu:
   docs:
     parent: Automation
-weight: 620
+weight: 6100
 ---
 
 **Karaoke Templater** is an [Automation]({{< relref "Automation" >}}) script that ships with Aegisub. Its

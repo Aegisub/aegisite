@@ -3,7 +3,7 @@ title: Credits
 menu:
   docs:
     parent: Introduction
-weight: 230
+weight: 2300
 ---
 
 Aegisub was originally written by Rodrigo Braz Monteiro with significant contributions from Niels Martin Hansen.

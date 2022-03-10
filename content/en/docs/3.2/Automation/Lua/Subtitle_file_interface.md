@@ -3,7 +3,7 @@ title: Subtitles object
 menu:
   docs:
     parent: Lua Reference
-weight: 200
+weight: 6220
 ---
 
 This page describes the **subtitle file interface** use in Automation 4 Lua

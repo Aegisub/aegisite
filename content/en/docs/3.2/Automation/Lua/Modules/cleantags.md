@@ -3,7 +3,7 @@ title: cleantags.lua
 menu:
   docs:
     parent: Lua Modules
-weight: 400
+weight: 6264
 ---
 
 {{<todo>}}Write documentation {{</todo>}}

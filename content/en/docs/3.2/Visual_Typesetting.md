@@ -3,7 +3,7 @@ title: Visual Typesetting
 menu:
   docs:
     parent: Typesetting
-weight: 420
+weight: 4300
 ---
 
 {{<todo>}}Screenshots need to be updated {{</todo>}}

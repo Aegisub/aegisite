@@ -3,7 +3,7 @@ title: Path Specifiers
 menu:
   docs:
     parent: Miscellaneous
-weight: 715
+weight: 7200
 ---
 
 Aegisub uses a simple system for denoting file locations. Most pathnames in

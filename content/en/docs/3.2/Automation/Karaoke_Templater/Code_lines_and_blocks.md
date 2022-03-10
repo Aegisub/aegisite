@@ -3,7 +3,7 @@ title: Code lines and blocks
 menu:
   docs:
     parent: Karaoke Templater
-weight: 500
+weight: 6150
 ---
 
 Code lines and blocks in Karaoke Templater allows you to create advanced

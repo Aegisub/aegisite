@@ -3,7 +3,7 @@ title: Spell Checker
 menu:
   docs:
     parent: Working with Subtitles
-weight: 340
+weight: 3300
 ---
 
 To help you with quality assurance of your subtitle scripts, Aegisub

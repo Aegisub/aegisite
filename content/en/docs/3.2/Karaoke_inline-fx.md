@@ -1,9 +1,9 @@
 ---
-title: Inline effects
+title: Inline effects Tutorial
 menu:
   docs:
-    parent: karaskel.lua
-weight: 100
+    parent: Tutorials
+weight: 2720
 ---
 
 Karaoke inline-fx (inline effects) is a way of marking up [timed karaoke]({{< relref "Timing#karaoketiming" >}}) to assign different effects to different

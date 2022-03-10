@@ -3,7 +3,7 @@ title: utils.lua
 menu:
   docs:
     parent: Lua Modules
-weight: 200
+weight: 6262
 ---
 
 The Automation 4 Lua include file `utils.lua` contains various support functions to aid writing Lua scripts.

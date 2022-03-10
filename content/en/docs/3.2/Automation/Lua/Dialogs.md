@@ -3,7 +3,7 @@ title: Dialogs
 menu:
   docs:
     parent: Lua Reference
-weight: 400
+weight: 6240
 ---
 
 These functions are used to display dialogs for the user to interact with.

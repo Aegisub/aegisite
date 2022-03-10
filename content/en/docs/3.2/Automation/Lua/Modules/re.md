@@ -3,7 +3,7 @@ title: re
 menu:
   docs:
     parent: Lua Modules
-weight: 600
+weight: 6266
 ---
 
 The `re` module is a wrapper around boost::regex, intended as a full

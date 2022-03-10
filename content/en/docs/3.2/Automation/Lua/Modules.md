@@ -3,7 +3,7 @@ title: Lua Modules
 menu:
   docs:
     parent: Lua Reference
-weight: 600
+weight: 6260
 ---
 
 A number of Lua modules are included with Aegisub.

@@ -3,7 +3,7 @@ title: Misc. APIs
 menu:
   docs:
     parent: Lua Reference
-weight: 500
+weight: 6250
 ---
 
 This page documents **miscellaneous APIs useful for working with

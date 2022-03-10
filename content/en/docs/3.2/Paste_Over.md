@@ -3,7 +3,7 @@ title: Paste Over
 menu:
   docs:
     parent: Working with Subtitles
-weight: 360
+weight: 3500
 ---
 
 The **paste over** tool is a "smart" variant of the good old Ctrl-c Ctrl-v

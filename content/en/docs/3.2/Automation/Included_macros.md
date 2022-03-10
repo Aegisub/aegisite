@@ -3,7 +3,7 @@ title: Standard macros
 menu:
   docs:
     parent: Automation
-weight: 660
+weight: 6500
 ---
 
 Aegisub includes several macros. Here's a line-up of them.

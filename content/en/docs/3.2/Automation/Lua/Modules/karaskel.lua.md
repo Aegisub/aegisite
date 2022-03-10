@@ -3,7 +3,7 @@ title: karaskel.lua
 menu:
   docs:
     parent: Lua Modules
-weight: 100
+weight: 6261
 ---
 
 The Automation 4 `karaskel.lua` include file contains several functions

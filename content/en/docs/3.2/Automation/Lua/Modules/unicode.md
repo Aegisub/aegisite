@@ -3,7 +3,7 @@ title: unicode.lua
 menu:
   docs:
     parent: Lua Modules
-weight: 300
+weight: 6263
 ---
 
 The `unicode` module for Automation 4 Lua contains various helper functions for working with UTF-8 encoded text.

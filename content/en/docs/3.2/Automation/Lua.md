@@ -3,7 +3,7 @@ title: Lua Reference
 menu:
   docs:
     parent: Automation
-weight: 630
+weight: 6200
 ---
 
 The Automation 4 Lua scripting engine is based on the version 5.1 series of

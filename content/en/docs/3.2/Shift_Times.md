@@ -3,7 +3,7 @@ title: Shift times
 menu:
   docs:
     parent: Timing
-weight: 530
+weight: 5200
 ---
 
 The **shift times** tool is a batch processor for timestamps; it adjusts the

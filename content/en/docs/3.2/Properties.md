@@ -3,7 +3,7 @@ title: Script Properties
 menu:
   docs:
     parent: Miscellaneous
-weight: 720
+weight: 7300
 ---
 
 The **script properties** are some headers and other options that affect the

@@ -3,7 +3,7 @@ title: Overview
 menu:
   docs:
     parent: Introduction
-weight: 215
+weight: 2100
 ---
 
 ![Main-window-overview](/img/3.2/Main-window-overview.png)

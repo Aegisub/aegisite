@@ -3,7 +3,7 @@ title: Working with Audio
 menu:
   docs:
     parent: Timing
-weight: 510
+weight: 5000
 ---
 
 Aegisub has a fairly advanced, customizable audio mode with both the

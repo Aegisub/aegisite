@@ -3,7 +3,7 @@ title: Highlights
 menu:
   docs:
     parent: Introduction
-weight: 220
+weight: 2200
 ---
 
 Some highlights of Aegisub:

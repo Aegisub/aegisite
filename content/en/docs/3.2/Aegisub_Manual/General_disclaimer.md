@@ -3,7 +3,7 @@ title: General Disclaimer
 menu:
   docs:
     parent: Introduction
-weight: 235
+weight: 2400
 ---
 
 **This manual is a work in progress.** It is at present incomplete and no information in it can be taken for granted. We attempt to be accurate on every point, to a reasonable degree.

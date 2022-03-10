@@ -3,7 +3,7 @@ title: clipboard
 menu:
   docs:
     parent: Lua Modules
-weight: 500
+weight: 6265
 ---
 
 The `clipboard` module supplies functions for reading from and writing to the clipboard.

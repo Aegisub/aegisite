@@ -3,7 +3,7 @@ title: Applying Subtitles
 menu:
   docs:
     parent: Working with Subtitles
-weight: 330
+weight: 3200
 ---
 
 In digital encoding, there are two main ways of including subtitles in a video:

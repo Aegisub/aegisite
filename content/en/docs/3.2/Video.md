@@ -3,7 +3,7 @@ title: Working with Video
 menu:
   docs:
     parent: Typesetting
-weight: 405
+weight: 4100
 ---
 
 Aegisub isn't a video (or media) player, but it still supports loading and

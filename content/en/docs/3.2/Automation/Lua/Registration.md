@@ -3,7 +3,7 @@ title: Registration
 menu:
   docs:
     parent: Lua Reference
-weight: 100
+weight: 6210
 ---
 
 **Registration** covers presenting your [Automation 4 Lua]({{< relref "Lua" >}})

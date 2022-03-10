@@ -3,7 +3,7 @@ title: Modifiers
 menu:
   docs:
     parent: Karaoke Templater
-weight: 300
+weight: 6130
 ---
 
 Template lines and code lines can take a number of modifiers.

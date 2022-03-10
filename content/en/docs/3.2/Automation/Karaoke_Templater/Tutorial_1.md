@@ -3,7 +3,7 @@ title: A simple example
 menu:
   docs:
     parent: Automation Tutorials
-weight: 710
+weight: 6171
 ---
 
 Welcome to the first tutorial in using Karaoke Templater to create [karaoke effects]({{< relref "../../Glossary/Karaoke_effect" >}}). We'll start out with something simple and

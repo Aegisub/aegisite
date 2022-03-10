@@ -3,7 +3,7 @@ title: Styling Assistant
 menu:
   docs:
     parent: Typesetting
-weight: 435
+weight: 4600
 ---
 
 The Styling assistant is a powerful tool for subtitles that have multiple

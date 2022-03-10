@@ -3,7 +3,7 @@ title: Execution order
 menu:
   docs:
     parent: Karaoke Templater
-weight: 200
+weight: 6120
 ---
 
 This page describes various technical details about how Karaoke Templater
