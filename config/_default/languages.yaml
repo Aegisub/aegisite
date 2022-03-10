@@ -1,12 +1,15 @@
-# i18n languages config
 en:
   languageCode: en-us
-  contentDir: content/en
   languageName: English
+  contentDir: content/en
   weight: 10
+  params:
+    languageISO: EN
 
 zh-cn:
   languageCode: zh-cn
-  contentDir: content/zh-cn
   languageName: 简体中文
+  contentDir: content/zh-cn
   weight: 15
+  params:
+    languageISO: ZH

@@ -4,7 +4,7 @@ var docs = [
     id: {{ $index }},
     title: "{{ .Title }}",
     description: "{{ .Params.description }}",
-    href: "{{ .URL | relLangURL }}"
+    href: "{{ .URL | relURL }}"
   },
 {{ end -}}
 ];
