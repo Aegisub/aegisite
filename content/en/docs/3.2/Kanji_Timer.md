@@ -61,7 +61,6 @@ Down arrow
 
 Backspace
 : Un-groups (or unlinks) the last accepted syllable and lets you try to group it again (useful if you make a mistake).
-{: .dl-horizontal}
 
 ## Things to note ##
 

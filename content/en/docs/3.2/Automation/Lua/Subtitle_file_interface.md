@@ -20,12 +20,12 @@ the feature is being applied on.
 A subtitles object can have two special properties depending on the context it
 is created for:
 
-**Read-only**
+Read-only
 : Some feature functions must not be allowed to modify the subtitle file at
 all. This includes for example [macro validation functions]({{< relref "Registration#macrovalidationfunction" >}}) and [export filter configuration panel providers]({{< relref "Registration#_export_filter_configuration_panel_provider" >}}),
 because this would be outside user expectations.
 
-**Allow undo points**
+Allow undo points
 : Only [macro processing functions]({{< relref "Registration#macroprocessingfunction" >}}) can set undo
 points, as it makes no sense to do so at any other time.
 

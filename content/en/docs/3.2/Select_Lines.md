@@ -40,7 +40,7 @@ reading the [perlretut manual page](http://perldoc.perl.org/perlretut.html) or
 googling. For a reference of the exact syntax supported by Aegisub, see the
 [wxWidgets regular expressions reference
 page](http://www.wxwidgets.org/manuals/stable/wx_wxresyn.html).
-{: class="horizontal-wide"}
+
 
 ### In field ###
 This option controls what field of each line will be used for the matching
@@ -57,7 +57,7 @@ Actor
 
 Effect
 : The effect field
-{: class="horizontal-narrow"}
+
 
 ### Match dialogues/comments ###
 Here you can choose if you want to select from comment lines, dialogue lines,
@@ -82,4 +82,4 @@ Intersect with selection
 : Does the inverse of subtract from selection. That is to say, all lines in the
 current selection that matches the criteria are kept selected, but everything
 else is deselected.
-{: class="horizontal-wide"}
+

@@ -108,7 +108,7 @@ lx, ly
 
 lwidth, lheight
 : line width and height in pixels, this is rounded and might not match exactly with the positioning variables
-{: .horizontal-wide}
+
 
 #### Syllable variants
 
@@ -132,7 +132,6 @@ sx, sy
 
 swidth, sheight
 : syllable width and height in pixelsthis is rounded and might not match exactly with the positioning variables
-{: .horizontal-wide}
 
 
 #### Automatic variants
@@ -157,4 +156,3 @@ x, y
 
 width, height
 : width and height of line/syllable in pixels, this is rounded and might not match exactly with the positioning variables
-{: .horizontal-wide}

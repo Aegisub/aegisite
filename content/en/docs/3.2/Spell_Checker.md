@@ -56,7 +56,7 @@ Remove from dictionary
 : Remove the word currently in the **Replace with** field from the dictionary.
 Can only remove words which were added with the **Add to dictionary** function
 and not words in the standard dictionary.
-{: class="dl-horizontal"}
+
 
 At the bottom of the dialog box there is a dropdown box to choose the spell
 checker language.

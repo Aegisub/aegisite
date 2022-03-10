@@ -274,3 +274,19 @@ body {
 .card-body pre {
   margin: 0;
 }
+
+dl {
+  display: grid;
+  grid-template-columns: max-content auto;
+}
+
+dl dt {
+  font-weight: bold;
+  grid-column-start: 1;
+  max-width: 20rem;
+}
+
+dl dd {
+  padding: 0rem 0rem 0.5rem 1rem;
+  grid-column-start: 2;
+}
