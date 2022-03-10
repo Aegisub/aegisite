@@ -150,15 +150,12 @@ above 中国 while it isn't in the first.
 
 ## Summary  ##
 
-|------|-------|------------------|--------------------------------|----------
 | Char | ASCII | Unicode          | Where                          | Meaning
 |:----:|:-----:|------------------|--------------------------------|----------
 | \#   | 35    | U+0023<br>U+FF03 | Instead of main text           | Extend previous syllable with another highlight
 | \|   | 124   | U+007C<br>U+FF5C | Between main text and furigana | Separate main text and furigana text of a syllable
 | !    | 33    | U+0021<br>U+FF01 | First character of furigana    | Sequence break; prevent joining furigana for this syllable with furigana from previous syllable
 | &lt; | 60    | U+003C<br>U+FF1C | First character of furigana    | Sequence break with float-left; prevent joining furigana for this syllable with furigana from previous syllable, but allow furigana to extend left of main text
-|------|-------|------------------|--------------------------------|----------
-{:.karatable}
 
 Note that every special character can in fact be represented by two different
 Unicode codepoints. The first is the regular character, corresponding to the
