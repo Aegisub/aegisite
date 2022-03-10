@@ -271,9 +271,18 @@ body {
   }
 }
 
-.card-body pre {
-  margin: 0;
+.card {
+  margin: 1rem 0;
 }
+
+.card .card-body pre {
+  margin: 0 0 1rem 0;
+}
+
+.card-body {
+  padding: 1rem 1rem 0rem 1rem;
+}
+
 
 dl {
   display: grid;
