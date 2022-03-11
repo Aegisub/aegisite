@@ -3,7 +3,7 @@ title: Paste Over
 menu:
   docs:
     parent: Working with Subtitles
-weight: 360
+weight: 3500
 ---
 
 The **paste over** tool is a "smart" variant of the good old Ctrl-c Ctrl-v
@@ -17,7 +17,7 @@ To use it, first copy one or more lines with the familiar copy function
 and click _paste lines over_ (or press Ctrl-Shift-v). You will then get a
 dialog box that looks like this:
 
-![Paste_over](/img/3.2/Paste_over.png){: class="center"}
+![Paste_over](/img/3.2/Paste_over.png#center)
 
 Tick the fields you want to paste (the buttons below the checkboxes can be used
 to select all fields (in which case paste over is almost the same as normal

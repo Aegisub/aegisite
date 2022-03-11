@@ -3,7 +3,7 @@ title: FAQ
 menu:
   docs:
     parent: Introduction
-weight: 250
+weight: 2600
 ---
 
 A small collection of Frequently Asked Questions about Aegisub - mostly

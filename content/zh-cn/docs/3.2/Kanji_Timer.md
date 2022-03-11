@@ -3,7 +3,7 @@ title: Kanji Timer
 menu:
   docs:
     parent: Timing
-weight: 550
+weight: 5400
 ---
 
 The kanji timer makes it easy to copy timed karaoke from one set of already karaoke timed lines to another set of yet untimed lines. Primarily intended for adding karaoke to Japanese songs.
@@ -38,7 +38,7 @@ But this does **not** (pairs lines wrong):
 
 The kanji timer dialog looks like this:
 
-![Kanji_timer](/img/3.2/Kanji_timer.png){: class="center"}
+![Kanji_timer](/img/3.2/Kanji_timer.png#center)
 
 The first thing you need to do is to select which styles are used for the timed input lines and the untimed output lines respectively. This is done in the upper right corner of the dialog; the top dropdown is the source style and the bottom one is the destination. When you've done this, click the start button.
 
@@ -61,7 +61,6 @@ Down arrow
 
 Backspace
 : Un-groups (or unlinks) the last accepted syllable and lets you try to group it again (useful if you make a mistake).
-{: .dl-horizontal}
 
 ## Things to note ##
 

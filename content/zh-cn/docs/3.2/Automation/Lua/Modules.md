@@ -1,3 +1,10 @@
+---
+title: Lua Modules
+menu:
+  docs:
+    parent: Lua Reference
+weight: 6260
+---
 
 A number of Lua modules are included with Aegisub.
 Some of these, such as [`karaskel.lua`]({{< relref "karaskel.lua.md" >}}) implement subtitle-specific functionality, while others such as [re]({{< relref "re" >}}) fill holes in the Lua standard library.
@@ -43,5 +50,3 @@ Several helper functions are provided here.
 
 [lfs](http://keplerproject.github.io/luafilesystem/)
 : Some assorted filesystem functionality not supported by the Lua standard library.
-
-{::template name="automation_navbox" /}

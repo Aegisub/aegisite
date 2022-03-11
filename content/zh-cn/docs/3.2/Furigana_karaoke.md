@@ -1,3 +1,10 @@
+---
+title: Furigana Tutorial
+menu:
+  docs:
+    parent: Tutorials
+weight: 2730
+---
 
 ![Furigana-demo-1](/img/3.2/Furigana-demo-1.png)
 
@@ -43,11 +50,13 @@ generated syllable structure, but the main timing (`start_time` and `end_time`)
 of the syllable structure reflects only the added-together timings of the
 number sign syllables.
 
-{::template name="examplebox"}
+{{<example-box>}}
 This line shows how multi-highlight syntax is used to mark up kanji and groups
 of kanji that cover multiple syllables:
 
-    {\k5}明日{\k10}#{\k5}#{\k10}ま{\k7}た{\k10}会{\k4}う{\k6}時{\k14}#
+```plaintext
+{\k5}明日{\k10}#{\k5}#{\k10}ま{\k7}た{\k10}会{\k4}う{\k6}時{\k14}#
+```
 
 It generates the following syllable structures:
 
@@ -63,8 +72,7 @@ It generates the following syllable structures:
     <tr><td rowspan="2">時</td><td rowspan="2">20</td><td>6</td></tr>
     <tr><td>14</td></tr>
 </table>
-
-{:/}
+{{</example-box>}}
 
 ## Basic furigana  ##
 To add furigana to a syllable, you add a pipe character (|, ASCII 124, Unicode
@@ -79,10 +87,12 @@ syllables they belong to. If the string of furigana is wider than the main text
 the furigana is left-aligned with the main text. You can control this behaviour
 with special control characters, see below.
 
-{::template name="examplebox"}
+{{<example-box>}}
 Adding furigana to the example above:
 
-    {\k5}明日|あ{\k10}#|し{\k5}#|た{\k10}ま{\k7}た{\k10}会|あ{\k4}う{\k6}時|と{\k14}#|き
+```plaintext
+{\k5}明日|あ{\k10}#|し{\k5}#|た{\k10}ま{\k7}た{\k10}会|あ{\k4}う{\k6}時|と{\k14}#|き
+```
 
 The following syllables, highlights and furigana are produced:
 
@@ -98,7 +108,7 @@ The following syllables, highlights and furigana are produced:
     <tr><td rowspan="2">時</td><td rowspan="2">20</td><td>6</td><td>と</td></tr>
     <tr><td>14</td><td>き</td></tr>
 </table>
-{:/}
+{{</example-box>}}
 
 ## Controlling the layout  ##
 Often the layout produced with the plain furigana syntax isn't exactly what you
@@ -127,7 +137,7 @@ In all cases, if two furigana sequences extend beyond their main text such that
 they would overlap, the main text is moved such that the furigana won't
 overlap.
 
-{::template name="examplebox"}
+{{<example-box>}}
 Here is the same (rather contrived) sample text shown without layout control
 and with each of the two layout control characters:
 
@@ -140,19 +150,16 @@ difference is only a few pixels, but it is there. In the first sample, the た
 extends a bit over the left edge of 魂 and above 国 while it exactly
 left-aligns with 魂 in the second. In the second, ちゅうごく is also centered
 above 中国 while it isn't in the first.
-{:/}
+{{</example-box>}}
 
 ## Summary  ##
 
-|------|-------|------------------|--------------------------------|----------
 | Char | ASCII | Unicode          | Where                          | Meaning
 |:----:|:-----:|------------------|--------------------------------|----------
 | \#   | 35    | U+0023<br>U+FF03 | Instead of main text           | Extend previous syllable with another highlight
 | \|   | 124   | U+007C<br>U+FF5C | Between main text and furigana | Separate main text and furigana text of a syllable
 | !    | 33    | U+0021<br>U+FF01 | First character of furigana    | Sequence break; prevent joining furigana for this syllable with furigana from previous syllable
 | &lt; | 60    | U+003C<br>U+FF1C | First character of furigana    | Sequence break with float-left; prevent joining furigana for this syllable with furigana from previous syllable, but allow furigana to extend left of main text
-|------|-------|------------------|--------------------------------|----------
-{:.karatable}
 
 Note that every special character can in fact be represented by two different
 Unicode codepoints. The first is the regular character, corresponding to the
@@ -168,18 +175,20 @@ Furigana: [The _furi_ template class]({{< relref "Automation/Karaoke_Templater/T
 
 Multi-highlight: [The _multi_ modifier]({{< relref "Automation/Karaoke_Templater/Template_modifiers#multi" >}})
 
-{::template name="examplebox"}
+{{<example-box>}}
 The examples used earlier on this page are all generated using this kara-templater snippet:
 
-    Comment: 0,0:00:00.00,0:00:00.00,Default,,0000,0000,0000,template syl,{\pos(!line.left+syl.center!,!line.middle!)\an5\k!syl.start_time/10!\k$kdur}
-    Comment: 0,0:00:00.00,0:00:00.00,Default,,0000,0000,0000,template furi,{\pos(!line.left+syl.center!,!line.middle-line.height!)\an5\k!syl.start_time/10!\k$kdur}
-    Comment: 0,0:00:00.00,0:00:02.00,Default,,0000,0000,0000,karaoke,{\k15}二|ふ{\k15}#|た{\k10}人|り{\k15}だ{\k57}け{\k5}の{\k6}地|ほ{\k5}球|し{\k8}で
-    Comment: 0,0:00:02.00,0:00:04.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|<た{\k10}#|ま{\k10}#|し{\k10}#|い
-    Comment: 0,0:00:04.00,0:00:06.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|!た{\k10}#|ま{\k10}#|し{\k10}#|い
-    Comment: 0,0:00:06.00,0:00:08.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|た{\k10}#|ま{\k10}#|し{\k10}#|い
+```plaintext
+Comment: 0,0:00:00.00,0:00:00.00,Default,,0000,0000,0000,template syl,{\pos(!line.left+syl.center!,!line.middle!)\an5\k!syl.start_time/10!\k$kdur}
+Comment: 0,0:00:00.00,0:00:00.00,Default,,0000,0000,0000,template furi,{\pos(!line.left+syl.center!,!line.middle-line.height!)\an5\k!syl.start_time/10!\k$kdur}
+Comment: 0,0:00:00.00,0:00:02.00,Default,,0000,0000,0000,karaoke,{\k15}二|ふ{\k15}#|た{\k10}人|り{\k15}だ{\k57}け{\k5}の{\k6}地|ほ{\k5}球|し{\k8}で
+Comment: 0,0:00:02.00,0:00:04.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|<た{\k10}#|ま{\k10}#|し{\k10}#|い
+Comment: 0,0:00:04.00,0:00:06.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|!た{\k10}#|ま{\k10}#|し{\k10}#|い
+Comment: 0,0:00:06.00,0:00:08.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|た{\k10}#|ま{\k10}#|し{\k10}#|い
+```
 
 The font used in MS PMincho 30 pt with the furigana being 15 pt.
-{:/}
+{{</example-box>}}
 
 
 ## Usage in Lua scripts  ##
@@ -202,6 +211,4 @@ generate to the furigana style.
 Multi-highlights are always processed even when furigana layout isn't done.
 Multi-highlight data are stored in `syl.highlights`.
 
-{::template name="todo"}more details{:/}
-
-{::template name="automation_navbox" /}
+{{<todo>}}more details {{</todo>}}

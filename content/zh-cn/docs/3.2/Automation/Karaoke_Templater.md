@@ -3,7 +3,7 @@ title: Karaoke Templater
 menu:
   docs:
     parent: Automation
-weight: 620
+weight: 6100
 ---
 
 **Karaoke Templater** is an [Automation]({{< relref "Automation" >}}) script that ships with Aegisub. Its
@@ -17,7 +17,7 @@ installed and ready to use along with Aegisub.
 * [Using multiple template lines](#)
 * [More advanced effects with positioned syllables](#)
 
-{::template name="todo"}Plan more tutorials. Also actually write those above.{:/}
+{{<todo>}}Plan more tutorials. Also actually write those above. {{</todo>}}
 
 ## Reference  ##
 * [Declaring template and code lines]({{< relref "./Karaoke_Templater/Declaring_template_and_code_lines" >}})
@@ -57,5 +57,3 @@ several pitfalls. Some of them are:
   the start and end times of your generated lines.
 * Lots of more fancy features. Check the tutorials or read the reference to
   learn about it all.
-
-{::template name="automation_navbox" /}

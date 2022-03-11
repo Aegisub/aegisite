@@ -3,7 +3,7 @@ title: Attachment Manager
 menu:
   docs:
     parent: Miscellaneous
-weight: 730
+weight: 7500
 ---
 
 The attachment manager allows you to attach fonts and/or pictures to your
@@ -13,7 +13,7 @@ fonts as separate files. However, it is quite limited and is prone to causing
 problems.
 
 ## Overview  ##
-![Attachment_list](/img/3.2/Attachment_list.png){: class="center"}
+![Attachment_list](/img/3.2/Attachment_list.png#center)
 
 The entire dialogue is fairly self-explanatory. The two "Attach ..." buttons
 add attachments, "Extract" extracts existing attachments into separate files,

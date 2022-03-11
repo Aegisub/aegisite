@@ -1,3 +1,10 @@
+---
+title: Standard macros
+menu:
+  docs:
+    parent: Automation
+weight: 6500
+---
 
 Aegisub includes several macros. Here's a line-up of them.
 
@@ -17,7 +24,7 @@ such that the letters are "stacked".
 This macro modifies all lines that are currently selected in the subtitles
 grid.
 
-{::template name="examplebox"}
+{{<example-box>}}
 Here's a typeset sign:
 
     {\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&H25485A&\c&HDEEBF1&\pos(456,184)\frz-90}Sign text
@@ -35,7 +42,7 @@ Now after running this macro on the line:
 This is what it looks before and after running the macro:
 
 ![StackedSign1](/img/3.2/StackedSign1.png) ![StackedSign2](/img/3.2/StackedSign2.png)
-{:/}
+{{</example-box>}}
 
 ## Automatic karaoke lead-in  ##
 Automatically join several karaoke-timed lines up timing-wise and add
@@ -51,20 +58,23 @@ start-time of the selected line that comes before it. It changes the timing
 of the selected lines and adds `\k` tags at the start of them except the
 first.
 
-{::template name="examplebox"}
+{{<example-box>}}
 Here's two lines of "tightly" timed karaoke:
 
-    Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
-    Dialogue: 0,0:00:46.57,0:00:48.56,Default,,0000,0000,0000,,{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+```plaintext
+Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
+Dialogue: 0,0:00:46.57,0:00:48.56,Default,,0000,0000,0000,,{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+```
 
 Both lines start exactly when the first word starts being sung, and they end
 exactly when the last word ends.
 
 Now if the _Automatic karaoke lead-in_ macro is run on these two lines, they
 are changed into this:
-<pre><code>Dialogue: 0,0:00:44.46,<u>0:00:46.28</u>,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
-Dialogue: 0,<u>0:00:46.28</u>,0:00:48.56,Default,,0000,0000,0000,,<u>{\k29}</u>{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
-</code></pre>
+```plaintext
+Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
+Dialogue: 0,0:00:46.28,0:00:48.56,Default,,0000,0000,0000,,{\k29}{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+```
 
 The start-time of the second line is changed so it matches the end-time of
 the first line, and a `\k` tag  is added to the start of the line, to make
@@ -73,14 +83,15 @@ empty syllable that can be used as a "spacer" to create fade-in and fade-out
 effects.
 
 The macro also shows this message:
-
-    Smallest inter-line duration: 290 milliseconds
+```plaintext
+Smallest inter-line duration: 290 milliseconds
+```
 
 This simply says that the smallest duration between two lines it found, was
 290 milliseconds, or 0.29 seconds, so that's as much time you have to make
 fade-in, fade-out and other transition effects, if you want every
 syllable-highlight to be fully visible.
-{:/}
+{{</example-box>}}
 
 ## Clean tags  ##
 This macro does various cleaning up on the override tags in all selected
@@ -110,10 +121,12 @@ sensibly into syllable structures, see the example.
 This macro modifies all selected lines in the grid, re-writing all tag
 blocks in them.
 
-{::template name="examplebox"}
+{{<example-box>}}
 Original line:
 
-    {\r\frz90\k80}Test {\r\fry180\k60}me
+```plaintext
+{\r\frz90\k80}Test {\r\fry180\k60}me
+```
 
 Karaskel creates these syllable structures:
 
@@ -124,7 +137,9 @@ Karaskel creates these syllable structures:
 
 After running _Clean Tags_ on the line:
 
-    {\k80\r\frz90}Test {\k60\r\fry180}me
+```plaintext
+{\k80\r\frz90}Test {\k60\r\fry180}me
+```
 
 Now karaskel creates these syllable structures:
 
@@ -135,7 +150,7 @@ Now karaskel creates these syllable structures:
 
 The cleaned up version is generally what you'd want since it places the
 override tags inside the syllables they affect.
-{:/}
+{{</example-box>}}
 
 ## Add Edgeblur ##
 Add [`\be1`]({{< relref "../ASS_Tags#bluredges" >}}) to all selected lines. Lightly blurring the
@@ -152,4 +167,3 @@ Select all lines which begin while another line is still active. This can be
 useful for catching timing errors, or for setting an alternate style for these
 lines, which improves readability.
 
-{::template name="automation_navbox" /}

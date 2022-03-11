@@ -3,6 +3,6 @@ title: Commands
 menu:
   docs:
     parent: Miscellaneous
-weight: 799
-layout: cmd
+weight: 7600
+type: cmd
 ---

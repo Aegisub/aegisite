@@ -3,7 +3,7 @@ title: Credits
 menu:
   docs:
     parent: Introduction
-weight: 230
+weight: 2300
 ---
 
 Aegisub was originally written by Rodrigo Braz Monteiro with significant contributions from Niels Martin Hansen.
@@ -14,14 +14,12 @@ Development was lead by Monteiro through 2008, Hansen through 2010, and by Thoma
   * **Rodrigo Braz Monteiro** (ArchMage ZeratuL) - Lead developer, video system, audio system, subtitles I/O, tools
   * **Niels Martin Hansen** (jfs) - Automation, Lua automation, audio system, tools
   * **Thomas Goyne (Plorkyeran)** - Lead developer for 3.0 onwards.
-
 * Staff Contributors:
   * **Karl Blomster** (TheFluff) - General code, FFmpegSource video provider
   * **Fredrik Mellbin** (Myrsloik) - FFmpegSource and Avisynth-related code
   * **Amar Takhar** (verm) - New unix build system
   * **David Lamparter** (equinox) - Unix port
   * **Alysson Souza e Silva** (demi_alucard) - General code
-
 * Other contributors:
   * **Dan Donovan** (Dansolo) - Miscellaneous tools
   * **Patryk Pomykalski** (Pomyk) - Miscellaneous patching
@@ -42,19 +40,16 @@ Development was lead by Monteiro through 2008, Hansen through 2010, and by Thoma
   * **Niels Martin Hansen** (jfs)
   * **Fredrik Mellbin** (Myrsloik)
   * **Rodrigo Braz Monteiro** (ArchMage ZeratuL)
-
 * Previous:
   * movax
 
 ## Manual ##
 * 3.x:
   * **Thomas Goyne (Plorkyeran)**
-
 * 2.x:
   * **Karl Blomster** (TheFluff)
   * **Niels Martin Hansen** (jfs)
   * **Rodrigo Braz Monteiro** (ArchMage ZeratuL)
-
 * Previous:
   * Motoko-chan
   * Kobi
@@ -68,7 +63,6 @@ Development was lead by Monteiro through 2008, Hansen through 2010, and by Thoma
   * **Niels Martin Hansen** (jfs): Bug Tracker
   * **Marcello Bastéa-Forte**: Documentation Wiki
   * **Rodrigo Braz Monteiro** (ArchMage ZeratuL): Domain administration
-
 * Previous:
   * **David Lamparter** (equinox): SVN repository for versions 2.00 - 2.1.2
   * BerliOS: SVN repository for version 1.10
@@ -82,10 +76,8 @@ Development was lead by Monteiro through 2008, Hansen through 2010, and by Thoma
   * Yuri: Hungarian
   * Hiroshi: Japanese
   * Jeroi: Finnish
-
 * 1.11 translations:
   * Karasu: Traditional Chinese
-
 * 1.10 translations:
   * TechNiko: French
   * Crysral: French

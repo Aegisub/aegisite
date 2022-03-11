@@ -3,7 +3,7 @@ title: Timing subtitles to audio
 menu:
   docs:
     parent: Timing
-weight: 520
+weight: 5100
 ---
 
 ## The main audio view ##
@@ -153,4 +153,4 @@ Aegisub yourself and did not use FFTW3; FFTW3 is fast enough that the default
 quality is bumped up a bit.
 
 ## Karaoke timing ##
-{::template name="todo"}here be dragons{:/}
+{{<todo>}}here be dragons {{</todo>}}

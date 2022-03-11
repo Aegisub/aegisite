@@ -3,7 +3,7 @@ title: Applying Subtitles
 menu:
   docs:
     parent: Working with Subtitles
-weight: 330
+weight: 3200
 ---
 
 In digital encoding, there are two main ways of including subtitles in a video:
@@ -153,10 +153,12 @@ favourite text editor) and save it with the .avs extension (beware that Windows
 might be hiding your extension, and you might actually be making a .avs.txt
 file). Here is an example:
 
-    LoadPlugin("c:\program files\aegisub\csri\vsfilter.dll")
-    AVISource("c:\projects\project1\video\mycoolvideo.avi")
-    TextSub("c:\projects\project1\subs\mainsubtitles.ass")
-    TextSub("c:\projects\project1\subs\endkaraoke.ass")
+```plaintext
+LoadPlugin("c:\program files\aegisub\csri\vsfilter.dll")
+AVISource("c:\projects\project1\video\mycoolvideo.avi")
+TextSub("c:\projects\project1\subs\mainsubtitles.ass")
+TextSub("c:\projects\project1\subs\endkaraoke.ass")
+```
 
 The above script will take an AVI file (mycoolvideo.avi), and then draw the
 contents of two subtitle files on the video. You can then encode this video in

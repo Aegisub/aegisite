@@ -3,7 +3,7 @@ title: Support Aegisub
 menu:
   docs:
     parent: Introduction
-weight: 240
+weight: 2500
 ---
 
 Do you want to support Aegisub? Well, it's easy!

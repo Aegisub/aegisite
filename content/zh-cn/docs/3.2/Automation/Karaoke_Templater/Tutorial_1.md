@@ -1,3 +1,11 @@
+---
+title: A simple example
+menu:
+  docs:
+    parent: Automation Tutorials
+weight: 6171
+---
+
 Welcome to the first tutorial in using Karaoke Templater to create [karaoke effects]({{< relref "../../Glossary/Karaoke_effect" >}}). We'll start out with something simple and
 then continue on to more advanced effects throughout the series.
 
@@ -36,8 +44,10 @@ If you don't have any song to work with here are two lines from a song. You
 can select them in your browser, select _Edit_→_Copy_, then go to Aegisub and
 select _Edit_→_Paste_, to get them into Aegisub.
 
-    Dialogue: 0,0:00:01.85,0:00:09.06,Default,,0000,0000,0000,,{\k97}shi{\k41}ta{\k0} {\k20}no{\k10} {\k30}u{\k80}e{\k53} {\k23}a{\k21}ma{\k39}ku{\k7}  {\k24}to{\k24}ke{\k31}ru{\k0} {\k37}wa{\k23}ta{\k92}gu{\k69}mo
-    Dialogue: 0,0:00:09.28,0:00:16.21,Default,,0000,0000,0000,,{\k79}ki{\k61}su{\k0} {\k9}o{\k0} {\k37}shi{\k98}te{\k40}  {\k23}ku{\k25}ro{\k40}i{\k0} {\k28}tsu{\k19}ba{\k51}sa{\k0} {\k11}no{\k0} {\k34}shi{\k138}ta
+```plaintext
+Dialogue: 0,0:00:01.85,0:00:09.06,Default,,0000,0000,0000,,{\k97}shi{\k41}ta{\k0} {\k20}no{\k10} {\k30}u{\k80}e{\k53} {\k23}a{\k21}ma{\k39}ku{\k7}  {\k24}to{\k24}ke{\k31}ru{\k0} {\k37}wa{\k23}ta{\k92}gu{\k69}mo
+Dialogue: 0,0:00:09.28,0:00:16.21,Default,,0000,0000,0000,,{\k79}ki{\k61}su{\k0} {\k9}o{\k0} {\k37}shi{\k98}te{\k40}  {\k23}ku{\k25}ro{\k40}i{\k0} {\k28}tsu{\k19}ba{\k51}sa{\k0} {\k11}no{\k0} {\k34}shi{\k138}ta
+```
 
 Either way you have some karaoke timed lyrics now, so we can start.
 
@@ -61,7 +71,7 @@ follow.
 1. Find the _Effect_ field, it's to the right of the _Style_ and _Actor_ fields. Put the text "`template line`" into it. (Without the quotes!) Press the _Enter_ key on your keyboard to save the Effect field.
 1. Finally, enter this text for the main text of your template line. Finish off with _Enter_ again. `{\r\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)}`
 
-{::template name="todo"}Insert a screenshot of how it should look after the steps.{:/}
+{{<todo>}}Insert a screenshot of how it should look after the steps. {{</todo>}}
 
 Now look at the _Automation_ menu again. If you made the template line
 correctly, _Apply karaoke template_ will now be available. If it isn't review
@@ -69,7 +79,7 @@ the steps above again.
 
 Select _Apply karaoke templates_ and watch Karaoke Templater do its work.
 
-{::template name="todo"}Another screenshot, this time after applying templates.{:/}
+{{<todo>}}Another screenshot, this time after applying templates. {{</todo>}}
 
 If you have a video open you can view the effect right now, inside Aegisub.
 
@@ -85,7 +95,7 @@ Continuing right on from above, now try doing this:
 1. Change the text of the template line to: `{\r\k$kdur\t($start,$end,\1c&H00FF00&)\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)}`
 1. Apply templates again
 
-{::template name="todo"}More screenshot{:/}
+{{<todo>}}More screenshot {{</todo>}}
 
 Karaoke Templater re-used the commented out timed karaoke and changed the
 styled karaoke to match the new effect instead. You can also try changing the

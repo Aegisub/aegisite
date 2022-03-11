@@ -3,7 +3,7 @@ title: Translation Assistant
 menu:
   docs:
     parent: Working with Subtitles
-weight: 350
+weight: 3400
 ---
 
 The translation assistant is a valuable tool for translating subtitles from one language to the other. It allows you to translate in the most efficient possible manner, by letting you type the translated text without having to worry about selecting the original, or forgetting what was written in it. It also parses ASS override tags, and will skip over them.
@@ -12,7 +12,7 @@ The translation assistant is a valuable tool for translating subtitles from one 
 ## Overview  ##
 
 
-![Translation_Assistant](/img/3.2/Translation_Assistant.png){: class="center"}
+![Translation_Assistant](/img/3.2/Translation_Assistant.png#center)
 
 The assistant window is simple: it shows you the original raw line, and a box where you can type the translation. There is also a list of hotkeys specific to this window, and a checkbox to enable previewing, if you have the corresponding video set up. Having this option enabled will automatically jump to the current line when you change it.
 

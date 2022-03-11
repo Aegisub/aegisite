@@ -1,3 +1,11 @@
+---
+title: Modifiers
+menu:
+  docs:
+    parent: Karaoke Templater
+weight: 6130
+---
+
 Template lines and code lines can take a number of modifiers.
 
 This is a space-separated list of words in the Effect field following the `template` or `code` keyword.
@@ -26,11 +34,13 @@ Code lines with the `once` modifier are run exactly once during Karaoke Template
 
 "code once" lines are primarily intended to declare functions for use in templates.
 
-{{Examplebox|
-    Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>code once</u>,function setlayer(newlayer) line.layer = newlayer; return ""; end
+{{<example-box>}}
+```plaintext
+Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>code once</u>,function setlayer(newlayer) line.layer = newlayer; return ""; end
+```
 
 This example declares a new function that changes the Layer field in the output line.
-}}
+{{</example-box>}}
 
 
 ### line _[name]_  ###
@@ -46,21 +56,27 @@ Code lines can not be named, they must be anonymous.
 
 Named line template lines append to the template text in the order they appear. The appending of template text happens at template parse time, not at execution time.
 
-{{Examplebox|
-    Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>code line</u>,fxgroup.funky = line.actor == "funky"
+{{<example-box>}}
+```plaintext
+Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>code line</u>,fxgroup.funky = line.actor == "funky"
+```
 
 This code line is run once per input line. It enables/disables an effect group named "funky" depending on the Actor field of the input line.
-}}
-{{Examplebox|
-    Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template line</u>,{\r\t($start,$end,\bord0)}
+{{</example-box>}}
+{{<example-box>}}
+```plaintext
+Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template line</u>,{\r\t($start,$end,\bord0)}
+```
 
 This template line declares an anonymous line template. The effect produced will transform the border of each syllable to zero during the syllable's duration.
-}}
-{{Examplebox|
-    Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template line jumper</u>,{\r\t($start,$mid,\frz-0.1)\t($mid,$end,\frz0}
+{{</example-box>}}
+{{<example-box>}}
+```plaintext
+Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template line jumper</u>,{\r\t($start,$mid,\frz-0.1)\t($mid,$end,\frz0}
+```
 
 This template line appends to a line template named "jumper"  or creates it if it doesn't exist. Together with the pre-line template example given below, this will produce a "jumping" effect for the syllables.
-}}
+{{</example-box>}}
 
 
 ### pre-line _[name]_  ###
@@ -74,17 +90,20 @@ Anonymous line templates with only pre-line text leave the original input line t
 
 Named pre-line template lines append to the pre-line template text in the order they appear. The appending of template text happens at template parse time, not at execution time.
 
-{{Examplebox|
-    Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template pre-line</u>,{\be1}
+{{<example-box>}}
+```plaintext
+Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template pre-line</u>,{\be1}
+```
 
 This template line declares an anonymous line template, that will prepend <tt>{\be1}</tt> to all matching lines.
-}}
-{{Examplebox|
-    Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template pre-line jumper</u>,{\org(-10000,$y)}
+{{</example-box>}}
+{{<example-box>}}
+```plaintext
+Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template pre-line jumper</u>,{\org(-10000,$y)}
+```
 
 This template line appends to the pre-line template text of a line template named "jumper", or creates it if it doesn't exist. Together with the line template example given above, this will produce a "jumping" effect for the syllables.
-}}
-
+{{</example-box>}}
 
 ### syl  ###
 
@@ -93,11 +112,13 @@ This class modifier is valid for both code lines and template lines.
 
 Syl templates can not be named.
 
-{{Examplebox|
-    Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl</u>,{\pos($x,$y)}
+{{<example-box>}}
+```plaintext
+Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl</u>,{\pos($x,$y)}
+```
 
 This template line declares a syl template that simply positions the syllable text.
-}}
+{{</example-box>}}
 
 
 ### furi  ###
@@ -107,11 +128,13 @@ This class modifier is valid for both code lines and template lines.
 
 Furi templates can not be named.
 
-{{Examplebox|
-    Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template furi</u>,{\pos($x,$y)}
+{{<example-box>}}
+```plaintext
+Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template furi</u>,{\pos($x,$y)}
+```
 
 This template line declares a furi template that simply positions the syllable text. It's not needed to do anything further to get correct furigana formatting.
-}}
+{{</example-box>}}
 
 
 ### syl furi  ###
@@ -133,11 +156,13 @@ Apply template to all styles, not just the one of the template line.
 
 Applicable for both code lines and templates, and for all classes.
 
-{{Examplebox|
-    Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl all</u>,{\pos($x,$y)}
+{{<example-box>}}
+```plaintext
+Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl all</u>,{\pos($x,$y)}
+```
 
 This template will be applied to every single syllable in the entire subtitle file, regardless of the style of the line they are on.
-}}
+{{</example-box>}}
 
 
 ### char  ###
@@ -147,23 +172,27 @@ Make the template work per-character instead of per-syllable. This changes appli
 
 While this will work on code lines, it is generally not useful, see the discussion on execution order.
 
-{{Examplebox|
-    Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl char</u>,{\pos($x,$y)}
-    Comment: 1,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl char</u>,{\pos($x,$y)\bord0}
+{{<example-box>}}
+```plaintext
+Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl char</u>,{\pos($x,$y)}
+Comment: 1,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl char</u>,{\pos($x,$y)\bord0}
+```
 
 Every single character on the line will be positioned separately. For each syllable, each template will apply for all characters in one go, and not be applied interleaved.
 
 For example, if there are two syllables, "ab" and "cd", and the above two templates are applied to them, the result will be 8 lines with the following text, in this order:
 
-    {\pos($x,$y)}a
-    {\pos($x,$y)}b
-    {\pos($x,$y)\bord0}a
-    {\pos($x,$y)\bord0}b
-    {\pos($x,$y)}c
-    {\pos($x,$y)}d
-    {\pos($x,$y)\bord0}c
-    {\pos($x,$y)\bord0}d
-}}
+```plaintext
+{\pos($x,$y)}a
+{\pos($x,$y)}b
+{\pos($x,$y)\bord0}a
+{\pos($x,$y)\bord0}b
+{\pos($x,$y)}c
+{\pos($x,$y)}d
+{\pos($x,$y)\bord0}c
+{\pos($x,$y)\bord0}d
+```
+{{</example-box>}}
 
 
 ### fx _name_  ###
@@ -171,13 +200,15 @@ For example, if there are two syllables, "ab" and "cd", and the above two templa
 
 Make template only apply to syllables that have the named [inline-fx]({{< relref "Karaoke_inline-fx" >}}). Specifying an inline-fx name is required; the name may also overlap with template modifier names though this is not recommended.
 
-{{Examplebox|
-    Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl fx drop</u>,{\move($x,$y,$x,!$y+30!,$start,$end)}
+{{<example-box>}}
+```plaintext
+Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl fx drop</u>,{\move($x,$y,$x,!$y+30!,$start,$end)}
+```
 
 With this template, all syllables that have the inline-fx "drop" will get an additional line produced, where the syllables moves down 30 pixels during its duration.
 
 All other template lines that don't have _fx_ specified will still be applied as usual to those syllables as well.
-}}
+{{</example-box>}}
 
 
 ### fxgroup _name_  ###
@@ -185,7 +216,9 @@ All other template lines that don't have _fx_ specified will still be applied as
 
 Declare template to be in the named effect group. Specifying an effect group name is required; the name may also overlap with template modifier names and Lua reserved words, though this is not recommended.
 
-{{Examplebox|There is an example of _fxgroup_ on the [Code execution environment]({{< relref "./Code_execution_environment#conditionaltemplateswithfxgroup" >}}) page.}}
+{{<example-box>}}
+There is an example of _fxgroup_ on the [Code execution environment]({{< relref "./Code_execution_environment#conditionaltemplateswithfxgroup" >}}) page.
+{{</example-box>}}
 
 
 ### keeptags  ###
@@ -195,14 +228,16 @@ Specify that the original tags must be kept in the syllable after application.
 
 This has no effect when combined with `char` or `multi`.
 
-{{Examplebox|
-    template line <u>keeptags</u>: {\r\t($start,!$start+1!,\frx40)\t(!$start+1!,$end,\frx0)}
-    karaoke: {\k21}hi{\k10}gu{\k23}ra{\k22}shi {\k38}ga {\k37\1c&H0000FF&}na{\k37}ku
+{{<example-box>}}
+```plaintext
+template line <u>keeptags</u>: {\r\t($start,!$start+1!,\frx40)\t(!$start+1!,$end,\frx0)}
+karaoke: {\k21}hi{\k10}gu{\k23}ra{\k22}shi {\k38}ga {\k37\1c&H0000FF&}na{\k37}ku
+```
 
 The syllables "tip" back over a bit during highlight. One of them ("na") is coloured differently by putting an override tag in the timed karaoke line, but the following syllables don't get it because of the customary `\r` at the start of the template.
 
 The _notags_ modifier ensures that the special colour of the special syllable gets carried over to the output.
-}}
+{{</example-box>}}
 
 
 ### multi  ###
@@ -212,14 +247,16 @@ Make the template apply per-highlight in [multi-highlight]({{< relref "Furigana_
 
 While this will work on code lines, it is generally not useful, see the discussion on execution order.
 
-{{Examplebox|
-    template syl <u>multi</u>: {\an5\pos($scenter,$smiddle)\1a&HFF&\t($start,$end,\bord5\3a&HFF&)}
-    karaoke: {\k33}風<u>{\k36}#</u>{\k89}の{\k46}花<u>{\k28}#</u>{\k57}よ
+{{<example-box>}}
+```plaintext
+template syl <u>multi</u>: {\an5\pos($scenter,$smiddle)\1a&HFF&\t($start,$end,\bord5\3a&HFF&)}
+karaoke: {\k33}風<u>{\k36}#</u>{\k89}の{\k46}花<u>{\k28}#</u>{\k57}よ
+```
 
 The timed karaoke line uses basic multi-highlight markup, the <tt>#</tt> syllables, to create multi-highlight syllables. Such, the 風 (ka-ze) and 花 (ha-na) kanji each get stored as a single syllable that gets two highlights each, and the <tt>#</tt> characters aren't displayed at all in the applied effect. (They will still display if you try to play the timed karaoke line without applying any templates.)
 
 The template uses the _multi_ modifier to signal that it wants to use multi-highlights instead of just one highlight/application per displayed syllable. The effect is a kind of simple "exploding border", but it explodes twice on both the 風 and 花 kanji. If the _multi_ modifier wasn't there, it would only explode once on each.
-}}
+{{</example-box>}}
 
 
 ### noblank  ###
@@ -239,14 +276,16 @@ This is intended for use primarily with templates that output drawing tags and s
 
 Not applicable for code lines.
 
-{{Examplebox|
-    code once: sword_shape = "m 0 0 l 5 -5 l 5 -30 l 10 -30 l 10 -32 l 2 -32 l 2 -40 l -2 -40 l -2 -32 l -10 -32 l -10 -30 l -5 -30 l -5 -5 "
-    template syl notext noblank: {\an5\move($scenter,!$smiddle-30!,$scenter,$smiddle,!$start-20!,$start)\p2}!sword_shape!
+{{<example-box>}}
+```plaintext
+code once: sword_shape = "m 0 0 l 5 -5 l 5 -30 l 10 -30 l 10 -32 l 2 -32 l 2 -40 l -2 -40 l -2 -32 l -10 -32 l -10 -30 l -5 -30 l -5 -5 "
+template syl notext noblank: {\an5\move($scenter,!$smiddle-30!,$scenter,$smiddle,!$start-20!,$start)\p2}!sword_shape!
+```
 
 The first code line defines a vector drawing shape for convenience, so it doesn't clutter up the actual template lines later on. The drawing is of a small simple sword pointing downwards. The effect itself is these small swords dropping down onto the syllables, by a move.
 
 The template uses the _notext_ modifier to avoid getting the original syllable text shown, because it's being replaced with a vector drawing here. Also the _noblank_ modifier is used to avoid producing anything for "invisible" syllables, eg. we don't want a sword dropping down on a lone timed space, that just looks dumb.
-}}
+{{</example-box>}}
 
 
 ### repeat _n_, loop _n_  ###
@@ -258,14 +297,13 @@ Specify that the template will be applied the given number of times. Specifying 
 
 Note that the execution order of looped line templates and looped syl/furi templates is different. See [Template execution and order]({{< relref "./Template_execution_rules_and_order" >}}) for details.
 
-{{Examplebox|
-    template syl <u>loop 4</u>: {\move($x,$y,!$x+math.random(-30,30)!,!$y+math.random(-30,30)!,$start,$end)\alpha&Hc0&\t($start,$end,\alpha&HFF&)}
+{{<example-box>}}
+```plaintext
+template syl <u>loop 4</u>: {\move($x,$y,!$x+math.random(-30,30)!,!$y+math.random(-30,30)!,$start,$end)\alpha&Hc0&\t($start,$end,\alpha&HFF&)}
+```
 
 The _loop_ modifier is used to created 4 copies of the syllable for each time this template is run. Each of those move in a random direction, up to 30 pixels away in X and Y direction. They also fade out.
 
 The starting alpha for each copy, `&Hc0` is chosen as 256 - (256 / 4), 4 being the number of loops made. This way, the opacity for each copy adds up to exactly 256. (Technically it should be 255, but that can't be achieved with an even number of loops.)
-}}
+{{</example-box>}}
 > _Also see the examples on the [Code execution environment]({{< relref "./Code_execution_environment#loopingtemplates" >}}) page for more advanced usage._
-
-{::template name="automation_navbox" /}
-

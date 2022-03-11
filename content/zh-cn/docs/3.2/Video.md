@@ -3,7 +3,7 @@ title: Working with Video
 menu:
   docs:
     parent: Typesetting
-weight: 405
+weight: 4100
 ---
 
 Aegisub isn't a video (or media) player, but it still supports loading and
@@ -68,7 +68,7 @@ DirectShowSource()
 the file. Basically the same as DSS2, but far less reliable and it
 doesn't convert VFR to CFR. Warning: DSS is known to have problems with
 frame-accurate seeking. Do not use it if you can avoid it.
-{: .horizontal-wide}
+
 
 Note that [VFR]({{< relref "Video#variableframeratevideo" >}}) is not supported by the
 Avisynth provider. In some cases loading [external timecodes]({{< relref "Video#timecodes" >}})
@@ -85,7 +85,7 @@ Aegisub also supports providing a bogus video surface for you to render
 subtitles on without having any actual video loaded. The dummy video dialog box
 looks like this:
 
-![Dummy_video](/img/3.2/Dummy_video.png){: class="center"}
+![Dummy_video](/img/3.2/Dummy_video.png#center)
 
 Resolution
 : The resolution of the dummy video in pixels. There are a few
@@ -105,7 +105,7 @@ timecodes with dummy video.
 Duration
 : The duration of the video in frames. Below this number is shown the
 resulting duration in hours/minutes/seconds.
-{: .horizontal-narrow}
+
 
 
 ## Playing video ##
@@ -343,7 +343,6 @@ Show video details
 are filename, frames per second (for VFR files the average FPS is
 displayed), resolution and aspect ratio, length and decoder. Decoder
 being what filter/method Aegisub used to open the file.
-{: .horizontal-wide}
 
 ### Timecodes-related ###
 Open timecodes file
@@ -358,7 +357,6 @@ Close timecodes file
 
 Recent
 : Shows list of recently opened timecodes files.
-{: .horizontal-wide}
 
 ### Keyframes-related ###
 Open keyframes
@@ -376,7 +374,7 @@ keyframes file with only frame 0 being marked as a keyframe.
 
 Recent
 : Shows list of recently loaded keyframe files.
-{: .horizontal-wide}
+
 
 ### Display-related ###
 Detach video
@@ -403,7 +401,7 @@ amounts](http://en.wikipedia.org/wiki/Overscan_amounts). Aegisub
 follows the [BBC
 guidelines](http://www.bbc.co.uk/guidelines/dq/pdf/tv/tv_standards_london.pdf)
 on how big the safe areas should be.
-{: .horizontal-wide}
+
 
 ### Seeking-related ###
 Jump to
@@ -414,4 +412,4 @@ Jump video to start
 
 Jump video to end
 : Seeks the video to the end time of the currently active line.
-{: .horizontal-wide}
+

@@ -1,3 +1,10 @@
+---
+title: Misc. APIs
+menu:
+  docs:
+    parent: Lua Reference
+weight: 6250
+---
 
 This page documents **miscellaneous APIs useful for working with
 subtitles**. These can't be clearly placed into any of the other main
@@ -161,5 +168,3 @@ Synopsis `properties = aegisub.project_properties()`
 
 Get a table containing information about what files the user currently has open.
 The exact contents of this table are deliberately undocumented, and may change without warning.
-
-{::template name="automation_navbox" /}

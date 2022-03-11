@@ -1,3 +1,12 @@
+---
+title: Inline-variables ($-variables)
+menu:
+  docs:
+    parent: Karaoke Templater
+weight: 6140
+---
+
+
 This page describes the **inline variables** also known as **dollar variables**
 available in Karaoke Templater.
 
@@ -8,8 +17,9 @@ lines, not in code lines. You can, however, use them in code blocks on template
 lines.
 
 Here is an example of how a template text using inline variables could look:
-
-    {\pos(**$x**,**$y**)\t(**$start**,**$end**,\bord0)}
+```plaintext
+{\pos(**$x**,**$y**)\t(**$start**,**$end**,\bord0)}
+```
 
 The highlighted parts are the inline variables in the template.
 
@@ -99,7 +109,7 @@ lx, ly
 
 lwidth, lheight
 : line width and height in pixels, this is rounded and might not match exactly with the positioning variables
-{: .horizontal-wide}
+
 
 #### Syllable variants
 
@@ -123,7 +133,6 @@ sx, sy
 
 swidth, sheight
 : syllable width and height in pixelsthis is rounded and might not match exactly with the positioning variables
-{: .horizontal-wide}
 
 
 #### Automatic variants
@@ -148,6 +157,3 @@ x, y
 
 width, height
 : width and height of line/syllable in pixels, this is rounded and might not match exactly with the positioning variables
-{: .horizontal-wide}
-
-{::template name="automation_navbox" /}

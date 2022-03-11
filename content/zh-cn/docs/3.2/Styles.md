@@ -3,7 +3,7 @@ title: Editing styles
 menu:
   docs:
     parent: Typesetting
-weight: 415
+weight: 4200
 ---
 
 A **style** in the ASS format is a set of typographic formatting rules that is
@@ -16,7 +16,7 @@ all the overrides for each line.
 Aegisub's styles manager tool (accessed from the Subtitles menu) provides
 various means of organizing, saving and editing styles. It looks like this:
 
-![Style_manager](/img/3.2/Style_manager.png){: class="center"}
+![Style_manager](/img/3.2/Style_manager.png#center)
 
 As you can see, the window is divided into two halves. The right half displays
 all styles that you currently have accessible in your currently loaded script;
@@ -64,7 +64,7 @@ limitation.
 
 To return to the style editor:
 
-![Style_editor](/img/3.2/Style_editor.png){: class="center"}
+![Style_editor](/img/3.2/Style_editor.png#center)
 
 Style name
 : The name of the style. You can't have two styles with the same name in the
@@ -80,20 +80,19 @@ Colors
 : This controls the four text colors (primary, secondary, outline and shadow).
 The meaning of each of them is as follows:
 
-    Primary
-    : The main "fill" color of the body of the text.
+    **Primary:**
+    The main "fill" color of the body of the text.
 
-    Secondary
-    : Secondary fill color, used for karaoke effects (see `\k` and its
+    **Secondary:**
+    Secondary fill color, used for karaoke effects (see `\k` and its
     relatives on the [override tags page]({{< relref "ASS_Tags#karaokeeffect" >}})).
 
-    Outline
-    : The border color of the text.
+    **Outline:**
+    The border color of the text.
 
-    Shadow
-    : The color of the shadow, which is displayed under the main text and
+    **Shadow**
+    The color of the shadow, which is displayed under the main text and
     offset by the shadow width defined to the right.
-    {: .horizontal-narrow }
 
     The four colored boxes show you the current color for each of the four text
     colors; clicking on them opens the [color picker]({{< relref "Colour_Picker" >}}).
@@ -135,26 +134,26 @@ Outline
 Miscellaneous
 : This section has various other parameters, namely:
 
-    Scale X/Y
-    : Controls text stretching in the horizontal (X) and vertical (Y) direction
+    **Scale X/Y:**
+    Controls text stretching in the horizontal (X) and vertical (Y) direction
     respectively. The value is given in percent, so 100 means no stretching is
     done. You should not use this for normal text sizing; use the point value
     in the Font area instead since that uses hinting information from the font.
 
-    Rotation
-    : Controls rotation of the text. The value is the angle of the rotation in
+    **Rotation:**
+    Controls rotation of the text. The value is the angle of the rotation in
     degrees (360 degrees to a full circle) and may be negative or larger than
     360 (setting it to 360, 720 etc. is the same as setting it to 0 except for
     when [animated transforms]({{< relref "ASS_Tags#animatedtransform" >}}) are involved).
 
-    Spacing
-    : Controls the horizontal spacing between letters. 0 means the font
+    **Spacing:**
+    Controls the horizontal spacing between letters. 0 means the font
     defaults are used. May be negative for less spacing, or positive for more.
     The value is the additional gap in pixels between each character; whether
     these are script pixels or video pixels is not well defined.
 
-    Encoding
-    : Controls which codepage is used to map codepoints to glyphs; it has
+    **Encoding:**
+    Controls which codepage is used to map codepoints to glyphs; it has
     nothing to do with the actual text encoding of the script. This is only
     meaningful on Windows using VSFilter, where it is used to get some old
     (particularly Japanese) fonts without proper Unicode mappings to render
@@ -162,9 +161,8 @@ Miscellaneous
     mappings. If you didn't understand a word of the above, pretend this
     setting doesn't exist, as it is rarely important.
 
-    Preview
-    : Shows a preview of what the text will look like using the current style
+    **Preview:**
+    Shows a preview of what the text will look like using the current style
     parameters. The text field lets you input some sample text to preview, and
     the colored box controls the color of the background.
-    {: .horizontal-narrow}
-{: .dl-horizontal}
+

@@ -3,7 +3,7 @@ title: Lua Reference
 menu:
   docs:
     parent: Automation
-weight: 630
+weight: 6200
 ---
 
 The Automation 4 Lua scripting engine is based on the version 5.1 series of
@@ -83,5 +83,3 @@ providing a configuration interface for export filters.
 [Miscellaneous APIs]({{< relref "./Lua/Miscellaneous_APIs" >}})
 : for e.g. getting the rendered size of text and getting video frame rate
 information.
-
-{::template name="automation_navbox" /}

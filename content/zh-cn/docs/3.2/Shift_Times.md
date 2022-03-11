@@ -3,7 +3,7 @@ title: Shift times
 menu:
   docs:
     parent: Timing
-weight: 530
+weight: 5200
 ---
 
 The **shift times** tool is a batch processor for timestamps; it adjusts the
@@ -12,7 +12,7 @@ located under _Timing_ -> _Shift Times_.
 
 It looks like this:
 
-![shift_times](/img/3.2/shift_times.png){: class="center"}
+![shift_times](/img/3.2/shift_times.png#center)
 
 The left part of the window contain the options.
 
@@ -32,7 +32,6 @@ the timestamps to the frame times without doing any shifting.
 
 Forward or Backward
 : Controls in which direction the timestamps are adjusted.
-{: .horizontal-wide}
 
 ### Affect ###
 
@@ -47,7 +46,6 @@ Selected rows
 Selection onward
 : Applies the time shifting to the first selected line and all lines
 below it (in the grid).
-{: .horizontal-wide}
 
 ### Times ###
 
@@ -66,7 +64,6 @@ End times only
 : Only the end times of the affected lines will be modified. Note that
 this makes the lines longer (if you shift forwards) or shorter (if you
 shift backwards) and can even make them have a duration of zero.
-{: .horizontal-wide}
 
 Note that if a line is shifted so that its start or end time stamp would be
 negative, that timestamp is zeroed instead. This can be used to clear all

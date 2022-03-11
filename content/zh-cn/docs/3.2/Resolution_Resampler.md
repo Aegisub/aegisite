@@ -3,7 +3,7 @@ title: Resolution Resampler
 menu:
   docs:
     parent: Typesetting
-weight: 440
+weight: 4700
 ---
 
 The Resolution Resampler is a built-in tool designed to change the [resolution of the script]({{< relref "Script_Resolution" >}}) while transforming all affected tags so it
@@ -13,7 +13,7 @@ resolutions, converting a script for a 4:3 video to its 16:9 equivalent, and
 converting between 1:1 and anamorphic pixel formats.
 
 ## Overview
-![resolution_resampler](/img/3.2/resolution_resampler.png){: class="center"}
+![resolution_resampler](/img/3.2/resolution_resampler.png#center)
 
 There are three main parts to the resolution resampler: the source
 resolution, destination resolution, and what to do if the source and

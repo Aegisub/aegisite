@@ -3,7 +3,7 @@ title: Aegisub Options
 menu:
   docs:
     parent: Miscellaneous
-weight: 710
+weight: 7000
 ---
 
 Aegisub is highly customizable and hence has a large amount of user-changeable
@@ -17,7 +17,7 @@ program, you can just delete config.json and restart Aegisub.
 
 ## General ##
 
-![preferences-general](/img/3.2/preferences-general.png){: class="center"}
+![preferences-general](/img/3.2/preferences-general.png#center)
 **Auto Check for Updates**
 : If enabled, Aegisub will periodically check whether there is a newer version
 available, and alert you if there is.
@@ -56,11 +56,11 @@ larger lists may get unwieldy to use.
 
 ### Default Styles
 
-![preferences-default-styles](/img/3.2/preferences-default-styles.png){: class="center"}
+![preferences-default-styles](/img/3.2/preferences-default-styles.png#center)
 
 ## Audio ##
 
-![preferences-audio](/img/3.2/preferences-audio.png){: class="center"}
+![preferences-audio](/img/3.2/preferences-audio.png#center)
 **Lock scroll on cursor**
 : When enabled, the audio waveform view will automatically scroll to follow the
 playback cursor if it gets too close to either of the edges.
@@ -164,7 +164,7 @@ karaoke syllables.
 
 ## Video ##
 
-![preferences-video](/img/3.2/preferences-video.png){: class="center"}
+![preferences-video](/img/3.2/preferences-video.png#center)
 **Show keyframes in slider**
 : When enabled, Aegisub will draw keyframe markers on the video seek slider.
 
@@ -213,7 +213,7 @@ match the video resolution automatically.
 
 ## Interface ##
 
-![preferences-interface](/img/3.2/preferences-interface.png){: class="center"}
+![preferences-interface](/img/3.2/preferences-interface.png#center)
 
 **Enable call tips**
 : When enabled, Aegisub will detect when you are writing an [override tag]({{< relref "ASS_Tags" >}}) and display a small box with a brief reference of the syntax of
@@ -284,7 +284,7 @@ so desire.
 
 ### Colors ###
 
-![preferences-colours](/img/3.2/preferences-colours.png){: class="center"}
+![preferences-colours](/img/3.2/preferences-colours.png#center)
 
 #### Audio Display ####
 
@@ -364,7 +364,7 @@ respectively.
 
 ## Hotkeys ##
 
-![preferences-hotkeys](/img/3.2/preferences-hotkeys.png){: class="center"}
+![preferences-hotkeys](/img/3.2/preferences-hotkeys.png#center)
 
 This page lists all hotkeys currently set in Aegisub, and allows you to add,
 remove or change them.
@@ -394,7 +394,7 @@ as when editing them.
 
 ## Backup ##
 
-![preferences-backup](/img/3.2/preferences-backup.png){: class="center"}
+![preferences-backup](/img/3.2/preferences-backup.png#center)
 
 ### Automatic Save ###
 
@@ -428,7 +428,7 @@ this can be changed (see below).
 
 ## Automation ##
 
-![preferences-automation](/img/3.2/preferences-automation.png){: class="center"}
+![preferences-automation](/img/3.2/preferences-automation.png#center)
 
 **Base path**
 : A base directory where you put non-autoloaded automation scripts. Used only
@@ -462,7 +462,7 @@ dialogue is opened. In that case you will have to enter the
 
 ## Advanced Audio ##
 
-![preferences-advanced-audio](/img/3.2/preferences-advanced-audio.png){: class="center"}
+![preferences-advanced-audio](/img/3.2/preferences-advanced-audio.png#center)
 
 **Audio provider**
 : What backend to to use for loading audio. Currently there are only two
@@ -552,7 +552,7 @@ one minute of audio uses this much memory at the different settings:
     (Aegisub always works in mono) or the bit-depth (the spectrum is always
     calculated in 32 bit floating point) of the audio.
 
-{::template name="todo"}this is probably wrong{:/}
+{{<todo>}}this is probably wrong {{</todo>}}
 
 **Cache memory max**
 : The maximum amount of memory to use for audio spectrum caching. The results
@@ -606,7 +606,7 @@ you to reindex the file to open audio tracks from the same file.
 
 ## Advanced Video ##
 
-![preferences-advanced-video](/img/3.2/preferences-advanced-video.png){: class="center"}
+![preferences-advanced-video](/img/3.2/preferences-advanced-video.png#center)
 
 **Video provider**
 : Decides what method Aegisub should use to load video. What options you have

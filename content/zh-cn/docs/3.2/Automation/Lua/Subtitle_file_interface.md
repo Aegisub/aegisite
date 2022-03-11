@@ -1,3 +1,11 @@
+---
+title: Subtitles object
+menu:
+  docs:
+    parent: Lua Reference
+weight: 6220
+---
+
 This page describes the **subtitle file interface** use in Automation 4 Lua
 scripts to manipulate subtitle files.
 
@@ -12,12 +20,12 @@ the feature is being applied on.
 A subtitles object can have two special properties depending on the context it
 is created for:
 
-**Read-only**
+Read-only
 : Some feature functions must not be allowed to modify the subtitle file at
 all. This includes for example [macro validation functions]({{< relref "Registration#macrovalidationfunction" >}}) and [export filter configuration panel providers]({{< relref "Registration#_export_filter_configuration_panel_provider" >}}),
 because this would be outside user expectations.
 
-**Allow undo points**
+Allow undo points
 : Only [macro processing functions]({{< relref "Registration#macroprocessingfunction" >}}) can set undo
 points, as it makes no sense to do so at any other time.
 
@@ -264,5 +272,3 @@ be things like files embedded into the subtitles. You shouldn't try to work
 with these lines unless you really know what you're doing. Deleting, modifying
 and inserting `unknown` lines has undefined consequences. (That means, even if
 it works today it might not work tomorrow or in the next version of Aegisub.)
-
-{::template name="automation_navbox" /}

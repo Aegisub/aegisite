@@ -3,7 +3,7 @@ title: Fonts Collector
 menu:
   docs:
     parent: Typesetting
-weight: 445
+weight: 4800
 ---
 
 The fonts collector is an automated tool that finds all fonts used in the
@@ -11,7 +11,7 @@ current script, scans your system's fonts folder(s) and copies all the
 relevant fonts to a destination of your choosing. The dialog box looks like
 so:
 
-![fonts_collector](/img/3.2/fonts_collector.png){: class="center"}
+![fonts_collector](/img/3.2/fonts_collector.png#center)
 
 The collector can perform any of the following actions:
 

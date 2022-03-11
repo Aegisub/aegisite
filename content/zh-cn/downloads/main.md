@@ -7,9 +7,6 @@ menu:
 ---
 
 
-[Latest release · Aegisub/Aegisub](https://github.com/Aegisub/Aegisub/releases/latest)
-
-
 ## Dictionaries
 
 TODO

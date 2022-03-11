@@ -1,3 +1,11 @@
+---
+title: General Disclaimer
+menu:
+  docs:
+    parent: Introduction
+weight: 2400
+---
+
 **This manual is a work in progress.** It is at present incomplete and no information in it can be taken for granted. We attempt to be accurate on every point, to a reasonable degree.
 
 **Aegisub is software under constant development.** While it is a goal to provide up-to-date documentation there will almost always be cases where the actual functionality of the program has changed since this documentation was last updated.

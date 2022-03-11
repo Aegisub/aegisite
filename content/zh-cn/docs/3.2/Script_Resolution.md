@@ -1,3 +1,11 @@
+---
+title: Script Resolution
+menu:
+  docs:
+    parent: Miscellaneous
+weight: 7400
+---
+
 ASS subtitle files are, to some extent, video independant and can be used with video files other than the one they were created with.
 This is achieved by using a virtual video resolution which controls how font sizes and coordinates are interpreted, which is commonly known as the "script resolution".
 Unfortunately, due to some bugs in the reference implementation of the subtitle format (VSFilter), rendering subtitles whose script resolution is not equal to the actual video resolution works poorly.
@@ -41,7 +49,7 @@ When opening a video which has a different resolution from the script's resoluti
 
 If the video and the script have the same aspect ratio, you'll get the following dialog:
 
-![resolution-mismatch](/img/3.2/resolution-mismatch.png){: class="center"}
+![resolution-mismatch](/img/3.2/resolution-mismatch.png#center)
 
 "Resample script" will resample the subtitles to the new video's resolution as if you had used the [Resolution Resampler]({{< relref "Resolution_Resampler" >}}), and is normally what you want if you're updating pre-existing subtitles for the video you just opened.
 
@@ -55,7 +63,7 @@ You want to do this if you are opening a lower-resolution work raw after the sub
 
 If the video's aspect ratio is different from the script's, you'll get the following dialog:
 
-![resolution-mismatch-ar](/img/3.2/resolution-mismatch-ar.png){: class="center"}
+![resolution-mismatch-ar](/img/3.2/resolution-mismatch-ar.png#center)
 
 There are a few common scnarios where the aspect ratio will have changed:
 

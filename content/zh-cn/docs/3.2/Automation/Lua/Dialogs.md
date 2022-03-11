@@ -1,3 +1,10 @@
+---
+title: Dialogs
+menu:
+  docs:
+    parent: Lua Reference
+weight: 6240
+---
 
 These functions are used to display dialogs for the user to interact with.
 
@@ -37,8 +44,8 @@ specify which button will be triggered if the user hits Enter or ESC.
 :   The [Dialog Result table]({{< relref "Dialogs#dialog-result-table-format" >}}) corresponding to
     the values the user input in the dialog.
 
-{::template name="examplebox"}
-~~~ lua
+{{<example-box>}}
+``` lua
 config = {
     {class="label", text="Times to frobulate", x=0, y=0},
     {class="intedit", name="times", value=20, x=0, y=1}
@@ -49,8 +56,8 @@ btn, result = aegisub.dialog.display(config,
 if btn then
     frobulate(result.times)
 end
-~~~
-{:/}
+```
+{{</example-box>}}
 
 ### aegisub.dialog.open ###
 Synopsis: `file_name = aegisub.dialog.open(title, default_file, default_dir, wildcards, allow_multiple=false, must_exist=true)`
@@ -85,16 +92,16 @@ the path to the selected file(s), or nil if the user canceled.
     selected file if `allow_multiple` is false, or a table containing the
     paths to all selected files if `allow_multiple` is true.
 
-{::template name="examplebox"}
-~~~ lua
+{{<example-box>}}
+``` lua
 filename = aegisub.dialog.open('Select file to read', '', '',
                                'Text files (.txt)|*.txt', false, true)
 if not filename then aegisub.cancel() end
 
 file = io.open(filename, 'rb')
 ....
-~~~
-{:/}
+```
+{{</example-box>}}
 
 ### aegisub.dialog.save ###
 Synopsis: `file_name = aegisub.dialog.save(title, default_file, default_dir, wildcards, dont_prompt_for_overwrite=false)`
@@ -297,5 +304,3 @@ affirmative button for the dialog.
 
 Buttons with the ID `help` will be displayed as a question mark in a circle on
 the left side of the dialog on OS X.
-
-{::template name="automation_navbox" /}

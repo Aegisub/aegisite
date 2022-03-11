@@ -3,7 +3,7 @@ title: Editing Subtitles
 menu:
   docs:
     parent: Working with Subtitles
-weight: 310
+weight: 3000
 ---
 
 Editing subtitles is what Aegisub is made for. This page will deal with basic
@@ -35,7 +35,7 @@ currently only works with Matroska video files.
 Open [Autosaved Subtitles]({{< relref "Autosave" >}})
 : Open a file created by Aegisub's autosave. Useful if Aegisub crashes when you
 had unsaved changes or just if you want to open an older version of a file.
-{: class="horizontal-wide"}
+
 
 When you open a subtitles file that is not detected as Unicode, Aegisub will
 attempt to guess what character set it is encoded with. If it is unsure, it
@@ -65,11 +65,13 @@ CodecIDs are supported:
 ### Importing plain text scripts ###
 Aegisub also supports importing "dialogue-formatted" plain text scripts. For example:
 
-    Actor 1: Well do I understand your speech, yet few strangers do so.
-             Why then do you not speak in the Common Tongue,
-             as is the custom in the West, if you wish to be answered?
-    # TL check: The above seems to be a quote from the lord of the rings, look it up later
-    Actor 2: What are you babbling about?
+```plaintext
+Actor 1: Well do I understand your speech, yet few strangers do so.
+         Why then do you not speak in the Common Tongue,
+         as is the custom in the West, if you wish to be answered?
+# TL check: The above seems to be a quote from the lord of the rings, look it up later
+Actor 2: What are you babbling about?
+```
 
 This will result in five subtitle lines, one being commented out. The first
 three will have the actor field set to "Actor 1", and the fifth will have it
@@ -171,6 +173,7 @@ Insert Original
 #### Context menu
 
 If you right-click anywhere in the edit box, you get the following menu:
+
 ![Subs_Edit_Context](/img/3.2/Subs_Edit_Context.png)
 
 Select all, copy, cut and paste all do what you'd expect them to.
@@ -192,7 +195,7 @@ times keeps the old line's timing for both lines. Estimate times tries
 to guess where the split is based on the length of the text on each
 side of the cursor. At video frame makes the first half of the line end
 on the previous frame, and the second half start on the current frame.
-{: class="dl-horizontal"}
+
 
 ### The subtitles grid ###
 ![Subs_grid](/img/3.2/Subs_grid.png)
@@ -222,7 +225,7 @@ mean.
 
 By default, the following columns are visible:
 
-**#**
+\#
 : The line number.
 
 Start
@@ -236,7 +239,7 @@ Style
 
 Text
 : The text of the line (this is what will be displayed on the video).
-{: class="horizontal-narrow"}
+
 
 The following columns will be displayed if any line in the script uses them:
 
@@ -257,7 +260,7 @@ Right
 
 Vert
 : The vertical margin.
-{: class="horizontal-narrow"}
+
 
 You can also right-click the top line of the grid (the one with the column
 names) to manually select which columns you want to be visible.
@@ -267,18 +270,18 @@ Right-clicking any other line in the grid gives you the following menu
 
 ![grid_context_menu](/img/3.2/grid_context_menu.png)
 
-**Insert (before/after)**
+Insert (before/after)
 : Inserts a new empty line before or after the selected line. The new line
 will be timed start at 0:00:00.00 and go to 0:00:05.00.
 
-**Insert at video time (before/after)**
+Insert at video time (before/after)
 : Same as the above, but the new line will be timed to start at the current
 video frame. Not enabled unless you have video loaded.
 
-**Duplicate**
+Duplicate
 : Duplicates the selected line(s).
 
-**Split lines before current frame**
+Split lines before current frame
 : Duplicate the selected line(s), set the end time of the original line
 to the frame before the current video frame, and set the start time of
 the copy to the current video frame. Useful for frame-by-frame
@@ -286,43 +289,43 @@ typesetting and for splitting a line at a scene change to let it move
 down if it collided with a no-longer-visible line. Only enabled if you
 have video loaded.
 
-**Split lines after current frame**
+Split lines after current frame
 : As above, but it splits off the portion of the line after the current
 frame rather than the potion before the current frame, for when doing
 frame-by-frame typesetting from the last to the first frame of a line.
 
-**Split (by karaoke)**
+Split (by karaoke)
 : Splits the line into one new line per syllable, as delimited by karaoke
 override tags (`\k` and its relatives). The timing of the first line will
 start at the original line's start time and end at that time plus the
 length of the first syllable; the following lines will start at the end of
 the previous and last for the duration of the syllable.
 
-**Swap**
+Swap
 : Swaps the places (in the grid) of two selected lines.
 
-**Join (keep first)**
+Join (keep first)
 : Joins two or more lines, discarding the text of all but the first. The
 new line will be timed to start at the first line's start time and end at
 the last line's end time. Only enabled if you have more than one line
 selected.
 
-**Join (concatenate)**
+Join (concatenate)
 : Same as above, but concatenates the text of all selected lines instead. A
 space is inserted between the texts of each source line.
 
-**Join (as karaoke)**
+Join (as karaoke)
 : Does the inverse of _Split (by karaoke)_, i.e.  the same as _Join
 (concatenate)_ but inserts `\k` tags with the timing of each source line in
 the joined line.
 
-**Make times continuous (change start/change end)**
+Make times continuous (change start/change end)
 : Modifies the timing of the selected lines so that the end time of each
 line is the same as the start time of the next line. Change start/change
 end determines whether the function changes the end time or the start time
 of each line. Only  enabled when you have more than one line selected.
 
-**Recombine lines**
+Recombine lines
 : Given two or more lines with the same text being partially present in all
 of them, creates one line per text fragment instead. This is mostly useful
 for correcting subs ripped from DVDs, which frequently look something like
@@ -334,19 +337,19 @@ this:
 
     ![Recombine_02](/img/3.2/Recombine_02.png)
 
-**Create audio clip**
+Create audio clip
 : Saves a segment of the loaded audio corresponding to the timing of the
 selected lines (starting at the earliest start time and ending at the
 latest end time) as an uncompressed WAV file. Only enabled if you have
 audio loaded.
 
-**Cut/Copy/Paste**
+Cut/Copy/Paste
 : Cuts/copies/pastes entire lines. Note that the lines are copied as plain
 text and can be copied and pasted freely between text editors, chat
 programs, web browsers, other instances of Aegisub etc.
 
-**Paste Lines Over...**
+Paste Lines Over...
 : Open the [Paste Over]({{< relref "Paste_Over" >}}) dialog.
 
-**Delete**
+Delete
 : Deletes the selected lines.
