@@ -2,7 +2,7 @@
 title: Fonts Collector
 menu:
   docs:
-    parent: Typesetting
+    parent: typesetting
 weight: 4800
 ---
 

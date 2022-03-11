@@ -2,7 +2,7 @@
 title: Furigana Tutorial
 menu:
   docs:
-    parent: Tutorials
+    parent: tutorials
 weight: 2730
 ---
 

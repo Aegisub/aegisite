@@ -2,7 +2,7 @@
 title: Dialogs
 menu:
   docs:
-    parent: Lua Reference
+    parent: lua-reference
 weight: 6240
 ---
 

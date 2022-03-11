@@ -2,7 +2,7 @@
 title: Attachment Manager
 menu:
   docs:
-    parent: Miscellaneous
+    parent: miscellaneous
 weight: 7500
 ---
 

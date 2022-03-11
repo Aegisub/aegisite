@@ -2,7 +2,7 @@
 title: What is Aegisub?
 menu:
   docs:
-    parent: Introduction
+    parent: introduction
     name: What is Aegisub?
 weight: 2000
 ---

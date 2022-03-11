@@ -2,7 +2,7 @@
 title: Aegisub Options
 menu:
   docs:
-    parent: Miscellaneous
+    parent: miscellaneous
 weight: 7000
 ---
 

@@ -2,7 +2,7 @@
 title: re
 menu:
   docs:
-    parent: Lua Modules
+    parent: lua-modules
 weight: 6266
 ---
 

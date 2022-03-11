@@ -2,7 +2,7 @@
 title: Main Page
 menu:
   docs:
-    parent: Navigation
+    parent: navigation
 weight: 1000
 ---
 

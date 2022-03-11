@@ -2,7 +2,7 @@
 title: Modifiers
 menu:
   docs:
-    parent: Karaoke Templater
+    parent: karaoke-templater
 weight: 6130
 ---
 

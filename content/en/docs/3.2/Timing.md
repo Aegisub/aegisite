@@ -2,7 +2,7 @@
 title: Timing subtitles to audio
 menu:
   docs:
-    parent: Timing
+    parent: timing
 weight: 5100
 ---
 

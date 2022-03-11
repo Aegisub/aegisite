@@ -2,7 +2,7 @@
 title: Inline effects Tutorial
 menu:
   docs:
-    parent: Tutorials
+    parent: tutorials
 weight: 2720
 ---
 

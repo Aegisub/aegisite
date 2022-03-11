@@ -2,7 +2,7 @@
 title: Automation Overview
 menu:
   docs:
-    parent: Automation
+    parent: automation
 weight: 6000
 ---
 

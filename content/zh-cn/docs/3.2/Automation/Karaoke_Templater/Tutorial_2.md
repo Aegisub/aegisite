@@ -2,7 +2,7 @@
 title: Using math expressions
 menu:
   docs:
-    parent: Automation Tutorials
+    parent: automation-tutorials
 weight: 6172
 ---
 

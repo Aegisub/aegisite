@@ -2,7 +2,7 @@
 title: Code lines and blocks
 menu:
   docs:
-    parent: Karaoke Templater
+    parent: karaoke-templater
 weight: 6150
 ---
 

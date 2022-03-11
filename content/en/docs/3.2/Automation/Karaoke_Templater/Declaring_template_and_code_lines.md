@@ -2,7 +2,7 @@
 title: Declaring templates
 menu:
   docs:
-    parent: Karaoke Templater
+    parent: karaoke-templater
 weight: 6110
 ---
 

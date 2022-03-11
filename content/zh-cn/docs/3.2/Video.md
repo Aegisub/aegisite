@@ -2,7 +2,7 @@
 title: Working with Video
 menu:
   docs:
-    parent: Typesetting
+    parent: typesetting
 weight: 4100
 ---
 

@@ -2,7 +2,7 @@
 title: Credits
 menu:
   docs:
-    parent: Introduction
+    parent: introduction
 weight: 2300
 ---
 

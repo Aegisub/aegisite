@@ -2,7 +2,7 @@
 title: Running macros
 menu:
   docs:
-    parent: Automation
+    parent: automation
 weight: 6400
 ---
 

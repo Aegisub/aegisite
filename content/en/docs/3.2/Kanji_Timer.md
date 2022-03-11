@@ -2,7 +2,7 @@
 title: Kanji Timer
 menu:
   docs:
-    parent: Timing
+    parent: timing
 weight: 5400
 ---
 

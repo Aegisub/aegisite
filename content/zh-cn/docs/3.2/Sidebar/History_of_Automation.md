@@ -2,7 +2,7 @@
 title: History of Automation
 menu:
   docs:
-    parent: Automation
+    parent: automation
 weight: 6600
 ---
 

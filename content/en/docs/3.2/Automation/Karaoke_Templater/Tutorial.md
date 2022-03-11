@@ -2,7 +2,8 @@
 title: Automation Tutorials
 menu:
   docs:
-    parent: Karaoke Templater
+    parent: karaoke-templater
+    identifier: automation-tutorials
 weight: 6170
 ---
 * [A simple example]({{< relref "./Tutorial_1" >}})

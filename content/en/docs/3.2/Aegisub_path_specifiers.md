@@ -2,7 +2,7 @@
 title: Path Specifiers
 menu:
   docs:
-    parent: Miscellaneous
+    parent: miscellaneous
 weight: 7200
 ---
 

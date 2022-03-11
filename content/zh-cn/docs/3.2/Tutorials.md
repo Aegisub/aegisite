@@ -2,7 +2,8 @@
 title: Tutorials
 menu:
   docs:
-    parent: Introduction
+    parent: introduction
+    identifier: tutorials
 weight: 2700
 ---
 

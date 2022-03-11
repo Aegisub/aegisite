@@ -2,7 +2,7 @@
 title: Standard macros
 menu:
   docs:
-    parent: Automation
+    parent: automation
 weight: 6500
 ---
 

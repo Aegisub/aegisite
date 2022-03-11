@@ -2,7 +2,8 @@
 title: Lua Reference
 menu:
   docs:
-    parent: Automation
+    parent: automation
+    identifier: lua-reference
 weight: 6200
 ---
 

@@ -2,7 +2,7 @@
 title: Karaoke Timing Tutorial
 menu:
   docs:
-    parent: Tutorials
+    parent: tutorials
 weight: 2710
 ---
 

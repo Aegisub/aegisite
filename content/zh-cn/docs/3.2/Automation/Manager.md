@@ -2,7 +2,7 @@
 title: Automation Manager
 menu:
   docs:
-    parent: Automation
+    parent: automation
 weight: 6300
 ---
 

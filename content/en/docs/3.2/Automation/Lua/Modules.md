@@ -2,7 +2,8 @@
 title: Lua Modules
 menu:
   docs:
-    parent: Lua Reference
+    parent: lua-reference
+    identifier: lua-modules
 weight: 6260
 ---
 

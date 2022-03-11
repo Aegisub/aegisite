@@ -2,7 +2,7 @@
 title: Script Resolution
 menu:
   docs:
-    parent: Miscellaneous
+    parent: miscellaneous
 weight: 7400
 ---
 

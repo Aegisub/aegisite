@@ -2,7 +2,7 @@
 title: Support Aegisub
 menu:
   docs:
-    parent: Introduction
+    parent: introduction
 weight: 2500
 ---
 

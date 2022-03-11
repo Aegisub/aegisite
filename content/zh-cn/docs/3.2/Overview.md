@@ -2,7 +2,7 @@
 title: Overview
 menu:
   docs:
-    parent: Introduction
+    parent: introduction
 weight: 2100
 ---
 

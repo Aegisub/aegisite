@@ -2,7 +2,7 @@
 title: Subtitles object
 menu:
   docs:
-    parent: Lua Reference
+    parent: lua-reference
 weight: 6220
 ---
 

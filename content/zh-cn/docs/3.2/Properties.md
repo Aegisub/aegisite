@@ -2,7 +2,7 @@
 title: Script Properties
 menu:
   docs:
-    parent: Miscellaneous
+    parent: miscellaneous
 weight: 7300
 ---
 

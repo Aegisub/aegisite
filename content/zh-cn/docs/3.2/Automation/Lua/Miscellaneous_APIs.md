@@ -2,7 +2,7 @@
 title: Misc. APIs
 menu:
   docs:
-    parent: Lua Reference
+    parent: lua-reference
 weight: 6250
 ---
 

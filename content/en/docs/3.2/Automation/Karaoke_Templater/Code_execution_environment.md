@@ -2,7 +2,7 @@
 title: Execution envirionment
 menu:
   docs:
-    parent: Karaoke Templater
+    parent: karaoke-templater
 weight: 6160
 ---
 

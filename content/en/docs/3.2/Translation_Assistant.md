@@ -2,7 +2,7 @@
 title: Translation Assistant
 menu:
   docs:
-    parent: Working with Subtitles
+    parent: working-with-subtitles
 weight: 3400
 ---
 

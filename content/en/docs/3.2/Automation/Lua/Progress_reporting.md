@@ -2,7 +2,7 @@
 title: Progress reporting
 menu:
   docs:
-    parent: Lua Reference
+    parent: lua-reference
 weight: 6230
 ---
 

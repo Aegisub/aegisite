@@ -2,7 +2,7 @@
 title: Commands
 menu:
   docs:
-    parent: Miscellaneous
+    parent: miscellaneous
 weight: 7600
 layout: cmd
 ---

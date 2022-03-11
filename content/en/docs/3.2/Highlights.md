@@ -2,7 +2,7 @@
 title: Highlights
 menu:
   docs:
-    parent: Introduction
+    parent: introduction
 weight: 2200
 ---
 

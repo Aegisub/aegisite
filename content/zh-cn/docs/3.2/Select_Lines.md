@@ -2,7 +2,7 @@
 title: Select Lines
 menu:
   docs:
-    parent: Working with Subtitles
+    parent: working-with-subtitles
 weight: 3600
 ---
 

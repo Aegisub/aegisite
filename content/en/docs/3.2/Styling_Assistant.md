@@ -2,7 +2,7 @@
 title: Styling Assistant
 menu:
   docs:
-    parent: Typesetting
+    parent: typesetting
 weight: 4600
 ---
 

@@ -2,7 +2,7 @@
 title: Typesetting Introduction
 menu:
   docs:
-    parent: Typesetting
+    parent: typesetting
     name: Typesetting Introduction
 weight: 4000
 ---

@@ -2,7 +2,7 @@
 title: Working with Audio
 menu:
   docs:
-    parent: Timing
+    parent: timing
 weight: 5000
 ---
 

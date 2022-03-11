@@ -47,18 +47,25 @@ social:
 docs:
   - name: Navigation
     weight: 110
+    identifier: navigation
   - name: Introduction
     weight: 200
+    identifier: introduction
   - name: Working with Subtitles
     weight: 300
+    identifier: working-with-subtitles
   - name: Typesetting
     weight: 400
+    identifier: typesetting
   - name: Timing
     weight: 500
+    identifier: timing
   - name: Automation
     weight: 600
+    identifier: automation
   - name: Miscellaneous
     weight: 700
+    identifier: miscellaneous
 
 # docs-sidebar/downloads
 

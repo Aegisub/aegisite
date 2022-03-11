@@ -2,7 +2,7 @@
 title: Timing Post-Processor
 menu:
   docs:
-    parent: Timing
+    parent: timing
 weight: 5300
 ---
 

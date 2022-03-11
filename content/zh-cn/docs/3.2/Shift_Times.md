@@ -2,7 +2,7 @@
 title: Shift times
 menu:
   docs:
-    parent: Timing
+    parent: timing
 weight: 5200
 ---
 

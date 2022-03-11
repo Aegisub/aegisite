@@ -2,7 +2,7 @@
 title: Inline-variables ($-variables)
 menu:
   docs:
-    parent: Karaoke Templater
+    parent: karaoke-templater
 weight: 6140
 ---
 

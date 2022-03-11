@@ -2,7 +2,7 @@
 title: Colour Picker
 menu:
   docs:
-    parent: Typesetting
+    parent: typesetting
 weight: 4500
 ---
 

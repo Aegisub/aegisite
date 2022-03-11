@@ -2,7 +2,7 @@
 title: A simple example
 menu:
   docs:
-    parent: Automation Tutorials
+    parent: automation-tutorials
 weight: 6171
 ---
 

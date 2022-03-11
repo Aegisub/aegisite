@@ -2,7 +2,7 @@
 title: Resolution Resampler
 menu:
   docs:
-    parent: Typesetting
+    parent: typesetting
 weight: 4700
 ---
 

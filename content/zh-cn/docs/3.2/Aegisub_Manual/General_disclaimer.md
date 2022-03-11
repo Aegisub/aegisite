@@ -2,7 +2,7 @@
 title: General Disclaimer
 menu:
   docs:
-    parent: Introduction
+    parent: introduction
 weight: 2400
 ---
 

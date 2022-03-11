@@ -2,7 +2,7 @@
 title: Execution order
 menu:
   docs:
-    parent: Karaoke Templater
+    parent: karaoke-templater
 weight: 6120
 ---
 

@@ -2,7 +2,8 @@
 title: Karaoke Templater
 menu:
   docs:
-    parent: Automation
+    parent: automation
+    identifier: karaoke-templater
 weight: 6100
 ---
 

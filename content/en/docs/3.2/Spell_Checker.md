@@ -2,7 +2,7 @@
 title: Spell Checker
 menu:
   docs:
-    parent: Working with Subtitles
+    parent: working-with-subtitles
 weight: 3300
 ---
 
