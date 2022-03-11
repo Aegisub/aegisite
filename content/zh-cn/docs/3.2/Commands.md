@@ -4,5 +4,5 @@ menu:
   docs:
     parent: Miscellaneous
 weight: 7600
-type: cmd
+layout: cmd
 ---
