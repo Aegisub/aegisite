@@ -10,27 +10,10 @@
     {{ $pageLang := .Page.Lang}}
     {{ range .Site.Data.commands_32 }}
       <!-- TODO: check "eq $pageLang .locale" for all lang -->
-      {{ if and (eq $pageLang "en") (eq .locale "en_US") }}
-        {{ range .commands }}
-        <tr>
-          <td>{{ .name }}</td>
-          <td>{{ .display }}</td>
-          <td>{{ .help }}</td>
-        </tr>
-        {{ end }}
-      {{ end }}
-
-      {{ if and (eq $pageLang "zh-cn") (eq .locale "zh_CN") }}
-        {{ range .commands }}
-        <tr>
-          <td>{{ .name }}</td>
-          <td>{{ .display }}</td>
-          <td>{{ .help }}</td>
-        </tr>
-        {{ end }}
-      {{ end }}
-
-      {{ if eq $pageLang .locale}}
+      {{ if in (slice         
+        (and (eq $pageLang "en") (eq .locale "en_US"))
+        (and (eq $pageLang "zh-cn") (eq .locale "zh_CN"))
+        (eq $pageLang .locale)) true}}
         {{ range .commands }}
         <tr>
           <td>{{ .name }}</td>
