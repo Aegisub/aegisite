@@ -61,17 +61,20 @@ first.
 {{<example-box>}}
 Here's two lines of "tightly" timed karaoke:
 
-    Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
-    Dialogue: 0,0:00:46.57,0:00:48.56,Default,,0000,0000,0000,,{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+```plaintext
+Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
+Dialogue: 0,0:00:46.57,0:00:48.56,Default,,0000,0000,0000,,{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+```
 
 Both lines start exactly when the first word starts being sung, and they end
 exactly when the last word ends.
 
 Now if the _Automatic karaoke lead-in_ macro is run on these two lines, they
 are changed into this:
-<pre><code>Dialogue: 0,0:00:44.46,<u>0:00:46.28</u>,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
-Dialogue: 0,<u>0:00:46.28</u>,0:00:48.56,Default,,0000,0000,0000,,<u>{\k29}</u>{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
-</code></pre>
+```plaintext
+Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
+Dialogue: 0,0:00:46.28,0:00:48.56,Default,,0000,0000,0000,,{\k29}{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+```
 
 The start-time of the second line is changed so it matches the end-time of
 the first line, and a `\k` tag  is added to the start of the line, to make
@@ -80,8 +83,9 @@ empty syllable that can be used as a "spacer" to create fade-in and fade-out
 effects.
 
 The macro also shows this message:
-
-    Smallest inter-line duration: 290 milliseconds
+```plaintext
+Smallest inter-line duration: 290 milliseconds
+```
 
 This simply says that the smallest duration between two lines it found, was
 290 milliseconds, or 0.29 seconds, so that's as much time you have to make
@@ -120,7 +124,9 @@ blocks in them.
 {{<example-box>}}
 Original line:
 
-    {\r\frz90\k80}Test {\r\fry180\k60}me
+```plaintext
+{\r\frz90\k80}Test {\r\fry180\k60}me
+```
 
 Karaskel creates these syllable structures:
 
@@ -131,7 +137,9 @@ Karaskel creates these syllable structures:
 
 After running _Clean Tags_ on the line:
 
-    {\k80\r\frz90}Test {\k60\r\fry180}me
+```plaintext
+{\k80\r\frz90}Test {\k60\r\fry180}me
+```
 
 Now karaskel creates these syllable structures:
 

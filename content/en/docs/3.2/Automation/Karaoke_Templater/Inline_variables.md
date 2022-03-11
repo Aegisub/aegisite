@@ -17,8 +17,9 @@ lines, not in code lines. You can, however, use them in code blocks on template
 lines.
 
 Here is an example of how a template text using inline variables could look:
-
-    {\pos(**$x**,**$y**)\t(**$start**,**$end**,\bord0)}
+```plaintext
+{\pos(**$x**,**$y**)\t(**$start**,**$end**,\bord0)}
+```
 
 The highlighted parts are the inline variables in the template.
 

@@ -143,7 +143,9 @@ cause it to output nothing when used in code blocks, but still evaluate to
 true if used in boolean expressions.
 
 {{<example-box>}}
-    template syl: !retime("preline", -1000, 0)!{\pos($scenter,$smiddle)\an5\fscx0\fscy0\t(\fscx100\fscy100)}
+```plaintext
+template syl: !retime("preline", -1000, 0)!{\pos($scenter,$smiddle)\an5\fscx0\fscy0\t(\fscx100\fscy100)}
+```
 
 This creates a kind of "pop-in" effect for the syllables that lasts 1
 second (1000 milliseconds) before the actual line timing. The two important
@@ -152,7 +154,9 @@ offset is negative, -1000, because the start time needs to be moved
 backwards.
 {{</example-box>}}
 {{<example-box>}}
-    template syl: !retime("syl", 0, 0)!{\pos($x,$y)\t(\fscx360)}
+```plaintext
+template syl: !retime("syl", 0, 0)!{\pos($x,$y)\t(\fscx360)}
+```
 
 Makes the syllable spin around itself during its highlight. Unless you also
 have _syl_ templates retimed to `start2syl` and `syl2end` the
@@ -162,8 +166,10 @@ end times in the `\t` tag, as they default to the duration of the entire
 line and here the duration of the line is the duration of the syllable.
 {{</example-box>}}
 {{<example-box>}}
-    template syl: !retime("sylpct", 0, 50)!{\move($x,$y,$x,!$y-10!)}
-    template syl: !retime("sylpct", 50, 100)!{\move($x,!$y-10!,$x,$y)}
+```plaintext
+template syl: !retime("sylpct", 0, 50)!{\move($x,$y,$x,!$y-10!)}
+template syl: !retime("sylpct", 50, 100)!{\move($x,!$y-10!,$x,$y)}
+```
 
 These two templates together makes the syllable move 10 pixels upwards
 during the first half of its highlight and back down during the last half.
@@ -184,7 +190,9 @@ Layer field on the template line, and it will transfer to the generated
 lines. This function is only needed when the layer number is dynamic.
 
 {{<example-box>}}
-    template syl: !relayer(syl.i*5+20)!
+```plaintext
+template syl: !relayer(syl.i*5+20)!
+```
 
 Each syllable generated from the line gets a progressively higher layer
 number. The first syllable gets in layer 25, the second in layer 30 and so
@@ -216,13 +224,17 @@ Dynamically control the number of times a template will be looped.
 You do not need to use the loop modifier on templates to use this function.
 
 {{<example-box>}}
-    template syl: !maxloop(syl.width + 2*line.styleref.outline)!{\clip(!line.left+syl.left-line.styleref.outline+j-1!,0,!line.left+syl.left-line.styleref.outline+j!,!meta.res_y!)\an5\move(!line.left+syl.center!,!line.middle!,!line.left+syl.center!,!line.middle+math.random(-20,20)!,$start,$end)\shad0}
+```plaintext
+template syl: !maxloop(syl.width + 2*line.styleref.outline)!{\clip(!line.left+syl.left-line.styleref.outline+j-1!,0,!line.left+syl.left-line.styleref.outline+j!,!meta.res_y!)\an5\move(!line.left+syl.center!,!line.middle!,!line.left+syl.center!,!line.middle+math.random(-20,20)!,$start,$end)\shad0}
+```
 
 Cut each syllable into a number of slivers, depending on the size of the
 syllable. Each sliver moves randomly on highlight.
 {{</example-box>}}
 {{<example-box>}}
-    template syl: !maxloop(j+1)!
+```plaintext
+template syl: !maxloop(j+1)!
+```
 
 Makes an infinite loop. It continually sets `j` one higher, making the loop
 never complete.
@@ -270,8 +282,10 @@ is a truthy value (i.e. not `nil` or `false`.) It still returns the value even
 if the condition is falsey.
 
 {{<example-box>}}
-    template syl: {\frz!remember("entryrotation",math.random(100,200))!\fscx300\fscy300\t(0,300,\frz0\fscx100\fscy100)\pos($x,$y)}
-    template syl: {\frz-!recall("entryrotation")!\fscx300\fscy300\t(0,300,\frz0\fscx100\fscy100)\pos($x,$y)\fad(300,0)}
+```plaintext
+template syl: {\frz!remember("entryrotation",math.random(100,200))!\fscx300\fscy300\t(0,300,\frz0\fscx100\fscy100)\pos($x,$y)}
+template syl: {\frz-!recall("entryrotation")!\fscx300\fscy300\t(0,300,\frz0\fscx100\fscy100)\pos($x,$y)\fad(300,0)}
+```
 
 The first line chooses a random number between 100 and 200 degrees, and stores
 the chosen value with the name `"entryrotation"`. It then uses that number to set
@@ -284,7 +298,9 @@ otherwise does the same effect. The result is two copies of the syllable
 rotating opposite each other, but the same amount.
 {{</example-box>}}
 {{<example-box>}}
-    template syl: {\fscx!remember_if("longsyllables", recall("longsyllables", 100)+10, #syl.duration>200)!}
+```plaintext
+template syl: {\fscx!remember_if("longsyllables", recall("longsyllables", 100)+10, #syl.duration>200)!}
+```
 
 Here `remember_if` and `recall` are combined, together with a default value,
 to set up a value that updates itself every time it is used.
@@ -320,7 +336,9 @@ the number of iterations the loop makes. The
 function is convenient for making dynamic loops.
 
 {{<example-box>}}
-<code><pre>template syl loop 5: {\an5\pos($scenter,$smiddle)\1a&HFF&\3a&Hcc&\t($start,$end,\fscx!100+<u>j</u>\*10!\fscy!100+<u>j</u>\*10!\3a&HFF&)}</pre></code>
+```plaintext
+template syl loop 5: {\an5\pos($scenter,$smiddle)\1a&HFF&\3a&Hcc&\t($start,$end,\fscx!100+j\*10!\fscy!100+j\*10!\3a&HFF&)}
+```
 
 The syllable fill is hidden so only the border is visible, then several
 copies of the that border-only line is made through the loop, and made to
@@ -331,7 +349,9 @@ does have a border.
 {{</example-box>}}
 
 {{<example-box>}}
-<code><pre>template syl loop 20: {\move($x,$y,!$x+15\*math.cos(math.pi\*2\*<u>j</u>/<u>maxj</u>)!,!$y+15\*math.sin(math.pi\*2\*<u>j</u>/<u>maxj</u>)!,$start,$end)\t($start,$end,\alpha&HFF&)}</code></pre>
+```plaintext
+template syl loop 20: {\move($x,$y,!$x+15\*math.cos(math.pi\*2\*j/maxj)!,!$y+15\*math.sin(math.pi\*2\*j/maxj)!,$start,$end)\t($start,$end,\alpha&HFF&)}
+```
 
 Here looping is used to [calculate several points on a
 circle](http://en.wikipedia.org/wiki/Unit_circle#Trigonometric_functions_on_the_unit_circle)
@@ -357,10 +377,12 @@ they're used in Lua code it's best to avoid ones that overlap with Lua
 reserved words such as `end`, `break`, `return` and several more.
 
 {{<example-box>}}
-<code><pre>code syl: <u>fxgroup.long = (syl.duration > 200)</u>
+```plaintext
+code syl: fxgroup.long = (syl.duration > 200)
 template syl noblank: all here:
-template syl <u>fxgroup long</u>: is long:
-karaoke: {\k10}huh? {\k40}wee~~</code></pre>
+template syl fxgroup long: is long:
+karaoke: {\k10}huh? {\k40}wee~~
+```
 
 It's important to understand the template execution order to understand
 this example. For each input syllable (i.e. "huh?" and "wee~~") all the

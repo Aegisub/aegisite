@@ -65,7 +65,10 @@ brackets are not part of the value you should enter. Use the examples as a
 guide to how the tags should be entered. In general, the same rules apply to
 all tags in how they look.
 
-{{<tag-def-box title="Italics" id="\i">}}\i1<br>\i0{{</tag-def-box>}}
+{{<tag-def-box title="Italics" id="\i">}}
+\i1
+\i0
+{{</tag-def-box>}}
 Switch _italics_ text on or off. Use `\i1` to enable italics for the following
 text and `\i0` to disable italics again.
 
@@ -83,24 +86,34 @@ so you rarely need to use this. Font weights are multiples of 100, such that
 100 is the lowest, 400 is "normal", 700 is "bold" and 900 is the heaviest.
 
 {{<example-box>}}
-<pre>I am {\b1}not[\b0} amused.</pre>
+```
+I am {\b1}not[\b0} amused.
+```
 
 The word "not" is written in boldface.
 {{</example-box>}}
 
 {{<example-box>}}
-<pre>{\b100}How {\b300}bold {\b500}can {\b700}you {\b900}get?</pre>
+```
+{\b100}How {\b300}bold {\b500}can {\b700}you {\b900}get?
+```
 
 The words are written with increasingly greater weight. Note that most fonts
 do not have more than one or two different weights and you will only be able
 to see "not bold" and "bold" in that case.
 {{</example-box>}}
 
-{{<tag-def-box title="Underline" id="\u">}}\u1<br>\u0{{</tag-def-box>}}
+{{<tag-def-box title="Underline" id="\u">}}
+\u1
+\u0
+{{</tag-def-box>}}
 Switch <u>underlined</u> text on or off. Use `\u1` to enable underlining for
 the following text and `\u0` to disable underlining again.
 
-{{<tag-def-box title="Strikeout" id="\s">}}\s1<br>\s0{{</tag-def-box>}}
+{{<tag-def-box title="Strikeout" id="\s">}}
+\s1
+\s0
+{{</tag-def-box>}}
 Switch <s>striked out</s> text on or off. Use `\s1` to enable strikeout for
 the following text and `\s0` to disable strikeout again.
 
@@ -117,12 +130,16 @@ The value is not limited to whole integer pixels and can have decimal places.
 Border width cannot be negative.
 
 {{<example-box>}}
-<pre>\bord0</pre>
+```
+\bord0
+```
 
 Disable border entirely.
 {{</example-box>}}
 {{<example-box>}}
-<pre>bord3.7</pre>
+```
+bord3.7
+```
 
 Set the border width to 3.7 pixels
 {{</example-box>}}
@@ -195,12 +212,16 @@ between `\fn` and the font name, and you should not put parentheses or similar
 around the font name either.
 
 {{<example-box>}}
-<pre>\fnArial</pre>
+```
+\fnArial
+```
 
 The text following this tag will be in Arial font.
 {{</example-box>}}
 {{<example-box>}}
-<pre>\fnTimes New Roman</pre>
+```
+\fnTimes New Roman
+```
 
 The text following this tag will be in Times New Roman font.
 {{</example-box>}}
@@ -215,7 +236,9 @@ point ends up being exactly equal to one script resolution pixel.)
 You can only specify integer font sizes.
 
 {{<example-box>}}
-<pre>\fs10</pre>
+```
+\fs10
+```
 
 The following text will use a size 10 font.
 {{</example-box>}}
@@ -241,17 +264,23 @@ text size more precisely than with [\fs]({{< relref "ASS_Tags#fontsize" >}}).
 Note that older versions of VSFitler will truncate non-integer scales.
 
 {{<example-box>}}
-<pre>\fscx150</pre>
+```
+\fscx150
+```
 
 Make the text 50% wider than normal.
 {{</example-box>}}
 {{<example-box>}}
-<pre>\fscy50</pre>
+```
+\fscy50
+```
 
 Make the text half height.
 {{</example-box>}}
 {{<example-box>}}
-<pre>\fscx200\fscy200</pre>
+```
+\fscx200\fscy200
+```
 
 Make the text double size.
 {{</example-box>}}
@@ -293,29 +322,39 @@ described with the [\org]({{< relref "ASS_Tags#rotationorigin" >}}) tag.
 These tags also affect [vector drawings]({{< relref "ASS_Tags#vectordrawings" >}}).
 
 {{<example-box>}}
-<pre>\frx45</pre>
+```
+\frx45
+```
 
 Rotate the text 45 degrees on the X axis.
 {{</example-box>}}
 {{<example-box>}}
-<pre>\fry-45</pre>
+```
+\fry-45
+```
 
 Rotate the text 45 degrees in opposite direction on the Y axis.
 {{</example-box>}}
 {{<example-box>}}
-<pre>\frz180</pre>
+```
+\frz180
+```
 
 Rotate the text 180 degrees on the Z axis, making it upside-down.
 {{</example-box>}}
 {{<example-box>}}
 The following two rotations produce the same result:
-<pre>\frz-30
-\frz330</pre>
+```
+\frz-30
+\frz330
+```
 
 This is because 330 degrees is 30 degrees less than a full rotation of 360 degrees.
 {{</example-box>}}
 {{<example-box>}}
-<pre>\t(\frz3600)</pre>
+```
+\t(\frz3600)
+```
 
 Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the [\t]({{< relref "ASS_Tags#animatedtransform" >}}) tag.
 {{</example-box>}}
@@ -427,13 +466,17 @@ An alpha of 00 (zero) means opaque/fully visible, and an alpha of FF (ie. 255
 in decimal) is fully transparent/invisible.
 
 {{<example-box>}}
-<pre>\alpha&H80&</pre>
+```
+\alpha&H80&
+```
 
 Set the alpha of all components to hexadecimal 80, decimal 128, making the
 text 50% transparent in general.
 {{</example-box>}}
 {{<example-box>}}
-<pre>\1a&HFF&</pre>
+```
+\1a&HFF&
+```
 
 Set the primary fill alpha to hexadecimal FF, decimal 255, making it invisible
 and effectively leaving only the border and shadow.
@@ -537,7 +580,9 @@ for the entire line, while the second form, that specifies the name of a
 _style_, will reset the style to that specific style.
 
 {{<example-box>}}
-<pre>-Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?</pre>
+```
+-Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?
+```
 
 Assuming the current line style is "Default", this has first "Hey" in the
 Default style, then follows on next line "Huh?" in the style "Alternate", and
@@ -613,14 +658,18 @@ segments that are done on separate subtitle lines. (How to do this is outside
 the scope of this page.)
 
 {{<example-box>}}
-<pre>\move(100,150,300,350)</pre>
+```
+\move(100,150,300,350)
+```
 
 When the line appears on screen, the subtitle is at (100,150). While the
 subtitle is displayed, it moves at constant speed such that it will arrive at
 point (300,350) at the same time it disappears.
 {{</example-box>}}
 {{<example-box>}}
-<pre>\move(100,150,300,350,500,1500)</pre>
+```
+\move(100,150,300,350,500,1500)
+```
 
 The line appears at (100,150). After the line has been displayed for half a
 second (500 milliseconds) it begins moving towards (300,350) such that it will
@@ -654,12 +703,16 @@ There can be at most one `\org` tag in a single line, if you put more than one
 in a single line, only the first is used.
 
 {{<example-box>}}
-<pre>\org(320,240)</pre>
+```
+\org(320,240)
+```
 
 Fix the rotation origin at point (320,240).
 {{</example-box>}}
 {{<example-box>}}
-<pre>\org(10000,0)</pre>
+```
+\org(10000,0)
+```
 
 Placing the rotation origin at a far away point allows you to use slight
 `\frz` rotations to produce "jumping" effects; the text will move up or down
@@ -678,7 +731,9 @@ duration of the line. For example, for a line displayed for 4 seconds, the sum
 of _fadein_+_fadeout_ should not be greater than 4000.
 
 {{<example-box>}}
-<pre>\fad(1200,250)</pre>
+```
+\fad(1200,250)
+```
 
 Fade in the line in the first 1.2 seconds it is to be displayed, and fade it
 out for the last one quarter second it is displayed.
@@ -700,7 +755,9 @@ milliseconds after the start of the line. All seven parameters are required.
 * After _t4_ the line has alpha _a3_.
 
 {{<example-box>}}
-<pre>\fade(255,32,224,0,500,2000,2200)</pre>
+```
+\fade(255,32,224,0,500,2000,2200)
+```
 
 Starts invisible, fades to almost totally opaque, then fades to almost totally
 invisible. First fade starts when the line starts and lasts 500 milliseconds.
@@ -760,22 +817,30 @@ given _style overrides_. Between _t1_ and _t2_ the style is gradually animated
 between those two points, following the acceleration function described above.
 
 {{<example-box>}}
-<pre>{\1c&HFF0000&\t(\1c&H0000FF&)}Hello!</pre>
+```
+{\1c&HFF0000&\t(\1c&H0000FF&)}Hello!
+```
 
 The text starts out blue, but fades towards red so it is completely red when the line ends.
 {{</example-box>}}
 {{<example-box>}}
-<pre>{\an5\t(0,5000,\frz3600)}Wheee</pre>
+```
+{\an5\t(0,5000,\frz3600)}Wheee
+```
 
 Makes the text rotate 10 times, counterclockwise, lasting for 5 seconds.
 {{</example-box>}}
 {{<example-box>}}
-<pre>{\an5\t(0,5000,0.5,\frz3600)}Wheee</pre>
+```
+{\an5\t(0,5000,0.5,\frz3600)}Wheee
+```
 
 Same as above, but it will start fast and slow down, still doing the 10 rotations in 5 seconds.
 {{</example-box>}}
 {{<example-box>}}
-<pre>{\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}Boo!</pre>
+```
+{\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}Boo!
+```
 
 Text starts at zero size, i.e. invisible, then grows to 100% size in both X and Y direction.
 {{</example-box>}}
@@ -795,19 +860,24 @@ must be integers, there is no possibility to use non-integer coordinates.
 clipping always happens on video pixel boundaries.)
 
 {{<example-box>}}
-<pre>\clip(0,0,320,240)</pre>
+```
+\clip(0,0,320,240)
+```
 
 Assuming 640x480 script resolution, only the part of the line within the top
 left quadrant is visible.
 {{</example-box>}}
 {{<example-box>}}
-<pre>\iclip(0,0,320,240)</pre>
+```
+\iclip(0,0,320,240)
+```
 
 Similar to above, but instead the part of the line within the top left
 quadrant is hidden.
 {{</example-box>}}
 {{<example-box>}}
 Example of `\clip(0,0,704,245)` on a 704x480 video:
+
 ![Clip_sample01](/img/3.2/Clip_sample01.jpg)
 {{</example-box>}}
 
@@ -834,7 +904,9 @@ multiple similar subtitle lines with each their own "frame" of the clipping
 animation.
 
 {{<example-box>}}
-<pre>\clip(1,m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0)</pre>
+```
+\clip(1,m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0)
+```
 
 Only show the portion of the line within the defined pseudo-circle.
 {{</example-box>}}

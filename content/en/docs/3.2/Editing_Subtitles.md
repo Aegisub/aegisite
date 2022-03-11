@@ -65,11 +65,13 @@ CodecIDs are supported:
 ### Importing plain text scripts ###
 Aegisub also supports importing "dialogue-formatted" plain text scripts. For example:
 
-    Actor 1: Well do I understand your speech, yet few strangers do so.
-             Why then do you not speak in the Common Tongue,
-             as is the custom in the West, if you wish to be answered?
-    # TL check: The above seems to be a quote from the lord of the rings, look it up later
-    Actor 2: What are you babbling about?
+```plaintext
+Actor 1: Well do I understand your speech, yet few strangers do so.
+         Why then do you not speak in the Common Tongue,
+         as is the custom in the West, if you wish to be answered?
+# TL check: The above seems to be a quote from the lord of the rings, look it up later
+Actor 2: What are you babbling about?
+```
 
 This will result in five subtitle lines, one being commented out. The first
 three will have the actor field set to "Actor 1", and the fifth will have it
