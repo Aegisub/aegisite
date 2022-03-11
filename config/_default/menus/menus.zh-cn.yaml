@@ -16,9 +16,6 @@ main:
   - name: Blog
     url: /blog/
     weight: 40
-  - name: 旧新闻
-    url: http://blog.aegisub.org/
-    weight: 99
 
 # header-bar/right side: social menus
 social:
