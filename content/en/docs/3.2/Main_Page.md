@@ -21,7 +21,9 @@ at [the bug tracker](https://github.com/Aegisub/Aegisub/issues).
 * [Timing a translated script to audio]({{< relref "Audio" >}})
 * [Basic typesetting of on-screen signs]({{< relref "Tutorials#visualtypesetting" >}})
 * [Putting your finished subtitles onto the video]({{< relref "Attaching_subtitles_to_video" >}}) (for viewing or distribution)
+<!-- -->
 * [Translating a subtitle file from one language to another]({{< relref "Translation_Assistant" >}})
 * [Correcting a subtitle that's not properly synchronised to the video]({{< relref "Fix_Timing_Tutorial" >}})
+<!-- -->
 * [Timing karaoke to a song]({{< relref "Tutorials#karaoketiming" >}})
 * [Creating fancy karaoke effects]({{< relref "Automation/Karaoke_Templater/Tutorial_1" >}})

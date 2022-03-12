@@ -107,7 +107,7 @@ operators to chain values and conditions. For example:
 ```
 
 If the syllable duration is longer than 100 ms the first sub-expression is
-true, and the code block returns <tt>"f"</tt>, otherwise the entire `and`
+true, and the code block returns `"f"`, otherwise the entire `and`
 expression is false, and the right-hand argument of the `or` expression is
 returned.
 

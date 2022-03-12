@@ -34,7 +34,7 @@ as a number of other helper functions.
 : All data passed in and out of Aegisub through the Automation 4 Lua interface are encoded in UTF-8, but Lua doesn't natively provide support for this.
 Several helper functions are provided here.
 
-[`cleantags.lua`](#)
+[`cleantags.lua`]({{< relref "Modules/cleantags" >}})
 : A function to clean up ASS tags in a line.
 
 [clipboard]({{< relref "Modules/clipboard" >}})

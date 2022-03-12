@@ -258,8 +258,8 @@ Fortunately it's easy to compensate for the stretching, since you know by how
 much the image will be stretched (since you know its original dimensions and
 the display aspect ratio). You just calculate how many percent the image will
 be stretched in either the X or the Y direction, and then set the ScaleX or
-ScaleY parameter in the [style]({{< relref "Styles" >}}) (or use the <tt>\fscx</tt> or
-<tt>\fscy</tt> [overrides]({{< relref "ASS_Tags" >}})) to the same amount but in the other
+ScaleY parameter in the [style]({{< relref "Styles" >}}) (or use the `\fscx` or
+`\fscy` [overrides]({{< relref "ASS_Tags" >}})) to the same amount but in the other
 direction.
 
 Example: we have a 704x480 image that we know will be displayed as 16:9 (or

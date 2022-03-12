@@ -161,7 +161,7 @@ to see "not bold" and "bold" in that case.
 Switch <u>underlined</u> text on or off. Use `\u1` to enable underlining for
 the following text and `\u0` to disable underlining again.
 
-打开或关闭 [下划线]{.ul}
+打开或关闭 <u>__下划线</u>
 选项。利用`\u1`对后面的字符应用下划线，并且可以用`\u0`使后面的字符取消下划线。
 
 {{<tag-def-box title="删除线" id="\s">}}

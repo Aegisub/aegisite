@@ -36,7 +36,7 @@ Then try applying templates again. You should see the old effect happen as usual
 
 The magic in this is the exclamation marks here: `!$end+200!`
 
-When you have a pair of exclamation marks like that, everything in between them is treated as an _expression_ (actually a very small Lua program, but don't worry about that yet.) Here we use an expression to take the end-time of the syllable and add 200 to it, getting a new number. The end result is that the <tt>\t</tt> fadeout effect lasts from `$end` and until 200 milliseconds later.
+When you have a pair of exclamation marks like that, everything in between them is treated as an _expression_ (actually a very small Lua program, but don't worry about that yet.) Here we use an expression to take the end-time of the syllable and add 200 to it, getting a new number. The end result is that the `\t` fadeout effect lasts from `$end` and until 200 milliseconds later.
 
 
 ## Tweaking the grow/shrink effect  ##

@@ -120,14 +120,14 @@ now.
     class it is.  For line templates, this is `line`.
  *  So, the `template line` text in the Effect field means this is a
     _template line_ of _line class_.
-^
+<!-- -->
  *  A template only does something to timed karaoke lines that have the same
     Style as the template line.
-^
+<!-- -->
  *  Styled karaoke produced by Karaoke Templater all has `fx` in the Effect
     field. This is used as a reminder for Karaoke Templater that this line
     should be replaced, if templates are applied once again.
-^
+<!-- -->
  *  The main text for a template line is called the _template text_. In
     _line_ templates, every \k tag is replaced with the template text.
  *  Template text can use several _variables_. These are short words that

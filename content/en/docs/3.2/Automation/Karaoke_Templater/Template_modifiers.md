@@ -95,7 +95,7 @@ Named pre-line template lines append to the pre-line template text in the order 
 Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template pre-line</u>,{\be1}
 ```
 
-This template line declares an anonymous line template, that will prepend <tt>{\be1}</tt> to all matching lines.
+This template line declares an anonymous line template, that will prepend `{\be1}`> to all matching lines.
 {{</example-box>}}
 {{<example-box>}}
 ```plaintext
@@ -253,7 +253,7 @@ template syl <u>multi</u>: {\an5\pos($scenter,$smiddle)\1a&HFF&\t($start,$end,\b
 karaoke: {\k33}風<u>{\k36}#</u>{\k89}の{\k46}花<u>{\k28}#</u>{\k57}よ
 ```
 
-The timed karaoke line uses basic multi-highlight markup, the <tt>#</tt> syllables, to create multi-highlight syllables. Such, the 風 (ka-ze) and 花 (ha-na) kanji each get stored as a single syllable that gets two highlights each, and the <tt>#</tt> characters aren't displayed at all in the applied effect. (They will still display if you try to play the timed karaoke line without applying any templates.)
+The timed karaoke line uses basic multi-highlight markup, the `#` syllables, to create multi-highlight syllables. Such, the 風 (ka-ze) and 花 (ha-na) kanji each get stored as a single syllable that gets two highlights each, and the `#` characters aren't displayed at all in the applied effect. (They will still display if you try to play the timed karaoke line without applying any templates.)
 
 The template uses the _multi_ modifier to signal that it wants to use multi-highlights instead of just one highlight/application per displayed syllable. The effect is a kind of simple "exploding border", but it explodes twice on both the 風 and 花 kanji. If the _multi_ modifier wasn't there, it would only explode once on each.
 {{</example-box>}}

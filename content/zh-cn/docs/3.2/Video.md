@@ -106,8 +106,7 @@ keyframe format v1 fps 0 0 30 70 82 130 131
 A keyframes file is a plain ASCII-encoded text file; both \\n and \\r\\n
 is understood to mean a linebreak. Syntax example:
 
-::: highlight
-``` {.highlight .plaintext}
+```plaintext
 # keyframe format v1
 fps 0
 0
@@ -117,7 +116,6 @@ fps 0
 130
 131
 ```
-:::
 
 第一行是格式规范：字符串`# keyframe format v1`。
 第二行包含了用于生成关键帧数据的视频的FPS。

@@ -27,7 +27,9 @@ grid.
 {{<example-box>}}
 Here's a typeset sign:
 
-    {\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&H25485A&\c&HDEEBF1&\pos(456,184)\frz-90}Sign text
+```plaintext
+{\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&H25485A&\c&HDEEBF1&\pos(456,184)\frz-90}Sign text
+```
 
 Notice that it uses an "@-font", a variation that exists of every CJK font
 that has "fullwidth" characters rotated 90 degrees from the baseline.
@@ -37,7 +39,9 @@ punctuation characters.
 
 Now after running this macro on the line:
 
-    {\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&H25485A&\c&HDEEBF1&\pos(456,184)\frz-90}Ｓｉｇｎ ｔｅｘｔ
+```plaintext
+{\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&H25485A&\c&HDEEBF1&\pos(456,184)\frz-90}Ｓｉｇｎ ｔｅｘｔ
+```
 
 This is what it looks before and after running the macro:
 
