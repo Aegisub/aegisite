@@ -24,7 +24,7 @@
                     <div class="collapse{{ if $active }} show{{ end }}" id="section-{{ .Identifier }}">
                       <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         {{- $activeItem := or ($currentPage.IsMenuCurrent $section .) (eq $currentPage.Section .Identifier) -}}
-                        <li><a class="docs-link rounded{{ if $activeItem }} active{{ end }}" href="{{ .URL | relURL }}">Overview</a></li>
+                        <li><a class="docs-link rounded{{ if $activeItem }} active{{ end }}" href="{{ .URL | relURL }}">{{ i18n "menu-overview" }}</a></li>
                         {{ range .Children -}}
                           {{ if .HasChildren -}}
                             <li class="my-1 ms-3">
@@ -37,7 +37,7 @@
                                 <div class="collapse{{ if $active }} show{{ end }}" id="section-{{ .Identifier }}">
                                   <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                     {{- $activeItem := or ($currentPage.IsMenuCurrent $section .) (eq $currentPage.Section .Identifier) -}}
-                                    <li><a class="docs-link rounded{{ if $activeItem }} active{{ end }}" href="{{ .URL | relURL }}">Overview</a></li>
+                                    <li><a class="docs-link rounded{{ if $activeItem }} active{{ end }}" href="{{ .URL | relURL }}">{{ i18n "menu-overview" }}</a></li>
                                   {{ range .Children -}}
                                     {{- $active := or ($currentPage.IsMenuCurrent $section .) ($currentPage.HasMenuCurrent $section .) -}}
                                     {{- $active = or $active (eq $currentPage.Section .Identifier) -}}

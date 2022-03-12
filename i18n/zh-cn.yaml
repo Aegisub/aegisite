@@ -7,3 +7,6 @@ latest-release:
 see-changelog:
   other: 阅读 <a href="{{.}}">更新日志</a> 了解更新内容
 
+menu-overview:
+  other: Overview
+

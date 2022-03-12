@@ -6,89 +6,76 @@ menu:
 weight: 6160
 ---
 
+在code区和code行的Lua代码运行在一个隔离的全局环境，这让它们不会意外地影响到主脚本函数。
 
-The Lua code in code blocks and on code lines is run in a separate global
-environment such that it won't accidentally disturb the main script
-function.
+为了后期使用，你可以把你的数据存放到这个环境里，例如先在code行预先计算一些数值，然后后期再用code区把它们添加进模板。
+这个环境也可以包含许多预先定义的变量和函数，它们可以让特效模板书写起更加方便。
 
-You can store your own data in this environment for use later, for example
-pre-compute some values on code-lines and later insert them using code
-blocks, but it also contains several pre-defined variables and functions
-designed to make it easier writing effect templates.
+要知道，代码执行环境的内容和[内联变量]({{< relref "./Inline_variables" >}})是没有什么关系的，这一点很重要。你不能通过改变代码执行环境里面的东西来改变一个内联变量的值；当然，你也不能添加新的内联变量。然而，你可以创造并且重新定义代码执行环境里面的内容。
 
-It's important to understand that the contents of code execution
-environment and the
-[inline-variables]({{< relref "./Inline_variables" >}})
-($-variables) are not related. You cannot change an inline-variable by
-changing something in the code execution environment nor can you add new
-ones. However, you can create and re-define the contents of the code
-execution environment.
+## Line and syllable information
 
-## Line and syllable information  ##
-The code execution environment contains a few variables pointing to the
-current line and syllable structure being processed, as well as some more
-supporting tables. These are just references to the structures produced by
-[karaskel]({{< relref "../Lua/Modules/karaskel.lua.md#datastructures" >}}) and are not
-modified in any way.
+## 行和音节的信息
 
-You should treat all of these except `line` as read-only. If you change the
-other ones, the kara-templater script might start misbehaving.
+代码执行环境包含一些指向当正在处理的行和音节结构的变量，这些变量就是把
+[karaskel]({{< relref "../Lua/Modules/karaskel.lua.md#datastructures" >}})
+中的数据原封不动地拿了出来。.
 
-* **line** - The line currently being produced. Changing this will affect
-  the resulting line in the file. See the **[reference for dialogue line tables]({{< relref "../Lua/Modules/karaskel.lua.md#dialoguelinetable" >}})**.
-* **orgline** - The original line. This is the source line the current
-  syllable is located on.
-* **syl** - The current syllable structure. If the current template is a
-  _furi_ template, it's the current furigana syllable. If the current
-  template has one or both of the _char_ or _multi_ modifiers, this is a
-  pseudo-syllable structure, a copy of the original syllable structure with
-  several values changed to look like the current part of the syllable
-  being processed. Also see the **[reference for syllable tables]({{< relref "../Lua/Modules/karaskel.lua.md#karaokeandfuriganasyllabletables" >}})**.
-* **basesyl** - Usually the same as `syl`, except when the template has the
-  _char_ or _multi_ modifier, then this is the original syllable. (If `syl
-  == basesyl` is true, then the current template is neither _char_ nor
-  _multi_.)
-* **meta** - Contains various metadata about the script, namely the
-  contents of the _Script Info_ section. Most importantly, it has the
-  `res_x` and `res_y` fields describing the script resolution.
+你应该将除了 `line`
+以外的部分作为只读的信息进行处理。如果你改变了其中某些变量的值，卡拉OK模板执行器脚本可能会无法正确工作。
 
-All of these variables are reset to `nil` whenever processing starts for a
-new line, except `meta`. They are then set to the relevant value whenever
-processing hits a new stage. This means that, for example _pre-line_
-templates only has `line` and `orgline` set and both `syl` and `basesyl`
-are `nil`. In _code once_ templates, all of the variables except `meta` are
-`nil`.
+-   **line** - 当前正在处理的行。改变它会引起文件中的行变化。具体请查看
+    **[reference for dialogue line
+    tables]({{< relref "../Lua/Modules/karaskel.lua.md#dialoguelinetable" >}})**。
+-   **orgline** - 原始行。当前处理的音节位于的原始行。
+-   **syl** - 当前处理音节的结构。如果当前执行的模板是一个 *furi*
+    类型的模板，那么获取到的则是注音假名音节。如果当前模板带有 *char*
+    或者 *multi* 修饰语，这是一个伪音节结构，具体可以查看 **[reference
+    for syllable
+    tables]({{< relref "../Lua/Modules/karaskel.lua.md#karaokeandfuriganasyllabletables" >}}**.
+-   **basesyl** - 一般情况下和 `syl` 相同，在模板含有 *char* 或 *multi*
+    修饰语时，它将会是原始音节 (如果 `syl == basesyl`
+    为真，那么当前模板行既不是 *char* 也不是 *multi*)
+-   **meta** - 包含着多种脚本相关的元数据，名义上是 *Script Info*
+    的内容。最为重要的是它含有 `res_x` 和 `res_y` ，来表示脚本分辨率。
 
-## Standard libraries and related things  ##
-Both the [**string**](http://www.lua.org/manual/5.1/manual.html#5.4) and
-[**math**](http://www.lua.org/manual/5.1/manual.html#5.6) Lua standard
-libraries are imported into the execution environment, as they are
-generally useful.
+在处理新一行之前，上述所有变量(除了 `meta` )都会被重设为 `nil`
+。当处理进入新的一个阶段，它们会被赋予相关的值。 这意味着，在像
+*pre-line* 这样的模板中只存在 `line` 和 `orgline` ，而其中的 `syl` 和
+`basesyl` 都是 `nil`。在 *code once* 模板中，除了 `meta`
+之外的所有变量都是 `nil`。
 
-You can also access the main execution environment of the kara-templater
-script itself using the **`_G`** (underscore capital-G) variable and
-through that access the rest of the Lua standard library and any [loaded modules]({{< relref "../Lua/Modules" >}}). For example, `_G.table.sort` refers to
-the regular `table.sort` function. See the [Lua 5.1
-manual](http://www.lua.org/manual/5.1/manual.html#5) for details on the
-available libraries.
+## 标准库及其相关
 
-For backwards compatibility, several of the included modules
+[**string库**](http://www.lua.org/manual/5.2/manual.html#6.4) 和
+[**math库**](http://www.lua.org/manual/5.2/manual.html#6.6) 这两个 Lua
+标准库已经被导入到了执行环境中，因为它们十分常用。
+
+通过使用 **`_G`** (下划线+大写G)，你也可以访问到 kara-templater
+的主要执行环境，和其余的 Lua 标准库 [loaded
+modules]({{< relref "../Lua/Modules" >}})。比如， `_G.table.sort`
+实际上调用的是 `table.sort` 函数。查看 [Lua 5.2
+手册](http://www.lua.org/manual/5.2/manual.html#6) 来获取更多有关 Lua
+标准库的信息。
+
+为了向后兼容，
 ([karaskel.lua]({{< relref "../Lua/Modules/karaskel.lua.md" >}}),
-[unicode.lua]({{< relref "../Lua/Modules/unicode" >}}) and
-[utils.lua]({{< relref "../Lua/Modules/util" >}})) are automatically loaded
-and will be accessible via `_G` by default. All others must be explicitly
-`require`d on a code line.
+[unicode.lua]({{< relref "../Lua/Modules/unicode" >}}) 和
+[utils.lua]({{< relref "../Lua/Modules/util" >}}))
+会被自动载入环境，且可通过 `_G` 访问。其余所有的模块/库需要通过单独在
+code 行使用 `require` 来导入。
 
-There is also the self-reference **`tenv`** variable which refers to the
-code execution environment itself. This means that `tenv.tenv == tenv` is
-true.
+另有自指变量 **`tenv`** 来指向执行环境本身。这意味着 `tenv.tenv == tenv`
+会得到 true 的值。
 
-## Utility functions  ##
-These functions help do more complex modifications of the output line (the
-`line` variable) and are unavoidable when creating complex effects.
+## 常用函数
 
-### retime  ###
-Synopsis: `retime(mode, startadjust, endadjust)`
+这些函数可以帮助我们对输出的行做更复杂的修饰。 ( `line` )
+也不可避免地使得结果变得复杂。
+
+### retime
+
+摘要: `retime(mode, startadjust, endadjust)`
 
 ![Auto4-kara-templater-retime-explanation](/img/3.2/Auto4-kara-templater-retime-explanation.png)
 

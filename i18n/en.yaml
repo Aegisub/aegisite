@@ -6,3 +6,7 @@ latest-release:
 
 see-changelog:
   other: See the <a href="{{.}}">changelog</a> for a list of changes.
+
+menu-overview:
+  other: Overview
+

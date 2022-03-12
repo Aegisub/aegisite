@@ -6,150 +6,163 @@ menu:
 weight: 6262
 ---
 
-The Automation 4 Lua include file `utils.lua` contains various support functions to aid writing Lua scripts.
-There is no general theme for the file.
+Automation 4 Lua include的文件 `utils.lua`
+包括了多种不同的辅助函数来帮助你写Lua脚本。 这个文件并没有统一的主题。
 
-## Usage ##
-Import this module with {{< lua `util = require 'aegisub.util'` >}}
+## 用法
 
-## Table functions  ##
-Duplicating tables in various ways is a common task.
-`util` provides some functions to handle the most common cases.
+使用 `util = require 'aegisub.util'` 来导入这个模块。
 
-### copy  ###
-Synopsis: {{< lua `newtable = util.copy(oldtable)` >}}
+## Table functions
 
-Makes a shallow copy of the table passed as parameter.
-Shallow here means that it does not dive into contained tables and copy those as well.
-For example, if `oldtable.st` refers to a table, `newtable.st` will refer to the same table, and changes made to `newtable.st` will also be reflected in `oldtable.st` and vice versa.
+以多种方式复制一个table是经常要做的工作之一。 `util`
+提供了一些函数来解决这些问题。
 
-### deep_copy  ###
-Synopsis: {{< lua `newtable = util.deep_copy(oldtable)` >}}
+### copy
 
-Makes a deep copy of the table passed as parameter.
-While this function attempts to handle circular references and not do infinite recursion on them, it might not work in all cases.
-You will rarely need to use this function.
-If you think you need to do a deep copy, consider your task an extra time.
+摘要: `newtable = util.copy(oldtable)`
 
-## Colour functions  ##
-It is often useful to do various transformations on colour data. Several
-functions for this are included.
+制作参数table的浅拷贝。 浅拷贝意味着它不会访问和复制table中的table。
+举个例子, 如果 `oldtable.st` 指某table, `newtable.st` 指某相同table, 对
+`newtable.st`的更改也会反映到 `oldtable.st` 中，反之亦然。
 
-### ass_color  ###
-Synopsis: {{< lua `colorstring = util.ass_color(r, g, b)` >}}
+### deep_copy
 
-Makes an ASS colour string in the form `&HBBGGRR` from the given `r`, `g` and `b` arguments.
+摘要: `newtable = util.deep_copy(oldtable)`
 
-Warning: The arguments are not checked for range.
-Values outside the 0..255 range will produce garbage output.
+制作参数table的深拷贝。
+虽然这个函数试图处理循环引用而不是对它们进行无限递归，但它可能不适用于所有情况。
+你基本用不到这个函数。 如果你认为需要进行深拷贝，请考虑任务额外时间。
 
-### ass_alpha  ###
-Synopsis: {{< lua `alphastring = util.ass_alpha(a)` >}}
+## 颜色函数
 
-Makes an ASS alpha string in the form `&HAA&` from the given `a` argument.
+这类函数对于不同类型的颜色数据转换来说是十分有用的。 有以下这些函数
 
-Does not check input range.
+### ass_color
 
-### ass_style_color  ###
-Synopsis: {{< lua `colorstring = util.ass_style_color(r, g, b, a)` >}}
+摘要: `colorstring = util.ass_color(r, g, b)`
 
-Makes an ASS colour string suitable for use in Style definitions, i.e. in format `&HAABBGGRR`.
+给定 `r`, `g` , `b` 数值，返回ASS的 `&HBBGGRR` 颜色格式字符串。
 
-Does not check input range.
+警告:本函数并不含有颜色输入范围检查功能。
+如果你用了0\~255之外的数值，返回的是什么鬼就不一定了。
 
-### extract_color  ###
-Synopsis: {{< lua `r, g, b, a = util.extract_color(colorstring)` >}}
+### ass_alpha
 
-Extracts colour components from a colour string. Several formats of colour strings are recognised:
+摘要: `alphastring = util.ass_alpha(a)`
 
-* Style definition: `&HAABBGGRR`
-* Inline override: `&HBBGGRR&`
-* Alpha override: `&HAA&`
-* HTML with alpha: `#RRGGBBAA`
+给定 `a` 数值，返回ASS的 `&HAA&` 透明度格式字符串。
 
-Note that this function always returns four numbers when passed a valid colour string.
-Unused values (depends on the format of the colour string) are assigned 0 (zero).
-If an unrecognised colour string is passed, `nil` is returned.
+不具有输入范围检查(0\~255)
+
+### ass_style_color
+
+摘要: `colorstring = util.ass_style_color(r, g, b, a)`
+
+生成ASS样式使用的颜色格式字符串，也就是`&HAABBGGRR`。
+
+不具有输入范围检查。
+
+### extract_color
+
+摘要: `r, g, b, a = util.extract_color(colorstring)`
+
+从一个颜色字符串中导出色值。支持识别以下几种:
+
+-   样式定义: `&HAABBGGRR`
+-   行内颜色标签: `&HBBGGRR&`
+-   行内透明度标签: `&HAA&`
+-   带透明度的HTML: `#RRGGBBAA`
+
+注意，当输入一个有效的颜色字符串，本函数一般会返回四个数值。
+无用的部分会被置0。 无法识别的的颜色字符串会返回`nil`。
 
 {{<example-box>}}
 ``` lua
 r, g, b, a = extract_color("&H7F&")
 ```
 
-`r`, `g`, and `b` will be 0; `a` will be 127.
+
+`r`, `g`,  `b` 都是 0; `a` 是 127.
 {{</example-box>}}
 
-### alpha_from_style  ###
-Synopsis: {{< lua `alphastring = util.alpha_from_style(coloralphastring)` >}}
+### alpha_from_style
 
-Returns the alpha part of a colour string, as an alpha override string, i.e. `&HAA&` format.
-This function is a composition of `extract_color` and `ass_alpha`.
+摘要: `alphastring = util.alpha_from_style(coloralphastring)`
 
-### color_from_style  ###
-Synopsis: {{< lua `colorstring = util.color_from_style(coloralphastring)` >}}
+返回一个颜色字符串的透明度部分，作为一个透明度标签，`&HAA&` 格式。
+这个函数是 `extract_color` 和 `ass_alpha` 的组成部分。
 
-Returns the colour part of a colour string, as a colour override string, i.e. `&HBBGGRR&` format.
-This function is a composition of `extract_color` and `ass_color`.
+### color_from_style
 
-### HSV_to_RGB  ###
-Synopsis: {{< lua `r, g, b = util.HSV_to_RGB(h, s, v)` >}}
+摘要: `colorstring = util.color_from_style(coloralphastring)`
 
-Transforms a colour given in Hue, Saturation, Value space into Red, Green, Blue space.
+返回一个颜色字符串的颜色部分，作为一个颜色标签， `&HBBGGRR&` 格式。
+这个函数是 `extract_color` 和 `ass_color` 的组成部分。
 
-`h` is given in degrees.
-The nominal range is 0..359; values outside this range will be translated into it.
-Input range of `s` and `v` are 0..1.
-These are not range checked.
-Output range of `r`, `g` and `b` are 0..255.
+### HSV_to_RGB
 
-## String functions  ##
-Because the Lua standard `string` library is fairly limited, a few additional helper functions are provided.
-See also [unicode]({{< relref "unicode" >}}).
+摘要: `r, g, b = util.HSV_to_RGB(h, s, v)`
 
-### string.trim  ###
-Synopsis: {{< lua `outstring = util.trim(instring)` >}}
+将输入的色相，饱和度和明度转化为RGB值。 `h` 是角度定义，范围
+0..359，不在范围内的值会被转换回360以内 `s` 和 `v` 范围在 0..1 之间。
+无输入范围检查 输出的 `r`, `g` , `b` 范围是 0..255。
 
-Removes all space characters at the start and end of the input string, and returns the transformed string.
+## 字符串函数
 
-Warning: This function is not UTF-8 safe.
-It uses the Lua regex `%s` class to match spaces, which in some legacy encodings will result in it also matching some prefix bytes in UTF-8 encoded text.
+因为lua标准的 `string` 库功能十分有限, 这里提供了一些额外的辅助函数。
+可以参见 [unicode]({{< relref "unicode" >}}) 。
 
-### string.headtail  ###
-Synopsis: {{< lua `head, tail = util.headtail(instring)` >}}
+### string.trim
 
-Splits a string by first space-sequence into a "head" and a "tail", similar to the handling of linked lists in several functional languages.
+摘要: `outstring = util.trim(instring)`
 
-If `instring` does not contain any space characters it returns `instring, ""`.
+移除输入字符串中首尾的空格。
 
-### string.words  ###
-Synopsis: {{< lua `for word in util.words(instring) do ... end` >}}
+警告: 这个函数和 UTF-8 的兼容性并未完全确认。 它使用 Lua 的正则 `%s`
+类来匹配空格，当遇到一些传统的编码时可能会出现问题。
 
-Returns an iterator function for use in a `for` loop, to loop over all the words in the string using `string.headtail` semantics.
+### string.headtail
 
-## Numeric functions  ##
-Functions to handle various operations on numbers.
+摘要: `head, tail = util.headtail(instring)`
 
-### clamp  ###
-Synopsis: {{< lua `outval = util.clamp(inval, min, max)` >}}
+利用字符串中首个空格将其分割成 \"头\" 和 \"尾\" 两部分。
 
-Clamps `inval` to be in range `min`..`max`.
+如果 `instring` 中不含有空格，则会返回 `instring, ""`.
 
-### interpolate  ###
-Synopsis: {{< lua `outval = util.interpolate(t, a, b)` >}}
+### string.words
 
-Interpolates between `a` and `b`.
-`t` is the time variable in range 0..1.
-Values outside this range are clamped.
+摘要: `for word in util.words(instring) do ... end`
 
-### interpolate_color  ###
+返回一个迭代器函数，可以用于 for 循环中，本质是使用 `string.headtail`
+多次。
 
-Synopsis: {{< lua `outcolor = util.interpolate_color(t, color1, color2)` >}}
+## 数学函数
 
-Interpolate between `color1` and `color2` with `t` as time variable in range 0..1.
-`color1`, `color2` and `outcolor` are colour strings, and `outcolour` will be in colour override format.
+一些用来对数字进行操作的函数。
 
-### interpolate_alpha  ###
-Synopsis: {{< lua `outalpha = util.interpolate_alpha(t, alpha1, alpha2)` >}}
+### clamp
 
-Similar to `interpolate_color`, but interpolates alpha values instead.
-Also works on colour strings, and will return an alpha override string.
+摘要: `outval = util.clamp(inval, min, max)`
+
+返回的outval介于min、max之间，若inval小于min，返回min，若大于max，返回max。
+
+### interpolate
+
+摘要: `outval = util.interpolate(t, a, b)`
+
+在 `a` 和 `b`之间插值 `t` 代指倾向a还是b，取值范围0-1。
+如果取值到了\[a,b\]范围外，则会被clamp。
+
+### interpolate_color
+
+摘要: `outcolor = util.interpolate_color(t, color1, color2)`
+
+在 `color1` 和 `color2` 之间插值， `t` 含义与上文相同。 `color1`,
+`color2` 和 `outcolor` 是颜色字符串， `outcolour` 是ASS格式颜色字符串。
+
+### interpolate_alpha
+
+摘要: `outalpha = util.interpolate_alpha(t, alpha1, alpha2)`
+
+和 `interpolate_color` 相似，但是对象是透明度字符串。
