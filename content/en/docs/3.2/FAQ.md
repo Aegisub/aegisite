@@ -25,7 +25,7 @@ Aegisub's File -> Export... dialog to save real SSA files.
 ### Does Aegisub allow saving to SRT? ###
 
 Yes, but only if it means that no information will be lost. In other
-words, if you have any override tags that aren't \1c, \b, or \i,
+words, if you have any override tags that aren't `\1c`, `\b`, or `\i`,
 Aegisub won't allow saving directly to SRT. However, you can still
 export to SRT by using the File -> Export... dialog box. Just uncheck
 all the checkboxes (clean script info, VFR transform etc.).
@@ -54,4 +54,4 @@ forums](http://forum.doom9.org) is generally the place to go.
 
 ### Are there any VSFilter bugs I should know about? ###
 
-In one word: [yes](http://asa.diac24.net/VSFilter#BUGS).
+In one word: [yes](https://web.archive.org/web/20110811220802/http://asa.diac24.net/VSFilter#BUGS).

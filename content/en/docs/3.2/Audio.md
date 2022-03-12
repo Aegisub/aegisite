@@ -55,8 +55,7 @@ is the number of bits per sample (always 16 in the current implementation),
 _r_ is the sample rate in Hz (usually 48000, or 44100 in some cases), and
 _l_ is the length of the audio (in seconds).
 
-For example, for a 25 minute audio clip at 48 kHz, you will need (16 * 48000
-* 25 * 60)/8 = 144000000 bytes ~= 137 MB.
+For example, for a 25 minute audio clip at 48 kHz, you will need (16 \* 48000 \* 25 \* 60)/8 = 144000000 bytes ~= 137 MB.
 
 Loading and decompressing the audio into the cache takes some time.
 A progress bar is shown in the scroll bar of the audio display while audio is loading.

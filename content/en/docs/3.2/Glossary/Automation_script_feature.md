@@ -1,5 +1,6 @@
 ---
 Type: glossary
+Title: Automation script feature
 ---
 
 

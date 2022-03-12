@@ -87,7 +87,7 @@ so you rarely need to use this. Font weights are multiples of 100, such that
 
 {{<example-box>}}
 ```
-I am {\b1}not[\b0} amused.
+I am {\b1}not{\b0} amused.
 ```
 
 The word "not" is written in boldface.
@@ -746,7 +746,7 @@ times _t1_, _t2_, _t3_ and _t4_.
 The alpha values are given in _decimal_ and are between 0 and 255, with 0
 being fully visible and 255 being invisible. The time values are given in
 milliseconds after the start of the line. All seven parameters are required.
-(For most common fade effects the `[\fad]({{< relref "ASS_Tags#fade" >}})` tag works fine.)
+(For most common fade effects the [`\fad`]({{< relref "ASS_Tags#fade" >}}) tag works fine.)
 
 * Before _t1_, the line has alpha _a1_.
 * Between _t1_ and _t2_ the line fades from alpha _a1_ to alpha _a2_.

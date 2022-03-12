@@ -31,7 +31,7 @@ slash unless they are the entire path (i.e. ?scripta doesn't work).
 ?local
 :   The local user settings directory. Cache files which should be
     persisted across runs, such as FFMS2 indexes and the fontconfig cache are
-    stored here. %LOCALAPPDATA%\Aegisub on recent versions of Windows, and
+    stored here. `%LOCALAPPDATA%\Aegisub` on recent versions of Windows, and
     equal to ?user everywhere else.
 
 ?script

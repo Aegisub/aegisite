@@ -6,15 +6,15 @@ menu:
 weight: 3500
 ---
 
-The **paste over** tool is a "smart" variant of the good old Ctrl-c Ctrl-v
+The **paste over** tool is a "smart" variant of the good old `Ctrl`+`C` & `Ctrl`+`V`
 combo. It allows you to paste any given field(s) of one or more lines to the
 corresponding fields of other lines, without affecting the other fields. It can
 be found under the _Edit_ menu -> _Paste lines over_, or by right-clicking on
 the subtitles grid.
 
 To use it, first copy one or more lines with the familiar copy function
-(right-click -> copy, or Ctrl-c). Then select the line(s) you want to paste to,
-and click _paste lines over_ (or press Ctrl-Shift-v). You will then get a
+(right-click -> copy, or `Ctrl`+`C`). Then select the line(s) you want to paste to,
+and click _paste lines over_ (or press `Ctrl`+`Shift`+`V`. You will then get a
 dialog box that looks like this:
 
 ![Paste_over](/img/3.2/Paste_over.png#center)

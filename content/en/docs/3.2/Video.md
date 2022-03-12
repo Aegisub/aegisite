@@ -9,8 +9,7 @@ weight: 4100
 Aegisub isn't a video (or media) player, but it still supports loading and
 working with video in various ways. This page is a reference of how Aegisub's
 loading and handling of video works; for a gentler introduction on how to just
-get things to display properly you may want to read the
-[Typesetting_Tutorial]({{< relref "Visual_Typesetting" >}}) or [Visual_Typesetting]({{< relref "Visual_Typesetting" >}}) pages.
+get things to display properly you may want to read the [Visual_Typesetting]({{< relref "Visual_Typesetting" >}}) pages.
 
 ## Opening video ##
 
@@ -267,11 +266,15 @@ Example: we have a 704x480 image that we know will be displayed as 16:9 (or
 1.7777...:1). If we assume that the player will stretch the width but leave the
 height untouched, this means that the new width will be:
 
-    (16 / 9) * 480 = 853.333...
+```plaintext
+(16 / 9) * 480 = 853.333...
+```
 
 which in percent is:
 
-    853.333... / 704 = 1.212121...
+```plaintext
+853.333... / 704 = 1.212121...
+```
 
 i.e. 121%. Hence, to compensate for this horizontal (X-direction) stretch we
 set ScaleY in all our styles to 121% to stretch the subtitles by the same

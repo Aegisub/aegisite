@@ -153,4 +153,4 @@ Aegisub yourself and did not use FFTW3; FFTW3 is fast enough that the default
 quality is bumped up a bit.
 
 ## Karaoke timing ##
-{{<todo>}}here be dragons {{</todo>}}
+[Karaoke timing Tutorial]({{< relref "Karaoke_Timing_Tutorial" >}})
