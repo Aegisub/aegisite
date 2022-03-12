@@ -109,4 +109,4 @@ options:
 menu:
   section:
     auto: false
-    collapsibleSidebar: false
+    collapsibleSidebar: true
