@@ -65,7 +65,7 @@ table. See below for more information.
 Synopsis: {{< lua `karaskel.preproc_line_text(meta, styles, line)` >}}
 
 Preprocess the text of a single line. `meta` and `styles` are the tables
-returned by `[karaskel.collect_head]({{< relref "karaskel.lua.md#karaskel.collect_head" >}})`.
+returned by [`karaskel.collect_head`]({{< relref "karaskel.lua.md#karaskel.collect_head" >}}).
 
 This function does not return a value, but rather modifies the `line`
 table. The following fields are added:
@@ -297,7 +297,7 @@ Full list of fields:
 * `style.fontsize` - Font size for the style.
 * `style.color1`, `style.color2`, `style.color3` and `style.color4` - The
   four colours used by the style, in regular order. Use
-  `[extract_color]({{< relref "../Modules#extractcolor" >}})` and family to
+  [`extract_color`]({{< relref "../Modules#extractcolor" >}}) and family to
   manipulate these.
 * `style.bold` - `true`/`false` to specify bold/non-bold font face. Can
   also be a number to specify font weight, but this is not well supported

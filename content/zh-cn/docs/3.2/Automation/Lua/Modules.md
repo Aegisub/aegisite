@@ -1,5 +1,5 @@
 ---
-title: Lua Modules
+title: Lua模块
 menu:
   docs:
     parent: lua-reference

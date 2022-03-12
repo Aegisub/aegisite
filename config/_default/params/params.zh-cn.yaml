@@ -3,12 +3,12 @@
 ## Homepage
 title: Aegisub
 titleSeparator: '-'
-titleAddition: Aegisub Advanced Subtitle Editor
+titleAddition: Aegisub 高级字幕编辑器
 description: >-
-  Aegisub is a free, cross-platform open source tool for creating and modifying
-  subtitles. Aegisub makes it quick and easy to time subtitles to audio, and
-  features many powerful tools for styling them, including a built-in real-time
-  video preview.
+  Aegisub 是一款自由、跨平台的开源字幕编辑软件。
+  它能让您轻松且高效地完成时间轴的制作，
+  并利用内置的各种实用工具来调整字幕的样式，
+  还可以进行实时的视频预览。
 
 ## Documentation
 # docsVersion = "0.3"
@@ -16,7 +16,7 @@ description: >-
 ## Open Graph
 images:
   - img/logo.png
-ogLocale: en_US
+ogLocale: zh_CN
 domainTLD: aegisub.org
 titleHome: Aegisub
 
@@ -32,7 +32,7 @@ schemaName: Aegisub
 #schemaAuthorTwitter: 'https://twitter.com/henkverlinde'
 #schemaAuthorLinkedIn: 'https://www.linkedin.com/in/henkverlinde/'
 #schemaAuthorGitHub: 'https://github.com/h-enk'
-schemaLocale: en-US
+schemaLocale: zh_CN
 schemaLogo: logo-aegisub.png
 schemaLogoWidth: 512
 schemaLogoHeight: 512

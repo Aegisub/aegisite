@@ -1,5 +1,5 @@
 ---
-title: Standard macros
+title: 附带的宏
 menu:
   docs:
     parent: automation

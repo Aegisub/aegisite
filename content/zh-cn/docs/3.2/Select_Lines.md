@@ -1,85 +1,81 @@
 ---
-title: Select Lines
+title: 选择多行
 menu:
   docs:
     parent: working-with-subtitles
 weight: 3600
 ---
 
-The **select lines** tool is useful for finding and selecting all lines in the
-script that matches certain criteria. This can be useful from a number of
-things ranging from deleting all comment lines to finding all lines said by a
-certain actor. The tool can be found in the _Subtitles_ menu -> _Select lines_.
+**选择多行**用于选取符合特定标准的字幕行，是一个非常实用的工具。它有许多应用场景，从删除所有注释行到查找某个说话人的全部台词，不一而足。您可以从"*字幕
+-\> 选择多行*" 打开它。
 
-![Select_lines](/img/3.2/Select_lines.png#center)
+![Select_lines](/img/3.2/zh/Select_lines.png#center)
 
-### Match ###
-These controls what criteria will be used for selecting the lines.
+### 匹配
 
-Match
-: Select all lines that match the criteria.
+下列选项用于设定选取字幕行的条件。
 
-Doesn't match
-: Select all lines that *don't* match the criteria.
+匹配项
+:   选取所有符合标准的行。
 
-Match case
-: Controls case sensitivity, i.e. if the tool should care about the difference
-between lower and upper case or not.
+不匹配
+:   选取所有*不符合* 标准的行。
 
-Exact match
-: Matches the lines that matches the given string _exactly_.
+区分大小写
+:   通过区分字母的大小写来调整匹配精确度。
 
-Contains
-: Matches the lines that _contains_ the given string.
+### 模式
 
-Regular Expression match
-: Treats the string as a [regular
-expression](http://en.wikipedia.org/wiki/Regular_expression) or "regex", and
-matches if said expression matches. For a regular expressions tutorial, try
-reading the [perlretut manual page](http://perldoc.perl.org/perlretut.html) or
-googling. For a reference of the exact syntax supported by Aegisub, see the
-[wxWidgets regular expressions reference
-page](http://www.wxwidgets.org/manuals/stable/wx_wxresyn.html).
+下列选项用于设定匹配的模式。
 
+精确匹配
+:   匹配与输入的字符串*完全一致* 的行。
 
-### In field ###
-This option controls what field of each line will be used for the matching
-mentioned above. Possible alternatives are:
+包含
+:   匹配内容中*含有* 输入的字符串的行。
 
-Text
-: The body text of the line
+正则表达式匹配
+:   将输入的字符串视为
+    [正则表达式](https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)
+    进行匹配。关于正则表达式的教程，可以阅读 [perlretut
+    使用手册](https://perldoc.perl.org/perlretut.html)（英文）与
+    [正则表达式30分钟入门教程](https://www.jb51.net/tools/zhengze.html)（中文），或在搜索引擎中查找相关内容。若想了解
+    Aegisub 具体支持哪些正则语法，请参阅 [wxWidgets
+    文档](https://docs.wxwidgets.org/2.8.12/wx_wxresyn.html)。
 
-Style
-: The line's style name
+### 在下列栏中搜索
 
-Actor
-: The actor field
+这一项用于设定上述匹配规则作用的对象。可选的字段有：
 
-Effect
-: The effect field
+文本
+:   字幕行的文本内容
 
+样式
+:   字幕行的样式名称
 
-### Match dialogues/comments ###
-Here you can choose if you want to select from comment lines, dialogue lines,
-or both.
+说话人
+:   字幕行的说话人名称
 
-### Action ###
-Decides what the tool should do with the lines that matches the given criteria.
-You can choose between:
+特效
+:   字幕行的特效
 
-Set selection
-: Your current selection will be discarded and all lines in the script matching
-the criteria will be selected instead.
+### 匹配对话／注释
 
-Add to selection
-: Adds all lines in the script that matches the criteria to your current
-selection.
+您可以选择仅在注释行或对话行中进行匹配，也可以两者都选。
 
-Subtract from selection
-: Deselects all currently selected lines that match the criteria.
+### 动作
 
-Intersect with selection
-: Does the inverse of subtract from selection. That is to say, all lines in the
-current selection that matches the criteria are kept selected, but everything
-else is deselected.
+这一项决定匹配后执行何种动作。您可以选择：
+
+设为所选
+:   放弃当前已选中的行，并选中匹配到的行。
+
+加入所选
+:   保持当前已选中的行，并在此基础上增加匹配到的行。
+
+移出所选
+:   在已选中的行中，将符合匹配标准的行筛除。
+
+选中与所选之交集
+:   与"移出所选"相反------在已选中的行中，将不符合匹配标准的行筛除。
 

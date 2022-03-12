@@ -1,5 +1,5 @@
 ---
-title: Automation Overview
+title: 自动化
 menu:
   docs:
     parent: automation

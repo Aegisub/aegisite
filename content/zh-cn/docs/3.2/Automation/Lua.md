@@ -1,5 +1,5 @@
 ---
-title: Lua Reference
+title: Lua 相关
 menu:
   docs:
     parent: automation

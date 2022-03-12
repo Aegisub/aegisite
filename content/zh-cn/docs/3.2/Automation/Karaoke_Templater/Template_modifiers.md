@@ -1,5 +1,5 @@
 ---
-title: Modifiers
+title: 模版修饰语
 menu:
   docs:
     parent: karaoke-templater

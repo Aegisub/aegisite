@@ -1,5 +1,5 @@
 ---
-title: A simple example
+title: 教程一
 menu:
   docs:
     parent: automation-tutorials

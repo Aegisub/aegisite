@@ -1,5 +1,5 @@
 ---
-title: Running macros
+title: 运行宏
 menu:
   docs:
     parent: automation

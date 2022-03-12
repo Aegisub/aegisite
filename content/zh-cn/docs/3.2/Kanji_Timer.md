@@ -1,72 +1,82 @@
 ---
-title: Kanji Timer
+title: 汉字计时器
 menu:
   docs:
     parent: timing
 weight: 5400
 ---
 
-The kanji timer makes it easy to copy timed karaoke from one set of already karaoke timed lines to another set of yet untimed lines. Primarily intended for adding karaoke to Japanese songs.
+汉字计时器使得把打好K值的时间轴快速赋予到一条未打K值的时间轴非常方便。它多用于日文歌曲的卡拉OK时间轴制作。(常用于快速对应日文和罗马音)
 
-Here is a video demonstration of the kanji timer in action: [Download demonstration video](http://www.animereactor.dk/aegisub/demovids/kanji-timer.avi) (XviD MP3 AVI, 5 min 20 sec, 12 MB)
+这里有个汉字计时器的实际操作演示视频:
+[下载演示视频](http://www.animereactor.dk/aegisub/demovids/kanji-timer.avi)
+(XviD MP3 AVI, 5 min 20 sec, 12 MB)
 
 
-## Before you start ##
+## 在你操作前
 
-The kanji timer attempts to pair syllables in one (timed) input line with a given style with syllables in a corresponding (untimed) line with another style. In other words, the timed input lines should all have same style ("romaji" for example) and the untimed ones another ("kanji" for example). Having more timed source lines than untimed destination ones or vice versa can confuse the tool, but it's usually possible to un-confuse it, see below. In order to correctly pair source lines with destination ones, both sets must be in the same order in the grid. For example, this works:
+汉字计时器会尝试把打好K值的行(由用户指定样式的行)中的音节和未打K值的行(另一个指定样式的行)中的音节配对。换句话说，打好K值的行应该具有统一的一个样式(例如\"romaji\")未打K值的行应该具有统一的另一个样式(例如\"kanji\")。
+打K的行比未打K的行多是不行的，反过来也一样。下面会展示几种汉字计时器正常工作的情况，我们应该尽量保证行与行之间是这样:
 
-    Timed line 1
-    Untimed line 1
-    Timed line 2
-    Untimed line 2
+```plaintext
+已打K的行 1
+未打K的行 1
+已打K的行 2
+未打K的行 2
+```
 
-And so does this:
+或者这样:
 
-    Timed line 1
-    Timed line 2
-    Untimed line 1
-    Untimed line 2
+```plaintext
+已打K的行 1
+已打K的行 2
+未打K的行 1
+未打K的行 2
+```
 
-But this does **not** (pairs lines wrong):
+这样则 **不行** (配对错误):
 
-    Timed line 1
-    Timed line 2
-    Untimed line 2
-    Untimed line 1
+```
+已打K的行 1
+已打K的行 2
+未打K的行 2
+未打K的行 1
+```
 
-## Using the kanji timer ##
+## 使用汉字计时器
 
-The kanji timer dialog looks like this:
+汉字计时器对话框看起来是这样:
 
 ![Kanji_timer](/img/3.2/Kanji_timer.png#center)
 
-The first thing you need to do is to select which styles are used for the timed input lines and the untimed output lines respectively. This is done in the upper right corner of the dialog; the top dropdown is the source style and the bottom one is the destination. When you've done this, click the start button.
+你应该做的第一件事就是分别选择用于输入(获取)时间和输出(设置)时间的两个样式。你可以在对话框的右上角调整；上方的下拉菜单用于选择源(从中获取时间)样式，下方的下拉菜单用于选择目标样式(应用时间于)。当你选择完这两项，点击开始按钮。
 
-Now, you'll see the first syllable of the first source line highlighted in the source text field, and a suggestion for the destination syllable highlighted in the destination field. What you do now is "group" each source syllable with one or more kanji (or other syllables) in the destination. This is done using the following keyboard shortcuts:
+现在，你会看见源行的第一个音节变为高亮，同时目标行中建议对应的音节也会高亮。你现在做的就是把源行中的每一个音节和目标行中的一个或多个汉字(或其他音节)对应起来。完成这些工作需要使用下面的快捷键:
 
-Enter
-: Accept the highlighted grouping (and go to next line if all syllables are grouped).
+回车
+:   接受当前的高亮对应关系 (如果该行处理完，则进入下一行)。
 
-Right arrow
-: Increase the destination highlight length.
+右箭头
+:   增加目标高亮音节长度
 
-Left arrow
-: Decrease the destination highlight length.
+左箭头
+:   缩短目标高亮音节长度
 
-Up arrow
-: Increase the source highlight length.
+上箭头
+:   增加源高亮音节长度
 
-Down arrow
-: Decrease the source highlight length.
+下箭头
+:   缩短源高亮音节长度
 
-Backspace
-: Un-groups (or unlinks) the last accepted syllable and lets you try to group it again (useful if you make a mistake).
+退格
+:   撤销上一步对应或接受动作，以便重新对应 (犯错时很有用)。
 
-## Things to note ##
+## 需要注意的事情
 
-* Don't use the mouse to change the highlights; it confuses the tool a lot. Use the keyboard shortcuts instead, they're much faster.
-* The destination line can already be k-timed, but if it is, the kanji timer will overwrite those timings.
-* Empty syllables will be copied alone, or will be combined with the surrounding syllables if those are to be combined.
-* Any ASS override tags appearing before each \k will be copied directly without modification, but tags after each \k is currently not copied at all.
-* If you have more source than destination lines or vice versa, you can use the "Skip source line" or "Skip destination line" to make sure the pairing of source/destination lines is correctly done.
+-   不要用鼠标去改变高亮的范围;这会让工具出错。你应该使用键盘，这样又快又不易出错。
+-   目标行可以是打过K的，不过应用汉字计时器后，K值会被覆写。
+-   空白音节会被单独复制，或者和周围的音节连在一起。
+-   任何在\\k前的ASS特效标签都会被直接复制，但\\k后的标签目前不能复制。
+-   如果你的源行多于目标行，或者反过来，你可以使用\"跳过源行\" 或
+    \"跳过目标行\" 来保证 源/目标行之间的对应能够正确完成。
 

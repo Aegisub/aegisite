@@ -1,93 +1,53 @@
 ---
-title: Typesetting Introduction
+title: 排版
 menu:
   docs:
     parent: typesetting
-    name: Typesetting Introduction
+    name: 介绍
 weight: 4000
 ---
 
-Wikipedia's definition of
-[typesetting](http://en.wikipedia.org/wiki/Typesetting): "**Typesetting**
-involves the presentation of textual material in graphic form on paper or some
-other medium." In a subtitling context, this means three things:
+维基上关于 [排版](http://en.wikipedia.org/wiki/Typesetting)的定义:
+\"**排版**可以指文字材料在纸或其它一些介质上的可视化呈现。\"
+在字幕工作的环境里，它意味着下面的三件事：
 
-* Presenting (a translation of) the spoken dialogue to the viewer in an easily
-  readable and visually pleasing form.
-* Translating any foreign-language background texts (such as episode titles,
-  scene information like time/place and other plot-important writings on things
-  in the background) and presenting the translation to the viewer, preferably
-  so that it appears that the translation was there all along (yet retaining
-  readability).
-* Designing other texts (logotypes, karaoke, etc. etc.) that should be
-  displayed on the video.
+-   把对话以一种更易于阅读和更佳的视觉效果形式呈现给观众。
+-   翻译背景里所有外语文字（如选段标题，背景里的时间/地点和其他推动情节发展的重要文字），并且把翻译呈现给观众，最好让翻译和原文一起出现（但保留可读性）。
+-   在视频里面设计其他文字（如logo，卡拉OK特效等等）
 
-Particularly in the fansub community, the word "typesetting" usually refers to
-the second or third of these three.
+尤其在一些字幕组里，"排版"通常意味着第二点或者第三点
 
-This page will attempt to give you an introduction to subtitle typesetting.
-Unfortunately good taste is hard to teach, but we will do our best.
+这一页将试图向你介绍字幕的排版方式。不幸的是，这种好的品味不是能够教出来的，但是我们还是会尽最大的努力把它讲清楚。
 
-## Dialogue typesetting ##
-The main goal of dialogue typesetting is **legibility**; everything else is
-just icing on the cake. There's no point in having subtitles if the viewer
-can't read them. Remember that subtitles frequently require quite fast reading,
-so ease of recognition is vital. Some guidelines for good legibility:
+## 对话排版
 
-* Use a plain, uncluttered, no-nonsense typeface. Sans-serif fonts (or if you
-  insist on serifs, "slab serif" fonts) are generally preferable, especially at
-  low video resolutions, since the serifs tend get blurred out, which naturally
-  looks bad. Too thin fonts are also to be avoided. Small caps fonts are bad
-  because the ascenders/descenders of  help recognition of words. Using tried
-  and trusted faces such as Helvetica, Arial or Verdana is not a bad thing; if
-  you want something that looks less "boring" but still readable try a
-  sans-serif font of the "humanist" variety, such as Calibri.
-* Use a well-defined but not too thick border. The color is important; the
-  higher the contrast against the main color the better. The white main
-  color/black border combo is well tried and trusted. Shadow is optional; if
-  you use it consider setting it to half-transparent black; solid black tends
-  to hurt legibility.
-* Use big friendly letters with comfortable margins; usually subtitles need to
-  be bigger than you think to be easily readable, particularly on a TV screen
-  (since the viewing distance on a TV is usually 2-3 meters, compared to
-  0.3-0.6m for a computer screen). If you plan on showing your subtitles on a
-  TV you also need to take [overscan](http://en.wikipedia.org/wiki/Overscan)
-  into account; Aegisub has an overscan mask feature (see [working with video]({{< relref "Video" >}})) that can help you with this. Even if the end result isn't
-  going to be viewed on a TV, subtitles which are in the overscan area are
-  usually not very readable anyway. Also consider the aspect ratio of the
-  video; 16:9 or wider aspect ratios give you the opportunity to have longer
-  lines at the expense of vertical space.
-* Make sure that no more than two lines of text are visible at a time
-  (exceptions can be made at times where there are a lot of people talking at
-  the same time). Sometimes you can compress the text horizontally a bit to
-  squeeze it in; at other times you just have to split the text block into two
-  different lines and display one after the other.
+对话排版的重点是"易读性"；其他的都只不过是蛋糕外面的糖衣。如果观众没法阅读字幕，那什么都没得说。记住，字幕通常需要快速阅读，所以轻松识别是至关重要的。下面是关于提高易读性的一些指导：
 
-{{<todo>}}examples {{</todo>}}
+-   用一个朴素，整洁，严肃的字体。无衬线字体通常是首选（如果你坚持要用有衬线字体，那就推荐"slab
+    serif"），尤其是视频分辨率比较低的时候，有衬线字体就会变得模糊不清所以看起来就很糟糕。太细的字体也是要避免使用的。小型大写字体也不好，因为它的字母会有上升与下降的变化，导致看不清楚。用一些可靠的字体是个不错的是，例如Helvetica，Arial或者Verdana；如果你想要它们看起来不那么无聊却要保持一定的可读性，那就试试无衬线字体中"人性化"的一些，例如Calibri。
 
-## "Sign" typesetting ##
-Sign typesetting (translating various background text) can usually be
-accomplished with ASS, but for more complex effects commercial programs like
-Adobe AfterEffects are sometimes used, since the holy grail of sign typesetting
-is to make the subtitle look like it's a part of the image that was always
-there. How to get there from here will not be discussed in detail on this page
-(see the [typesetting tutorial]({{< relref "Visual_Typesetting" >}})), but here are some
-pointers:
+-   用一个清晰但又不太厚的边框。边框的颜色是很重要的；最好是与主要颜色的差别比较大。白色的主要颜色与黑色的边框搭配已经测试过是很可靠的。阴影就可以根据情况选择；如果你用它就要考虑到把它（应该是边框）调成半透明的黑色；纯黑色是可能影响到清晰度的。
 
-* Is the sign actually important to the plot? Trying to translate every single
-  bit of text displayed on screen will rapidly make you go insane, and the end
-  result will often be unreadable anyway.
-* Frequently, the text of a plot-important sign (such as a letter) is actually
-  read out loud in the dialogue; if this is the case you should consider
-  skipping the sign typeset because having both text and dialogue may overload
-  the viewer with information. You should not typeset a sign just to show off
-  that you're capable of doing so.
-* Will you be able to make the translation easily legible? For example, if you
-  have very little space available to squeeze it in on, consider putting a
-  translation note as a normal "toptitle" instead.
+-   用大的而且友好的字母配上舒服的页边留白；通常字幕为了能够让人们读起来更容易需要比你想象的更大，尤其是在电视屏幕上（因为通常看电视的时候离电视有2-3米远，然而相比之下，看电脑只有0.3-0.6米）。如果你打算把字幕放到电视上的话就需要注意[过扫描](http://en.wikipedia.org/wiki/Overscan)问题；Aegisub有过扫描遮罩功能（详见
+    [载入视频]({{< relref "Video" >}})）或许能在这方面帮到你。即使字幕不是用来在电视上观看，在过扫描区域的字幕一般来说可读性也并不好。同时考虑到视频比例方面；16:9或者更宽的比例可以让你输入一长段文字而不用换行。
 
-{{<todo>}}images {{</todo>}}
+-   确保不会有两条对话同时显示出来（除非同时有一大群人同时交谈才会这样用）。一些情况下你可以把文字进行水平压缩使他们挤到同一行；其他情况下，你可以把一行分成两行，再依次显示出来。
 
-## Further reading ##
-The Wikipedia page on [typography](http://en.wikipedia.org/wiki/Typography) has
-a lot of useful links and explanation of various typesetting-related terms.
+{{<todo>}}例子{{</todo>}}
+
+## \"标记类文本\" 排版
+
+标记类文本的排版（翻译各种背景文字）通常可以用ASS来达到，但是拥有更多复杂效果的商业软件，像Adobe
+AfterEffects有时也会用的到，因为神圣的标记类文本排版是为了让它看起来就像是图像的一部分就一直存在于此了。如何从这里到那里本页不会进行详细的讨论（详见排版教程），但是这里有几个指点：
+
+-   标记对于图像来说真的那么重要么？如果让你试图翻译屏幕上显示的每一个文本，那你很快就会抓狂，并且最终的结果往往无论如何都不可阅读。
+-   通常来说，一个重要标记的文本（例如信件）事实上会在对话中读出来；如果是这种情况，那你应该考虑跳过标记类文本的排版，因为同时接收文本和对话的信息可能会使观众过载。你不应该仅仅是为了炫耀你的能力去排版一些标记类文本。
+-   你能做到使翻译简单易读么？例如，如果你把它们挤进非常小的可用空间，那么考虑将翻译注解作为一个正常的"顶端字幕"代替。
+
+{{<todo>}}图片{{</todo>}}
+
+## 进一步阅读
+
+维基上关于 [typography](http://en.wikipedia.org/wiki/Typography)
+有一大堆有用的链接和各种排版相关术语的解释。
+

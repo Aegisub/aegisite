@@ -1,5 +1,5 @@
 ---
-title: Karaoke Templater
+title: 卡拉OK模版执行器
 menu:
   docs:
     parent: automation

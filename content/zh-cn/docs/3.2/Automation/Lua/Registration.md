@@ -1,5 +1,5 @@
 ---
-title: Registration
+title: 注册
 menu:
   docs:
     parent: lua-reference

@@ -1,5 +1,5 @@
 ---
-title : "Download"
+title : "下载"
 menu:
   downloads:
     parent: "Downloads"
@@ -7,18 +7,18 @@ menu:
 ---
 
 
-## Dictionaries
+## 词典
 
 TODO
 
-To cut down on the download size, the Windows "Full" Install includes only a US English dictionary for the spell checker. All others must be downloaded separately:
+为了减小安装包的体积，Windows 安装程序中仅包含了用于拼写检查的英语(美国)词典，其它语种的词典则需单独下载：
 
 
-## Upcoming Versions
+## 即将推出的版本
 
 Check CI build
 
 
-## Previous Versions
+## 旧版本
 
 TODO

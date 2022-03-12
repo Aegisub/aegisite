@@ -1,5 +1,5 @@
 ---
-title: Progress reporting
+title: 进度报告
 menu:
   docs:
     parent: lua-reference

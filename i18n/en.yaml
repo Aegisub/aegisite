@@ -1,0 +1,8 @@
+get-started:
+  other: Get Started
+
+latest-release:
+  other: The <a href="https://github.com/Aegisub/Aegisub/releases/latest">Latest Release</a> version is <strong>{{.Site.Data.version.current}}</strong>, released {{.Site.Data.version.release_date}}
+
+see-changelog:
+  other: See the <a href="{{.}}">changelog</a> for a list of changes.

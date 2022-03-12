@@ -1,5 +1,5 @@
 ---
-title: Automation Manager
+title: 自动化脚本管理器
 menu:
   docs:
     parent: automation

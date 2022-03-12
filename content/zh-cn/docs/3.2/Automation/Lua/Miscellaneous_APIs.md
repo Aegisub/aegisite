@@ -1,5 +1,5 @@
 ---
-title: Misc. APIs
+title: 杂项API
 menu:
   docs:
     parent: lua-reference

@@ -1,5 +1,5 @@
 ---
-title: Karaoke Timing Tutorial
+title: 卡拉OK计时
 menu:
   docs:
     parent: tutorials

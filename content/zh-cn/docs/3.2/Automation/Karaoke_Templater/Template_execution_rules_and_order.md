@@ -1,5 +1,5 @@
 ---
-title: Execution order
+title: 卡拉OK模板执行环境和顺序
 menu:
   docs:
     parent: karaoke-templater

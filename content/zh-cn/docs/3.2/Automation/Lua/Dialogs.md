@@ -1,5 +1,5 @@
 ---
-title: Dialogs
+title: 对话框
 menu:
   docs:
     parent: lua-reference

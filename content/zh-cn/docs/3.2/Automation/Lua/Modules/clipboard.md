@@ -1,24 +1,26 @@
 ---
-title: clipboard
+title: 剪贴板
 menu:
   docs:
     parent: lua-modules
 weight: 6265
 ---
 
-The `clipboard` module supplies functions for reading from and writing to the clipboard.
+`clipboard`模块提供读取和写入剪贴板的函数。
 
-## Usage ##
-Import this module with {{< lua `clipboard = require 'aegisub.clipboard'` >}}
+## 使用 {#section}
 
-### clipboard.get() ###
-Synopsis: {{< lua `text = clipboard.get()` >}}
+使用`clipboard = require 'aegisub.clipboard'`导入此模块。
 
-Get the current contents of the clipboard as a string.
-Returns `nil` if the clipboard does not currently contain text or if an error occurs.
+### clipboard.get() {#clipboardget}
 
-### clipboard.get() ###
-Synopsis: {{< lua `clipboard.set(new_text)` >}}
+示例：`text = clipboard.get()`
 
-Set the clipboard contents to a string.
-Returns true if the clipboard could be set, and false if an error occurred.
+以字符串形式获取剪贴板的当前内容。
+如果剪贴板当前不包含文本或发生错误，则返回`nil`。
+
+### clipboard.set() {#clipboardset}
+
+示例：`clipboard.set(new_text)`
+
+将剪贴板内容设为指定字符串。 设定成功将返回true，出错则返回false。

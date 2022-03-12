@@ -1,7 +1,7 @@
 ---
-title : "Advanced Subtitle Editor"
-description: "Aegisub is a free, cross-platform open source tool for creating and modifying subtitles. Aegisub makes it quick and easy to time subtitles to audio, and features many powerful tools for styling them, including a built-in real-time video preview."
-lead: "Aegisub is a free, cross-platform open source tool for creating and modifying subtitles. Aegisub makes it quick and easy to time subtitles to audio, and features many powerful tools for styling them, including a built-in real-time video preview."
+title : "高级字幕编辑器"
+description: "Aegisub 是一款自由、跨平台的开源字幕编辑软件。它能让您轻松且高效地完成时间轴的制作，并利用内置的各种实用工具来调整字幕的样式，还可以进行实时的视频预览。"
+lead: "Aegisub 是一款自由、跨平台的开源字幕编辑软件。它能让您轻松且高效地完成时间轴的制作，并利用内置的各种实用工具来调整字幕的样式，还可以进行实时的视频预览。"
 date: 2020-10-06T08:47:36+00:00
 lastmod: 2020-10-06T08:47:36+00:00
 draft: false

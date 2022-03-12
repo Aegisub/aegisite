@@ -1,5 +1,5 @@
 ---
-title: Furigana Tutorial
+title: 注音卡拉OK
 menu:
   docs:
     parent: tutorials

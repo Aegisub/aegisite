@@ -1,5 +1,5 @@
 ---
-title: Aegisub Options
+title: 选项
 menu:
   docs:
     parent: miscellaneous

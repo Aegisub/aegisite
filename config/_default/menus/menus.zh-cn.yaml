@@ -45,25 +45,25 @@ social:
 
 # docs-sidebar/docs
 docs:
-  - name: Navigation
+  - name: 导航
     weight: 110
     identifier: navigation
-  - name: Introduction
+  - name: 介绍
     weight: 200
     identifier: introduction
-  - name: Working with Subtitles
+  - name: 制作字幕
     weight: 300
     identifier: working-with-subtitles
-  - name: Typesetting
+  - name: 排版
     weight: 400
     identifier: typesetting
-  - name: Timing
+  - name: 时间轴
     weight: 500
     identifier: timing
-  - name: Automation
+  - name: 自动化
     weight: 600
     identifier: automation
-  - name: Miscellaneous
+  - name: 杂项
     weight: 700
     identifier: miscellaneous
 

@@ -1,5 +1,5 @@
 ---
-title: Inline effects Tutorial
+title: 卡拉OK内联特效
 menu:
   docs:
     parent: tutorials

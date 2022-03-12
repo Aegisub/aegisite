@@ -1,5 +1,5 @@
 ---
-title: Code lines and blocks
+title: Code行 和 Code区
 menu:
   docs:
     parent: karaoke-templater

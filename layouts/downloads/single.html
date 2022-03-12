@@ -31,13 +31,9 @@
 				{{ partial "sidebar/docs-toc.html" . }}
 			</nav>
 			{{ end -}}
-			<p> The <a href="https://github.com/Aegisub/Aegisub/releases/latest">Latest Release</a>
-				version is <strong>{{.Site.Data.version.current}}</strong>, released {{.Site.Data.version.release_date}}
-			</p>
-			<p>See the
-				<a href="{{ "changelog/" | relLangURL }}/{{.Site.Data.version.current}}">changelog</a>
-				for a list of changes.
-			</p>
+			<p>{{ markdownify (i18n "latest-release" .) }}</p>
+			{{ $changelogLink := (print ("changelog/" | relLangURL) .Site.Data.version.current)}}
+			<p>{{ markdownify (i18n "see-changelog" $changelogLink) }}</p>
 			{{ .Content }}
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				{{ if .Site.Params.lastMod -}}

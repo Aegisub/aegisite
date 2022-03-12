@@ -1,5 +1,5 @@
 ---
-title: Exporting Subtitles
+title: 导出
 menu:
   docs:
     parent: working-with-subtitles

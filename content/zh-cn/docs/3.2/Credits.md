@@ -1,26 +1,28 @@
 ---
-title: Credits
+title: 贡献者名单
 menu:
   docs:
     parent: introduction
+    name: 贡献者
 weight: 2300
 ---
 
-Aegisub was originally written by Rodrigo Braz Monteiro with significant contributions from Niels Martin Hansen.
-Development was lead by Monteiro through 2008, Hansen through 2010, and by Thomas Goyne  from 2011 onward.
+Aegisub 最初由 Rodrigo Braz Monteiro 所编写，Niels Martin Hansen
+在此过程中也做出了重要贡献。开发工作在 2008 年由 Monteiro 主导，2010
+年由 Hansen 接替，2011 年以后则由 Thomas Goyne 负责。
 
-## Programming ##
-* Main Programmers:
+## 主程序 ##
+* 主要开发者：
   * **Rodrigo Braz Monteiro** (ArchMage ZeratuL) - Lead developer, video system, audio system, subtitles I/O, tools
   * **Niels Martin Hansen** (jfs) - Automation, Lua automation, audio system, tools
   * **Thomas Goyne (Plorkyeran)** - Lead developer for 3.0 onwards.
-* Staff Contributors:
+* 开发组成员：
   * **Karl Blomster** (TheFluff) - General code, FFmpegSource video provider
   * **Fredrik Mellbin** (Myrsloik) - FFmpegSource and Avisynth-related code
   * **Amar Takhar** (verm) - New unix build system
   * **David Lamparter** (equinox) - Unix port
   * **Alysson Souza e Silva** (demi_alucard) - General code
-* Other contributors:
+* 其他贡献者：
   * **Dan Donovan** (Dansolo) - Miscellaneous tools
   * **Patryk Pomykalski** (Pomyk) - Miscellaneous patching
   * **ai-chan** - ASSDraw3
@@ -35,50 +37,50 @@ Development was lead by Monteiro through 2008, Hansen through 2010, and by Thoma
   * **tophf** - General patches
   * **nodame** - General patches
 
-## Installer ##
-* 2.x:
+## 安装程序 ##
+* 2.x：
   * **Niels Martin Hansen** (jfs)
   * **Fredrik Mellbin** (Myrsloik)
   * **Rodrigo Braz Monteiro** (ArchMage ZeratuL)
-* Previous:
+* 早期：
   * movax
 
-## Manual ##
-* 3.x:
+## 用户手册 ##
+* 3.x：
   * **Thomas Goyne (Plorkyeran)**
-* 2.x:
+* 2.x：
   * **Karl Blomster** (TheFluff)
   * **Niels Martin Hansen** (jfs)
   * **Rodrigo Braz Monteiro** (ArchMage ZeratuL)
-* Previous:
+* 早期：
   * Motoko-chan
   * Kobi
   * movax
   * Jcubed
 
-## Hosting ##
-* Current:
+## 内容托管 ##
+* 当前：
   * **DeathWolf**: SVN repository for versions 2.1.2+
   * **Sigurd Tao Lyngse** (Bot1): Forums and Main Wiki
   * **Niels Martin Hansen** (jfs): Bug Tracker
   * **Marcello Bastéa-Forte**: Documentation Wiki
   * **Rodrigo Braz Monteiro** (ArchMage ZeratuL): Domain administration
-* Previous:
+* 早期：
   * **David Lamparter** (equinox): SVN repository for versions 2.00 - 2.1.2
   * BerliOS: SVN repository for version 1.10
   * Mentar: SVN repository up to version 1.09
   * Bot1: Bug Tracker
 
-## Localization files ##
-* 2.00 translations:
+## 本地化 ##
+* 2.00 翻译：
   * ArchMage ZeratuL: Brazilian Portuguese
   * Ereza: Catalan
   * Yuri: Hungarian
   * Hiroshi: Japanese
   * Jeroi: Finnish
-* 1.11 translations:
+* 1.11 翻译：
   * Karasu: Traditional Chinese
-* 1.10 translations:
+* 1.10 翻译：
   * TechNiko: French
   * Crysral: French
   * thrash-sensei: Russian
@@ -89,7 +91,7 @@ Development was lead by Monteiro through 2008, Hansen through 2010, and by Thoma
   * oblisk: Korean
   * mulrich: Danish
 
-## Additional thanks ##
+## 额外致谢 ##
 * [Combined Community Codec Pack](http://www.cccp-project.net) staff
 * Gabest for VSFilter
 * squid_80 for the x64 builds of Avisynth and CSRI-enabled VSFilter
@@ -98,8 +100,8 @@ Development was lead by Monteiro through 2008, Hansen through 2010, and by Thoma
 * ender for yawning a lot
 * Alpha testers: b0nk, Bot1, deathbygirl, DoGfOoD, grimlock, Jagobah, Jcubed, Kintaro, Kobi, kodachrome, maxx-, mASSIVe, Maya, Mentar, movax, msb, neo2sonic, nich, nwa, omgifos, SOzuken, TheFluff, thrash_sensei, Vincent, zegnat
 
-## About ##
-Aegisub includes portions from the following other projects:
+## 相关项目 ##
+Aegisub 包含了以下项目的部分内容：
 
 * Avisynth 2.5 - Copyright (c) Ben Rudiak-Gould et al
 * FFMS2 - Copyright (c) Fredrik Mellbin

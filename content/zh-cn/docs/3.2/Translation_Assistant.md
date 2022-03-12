@@ -1,26 +1,28 @@
 ---
-title: Translation Assistant
+title: 翻译助手
 menu:
   docs:
     parent: working-with-subtitles
 weight: 3400
 ---
 
-The translation assistant is a valuable tool for translating subtitles from one language to the other. It allows you to translate in the most efficient possible manner, by letting you type the translated text without having to worry about selecting the original, or forgetting what was written in it. It also parses ASS override tags, and will skip over them.
+翻译助手是一个很有用的翻译辅助工具。它可以让您以最高效的方式翻译字幕，而不必为选取文字的事情费心，也无需担心忘记原文的内容。在您翻译时，它还能从文本中识别出
+ASS 特效标签并自动略过它们。
 
+## 概览
 
-## Overview  ##
+![Translation_Assistant](/img/3.2/zh/Translation_Assistant.png#center)
 
+翻译助手的窗口十分简洁：上方的文本框展示当前行的原文，下方的文本框用于输入译文。再往下，则是翻译助手专用的快捷键列表，以及"启用预览"的复选框。如果您已经载入了视频并开启了预览，提交译文更改的同时，视频就会自动跳转至当前行对应的时间。
 
-![Translation_Assistant](/img/3.2/Translation_Assistant.png#center)
+## 如何使用
 
-The assistant window is simple: it shows you the original raw line, and a box where you can type the translation. There is also a list of hotkeys specific to this window, and a checkbox to enable previewing, if you have the corresponding video set up. Having this option enabled will automatically jump to the current line when you change it.
+翻译助手的使用方法非常简单。首先，点击工具条中的红色小鱼图标，或者从"*字幕
+-\> 翻译助手*
+"打开它，就会从当前选中的行开始翻译。原文中，待翻译的部分将会突出显示为蓝色，您只需输入译文，然后按下回车即可。如果文本中间插入了特效标签，这一行可能就需要拆分为几个小节来翻译。
 
-
-## How to use  ##
-
-
-Using the assistant is very easy. First, start it by clicking its icon in the toolbar or going to Subtitles->Translation Assistant. It will start at the currently selected line. The original line will have the text that you have to translate highlighted in blue. Simply type the translation to it, and hit enter. If there are override tags in the line, you may have to translate more than one block per line.
-
-In the above screenshot, supposing that you are translating to Portuguese, you would first type "Clima" (Portuguese for Weather) and hit enter. It would then highlight "_______". Since I don't want to translate that, I just hit Insert in the keyboard, and it will copy the text over. So I hit enter, and it will ask for the last bit, "Temperature", so I enter "Temperatura" and hit enter again. Then it will jump to the next line, where I will repeat the process. If I make a mistake, I can use Page Up and Page Down keys to move to the next or previous block/line.
-
+如上方的截图所示，假设我们正在将英语译成葡萄牙语。首先，在译文栏输入"Clima"（葡萄牙语中的
+Weather）并按下回车，下一个小节将显示为蓝色，即"\_\_\_\_\_\_\_"。由于我们不想翻译它，所以直接按下
+`Insert`
+键，原文就会填入译文栏。按下回车，输入"Temperature"的译文"Temperatura"，再次回车，这一行便完成了。然后跳至下一行，重复上述过程。如果中途某一步出错了，可以使用
+`Page Up` 和 `Page Down` 来移动到上一个或下一个小节／行。

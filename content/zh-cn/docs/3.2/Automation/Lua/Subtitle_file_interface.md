@@ -1,5 +1,5 @@
 ---
-title: Subtitles object
+title: 字幕文件接口
 menu:
   docs:
     parent: lua-reference

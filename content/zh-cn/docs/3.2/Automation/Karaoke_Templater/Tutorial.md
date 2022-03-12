@@ -6,6 +6,6 @@ menu:
     identifier: automation-tutorials
 weight: 6170
 ---
-* [A simple example]({{< relref "./Tutorial_1" >}})
-* [Using math expressions]({{< relref "./Tutorial_2" >}})
+* [教程一]({{< relref "./Tutorial_1" >}})
+* [教程二]({{< relref "./Tutorial_2" >}})
 
