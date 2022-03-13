@@ -286,13 +286,12 @@ body {
 
 dl {
   display: grid;
-  grid-template-columns: max-content auto;
+  grid-template-columns: fit-content(30%) auto;
 }
 
 dl dt {
   font-weight: bold;
   grid-column-start: 1;
-  max-width: 20rem;
 }
 
 dl dd {
