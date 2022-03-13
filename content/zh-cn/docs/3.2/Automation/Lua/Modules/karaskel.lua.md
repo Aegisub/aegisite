@@ -10,8 +10,8 @@ Automation 4的核心文件 `karaskel.lua` 内置了许多函数，用来协助A
 4 Lua方面的卡拉OK特效制作 它定义了几种新的数据结构，也拓展了Automation 4
 本身定义的一些。
 
-`karaskel.lua` 包含 \[`utils.lua`\]({{\< relref "util" >}}) 和
-\[`unicode.lua`\]({{\< relref "unicode" >}})
+`karaskel.lua` 包含 [`utils.lua`]({{< relref "util" >}}) 和
+[`unicode.lua`]({{< relref "unicode" >}})
 。所以你在使用`karaskel.lua`时不必再单独include这两项。
 
 `karaskel.lua`
@@ -28,7 +28,7 @@ Automation 4的核心文件 `karaskel.lua` 内置了许多函数，用来协助A
 
 - `subtitles` 指的是Automation 4 Lua定义的字幕文件对象。
 - `generate_furigana` 是在这种逻辑下进行的操作: 它会为没有对应
-  \[假名布局\]({{\< relref "Furigana_karaoke" >}})
+  [假名布局]({{< relref "Furigana_karaoke" >}})
   的样式单独生成样式。生成的假名样式永远也不会覆盖存在的样式。
 
 使用 `collect_head` 一般情况下是你在处理函数中做的第一步。
@@ -66,7 +66,7 @@ Automation 4的核心文件 `karaskel.lua` 内置了许多函数，用来协助A
 - `line.text_stripped` - 返回除去特效标签和绘图代码的原文本
 - `line.duration` - 返回行的持续时间(毫秒单位)
 - `line.kara` 和 `line.furi` - 扩展版的
-  \[卡拉OK和假名标注表\]({{\< relref "karaskel.lua.md#karaoke-and-furigana-syllable-tables" >}}),
+  [卡拉OK和假名标注表]({{< relref "karaskel.lua.md#karaoke-and-furigana-syllable-tables" >}}),
   不含尺寸位置信息。
 
 这个函数不计算任何尺寸和位置信息。 (事实上它根本不使用 `meta` 或者
@@ -86,7 +86,7 @@ Automation 4的核心文件 `karaskel.lua` 内置了许多函数，用来协助A
   `false` (假)
 - `line.width`, `line.height`, `line.descent` 和 `line.extlead` -
   原文本的尺寸信息，由
-  \[\`aegisub.text_extents\`\]({{\< relref "../Miscellaneous_APIs#aegisub.text_extents" >}})
+  [\`aegisub.text_extents\`]({{< relref "../Miscellaneous_APIs#aegisub.text_extents" >}})
   返回。 这个函数也修饰 `line.kara` 和 `line.furi` 表, 增加尺寸信息。
 
 这一部分不涉及位置信息的计算。
@@ -131,7 +131,7 @@ Automation 4的核心文件 `karaskel.lua` 内置了许多函数，用来协助A
 
 此外, `line.kara` 和 `line.furi` 表是被布局函数调用，然后加上位置信息。
 
-详见这部分 \[data structures\]({{\< relref "karaskel.lua.md#datastructures" >}}) 。
+详见这部分 [data structures]({{< relref "karaskel.lua.md#datastructures" >}}) 。
 
 如果没有找到任何行的尺寸信息, `karaskel.preproc_line_size` 会被调用,
 它可能会转而调用 `karaskel.preproc_line_text`。
@@ -270,7 +270,7 @@ Full list of fields:
 - `style.fontsize` - Font size for the style.
 - `style.color1`, `style.color2`, `style.color3` and `style.color4` - The
   four colours used by the style, in regular order. Use
-  \[`extract_color`\]({{\< relref "../Modules#extractcolor" >}}) and family to
+  [`extract_color`]({{< relref "../Modules#extractcolor" >}}) and family to
   manipulate these.
 - `style.bold` - `true`/`false` to specify bold/non-bold font face. Can
   also be a number to specify font weight, but this is not well supported
@@ -401,7 +401,7 @@ Additions by `karaskel.preproc_line_text`:
 - `syl.kdur` - Syllable duration in centiseconds, suitable for use in `\k`
   tags.
 - `syl.line` - Back reference to the line table containing this syllable.
-- `syl.inline_fx` - Name of the \[_inline-fx_\]({{\< relref "Karaoke_inline-fx" >}}) for this
+- `syl.inline_fx` - Name of the [_inline-fx_]({{< relref "Karaoke_inline-fx" >}}) for this
   syllable.
 - `syl.i` - Index number of this syllable.
 - `syl.prespace`, `syl.postspace` - Space characaters at the start/end of

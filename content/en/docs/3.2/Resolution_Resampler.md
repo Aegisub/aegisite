@@ -6,7 +6,7 @@ menu:
 weight: 4700
 ---
 
-The Resolution Resampler is a built-in tool designed to change the \[resolution of the script\]({{\< relref "Script_Resolution" >}}) while transforming all affected tags so it
+The Resolution Resampler is a built-in tool designed to change the [resolution of the script]({{< relref "Script_Resolution" >}}) while transforming all affected tags so it
 ends up looking the same. It can also offset all margins (and absolute
 positions) by a specific value. Uses include merging two scripts with different
 resolutions, converting a script for a 4:3 video to its 16:9 equivalent, and

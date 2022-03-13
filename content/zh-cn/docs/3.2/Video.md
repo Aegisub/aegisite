@@ -9,12 +9,12 @@ weight: 4100
 Aegisub不是一个视频（或媒体）播放器，但它依然支持载入多种视频文件。
 这一篇就是关于Aegisub是如何载入和处理视频文件的，如果你只是想做一个安静的美男子（萌妹子），
 建议您还是直接参考排版教程 或
-\[可视化排版\]({{\< relref "Visual_Typesetting" >}}) .
+[可视化排版]({{< relref "Visual_Typesetting" >}}) .
 
 ## 打开视频
 
 在 *视频_菜单中选择
-\_打开视频*。你所能打开的视频文件类型取决于你的\[视频提供器\]({{\< relref "Options#video" >}})。如果你要使用空白视频，则点击
+\_打开视频*。你所能打开的视频文件类型取决于你的[视频提供器]({{< relref "Options#video" >}})。如果你要使用空白视频，则点击
 *打开空白视频*。
 
 ### 支持格式
@@ -44,8 +44,8 @@ DSS2()
 DirectShowSource() :
 使用DirectShowSource()（由Avisynth提供）来尝试载入文件。总体上与DSS2是一样的，但是远不及其可靠，而且不会把VFR文件转换为CFR文件。警告：DSS无法正常进行frame-accurate
 seeking，请尽量避免使用DSS。
-注意，VFR视频不被Avisynth提供器支持，有时，载入\[外部时间码\]({{\< relref "Video#timecodes" >}})可能管用，但是实际上它会瞎搞一通。
-Aegisub会在\[?data\]({{\< relref "Aegisub_path_specifiers#?data" >}})目录（Windows下通常在aegisub32.exe所在的文件夹）寻找Avisynth插件。你也可以直接把他们放在你的Avisynth插件文件夹来让它们自动载入。
+注意，VFR视频不被Avisynth提供器支持，有时，载入[外部时间码]({{< relref "Video#timecodes" >}})可能管用，但是实际上它会瞎搞一通。
+Aegisub会在[?data]({{< relref "Aegisub_path_specifiers#?data" >}})目录（Windows下通常在aegisub32.exe所在的文件夹）寻找Avisynth插件。你也可以直接把他们放在你的Avisynth插件文件夹来让它们自动载入。
 
 ### 空白视频
 
@@ -183,8 +183,8 @@ by how much the image will be stretched (since you know its original
 dimensions and the display aspect ratio). You just calculate how many
 percent the image will be stretched in either the X or the Y direction,
 and then set the ScaleX or ScaleY parameter in the
-\[style\]({{\< relref "Styles" >}}) (or use the \\fscx or \\fscy
-\[overrides\]({{\< relref "ASS_Tags" >}})) to the same amount but in the other
+[style]({{< relref "Styles" >}}) (or use the \\fscx or \\fscy
+[overrides]({{< relref "ASS_Tags" >}})) to the same amount but in the other
 direction.
 
 Example: we have a 704x480 image that we know will be displayed as 16:9

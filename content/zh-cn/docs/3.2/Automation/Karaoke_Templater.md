@@ -7,12 +7,12 @@ menu:
 weight: 6100
 ---
 
-**卡拉OK模版执行器**是一个Aegisub自带的\[自动化\]({{\< relref "Automation" >}})脚本。它的主要目的是帮助你使用特别设计的模版语言来制作\[卡拉OK特效\]({{\< relref "../Glossary/Karaoke_effect" >}})。卡拉OK模版执行器已随Aegisub安装并可以使用。
+**卡拉OK模版执行器**是一个Aegisub自带的[自动化]({{< relref "Automation" >}})脚本。它的主要目的是帮助你使用特别设计的模版语言来制作[卡拉OK特效]({{< relref "../Glossary/Karaoke_effect" >}})。卡拉OK模版执行器已随Aegisub安装并可以使用。
 
 ## 教程：卡拉OK模版执行器介绍
 
-- \[一个简单的例子\]({{\< relref "./Karaoke_Templater/Tutorial_1" >}})
-- \[使用数学表达式\]({\< relref "./Karaoke_Templater/Tutorial_2" >}})
+- [一个简单的例子]({{< relref "./Karaoke_Templater/Tutorial_1" >}})
+- [使用数学表达式]({{< relref "./Karaoke_Templater/Tutorial_2" >}})
 - Using multiple template lines
 - More advanced effects with positioned syllables
 
@@ -20,14 +20,14 @@ weight: 6100
 
 ## 相关
 
-- \[声明template和code行\]({{\< relref "./Karaoke_Templater/Declaring_template_and_code_lines" >}})
-- \[模版执行器将在何时以及以何种顺序执行\]({{\< relref "./Karaoke_Templater/Template_execution_rules_and_order" >}})
-- \[template修饰语\]({{\< relref "./Karaoke_Templater/Template_modifiers" >}})
-- \[内联变量（$变量）\]({{\< relref "./Karaoke_Templater/Inline_variables" >}})
-- \[code区和code行的规则\]({{\< relref "./Karaoke_Templater/Code_lines_and_blocks" >}})
-- \[code区/行的执行环境的内容\]({{\< relref "./Karaoke_Templater/Code_execution_environment" >}})
+- [声明template和code行]({{< relref "./Karaoke_Templater/Declaring_template_and_code_lines" >}})
+- [模版执行器将在何时以及以何种顺序执行]({{< relref "./Karaoke_Templater/Template_execution_rules_and_order" >}})
+- [template修饰语]({{< relref "./Karaoke_Templater/Template_modifiers" >}})
+- [内联变量（$变量）]({{< relref "./Karaoke_Templater/Inline_variables" >}})
+- [code区和code行的规则]({{< relref "./Karaoke_Templater/Code_lines_and_blocks" >}})
+- [code区/行的执行环境的内容]({{< relref "./Karaoke_Templater/Code_execution_environment" >}})
 
-也请看一下\[Automation/Lua/Modules/karaskel.lua\]({{\< relref "Lua/Modules/karaskel.lua.md" >}})，有更多关于`line`和`syl`变量的内容，以及其他内容。
+也请看一下[Automation/Lua/Modules/karaskel.lua]({{< relref "Lua/Modules/karaskel.lua.md" >}})，有更多关于`line`和`syl`变量的内容，以及其他内容。
 
 ## 对于使用过 *multi-template* 的用户
 

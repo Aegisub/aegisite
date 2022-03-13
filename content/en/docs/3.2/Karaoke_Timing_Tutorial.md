@@ -157,7 +157,7 @@ Repeat.
 
 ## Styling
 
-{{<todo>}}a bit about styles, how basic karaoke looks, and the \\kf and \\ko effects {{</todo>}}
+{{<todo>}}a bit about styles, how basic karaoke looks, and the \kf and \ko effects {{</todo>}}
 
 ## Wrapping up
 

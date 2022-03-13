@@ -20,7 +20,7 @@ over Lua's:
 
 ## Usage
 
-Import this module with {{\< lua `re = require 'aegisub.re'` >}}.
+Import this module with {{< lua `re = require 'aegisub.re'` >}}.
 
 See [boost.regex's
 documentation](http://www.boost.org/doc/libs/1_53_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html)
@@ -33,15 +33,15 @@ this module's regular expressions.
 Several of the functions below return Match Tables, which are tables containing
 the following fields:
 
-**`str`** (`string`)
+`str` (`string`)
 : The text matched by a pattern or capturing expression
 
-**`first`** (`number`)
+`first` (`number`)
 : The start index of `str` in the original string which had a regular
   expression applied to it. Note that this index is one-based and is in bytes,
   rather than characters, to match Lua's string indexing.
 
-**`last`** (`number`)
+`last` (`number`)
 : The end index of `str` in the original string which had a regular expression
   applied to it. Note that this index is one-based, inclusive, and is in bytes,
   rather than characters, to match Lua's string indexing.
@@ -109,15 +109,15 @@ nil
 
 ### re.compile
 
-Synopsis: {{\< lua `expr = re.compile(pattern, [FLAGS])` >}}
+Synopsis: {{< lua `expr = re.compile(pattern, [FLAGS])` >}}
 
 Compile a regular expression. Reusing a compiled regular expression is faster
 than recompiling it each time it is used, and is usually more readable as well.
 
-**`@pattern`** (`string`)
+`@pattern` (`string`)
 : Regular expression to compile.
 
-**`expr`** (`table`)
+`expr` (`table`)
 : A table with all of the functions listed below, except without the pattern
   and flags arguments.
 
@@ -137,25 +137,25 @@ than recompiling it each time it is used, and is usually more readable as well.
 
 ### re.split
 
-Synopsis: {{\< lua `chunks = re.split(str, pattern, skip_empty=false, max_splits=0)` >}}
+Synopsis: {{< lua `chunks = re.split(str, pattern, skip_empty=false, max_splits=0)` >}}
 
 Split the string at each of the occurrences of `pattern`.
 
-**`@str`** (`string`)
+`@str` (`string`)
 : String to split.
 
-**`@pattern`** (`string`)
+`@pattern` (`string`)
 : Regular expression to split the string on. Capturing groups in the pattern
   are ignored.
 
-**`@skip_empty`** (`boolean`)
+`@skip_empty` (`boolean`)
 : Do not include zero-length chunks in the results.
 
-**`@max_splits`** (`number`)
+`@max_splits` (`number`)
 : If greater than zero, the maximum numbers of times to split the string (i.e.
   `#chunks` will be at most `max_splits + 1`).
 
-**`chunks`** (`table`)
+`chunks` (`table`)
 : A table containing each of the sections of `str` between the matches of
   `pattern`.
 
@@ -198,25 +198,25 @@ Split the string at each of the occurrences of `pattern`.
 
 ### re.gsplit
 
-Synopsis: {{\< lua `iter = re.gsplit(str, pattern, skip_empty=false, max_splits=0)` >}}
+Synopsis: {{< lua `iter = re.gsplit(str, pattern, skip_empty=false, max_splits=0)` >}}
 
 Iterator version of re.split.
 
-**`@str`** (`string`)
+`@str` (`string`)
 : String to split.
 
-**`@pattern`** (`string`)
+`@pattern` (`string`)
 : Regular expression to split the string on. Capturing groups in the pattern
   are ignored.
 
-**`@skip_empty`** (`boolean`)
+`@skip_empty` (`boolean`)
 : Do not include zero-length chunks in the results.
 
-**`@max_splits`** (`number`)
+`@max_splits` (`number`)
 : If greater than zero, the maximum numbers of times to split the string (i.e.
   `#chunks` will be at most `max_splits + 1`).
 
-**`iter`** (`iterator over strings`)
+`iter` (`iterator over strings`)
 : An iterator over each of the sections of `str` between the matches of
   `pattern`.
 
@@ -259,18 +259,18 @@ a
 
 ### re.find
 
-Synopsis: {{\< lua `matches = re.find(str, pattern)` >}}
+Synopsis: {{< lua `matches = re.find(str, pattern)` >}}
 
 Find all non-overlapping substrings of `str` which match `pattern`.
 
-**`@str`** (`string`)
+`@str` (`string`)
 : String to search for the pattern in.
 
-**`@pattern`** (`string`)
+`@pattern` (`string`)
 : Pattern to search for. Capturing groups in the pattern are ignored.
 
-**`matches`** (`table` or `nil`)
-: A table of \[Match Tables\]({{\< relref "re#match-tables" >}}) for all matches, or `nil` if
+`matches` (`table` or `nil`)
+: A table of [Match Tables]({{< relref "re#match-tables" >}}) for all matches, or `nil` if
   there were none.
 
 {{<example-box>}}
@@ -290,8 +290,8 @@ Find all non-overlapping substrings of `str` which match `pattern`.
     }
 }
 ```
-
 {{</example-box>}}
+
 {{<example-box>}}
 
 ```lua
@@ -312,17 +312,17 @@ Doesn't have an a
 
 ### re.gfind
 
-Synopsis: {{\< lua `iter = re.gfind(str, pattern)` >}}
+Synopsis: {{< lua `iter = re.gfind(str, pattern)` >}}
 
 Iterate over all non-overlapping substrings of `str` which match `pattern`.
 
-**`@str`** (`string`)
+`@str` (`string`)
 : String to search for the pattern in.
 
-**`@pattern`** (`string`)
+`@pattern` (`string`)
 : Pattern to search for. Capturing groups in the pattern are ignored.
 
-**`iter`** (`iterator over string, number, number`)
+`iter` (`iterator over string, number, number`)
 : An iterator which produces three values at each step: a matched string, the
   started index of the match in the source string, and the inclusive end index of
   the match in the source string.
@@ -341,21 +341,21 @@ Iterate over all non-overlapping substrings of `str` which match `pattern`.
 
 ### re.match
 
-Synopsis: {{\< lua `matches = re.match(str, pattern)` >}}
+Synopsis: {{< lua `matches = re.match(str, pattern)` >}}
 
 Match a pattern against a string. This differs from `find` in that `find`
 returns all matches and does not capture subgroups, while this returns only a
 single match along with the captured subgroups.
 
-**`@str`** (`string`)
+`@str` (`string`)
 : String to search for the pattern in.
 
-**`@pattern`** (`string`)
+`@pattern` (`string`)
 : Pattern to search for.
 
-**`matches`** (`table` or `nil`)
+`matches` (`table` or `nil`)
 : `nil` if the pattern did not match the string. Otherwise, a table containing
-  a \[Match Table\]({{\< relref "re#match-tables" >}}) for the full match, followed by a \[Match Table\]({{\< relref "re#match-tables" >}}) for each capturing subexpression in the pattern (if
+  a [Match Table]({{< relref "re#match-tables" >}}) for the full match, followed by a [Match Table]({{< relref "re#match-tables" >}}) for each capturing subexpression in the pattern (if
   any).
 
 {{<example-box>}}
@@ -390,33 +390,31 @@ single match along with the captured subgroups.
 
 ### re.gmatch
 
-Synopsis: {{\< lua `iter = re.gmatch(str, pattern)` >}}
+Synopsis: {{< lua `iter = re.gmatch(str, pattern)` >}}
 
-Iterator version of \[`re.match`\]({{\< relref "re#re.match" >}}).
+Iterator version of [`re.match`]({{< relref "re#re.match" >}}).
 
-**`@str`** (`string`)
+`@str` (`string`)
 : String to search for the pattern in.
 
-**`@pattern`** (`string`)
+`@pattern` (`string`)
 : Pattern to search for.
 
-**`matches`** (`iterator over table`)
-: An iterator which returns a table containing a \[Match Table\]({{\< relref "re#match-tables" >}}) for the full match (if it matched), followed by a
-  \[Match Table\]({{\< relref "re#match-tables" >}}) for each capturing subexpression in the pattern
+`matches` (`iterator over table`)
+: An iterator which returns a table containing a [Match Table]({{< relref "re#match-tables" >}}) for the full match (if it matched), followed by a
+  [Match Table]({{< relref "re#match-tables" >}}) for each capturing subexpression in the pattern
   (if any).
 
 ### re.sub
 
-Synopsis: {{\< lua `out_str, rep_count = re.sub(str, replace, pattern, max_count=0)` >}}
+Synopsis: {{< lua `out_str, rep_count = re.sub(str, replace, pattern, max_count=0)` >}}
 
 Replace each occurrence of `pattern` in `str` with `replace`.
 
-**`@pattern`** (`string`)
-
+`@pattern` (`string`)
 : Pattern to search for.
 
-**`@replace`** (`string` or `function`)
-
+`@replace` (`string` or `function`)
 : Replacement for matches. This may be either a string which is inserted, or a
   function which is called for each match.
 
@@ -431,16 +429,13 @@ Replace each occurrence of `pattern` in `str` with `replace`.
   value. If it returns anything else, then the source string is left
   unchanged.
 
-**`@max_count`** (`number`)
-
+`@max_count` (`number`)
 : If greater than zero, the maximum number of replacements to make.
 
-**`out_str`** (`string`)
-
+`out_str` (`string`)
 : The input string, with replacements applied.
 
-**`rep_count`** (`number`)
-
+`rep_count` (`number`)
 : The number of replacements that were made.
 
 {{<example-box>}}

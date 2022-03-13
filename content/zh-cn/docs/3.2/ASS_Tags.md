@@ -8,7 +8,7 @@ weight: 4400
 
 The following is a list of every tag supported by the Advanced Substation
 Alpha format. This is basically a detailed version of ass-quickref.txt. See
-the \[tutorial\]({{\< relref "Visual_Typesetting" >}}) for an introduction to typesetting,
+the [tutorial]({{< relref "Visual_Typesetting" >}}) for an introduction to typesetting,
 using some basic tags.
 
 下面列出所有ASS格式支持的标签。这基本上算是ass-quickref.txt的一个详细版本。你可以在本教程手册的排版教程获取关于使用一些基本标签来排版文本的教程。
@@ -22,9 +22,9 @@ override blocks (i.e. not between { and }).
 
 {{<tag-def-box title="软换行（软空格)" id="\n">}}\\n{{</tag-def-box>}}
 Insert a forced line break, but only when in wrapping mode 2. (See
-\[the \\q tag\]({{\< relref "ASS_Tags#wrapstyle" >}})). Note that this is a lowercase n.
+[the \\q tag]({{< relref "ASS_Tags#wrapstyle" >}})). Note that this is a lowercase n.
 
-插入一个强制换行符，但是只在换行方式2下生效（参阅\[\\q标签\]({{\< relref "ASS_Tags#wrapstyle" >}})）。注意这是一个小写的
+插入一个强制换行符，但是只在换行方式2下生效（参阅[\\q标签]({{< relref "ASS_Tags#wrapstyle" >}})）。注意这是一个小写的
 n。
 
 In all other wrapping modes, this is replaced by a regular space. This is
@@ -134,7 +134,7 @@ so you rarely need to use this. Font weights are multiples of 100, such that
 
 {{<example-box>}}
 
-```
+```plaintext
 I am {\b1}not{\b0} amused.
 ```
 
@@ -145,7 +145,7 @@ The word "not" is written in boldface.
 
 {{<example-box>}}
 
-```
+```plaintext
 {\b100}How {\b300}bold {\b500}can {\b700}you {\b900}get?
 ```
 
@@ -183,13 +183,13 @@ disable the border entirely.
 
 改变字符周围边框的宽度。把size设为0可以使边框完全消失。
 
-If "scale border and shadow" (see \[script properties\]({{\< relref "Properties" >}})) is
+If "scale border and shadow" (see [script properties]({{< relref "Properties" >}})) is
 enabled, the value is given in script resolution pixels, otherwise it is given
 in video resolution pixels (which means the border thickness will vary
 depending on the resolution of the video on which the subtitles are rendered.)
 
 如果"比例缩放边框和阴影"(详见
-\[脚本配置\]({{\< relref "Properties" >}}))是选中的，边框宽度值将取决于脚本的分辨率，否则会由视频的分辨率决定（也就是说边框的宽度会自适应使用该字幕的视频）。
+[脚本配置]({{< relref "Properties" >}}))是选中的，边框宽度值将取决于脚本的分辨率，否则会由视频的分辨率决定（也就是说边框的宽度会自适应使用该字幕的视频）。
 
 The value is not limited to whole integer pixels and can have decimal places.
 Border width cannot be negative.
@@ -198,7 +198,7 @@ Border width cannot be negative.
 
 {{<example-box>}}
 
-```
+```plaintext
 \bord0
 ```
 
@@ -206,7 +206,7 @@ Disable border entirely. 完全隐藏边框。
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 bord3.7
 ```
 
@@ -237,9 +237,9 @@ disable border in that direction.
 
 {{<tag-def-box title="阴影距离" id="\shad">}}\\shad<i>\<depth></i>{{</tag-def-box>}}
 Set the distance from the text to position the shadow. Set the depth to 0
-(zero) to disable shadow entirely. Works similar to \[\\bord\]({{\< relref "ASS_Tags#bordersize" >}}).
+(zero) to disable shadow entirely. Works similar to [\\bord]({{< relref "ASS_Tags#bordersize" >}}).
 
-设置字符与阴影间的距离。设置深度为0使阴影完全消失。其他方面和边框宽度\[\\bord\]({{\< relref "ASS_Tags#bordersize" >}})的设置相似。
+设置字符与阴影间的距离。设置深度为0使阴影完全消失。其他方面和边框宽度[\\bord]({{< relref "ASS_Tags#bordersize" >}})的设置相似。
 
 The shadow distance can not be negative with this tag.
 
@@ -272,12 +272,12 @@ better. It is usually more visible at smaller text sizes.
 应用或取消一个字符边缘柔化的效果。这个效果并不总是很明显，但是有些时候会让字符看起来更舒服。这个效果在字符比较小的时候一般会更明显。
 
 Be aware that this tag blurs the _edges_ of the text, not everything. This
-means that if the text has a border (set with \[\\bord\]({{\< relref "ASS_Tags#borderwidth" >}})) the
+means that if the text has a border (set with [\\bord]({{< relref "ASS_Tags#borderwidth" >}})) the
 border will be blurred, but if there is no border, the main text will be
 blurred instead.
 
 注意这个标签只会模糊文本的 *边框* ，不是整体。也就是说，如果文本有边框
-(边框设置详见 \[\\bord\]({{\< relref "ASS_Tags#borderwidth" >}}))
+(边框设置详见 [\\bord]({{< relref "ASS_Tags#borderwidth" >}}))
 那么边框将会被模糊，但是如果没有边框，那么文本整体就会被模糊。
 
 In the extended version, _strength_ is the number of times to apply the
@@ -290,23 +290,23 @@ generally more useful as a result. The _strength_ must be an integer number.
 *strength* 必须是一个整数。
 
 {{<tag-def-box title="边缘模糊 (高斯函数)" id="\blur">}}\\blur<i>\<strength></i>{{</tag-def-box>}}
-In general, this has the same function as the \[`\be`\]({{\< relref "ASS_Tags#bluredges" >}}) tag, but
+In general, this has the same function as the [`\be`]({{< relref "ASS_Tags#bluredges" >}}) tag, but
 uses a more advanced algorithm that looks better at high strengths. Unlike
 `\be`, the _strength_ can be non-integer here. Set _strength_ to 0 (zero) to
 disable the effect. Be careful, setting _strength_ too high can take a lot of
 CPU time to render.
 
-通常来说，这个标签和\[\`\\be\`\]({{\< relref "ASS_Tags#bluredges" >}})标签的功能相似，但是它使用了一个更高级的算法让它在高强度上看起来更好。和`\be`不一样，这个
+通常来说，这个标签和[\`\\be\`]({{< relref "ASS_Tags#bluredges" >}})标签的功能相似，但是它使用了一个更高级的算法让它在高强度上看起来更好。和`\be`不一样，这个
 *strength* 可以不是整数。设置 *strength* 为0使模糊效果消失。小心点，把
 *strength* 设置的太高的话，渲染时会占用大量 CPU 时间。
 
 Be aware that this tag blurs the _edges_ of the text, not everything. This
-means that if the text has a border (set with \[`\bord`\]({{\< relref "ASS_Tags#borderwidth" >}})) the
+means that if the text has a border (set with [`\bord`]({{< relref "ASS_Tags#borderwidth" >}})) the
 border will be blurred, but if there is no border, the main text will be
 blurred instead.
 
 注意，这个标签会模糊文本的 *边框*
-，不是全部。也就是说，如果文本有边框（用\[\`\\bord\`\]({{\< relref "ASS_Tags#borderwidth" >}})标签进行设置），那么边框会被模糊，但是如果没有边框，那么文本的主体就会被模糊。
+，不是全部。也就是说，如果文本有边框（用[\`\\bord\`]({{< relref "ASS_Tags#borderwidth" >}})标签进行设置），那么边框会被模糊，但是如果没有边框，那么文本的主体就会被模糊。
 
 {{<tag-def-box title="字体名称" id="\fn">}}\\fn<i>\<字体名称></i>{{</tag-def-box>}}
 Set the font face to use for the following text. There should be no space
@@ -317,7 +317,7 @@ around the font name either.
 
 {{<example-box>}}
 
-```
+```plaintext
 \fnArial
 ```
 
@@ -328,7 +328,7 @@ The text following this tag will be in Arial font.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \fnTimes New Roman
 ```
 
@@ -354,7 +354,7 @@ You can only specify integer font sizes.
 
 {{<example-box>}}
 
-```
+```plaintext
 \fs10
 ```
 
@@ -384,12 +384,12 @@ rarely desirable.
 `\fs`，因为有字体微调参与的变形效果通常都不怎么好看。
 （译者注：字体微调，是对不同字号（即字体大小）的字形进行细节调整，优化其显示效果的技术。经过字体微调后，同一字符（同一字体同一字重的）不同字号的字形之间不再是严格的相似关系，变形效果会很差。所以在不同字体大小之间变形时，不能使用字体原本提供的不同大小的字形，而是仅使用一个大小的字形，用字体变形标签对其进行缩放。
 
-These tags also affect \[vector drawings\]({{\< relref "ASS_Tags#drawing-commands" >}}).
+These tags also affect [vector drawings]({{< relref "ASS_Tags#drawing-commands" >}}).
 
-这两个标签也会影响\[矢量绘图\]({{\< relref "ASS_Tags#drawing-commands" >}})。
+这两个标签也会影响[矢量绘图]({{< relref "ASS_Tags#drawing-commands" >}})。
 
 You can use font scaling to correct for anamorphic rendering and to specify
-text size more precisely than with \[\\fs\]({{\< relref "ASS_Tags#fontsize" >}}).
+text size more precisely than with [\\fs]({{< relref "ASS_Tags#fontsize" >}}).
 
 字体变形可以用来修正错误的渲染，也可以比 \\fs 更准确的指定字体大小。
 
@@ -399,7 +399,7 @@ Note that older versions of VSFitler will truncate non-integer scales.
 
 {{<example-box>}}
 
-```
+```plaintext
 \fscx150
 ```
 
@@ -410,7 +410,7 @@ Make the text 50% wider than normal.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \fscy50
 ```
 
@@ -421,7 +421,7 @@ Make the text half height.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \fscx200\fscy200
 ```
 
@@ -478,17 +478,17 @@ larger than 360 degrees.
 以数学上的角度给出。如360度意味着转一整圈，转360度的倍数相当于没转。旋转角度可以使用负值和大于360度的值。
 
 The rotation is performed around the subtitle line origin point, this is
-described with the \[\\org\]({{\< relref "ASS_Tags#rotationorigin" >}}) tag.
+described with the [\\org]({{< relref "ASS_Tags#rotationorigin" >}}) tag.
 
-旋转的中心是当前字幕行的原点，这个点由 \[`\org`\]({{\< relref "ASS_Tags#rotationorigin" >}}) 规定。
+旋转的中心是当前字幕行的原点，这个点由 [`\org`]({{< relref "ASS_Tags#rotationorigin" >}}) 规定。
 
-These tags also affect \[vector drawings\]({{\< relref "ASS_Tags#vectordrawings" >}}).
+These tags also affect [vector drawings]({{< relref "ASS_Tags#vectordrawings" >}}).
 
-这几个标签也会影响\[矢量绘图\]({{\< relref "ASS_Tags#vectordrawings" >}})。
+这几个标签也会影响[矢量绘图]({{< relref "ASS_Tags#vectordrawings" >}})。
 
 {{<example-box>}}
 
-```
+```plaintext
 \frx45
 ```
 
@@ -497,7 +497,7 @@ Rotate the text 45 degrees on the X axis.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \fry-45
 ```
 
@@ -506,7 +506,7 @@ Rotate the text 45 degrees in opposite direction on the Y axis.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \frz180
 ```
 
@@ -517,7 +517,7 @@ Rotate the text 180 degrees on the Z axis, making it upside-down.
 The following two rotations produce the same result:
 下面两个旋转效果相同：
 
-```
+```plaintext
 \frz-30
 \frz330
 ```
@@ -527,12 +527,12 @@ This is because 330 degrees is 30 degrees less than a full rotation of 360 degre
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \t(\frz3600)
 ```
 
-Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the \[\\t\]({{\< relref "ASS_Tags#animatedtransform" >}}) tag.
-轴旋转10圈的动画。参见 \[`\t`\]({{\< relref "ASS_Tags#animatedtransform" >}})。
+Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the [\\t]({{< relref "ASS_Tags#animatedtransform" >}}) tag.
+轴旋转10圈的动画。参见 [`\t`]({{< relref "ASS_Tags#animatedtransform" >}})。
 {{</example-box>}}
 {{<example-box>}}
 The following screenshots illustrate the effect of rotating on the different axes:
@@ -561,10 +561,10 @@ unlikely to have desireable results.
 范围的值，效果一般都不是很好。
 
 Shearing is performed after rotation, on the rotated coordinates. The
-coordinate system used for shearing is not affected by the \[rotation origin\]({{\< relref "ASS_Tags#rotationorigin" >}}).
+coordinate system used for shearing is not affected by the [rotation origin]({{< relref "ASS_Tags#rotationorigin" >}}).
 
 剪切是在旋转之后应用的，以旋转后的坐标系为基准。这个剪切用的坐标系不受
-\[旋转中心\]({{\< relref "ASS_Tags#rotationorigin" >}}) 的影响。
+[旋转中心]({{< relref "ASS_Tags#rotationorigin" >}}) 的影响。
 
 {{<example-box>}}
 ![shearing](/img/3.2/shearing.png)
@@ -617,10 +617,10 @@ Some common font encoding IDs are:
 
 {{<todo>}}Is that really correct? {{</todo>}}
 
-A more complete list can be seen the \[style editor\]({{\< relref "Styles#thestyleeditor" >}})
+A more complete list can be seen the [style editor]({{< relref "Styles#thestyleeditor" >}})
 dialog box.
 
-\[样式编辑器\]({{\< relref "Styles#thestyleeditor" >}})对话框有更全面的列表。
+[样式编辑器]({{< relref "Styles#thestyleeditor" >}})对话框有更全面的列表。
 
 In ASS files stored in non-Unicode encodings, this tag also affects what
 codepage the text following it should be interpreted in. Aegisub doesn't
@@ -695,7 +695,7 @@ alpha 值为00意味着完全不透明，而为FF（十进制的255）即为完�
 
 {{<example-box>}}
 
-```
+```plaintext
 \alpha&H80&
 ```
 
@@ -706,7 +706,7 @@ text 50% transparent in general.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \1a&HFF&
 ```
 
@@ -718,12 +718,12 @@ and effectively leaving only the border and shadow.
 
 {{<tag-def-box title="行对齐方式" id="\an">}}\\an<i>\<pos></i>{{</tag-def-box>}}
 Specify the alignment of the line. The alignment specifies the position of the
-line when no \[position override\]({{\< relref "ASS_Tags#setposition" >}}) or
-\[movement\]({{\< relref "ASS_Tags#movement" >}}) is in effect, and otherwise specifies the
+line when no [position override]({{< relref "ASS_Tags#setposition" >}}) or
+[movement]({{< relref "ASS_Tags#movement" >}}) is in effect, and otherwise specifies the
 anchor point of positioning and rotation.
 
-选择行的对齐方式。如果没有设定 \[位置\]({{\< relref "ASS_Tags#setposition" >}}) 或
-\[移动\]({{\< relref "ASS_Tags#movement" >}})
+选择行的对齐方式。如果没有设定 [位置]({{< relref "ASS_Tags#setposition" >}}) 或
+[移动]({{< relref "ASS_Tags#movement" >}})
 ，对齐方式决定了行的位置。如果设定了位置或移动，对齐方式决定了位置和移动的参考点。
 
 The `\an` tag uses "numpad" values for the _pos_, ie. the alignment values
@@ -821,11 +821,11 @@ the line.
 
 The _duration_ is given in centiseconds, ie. a _duration_ of 100 is equivalent
 to 1 second. You generally don't enter `\k` tags manually but rather use
-karaoke timing tools such as \[Aegisub's karaoke mode\]({{\< relref "Tutorials#karaoketiming" >}}).
+karaoke timing tools such as [Aegisub's karaoke mode]({{< relref "Tutorials#karaoketiming" >}}).
 
 *duration* 参数的单位是厘秒，一秒的百分之一。一般来说，\\k
-标签并不是手动输入的，而是用卡拉OK 计时工具创建，比如 \[Aegisub's
-karaoke mode\]({{\< relref "Tutorials#karaoketiming" >}})。
+标签并不是手动输入的，而是用卡拉OK 计时工具创建，比如 [Aegisub's
+karaoke mode]({{< relref "Tutorials#karaoketiming" >}})。
 
 The different `\k` tags create various effects:
 
@@ -872,9 +872,9 @@ Determine how line breaking is applied to the subtitle line. The following
 
 {{<tag-def-box title="重置样式" id="\r">}}\\r<br>\\r<i>\<style></i>{{</tag-def-box>}}
 Reset the style. This cancels all style overrides in effect, including
-\[animations\]({{\< relref "ASS_Tags#animatedtransform" >}}), for all following text.
+[animations]({{< relref "ASS_Tags#animatedtransform" >}}), for all following text.
 
-重置其后字符的样式，会让一切样式标签失效，包括\[动画效果\]({{\< relref "ASS_Tags#animatedtransform" >}})。
+重置其后字符的样式，会让一切样式标签失效，包括[动画效果]({{< relref "ASS_Tags#animatedtransform" >}})。
 
 The first form that does not specify a _style_ will reset to the style defined
 for the entire line, while the second form, that specifies the name of a
@@ -886,7 +886,7 @@ _style_, will reset the style to that specific style.
 
 {{<example-box>}}
 
-```
+```plaintext
 -Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?
 ```
 
@@ -904,10 +904,10 @@ are you?"又被重设为 Default 样式。
 {{<tag-def-box title="位置设定" id="\pos">}}\\pos(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
 Set the position of the line. The _X_ and _Y_ coordinates must be integers and
 are given in the script resolution coordinate system. The meaning of _X_ and
-_Y_ changes slightly depending on \[alignment\]({{\< relref "ASS_Tags#linealignment" >}}).
+_Y_ changes slightly depending on [alignment]({{< relref "ASS_Tags#linealignment" >}}).
 
 设置一行字幕的位置。 *X* 和 *Y* 坐标必须是整数，按脚本分辨率计算。 *X*
-和 *Y* 坐标的含义视 \[行对齐\]({{\< relref "ASS_Tags#linealignment" >}})
+和 *Y* 坐标的含义视 [行对齐]({{< relref "ASS_Tags#linealignment" >}})
 的不同而略有差异。
 
 The alignment of the subtitle line is used as anchor point for the position.
@@ -936,10 +936,10 @@ The green cross marks the point (320,240) on the video.
 \\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i>>)
 \\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i>>,<i>\<t1</i>>,<i>\<t2</i>>)
 {{</tag-def-box>}}
-The `\move` tag works similar to \[`\pos`\]({{\< relref "ASS_Tags#setposition" >}}) in that it
+The `\move` tag works similar to [`\pos`]({{< relref "ASS_Tags#setposition" >}}) in that it
 positions the subtitle line, the difference is that `\move` makes the subtitle
 move.
-`\move` 标签和 \[\`\\pos\`\]({{\< relref "ASS_Tags#setposition" >}})
+`\move` 标签和 [\`\\pos\`]({{< relref "ASS_Tags#setposition" >}})
 标签一样都指定字幕行的位置，但是与之不同的是，`\move` 还让字幕移动。
 
 The two versions of `\move` differ in that one makes the movement occur over
@@ -952,13 +952,13 @@ over which the movement occurs.
 The coordinates _x1_, _y1_, _x2_ and _y2_ are given in the script resolution
 coordinate system, like `\pos`. The subtitle starts out at point (_x1_,_y1_)
 and moves with constant speed so it ends up at (_x2_,_y2_).
-\[Alignment\]({{\< relref "ASS_Tags#linealignment" >}}) influences movement coordinates the same
+[Alignment]({{< relref "ASS_Tags#linealignment" >}}) influences movement coordinates the same
 way as it influences `\pos` coordinates.
 
 坐标 *x1* ， *y1* ， *x2* 和 *y2*
 按脚本分辨率计算，就像`\pos`一样。字幕开始在点 (*x1*, *y1*)
 处，然后匀速移动到点 (*x2*,
-*y2*)处。\[行对齐方式\]({{\< relref "ASS_Tags#linealignment" >}})对移动的影响和对 `\pos`
+*y2*)处。[行对齐方式]({{< relref "ASS_Tags#linealignment" >}})对移动的影响和对 `\pos`
 的影响相同。
 
 In the second version, the times _t1_ and _t2_ are given in milliseconds, ie.
@@ -1010,7 +1010,7 @@ the scope of this page.)
 
 {{<example-box>}}
 
-```
+```plaintext
 \move(100,150,300,350)
 ```
 
@@ -1023,7 +1023,7 @@ point (300,350) at the same time it disappears.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \move(100,150,300,350,500,1500)
 ```
 
@@ -1037,22 +1037,22 @@ first appeared on screen.
 {{</example-box>}}
 
 {{<tag-def-box title="旋转中心" id="\org">}}\\org(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
-Set the origin point used for \[rotation\]({{\< relref "ASS_Tags#textrotation" >}}). This
+Set the origin point used for [rotation]({{< relref "ASS_Tags#textrotation" >}}). This
 affects all rotations of the line. The _X_ and _Y_ coordinates are given in
 integer script resolution pixels.
 
-设定 \[文本旋转\]({{\< relref "ASS_Tags#textrotation" >}})
+设定 [文本旋转]({{< relref "ASS_Tags#textrotation" >}})
 使用的中心点，适用于这一行字幕的所有文本旋转， *X* 和 *Y*
 坐标按脚本分辨率像素计算。
 
 When there is no `\org` tag in a line, the rotation origin is implicitly the
-same as the \[position anchor point\]({{\< relref "ASS_Tags#setposition" >}}). This means that
+same as the [position anchor point]({{< relref "ASS_Tags#setposition" >}}). This means that
 the rotation origin will move if the line moves and there is no origin set
 with `\org`. Note that you can _not_ animate the `\org` tag, you are limited
 to a fixed origin if you use it.
 
 当不设定`\org`标签时，旋转中心就是
-\[位置设定的参考点\]({{\< relref "ASS_Tags#setposition" >}})。这意味着如果不设定`\org`标签，当行的位置改变时，旋转中心也会随之改变。注意你无法给`\org`标签加上动画效果，旋转中心必须是固定的。
+[位置设定的参考点]({{< relref "ASS_Tags#setposition" >}})。这意味着如果不设定`\org`标签，当行的位置改变时，旋转中心也会随之改变。注意你无法给`\org`标签加上动画效果，旋转中心必须是固定的。
 
 If the rotation origin is placed on the vanishing point in a 3D scene, 3D
 rotations of subtitle line will produce the correct perspective to match the
@@ -1077,7 +1077,7 @@ in a single line, only the first is used.
 
 {{<example-box>}}
 
-```
+```plaintext
 \org(320,240)
 ```
 
@@ -1087,7 +1087,7 @@ Fix the rotation origin at point (320,240).
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \org(10000,0)
 ```
 
@@ -1121,7 +1121,7 @@ of _fadein_+_fadeout_ should not be greater than 4000.
 
 {{<example-box>}}
 
-```
+```plaintext
 \fad(1200,250)
 ```
 
@@ -1141,9 +1141,9 @@ times _t1_, _t2_, _t3_ and _t4_.
 The alpha values are given in _decimal_ and are between 0 and 255, with 0
 being fully visible and 255 being invisible. The time values are given in
 milliseconds after the start of the line. All seven parameters are required.
-(For most common fade effects the \[`\fad`\]({{\< relref "ASS_Tags#fade" >}}) tag works fine.)
+(For most common fade effects the [`\fad`]({{< relref "ASS_Tags#fade" >}}) tag works fine.)
 
-透明度值是十进制的，介于0和255之间，当其为零时字符时完全不透明的，为255时是完全透明的。时间值单位是毫秒，是字幕行开始后经过的时间。七个参数都是需要的。（\[\`\\fad\`\]({{\< relref "ASS_Tags#fade" >}})
+透明度值是十进制的，介于0和255之间，当其为零时字符时完全不透明的，为255时是完全透明的。时间值单位是毫秒，是字幕行开始后经过的时间。七个参数都是需要的。（[\`\\fad\`]({{< relref "ASS_Tags#fade" >}})
 标签对于大部分常见的渐变特效都工作良好。）
 
 - Before _t1_, the line has alpha _a1_.
@@ -1159,7 +1159,7 @@ milliseconds after the start of the line. All seven parameters are required.
 
 {{<example-box>}}
 
-```
+```plaintext
 \fade(255,32,224,0,500,2000,2200)
 ```
 
@@ -1259,7 +1259,7 @@ between those two points, following the acceleration function described above.
 
 {{<example-box>}}
 
-```
+```plaintext
 {\1c&HFF0000&\t(\1c&H0000FF&)}Hello!
 ```
 
@@ -1269,7 +1269,7 @@ The text starts out blue, but fades towards red so it is completely red when the
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 {\an5\t(0,5000,\frz3600)}Wheee
 ```
 
@@ -1279,7 +1279,7 @@ Makes the text rotate 10 times, counterclockwise, lasting for 5 seconds.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 {\an5\t(0,5000,0.5,\frz3600)}Wheee
 ```
 
@@ -1289,7 +1289,7 @@ Same as above, but it will start fast and slow down, still doing the 10 rotation
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 {\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}Boo!
 ```
 
@@ -1320,7 +1320,7 @@ clipping always happens on video pixel boundaries.)
 
 {{<example-box>}}
 
-```
+```plaintext
 \clip(0,0,320,240)
 ```
 
@@ -1331,7 +1331,7 @@ left quadrant is visible.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \iclip(0,0,320,240)
 ```
 
@@ -1381,7 +1381,7 @@ animation.
 
 {{<example-box>}}
 
-```
+```plaintext
 \clip(1,m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0)
 ```
 
@@ -1412,7 +1412,7 @@ allow sub-pixel accuracy.
 
 e.g.:
 
-```
+```plaintext
 \p1
 ```
 
@@ -1420,7 +1420,7 @@ e.g.:
 
 在正常坐标系下进入绘制模式。
 
-```
+```plaintext
 \p0
 ```
 
@@ -1428,7 +1428,7 @@ e.g.:
 
 退出绘制模式。
 
-```
+```plaintext
 \p2
 ```
 
@@ -1437,7 +1437,7 @@ actually draw to 100,100)
 
 进入绘制模式，分辨率是倍数是2，所以画到点 (200, 200) 实际上画到了点 (100, 100)。
 
-```
+```plaintext
 \p4
 ```
 
@@ -1455,7 +1455,7 @@ coordinates.
 
 e.g.:
 
-```
+```plaintext
 \pbo-50
 ```
 
@@ -1463,7 +1463,7 @@ e.g.:
 
 （绘制时会比既定的位置向上偏50像素）
 
-```
+```plaintext
 \pbo100
 ```
 
@@ -1584,9 +1584,9 @@ Closes the b-spline.
 
 闭合 b-spline。
 
-_Note: The \[vector clip visual typesetting tool\]({{\< relref "Visual_Typesetting#vectorial-clip" >}}) only supports the m, l and b
+_Note: The [vector clip visual typesetting tool]({{< relref "Visual_Typesetting#vectorial-clip" >}}) only supports the m, l and b
 commands, and may corrupt drawings which use the other commands._
 
-*注意： \[vector clip visual typesetting
-tool\]({{\< relref "Visual_Typesetting#vectorial-clip" >}})只支持
+*注意： [vector clip visual typesetting
+tool]({{< relref "Visual_Typesetting#vectorial-clip" >}})只支持
 m，l，b命令，并且对于其他命令可能会绘制错误.*

@@ -6,7 +6,7 @@ menu:
 weight: 6300
 ---
 
-自动化管理器窗口被用来查看，读取和卸载 \[自动化\]({{\< relref "Automation" >}})脚本。
+自动化管理器窗口被用来查看，读取和卸载 [自动化]({{< relref "Automation" >}})脚本。
 
 自动化管理器窗口从自动化菜单或者![Automation-toolbar-icon](/img/3.2/Automation-toolbar-icon.png)按键打开。
 
@@ -15,7 +15,7 @@ weight: 6300
 ## 脚本列表
 
 窗口的主要区域是已经被挂载的脚本文件.记住一个脚本文件可能含有几个
-\[features\]({{\< relref "../Glossary/Automation_script_feature" >}})，例如一个脚本文件能定义两个\[宏\]({{\< relref "../Glossary/Macro" >}})和一个输出过滤器。
+[features]({{< relref "../Glossary/Automation_script_feature" >}})，例如一个脚本文件能定义两个[宏]({{< relref "../Glossary/Macro" >}})和一个输出过滤器。
 
 脚本能以两种方式被挂载。上图中,大部分的脚本是 *全局的(global)*
 (自动挂载)，以最左边的字母"G"来指明。全局脚本是被自动地加载，同Aegisub同时启动.它们位于Automation下的autoload目录。你不能卸载全局脚本，你必须将它们从自动挂载路径下移走，然后重新扫描自动读取目录.
@@ -44,10 +44,10 @@ weight: 6300
 
 如果你在开发脚本，你可能会发现你会回到自动化管理器窗口去重新读取你的脚本。其实还有一些快捷的方式去重读脚本：
 
-- 当打开\[导出\]({{\< relref "Exporting" >}})对话框时，所有本地脚本会被重新加载。您可以在\[选项\]({{\< relref "Options" >}})对话框里改变这个设定。
+- 当打开[导出]({{< relref "Exporting" >}})对话框时，所有本地脚本会被重新加载。您可以在[选项]({{< relref "Options" >}})对话框里改变这个设定。
 - 按住Ctrl键的同时点击工具栏里的自动化按钮可以重新扫描autoload文件夹。
 - 同时按住Ctrl和Shift键并点击工具栏里的自动化按钮可以重新加载所有脚本，当然同时也会重新扫描autoload文件夹。
-- 默认是没有重新加载脚本的快捷键的，不过您可以在\[选项对话框\]({{\< relref "Options#hotkeys" >}})里设置一个。
+- 默认是没有重新加载脚本的快捷键的，不过您可以在[选项对话框]({{< relref "Options#hotkeys" >}})里设置一个。
 
 不通过上面的方法，自动化脚本管理器是不会打开的，但如果有脚本载入错误的话你会看到一个错误提示对话框。
 注意您可以在错误对话框的行上双击以获得更多信息。

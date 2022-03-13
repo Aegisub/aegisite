@@ -32,7 +32,7 @@ Untimed line 2
 
 But this does **not** (pairs lines wrong):
 
-```
+```plaintext
 Timed line 1
 Timed line 2
 Untimed line 2

@@ -11,7 +11,7 @@ Aegisub includes several macros. Here's a line-up of them.
 ## Apply karaoke template
 
 This is the macro incantation of Karaoke Templater. See the page on
-\[Karaoke_Templater\]({{\< relref "Karaoke_Templater" >}}) for how to use this.
+[Karaoke_Templater]({{< relref "Karaoke_Templater" >}}) for how to use this.
 
 This macro is only available when there is at least one template line in the
 subtitle file.
@@ -125,7 +125,7 @@ lines.
 This macro is also available as an export filter.
 
 The main intended function of this macro is to make
-\[karaskel.lua\]({{\< relref "./Lua/Modules/karaskel.lua.md" >}}) split karaoke lines more
+[karaskel.lua]({{< relref "./Lua/Modules/karaskel.lua.md" >}}) split karaoke lines more
 sensibly into syllable structures, see the example.
 
 This macro modifies all selected lines in the grid, re-writing all tag
@@ -162,9 +162,9 @@ override tags inside the syllables they affect.
 
 ## Add Edgeblur
 
-Add \[`\be1`\]({{\< relref "../ASS_Tags#bluredges" >}}) to all selected lines. Lightly blurring the
+Add [`\be1`]({{< relref "../ASS_Tags#bluredges" >}}) to all selected lines. Lightly blurring the
 edges of all dialogue lines can noticeably improve compressibility when
-\[hardsubbing\]({{\< relref "Attaching_subtitles_to_video" >}}) (especially when using older
+[hardsubbing]({{< relref "Attaching_subtitles_to_video" >}}) (especially when using older
 codecs such as XviD), but edgeblur cannot be set in the style due to format
 limitations.
 

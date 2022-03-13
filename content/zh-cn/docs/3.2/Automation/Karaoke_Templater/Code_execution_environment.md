@@ -11,28 +11,28 @@ weight: 6160
 为了后期使用，你可以把你的数据存放到这个环境里，例如先在code行预先计算一些数值，然后后期再用code区把它们添加进模板。
 这个环境也可以包含许多预先定义的变量和函数，它们可以让特效模板书写起更加方便。
 
-要知道，代码执行环境的内容和\[内联变量\]({{\< relref "./Inline_variables" >}})是没有什么关系的，这一点很重要。你不能通过改变代码执行环境里面的东西来改变一个内联变量的值；当然，你也不能添加新的内联变量。然而，你可以创造并且重新定义代码执行环境里面的内容。
+要知道，代码执行环境的内容和[内联变量]({{< relref "./Inline_variables" >}})是没有什么关系的，这一点很重要。你不能通过改变代码执行环境里面的东西来改变一个内联变量的值；当然，你也不能添加新的内联变量。然而，你可以创造并且重新定义代码执行环境里面的内容。
 
 ## Line and syllable information
 
 ## 行和音节的信息
 
 代码执行环境包含一些指向当正在处理的行和音节结构的变量，这些变量就是把
-\[karaskel\]({{\< relref "../Lua/Modules/karaskel.lua.md#datastructures" >}})
+[karaskel]({{< relref "../Lua/Modules/karaskel.lua.md#datastructures" >}})
 中的数据原封不动地拿了出来。.
 
 你应该将除了 `line`
 以外的部分作为只读的信息进行处理。如果你改变了其中某些变量的值，卡拉OK模板执行器脚本可能会无法正确工作。
 
 - **line** - 当前正在处理的行。改变它会引起文件中的行变化。具体请查看
-  **\[reference for dialogue line
-  tables\]({{\< relref "../Lua/Modules/karaskel.lua.md#dialoguelinetable" >}})**。
+  **[reference for dialogue line
+  tables]({{< relref "../Lua/Modules/karaskel.lua.md#dialoguelinetable" >}})**。
 - **orgline** - 原始行。当前处理的音节位于的原始行。
 - **syl** - 当前处理音节的结构。如果当前执行的模板是一个 *furi*
   类型的模板，那么获取到的则是注音假名音节。如果当前模板带有 *char*
-  或者 *multi* 修饰语，这是一个伪音节结构，具体可以查看 **\[reference
+  或者 *multi* 修饰语，这是一个伪音节结构，具体可以查看 **[reference
   for syllable
-  tables\]({{\< relref "../Lua/Modules/karaskel.lua.md#karaokeandfuriganasyllabletables" >}}**.
+  tables]({{< relref "../Lua/Modules/karaskel.lua.md#karaokeandfuriganasyllabletables" >}})**.
 - **basesyl** - 一般情况下和 `syl` 相同，在模板含有 *char* 或 *multi*
   修饰语时，它将会是原始音节 (如果 `syl == basesyl`
   为真，那么当前模板行既不是 *char* 也不是 *multi*)
@@ -52,16 +52,16 @@ weight: 6160
 标准库已经被导入到了执行环境中，因为它们十分常用。
 
 通过使用 **`_G`** (下划线+大写G)，你也可以访问到 kara-templater
-的主要执行环境，和其余的 Lua 标准库 \[loaded
-modules\]({{\< relref "../Lua/Modules" >}})。比如， `_G.table.sort`
+的主要执行环境，和其余的 Lua 标准库 [loaded
+modules]({{< relref "../Lua/Modules" >}})。比如， `_G.table.sort`
 实际上调用的是 `table.sort` 函数。查看 [Lua 5.2
 手册](http://www.lua.org/manual/5.2/manual.html#6) 来获取更多有关 Lua
 标准库的信息。
 
 为了向后兼容，
-(\[karaskel.lua\]({{\< relref "../Lua/Modules/karaskel.lua.md" >}}),
-\[unicode.lua\]({{\< relref "../Lua/Modules/unicode" >}}) 和
-\[utils.lua\]({{\< relref "../Lua/Modules/util" >}}))
+([karaskel.lua]({{< relref "../Lua/Modules/karaskel.lua.md" >}}),
+[unicode.lua]({{< relref "../Lua/Modules/unicode" >}}) 和
+[utils.lua]({{< relref "../Lua/Modules/util" >}}))
 会被自动载入环境，且可通过 `_G` 访问。其余所有的模块/库需要通过单独在
 code 行使用 `require` 来导入。
 
@@ -334,7 +334,7 @@ variables are introduced in the code execution environment, **`j`** and
 
 If you change `j` or `maxj` while a template is executing, you can affect
 the number of iterations the loop makes. The
-\[`maxloop`\]({{\< relref "Code_execution_environment#maxloop" >}})
+[`maxloop`]({{< relref "Code_execution_environment#maxloop" >}})
 function is convenient for making dynamic loops.
 
 {{<example-box>}}

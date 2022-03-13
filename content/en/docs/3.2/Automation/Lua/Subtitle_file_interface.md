@@ -23,11 +23,11 @@ is created for:
 
 Read-only
 : Some feature functions must not be allowed to modify the subtitle file at
-  all. This includes for example \[macro validation functions\]({{\< relref "Registration#macrovalidationfunction" >}}) and \[export filter configuration panel providers\]({{\< relref "Registration#\_export_filter_configuration_panel_provider" >}}),
+  all. This includes for example [macro validation functions]({{< relref "Registration#macrovalidationfunction" >}}) and [export filter configuration panel providers]({{< relref "Registration#\_export_filter_configuration_panel_provider" >}}),
   because this would be outside user expectations.
 
 Allow undo points
-: Only \[macro processing functions\]({{\< relref "Registration#macroprocessingfunction" >}}) can set undo
+: Only [macro processing functions]({{< relref "Registration#macroprocessingfunction" >}}) can set undo
   points, as it makes no sense to do so at any other time.
 
 To allow the most flexibility, the subtitles object represents a complete ASS
@@ -62,7 +62,7 @@ script.
 Note that this is not a constant-time lookup, but lua does cache the value if
 used in `for i = 1, #subs`.
 
-**`num_lines`** (`number`)
+`num_lines` (`number`)
 : Number of lines in the subtitle file.
 
 The first syntax is the preferred one, per normal Lua 5.1 coding style.
@@ -74,10 +74,10 @@ Synopsis: `line = subtitles[i]`
 This retrieves the indexed line and creates a new table object with data about
 it.
 
-**`line`** (`table`)
+`line` (`table`)
 : Table with data about the retrieved line.
 
-**`i`** (`number`)
+`i` (`number`)
 : Index into the subtitles file of the line number to retrieve. This is
   one-based, i.e. the first line in the file has index 1.
 
@@ -103,7 +103,7 @@ operation.)
 
 The third syntax supports appending multiple lines with one single operation.
 
-**`line`** (`table`)
+`line` (`table`)
 : The line object table to append to the subtitles file.
 
 The latter function-call syntax is preferred for readability. The table index
@@ -130,10 +130,10 @@ such that old indexes will no longer be valid.
 Inserting lines into the wrong section of the subtitle file has undefined
 results, and may break in weird ways.
 
-**`i`** (`number`)
+`i` (`number`)
 : Index to insert before.
 
-**`line`** (`table`)
+`line` (`table`)
 : The line object table to insert into the subtitles file.
 
 The latter function-call syntax is preferred for readability. The table index
@@ -147,10 +147,10 @@ Synopsis: `subtitles[i] = line`
 
 Delete the indexed line and insert the given line in its stead.
 
-**`i`** (`number`)
+`i` (`number`)
 : The line index to replace at.
 
-**`line`** (`table`)
+`line` (`table`)
 : The line object table to replace with.
 
 Replacing lines uses the list cursor and will move it.
@@ -184,13 +184,13 @@ Trying to delete a nonexistent line is an error, except for with deleterange.
 
 The fifth syntax deletes a range of lines, both indexed lines inclusive.
 
-**`i`** (`number`)
+`i` (`number`)
 : Index of the line to delete.
 
-**`first`** (`number`)
+`first` (`number`)
 : Index of the first line of the range to delete.
 
-**`last`** (`number`)
+`last` (`number`)
 : Index of the last line of the range to delete.
 
 Deleting lines uses the list cursor and will move it.
@@ -210,7 +210,7 @@ idea to.
 Only available in macro processing functions, as it doesn't make sense anywhere
 else either.
 
-**`description`** (`string`)
+`description` (`string`)
 : Text to appear in the Edit menu for the Undo and Redo items to describe the
   action that can be undone.
 
@@ -227,28 +227,28 @@ The line data objects are regular Lua tables with some specific fields defined.
 
 Here's a list of the different classes of lines:
 
-**`info`**
+`info`
 : A key/value pair in the Script Info section of the file
 
-**`style`**
+`style`
 : a regular style definition line
 
-**`dialogue`**
+`dialogue`
 : A dialogue line, which may or may not be a comment. These are the lines you
   see in the grid in Aegisub.
 
-**`unknown`**
+`unknown`
 : An unknown kind of line.
 
 There's three fields that always exist in all line data tables:
 
-**`class`** (`string`)
+`class` (`string`)
 : The name of the class of line this is, see the list above.
 
-**`raw`** (`string`)
+`raw` (`string`)
 : The raw text of the line, from first to last character on the physical line.
 
-**`section`** (`string`)
+`section` (`string`)
 : Which section of the file the line belongs to. If the line is placed before
   the first section heading, this field is `nil`.
 
@@ -256,11 +256,11 @@ There's three fields that always exist in all line data tables:
 
 This class defines two additional fields:
 
-**`key`** (`string`)
+`key` (`string`)
 : The part of the line before the first colon, with leading and trailing spaces
   removed.
 
-**`value`** (`string`)
+`value` (`string`)
 : Everything after the first colon on the line, also with leading and trailing
   spaces removed.
 
@@ -268,14 +268,14 @@ This class defines two additional fields:
 
 This class defines a large number of additional fields. It's usually processed
 by the _karaskel_ and modified a bit by that. See the _karaskel.lua_ section on
-\[style tables\]({{\< relref "Modules/karaskel.lua.md#styletable" >}}) for more
+[style tables]({{< relref "Modules/karaskel.lua.md#styletable" >}}) for more
 information about this class.
 
 ### `dialogue` class
 
 This class defines a large number of additional fields. It's usually processed
 by the _karaskel_ and has many calculated fields added by that. See the
-_karaskel.lua_ section on \[dialogue line tables\]({{\< relref "Modules/karaskel.lua.md#dialoguelinetable" >}}) for more
+_karaskel.lua_ section on [dialogue line tables]({{< relref "Modules/karaskel.lua.md#dialoguelinetable" >}}) for more
 information on this class.
 
 ### `unknown` class

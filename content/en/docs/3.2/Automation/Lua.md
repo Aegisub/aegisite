@@ -23,7 +23,7 @@ be able to do anything interesting.
 
 There's a number of global variables a script can set to provide
 information about itself. This information will be displayed in the
-\[Automation/Manager\]({{\< relref "./Manager" >}}) window: `script_name`, `script_description`,
+[Automation/Manager]({{< relref "./Manager" >}}) window: `script_name`, `script_description`,
 `script_author` and `script_version`.
 
 Automation 4 Lua implements both of the currently defined "features" of
@@ -36,7 +36,7 @@ once. You can put variable initialisations and such at the top level, but
 what you usually will do is define some of the script information globals,
 import some modules, write some functions that do the script's work and
 then call the feature registration functions. This is described on the
-**\[Registration\]({{\< relref "./Lua/Registration" >}})** page. The only fields of the
+**[Registration]({{< relref "./Lua/Registration" >}})** page. The only fields of the
 `aegisub` object that should be touched during script loading are
 `lua_automation_version` and the registration functions. Most others will
 simply do nothing and return `nil`.
@@ -49,7 +49,7 @@ manipulate. To some extent, the subtitles object works as an
 integer-indexed array, but it exposes some special interfaces to add,
 remove and modify subtitle lines. The subtitles object allows you to access
 every line in the subtitle file, including headers, style definitions,
-dialogue lines and comment lines. This is described on the **\[Subtitle file interface\]({{\< relref "./Lua/Subtitle_file_interface" >}})** page.
+dialogue lines and comment lines. This is described on the **[Subtitle file interface]({{< relref "./Lua/Subtitle_file_interface" >}})** page.
 
 Automation 4 Lua also provides a number of helper functions in the core API
 for getting information on e.g. the video frame timestamps and how large a
@@ -57,7 +57,7 @@ piece of text will be when rendered with a given style.
 
 Most things that can be implemented in clean Lua code, i.e. that don't
 depend directly on Aegisub internal data structures, have been implemented
-outside the core API as \[Lua modules\]({{\< relref "Modules" >}}). While it is possible to write
+outside the core API as [Lua modules]({{< relref "Modules" >}}). While it is possible to write
 Automation 4 Lua scripts without using the provided standard include files
 you will find that for anything but the simplest scripts you will need some
 of the functions provided by the includes.
@@ -67,22 +67,22 @@ of the functions provided by the includes.
 Automation 4 Lua provides various APIs that can be grouped in these general
 categories.
 
-\[Script and feature registration\]({{\< relref "./Lua/Registration" >}})
+[Script and feature registration]({{< relref "./Lua/Registration" >}})
 : Deals with advertising what features a script provides and a few other
   script meta data.
 
-\[Subtitle file interface\]({{\< relref "./Lua/Subtitle_file_interface" >}})
+[Subtitle file interface]({{< relref "./Lua/Subtitle_file_interface" >}})
 : Deals with use of the _subtitles_ object, the principal way of accessing
   and modifying the subtitle data.
 
-\[Progress reporting and debug output\]({{\< relref "./Lua/Progress_reporting" >}})
+[Progress reporting and debug output]({{< relref "./Lua/Progress_reporting" >}})
 : providing feedback to the user while a script is running, outputting
   hints and warnings to the user and printing debug information.
 
-\[Displaying dialogue boxes and getting user input\]({{\< relref "./Lua/Dialogs" >}})
+[Displaying dialogue boxes and getting user input]({{< relref "./Lua/Dialogs" >}})
 : requesting user input during macro execution by dialogue boxes and
   providing a configuration interface for export filters.
 
-\[Miscellaneous APIs\]({{\< relref "./Lua/Miscellaneous_APIs" >}})
+[Miscellaneous APIs]({{< relref "./Lua/Miscellaneous_APIs" >}})
 : for e.g. getting the rendered size of text and getting video frame rate
   information.

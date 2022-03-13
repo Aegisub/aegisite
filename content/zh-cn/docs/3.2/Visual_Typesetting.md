@@ -6,7 +6,7 @@ menu:
 weight: 4300
 ---
 
-**关于这个功能，你能在 \[视频教程\]({{\< relref "Tutorials" >}})中找到。**
+**关于这个功能，你能在 [视频教程]({{< relref "Tutorials" >}})中找到。**
 
 ## 总览
 
@@ -15,7 +15,7 @@ weight: 4300
 ### 播放
 
 播放视频, 从当前帧开始。查看
-\[使用视频\]({{\< relref "Video#playingvideo" >}}) 来获取Aegisub中有关的信息。
+[使用视频]({{< relref "Video#playingvideo" >}}) 来获取Aegisub中有关的信息。
 
 ### 播放当前行
 
@@ -37,8 +37,8 @@ weight: 4300
 
 显示当前视频帧相对于当前活动行开始时间的时间（偏移量），或相对于活动行结束时间。
 当你使用含有相对时间参数的特效标签时，这两个时间十分有价值，如
-\[\\t\]({{\< relref "ASS_Tags#animatedtransform" >}}) 和
-\[\\fad\]({{\< relref "ASS_Tags#fade" >}})。
+[\\t]({{< relref "ASS_Tags#animatedtransform" >}}) 和
+[\\fad]({{< relref "ASS_Tags#fade" >}})。
 
 ### 缩放
 
@@ -57,7 +57,7 @@ Alt-left/right可以一次性调整10帧;Shift-left/right可以跳到前后的�
 
 保存PNG截图
 : 把当前帧保存为一张 PNG 屏幕截图，保存路径在
-  \[选项\]({{\< relref "options" >}})
+  [选项]({{< relref "options" >}})
   中可以调节。截图分辨率和视频分辨率相同，不会受缩放或其它因素影响。
 
 复制图像至剪贴板
@@ -81,7 +81,7 @@ Alt-left/right可以一次性调整10帧;Shift-left/right可以跳到前后的�
 ### 十字工具
 
 这是标准模式，点击工具后在视频区域移动光标，光标会变为十字，十字附近会显示出光标所在点相对视频的坐标。默认情况下这个坐标是相对于左上角，按下Shift后这个坐标是相对于右下角计算。双击点会把该点的坐标以
-\[\\pos 标签\]({{\< relref "ASS_Tags#setposition" >}})
+[\\pos 标签]({{< relref "ASS_Tags#setposition" >}})
 的形式写入到当前行中。如果按下Alt同时双击，当前所有选择的行都会和被移动的行移动相同的距离(包括当前帧不可见的行)。(译者注:用于批量调整已有pos行的重定位，不会造成相对移动)
 
 ![Visual_crosshair](/img/3.2/zh/Visual_crosshair.png#center)
@@ -93,7 +93,7 @@ Alt-left/right可以一次性调整10帧;Shift-left/right可以跳到前后的�
 ![Visual_drag](/img/3.2/zh/Visual_drag.png#center)
 
 在定位模式下，你可以简单地在视频表面点击-拖动字幕（通过"锚"，即那个方块）。你松开按键时的
-\[\\pos\]({{\< relref "ASS_Tags#setposition" >}}) 参数会被写入到行中。
+[\\pos]({{< relref "ASS_Tags#setposition" >}}) 参数会被写入到行中。
 
 在移动模式下，会有另一个圆形的"锚"，它用来定位移动终点的坐标。设置好移动的起点终点后，会有一条箭头线从起点指向终点。为了更好地控制时间，建议起点按照移动的起始帧定位，终点按照移动的终止帧定位。举个例子，如果你想让一行字幕从行开始5000毫秒后开始移动，就先把视频调节到相对该行5000毫秒的时候，定起点，确定完成移动的时间，调节视频到结束时间，定终点。
 
@@ -114,7 +114,7 @@ Alt-left/right可以一次性调整10帧;Shift-left/right可以跳到前后的�
 ![Visual_rotate_1](/img/3.2/zh/Visual_rotate_1.png#center)
 
 这个工具提供了两种可调节功能。你可以定位旋转中心（原点），相当于使用
-\[\\org\]({{\< relref "ASS_Tags#rotationorigin" >}})
+[\\org]({{< relref "ASS_Tags#rotationorigin" >}})
 标签)，或者你随意点击来确定旋转的角度。
 
 你会注意到圆心和光标有一条连线，当你按住鼠标左键的同时拖动时，可以看到字幕旋转的实际效果。旋转角度合适时松开鼠标。按住Ctrl同时进行旋转会以30°为单位角度增量进行。

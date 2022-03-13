@@ -9,12 +9,12 @@ weight: 4100
 Aegisub isn't a video (or media) player, but it still supports loading and
 working with video in various ways. This page is a reference of how Aegisub's
 loading and handling of video works; for a gentler introduction on how to just
-get things to display properly you may want to read the \[Visual_Typesetting\]({{\< relref "Visual_Typesetting" >}}) pages.
+get things to display properly you may want to read the [Visual_Typesetting]({{< relref "Visual_Typesetting" >}}) pages.
 
 ## Opening video
 
 To load a video file, go to the _Video_ menu and press _Open video file_. What
-video files you can open depends on your \[video provider\]({{\< relref "Options#video" >}}). To
+video files you can open depends on your [video provider]({{< relref "Options#video" >}}). To
 use a dummy (mockup, blank) video, press _Use dummy video_.
 
 ### Supported formats
@@ -68,12 +68,12 @@ DirectShowSource()
   doesn't convert VFR to CFR. Warning: DSS is known to have problems with
   frame-accurate seeking. Do not use it if you can avoid it.
 
-Note that \[VFR\]({{\< relref "Video#variableframeratevideo" >}}) is not supported by the
-Avisynth provider. In some cases loading \[external timecodes\]({{\< relref "Video#timecodes" >}})
+Note that [VFR]({{< relref "Video#variableframeratevideo" >}}) is not supported by the
+Avisynth provider. In some cases loading [external timecodes]({{< relref "Video#timecodes" >}})
 may work, but in practice it will often result in a broken mess.
 
 Aegisub will look for Avisynth plugins in its
-\[?data\]({{\< relref "Aegisub_path_specifiers#?data" >}}) directory (generally the folder where
+[?data]({{< relref "Aegisub_path_specifiers#?data" >}}) directory (generally the folder where
 aegisub32.exe is, on Windows). You can also put them directly in your Avisynth
 plugins folder to get them autoloaded.
 
@@ -173,7 +173,7 @@ which can be useful to avoid passing video files around in certain situations
 A keyframes file is a plain ASCII-encoded text file; both \\n and \\r\\n is
 understood to mean a linebreak. Syntax example:
 
-```
+```plaintext
 # keyframe format v1
 fps 0
 0
@@ -257,8 +257,8 @@ Fortunately it's easy to compensate for the stretching, since you know by how
 much the image will be stretched (since you know its original dimensions and
 the display aspect ratio). You just calculate how many percent the image will
 be stretched in either the X or the Y direction, and then set the ScaleX or
-ScaleY parameter in the \[style\]({{\< relref "Styles" >}}) (or use the `\fscx` or
-`\fscy` \[overrides\]({{\< relref "ASS_Tags" >}})) to the same amount but in the other
+ScaleY parameter in the [style]({{< relref "Styles" >}}) (or use the `\fscx` or
+`\fscy` [overrides]({{< relref "ASS_Tags" >}})) to the same amount but in the other
 direction.
 
 Example: we have a 704x480 image that we know will be displayed as 16:9 (or

@@ -31,24 +31,24 @@ context it is created for:
 
 一个subtitles对象可以根据使用场景来定义两种特殊属性：
 
-**只读**
+只读
 : Some feature functions must not be allowed to modify the subtitle
-  file at all. This includes for example \[macro validation
-  functions\]({{\< relref "Registration#macrovalidationfunction" >}}) and
-  \[export filter configuration panel
-  providers\]({{\< relref "Registration#\_export_filter_configuration_panel_provider" >}}),
+  file at all. This includes for example [macro validation
+  functions]({{< relref "Registration#macrovalidationfunction" >}}) and
+  [export filter configuration panel
+  providers]({{< relref "Registration#_export_filter_configuration_panel_provider" >}}),
   because this would be outside user expectations.
 : 一些功能函数理应不允许其修改字幕文件。这种函数包括例如
-  \[宏验证函数\]({{\< relref "Registration#macrovalidationfunction" >}})
+  [宏验证函数]({{< relref "Registration#macrovalidationfunction" >}})
   以及
-  \[导出滤镜配置面板提供程序\]({{\< relref "Registration#\_export_filter_configuration_panel_provider" >}})，因为可能会有与用户预期不符的效果。
+  [导出滤镜配置面板提供程序]({{< relref "Registration#_export_filter_configuration_panel_provider" >}})，因为可能会有与用户预期不符的效果。
 
-**允许撤消点**
-: Only \[macro processing
-  functions\]({{\< relref "Registration#macroprocessingfunction" >}} can
+允许撤消点
+: Only [macro processing
+  functions]({{< relref "Registration#macroprocessingfunction" >}}) can
   set undo points, as it makes no sense to do so at any other time.
 
-仅有\[宏处理函数\]({{\< relref "Registration#macroprocessingfunction" >}})可设置撤销点，因为在其他任何时候设置没有意义。
+仅有[宏处理函数]({{< relref "Registration#macroprocessingfunction" >}})可设置撤销点，因为在其他任何时候设置没有意义。
 
 To allow the most flexibility, the subtitles object represents a
 complete ASS format file, line by line, including all meta-lines such as
@@ -106,7 +106,7 @@ value if used in `for i = 1, #subs`.
 注意这个查找所消耗的时间不是常数阶的，但在 `for i = 1, #subs`
 中使用的话Lua会缓存这个值。
 
-**`num_lines`** (`number`)
+`num_lines` (`number`)
 : Number of lines in the subtitle file.
 : 字幕文件的行数。
 
@@ -123,11 +123,11 @@ about it.
 
 这会读取索引行并创建一个新的表对象来存储此行的数据。
 
-**`line`** (`table`)
+`line` (`table`)
 : Table with data about the retrieved line.
 : 包含读取行数据的一个表。
 
-**`i`** (`number`)
+`i` (`number`)
 : Index into the subtitles file of the line number to retrieve. This
   is one-based, i.e. the first line in the file has index 1.
 : 获取的行位于字幕文件中的行号。这个值始于1，即文件中第一行的索引是1。
@@ -164,7 +164,7 @@ operation.
 
 第三个写法支持一次操作附加多行。
 
-**`line`** (`table`)
+`line` (`table`)
 : The line object table to append to the subtitles file.
 : 附加至字幕文件的行的对象表。
 
@@ -196,10 +196,10 @@ such that old indexes will no longer be valid.
 Inserting lines into the wrong section of the subtitle file has undefined
 results, and may break in weird ways.
 
-**`i`** (`number`)
+`i` (`number`)
 : Index to insert before.
 
-**`line`** (`table`)
+`line` (`table`)
 : The line object table to insert into the subtitles file.
 
 The latter function-call syntax is preferred for readability. The table index
@@ -213,10 +213,10 @@ Synopsis: `subtitles[i] = line`
 
 Delete the indexed line and insert the given line in its stead.
 
-**`i`** (`number`)
+`i` (`number`)
 : The line index to replace at.
 
-**`line`** (`table`)
+`line` (`table`)
 : The line object table to replace with.
 
 Replacing lines uses the list cursor and will move it.
@@ -250,13 +250,13 @@ Trying to delete a nonexistent line is an error, except for with deleterange.
 
 The fifth syntax deletes a range of lines, both indexed lines inclusive.
 
-**`i`** (`number`)
+`i` (`number`)
 : Index of the line to delete.
 
-**`first`** (`number`)
+`first` (`number`)
 : Index of the first line of the range to delete.
 
-**`last`** (`number`)
+`last` (`number`)
 : Index of the last line of the range to delete.
 
 Deleting lines uses the list cursor and will move it.
@@ -276,7 +276,7 @@ idea to.
 Only available in macro processing functions, as it doesn't make sense anywhere
 else either.
 
-**`description`** (`string`)
+`description` (`string`)
 : Text to appear in the Edit menu for the Undo and Redo items to describe the
   action that can be undone.
 
@@ -293,28 +293,28 @@ The line data objects are regular Lua tables with some specific fields defined.
 
 Here's a list of the different classes of lines:
 
-**`info`**
+`info`
 : A key/value pair in the Script Info section of the file
 
-**`style`**
+`style`
 : a regular style definition line
 
-**`dialogue`**
+`dialogue`
 : A dialogue line, which may or may not be a comment. These are the lines you
   see in the grid in Aegisub.
 
-**`unknown`**
+`unknown`
 : An unknown kind of line.
 
 There's three fields that always exist in all line data tables:
 
-**`class`** (`string`)
+`class` (`string`)
 : The name of the class of line this is, see the list above.
 
-**`raw`** (`string`)
+`raw` (`string`)
 : The raw text of the line, from first to last character on the physical line.
 
-**`section`** (`string`)
+`section` (`string`)
 : Which section of the file the line belongs to. If the line is placed before
   the first section heading, this field is `nil`.
 
@@ -322,11 +322,11 @@ There's three fields that always exist in all line data tables:
 
 This class defines two additional fields:
 
-**`key`** (`string`)
+`key` (`string`)
 : The part of the line before the first colon, with leading and trailing spaces
   removed.
 
-**`value`** (`string`)
+`value` (`string`)
 : Everything after the first colon on the line, also with leading and trailing
   spaces removed.
 
@@ -334,14 +334,14 @@ This class defines two additional fields:
 
 This class defines a large number of additional fields. It's usually processed
 by the _karaskel_ and modified a bit by that. See the _karaskel.lua_ section on
-\[style tables\]({{\< relref "Modules/karaskel.lua.md#styletable" >}}) for more
+[style tables]({{< relref "Modules/karaskel.lua.md#styletable" >}}) for more
 information about this class.
 
 ### `dialogue` class
 
 This class defines a large number of additional fields. It's usually processed
 by the _karaskel_ and has many calculated fields added by that. See the
-_karaskel.lua_ section on \[dialogue line tables\]({{\< relref "Modules/karaskel.lua.md#dialoguelinetable" >}}) for more
+_karaskel.lua_ section on [dialogue line tables]({{< relref "Modules/karaskel.lua.md#dialoguelinetable" >}}) for more
 information on this class.
 
 ### `unknown` class

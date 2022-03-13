@@ -36,17 +36,17 @@ weight: 3100
 ### 卡拉OK模板
 
 滤镜通过自动化脚本
-"卡拉OK模板"生成卡拉OK特效。详见\[卡拉OK模板\]({{\< relref "Automation/Karaoke_Templater" >}})
-和 \[自动化\]({{\< relref "Automation" >}}) 。
+"卡拉OK模板"生成卡拉OK特效。详见[卡拉OK模板]({{< relref "Automation/Karaoke_Templater" >}})
+和 [自动化]({{< relref "Automation" >}}) 。
 
 ### 帧率转换
 
 在"固定"
-输出模式下，以新的帧率重新计算脚本内的每一个时间标记(包含特效标签中的\[\\k\]({{\< relref "ASS_Tags" >}}))。
+输出模式下，以新的帧率重新计算脚本内的每一个时间标记(包含特效标签中的[\\k]({{< relref "ASS_Tags" >}}))。
 这意味着整个脚本被"加速"或"减速"。例如NTSC->PAL 的帧率转换，反之亦然。
 
 在"可变"输出模式下，会使用当前被读取视频的帧率(或指定值，如果和视频帧率不同)和时间码，然后单独计算字幕脚本中的每个时间标记，这样导出的字幕脚本可以被用于压制硬字幕。如果不读取时间码则没有作用。
-详见 \[可变帧率视频\]({{\< relref "Video#variableframeratevideo" >}}) 。
+详见 [可变帧率视频]({{< relref "Video#variableframeratevideo" >}}) 。
 
 ### 整理特效标签
 

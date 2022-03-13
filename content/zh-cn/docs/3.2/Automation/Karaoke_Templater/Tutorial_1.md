@@ -7,7 +7,7 @@ weight: 6171
 ---
 
 欢迎来到这里！这是有关卡拉OK模板执行器的第一篇教程，它可以帮助你创作
-\[卡拉OK特效\]({{\< relref "../../Glossary/Karaoke_effect" >}})。在一系列教程里，我们由简单到复杂来进行教学。
+[卡拉OK特效]({{< relref "../../Glossary/Karaoke_effect" >}})。在一系列教程里，我们由简单到复杂来进行教学。
 
 ## 找到卡拉OK模板执行器(Karaoke Templater)
 
@@ -27,7 +27,7 @@ weight: 6171
 ## 获取打好K值的行
 
 卡拉OK模板执行能做许多事，但是它没办法猜到歌曲的歌词，也没办法猜测歌词和音乐的同步信息。你不得不亲自给歌词制作卡拉OK时间。你可以在
-\[Karaoke Timing Tutorial\]({{\< relref "Karaoke_Timing_Tutorial" >}})
+[Karaoke Timing Tutorial]({{< relref "Karaoke_Timing_Tutorial" >}})
 中找到给歌词制作卡拉OK时间（K值）的方法。
 
 我们把基础的含有卡拉OK时间信息的歌词称为K值歌词(\\k
@@ -139,8 +139,8 @@ Dialogue: 0,0:00:09.28,0:00:16.21,Default,,0000,0000,0000,,{\k79}ki{\k61}su{\k0}
     放回到行中，就像我们上面的模板中写的。
 
 知道了这些，你应该已经可以创作许多特效啦。配合着
-\[ASS特效标签\]({{\< relref "ASS_Tags" >}})
+[ASS特效标签]({{< relref "ASS_Tags" >}})
 ，发挥想象，会有更丰富的效果。
 
 你也可以
-\[继续下一篇教程\]({{\< relref "./Tutorial_2" >}})，在那里你可以了解如何对变量做一些数学上的调整，来获取一些变型。
+[继续下一篇教程]({{< relref "./Tutorial_2" >}})，在那里你可以了解如何对变量做一些数学上的调整，来获取一些变型。

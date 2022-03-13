@@ -111,7 +111,7 @@ r, g, b, a = extract_color("&H7F&")
 ## 字符串函数
 
 因为lua标准的 `string` 库功能十分有限, 这里提供了一些额外的辅助函数。
-可以参见 \[unicode\]({{\< relref "unicode" >}}) 。
+可以参见 [unicode]({{< relref "unicode" >}}) 。
 
 ### string.trim
 

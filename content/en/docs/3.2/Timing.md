@@ -18,10 +18,10 @@ the audio waveform/spectrum display.
 Green and red buttons are toggle buttons. A green background indicates that
 the option is turned on, while a red background indicates that the option is
 turned off. The buttons and controls are as follows (many of these have
-\[keyboard shortcuts\]({{\< relref "Keyboard_shortcuts" >}}) associated with them by default):
+[keyboard shortcuts]({{< relref "Keyboard_shortcuts" >}}) associated with them by default):
 
 1. Go to previous line, discarding any unsaved changes (previous syllable
-   when in \[karaoke mode\]({{\< relref "Audio#karaokemode" >}}))
+   when in [karaoke mode]({{< relref "Audio#karaokemode" >}}))
 1. Go to next line, discarding any unsaved changes (next syllable when in
    karaoke mode)
 1. Play selected area of the audio waveform
@@ -32,8 +32,8 @@ turned off. The buttons and controls are as follows (many of these have
 1. Play first 500ms of selection
 1. Play last 500ms of selection
 1. Play from selection start to end of file (or until pause is pressed)
-1. Add lead-in (how much is determined by the \[audio lead in setting\]({{\< relref "Options#audio" >}}))
-1. Add lead-out (exactly like the above, but the setting is called \[audio lead out\]({{\< relref "Options#audio" >}}), logically enough)
+1. Add lead-in (how much is determined by the [audio lead in setting]({{< relref "Options#audio" >}}))
+1. Add lead-out (exactly like the above, but the setting is called [audio lead out]({{< relref "Options#audio" >}}), logically enough)
 1. Commit (save) changes
 1. Scroll view to selection/go to selection
 1. Toggle auto-commit (if enabled, all timing changes are committed
@@ -58,7 +58,7 @@ the audio display and, if you have auto-scrolling enabled, scroll the audio
 display so it's centered on the line (during normal timing, it's usually a good
 idea to disable auto-scrolling). You'll notice various vertical lines in the
 audio display; the pink ones indicate keyframes in the video if you have it
-loaded (see the \[Working with video\]({{\< relref "Video" >}}) section), the white broken line
+loaded (see the [Working with video]({{< relref "Video" >}}) section), the white broken line
 indicates the currently visible video frame, and the thick red and orange ones
 are the line start and end markers (respectively) for the current line. To
 (re-)define the start and end times of the line, you can either left-click to
@@ -85,7 +85,7 @@ amount of time, there's some things you should note:
 - You don't need to have video displayed while timing. If you think you do,
   there's a good change you're doing something wrong. Scene-timing, i.e.
   syncing line start/ends to scene changes, can be done later. Either
-  manually, or with the \[timing postprocessor\]({{\< relref "Timing_Post-Processor" >}}).
+  manually, or with the [timing postprocessor]({{< relref "Timing_Post-Processor" >}}).
 - Use "go to next line on commit".
 - Experiment with different timing styles when you're new and stick to one
   that suits you. Then practice. Lots.
@@ -100,7 +100,7 @@ amount of time, there's some things you should note:
   than fix bad timing, due to that fixing bad timing requires spending a small
   amount of time thinking about each line.
 - If you want to delete all timing data and start over, a simple way is to use
-  the \[shift times dialog\]({{\< relref "Shift_Times" >}}) to shift all lines backwards by
+  the [shift times dialog]({{< relref "Shift_Times" >}}) to shift all lines backwards by
   9:59:59.99.
 
 One common timing style (preferred by the author of this page) goes something
@@ -151,10 +151,10 @@ strength.
 
 Because calculating the spectrum data is very CPU intensive, it in initially
 set to be in a medium quality. You can increase the quality of the spectrum
-in the \[audio options\]({{\< relref "Audio#options" >}}). This is mostly important when you built
+in the [audio options]({{< relref "Audio#options" >}}). This is mostly important when you built
 Aegisub yourself and did not use FFTW3; FFTW3 is fast enough that the default
 quality is bumped up a bit.
 
 ## Karaoke timing
 
-\[Karaoke timing Tutorial\]({{\< relref "Karaoke_Timing_Tutorial" >}})
+[Karaoke timing Tutorial]({{< relref "Karaoke_Timing_Tutorial" >}})

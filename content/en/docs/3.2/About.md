@@ -18,7 +18,7 @@ or were too buggy and/or unreliable to be really useful.
 Since then, Aegisub has grown into a fully fledged, highly customizable
 subtitle editor. It features a lot of convenient tools to help you with
 timing, typesetting, editing and translating subtitles, as well as a
-powerful \[scripting environment\]({{\< relref "Automation" >}}) called Automation
+powerful [scripting environment]({{< relref "Automation" >}}) called Automation
 (originally mostly intended for creating karaoke effects, Automation
 can now be used much else, including creating macros and various other
 convenient tools).

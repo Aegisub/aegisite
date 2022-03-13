@@ -18,40 +18,40 @@ but if you see some behaviour you don't understand this page might explain it.
 These are some terms and concepts used throughout the description. The names
 are close to or the same as those used in the actual script.
 
-**`tenv`**
-: The **t**emplate **env**ironment, or \[code execution environment\]({{\< relref "./Code_execution_environment" >}}).
+`tenv`
+: The **t**emplate **env**ironment, or [code execution environment]({{< relref "./Code_execution_environment" >}}).
 
-**`varctx`**
+`varctx`
 : The inline **var**iable **c**on**t**e**x**t, the storage for the actual
-  values of the \[inline variables\]({{\< relref "./Inline_variables" >}}).
+  values of the [inline variables]({{< relref "./Inline_variables" >}}).
 
-**`template`**
+`template`
 : The basic "execution unit" of kara-templater, a template is essentially a
   mini-program compiled and executed by kara-templater.
 
-**`code template`**
+`code template`
 : A template that runs a chunk of Lua code but doesn't produce output.
   (Declared with the _code_ keyword.)
 
-**`output template`**
+`output template`
 : A template that produces output lines from some karaoke data input. (Declared
   with the _template_ keyword.)
 
-**`code line`**
+`code line`
 : A line in the subtitle that defines a code template.
 
-**`template line`**
+`template line`
 : A line in the subtitle file that defines an output template, or part of one.
   (One _line_ class output template can span multiple template lines.)
 
-**`class`**
+`class`
 : A class is a kind of template. There's four basic classes, _once_, _line_,
   _syl_ and _furi_, the first only available for code templates.
 
-**`modifier`**
+`modifier`
 : Modifiers affect how and when templates are executed.
 
-**`template text** or just **text`**
+`template text** or just **text`
 : The "text" part of a template, either the Lua code in a code template or the
   template code in output templates. _line_ class output templates also have a
   _pre-line text_.
@@ -59,10 +59,10 @@ are close to or the same as those used in the actual script.
 ## Startup
 
 The first thing kara-templater does is simply use
-\[karaskel\]({{\< relref "../Lua/Modules/karaskel.lua.md" >}}) to collect some basic
+[karaskel]({{< relref "../Lua/Modules/karaskel.lua.md" >}}) to collect some basic
 information on the subtitle file. It always passes `true` for
 _generate_furigana_ in the `karaskel.collect_head` function, meaning that
-\[furigana\]({{\< relref "Furigana_karaoke" >}}) styles are always generated, unless they already
+[furigana]({{< relref "Furigana_karaoke" >}}) styles are always generated, unless they already
 exist.
 
 It then collects all template lines in the file.
@@ -101,7 +101,7 @@ run of kara-templater, so they should be replaced in this new run.
 
 The last thing done before starting actually running the templates is
 initialising the runtime environment for the templates. Basically, as much as
-possible before any templates are run, is put into _tenv_. See \[Code execution environment\]({{\< relref "./Code_execution_environment" >}}) for more
+possible before any templates are run, is put into _tenv_. See [Code execution environment]({{< relref "./Code_execution_environment" >}}) for more
 details on what's in there. (Basically everything but `line`, `orgline`, `syl`
 and `basesyl`.)
 

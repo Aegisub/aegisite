@@ -158,7 +158,7 @@ This template will be applied to every single syllable in the entire subtitle fi
 
 ### char
 
-Make the template work per-character instead of per-syllable. This changes application order semantics in a significant way, see \[Template execution and order\]({{\< relref "./Template_execution_rules_and_order" >}}) for details.
+Make the template work per-character instead of per-syllable. This changes application order semantics in a significant way, see [Template execution and order]({{< relref "./Template_execution_rules_and_order" >}}) for details.
 
 While this will work on code lines, it is generally not useful, see the discussion on execution order.
 
@@ -188,7 +188,7 @@ For example, if there are two syllables, "ab" and "cd", and the above two templa
 
 ### fx _name_
 
-Make template only apply to syllables that have the named \[inline-fx\]({{\< relref "Karaoke_inline-fx" >}}). Specifying an inline-fx name is required; the name may also overlap with template modifier names though this is not recommended.
+Make template only apply to syllables that have the named [inline-fx]({{< relref "Karaoke_inline-fx" >}}). Specifying an inline-fx name is required; the name may also overlap with template modifier names though this is not recommended.
 
 {{<example-box>}}
 
@@ -206,7 +206,7 @@ All other template lines that don't have _fx_ specified will still be applied as
 Declare template to be in the named effect group. Specifying an effect group name is required; the name may also overlap with template modifier names and Lua reserved words, though this is not recommended.
 
 {{<example-box>}}
-There is an example of _fxgroup_ on the \[Code execution environment\]({{\< relref "./Code_execution_environment#conditionaltemplateswithfxgroup" >}}) page.
+There is an example of _fxgroup_ on the [Code execution environment]({{< relref "./Code_execution_environment#conditionaltemplateswithfxgroup" >}}) page.
 {{</example-box>}}
 
 ### keeptags
@@ -229,7 +229,7 @@ The _notags_ modifier ensures that the special colour of the special syllable ge
 
 ### multi
 
-Make the template apply per-highlight in \[multi-highlight\]({{\< relref "Furigana_karaoke" >}}) timed karaoke. This changes application order semantics in a significant way, see \[Template execution and order\]({{\< relref "./Template_execution_rules_and_order" >}}) for details.
+Make the template apply per-highlight in [multi-highlight]({{< relref "Furigana_karaoke" >}}) timed karaoke. This changes application order semantics in a significant way, see [Template execution and order]({{< relref "./Template_execution_rules_and_order" >}}) for details.
 
 While this will work on code lines, it is generally not useful, see the discussion on execution order.
 
@@ -277,7 +277,7 @@ Specify that the template will be applied the given number of times. Specifying 
 
 `repeat` and `loop` are synonymous.
 
-Note that the execution order of looped line templates and looped syl/furi templates is different. See \[Template execution and order\]({{\< relref "./Template_execution_rules_and_order" >}}) for details.
+Note that the execution order of looped line templates and looped syl/furi templates is different. See [Template execution and order]({{< relref "./Template_execution_rules_and_order" >}}) for details.
 
 {{<example-box>}}
 
@@ -290,4 +290,4 @@ The _loop_ modifier is used to created 4 copies of the syllable for each time th
 The starting alpha for each copy, `&Hc0` is chosen as 256 - (256 / 4), 4 being the number of loops made. This way, the opacity for each copy adds up to exactly 256. (Technically it should be 255, but that can't be achieved with an even number of loops.)
 {{</example-box>}}
 
-> _Also see the examples on the \[Code execution environment\]({{\< relref "./Code_execution_environment#loopingtemplates" >}}) page for more advanced usage._
+> _Also see the examples on the [Code execution environment]({{< relref "./Code_execution_environment#loopingtemplates" >}}) page for more advanced usage._

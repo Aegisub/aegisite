@@ -10,7 +10,7 @@ weight: 6500
 
 ## 应用卡拉OK模版
 
-这个是卡拉OK脚本执行器的宏，用法请参见\[卡拉OK脚本执行器\]({{\< relref "Karaoke_Templater" >}})。
+这个是卡拉OK脚本执行器的宏，用法请参见[卡拉OK脚本执行器]({{< relref "Karaoke_Templater" >}})。
 
 这个宏只有在字幕文件中至少有一行模版行时才可用。
 
@@ -101,9 +101,9 @@ Smallest inter-line duration: 290 milliseconds
 这个宏也可用作导出滤镜。
 
 The main intended function of this macro is to make
-\[karaskel.lua\]({{\< relref "./Lua/Modules/karaskel.lua.md" >}}) split karaoke
+[karaskel.lua]({{< relref "./Lua/Modules/karaskel.lua.md" >}}) split karaoke
 lines more sensibly into syllable structures, see the example.
-这个宏主要功能是为了让\[karaskel.lua\]({{\< relref "./Lua/Modules/karaskel.lua.md" >}})能够更聪明地将卡拉OK行分割为音节结构，请看如下的例子。
+这个宏主要功能是为了让[karaskel.lua]({{< relref "./Lua/Modules/karaskel.lua.md" >}})能够更聪明地将卡拉OK行分割为音节结构，请看如下的例子。
 
 这个宏会修改所有字幕栏中所选行，重写这些行里的所有标签区。
 
@@ -137,7 +137,7 @@ Karaskel会创建这些音节结构：
 
 ## 添加边角模糊
 
-向所选行插入\[`\be1`\]({{\< relref "../ASS_Tags#bluredges" >}})\`标签。轻微模糊所有字幕行的边缘可以显著提高\[内嵌字幕\]({{\< relref "Attaching_subtitles_to_video" >}})的压缩率（尤其是使用像XviD这些旧的编码时），但由于字幕格式的限制，边缘模糊无法通过样式来调整。
+向所选行插入[`\be1`]({{< relref "../ASS_Tags#bluredges" >}})\`标签。轻微模糊所有字幕行的边缘可以显著提高[内嵌字幕]({{< relref "Attaching_subtitles_to_video" >}})的压缩率（尤其是使用像XviD这些旧的编码时），但由于字幕格式的限制，边缘模糊无法通过样式来调整。
 
 ## 删除特效标签
 

@@ -20,7 +20,7 @@ Synopsis: `aegisub.progress.set(percent)`
 
 Set the position of the percent-done bar in the progress window.
 
-**`percent`** (`number`)
+`percent` (`number`)
 : Number from 0 to 100.
 
 ### aegisub.progress.task
@@ -30,11 +30,11 @@ Synopsis: `aegisub.progress.task(msg, ...)`
 Set the "task" text in the progress window, which is the small text below the
 progress bar showing what the script is currently doing.
 
-**`msg`** (`string`)
+`msg` (`string`)
 : A format string specifying the message. See the Lua standard string library
   `string.format` function for details on format strings.
 
-**`...`**
+`...`
 : Parameters to the format string.
 
 ### aegisub.progress.title
@@ -45,10 +45,11 @@ Set the title of the progress window, which is is the large text displayed
 above the progress bar. This text should usually not change while the script
 is running. By default this is set to the name of the macro running.
 
-**`title`** (`string`)
+`title` (`string`)
 : A format string specifying the title. See the Lua standard string library
   `string.format` function for details on format strings.
-  **`...`**
+
+`...`
 : Parameters to the format string.
 
 ### aegisub.progress.is_cancelled
@@ -58,10 +59,10 @@ Synopsis: `cancelled = aegisub.progress.is_cancelled()`
 Tells whether the user has clicked on the Cancel button.
 
 You should call this function regularly during long operations, and if it's
-true call \[`aegisub.cancel()`\]({{\< relref "Miscellaneous_APIs#aegisub.cancel" >}}) to
+true call [`aegisub.cancel()`]({{< relref "Miscellaneous_APIs#aegisub.cancel" >}}) to
 rollback all changes and immediately end execution of the script.
 
-**`cancelled`** (`boolean`)
+`cancelled` (`boolean`)
 : `false` if the user has not clicked the Cancel button, `true` if the user has
   clicked Cancel. If `is_cancelled` returns `true` all subsequent calls to it in
   the current execution will also return `true`.
@@ -93,15 +94,15 @@ Sends a message to the message log, optionally with a specific severity level.
 The user can control in Aegisub's options the highest level messages that will
 be shown.
 
-**`level`** (`number`)
+`level` (`number`)
 : Severity level of the message. This parameter is optional. If you leave it
   out (by entirely skipping it) the message will always be shown.
 
-**`msg`** (`string`)
+`msg` (`string`)
 : A format string specifying the message. See the Lua standard string library
   `string.format` function for details on format strings.
 
-**`...`**
+`...`
 : Parameters to the format string.
 
 The following severity levels are suggested:
@@ -109,7 +110,7 @@ The following severity levels are suggested:
 0: "fatal"
 : Something really bad happened and the script can't continue. Level 0 messages
   are always shown. Note that Aegisub does not automatically terminate your
-  script. Call \[`aegisub.cancel()`\]({{\< relref "Miscellaneous_APIs#aegisub.cancel" >}})
+  script. Call [`aegisub.cancel()`]({{< relref "Miscellaneous_APIs#aegisub.cancel" >}})
   afterwards if you want it to.
 
 1: "error"

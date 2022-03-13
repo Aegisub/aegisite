@@ -26,28 +26,28 @@ Synopsis: `width, height, descent, ext_lead = aegisub.text_extents(style, text)`
 Obtain system font metrics and determine the rendered size in pixels of the
 given **text** when using the **style**.
 
-**`@style`** (`table`)
-: A \[style table\]({{\< relref "Subtitle_file_interface#styletable" >}}) as defined by
+`@style` (`table`)
+: A [style table]({{< relref "Subtitle_file_interface#styletable" >}}) as defined by
   the subtitle interface. The font name, size, weight, style, spacing and
   encoding is used to determine the size of the text.
 
-**`@text`** (`string`)
+`@text` (`string`)
 : The text the extents should be determined for. This
   should not contain line breaks (`\n` or `\r\n`) nor should it contain
   formatting codes of any kind. Formatting codes are not interpreted and
   will be taken as verbatim text.
 
-**`width`** (`number`)
+`width` (`number`)
 : Width in pixels of text. This may be non-integer.
 
-**`height`** (`number`)
+`height` (`number`)
 : Height in pixels of the text. This may be non-integer.
 
-**`descent`** (`number`)
+`descent` (`number`)
 : Length of descenders in the font. This may be
   non-integer.
 
-**`ext_lead`** (`number`)
+`ext_lead` (`number`)
 : External leading for the font. This may be non-integer.
 
 You should only feed plain text strings without line breaks into this
@@ -92,11 +92,11 @@ Synopsis: `frame = aegisub.frame_from_ms(ms)`
 Use loaded frame rate data to convert an absolute time given in
 **milliseconds** into a **frame** number.
 
-**`@ms`** (`number`)
+`@ms` (`number`)
 : Absolute time from the beginning of the video, for
   which to determine the frame number.
 
-**`frame`** (`number`)
+`frame` (`number`)
 : Frame number corresponding to the time in ms, or `nil` if there is no
   frame rate data loaded.
 
@@ -110,10 +110,10 @@ Synopsis: `ms = aegisub.ms_from_frame(frame)`
 Use loaded frame rate data to convert a **frame** number of the video into
 an absolute time in **milliseconds**.
 
-**`@frame`** (`number`)
+`@frame` (`number`)
 : Frame to obtain the beginning time of.
 
-**`ms`** (`number`)
+`ms` (`number`)
 : First integer millisecond time stamp to lie within the frame, or `nil` if
   there is no frame rate data loaded.
 
@@ -128,20 +128,16 @@ Synopsis: `xres, yres, ar, artype = aegisub.video_size()`
 Get information about the resolution and aspect-ratio of the loaded video,
 if any.
 
-**`xres`** (`number`)
-
+`xres` (`number`)
 : Coded width of the video in pixels, or `nil` if there is no video loaded.
 
-**`yres`** (`number`)
-
+`yres` (`number`)
 : Coded height of the video in pixels, or `nil` if there is no video loaded.
 
-**`ar`** (`number`)
-
+`ar` (`number`)
 : Custom display aspect ratio override. Meaningless unless `artype` is 4.
 
-**`artype`** (`number`)
-
+`artype` (`number`)
 : There are 5 values that `artype` can take:
 
   - 0: The video has square pixels, i.e. PAR is 1.00 and DAR is `xres`/`yres`.
@@ -156,7 +152,7 @@ Synopsis `keyframes = aegisub.keyframes()`
 
 Get a list of what video frames are keyframes.
 
-**`keyframes`** (`table`)
+`keyframes` (`table`)
 : A sorted table where each entry is the frame number of a keyframe. If
   no keyframe data is loaded, the table will be empty.
 
@@ -164,14 +160,14 @@ Get a list of what video frames are keyframes.
 
 Synopsis `path = aegisub.decode_path(encoded_path)`
 
-Convert a path beginning with a \[path specifier\]({{\< relref "Aegisub_path_specifiers" >}})
+Convert a path beginning with a [path specifier]({{< relref "Aegisub_path_specifiers" >}})
 to an absolute path.
 
-**`@encoded_path`** (`string`)
-: A string which may optionally begin with an Aegisub \[path specifier\]({{\< relref "Aegisub_path_specifiers" >}}).
+`@encoded_path` (`string`)
+: A string which may optionally begin with an Aegisub [path specifier]({{< relref "Aegisub_path_specifiers" >}}).
 
-**`@path`** (`string`)
-: If `encoded_path` began with a valid \[path specifier\]({{\< relref "Aegisub_path_specifiers" >}}), an absolute path. If it began with an
+`@path` (`string`)
+: If `encoded_path` began with a valid [path specifier]({{< relref "Aegisub_path_specifiers" >}}), an absolute path. If it began with an
   invalid path specifier (such as if ?video was used when no video is open),
   a string that is unlikely to be useful in any way. Any other strings are
   passed through untouched.

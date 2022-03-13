@@ -8,8 +8,8 @@ weight: 3000
 
 Editing subtitles is what Aegisub is made for. This page will deal with basic
 text editing of subtitle lines; for more information on the typography of
-subtitles, see \[typesetting\]({{\< relref "Typesetting" >}}). For information on the timing of
-subtitle lines, see \[working with audio\]({{\< relref "Audio" >}}).
+subtitles, see [typesetting]({{< relref "Typesetting" >}}). For information on the timing of
+subtitle lines, see [working with audio]({{< relref "Audio" >}}).
 
 ## Opening subtitles
 
@@ -32,7 +32,7 @@ Open subtitles from video
 : Open the subtitles muxed into the currently open video file. This
   currently only works with Matroska video files.
 
-Open \[Autosaved Subtitles\]({{\< relref "Autosave" >}})
+Open [Autosaved Subtitles]({{< relref "Autosave" >}})
 : Open a file created by Aegisub's autosave. Useful if Aegisub crashes when you
   had unsaved changes or just if you want to open an older version of a file.
 
@@ -100,15 +100,15 @@ They are:
 
 1. Flags the line as a comment. Comment lines will not be displayed on the
    video.
-1. The \[style\]({{\< relref "Styles" >}}) used for this line.
+1. The [style]({{< relref "Styles" >}}) used for this line.
 1. The actor speaking this line. Has no actual effect on subtitle display but
    can be useful for editing purposes.
 1. Effect for this line. There are a few predefined effects which can be
    applied via this field, but renderer support for them is spotty and using
-   \[override tags\]({{\< relref "ASS_Tags" >}}) is nearly always a better idea. This is commonly
+   [override tags]({{< relref "ASS_Tags" >}}) is nearly always a better idea. This is commonly
    used as a metadata field for automation scripts.
 1. The number of characters on the longest line of this subtitle.
-1. Layer for this line. If you override positioning with an \[override tag\]({{\< relref "ASS_Tags" >}}) so that two or more lines are displayed on top of each
+1. Layer for this line. If you override positioning with an [override tag]({{< relref "ASS_Tags" >}}) so that two or more lines are displayed on top of each
    other, this field controls which one is drawn where; higher layer numbers
    are drawn on top of lower ones.
 1. Start time for the line.
@@ -132,16 +132,16 @@ They are:
 1. Brings up a font selection window and inserts a font face name tag
    (`\fnFontName`) with the given font name, as well as the chosen effect
    tags.
-1. Brings up the \[color picker\]({{\< relref "Colour_Picker" >}}) and lets you choose a
+1. Brings up the [color picker]({{< relref "Colour_Picker" >}}) and lets you choose a
    color; then inserts a primary color override tag (`\c`) with the chosen
    color at the cursor position.
-1. Brings up the \[color picker\]({{\< relref "Colour_Picker" >}}) and lets you choose a
+1. Brings up the [color picker]({{< relref "Colour_Picker" >}}) and lets you choose a
    color; then inserts a secondary color override tag (`\2c`) with the chosen
    color at the cursor position.
-1. Brings up the \[color picker\]({{\< relref "Colour_Picker" >}}) and lets you choose a
+1. Brings up the [color picker]({{< relref "Colour_Picker" >}}) and lets you choose a
    color; then inserts an outline color override tag (`\3c`) with the chosen
    color at the cursor position.
-1. Brings up the \[color picker\]({{\< relref "Colour_Picker" >}}) and lets you choose a
+1. Brings up the [color picker]({{< relref "Colour_Picker" >}}) and lets you choose a
    color; then inserts a shadow color override tag (`\4c`) with the chosen
    color at the cursor position.
 1. Move to the next line, creating a new one at the end of the file if
@@ -188,7 +188,7 @@ Spell checker
   set which language it will use for checking from this menu, or add
   words that it doesn't recognize but you know to be correctly spelled to
   the dictionary. For more information on spell checking in Aegisub, see
-  the \[Spell Checker\]({{\< relref "Spell_Checker" >}}) page.
+  the [Spell Checker]({{< relref "Spell_Checker" >}}) page.
 
 Thesaurus
 : Suggests alternative words similar to the highlighted word.
@@ -218,18 +218,18 @@ Some common controls:
   selection, hold down alt and click on the new line.
 - To sort all lines in the grid, open the _Subtitle_ menu, and under _Sort
   Lines_ select the field to sort the lines on.
-- To change the way \[override tags\]({{\< relref "ASS_Tags" >}}) are displayed in the grid,
+- To change the way [override tags]({{< relref "ASS_Tags" >}}) are displayed in the grid,
   click the "cycle through tag hiding modes" button on the toolbar.
 
 ![Subs_grid_tags](/img/3.2/Subs_grid_tags.png)
 
 The lines have different (configurable) colors representing different
-things; see the \[subtitles grid section of the options page\]({{\< relref "Options#General\_-.3E_Subtitles_grid" >}}) for details on what the colors
+things; see the [subtitles grid section of the options page]({{< relref "Options#General\_-.3E_Subtitles_grid" >}}) for details on what the colors
 mean.
 
 By default, the following columns are visible:
 
-**#**
+**\#**
 : The line number.
 
 Start
@@ -273,21 +273,17 @@ Right-clicking any other line in the grid gives you the following menu
 ![grid_context_menu](/img/3.2/grid_context_menu.png)
 
 Insert (before/after)
-
 : Inserts a new empty line before or after the selected line. The new line
   will be timed start at 0:00:00.00 and go to 0:00:05.00.
 
 Insert at video time (before/after)
-
 : Same as the above, but the new line will be timed to start at the current
   video frame. Not enabled unless you have video loaded.
 
 Duplicate
-
 : Duplicates the selected line(s).
 
 Split lines before current frame
-
 : Duplicate the selected line(s), set the end time of the original line
   to the frame before the current video frame, and set the start time of
   the copy to the current video frame. Useful for frame-by-frame
@@ -296,13 +292,11 @@ Split lines before current frame
   have video loaded.
 
 Split lines after current frame
-
 : As above, but it splits off the portion of the line after the current
   frame rather than the potion before the current frame, for when doing
   frame-by-frame typesetting from the last to the first frame of a line.
 
 Split (by karaoke)
-
 : Splits the line into one new line per syllable, as delimited by karaoke
   override tags (`\k` and its relatives). The timing of the first line will
   start at the original line's start time and end at that time plus the
@@ -310,36 +304,30 @@ Split (by karaoke)
   the previous and last for the duration of the syllable.
 
 Swap
-
 : Swaps the places (in the grid) of two selected lines.
 
 Join (keep first)
-
 : Joins two or more lines, discarding the text of all but the first. The
   new line will be timed to start at the first line's start time and end at
   the last line's end time. Only enabled if you have more than one line
   selected.
 
 Join (concatenate)
-
 : Same as above, but concatenates the text of all selected lines instead. A
   space is inserted between the texts of each source line.
 
 Join (as karaoke)
-
 : Does the inverse of _Split (by karaoke)_, i.e.  the same as _Join
   (concatenate)_ but inserts `\k` tags with the timing of each source line in
   the joined line.
 
 Make times continuous (change start/change end)
-
 : Modifies the timing of the selected lines so that the end time of each
   line is the same as the start time of the next line. Change start/change
   end determines whether the function changes the end time or the start time
   of each line. Only  enabled when you have more than one line selected.
 
 Recombine lines
-
 : Given two or more lines with the same text being partially present in all
   of them, creates one line per text fragment instead. This is mostly useful
   for correcting subs ripped from DVDs, which frequently look something like
@@ -352,22 +340,18 @@ Recombine lines
   ![Recombine_02](/img/3.2/Recombine_02.png)
 
 Create audio clip
-
 : Saves a segment of the loaded audio corresponding to the timing of the
   selected lines (starting at the earliest start time and ending at the
   latest end time) as an uncompressed WAV file. Only enabled if you have
   audio loaded.
 
 Cut/Copy/Paste
-
 : Cuts/copies/pastes entire lines. Note that the lines are copied as plain
   text and can be copied and pasted freely between text editors, chat
   programs, web browsers, other instances of Aegisub etc.
 
 Paste Lines Over...
-
-: Open the \[Paste Over\]({{\< relref "Paste_Over" >}}) dialog.
+: Open the [Paste Over]({{< relref "Paste_Over" >}}) dialog.
 
 Delete
-
 : Deletes the selected lines.

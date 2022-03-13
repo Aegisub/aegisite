@@ -12,8 +12,8 @@ It also defines several new data structures, and extensions to those
 defined by Automation 4 Lua itself.
 
 `karaskel.lua` itself includes
-\[`utils.lua`\]({{\< relref "util" >}}) and
-\[`unicode.lua`\]({{\< relref "unicode" >}}) so you do not need to
+[`utils.lua`]({{< relref "util" >}}) and
+[`unicode.lua`]({{< relref "unicode" >}}) so you do not need to
 include those yourself when using `karaskel.lua`.
 
 Using `karaskel.lua` is strongly recommended when creating karaoke effects,
@@ -24,13 +24,13 @@ layouting functions.
 
 ### karaskel.collect_head
 
-Synopsis: {{\< lua `meta, styles = karaskel.collect_head(subtitles, generate_furigana)` >}}
+Synopsis: {{< lua `meta, styles = karaskel.collect_head(subtitles, generate_furigana)` >}}
 
 Reads the subtitle file to collect all header information and style
 definitions, and optionally also generates new styles for furigana layouts.
 
 - `subtitles` is the Subtitle File object defined by Automation 4 Lua.
-- `generate_furigana` is a boolean: if it is true a style for \[furigana layout\]({{\< relref "Furigana_karaoke" >}}) is generated for each style that does not have
+- `generate_furigana` is a boolean: if it is true a style for [furigana layout]({{< relref "Furigana_karaoke" >}}) is generated for each style that does not have
   one already. Generation of furigana styles will never overwrite existing
   styles, create double style definitions or create meaningless furigana
   styles for other furigana styles.
@@ -53,7 +53,7 @@ number of styles stored, and `styles[1]` is the first style defined.
 
 ### karaskel.preproc_line
 
-Synopsis: {{\< lua `karaskel.preproc_line(subtitles, meta, styles, line)` >}}
+Synopsis: {{< lua `karaskel.preproc_line(subtitles, meta, styles, line)` >}}
 
 Calculate sizing, positioning and various other information for a single
 subtitle line. This function calls `karaskel.preproc_line_text`,
@@ -64,10 +64,10 @@ table. See below for more information.
 
 ### karaskel.preproc_line_text
 
-Synopsis: {{\< lua `karaskel.preproc_line_text(meta, styles, line)` >}}
+Synopsis: {{< lua `karaskel.preproc_line_text(meta, styles, line)` >}}
 
 Preprocess the text of a single line. `meta` and `styles` are the tables
-returned by \[`karaskel.collect_head`\]({{\< relref "karaskel.lua.md#karaskel.collect_head" >}}).
+returned by [`karaskel.collect_head`]({{< relref "karaskel.lua.md#karaskel.collect_head" >}}).
 
 This function does not return a value, but rather modifies the `line`
 table. The following fields are added:
@@ -75,7 +75,7 @@ table. The following fields are added:
 - `line.text_stripped` - Line text with all override tags and vector
   drawings removed.
 - `line.duration` - Duration of the line in milliseconds
-- `line.kara` and `line.furi` - Extended \[karaoke and furigana tables\]({{\< relref "karaskel.lua.md#karaoke-and-furigana-syllable-tables" >}}), without sizing and
+- `line.kara` and `line.furi` - Extended [karaoke and furigana tables]({{< relref "karaskel.lua.md#karaoke-and-furigana-syllable-tables" >}}), without sizing and
   position data.
 
 This function does not calculate any text sizing or positioning
@@ -84,7 +84,7 @@ arguments at all.)
 
 ### karaskel.preproc_line_size
 
-Synopsis: {{\< lua `karaskel.preproc_line_size(meta, styles, line)` >}}
+Synopsis: {{< lua `karaskel.preproc_line_size(meta, styles, line)` >}}
 
 Calculate sizing data for a line and all karaoke syllables and furigana
 parts. Also adds a reference to the line style.
@@ -99,7 +99,7 @@ table. The following fields are added:
   this field is `false` instead.
 - `line.width`, `line.height`, `line.descent` and `line.extlead` - Sizing
 - information for the stripped line text, as returned by
-- \[`aegisub.text_extents`\]({{\< relref "../Miscellaneous_APIs#aegisub.text_extents" >}}).
+- [`aegisub.text_extents`]({{< relref "../Miscellaneous_APIs#aegisub.text_extents" >}}).
 
 Also, this function modifies the `line.kara` and `line.furi` tables, adding
 sizing information.
@@ -111,7 +111,7 @@ If the `line` table does not seem to have been processed with
 
 ### karaskel.preproc_line_pos
 
-Synopsis: {{\< lua `karaskel.preproc_line_pos(meta, styles, line)` >}}
+Synopsis: {{< lua `karaskel.preproc_line_pos(meta, styles, line)` >}}
 
 Calculate line, karaoke and furigana position information.
 
@@ -151,7 +151,7 @@ table. The following fields are added:
 Furthermore, the `line.kara` and `line.furi` tables are modified by the
 layout function called, adding positioning information.
 
-See the part on \[data structures\]({{\< relref "karaskel.lua.md#datastructures" >}}) later on
+See the part on [data structures]({{< relref "karaskel.lua.md#datastructures" >}}) later on
 this page for more details on the various fields that are added.
 
 If no line sizing information is found, `karaskel.preproc_line_size` will
@@ -309,7 +309,7 @@ Full list of fields:
 - `style.fontsize` - Font size for the style.
 - `style.color1`, `style.color2`, `style.color3` and `style.color4` - The
   four colours used by the style, in regular order. Use
-  \[`extract_color`\]({{\< relref "../Modules#extractcolor" >}}) and family to
+  [`extract_color`]({{< relref "../Modules#extractcolor" >}}) and family to
   manipulate these.
 - `style.bold` - `true`/`false` to specify bold/non-bold font face. Can
   also be a number to specify font weight, but this is not well supported
@@ -440,7 +440,7 @@ Additions by `karaskel.preproc_line_text`:
 - `syl.kdur` - Syllable duration in centiseconds, suitable for use in `\k`
   tags.
 - `syl.line` - Back reference to the line table containing this syllable.
-- `syl.inline_fx` - Name of the \[_inline-fx_\]({{\< relref "Karaoke_inline-fx" >}}) for this
+- `syl.inline_fx` - Name of the [_inline-fx_]({{< relref "Karaoke_inline-fx" >}}) for this
   syllable.
 - `syl.i` - Index number of this syllable.
 - `syl.prespace`, `syl.postspace` - Space characaters at the start/end of

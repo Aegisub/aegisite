@@ -6,11 +6,11 @@ menu:
 weight: 2720
 ---
 
-Karaoke inline-fx (inline effects) is a way of marking up \[timed karaoke\]({{\< relref "Timing#karaoketiming" >}}) to assign different effects to different
+Karaoke inline-fx (inline effects) is a way of marking up [timed karaoke]({{< relref "Timing#karaoketiming" >}}) to assign different effects to different
 parts of a line.
 
 By itself, inline-fx markup doesn't do anything, it only has an effect when
-a \[karaoke effect script\]({{\< relref "Automation" >}}) that understands it is applied to
+a [karaoke effect script]({{< relref "Automation" >}}) that understands it is applied to
 the timed karaoke.
 
 ## The markup
@@ -45,11 +45,12 @@ These syllables get inline-fx assigned like this:
 | ta                 | `paint`   |
 | yu                 | `cloud`   |
 | me                 | `cloud`   |
-| {{</example-box>}} |           |
+
+{{</example-box>}}
 
 ## Usage in Karaoke Templater
 
-If you use \[Karaoke Templater\]({{\< relref "Automation/Karaoke_Templater" >}}) to create
+If you use [Karaoke Templater]({{< relref "Automation/Karaoke_Templater" >}}) to create
 effects, you can use the _fx_ modifier on templates to make that template
 affect only syllables with a specific inline-fx. It isn't possible
 (directly) to match only syllables with blank inline-fx.
@@ -65,6 +66,7 @@ template syl fx cloud: {overlay effect applied only to the 'cloud' syllables}
 
 The idea here is to have a base effect and then some of the syllables get
 some more effects on top of that.
+
 {{</example-box>}}
 
 {{<example-box>}}
@@ -80,12 +82,13 @@ template syl fxgroup blankfx: {effect only applied on blank inline-fx syllables}
 
 The important thing is that the code line runs per syllable and runs before
 any per-syllable templates that must use it.
+
 {{</example-box>}}
 
 ## Usage in Lua scripts
 
 The inline-fx tags are parsed by
-\[`karaskel.preproc_line_text`\]({{\< relref "Automation/Lua/Modules/karaskel.lua.md#karaskel.preproc_line_text" >}})
+[`karaskel.preproc_line_text`]({{< relref "Automation/Lua/Modules/karaskel.lua.md#karaskel.preproc_line_text" >}})
 so they will only work if you have applied at least that much karaskel
 pre-processing on your subtitle lines.
 
@@ -107,6 +110,7 @@ end
 
 Simply compare the inline-fx name to the various possibilities and run the
 right effect code.
+
 {{</example-box>}}
 {{<example-box>}}
 In some code that runs per-syllable in your script:

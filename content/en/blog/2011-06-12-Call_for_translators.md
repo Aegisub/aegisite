@@ -19,13 +19,13 @@ However, there are some user interface languages we had in 2.1.8 or earlier vers
 
 - Farsi (Meysam)
 
-- \~~Korean (unknown)~~
+- ~~Korean (unknown)~~
 
-- \~~Polish (Adam)~~
+- ~~Polish (Adam)~~
 
-- \~~Vietnamese (Hung NGUYEN, OnEsChi)~~
+- ~~Vietnamese (Hung NGUYEN, OnEsChi)~~
 
-- \~~Chinese, both Traditional and Simplified (mkboy2)~~
+- ~~Chinese, both Traditional and Simplified (mkboy2)~~
 
 If you are one of the people listed here I would appreciate if you could contact me. If you otherwise speak one of these languages well and want to help, I would also love to hear so.
 

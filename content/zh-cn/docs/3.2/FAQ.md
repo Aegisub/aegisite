@@ -10,7 +10,7 @@ Aegisub 的常见疑问小整合——大多是其他页面没有涉及的问题
 
 ### 制作卡拉OK特效？
 
-请阅读 \[卡拉OK模版教程\]({{\< relref "Automation/Karaoke_Templater/Tutorial_1" >}})。
+请阅读 [卡拉OK模版教程]({{< relref "Automation/Karaoke_Templater/Tutorial_1" >}})。
 
 ### 我能用 Aegisub 制作 DVD 字幕吗？
 

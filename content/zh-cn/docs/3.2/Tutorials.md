@@ -48,7 +48,7 @@ weight: 2700
 
 ## 文字教程
 
-- \[卡拉OK计时\]({{\< relref "Karaoke_Timing_Tutorial" >}}) --- 输入歌曲的歌词并为其添加时间码（K值）。
-- \[Karaoke Inline effects Tutorial\]({{\< relref "Karaoke_inline-fx" >}})
-- \[Karaoke Furigana Tutorial\]({{\< relref "Furigana_karaoke" >}})
-- \[卡拉OK模版\]({{\< relref "Automation/Karaoke_Templater" >}}) (待完善) ---  通过简单的方式为卡拉OK添加特效，从最基础的效果到非常高级的效果均有涉及。
+- [卡拉OK计时]({{< relref "Karaoke_Timing_Tutorial" >}}) --- 输入歌曲的歌词并为其添加时间码（K值）。
+- [Karaoke Inline effects Tutorial]({{< relref "Karaoke_inline-fx" >}})
+- [Karaoke Furigana Tutorial]({{< relref "Furigana_karaoke" >}})
+- [卡拉OK模版]({{< relref "Automation/Karaoke_Templater" >}}) (待完善) ---  通过简单的方式为卡拉OK添加特效，从最基础的效果到非常高级的效果均有涉及。

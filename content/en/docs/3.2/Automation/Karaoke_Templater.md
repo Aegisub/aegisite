@@ -7,15 +7,15 @@ menu:
 weight: 6100
 ---
 
-**Karaoke Templater** is an \[Automation\]({{\< relref "Automation" >}}) script that ships with Aegisub. Its
-primary purpose is to help creating \[karaoke effects\]({{\< relref "../Glossary/Karaoke_effect" >}})
+**Karaoke Templater** is an [Automation]({{< relref "Automation" >}}) script that ships with Aegisub. Its
+primary purpose is to help creating [karaoke effects]({{< relref "../Glossary/Karaoke_effect" >}})
 with a specially designed template language. Karaoke Templater is already
 installed and ready to use along with Aegisub.
 
 ## Tutorials: Introducing Karaoke Templater
 
-- \[A simple example\]({{\< relref "./Karaoke_Templater/Tutorial_1" >}})
-- \[Using math expressions\]({{\< relref "./Karaoke_Templater/Tutorial_2" >}})
+- [A simple example]({{< relref "./Karaoke_Templater/Tutorial_1" >}})
+- [Using math expressions]({{< relref "./Karaoke_Templater/Tutorial_2" >}})
 - [Using multiple template lines](#)
 - [More advanced effects with positioned syllables](#)
 
@@ -23,14 +23,14 @@ installed and ready to use along with Aegisub.
 
 ## Reference
 
-- \[Declaring template and code lines\]({{\< relref "./Karaoke_Templater/Declaring_template_and_code_lines" >}})
-- \[Rules for when and in what order templates are run\]({{\< relref "./Karaoke_Templater/Template_execution_rules_and_order" >}})
-- \[Template modifiers\]({{\< relref "./Karaoke_Templater/Template_modifiers" >}})
-- \[Inline variables (dollar-variables)\]({{\< relref "./Karaoke_Templater/Inline_variables" >}})
-- \[Rules for code blocks and code lines\]({{\< relref "./Karaoke_Templater/Code_lines_and_blocks" >}})
-- \[Contents of the code block/line execution environment\]({{\< relref "./Karaoke_Templater/Code_execution_environment" >}})
+- [Declaring template and code lines]({{< relref "./Karaoke_Templater/Declaring_template_and_code_lines" >}})
+- [Rules for when and in what order templates are run]({{< relref "./Karaoke_Templater/Template_execution_rules_and_order" >}})
+- [Template modifiers]({{< relref "./Karaoke_Templater/Template_modifiers" >}})
+- [Inline variables (dollar-variables)]({{< relref "./Karaoke_Templater/Inline_variables" >}})
+- [Rules for code blocks and code lines]({{< relref "./Karaoke_Templater/Code_lines_and_blocks" >}})
+- [Contents of the code block/line execution environment]({{< relref "./Karaoke_Templater/Code_execution_environment" >}})
 
-Also see the \[`Automation/Lua/Modules/karaskel.lua`\]({{\< relref "Lua/Modules/karaskel.lua.md" >}}) section for more
+Also see the [`Automation/Lua/Modules/karaskel.lua`]({{< relref "Lua/Modules/karaskel.lua.md" >}}) section for more
 information on what's in the `line` and `syl` variables, and more.
 
 ## For users of _multi-template_

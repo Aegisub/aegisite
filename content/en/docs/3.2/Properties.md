@@ -16,7 +16,7 @@ The properties are:
 
 - **Title**, **Original script**, **Translation**, **Editing**, **Timing**, **Synch point**, **Updated by** and **Update details** - These are for informational purposes only and do not affect rendering in any way. Set them to appropriate values if you find them useful.
 
-- **Resolution**, **YCbCr Matrix**, **Scale border and shadow** - See the \[Script Resolution\]({{\< relref "Script_Resolution" >}}) page for the meaning of these fields.
+- **Resolution**, **YCbCr Matrix**, **Scale border and shadow** - See the [Script Resolution]({{< relref "Script_Resolution" >}}) page for the meaning of these fields.
 
 - **Wrap style** - Controls how the subtitle renderer will break lines that are too long to fit on one line. The modes are:
 
@@ -26,4 +26,4 @@ The properties are:
   - 3 - Same as mode 0, but prefers the bottom line to be wider. Note that for a long time VSFilter's implementation of this was buggy and would sometimes insert extra blank lines or have lines with a single word on them.
 
 The wrapping mode should almost always be zero.
-Mode two is sometimes useful for long lines which are scrolled or manually line-broken, but should be set on a per-line basis with the \[\\q\]({{\< relref "ASS_Tags#\\q" >}}) tag.
+Mode two is sometimes useful for long lines which are scrolled or manually line-broken, but should be set on a per-line basis with the [\\q]({{< relref "ASS_Tags#\\q" >}}) tag.

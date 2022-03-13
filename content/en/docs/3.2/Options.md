@@ -11,32 +11,33 @@ options. These are available in the options dialog box, found in the View menu.
 This page is a reference of all the available options.
 
 Aegisub stores all its configuration in a plain text file called _config.json_
-which by default is stored in the \[?user\]({{\< relref "Aegisub_path_specifiers" >}}) directory.
+which by default is stored in the [?user]({{< relref "Aegisub_path_specifiers" >}}) directory.
 If you want to reset Aegisub to its default options without reinstalling the
 program, you can just delete config.json and restart Aegisub.
 
 ## General
 
 ![preferences-general](/img/3.2/preferences-general.png#center)
-**Auto Check for Updates**
-\: If enabled, Aegisub will periodically check whether there is a newer version
-available, and alert you if there is.
-Requires a working connection to the internet, naturally.
 
-**Show main toolbar**
+Auto Check for Updates
+: If enabled, Aegisub will periodically check whether there is a newer version
+  available, and alert you if there is.
+  Requires a working connection to the internet, naturally.
+
+Show main toolbar
 : If disabled, Aegisub's main toolbar is hidden.
 
-**Save UI state in subtitles files**
+Save UI state in subtitles files
 : By default, Aegisub saves things like the current scroll position of the subtitles grid and active
   row number in the subtitles file so that it can be automatically restored when you reopen the file.
   However, if you're using source control for your subtitle files you may want to disable this to
   reduce the noise in the changes.
 
-**Toolbar icon size**
+Toolbar icon size
 : The size of icons to use in all of the toolbars in Aegisub. Currently the
   only valid values are 16 and 24.
 
-**Automatically load linked files**
+Automatically load linked files
 : Whenever you save a script, Aegisub also stores some information about what
   video, audio and timecodes files you had open while working on it, inside the
   script itself. This option decides what Aegisub does with these files that are
@@ -45,11 +46,11 @@ Requires a working connection to the internet, naturally.
   linked files, and likewise if set to "always", Aegisub will always try to load
   linked files (and report an error if the file(s) were not found).
 
-**Undo levels**
+Undo levels
 : The maximum number of changes that can be undone. The higher this value, the
   more memory Aegisub will use.
 
-**Recently Used Lists**
+Recently Used Lists
 : Maximum number of items to remember for all of the various lists of recently
   used items in Aegisub. The memory impact from increasing these is trivial, but
   larger lists may get unwieldy to use.
@@ -61,55 +62,56 @@ Requires a working connection to the internet, naturally.
 ## Audio
 
 ![preferences-audio](/img/3.2/preferences-audio.png#center)
-**Lock scroll on cursor**
-\: When enabled, the audio waveform view will automatically scroll to follow the
+
+Lock scroll on cursor
+:  When enabled, the audio waveform view will automatically scroll to follow the
 playback cursor if it gets too close to either of the edges.
 
-**Snap markers by default**
+Snap markers by default
 : When enabled, Aegisub will default to snapping audio markers to other markers
   in the audio display (such as keyframes and the start or end times of other
   lines) when moving them by clicking or dragging them if they are close enough.
   Snapping can be toggled on or off by holding down shift.
 
-**Default mouse wheel to zoom**
+Default mouse wheel to zoom
 : When enabled, the mouse wheel will zoom the audio display horizontally by
   default, and scroll the audio display when Ctrl is held down. If disabled, this
   is reversed.
 
-**Auto-focus on mouse over**
+Auto-focus on mouse over
 : If enabled, moving the mouse cursor over the audio waveform will
   automatically give it focus (as opposed to requiring a click).
 
-**Play audio when stepping in video**
+Play audio when stepping in video
 : When enabled, frame stepping plays the audio for that frame.
 
-**Default timing length**
+Default timing length
 : The default length of a new untimed line, in milliseconds.
 
-**Default lead-in length**
-**Default lead-out length**
-\: The duration added to the start of a line by the "add lead-in" and "add
-lead-out" functions. Also used in (and set by) the \[timing postprocessor\]({{\< relref "Timing_Post-Processor" >}}).
+Default lead-in length
+Default lead-out length
+: The duration added to the start of a line by the "add lead-in" and "add
+  lead-out" functions. Also used in (and set by) the [timing postprocessor]({{< relref "Timing_Post-Processor" >}}).
 
-**Marker drag-start sensitivity**
+Marker drag-start sensitivity
 : The distance in pixels that a marker must be dragged for it to register as a
   drag. Higher values reduce the chance of accidental changes, at the cost of
   worse responsiveness.
 
-**Left-click-drag moves end marker**
+Left-click-drag moves end marker
 : When enabled, left clicking will set the start time of the line to the
   clicked point, then set the end time of the line to the point dragged to,
   making it possible to time a line with a single click-drag movement. When
   disabled, left-click-drag always updates only the start time of the line, as
   right-click does with the end time.
 
-**Line boundary thickness**
+Line boundary thickness
 : The width, in pixels, of the line start and end markers.
 
-**Maximum snap distance**
+Maximum snap distance
 : Maximum distance to snap markers to other markers, in pixels.
 
-**Show inactive lines**
+Show inactive lines
 : Controls how lines surrounding the currently selected line are displayed in
   the audio waveform. "Don't show" will only display the current line. "Show
   previous" will show the previous line (in the grid, _not_ chronologically) in
@@ -117,35 +119,30 @@ lead-out" functions. Also used in (and set by) the \[timing postprocessor\]({{\<
   lines before and after the current line (in the grid, _not_ chronologically).
   "Show all" will show all lines in gray in addition to the current line.
 
-**Include commented inactive lines**
+Include commented inactive lines
 : If disabled, commented lines will be skipped over when picking which inactive
   lines to show in the audio display (making "Show previous" into "Show last
   uncommented line before this line", and so on).
 
 ### Display Visual Options
 
-**keyframes**
-
+keyframes
 : If enabled, lines marking the positions of keyframes in the video will be
   drawn on the audio waveform when in dialogue timing mode (the default).
 
-**Karaoke keyframes**
-
+Karaoke keyframes
 : If enabled, lines marking the positions of keyframes in the video will be
   drawn on the audio waveform when in karaoke timing mode.
 
-**Draw cursor time**
-
+Draw cursor time
 : If enabled, a timestamp showing the time since the start of the file will be
   drawn near the top of the audio waveform cursor.
 
-**Video position**
-
+Video position
 : If enabled, a line is drawn in the audio display marking the start time of
   the current video frame.
 
-**Waveform style**
-
+Waveform style
 : Selects which of the waveform rendering styles to use
 
   Maximum + Average
@@ -162,54 +159,55 @@ lead-out" functions. Also used in (and set by) the \[timing postprocessor\]({{\<
 These options control the appearance of labels drawn in the audio display for
 karaoke syllables.
 
-**Font Face**
+Font Face
 : The font to use for audio labels.
 
-**Font Size**
+Font Size
 : The font size to use for audio labels.
 
 ## Video
 
 ![preferences-video](/img/3.2/preferences-video.png#center)
-**Show keyframes in slider**
-\: When enabled, Aegisub will draw keyframe markers on the video seek slider.
 
-**Seek video to line start on selection change**
+Show keyframes in slider
+:  When enabled, Aegisub will draw keyframe markers on the video seek slider.
+
+Seek video to line start on selection change
 : When enabled, whenever the active line is changed Aegisub will automatically
   seek the video to the first frame of the new line. Note that this can by done
   manually by double-clicking on the grid, or by pressing Ctrl-1.
 
-**Always show visual tools**
+Always show visual tools
 : When disabled, the visual typesetting tools are only rendered when the mouse
   is over the video display.
 
-**Automatically open audio when opening video**
+Automatically open audio when opening video
 : When enabled, when you open a video file which also has audio data, Aegisub
   will automatically load the audio.
 
-**Default zoom**
+Default zoom
 : The default video zoom level. Useful if you have a very big or very small screen.
 
-**Fast jump step in frames**
+Fast jump step in frames
 : Decides how big "jumps" Aegisub will make when you use the fast seek feature
   (Alt-rightarrow and Alt-leftarrow). Measured in frames.
 
-**Screenshot save path**
+Screenshot save path
 : Decides where Aegisub should save screenshots. The default is `?video`, which
   means they are saved to wherever the video is, but you can change it to any
-  path you like. \[Aegisub_path_specifiers\]({{\< relref "Aegisub_path_specifiers" >}}) are supported; another option
+  path you like. [Aegisub_path_specifiers]({{< relref "Aegisub_path_specifiers" >}}) are supported; another option
   directly available in the dropdown is `?script`, which is wherever the script
   is.
 
 ### Script resolution
 
-**Use resolution of first video opened**
+Use resolution of first video opened
 : When enabled, Aegisub will automatically set the script resolution to the
   video resolution if you open a video and the script resolution is not yet set.
   If this is disabled, Aegisub instead sets the script resolution to a
   configurable default.
 
-**Match video resolution on open**
+Match video resolution on open
 : Controls what Aegisub will do about script resolution when you open a video.
   If set to "never", Aegisub will do nothing if the script resolution doesn't
   match the video resolution. If set to "ask", Aegisub will ask you if you want
@@ -221,12 +219,12 @@ karaoke syllables.
 
 ![preferences-interface](/img/3.2/preferences-interface.png#center)
 
-**Enable call tips**
-: When enabled, Aegisub will detect when you are writing an \[override tag\]({{\< relref "ASS_Tags" >}}) and display a small box with a brief reference of the syntax of
+Enable call tips
+: When enabled, Aegisub will detect when you are writing an [override tag]({{< relref "ASS_Tags" >}}) and display a small box with a brief reference of the syntax of
   the tag in question until you close the tag. This is called a "call tip" and
   the feature may be familiar to users of various programming IDEs.
 
-**Overwrite in time boxes**
+Overwrite in time boxes
 : Controls the behavior of all time edit boxes in the program. By default, all
   time edit boxes in Aegisub behave like as if you had pressed the Insert button,
   so every digit you type overwrites what is already there, and you cannot erase
@@ -234,37 +232,37 @@ karaoke syllables.
   disables this behavior and makes the time edit boxes behave just like normal
   text edit boxes (almost).
 
-**Enable syntax highlighting**
+Enable syntax highlighting
 : Enables or disables syntax highlighting of override tags in the main edit
   box.
 
-**Path to dictionary files**
+Path to dictionary files
 : Decides where Aegisub will look for dictionary files for its spellchecker and
   thesaurus. By default it looks in `?data/dictionaries`, but if you have your
   own dictionaries in the correct format somewhere else, feel free to point
   Aegisub there instead.
 
-**Font**
+Font
 : Decides the font and fontsize used for the subtitle edit box and other edit
   boxes.
 
-**Maximum characters per line**
+Maximum characters per line
 : If the value of the character counter is higher than this number, the
   background will turn red to alert you that you have exceeded the maximum line
   length. The maximum length is not enforced in any other way.
 
-**Characters Per Second Warning Threshold**
-**Characters Per Second Error Threshold**
-\: The thresholds at which the background CPS column begins to be colored and when the error color is
-reached.
+Characters Per Second Warning Threshold
+Characters Per Second Error Threshold
+: The thresholds at which the background CPS column begins to be colored and when the error color is
+  reached.
 
-**Ignore whitespace**
+Ignore whitespace
 : If enabled, whitespace will not be included in the character count.
 
-**Ignore punctuation**
+Ignore punctuation
 : If enabled, punctuation will not be included in the character count.
 
-**Focus grid on click**
+Focus grid on click
 : When enabled, the subtitles grid acts as its own area of the program and it
   can have focus, just like the audio or the video can, and while it does you can
   use the arrow keys/mouse wheel to scroll around it etc. On the other hand, if
@@ -273,19 +271,19 @@ reached.
   anymore, but on the other hand it means you can click in the grid to go to a
   line without losing the audio focus and so on. Use at your own discretion.
 
-**Highlight visible subtitles**
+Highlight visible subtitles
 : When enabled, all subtitle lines that are currently visible in the video
   frame (or at least _should_ be visible; Aegisub does not account for alpha and
   such trickery in this case; it cares only about the timing of the line) will be
   highlighted in the grid with a special background color (see the "Line in frame
   background" option below).
 
-**Hide overrides symbol**
+Hide overrides symbol
 : The character that will be shown instead of override blocks if tag hiding is
   active. Note that despite the name, this can be more than one character if you
   so desire.
 
-**Font**
+Font
 : Decides the font and font size of all text in the grid.
 
 ### Colors
@@ -294,15 +292,15 @@ reached.
 
 #### Audio Display
 
-**Play cursor**
+Play cursor
 : The color of the playback cursor.
 
-**Line boundary start**
-**Line boundary end**
-**Line boundary inactive line**
-\: The respective colors of the various line boundary markers.
+Line boundary start
+Line boundary end
+Line boundary inactive line
+: The respective colors of the various line boundary markers.
 
-**Syllable boundary**
+Syllable boundary
 : The color of a syllable boundary line in karaoke mode.
 
 ### Color Schemes
@@ -314,60 +312,60 @@ config.json.
 
 #### Syntax Highlighting
 
-**Normal**
+Normal
 : The color of normal text.
 
-**Brackets**
+Brackets
 : The color of brackets that start/end override blocks.
 
-**Slashes and parentheses**
+Slashes and parentheses
 : The color of backslashes and parentheses within override blocks.
 
-**Tags**
+Tags
 : The color of tag names within override blocks.
 
-**Parameters**
+Parameters
 : The color of parameters to override tags.
 
-**Error**
+Error
 : The error color for invalid syntax within an override block.
 
-**Error background**
+Error background
 : Background color for errors.
 
-**Line break**
+Line break
 : Color for \\N, \\n and \\h outside of override blocks.
 
-**Karaoke templates**
+Karaoke templates
 : Color for karaoke templater blocks on template lines.
 
 #### Subtitle Grid
 
-**Standard foreground**
-**Standard background**
-\: The normal color of lines in the grid. "Foreground" is the text color, and
-"Background" is obviously the background color.
+Standard foreground
+Standard background
+: The normal color of lines in the grid. "Foreground" is the text color, and
+  "Background" is obviously the background color.
 
-**Selection foreground**
-**Selection background**
-\: The color of selected lines in the grid.
+Selection foreground
+Selection background
+: The color of selected lines in the grid.
 
-**Comment background**
-**Selected comment background**
-\: The background color of commented-out lines and selected commented-out lines,
+Comment background
+Selected comment background
+: The background color of commented-out lines and selected commented-out lines,
 respectively.
 
-**Collision foreground**
+Collision foreground
 : The text color of lines whose timings overlap with the currently active line.
 
-**Line in frame background**
+Line in frame background
 : The background color of lines currently visible in the video frame.
 
-**Header**
-**Left column**
-**Active line border**
-**Lines**
-\: The color of the grid lines and fixed columns/headers.
+Header
+Left column
+Active line border
+Lines
+: The color of the grid lines and fixed columns/headers.
 
 ## Hotkeys
 
@@ -398,7 +396,7 @@ hotkey field in the row, then press the key(s) that should trigger the command.
 Accept the new hotkey by clicking on another row.
 
 To add a new hotkey, select the context you want to add the hotkey to, then
-click the New button. Enter the \[command name\]({{\< relref "Commands" >}}), then set the hotkey
+click the New button. Enter the [command name]({{< relref "Commands" >}}), then set the hotkey
 as when editing them.
 
 ## Backup
@@ -407,30 +405,30 @@ as when editing them.
 
 ### Automatic Save
 
-**Enable**
+Enable
 : If enabled, Aegisub will periodically save a copy of the script you are
   working on to the autosave path.
 
-**Interval in seconds**
+Interval in seconds
 : How often should Aegisub autosave.
 
-**Path**
+Path
 : Decides where to save autosaved copies of scripts you are working on. By
   default set to `autosave` in your Aegisub `?user` directory (see the
-  \[Aegisub_path_specifiers\]({{\< relref "Aegisub_path_specifiers" >}}) page for details).
+  [Aegisub_path_specifiers]({{< relref "Aegisub_path_specifiers" >}}) page for details).
 
-**Autosave after every change**
+Autosave after every change
 : If enabled, Aegisub will save the file after every change made to it. Note
   that this currently causes some problems with the undo system.
 
 ### Automatic Backup
 
-**Enable**
+Enable
 : If enabled, Aegisub will save a backup copy of each script you open,
   immediately on opening it. By default, it is saved to `?user/autoback/`, but
   this can be changed (see below).
 
-**Path**
+Path
 : Decides where to save automatic backup copies of scripts. By default set to
   `autoback` in your Aegisub `?user` directory.
 
@@ -438,41 +436,40 @@ as when editing them.
 
 ![preferences-automation](/img/3.2/preferences-automation.png#center)
 
-**Base path**
+Base path
 : A base directory where you put non-autoloaded automation scripts. Used only
   for saving paths to script files in the subtitles.
 
-**Include path**
+Include path
 : List of directories where include files and modules are searched for.
   Directories are separated with a pipe character, `|`.
 
-**Auto-load path**
+Auto-load path
 : List of directories that are searched for scripts on startup, which are then
   automatically loaded. Directories are separated with a pipe character, `|`.
 
-**Trace level**
+Trace level
 : When a script sends a message to the debug console it can also specify a
   trace level. If the trace level of a message is lower than the value given
   here, the message is not logged. The names given to the levels are only
   suggestions and they don't have any effect on the execution of the script.
   (i.e. a "Fatal" level message will not cause the script to terminate.)
 
-**Thread priority**
+Thread priority
 : Priority given to the script execution thread. If you're on a
   single-core/single-CPU system having this on lower than normal will make other
   programs more responsive while long-running scripts are active.
 
-**Autoreload on Export**
-: Automatically reloads the specified sets of scripts when the \[Exporting\]({{\< relref "Exporting" >}})
+Autoreload on Export
+: Automatically reloads the specified sets of scripts when the [Exporting]({{< relref "Exporting" >}})
   dialogue is opened. In that case you will have to enter the
-  \[Automation/Manager\]({{\< relref "Automation/Manager" >}}) window and determine the cause of the error.
+  [Automation/Manager]({{< relref "Automation/Manager" >}}) window and determine the cause of the error.
 
 ## Advanced Audio
 
 ![preferences-advanced-audio](/img/3.2/preferences-advanced-audio.png#center)
 
-**Audio provider**
-
+Audio provider
 : What backend to to use for loading audio. Currently there are only two
   methods.
 
@@ -489,8 +486,7 @@ as when editing them.
   Regardless of this setting, the internal PCM WAV reader will always be
   tried first for WAV files.
 
-**Audio player**
-
+Audio player
 : What method to use for playing back audio. The options depend on the platform.
 
   _DirectSound_ (Windows only)
@@ -529,23 +525,22 @@ as when editing them.
 
 ### Cache
 
-**Cache type**
+Cache type
 : Use RAM unless you have very little of it, then use Hard Disk. The cache is
   not needed and not used when PCM WAV files are opened. If you disable caching,
   audio playback might become very unreliable.
 
-**Path**
-**File name**
-\: These options determine where the hard disk audio cache will be located. Only
-used if cache is set to hard disk. You shouldn't need to change this unless
-you're low on disk space. For the name, the string expects a printf-style "%i"
-parameter, that will be replaced with a number. "%02i" is used by default.
-Don't change that unless you know what you are doing.
+Path
+File name
+: These options determine where the hard disk audio cache will be located. Only
+  used if cache is set to hard disk. You shouldn't need to change this unless
+  you're low on disk space. For the name, the string expects a printf-style "%i"
+  parameter, that will be replaced with a number. "%02i" is used by default.
+  Don't change that unless you know what you are doing.
 
 ### Spectrum
 
-**Spectrum quality**
-
+Spectrum quality
 : Determines the quality of the audio spectrum display. Higher quality settings
   result in larger CPU and RAM use. Each consecutive setting uses a bit more CPU
   than the previous, and double the amount of RAM.  For 48 kHz sample rate audio,
@@ -564,7 +559,7 @@ Don't change that unless you know what you are doing.
 
 {{<todo>}}this is probably wrong {{</todo>}}
 
-**Cache memory max**
+Cache memory max
 : The maximum amount of memory to use for audio spectrum caching. The results
   of the calculations to display the audio spectrum are cached to make scrolling
   through the audio smoother. The amount of spectrum display that can be cached
@@ -576,19 +571,18 @@ Don't change that unless you know what you are doing.
 
 ### Avisynth (Windows only)
 
-**Avisynth down-mixer**
+Avisynth down-mixer
 : Aegisub can only use mono (single-channel) audio. This option determines
   which Avisynth function to use to convert audio to mono.
 
-**Force sample rate**
+Force sample rate
 : Convert all audio opened to the given sample rate. Forcing the sample rate to
   the sample rate used by your sound card (rather than having the audio player do
   it) can potentially improve audio performance and fix playback issues.
 
 ### FFmpegSource
 
-**Audio indexing error handling mode**
-
+Audio indexing error handling mode
 : What to do if an error occurs while indexing an audio track.
 
   _Ignore_
@@ -606,22 +600,20 @@ Don't change that unless you know what you are doing.
   _Abort_
   : Refuse to open the file at all.
 
-**Always index all audio tracks**
-
+Always index all audio tracks
 : If disabled, opening a video file will only index the video tracks, forcing
   you to reindex the file to open audio tracks from the same file.
 
 ### Portaudio
 
-**Portaudio device**
+Portaudio device
 : What output device to use when playing audio through portaudio.
 
 ## Advanced Video
 
 ![preferences-advanced-video](/img/3.2/preferences-advanced-video.png#center)
 
-**Video provider**
-
+Video provider
 : Decides what method Aegisub should use to load video. What options you have
   available here depends on how your copy of Aegisub was compiled and what
   operating system you are running under. The following alternatives exist:
@@ -640,8 +632,7 @@ Don't change that unless you know what you are doing.
   : Uses [FFMS2](http://code.google.com/p/ffmpegsource/) to load video.
     Generally the most reliable option.
 
-**Subtitles provider**
-
+Subtitles provider
 : Decides what backend Aegisub uses to render subtitles on the video.
   If you install additional CSRI renderers such as VSFilterMod or
   xy-VSFilter (by placing the dlls in the CSRI directory within Aegisub's
@@ -656,12 +647,11 @@ Don't change that unless you know what you are doing.
     libass is far faster than VSFilter and (somewhat) cross-platform, but
     unfortunately still has some rendering differences from VSFilter and
     font-related issues on Windows. If you are doing complex typesetting
-    that will be \[softsubbed\]({{\< relref "Attaching_subtitles_to_video#softsubbing" >}}) it
+    that will be [softsubbed]({{< relref "Attaching_subtitles_to_video#softsubbing" >}}) it
     is a good idea to check your work with both VSFilter and libass, as an
     increasing number of users are using libass.
 
-**Force BT.601**
-
+Force BT.601
 : Pretend all YUV videos are BT.601, for VSFilter compatibility.
 
   When VSFilter is used as a DirectShow filter, it always uses the BT.601
@@ -688,27 +678,27 @@ Don't change that unless you know what you are doing.
 
 ### Avisynth
 
-**Allow pre-2.56a Avisynth**
+Allow pre-2.56a Avisynth
 : Support using ancient versions of Avisynth that a few people refuse to
   upgrade past for various bad reasons.
 
-**Avisynth memory limit**
+Avisynth memory limit
 : Frame cache memory limit for Avisynth. Raising this generally does not
   improve performance and should be done only if you're opening overcomplicated
   Avisynth scripts directly.
 
 ### FFmpegSource
 
-**Debug log verbosity**
+Debug log verbosity
 : Set ffmpeg/libav's verbosity level. Only has an effect when you have a
   debugger attached to Aegisub.
 
-**Decoding threads**
+Decoding threads
 : Maximum number of threads to use to decode video, or -1 to choose
   automatically. Setting this to 1 can fix some decoding issues at the cost of
   performance. There is rarely any reason to set it to a value other than 1 or
   -1.
 
-**Enable unsafe seeking**
+Enable unsafe seeking
 : Disable some of FFMS2's sanity checks when seeking in video. Makes it
   possible to open some files which FFMS2 cannot seek frame-accurately in.

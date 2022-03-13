@@ -15,43 +15,43 @@ weight: 6120
 
 有些术语和概念在本页全篇中都有使用。这些名称和脚本中使用的相似或者完全相同。（译者注：在使用时需要保留英文，故翻译内容保留重要英文）
 
-**`tenv`**
+`tenv`
 : **t**emplate **env**ironment(模板环境)的缩写, 或者
-  \[代码执行环境\]({{\< relref "./Code_execution_environment" >}})。
+  [代码执行环境]({{< relref "./Code_execution_environment" >}})。
 
-**`varctx`**
+`varctx`
 : **var**iable **c**on**t**e**x**t(内联变量环境),
-  \[内联变量\]({{\< relref "./Inline_variables" >}})存储在的实际区域。
+  [内联变量]({{< relref "./Inline_variables" >}})存储在的实际区域。
 
-**`template`**
+`template`
 : 卡拉OK模板执行器(kara-templater)中最基本的 "执行单元(execution
   unit)" , 事实上一个模板就是一个迷你程序，这个程序由
   卡拉OK模板执行器 编译并执行。
 
-**`code template`**
+`code template`
 : 以Lua代码块方式行使功能的模板，但是一般情况下不会直接输出字幕对象。(用
   *code* 关键字声明)
 
-**`output template`**
+`output template`
 : 会产生字幕行(字幕对象)的一类模板，一般以打好K值的行作为输入。(用
   *template* 关键字声明)
 
-**`code line`**
+`code line`
 : 字幕文件中的一行，该行定义了一个code模板(code 模板)。
 
-**`template line`**
+`template line`
 : 字幕文件中的一行，该行定义了一个输出模板(output template),
   或者整个输出模板中的一部分。 (一个 *line*
   类输出模板可以对应多个模板行)
 
-**`class(类)`**
+`class(类)`
 : 一个类指的是一种类型的模板。有四种基本的模板类, *once*, *line*,
   *syl* and *furi*, 第一个类只对code模板有用。
 
-**`modifier(修饰语)`**
+`modifier(修饰语)`
 : 修饰语会影响模板作用的方式和作用的顺序。
 
-**`template text`** 或 **`text`**
+`template text` 或 `text`
 : 模板的"文本" 部分，可以是code模板中的 Lua
   代码，或者是输出模板中的模板代码。 *line* 类输出模板还有一个
   *pre-line text* 。
@@ -59,11 +59,11 @@ weight: 6120
 ## 启动(Start-up)
 
 卡拉OK模板执行器(后文均简称模板应用器)做的第一件事是使用
-\[卡拉OK框架(karaskel)\]({{\< relref "../Lua/Modules/karaskel.lua.md" >}})
+[卡拉OK框架(karaskel)]({{< relref "../Lua/Modules/karaskel.lua.md" >}})
 来收集一些基础的字幕文件信息。这个过程中总是会伴随着传递 `真(true)`值给
 *generate_furigana* (生成假名标注)，它属于`karaskel.collect_head`
 函数，这意味着
-\[假名标注(furigana)\]({{\< relref "Furigana_karaoke" >}}
+[假名标注(furigana)]({{< relref "Furigana_karaoke" >}}
 的样式会被生成，除非它们早就存在。
 
 然后模板应用器会收集文件中的所有模板行(template line)信息。
@@ -94,7 +94,7 @@ field)填写着 *code* 或者 *template* 的行会被作为模板行。
 ### 初始化 *tenv*
 
 在开始实际应用模板之前的最后一项工作就是初始化运行环境。基本上，在所有的模板运行之前，都会被放置到
-*tenv*。详见 \[代码执行环境\]({{\< relref "./Code_execution_environment" >}})
+*tenv*。详见 [代码执行环境]({{< relref "./Code_execution_environment" >}})
 ("基本上"是指除了 `line`, `orgline`, `syl` 和 `basesyl`.)
 
 ## 运行 *once* 模板

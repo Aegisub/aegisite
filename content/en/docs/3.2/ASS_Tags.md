@@ -8,7 +8,7 @@ weight: 4400
 
 The following is a list of every tag supported by the Advanced Substation
 Alpha format. This is basically a detailed version of ass-quickref.txt. See
-the \[tutorial\]({{\< relref "Visual_Typesetting" >}}) for an introduction to typesetting,
+the [tutorial]({{< relref "Visual_Typesetting" >}}) for an introduction to typesetting,
 using some basic tags.
 
 ## Special characters
@@ -18,7 +18,7 @@ override blocks (i.e. not between { and }).
 
 {{<tag-def-box title="Soft line break" id="\n">}}\\n{{</tag-def-box>}}
 Insert a forced line break, but only when in wrapping mode 2. (See
-\[the \\q tag\]({{\< relref "ASS_Tags#wrapstyle" >}})). Note that this is a lowercase n.
+[the \\q tag]({{< relref "ASS_Tags#wrapstyle" >}})). Note that this is a lowercase n.
 
 In all other wrapping modes, this is replaced by a regular space. This is
 rarely (if ever) actually useful. If you're not sure whether you want this or
@@ -88,7 +88,7 @@ so you rarely need to use this. Font weights are multiples of 100, such that
 
 {{<example-box>}}
 
-```
+```plaintext
 I am {\b1}not{\b0} amused.
 ```
 
@@ -97,7 +97,7 @@ The word "not" is written in boldface.
 
 {{<example-box>}}
 
-```
+```plaintext
 {\b100}How {\b300}bold {\b500}can {\b700}you {\b900}get?
 ```
 
@@ -124,7 +124,7 @@ the following text and `\s0` to disable strikeout again.
 Change the width of the border around the text. Set the size to 0 (zero) to
 disable the border entirely.
 
-If "scale border and shadow" (see \[script properties\]({{\< relref "Properties" >}})) is
+If "scale border and shadow" (see [script properties]({{< relref "Properties" >}})) is
 enabled, the value is given in script resolution pixels, otherwise it is given
 in video resolution pixels (which means the border thickness will vary
 depending on the resolution of the video on which the subtitles are rendered.)
@@ -134,7 +134,7 @@ Border width cannot be negative.
 
 {{<example-box>}}
 
-```
+```plaintext
 \bord0
 ```
 
@@ -142,7 +142,7 @@ Disable border entirely.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 bord3.7
 ```
 
@@ -165,7 +165,7 @@ disable border in that direction.
 
 {{<tag-def-box title="Shadow distance" id="\shad">}}\\shad<i>\<depth></i>{{</tag-def-box>}}
 Set the distance from the text to position the shadow. Set the depth to 0
-(zero) to disable shadow entirely. Works similar to \[\\bord\]({{\< relref "ASS_Tags#bordersize" >}}).
+(zero) to disable shadow entirely. Works similar to [\\bord]({{< relref "ASS_Tags#bordersize" >}}).
 
 The shadow distance can not be negative with this tag.
 
@@ -190,7 +190,7 @@ effect isn't always very visible, but it can in some cases make the text look
 better. It is usually more visible at smaller text sizes.
 
 Be aware that this tag blurs the _edges_ of the text, not everything. This
-means that if the text has a border (set with \[\\bord\]({{\< relref "ASS_Tags#borderwidth" >}})) the
+means that if the text has a border (set with [\\bord]({{< relref "ASS_Tags#borderwidth" >}})) the
 border will be blurred, but if there is no border, the main text will be
 blurred instead.
 
@@ -200,14 +200,14 @@ nothingness, and generally isn't very useful. For strong blurs, `\blur` is
 generally more useful as a result. The _strength_ must be an integer number.
 
 {{<tag-def-box title="Blur edges (Gaussian kernel)" id="\blur">}}\\blur<i>\<strength></i>{{</tag-def-box>}}
-In general, this has the same function as the \[`\be`\]({{\< relref "ASS_Tags#bluredges" >}}) tag, but
+In general, this has the same function as the [`\be`]({{< relref "ASS_Tags#bluredges" >}}) tag, but
 uses a more advanced algorithm that looks better at high strengths. Unlike
 `\be`, the _strength_ can be non-integer here. Set _strength_ to 0 (zero) to
 disable the effect. Be careful, setting _strength_ too high can take a lot of
 CPU time to render.
 
 Be aware that this tag blurs the _edges_ of the text, not everything. This
-means that if the text has a border (set with \[`\bord`\]({{\< relref "ASS_Tags#borderwidth" >}})) the
+means that if the text has a border (set with [`\bord`]({{< relref "ASS_Tags#borderwidth" >}})) the
 border will be blurred, but if there is no border, the main text will be
 blurred instead.
 
@@ -218,7 +218,7 @@ around the font name either.
 
 {{<example-box>}}
 
-```
+```plaintext
 \fnArial
 ```
 
@@ -226,7 +226,7 @@ The text following this tag will be in Arial font.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \fnTimes New Roman
 ```
 
@@ -244,7 +244,7 @@ You can only specify integer font sizes.
 
 {{<example-box>}}
 
-```
+```plaintext
 \fs10
 ```
 
@@ -264,16 +264,16 @@ text modifies the text shape after hinting. As a result, this should always be
 used with `\t` rather than `\fs`, as animating changing font hinting is very
 rarely desirable.
 
-These tags also affect \[vector drawings\]({{\< relref "ASS_Tags#drawing-commands" >}}).
+These tags also affect [vector drawings]({{< relref "ASS_Tags#drawing-commands" >}}).
 
 You can use font scaling to correct for anamorphic rendering and to specify
-text size more precisely than with \[\\fs\]({{\< relref "ASS_Tags#fontsize" >}}).
+text size more precisely than with [\\fs]({{< relref "ASS_Tags#fontsize" >}}).
 
 Note that older versions of VSFitler will truncate non-integer scales.
 
 {{<example-box>}}
 
-```
+```plaintext
 \fscx150
 ```
 
@@ -281,7 +281,7 @@ Make the text 50% wider than normal.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \fscy50
 ```
 
@@ -289,7 +289,7 @@ Make the text half height.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \fscx200\fscy200
 ```
 
@@ -327,13 +327,13 @@ rotating. It is legal to specify negative rotation amounts, as well as amounts
 larger than 360 degrees.
 
 The rotation is performed around the subtitle line origin point, this is
-described with the \[\\org\]({{\< relref "ASS_Tags#rotationorigin" >}}) tag.
+described with the [\\org]({{< relref "ASS_Tags#rotationorigin" >}}) tag.
 
-These tags also affect \[vector drawings\]({{\< relref "ASS_Tags#vectordrawings" >}}).
+These tags also affect [vector drawings]({{< relref "ASS_Tags#vectordrawings" >}}).
 
 {{<example-box>}}
 
-```
+```plaintext
 \frx45
 ```
 
@@ -341,7 +341,7 @@ Rotate the text 45 degrees on the X axis.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \fry-45
 ```
 
@@ -349,7 +349,7 @@ Rotate the text 45 degrees in opposite direction on the Y axis.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \frz180
 ```
 
@@ -358,7 +358,7 @@ Rotate the text 180 degrees on the Z axis, making it upside-down.
 {{<example-box>}}
 The following two rotations produce the same result:
 
-```
+```plaintext
 \frz-30
 \frz330
 ```
@@ -367,11 +367,11 @@ This is because 330 degrees is 30 degrees less than a full rotation of 360 degre
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \t(\frz3600)
 ```
 
-Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the \[\\t\]({{\< relref "ASS_Tags#animatedtransform" >}}) tag.
+Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the [\\t]({{< relref "ASS_Tags#animatedtransform" >}}) tag.
 {{</example-box>}}
 {{<example-box>}}
 The following screenshots illustrate the effect of rotating on the different axes:
@@ -394,7 +394,7 @@ Usually _factor_ will be a small number; values outside the range -2 to 2 are
 unlikely to have desireable results.
 
 Shearing is performed after rotation, on the rotated coordinates. The
-coordinate system used for shearing is not affected by the \[rotation origin\]({{\< relref "ASS_Tags#rotationorigin" >}}).
+coordinate system used for shearing is not affected by the [rotation origin]({{< relref "ASS_Tags#rotationorigin" >}}).
 
 {{<example-box>}}
 ![shearing](/img/3.2/shearing.png)
@@ -428,7 +428,7 @@ Some common font encoding IDs are:
 
 {{<todo>}}Is that really correct? {{</todo>}}
 
-A more complete list can be seen the \[style editor\]({{\< relref "Styles#thestyleeditor" >}})
+A more complete list can be seen the [style editor]({{< relref "Styles#thestyleeditor" >}})
 dialog box.
 
 In ASS files stored in non-Unicode encodings, this tag also affects what
@@ -481,7 +481,7 @@ in decimal) is fully transparent/invisible.
 
 {{<example-box>}}
 
-```
+```plaintext
 \alpha&H80&
 ```
 
@@ -490,7 +490,7 @@ text 50% transparent in general.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \1a&HFF&
 ```
 
@@ -500,8 +500,8 @@ and effectively leaving only the border and shadow.
 
 {{<tag-def-box title="Line alignment" id="\an">}}\\an<i>\<pos></i>{{</tag-def-box>}}
 Specify the alignment of the line. The alignment specifies the position of the
-line when no \[position override\]({{\< relref "ASS_Tags#setposition" >}}) or
-\[movement\]({{\< relref "ASS_Tags#movement" >}}) is in effect, and otherwise specifies the
+line when no [position override]({{< relref "ASS_Tags#setposition" >}}) or
+[movement]({{< relref "ASS_Tags#movement" >}}) is in effect, and otherwise specifies the
 anchor point of positioning and rotation.
 
 The `\an` tag uses "numpad" values for the _pos_, ie. the alignment values
@@ -557,7 +557,7 @@ the line.
 
 The _duration_ is given in centiseconds, ie. a _duration_ of 100 is equivalent
 to 1 second. You generally don't enter `\k` tags manually but rather use
-karaoke timing tools such as \[Aegisub's karaoke mode\]({{\< relref "Tutorials#karaoketiming" >}}).
+karaoke timing tools such as [Aegisub's karaoke mode]({{< relref "Tutorials#karaoketiming" >}}).
 
 The different `\k` tags create various effects:
 
@@ -590,7 +590,7 @@ Determine how line breaking is applied to the subtitle line. The following
 
 {{<tag-def-box title="Reset style" id="\r">}}\\r<br>\\r<i>\<style></i>{{</tag-def-box>}}
 Reset the style. This cancels all style overrides in effect, including
-\[animations\]({{\< relref "ASS_Tags#animatedtransform" >}}), for all following text.
+[animations]({{< relref "ASS_Tags#animatedtransform" >}}), for all following text.
 
 The first form that does not specify a _style_ will reset to the style defined
 for the entire line, while the second form, that specifies the name of a
@@ -598,7 +598,7 @@ _style_, will reset the style to that specific style.
 
 {{<example-box>}}
 
-```
+```plaintext
 -Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?
 ```
 
@@ -611,7 +611,7 @@ text.
 {{<tag-def-box title="Set position" id="\pos">}}\\pos(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
 Set the position of the line. The _X_ and _Y_ coordinates must be integers and
 are given in the script resolution coordinate system. The meaning of _X_ and
-_Y_ changes slightly depending on \[alignment\]({{\< relref "ASS_Tags#linealignment" >}}).
+_Y_ changes slightly depending on [alignment]({{< relref "ASS_Tags#linealignment" >}}).
 
 The alignment of the subtitle line is used as anchor point for the position.
 I.e. when you have a line with alignment top-left, the top-left corner of the
@@ -632,7 +632,7 @@ The green cross marks the point (320,240) on the video.
 \\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i>>)
 \\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i>>,<i>\<t1</i>>,<i>\<t2</i>>)
 {{</tag-def-box>}}
-The `\move` tag works similar to \[`\pos`\]({{\< relref "ASS_Tags#setposition" >}}) in that it
+The `\move` tag works similar to [`\pos`]({{< relref "ASS_Tags#setposition" >}}) in that it
 positions the subtitle line, the difference is that `\move` makes the subtitle
 move.
 
@@ -643,7 +643,7 @@ over which the movement occurs.
 The coordinates _x1_, _y1_, _x2_ and _y2_ are given in the script resolution
 coordinate system, like `\pos`. The subtitle starts out at point (_x1_,_y1_)
 and moves with constant speed so it ends up at (_x2_,_y2_).
-\[Alignment\]({{\< relref "ASS_Tags#linealignment" >}}) influences movement coordinates the same
+[Alignment]({{< relref "ASS_Tags#linealignment" >}}) influences movement coordinates the same
 way as it influences `\pos` coordinates.
 
 In the second version, the times _t1_ and _t2_ are given in milliseconds, ie.
@@ -677,7 +677,7 @@ the scope of this page.)
 
 {{<example-box>}}
 
-```
+```plaintext
 \move(100,150,300,350)
 ```
 
@@ -687,7 +687,7 @@ point (300,350) at the same time it disappears.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \move(100,150,300,350,500,1500)
 ```
 
@@ -698,12 +698,12 @@ first appeared on screen.
 {{</example-box>}}
 
 {{<tag-def-box title="Rotation origin" id="\org">}}\\org(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
-Set the origin point used for \[rotation\]({{\< relref "ASS_Tags#textrotation" >}}). This
+Set the origin point used for [rotation]({{< relref "ASS_Tags#textrotation" >}}). This
 affects all rotations of the line. The _X_ and _Y_ coordinates are given in
 integer script resolution pixels.
 
 When there is no `\org` tag in a line, the rotation origin is implicitly the
-same as the \[position anchor point\]({{\< relref "ASS_Tags#setposition" >}}). This means that
+same as the [position anchor point]({{< relref "ASS_Tags#setposition" >}}). This means that
 the rotation origin will move if the line moves and there is no origin set
 with `\org`. Note that you can _not_ animate the `\org` tag, you are limited
 to a fixed origin if you use it.
@@ -724,7 +724,7 @@ in a single line, only the first is used.
 
 {{<example-box>}}
 
-```
+```plaintext
 \org(320,240)
 ```
 
@@ -732,7 +732,7 @@ Fix the rotation origin at point (320,240).
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \org(10000,0)
 ```
 
@@ -754,7 +754,7 @@ of _fadein_+_fadeout_ should not be greater than 4000.
 
 {{<example-box>}}
 
-```
+```plaintext
 \fad(1200,250)
 ```
 
@@ -769,7 +769,7 @@ times _t1_, _t2_, _t3_ and _t4_.
 The alpha values are given in _decimal_ and are between 0 and 255, with 0
 being fully visible and 255 being invisible. The time values are given in
 milliseconds after the start of the line. All seven parameters are required.
-(For most common fade effects the \[`\fad`\]({{\< relref "ASS_Tags#fade" >}}) tag works fine.)
+(For most common fade effects the [`\fad`]({{< relref "ASS_Tags#fade" >}}) tag works fine.)
 
 - Before _t1_, the line has alpha _a1_.
 - Between _t1_ and _t2_ the line fades from alpha _a1_ to alpha _a2_.
@@ -779,7 +779,7 @@ milliseconds after the start of the line. All seven parameters are required.
 
 {{<example-box>}}
 
-```
+```plaintext
 \fade(255,32,224,0,500,2000,2200)
 ```
 
@@ -840,7 +840,7 @@ between those two points, following the acceleration function described above.
 
 {{<example-box>}}
 
-```
+```plaintext
 {\1c&HFF0000&\t(\1c&H0000FF&)}Hello!
 ```
 
@@ -848,7 +848,7 @@ The text starts out blue, but fades towards red so it is completely red when the
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 {\an5\t(0,5000,\frz3600)}Wheee
 ```
 
@@ -856,7 +856,7 @@ Makes the text rotate 10 times, counterclockwise, lasting for 5 seconds.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 {\an5\t(0,5000,0.5,\frz3600)}Wheee
 ```
 
@@ -864,7 +864,7 @@ Same as above, but it will start fast and slow down, still doing the 10 rotation
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 {\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}Boo!
 ```
 
@@ -887,7 +887,7 @@ clipping always happens on video pixel boundaries.)
 
 {{<example-box>}}
 
-```
+```plaintext
 \clip(0,0,320,240)
 ```
 
@@ -896,7 +896,7 @@ left quadrant is visible.
 {{</example-box>}}
 {{<example-box>}}
 
-```
+```plaintext
 \iclip(0,0,320,240)
 ```
 
@@ -933,7 +933,7 @@ animation.
 
 {{<example-box>}}
 
-```
+```plaintext
 \clip(1,m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0)
 ```
 
@@ -956,26 +956,26 @@ and will be interpreted as the scale, in 2^(value-1) mode. This is done to
 allow sub-pixel accuracy.
 e.g.:
 
-```
+```plaintext
 \p1
 ```
 
 (Enables drawing with normal coordinates)
 
-```
+```plaintext
 \p0
 ```
 
 (Disables drawing)
 
-```
+```plaintext
 \p2
 ```
 
 (Enables drawing, and resolution is doubled. So drawing to 200,200 will
 actually draw to 100,100)
 
-```
+```plaintext
 \p4
 ```
 
@@ -988,13 +988,13 @@ Defines baseline offset for drawing. This is basically an Y offset to all
 coordinates.
 e.g.:
 
-```
+```plaintext
 \pbo-50
 ```
 
 (Draws everything 50 pixels above specified)
 
-```
+```plaintext
 \pbo100
 ```
 
@@ -1072,5 +1072,5 @@ pair of coordinates at the end of s.
 
 Closes the b-spline.
 
-_Note: The \[vector clip visual typesetting tool\]({{\< relref "Visual_Typesetting#vectorial-clip" >}}) only supports the m, l and b
+_Note: The [vector clip visual typesetting tool]({{< relref "Visual_Typesetting#vectorial-clip" >}}) only supports the m, l and b
 commands, and may corrupt drawings which use the other commands._

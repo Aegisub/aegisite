@@ -6,8 +6,8 @@ menu:
 weight: 6210
 ---
 
-**注册** 涵盖了以下内容：使你自己编写的Lua脚本\[Automation 4
-Lua\]({{\< relref "Lua" >}})出现在Aegisub中、
+**注册** 涵盖了以下内容：使你自己编写的Lua脚本[Automation 4
+Lua]({{< relref "Lua" >}})出现在Aegisub中、
 提供和脚本有关的信息、该脚本提供了什么样的 *特性*。
 
 ## 有关特性(Feature)的解释
@@ -23,7 +23,7 @@ Automation 4 中的一个最基础的概念就是 *特性*
 还有一个可选的有效性确认函数(决定这个宏在当前状态下是否可以运行，如：卡拉OK模板执行器就具有这个属性，如果检测不到template行，该项为灰色不可用)
 
 另外一种特性是 **export
-filter**(导出滤镜)。导出滤镜会被展示在\[Export\]({{\< relref "Exporting" >}})
+filter**(导出滤镜)。导出滤镜会被展示在[Export]({{< relref "Exporting" >}})
 对话框中，在进行导出操作时被应用
 导出滤镜也有名字、描述、处理函数，同时提供了配置面板函数。使用配置面板函数可以返回一个配置面板对话框，
 在执行导出滤镜的时候会被展示给用户，在配置面板中输入的参数和配置可以传递给处理函数作为参数。
@@ -31,7 +31,7 @@ filter**(导出滤镜)。导出滤镜会被展示在\[Export\]({{\< relref "Expo
 ## 全局脚本信息变量
 
 一个脚本中，可以设置一些全局变量，来给Aegisub提供一些元数据。
-这些全局变量会被展示在\[Automation Manager\]({{\< relref "../Manager" >}})
+这些全局变量会被展示在[Automation Manager]({{< relref "../Manager" >}})
 对话框中和脚本信息对话框中。
 
 - **script_name** (脚本名，字符串) - 脚本的名称，应尽量简洁
@@ -68,14 +68,14 @@ filter**(导出滤镜)。导出滤镜会被展示在\[Export\]({{\< relref "Expo
   建议这部分写的简明直接，描述清楚该脚本是做什么的。
 
 - **processing_function** (处理函数，函数) -
-  当用户点击了这项时，调用的处理函数 \[macro processing function
-  API\]({{\< relref "Registration#macroprocessingfunction" >}}).。
+  当用户点击了这项时，调用的处理函数 [macro processing function
+  API]({{< relref "Registration#macroprocessingfunction" >}}).。
 
 - **validation_function** (有效性检测函数，函数, 可选) -
   这个函数被用来检测当前项是否可用。
   (灰色还是正常)。如果不设置该函数，宏则一直处于可用状态。
-  这个函数遵循 \[macro validation function
-  API\]({{\< relref "Registration#macrovalidationfunction" >}}) 中的说明。
+  这个函数遵循 [macro validation function
+  API]({{< relref "Registration#macrovalidationfunction" >}}) 中的说明。
 
 - **is_active_function** (活动检测函数，函数, 可选) -
   这个函数会在当前可用项的左侧显示一个对勾。 规则同有效检测函数
@@ -103,15 +103,15 @@ filter**(导出滤镜)。导出滤镜会被展示在\[Export\]({{\< relref "Expo
   - 修复样式 = -5000 (一般总是最后运行)
 
 - **processing_function** (处理函数，函数) -
-  当用户执行导出操作时调用的处理函数。 这个函数需要符合 \[export filter
+  当用户执行导出操作时调用的处理函数。 这个函数需要符合 [export filter
   processing function
-  API\]({{\< relref "Registration#exportfilterprocessingfunction" >}})的要求。
+  API]({{< relref "Registration#exportfilterprocessingfunction" >}})的要求。
 
 - **configuration_panel_provider** (配置面板函数，函数，可选) -
   为导出滤镜提供了配置面板的函数
-  如果不写这个函数，导出滤镜不会具有配置面板。需要遵循 \[export filter
+  如果不写这个函数，导出滤镜不会具有配置面板。需要遵循 [export filter
   configuration panel provider
-  API\]({{\< relref "Registration#exportfilterconfigurationpanelprovider" >}}) 的要求。
+  API]({{< relref "Registration#exportfilterconfigurationpanelprovider" >}}) 的要求。
 
 ## Feature callback functions
 
@@ -122,11 +122,11 @@ These are the callback functions you provide to the registration functions.
 Signature: `process_macro(subtitles, selected_lines, active_line)`
 
 Macro processing functions passed to
-\[`aegisub.register_macro`\]({{\< relref "Registration#aegisub.register_macro" >}})
+[`aegisub.register_macro`]({{< relref "Registration#aegisub.register_macro" >}})
 must have this signature. The name `process_macro` is a placeholder for your
 own function name.
 
-- **subtitles** (user data) - The \[subtitles object\]({{\< relref "Subtitle_file_interface" >}}) you use to manipulate
+- **subtitles** (user data) - The [subtitles object]({{< relref "Subtitle_file_interface" >}}) you use to manipulate
   the subtitles with.
 - **selected_lines** (table) - An array with indexes of the selected lines.
   The values in this table are line indexes in the _subtitles_ object at its
@@ -148,7 +148,7 @@ set, the new active line index must be one of the lines in the new
 Signature: `validate_macro(subtitles, selected_lines, active_line)`
 
 Macro validation functions passed to
-\[`aegisub.register_macro`\]({{\< relref "Registration#aegisub.register_macro" >}})
+[`aegisub.register_macro`]({{< relref "Registration#aegisub.register_macro" >}})
 must have this signature. The name `validate_macro` is a placeholder for
 your own function name.
 
@@ -158,7 +158,7 @@ every time the user pulls open the Automation menu, and every millisecond
 you spend in `validate_macro` is one millisecond delay in opening the menu.
 Consider that the user might have very large files open. Don't block the UI.
 
-- **subtitles** (user data) - The \[subtitles object\]({{\< relref "Subtitle_file_interface" >}}) for the current subtitle
+- **subtitles** (user data) - The [subtitles object]({{< relref "Subtitle_file_interface" >}}) for the current subtitle
   file. This is **read-only**. You cannot modify the subtitles in the
   validation function, and attempting to do so will cause a run-time error.
 - **selected_lines** (table) - An array with indexes of the selected lines.
@@ -183,20 +183,20 @@ cannot be run, but there may be more uses for it.
 Signature: `process_filter(subtitles, settings)`
 
 Export filter processing functions passed to
-\[`aegisub.register_filter`\]({{\< relref "Registration#aegisub.register_filter" >}})
+[`aegisub.register_filter`]({{< relref "Registration#aegisub.register_filter" >}})
 must have this signature. The name `process_filter` is a placeholder for
 your own function name.
 
 You do not have to worry about undo issues with export filters. You always
 work on a copy of the subtitle file.
 
-- **subtitles** (user data) - The \[subtitles object\]({{\< relref "Subtitle_file_interface" >}}) you use to manipulate
+- **subtitles** (user data) - The [subtitles object]({{< relref "Subtitle_file_interface" >}}) you use to manipulate
   the subtitles with. This is a copy of the open subtitles file, so
   modifying this subtitles object does not modify the open file and will
   only affect the exported file.
 - **settings** (table) - Configuration settings entered into the
   configuration panel or an empty table if there is no configuration panel.
-  See the page on \[configuration dialogues\]({{\< relref "Dialogs" >}}) for more information
+  See the page on [configuration dialogues]({{< relref "Dialogs" >}}) for more information
   on the format of this table.
 
 **Return value:**
@@ -207,7 +207,7 @@ Nothing.
 Signature: `get_filter_configuration_panel(subtitles, old_settings)`
 
 Export filter configuration panel providers passed to
-\[`aegisub.register_filter`\]({{\< relref "Registration#aegisub.register_filter" >}})
+[`aegisub.register_filter`]({{< relref "Registration#aegisub.register_filter" >}})
 must have this signature. The name `get_filter_configuration_panel` is a
 placeholder for your own function name.
 
@@ -219,7 +219,7 @@ open, and that every millisecond spent creating your configuration dialogue
 is one more millisecond the user has to wait for the Export dialogue to
 open. Don't block the UI.
 
-- **subtitles** (user data) - The \[subtitles object\]({{\< relref "Subtitle_file_interface" >}}) for the current subtitle
+- **subtitles** (user data) - The [subtitles object]({{< relref "Subtitle_file_interface" >}}) for the current subtitle
   file. This is **read-only**. You cannot modify the subtitles in the filter
   configuration provider. Attempting to modify the subtitles will cause a
   run-time error.
@@ -231,5 +231,5 @@ open. Don't block the UI.
 
 **Return value:**
 A configuration dialogue table. See the page on
-\[configuration dialogues\]({{\< relref "Dialogs" >}}) for
+[configuration dialogues]({{< relref "Dialogs" >}}) for
 more information on the format of this table.

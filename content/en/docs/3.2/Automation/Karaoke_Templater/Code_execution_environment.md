@@ -17,7 +17,7 @@ designed to make it easier writing effect templates.
 
 It's important to understand that the contents of code execution
 environment and the
-\[inline-variables\]({{\< relref "./Inline_variables" >}})
+[inline-variables]({{< relref "./Inline_variables" >}})
 ($-variables) are not related. You cannot change an inline-variable by
 changing something in the code execution environment nor can you add new
 ones. However, you can create and re-define the contents of the code
@@ -28,14 +28,14 @@ execution environment.
 The code execution environment contains a few variables pointing to the
 current line and syllable structure being processed, as well as some more
 supporting tables. These are just references to the structures produced by
-\[karaskel\]({{\< relref "../Lua/Modules/karaskel.lua.md#datastructures" >}}) and are not
+[karaskel]({{< relref "../Lua/Modules/karaskel.lua.md#datastructures" >}}) and are not
 modified in any way.
 
 You should treat all of these except `line` as read-only. If you change the
 other ones, the kara-templater script might start misbehaving.
 
 - **line** - The line currently being produced. Changing this will affect
-  the resulting line in the file. See the **\[reference for dialogue line tables\]({{\< relref "../Lua/Modules/karaskel.lua.md#dialoguelinetable" >}})**.
+  the resulting line in the file. See the **[reference for dialogue line tables]({{< relref "../Lua/Modules/karaskel.lua.md#dialoguelinetable" >}})**.
 - **orgline** - The original line. This is the source line the current
   syllable is located on.
 - **syl** - The current syllable structure. If the current template is a
@@ -43,7 +43,7 @@ other ones, the kara-templater script might start misbehaving.
   template has one or both of the _char_ or _multi_ modifiers, this is a
   pseudo-syllable structure, a copy of the original syllable structure with
   several values changed to look like the current part of the syllable
-  being processed. Also see the **\[reference for syllable tables\]({{\< relref "../Lua/Modules/karaskel.lua.md#karaokeandfuriganasyllabletables" >}})**.
+  being processed. Also see the **[reference for syllable tables]({{< relref "../Lua/Modules/karaskel.lua.md#karaokeandfuriganasyllabletables" >}})**.
 - **basesyl** - Usually the same as `syl`, except when the template has the
   _char_ or _multi_ modifier, then this is the original syllable. (If `syl == basesyl` is true, then the current template is neither _char_ nor
   _multi_.)
@@ -67,15 +67,15 @@ generally useful.
 
 You can also access the main execution environment of the kara-templater
 script itself using the **`_G`** (underscore capital-G) variable and
-through that access the rest of the Lua standard library and any \[loaded modules\]({{\< relref "../Lua/Modules" >}}). For example, `_G.table.sort` refers to
+through that access the rest of the Lua standard library and any [loaded modules]({{< relref "../Lua/Modules" >}}). For example, `_G.table.sort` refers to
 the regular `table.sort` function. See the [Lua 5.1
 manual](http://www.lua.org/manual/5.1/manual.html#5) for details on the
 available libraries.
 
 For backwards compatibility, several of the included modules
-(\[karaskel.lua\]({{\< relref "../Lua/Modules/karaskel.lua.md" >}}),
-\[unicode.lua\]({{\< relref "../Lua/Modules/unicode" >}}) and
-\[utils.lua\]({{\< relref "../Lua/Modules/util" >}})) are automatically loaded
+([karaskel.lua]({{< relref "../Lua/Modules/karaskel.lua.md" >}}),
+[unicode.lua]({{< relref "../Lua/Modules/unicode" >}}) and
+[utils.lua]({{< relref "../Lua/Modules/util" >}})) are automatically loaded
 and will be accessible via `_G` by default. All others must be explicitly
 `require`d on a code line.
 
@@ -349,7 +349,7 @@ variables are introduced in the code execution environment, **`j`** and
 
 If you change `j` or `maxj` while a template is executing, you can affect
 the number of iterations the loop makes. The
-\[`maxloop`\]({{\< relref "Code_execution_environment#maxloop" >}})
+[`maxloop`]({{< relref "Code_execution_environment#maxloop" >}})
 function is convenient for making dynamic loops.
 
 {{<example-box>}}

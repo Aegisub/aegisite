@@ -6,7 +6,7 @@ menu:
 weight: 6172
 ---
 
-In \[the previous tutorial\]({{\< relref "./Tutorial_1" >}}) we saw how to use the basic features of Karaoke Templater to make simple karaoke effects. We'll continue where we left off here, by expanding on the basics from last tutorial.
+In [the previous tutorial]({{< relref "./Tutorial_1" >}}) we saw how to use the basic features of Karaoke Templater to make simple karaoke effects. We'll continue where we left off here, by expanding on the basics from last tutorial.
 
 {{<todo>}}make and insert screenshots {{</todo>}}
 
