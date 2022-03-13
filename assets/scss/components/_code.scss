@@ -21,7 +21,7 @@ pre code {
   display: block;
   overflow-x: auto;
   line-height: $line-height-base;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem !important;
   tab-size: 4;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
@@ -30,10 +30,6 @@ pre code {
 code.inline-code {
   padding: 0.25rem 0.5rem !important;
   display: inline;
-}
-
-.hljs {
-  padding: 1rem !important;
 }
 
 @include media-breakpoint-down(sm) {
