@@ -1,15 +1,16 @@
 ---
-title: "Bug tracker lost..."
+title: Bug tracker lost...
 contributors:
-- "jfs"
-date: 2008-11-03T20:50:00.002Z
-lastmod: 2008-11-03T20:54:27.683Z
+  - jfs
+date: 2008-11-03T20:50:00.002000Z
+lastmod: 2008-11-03T20:54:27.683000Z
 weight: 50
 tags:
-- old-post
-- announcement
-- bugtracker
+  - old-post
+  - announcement
+  - bugtracker
 ---
+
 Oops.
 
 We lost the bug tracker, and the latest back-up of it is from 2008-09-17. The chances to restore any newer dataset are very slim.

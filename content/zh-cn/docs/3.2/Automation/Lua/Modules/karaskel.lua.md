@@ -10,8 +10,8 @@ Automation 4的核心文件 `karaskel.lua` 内置了许多函数，用来协助A
 4 Lua方面的卡拉OK特效制作 它定义了几种新的数据结构，也拓展了Automation 4
 本身定义的一些。
 
-`karaskel.lua` 包含 [`utils.lua`]({{< relref "util" >}}) 和
-[`unicode.lua`]({{< relref "unicode" >}})
+`karaskel.lua` 包含 \[`utils.lua`\]({{\< relref "util" >}}) 和
+\[`unicode.lua`\]({{\< relref "unicode" >}})
 。所以你在使用`karaskel.lua`时不必再单独include这两项。
 
 `karaskel.lua`
@@ -26,10 +26,10 @@ Automation 4的核心文件 `karaskel.lua` 内置了许多函数，用来协助A
 
 读取字幕文件来获取所有的头部信息和样式定义,也可以为假名生成新的样式。
 
--   `subtitles` 指的是Automation 4 Lua定义的字幕文件对象。
--   `generate_furigana` 是在这种逻辑下进行的操作: 它会为没有对应
-    [假名布局]({{< relref "Furigana_karaoke" >}})
-    的样式单独生成样式。生成的假名样式永远也不会覆盖存在的样式。
+- `subtitles` 指的是Automation 4 Lua定义的字幕文件对象。
+- `generate_furigana` 是在这种逻辑下进行的操作: 它会为没有对应
+  \[假名布局\]({{\< relref "Furigana_karaoke" >}})
+  的样式单独生成样式。生成的假名样式永远也不会覆盖存在的样式。
 
 使用 `collect_head` 一般情况下是你在处理函数中做的第一步。
 
@@ -63,11 +63,11 @@ Automation 4的核心文件 `karaskel.lua` 内置了许多函数，用来协助A
 
 这个函数不会返回值，但是在修饰 `line` 表的时候例外:
 
--   `line.text_stripped` - 返回除去特效标签和绘图代码的原文本
--   `line.duration` - 返回行的持续时间(毫秒单位)
--   `line.kara` 和 `line.furi` - 扩展版的
-    [卡拉OK和假名标注表]({{< relref "karaskel.lua.md#karaoke-and-furigana-syllable-tables" >}}),
-    不含尺寸位置信息。
+- `line.text_stripped` - 返回除去特效标签和绘图代码的原文本
+- `line.duration` - 返回行的持续时间(毫秒单位)
+- `line.kara` 和 `line.furi` - 扩展版的
+  \[卡拉OK和假名标注表\]({{\< relref "karaskel.lua.md#karaoke-and-furigana-syllable-tables" >}}),
+  不含尺寸位置信息。
 
 这个函数不计算任何尺寸和位置信息。 (事实上它根本不使用 `meta` 或者
 `styles` 之前获取到的尺寸位置信息)
@@ -80,14 +80,14 @@ Automation 4的核心文件 `karaskel.lua` 内置了许多函数，用来协助A
 
 这个函数不会返回值，但是在修饰 `line` 表的时候例外:
 
--   `line.styleref` - 参照样式表，返回当前被应用模板的行的样式表。
--   `line.furistyle` -
-    参照样式表，返回当前被应用模板的行对应假名标注的样式表。如果没有匹配的样式名称这个区域就为
-    `false` (假)
--   `line.width`, `line.height`, `line.descent` 和 `line.extlead` -
-    原文本的尺寸信息，由
-    [\`aegisub.text_extents\`]({{< relref "../Miscellaneous_APIs#aegisub.text_extents" >}})
-    返回。 这个函数也修饰 `line.kara` 和 `line.furi` 表, 增加尺寸信息。
+- `line.styleref` - 参照样式表，返回当前被应用模板的行的样式表。
+- `line.furistyle` -
+  参照样式表，返回当前被应用模板的行对应假名标注的样式表。如果没有匹配的样式名称这个区域就为
+  `false` (假)
+- `line.width`, `line.height`, `line.descent` 和 `line.extlead` -
+  原文本的尺寸信息，由
+  \[\`aegisub.text_extents\`\]({{\< relref "../Miscellaneous_APIs#aegisub.text_extents" >}})
+  返回。 这个函数也修饰 `line.kara` 和 `line.furi` 表, 增加尺寸信息。
 
 这一部分不涉及位置信息的计算。
 
@@ -106,32 +106,32 @@ Automation 4的核心文件 `karaskel.lua` 内置了许多函数，用来协助A
 
 这个函数不会返回值，但是在修饰 `line` 表的时候例外:
 
--   `line.margin_v` - `line.margin_t` 的别名。
--   `line.eff_margin_l`, `line.eff_margin_r`, `line.eff_margin_t`,
-    `line.eff_margin_b` 和 `line.eff_margin_v` -
-    该行的有效边距值。如果某一行对应的值非零，则使用这些值，否则会使用样式管理器中定义的值。
--   `line.halign` - 三种水平对齐方式 `"left"`, `"center"` 或
-    `"right"`中的一种，是由 `line.styleref.align`派生出来的。
--   `line.valign` - 三种竖直对齐方式 `"top"`, `"middle"` 或 `"bottom"`
-    中的一种, 是由 `line.styleref.align`派生出来的。
--   `line.left` -
-    行左边缘的X坐标，假设定义了对齐，有效边距，并且未检测到重叠。
--   `line.center` -
-    行水平中点的X坐标，假设定义了对齐，有效边距，并且未检测到重叠。
--   `line.right` -
-    行右边缘的X坐标，假设定义了对齐，有效边距，并且未检测到重叠。
--   `line.top` -
-    行上边缘的Y坐标，假设定义了对齐，有效边距，并且未检测到重叠。
--   `line.middle` -
-    行竖直中点的Y坐标，假设定义了对齐，有效边距，并且未检测到重叠。别名`line.vcenter`。
-    `line.bottom` -
-    行下边缘的Y坐标，假设定义了对齐，有效边距，并且未检测到重叠。
--   `line.x` 和 `line.y` - 行的X 和 Y 坐标，适合与 `\pos`
-    配合使用，保持行的原位置。
+- `line.margin_v` - `line.margin_t` 的别名。
+- `line.eff_margin_l`, `line.eff_margin_r`, `line.eff_margin_t`,
+  `line.eff_margin_b` 和 `line.eff_margin_v` -
+  该行的有效边距值。如果某一行对应的值非零，则使用这些值，否则会使用样式管理器中定义的值。
+- `line.halign` - 三种水平对齐方式 `"left"`, `"center"` 或
+  `"right"`中的一种，是由 `line.styleref.align`派生出来的。
+- `line.valign` - 三种竖直对齐方式 `"top"`, `"middle"` 或 `"bottom"`
+  中的一种, 是由 `line.styleref.align`派生出来的。
+- `line.left` -
+  行左边缘的X坐标，假设定义了对齐，有效边距，并且未检测到重叠。
+- `line.center` -
+  行水平中点的X坐标，假设定义了对齐，有效边距，并且未检测到重叠。
+- `line.right` -
+  行右边缘的X坐标，假设定义了对齐，有效边距，并且未检测到重叠。
+- `line.top` -
+  行上边缘的Y坐标，假设定义了对齐，有效边距，并且未检测到重叠。
+- `line.middle` -
+  行竖直中点的Y坐标，假设定义了对齐，有效边距，并且未检测到重叠。别名`line.vcenter`。
+  `line.bottom` -
+  行下边缘的Y坐标，假设定义了对齐，有效边距，并且未检测到重叠。
+- `line.x` 和 `line.y` - 行的X 和 Y 坐标，适合与 `\pos`
+  配合使用，保持行的原位置。
 
 此外, `line.kara` 和 `line.furi` 表是被布局函数调用，然后加上位置信息。
 
-详见这部分 [data structures]({{< relref "karaskel.lua.md#datastructures" >}}) 。
+详见这部分 \[data structures\]({{\< relref "karaskel.lua.md#datastructures" >}}) 。
 
 如果没有找到任何行的尺寸信息, `karaskel.preproc_line_size` 会被调用,
 它可能会转而调用 `karaskel.preproc_line_text`。
@@ -172,8 +172,8 @@ Automation 4的核心文件 `karaskel.lua` 内置了许多函数，用来协助A
 使用特效库功能的前提是在每一打好K值行的特效栏填写了你希望应用的特效类型（名称）。
 如果你想在一个文件里应用多种卡拉OK效果，这是一个很好的选择。
 
-当特效库函数被调用,它会首先为每个对话行调用 *\"fx_特效\"* 。举个例子,
-如果某个对话行的特效栏填写的是 *\"jump\"*, 则名为 `fx_jump`
+当特效库函数被调用,它会首先为每个对话行调用 *"fx_特效"* 。举个例子,
+如果某个对话行的特效栏填写的是 *"jump"*, 则名为 `fx_jump`
 的函数将会被调用。对于特效栏为空的对话行, 函数 `fx_none` 将会被调用。
 
 如果指明的 `fx`
@@ -189,7 +189,8 @@ Automation 4的核心文件 `karaskel.lua` 内置了许多函数，用来协助A
 
 与 `_furi` 变种相同，除了 `use_furigana` 被去除；它被假定为false。
 
-### Classic Advanced  ###
+### Classic Advanced
+
 Main function: `karaskel.use_classic_adv(use_furigana, add_macro)`
 
 Call the `karaskel.use_classic_adv` function to install the Classic
@@ -228,11 +229,13 @@ parameter is the function that would be called if `do_line` didn't exist.
 You can call it to run the default line processing along with your own
 processing.
 
-## Data structures  ##
+## Data structures
+
 `karaskel.lua` defines and extends several data structures. Some of the
 changes are already listed above under the individual functions.
 
-### Styles array  ###
+### Styles array
+
 The `styles` array is produced by the `karaskel.collect_head` function and
 should be passed to most other `karaskel.lua` functions. It contains a list
 of all styles in the subtitle file, and can be accessed in two ways.
@@ -249,125 +252,128 @@ Be aware that modifying the `styles` will never update the subtitles file,
 and conversely updating the styles in the subtitle file will not
 automatically be reflected in `styles` either.
 
-### Style table  ###
+### Style table
+
 This is a slight extension of the basic `style` class subtitle line structure.
 
 One field is added:
 
-* `style.margin_v` is a convenience alias for `style.margin_t`.
+- `style.margin_v` is a convenience alias for `style.margin_t`.
 
 Full list of fields:
 
-* `style.class == "style"`
-* `style.raw` - The raw line text.
-* `style.section == "[V4+ Styles]"`
-* `style.name` - Name of the style.
-* `style.fontname` - Name of the font face used by the style.
-* `style.fontsize` - Font size for the style.
-* `style.color1`, `style.color2`, `style.color3` and `style.color4` - The
+- `style.class == "style"`
+- `style.raw` - The raw line text.
+- `style.section == "[V4+ Styles]"`
+- `style.name` - Name of the style.
+- `style.fontname` - Name of the font face used by the style.
+- `style.fontsize` - Font size for the style.
+- `style.color1`, `style.color2`, `style.color3` and `style.color4` - The
   four colours used by the style, in regular order. Use
-  [`extract_color`]({{< relref "../Modules#extractcolor" >}}) and family to
+  \[`extract_color`\]({{\< relref "../Modules#extractcolor" >}}) and family to
   manipulate these.
-* `style.bold` - `true`/`false` to specify bold/non-bold font face. Can
+- `style.bold` - `true`/`false` to specify bold/non-bold font face. Can
   also be a number to specify font weight, but this is not well supported
   and should be avoided.
-* `style.italic` - Boolean, whether an italic/oblique version of the font
+- `style.italic` - Boolean, whether an italic/oblique version of the font
   face is used or not.
-* `style.underline` and `style.strikeout` - Boolean, whether to apply these
+- `style.underline` and `style.strikeout` - Boolean, whether to apply these
   two decorations to the text.
-* `style.scale_x` and `style.scale_y` - Scaling in X and Y direction, 100
+- `style.scale_x` and `style.scale_y` - Scaling in X and Y direction, 100
   is neutral.
-* `style.spacing` - Additional spacing in pixels between individual
+- `style.spacing` - Additional spacing in pixels between individual
   characters in text.
-* `style.angle` - Z axis rotation for the text.
-* `style.borderstyle`  - 1 (one) for regular outlined text, 3 for opaque
+- `style.angle` - Z axis rotation for the text.
+- `style.borderstyle`  - 1 (one) for regular outlined text, 3 for opaque
   box behind subtitles.
-* `style.outline` - Width of the extended outline around the text.
-* `style.shadow` - Distance to the shadow behind the text.
-* `style.align` - Numpad-style alignment for the text on screen.
-* `style.margin_l`, `style.margin_r`, `style.margin_t` and `style.margin_b`
+- `style.outline` - Width of the extended outline around the text.
+- `style.shadow` - Distance to the shadow behind the text.
+- `style.align` - Numpad-style alignment for the text on screen.
+- `style.margin_l`, `style.margin_r`, `style.margin_t` and `style.margin_b`
   - Margins for the style. `style.margin_v` is an alias for top margin.
-* `style.encoding` - Windows font encoding ID for the style.
-* `style.relative_to` - Currently unsupported.
-* `style.vertical` - Unsupported, tentative AS5 feature.
+- `style.encoding` - Windows font encoding ID for the style.
+- `style.relative_to` - Currently unsupported.
+- `style.vertical` - Unsupported, tentative AS5 feature.
 
-### Dialogue line table  ###
+### Dialogue line table
+
 A large number of new fields have been added to the dialogue line class.
 
 Basic fields:
 
-* `line.class == "dialogue"`, also for comment lines
-* `line.raw` - The raw line text.
-* `line.section` - Usually `"[Events]"`.
-* `line.comment` - Boolean, true if the line is a Comment line rather than
+- `line.class == "dialogue"`, also for comment lines
+- `line.raw` - The raw line text.
+- `line.section` - Usually `"[Events]"`.
+- `line.comment` - Boolean, true if the line is a Comment line rather than
   Dialogue.
-* `line.layer` - Layer of the line.
-* `line.start_time`, `line.end_time` - Start and end times of the line in
+- `line.layer` - Layer of the line.
+- `line.start_time`, `line.end_time` - Start and end times of the line in
   milliseconds.
-* `line.style` - Name of the style used for the line.
-* `line.actor` - Actor field for the line.
-* `line.margin_l`, `line.margin_r`, `line.margin_t` and `line.margin_b` -
+- `line.style` - Name of the style used for the line.
+- `line.actor` - Actor field for the line.
+- `line.margin_l`, `line.margin_r`, `line.margin_t` and `line.margin_b` -
   Margin overrides for the line, a zero value means use margin from style.
-* `line.effect` - Effect field of the line.
-* `line.userdata` - Unused.
-* `line.text` - Dialogue text.
+- `line.effect` - Effect field of the line.
+- `line.userdata` - Unused.
+- `line.text` - Dialogue text.
 
 Basic added fields, by `karaskel.preproc_line_text`:
 
-* `line.text_stripped` - Line text with all override tags and vector
+- `line.text_stripped` - Line text with all override tags and vector
   drawings removed.
-* `line.duration` - Duration of the line in milliseconds
-* `line.kara` and `line.furi` - Array tables of extended karaoke and
+- `line.duration` - Duration of the line in milliseconds
+- `line.kara` and `line.furi` - Array tables of extended karaoke and
   furigana tables, respectively. They do not contain sizing and positioning
   data from the beginning.
 
 Added fields for sizing, by `karaskel.preproc_line_size`:
 
-* `line.styleref` - A reference to the Style table representing this line's
+- `line.styleref` - A reference to the Style table representing this line's
   selected style.
-* `line.furistyle` - A reference to the Style table representing this
+- `line.furistyle` - A reference to the Style table representing this
   line's furigana layout style. If there is no style with the right name,
   this field is `false` instead.
-* `line.width`, `line.height`, `line.descent` and `line.extlead` - Sizing
+- `line.width`, `line.height`, `line.descent` and `line.extlead` - Sizing
   information for the stripped line text, as returned by
   `aegisub.text_extents`. `line.width` may also be modified by
   `karaskel.preproc_line_pos`.
 
 Added fields for positioning, by `karaskel.preproc_line_pos`:
 
-* `line.margin_v` - A convenience alias for `line.margin_t`.
-* `line.eff_margin_l`, `line.eff_margin_r`, `line.eff_margin_t`,
+- `line.margin_v` - A convenience alias for `line.margin_t`.
+- `line.eff_margin_l`, `line.eff_margin_r`, `line.eff_margin_t`,
   `line.eff_margin_b` and `line.eff_margin_v` - Effective margin values for
   the line. If the corresponding margin override for the line is non-zero,
   that value is used, otherwise the value defined in the style is used.
-* `line.halign` - One of `"left"`, `"center"` or `"right"`, the horizontal
+- `line.halign` - One of `"left"`, `"center"` or `"right"`, the horizontal
   alignment of the line, derived from `line.styleref.align`.
-* `line.valign` - One of `"top"`, `"middle"` or `"bottom"`, the vertical
+- `line.valign` - One of `"top"`, `"middle"` or `"bottom"`, the vertical
   alignment of the line, derived from `line.styleref.align`.
-* `line.left` - The left edge X coordinate for the line, assuming its given
+- `line.left` - The left edge X coordinate for the line, assuming its given
   alignment, effective margins and no collision detection.
-* `line.center` - The line centre X coordinate, assuming its given
+- `line.center` - The line centre X coordinate, assuming its given
   alignment, effective margins and no collision detection.
-* `line.right` - The right edge X coordinate for the line, assuming its
+- `line.right` - The right edge X coordinate for the line, assuming its
   given alignment, effective margins and no collision detection.
-* `line.top` - The top edge Y coordinate for the line, assuming its given
+- `line.top` - The top edge Y coordinate for the line, assuming its given
   alignment, effective margins and no collision detection.
-* `line.middle` - The line vertical centre Y coordinate, assuming its given
+- `line.middle` - The line vertical centre Y coordinate, assuming its given
   alignment, effective margins and no collision detection `line.vcenter` is
   an alias for this.
-* `line.bottom` - The bottom edge Y coordinate for the line, assuming its
+- `line.bottom` - The bottom edge Y coordinate for the line, assuming its
   given alignment, effective margins and no collision detection.
-* `line.x` and `line.y` - X and Y coordinates for the line, suitable for
+- `line.x` and `line.y` - X and Y coordinates for the line, suitable for
   using in a `\pos` override tag to get the line's original position.
 
 Added fields for linked list access, only available when using the Classic
 Advanced skeleton:
 
-* `line.prev`, `line.next` - Access the dialogue line before and after this
+- `line.prev`, `line.next` - Access the dialogue line before and after this
   one. These might be `nil` on the first/last dialogue lines. Blank lines,
   style lines, header lines etc. are _not_ included in this linked list.
 
-### Karaoke and furigana syllable tables  ###
+### Karaoke and furigana syllable tables
+
 Tables for regular karaoke syllables and furigana parts are identical in
 (almost) every aspect, and can usually be processed by the same code
 without problems. There are a few points to take note of which are marked.
@@ -376,57 +382,57 @@ otherwise noted.
 
 Basic fields, defined by `aegisub.parse_karaoke_data`:
 
-* `syl.duration` - syllable duration in milliseconds (divide by 10 to get a
+- `syl.duration` - syllable duration in milliseconds (divide by 10 to get a
   number suitable for `\k` tags.)
-* `syl.start_time`, `syl.end_time` - Start and end time of the syllable in
+- `syl.start_time`, `syl.end_time` - Start and end time of the syllable in
   milliseconds, relative to the start time of the line.
-* `syl.tag` - The name of the tag defining this syllable, without
+- `syl.tag` - The name of the tag defining this syllable, without
   backslash. It will usually be one of `k`, `K`, `kf` or `ko`. Note that
   `kt` is not handled. Furigana parts have the same tag as the original
   syllable defining them.
-* `syl.text` - Text including tags of the syllable. Same as stripped text
+- `syl.text` - Text including tags of the syllable. Same as stripped text
   for furigana.
-* `syl.text_stripped` - Text of the syllable with all tags removed. For
+- `syl.text_stripped` - Text of the syllable with all tags removed. For
   main syllables, this also has furigana and multi-highlight parts removed.
   This is the text you will usually want to use.
 
 Additions by `karaskel.preproc_line_text`:
 
-* `syl.kdur` - Syllable duration in centiseconds, suitable for use in `\k`
+- `syl.kdur` - Syllable duration in centiseconds, suitable for use in `\k`
   tags.
-* `syl.line` - Back reference to the line table containing this syllable.
-* `syl.inline_fx` - Name of the [_inline-fx_]({{< relref "Karaoke_inline-fx" >}}) for this
+- `syl.line` - Back reference to the line table containing this syllable.
+- `syl.inline_fx` - Name of the \[_inline-fx_\]({{\< relref "Karaoke_inline-fx" >}}) for this
   syllable.
-* `syl.i` - Index number of this syllable.
-* `syl.prespace`, `syl.postspace` - Space characaters at the start/end of
+- `syl.i` - Index number of this syllable.
+- `syl.prespace`, `syl.postspace` - Space characaters at the start/end of
   the syllable. Always blank for furigana. These are spaces included in
   `syl.text_stripped`. You will usually never need this.
-* `syl.text_spacestripped` - Syllable text stripped for tags and trimmed of
+- `syl.text_spacestripped` - Syllable text stripped for tags and trimmed of
   spaces at the start and end. This, `syl.prespace` and `syl.postspace`
   together can produce the same as `syl.text_stripped`. You will usually
   never need this.
-* `syl.isfuri` - `true` if the table is a furigana table, `false` if it is
+- `syl.isfuri` - `true` if the table is a furigana table, `false` if it is
   not. If you use a single function to process both regular and furigana
   syllables, you can use this to do differentiated processing still.
-* `syl.highlights` - Array table of multi-highlight data for the syllable.
+- `syl.highlights` - Array table of multi-highlight data for the syllable.
   For furigana, there is always exactly one highlight defined. See below
   for format of highlight tables.
 
 Additions by `karaskel.preproc_line_size`:
 
-* `syl.style` - Reference to the style used to calculate sizing for this
+- `syl.style` - Reference to the style used to calculate sizing for this
   syllable. This will be the main line style for regular syllables and the
   furigana style for furigana. You should always set the style of the
   generated lines to this one.
-* `syl.width`, `syl.height` - Width and height of `syl.text_spacestripped`,
+- `syl.width`, `syl.height` - Width and height of `syl.text_spacestripped`,
   as returned by `aegisub.text_extents`.
-* `syl.prespacewidth`, `syl.postspacewidth` - Width of `syl.prespace` and
+- `syl.prespacewidth`, `syl.postspacewidth` - Width of `syl.prespace` and
   `syl.postspace` respectively. You will usually not need these. Always
   zero for furigana.
 
 Additions by `karaskel.preproc_line_pos`:
 
-* `syl.left`, `syl.center`, `syl.right` - Respectively left, center and
+- `syl.left`, `syl.center`, `syl.right` - Respectively left, center and
   right aligned positions of the syllable/furigana, for use with different
   alignments. The positions are _relative to the left edge of the line_,
   meaning you will need to add a value for line positioning to use these
@@ -435,7 +441,8 @@ Additions by `karaskel.preproc_line_pos`:
   syllable.
 
 {{<example-box>}}
-``` lua
+
+```lua
 line.left + syl.center
 ```
 
@@ -443,13 +450,14 @@ Calculates the default X position of a syllable, suitable for use with
 `\an2`, `\an5` or `\an8` alignment.
 {{</example-box>}}
 
-#### Highlight table  ####
+#### Highlight table
+
 A highlight table defines one highlight of a multi-highlight timed
 syllable.
 
 Highlight tables are entirely defined by `karaskel.preproc_line_text`, and
 contain the following fields:
 
-* `hl.start_time`, `hl.end_time` - Start and end time of the highlight, in
+- `hl.start_time`, `hl.end_time` - Start and end time of the highlight, in
   milliseconds, relative to the start of the line.
-* `hl.duration` - Duration of the highlight in milliseconds.
+- `hl.duration` - Duration of the highlight in milliseconds.

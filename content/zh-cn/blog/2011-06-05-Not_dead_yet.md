@@ -1,14 +1,15 @@
 ---
-title: "Not dead yet"
+title: Not dead yet
 contributors:
-- "jfs"
-date: 2011-06-05T01:45:00.004+01:00
-lastmod: 2011-06-05T01:58:29.922+01:00
+  - jfs
+date: 2011-06-05T01:45:00.004000+01:00
+lastmod: 2011-06-05T01:58:29.922000+01:00
 weight: 50
 tags:
-- old-post
-- aegisub
+  - old-post
+  - aegisub
 ---
+
 Aegisub is still alive!
 
 Recently I've seen people asking whether Aegisub is dead, or what is happening, so it's probably a good idea to write an update on it.

@@ -45,7 +45,7 @@ Automation 4 Lua include的文件 `utils.lua`
 给定 `r`, `g` , `b` 数值，返回ASS的 `&HBBGGRR` 颜色格式字符串。
 
 警告:本函数并不含有颜色输入范围检查功能。
-如果你用了0\~255之外的数值，返回的是什么鬼就不一定了。
+如果你用了0~255之外的数值，返回的是什么鬼就不一定了。
 
 ### ass_alpha
 
@@ -53,7 +53,7 @@ Automation 4 Lua include的文件 `utils.lua`
 
 给定 `a` 数值，返回ASS的 `&HAA&` 透明度格式字符串。
 
-不具有输入范围检查(0\~255)
+不具有输入范围检查(0~255)
 
 ### ass_style_color
 
@@ -69,19 +69,19 @@ Automation 4 Lua include的文件 `utils.lua`
 
 从一个颜色字符串中导出色值。支持识别以下几种:
 
--   样式定义: `&HAABBGGRR`
--   行内颜色标签: `&HBBGGRR&`
--   行内透明度标签: `&HAA&`
--   带透明度的HTML: `#RRGGBBAA`
+- 样式定义: `&HAABBGGRR`
+- 行内颜色标签: `&HBBGGRR&`
+- 行内透明度标签: `&HAA&`
+- 带透明度的HTML: `#RRGGBBAA`
 
 注意，当输入一个有效的颜色字符串，本函数一般会返回四个数值。
 无用的部分会被置0。 无法识别的的颜色字符串会返回`nil`。
 
 {{<example-box>}}
-``` lua
+
+```lua
 r, g, b, a = extract_color("&H7F&")
 ```
-
 
 `r`, `g`,  `b` 都是 0; `a` 是 127.
 {{</example-box>}}
@@ -111,7 +111,7 @@ r, g, b, a = extract_color("&H7F&")
 ## 字符串函数
 
 因为lua标准的 `string` 库功能十分有限, 这里提供了一些额外的辅助函数。
-可以参见 [unicode]({{< relref "unicode" >}}) 。
+可以参见 \[unicode\]({{\< relref "unicode" >}}) 。
 
 ### string.trim
 
@@ -126,7 +126,7 @@ r, g, b, a = extract_color("&H7F&")
 
 摘要: `head, tail = util.headtail(instring)`
 
-利用字符串中首个空格将其分割成 \"头\" 和 \"尾\" 两部分。
+利用字符串中首个空格将其分割成 "头" 和 "尾" 两部分。
 
 如果 `instring` 中不含有空格，则会返回 `instring, ""`.
 

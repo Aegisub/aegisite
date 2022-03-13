@@ -6,9 +6,9 @@ menu:
 weight: 2720
 ---
 
-卡拉OK inline-fx（内联特效）可以用来给[打过k的时间轴]({{< relref "Timing#karaoketiming" >}})的不同部分分配不同的特效。
+卡拉OK inline-fx（内联特效）可以用来给\[打过k的时间轴\]({{\< relref "Timing#karaoketiming" >}})的不同部分分配不同的特效。
 
-inline-fx标记本身并不会有任何影响，只有当应用可以识别它的[卡拉ok特效脚本]({{< relref "Automation" >}})时才会应用于打了k的轴。
+inline-fx标记本身并不会有任何影响，只有当应用可以识别它的\[卡拉ok特效脚本\]({{\< relref "Automation" >}})时才会应用于打了k的轴。
 
 ## 标记
 
@@ -28,23 +28,23 @@ inline-fx标记本身并不会有任何影响，只有当应用可以识别它�
 
 这些音节会被分配如下的内联特效：
 
-| Syllable   | Inline-fx
-| ---------- | -----------
-| zu         | (blank)
-| t          | (blank)
-| to         | (blank)
-| e          | `paint`
-| ga         | `paint`
-| i          | `paint`
-| te         | `paint`
-| ta         | `paint`
-| yu         | `cloud`
-| me         | `cloud`
-{{</example-box>}}
+| Syllable           | Inline-fx |
+| ------------------ | --------- |
+| zu                 | (blank)   |
+| t                  | (blank)   |
+| to                 | (blank)   |
+| e                  | `paint`   |
+| ga                 | `paint`   |
+| i                  | `paint`   |
+| te                 | `paint`   |
+| ta                 | `paint`   |
+| yu                 | `cloud`   |
+| me                 | `cloud`   |
+| {{</example-box>}} |           |
 
 ## 卡拉OK模版执行器中的用法
 
-如果你用[卡拉OK模版执行器]({{< relref "Automation/Karaoke_Templater" >}})来制作特效，你可以在模版上使用
+如果你用\[卡拉OK模版执行器\]({{\< relref "Automation/Karaoke_Templater" >}})来制作特效，你可以在模版上使用
 *fx*
 修饰语来指定其仅对特定的内联特效生效。这种方式无法（直接）匹配无内联特效标记的音节。
 
@@ -76,7 +76,7 @@ template syl fxgroup blankfx: {仅对空内联特效音节叠加生效的效果}
 ## Lua脚本中的用法
 
 The inline-fx tags are parsed by
-[\`karaskel.preproc_line_text\`]({{< relref "Automation/Lua/Modules/karaskel.lua.md#karaskel.preproc_line_text" >}})
+\[\`karaskel.preproc_line_text\`\]({{\< relref "Automation/Lua/Modules/karaskel.lua.md#karaskel.preproc_line_text" >}})
 so they will only work if you have applied at least that much karaskel
 pre-processing on your subtitle lines.
 
@@ -95,7 +95,6 @@ elseif syl.inline_fx == "cloud" then
     apply_cloud_effect(subs, meta, line, syl)
 end
 ```
-
 
 Simply compare the inline-fx name to the various possibilities and run
 the right effect code.
@@ -118,10 +117,9 @@ effects.cloud = function(subs, meta, line, syl)
 end
 ```
 
-
 Then later, in some per-syllable processing code:
 
-``` lua
+```lua
 effects[syl.inline_fx](subs, meta, line, syl)
 ```
 

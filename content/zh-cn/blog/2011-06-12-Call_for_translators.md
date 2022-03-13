@@ -1,31 +1,31 @@
 ---
-title: "Call for translators"
+title: Call for translators
 contributors:
-- "jfs"
-date: 2011-06-12T03:59:00.006+01:00
-lastmod: 2011-08-08T10:13:37.919+01:00
+  - jfs
+date: 2011-06-12T03:59:00.006000+01:00
+lastmod: 2011-08-08T10:13:37.919000+01:00
 weight: 50
 tags:
-- old-post
-- aegisub
-- localisation
+  - old-post
+  - aegisub
+  - localisation
 ---
+
 Version 2.1.9 is still getting closer to being ready for release, although there's still some actual issues needing, at the very least, testing.
 
 However, there are some user interface languages we had in 2.1.8 or earlier versions, where the translator has gone missing, or just hasn't responded to my mail.
 
-* Catalan (Eduard)
+- Catalan (Eduard)
 
-* Farsi (Meysam)
+- Farsi (Meysam)
 
-* ~~Korean (unknown)~~
+- \~~Korean (unknown)~~
 
-* ~~Polish (Adam)~~
+- \~~Polish (Adam)~~
 
-* ~~Vietnamese (Hung NGUYEN, OnEsChi)~~
+- \~~Vietnamese (Hung NGUYEN, OnEsChi)~~
 
-* ~~Chinese, both Traditional and Simplified (mkboy2)~~
-
+- \~~Chinese, both Traditional and Simplified (mkboy2)~~
 
 If you are one of the people listed here I would appreciate if you could contact me. If you otherwise speak one of these languages well and want to help, I would also love to hear so.
 

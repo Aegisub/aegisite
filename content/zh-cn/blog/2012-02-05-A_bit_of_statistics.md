@@ -1,14 +1,15 @@
 ---
-title: "A bit of statistics"
+title: A bit of statistics
 contributors:
-- "jfs"
-date: 2012-02-05T20:26:00.004Z
-lastmod: 2012-02-05T20:58:14.329Z
+  - jfs
+date: 2012-02-05T20:26:00.004000Z
+lastmod: 2012-02-05T20:58:14.329000Z
 weight: 50
 tags:
-- old-post
-- aegisub
+  - old-post
+  - aegisub
 ---
+
 As you may know, we have an automatic update checker in Aegisub, you may have noticed it telling you about the 2.1.9 release yesterday.
 
 When we check for updates, we also send a little bit of anonymous system information back, to get an idea of what kind of systems Aegisub is being used on. This allows us to make some basic statistics. Here's a few facts:

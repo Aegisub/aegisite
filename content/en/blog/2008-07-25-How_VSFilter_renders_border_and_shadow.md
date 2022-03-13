@@ -1,29 +1,29 @@
 ---
-title: "How VSFilter renders border and shadow"
+title: How VSFilter renders border and shadow
 contributors:
-- "jfs"
-date: 2008-07-25T03:00:00.000+01:00
-lastmod: 2008-07-25T03:36:11.623+01:00
+  - jfs
+date: 2008-07-25T03:00:00+01:00
+lastmod: 2008-07-25T03:36:11.623000+01:00
 weight: 50
 tags:
-- old-post
-- vsfilter
-- vsfilter internals
+  - old-post
+  - vsfilter
+  - vsfilter internals
 ---
-If you've ever used the \be or the new \blur tag you might wonder, why do they blur *edges* and not everything?
+
+If you've ever used the \\be or the new \\blur tag you might wonder, why do they blur *edges* and not everything?
 
 ![Example of how VSFilter blurs just edges and not everything](/img/blog/old/be-blur-demo.png)
 
 The answer lies in how VSFilter internally handles fill, border and shadow, and the relationship between them.
 
-
-The basic component of a subtitle rendering is the *fill*. The fill is the main shape of the text, ie. what you see if you disable border and shadow. (When I write "text" here it can just as well be a vector drawing made with \p1.)
+The basic component of a subtitle rendering is the *fill*. The fill is the main shape of the text, ie. what you see if you disable border and shadow. (When I write "text" here it can just as well be a vector drawing made with \\p1.)
 
 I am keeping things simple here, there are some technical details in the actual implementation I'm skipping over because they aren't relevant for the discussion, although they actually impact the actual algorithm used greatly. I might discuss the detailed algorithm later.
 
 When I talk about bitmaps in this post, they are single-channel bitmaps, ie. black/white bitmaps. Colour is applied during the painting-step, this is described in detail below.
 
-When a subtitle is to be rendered, VSFilter first creates a bitmap of the text fill. It then sees if the text should have a "wide outline", ie. if a \bord tag is in effect. If there is a wide outline, it allocates an additional bitmap that will contain the *widened region*.
+When a subtitle is to be rendered, VSFilter first creates a bitmap of the text fill. It then sees if the text should have a "wide outline", ie. if a \\bord tag is in effect. If there is a wide outline, it allocates an additional bitmap that will contain the *widened region*.
 
 The *widened region* is the fill bitmap modified in a way so it's effectively "embolded", ie. the outline is expanded outwards, but the entire fill is still kept.
 
@@ -41,5 +41,4 @@ Okay, so **on to the blur effects**.
 
 The blur effects are applied to the bitmaps, either to the fill or to the widened region bitmap. If there is a widened region bitmap, it is applied to that one only and the fill is left alone. If there is no widened region (ie. no border) the blur is applied to only the fill bitmap.
 
-This is why only the border blurs when you use \be or \blur along with a border, and why the fill does blur when you use blur on lines with no border: The fill bitmap is rendered on top of the blurred border, even though the border blur extends below the fill.
-
+This is why only the border blurs when you use \\be or \\blur along with a border, and why the fill does blur when you use blur on lines with no border: The fill bitmap is rendered on top of the blurred border, even though the border blur extends below the fill.

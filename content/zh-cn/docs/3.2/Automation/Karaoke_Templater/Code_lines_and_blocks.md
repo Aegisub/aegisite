@@ -10,7 +10,7 @@ Code行和Code区是由卡拉OK模板执行器产生的概念，它们允许你�
 代码可以是几个数字之间的简单运算，也可以是复杂的函数，例如生成各种各样的图形和颜色。
 
 Code行和Code区的代码执行都是在一个半封闭的执行环境进行的，这意味着它们的执行几乎不会受自带的Lua运行环境影响。想知道什么样的变量可以应用在Code行/区，可以查看:
-[代码执行环境]({{< relref "./Code_execution_environment" >}})。
+\[代码执行环境\]({{\< relref "./Code_execution_environment" >}})。
 
 ## Code 行
 
@@ -19,8 +19,8 @@ Code行是一种特殊的template行。它不使用`template`来声明，而是�
 
 Code行的两种用途:
 
--   定义/更新变量，为变量在template行中的使用做准备
--   定义函数，为函数在template行中的使用做准备
+- 定义/更新变量，为变量在template行中的使用做准备
+- 定义函数，为函数在template行中的使用做准备
 
 例如，如果你需要一个随机数，但是需要在template行中两次用到同一个随机数，你可以采用code
 line来生成这个随机数，然后再在template行中使用它。
@@ -35,23 +35,23 @@ line来生成这个随机数，然后再在template行中使用它。
 可用的类型(修饰语)有:
 
 once
-:   `once`
-    类型的code行在模板执行器的整个运行过程中只执行一次。通常用来定义函数或者一个通用的表，以便你之后多次调用。它是默认类型，如果你不指定code行类型，那么它默认以
-    `once` 的规则执行。
+: `once`
+  类型的code行在模板执行器的整个运行过程中只执行一次。通常用来定义函数或者一个通用的表，以便你之后多次调用。它是默认类型，如果你不指定code行类型，那么它默认以
+  `once` 的规则执行。
 
 line
-:   `line`
-    类型的code行每检测到一行karaoke行便执行一次。这个类型的code行一般与
-    `line`/`pre-line` 类型的模板配合使用。
-    (code行并没有\"pre-line\"这个类别)
+: `line`
+  类型的code行每检测到一行karaoke行便执行一次。这个类型的code行一般与
+  `line`/`pre-line` 类型的模板配合使用。
+  (code行并没有"pre-line"这个类别)
 
 syl
-:   `syl` 类型的code行每检测到一个音节便执行一次。它与 `syl`
-    类型的template行配合使用。
+: `syl` 类型的code行每检测到一个音节便执行一次。它与 `syl`
+  类型的template行配合使用。
 
 furi
-:   `furi` 类型的code行每检测到一个注音音节便执行一次。它与 `furi`
-    类型的template行配合使用。
+: `furi` 类型的code行每检测到一个注音音节便执行一次。它与 `furi`
+  类型的template行配合使用。
 
 你 *不能* 用 `char` 或者 `multi`
 修饰语来配合code行使用。这是执行模式带来的限制。这一点在未来的卡拉OK模板执行器中也不会改变。
@@ -59,7 +59,7 @@ furi
 ## Code 区
 
 Code区是在template行中使用Lua代码的一个区块。插入一个Code区，就可以在里面使用复杂的东西，这类东西可以表述为
-[内联变量]({{< relref "./Inline_variables" >}})。
+\[内联变量\]({{\< relref "./Inline_variables" >}})。
 
 Code区要求是一个单独的Lua表达式，因为
 `return`这种步骤已经预先包含在了code区的规则中。
@@ -87,8 +87,7 @@ Code区总是返回一串字符或者数学数值，如果要求它返回一个�
 {\k**!syl.duration > 100 and "f" or ""!**$kdur}
 ```
 
-
-如果音节持续时间大于 100 ms ，子表达式1为真，code区会返回 \"f\"
+如果音节持续时间大于 100 ms ，子表达式1为真，code区会返回 "f"
 作为结果。否则整个 `and` 表达为false，右边的参数 `or`
 表达式会被执行并返回空。
 

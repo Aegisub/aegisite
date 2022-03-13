@@ -6,17 +6,17 @@ menu:
 weight: 6140
 ---
 
-
 This page describes the **inline variables** also known as **dollar variables**
 available in Karaoke Templater.
 
-## How to use inline variables  ##
+## How to use inline variables
 
 All inline variables start with a dollar-sign. They only work in template
 lines, not in code lines. You can, however, use them in code blocks on template
 lines.
 
 Here is an example of how a template text using inline variables could look:
+
 ```plaintext
 {\pos(**$x**,**$y**)\t(**$start**,**$end**,\bord0)}
 ```
@@ -32,14 +32,13 @@ and end times of the syllable.
 Case does not matter for inline variables. `$start`, `$START` and `$StArT` all
 work and give the same result.
 
-
-### Limitations  ###
+### Limitations
 
 Inline variables are not "intelligent": they do the same no matter where you
 place them or use them and don't "know" what tag it's being used with. Not
 every variable can be used with success in all places, and the meaning of some
 are affected by usage of e.g. the
-[retime]({{< relref "./Code_execution_environment#retime" >}})
+\[retime\]({{\< relref "./Code_execution_environment#retime" >}})
 function. In these cases, inline variables may not be appropriate and you need
 to use code blocks.
 
@@ -54,7 +53,7 @@ All positioning and sizing inline variables (such as `$y`, `$right` and
 internal data structures which you can get in code blocks, which have sub-pixel
 precision.
 
-## Line and syllable variables  ##
+## Line and syllable variables
 
 The inline variables exist in both "line" and "syllable" variants. The "line"
 variants contain information about the entire line being processed, the
@@ -66,13 +65,12 @@ the line or the syllable variant depending on what kind of template they are
 used in. In pre-line templates the automatic inline variables refer to the line
 variants, and everywhere else they refer to the syllable variants.
 
-
-## The variables  ##
+## The variables
 
 The line variables that also exist as automatic variants all start with a
 lowercase L ("ell") letter. The syllable variants start with the letter S.
 
-####  Line variants
+#### Line variants
 
 layer
 : line layer
@@ -105,16 +103,15 @@ ltop, lmiddle, lbottom
 : line top, vertical middle and bottom edges, taking margins and alignment into account, rounded
 
 lx, ly
-: line x and y position suitable for a \pos command when alignment is not overridden
+: line x and y position suitable for a \\pos command when alignment is not overridden
 
 lwidth, lheight
 : line width and height in pixels, this is rounded and might not match exactly with the positioning variables
 
-
 #### Syllable variants
 
 sstart, send, smid
-: syllable start, end and midway times relative to start of line, suitable for putting into \t and \move
+: syllable start, end and midway times relative to start of line, suitable for putting into \\t and \\move
 
 sdur, skdur
 : syllable duration in milliseconds and centiseconds
@@ -123,17 +120,16 @@ si
 : syllable index from start of line
 
 sleft, scenter, sright
-: absolute left, horizontal center and right edges for syllable from left edge of screen, suitable directly for \pos and \move
+: absolute left, horizontal center and right edges for syllable from left edge of screen, suitable directly for \\pos and \\move
 
 sbottom, smiddle, stop
-: absolute bottom, vertical middle and top edges for syllable from top edge of screen, suitable directly for \pos and \move, adjusted for furigana positioning if needed
+: absolute bottom, vertical middle and top edges for syllable from top edge of screen, suitable directly for \\pos and \\move, adjusted for furigana positioning if needed
 
 sx, sy
-: syllable absolute x and y position in default alignment, suitable for using directly in \pos and \move
+: syllable absolute x and y position in default alignment, suitable for using directly in \\pos and \\move
 
 swidth, sheight
 : syllable width and height in pixelsthis is rounded and might not match exactly with the positioning variables
-
 
 #### Automatic variants
 

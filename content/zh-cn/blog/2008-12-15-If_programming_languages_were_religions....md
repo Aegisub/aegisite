@@ -1,22 +1,22 @@
 ---
-title: "If programming languages were religions..."
+title: If programming languages were religions...
 contributors:
-- "Unknown"
-date: 2008-12-15T14:52:00.042Z
-lastmod: 2011-04-06T05:06:25.534+01:00
+  - Unknown
+date: 2008-12-15T14:52:00.042000Z
+lastmod: 2011-04-06T05:06:25.534000+01:00
 weight: 50
 tags:
-- old-post
-- programming
-- flame bait
-- humor
-- offtopic
+  - old-post
+  - programming
+  - flame bait
+  - humor
+  - offtopic
 ---
+
 And now, for some off-topic:
 
 "If programming languages were religions"
 (Inspired by "[If programming languages were cars](http://www.cs.caltech.edu/%7Emvanier/hacking/rants/cars.html)")
-
 
 **C** would be **Judaism** - it's old and restrictive, but most of the world is familiar with its laws and respects them. The catch is, you can't convert into it - you're either into it from the start, or you will think that it's insanity. Also, when things go wrong, many people are willing to blame the problems of the world on it.
 
@@ -52,14 +52,8 @@ And now, for some off-topic:
 
 Thanks to jfs and other people on #aegisub for the suggestions. Keep in mind, this list is a joke, and is not meant to offend anyone. Also, if you're a Muslim, please don't kill me. ;)
 
-
 Note: I wrote a [follow-up](/blog/2008-12-20-if_programming_languages_were_religions_the_aftermath/) to this article, regarding the overwhelming reaction that it received.
 
 Note 2: This article is also hosted at my official blog [here](http://higherorderfun.com/blog/2011/02/16/if-programming-languages-were-religions/).
 
 **Comments closed as of April 2011.** This post has started attracting more spam than useful comments, so commenting has been closed now. Thank you for the many responses.
-
-
-
-
-

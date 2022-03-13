@@ -11,10 +11,10 @@ This is achieved by using a virtual video resolution which controls how font siz
 Unfortunately, due to some bugs in the reference implementation of the subtitle format (VSFilter), rendering subtitles whose script resolution is not equal to the actual video resolution works poorly.
 
 Because the behavior of mismatched script and video resolutions can be confusing, we recommend keeping them the same when doing any complex styling.
-If you are releasing a single subtitles file with multiple videos of different resolutions, the [Resolution Resampler]({{< relref "Resolution_Resampler" >}}) can be used to convert a single file to each video resolution.
+If you are releasing a single subtitles file with multiple videos of different resolutions, the \[Resolution Resampler\]({{\< relref "Resolution_Resampler" >}}) can be used to convert a single file to each video resolution.
 However, if you're just creating simple styled subtitles, you normally should not have to worry about this.
 
-----------------------
+______________________________________________________________________
 
 There are several categories of things which are affected by the script resolution:
 
@@ -30,10 +30,10 @@ Scaling them relative to the script resolution should always be enabled.
 
 ### Changing the script resolution
 
-The script resolution can be changed either by simply changing the value in the [Properties]({{< relref "Properties" >}}) dialog, or by resampling the script to a new resolution with the [Resolution Resampler]({{< relref "Resolution_Resampler" >}}) tool.
+The script resolution can be changed either by simply changing the value in the \[Properties\]({{\< relref "Properties" >}}) dialog, or by resampling the script to a new resolution with the \[Resolution Resampler\]({{\< relref "Resolution_Resampler" >}}) tool.
 Which to do depends on why you need to change the resolution.
-If you currently have an unstyled subtitle script which was set to the wrong resolution for whatever reason, change it in the [Properties]({{< relref "Properties" >}}) dialog.
-If the script has already been styled and you now want to use it with a video of a different resolution, use the [Resolution Resampler]({{< relref "Resolution_Resampler" >}}).
+If you currently have an unstyled subtitle script which was set to the wrong resolution for whatever reason, change it in the \[Properties\]({{\< relref "Properties" >}}) dialog.
+If the script has already been styled and you now want to use it with a video of a different resolution, use the \[Resolution Resampler\]({{\< relref "Resolution_Resampler" >}}).
 
 ### YCbCr Matrix
 
@@ -51,7 +51,7 @@ If the video and the script have the same aspect ratio, you'll get the following
 
 ![resolution-mismatch](/img/3.2/resolution-mismatch.png#center)
 
-"Resample script" will resample the subtitles to the new video's resolution as if you had used the [Resolution Resampler]({{< relref "Resolution_Resampler" >}}), and is normally what you want if you're updating pre-existing subtitles for the video you just opened.
+"Resample script" will resample the subtitles to the new video's resolution as if you had used the \[Resolution Resampler\]({{\< relref "Resolution_Resampler" >}}), and is normally what you want if you're updating pre-existing subtitles for the video you just opened.
 
 "Set to video resolution" will simply set the script resolution to the video's resolution.
 This is the correct thing to do only if the subtitles actually match the video you just opened already, but someone previously changed the script resolution to an incorrect value.
@@ -59,7 +59,7 @@ This is the correct thing to do only if the subtitles actually match the video y
 Cancel or hitting ESC will leave the script resolution at its current value.
 You want to do this if you are opening a lower-resolution work raw after the subtitles have already been styled for the final video resolution.
 
-----------------------
+______________________________________________________________________
 
 If the video's aspect ratio is different from the script's, you'll get the following dialog:
 
@@ -67,13 +67,13 @@ If the video's aspect ratio is different from the script's, you'll get the follo
 
 There are a few common scnarios where the aspect ratio will have changed:
 
-* The new video is anamorphic while the script was created with a pre-stretched video (or vice versa).
+- The new video is anamorphic while the script was created with a pre-stretched video (or vice versa).
   This typially happens with DVDs, where a 720x480 image is stretched to either 640x480 or 853x480 on playback.
   In this case you want to stretch the subtitles to the new aspect ratio, as the stretching will be canceled out by the anamorphic rendering.
 
-* The original video contained only the content area and the new video has added black borders on either the top and bottom or left and right.
+- The original video contained only the content area and the new video has added black borders on either the top and bottom or left and right.
   Alternatively, the original video was a pan-and-scan version, while the new video contains the full image.
   Select "add borders" for this case.
 
-* Either the original video was black-bordered and the new video is not, or the new video is a pan-and-scan.
+- Either the original video was black-bordered and the new video is not, or the new video is a pan-and-scan.
   Select "remove borders".

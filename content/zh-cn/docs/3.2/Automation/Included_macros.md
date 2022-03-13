@@ -10,7 +10,7 @@ weight: 6500
 
 ## 应用卡拉OK模版
 
-这个是卡拉OK脚本执行器的宏，用法请参见[卡拉OK脚本执行器]({{< relref "Karaoke_Templater" >}})。
+这个是卡拉OK脚本执行器的宏，用法请参见\[卡拉OK脚本执行器\]({{\< relref "Karaoke_Templater" >}})。
 
 这个宏只有在字幕文件中至少有一行模版行时才可用。
 
@@ -29,7 +29,7 @@ weight: 6500
 {\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&H25485A&\c&HDEEBF1&\pos(456,184)\frz-90}Sign text
 ```
 
-注意这里使用了"\@字体"，这是所有CJK字体都有的一种字形，它可以使所有全角字符从基线旋转90度。全角字符不只包括拉丁字母的全角变化版本，日语的假名和日文的汉字、中文的汉字、韩语的汉字以及各种标点符号。
+注意这里使用了"@字体"，这是所有CJK字体都有的一种字形，它可以使所有全角字符从基线旋转90度。全角字符不只包括拉丁字母的全角变化版本，日语的假名和日文的汉字、中文的汉字、韩语的汉字以及各种标点符号。
 
 现在运行了这个宏后：
 
@@ -88,22 +88,22 @@ Smallest inter-line duration: 290 milliseconds
 
 这个宏会用不同方式整理所选行的特效标签。
 
--   合并相邻的特效标签区（即 { ...
-    }），如果相邻的两个标签区都有\\k标签，则不会合并
--   将\\k标签移动到特效标签区的前面（例如将{\\frz90\\k40} 转为
-    {\\k40\\frz90}）。同时会保持一个区中多个\\k标签的顺序
--   移动行标签（即会影响整个行的特效标签------ \\a \\an \\org \\pos
-    \\move \\fade \\fad）至行首
--   移除第一个以外的行标签（注意：\\pos和\\move是同一类标签------一行中只有第一个是有效的，因此这个脚本会找出所有的\\move或\\pos并留下靠前的一个并会删除其他的。同样的也适用于\\fad和\\fade标签）。
--   移除参数中用来分隔逗号的空格（例如 \\pos(200 , 200) 改为
-    \\pos(200,200)）
+- 合并相邻的特效标签区（即 { ...
+  }），如果相邻的两个标签区都有\\k标签，则不会合并
+- 将\\k标签移动到特效标签区的前面（例如将{\\frz90\\k40} 转为
+  {\\k40\\frz90}）。同时会保持一个区中多个\\k标签的顺序
+- 移动行标签（即会影响整个行的特效标签------ \\a \\an \\org \\pos
+  \\move \\fade \\fad）至行首
+- 移除第一个以外的行标签（注意：\\pos和\\move是同一类标签------一行中只有第一个是有效的，因此这个脚本会找出所有的\\move或\\pos并留下靠前的一个并会删除其他的。同样的也适用于\\fad和\\fade标签）。
+- 移除参数中用来分隔逗号的空格（例如 \\pos(200 , 200) 改为
+  \\pos(200,200)）
 
 这个宏也可用作导出滤镜。
 
 The main intended function of this macro is to make
-[karaskel.lua]({{< relref "./Lua/Modules/karaskel.lua.md" >}}) split karaoke
+\[karaskel.lua\]({{\< relref "./Lua/Modules/karaskel.lua.md" >}}) split karaoke
 lines more sensibly into syllable structures, see the example.
-这个宏主要功能是为了让[karaskel.lua]({{< relref "./Lua/Modules/karaskel.lua.md" >}})能够更聪明地将卡拉OK行分割为音节结构，请看如下的例子。
+这个宏主要功能是为了让\[karaskel.lua\]({{\< relref "./Lua/Modules/karaskel.lua.md" >}})能够更聪明地将卡拉OK行分割为音节结构，请看如下的例子。
 
 这个宏会修改所有字幕栏中所选行，重写这些行里的所有标签区。
 
@@ -116,9 +116,9 @@ lines more sensibly into syllable structures, see the example.
 
 Karaskel会创建这些音节结构：
 
--   0 = {\\r\\frz90}
--   1 = Test {\\r\\fry180}
--   2 = me
+- 0 = {\\r\\frz90}
+- 1 = Test {\\r\\fry180}
+- 2 = me
 
 该行执行 *整理特效标签* 后：
 
@@ -128,16 +128,16 @@ Karaskel会创建这些音节结构：
 
 现在Karaskel会创建这些音节结构：
 
--   0 =
--   1 = {\\r\\frz90}Test
--   2 = {\\r\\fry180}me
+- 0 =
+- 1 = {\\r\\frz90}Test
+- 2 = {\\r\\fry180}me
 
 它会把特效标签放到处理过的音节上，所以整理后的版本通常是你想要的。
 {{</example-box>}}
 
 ## 添加边角模糊
 
-向所选行插入[`\be1`]({{< relref "../ASS_Tags#bluredges" >}})`标签。轻微模糊所有字幕行的边缘可以显著提高[内嵌字幕]({{< relref "Attaching_subtitles_to_video" >}})的压缩率（尤其是使用像XviD这些旧的编码时），但由于字幕格式的限制，边缘模糊无法通过样式来调整。
+向所选行插入\[`\be1`\]({{\< relref "../ASS_Tags#bluredges" >}})\`标签。轻微模糊所有字幕行的边缘可以显著提高\[内嵌字幕\]({{\< relref "Attaching_subtitles_to_video" >}})的压缩率（尤其是使用像XviD这些旧的编码时），但由于字幕格式的限制，边缘模糊无法通过样式来调整。
 
 ## 删除特效标签
 

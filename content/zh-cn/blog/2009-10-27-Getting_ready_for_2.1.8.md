@@ -1,14 +1,15 @@
 ---
-title: "Getting ready for 2.1.8"
+title: Getting ready for 2.1.8
 contributors:
-- "jfs"
-date: 2009-10-27T16:58:00.003Z
-lastmod: 2009-10-27T23:36:50.309Z
+  - jfs
+date: 2009-10-27T16:58:00.003000Z
+lastmod: 2009-10-27T23:36:50.309000Z
 weight: 50
 tags:
-- old-post
-- future
+  - old-post
+  - future
 ---
+
 It's been a little over three months since we released 2.1.7 stable, and we are happy to announce that version 2.1.8 is getting closer every day.
 
 After we released 2.1.7 we split Aegisub development into two main branches: The stable branch where we apply bugfixes for the last stable version, and the development trunk where we work on grand new features.
@@ -25,8 +26,6 @@ We also fixed some issues with slow seeking in MKV files and opening files with 
 
 There's more minor problems most of you probably haven't bumped into, you can see an overview of everything on the bug tracker: [Milestone 2.1.8 issues](http://devel.aegisub.org/query?group=status&milestone=2.1.8).
 
-
 There are also some things we'd have loved to get in, but just aren't feasible. Some people have complained that the audio spectrum display is very slow, which is entirely true, but it turns out that fixing it causes an avalanche of other problems to pop up, and it's just such a major undertaking that it will never make it into the 2.1.x series of Aegisub. But you can be assured that there is a major rewrite of things under way, and it's *very* fast!
 
 As mentioned at the beginning, it also seems like we won't be able to get a really stable version for Mac out in the 2.1.x line of Aegisub. The technical reason is that we use wxWidgets 2.8, which has some big problems on Mac in some core areas Aegisub depends on, and we can't switch Aegisub 2.1 to use wxWidgets 2.9 without causing a lot of new bugs to pop up. Our unstable development branch is using wxWidgets 2.9 however, and it's looking very good on Mac, but the changes required to support wxWidgets 2.9 in Aegisub were large enough that they aren't getting into Aegiub 2.1.
-

@@ -1,7 +1,8 @@
 ---
-title : "Aegisub Docs"
-type: "simple-page"
+title: Aegisub Docs
+type: simple-page
 ---
+
 <p>
 <br />
 <a href="3.2" class="btn btn-primary" role="button">3.2 Manual</a> User manual for 3.2.

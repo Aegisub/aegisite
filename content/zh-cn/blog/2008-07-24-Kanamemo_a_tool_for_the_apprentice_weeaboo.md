@@ -1,18 +1,19 @@
 ---
-title: "Kanamemo: a tool for the apprentice weeaboo"
+title: 'Kanamemo: a tool for the apprentice weeaboo'
 contributors:
-- "Unknown"
-date: 2008-07-24T03:24:00.006+01:00
-lastmod: 2008-10-16T01:07:57.655+01:00
+  - Unknown
+date: 2008-07-24T03:24:00.006000+01:00
+lastmod: 2008-10-16T01:07:57.655000+01:00
 weight: 50
 tags:
-- old-post
-- kanamemo
-- katakana
-- hiragana
-- utility
-- japanese
+  - old-post
+  - kanamemo
+  - katakana
+  - hiragana
+  - utility
+  - japanese
 ---
+
 Back in 2006, when I decided to learn Hiragana and Katakana, I looked around for flashcard programs to help me in my task. After finding that none of them actually worked as I thought that they SHOULD, I decided to roll my own. The result is Kanamemo:
 
 ![](/img/blog/old/kanamemo.png)
@@ -29,5 +30,4 @@ The source code for the program has been available at the Aegisub repository for
 
 I have been meaning to write a similar tool for kanji+words (by mining data from EDICT and KANJIDIC), but my sloth has been preventing me from doing so.
 
-[EDIT] If you want to build it natively on Linux, see [this](/blog/2008-10-10-kanamemo_on_linux/).
-
+\[EDIT\] If you want to build it natively on Linux, see [this](/blog/2008-10-10-kanamemo_on_linux/).

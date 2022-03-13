@@ -1,18 +1,19 @@
 ---
-title: "The old and present: VSFilter"
+title: 'The old and present: VSFilter'
 contributors:
-- "jfs"
-date: 2010-02-19T23:06:00.011Z
-lastmod: 2010-02-20T00:22:52.883Z
+  - jfs
+date: 2010-02-19T23:06:00.011000Z
+lastmod: 2010-02-20T00:22:52.883000Z
 weight: 50
 tags:
-- old-post
-- as5
-- vsfilter
-- history
-- future
-- subtitle formats
+  - old-post
+  - as5
+  - vsfilter
+  - history
+  - future
+  - subtitle formats
 ---
+
 A short while ago, yet another fork of the VSFilter subtitle renderer has surfaced, introducing more extensions. Let it be clear immediately: **Aegisub will not support any new extensions to the ASS subtitle format.** We strongly urge you to not use any extensions, and as for why, please read on.
 
 Let's start with the history of the ASS subtitle format: In 2004, Gabest made the Guliverkli project open source under the GPL license. This corresponds to the version 2.23 of VSFilter, or VobSub as it was better known as then. By this time, the ASS format was essentially already in its final form, no real extensions ever came up then. That's more than 5 years ago. Around 2006-2007, the Guliverkli project mostly died off, almost no more development happened. However, a few patches started to crop up. In 2008, we made a fork for Aegisub, and ended up applying those existing patches, fixing a bunch of bugs and, unfortunately, also adding some new features. Very soon the Guliverkli2 project is forked off the Guliverkli project, and includes patches for all parts of it. The Aegisub patches are ported to Guliverkli2. Some more development happens, the Aegisub fork is abandoned in favour of Guliverkli2. The MPC-HC (Media Player Classic Home Cinema) project pops up, as a second fork of Guliverkli. They import most all the Guliverkli2 patches too, as well as add many major new features to Media Player Classic. Now, a new, fourth fork of VSFilter appears, and it has several new extensions.

@@ -1,15 +1,16 @@
 ---
-title: "Aegisub crack + keygen"
+title: Aegisub crack + keygen
 contributors:
-- "jfs"
-date: 2008-07-29T01:48:00.004+01:00
-lastmod: 2008-07-29T23:18:38.518+01:00
+  - jfs
+date: 2008-07-29T01:48:00.004000+01:00
+lastmod: 2008-07-29T23:18:38.518000+01:00
 weight: 50
 tags:
-- old-post
-- aegisub
-- funny stuff
+  - old-post
+  - aegisub
+  - funny stuff
 ---
+
 Damn, it seems people started pirating Aegisub.
 
 ![Screenshot of a warez site](/img/blog/old/aegisub-crack-keygen.png)

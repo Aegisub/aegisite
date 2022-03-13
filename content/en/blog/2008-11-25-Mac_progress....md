@@ -1,15 +1,16 @@
 ---
-title: "Mac progress...?"
+title: Mac progress...?
 contributors:
-- "jfs"
-date: 2008-11-25T01:41:00.004Z
-lastmod: 2008-11-25T01:55:34.392Z
+  - jfs
+date: 2008-11-25T01:41:00.004000Z
+lastmod: 2008-11-25T01:55:34.392000Z
 weight: 50
 tags:
-- old-post
-- experimental builds
-- mac
+  - old-post
+  - experimental builds
+  - mac
 ---
+
 We get asked "what about the mac version?" once in a while and yes, it's the eternal problem.
 
 Aegisub can build on Mac and it can run, but unfortunately it's quite hard to make it useful, not to mention the numerous GUI bugs and glitches.
@@ -25,4 +26,3 @@ If you really want to try it anyway, here's a download link: [aegisub-mac-r2486-
 Also, while it *does* run on Intel machines, it's quite slow, especially during startup, as it's not a Universal binary but a PPC-only one. Of course it's also possible to make an Intel version and it shouldn't be a major problem to lipo them together, I just haven't bothered to try yet.
 
 There's no ETA for the next useful version. (But oh, by the way, I have added a new script to the SVN repository. It's called `make-app-bundle.sh` and can create Application bundles. Quite useful if you're building for Mac yourself! Yes I used it for this build.)
-

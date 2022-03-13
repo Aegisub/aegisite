@@ -6,14 +6,15 @@ menu:
 weight: 2720
 ---
 
-Karaoke inline-fx (inline effects) is a way of marking up [timed karaoke]({{< relref "Timing#karaoketiming" >}}) to assign different effects to different
+Karaoke inline-fx (inline effects) is a way of marking up \[timed karaoke\]({{\< relref "Timing#karaoketiming" >}}) to assign different effects to different
 parts of a line.
 
 By itself, inline-fx markup doesn't do anything, it only has an effect when
-a [karaoke effect script]({{< relref "Automation" >}}) that understands it is applied to
+a \[karaoke effect script\]({{\< relref "Automation" >}}) that understands it is applied to
 the timed karaoke.
 
-## The markup  ##
+## The markup
+
 Inline-fx tags are (otherwise invalid) ASS override tags of the form
 `\-effectname`, where _effectname_ is the name of the inline-fx defined.
 
@@ -32,22 +33,23 @@ Here is a timed karaoke line with inline-fx markup:
 
 These syllables get inline-fx assigned like this:
 
-| Syllable | Inline-fx
-| -------- | --------------
-| zu       | (blank)
-| t        | (blank)
-| to       | (blank)
-| e        | `paint`
-| ga       | `paint`
-| i        | `paint`
-| te       | `paint`
-| ta       | `paint`
-| yu       | `cloud`
-| me       | `cloud`
-{{</example-box>}}
+| Syllable           | Inline-fx |
+| ------------------ | --------- |
+| zu                 | (blank)   |
+| t                  | (blank)   |
+| to                 | (blank)   |
+| e                  | `paint`   |
+| ga                 | `paint`   |
+| i                  | `paint`   |
+| te                 | `paint`   |
+| ta                 | `paint`   |
+| yu                 | `cloud`   |
+| me                 | `cloud`   |
+| {{</example-box>}} |           |
 
-## Usage in Karaoke Templater  ##
-If you use [Karaoke Templater]({{< relref "Automation/Karaoke_Templater" >}}) to create
+## Usage in Karaoke Templater
+
+If you use \[Karaoke Templater\]({{\< relref "Automation/Karaoke_Templater" >}}) to create
 effects, you can use the _fx_ modifier on templates to make that template
 affect only syllables with a specific inline-fx. It isn't possible
 (directly) to match only syllables with blank inline-fx.
@@ -68,7 +70,7 @@ some more effects on top of that.
 {{<example-box>}}
 It is possible to match only syllables with blank inline-fx in
 kara-templater by using an _fxgroup_ that enables or disables basing on
-inline-fx. You can also use _fxgroup_s to have templates that run for
+inline-fx. You can also use \_fxgroup_s to have templates that run for
 multiple inline-fx.
 
 ```plaintext
@@ -80,9 +82,10 @@ The important thing is that the code line runs per syllable and runs before
 any per-syllable templates that must use it.
 {{</example-box>}}
 
-## Usage in Lua scripts  ##
+## Usage in Lua scripts
+
 The inline-fx tags are parsed by
-[`karaskel.preproc_line_text`]({{< relref "Automation/Lua/Modules/karaskel.lua.md#karaskel.preproc_line_text" >}})
+\[`karaskel.preproc_line_text`\]({{\< relref "Automation/Lua/Modules/karaskel.lua.md#karaskel.preproc_line_text" >}})
 so they will only work if you have applied at least that much karaskel
 pre-processing on your subtitle lines.
 
@@ -92,7 +95,7 @@ you can compare to a string to conditionally apply effects.
 {{<example-box>}}
 In some code that runs per-syllable in your script:
 
-``` lua
+```lua
 if syl.inline_fx == "" then
     apply_base_effect(subs, meta, line, syl)
 elseif syl.inline_fx == "paint" then
@@ -109,7 +112,7 @@ right effect code.
 In some code that runs per-syllable in your script:
 At top-level of your script:
 
-``` lua
+```lua
 effects = {}
 effects[""] = function(subs, meta, line, syl)
     -- base effect code here
@@ -124,7 +127,7 @@ end
 
 Then later, in some per-syllable processing code:
 
-``` lua
+```lua
 effects[syl.inline_fx](subs, meta, line, syl)
 ```
 

@@ -1,16 +1,17 @@
 ---
-title: "Aegisub for Windows Me and 98? Never."
+title: Aegisub for Windows Me and 98? Never.
 contributors:
-- "jfs"
-date: 2008-08-19T01:39:00.003+01:00
-lastmod: 2008-08-19T01:51:11.303+01:00
+  - jfs
+date: 2008-08-19T01:39:00.003000+01:00
+lastmod: 2008-08-19T01:51:11.303000+01:00
 weight: 50
 tags:
-- old-post
-- aegisub
-- windows
-- windows 9x
+  - old-post
+  - aegisub
+  - windows
+  - windows 9x
 ---
+
 You may wonder why there is no version of Aegisub that works on Windows 95, 98, 98 SE or Me, together knows as Windows 9x. The reason is part technical-practical and part ideological.
 
 The ideological part is short and simple: All of those operating systems are outdated, no longer under support by Microsoft and in general regarded as far inferior to the Windows NT line of systems (2000, XP, Vista). We would rather see people stop using outdated technology.

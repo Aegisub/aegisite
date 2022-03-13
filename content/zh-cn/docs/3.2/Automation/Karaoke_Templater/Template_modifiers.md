@@ -32,13 +32,13 @@ line)都可以在没有声明类的修饰语的情况下起作用。不过为了
 带有 `once` 修饰语的
 code行在一次卡拉OK执行器的执行过程中只运行一次，一般都先于其它的code行或者模板行。它们是按声明的顺序执行的。
 
-\"code once\" 行基本用来声明模板中使用的函数。
+"code once" 行基本用来声明模板中使用的函数。
 
 {{<example-box>}}
+
 ```plaintext
 Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>code once</u>,function setlayer(newlayer) line.layer = newlayer; return ""; end
 ```
-
 
 这个例子声明了一个新的函数，它用来控制输出行的 层次(Layer) 信息。
 {{</example-box>}}
@@ -56,16 +56,17 @@ Code行不能被命名。
 已命名模板行的顺序合并是在卡拉OK模板执行器解析模板时发生的，而不是在模板执行时。
 
 {{<example-box>}}
+
 ```plaintext
 Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>code line</u>,fxgroup.funky = line.actor == "funky"
 ```
-
 
 这个 code
 行对每个输入行运行一次。它开启/关闭一个特效群，依靠输入行的说话人信息进行判断。
 {{</example-box>}}
 
 {{<example-box>}}
+
 ```plaintext
 Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template line</u>,{\r\t($start,$end,\bord0)}
 ```
@@ -74,6 +75,7 @@ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template line</u>,{\
 {{</example-box>}}
 
 {{<example-box>}}
+
 ```plaintext
 Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template line jumper</u>,{\r\t($start,$mid,\frz-0.1)\t($mid,$end,\frz0}
 ```
@@ -96,6 +98,7 @@ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template line jumper
 模板行会按顺序把模板内容叠加。最后合成的一个模板再进行应用，所以这些模板内容是在解析模板时进行的，而不是执行时。
 
 {{<example-box>}}
+
 ```plaintext
 Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template pre-line</u>,{\be1}
 ```
@@ -105,6 +108,7 @@ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template pre-line</u
 {{</example-box>}}
 
 {{<example-box>}}
+
 ```plaintext
 Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template pre-line jumper</u>,{\org(-10000,$y)}
 ```
@@ -121,6 +125,7 @@ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template pre-line ju
 Syl(音节)类的模板不能被命名。
 
 {{<example-box>}}
+
 ```plaintext
 Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl</u>,{\pos($x,$y)}
 ```
@@ -136,6 +141,7 @@ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl</u>,{\p
 Furi(假名标注)类模板不能被命名。
 
 {{<example-box>}}
+
 ```plaintext
 Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template furi</u>,{\pos($x,$y)}
 ```
@@ -161,6 +167,7 @@ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template furi</u>,{\
 对 code行和 template行都可用。
 
 {{<example-box>}}
+
 ```plaintext
 Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl all</u>,{\pos($x,$y)}
 ```
@@ -171,12 +178,13 @@ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl all</u>
 ### char
 
 使模板的工作对象变为每个字符，而不是每个音节。它会以值得注意的方式改变应用顺序，查看
-[模板执行和执行顺序]({{< relref "./Template_execution_rules_and_order" >}})
+\[模板执行和执行顺序\]({{\< relref "./Template_execution_rules_and_order" >}})
 来获取相信信息。
 
 它用于 code行时，一般没什么意义，在上面的链接中可以了解到。
 
 {{<example-box>}}
+
 ```plaintext
 Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl char</u>,{\pos($x,$y)}
 Comment: 1,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl char</u>,{\pos($x,$y)\bord0}
@@ -197,15 +205,17 @@ Comment: 1,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl char</u
 {\pos($x,$y)\bord0}c
 {\pos($x,$y)\bord0}d
 ```
+
 {{</example-box>}}
 
 ### fx *name*
 
 使模板只应用于含有内联特效
-[(inline-fx)]({{< relref "Karaoke_inline-fx" >}})
+\[(inline-fx)\]({{\< relref "Karaoke_inline-fx" >}})
 的音节。指定内联特效名称是必要的；内联特效名称也不建议和修饰语重复。
 
 {{<example-box>}}
+
 ```plaintext
 Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl fx drop</u>,{\move($x,$y,$x,!$y+30!,$start,$end)}
 ```
@@ -221,8 +231,8 @@ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl fx drop
 声明这个模板属于一个有名称的特效组。指定特效组名称是必要的；该名称不建议和修饰语重复，也不建议和Lua保留词重复。
 
 {{<example-box>}}
-有一个 *fxgroup* 的例子，见 [代码执行环境Code execution
-environment]({{< relref "./Code_execution_environment#conditionaltemplateswithfxgroup" >}})
+有一个 *fxgroup* 的例子，见 \[代码执行环境Code execution
+environment\]({{\< relref "./Code_execution_environment#conditionaltemplateswithfxgroup" >}})
 {{</example-box>}}
 
 ### keeptags
@@ -232,6 +242,7 @@ environment]({{< relref "./Code_execution_environment#conditionaltemplateswithfx
 这个修饰语在 `char` 或 `multi`下没有效果。
 
 {{<example-box>}}
+
 ```plaintext
 template line <u>keeptags</u>: {\r\t($start,!$start+1!,\frx40)\t(!$start+1!,$end,\frx0)}
 karaoke: {\k21}hi{\k10}gu{\k23}ra{\k22}shi {\k38}ga {\k37\1c&H0000FF&}na{\k37}ku
@@ -246,19 +257,20 @@ karaoke: {\k21}hi{\k10}gu{\k23}ra{\k22}shi {\k38}ga {\k37\1c&H0000FF&}na{\k37}ku
 ### multi
 
 使模板对每个高亮应用一次
-，见[多次高亮]({{< relref "Furigana_karaoke" >}})
+，见\[多次高亮\]({{\< relref "Furigana_karaoke" >}})
 。它会改变模板执行顺序，详见
-[模板执行顺序]({{< relref "./Template_execution_rules_and_order" >}})) 。
+\[模板执行顺序\]({{\< relref "./Template_execution_rules_and_order" >}})) 。
 
 当它被用于 code行时，基本没什么卵用，具体可以参照执行顺序。
 
 {{<example-box>}}
+
 ```plaintext
 template syl <u>multi</u>: {\an5\pos($scenter,$smiddle)\1a&HFF&\t($start,$end,\bord5\3a&HFF&)}
 karaoke: {\k33}風<u>{\k36}#</u>{\k89}の{\k46}花<u>{\k28}#</u>{\k57}よ
 ```
 
-打好K的时间轴使用了多次高亮(multi-highlight)标记， \#
+打好K的时间轴使用了多次高亮(multi-highlight)标记， #
 被用来创建多次高亮音节。比如，風 (ka-ze) 和 花 (ha-na)
 日文汉字实际上都对应两个音节，在这种情况下它们被存储成一个音节，但是会有两次高亮，
 \# 字符在应用模板后不会显示 (当然，在应用模板前还是存在的.....)
@@ -271,11 +283,11 @@ karaoke: {\k33}風<u>{\k36}#</u>{\k89}の{\k46}花<u>{\k28}#</u>{\k57}よ
 
 ### noblank
 
-说明该模板不会对被认为是\"空\"的音节起作用。一个音节在几种情况下会被认为是空，去掉音节前的标签后：
+说明该模板不会对被认为是"空"的音节起作用。一个音节在几种情况下会被认为是空，去掉音节前的标签后：
 1.剩下的是ASCII的空格 2.剩下全角空格 3.真正是空的 特殊情况
 4.音节的持续时间是0 (\\k0)
 
-> _ 查看 *notext* 修饰语的例子_
+> \_ 查看 *notext* 修饰语的例子\_
 
 ### notext
 
@@ -286,6 +298,7 @@ karaoke: {\k33}風<u>{\k36}#</u>{\k89}の{\k46}花<u>{\k28}#</u>{\k57}よ
 code行不可用。
 
 {{<example-box>}}
+
 ```plaintext
 code once: sword_shape = "m 0 0 l 5 -5 l 5 -30 l 10 -30 l 10 -32 l 2 -32 l 2 -40 l -2 -40 l -2 -32 l -10 -32 l -10 -30 l -5 -30 l -5 -5 "
 template syl notext noblank: {\an5\move($scenter,!$smiddle-30!,$scenter,$smiddle,!$start-20!,$start)\p2}!sword_shape!
@@ -309,9 +322,10 @@ code行为了方便定义了一个矢量绘图。这个图形是一个简单的�
 
 注意 loop 修饰的行模板和 loop 修饰的
 音节/假名标记(syl/furi)模板执行顺序不同。详见
-[模板执行顺序]({{< relref "./Template_execution_rules_and_order" >}}) 。
+\[模板执行顺序\]({{\< relref "./Template_execution_rules_and_order" >}}) 。
 
 {{<example-box>}}
+
 ```plaintext
 template syl <u>loop 4</u>: {\move($x,$y,!$x+math.random(-30,30)!,!$y+math.random(-30,30)!,$start,$end)\alpha&HC0&\t($start,$end,\alpha&HFF&)}
 ```
@@ -325,5 +339,5 @@ template syl <u>loop 4</u>: {\move($x,$y,!$x+math.random(-30,30)!,!$y+math.rando
 {{</example-box>}}
 
 > *可以在
-> [代码执行环境]({{< relref "./Code_execution_environment#loopingtemplates" >}})
+> \[代码执行环境\]({{\< relref "./Code_execution_environment#loopingtemplates" >}})
 > 页面看到更多高级用法。*

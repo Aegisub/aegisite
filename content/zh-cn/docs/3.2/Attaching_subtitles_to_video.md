@@ -11,7 +11,7 @@ weight: 3200
 
 ## 硬字幕
 
-硬字幕是一种把字幕 \"烧录\"
+硬字幕是一种把字幕 "烧录"
 在视频部分中的方法。数字硬字幕更像是VHS录像带；字幕是不能被关闭的。
 
 ### 硬字幕的优势
@@ -82,14 +82,13 @@ AVI格式的文件对于软字幕的支持很弱，如果你想使用软字幕�
 
 如果你对Avisynth不熟悉，建议先去熟悉一下下，因为它具有很多极佳的特性，和大量的视频滤镜，支持所有格式视频的简单处理。下面的说明会建立在你具有基础的Avisynth知识基础上。
 
-在视频流中加入字幕，你有两个选项：使用VSFilter (Aegisub自带,在 \"csri\"
+在视频流中加入字幕，你有两个选项：使用VSFilter (Aegisub自带,在 "csri"
 目录下)，或者使用 [AssRender](http://srsfckn.biz/assrender/)，它调用的是libass。
 下面的介绍假定你使用VSFilter
 
 如果仅仅想加字幕，你写的AVS文件只要包含简单的几行。使用记事本(其它你喜欢的文本编辑器都行)建立一个纯文本文件，以
 .avs 后缀保存(注意Windows有时候会隐藏拓展名，所以你有可能建立了一个
 .avs.txt 文件)。下面是个例子:
-
 
 ```plaintext
 LoadPlugin("c:\program files\aegisub\csri\vsfilter.dll")
@@ -98,7 +97,6 @@ TextSub("c:\projects\project1\subs\mainsubtitles.ass")
 TextSub("c:\projects\project1\subs\endkaraoke.ass")
 ```
 
-
 上面的脚本以 AVI 文件为例
 (mycoolvideo.avi)，挂载两个字幕到视频。你可以在任何一个支持AVS的程序中对视频进行编码，例如
 [VirtualDub](http://www.virtualdub.org) 或者 x264。在相应的程序中打开
@@ -106,15 +104,15 @@ TextSub("c:\projects\project1\subs\endkaraoke.ass")
 
 切记，由于VSFilter的BUG， 挂载字幕时一定要写绝对路径。
 
-## 用 VirtualDub 内嵌字幕 
+## 用 VirtualDub 内嵌字幕
 
 如果你已经对 VirtualDub
 滤镜很熟悉，并且不打算对视频做其他处理，你应该注意到无法把VSFilter作为一个VirtualDub滤镜使用。重命名VSFilter.dll
 为 VSFilter.vdf
-然后把它复制到VirtualDub的plugins目录下。就可以使用\"TextSub\"了。
+然后把它复制到VirtualDub的plugins目录下。就可以使用"TextSub"了。
 
-**警告**: VirtualDub其实自带了一个TextSub，名为\"TextSub
-2.23\"。这个版本太老旧了，甚至无法正确处理UTF-8编码
+**警告**: VirtualDub其实自带了一个TextSub，名为"TextSub
+2.23"。这个版本太老旧了，甚至无法正确处理UTF-8编码
 (Aegisub文件的默认编码)文件。结果就是它把非ASCII字符全部渲染成乱码。永远也不要使用这个滤镜！
 
 ## 软字幕
@@ -135,4 +133,3 @@ Haali 分离器 (Windows) 或者 MPlayer (在 \*nix 和 MacOS X) 。
 ### 变形 2: 外挂字幕
 
 这种方式在你想制作AVI封装文件时最有用。你只要把字幕文件和视频一起发送即可。观看者需要在支持外挂字幕的播放器中挂载字幕。使用这个方法，你需要确保你使用的字体人人都已经安装，不然就再附上一份字体打包ZIP文件。由于一些明显的原因，这个方法不推荐。
-

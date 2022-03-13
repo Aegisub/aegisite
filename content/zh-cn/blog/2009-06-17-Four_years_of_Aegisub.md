@@ -1,16 +1,17 @@
 ---
-title: "Four years of Aegisub"
+title: Four years of Aegisub
 contributors:
-- "jfs"
-date: 2009-06-17T17:05:00.013+01:00
-lastmod: 2009-06-17T17:05:01.016+01:00
+  - jfs
+date: 2009-06-17T17:05:00.013000+01:00
+lastmod: 2009-06-17T17:05:01.016000+01:00
 weight: 50
 tags:
-- old-post
-- aegisub
-- history
-- hollowpromises
+  - old-post
+  - aegisub
+  - history
+  - hollowpromises
 ---
+
 Today it's just about four years since Aegisub was first conceived.
 
 It was on the 17th of June 2005 in a private channel on the ChatSociety IRC network. We were discussing the various problems with making advanced typesetting in ASS subtitles and how poor the tools generally were.
@@ -55,5 +56,3 @@ Visual typesetting finally got added, the thing Aegisub (then Visual SSA) was fi
 
 ![](/img/blog/old/aegiinstaller.jpg)
 The installer for Aegisub 1.00 was 2.82 MB, the installer for Aegisub 2.1.7 on Windows will be close to 24 MB. We've come a long way since that day in June 2005.
-
-

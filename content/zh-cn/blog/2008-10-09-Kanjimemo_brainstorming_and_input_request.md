@@ -1,22 +1,23 @@
 ---
-title: "Kanjimemo brainstorming and input request"
+title: Kanjimemo brainstorming and input request
 contributors:
-- "Unknown"
-date: 2008-10-10T00:48:00.003+01:00
-lastmod: 2008-10-11T03:56:18.338+01:00
+  - Unknown
+date: 2008-10-10T00:48:00.003000+01:00
+lastmod: 2008-10-11T03:56:18.338000+01:00
 weight: 50
 tags:
-- old-post
-- kanamemo
-- kanji
-- katakana
-- hiragana
-- kanjimemo
-- japanese
+  - old-post
+  - kanamemo
+  - kanji
+  - katakana
+  - hiragana
+  - kanjimemo
+  - japanese
 ---
+
 <p style="font-size:40pt;text-align: center;">漢字メモ？</p>
 
-*[Text above added to try to attract some attention to this post]*
+*\[Text above added to try to attract some attention to this post\]*
 
 Ever since I've posted about [Kanamemo](/blog/2008-07-24-kanamemo_a_tool_for_the_apprentice_weeaboo/), there have been quite a few requests for a "Kanjimemo", a tool based on the same idea, but for Kanji.
 
@@ -37,13 +38,13 @@ So, any thoughts on the "language barrier" might be useful.
 On to how the program would ACTUALLY work... Learning kanji is nowhere as easy as learning kana. The problem with kanji is that most of them have multiple (typically two) readings, depending on the word... but some (like 日, one of the most basic kanji) can have many more. So my idea is to have an algorithm that works like this:
 
 1. Select a group of five or so kanji for each level (like Kanamemo)
-2. Mine EDICT for all words marked as [Common] that use that kanji
-3. Perhaps attempt to extract the pronunciation of your kanji on that word? If that doesn't work, just go with individual words.
-4. Create a list of all the different unique pronunciations and associated words.
-5. Have the user learn all the unique pronunciations, preferably by using words that contain nothing but that kanji and kana.
-6. If there's no word with that kanji by itself, make sure that the user already "learned" all the other kanji in the word displayed.
+1. Mine EDICT for all words marked as \[Common\] that use that kanji
+1. Perhaps attempt to extract the pronunciation of your kanji on that word? If that doesn't work, just go with individual words.
+1. Create a list of all the different unique pronunciations and associated words.
+1. Have the user learn all the unique pronunciations, preferably by using words that contain nothing but that kanji and kana.
+1. If there's no word with that kanji by itself, make sure that the user already "learned" all the other kanji in the word displayed.
 
- Of course, steps 3 and 6 might be very tricky to code. All of this will require mining data from EDICT and possibly KANJIDIC. If it becomes necessary, I might use a SQLite database to store this information.
+Of course, steps 3 and 6 might be very tricky to code. All of this will require mining data from EDICT and possibly KANJIDIC. If it becomes necessary, I might use a SQLite database to store this information.
 
 **Progression**
 Progression would work similarly to Kanamemo, with a new set of 5 kanji unlocked with each memorized set. Ideally, the user could choose profiles to control the new kanji: perhaps follow the JLPT progression, or the japanese school system progression, or how common a given kanji is, or a combination of them (i.e. start with all JLPT4 kanji sorted by frequency, then all JLPT3 sorted by frequency, etc). The user should also be able to customize a list of kanji that he wants to learn.
@@ -64,4 +65,3 @@ Perhaps the program should be designed to look more like a game? A little mascot
 
 **Development**
 Of course, what this needs the most right now are IDEAS! If you have any, please share them with us. If you know of somebody who might be interested in this sort of thing, link them to this page! If you want to help with the development itself, drop by IRC and let us know. The idea is that this should be an open, free project.
-

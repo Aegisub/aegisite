@@ -1,7 +1,8 @@
 ---
-title : "用户手册"
-type: "simple-page"
+title: 用户手册
+type: simple-page
 ---
+
 <p>
 <br />
 <a href="3.2" class="btn btn-primary" role="button">3.2 手册</a> 3.2版本的用户手册，正在翻译。

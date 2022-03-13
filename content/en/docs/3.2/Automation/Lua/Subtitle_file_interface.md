@@ -12,7 +12,8 @@ scripts to manipulate subtitle files.
 There is one special object (the **subtitles** user data object) which has a
 number of functions, and a number of table formats defined.
 
-## The subtitles object  ##
+## The subtitles object
+
 Most Automation 4 Lua feature functions are passed a **subtitles object** when
 called. This object is used to obtain data from and manipulate the subtitles
 the feature is being applied on.
@@ -22,35 +23,36 @@ is created for:
 
 Read-only
 : Some feature functions must not be allowed to modify the subtitle file at
-all. This includes for example [macro validation functions]({{< relref "Registration#macrovalidationfunction" >}}) and [export filter configuration panel providers]({{< relref "Registration#_export_filter_configuration_panel_provider" >}}),
-because this would be outside user expectations.
+  all. This includes for example \[macro validation functions\]({{\< relref "Registration#macrovalidationfunction" >}}) and \[export filter configuration panel providers\]({{\< relref "Registration#\_export_filter_configuration_panel_provider" >}}),
+  because this would be outside user expectations.
 
 Allow undo points
-: Only [macro processing functions]({{< relref "Registration#macroprocessingfunction" >}}) can set undo
-points, as it makes no sense to do so at any other time.
+: Only \[macro processing functions\]({{\< relref "Registration#macroprocessingfunction" >}}) can set undo
+  points, as it makes no sense to do so at any other time.
 
 To allow the most flexibility, the subtitles object represents a complete ASS
 format file, line by line, including all meta-lines such as section headers.
 
 The subtitles object supports the following operations:
 
-* Retrieve number of lines
-* Read line
-* Append line (to end of file)
-* Insert line (at arbitrary position in file)
-* Replace line
-* Delete line
-* Create undo point
+- Retrieve number of lines
+- Read line
+- Append line (to end of file)
+- Insert line (at arbitrary position in file)
+- Replace line
+- Delete line
+- Create undo point
 
 These operations are described in detail below. In all operation synopses and
 examples, `subtitles` is used for name of the subtitles object being operated
 on.
 
-### Retrieve number of lines  ###
+### Retrieve number of lines
+
 Synopsis:
 
-* `num_lines = #subtitles`
-* `num_lines = subtitles.n`
+- `num_lines = #subtitles`
+- `num_lines = subtitles.n`
 
 This operation retrieves the total number of lines in the subtitle file
 currently. This number only changes by using the other operations on the
@@ -65,7 +67,8 @@ used in `for i = 1, #subs`.
 
 The first syntax is the preferred one, per normal Lua 5.1 coding style.
 
-### Read line  ###
+### Read line
+
 Synopsis: `line = subtitles[i]`
 
 This retrieves the indexed line and creates a new table object with data about
@@ -76,7 +79,7 @@ it.
 
 **`i`** (`number`)
 : Index into the subtitles file of the line number to retrieve. This is
-one-based, i.e. the first line in the file has index 1.
+  one-based, i.e. the first line in the file has index 1.
 
 Aegisub internally stores the subtitle file as a linked list, which means that
 random access is slow, but sequential access is fast. While Automation 4 Lua
@@ -85,12 +88,13 @@ used to optimise for sequential access. It is faster to access a line with an
 index close to the one you last accessed than to access one further away. It is
 always fast to access lines near the beginning or end of the file.
 
-### Append line  ###
+### Append line
+
 Synopsis:
 
-* `subtitles[0] = line`
-* `subtitles.append(line)`
-* `subtitles.append(line1, line2, ...)`
+- `subtitles[0] = line`
+- `subtitles.append(line)`
+- `subtitles.append(line1, line2, ...)`
 
 Append one or more lines to the end of the appropriate section of the subtitles
 file. If the section does not exist, it will be created. In the first syntax, it
@@ -108,12 +112,13 @@ setting syntax is slightly faster.
 Appending a line does not move the cursor otherwise used to optimise sequential
 access.
 
-### Insert line  ###
+### Insert line
+
 Synopsis:
 
-* `subtitles[-i] = line`
-* `subtitles.insert(i, line)`
-* `subtitles.insert(i, line1, line2, ...)`
+- `subtitles[-i] = line`
+- `subtitles.insert(i, line)`
+- `subtitles.insert(i, line1, line2, ...)`
 
 Inserts one or more lines into the subtitles file before the numbered line. In
 the first syntax, you supply a negative index. E.g. to insert a line before
@@ -136,7 +141,8 @@ setting syntax is slightly faster.
 
 Inserting lines uses the list cursor and will move it.
 
-### Replace line  ###
+### Replace line
+
 Synopsis: `subtitles[i] = line`
 
 Delete the indexed line and insert the given line in its stead.
@@ -152,14 +158,15 @@ Replacing lines uses the list cursor and will move it.
 Replacing lines with lines of a different type has undefined results, and may
 break in weird ways.
 
-### Delete line  ###
+### Delete line
+
 Synopsis:
 
-* `subtitles[i] = nil`
-* `subtitles.delete(i)`
-* `subtitles.delete(i1, i2, ...)`
-* `subtitles.delete({i1, i2, ...})`
-* `subtitles.deleterange(first, last)`
+- `subtitles[i] = nil`
+- `subtitles.delete(i)`
+- `subtitles.delete(i1, i2, ...)`
+- `subtitles.delete({i1, i2, ...})`
+- `subtitles.deleterange(first, last)`
 
 Remove one or more from the subtitles file. All lines after the deleted line(s)
 will move up to fill the deleted indexes, so old indexes will no longer be
@@ -188,7 +195,8 @@ The fifth syntax deletes a range of lines, both indexed lines inclusive.
 
 Deleting lines uses the list cursor and will move it.
 
-### Creating an undo point  ###
+### Creating an undo point
+
 Synopsis: `aegisub.set_undo_point(description)`
 
 You should always create an undo point at the end of any macro which made
@@ -204,12 +212,13 @@ else either.
 
 **`description`** (`string`)
 : Text to appear in the Edit menu for the Undo and Redo items to describe the
-action that can be undone.
+  action that can be undone.
 
 This is not really a function in the subtitles object, but it is still closely
 tied to it.
 
-## Line data tables  ##
+## Line data tables
+
 When you read lines from the subtitle file object they will always be one of a
 few classes of lines, and when you write lines back to the subtitle file they
 must also follow the format of one of those classes.
@@ -226,7 +235,7 @@ Here's a list of the different classes of lines:
 
 **`dialogue`**
 : A dialogue line, which may or may not be a comment. These are the lines you
-see in the grid in Aegisub.
+  see in the grid in Aegisub.
 
 **`unknown`**
 : An unknown kind of line.
@@ -241,32 +250,36 @@ There's three fields that always exist in all line data tables:
 
 **`section`** (`string`)
 : Which section of the file the line belongs to. If the line is placed before
-the first section heading, this field is `nil`.
+  the first section heading, this field is `nil`.
 
-### `info` class  ###
+### `info` class
+
 This class defines two additional fields:
 
 **`key`** (`string`)
 : The part of the line before the first colon, with leading and trailing spaces
-removed.
+  removed.
 
 **`value`** (`string`)
 : Everything after the first colon on the line, also with leading and trailing
-spaces removed.
+  spaces removed.
 
-### `style` class  ###
+### `style` class
+
 This class defines a large number of additional fields. It's usually processed
 by the _karaskel_ and modified a bit by that. See the _karaskel.lua_ section on
-[style tables]({{< relref "Modules/karaskel.lua.md#styletable" >}}) for more
+\[style tables\]({{\< relref "Modules/karaskel.lua.md#styletable" >}}) for more
 information about this class.
 
-### `dialogue` class  ###
+### `dialogue` class
+
 This class defines a large number of additional fields. It's usually processed
 by the _karaskel_ and has many calculated fields added by that. See the
-_karaskel.lua_ section on [dialogue line tables]({{< relref "Modules/karaskel.lua.md#dialoguelinetable" >}}) for more
+_karaskel.lua_ section on \[dialogue line tables\]({{\< relref "Modules/karaskel.lua.md#dialoguelinetable" >}}) for more
 information on this class.
 
-### `unknown` class  ###
+### `unknown` class
+
 No additional fields are defined by this class, due to its nature. This might
 be things like files embedded into the subtitles. You shouldn't try to work
 with these lines unless you really know what you're doing. Deleting, modifying
