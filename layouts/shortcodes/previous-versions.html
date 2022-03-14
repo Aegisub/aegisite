@@ -6,9 +6,9 @@
     <thead>
       <tr>
         <th scope="col">Type</th>
-        <th scope="col">Comment</th>
+        <th scope="col">Notes</th>
         <th scope="col">File</th>
-        <th scope="col">md5</th>
+        <th scope="col">MD5</th>
       </tr>
     </thead>
     <tbody>
@@ -16,7 +16,7 @@
         {{ if not .isHidden}}
         <tr>
           <td>{{ .type }}</td>
-          <td>{{ .comment }}</td>
+          <td>{{ .notes }}</td>
           {{ if .link }}
             <td><a href="{{ .link }}">{{ .filename }}</a></td>
           {{ else }}

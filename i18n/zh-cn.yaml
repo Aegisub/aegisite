@@ -1,14 +1,5 @@
 get-started:
   other: Get Started
 
-latest-release:
-  other: <a href="https://github.com/Aegisub/Aegisub/releases/latest">最新的版</a>本是 <strong>{{.Site.Data.version.current}}</strong>，发布于 {{.Site.Data.version.release_date}}
-
-see-changelog:
-  other: 阅读 <a href="{{.}}">更新日志</a> 了解更新内容
-
 menu-overview:
   other: Overview
-
-previous-version:
-  other: 旧版本
