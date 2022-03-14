@@ -1,2 +1,724 @@
 current: 3.2.2
 release_date: December 7, 2014
+
+previous_versions:
+ - version: 2.1.0
+   artifacts:
+    - filename: Aegisub-2.1.0-r1847-setup.exe
+      type: Windows
+      comment: Regular Install
+      link: https://web.archive.org/web/20190708013854if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-2.1.0-r1847-setup.exe
+      md5: 3c3dc4e747976e102a7a6fe422e86f45
+      sha256: f840164a4e26ec6c1281ae558520db88fd4befc5d19ce73aab1af8ad1a0a4f66
+
+ - version: 2.1.2
+   artifacts:
+    - filename: Aegisub-2.1.2-r1987-setup.exe
+      type: Windows
+      comment: Regular Install
+      link: https://web.archive.org/web/20190708020653if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-2.1.2-r1987-setup.exe
+      md5: 0350634abce6c2e8cee11a2b45b0e388
+      sha256: 696a536231f40fe501f7a43144ec6310193bd82bc36a97665a590066379e844d
+
+ - version: 2.1.3
+   artifacts:
+    - filename: Aegisub-2.1.3-r2429a-setup.exe
+      type: Windows
+      comment: Regular Install
+      link: https://web.archive.org/web/20190708040049if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-2.1.3-r2429a-setup.exe
+      md5: f685b4aadf0e2f59399f0c51aad19047
+      sha256: 060e9532281e784c5d93e801a33d0e5323e209755da93a3baa98a3135e29c312
+
+ - version: 2.1.6
+   artifacts:
+    - filename: Aegisub-2.1.6-r2494-setup.exe
+      type: Windows
+      comment: Regular Install
+      link: https://web.archive.org/web/20190708050405if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-2.1.6-r2494-setup.exe
+      md5: 7c1f37d3ea640c7529b7647d98e4e801
+      sha256: 6d0b2a4474c5c0bb4e9b165943708c598a3cec631cc358d4cb8177c734242853
+
+ - version: 2.1.7
+   artifacts:
+    - filename: Aegisub-2.1.7-portable.exe
+      type: Windows
+      comment: Portable
+      link: https://web.archive.org/web/20190708032453if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-2.1.7-portable.exe
+      md5: d4f7304e660fad559814b6064e5f6516
+      sha256: 066320b276b61f8807713f84e1c5a73904a09c9cfeacac1921a70491c19d26d2
+
+    - filename: Aegisub-2.1.7-setup.exe
+      type: Windows
+      comment: Regular Install
+      link: https://web.archive.org/web/20190708043833if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-2.1.7-setup.exe
+      md5: 3a28a6b34ee8a28598d474ac0ece5ecf
+      sha256: b63f465ea73c272788bf2af7df8156ff7f7775a3d8565eb19fda6d5fe863d0f8
+
+ - version: 2.1.8
+   artifacts:
+    - filename: aegisub-2.1.8-linux-glibc27-x86.tar.bz2
+      type: Linux
+      isHidden: true
+      link: https://web.archive.org/web/20120513235739if_/http://ftp.aegisub.org/pub/archives/releases/linux/aegisub-2.1.8-linux-glibc27-x86.tar.bz2
+      md5: a2adde8ac6147798ae667d58391e9e3f
+      sha256: 09aae5709c8d7963581aa68d06464967e3b38b6a441b592427fa69c3797aaff2
+
+    - filename: aegisub-2.1.8-linux-glibc27-x86_64.tar.bz2
+      type: Linux
+      isHidden: true
+      link: https://web.archive.org/web/20120513235227if_/http://ftp.aegisub.org/pub/archives/releases/linux/aegisub-2.1.8-linux-glibc27-x86_64.tar.bz2
+      md5: 058464aaee5fba6bfffed5c6d60cb992
+      sha256: c65bc040c7e010b09c2d494ff86013046f937ccacdfbddc52237b4eac92f8dbd
+
+    - filename: aegisub-2.1.8.tar.gz
+      type: Source
+      link: https://web.archive.org/web/20190707235333if_/http://ftp.aegisub.org/pub/archives/releases/source/aegisub-2.1.8.tar.gz
+      md5: 04438f9c237618d225d3654cded3d4bb
+      sha256: a67356e5c4fa376738d363f1cf5e50aa74e6b69e76a089ed0442bf6d7390d769
+
+    - filename: Aegisub-2.1.8-intel.dmg
+      type: OS X
+      comment: Full Install (Intel)
+      link: https://web.archive.org/web/20190708034712if_/http://ftp.aegisub.org/pub/archives/releases/osx/Aegisub-2.1.8-intel.dmg
+      md5: f1032ac094329332cf07ac9742c20874
+      sha256: 68b776021e0d57f5500f037eb9b592934bbf9e26af6a673f2b64f63ed04c6cc5
+
+    - filename: Aegisub-2.1.8-portable.exe
+      type: Windows
+      comment: 	Portable
+      link: https://web.archive.org/web/20190708025557if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-2.1.8-portable.exe
+      md5: 40323082d783306e14972ab5648a655f
+      sha256: 9377327279478c2ba19868d239f5de7389b4271dfb4e7f4e77c0f6b9c7c8017e
+
+    - filename: Aegisub-2.1.8-ppc.dmg
+      type: OS X
+      comment: Full Install (PPC)
+      link: https://web.archive.org/web/20190708040842if_/http://ftp.aegisub.org/pub/archives/releases/osx/Aegisub-2.1.8-ppc.dmg
+      md5: ac709b964d3176b53772f9309c3e9e83
+      sha256: ded835771cbb165ae270455fb39ddcda3a5d67aa424be2c05071be33bdd95489
+
+    - filename: Aegisub-2.1.8-setup.exe
+      type: Windows
+      comment: Regular Install
+      link: https://web.archive.org/web/20190708044107if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-2.1.8-setup.exe
+      md5: 9dd26d603ec757058773ba57e67e0409
+      sha256: 119b5398b1d67b1ffb27b82008be38a94dea7a32b4ced640c53d2c3f7d20dbce
+
+    - filename: Aegisub-2.1.8-upgrade.exe
+      type: Windows
+      isHidden: true
+      link: https://web.archive.org/web/20120513231917if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-2.1.8-upgrade.exe
+      md5: cbf60ec2eccdc62293566285a0f54627
+      sha256: 1c814e671498dd3e7e7b753c52fde4b9d5474060ae879cae96dd54aa735b9eb3
+
+    - filename: Aegisub-2.1.8.dmg
+      type: OS X
+      comment: Full Install (Universal)
+      link: https://web.archive.org/web/20190708042331if_/http://ftp.aegisub.org/pub/archives/releases/osx/Aegisub-2.1.8.dmg
+      md5: 7dd5fb1040356c7eb6c2c01db62fa148
+      sha256: 4b20663fe7a70172bdc82fb6525af129718ab8a23c3b8f3078b85198a6468bcb
+
+ - version: 2.1.9
+   artifacts:
+    - filename: aegisub-2.1.9.tar.gz
+      type: Source
+      link: https://web.archive.org/web/20190708000351if_/http://ftp.aegisub.org/pub/archives/releases/source/aegisub-2.1.9.tar.gz
+      md5: 878cf7e6fd9c35cc218537bac3b86c25
+      sha256: ac1f20751f3d2732d7e11627ea4cc30b53cb905d11422925b7f881785d373706
+
+    - filename: Aegisub-2.1.9-64bit.exe
+      type: Windows
+      comment: Regular Install (64-bit)
+      link: https://web.archive.org/web/20190708015838if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-2.1.9-64bit.exe
+      md5: 4e6bfd887e9b512fc785438b60f8daeb
+      sha256: f0fa0824ef2774d515797fbf9fd9b772c647e06d669709b118ce511e7fe1abce
+
+    - filename: Aegisub-2.1.9-intel.dmg
+      type: OS X
+      comment: Full Install (Intel)
+      link: https://web.archive.org/web/20190708032151if_/http://ftp.aegisub.org/pub/archives/releases/osx/Aegisub-2.1.9-intel.dmg
+      md5: 3d5a90e9621a05466eed3fc7b01cc349
+      sha256: e2bbb35a63daefaecca76de9c751329ff11448f6f6ef4edb893044582f349c17
+
+    - filename: Aegisub-2.1.9-portable.exe
+      type: Windows
+      comment: Portable (32-bit)
+      link: https://web.archive.org/web/20190708005603if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-2.1.9-portable.exe
+      md5: b52038872f83de80abcce1003bf1244a
+      sha256: 29b1c0e4884d9eaec0ec94f8d885591b08810c6d1590b9cad928c9c29fa91b0e
+
+    - filename: Aegisub-2.1.9-setup.exe
+      type: Windows
+      comment: Regular Install (32-bit)
+      link: https://web.archive.org/web/20190708041132if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-2.1.9-setup.exe
+      md5: e3fb9d6b2b596cd9a69573919f88cbc2
+      sha256: 19aa1e4f7601e0923bc19dfe149f9a544ff7c34579bd64bc31b619e7a3d4e1c4
+
+ - version: 3.0.0
+   artifacts:
+    - filename: Aegisub-3.0.0-32.exe
+      type: Windows
+      comment: Regular Install (32-bit)
+      link: https://web.archive.org/web/20190707235332if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.0-32.exe
+      md5: 766aaf847c14a622f7235048f91ef07c
+      sha512: 39b9e78a8a558c75c18cdc1ce42e77cb0de1250f7cc8baf8a756dbee512c13771fcf95cffb8c9199f3d044d2a794efbc79d4947b85f5f1210b5e93637a97b50e
+
+    - filename: Aegisub-3.0.0-64.exe
+      type: Windows
+      comment: Regular Install (64-bit)
+      link: https://web.archive.org/web/20190708023901if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.0-64.exe
+      md5: dc9d5afaee7e922fc2d7429ec770195a
+      sha512: 1132faa12ab915bf0e829b6a6a89201b1088d6cb12276f9680e09de4f89745037c9f8715ed34b61e957a18bc2d6a6bf3d0e41cadeb15961975260c2a8f42fdd8
+
+    - filename: Aegisub-3.0.0-portable-32.exe
+      type: Windows
+      comment: Portable (32-bit)
+      link: https://web.archive.org/web/20190708013926if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.0-portable-32.exe
+      md5: cb576b413573740bc38ad47559e42b73
+      sha512: d4ae46dd919cb88199231b238706244284a87983ea018fd7f960d01962364739837da1e7016c6923844c0e75dccc5abe357427759cd8829642ce1e3d5c17267c
+
+    - filename: Aegisub-3.0.0-portable-64.exe
+      type: Windows
+      comment: Portable (64-bit)
+      link: https://web.archive.org/web/20190708003832if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.0-portable-64.exe
+      md5: ed1fb46bb8de71681c2927f4b7e8ca90
+      sha512: 55dcd0ac390aa243c9210409767f4ec759a3b3c2a4c5e51e3039e3b077d1bcc574d312030a09252457971d18ea1e6c65f2cb29134d501790ab83023f94c77eb1
+
+    - filename: Aegisub-3.0.0.dmg
+      type: OS X
+      comment: 	Full Install
+      link: https://web.archive.org/web/20190708022607if_/http://ftp.aegisub.org/pub/archives/releases/osx/Aegisub-3.0.0.dmg
+      md5: eeb41a3c340b976e9f49d891fbdf0f84
+      sha512: b10d5b5edd75240076b0f2c1ddf2a49856699b7e317d16ad2f9ec5ee4df9c72bb97a7c6ff24c5891dd5f0c34abd96daf2da00d46d22fa9f9c4fba82b4d3f9c15
+
+    - filename: aegisub-3.0.0.tar.xz
+      type: Source
+      link: https://web.archive.org/web/20200627020120if_/http://ftp.aegisub.org:80/pub/archives/releases/source/aegisub-3.0.0.tar.xz
+      md5: 9f815dfdd3448228d861cec160c3d09d
+      sha512: 7e11f77fc5699e2c4226c689dc7b52b6e2701b6df30fff8791c0bb62554cdbbf9c678fe366251443e8e9b3c9e64716d81d1f0dbb95d01602a26dff0764eef706
+
+ - version: 3.0.1
+   artifacts:
+    - filename: Aegisub-3.0.1-32.exe
+      type: Windows
+      comment: Regular Install (32-bit)
+      link: https://web.archive.org/web/20190708000357if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.1-32.exe
+      md5: dc43eab142f89da097ac7ae5e1759b49
+      sha512: bd0abd5fa6a07aa83e89c769e190f142658ea73d8d565a4d3ee9e767e23b0bcf4157cb7d7b9f9dd4c7512ce24f85c589bee0713d3610ff1922e88f9b9dbbd0fe
+
+    - filename: Aegisub-3.0.1-64.exe
+      type: Windows
+      comment: Regular Install (64-bit)
+      link: https://web.archive.org/web/20190708022925if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.1-64.exe
+      md5: 79fdd602e8df801bd97236ad96b0ecc5
+      sha512: 946034f4b43cc3064c7ab79a1f16db6637bd86ca45970b4f09d15c74744153e64b76270e27d30be1456c3d70a80a40ede490935245d827e81d1eb33207c1e7fb
+
+    - filename: Aegisub-3.0.1-portable-32.exe
+      type: Windows
+      comment: Portable (32-bit)
+      link: https://web.archive.org/web/20190708045315if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.1-portable-32.exe
+      md5: ecdca0fce93f1b772feeca0fed5d7562
+      sha512: 1313b23ac0c78b225b8b4a06407426538778b95d3295e15a17ba0e3b4d63b6646448aaf84f302646098fb98c9b3480a46f2009582cccec57b16522f893fe0ae0
+
+    - filename: Aegisub-3.0.1-portable-64.exe
+      type: Windows
+      comment: Portable (64-bit)
+      link: https://web.archive.org/web/20190708030615if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.1-portable-64.exe
+      md5: 5330e615fcb6a161c99eaa9680471681
+      sha512: fc7a60d449a7e99c4b7d9caea4a7d6708bbaf1656765e4c483f7745cc9bd6e21d355dc859c0f27246ecd4f8f9caae9490b455fe600c962e9f06bb719dbabf4ae
+
+    - filename: Aegisub-3.0.1.dmg
+      type: OS X
+      comment: 	Full Install
+      link: https://web.archive.org/web/20190708004305if_/http://ftp.aegisub.org/pub/archives/releases/osx/Aegisub-3.0.1.dmg
+      md5: 9573846f9dd21c20f9530cd6c9c9f979
+      sha512: e64496748338d774554729ff2abc38518205326a3ddba80ef7aa1c31bd8390dd93556b96195a7cf8056e8c331e20d51e857d78c8f242c768257bcce2656ba62c
+
+    - filename: aegisub-3.0.1.tar.xz
+      type: Source
+      link: https://web.archive.org/web/20200627020135if_/http://ftp.aegisub.org:80/pub/archives/releases/source/aegisub-3.0.1.tar.xz
+      md5: 3561822b609999d38e8d978ca8eabecc
+      sha512: 6af97c64132669f1d1a3dc4e9967951ef1d1006192a46980bc03ea84added4718b000a0e466b4caf29b9522656f74c1c3b2c2d38f2032a5a72b6bb33e0cc53ed
+
+ - version: 3.0.2
+   artifacts:
+    - filename: aegisub-3.0.2-portable-32.exe
+      type: Windows
+      comment: Portable (32-bit)
+      link: https://github.com/downloads/Aegisub/Aegisub/Aegisub-3.0.2-portable-32.exe
+      md5: f71c9caf4f2e2d40e40236cc0b1cb63d
+      sha512: 959e29c19879bad7029f46d1f8c82c2460fc21e90f79a4bc1580bf0b53fcf159e0f3957f6d588d4286e4859b226f046e5cbfff83796d550d91f28e2860dfccec
+
+    - filename: aegisub-3.0.2-portable-64.exe
+      type: Windows
+      comment: Portable (64-bit)
+      link: https://web.archive.org/web/20190708044059if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.2-portable-64.exe
+      md5: 393fa516ad1dccd0445474aa26bfeae2
+      sha512: 7fb73bf75c71a557c408fd81f641d874934925a63c6f19889a83c1f95e82ba0ccedceae5161295d1e0d638218ea0035dde4095b51957c3c68028fd2f88e2275a
+
+    - filename: aegisub-3.0.2.tar.xz
+      type: Source
+      link: https://web.archive.org/web/20200627020150if_/http://ftp.aegisub.org:80/pub/archives/releases/source/aegisub-3.0.2.tar.xz
+      md5: d3817d493d0f2f1ee9c5a8e0a58d591e
+      sha512: 29e3d64f846e92d8ab9c7ab8de51a2299c7cb03e8c83a12f41738fe9161ccfb31a84be9fed17a002fd856cc0179139c1a4fd134028a1c0bac727136a05d10be5
+
+    - filename: Aegisub-3.0.2-32.exe
+      type: Windows
+      comment: Regular Install (32-bit)
+      link: https://web.archive.org/web/20190708002001if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.2-32.exe
+      md5: 03f7e9066c02ea2a66a9d7d309088764
+      sha512: cf45d06eebee5a52d455039f305187fe8b3632df81e6e97d0ca2b76fe8ec3c30a545c9d2b6becceeb9915516838da8dd2e9077c4281e4e5b07193a22272fce90
+
+    - filename: Aegisub-3.0.2-64.exe
+      type: Windows
+      comment: Regular Install (64-bit)
+      link: https://web.archive.org/web/20190708020930if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.2-64.exe
+      md5: 7b740e5ba028f9755112ce01ef058696
+      sha512: 96928193f52635fbfe675b0e86900cc5b6f920c5489f9da9c5f1cd47928fce3de4384c168e07d92ca59df9cb382bc42e9b6b68d44a88fc137263e441718e0aac
+
+    - filename: Aegisub-3.0.2.dmg
+      type: OS X
+      comment: 	Full Install
+      link: https://web.archive.org/web/20190708040908if_/http://ftp.aegisub.org/pub/archives/releases/osx/Aegisub-3.0.2.dmg
+      md5: 1f38e74f7290345984d4ab81bdb1ba21
+      sha512: 63158ec89aa05ac9db0a691bbb02a86f4dfca7ed7f07319dcbec2069f20f1d0fe1dc25f9c2181f579bdd5626f9fa679ebf9f8c56f51139e42e85ae1ffe6d6531
+
+ - version: 3.0.3
+   artifacts:
+    - filename: aegisub-3.0.3-portable-32.exe
+      type: Windows
+      comment: Portable (32-bit)
+      link: http://plorkyeran.com/aegisub/downloads/Aegisub-3.0.3-portable-32.exe
+      md5: b907f48048148a788985b6f03d31ee20
+      sha512: d20cc6676379b4e9381affb026bb0615e324ff6d1184db058243666ddecf448e50336569dd1bb0bb0be21a5f3209a7317e143474a220a2cd37a614cd6aac6e15
+
+    - filename: aegisub-3.0.3-portable-64.exe
+      type: Windows
+      comment: Portable (64-bit)
+      link: http://plorkyeran.com/aegisub/downloads/Aegisub-3.0.3-portable-64.exe
+      md5: a05fe16e6d8e9d0983db0b9b0e416967
+      sha512: 59c70ce50b0e46e8b503ae4b4a99e33b4f7d3085f4e5b79f8613436eb56522432d6c7e5c05526eac53b8d140ac9cde048b3389594d27160f1bb37bf96289b28d
+
+    - filename: aegisub-3.0.3.tar.xz
+      type: Source
+      link: https://web.archive.org/web/20200627020205if_/http://ftp.aegisub.org:80/pub/archives/releases/source/aegisub-3.0.3.tar.xz
+      md5: 40791534ff185cb1469a0c3b9526614e
+      sha512: 9404d20c6a136f6a0dbf14d7cec572e4b25af401c39adabbd59327d285247752c9573b1072d51edd9d8c2f26da0cdd8bbb5cd67d62ebb06081652bf74af041b5
+
+    - filename: Aegisub-3.0.3-32.exe
+      type: Windows
+      comment: Regular Install (32-bit)
+      link: https://web.archive.org/web/20190708002956if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.3-32.exe
+      md5: 6d7bd1c058c1ef411cc3ce7e2d732ffe
+      sha512: df212e5c205feca884b8be7642ef144d278e00cc3dda74fbd4f0b810963d2aa076e32f32082715f7dc4da801d28307fdb1c78c27680cb2bf3208b70549577d63
+
+    - filename: Aegisub-3.0.3-64.exe
+      type: Windows
+      comment: Regular Install (64-bit)
+      link: https://web.archive.org/web/20190708014858if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.3-64.exe
+      md5: 65e1e4999fa5944dc72dfabbf770cf33
+      sha512: 17822348744228fc8afde825059cea0b114c986c46ea1cbbe4558a77a9a14b92987b78f0fb0a5620b2839264fabbb5dccdff1d6d8b26e988c2fcd98bcdc48e3b
+
+    - filename: Aegisub-3.0.3.dmg
+      type: OS X
+      comment: 	Full Install
+      link: https://web.archive.org/web/20190708031132if_/http://ftp.aegisub.org/pub/archives/releases/osx/Aegisub-3.0.3.dmg
+      md5: e2c62f02b913f8d27f3a9af8e6a79058
+      sha512: c262b72d03fab919e774503bebc3ea7d120df1adf5b0784752b63fca466fecae7845d4dc74d74148d058723b094b22a6601262fd2e58a81da70a183889525c4a
+
+ - version: 3.0.4
+   artifacts:
+    - filename: aegisub_3.0.4-1_amd64.deb
+      type: Linux
+      isHidden: true
+      link: http://plorkyeran.com/aegisub/downloads/aegisub_3.0.4-1_amd64.deb
+      md5: 1b203df04a4b9aa567a9862288eb7920
+      sha512: d585097717403fa38ae00d309741d7b7b1f127a0d7fde56f5e3a4d0f9010fdf902e003132aa6e0d3780ade52377909e350d26a792d9a902d7895a59d31600a27
+
+    - filename: aegisub_3.0.4-1_i386.deb
+      type: Linux
+      isHidden: true
+      md5: 45280d5b5b0248b30babd438322ed5d6
+      link: http://plorkyeran.com/aegisub/downloads/aegisub_3.0.4-1_i386.deb
+      sha512: cd3759351d20ec2f13c050f06e0c8b5b2da94abe78849841e9f95a08c512a98f970a8c087cc50595cd578b08b276f2a2c53adcd5c3331d7c4ba11e78e12e7320
+
+    - filename: aegisub-3.0.4-portable-64.exe
+      type: Windows
+      comment: Portable (64-bit)
+      link: http://plorkyeran.com/aegisub/downloads/aegisub-3.0.4-portable-64.exe
+      md5: 4044bb84180128f39732313f4b758546
+      sha512: b0862541ca64dce502036f0044775d3faa958036cae6c1b6fbdafa3c0830772d9a0eab7fbb91654bf374e1f775c4a9b6b57f75cb7db7891d9045abff14435144
+
+    - filename: aegisub-3.0.4-portable-32.exe
+      type: Windows
+      comment: Portable (32-bit)
+      link: http://plorkyeran.com/aegisub/downloads/aegisub-3.0.4-portable-32.exe
+      md5: 3d98d23e4663e36c23344645ce4fdde7
+      sha512: 78aaec0cd3c8ab045e1ecb779acb81ca8b81fbaf2087df9d4c277ddf00f7aa03ca524785bdfe7b2b65668c468cbeff9a4776986768ed1fed99ef3a510f1b4f4c
+
+    - filename: aegisub-3.0.4.tar.xz
+      type: Source
+      link: https://web.archive.org/web/20200427173354if_/http://ftp.aegisub.org:80/pub/archives/releases/source/aegisub-3.0.4.tar.xz
+      md5: 0f22d63ed4c502f3801795fa623a4f41
+      sha512: 2917195a61d16578a83ce0b69006dd0269c086c6eff2f622c47d9880697e4e531a7c0c0232c187f9023635c9d3857a1d6a0cee4f6251e49d22e2b625ac5dda7f
+
+    - filename: Aegisub-3.0.4-32.exe
+      type: Windows
+      comment: Regular Install (32-bit)
+      link: https://web.archive.org/web/20190708004606if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.4-32.exe
+      md5: 2112f953d0e72af164df964b784d8441
+      sha512: 1c24a7b5b8de2131aad8a6c3d63f7f61b41175540c1831c53f788c13c019e3a3856f11f0067629fa9246c94ef86adab2b01733dcca9ef06736bd4225d8738d6c
+
+    - filename: Aegisub-3.0.4-64.exe
+      type: Windows
+      comment: Regular Install (64-bit)
+      link: https://web.archive.org/web/20190708012431if_/http://ftp.aegisub.org/pub/archives/releases/windows/Aegisub-3.0.4-64.exe
+      md5: 1eec988e50a164554d39f8d8d1528555
+      sha512: 4d1e66f247eeb09307c453022673ed4ed5eb8bb3b9eae01d93baad812c57933656ee43e637e9c3bc2324991d8233c57808279b3f4c91443a1827db0ec4dc75cb
+
+    - filename: Aegisub-3.0.4.dmg
+      type: OS X
+      comment: 	Full Install
+      link: https://web.archive.org/web/20190708032621if_/http://ftp.aegisub.org/pub/archives/releases/osx/Aegisub-3.0.4.dmg
+      md5: 429f49bc97d8dd856d0fff5ecf6b3b1f
+      sha512: 9f476addf4618a47bf4060f92124cb8ee29b7f919d17500af0f902ec10f4515f0cf481b9e2e302a83ecf87302defc5dea8241c9308f71b4426271cc4895de06e
+
+ - version: 3.1.0
+   artifacts:
+    - filename: aegisub-3.1.0.tar.xz
+      type: Source
+      link: https://web.archive.org/web/20180807180549if_/http://ftp.aegisub.org:80/pub/archives/releases/source/aegisub-3.1.0.tar.xz
+      md5: 3810b4efd0256e03005c514524633ccc
+      sha512: 5042436cb89c9b4403a7a7f6839e4df91a214a0cdc88c4bac73d42d410bc0a4653593b284176a541712fee070b06f1b802ee213f3b83be186dd631e7772bc0c1
+
+    - filename: Aegisub-3.1.0-32.exe
+      type: Windows
+      comment: Regular Install (32-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.0/Aegisub-3.1.0-32.exe
+      md5: b75c0861e3c0e319f7faeca88a757e3e
+      sha512: 796b87319e0f9cf9b1578e4c712348529cbfea3af2308c0f9745c89da1bb73ea8901a231eb7d257f0d2590b997890472d996a93a49aa937d1ad8eae909912654
+
+    - filename: Aegisub-3.1.0-64.exe
+      type: Windows
+      comment: Regular Install (64-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.0/Aegisub-3.1.0-64.exe
+      md5: ba34e2a24d6788599d3a8d132111e26b
+      sha512: cc2fc5076b0b6f23d69e34e67fa6ebae8708c12dd4d60ba816693fce93b427e9fec880a6a11c2801b3b6fffe5d8908a570463b7ec3e6304dabc2de4180a98a0b
+
+    - filename: Aegisub-3.1.0-portable-32.exe
+      type: Windows
+      comment: Portable (32-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.0/Aegisub-3.1.0-portable-32.exe
+      md5: 22873fc2dcce9b224cab5a630f26743e
+      sha512: 167e943ad16c57c0445a6d46ba035ea65b99346739624e3211e1012b9a27525ea6ec47a69c391f4b9ca9d0e0d27a280581e9304c1ff5646aaed24a747645ad7a
+
+    - filename: Aegisub-3.1.0-portable-64.exe
+      type: Windows
+      comment: Portable (64-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.0/Aegisub-3.1.0-portable-64.exe
+      md5: 12e359c7b1bc05661fa1e075dd5e19f0
+      sha512: 17976aa02d8759b3080ddb670da5b8cf70921a6099e302addd4fc36a124e05f768ed0c31e25e32a3db422a5cf4d9492a6fedde44cd98d963c99a5e9638a29dc3
+
+    - filename: Aegisub-3.1.0.dmg
+      type: OS X
+      comment: 	Full Install
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.0/Aegisub-3.1.0.dmg
+      md5: 18caa210492aa5b02b2547d0433ab625
+      sha512: 3f055ef5e200846918598e1dd5bc09309116a32bd0ddb80041ac6bbc05230098432e9c30a0614ba70be92feedadcf5dd77a7bd15eafe8827739650c5632ad25b
+
+ - version: 3.1.1
+   artifacts:
+    - filename: aegisub-3.1.1-portable-32.exe
+      type: Windows
+      comment: Portable (32-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.1/aegisub-3.1.1-portable-32.exe
+      md5: 78be79ba7e99f739b062102f3ff1a932
+      sha512: a2c80209fc192b47e75dc82fa2eaab90aefd99dfc51162dc88578f248bf906edd2a5821e68582ca9a658aa9db1aae07ba2dca36ac809bf6f940b362c38f1d2e7
+
+    - filename: aegisub-3.1.1-portable-64.exe
+      type: Windows
+      comment: Portable (64-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.1/aegisub-3.1.1-portable-64.exe
+      md5: 3691f7ac075ba8763f36136f48523d17
+      sha512: dbcc25388c79c36dbbab226d50192fcdc139c5441e6d64da7be2bcca620f38bc23e5904129892d49ca4b93bb70c7364dd130a0a5890cb3320844e3072e3d5b33
+
+    - filename: aegisub-3.1.1.tar.xz
+      type: Source
+      link: https://web.archive.org/web/20180809195544if_/http://ftp.aegisub.org:80/pub/archives/releases/source/aegisub-3.1.1.tar.xz
+      md5: b2d4cf8da35a703bdd00c1b89dde39bf
+      sha512: f83b672ae241502d709ebc29064650045b562d4a3b2d38b37f23841857b2877b493b2236f324048271bf26db9d829560957c8ac71cf126a0a24b718a55fa70d7
+
+    - filename: Aegisub-3.1.1-32.exe
+      type: Windows
+      comment: Regular Install (32-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.1/Aegisub-3.1.1-32.exe
+      md5: ead7fb22919a3ee1af44c78a248f9c1c
+      sha512: 3a7a370943f4532d65ef8d105e198154c56529df2b226dcffa31d4482d8eaa727a7d9c8712a57ada5a03ede2fd6f34c4f6e75d65cfe6105128d8f48774290b4d
+
+    - filename: Aegisub-3.1.1-64.exe
+      type: Windows
+      comment: Regular Install (64-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.1/Aegisub-3.1.1-64.exe
+      md5: 2004db7d6b9470634c3364554274a50d
+      sha512: 0a3f05f847ccfd2d1f36ae8e82a8f0f8e4b4ebcd5aa7e7367ed84c0efc6e6934a7bf735a6afd192f386a9ea2a4d1492562239c27df6dbaa37d2cd1e6856e9c8b
+
+    - filename: Aegisub-3.1.1.dmg
+      type: OS X
+      comment: 	Full Install
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.1/Aegisub-3.1.1.dmg
+      md5: eca503d2b0ca85e68a1ad89bee62a0e8
+      sha512: a2665b8989bd4c5b7aa13874060b529970b4ed8936f5ccb9e0dff3aa01dddd8f5c3e207c34cb17015e968be01db6014e30135730e315f2a952a1470fcbc84ec0
+
+ - version: 3.1.2
+   artifacts:
+    - filename: Aegisub-3.1.2-32.exe
+      type: Windows
+      comment: Regular Install (32-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.2/Aegisub-3.1.2-32.exe
+      md5: 245020d38ed3ab821111f3bfeb34cd40
+      sha512: 7bcc90075c7c995d5f45903958094ea3f7f47ac4cd45209387a97debfead53e2cf77acf492a65e63f06c5a1e525056f5cdb5acd752689cc176b4ddb2ac921d25
+
+    - filename: Aegisub-3.1.2-64.exe
+      type: Windows
+      comment: Regular Install (64-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.2/Aegisub-3.1.2-64.exe
+      md5: ae0b236a5607e0fb481bff025e0d58ea
+      sha512: d3f39ff4ace16ebf43fdb6e218994ddcbd956dfa348d0875f85046e8bb9cb3c61f1f5f9cecf9d9947e11d5a4bcfa110bc3f17d8a584c0e04faf638a50311c107
+
+    - filename: Aegisub-3.1.2-portable-32.exe
+      type: Windows
+      comment: Portable (32-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.2/Aegisub-3.1.2-portable-32.exe
+      md5: 48a51dc8c8afe6f477d7f697bcacf4d4
+      sha512: 383d04a540472aaddc2b973d58c5c0bdd608fa249698b865e38b32ff2721488ae59d9ddcfa1ebdd4cc87a999f5449533baf5c999005cc6f69e760bea92e29a4a
+
+    - filename: Aegisub-3.1.2-portable-64.exe
+      type: Windows
+      comment: Portable (64-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.2/Aegisub-3.1.2-portable-64.exe
+      md5: ce9a1ad85909eca3140d8be3a382a088
+      sha512: 4a682a906143841e504a2befdac72103bc3c6c49e5644c4dc139c39f31d5478221441292421678d65a04f14035401d71ec5a81875b18540c94b759c7220fd3ef
+
+    - filename: Aegisub-3.1.2.dmg
+      type: OS X
+      comment: 	Full Install
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.2/Aegisub-3.1.2.dmg
+      md5: 0342b1b133365193be8cb24ca393beab
+      sha512: 7b0f6b3da2b7eba60a4835b46faea7f657d4862e341c83b6c60913008f13c98f796b12ac83c4729bf2ac17479036255f497c6e993ad15dac4980534af36f2c9e
+
+    - filename: aegisub-3.1.2.tar.xz
+      type: Source
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.2/Aegisub-3.1.2.dmg
+      md5: d00c1ee88eb50e9311f4acbeb74149ed
+      sha512: d15e16f9f98c01447b72cde1998c915a2bfc1aa918a4380b54303de8e88ef881f46c3896ab9dc5eddaf4f1376f0908abd8427dbf6af395e6e0b3969ddca402ab
+
+ - version: 3.1.3
+   artifacts:
+    - filename: aegisub-3.1.3-portable-32.exe
+      type: Windows
+      comment: Portable (32-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.3/aegisub-3.1.3-portable-32.exe
+      md5: e9aa5382692d8330acb52b377d0ab170
+      sha512: 2de19dae3a03d0a3fda4169d9c2e316b92ba53cef2ae38c8cb9005755c8f0bd856c7174929b2d97fad7b75a1b176a2e3c3fc0cd88053ead2e9860a3670221a72
+
+    - filename: aegisub-3.1.3-portable-64.exe
+      type: Windows
+      comment: Portable (64-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.3/aegisub-3.1.3-portable-64.exe
+      md5: 5af37b0d4adcfc84a82600f00dc3d95f
+      sha512: c236007427f1df978f3855f893c690bd210654fd3a11ffdc55bd99746be8bb27f44158469157ec48543b382e2bc2a11b5dba9fc466a9053a1f7721c2a4f466db
+
+    - filename: aegisub-3.1.3.tar.xz
+      type: Source
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.3/aegisub-3.1.3.tar.xz
+      md5: 2203c51be24d943b97cfe2e19a4902b1
+      sha512: c406925623e7b8425df47d1cd31ef77d536861335d25c626ecb916ef091341a8156879430f094ffa1d27490a65f79e2edb84593609d589834f3411b2c2841297
+
+    - filename: Aegisub-3.1.3-32.exe
+      type: Windows
+      comment: Regular Install (32-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.3/Aegisub-3.1.3-32.exe
+      md5: 755e5b5c51ec46144406cc52235f20fc
+      sha512: b03795aca3e944c4405ad832acce9d1031c287ef9b0a998e8b4111f6600b5d761e17017aa25e39e51d89fcfad57bedcf4f67497cfd5b38bb95a0823b0407e8ad
+
+    - filename: Aegisub-3.1.3-64.exe
+      type: Windows
+      comment: Regular Install (64-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.3/Aegisub-3.1.3-64.exe
+      md5: 8f2c5edaf1a546ae4e21270ea659027f
+      sha512: 12f679b3a6deb060cc0923d855e6885d353a42fdea4b4e3dfbb1daffa4c740cee8b30aff4afd98249057a695dd7d80864d8b52d93a62029835f1758367872f04
+
+    - filename: Aegisub-3.1.3.dmg
+      type: OS X
+      comment: 	Full Install
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.3/Aegisub-3.1.3.dmg
+      md5: f6fe5421ce5a1616d6be48b0cfa2fcd5
+      sha512: 8e52e3454f819ec70690d4c4884a6c26c481ca92e911da4961834435b7dcd39aba68a4be3757606a6f204c7eb129ff13c650e67c8c64fc3201f796c68bf20cb5
+
+ - version: 3.2.0
+   artifacts:
+    - filename: Aegisub-3.2.0-32.exe
+      type: Windows
+      comment: Regular Install (32-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.0/Aegisub-3.2.0-32.exe
+      md5: ffac04def9c9da28877128ebd1ee06ae
+      sha512: f249eba332f6eeeff9135a567a5a6c211f32762ff25ffcc0846e91cf02cbffddc0a4941733fe1dfaae261949c83a4fdcfba0c8ffff367347b9f059040fb863f0
+
+    - filename: Aegisub-3.2.0-64.exe
+      type: Windows
+      comment: Regular Install (64-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.0/Aegisub-3.2.0-64.exe
+      md5: 23daaa15ffa7150a3cdf1568a21f7ee5
+      sha512: e86c5205705c2d0f3c34c02f289d092d5ead86a7e6494e119f5821bb56550fb5bd12be5186e5bcdd7cebc63f85abfd778a2045b9287d15577f3ea2260eef73d2
+
+    - filename: Aegisub-3.2.0.dmg
+      type: OS X
+      comment: 	Full Install
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.0/Aegisub-3.2.0.dmg
+      md5: e9bd4c9dbf42e51f8d19d8e413bbd65d
+      sha512: d446a1c01babe83307f2fa520c19eae19c8b44e9085127db4dae6f1983efbdd3ef774356c77c86b201d00e26bbe0004107e4927b38d6bed3bdd756c6ae2375b8
+
+    - filename: aegisub-3.2.0-32.zip
+      type: Windows
+      isHidden: true
+      md5: b1c84cc1a379a84dfaff0ade28bf3c94
+      sha512: 8ad30fbba12f09cd9a02d6a2dd34e039109535ff6a22f3fe471a5c1c01f6e5e1f0668058e90eb577646b7fb05d3489d20d4b37c5ed6d12dcf000d0794b7ae62f
+
+    - filename: aegisub-3.2.0-64.zip
+      type: Windows
+      isHidden: true
+      md5: d6ebfaa0a9d5adae4f89ecfc144f8ef3
+      sha512: 78705d1511174c1743041528d1c4f5ba9ccc3b6112aa623167dc33765595cbbabe7e89a11d78e0ea506d462e3be178dc1e28c5ed94cb355b4053b521dcd7e3a3
+
+    - filename: aegisub-3.2.0-portable-32.exe
+      type: Windows
+      comment: Portable (32-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.0/aegisub-3.2.0-portable-32.exe
+      md5: 82ec21219e7e3677b65affd8840a0888
+      sha512: 1ab075963b88176fac9486a17027d8a004a9087190594c1916e6d190b8566ad639a3334096c89732cd3e96141ab36ad1eadb34adbdd1646806bc99d74648dfda
+
+    - filename: aegisub-3.2.0-portable-64.exe
+      type: Windows
+      comment: Portable (64-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.0/aegisub-3.2.0-portable-64.exe
+      md5: b66d85fa6d5e79c08519589c1872f4f2
+      sha512: e16f274c93fca6f393f78bbb4ee0957a56d771fccc6e051805ba18599a9524b9c2aefe0a32977edfe43ee14b436bddc18aa3a1b2640a305b0acc55f9233ccc4d
+
+    - filename: aegisub-3.2.0.tar.xz
+      type: Source
+      link: https://web.archive.org/web/20180811094457if_/http://ftp.aegisub.org:80/pub/archives/releases/source/aegisub-3.2.0.tar.xz
+      md5: 914685eb87daf230ac8856ed81479b43
+      sha512: 0e293d094b7246311361eedaf16398689780971a16dcb0f5cb0599bde290eec872b72a8e003879558e06f40632604da04cd82952817b36b7359ce2094b614d5e
+
+ - version: 3.2.1
+   artifacts:
+    - filename: Aegisub-3.2.1-32.exe
+      type: Windows
+      comment: 	Regular Install (32-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.1/Aegisub-3.2.1-32.exe
+      md5: 4f5ad65168ab02cb24db3052733982f7
+      sha512: ca0407c6f28449ce81d8e36f533dd48465130c2d94d41e7361c62242738137b90ca080e5666f06cb291695ea22afff9d4944e0370d40a7d0f87921a86de5f1bd
+
+    - filename: Aegisub-3.2.1-64.exe
+      type: Windows
+      comment: Regular Install (64-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.1/Aegisub-3.2.1-64.exe
+      md5: 5345374df4403a8b64ecb03feaa5aed7
+      sha512: c5636f11fc027e924beda6585b1aa65427811b8e942739759dd7b3e5c393329c716e9c5572f69799fbb4bb80ab362b857660e5ec58f5531d2d07aa90fdf1ac4c
+
+    - filename: Aegisub-3.2.1.dmg
+      type: OS X
+      comment: 	Full Install
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.1/Aegisub-3.2.1.dmg
+      md5: 62d53df1eb0042413df069f6c1391249
+      sha512: 3cc5e0058fa2138510a33e2f09c4674845a2895b7926aba41c335e5e9f97621b5fb6ac72b125fbe44cf08810a542c2e455713b5e6f34616d793cd8b04c81dfcb
+
+    - filename: aegisub-3.2.1-32.zip
+      type: Windows
+      isHidden: true
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.1/aegisub-3.2.1-32.zip
+      md5: 0f8635588d76761d72db34f05f29c5d2
+      sha512: 1e7e36a64ab24614a1eaa2ed346cf96ee42795a6e4f5c761f11fb63923d4b7fe4a43aa5dd256ca2a1f55126996f4e0e447b925251fa2d1887fb4c049aad21577
+
+    - filename: aegisub-3.2.1-64.zip
+      type: Windows
+      isHidden: true
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.1/aegisub-3.2.1-64.zip
+      md5: 433343fb8c2be2eeefeaa9792f9e316f
+      sha512: 2bd3122f2be50c88716076936cb69a0a455ffcd118849e932cfc28a3bed120cd6a6e27e6c2d0d0c9c360d152e10d4bb6f3c73656d587d03b441eb74870c05276
+
+    - filename: aegisub-3.2.1-portable-32.exe
+      type: Windows
+      comment: Portable (32-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.1/aegisub-3.2.1-portable-32.exe
+      md5: 4c63544930fc94c86d98640cedfd209a
+      sha512: c254ab43b2b18f54fe9cc8aab12bb11b7102269bb62dd2e2d4d02c5f45beaa0f4cc32e73dac7558a1327d0ec0be0d78703c051a432c757ba69245b1aa162dfd2
+
+    - filename: aegisub-3.2.1-portable-64.exe
+      type: Windows
+      comment: Portable (64-bit)
+      md5: e555327bc1caf8b7761eb1f0ed0da847
+      sha512: 4b6c244b4085cc1eec37337820bba408ccaccfde26cc1c703a2ee4bcc98476bc2249c7ea6f605aaab13f3121eb4a03149345bd370426808e7e8d58143a31dd95
+
+    - filename: aegisub-3.2.1.tar.xz
+      type: Source
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.1/aegisub-3.2.1.tar.xz
+      md5: ff50e925eb96c69d928811e93a045a6b
+      sha512: 79f37b0f834dc2c98d64b5d38d21fa13c1b0292f63c537a5a23663e08a02c29c64c15e3b12070c6d51082e184b4af1d3830331bfc646a7659664d29c6096f96b
+
+ - version: 3.2.2
+   artifacts:
+    - filename: Aegisub-3.2.2-32.exe
+      type: Windows
+      comment: Regular Install (32-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.2/Aegisub-3.2.2-32.exe
+      md5: 7717d85ebb15ee3a2b30e3271068fa0f
+      sha512: 6d72a5c1da9cede3cf4092edf77c63b443e47b2cbba2b638702b71437fe0dc93eddf57d407616593d6f40adc33af99269f9a43e9017ee25cc9fddf35ac9968b7
+
+    - filename: Aegisub-3.2.2-64.exe
+      type: Windows
+      comment: Regular Install (64-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.2/Aegisub-3.2.2-64.exe
+      md5: 3cb95e30c73b7a227a4590b0cd986ddb
+      sha512: 602c8a82a159a509a8e98862ab5243187102d0fc3082a6065d60cf9dbaafda34aca1a4739ab783f93408e0cc982787d3d41c5b15fcff1c7f6617f2161f7f0df3
+
+    - filename: Aegisub-3.2.2.dmg
+      type: OS X
+      comment: 	Full Install
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.2/Aegisub-3.2.2.dmg
+      md5: 913e07d6483dcea627c3706584c9d95d
+      sha512: 2cb8da258a052675f37433b5dd756c02f6fd4cd7b188cfae02d64e85bcf0ae76bdae61fe3de0eadd05cb68285c36a418ea727787e2f25f6f6f3cecbdfca9639a
+
+    - filename: aegisub-3.2.2-32.zip
+      type: Windows
+      isHidden: true
+      link: http://plorkyeran.com/aegisub/downloads/aegisub-3.2.2-32.zip
+      md5: 60383c3d2303daa1bdd6698855062a1a
+      sha512: 0914765cbd44fad8fc1133daa78fd3c160fd2bb6440f3edad3f7bbf1232367097de9bd2bcd83c81963a91815ad109b6478a0c6ab588488265af2e036ea550e47
+
+    - filename: aegisub-3.2.2-64.zip
+      type: Windows
+      isHidden: true
+      link: http://plorkyeran.com/aegisub/downloads/aegisub-3.2.2-64.zip
+      md5: 8dee1ca7a5601714617534b597f2f8b3
+      sha512: 2cc0a98f03fba29bf7e5d4377e05cde579921cb97c027b49786aaa0f6ee914d0bea4dae719e827eb138720b5b0838a11265ed0a091d079e0f7eee61ad8da883a
+
+    - filename: aegisub-3.2.2-portable-32.exe
+      type: Windows
+      comment: Portable (32-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.2/aegisub-3.2.2-portable-32.exe
+      md5: 908016606d64c52ef52b52a3704fc1b2
+      sha512: a6b4b3d79c7fbc4fe6d54a0e34def67833000876f772c0b8c829b6778b599b010c86ca117daec25d98978befe79c143859d26081061680df8127758bba8dc9f9
+
+    - filename: aegisub-3.2.2-portable-64.exe
+      type: Windows
+      comment: Portable (64-bit)
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.2/aegisub-3.2.2-portable-64.exe
+      md5: d316e4ce9bcbfb53d3803c86804c3f69
+      sha512: 151fc715c08181e0e8714e0d0870b0dc19da23d093ddaf94871e0d81cd8c0bb524fdf7062928b799922b3719c12c3b204440836a8762529934071bc49b59adf5
+
+    - filename: aegisub-3.2.2.tar.xz
+      type: Source
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.2.2/aegisub-3.2.2.tar.xz
+      md5: d80e852c34811add358c06d77f5cd40d
+      sha512: 54f825e52f238fef8d5cc31c37436e21355aee27883347f905271e5d2a8ff2a77e1b67d5aef38b0f8468bd0bad851fe944e02de27ec96310b902fbe5b1086722

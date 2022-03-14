@@ -35,6 +35,8 @@
 			{{ $changelogLink := (print ("changelog/" | relLangURL) .Site.Data.version.current)}}
 			<p>{{ markdownify (i18n "see-changelog" $changelogLink) }}</p>
 			{{ .Content }}
+			<h2>{{i18n "previous-version" }}</h2>
+			{{ partial "previous-versions.html" . }}
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				{{ if .Site.Params.lastMod -}}
 					{{ partial "main/last-modified.html" . }}

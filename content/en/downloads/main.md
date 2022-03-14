@@ -15,7 +15,3 @@ To cut down on the download size, the Windows "Full" Install includes only a US 
 ## Upcoming Versions
 
 Check CI build
-
-## Previous Versions
-
-TODO
