@@ -61,7 +61,7 @@
         <ul class="nav flex-column flex-md-row ms-md-auto me-md-n5 pe-md-2">
           {{ range .Site.Menus.social -}}
             <li class="nav-item">
-              <a class="nav-link ps-0 py-1" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}<small class="ms-2 d-md-none">{{ .Name | safeHTML }}</small></a>
+              <a class="nav-link ps-0 py-1" href="{{ .URL | relURL }}" aria-label="View repository on GitHub">{{ .Pre | safeHTML }}<small class="ms-2 d-md-none">{{ .Name | safeHTML }}</small></a>
             </li>
           {{ end -}}
         </ul>
