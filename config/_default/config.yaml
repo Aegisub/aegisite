@@ -8,7 +8,7 @@ enableRobotsTXT: true
 paginate: 7
 rssLimit: 10
 
-# i18n
+# Multilingual
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
 
@@ -32,28 +32,10 @@ outputFormats:
     noUgly: true
     rel: sitemap
 
-markup:
-  goldmark:
-    extensions:
-      linkify: false
-    parser:
-      autoHeadingID: true
-      autoHeadingIDType: github
-      attribute:
-        block: true
-        title: true
-    renderer:
-      unsafe: true
-  highlight:
-    codeFences: false
-    guessSyntax: false
-    hl_Lines: ''
-    lineNoStart: 1
-    lineNos: false
-    lineNumbersInTable: true
-    noClasses: false
-    style: dracula
-    tabWidth: 4
+caches:
+  getjson:
+    dir: ':cacheDir/:project'
+    maxAge: 10s
 
 sitemap:
   changefreq: weekly
@@ -63,16 +45,29 @@ sitemap:
 taxonomies:
   contributor: contributors
 
-RelPermalinks:
-  blog: '/blog/:title/'
+permalinks:
+  blog: '/blog/:slug/'
+
+minify:
+  tdewolff:
+    html:
+      keepWhitespace: false
 
 module:
+  hugoVersion:
+    extended: true
+    min: 0.80.0
+    max: ''
   mounts:
     - source: assets
       target: assets
     - source: static
       target: static
+    - source: static/img
+      target: assets/img
     - source: node_modules/flexsearch
       target: assets/js/vendor/flexsearch
     - source: node_modules/katex
       target: assets/js/vendor/katex
+    - source: node_modules/mermaid
+      target: assets/js/vendor/mermaid

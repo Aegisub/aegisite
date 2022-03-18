@@ -2,8 +2,8 @@
 title: Working with Audio
 menu:
   docs:
-    parent: Timing
-weight: 510
+    parent: timing
+weight: 5000
 ---
 
 Aegisub has a fairly advanced, customizable audio mode with both the
@@ -11,7 +11,8 @@ traditional waveform display as well as an alternative spectrum display.
 Several different timing modes are available for both normal dialog timing
 and karaoke timing.
 
-## Opening audio ##
+## Opening audio
+
 To load an audio file into Aegisub, just go to the _Audio_ menu and press
 _Open audio file_. If you have a video file (with an included audio track)
 already loaded, you can use _Open audio from video_ instead, which obviously
@@ -24,7 +25,8 @@ Audio_.
 If opening audio fails with an error that mentions the audio player, or if
 playing audio results in no sound, switching to a [different audio player]({{< relref "Options#advancedaudio" >}}) may help.
 
-### Supported formats ###
+### Supported formats
+
 Aegisub normally uses [FFMS2](https://github.com/FFMS/ffms2) to open audio,
 which can reliably open audio is nearly any format you can think of. On
 Windows, Aegisub can also use DirectShow (via Avisynth), which can be faster as
@@ -36,7 +38,8 @@ Aegisub only supports mono audio. Multichannel audio will be automatically
 downmixed, but the results may be of poor quality for sources of more than
 two channels.
 
-### Audio caching ###
+### Audio caching
+
 If you're loading any audio format that isn't an uncompressed (PCM)
 Microsoft WAV file, Aegisub needs to decode and cache it first. When loaded,
 the audio is downmixed to mono (see the [audio downmixer option]({{< relref "Options#avisynthwindowsonly" >}}) if you want to grab one channel only
@@ -49,14 +52,13 @@ Aegisub can read from WAVs directly without need for caching.
 
 The exact amount of memory used for any given audio file can be calculated
 with the following formula:
-    s = ( b * r * l ) / 8
+s = ( b * r * l ) / 8
 where _s_ is the amount of memory (in bytes - divide by 1024 to get kB), _b_
 is the number of bits per sample (always 16 in the current implementation),
 _r_ is the sample rate in Hz (usually 48000, or 44100 in some cases), and
 _l_ is the length of the audio (in seconds).
 
-For example, for a 25 minute audio clip at 48 kHz, you will need (16 * 48000
-* 25 * 60)/8 = 144000000 bytes ~= 137 MB.
+For example, for a 25 minute audio clip at 48 kHz, you will need (16 * 48000 * 25 * 60)/8 = 144000000 bytes ~= 137 MB.
 
 Loading and decompressing the audio into the cache takes some time.
 A progress bar is shown in the scroll bar of the audio display while audio is loading.

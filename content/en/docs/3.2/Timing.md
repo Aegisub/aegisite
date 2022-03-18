@@ -2,11 +2,11 @@
 title: Timing subtitles to audio
 menu:
   docs:
-    parent: Timing
-weight: 520
+    parent: timing
+weight: 5100
 ---
 
-## The main audio view ##
+## The main audio view
 
 When your audio file has loaded, Aegisub will transform into something like
 the screenshot below:
@@ -21,9 +21,9 @@ turned off. The buttons and controls are as follows (many of these have
 [keyboard shortcuts]({{< relref "Keyboard_shortcuts" >}}) associated with them by default):
 
 1. Go to previous line, discarding any unsaved changes (previous syllable
-  when in [karaoke mode]({{< relref "Audio#karaokemode" >}}))
+   when in [karaoke mode]({{< relref "Audio#karaokemode" >}}))
 1. Go to next line, discarding any unsaved changes (next syllable when in
-  karaoke mode)
+   karaoke mode)
 1. Play selected area of the audio waveform
 1. Play currently selected line
 1. Pause playback
@@ -37,12 +37,12 @@ turned off. The buttons and controls are as follows (many of these have
 1. Commit (save) changes
 1. Scroll view to selection/go to selection
 1. Toggle auto-commit (if enabled, all timing changes are committed
-  instantly rather than waiting for the user to press commit)
+   instantly rather than waiting for the user to press commit)
 1. Toggle auto next line on commit (if this is enabled, Aegisub will
-  automatically select the next line when the current line is committed by
-  the user. Auto-commits do not trigger this, for obvious reasons)
+   automatically select the next line when the current line is committed by
+   the user. Auto-commits do not trigger this, for obvious reasons)
 1. Toggle auto-scrolling (will center waveform on the currently selected
-  line automatically when enabled)
+   line automatically when enabled)
 1. Toggle spectrum analyzer mode (see below)
 1. Toggle Medusa-style timing shortcuts
 1. Toggle karaoke mode
@@ -51,7 +51,8 @@ turned off. The buttons and controls are as follows (many of these have
 1. Audio volume
 1. Toggle linking of vertical audio zoom slider with volume slider
 
-## Basic audio timing ##
+## Basic audio timing
+
 When you click on a line in the subtitles grid, Aegisub will highlight it in
 the audio display and, if you have auto-scrolling enabled, scroll the audio
 display so it's centered on the line (during normal timing, it's usually a good
@@ -74,30 +75,31 @@ For example, if you have two lines already snapped to each other but want to shi
 
 Holding alt will make you drag all selected lines (both start and end times).
 
-### Timing protips ###
+### Timing protips
+
 If you want to finish timing your movie or episode within any reasonable
 amount of time, there's some things you should note:
 
-* Use keyboard shortcuts! They speed up your work by several orders of
+- Use keyboard shortcuts! They speed up your work by several orders of
   magnitude.
-* You don't need to have video displayed while timing. If you think you do,
+- You don't need to have video displayed while timing. If you think you do,
   there's a good change you're doing something wrong. Scene-timing, i.e.
   syncing line start/ends to scene changes, can be done later. Either
   manually, or with the [timing postprocessor]({{< relref "Timing_Post-Processor" >}}).
-* Use "go to next line on commit".
-* Experiment with different timing styles when you're new and stick to one
+- Use "go to next line on commit".
+- Experiment with different timing styles when you're new and stick to one
   that suits you. Then practice. Lots.
-* Aegisub heavily relies on the concept of "focus", and doing things in a
+- Aegisub heavily relies on the concept of "focus", and doing things in a
   way that require you to switch back and forth between video/audio/subtitle
   edit box a lot will cost you a lot of time. Do it in several "passes"
   instead.
-* The spectrum analyzer mode looks weird at first, but usually makes it lot
+- The spectrum analyzer mode looks weird at first, but usually makes it lot
   easier to "see" where lines start and end, especially when there is
   background noise.
-* With practice, it's often faster and easier to time something from scratch
+- With practice, it's often faster and easier to time something from scratch
   than fix bad timing, due to that fixing bad timing requires spending a small
   amount of time thinking about each line.
-* If you want to delete all timing data and start over, a simple way is to use
+- If you want to delete all timing data and start over, a simple way is to use
   the [shift times dialog]({{< relref "Shift_Times" >}}) to shift all lines backwards by
   9:59:59.99.
 
@@ -128,7 +130,8 @@ Of course, this style may not feel comfortable for all people; you should
 experiment with other timing styles before deciding which one is best for
 you.
 
-### The spectrum analyzer mode ###
+### The spectrum analyzer mode
+
 ![spectrum](/img/3.2/spectrum.png)
 
 When you press the spectrum analyzer button, the waveform does no longer
@@ -152,5 +155,6 @@ in the [audio options]({{< relref "Audio#options" >}}). This is mostly important
 Aegisub yourself and did not use FFTW3; FFTW3 is fast enough that the default
 quality is bumped up a bit.
 
-## Karaoke timing ##
-{{<todo>}}here be dragons {{</todo>}}
+## Karaoke timing
+
+[Karaoke timing Tutorial]({{< relref "Karaoke_Timing_Tutorial" >}})

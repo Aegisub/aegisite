@@ -1,3 +1,10 @@
+---
+title: Execution order
+menu:
+  docs:
+    parent: karaoke-templater
+weight: 6120
+---
 
 This page describes various technical details about how Karaoke Templater
 (_kara-templater_) works and will try to explain why various things work as
@@ -6,49 +13,51 @@ they do and why some things can't and won't work.
 Most of this is technical details you don't need to know to use kara-templater,
 but if you see some behaviour you don't understand this page might explain it.
 
-## Concepts  ##
+## Concepts
+
 These are some terms and concepts used throughout the description. The names
 are close to or the same as those used in the actual script.
 
-**`tenv`**
+`tenv`
 : The **t**emplate **env**ironment, or [code execution environment]({{< relref "./Code_execution_environment" >}}).
 
-**`varctx`**
+`varctx`
 : The inline **var**iable **c**on**t**e**x**t, the storage for the actual
-values of the [inline variables]({{< relref "./Inline_variables" >}}).
+  values of the [inline variables]({{< relref "./Inline_variables" >}}).
 
-**`template`**
+`template`
 : The basic "execution unit" of kara-templater, a template is essentially a
-mini-program compiled and executed by kara-templater.
+  mini-program compiled and executed by kara-templater.
 
-**`code template`**
+`code template`
 : A template that runs a chunk of Lua code but doesn't produce output.
-(Declared with the _code_ keyword.)
+  (Declared with the _code_ keyword.)
 
-**`output template`**
+`output template`
 : A template that produces output lines from some karaoke data input. (Declared
-with the _template_ keyword.)
+  with the _template_ keyword.)
 
-**`code line`**
+`code line`
 : A line in the subtitle that defines a code template.
 
-**`template line`**
+`template line`
 : A line in the subtitle file that defines an output template, or part of one.
-(One _line_ class output template can span multiple template lines.)
+  (One _line_ class output template can span multiple template lines.)
 
-**`class`**
+`class`
 : A class is a kind of template. There's four basic classes, _once_, _line_,
-_syl_ and _furi_, the first only available for code templates.
+  _syl_ and _furi_, the first only available for code templates.
 
-**`modifier`**
+`modifier`
 : Modifiers affect how and when templates are executed.
 
-**`template text** or just **text`**
+`template text** or just **text`
 : The "text" part of a template, either the Lua code in a code template or the
-template code in output templates. _line_ class output templates also have a
-_pre-line text_.
+  template code in output templates. _line_ class output templates also have a
+  _pre-line text_.
 
-## Startup  ##
+## Startup
+
 The first thing kara-templater does is simply use
 [karaskel]({{< relref "../Lua/Modules/karaskel.lua.md" >}}) to collect some basic
 information on the subtitle file. It always passes `true` for
@@ -58,7 +67,8 @@ exist.
 
 It then collects all template lines in the file.
 
-### Collecting, parsing and compiling templates  ###
+### Collecting, parsing and compiling templates
+
 Every line in the file is visited and checked for being a template line, i.e.
 be a comment and have the first word in the Effect field be _code_ or
 _template_.
@@ -80,32 +90,36 @@ rather than the regular text.
 The templates of different classes are each put in their own "bucket", so for
 example _line_ and _syl_ templates are not kept together.
 
-### Clean-up  ###
+### Clean-up
+
 After all templates have been collected etc., all old and no longer needed
 lines are deleted from the subtitle file. This mainly includes lines with _fx_
 in the Effect field, as those are assumed to have been generated in a previous
 run of kara-templater, so they should be replaced in this new run.
 
-### Initialising the _tenv_  ###
+### Initialising the _tenv_
+
 The last thing done before starting actually running the templates is
 initialising the runtime environment for the templates. Basically, as much as
 possible before any templates are run, is put into _tenv_. See [Code execution environment]({{< relref "./Code_execution_environment" >}}) for more
 details on what's in there. (Basically everything but `line`, `orgline`, `syl`
 and `basesyl`.)
 
-## Run _once_ templates  ##
+## Run _once_ templates
+
 All templates in the _once_ class are executed first. Nothing truly exciting
 happens here, the main thing that can happen is that some more things are added
 to _tenv_.
 
-## Iterate through karaoke lines in file  ##
+## Iterate through karaoke lines in file
+
 Every non-template line in the file is now run through and has all templates attempted applied in order.
 
-* If a line is a comment and its Effect field doesn't contain `Karaoke` it is
+- If a line is a comment and its Effect field doesn't contain `Karaoke` it is
   skipped immediately.
-* If a line is not a comment and its Effect field contains anything else that
+- If a line is not a comment and its Effect field contains anything else that
   `Karaoke` or nothing (is blank) it is skipped immediately.
-* Kara-templater attempts to match all templates against all other lines.
+- Kara-templater attempts to match all templates against all other lines.
 
 Each line that hasn't been rejected by the above points is now run through all
 templates in three steps.
@@ -129,28 +143,28 @@ not per-character virtual syllables and not a combination.
 {{<example-box>}}
 Assume there are three `syl` class templates: A, B and C.
 
-* A is a regular template with neither _multi_ nor _char_ modifier.
-* B has the _multi_ modifier but not _char_.
-* C has both the _char_ and _multi_ modifiers.
+- A is a regular template with neither _multi_ nor _char_ modifier.
+- B has the _multi_ modifier but not _char_.
+- C has both the _char_ and _multi_ modifiers.
 
 Now these templates are applied against a line with 2 syllables. This happens in order:
 
-* Syllable 1 is picked.
-    * Template A is matched against the line. It matches.
-        * Template A is applied on syllable 1.
-    * Template B is matched against the line. It matches.
-        * Syllable 1 is split into multi-highlight pseudo-sylables 1.1 and 1.2
-        * Template B is applied on pseudo-syllable 1.1.
-        * Template B is applied on pseudo-syllable 1.2.
-    * Template C is matched against the line. It matches.
-        * Syllable 1 is split into per-character pseudo-syllables 1.a and 1.b
-        * Syllable 1.a and 1.b are further split into per-character pseudo-sylables 1.a1, 1.a2, 1.b1 and 1.b2.
-        * Template C is applied on pseudo-syllable 1.a1.
-        * Template C is applied on pseudo-syllable 1.a2.
-        * Template C is applied on pseudo-syllable 1.b1.
-        * Template C is applied on pseudo-syllable 1.b2.
-    * Syllable 2 is picked.
-        * Processing proceeds similar to syllable 1.
+- Syllable 1 is picked.
+  - Template A is matched against the line. It matches.
+    - Template A is applied on syllable 1.
+  - Template B is matched against the line. It matches.
+    - Syllable 1 is split into multi-highlight pseudo-sylables 1.1 and 1.2
+    - Template B is applied on pseudo-syllable 1.1.
+    - Template B is applied on pseudo-syllable 1.2.
+  - Template C is matched against the line. It matches.
+    - Syllable 1 is split into per-character pseudo-syllables 1.a and 1.b
+    - Syllable 1.a and 1.b are further split into per-character pseudo-sylables 1.a1, 1.a2, 1.b1 and 1.b2.
+    - Template C is applied on pseudo-syllable 1.a1.
+    - Template C is applied on pseudo-syllable 1.a2.
+    - Template C is applied on pseudo-syllable 1.b1.
+    - Template C is applied on pseudo-syllable 1.b2.
+  - Syllable 2 is picked.
+    - Processing proceeds similar to syllable 1.
 
 Also see later down for more details on multi-highlight and per-character pseudo-syllables.
 {{</example-box>}}
@@ -159,23 +173,27 @@ If any template matches at any time during the three steps above the (original)
 line is marked as "timed karaoke" and is then made into a comment with
 `karaoke` in the Effect field.
 
-### Matching a template against a line  ###
+### Matching a template against a line
+
 Templates are always matched against a line, not against a syllable or
 otherwise.
 
-* If the template has the _fxgroup_ modifier and the fxgroup named is disabled,
+- If the template has the _fxgroup_ modifier and the fxgroup named is disabled,
   the template never matches anything.
-* If the template has the _all_ modifier it always matches any line.
-* If the template has the same Style as a line, it matches the line.
-* Otherwise the template does not match the line.
+- If the template has the _all_ modifier it always matches any line.
+- If the template has the same Style as a line, it matches the line.
+- Otherwise the template does not match the line.
 
-## Applying _line_ class templates  ##
+## Applying _line_ class templates
+
 {{<todo>}} write this {{</todo>}}
 
-## Applying _syl_ and _furi_ class templates  ##
+## Applying _syl_ and _furi_ class templates
+
 {{<todo>}} write this {{</todo>}}
 
-## Old mid-level description  ##
+## Old mid-level description
+
 <pre>Main kara-templater process:
 1. Collect header
    1. Find all header information, primarily PlayResX and PlayResY
@@ -318,5 +336,3 @@ Running a single template:
          1. Replace match with result of running the function</pre>
 
 {{<todo>}}Turn this into something more reasonable? {{</todo>}}
-
-{::template name="automation_navbox" /}

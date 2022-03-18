@@ -1,0 +1,376 @@
+dict_languages:
+ - name:  Catalan
+   lang:  ca_ES
+
+ - name:  Czech
+   lang:  cs_CZ
+
+ - name:  Danish
+   lang:  da_DK
+
+ - name:  Austrian German
+   lang:  de_AT
+
+ - name:  Swiss German
+   lang:  de_CH
+
+ - name:  German
+   lang:  de_DE
+
+ - name:  Greek
+   lang:  el_GR
+
+ - name:  British English
+   lang:  en_GB
+
+ - name:  American English
+   lang:  en_US
+
+ - name:  Spanish
+   lang:  es_ES
+
+ - name:  Basque
+   lang:  eu
+
+ - name:  French
+   lang:  fr_FR
+
+ - name:  Hungarian
+   lang:  hu_HU
+
+ - name:  Italian
+   lang:  it_IT
+
+ - name:  Malay
+   lang:  ms_MY
+
+ - name:  Dutch
+   lang:  nl_NL
+
+ - name:  Polish
+   lang:  pl_PL
+
+ - name:  Brazilian Portuguese
+   lang:  pt_BR
+
+ - name:  Portuguese
+   lang:  pt_PT
+
+ - name:  Russian
+   lang:  ru_RU
+
+ - name:  Slovak
+   lang:  sk_SK
+
+ - name:  Slovenian
+   lang:  sl_SI
+
+ - name:  Serbian (Cyrillic and Latin)
+   lang:  sr
+
+ - name:  Swedish
+   lang:  sv_SE
+
+ - name:  Swahili (Tanzania)
+   lang:  sw_TZ
+
+ - name:  Thai
+   lang:  th_TH
+
+ - name:  Vietnamese
+   lang:  vi_VN
+
+
+dict_files:
+ - version: "2.1"
+   artifacts:
+    - filename: Aegisub-2.1-dict-ca_ES.exe
+      language: ca_ES
+      link: https://web.archive.org/web/20120509235456if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-ca_ES.exe
+      md5: b2da29d2fdbc3d1b0f9ba95334919352
+      sha256: dab2b8a092a5078e86cd877d88e7b3c3d7ab390b57615a3d0b2ffcfe56776c09
+
+    - filename: Aegisub-2.1-dict-cs_CZ.exe
+      language: cs_CZ
+      link: https://web.archive.org/web/20120509234625if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-cs_CZ.exe
+      md5: e697099d7e6abf75f0dc397a8b44433b
+      sha256: 3eeb67193152390499c23d207eaa89ae47855330f46fbbc5a2950678f47b21d7
+
+    - filename: Aegisub-2.1-dict-da_DK.exe
+      language: da_DK
+      link: https://web.archive.org/web/20120509234903if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-da_DK.exe
+      md5: f6f0e052551ef8b455197499418740e9
+      sha256: 4f60ae83eaeb74fd787d154d2a90a9f3f69179e16fd3bd710dfe5e72d1b12d35
+
+    - filename: Aegisub-2.1-dict-de_AT.exe
+      language: de_AT
+      link: https://web.archive.org/web/20120509234751if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-de_AT.exe
+      md5: 359155c097763591a29fcc7301243b19
+      sha256: 86bbc98e96df94c024798be99628f2992c5c6004b170307a8a9b6d4355342ea6
+
+    - filename: Aegisub-2.1-dict-de_DE.exe
+      language: de_DE
+      link: https://web.archive.org/web/20120509235206if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-de_DE.exe
+      md5: d73f7d4067f43fca2d44cd55b6150986
+      sha256: 52b59ab2e506d6b42b425a5c573dd46ae490956081b8c3eb3a53fa21711d530a
+
+    - filename: Aegisub-2.1-dict-el_GR.exe
+      language: el_GR
+      link: https://web.archive.org/web/20120509235025if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-el_GR.exe
+      md5: 080cea67efdd060b0434284b81556014
+      sha256: 4ed3a4fa7e51f56faffec37b2920b5965c5adc497c3a00c6323876d20679b367
+
+    - filename: Aegisub-2.1-dict-en_GB.exe
+      language: en_GB
+      link: https://web.archive.org/web/20120509234939if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-en_GB.exe
+      md5: 3392e9c20ceab65799932300dd191c56
+      sha256: 8146defb9fb21035b6f84275d797d19f14a20584c87b1c7ffc37d0ca7357f465
+
+    - filename: Aegisub-2.1-dict-en_US.exe
+      language: en_US
+      link: https://web.archive.org/web/20120509235047if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-en_US.exe
+      md5: 1eb20f3b5340c32ce25c6d45de6bcc78
+      sha256: a1748e5d2a28743d64a6785893757ebc619d4e3f6b81c0d3a7bcf1bcfb8bd028
+
+    - filename: Aegisub-2.1-dict-es_ES.exe
+      language: es_ES
+      link: https://web.archive.org/web/20120509234934if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-es_ES.exe
+      md5: 8c8dac8b171f340f541abbaba74bc2f4
+      sha256: 765ce255845ca82a6038d6a3b2977ba0f23c5a072ab53aeb5feb63c96cb50de4
+
+    - filename: Aegisub-2.1-dict-fr_FR.exe
+      language: fr_FR
+      link: https://web.archive.org/web/20120509235616if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-fr_FR.exe
+      md5: 898fe0836d037ef75588d73c68ce0633
+      sha256: 838c1cb2b08eb02d2923d50d076db17f4068e6e98aa87a078e20858f9e67dcab
+
+    - filename: Aegisub-2.1-dict-it_IT.exe
+      language: it_IT
+      link: https://web.archive.org/web/20120509234913if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-it_IT.exe
+      md5: 6d4f31556f2144da45c81aa249aa6516
+      sha256: b4dffef3a116c882ea82fa61281517eb3a75ca837f8e36fe2c8df5ee4b3087d0
+
+    - filename: Aegisub-2.1-dict-nl_NL.exe
+      language: nl_NL
+      link: https://web.archive.org/web/20120509234736if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-nl_NL.exe
+      md5: eaeab5cc8b307c83c5b142dee7a30d4f
+      sha256: 178129443ff29392c29d5c865b5de02bf99882c550d34106ecac37611672c853
+
+    - filename: Aegisub-2.1-dict-pl_PL.exe
+      language: pl_PL
+      link: https://web.archive.org/web/20120509235806if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-pl_PL.exe
+      md5: 0d90874d2fecbd03d49e63780bc25881
+      sha256: 0b438bd3b0ebb2c187ad74db462baf5d6705b5ad9a9d9a5b9699b835f3ce535c
+
+    - filename: Aegisub-2.1-dict-pt_BR.exe
+      language: pt_BR
+      link: https://web.archive.org/web/20120509234826if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-pt_BR.exe
+      md5: ebc8040cdba5be9510747baf7d159998
+      sha256: 48edfa67880dae8fc80b0d212a8285e0e3ad6229d836506facaf9e5d69ea7286
+
+    - filename: Aegisub-2.1-dict-ru_RU.exe
+      language: ru_RU
+      link: https://web.archive.org/web/20120509235014if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-ru_RU.exe
+      md5: 098cb1c31cc553cd5ae8e01aa4cdde45
+      sha256: a17cc26576fdb77c1b11dcdb313b304e16b46fed12246cb56cea0dca9c98aa15
+
+    - filename: Aegisub-2.1-dict-sk_SK.exe
+      language: sk_SK
+      link: https://web.archive.org/web/20120509234728if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-sk_SK.exe
+      md5: d2d44b08cfbc3689cff4405ae71e8d76
+      sha256: 1bbfafcaa94ba33b3434e722123c0857107df602b0a6a81797457976d0271e38
+
+    - filename: Aegisub-2.1-dict-sl_SI.exe
+      language: sl_SI
+      link: https://web.archive.org/web/20120509235443if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-sl_SI.exe
+      md5: 98efc01a12d33580dd1135966519c056
+      sha256: a7ec226af3e7c40e106df530908a5a6218ae023bed0f249d0d596da13fa598c5
+
+    - filename: Aegisub-2.1-dict-sr.exe
+      language: sr
+      link: https://web.archive.org/web/20120509234925if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-sr.exe
+      md5: b2ce6f6a9acdfe2a8a2be4d4d4b55fbd
+      sha256: a6bdf58fd9b471609da8ffa896ee63f6b7a239f846c9961d2d7ac52fe706884c
+
+    - filename: Aegisub-2.1-dict-sv_SE.exe
+      language: sv_SE
+      link: https://web.archive.org/web/20120509235316if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-sv_SE.exe
+      md5: 60c529baef4dea9df0764b569d55fc01
+      sha256: 8990febada831078473da3e6df0b67c7481626f50ecc30e70688326f32dfa125
+
+    - filename: Aegisub-2.1-dict-vi_VN.exe
+      language: vi_VN
+      link: https://web.archive.org/web/20120509235040if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-2.1-dict-vi_VN.exe
+      md5: 2b2d9681a9e01b036cf1751f9abc28d3
+      sha256: ef5967607e5de4267546606b16beea9e95c715da8e0b689bce0c9bc038fbd925
+
+ - version: "3.0"
+   artifacts:
+    - filename: Aegisub-3.0-dict-ca_ES.exe
+      language: ca_ES
+      link: https://web.archive.org/web/20190708003904if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-ca_ES.exe
+      md5: a33cfae7863bb1a3021fe595356cd81e
+      sha512: b5b88a9459bf433c97d00640a5db5d6828d29454e0565606494ceea57915728482d356a4b03e91759a729c54cc8a355b2505ca7bd89ebf34b9aa922dccc10ee2
+
+    - filename: Aegisub-3.0-dict-cs_CZ.exe
+      language: cs_CZ
+      link: https://web.archive.org/web/20190708040618if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-cs_CZ.exe
+      md5: 39598849a3fdd581f73690c791f8cb14
+      sha512: 54469a5b98fd7748b1d27e2aaef807ee59223d3e75b5dcfe583af4ab1be326c1e9a9183e4874d4203110ed5a459568fcb0c9f2eb51d0177ff91da2a64b0d5fb2
+
+    - filename: Aegisub-3.0-dict-da_DK.exe
+      language: da_DK
+      link: https://web.archive.org/web/20190708042855if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-da_DK.exe
+      md5: a017bb49f32851b1c9d6b28bdd66bd87
+      sha512: c5e70fce061505799ec9beb91742abf10085e8564b8a4f7d694ce619e0bf8eb29a7d1507a75dbbfad5c25c7e70c294f0dacb0decabc86344a592fe6f7cbe6dd0
+
+    - filename: Aegisub-3.0-dict-de_AT.exe
+      language: de_AT
+      link: https://web.archive.org/web/20190708042142if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-de_AT.exe
+      md5: 910044f1b6e7b00ab9dc84f0a92582ce
+      sha512: 75589731d3ae09f0f9bdd6a12617629c3830838ff31ed1c9fa0937260e707fce1c099ec98fb1d146b0c3ee78525d0b9af4e6a6d55d6ab40f2bdff061c6e4f997
+
+    - filename: Aegisub-3.0-dict-de_CH.exe
+      language: de_CH
+      link: https://web.archive.org/web/20190708030246if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-de_CH.exe
+      md5: bc16377effe2aa6ccadf3cd8c587e330
+      sha512: f67c7d02629137f1367f0ef1ff208ef0625ea5c1a5725096009a2b26e66e1704868e17a3c00a1af549c269094a17d1d4f56ea7a13a068045fdc75853fd64c7cd
+
+    - filename: Aegisub-3.0-dict-de_DE.exe
+      language: de_DE
+      notes: Includes thesaurus
+      link: https://web.archive.org/web/20190708032231if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-de_DE.exe
+      md5: 98eec7789f644efa544d10fe17307a92
+      sha512: 3aeaf5fcc84fd1d9f3433f0c065a70cf82326929d824b1e0d14ec7639f63ec111116f24ddd4318e4ef2836f613c853981426b0589774f2395ec796ccda6b513d
+
+    - filename: Aegisub-3.0-dict-el_GR.exe
+      language: el_GR
+      link: https://web.archive.org/web/20190708034533if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-el_GR.exe
+      md5: 374f53aee8e8377d5c61d8feee34e4f4
+      sha512: d06d823697d71c05c94a937a039d1a03ce744b4002f8c50b934a2e3ae825046aaff86d25835494f3d1364577d7704b397ed8e78bbecae833362c2e046ff935f5
+
+    - filename: Aegisub-3.0-dict-en_GB.exe
+      language: en_GB
+      link: https://web.archive.org/web/20190708032341if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-en_GB.exe
+      md5: a56df662f2ea0300052cb722925cac20
+      sha512: 4dc65f9dbb3308d042174530d1a55166a0b27dfdef9d6b190dfc47bca20dffb9c5228bc4ad3eaabe6fc4ff96a921a011ddd5cca6b05922b3be4985385f0c2634
+
+    - filename: Aegisub-3.0-dict-en_US.exe
+      language: en_US
+      notes: Thesaurus only (dictionary is bundled with Aegisub)
+      link: https://web.archive.org/web/20190708035613if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-en_US.exe
+      md5: d672a75cd478d184abf14e65f0c28c70
+      sha512: f06f6223094367d1c4405f23de2af2da405934eb0e9477dede630bde390c1df9fca643bc1e0ddab9ffb2db939184f9eca6414122da046b1b76a675c00a4f4338
+
+    - filename: Aegisub-3.0-dict-es_ES.exe
+      language: es_ES
+      notes: Includes thesaurus
+      link: https://web.archive.org/web/20190708032900if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-es_ES.exe
+      md5: 5cc2e87c722d06320690e8f5a471c3d2
+      sha512: 92858fd3436da9a1bc6136505902e40f564256878eabb4dee1f33ff6913acf98d63cd6c706900f8fc00f40c927cfa41fc3d14d3ee49f547a571f79c16562aa75
+
+    - filename: Aegisub-3.0-dict-eu.exe
+      language: eu
+      link: https://web.archive.org/web/20190708033547if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-eu.exe
+      md5: 325fbeefc574de48ae327a8ccc16fc54
+      sha512: 0a6500121ae56d93ed345488b6d88e277536dbdb7b87b0ae90f703401c0e2ba1cae258e27f2fd19b1ade5a2f246276a31c67e6f36e1490b53d76a4d2de6afd30
+
+    - filename: Aegisub-3.0-dict-fr_FR.exe
+      language: fr_FR
+      notes: Includes thesaurus
+      link: https://web.archive.org/web/20190708005534if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-fr_FR.exe
+      md5: b65e4d6761b35c5b21cc9489e941b2e8
+      sha512: 2956b995e7bcd4962b44beb0ac82a17d4f17cc2b22c5b75e2a4c44bb906922df854c02986f18a97379c5a14c9e1de42a8fee43097b90f716bfa29538103a7479
+
+    - filename: Aegisub-3.0-dict-hu_HU.exe
+      language: hu_HU
+      link: https://web.archive.org/web/20190708012443if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-hu_HU.exe
+      md5: dd453b43a228b86a8a12692a259051a4
+      sha512: 0951ae05307f3f33d06f1bf4153dc2a495539baa8f251f5bf730567f1911f6775c229d64eab7490bbb122c163f236e2357dfbdb10f234b8b362bcb5f3a50d508
+
+    - filename: Aegisub-3.0-dict-it_IT.exe
+      language: it_IT
+      notes: Includes thesaurus
+      link: https://web.archive.org/web/20190708042809if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-it_IT.exe
+      md5: d194d6908920894601e05481717996f7
+      sha512: 22b62c0efa916340ad18353fc9752df724794916a6cbe67f21866c3fd51c5fca2b4491f65ed030442832f5994ddba34029b5796bf76b6ffae4dc681381f1787b
+
+    - filename: Aegisub-3.0-dict-nl_NL.exe
+      language: nl_NL
+      link: https://web.archive.org/web/20190708042307if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-nl_NL.exe
+      md5: 691c2b93659eff75dd71bbfa2d086da8
+      sha512: 7fc4aed3ba56eac89a8bfb0920d9cc391b5605ad91e4487a2ee241366be0242889441b74b0e7615fe2b85f04481c76beeddaa4b4b0530a7b457d51323af9ab83
+
+    - filename: Aegisub-3.0-dict-pl_PL.exe
+      language: pl_PL
+      link: https://web.archive.org/web/20190708002625if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-pl_PL.exe
+      md5: b36c95435b38cf58ada90cc6a88dd65d
+      sha512: 6c5c5cb773333151346d7e57a85e1879d20fefa1ebe879e3a91a6ac84ee5062657325866da332873be9d0203eb35ce69fd5f697a2bb3874a54f08a496e4ea25d
+
+    - filename: Aegisub-3.0-dict-pt_BR.exe
+      language: pt_BR
+      link: https://web.archive.org/web/20190708043226if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-pt_BR.exe
+      md5: e3534a0af286c29101692fa7d84bb874
+      sha512: 2a3669207a182861627ac6cf71c2843b1a643fb58bb9600a388de004c8e7c5674525545032ff6e2aa547aeafca5d8556e9f57606d6a003f445e4cdbdfb45d38a
+
+    - filename: Aegisub-3.0-dict-pt_PT.exe
+      language: pt_PT
+      link: https://web.archive.org/web/20190708045831if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-pt_PT.exe
+      md5: d1e9f3442c0807c9745fdc32d2a6051d
+      sha512: b1247248925b00136432a7d4a89e2cb1bdbf1b3df4ab9b1e3e8e90993c2f4bba6b0e4c23ec308769d981f57184160edbef59c36d26945a2160aff3567ba7b532
+
+    - filename: Aegisub-3.0-dict-ru_RU.exe
+      language: ru_RU
+      notes: Includes thesaurus
+      link: https://web.archive.org/web/20190708035226if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-ru_RU.exe
+      md5: 185e8536d7118e6915cf7262e2767d59
+      sha512: d2a695753e49dec5e0ef429992042c840ab10a7ba54ad4ddc324ae541c6797c927cd9c61cf27fd77ebd4d6b53954f8157be67fb92b777cdc54bac5052cc31033
+
+    - filename: Aegisub-3.0-dict-sk_SK.exe
+      language: sk_SK
+      link: https://web.archive.org/web/20190708042500if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-sk_SK.exe
+      md5: 6aa35bf694a29ae964d73c34c8688a73
+      sha512: cdf68cec7c19c553ee45e90d862044049432f26f139615a9543e23459d96df1622c56642f057523d222298693fddb2ed498f659cdeb21664afdb815550fb34c4
+
+    - filename: Aegisub-3.0-dict-sl_SI.exe
+      language: sl_SI
+      link: https://web.archive.org/web/20190708014150if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-sl_SI.exe
+      md5: 4230ed3afdd040132e9c2e59192e87b4
+      sha512: 2072a5ec928a6c122572a9fd240ab327362c92430ad55f5a4da4cda329377b6c48a123037332b62f0341371cc152653b30257fc879194e617a2d967e0df8b470
+
+    - filename: Aegisub-3.0-dict-sr.exe
+      language: sr
+      link: https://web.archive.org/web/20190708013126if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-sr.exe
+      md5: 0ad5b12868ae84cf72428bb610b58a6d
+      sha512: 81d3c16f1af2e6750877e114c408f72fc25418446d5494bae89b88a84488a14a9b0e0fb1387635af498d4c5671754b9090b48535ea4a0386266dd7311a38054b
+
+    - filename: Aegisub-3.0-dict-sv_SE.exe
+      language: sv_SE
+      link: https://web.archive.org/web/20190708022151if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-sv_SE.exe
+      md5: 2079ad9ddc3ca9b0aff30ec4df01b528
+      sha512: 1c94499dc59b700f3e36b88e2e109cd3a32e1e5cf90e8380598d2e9471636ca7fe0401eb1e3543bff8e38e3f2ca850d9d07b6f64661630fe96388b9f46a32c24
+
+    - filename: Aegisub-3.0-dict-sw_TZ.exe
+      language: sw_TZ
+      link: https://web.archive.org/web/20190708041428if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-sw_TZ.exe
+      md5: 42b6c63f8a839e55e12f04c536d67ece
+      sha512: e4b84da3101edac56f014799b888d45883ffbf97dab9301226003de848752a0cefdd39aa29cf3fd94d6b934494a7694cfaf3ddef38ae373ed51ac393189961a4
+
+    - filename: Aegisub-3.0-dict-th_TH.exe
+      language: th_TH
+      link: https://web.archive.org/web/20190708040859if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-th_TH.exe
+      md5: 764e0fb0c7a21769192a3cb88827e576
+      sha512: e7e9fd2cc6d762007c2f1fd67c69aa96feab8112d111f651f751872230430c6a03bc4fdf251033ef404c90118088f5fb1cef60caf0aaf85f854034d4f82ef40d
+
+    - filename: Aegisub-3.0-dict-vi_VN.exe
+      language: vi_VN
+      link: https://web.archive.org/web/20190708035804if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-vi_VN.exe
+      md5: 4d7af495335543f5b1ba5fe186b7087d
+      sha512: f0fc198d448aea8fd7dae0decd3bbb3679b748386665cd387dfcc8ecd0821a87b3108d1ed92bbc36438830ca5cccac6f8aa0d9228f9c7aa4435cbb86b0347dcb
+
+    - filename: Aegisub-3.0-dict-ms_MY.exe
+      language: ms_MY
+      link: https://web.archive.org/web/20190708011321if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-ms_MY.exe
+      md5: 666b027194c1af3ee56c069f12cb1576
+      sha512: 574bf0e7246ff42b0bd31c01420e2a721b5ac0433b514c4c0f69a97d0b3a957f03099b7ca1d95e212104d4b4aadca2eb70001bacf55a0370e6a51f8d99a1b456
+

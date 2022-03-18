@@ -1,3 +1,10 @@
+---
+title: Furigana Tutorial
+menu:
+  docs:
+    parent: tutorials
+weight: 2730
+---
 
 ![Furigana-demo-1](/img/3.2/Furigana-demo-1.png)
 
@@ -27,7 +34,8 @@ around [karaoke timed]({{< relref "Karaoke_Timing_Tutorial" >}}) text. It isn't 
 regular text (e.g. dialogue lines) with general purpose ruby text. A more
 elaborate syntax and more complex layout engine would be required for that.
 
-## Multi-highlight syntax  ##
+## Multi-highlight syntax
+
 A prerequisite for an integral part of the furigana syntax is the
 multi-highlight syntax.
 
@@ -47,7 +55,9 @@ number sign syllables.
 This line shows how multi-highlight syntax is used to mark up kanji and groups
 of kanji that cover multiple syllables:
 
-    {\k5}明日{\k10}#{\k5}#{\k10}ま{\k7}た{\k10}会{\k4}う{\k6}時{\k14}#
+```plaintext
+{\k5}明日{\k10}#{\k5}#{\k10}ま{\k7}た{\k10}会{\k4}う{\k6}時{\k14}#
+```
 
 It generates the following syllable structures:
 
@@ -65,7 +75,8 @@ It generates the following syllable structures:
 </table>
 {{</example-box>}}
 
-## Basic furigana  ##
+## Basic furigana
+
 To add furigana to a syllable, you add a pipe character (|, ASCII 124, Unicode
 U+007C) after the main syllable text, and then add the furigana text after the
 pipe. You can also add furigana to repeat-syllables (number sign syllables for
@@ -81,7 +92,9 @@ with special control characters, see below.
 {{<example-box>}}
 Adding furigana to the example above:
 
-    {\k5}明日|あ{\k10}#|し{\k5}#|た{\k10}ま{\k7}た{\k10}会|あ{\k4}う{\k6}時|と{\k14}#|き
+```plaintext
+{\k5}明日|あ{\k10}#|し{\k5}#|た{\k10}ま{\k7}た{\k10}会|あ{\k4}う{\k6}時|と{\k14}#|き
+```
 
 The following syllables, highlights and furigana are produced:
 
@@ -99,7 +112,8 @@ The following syllables, highlights and furigana are produced:
 </table>
 {{</example-box>}}
 
-## Controlling the layout  ##
+## Controlling the layout
+
 Often the layout produced with the plain furigana syntax isn't exactly what you
 want, or maybe even plain misleading. Because of this, there's two special
 characters that can be used to control how the furigana are laid out.
@@ -115,7 +129,7 @@ furigana, but the furigana for them need to be separate. In that case, put the
 exclamation mark as the first character in the furigana for the first syllable
 of the second word.
 
-The other special character is the less-than sign (<, ASCII 60, Unicode U+003C)
+The other special character is the less-than sign (\<, ASCII 60, Unicode U+003C)
 which marks a "sequence break with float-left". It has the same sequence break
 semantics as the exclamation mark, but also changes the overflow behaviour.
 When the furigana sequence starts with a less-than sign marked furigana
@@ -130,9 +144,11 @@ overlap.
 Here is the same (rather contrived) sample text shown without layout control
 and with each of the two layout control characters:
 
-| ![Furigana-demo-4](/img/3.2/Furigana-demo-4.png) | `{\k10}`中\|ちゅ`{\k10}`#\|う`{\k10}`国\|ご`{\k10}`#\|く<br>`{\k10}`<u>魂\|た</u>`{\k10}`#\|ま`{\k10}`#\|し`{\k10}`#\|い
-| ![Furigana-demo-3](/img/3.2/Furigana-demo-3.png) | `{\k10}`中\|ちゅ`{\k10}`#\|う`{\k10}`国\|ご`{\k10}`#\|く<br>`{\k10}`<u>魂\|!た</u>`{\k10}`#\|ま`{\k10}`#\|し`{\k10}`#\|い
-| ![Furigana-demo-2](/img/3.2/Furigana-demo-2.png) | `{\k10}`中\|ちゅ`{\k10}`#\|う`{\k10}`国\|ご`{\k10}`#\|く<br>`{\k10}`<u>魂\|&lt;た</u>`{\k10}`#\|ま`{\k10}`#\|し`{\k10}`#\|い
+| Result                                           | Script                                                                                                         |
+| ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| ![Furigana-demo-4](/img/3.2/Furigana-demo-4.png) | `{\k10}`中\|ちゅ`{\k10}`#\|う`{\k10}`国\|ご`{\k10}`#\|く<br>`{\k10}`<u>魂\|た</u>`{\k10}`#\|ま`{\k10}`#\|し`{\k10}`#\|い   |
+| ![Furigana-demo-3](/img/3.2/Furigana-demo-3.png) | `{\k10}`中\|ちゅ`{\k10}`#\|う`{\k10}`国\|ご`{\k10}`#\|く<br>`{\k10}`<u>魂\|!た</u>`{\k10}`#\|ま`{\k10}`#\|し`{\k10}`#\|い  |
+| ![Furigana-demo-2](/img/3.2/Furigana-demo-2.png) | `{\k10}`中\|ちゅ`{\k10}`#\|う`{\k10}`国\|ご`{\k10}`#\|く<br>`{\k10}`<u>魂\|\<た</u>`{\k10}`#\|ま`{\k10}`#\|し`{\k10}`#\|い |
 
 It _is_ very hard to tell the difference between the two first as the
 difference is only a few pixels, but it is there. In the first sample, the た
@@ -141,17 +157,14 @@ left-aligns with 魂 in the second. In the second, ちゅうごく is also cente
 above 中国 while it isn't in the first.
 {{</example-box>}}
 
-## Summary  ##
+## Summary
 
-|------|-------|------------------|--------------------------------|----------
-| Char | ASCII | Unicode          | Where                          | Meaning
-|:----:|:-----:|------------------|--------------------------------|----------
-| \#   | 35    | U+0023<br>U+FF03 | Instead of main text           | Extend previous syllable with another highlight
-| \|   | 124   | U+007C<br>U+FF5C | Between main text and furigana | Separate main text and furigana text of a syllable
-| !    | 33    | U+0021<br>U+FF01 | First character of furigana    | Sequence break; prevent joining furigana for this syllable with furigana from previous syllable
-| &lt; | 60    | U+003C<br>U+FF1C | First character of furigana    | Sequence break with float-left; prevent joining furigana for this syllable with furigana from previous syllable, but allow furigana to extend left of main text
-|------|-------|------------------|--------------------------------|----------
-{:.karatable}
+| Char | ASCII | Unicode          | Where                          | Meaning                                                                                                                                                         |
+| :--: | :---: | ---------------- | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  #   |  35   | U+0023<br>U+FF03 | Instead of main text           | Extend previous syllable with another highlight                                                                                                                 |
+|  \|  |  124  | U+007C<br>U+FF5C | Between main text and furigana | Separate main text and furigana text of a syllable                                                                                                              |
+|  !   |  33   | U+0021<br>U+FF01 | First character of furigana    | Sequence break; prevent joining furigana for this syllable with furigana from previous syllable                                                                 |
+|  \<  |  60   | U+003C<br>U+FF1C | First character of furigana    | Sequence break with float-left; prevent joining furigana for this syllable with furigana from previous syllable, but allow furigana to extend left of main text |
 
 Note that every special character can in fact be represented by two different
 Unicode codepoints. The first is the regular character, corresponding to the
@@ -162,7 +175,8 @@ IME off to enter a single or two regular ASCII characters and switch it on
 again. Therefore both the half width (ASCII) and full width versions of the
 characters are accepted.
 
-## Usage in Karaoke Templater  ##
+## Usage in Karaoke Templater
+
 Furigana: [The _furi_ template class]({{< relref "Automation/Karaoke_Templater/Template_modifiers#furi" >}})
 
 Multi-highlight: [The _multi_ modifier]({{< relref "Automation/Karaoke_Templater/Template_modifiers#multi" >}})
@@ -170,18 +184,20 @@ Multi-highlight: [The _multi_ modifier]({{< relref "Automation/Karaoke_Templater
 {{<example-box>}}
 The examples used earlier on this page are all generated using this kara-templater snippet:
 
-    Comment: 0,0:00:00.00,0:00:00.00,Default,,0000,0000,0000,template syl,{\pos(!line.left+syl.center!,!line.middle!)\an5\k!syl.start_time/10!\k$kdur}
-    Comment: 0,0:00:00.00,0:00:00.00,Default,,0000,0000,0000,template furi,{\pos(!line.left+syl.center!,!line.middle-line.height!)\an5\k!syl.start_time/10!\k$kdur}
-    Comment: 0,0:00:00.00,0:00:02.00,Default,,0000,0000,0000,karaoke,{\k15}二|ふ{\k15}#|た{\k10}人|り{\k15}だ{\k57}け{\k5}の{\k6}地|ほ{\k5}球|し{\k8}で
-    Comment: 0,0:00:02.00,0:00:04.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|<た{\k10}#|ま{\k10}#|し{\k10}#|い
-    Comment: 0,0:00:04.00,0:00:06.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|!た{\k10}#|ま{\k10}#|し{\k10}#|い
-    Comment: 0,0:00:06.00,0:00:08.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|た{\k10}#|ま{\k10}#|し{\k10}#|い
+```plaintext
+Comment: 0,0:00:00.00,0:00:00.00,Default,,0000,0000,0000,template syl,{\pos(!line.left+syl.center!,!line.middle!)\an5\k!syl.start_time/10!\k$kdur}
+Comment: 0,0:00:00.00,0:00:00.00,Default,,0000,0000,0000,template furi,{\pos(!line.left+syl.center!,!line.middle-line.height!)\an5\k!syl.start_time/10!\k$kdur}
+Comment: 0,0:00:00.00,0:00:02.00,Default,,0000,0000,0000,karaoke,{\k15}二|ふ{\k15}#|た{\k10}人|り{\k15}だ{\k57}け{\k5}の{\k6}地|ほ{\k5}球|し{\k8}で
+Comment: 0,0:00:02.00,0:00:04.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|<た{\k10}#|ま{\k10}#|し{\k10}#|い
+Comment: 0,0:00:04.00,0:00:06.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|!た{\k10}#|ま{\k10}#|し{\k10}#|い
+Comment: 0,0:00:06.00,0:00:08.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|た{\k10}#|ま{\k10}#|し{\k10}#|い
+```
 
 The font used in MS PMincho 30 pt with the furigana being 15 pt.
 {{</example-box>}}
 
+## Usage in Lua scripts
 
-## Usage in Lua scripts  ##
 It's all in [karaskel]({{< relref "Automation/Lua/Modules/karaskel.lua.md" >}}).
 
 Furigana layout is automatically invoked by `karaskel.preproc_line_pos` if a
@@ -202,5 +218,3 @@ Multi-highlights are always processed even when furigana layout isn't done.
 Multi-highlight data are stored in `syl.highlights`.
 
 {{<todo>}}more details {{</todo>}}
-
-{::template name="automation_navbox" /}

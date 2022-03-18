@@ -2,9 +2,9 @@
 title: What is Aegisub?
 menu:
   docs:
-    parent: Introduction
+    parent: introduction
     name: What is Aegisub?
-weight: 210
+weight: 2000
 ---
 
 Aegisub was originally created as a tool to make typesetting,
@@ -22,4 +22,3 @@ powerful [scripting environment]({{< relref "Automation" >}}) called Automation
 (originally mostly intended for creating karaoke effects, Automation
 can now be used much else, including creating macros and various other
 convenient tools).
-

@@ -1,78 +1,69 @@
 ---
-title: Spell Checker
+title: 拼写检查器
 menu:
   docs:
-    parent: Working with Subtitles
-weight: 340
+    parent: working-with-subtitles
+weight: 3300
 ---
 
-To help you with quality assurance of your subtitle scripts, Aegisub
-features a complete spell checker. It uses the Hunspell library, which is
-based on OpenOffice.org's MySpell, which means it's at least as good as one
-you'd find in a sophisticated word processing program. It can be found in
-the _Subtitles_ menu -> _Spell Checker_. It also spell-checks as you type
-and can to some degree be controlled from the subtitle edit box's
-right-click menu (see [editing subtitles]({{< relref "Editing_Subtitles" >}})).
+为了保障字幕的质量，Aegisub
+特意为您准备了一个完善的拼写检查器。它采用了由 OpenOffice.org 的 MySpell
+发展而来的 Hunspell 拼写检查库，这意味着 Aegisub
+的纠错能力将不亚于同样使用了 Hunspell 的高级文字处理软件
+（※译者注：例如 WPS Office、印象笔记等）
+。您可以通过"*字幕 -> 拼写检查器*
+"打开它，它会在您输入内容的同时进行检查。此外，字幕编辑框的右键菜单中也有与之相关的选项（详见
+[编辑字幕]({{< relref "Editing_Subtitles" >}})）。
 
-### The spell checker dialog ###
-![spell_checker](/img/3.2/spell_checker.png){: class="center"}
+### 拼写检查对话框
 
-The spell checker dialog will go through all misspelled words it can find in
-your script. The area in the lower left of the box displays suggestions to
-replace the misspelled word with; to the right there are a number of
-buttons:
+![spell_checker](/img/3.2/zh/spell_checker.png#center)
 
-Skip Comments
-: Skip over commented lines when looking for misspelled words. Useful
-when your comments are mostly things like karaoke scripts or the
-original script which you're translating to a new language.
+拼写检查对话框将会引导您逐一订正字幕中出现的拼写错误。左侧方框中展示的是针对当前误拼单词的修改建议，它的右侧有一些复选框和按钮：
 
-Ignore UPPERCASE words
-: Skip over words written in all caps. Useful if your subtitles have a sea of
-made-up acronyms and you don't feel like spending the time adding them all to
-the dictionary.
+忽略注释
+: 在检查时跳过注释行。如果您的注释行主要是卡拉OK脚本、未翻译的原文之类的内容，那么建议您勾选。
 
-Replace
-: Replaces the found misspelled word with the chosen replacement. Note
-that the list box can be double-clicked to do this as well.
+忽略大写的单词
+: 在检查时跳过大写的单词。如果您的字幕中含有大量生造的首字母缩略词（※译者注：例如仅限于汉语圈使用的"ACG"就会被判定为拼写错误），并且您不想花时间把它们添加到词典中，就可以勾选此项。
 
-Replace All
-: Replaces _all instances_ of the found misspelled word _in the entire
-script_ with the chosen replacement.
+替换
+: 用选中的修改建议替换当前误拼单词。直接双击某一条建议也是同样的效果。
 
-Ignore
-: Ignore _this instance_ of the misspelled word, but continue to stop
-on other places where this misspelling occurs.
+全部替换
+: 用选中的修改建议替换*整个字幕文件中* 与当前误拼单词相同的*所有*
+  拼写错误。
 
-Ignore All
-: Ignore _all instances_ of this word for this spell-checking session,
-but continue to check for it in the future.
+忽略
+: 忽略*此次* 拼写错误，但在下一次发现相同错误时依然会提示。
 
-Add to dictionary
-: Add the found word to the dictionary so it will not be detected as
-misspelled again.
+忽略全部
+: 忽略与当前误拼单词相同的*所有*
+  拼写错误，但在下一次启动拼写检查时依然会提示。
 
-Remove from dictionary
-: Remove the word currently in the **Replace with** field from the dictionary.
-Can only remove words which were added with the **Add to dictionary** function
-and not words in the standard dictionary.
-{: class="dl-horizontal"}
+添加至词典
+: 将当前误拼单词添加到词典中，从而使其不会再被判定为拼写错误。
 
-At the bottom of the dialog box there is a dropdown box to choose the spell
-checker language.
+从词典移除
+: 将当前显示在**替换为**一栏的单词从词典中移除。只能移除之前**添加至词典**的单词，对于词典中固有的单词则无效。
 
-### Dictionaries ###
-The Windows version of Aegisub comes with a US English dictionary.
-Installers for many other languages are available [on our
-website](http://www.aegisub.org/downloads/#dictionaries). If we don't
-supply a dictionary for your language, check [Mozilla's set of
-dictionaries](https://wiki.mozilla.org/L10n:Dictionaries), or simply
-Google for "hunspell <i>&lt;language&gt;</i> dictionary". We welcome
-submissions of additional dictionaries to package - it can sometimes be hard
-for us to find dictionaries for languages which none of the developers speak.
+对话框底部的下拉列表可以选择拼写检查的语言。
 
-The OS X version of Aegisub includes all of the dictionaries we have.
+▲译者提示：以单词"future"为例，假设它有几次被误拼为"futrue"，另有几次被误拼为"fuutre"，那么当我们对"futrue"选择"全部替换"时，所有的"futrue"就会被一次性订正，而对于"fuutre"则需另行操作。因为这是两种不同的拼写错误，即便主观上两者对应同一个单词；"忽略全部"也是同理。
 
-On Linux your distribution's package manager should have hunspell
-dictionaries. You may need to set the [dictionary path]({{< relref "Options#interface" >}}) to the location where they are installed; one
-common location is `/usr/share/hunspell`.
+### 词典
+
+Aegisub 的 Windows
+版本包含了英语(美国)词典，其他语种词典的安装程序可以在
+[我们的网站](https://aegi.vmoe.info/downloads/#dictionaries)
+上下载。如果没有找到您所需要的语言，可以查看 [Mozilla
+词典集](https://wiki.mozilla.org/L10n:Dictionaries)，或者在 Google
+中搜索"hunspell *\<language>*
+dictionary"。欢迎您协助我们扩充其他语种的词典------如果我们的开发团队中没有人使用某一种语言，那我们也许就很难找到它对应的词典。
+
+OS X 版本则已经内置了现有的全部词典。
+
+在各个发行版的 Linux 系统中，您可以通过软件包管理器来安装 hunspell
+词典。您可能需要在 Aegisub 中将
+[词典文件路径]({{< relref "Options#interface" >}})
+设置为它们实际安装的位置；常见的路径为 `/usr/share/hunspell`。

@@ -1,3 +1,11 @@
+---
+title: Execution envirionment
+menu:
+  docs:
+    parent: karaoke-templater
+weight: 6160
+---
+
 The Lua code in code blocks and on code lines is run in a separate global
 environment such that it won't accidentally disturb the main script
 function.
@@ -15,7 +23,8 @@ changing something in the code execution environment nor can you add new
 ones. However, you can create and re-define the contents of the code
 execution environment.
 
-## Line and syllable information  ##
+## Line and syllable information
+
 The code execution environment contains a few variables pointing to the
 current line and syllable structure being processed, as well as some more
 supporting tables. These are just references to the structures produced by
@@ -25,21 +34,20 @@ modified in any way.
 You should treat all of these except `line` as read-only. If you change the
 other ones, the kara-templater script might start misbehaving.
 
-* **line** - The line currently being produced. Changing this will affect
+- **line** - The line currently being produced. Changing this will affect
   the resulting line in the file. See the **[reference for dialogue line tables]({{< relref "../Lua/Modules/karaskel.lua.md#dialoguelinetable" >}})**.
-* **orgline** - The original line. This is the source line the current
+- **orgline** - The original line. This is the source line the current
   syllable is located on.
-* **syl** - The current syllable structure. If the current template is a
+- **syl** - The current syllable structure. If the current template is a
   _furi_ template, it's the current furigana syllable. If the current
   template has one or both of the _char_ or _multi_ modifiers, this is a
   pseudo-syllable structure, a copy of the original syllable structure with
   several values changed to look like the current part of the syllable
   being processed. Also see the **[reference for syllable tables]({{< relref "../Lua/Modules/karaskel.lua.md#karaokeandfuriganasyllabletables" >}})**.
-* **basesyl** - Usually the same as `syl`, except when the template has the
-  _char_ or _multi_ modifier, then this is the original syllable. (If `syl
-  == basesyl` is true, then the current template is neither _char_ nor
+- **basesyl** - Usually the same as `syl`, except when the template has the
+  _char_ or _multi_ modifier, then this is the original syllable. (If `syl == basesyl` is true, then the current template is neither _char_ nor
   _multi_.)
-* **meta** - Contains various metadata about the script, namely the
+- **meta** - Contains various metadata about the script, namely the
   contents of the _Script Info_ section. Most importantly, it has the
   `res_x` and `res_y` fields describing the script resolution.
 
@@ -50,7 +58,8 @@ templates only has `line` and `orgline` set and both `syl` and `basesyl`
 are `nil`. In _code once_ templates, all of the variables except `meta` are
 `nil`.
 
-## Standard libraries and related things  ##
+## Standard libraries and related things
+
 Both the [**string**](http://www.lua.org/manual/5.1/manual.html#5.4) and
 [**math**](http://www.lua.org/manual/5.1/manual.html#5.6) Lua standard
 libraries are imported into the execution environment, as they are
@@ -74,11 +83,13 @@ There is also the self-reference **`tenv`** variable which refers to the
 code execution environment itself. This means that `tenv.tenv == tenv` is
 true.
 
-## Utility functions  ##
+## Utility functions
+
 These functions help do more complex modifications of the output line (the
 `line` variable) and are unavoidable when creating complex effects.
 
-### retime  ###
+### retime
+
 Synopsis: `retime(mode, startadjust, endadjust)`
 
 ![Auto4-kara-templater-retime-explanation](/img/3.2/Auto4-kara-templater-retime-explanation.png)
@@ -94,33 +105,33 @@ The _startadjust_ and _endadjust_ parameters slightly change meaning based
 on the mode, but generally is a number of milliseconds added to the "base"
 time controlled by the mode.
 
-Possible _mode_s:
+Possible \_mode_s:
 
-* **abs** or **set** - Both _startadjust_ and _endadjust_ are used as
+- **abs** or **set** - Both _startadjust_ and _endadjust_ are used as
   absolute time values to set the start and end time of the line directly.
-* **preline** - Intended to make effects that happen before the actual line
+- **preline** - Intended to make effects that happen before the actual line
   start. Both start and end time of the line are set to the start time of
   the line, then _startadjust_ is added to the start time and _endadjust_
   added to the end time. Usually _startadjust_ should be negative here and
   _endadjust_ be zero.
-* **line** - Use the regular line timings and just add _startadjust_ to the
+- **line** - Use the regular line timings and just add _startadjust_ to the
   start time and _endadjust_ to the end time.
-* **start2syl** - Intended to make the look of the syllable from the start
+- **start2syl** - Intended to make the look of the syllable from the start
   of the line until it is highlighted. The start time of the line is kept
   and the end time is set to the start time of the syllable. Use
   _startadjust_ and _endadjust_ to offset the times.
-* **presyl** - Similar to _preline_ but for the syllable timing instead.
-* **syl** - From start of syllable to end of syllable.
-* **postsyl** - Similar to _presyl_ but the base timing is the syllable end
+- **presyl** - Similar to _preline_ but for the syllable timing instead.
+- **syl** - From start of syllable to end of syllable.
+- **postsyl** - Similar to _presyl_ but the base timing is the syllable end
   time instead of start time. You will usually want to use a zero
   _addstart_ and positive _addend_ here.
-* **syl2end** - The time from the end of the syllable to the end of line,
+- **syl2end** - The time from the end of the syllable to the end of line,
   similar to _start2syl_.
-* **postline** - Similar to _postsyl_ but for the line timing instead.
+- **postline** - Similar to _postsyl_ but for the line timing instead.
 
 There is also a special _mode_:
 
-* **sylpct** - Both of _startadjust_ and _endadjust_ are treated as
+- **sylpct** - Both of _startadjust_ and _endadjust_ are treated as
   percentage values from 0 to 100 and are used to set the line timing to
   cover that part of the syllable's time.
 
@@ -134,7 +145,10 @@ cause it to output nothing when used in code blocks, but still evaluate to
 true if used in boolean expressions.
 
 {{<example-box>}}
-    template syl: !retime("preline", -1000, 0)!{\pos($scenter,$smiddle)\an5\fscx0\fscy0\t(\fscx100\fscy100)}
+
+```plaintext
+template syl: !retime("preline", -1000, 0)!{\pos($scenter,$smiddle)\an5\fscx0\fscy0\t(\fscx100\fscy100)}
+```
 
 This creates a kind of "pop-in" effect for the syllables that lasts 1
 second (1000 milliseconds) before the actual line timing. The two important
@@ -143,7 +157,10 @@ offset is negative, -1000, because the start time needs to be moved
 backwards.
 {{</example-box>}}
 {{<example-box>}}
-    template syl: !retime("syl", 0, 0)!{\pos($x,$y)\t(\fscx360)}
+
+```plaintext
+template syl: !retime("syl", 0, 0)!{\pos($x,$y)\t(\fscx360)}
+```
 
 Makes the syllable spin around itself during its highlight. Unless you also
 have _syl_ templates retimed to `start2syl` and `syl2end` the
@@ -153,8 +170,11 @@ end times in the `\t` tag, as they default to the duration of the entire
 line and here the duration of the line is the duration of the syllable.
 {{</example-box>}}
 {{<example-box>}}
-    template syl: !retime("sylpct", 0, 50)!{\move($x,$y,$x,!$y-10!)}
-    template syl: !retime("sylpct", 50, 100)!{\move($x,!$y-10!,$x,$y)}
+
+```plaintext
+template syl: !retime("sylpct", 0, 50)!{\move($x,$y,$x,!$y-10!)}
+template syl: !retime("sylpct", 50, 100)!{\move($x,!$y-10!,$x,$y)}
+```
 
 These two templates together makes the syllable move 10 pixels upwards
 during the first half of its highlight and back down during the last half.
@@ -164,7 +184,8 @@ split the line into many "chained" times you can create an effect of the
 same syllable moving in several directions.
 {{</example-box>}}
 
-### relayer  ###
+### relayer
+
 Synopsis: `relayer(newlayer)`
 
 Change the Layer field of the generated line to _newlayer_.
@@ -175,14 +196,18 @@ Layer field on the template line, and it will transfer to the generated
 lines. This function is only needed when the layer number is dynamic.
 
 {{<example-box>}}
-    template syl: !relayer(syl.i*5+20)!
+
+```plaintext
+template syl: !relayer(syl.i*5+20)!
+```
 
 Each syllable generated from the line gets a progressively higher layer
 number. The first syllable gets in layer 25, the second in layer 30 and so
 on, each syllable getting a layer 5 larger than the previous.
 {{</example-box>}}
 
-### restyle  ###
+### restyle
+
 Synopsis: `restyle(newstyle)`
 
 Change the Style field on the generated line to _newstyle_.
@@ -197,7 +222,8 @@ sizing information will be invalid.
 
 No example because the function has limited use.
 
-### maxloop  ###
+### maxloop
+
 Synopsis: `maxloop(newmax)`
 
 Dynamically control the number of times a template will be looped.
@@ -207,19 +233,26 @@ Dynamically control the number of times a template will be looped.
 You do not need to use the loop modifier on templates to use this function.
 
 {{<example-box>}}
-    template syl: !maxloop(syl.width + 2*line.styleref.outline)!{\clip(!line.left+syl.left-line.styleref.outline+j-1!,0,!line.left+syl.left-line.styleref.outline+j!,!meta.res_y!)\an5\move(!line.left+syl.center!,!line.middle!,!line.left+syl.center!,!line.middle+math.random(-20,20)!,$start,$end)\shad0}
+
+```plaintext
+template syl: !maxloop(syl.width + 2*line.styleref.outline)!{\clip(!line.left+syl.left-line.styleref.outline+j-1!,0,!line.left+syl.left-line.styleref.outline+j!,!meta.res_y!)\an5\move(!line.left+syl.center!,!line.middle!,!line.left+syl.center!,!line.middle+math.random(-20,20)!,$start,$end)\shad0}
+```
 
 Cut each syllable into a number of slivers, depending on the size of the
 syllable. Each sliver moves randomly on highlight.
 {{</example-box>}}
 {{<example-box>}}
-    template syl: !maxloop(j+1)!
+
+```plaintext
+template syl: !maxloop(j+1)!
+```
 
 Makes an infinite loop. It continually sets `j` one higher, making the loop
 never complete.
 {{</example-box>}}
 
-### loopctl  ###
+### loopctl
+
 Synopsis: `loopctl(newj, newmaxj)`
 
 Control both loop variables. This function has questionable utility.
@@ -229,12 +262,14 @@ _newj_ sets the new value of `tenv.j` and _newmaxj_ sets the new value of
 
 No example because the function has limited use.
 
-### remember and recall ###
+### remember and recall
+
 Synopsis:
-* `remember(name, value)`
-* `remember_if(name, value, condition)`
-* `recall(name)`
-* `recall(name, default)`
+
+- `remember(name, value)`
+- `remember_if(name, value, condition)`
+- `recall(name)`
+- `recall(name, default)`
 
 This suite of functions lets you calculate a value in one template and re-use
 it in later templates. This is especially useful together with the
@@ -261,8 +296,11 @@ is a truthy value (i.e. not `nil` or `false`.) It still returns the value even
 if the condition is falsey.
 
 {{<example-box>}}
-    template syl: {\frz!remember("entryrotation",math.random(100,200))!\fscx300\fscy300\t(0,300,\frz0\fscx100\fscy100)\pos($x,$y)}
-    template syl: {\frz-!recall("entryrotation")!\fscx300\fscy300\t(0,300,\frz0\fscx100\fscy100)\pos($x,$y)\fad(300,0)}
+
+```plaintext
+template syl: {\frz!remember("entryrotation",math.random(100,200))!\fscx300\fscy300\t(0,300,\frz0\fscx100\fscy100)\pos($x,$y)}
+template syl: {\frz-!recall("entryrotation")!\fscx300\fscy300\t(0,300,\frz0\fscx100\fscy100)\pos($x,$y)\fad(300,0)}
+```
 
 The first line chooses a random number between 100 and 200 degrees, and stores
 the chosen value with the name `"entryrotation"`. It then uses that number to set
@@ -275,7 +313,10 @@ otherwise does the same effect. The result is two copies of the syllable
 rotating opposite each other, but the same amount.
 {{</example-box>}}
 {{<example-box>}}
-    template syl: {\fscx!remember_if("longsyllables", recall("longsyllables", 100)+10, #syl.duration>200)!}
+
+```plaintext
+template syl: {\fscx!remember_if("longsyllables", recall("longsyllables", 100)+10, #syl.duration>200)!}
+```
 
 Here `remember_if` and `recall` are combined, together with a default value,
 to set up a value that updates itself every time it is used.
@@ -289,20 +330,21 @@ The effect is that the `\fscx` gets 10 bigger for all syllables, every time
 a "long" syllable is encountered.
 {{</example-box>}}
 
+## Template execution data
 
-## Template execution data  ##
 These variables either give some further information on the status of the
 executing template or modify the rules for template execution in some way.
 They generally work together with specific template modifiers.
 
-### Looping templates  ###
+### Looping templates
+
 When a template with the _loop_ or _repeat_ modifier is running, two new
 variables are introduced in the code execution environment, **`j`** and
 **`maxj`**.
 
-* **maxj** is the number of loops, i.e. simply the parameter given to the
+- **maxj** is the number of loops, i.e. simply the parameter given to the
   _loop_ modifier.
-* **j** is the loop iteration counter. It starts at 1 in the first
+- **j** is the loop iteration counter. It starts at 1 in the first
   iteration and _maxj_ in the last.
 
 If you change `j` or `maxj` while a template is executing, you can affect
@@ -311,7 +353,10 @@ the number of iterations the loop makes. The
 function is convenient for making dynamic loops.
 
 {{<example-box>}}
-<code><pre>template syl loop 5: {\an5\pos($scenter,$smiddle)\1a&HFF&\3a&Hcc&\t($start,$end,\fscx!100+<u>j</u>\*10!\fscy!100+<u>j</u>\*10!\3a&HFF&)}</pre></code>
+
+```plaintext
+template syl loop 5: {\an5\pos($scenter,$smiddle)\1a&HFF&\3a&Hcc&\t($start,$end,\fscx!100+j\*10!\fscy!100+j\*10!\3a&HFF&)}
+```
 
 The syllable fill is hidden so only the border is visible, then several
 copies of the that border-only line is made through the loop, and made to
@@ -322,7 +367,10 @@ does have a border.
 {{</example-box>}}
 
 {{<example-box>}}
-<code><pre>template syl loop 20: {\move($x,$y,!$x+15\*math.cos(math.pi\*2\*<u>j</u>/<u>maxj</u>)!,!$y+15\*math.sin(math.pi\*2\*<u>j</u>/<u>maxj</u>)!,$start,$end)\t($start,$end,\alpha&HFF&)}</code></pre>
+
+```plaintext
+template syl loop 20: {\move($x,$y,!$x+15\*math.cos(math.pi\*2\*j/maxj)!,!$y+15\*math.sin(math.pi\*2\*j/maxj)!,$start,$end)\t($start,$end,\alpha&HFF&)}
+```
 
 Here looping is used to [calculate several points on a
 circle](http://en.wikipedia.org/wiki/Unit_circle#Trigonometric_functions_on_the_unit_circle)
@@ -332,7 +380,8 @@ because `j/maxj` is used to calculate how large a portion of the total
 number of loops have been completed.
 {{</example-box>}}
 
-### Conditional templates with fxgroup  ###
+### Conditional templates with fxgroup
+
 The _fxgroup_ modifier uses a special table **`fxgroup`** in the code
 execution environment to control whether a template will be executed or
 not.
@@ -348,10 +397,13 @@ they're used in Lua code it's best to avoid ones that overlap with Lua
 reserved words such as `end`, `break`, `return` and several more.
 
 {{<example-box>}}
-<code><pre>code syl: <u>fxgroup.long = (syl.duration > 200)</u>
+
+```plaintext
+code syl: fxgroup.long = (syl.duration > 200)
 template syl noblank: all here:
-template syl <u>fxgroup long</u>: is long:
-karaoke: {\k10}huh? {\k40}wee~~</code></pre>
+template syl fxgroup long: is long:
+karaoke: {\k10}huh? {\k40}wee~~
+```
 
 It's important to understand the template execution order to understand
 this example. For each input syllable (i.e. "huh?" and "wee~~") all the
@@ -374,5 +426,3 @@ The first template, because it has the "noblank" modifier, and the second
 because the zero'th syllable's duration is too short for the fxgroup to be
 enabled.
 {{</example-box>}}
-
-{::template name="automation_navbox" /}

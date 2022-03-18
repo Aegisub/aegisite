@@ -1,44 +1,54 @@
 ---
-title: Tutorials
+title: 教程
 menu:
   docs:
-    parent: Introduction
-weight: 260
+    parent: introduction
+    identifier: tutorials
+weight: 2700
 ---
 
-The following tutorials are available for Aegisub:
+以下教程可供学习 Aegisub（视频使用英语讲解）：
 
-## Video Tutorials (Screencasts)  ##
+## 视频教程（录屏
 
-### Dialogue Timing  ###
-* Description: A video describing how to time using Aegisub.
-* By: Karl Blomster
-* Link: <http://mod16.org/aegisub/timingtutorialimprovisation.mkv>
+### 对白计时
 
-* Description: A video showing an experienced user timing at full speed in Aegisub.
-* By: Karl Blomster
-* Link: <http://mod16.org/aegisub/timing-fullspeed.mkv>
+- 简介：讲解如何使用 Aegisub 制作时间轴。
 
-### Kanji Timer  ###
-* Description: A video tutorial demonstrating how the kanji timer can be used to synchronize kanji timing to romaji timing.
-* By: Niels Martin Hansen
-* Details: XviD MP3 AVI, 5 min 20 sec, 12 MB
-* Link: <http://jfs.itcamefromjapan.net/aegisub/demovids/kanji-timer.avi>
+- 作者：Karl Blomster
 
-### Karaoke Timing  ###
-{::template name="todo"}Actually do this{:/}
+- 链接：<http://mod16.org/aegisub/timingtutorialimprovisation.mkv>
 
-* By: Niels Martin Hansen
+- 简介：展示一位经验丰富的用户使用 Aegisub 全速打轴。
 
-### Visual Typesetting  ###
-* Description: A video tutorial demonstrating how to use Aegisub 2's new Visual Typesetting features.
-* By: Rodrigo Braz Monteiro
-* Details: Matroska/XviD/Vorbis, 10 min 22 sec, 25 MB
-* Subtitles: English, Portuguese (Brazil) (by amz), French (by shawurai), German (by Sqall)
-* Link: [malakith.net](http://www.malakith.net/amz/blah/screencast/%5bAegisub%5d_Visual_Typesetting_Tutorial_%5b8B24834E%5d.mkv)
+- 作者：Karl Blomster
 
-## Text tutorials  ##
-* [Karaoke timing]({{< relref "Karaoke_Timing_Tutorial" >}}) (work in progress) — Enter the words for a song and add time-codes to the words
-* [Karaoke Templater]({{< relref "Automation/Karaoke_Templater" >}}) (incomplete) — Easy way to add special effects to karaoke, ranging from the most basic effects to very advanced ones.
+- 链接：<http://mod16.org/aegisub/timing-fullspeed.mkv>
 
+### 汉字计时器
 
+- 简介：演示如何使用汉字计时器将汉字时间轴与罗马字时间轴进行同步。
+- 作者：Niels Martin Hansen
+- 详情：XviD MP3 AVI，5 分 20 秒，12 MB
+- 链接：<http://jfs.itcamefromjapan.net/aegisub/demovids/kanji-timer.avi>
+
+### 卡拉OK计时
+
+{{<todo>}}制作中{{</todo>}}
+
+- 作者：Niels Martin Hansen
+
+### 可视化排版g
+
+- 简介：演示如何使用 Aegisub 2 全新的可视化排版功能。
+- 作者：Rodrigo Braz Monteiro
+- 详情：Matroska/XviD/Vorbis，10 分 22 秒，25 MB
+- 字幕：英语、葡萄牙语(巴西)（by AMZ）、法语（by shawurai）、德语（by Sqall）
+- 链接：[malakith.net](http://www.malakith.net/amz/blah/screencast/%5bAegisub%5d_Visual_Typesetting_Tutorial_%5b8B24834E%5d.mkv)
+
+## 文字教程
+
+- [卡拉OK计时]({{< relref "Karaoke_Timing_Tutorial" >}}) --- 输入歌曲的歌词并为其添加时间码（K值）。
+- [Karaoke Inline effects Tutorial]({{< relref "Karaoke_inline-fx" >}})
+- [Karaoke Furigana Tutorial]({{< relref "Furigana_karaoke" >}})
+- [卡拉OK模版]({{< relref "Automation/Karaoke_Templater" >}}) (待完善) ---  通过简单的方式为卡拉OK添加特效，从最基础的效果到非常高级的效果均有涉及。

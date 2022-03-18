@@ -2,8 +2,9 @@
 title: Lua Reference
 menu:
   docs:
-    parent: Automation
-weight: 630
+    parent: automation
+    identifier: lua-reference
+weight: 6200
 ---
 
 The Automation 4 Lua scripting engine is based on the version 5.1 series of
@@ -15,7 +16,8 @@ structures provided by the Aegisub Automation 4 Lua interface. Please see
 [the Lua 5.1 manual](http://www.lua.org/manual/5.1/) for details on the
 language itself and its standard libraries.
 
-## General overview of the organisation of Automation 4 Lua  ##
+## General overview of the organisation of Automation 4 Lua
+
 The smallest legal Automation 4 Lua script is an empty file, but that won't
 be able to do anything interesting.
 
@@ -60,28 +62,27 @@ Automation 4 Lua scripts without using the provided standard include files
 you will find that for anything but the simplest scripts you will need some
 of the functions provided by the includes.
 
-## The Automation 4 Lua core API  ##
+## The Automation 4 Lua core API
+
 Automation 4 Lua provides various APIs that can be grouped in these general
 categories.
 
 [Script and feature registration]({{< relref "./Lua/Registration" >}})
 : Deals with advertising what features a script provides and a few other
-script meta data.
+  script meta data.
 
 [Subtitle file interface]({{< relref "./Lua/Subtitle_file_interface" >}})
 : Deals with use of the _subtitles_ object, the principal way of accessing
-and modifying the subtitle data.
+  and modifying the subtitle data.
 
 [Progress reporting and debug output]({{< relref "./Lua/Progress_reporting" >}})
 : providing feedback to the user while a script is running, outputting
-hints and warnings to the user and printing debug information.
+  hints and warnings to the user and printing debug information.
 
 [Displaying dialogue boxes and getting user input]({{< relref "./Lua/Dialogs" >}})
 : requesting user input during macro execution by dialogue boxes and
-providing a configuration interface for export filters.
+  providing a configuration interface for export filters.
 
 [Miscellaneous APIs]({{< relref "./Lua/Miscellaneous_APIs" >}})
 : for e.g. getting the rendered size of text and getting video frame rate
-information.
-
-{::template name="automation_navbox" /}
+  information.

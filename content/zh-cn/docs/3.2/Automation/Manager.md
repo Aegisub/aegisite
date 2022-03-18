@@ -1,74 +1,53 @@
-The Automation Manager window is used to view, load and unload
-[Automation]({{< relref "Automation" >}}) scripts.
+---
+title: 自动化脚本管理器
+menu:
+  docs:
+    parent: automation
+weight: 6300
+---
 
-The Automation Manager window is opened from the _Automation_ menu or with
-the ![Automation-toolbar-icon](/img/3.2/Automation-toolbar-icon.png) toolbar button.
+自动化管理器窗口被用来查看，读取和卸载 [自动化]({{< relref "Automation" >}})脚本。
+
+自动化管理器窗口从自动化菜单或者![Automation-toolbar-icon](/img/3.2/Automation-toolbar-icon.png)按键打开。
 
 ![automation_manager](/img/3.2/automation_manager.png)
 
-## The script list  ##
+## 脚本列表
 
-The main area of the window is a list of all _script files_ loaded. It's
-important to remember that one script file can contain several
-[features]({{< relref "../Glossary/Automation_script_feature" >}}), for example one script file
-can define two [macros]({{< relref "../Glossary/Macro" >}}) and one export filter.
+窗口的主要区域是已经被挂载的脚本文件.记住一个脚本文件可能含有几个
+[features]({{< relref "../Glossary/Automation_script_feature" >}})，例如一个脚本文件能定义两个[宏]({{< relref "../Glossary/Macro" >}})和一个输出过滤器。
 
-Scripts can be loaded in one of two ways. In the screenshot above, most of
-the scripts are _global_ (autoloaded), as indicated by the "G" in the
-leftmost column. Global scripts are automatically loaded along with Aegisub.
-They are put in one of the [Automation_autoload_folders](#). You can not
-unload global scripts; you must remove them from the autoload directory, and
-then rescan the autoload directory.
+脚本能以两种方式被挂载。上图中,大部分的脚本是 *全局的(global)*
+(自动挂载)，以最左边的字母"G"来指明。全局脚本是被自动地加载，同Aegisub同时启动.它们位于Automation下的autoload目录。你不能卸载全局脚本，你必须将它们从自动挂载路径下移走，然后重新扫描自动读取目录.
 
-The last script in the screenshot above is an example of the other type of
-script: _local_ scripts, as indicated by the "L". Scripts added manually via
-the Add button are local to the subtitle file being worked on, and are
-automatically unloaded when the current subtitle files is closed, then
-reloaded along with the subtitle file when you reopen it.
+上图中的最后一个脚本是另一个类型的脚本： *本地(local)*
+脚本，以最左边的字母"L"来指明。
+脚本通过'添加'按键，手动添加到当前的字幕文件，并自动卸载当字幕文件关闭，当您重新打开它，脚本会随字幕文件被重新加载。
 
-Sometimes a script is shown in red in the list. This only happens if the
-script could not be loaded for some reason. The reason will usually be shown
-in the Description column. If the description of the error is too long to
-read, you can select the script and click the Show Info button to see it
-all. Scripts failing to load should only happen if you are writing your own
-scripts and manage to make a programming error.
+有时候一个脚本文件在列表中看起来可能是红色的。这件事情只发生在脚本因为某些原因无法被读取的时候。原因会被显示在描述栏。如果描述的错误很长很难读，你可以选择该脚本，后点击显示信息，看到完整的错误提示。脚本读取失败有可能发在你自己编写的脚本中出现编程错误的时候。
 
-## The buttons  ##
+## 按键
 
-There are 6 buttons at the bottom of the Automation Manager window:
+在自动化管理器窗口有六个按键：
 
-* The **Add** button is used to load a local script.
-* The **Remove** button is used to unload a local script. It is only
-  available when a local script is selected.
-* The **Reload** button unloads and reloads the selected script file from
-  disk. You can use this to reload scripts you're developing, but also see
-  below for other ways to do this.
-* The **Show Info** buttons shows detailed information on the selected
-  script, as well as the entire Automation system.
-* The **Rescan Autoload Dir** button scans the autoload folders to see if
-  any scripts have been added or removed since Aegisub was started. All new
-  scripts in the autoload directories are then loaded, scripts that have been
-  removed are unloaded and all other global scripts are reloaded.
-* The **Close** button closes the Automation Manager window.
+- **载入** 按键用于加载一个本地脚本。
+- **移除**
+  按键用于移除一个本地脚本，只有当本地脚本被选定时才会起作用。
+- **重新载入**按键卸载然后从本地重新挂载已选择的脚本文件。你可以用这个功能去重新载入脚本，当你做开发工作时，但是也可以看看下面的方法。
+- **显示信息** 按键
+  会显示出已选择脚本的详细信息，也能是完整的自动化系统。
+- **重新扫描自动载入文件夹** 按键扫描 autoload
+  目录去确认是否有脚本被添加或者被移除，从Aegisub启动开始。所有autoload目录下的新脚本随后被读取。
+- **关闭** 按键关闭自动化管理器窗口。
 
-## Other ways to reload scripts  ##
+## 重新读取脚本的另外方式
 
-If you're developing scripts you might find yourself returning to the
-Automation Manager often to reload your script. There are also faster ways
-to reload scripts though:
+如果你在开发脚本，你可能会发现你会回到自动化管理器窗口去重新读取你的脚本。其实还有一些快捷的方式去重读脚本：
 
-* When the [Export]({{< relref "Exporting" >}}) dialog is opened all local scripts are
-  reloaded. You can change this in the [Options]({{< relref "Options" >}})
-  dialog.
-* Hold the Ctrl key and click the Automation toolbar button to rescan the
-  autoload folders.
-* Hold both the Ctrl and Shift keys and click the Automation toolbar button
-  to reload all scripts, also rescanning the autoload folders.
-* While there is no default hotkey to reload all scripts, you can add one in
-  the [preferences dialog]({{< relref "Options#hotkeys" >}}).
+- 当打开[导出]({{< relref "Exporting" >}})对话框时，所有本地脚本会被重新加载。您可以在[选项]({{< relref "Options" >}})对话框里改变这个设定。
+- 按住Ctrl键的同时点击工具栏里的自动化按钮可以重新扫描autoload文件夹。
+- 同时按住Ctrl和Shift键并点击工具栏里的自动化按钮可以重新加载所有脚本，当然同时也会重新扫描autoload文件夹。
+- 默认是没有重新加载脚本的快捷键的，不过您可以在[选项对话框]({{< relref "Options#hotkeys" >}})里设置一个。
 
-The Automation Manager won't open when any of there methods are used, but
-you will get an error message window if a script failed to load. Note that
-you can double-click on the rows in the error dialog for more information.
-
-{::template name="automation_navbox" /}
+不通过上面的方法，自动化脚本管理器是不会打开的，但如果有脚本载入错误的话你会看到一个错误提示对话框。
+注意您可以在错误对话框的行上双击以获得更多信息。

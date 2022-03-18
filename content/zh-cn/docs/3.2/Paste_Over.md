@@ -1,31 +1,24 @@
 ---
-title: Paste Over
+title: 选择性粘贴
 menu:
   docs:
-    parent: Working with Subtitles
-weight: 360
+    parent: working-with-subtitles
+weight: 3500
 ---
 
-The **paste over** tool is a "smart" variant of the good old Ctrl-c Ctrl-v
-combo. It allows you to paste any given field(s) of one or more lines to the
-corresponding fields of other lines, without affecting the other fields. It can
-be found under the _Edit_ menu -> _Paste lines over_, or by right-clicking on
-the subtitles grid.
+**选择性粘贴**是传统的 `Ctrl`+`C` & `Ctrl`+`V`
+组合键的"智能"升级版。它可以在不影响其他字段的情况下，将一行或多行字幕中特定字段的内容粘贴至对应的区域。您可以通过"*编辑
+-> 选择性粘贴* "来打开，也可以在字幕栏的鼠标右键菜单中找到它。
 
-To use it, first copy one or more lines with the familiar copy function
-(right-click -> copy, or Ctrl-c). Then select the line(s) you want to paste to,
-and click _paste lines over_ (or press Ctrl-Shift-v). You will then get a
-dialog box that looks like this:
+使用时，先按常规的方式复制若干行字幕（单击右键 -> *复制行*，或
+`Ctrl`+`C`），然后选中您想要粘贴到的那一行（或几行），打开"*选择性粘贴*
+"（快捷键 `Ctrl`+`Shift`+`V`），您将会看到如下对话框：
 
-![Paste_over](/img/3.2/Paste_over.png){: class="center"}
+![Paste_over](/img/3.2/zh/Paste_over.png#center)
 
-Tick the fields you want to paste (the buttons below the checkboxes can be used
-to select all fields (in which case paste over is almost the same as normal
-pasting except it replaces existing lines instead of inserting new ones), no
-fields (in which case it does nothing), just the text field, or both time
-fields) and press OK. The fields you selected will then be pasted. It's as
-simple as that.
+勾选您想要粘贴的字段（下方的按钮可供快捷操作："全部"会勾选所有字段，与普通的粘贴几乎没有区别，只不过这样会替换现有的行而不是插入新的行；"全不选"即取消勾选所有字段；"时间"对应开始时间和结束时间；"文字"则仅勾选文本），然后点击"确认"，所选字段的内容便会粘贴至相应区域，就这么简单。
 
-Do note that the paste over function isn't limited to using lines copied from
-Aegisub itself; you are free to copy correctly formatted lines from any text
-editor, chat program, web browser etc. etc.
+请注意，选择性粘贴的内容来源并不局限于 Aegisub
+自身，您可以自由地从任何文本编辑器、聊天软件、浏览器等进行复制，只要复制的内容格式符合规范即可。
+
+▲译者提示：如果要将已经打好的空白时间轴与翻译完成的文本进行合并，这项功能就会派上用场。

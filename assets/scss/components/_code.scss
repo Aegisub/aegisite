@@ -21,14 +21,15 @@ pre code {
   display: block;
   overflow-x: auto;
   line-height: $line-height-base;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem !important;
   tab-size: 4;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
 }
 
-.hljs {
-  padding: 1.25rem 1.5rem;
+code.inline-code {
+  padding: 0.25rem 0.5rem !important;
+  display: inline;
 }
 
 @include media-breakpoint-down(sm) {
@@ -49,14 +50,18 @@ pre code::-webkit-scrollbar {
 }
 
 pre code::-webkit-scrollbar-thumb {
-  background: $gray-200;
+  background: $gray-400;
 }
 
 pre code:hover {
   scrollbar-width: thin;
-  scrollbar-color: $gray-200 transparent;
+  scrollbar-color: $gray-500 transparent;
 }
 
 pre code::-webkit-scrollbar-thumb:hover {
-  background: $gray-200;
+  background: $gray-500;
+}
+
+code.language-mermaid {
+  background: none;
 }

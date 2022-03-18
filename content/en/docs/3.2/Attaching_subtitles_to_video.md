@@ -2,20 +2,22 @@
 title: Applying Subtitles
 menu:
   docs:
-    parent: Working with Subtitles
-weight: 330
+    parent: working-with-subtitles
+weight: 3200
 ---
 
 In digital encoding, there are two main ways of including subtitles in a video:
 softsubbing and hardsubbing. Both methods has unique advantages and
 disadvantages, along with various arguments both for and against each method.
 
-## Hardsubbing ##
+## Hardsubbing
+
 Hardsubbing is a method that "burns in" subtitles into the actual video portion
 of a movie. Digital hardsubs are much like subtitled VHS tapes; the subtitles
 cannot be turned off.
 
-### Advantages of Hardsubbing ###
+### Advantages of Hardsubbing
+
 Hardsubbing is usually much less demanding on the playback device. Since the
 text is already part of the video, it will only take as much processing as the
 unsubtitled video would. You are also often able to make special effects that
@@ -36,7 +38,8 @@ hardsubs, where the style is preserved. Also, these stylings will show back
 exactly the same on any device, unlike softsubs which depend on the playback
 device to properly intrepret and display the stylings.
 
-### Disadvantages of Hardsubbing ###
+### Disadvantages of Hardsubbing
+
 Despite what some may call numerous advantages for hardsubbing, there are
 several distinct disadvantages that should be evaluated before making a
 decision.
@@ -57,7 +60,8 @@ increase in bitrate necessary is typically around 3 to 10%.
 Changing the subtitles requires a re-encode of the video source, which can add
 a lot of time and extra work to the release process.
 
-## Softsubbing ##
+## Softsubbing
+
 Softsubbing is a method that keeps subtitles seperate from the video and relies
 on the playback device to combine the two when the video is being played. This
 method can be best compared to subtitles on most DVDs. The subtitling can be
@@ -66,7 +70,8 @@ one combined media file. Unlike with a DVD though, digital softsubs are
 actually text (DVD subtitles are pictures) which adds many nice features at the
 cost of complexity.
 
-### Advantages of Softsubbing ###
+### Advantages of Softsubbing
+
 Softsubs are much clearer on display. Since they are not part of the video
 image, video compression does not affect them, and with a good subtitle
 renderer, they are sharp and crisp - a huge benefit to readability.
@@ -83,7 +88,8 @@ Without a huge impact on size, multiple languages can be supported in one video 
 If you find a subtitling mistake in a file, you can fix it without having to
 re-encode the video - saving a lot of time.
 
-### Disadvantages of Softsubbing ###
+### Disadvantages of Softsubbing
+
 Softsubs add processing complexity to the video. The playback device has to
 render and overlay the text before displaying the video, as a result, this
 means that low-powered devices will not be able to play the video.
@@ -107,7 +113,8 @@ time, and may cause playback issues if the device cannot handle the processing
 requirements. A solution for this is to hardsub the complex parts such as
 opening and ending karaoke, and softsub the normal dialog.
 
-## What method do I choose? ##
+## What method do I choose?
+
 The method you should choose depends greatly on your audience. Will they have
 relatively new and powerful playback devices? Will they possibly be able to
 install something to play back softsubs if they don't have it? Is your
@@ -131,7 +138,8 @@ If you want to speed up your release process, use softsubs. They are faster to
 fix if an error is found, and allow you to release as soon as the subtitles are
 done, rather than waiting a few hours for the video to be encoded.
 
-## Hardsubbing with Avisynth ##
+## Hardsubbing with Avisynth
+
 Many people use the Avisynth package to add filters to their video to clean up
 defects, or otherwise manipulate the video image before encoding it. It is a
 very flexible tool, and can be also used to add subtitles directly to the video
@@ -153,10 +161,12 @@ favourite text editor) and save it with the .avs extension (beware that Windows
 might be hiding your extension, and you might actually be making a .avs.txt
 file). Here is an example:
 
-    LoadPlugin("c:\program files\aegisub\csri\vsfilter.dll")
-    AVISource("c:\projects\project1\video\mycoolvideo.avi")
-    TextSub("c:\projects\project1\subs\mainsubtitles.ass")
-    TextSub("c:\projects\project1\subs\endkaraoke.ass")
+```plaintext
+LoadPlugin("c:\program files\aegisub\csri\vsfilter.dll")
+AVISource("c:\projects\project1\video\mycoolvideo.avi")
+TextSub("c:\projects\project1\subs\mainsubtitles.ass")
+TextSub("c:\projects\project1\subs\endkaraoke.ass")
+```
 
 The above script will take an AVI file (mycoolvideo.avi), and then draw the
 contents of two subtitle files on the video. You can then encode this video in
@@ -167,7 +177,8 @@ normal encoding procedure for it.
 Keep in mind that, due to a bug in VSFilter, the path to the subtitle files
 MUST be absolute.
 
-## Hardsubbing with VirtualDub ##
+## Hardsubbing with VirtualDub
+
 If you're already familiar with VirtualDub filters, and don't intend to do any
 other video processing, you should note that it's possible to use VSFilter as a
 VirtualDub filter as well. Just rename the .dll to .vdf and copy it to the
@@ -179,13 +190,15 @@ cannot parse UTF-8 (the default Aegisub encoding) files properly. This will
 result in any non-ASCII characters being rendered as gibberish. NEVER USE THIS
 FILTER.
 
-## Softsubbing ##
+## Softsubbing
+
 Softsubbing a video can be done in several ways. On Windows using a DirectShow
 player, such as Media Player Classic, ZoomPlayer or even Windows Media Player,
 you need VSFilter installed to view the subtitles. If you use MPlayer, you need
 libass and FontConfig compiled to correctly view all the formatting.
 
-### Variant 1: softsubs inside the video container ###
+### Variant 1: softsubs inside the video container
+
 Matroska Video (MKV) is currently the best container for this method (MP4, OGM
 and even AVI can technically contain softsubs, but none supports font
 attachments, and all of them has various other issues). Using a muxer that
@@ -194,10 +207,11 @@ GUI](http://www.bunkus.org/videotools/mkvtoolnix/)), you simply add your
 subtitle files to the Matroska file as separate tracks (just like you add audio
 and video tracks), and any fonts as attachments (make sure they have the MIME
 type application/x-truetype-font). The fonts will then be installed temporarily
-by Haali Media Splitter (on Windows) or MPlayer (on *nix and MacOS X) during
+by Haali Media Splitter (on Windows) or MPlayer (on \*nix and MacOS X) during
 playback.
 
-### Variant 2: distributing script files ###
+### Variant 2: distributing script files
+
 This method works best when you want to encode the video in an AVI wrapper. You
 simply send the raw subtitle files along with the video. The viewer then needs
 to load them in a player that supports external subtitles. When using this

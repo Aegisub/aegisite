@@ -2,8 +2,8 @@
 title: Resolution Resampler
 menu:
   docs:
-    parent: Typesetting
-weight: 440
+    parent: typesetting
+weight: 4700
 ---
 
 The Resolution Resampler is a built-in tool designed to change the [resolution of the script]({{< relref "Script_Resolution" >}}) while transforming all affected tags so it
@@ -13,7 +13,8 @@ resolutions, converting a script for a 4:3 video to its 16:9 equivalent, and
 converting between 1:1 and anamorphic pixel formats.
 
 ## Overview
-![resolution_resampler](/img/3.2/resolution_resampler.png){: class="center"}
+
+![resolution_resampler](/img/3.2/resolution_resampler.png#center)
 
 There are three main parts to the resolution resampler: the source
 resolution, destination resolution, and what to do if the source and
@@ -38,6 +39,7 @@ If the new resolution and old resolution don't have the same aspect ratio, you h
 ## Examples
 
 ### 4:3 SD to 16:9 HD
+
 For example, if you have subtitles typeset to a 640x480 video, and want to
 apply the same subtitles to a 1280x720 video (which is widescreen, therefore
 either showing more video on the left and right margins or with black
@@ -45,5 +47,6 @@ borders), you'd set the resampler to the settings shown in the
 screenshot above.
 
 ### Anamorphic 720x480 to 640x480
+
 For this, you'd set source resolution to 720x480, destination resolution
 to 640x480, and select the "Stretch" aspect ratio handling

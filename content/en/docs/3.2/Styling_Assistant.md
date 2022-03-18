@@ -2,26 +2,27 @@
 title: Styling Assistant
 menu:
   docs:
-    parent: Typesetting
-weight: 435
+    parent: typesetting
+weight: 4600
 ---
 
 The Styling assistant is a powerful tool for subtitles that have multiple
 styles, such as cases when several actors have their own style, or for some
 other reason you have many different styles for dialog lines.
 
-## Overview  ##
-![styling_assistant](/img/3.2/styling_assistant.png){: class="center"}
+## Overview
+
+![styling_assistant](/img/3.2/styling_assistant.png#center)
 
 As seen from the image above, the assistant is composed of the following:
 
-* Current line field
-* Styles available field
-* Set style window
-* Keys field
-* Seek video to line start time checkbox
-* Play audio button
-* Play video button
+- Current line field
+- Styles available field
+- Set style window
+- Keys field
+- Seek video to line start time checkbox
+- Play audio button
+- Play video button
 
 The Current line field displays the line in the subtitles for which the
 style will be set. The text in it cannot be edited.
@@ -46,22 +47,23 @@ displayed for styling.
 The play audio and video buttons play the audio or video for the current
 line, to aid in determining what character is saying the line.
 
-## The autocomplete function  ##
-![Styling_autocomplete](/img/3.2/Styling_autocomplete.png){: class="center"}
+## The autocomplete function
+
+![Styling_autocomplete](/img/3.2/Styling_autocomplete.png#center)
 
 This window displays how the autocomplete function works. The characters
 that were typed are on the white background and the rest of the name is
 displayed as being selected. The selected part is what autocomplete sets as
 the style that matches with the typed characters.
 
-![Styling_invalid](/img/3.2/Styling_invalid.png){: class="center"}
+![Styling_invalid](/img/3.2/Styling_invalid.png#center)
 
 This image shows the response to a name that doesn't exist. The background
 of the window is colored red to show that no style on the list of selected
 styles matches the entered text.
 
+## How to use
 
-## How to use  ##
 Usage is simple. Select the first line you want to style and open the
 assistant. Then you look at text, video and/or audio to determine who is
 speaking it and type first few letters of style name, after which

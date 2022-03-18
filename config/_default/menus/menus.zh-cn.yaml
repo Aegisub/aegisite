@@ -16,9 +16,6 @@ main:
   - name: Blog
     url: /blog/
     weight: 40
-  - name: 旧新闻
-    url: http://blog.aegisub.org/
-    weight: 99
 
 # header-bar/right side: social menus
 social:
@@ -48,20 +45,27 @@ social:
 
 # docs-sidebar/docs
 docs:
-  - name: Navigation
+  - name: 导航
     weight: 110
-  - name: Introduction
+    identifier: navigation
+  - name: 介绍
     weight: 200
-  - name: Working with Subtitles
+    identifier: introduction
+  - name: 制作字幕
     weight: 300
-  - name: Typesetting
+    identifier: working-with-subtitles
+  - name: 排版
     weight: 400
-  - name: Timing
+    identifier: typesetting
+  - name: 时间轴
     weight: 500
-  - name: Automation
+    identifier: timing
+  - name: 自动化
     weight: 600
-  - name: Miscellaneous
+    identifier: automation
+  - name: 杂项
     weight: 700
+    identifier: miscellaneous
 
 # docs-sidebar/downloads
 

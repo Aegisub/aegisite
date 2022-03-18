@@ -1,123 +1,123 @@
-**Registration** covers presenting your [Automation 4 Lua]({{< relref "Lua" >}})
-script to Aegisub, providing information about it and registering what
-_features_ it provides.
+---
+title: 注册
+menu:
+  docs:
+    parent: lua-reference
+weight: 6210
+---
 
-## Features explained  ##
+**注册** 涵盖了以下内容：使你自己编写的Lua脚本[Automation 4
+Lua]({{< relref "Lua" >}})出现在Aegisub中、
+提供和脚本有关的信息、该脚本提供了什么样的 *特性*。
 
-One of the primary concepts in Automation 4 is the _feature_. A feature is
-something a script makes available for Aegisub to call back in response to a
-user action.
+## 有关特性(Feature)的解释
 
-A feature is not a plain callback. Rather, it's usually a set of several
-callback functions as well as some information on how they should be
-presented to the user in the GUI.
+Automation 4 中的一个最基础的概念就是 *特性*
+。特性决定了Aegisub如何响应用户的动作去调用脚本。
 
-One feature is the **macro**. A macro is presented as an item in the
-Automation menu. A macro has a name (the title show in the menu), a
-description (the text shown on the status bar when hovering over the menu
-item), a processing function (the function called when the user selects the
-menu item) and an optional validation function (determines whether the macro
-can even do any work in the current state.)
+特性不是简单的回调。它通常是一组几个回调函数,以及如何在GUI中向用户呈现它们的一些信息。
 
-Another feature is the **export filter**. The export filter is presented in
-the [Export]({{< relref "Exporting" >}}) dialogue and can be applied during an export
-operation. Export filters also have a name, description, processing function
-and then an optional configuration panel provider. The configuration panel
-provider is a function that returns a configuration dialogue definition
-structure which will be displayed in the Export dialogue when the export
-filter is enabled. The settings filled into the configuration panel are
-passed to the processing function when it is run.
+一种特性的类型是 **macro**
+(宏)，宏会被作为一个小项展示在自动化菜单中，它有一个名字(即菜单中显示的内容)，
+一段描述(当鼠标悬停在该项时，状态栏显示的说明文本)，一个处理函数(当用户点按该项时执行的函数)
+还有一个可选的有效性确认函数(决定这个宏在当前状态下是否可以运行，如：卡拉OK模板执行器就具有这个属性，如果检测不到template行，该项为灰色不可用)
 
-## Script information globals  ##
+另外一种特性是 **export
+filter**(导出滤镜)。导出滤镜会被展示在[Export]({{< relref "Exporting" >}})
+对话框中，在进行导出操作时被应用
+导出滤镜也有名字、描述、处理函数，同时提供了配置面板函数。使用配置面板函数可以返回一个配置面板对话框，
+在执行导出滤镜的时候会被展示给用户，在配置面板中输入的参数和配置可以传递给处理函数作为参数。
 
-A script can set a few global variables to provide metadata about the script
-to Aegisub. The information given with these variables are displayed in the
-[Automation Manager]({{< relref "../Manager" >}}) dialogue and the Script Info dialogue.
+## 全局脚本信息变量
 
-* **script_name** (string) - Name of the script. This should be short.
-* **script_description** (string) - Description of the purpose of the
-  script. Shouldn't be too long either.
-* **script_version** (string or number) - Version number/name of the script.
-  This is freeform; no specific meaning is assigned to this.
-* **script_author** (string) - Author credits for the script.
+一个脚本中，可以设置一些全局变量，来给Aegisub提供一些元数据。
+这些全局变量会被展示在[Automation Manager]({{< relref "../Manager" >}})
+对话框中和脚本信息对话框中。
 
-All of these are optional; a script does not have to provide any of these.
-If no script name is given, the file name is used instead for display
-purposes.
+- **script_name** (脚本名，字符串) - 脚本的名称，应尽量简洁
+- **script_description** (脚本描述，字符串) -
+  描述该脚本可以达成什么目的，也不建议太长。
+- **script_version** (脚本版本号，字符串或数字) - 脚本的版本号
+- **script_author** (脚本作者，字符串) - 脚本作者信息
 
-## Registration functions  ##
+上述的变量均为可选项，即使一个脚本头部没有定义这些变量，Aegisub也会调取文件名来显示。
 
-The registration functions are the functions provided by Automation 4 Lua
-you can call to make a feature available to Aegisub. You will usually call
-these in the top level, at the very bottom of your script.
+## 注册函数
 
-### aegisub.register_macro  ###
+注册函数是指一些Automation 4 提供的现成 Lua
+函数，可以方便你把一项特性变为Aegisub可用的形式
+你经常会在顶部或者底部调用它。
 
-Synopsis: `aegisub.register_macro(name, description, processing_function, validation_function, is_active_function)`
+### aegisub.register_macro
 
-Register a macro feature.
+摘要:
+`aegisub.register_macro(name, description, processing_function, validation_function, is_active_function)`
 
-* **name** (string) - The name displayed on the Automation menu. This should
-  be very short, try three words or less, and should be in command
-  tense.
+将脚本注册成为一个具有marco(宏)特性的项。
 
-  If forward slashes (/) are included in the name, the name will be
-  split on the slash, with the portion before the slash used as the name
-  of the submenu to place the macro in. For example, if you register a
-  macro named "Foo/Bar" and a macro named "Foo/Baz", the automation menu
-  will have a submenu named "Foo" with "Bar" and "Baz" entries.
+- **name** (名称，字符串) - 自动化 菜单中显示出来的名字。尽量简洁。
 
-  Menus can be nested to whatever depth is supported by the OS, but
-  nesting more than one level deep is unlikely to be a good idea.
-* **description** (string) - The description displayed on the status bar
-  when the user hovers the mouse over the menu item. This should be a
-  concise description of what the macro does. Try to keep it at most 60
-  characters.
-* **processing_function** (function) - The function that is called when the
-  user selects the menu item. This must be a function with the [macro processing function API]({{< relref "Registration#macroprocessingfunction" >}}).
-* **validation_function** (function, optional) - This function is called to
-  determine whether the menu item should be available to the user or not.
-  (Grayed out or not.) If no validation function is provided the macro is
-  always available. This function must follow the [macro validation function API]({{< relref "Registration#macrovalidationfunction" >}}).
-* **is_active_function** (function, optional) - This function is called to
-  determine whether the menu item should be shown with a check mark next to it.
-  If no function is provided the macro is never checked. This function uses the
-  same API as validation functions, and all of the same caveats apply.
+  如果名字中有向前斜杠(/)，名字会被斜杠分开，斜杠后的内容在自动化菜单中表现为子项。
+  例如，如果你注册了宏 "Foo/Bar" 和 "Foo/Baz"，自动化菜单中，
+  "Foo" 下会有 "Bar" 和 "Baz" 两个子项。
 
-### aegisub.register_filter  ###
+  菜单可以支持多级的嵌套，不过多级嵌套不是什么好主意
 
-Synopsis: `aegisub.register_filter(name, description, priority, processing_function, configuration_panel_provider)`
+- **description** (描述，字符串) -
+  当鼠标悬停在该项时，状态栏显示的说明文本。
+  建议这部分写的简明直接，描述清楚该脚本是做什么的。
 
-Register an export filter feature.
+- **processing_function** (处理函数，函数) -
+  当用户点击了这项时，调用的处理函数 [macro processing function
+  API]({{< relref "Registration#macroprocessingfunction" >}}).。
 
-* **name** (string) - The name displayed in the export filters list. The
-  name should be rather short.
-* **description** (string) - The description displayed in the description
-  box when the user highlights the export filter in the Export dialogue.
-* **priority** (number) - Determines the initial ordering of export filter
-  application. Filters with higher priority are applied earlier than filters
-  with lower priority. The user can change the filter application order in
-  the Export dialogue. Priorities of the Aegisub built in export filters:
+- **validation_function** (有效性检测函数，函数, 可选) -
+  这个函数被用来检测当前项是否可用。
+  (灰色还是正常)。如果不设置该函数，宏则一直处于可用状态。
+  这个函数遵循 [macro validation function
+  API]({{< relref "Registration#macrovalidationfunction" >}}) 中的说明。
 
-  * Transform Framerate = 1000 (karaoke effects should have higher priority
-    than this)
-  * Clean Script Info = 0 (your script might depend on the information
-    cleaned by this)
-  * Fix Styles = -5000 (should almost always run last)
+- **is_active_function** (活动检测函数，函数, 可选) -
+  这个函数会在当前可用项的左侧显示一个对勾。 规则同有效检测函数
 
-* **processing_function** (function) - The function that is called when the
-  user initiates the export operation. This must be a function with the
-  [export filter processing function API]({{< relref "Registration#exportfilterprocessingfunction" >}}).
-* **configuration_panel_provider** (function, optional) - A function that
-  provides a configuration panel for the export filter. If this function is
-  not provided the export filter will not have a configuration panel. This
-  function must follow the [export filter configuration panel provider API]({{< relref "Registration#exportfilterconfigurationpanelprovider" >}}).
+### aegisub.register_filter
 
-## Feature callback functions  ##
+摘要:
+`aegisub.register_filter(name, description, priority, processing_function, configuration_panel_provider)`
+
+将脚本注册成为一个具有filter(滤镜)特性的项。
+
+- **name** (名称，字符串) - 在 导出滤镜
+  列表中呈现的名称，应尽可能简洁。
+
+- **description** (描述，字符串) -
+  当用户选中该导出滤镜时，在描述框中显示的描述文字。
+
+- **priority** (优先级，数字) -
+  决定导出滤镜的应用顺序。高优先级的滤镜会被优先应用。 用户可以在 导出
+  对话框中修改顺序。 Aegisub内置导出滤镜的优先级顺序:
+
+  - 帧率转换 = 1000 (卡拉OK效果应该比这个有更高的优先级)
+  - 清除脚本信息 = 0
+    (你的脚本可能依赖于这个脚本会清理掉的信息，所以它最后被应用)
+  - 修复样式 = -5000 (一般总是最后运行)
+
+- **processing_function** (处理函数，函数) -
+  当用户执行导出操作时调用的处理函数。 这个函数需要符合 [export filter
+  processing function
+  API]({{< relref "Registration#exportfilterprocessingfunction" >}})的要求。
+
+- **configuration_panel_provider** (配置面板函数，函数，可选) -
+  为导出滤镜提供了配置面板的函数
+  如果不写这个函数，导出滤镜不会具有配置面板。需要遵循 [export filter
+  configuration panel provider
+  API]({{< relref "Registration#exportfilterconfigurationpanelprovider" >}}) 的要求。
+
+## Feature callback functions
 
 These are the callback functions you provide to the registration functions.
 
-### Macro processing function  ###
+### Macro processing function
 
 Signature: `process_macro(subtitles, selected_lines, active_line)`
 
@@ -126,12 +126,12 @@ Macro processing functions passed to
 must have this signature. The name `process_macro` is a placeholder for your
 own function name.
 
-* **subtitles** (user data) - The [subtitles object]({{< relref "Subtitle_file_interface" >}}) you use to manipulate
+- **subtitles** (user data) - The [subtitles object]({{< relref "Subtitle_file_interface" >}}) you use to manipulate
   the subtitles with.
-* **selected_lines** (table) - An array with indexes of the selected lines.
+- **selected_lines** (table) - An array with indexes of the selected lines.
   The values in this table are line indexes in the _subtitles_ object at its
   initial state. Only `dialogue` class lines can ever be selected.
-* **active_line** (number) - The line that is currently available for
+- **active_line** (number) - The line that is currently available for
   editing in the subtitle editing area. This is an index into the
   _subtitles_ object. This line will usually also be selected, but this is
   not a strict requirement.
@@ -143,7 +143,7 @@ macro returns, and an index of the line to make the new `active_line`. If
 set, the new active line index must be one of the lines in the new
 `selected_lines` table.
 
-### Macro validation function  ###
+### Macro validation function
 
 Signature: `validate_macro(subtitles, selected_lines, active_line)`
 
@@ -158,14 +158,13 @@ every time the user pulls open the Automation menu, and every millisecond
 you spend in `validate_macro` is one millisecond delay in opening the menu.
 Consider that the user might have very large files open. Don't block the UI.
 
-
-* **subtitles** (user data) - The [subtitles object]({{< relref "Subtitle_file_interface" >}}) for the current subtitle
+- **subtitles** (user data) - The [subtitles object]({{< relref "Subtitle_file_interface" >}}) for the current subtitle
   file. This is **read-only**. You cannot modify the subtitles in the
   validation function, and attempting to do so will cause a run-time error.
-* **selected_lines** (table) - An array with indexes of the selected lines.
+- **selected_lines** (table) - An array with indexes of the selected lines.
   The values in this table are line indexes in the _subtitles_ object at its
   initial state. Only `dialogue` class lines can ever be selected.
-* **active_line** (number) - The line that is currently available for
+- **active_line** (number) - The line that is currently available for
   editing in the subtitle editing area. This is an index into the
   _subtitles_ object.
 
@@ -179,7 +178,7 @@ a string. If it does, the description of the macro is set to the string.
 This is intended for reporting information to the user about why the macro
 cannot be run, but there may be more uses for it.
 
-### Export filter processing function  ###
+### Export filter processing function
 
 Signature: `process_filter(subtitles, settings)`
 
@@ -191,11 +190,11 @@ your own function name.
 You do not have to worry about undo issues with export filters. You always
 work on a copy of the subtitle file.
 
-* **subtitles** (user data) - The [subtitles object]({{< relref "Subtitle_file_interface" >}}) you use to manipulate
+- **subtitles** (user data) - The [subtitles object]({{< relref "Subtitle_file_interface" >}}) you use to manipulate
   the subtitles with. This is a copy of the open subtitles file, so
   modifying this subtitles object does not modify the open file and will
   only affect the exported file.
-* **settings** (table) - Configuration settings entered into the
+- **settings** (table) - Configuration settings entered into the
   configuration panel or an empty table if there is no configuration panel.
   See the page on [configuration dialogues]({{< relref "Dialogs" >}}) for more information
   on the format of this table.
@@ -203,7 +202,7 @@ work on a copy of the subtitle file.
 **Return value:**
 Nothing.
 
-### Export filter configuration panel provider  ###
+### Export filter configuration panel provider
 
 Signature: `get_filter_configuration_panel(subtitles, old_settings)`
 
@@ -220,11 +219,11 @@ open, and that every millisecond spent creating your configuration dialogue
 is one more millisecond the user has to wait for the Export dialogue to
 open. Don't block the UI.
 
-* **subtitles** (user data) - The [subtitles object]({{< relref "Subtitle_file_interface" >}}) for the current subtitle
+- **subtitles** (user data) - The [subtitles object]({{< relref "Subtitle_file_interface" >}}) for the current subtitle
   file. This is **read-only**. You cannot modify the subtitles in the filter
   configuration provider. Attempting to modify the subtitles will cause a
   run-time error.
-* **old_settings** (table) - Previous configuration settings entered into
+- **old_settings** (table) - Previous configuration settings entered into
   the configuration panel, if any. When an Automation 4 export filter is
   run, any configuration settings are automatically stored to the original
   file. If any stored settings exist for this filter, they are passed as
@@ -234,7 +233,3 @@ open. Don't block the UI.
 A configuration dialogue table. See the page on
 [configuration dialogues]({{< relref "Dialogs" >}}) for
 more information on the format of this table.
-
-{::template name="automation_navbox" /}
-
-

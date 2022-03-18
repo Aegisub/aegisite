@@ -1,28 +1,30 @@
+---
+title: Karaoke Timing Tutorial
+menu:
+  docs:
+    parent: tutorials
+weight: 2710
+---
+
 This tutorial will teach you how to load a song into Aegisub, how to enter the words for the song and how to add time-codes to the words to synchronise them with the song.
 
 You don't need to have used Aegisub before to follow this tutorial.
 
-
-## Before we begin  ##
-
+## Before we begin
 
 There's a few things you need to have ready before starting:
 
-
-* The song itself. This can for example be as an MP3 file or inside a video. Aegisub can read the sound from video files, you don't need to create a separate sound file if the song is on a video.
+- The song itself. This can for example be as an MP3 file or inside a video. Aegisub can read the sound from video files, you don't need to create a separate sound file if the song is on a video.
 
 <div></div>
 
-
-* The words for the song. It's easiest if you have them in a plain text file (.txt file) broken into verses and stanzas already.
+- The words for the song. It's easiest if you have them in a plain text file (.txt file) broken into verses and stanzas already.
 
 <div></div>
 
 I am using an English song for demonstration here, but many of the more advanced functions in Aegisub are designed for use with songs in Japanese and other languages that often need transcription or transliteration into Latin script. I will show how to use those in a video tutorial.
 
-
-## Loading the song  ##
-
+## Loading the song
 
 We'll start by creating a new file. You already have that if you have just started Aegisub.
 
@@ -46,17 +48,13 @@ When it's done, you should have a waveform display (the audio display) at the to
 
 We'll look at how to use the audio display for timing in a moment, but first let's get the lyrics for the song loaded.
 
-
-### Tips  ###
-
+### Tips
 
 **Loading audio directly from video files:** You can select to choose from video files in the Open Audio file selector. This won't actually open the video in the file, it will just read the audio from the video file, the same as if it was just the audio in a separate file.
 
 **Instant loading of WAV files:** If you have an uncompressed PCM WAV file, Aegisub can open it instantly without first loading it entirely into memory. This can be a great time-saver, but of course it requires a bit of extra disk space and probably also a bit of work beforehand to even create the WAV file. (Remember that this only works with _uncompressed PCM_ files, things like ADPCM or MP3 in WAV files won't work and will still trigger the pre-loading.)
 
-
-## Entering the words  ##
-
+## Entering the words
 
 Now, to get the text in, we could just start typing it in...
 
@@ -92,9 +90,7 @@ Remember that Aegisub automatically saves a copy of your file every minute, even
 
 Now we're ready to time the individual lines in the lyrics.
 
-
-## Rough timing, the lines first  ##
-
+## Rough timing, the lines first
 
 Before we start with timing, you should know that the way presented here is just one of many. There's several ways you can time to audio in Aegisub and this one might not be the best one for you. Try to also explore the program and see if you can find your own best way to do it. This is just the way I (jfs) usually do it.
 
@@ -118,9 +114,7 @@ Just continue timing like that until you have covered all the lines of the song:
 
 When you're done, save the file.
 
-
-### Tips  ###
-
+### Tips
 
 Timing from audio isn't hard at all, but here's some tips to make it even easier and also a lot faster!
 
@@ -130,10 +124,9 @@ Timing from audio isn't hard at all, but here's some tips to make it even easier
 
 The most important ones are:
 
-
-* **S** - Play Selection: Play back the currently selected audio.
-* **A** and **F** - Scroll Left and Right: Change the potion of the audio visible.
-* **G** - Commit: Copy the start and end times of the current audio selection into the line selected in the subtitles grid and move to the next line.
+- **S** - Play Selection: Play back the currently selected audio.
+- **A** and **F** - Scroll Left and Right: Change the potion of the audio visible.
+- **G** - Commit: Copy the start and end times of the current audio selection into the line selected in the subtitles grid and move to the next line.
 
 <div></div>
 
@@ -151,32 +144,21 @@ The spectrum mode takes more CPU and RAM than waveform mode, but it gives a bett
 
 **Zooming and scaling:** You can use the slider bars to the far right of the audio display to zoom in and out on the audio and to change the volume.
 
+## Fine timing, words and then syllables
 
-## Fine timing, words and then syllables  ##
+{{<todo>}}
+Click Karaoke button.<br>
+Time words.<br>
+Click Split button. Place split markers. Click Accept Split button.<br>
+Time syllables.<br>
+Commit.<br>
+Repeat.
+{{</todo>}}
 
-
-{{todo|
-Click Karaoke button.
-
-Time words.
-
-Click Split button. Place split markers. Click Accept Split button.
-
-Time syllables.
-
-Commit.
-
-Repeat.}}
-
-
-## Styling  ##
-
+## Styling
 
 {{<todo>}}a bit about styles, how basic karaoke looks, and the \kf and \ko effects {{</todo>}}
 
-
-## Wrapping up  ##
-
+## Wrapping up
 
 {{<todo>}}mention the video tutorial again and point to other relevant topics {{</todo>}}
-

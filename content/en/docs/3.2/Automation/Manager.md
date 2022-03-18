@@ -1,3 +1,11 @@
+---
+title: Automation Manager
+menu:
+  docs:
+    parent: automation
+weight: 6300
+---
+
 The Automation Manager window is used to view, load and unload
 [Automation]({{< relref "Automation" >}}) scripts.
 
@@ -6,7 +14,7 @@ the ![Automation-toolbar-icon](/img/3.2/Automation-toolbar-icon.png) toolbar but
 
 ![automation_manager](/img/3.2/automation_manager.png)
 
-## The script list  ##
+## The script list
 
 The main area of the window is a list of all _script files_ loaded. It's
 important to remember that one script file can contain several
@@ -33,42 +41,40 @@ read, you can select the script and click the Show Info button to see it
 all. Scripts failing to load should only happen if you are writing your own
 scripts and manage to make a programming error.
 
-## The buttons  ##
+## The buttons
 
 There are 6 buttons at the bottom of the Automation Manager window:
 
-* The **Add** button is used to load a local script.
-* The **Remove** button is used to unload a local script. It is only
+- The **Add** button is used to load a local script.
+- The **Remove** button is used to unload a local script. It is only
   available when a local script is selected.
-* The **Reload** button unloads and reloads the selected script file from
+- The **Reload** button unloads and reloads the selected script file from
   disk. You can use this to reload scripts you're developing, but also see
   below for other ways to do this.
-* The **Show Info** buttons shows detailed information on the selected
+- The **Show Info** buttons shows detailed information on the selected
   script, as well as the entire Automation system.
-* The **Rescan Autoload Dir** button scans the autoload folders to see if
+- The **Rescan Autoload Dir** button scans the autoload folders to see if
   any scripts have been added or removed since Aegisub was started. All new
   scripts in the autoload directories are then loaded, scripts that have been
   removed are unloaded and all other global scripts are reloaded.
-* The **Close** button closes the Automation Manager window.
+- The **Close** button closes the Automation Manager window.
 
-## Other ways to reload scripts  ##
+## Other ways to reload scripts
 
 If you're developing scripts you might find yourself returning to the
 Automation Manager often to reload your script. There are also faster ways
 to reload scripts though:
 
-* When the [Export]({{< relref "Exporting" >}}) dialog is opened all local scripts are
+- When the [Export]({{< relref "Exporting" >}}) dialog is opened all local scripts are
   reloaded. You can change this in the [Options]({{< relref "Options" >}})
   dialog.
-* Hold the Ctrl key and click the Automation toolbar button to rescan the
+- Hold the Ctrl key and click the Automation toolbar button to rescan the
   autoload folders.
-* Hold both the Ctrl and Shift keys and click the Automation toolbar button
+- Hold both the Ctrl and Shift keys and click the Automation toolbar button
   to reload all scripts, also rescanning the autoload folders.
-* While there is no default hotkey to reload all scripts, you can add one in
+- While there is no default hotkey to reload all scripts, you can add one in
   the [preferences dialog]({{< relref "Options#hotkeys" >}}).
 
 The Automation Manager won't open when any of there methods are used, but
 you will get an error message window if a script failed to load. Note that
 you can double-click on the rows in the error dialog for more information.
-
-{::template name="automation_navbox" /}

@@ -1,33 +1,30 @@
 ---
-title: Main Page
+title: 主页
 menu:
   docs:
-    parent: Navigation
-weight: 110
+    parent: navigation
+weight: 1000
 ---
 
-Welcome to the Aegisub manual. See our [about]({{< relref "About" >}}) page for more
-information on the program, or browse the topics on the left bar.
+欢迎来到 Aegisub 手册。要获取更多关于此程序的信息，请查看我们的 [关于]({{< relref "About" >}}) 页面，或浏览左侧栏中各个主题的文章。
+与开发、编译 Aegisub 相关的文档位于 [Bug 跟踪系统](https://github.com/Aegisub/Aegisub/issues) 上。
 
-Documentation related to delopment of Aegisub and building Aegisub is located
-at [the bug tracker](https://github.com/Aegisub/Aegisub/issues).
+## 开始
 
-## Starting points
+[Aegisub 快速概览]({{< relref "Overview" >}})
 
-[Quick overview of Aegisub]({{< relref "Overview" >}})
+**常见任务：**
 
-**Common tasks:**
+- [用已翻译的文本制作音频时间轴]({{< relref "Audio" >}})
+- [对字幕进行简单的排版]({{< relref "Tutorials#visualtypesetting" >}})
+- [将完成的字幕附到视频上]({{< relref "Attaching_subtitles_to_video" >}})（用于观看或发布）
 
-* [Timing a translated script to audio]({{< relref "Audio" >}})
-* [Basic typesetting of on-screen signs]({{< relref "Tutorials#visualtypesetting" >}})
-* [Putting your finished subtitles onto the video]({{< relref "Attaching_subtitles_to_video" >}}) (for viewing or distribution)
+<!-- -->
 
-^
+- [将字幕译成另一种语言]({{< relref "Translation_Assistant" >}})
+- [校正字幕使之与视频同步]({{< relref "Fix_Timing_Tutorial" >}})
 
-* [Translating a subtitle file from one language to another]({{< relref "Translation_Assistant" >}})
-* [Correcting a subtitle that's not properly synchronised to the video]({{< relref "Fix_Timing_Tutorial" >}})
+<!-- -->
 
-^
-
-* [Timing karaoke to a song]({{< relref "Tutorials#karaoketiming" >}})
-* [Creating fancy karaoke effects]({{< relref "Automation/Karaoke_Templater/Tutorial_1" >}})
+- [为歌曲制作卡拉OK时间轴]({{< relref "Tutorials#karaoketiming" >}})
+- [创作华丽的卡拉OK特效字幕]({{< relref "Automation/Karaoke_Templater/Tutorial_1" >}})

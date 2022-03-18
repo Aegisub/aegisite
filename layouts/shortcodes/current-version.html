@@ -1,0 +1,31 @@
+{{ $curVersion := .Site.Data.version.current }}
+{{ range (sort .Site.Data.version.previous_versions "version" "desc" ) }}
+{{ if eq .version $curVersion}}
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Notes</th>
+        <th scope="col">File</th>
+        <th scope="col">MD5</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{ range (sort .artifacts "type") }}
+        {{ if not .isHidden}}
+        <tr>
+        <td>{{ .type }}</td>
+        <td>{{ .notes }}</td>
+        {{ if .link }}
+            <td><a href="{{ .link }}">{{ .filename }}</a></td>
+        {{ else }}
+            <td>{{ .filename }}</td>
+        {{end}}
+        <td><code>{{ .md5 }}</code></td>
+        </tr>
+        {{ end }}
+    {{ end }}
+    </tbody>
+</table>
+{{ end }}
+{{ end }}
