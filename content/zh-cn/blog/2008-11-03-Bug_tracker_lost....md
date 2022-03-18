@@ -1,5 +1,6 @@
 ---
 title: Bug tracker lost...
+slug: bug-tracker-lost
 contributors:
   - jfs
 date: 2008-11-03T20:50:00.002000Z

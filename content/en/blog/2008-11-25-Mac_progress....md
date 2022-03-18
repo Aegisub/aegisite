@@ -1,5 +1,6 @@
 ---
 title: Mac progress...?
+slug: mac-progress
 contributors:
   - jfs
 date: 2008-11-25T01:41:00.004000Z

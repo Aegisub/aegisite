@@ -1,5 +1,6 @@
 ---
 title: If programming languages were religions...
+slug: if-programming-languages-were-religions
 contributors:
   - Unknown
 date: 2008-12-15T14:52:00.042000Z

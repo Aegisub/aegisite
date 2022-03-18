@@ -46,7 +46,7 @@ taxonomies:
   contributor: contributors
 
 permalinks:
-  blog: '/blog/:title/'
+  blog: '/blog/:slug/'
 
 minify:
   tdewolff:
