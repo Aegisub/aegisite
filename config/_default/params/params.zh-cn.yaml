@@ -71,7 +71,9 @@ smallLimit: '300'
 # Footer
 footer: >-
   Powered by <a class="text-muted" href="https://gohugo.io/">Hugo</a> and <a
-  class="text-muted" href="https://getdoks.org/">Doks</a>
+  class="text-muted" href="https://getdoks.org/">Doks</a>. <br/>
+  Copyright (c) AegiSite <a href="https://github.com/Aegisub/aegisite/graphs/contributors">contributors</a>
+  and <a href="https://github.com/computerfan/Chinese-aegisite/graphs/contributors">translators</a>.
 
 # Feed
 # copyRight: Copyright (c) 2020-2021 Henk Verlinde
