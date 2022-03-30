@@ -1,11 +1,11 @@
 {
-  "name": "@hyas/doks",
-  "description": "Doks theme",
+  "name": "aegisite",
+  "description": "New Aegisub website, powered by hugo and doks",
   "version": "0.4.0",
   "browserslist": [
     "defaults"
   ],
-  "repository": "https://github.com/h-enk/doks",
+  "repository": "https://github.com/Aegisub/aegisite",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
