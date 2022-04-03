@@ -1,2 +1,2 @@
-baseurl: /
-canonifyURLs: false
+baseurl: 'https://aegisub.github.io/aegisite/'
+canonifyURLs: true
