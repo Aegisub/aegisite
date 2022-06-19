@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/ASS_Tags/">
+        <title>ASS Tags - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title"><a name="index1h1"></a>
+                        <a href="../">Aegisub</a> / 
+                        ASS Tags
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <div id="toc">
+    <div id="toctitle">Contents</div>
+    
+<div class="toc">
+	<ol>
+		<li class="L2"><a href="#index1h2">Special characters</a>
+		<ol>
+			<li class="L3"><a href="#index1h3">Soft line break</a>
+			</li>
+			<li class="L3"><a href="#index2h3">Hard line break</a>
+			</li>
+			<li class="L3"><a href="#index3h3">Hard space</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index2h2">Override tags</a>
+		<ol>
+			<li class="L3"><a href="#index4h3">Italics</a>
+			</li>
+			<li class="L3"><a href="#index5h3">Bold</a>
+			</li>
+			<li class="L3"><a href="#index6h3">Underline</a>
+			</li>
+			<li class="L3"><a href="#index7h3">Strikeout</a>
+			</li>
+			<li class="L3"><a href="#index8h3">Border size</a>
+			</li>
+			<li class="L3"><a href="#index9h3">Border size (extended)</a>
+			</li>
+			<li class="L3"><a href="#index10h3">Shadow distance</a>
+			</li>
+			<li class="L3"><a href="#index11h3">Shadow distance (extended)</a>
+			</li>
+			<li class="L3"><a href="#index12h3">Blur edges</a>
+			</li>
+			<li class="L3"><a href="#index13h3">Blur edges (Gaussian kernel)</a>
+			</li>
+			<li class="L3"><a href="#index14h3">Font name</a>
+			</li>
+			<li class="L3"><a href="#index15h3">Font size</a>
+			</li>
+			<li class="L3"><a href="#index16h3">Font scale</a>
+			</li>
+			<li class="L3"><a href="#index17h3">Letter spacing</a>
+			</li>
+			<li class="L3"><a href="#index18h3">Text rotation</a>
+			</li>
+			<li class="L3"><a href="#index19h3">Text shearing</a>
+			</li>
+			<li class="L3"><a href="#index20h3">Font encoding</a>
+			</li>
+			<li class="L3"><a href="#index21h3">Set color</a>
+			</li>
+			<li class="L3"><a href="#index22h3">Set alpha</a>
+			</li>
+			<li class="L3"><a href="#index23h3">Line alignment</a>
+			</li>
+			<li class="L3"><a href="#index24h3">Line alignment (legacy)</a>
+			</li>
+			<li class="L3"><a href="#index25h3">Karaoke effect</a>
+			</li>
+			<li class="L3"><a href="#index26h3">Wrap style</a>
+			</li>
+			<li class="L3"><a href="#index27h3">Reset style</a>
+			</li>
+			<li class="L3"><a href="#index28h3">Set position</a>
+			</li>
+			<li class="L3"><a href="#index29h3">Movement</a>
+			</li>
+			<li class="L3"><a href="#index30h3">Rotation origin</a>
+			</li>
+			<li class="L3"><a href="#index31h3">Fade</a>
+			</li>
+			<li class="L3"><a href="#index32h3">Fade (complex)</a>
+			</li>
+			<li class="L3"><a href="#index33h3">Animated transform</a>
+			</li>
+			<li class="L3"><a href="#index34h3">Clip (rectangle)</a>
+			</li>
+			<li class="L3"><a href="#index35h3">Clip (vector drawing)</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index3h2">Drawing tags</a>
+		<ol>
+			<li class="L3"><a href="#index36h3">\p<0/1/..> - Toggle drawing mode</a>
+			</li>
+			<li class="L3"><a href="#index37h3">\pbo - Baseline offset</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index4h2">Drawing commands</a>
+		<ol>
+			<li class="L3"><a href="#index38h3">m   - Move</a>
+			</li>
+			<li class="L3"><a href="#index39h3">n   - Move (no closing)</a>
+			</li>
+			<li class="L3"><a href="#index40h3">l   - Line</a>
+			</li>
+			<li class="L3"><a href="#index41h3">b       - Cubic Bézier curve</a>
+			</li>
+			<li class="L3"><a href="#index42h3">s       ..   - Cubic b-spline</a>
+			</li>
+			<li class="L3"><a href="#index43h3">p   - Extend b-spline</a>
+			</li>
+			<li class="L3"><a href="#index44h3">c - Close b-spline</a>
+			</li>
+		</ol>
+		</li>
+	</ol>
+</div>
+
+</div>
+
+<p>The following is a list of every tag supported by the Advanced Substation
+Alpha format. This is basically a detailed version of ass-quickref.txt. See
+the <span class="createlink">tutorial</span> for an introduction to typesetting,
+using some basic tags.</p>
+
+<h2 id="specialcharacters"><a name="index1h2"></a>Special characters</h2>
+
+<p>The following tags are written in the middle of the text, and not inside
+override blocks (i.e. not between { and }).</p>
+
+<h3 id="softlinebreak"><a name="index1h3"></a>Soft line break</h3>
+
+<div class="tagusage">\n</div>
+
+<p>Insert a forced line break, but only when in wrapping mode 2. (See
+<a href="./#wrapstyle">the \q tag</a>). Note that this is a lowercase n.</p>
+
+<p>In all other wrapping modes, this is replaced by a regular space. If you're
+not sure whether you want this or \N, you probably want \N.</p>
+
+<h3 id="hardlinebreak"><a name="index2h3"></a>Hard line break</h3>
+
+<div class="tagusage">\N</div>
+
+<p>Insert a forced line break, regardless of wrapping mode. Note that this is an
+uppercase N.</p>
+
+<h3 id="hardspace"><a name="index3h3"></a>Hard space</h3>
+
+<div class="tagusage">\h</div>
+
+<p>Insert a non-breaking &quot;hard&quot; space. The line will never break automatically
+right before or after a hard space, and hard spaces are not folded when they
+appear at the start or end of a displayed line.</p>
+
+<h2 id="overridetags"><a name="index2h2"></a>Override tags</h2>
+
+<p>Override tags must appear within override blocks, which begin with { and end
+with }. Any unrecognized text within override blocks is silently ignored, so
+they are also commonly used for inline comments. Mixing comments and override
+tags in the same override block is not recommended.</p>
+
+<p>Tags fall into two general categories: those which set a property of the line
+itself, and those which modifiy only the text following them. <code>\pos</code>, <code>\move</code>,
+<code>\clip</code>, <code>\iclip</code>, <code>\org</code>, <code>\fade</code> and <code>\fad</code> are those in the first category;
+all others are in the second. Tags in the first category should appear at most
+once in a line, and where in the line they appear is unimportant. In addition,
+some of them are mutally exclusive: <code>\pos</code> and <code>\move</code>; <code>\clip</code> and <code>\iclip</code>;
+<code>\fad</code> and <code>\fade</code>. The result of inluding multiple instances of these tags or
+mutally exclusive tags will vary between renderers and is not recommended.</p>
+
+<p>Tags in the second category modify all text after the tag until the end of the
+line or until the property is re-overridden by another tag.</p>
+
+<p>Override tags always follow the same form: They start with a backslash \
+character, then a name, and after the name the parameter to the tag. If the
+parameter is omitted, the default value from the line's style is used.</p>
+
+<p>Some tags are &quot;complex&quot; and take more than one parameter. In these cases,
+parameters are put inside parentheses with commas between the parameters.</p>
+
+<p><strong>Note on typography:</strong><br/>
+On this page, everything written in <em>italics</em> with <code>&lt;</code> angle brackets <code>&gt;</code>
+around it is a parameter and you must enter a value instead of it. The angle
+brackets are not part of the value you should enter. Use the examples as a
+guide to how the tags should be entered. In general, the same rules apply to
+all tags in how they look.</p>
+
+<h3 id="italics"><a name="index4h3"></a>Italics</h3>
+
+<div class="tagusage">\i1<br>\i0</div>
+
+<p>Switch <em>italics</em> text on or off. Use <code>\i1</code> to enable italics for the following
+text and <code>\i0</code> to disable italics again.</p>
+
+<h3 id="bold"><a name="index5h3"></a>Bold</h3>
+
+<div class="tagusage"><p>\b1<br/>
+\b0<br/>
+\b<i>&lt;weight&gt;</i></p></div>
+
+<p>Switch <strong>boldface</strong> text on or off. Use <code>\b1</code> to enable boldface for the
+following text and <code>\b0</code> to disable boldface again.</p>
+
+<p>The <code>\b<i>&lt;weight&gt;</i></code> form allows you to specify an
+explicit weight to use. Note that most fonts only support one or two weights
+so you rarely need to use this. Font weights are multiples of 100, such that
+100 is the lowest, 400 is &quot;normal&quot;, 700 is &quot;bold&quot; and 900 is the heaviest.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>I am {\b1}not[\b0} amused.</pre>
+
+<p>The word &quot;not&quot; is written in boldface.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>{\b100}How {\b300}bold {\b500}can {\b700}you {\b900}get?</pre>
+
+<p>The words are written with increasingly greater weight. Note that most fonts
+do not have more than one or two different weights and you will only be able
+to see &quot;not bold&quot; and &quot;bold&quot; in that case.</p></div></div>
+
+<h3 id="underline"><a name="index6h3"></a>Underline</h3>
+
+<div class="tagusage">\u1<br>\u0</div>
+
+<p>Switch <u>underlined</u> text on or off. Use <code>\u1</code> to enable underlining for
+the following text and <code>\u0</code> to disable underlining again.</p>
+
+<h3 id="strikeout"><a name="index7h3"></a>Strikeout</h3>
+
+<div class="tagusage">\s1<br>\s0</div>
+
+<p>Switch <s>striked out</s> text on or off. Use <code>\s1</code> to enable strikeout for
+the following text and <code>\s0</code> to disable strikeout again.</p>
+
+<h3 id="bordersize"><a name="index8h3"></a>Border size</h3>
+
+<div class="tagusage">\bord<i>&lt;size&gt;</i></div>
+
+<p>Change the width of the border around the text. Set the size to 0 (zero) to
+disable the border entirely.</p>
+
+<p>If &quot;scale border and shadow&quot; (see <a href="../Properties/">script properties</a>) is
+enabled, the value is given in script resolution pixels, otherwise it is given
+in video resolution pixels (which means the border thickness will vary
+depending on the resolution of the video on which the subtitles are rendered.)</p>
+
+<p>The value is not limited to whole integer pixels and can have decimal places.
+Border width cannot be negative.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\bord0</pre>
+
+<p>Disable border entirely.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>bord3.7</pre>
+
+<p>Set the border width to 3.7 pixels</p></div></div>
+
+<h3 id="bordersizeextended"><a name="index9h3"></a>Border size (extended)</h3>
+
+<div class="tagusage"><p>\xbord<i>&lt;size&gt;</i><br/>
+\ybord<i>&lt;size&gt;</i></p></div>
+
+<p>Use the <code>\xbord</code> <code>\ybord</code> tags to set the border size in X and Y direction
+separately. This can be useful for correcting the border size for anamorphic
+rendering of subtitles.</p>
+
+<p>Note that if you use <code>\bord</code> after <code>\xbord</code> or <code>\ybord</code> on a line, it will
+override both of them.</p>
+
+<p>You can set the border width to 0 (zero) in one of the directions to entirely
+disable border in that direction.</p>
+
+<h3 id="shadowdistance"><a name="index10h3"></a>Shadow distance</h3>
+
+<div class="tagusage">\shad<i>&lt;depth&gt;</i></div>
+
+<p>Set the distance from the text to position the shadow. Set the depth to 0
+(zero) to disable shadow entirely. Works similar to <a href="./#bordersize">\bord</a>.</p>
+
+<p>The shadow distance can not be negative with this tag.</p>
+
+<h3 id="shadowdistanceextended"><a name="index11h3"></a>Shadow distance (extended)</h3>
+
+<div class="tagusage"><p>\xshad<i>&lt;depth&gt;</i><br/>
+\yshad<i>&lt;depth&gt;</i></p></div>
+
+<p>Set the distance from the text to position the shadow at, with X and Y
+position set separately. Shadow is only disabled if both X and Y distance is
+0.</p>
+
+<p>Note that unlike \shad, you can set the distance negative with these tags to
+position the shadow to the top or left of the text.</p>
+
+<h3 id="bluredges"><a name="index12h3"></a>Blur edges</h3>
+
+<div class="tagusage"><p>\be0<br/>
+\be1<br/>
+\be<i>&lt;strength&gt;</i></p></div>
+
+<p>Enable or disable a subtle softening-effect for the edges of the text. The
+effect isn't always very visible, but it can in some cases make the text look
+better. It is usually more visible at smaller text sizes.</p>
+
+<p>Be aware that this tag blurs the <em>edges</em> of the text, not everything. This
+means that if the text has a border (set with <a href="./#borderwidth">\bord</a>) the
+border will be blurred, but if there is no border, the main text will be
+blurred instead.</p>
+
+<p>In the extended version, <em>strength</em> is the number of times to apply the
+regular effect. Note that at high values the effect de-generates into
+nothingness, and generally isn't very useful. For strong blurs, <code>\blur</code> is
+generally more useful as a result. The <em>strength</em> must be an integer number.</p>
+
+<h3 id="bluredgesgaussiankernel"><a name="index13h3"></a>Blur edges (Gaussian kernel)</h3>
+
+<div class="tagusage">\blur<i>&lt;strength&gt;</i></div>
+
+<p>In general, this has the same function as the <a href="./#bluredges"><code>\be</code></a> tag, but
+uses a more advanced algorithm that looks better at high strengths. Unlike
+<code>\be</code>, the <em>strength</em> can be non-integer here. Set <em>strength</em> to 0 (zero) to
+disable the effect. Be careful, setting <em>strength</em> too high can take a lot of
+CPU time to render.</p>
+
+<p>Be aware that this tag blurs the <em>edges</em> of the text, not everything. This
+means that if the text has a border (set with <a href="./#borderwidth"><code>\bord</code></a>) the
+border will be blurred, but if there is no border, the main text will be
+blurred instead.</p>
+
+<h3 id="fontname"><a name="index14h3"></a>Font name</h3>
+
+<div class="tagusage">\fn<i>&lt;name&gt;</i></div>
+
+<p>Set the font face to use for the following text. There should be no space
+between <code>\fn</code> and the font name, and you should not put parentheses or similar
+around the font name either.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\fnArial</pre>
+
+<p>The text following this tag will be in Arial font.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\fnTimes New Roman</pre>
+
+<p>The text following this tag will be in Times New Roman font.</p></div></div>
+
+<h3 id="fontsize"><a name="index15h3"></a>Font size</h3>
+
+<div class="tagusage">\fs<i>&lt;size&gt;</i></div>
+
+<p>Set the size of the font. The size specified is the height in script pixels,
+so at font size 40 one line of text is 40 pixels tall. (Technical note: it's
+really typographic (desktop publishing) points, not script pixels, but since
+the rendering is always done at 72 DPI (as per the de facto standard), one
+point ends up being exactly equal to one script resolution pixel.)</p>
+
+<p>You can only specify integer font sizes.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\fs10</pre>
+
+<p>The following text will use a size 10 font.</p></div></div>
+
+<h3 id="fontscale"><a name="index16h3"></a>Font scale</h3>
+
+<div class="tagusage"><p>\fscx<i>&lt;scale&gt;</i><br/>
+\fscy<i>&lt;scale&gt;</i></p></div>
+
+<p>Adjust the size of the text in X (<code>\fscx</code> or Y (<code>\fscy</code>) direction. The
+<em>scale</em> given is in percent, so 100 means &quot;original size&quot;.</p>
+
+<p>This is not the same as setting the font size, as setting the size is subject
+to <a href="http://en.wikipedia.org/wiki/Font_hinting">font hinting</a> while scaling the
+text modifies the text shape after hinting. As a result, this should always be
+used with <code>\t</code> rather than <code>\fs</code>, as animating changing font hinting is very
+rarely desirable.</p>
+
+<p>These tags also affect <a href="./#vectordrawings">vector drawings</a>.</p>
+
+<p>You can use font scaling to correct for anamorphic rendering and to specify
+text size more precisely than with <a href="./#fontsize">\fs</a>.</p>
+
+<p>Only integer scales are supported.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\fscx150</pre>
+
+<p>Make the text 50% wider than normal.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\fscy50</pre>
+
+<p>Make the text half height.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\fscx200\fscy200</pre>
+
+<p>Make the text double size.</p></div></div>
+
+<h3 id="letterspacing"><a name="index17h3"></a>Letter spacing</h3>
+
+<div class="tagusage">\fsp<i>&lt;spacing&gt;</i></div>
+
+<p>Changes the spacing between the individual letters in the text. You can use
+this to spread the text more out visually. The <em>spacing</em> is given in script
+resolution pixels.</p>
+
+<p>Spacing can be negative and can have decimals.</p>
+
+<h3 id="textrotation"><a name="index18h3"></a>Text rotation</h3>
+
+<div class="tagusage"><p>\frx<i>&lt;amount&gt;</i><br/>
+\fry<i>&lt;amount&gt;</i><br/>
+\frz<i>&lt;amount&gt;</i><br/>
+\fr<i>&lt;amount&gt;</i></p></div>
+
+<p>Rotates the text along the X, Y or Z axis. The <code>\fr</code> tag is a shortcut for <code>\frz</code>.</p>
+
+<ul>
+<li>The <strong>X axis</strong> runs horizontally on the screen. Rotating on it (with
+ positive values) causes an effect where the top of the text moves farther
+ &quot;into&quot; the screen while the bottom moves &quot;out&quot; of the screen.</li>
+<li>The <strong>Y axis</strong> runs vertically on the screen. Rotating on it (with positive
+ values) causes the text to rotate so that the left moves &quot;outside&quot; the
+ screen, when the right moves &quot;into&quot; the screen.</li>
+<li>The <strong>Z axis</strong> runs perpendicular to the screen. Rotating on it (with
+ positive values) causes the text to rotate in 2D, counterclockwise (as
+ standard for degrees).</li>
+</ul>
+
+<p>The rotation <em>amount</em> is given in mathematical degrees, such that 360 degrees
+is a full rotation, and rotating any multiple of 360 is the same as not
+rotating. It is legal to specify negative rotation amounts, as well as amounts
+larger than 360 degrees.</p>
+
+<p>The rotation is performed around the subtitle line origin point, this is
+described with the <a href="./#rotationorigin">\org</a> tag.</p>
+
+<p>These tags also affect <a href="./#vectordrawings">vector drawings</a>.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\frx45</pre>
+
+<p>Rotate the text 45 degrees on the X axis.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\fry-45</pre>
+
+<p>Rotate the text 45 degrees in opposite direction on the Y axis.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\frz180</pre>
+
+<p>Rotate the text 180 degrees on the Z axis, making it upside-down.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>The following two rotations produce the same result:
+<pre>\frz-30
+\frz330</pre></p>
+
+<p>This is because 330 degrees is 30 degrees less than a full rotation of 360 degrees.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\t(\frz3600)</pre>
+
+<p>Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the <a href="./#animatedtransform">\t</a> tag.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>The following screenshots illustrate the effect of rotating on the different axes:</p>
+
+<p><img src="../img/Fr_sample01.jpg" alt="fr sample01.jpg" /></p>
+
+<p><img src="../img/Fr_sample02.jpg" alt="fr sample02.jpg" /></p>
+
+<p><img src="../img/Fr_sample03.jpg" alt="fr sample03.jpg" /></p></div></div>
+
+<h3 id="textshearing"><a name="index19h3"></a>Text shearing</h3>
+
+<div class="tagusage"><p>\fax<i>&lt;factor&gt;</i><br/>
+\fay<i>&lt;factor&gt;</i></p></div>
+
+<p>Perform a shearing (perspective distortion) transformation of the text. A
+<em>factor</em> of 0 (zero) means no distortion.</p>
+
+<p>Usually <em>factor</em> will be a small number; values outside the range -2 to 2 are
+unlikely to have desireable results.</p>
+
+<p>Shearing is performed after rotation, on the rotated coordinates. The
+coordinate system used for shearing is not affected by the <a href="./#rotationorigin">rotation
+origin</a>.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><img src="../img/shearing.png" alt="shearing.png" /></div></div>
+
+<h3 id="fontencoding"><a name="index20h3"></a>Font encoding</h3>
+
+<div class="tagusage">\fe<i>&lt;id&gt;</i></div>
+
+<p>Set the Windows font encoding used to select the font mapping table used to
+translate Unicode codepoints to glyph indices in the font. For some fonts
+without a Unicode mapping table this might be required to get text in certain
+languages to work. For fonts that do have a Unicode mapping table, it might be
+used to pick regional variations, such as picking the correct glyph for a Han
+ideogram that is different in Simplified Chinese, Traditional Chinese,
+Japanese and Korean.</p>
+
+<p>Some common font encoding IDs are:</p>
+
+<ul>
+<li>0 - ANSI, Windows CP-1252 for Western-European languages.</li>
+<li>1 - Default, depends on the configuration of the user's system, but also
+ allows the font sub-system to dynamically pick a different mapping table in
+ some circumstances.</li>
+<li>2 - Symbol, codepoints in the 0-255 range are translated to per-font defined
+ symbol glyphs, this is used for fonts such as Wingdings.</li>
+<li>128 - Shift-JIS, used for Japanese.</li>
+<li>129 and 130, respectively Hangeul and Johab, two encoding schemes for Korean.</li>
+<li>134 - GB2312, used for Simplified Chinese.</li>
+<li>136 - BIG5, used for Traditional Chinese.</li>
+<li>162 - Turkish.</li>
+<li>163 - Vietnamese.</li>
+<li>177 - Hebrew.</li>
+<li>178 - Arabic.</li>
+</ul>
+
+<div class="todo">**Todo:** Is that really correct?</div>
+
+<p>A more complete list can be seen the <a href="../Styles/#thestyleeditor">style editor</a>
+dialog box.</p>
+
+<p>In ASS files stored in non-Unicode encodings, this tag also affects what
+codepage the text following it should be interpreted in. Aegisub doesn't
+support this use and some renderers might not support it either. It is
+recommended you do not rely on this and instead always store your files in a
+Unicode encoding. (Aegisub stores files in Unicode UTF-8 by default.)</p>
+
+<h3 id="setcolor"><a name="index21h3"></a>Set color</h3>
+
+<div class="tagusage"><p>\c&amp;H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&amp;<br/>
+\1c&amp;H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&amp;<br/>
+\2c&amp;H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&amp;<br/>
+\3c&amp;H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&amp;<br/>
+\4c&amp;H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&amp;</p></div>
+
+<p>Set the color of the following text. The <code>\c</code> tag is an abbreviation of <code>\1c</code>.</p>
+
+<ul>
+<li><code>\1c</code> sets the primary fill color.</li>
+<li><code>\2c</code> sets the secondary fill color. This is only used for pre-highlight in
+ standard karaoke.</li>
+<li><code>\3c</code> sets the border color.</li>
+<li><code>\4c</code> sets the shadow color.</li>
+</ul>
+
+<p>The color codes are given in
+<a href="http://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</a> in Blue Green Red
+order. Note that this is the opposite order of HTML color codes. Color codes
+must always start with <code>&amp;H</code> and end with <code>&amp;</code>.</p>
+
+<p>The Pick Color toolbar buttons <img src="../img/Pick-color-toolbar-buttons.png" alt="pick-color-toolbar-buttons.png" /> can
+assist in picking colors and entering the color codes.</p>
+
+<h3 id="setalpha"><a name="index22h3"></a>Set alpha</h3>
+
+<div class="tagusage"><p>\alpha&amp;H<i>&lt;aa&gt;</i><br/>
+\1a&amp;H<i>&lt;aa&gt;</i><br/>
+\2a&amp;H<i>&lt;aa&gt;</i><br/>
+\3a&amp;H<i>&lt;aa&gt;</i><br/>
+\4a&amp;H<i>&lt;aa&gt;</i></p></div>
+
+<p>Set the alpha (transparency) of the text.</p>
+
+<ul>
+<li><code>\alpha</code> sets the alpha of all components at once.</li>
+<li><code>\1a</code> sets the primary fill alpha.</li>
+<li><code>\2a</code> sets the secondary fill alpha. This is only used for pre-highlight in
+ standard karaoke.</li>
+<li><code>\3a</code> sets the border alpha.</li>
+<li><code>\4a</code> sets the shadow alpha.</li>
+</ul>
+
+<p>An alpha of 00 (zero) means opaque/fully visible, and an alpha of FF (ie. 255
+in decimal) is fully transparent/invisible.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\alpha&H80&</pre>
+
+<p>Set the alpha of all components to hexadecimal 80, decimal 128, making the
+text 50% transparent in general.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\1a&HFF&</pre>
+
+<p>Set the primary fill alpha to hexadecimal FF, decimal 255, making it invisible
+and effectively leaving only the border and shadow.</p></div></div>
+
+<h3 id="linealignment"><a name="index23h3"></a>Line alignment</h3>
+
+<div class="tagusage">\an<i>&lt;pos&gt;</i></div>
+
+<p>Specify the alignment of the line. The alignment specifies the position of the
+line when no <a href="./#setposition">position override</a> or
+<a href="./#movement">movement</a> is in effect, and otherwise specifies the
+anchor point of positioning and rotation.</p>
+
+<p>The <code>\an</code> tag uses &quot;numpad&quot; values for the <em>pos</em>, ie. the alignment values
+correspond to the positions of the digits on the numeric keypad on a regular
+keyboard:</p>
+
+<ol>
+<li>Bottom left</li>
+<li>Bottom center</li>
+<li>Bottom right</li>
+<li>Middle left</li>
+<li>Middle center</li>
+<li>Middle right</li>
+<li>Top left</li>
+<li>Top center</li>
+<li>Top right</li>
+</ol>
+
+<h3 id="linealignmentlegacy"><a name="index24h3"></a>Line alignment (legacy)</h3>
+
+<div class="tagusage">\a<i>&lt;pos&gt;</i></div>
+
+<p>Specify the alignment of the line using legacy alignment codes from SubStation
+Alpha. This tag is supported but considered deprecated; you should usually use
+<code>\an</code> in new scripts instead, as it is more intuitive.</p>
+
+<p>Calculate <em>pos</em> as follows: Use 1 for left-alignment, 2 for center alignment
+and 3 for right-alignment. If you want sub-titles you're done. To get
+top-titles, add 4 to the number, to get mid-titles add 8 to the number:</p>
+
+<ul>
+<li>1: Bottom left</li>
+<li>2: Bottom center</li>
+<li>3: Bottom right</li>
+<li>5: Top left</li>
+<li>6: Top center</li>
+<li>7: Top right</li>
+<li>9: Middle left</li>
+<li>10: Middle center</li>
+<li>11: Middle right</li>
+</ul>
+
+<h3 id="karaokeeffect"><a name="index25h3"></a>Karaoke effect</h3>
+
+<div class="tagusage"><p>\k<i>&lt;duration&gt;</i><br/>
+\K<i>&lt;duration&gt;</i><br/>
+\kf<i>&lt;duration&gt;</i><br/>
+\ko<i>&lt;duration&gt;</i></p></div>
+
+<blockquote>
+<p><em>Please note that these tags alone only create some very specific effects
+and all other effects are created with a combination of multiple different
+tags.</em></p>
+</blockquote>
+
+<p>The <code>\k</code> family of tags mark up subtitles for karaoke effects by specifying
+the duration of each syllable. You place a <code>\k</code> tag before each syllable in
+the line.</p>
+
+<p>The <em>duration</em> is given in centiseconds, ie. a <em>duration</em> of 100 is equivalent
+to 1 second. You generally don't enter <code>\k</code> tags manually but rather use
+karaoke timing tools such as <a href="../Tutorials/#karaoketiming">Aegisub's karaoke
+mode</a>.</p>
+
+<p>The different <code>\k</code> tags create various effects:</p>
+
+<ul>
+<li><code>\k</code>: Before highlight, the syllable is filled with the secondary color and
+ alpha. When the syllable starts, the fill is instantly changed to use
+ primary color and alpha.</li>
+<li><code>\K</code> and <code>\kf</code>: These two are identical. Note that <code>\K</code> is an uppercase K
+ and is different from lowercase <code>\k</code>. The syllable fill starts out secondary
+ color, when the syllable starts, the fill changes from secondary to primary
+ with a sweep from left to right, so the sweep ends when the syllable time is
+ over.</li>
+<li><code>\ko</code>: Similar to <code>\k</code>, except that before highlight, the border/outline of
+ the syllable is removed, and appears instantly when the syllable starts.</li>
+</ul>
+
+<p><em>Note: There is an additional karaoke tag, <code>\kt</code>, which is very different from
+the other ones. It is rarely useful and Aegisub does not support that tag, so
+it is not documented.</em></p>
+
+<h3 id="wrapstyle"><a name="index26h3"></a>Wrap style</h3>
+
+<div class="tagusage">\q<i>&lt;style&gt;</i></div>
+
+<p>Determine how line breaking is applied to the subtitle line. The following
+_style_s are available:</p>
+
+<ul>
+<li>0: Smart wrapping, make each line approximately equally long, but top line
+ wider when equal width is impossible. Only <code>\N</code> forces line breaks.</li>
+<li>1: End-of-line wrapping, fill as much text in a line as possible, then break
+ to next line. Only <code>\N</code> forces line breaks.</li>
+<li>2: No word wrapping, wide lines will extend beyound the edges of the screen.
+ Both <code>\n</code> and <code>\N</code> force line breaks.</li>
+<li>3: Smart wrapping, similar to style 0, but bottom lines are made wider.</li>
+</ul>
+
+<h3 id="resetstyle"><a name="index27h3"></a>Reset style</h3>
+
+<div class="tagusage">\r<br>\r<i>&lt;style&gt;</i></div>
+
+<p>Reset the style. This cancels all style overrides in effect, including
+<a href="./#animatedtransform">animations</a>, for all following text.</p>
+
+<p>The first form that does not specify a <em>style</em> will reset to the style defined
+for the entire line, while the second form, that specifies the name of a
+<em>style</em>, will reset the style to that specific style.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>-Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?</pre>
+
+<p>Assuming the current line style is &quot;Default&quot;, this has first &quot;Hey&quot; in the
+Default style, then follows on next line &quot;Huh?&quot; in the style &quot;Alternate&quot;, and
+on the third line the style is reset to &quot;Default&quot; for the &quot;Who are you?&quot;
+text.</p></div></div>
+
+<h3 id="setposition"><a name="index28h3"></a>Set position</h3>
+
+<div class="tagusage">\pos(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>)</div>
+
+<p>Set the position of the line. The <em>X</em> and <em>Y</em> coordinates must be integers and
+are given in the script resolution coordinate system. The meaning of <em>X</em> and
+<em>Y</em> changes slightly depending on <a href="./#linealignment">alignment</a>.</p>
+
+<blockquote>
+<p><em>In VSFilter 2.39 and later, you can use non-integer numbers for
+coordinates, for sub-pixel precision to to one eighth of a pixel. Note that
+this might not be safe for softsubbing.</em></p>
+</blockquote>
+
+<p>The alignment of the subtitle line is used as anchor point for the position.
+I.e. when you have a line with alignment top-left, the top-left corner of the
+subtitle is placed at the coordinates given to <code>\pos</code>, and for bottom-center
+alignment, the bottom center of the subtitle is placed at the coordinates
+given.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>The following screenshots illustrate the way alignment affects positioning.
+The green cross marks the point (320,240) on the video. </p>
+
+<p><img src="../img/Pos_sample01.jpg" alt="pos sample01.jpg" /><br/>
+<img src="../img/Pos_sample02.jpg" alt="pos sample02.jpg" /><br/>
+<img src="../img/Pos_sample03.jpg" alt="pos sample03.jpg" /></p></div></div>
+
+<h3 id="movement"><a name="index29h3"></a>Movement</h3>
+
+<div class="tagusage"><p>\move(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)<br/>
+\move(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;,<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;)</p></div>
+
+<p>The <code>\move</code> tag works similar to <a href="./#setposition"><code>\pos</code></a> in that it
+positions the subtitle line, the difference is that <code>\move</code> makes the subtitle
+move.</p>
+
+<p>The two versions of <code>\move</code> differ in that one makes the movement occur over
+the entire duration of the subtitle, while on the other you specify the time
+over which the movement occurs.</p>
+
+<p>The coordinates <em>x1</em>, <em>y1</em>, <em>x2</em> and <em>y2</em> are given in the script resolution
+coordinate system, like <code>\pos</code>. The subtitle starts out at point (<em>x1</em>,_y1<em>)
+and moves with constant speed so it ends up at (<em>x2</em>,_y2</em>).
+<a href="./#linealignment">Alignment</a> influences movement coordinates the same
+way as it influences <code>\pos</code> coordinates.</p>
+
+<blockquote>
+<p><em>In VSFilter 2.39 and later, you can use non-integer numbers for the X and Y
+coordinates. Note that this might not be safe for softsubbing.</em></p>
+</blockquote>
+
+<p>In the second version, the times <em>t1</em> and <em>t2</em> are given in milliseconds, ie.
+one thousandth of a second, and are relative to the start time of the
+subtitle. For example, a <em>t1</em> value of 1500 means that the movement begins 1.5
+seconds (one and a half second) after the line has appeared on screen. When
+you specify times for the movement, the position of the subtitle is as
+follows:</p>
+
+<ol>
+<li>Before <em>t1</em>, the subtitle is stationary at point (<em>x1</em>,_y1_).</li>
+<li>Between <em>t1</em> and <em>t2</em>, the subtitle moves with constant speed from (<em>x1</em>,_y1<em>) to (<em>x2</em>,_y2</em>).</li>
+<li>After <em>t2</em> the subtitle is stationary at point (<em>x2</em>,_y2_).</li>
+</ol>
+
+<p>Note that it is legal to have <em>t1</em> and <em>t2</em> specify times greater than the
+duration of the line, but it might not be very useful to do so. Specifying
+both <em>t1</em> and <em>t2</em> as 0 (zero) is the same as using the first version of
+<code>\move</code>, ie. the movement will occur from the start time of the line to the
+end time of the line.</p>
+
+<p>There are some things <strong><code>\move</code> can not do</strong>:</p>
+
+<ul>
+<li>Non-constant-speed movement is not possible. The movement can not, for
+ example, start out slow and end fast.</li>
+<li>There can only be one positioning or movement tag in a line. Putting both a
+ <code>\pos</code> and a <code>\move</code> tag in a line will not work. It will also not work to
+ put two or more <code>\move</code> tags in a single line.</li>
+</ul>
+
+<p>If you need to do do any of those two you will need to split the movement into
+segments that are done on separate subtitle lines. (How to do this is outside
+the scope of this page.)</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\move(100,150,300,350)</pre>
+
+<p>When the line appears on screen, the subtitle is at (100,150). While the
+subtitle is displayed, it moves at constant speed such that it will arrive at
+point (300,350) at the same time it disappears.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\move(100,150,300,350,500,1500)</pre>
+
+<p>The line appears at (100,150). After the line has been displayed for half a
+second (500 milliseconds) it begins moving towards (300,350) such that it will
+arrive at the point a second and a half (1500 milliseconds) after the line
+first appeared on screen.</p></div></div>
+
+<h3 id="rotationorigin"><a name="index30h3"></a>Rotation origin</h3>
+
+<div class="tagusage">\org(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>)</div>
+
+<p>Set the origin point used for <a href="./#textrotation">rotation</a>. This
+affects all rotations of the line. The <em>X</em> and <em>Y</em> coordinates are given in
+integer script resolution pixels.</p>
+
+<p>When there is no <code>\org</code> tag in a line, the rotation origin is implicitly the
+same as the <a href="./#setposition">position anchor point</a>. This means that
+the rotation origin will move if the line moves and there is no origin set
+with <code>\org</code>. Note that you can <em>not</em> animate the <code>\org</code> tag, you are limited
+to a fixed origin if you use it.</p>
+
+<p>If the rotation origin is placed on the vanishing point in a 3D scene, 3D
+rotations of subtitle line will produce the correct perspective to match the
+scene.</p>
+
+<p>It's perfectly possible (and occasionally useful) to place the origin point
+far outside the actual image; if it is sufficiently far away, doing
+appropriately calculated small rotations will seem to move the text along a
+straight (or almost straight) line through the image. This is somewhat hard to
+control, but can be used to work around format limitations with \move, such as
+the inability to do accelerated moves or several moves per line.</p>
+
+<p>There can be at most one <code>\org</code> tag in a single line, if you put more than one
+in a single line, only the first is used.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\org(320,240)</pre>
+
+<p>Fix the rotation origin at point (320,240).</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\org(10000,0)</pre>
+
+<p>Placing the rotation origin at a far away point allows you to use slight
+<code>\frz</code> rotations to produce &quot;jumping&quot; effects; the text will move up or down
+without seeming to rotate.</p></div></div>
+
+<h3 id="fade"><a name="index31h3"></a>Fade</h3>
+
+<div class="tagusage">\fad(<i>&lt;fadein&gt;</i>,<i>&lt;fadeout&gt;</i>)</div>
+
+<p>Produce a fade-in and fade-out effect. The <em>fadein</em> and <em>fadeout</em> times are
+given in milliseconds, ie. 1000 means one second. You can specify <em>fadein</em> or
+<em>fadeout</em> as 0 (zero) to not have any fade effect on that end.</p>
+
+<p>Adding a fade effect does not extend the duration of the line, rather the
+start or end of the line's display time is used for the fade effect. For this
+reason, you should be careful that <em>fadein</em>+_fadeout_ is not greater than the
+duration of the line. For example, for a line displayed for 4 seconds, the sum
+of <em>fadein</em>+_fadeout_ should not be greater than 4000.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\fad(1200,250)</pre>
+
+<p>Fade in the line in the first 1.2 seconds it is to be displayed, and fade it
+out for the last one quarter second it is displayed.</p></div></div>
+
+<h3 id="fadecomplex"><a name="index32h3"></a>Fade (complex)</h3>
+
+<div class="tagusage">\fade(<i>&lt;a1</i>&gt;,<i>&lt;a2</i>&gt;,<i>&lt;a3</i>&gt;,<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;t3</i>&gt;,<i>&lt;t4</i>&gt;)</div>
+
+<p>Perform a five-part fade using three alpha values <em>a1</em>, <em>a2</em> and <em>a3</em> and four
+times <em>t1</em>, <em>t2</em>, <em>t3</em> and <em>t4</em>.</p>
+
+<p>The alpha values are given in <em>decimal</em> and are between 0 and 255, with 0
+being fully visible and 255 being invisible. The time values are given in
+milliseconds after the start of the line. All seven parameters are required.
+(For most common fade effects the <code>&lt;a href=&quot;./#fade&quot;&gt;\fad&lt;/a&gt;</code> tag works fine.)</p>
+
+<ul>
+<li>Before <em>t1</em>, the line has alpha <em>a1</em>.</li>
+<li>Between <em>t1</em> and <em>t2</em> the line fades from alpha <em>a1</em> to alpha <em>a2</em>.</li>
+<li>Between <em>t2</em> and <em>t3</em> the line has alpha <em>a2</em> constantly.</li>
+<li>Between <em>t3</em> and <em>t4</em> the line fades from alpha <em>a2</em> to alpha <em>a3</em>.</li>
+<li>After <em>t4</em> the line has alpha <em>a3</em>.</li>
+</ul>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\fade(255,32,224,0,500,2000,2200)</pre>
+
+<p>Starts invisible, fades to almost totally opaque, then fades to almost totally
+invisible. First fade starts when the line starts and lasts 500 milliseconds.
+Second fade starts 1500 milliseconds later, and lasts 200 milliseconds.</p></div></div>
+
+<h3 id="animatedtransform"><a name="index33h3"></a>Animated transform</h3>
+
+<div class="tagusage"><p>\t(<i>&lt;style modifiers&gt;</i>)<br/>
+\t(<i>&lt;accel&gt;</i>,<i>&lt;style modifiers&gt;</i>)<br/>
+\t(<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;style modifiers&gt;</i>)<br/>
+\t(<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;accel&gt;</i>,<i>&lt;style modifiers&gt;</i>)</p></div>
+
+<p>Perform a gradual, animated transformation from one style to another. The
+<em>style modifiers</em> are other override tags as specified in this reference. Only
+a limited set of the override tags are animateable with <code>\t</code>:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Font </th>
+            <th>Geometry </th>
+            <th>Other effects</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>\fs<br>\fsp<br>\c<br>\1c<br>\2c<br>\3c<br>\4c<br>\alpha<br>\1a<br>\2a<br>\3a<br>\4a </td>
+            <td>\fscx<br>\fscy<br>\frx<br>\fry<br>\frz<br>\fr<br>\fax<br>\fay </td>
+            <td>\bord<br>\xbord<br>\ybord<br>\shad<br>\xshad<br>\yshad<br>\clip<br>\iclip<br>\be<br>\blur</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><em>Note: For <code>\clip</code> and <code>\iclip</code>, only the rectangle versions can be animated. The
+vector drawing versions cannot be animated.</em></p>
+
+<p><em>Note: Mixing <code>\clip</code> and <code>\iclip</code> in <code>\t</code> tags has undesireable results.</em></p>
+
+<p>The <em>t1</em> and <em>t2</em> parameters specify the time interval to perform the
+transformation over. In the versions without <em>t1</em> and <em>t2</em> the transformation
+is performed over the entire duration of the line. The times are given in
+milliseconds and are relative to the start time of the line. (For the rest of
+the description of <code>\t</code>, <em>t1</em> and <em>t2</em> are assumed to be specified, or
+implicitly be respectively 0 and the duration of the line.)</p>
+
+<p>The <em>accel</em> parameter can be used to make the animation non-linear and instead
+follow an exponential curve. An <em>accel</em> parameter of 1 (one) causes the
+animation speed to be linear. A value bewteen 0 and 1 causes the animation to
+start fast and end slow. A value greater than 1 causes the animation to start
+slow and end fast. (For the mathematically inclined, the function is <em>y</em> = <em>x</em>
+with <em>x</em> ∈ [0;1] = (<em>t</em>-_t1<em>)/(<em>t2</em>-_t1</em>), <em>t</em> being the current time.)</p>
+
+<p>Before <em>t1</em>, the style is as all tags before the <code>\t</code> tag specify. After <em>t2</em>
+the style is as all tags before the <code>\t</code> tag, and further overridden by the
+given <em>style overrides</em>. Between <em>t1</em> and <em>t2</em> the style is gradually animated
+between those two points, following the acceleration function described above.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>{\1c&HFF0000&\t(\1c&H0000FF&)}Hello!</pre>
+
+<p>The text starts out blue, but fades towards red so it is completely red when the line ends.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>{\an5\t(0,5000,\frz3600)}Wheee</pre>
+
+<p>Makes the text rotate 10 times, counterclockwise, lasting for 5 seconds.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>{\an5\t(0,5000,0.5,\frz3600)}Wheee</pre>
+
+<p>Same as above, but it will start fast and slow down, still doing the 10 rotations in 5 seconds.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>{\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}Boo!</pre>
+
+<p>Text starts at zero size, i.e. invisible, then grows to 100% size in both X and Y direction.</p></div></div>
+
+<h3 id="cliprectangle"><a name="index34h3"></a>Clip (rectangle)</h3>
+
+<div class="tagusage"><p>\clip(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)<br/>
+\iclip(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)</p></div>
+
+<p>Define a rectangle to clip the line, only the part of the line that is inside
+the rectangle is visible. The <code>\iclip</code> tag has the opposite effect, it defines
+a rectangle where the line is not shown.</p>
+
+<p>The <em>x1</em>, <em>y1</em>, <em>x2</em> and <em>y2</em> coordinates are given in script resolution
+pixels and are relative to the top-left corner of the video. The coordinates
+must be integers, there is no possibility to use non-integer coordinates.
+(Increasing the script resolution will not increase the precision, the
+clipping always happens on video pixel boundaries.)</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\clip(0,0,320,240)</pre>
+
+<p>Assuming 640x480 script resolution, only the part of the line within the top
+left quadrant is visible.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\iclip(0,0,320,240)</pre>
+
+<p>Similar to above, but instead the part of the line within the top left
+quadrant is hidden.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>Example of <code>\clip(0,0,704,245)</code> on a 704x480 video:<br/>
+<img src="../img/Clip_sample01.jpg" alt="clip sample01.jpg" /></p></div></div>
+
+<h3 id="clipvectordrawing"><a name="index35h3"></a>Clip (vector drawing)</h3>
+
+<div class="tagusage"><p>\clip(<i>&lt;drawing commands&gt;</i>)<br/>
+\clip(<i>&lt;scale&gt;</i>,<i>&lt;drawing commands&gt;</i>)<br/>
+\iclip(<i>&lt;drawing commands&gt;</i>)<br/>
+\iclip(<i>&lt;scale&gt;</i>,<i>&lt;drawing commands&gt;</i>)</p></div>
+
+<p>Use the shape defined by a vector drawing to selectively display (<code>\clip</code>) or
+hide (<code>\iclip</code>) parts of the line.</p>
+
+<p>The <em>drawing commands</em> are drawing commands as those used with the <code>\p</code> tag,
+the coordinates are given in script resolution pixels and are relative to the
+top left corner of the video.</p>
+
+<p>If the <em>scale</em> is not specified it is assumed to be 1 (one), meaning that
+coordinates correspond directly to pixels. The <em>scale</em> works the same way as
+the <em>scale</em> for <code>\p</code> drawings.</p>
+
+<p>Unlike the rectangular clip, the vector drawing clip can <em>not</em> be animated
+with <code>\t</code>. If you need to animate a vector drawing clip, you must create
+multiple similar subtitle lines with each their own &quot;frame&quot; of the clipping
+animation.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre>\clip(1,m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0)</pre>
+
+<p>Only show the portion of the line within the defined pseudo-circle.</p></div></div>
+
+<h2 id="drawingtags"><a name="index3h2"></a>Drawing tags</h2>
+
+<p>Advanced Substation Alpha also supports some advanced drawing tags that allow
+you to draw with vectorial graphics. Certain familiarity with vectors and
+splines will make the understanding of this much simpler.</p>
+
+<h3 id="p01..-toggledrawingmode"><a name="index36h3"></a>\p<0/1/..> - Toggle drawing mode</h3>
+
+<p>Setting this tag to 1 or above enables drawing mode. Text after this override
+block will then be interpreted as drawing instructions, and not as actually
+visible text. Setting this to zero disables drawing mode, restoring normal
+behavior. When turning on, the value might be any integer larger than zero,
+and will be interpreted as the scale, in 2^(value-1) mode. This is done to
+allow sub-pixel accuracy.
+e.g.:
+ \p1
+(Enables drawing with normal coordinates)
+ \p0
+(Disables drawing)
+ \p2
+(Enables drawing, and resolution is doubled. So drawing to 200,200 will
+actually draw to 100,100)
+ \p4
+(Enables drawing, and resolution is 8x larger (2^(4-1)). So drawing to 400,400
+will actually draw to 50,50)</p>
+
+<h3 id="pboy-baselineoffset"><a name="index37h3"></a>\pbo - Baseline offset</h3>
+
+<p>Defines baseline offset for drawing. This is basically an Y offset to all
+coordinates.
+e.g.:
+ \pbo-50
+(Draws everything 50 pixels above specified)
+ \pbo100
+(Draws everything 100 pixels below specified)</p>
+
+<h2 id="drawingcommands"><a name="index4h2"></a>Drawing commands</h2>
+
+<p>These commands should appear either in a \clip tag (vectorial overload) or
+between \p# and \p0, outside override blocks. For example (taken straight
+from the ASS specs):</p>
+
+<ul>
+<li>Square:</li>
+</ul>
+
+<div></div>
+
+<pre><code>{\p1}m 0 0 l 100 0 100 100 0 100{\p0}
+</code></pre>
+
+<ul>
+<li>Rounded square:</li>
+</ul>
+
+<div></div>
+
+<pre><code>{\p1}m 0 0 s 100 0 100 100 0 100 c{\p0}
+</code></pre>
+
+<blockquote>
+<p>(c equals to &quot;p 0 0 100 0 100 100&quot; in this case)</p>
+</blockquote>
+
+<ul>
+<li>Circle (almost):</li>
+</ul>
+
+<div></div>
+
+<pre><code>{\p1}m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0{\p0}
+</code></pre>
+
+<blockquote>
+<p>(note that the 2nd 'b' is optional here)</p>
+</blockquote>
+
+<p>Drawing commands use the primary color for fill and outline color for borders.
+They also display shadow. The idea of drawing vectors is that there is an
+invisible &quot;cursor&quot; (think of it as the mouse pointer in a drawing program, or
+as a pen moving through the image) on the video frame, and you tell it to move
+to other positions. As it moves, it draws on the area behind it, and when you
+close the line formed, it fills it with the primary color.</p>
+
+<h3 id="mxy-move"><a name="index38h3"></a>m   - Move</h3>
+
+<p>Moves the cursor to x,y. If you have an unclosed shape, it will automatically
+be closed, as the program assumes that you are now drawing a new, independent
+shape. All drawing routines must start with this command.</p>
+
+<h3 id="nxy-movenoclosing"><a name="index39h3"></a>n   - Move (no closing)</h3>
+
+<p>Moves the cursor to x,y, without closing the current shape.</p>
+
+<h3 id="lxy-line"><a name="index40h3"></a>l   - Line</h3>
+
+<p>Draws a line from the current cursor position to x,y, and moves the cursor
+there afterwards.</p>
+
+<h3 id="bx1y1x2y2x3y3-cubicbziercurve"><a name="index41h3"></a>b       - Cubic Bézier curve</h3>
+
+<p>Draws a cubic (3rd degree) Bézier curve from the cursor position to (x3,y3),
+using (x1,y1) and (x2,y2) as the control points. Check the <a href="http://en.wikipedia.org/wiki/B%C3%A9zier_curve">article on
+Wikipedia</a> for more
+information about Bézier curves. In this picture taken from that article, P0
+is the cursor position, P1 is x1,y1, P2 is x2,y2 and P3 is x3,y3:<br/>
+<img src="../img/Bezier.png" alt="Bezier.png" /><br/>
+Note that the curve begins at P0, heads towards P1, then arrives at P3 coming
+from P2's direction.</p>
+
+<h3 id="sx1y1x2y2x3y3..xnyn-cubicb-spline"><a name="index42h3"></a>s       ..   - Cubic b-spline</h3>
+
+<p>Draws a cubic (3rd degree) uniform b-spline to point N. This must contain at
+least 3 coordinates (and is, in that case, the same as b). This basically lets
+you chain several cubic Bézier curves together. Check this other article on
+Wikipedia for more information.</p>
+
+<h3 id="pxy-extendb-spline"><a name="index43h3"></a>p   - Extend b-spline</h3>
+
+<p>Extends the b-spline to x,y. This is essentially the same as adding another
+pair of coordinates at the end of s.</p>
+
+<h3 id="c-closeb-spline"><a name="index44h3"></a>c - Close b-spline</h3>
+
+<p>Closes the b-spline.</p>
+
+<p><em>Note: The <a href="../Visual_Typesetting/#vectorialclip">vector clip visual typesetting
+tool</a> only supports the m, l and b
+commands, and may corrupt drawings which use the other commands.</em></p>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5><a name="index1h5"></a>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5><a name="index2h5"></a>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5><a name="index3h5"></a>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5><a name="index4h5"></a>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><span class="selflink">ASS Override Tags</span></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5><a name="index5h5"></a>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5><a name="index6h5"></a>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5><a name="index7h5"></a>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+                <div class="tags">
+                    Tags:
+                    
+                    <a href="../TODO/" rel="tag">/TODO</a>
+                    
+                </div>
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Automation/Included_macros/">Automation/Included macros</a>
+                    
+                    <a href="../Automation/Karaoke_Templater/Tutorial_1/">Automation/Karaoke Templater/Tutorial 1</a>
+                    
+                    <a href="../Editing_Subtitles/">Editing Subtitles</a>
+                    
+                    <a href="../Exporting/">Exporting</a>
+                    
+                    <a href="../Options/">Options</a>
+                    
+                    <a href="../Styles/">Styles</a>
+                    
+                    <a href="../Video/">Video</a>
+                    
+                    <a href="../Visual_Typesetting/">Visual Typesetting</a>
+                    
+                    <a href="../sidebar/">sidebar</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:51 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

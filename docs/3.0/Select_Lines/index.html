@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Select_Lines/">
+        <title>Select Lines - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title"><a name="index1h1"></a>
+                        <a href="../">Aegisub</a> / 
+                        Select Lines
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <div id="toc">
+    <div id="toctitle">Contents</div>
+    
+<div class="toc">
+		<ol>
+			<li class="L3"><a href="#index1h3">Match</a>
+			</li>
+			<li class="L3"><a href="#index2h3">In field</a>
+			</li>
+			<li class="L3"><a href="#index3h3">Match dialogues/comments</a>
+			</li>
+			<li class="L3"><a href="#index4h3">Action</a>
+			</li>
+		</ol>
+</div>
+
+</div>
+
+<p>The <strong>select lines</strong> tool is useful for finding and selecting all lines in the
+script that matches certain criteria. This can be useful from a number of
+things ranging from deleting all comment lines to finding all lines said by a
+certain actor. The tool can be found in the <em>Subtitles</em> menu -&gt; <em>Select lines</em>.</p>
+
+<center><img src="../img/Select_lines.png" alt="Select lines.png" /></center>
+
+<h3 id="match"><a name="index1h3"></a>Match</h3>
+
+<p>These controls what criteria will be used for selecting the lines.</p>
+<dl>
+<dt><strong>Match</strong></dt>
+<dd>Select all lines that match the criteria.</dd>
+
+<dt><strong>Doesn't match</strong></dt>
+<dd>Select all lines that <em>don't</em> match the criteria.</dd>
+
+<dt><strong>Match case</strong></dt>
+<dd>Controls case sensitivity, i.e. if the tool should care about the difference
+between lower and upper case or not.</dd>
+
+<dt><strong>Exact match</strong></dt>
+<dd>Matches the lines that matches the given string <em>exactly</em>.</dd>
+
+<dt><strong>Contains</strong></dt>
+<dd>Matches the lines that <em>contains</em> the given string.</dd>
+
+<dt><strong>Regular Expression match</strong></dt>
+<dd>Treats the string as a <a href="http://en.wikipedia.org/wiki/Regular_expression">regular
+expression</a> or &quot;regex&quot;, and
+matches if said expression matches. For a regular expressions tutorial, try
+reading the <a href="http://perldoc.perl.org/perlretut.html">perlretut manual page</a> or
+googling. For a reference of the exact syntax supported by Aegisub, see the
+<a href="http://www.wxwidgets.org/manuals/stable/wx_wxresyn.html">wxWidgets regular expressions reference
+page</a>.</dd>
+</dl>
+
+
+<h3 id="infield"><a name="index2h3"></a>In field</h3>
+
+<p>This option controls what field of each line will be used for the matching
+mentioned above. Possible alternatives are:</p>
+<dl>
+<dt><strong>Text</strong></dt>
+<dd>The main text field</dd>
+
+<dt><strong>Style</strong></dt>
+<dd>The style field</dd>
+
+<dt><strong>Actor</strong></dt>
+<dd>The actor field</dd>
+
+<dt><strong>Effect</strong></dt>
+<dd>The effect field</dd>
+</dl>
+
+
+<h3 id="matchdialoguescomments"><a name="index3h3"></a>Match dialogues/comments</h3>
+
+<p>Here you can choose if you want to select from comment lines, dialogue lines,
+or both.</p>
+
+<h3 id="action"><a name="index4h3"></a>Action</h3>
+
+<p>Decides what the tool should do with the lines that matches the given criteria.
+You can choose between:</p>
+<dl>
+<dt><strong>Set selection</strong></dt>
+<dd>Your current selection will be discarded and all lines in the script matching
+the criteria will be selected instead.</dd>
+
+<dt><strong>Add to selection</strong></dt>
+<dd>Adds all lines in the script that matches the criteria to your current
+selection.</dd>
+
+<dt><strong>Subtract from selection</strong></dt>
+<dd>Deselects all currently selected lines that match the criteria.</dd>
+
+<dt><strong>Intersect with selection</strong></dt>
+<dd>Does the inverse of subtract from selection. That is to say, all lines in the
+current selection that matches the criteria are kept selected, but everything
+else is deselected.</dd>
+</dl>
+
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5><a name="index1h5"></a>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5><a name="index2h5"></a>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5><a name="index3h5"></a>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><span class="selflink">Select Lines</span></li>
+</ul>
+
+<h5><a name="index4h5"></a>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5><a name="index5h5"></a>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5><a name="index6h5"></a>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5><a name="index7h5"></a>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Overview/">Overview</a>
+                    
+                    <a href="../sidebar/">sidebar</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:54 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

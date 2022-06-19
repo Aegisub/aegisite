@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Kanji_Timer/">
+        <title>Kanji Timer - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../">Aegisub</a> / 
+                        Kanji Timer
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>The kanji timer makes it easy to copy timed karaoke from one set of already karaoke timed lines to another set of yet untimed lines. Primarily intended for adding karaoke to Japanese songs.</p>
+
+<p>Here is a video demonstration of the kanji timer in action: <a href="http://www.animereactor.dk/aegisub/demovids/kanji-timer.avi">Download demonstration video</a> (XviD MP3 AVI, 5 min 20 sec, 12 MB)</p>
+
+<h2 id="beforeyoustart">Before you start</h2>
+
+<p>The kanji timer attempts to pair syllables in one (timed) input line with a given style with syllables in a corresponding (untimed) line with another style. In other words, the timed input lines should all have same style (&quot;romaji&quot; for example) and the untimed ones another (&quot;kanji&quot; for example). Having more timed source lines than untimed destination ones or vice versa can confuse the tool, but it's usually possible to un-confuse it, see below. In order to correctly pair source lines with destination ones, both sets must be in the same order in the grid. For example, this works:
+ Timed line 1
+ Untimed line 1
+ Timed line 2
+ Untimed line 2
+And so does this:
+ Timed line 1
+ Timed line 2
+ Untimed line 1
+ Untimed line 2
+But this does <strong>not</strong> (pairs lines wrong):
+ Timed line 1
+ Timed line 2
+ Untimed line 2
+ Untimed line 1</p>
+
+<h2 id="usingthekanjitimer">Using the kanji timer</h2>
+
+<p>The kanji timer dialog looks like this:</p>
+
+<center><img src="../img/Kanji_timer.png" alt="Kanji timer.png" /></center>
+
+<p>The first thing you need to do is to select which styles are used for the timed input lines and the untimed output lines respectively. This is done in the upper right corner of the dialog; the top dropdown is the source style and the bottom one is the destination. When you've done this, click the start button.</p>
+
+<p>Now, you'll see the first syllable of the first source line highlighted in the source text field, and a suggestion for the destination syllable highlighted in the destination field. What you do now is &quot;group&quot; each source syllable with one or more kanji (or other syllables) in the destination. This is done using the following keyboard shortcuts:</p>
+
+<ul>
+<li><strong>Enter</strong> - accept the highlighted grouping (and go to next line if all syllables are grouped).</li>
+<li><strong>Right arrow</strong> - increase the destination highlight length.</li>
+<li><strong>Left arrow</strong> - decrease the destination highlight length.</li>
+<li><strong>Up arrow</strong> - increase the source highlight length.</li>
+<li><strong>Down arrow</strong> - decrease the source highlight length.</li>
+<li><strong>Backspace</strong> - un-groups (or unlinks) the last accepted syllable and lets you try to group it again (useful if you make a mistake).</li>
+</ul>
+
+<div></div>
+
+<h2 id="thingstonote">Things to note</h2>
+
+<ul>
+<li>Don't use the mouse to change the highlights; it confuses the tool a lot. Use the keyboard shortcuts instead, they're much faster.</li>
+<li>The destination line can already be k-timed, but if it is, the kanji timer will overwrite those timings.</li>
+<li>Empty syllables will be copied alone, or will be combined with the surrounding syllables if those are to be combined.</li>
+<li>Any ASS override tags appearing before each \k will be copied directly without modification, but tags after each \k is currently not copied at all.</li>
+<li>If you have more source than destination lines or vice versa, you can use the &quot;Skip source line&quot; or &quot;Skip destination line&quot; to make sure the pairing of source/destination lines is correctly done.
+<div></div></li>
+</ul>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><span class="selflink">Kanji Timer</span></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Overview/">Overview</a>
+                    
+                    <a href="../sidebar/">sidebar</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:50 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

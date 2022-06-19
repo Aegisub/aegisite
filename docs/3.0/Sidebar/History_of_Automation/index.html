@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Sidebar/History_of_Automation/">
+        <title>History of Automation - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../../">Aegisub</a> / <a href="../../sidebar/">Sidebar</a> / 
+                        History of Automation
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>The Automation system in Aegisub has evolved from a very basic and hardly useful stand-alone system for creating basic karaoke effects into a very powerful extension mechanism. Here's a short account of its history, from the principal author of the systems.</p>
+
+<h2 id="automation1reallyjustkaraokeeffector">Automation 1, really just Karaoke Effector</h2>
+
+<p><span class="createlink">Effector screenshot.png</span></p>
+
+<p>The <em>Karaoke Effector</em> program was originally created for making karaoke effects for a small translation project, that later died. It was written in Borland Delphi and used Lua 5.0 for scripting. This use of Lua is the primary reason I even call it &quot;Automation 1&quot; today. It basically allowed creating effects similar to what the <em>simple-k-replacer</em> script from Automation 3 does, but in a more complicated and not as usable way.</p>
+
+<p>If you want to try this relic from the museum, you can download it here: <a href="http://www.animereactor.dk/aegisub/effector.rar">http://www.animereactor.dk/aegisub/effector.rar</a></p>
+
+<h2 id="automation2thepythonenginethatneverhappened">Automation 2, the Python engine that never happened</h2>
+
+<p>Automation 2 was intended to be the scripting system in Aegisub, I drafted the specifications for it while Aegisub was still only in internal pre-alpha development. It was planned to use Python for scripting language and be quite flexible. It just proved to be an overall bad design (which on hindsight might have been a good thing) and it was never implemented. Instead I started looking into Lua again and drafting what became Automation 3.</p>
+
+<p>I don't think there's much of any proof of the work on Automation 2 left now. The main thing to be said about it is that the current Automation 4 achieves everything Automation 2 was intended to be, and even more.</p>
+
+<h2 id="automation3backtoluaandsomethingusable">Automation 3, back to Lua and something usable</h2>
+
+<p>After the fiasco of Automation 2 and Python I went &quot;browsing languages&quot; again and ended up going back to Lua, and also went for a much less ambitious design. This proved to work and ended up as the Automation 3 system. Originally Automation 3 was also intended to be somewhat extensible and down the road support more than just the basic modification of subtitle lines, this is evident from the <em>kind=&quot;basic_ass&quot;</em> statement required in all Automation 3 scripts. Unfortunately the overall architecture of Automation 3 in the end didn't allow it to be extended either way, and the first rough ideas for Automation 4 started forming.</p>
+
+<p>In the end Automation 3 did prove very successful though and has done a great job.</p>
+
+<h2 id="automation4unlimitedfeatureworks">Automation 4, unlimited feature works?</h2>
+
+<p><span class="createlink">Hello-auto4.png</span></p>
+
+<p>As the flaws of Automation 3 started showing through the design of Automation 4 begun. Lots of people had been crying for other languages, especially Perl and Python, so support for multiple scripting languages went into the core design. The development of Automation 4 was much on and off, standing still for months at a time. Originally it was planned for Aegisub 1.09, then got pushed to 1.10 and then finally to 1.11, which then grew into Aegisub 2 because of the load of new features and major redesigns in that version, Automation 4 one of them.</p>
+
+<p>In mid-May 2006 Automation 4/Lua was finally in a &quot;working&quot; state, if I am to trust the timestamp of <em>hello-auto4.png</em> but first now, more than a year later, it's really useful. A testament to my laziness.</p>
+
+<blockquote>
+<p><em>- Niels Martin Hansen, July 2nd, 2007</em></p>
+</blockquote>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../../About/">What is Aegisub?</a></li>
+    <li><a href="../../Highlights/">Highlights</a></li>
+    <li><a href="../../Credits/">Credits</a></li>
+    <li><a href="../../Support/">Support Aegisub</a></li>
+    <li><a href="../../FAQ/">FAQ</a></li>
+    <li><a href="../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../../Typesetting/">Introduction</a></li>
+    <li><a href="../../Video/">Working with Video</a></li>
+    <li><a href="../../Styles/">Editing styles</a></li>
+    <li><a href="../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../../Audio/">Working with Audio</a></li>
+    <li><a href="../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../../Automation/">Overview</a></li>
+    <li><a href="../../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../Options/">Aegisub Options</a></li>
+    <li><a href="../../Properties/">Script Properties</a></li>
+    <li><a href="../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../../Automation/">Automation</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:54 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Automation/">
+        <title>Automation - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../">Aegisub</a> / 
+                        Automation
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>The name <strong>Automation</strong> covers the entire scripting functionality of Aegisub.</p>
+
+<h2 id="aboutautomation">About Automation</h2>
+
+<p>The single purpose of Automation is — as the name implies — to automate various
+aspects of subtitle creation and editing. To date this has mainly been for
+creating <a href="../Glossary/Karaoke_effect/">karaoke effects</a> but Aegisub 2 introduces
+<a href="../Sidebar/History_of_Automation/">Automation 4</a> which also allows creating more
+general purpose <a href="../Glossary/Macro/">macros</a> and also changing the style
+definitions and other meta data for the subtitles.</p>
+
+<p>Some of the goals of Automation:</p>
+
+<ul>
+<li>Macros to automate complex subtitle editing tasks</li>
+<li>Export filters to generate complex effects from simpler input</li>
+<li>Karaoke effects</li>
+<li>Translation note boxes</li>
+<li>Probably several yet-undiscovered uses</li>
+</ul>
+
+<h2 id="usingautomation">Using Automation</h2>
+
+<p>Aegisub comes with several Automation scripts already packaged and ready to
+use. This includes the advanced <strong><a href="./Karaoke_Templater/">Karaoke Templater</a></strong> script (which covers
+everything <em>simple-k-replacer</em>, <em>line-per-syllable</em> and <em>multi-template</em> did in
+Automation 3) and a <strong><a href="./Included_macros/">collection of macros</a></strong> to
+simplify some editing tasks.</p>
+
+<p>Aegisub almost always has several Automation scripts loaded at a time. You can
+see what scripts are loaded, and load/unload more from the
+<strong><a href="./Manager/">Manager</a></strong> window.</p>
+
+<p>All Automation scripts also present themselves in Aegisub in one way or
+another. Some appear as <a href="./Running_macros/">macros in the Automation
+menu</a> and others appear as <a href="../Exporting/">filters in the Export
+dialog</a>. Some scripts even appear in both places.</p>
+
+<h2 id="automationforprogrammers">Automation for programmers</h2>
+
+<p>Automation supports scripts in <a href="http://www.lua.org">Lua 5.1</a>. Other languages
+used to be supported, but no one used them.</p>
+
+<p>There is several example scripts included with Aegisub to give you a head start
+on writing your own ones. A word of warning: Unless you are an experienced
+programmer the <em>kara-templater.lua</em> script is a very bad place to start!</p>
+
+<p>The Automation 3 scripting interface used in Aegisub 1.10 and earlier is no
+longer supported. If you have previous experience with writing Automation 3
+scripts, there is an <strong><a href="./Overview_of_changes_from_Automation_3/">overview of changes from Automation 3</a></strong>.</p>
+
+<h3 id="futuregoals">Future goals</h3>
+
+<p>In future versions of Aegisub (perhaps 3.1), Automation will be replaced with a
+backwards-compatible scripting interface to the full capabilities of Aegisub,
+rather than being limited to merely manipulating subtitle files.</p>
+
+<div class="navbox">
+<div><span class="selflink">Automation 4</span></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><a href="./Manager/">Automation Manager</a> • <a href="./Running_macros/">Running macros</a> • <a href="../Exporting/">Using export filters</a> • <a href="./Included_macros/">Standard macros</a> • <a href="./Overview_of_changes_from_Automation_3/">Changes from Automation 3</a></td>
+        </tr>
+        <tr>
+            <th><a href="./Karaoke_Templater/">Karaoke Templater</a> reference: </th>
+            <td><a href="./Karaoke_Templater/Declaring_template_and_code_lines/">Declaring templates</a> • <a href="./Karaoke_Templater/Template_execution_rules_and_order/">Execution order</a> • <a href="./Karaoke_Templater/Template_modifiers/">Modifiers</a> • <a href="./Karaoke_Templater/Inline_variables/">Inline-variables ($-variables)</a> <br> <a href="./Karaoke_Templater/Code_lines_and_blocks/">Code lines and blocks</a> • <a href="./Karaoke_Templater/Code_execution_environment/">Execution envirionment</a></td>
+        </tr>
+        <tr>
+            <th><a href="./Lua/">Lua API</a> reference: </th>
+            <td><a href="./Lua/Registration/">Registration</a> • <a href="./Lua/Subtitle_file_interface/">Subtitles object</a> • <a href="./Lua/Progress_reporting/">Progress reporting</a> • <a href="./Lua/Dialogs/">Dialogs</a> • <a href="./Lua/Miscellaneous_APIs/">Misc. APIs</a></td>
+        </tr>
+        <tr>
+            <th><a href="./Lua/Modules/">Lua Modules</a>: </th>
+            <td><a href="./Lua/Modules/karaskel.lua/">karaskel.lua</a> • <a href="./Lua/Modules/utils.lua/">utils.lua</a> • <a href="./Lua/Modules/unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="./Lua/Modules/clipboard/">clipboard</a> • <a href="./Lua/Modules/re/">re</a></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="./Lua/Modules/karaskel.lua/#Style_table">Style tables</a> • <a href="./Lua/Modules/karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="./Lua/Modules/karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../Karaoke_inline-fx/">Inline effects</a> • <a href="../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><span class="selflink">Overview</span></li>
+    <li><a href="./Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="./Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../About/">About</a>
+                    
+                    <a href="./Karaoke_Templater/">Automation/Karaoke Templater</a>
+                    
+                    <a href="./Manager/">Automation/Manager</a>
+                    
+                    <a href="./Running_macros/">Automation/Running macros</a>
+                    
+                    <a href="../Exporting/">Exporting</a>
+                    
+                    <a href="../Karaoke_inline-fx/">Karaoke inline-fx</a>
+                    
+                    <a href="../Overview/">Overview</a>
+                    
+                    <a href="../sidebar/">sidebar</a>
+                    
+                    <a href="../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Tue 28 Feb 2012 08:30:10 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Typesetting/">
+        <title>Typesetting - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../">Aegisub</a> / 
+                        Typesetting
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>Wikipedia's definition of
+<a href="http://en.wikipedia.org/wiki/Typesetting">typesetting</a>: &quot;<strong>Typesetting</strong>
+involves the presentation of textual material in graphic form on paper or some
+other medium.&quot; In a subtitling context, this means three things:</p>
+
+<ul>
+<li>Presenting (a translation of) the spoken dialogue to the viewer in an easily
+ readable and visually pleasing form.</li>
+<li>Translating any foreign-language background texts (such as episode titles,
+ scene information like time/place and other plot-important writings on things
+ in the background) and presenting the translation to the viewer, preferably
+ so that it appears that the translation was there all along (yet retaining
+ readability).</li>
+<li>Designing other texts (logotypes, karaoke, etc. etc.) that should be
+ displayed on the video.</li>
+</ul>
+
+<p>Particularly in the fansub community, the word &quot;typesetting&quot; usually refers to
+the second or third of these three.</p>
+
+<p>This page will attempt to give you an introduction to subtitle typesetting.
+Unfortunately good taste is hard to teach, but we will do our best.</p>
+
+<h2 id="dialoguetypesetting">Dialogue typesetting</h2>
+
+<p>The main goal of dialogue typesetting is <strong>legibility</strong>; everything else is
+just icing on the cake. There's no point in having subtitles if the viewer
+can't read them. Remember that subtitles frequently require quite fast reading,
+so ease of recognition is vital. Some guidelines for good legibility:</p>
+
+<ul>
+<li>Use a plain, uncluttered, no-nonsense typeface. Sans-serif fonts (or if you
+ insist on serifs, &quot;slab serif&quot; fonts) are generally preferable, especially at
+ low video resolutions, since the serifs tend get blurred out, which naturally
+ looks bad. Too thin fonts are also to be avoided. Small caps fonts are bad
+ because the ascenders/descenders of help recognition of words. Using tried
+ and trusted faces such as Helvetica, Arial or Verdana is not a bad thing; if
+ you want something that looks less &quot;boring&quot; but still readable try a
+ sans-serif font of the &quot;humanist&quot; variety, such as Calibri.</li>
+<li>Use a well-defined but not too thick border. The color is important; the
+ higher the contrast against the main color the better. The white main
+ color/black border combo is well tried and trusted. Shadow is optional; if
+ you use it consider setting it to half-transparent black; solid black tends
+ to hurt legibility.</li>
+<li>Use big friendly letters with comfortable margins; usually subtitles need to
+ be bigger than you think to be easily readable, particularly on a TV screen
+ (since the viewing distance on a TV is usually 2-3 meters, compared to
+ 0.3-0.6m for a computer screen). If you plan on showing your subtitles on a
+ TV you also need to take <a href="http://en.wikipedia.org/wiki/Overscan">overscan</a>
+ into account; Aegisub has an overscan mask feature (see <a href="../Video/">working with
+ video</a>) that can help you with this. Even if the end result isn't
+ going to be viewed on a TV, subtitles which are in the overscan area are
+ usually not very readable anyway. Also consider the aspect ratio of the
+ video; 16:9 or wider aspect ratios give you the opportunity to have longer
+ lines at the expense of vertical space.</li>
+<li>Make sure that no more than two lines of text are visible at a time
+ (exceptions can be made at times where there are a lot of people talking at
+ the same time). Sometimes you can compress the text horizontally a bit to
+ squeeze it in; at other times you just have to split the text block into two
+ different lines and display one after the other.</li>
+</ul>
+
+<div class="todo">**Todo:** examples</div>
+
+<h2 id="signtypesetting">&quot;Sign&quot; typesetting</h2>
+
+<p>Sign typesetting (translating various background text) can usually be
+accomplished with ASS, but for more complex effects commercial programs like
+Adobe AfterEffects are sometimes used, since the holy grail of sign typesetting
+is to make the subtitle look like it's a part of the image that was always
+there. How to get there from here will not be discussed in detail on this page
+(see the <span class="createlink">typesetting tutorial</span>), but here are some
+pointers:</p>
+
+<ul>
+<li>Is the sign actually important to the plot? Trying to translate every single
+ bit of text displayed on screen will rapidly make you go insane, and the end
+ result will often be unreadable anyway.</li>
+<li>Frequently, the text of a plot-important sign (such as a letter) is actually
+ read out loud in the dialogue; if this is the case you should consider
+ skipping the sign typeset because having both text and dialogue may overload
+ the viewer with information. You should not typeset a sign just to show off
+ that you're capable of doing so.</li>
+<li>Will you be able to make the translation easily legible? For example, if you
+ have very little space available to squeeze it in on, consider putting a
+ translation note as a normal &quot;toptitle&quot; instead.</li>
+</ul>
+
+<div class="todo">**Todo:** images</div>
+
+<h2 id="furtherreading">Further reading</h2>
+
+<p>The Wikipedia page on <a href="http://en.wikipedia.org/wiki/Typography">typography</a> has
+a lot of useful links and explanation of various typesetting-related terms.</p>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><span class="selflink">Introduction</span></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+                <div class="tags">
+                    Tags:
+                    
+                    <a href="../TODO/" rel="tag">/TODO</a>
+                    
+                </div>
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Editing_Subtitles/">Editing Subtitles</a>
+                    
+                    <a href="../sidebar/">sidebar</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:38 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

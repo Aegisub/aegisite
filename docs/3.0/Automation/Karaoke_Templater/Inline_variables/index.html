@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Automation/Karaoke_Templater/Inline_variables/">
+        <title>Inline variables - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../../../">Aegisub</a> / <a href="../../">Automation</a> / <a href="../">Karaoke Templater</a> / 
+                        Inline variables
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>This page describes the <strong>inline variables</strong> also known as <strong>dollar variables</strong> available in Karaoke Templater.</p>
+
+<h2 id="howtouseinlinevariables">How to use inline variables</h2>
+
+<p>All inline variables start with a dollar-sign. They only work in template lines, not in code lines. You can, however, use them in code blocks on template lines.</p>
+
+<p>Here is an example of how a template text using inline variables could look:</p>
+
+<pre><code>{\pos(**$x**,**$y**)\t(**$start**,**$end**,\bord0)}
+</code></pre>
+
+<p>The highlighted parts are the inline variables in the template.</p>
+
+<p>When a template is applied, the first thing that happens is that all inline variables are found and replaced with their value. Eg. in the above example <code>$x</code> and <code>$y</code> are replaced with the X and Y coordinates of the syllable the template is being applied to, and <code>$start</code> and <code>$end</code> are replaced by the start and end times of the syllable.</p>
+
+<p>Case does not matter for inline variables, <code>$start</code>, <code>$START</code> and <code>$StArT</code> all work and give the same result.</p>
+
+<h3 id="limitations">Limitations</h3>
+
+<p>Inline variables are not &quot;intelligent&quot;, they do the same no matter where you place them or use them, it doesn't &quot;know&quot; what tag it's being used with. Not every variable can be used with success in all places, and the meaning of some are affected by usage of eg. the <a href="../Code_execution_environment/#retime">retime</a> function. In these cases, inline variables may not be appropriate and you need to use code blocks.</p>
+
+<p>Because inline variables have their values determined as the very first thing when a template is applied you can't affect their values in any way.</p>
+
+<p>Using inline variables is an easy way to get started with an effect, but for many advanced effects they might not be the best choice.</p>
+
+<p>All positioning and sizing inline variables (such as <code>$y</code>, <code>$right</code> and <code>$width</code> are rounded to the nearest whole pixel, unlike the values in the internal data structures which you can get in code blocks, they have sub-pixel precision.</p>
+
+<h2 id="lineandsyllablevariables">Line and syllable variables</h2>
+
+<p>The inline variables exist in both &quot;line&quot; and &quot;syllable&quot; variants. The &quot;line&quot; variants contain information about the entire line being processed, the &quot;syllable&quot; variants contain information about the current syllable being processed.</p>
+
+<p>There are also &quot;automatic&quot; variants of most of the variables, there are either the line or the syllable variant depending on what kind of template they are used in. In pre-line templates the automatic inline variables refer to the line variants, and everywhere else they refer to the syllable variants.</p>
+
+<h2 id="thevariables">The variables</h2>
+
+<p>The line variables that also exist as automatic variants all start with a lowercase L (&quot;ell&quot;) letter, the syllable variants start with the letter S.</p>
+
+<p>| Line variants |<br/>
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| layer | line layer<br/>
+| lstart, lend, ldur, lmid | line start time, end time, duration and midway, all absolute times in milliseconds<br/>
+| style | name of the line style<br/>
+| actor | name of the line actor<br/>
+| margin_l, margin_r | effective left and right margin (line if nonzero, otherwise style)<br/>
+| margin_v, margin_t, margin_b | effective vertical, top and bottom margin, vertical and top is same<br/>
+| syln | number of syllables on line<br/>
+| li | line index (first physical line in file is 1)<br/>
+| lleft, lcenter, lright | line left, horizontal center and right edges, taking margins and alignment into account, rounded to an integer value<br/>
+| ltop, lmiddle, lbottom | line top, vertical middle and bottom edges, taking margins and alignment into account, rounded<br/>
+| lx, ly | line x and y position suitable for a \pos command when alignment is not overridden<br/>
+| lwidth, lheight | line width and height in pixels, this is rounded and might not match exactly with the positioning variables<br/>
+| Syllable variants |<br/>
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| sstart, send, smid | syllable start, end and midway times relative to start of line, suitable for putting into \t and \move<br/>
+| sdur, skdur | syllable duration in milliseconds and centiseconds<br/>
+| si | syllable index from start of line<br/>
+| sleft, scenter, sright | absolute left, horizontal center and right edges for syllable from left edge of screen, suitable directly for \pos and \move<br/>
+| sbottom, smiddle, stop | absolute bottom, vertical middle and top edges for syllable from top edge of screen, suitable directly for \pos and \move, adjusted for furigana positioning if needed<br/>
+| sx, sy | syllable absolute x and y position in default alignment, suitable for using directly in \pos and \move<br/>
+| swidth, sheight | syllable width and height in pixelsthis is rounded and might not match exactly with the positioning variables<br/>
+| Automatic variants |<br/>
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| start, end, mid | start and and midway time for line/syllable; absolute for lines and relative for syllables<br/>
+| dur, kdur | duration in milliseconds and centiseconds of line/syllable<br/>
+| i | line or syllable index<br/>
+| left, center, right | left, center and right edges of line/syllable, absolute from left screen edge<br/>
+| top, middle, bottom | top middle and bottom edges of line/syllable, absolute from top screen edge<br/>
+| x, y | x and y position of line/syllable when using default alignment<br/>
+| width, height | width and height of line/syllable in pixels, this is rounded and might not match exactly with the positioning variables </p>
+
+<div class="navbox">
+<div><a href="../../">Automation 4</a></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><a href="../../Manager/">Automation Manager</a> • <a href="../../Running_macros/">Running macros</a> • <a href="../../../Exporting/">Using export filters</a> • <a href="../../Included_macros/">Standard macros</a> • <a href="../../Overview_of_changes_from_Automation_3/">Changes from Automation 3</a></td>
+        </tr>
+        <tr>
+            <th><a href="../">Karaoke Templater</a> reference: </th>
+            <td><a href="../Declaring_template_and_code_lines/">Declaring templates</a> • <a href="../Template_execution_rules_and_order/">Execution order</a> • <a href="../Template_modifiers/">Modifiers</a> • <span class="selflink">Inline-variables ($-variables)</span> <br> <a href="../Code_lines_and_blocks/">Code lines and blocks</a> • <a href="../Code_execution_environment/">Execution envirionment</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../Lua/">Lua API</a> reference: </th>
+            <td><a href="../../Lua/Registration/">Registration</a> • <a href="../../Lua/Subtitle_file_interface/">Subtitles object</a> • <a href="../../Lua/Progress_reporting/">Progress reporting</a> • <a href="../../Lua/Dialogs/">Dialogs</a> • <a href="../../Lua/Miscellaneous_APIs/">Misc. APIs</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../Lua/Modules/">Lua Modules</a>: </th>
+            <td><a href="../../Lua/Modules/karaskel.lua/">karaskel.lua</a> • <a href="../../Lua/Modules/utils.lua/">utils.lua</a> • <a href="../../Lua/Modules/unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="../../Lua/Modules/clipboard/">clipboard</a> • <a href="../../Lua/Modules/re/">re</a></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="../../Lua/Modules/karaskel.lua/#Style_table">Style tables</a> • <a href="../../Lua/Modules/karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="../../Lua/Modules/karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/">Inline effects</a> • <a href="../../../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../../../About/">What is Aegisub?</a></li>
+    <li><a href="../../../Highlights/">Highlights</a></li>
+    <li><a href="../../../Credits/">Credits</a></li>
+    <li><a href="../../../Support/">Support Aegisub</a></li>
+    <li><a href="../../../FAQ/">FAQ</a></li>
+    <li><a href="../../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../../../Typesetting/">Introduction</a></li>
+    <li><a href="../../../Video/">Working with Video</a></li>
+    <li><a href="../../../Styles/">Editing styles</a></li>
+    <li><a href="../../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../../../Audio/">Working with Audio</a></li>
+    <li><a href="../../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../../">Overview</a></li>
+    <li><a href="../">Karaoke Templater</a></li>
+    <li><a href="../../Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../../Options/">Aegisub Options</a></li>
+    <li><a href="../../../Properties/">Script Properties</a></li>
+    <li><a href="../../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Code_execution_environment/">Code execution environment</a>
+                    
+                    <a href="../Code_lines_and_blocks/">Code lines and blocks</a>
+                    
+                    <a href="../">Karaoke Templater</a>
+                    
+                    <a href="../Template_execution_rules_and_order/">Template execution rules and order</a>
+                    
+                    <a href="../../../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Sat 25 Feb 2012 08:06:40 AM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Automation/Manager/">
+        <title>Manager - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../../">Aegisub</a> / <a href="../">Automation</a> / 
+                        Manager
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>The Automation Manager window is used to view, load and unload
+<a href="../">Automation</a> scripts.</p>
+
+<p>The Automation Manager window is opened from the <em>Automation</em> menu or with
+the <img src="../../img/Automation-toolbar-icon.png" alt="Automation-toolbar-icon.png" /> toolbar button.</p>
+
+<p><img src="../../img/automation_manager.png" alt="automation manager.png" /></p>
+
+<h2 id="thescriptlist">The script list</h2>
+
+<p>The main area of the window is a list of all <em>script files</em> loaded. It's
+important to remember that one script file can contain several
+<a href="../../Glossary/Automation_script_feature/">features</a>, for example one script file
+can define two <a href="../../Glossary/Macro/">macros</a> and one export filter.</p>
+
+<p>Scripts can be loaded in one of two ways. In the screenshot above, most of
+the scripts are <em>global</em> (autoloaded), as indicated by the &quot;G&quot; in the
+leftmost column. Global scripts are automatically loaded along with Aegisub.
+They are put in one of the <span class="createlink">Automation autoload folders</span>. You can not
+unload global scripts; you must remove them from the autoload directory, and
+then rescan the autoload directory.</p>
+
+<p>The last script in the screenshot above is an example of the other type of
+script: <em>local</em> scripts, as indicated by the &quot;L&quot;. Scripts added manually via
+the Add button are local to the subtitle file being worked on, and are
+automatically unloaded when the current subtitle files is closed, then
+reloaded along with the subtitle file when you reopen it.</p>
+
+<p>Sometimes a script is shown in red in the list. This only happens if the
+script could not be loaded for some reason. The reason will usually be shown
+in the Description column. If the description of the error is too long to
+read, you can select the script and click the Show Info button to see it
+all. Scripts failing to load should only happen if you are writing your own
+scripts and manage to make a programming error.</p>
+
+<h2 id="thebuttons">The buttons</h2>
+
+<p>There are 6 buttons at the bottom of the Automation Manager window:</p>
+
+<ul>
+<li>The <strong>Add</strong> button is used to load a local script.</li>
+<li>The <strong>Remove</strong> button is used to unload a local script. It is only
+ available when a local script is selected.</li>
+<li>The <strong>Reload</strong> button unloads and reloads the selected script file from
+ disk. You can use this to reload scripts you're developing, but also see
+ below for other ways to do this.</li>
+<li>The <strong>Show Info</strong> buttons shows detailed information on the selected
+ script, as well as the entire Automation system.</li>
+<li>The <strong>Rescan Autoload Dir</strong> button scans the autoload folders to see if
+ any scripts have been added or removed since Aegisub was started. All new
+ scripts in the autoload directories are then loaded, scripts that have been
+ removed are unloaded and all other global scripts are reloaded.</li>
+<li>The <strong>Close</strong> button closes the Automation Manager window.</li>
+</ul>
+
+<h2 id="otherwaystoreloadscripts">Other ways to reload scripts</h2>
+
+<p>If you're developing scripts you might find yourself returning to the
+Automation Manager often to reload your script. There are also faster ways
+to reload scripts though:</p>
+
+<ul>
+<li>When the <a href="../../Exporting/">Export</a> dialog is opened all local scripts are
+ reloaded. You can change this in the <span class="createlink">Options</span>
+ dialog.</li>
+<li>Hold the Ctrl key and click the Automation toolbar button to rescan the
+ autoload folders.</li>
+<li>Hold both the Ctrl and Shift keys and click the Automation toolbar button
+ to reload all scripts, also rescanning the autoload folders.</li>
+<li>While there is no default hotkey to reload all scripts, you can add one in
+ the <a href="../../Options/#hotkeys">preferences dialog</a>.</li>
+</ul>
+
+<p>The Automation Manager won't open when any of there methods are used, but
+you will get an error message window if a script failed to load. Note that
+you can double-click on the rows in the error dialog for more information.</p>
+
+<h2 id="forusersofaegisub1.10andearlier">For users of Aegisub 1.10 and earlier</h2>
+
+<p>You may wonder where several of the functions that were previously in the Automation Manager have gone.</p>
+
+<ul>
+<li>The <strong>Create</strong> and <strong>Edit</strong> buttons were removed since they never worked
+ fully as intended. You're encouraged to instead use your favourite file
+ manager or editor to find and open the scripts you want to edit. Creating
+ new scripts is also a bit easier since the formal requirements for
+ Automation 4 scripts are much looser than for Automation 3 scripts.
+ Another otherwise commonly used method to create new scripts is just to
+ copy an existing script and edit that instead; the Create button wouldn't
+ be much help there either way.</li>
+<li>The <strong>Apply now</strong> button was removed for two reasons. The first and most
+ important is that it doesn't fit into the Automation 4 design at all. In
+ Automation 3 every script file only did one thing so it was obvious what
+ it meant to &quot;apply&quot; it. This isn't the case with Automation 4, one script
+ file can have several functions (features), so which of them should be
+ applied? The other, and rather minor reason, is that burying the button
+ inside a dialog is just not a good place. You would have to cancel out of
+ the Automation Manager window to undo the effect of the script if you
+ decided you weren't satisfied, just to immediately return to it, reload
+ the script and Apply again. The Automation 4 solution to this is to create
+ a macro instead. It's available directly from the Automation menu and you
+ can easily reload using one of the methods listed above.</li>
+</ul>
+
+<div class="navbox">
+<div><a href="../">Automation 4</a></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><span class="selflink">Automation Manager</span> • <a href="../Running_macros/">Running macros</a> • <a href="../../Exporting/">Using export filters</a> • <a href="../Included_macros/">Standard macros</a> • <a href="../Overview_of_changes_from_Automation_3/">Changes from Automation 3</a></td>
+        </tr>
+        <tr>
+            <th><a href="../Karaoke_Templater/">Karaoke Templater</a> reference: </th>
+            <td><a href="../Karaoke_Templater/Declaring_template_and_code_lines/">Declaring templates</a> • <a href="../Karaoke_Templater/Template_execution_rules_and_order/">Execution order</a> • <a href="../Karaoke_Templater/Template_modifiers/">Modifiers</a> • <a href="../Karaoke_Templater/Inline_variables/">Inline-variables ($-variables)</a> <br> <a href="../Karaoke_Templater/Code_lines_and_blocks/">Code lines and blocks</a> • <a href="../Karaoke_Templater/Code_execution_environment/">Execution envirionment</a></td>
+        </tr>
+        <tr>
+            <th><a href="../Lua/">Lua API</a> reference: </th>
+            <td><a href="../Lua/Registration/">Registration</a> • <a href="../Lua/Subtitle_file_interface/">Subtitles object</a> • <a href="../Lua/Progress_reporting/">Progress reporting</a> • <a href="../Lua/Dialogs/">Dialogs</a> • <a href="../Lua/Miscellaneous_APIs/">Misc. APIs</a></td>
+        </tr>
+        <tr>
+            <th><a href="../Lua/Modules/">Lua Modules</a>: </th>
+            <td><a href="../Lua/Modules/karaskel.lua/">karaskel.lua</a> • <a href="../Lua/Modules/utils.lua/">utils.lua</a> • <a href="../Lua/Modules/unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="../Lua/Modules/clipboard/">clipboard</a> • <a href="../Lua/Modules/re/">re</a></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="../Lua/Modules/karaskel.lua/#Style_table">Style tables</a> • <a href="../Lua/Modules/karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="../Lua/Modules/karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../Karaoke_inline-fx/">Inline effects</a> • <a href="../../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../../About/">What is Aegisub?</a></li>
+    <li><a href="../../Highlights/">Highlights</a></li>
+    <li><a href="../../Credits/">Credits</a></li>
+    <li><a href="../../Support/">Support Aegisub</a></li>
+    <li><a href="../../FAQ/">FAQ</a></li>
+    <li><a href="../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../../Typesetting/">Introduction</a></li>
+    <li><a href="../../Video/">Working with Video</a></li>
+    <li><a href="../../Styles/">Editing styles</a></li>
+    <li><a href="../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../../Audio/">Working with Audio</a></li>
+    <li><a href="../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../">Overview</a></li>
+    <li><a href="../Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../Options/">Aegisub Options</a></li>
+    <li><a href="../../Properties/">Script Properties</a></li>
+    <li><a href="../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../">Automation</a>
+                    
+                    <a href="../Lua/">Lua</a>
+                    
+                    <a href="../Lua/Registration/">Lua/Registration</a>
+                    
+                    <a href="../../Options/">Options</a>
+                    
+                    <a href="../Running_macros/">Running macros</a>
+                    
+                    <a href="../../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Tue 28 Feb 2012 08:04:32 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

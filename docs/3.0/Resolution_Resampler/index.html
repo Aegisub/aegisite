@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Resolution_Resampler/">
+        <title>Resolution Resampler - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../">Aegisub</a> / 
+                        Resolution Resampler
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>The Resolution Resampler is a built-in tool designed to change the resolution
+of the script while transforming all affected tags so it ends up looking the
+same. It can also offset all margins (and absolute positions) by a specific
+value. Uses include merging two scripts with different resolutions, converting
+a script for a 4:3 video to its 16:9 equivalent, and converting between 1:1 and
+anamorphic pixel formats.</p>
+
+<h2 id="overview">Overview</h2>
+
+<center><img src="../img/resolution_resampler.png" alt="resolution resampler.png" /></center>
+
+<p>There are two static boxes in the dialog, &quot;margin offset&quot; and &quot;resolution&quot;. The
+upper box controls how much you want to increase each margin by. The second box
+indicates the final resolution to which the script is resized.</p>
+
+<p>It's important to keep in mind that margin offset happens BEFORE the resolution
+is changed, so the values are relative to the current script resolution. If you
+check the &quot;symmetrical&quot; checkbox, then the left and right values will be
+identical, and the same for top and bottom. Positive values indicate an
+increase in margin (that is, subtitles farther from the video border), and
+negative values a decrease.</p>
+
+<p>After the margins were offset, the resolution is then resampled to the final
+value provided. You can click the &quot;From video&quot; button to copy the actual video
+resolution to the two fields. The &quot;Change aspect ratio&quot; check box indicates
+whether the horizontal size of subtitles should be affected to conform to the
+aspect ratio change. This is useful when converting between anamorphic and 1:1
+formats.</p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="sdto16:9hd">4:3 SD to 16:9 HD</h3>
+
+<p>For example, if you have subtitles typeset to a 640x480 video, and want to
+apply the same subtitles to a 1280x720 video (which is widescreen, therefore
+showing more video on the left and right margins), you would set margin left to
+107, while leaving top at 0 and &quot;symmetrical&quot; checked. Then you would set final
+resolution to 1280x720 (leave &quot;Change aspect ratio&quot; unchecked), and hit OK.</p>
+
+<center><img src="../img/Resample_diagram.png" alt="Resample diagram.png" /></center>
+
+<p>The above 107 value for the left/right margins was obtained with the following formula:</p>
+
+<pre><code>(OrigH * FinalW/FinalH - OrigW)/2
+</code></pre>
+
+<p>Which results in:</p>
+
+<pre><code>(480 * 1280/720 - 640)/2 = 107
+</code></pre>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><span class="selflink">Resolution Resampler</span></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Overview/">Overview</a>
+                    
+                    <a href="../sidebar/">sidebar</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:44 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

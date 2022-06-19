@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Automation/Lua/Miscellaneous_APIs/">
+        <title>Miscellaneous APIs - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title"><a name="index1h1"></a>
+                        <a href="../../../">Aegisub</a> / <a href="../../">Automation</a> / <a href="../">Lua</a> / 
+                        Miscellaneous APIs
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <div id="toc">
+    <div id="toctitle">Contents</div>
+    
+<div class="toc">
+	<ol>
+		<li class="L2"><a href="#index1h2">aegisub.cancel</a>
+		</li>
+		<li class="L2"><a href="#index2h2">aegisub.text_extents</a>
+		</li>
+		<li class="L2"><a href="#index3h2">aegisub.gettext</a>
+		</li>
+		<li class="L2"><a href="#index4h2">Getting information on the video</a>
+		<ol>
+			<li class="L3"><a href="#index1h3">aegisub.frame_from_ms</a>
+			</li>
+			<li class="L3"><a href="#index2h3">aegisub.ms_from_frame</a>
+			</li>
+			<li class="L3"><a href="#index3h3">aegisub.video_size</a>
+			</li>
+			<li class="L3"><a href="#index4h3">aegisub.keyframes</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index5h2">aegisub.decode_path</a>
+		</li>
+	</ol>
+</div>
+
+</div>
+
+<p>This page documents <strong>miscellaneous APIs useful for working with
+subtitles</strong>. These can't be clearly placed into any of the other main
+categories and there's too few of each kind to warrant a separate category.</p>
+
+<h2 id="aegisub.cancel"><a name="index1h2"></a>aegisub.cancel</h2>
+
+<p>Synopsis: <code>aegisub.cancel()</code></p>
+
+<p>Immediately end execution of the current script, rolling back any changes
+that have been made in it.</p>
+
+<p>This function never returns.</p>
+
+<h2 id="aegisub.text_extents"><a name="index2h2"></a>aegisub.text_extents</h2>
+
+<p>Synopsis: <code>width, height, descent, ext_lead = aegisub.text_extents(style, text)</code></p>
+
+<p>Obtain system font metrics and determine the rendered size in pixels of the
+given <strong>text</strong> when using the <strong>style</strong>.</p>
+<dl>
+<dt><strong><code>@style</code></strong> (<code>table</code>)</dt>
+<dd>A <a href="../Subtitle_file_interface/#styletable">style
+ table</a> as defined by
+ the subtitle interface. The font name, size, weight, style, spacing and
+ encoding is used to determine the size of the text.</dd>
+
+<dt><strong><code>@text</code></strong> (<code>string</code>)</dt>
+<dd>The text the extents should be determined for. This
+ should not contain line breaks (<code>\n</code> or <code>\r\n</code>) nor should it contain
+ formatting codes of any kind. Formatting codes are not interpreted and
+ will be taken as verbatim text.</dd>
+
+<dt><strong><code>width</code></strong> (<code>number</code>)</dt>
+<dd>Width in pixels of text. This may be non-integer.</dd>
+
+<dt><strong><code>height</code></strong> (<code>number</code>)</dt>
+<dd>Height in pixels of the text. This may be non-integer.</dd>
+
+<dt><strong><code>descent</code></strong> (<code>number</code>)</dt>
+<dd>Length of descenders in the font. This may be
+ non-integer.</dd>
+
+<dt><strong>ext_lead</strong> (number)</dt>
+<dd>External leading for the font. This may be non-integer.</dd>
+</dl>
+
+
+<p>You should only feed plain text strings without line breaks into this
+function. It cannot handle any kind of formatting codes or text layout.
+Rather, it is intended as a helper to create text layouts by determining
+rendered sizes of bits and pieces of a longer text, which can then be
+laid out by the script.</p>
+
+<h2 id="aegisub.gettext"><a name="index3h2"></a>aegisub.gettext</h2>
+
+<p>Synopsis: <code>translation = aegisub.gettext(untranslated)</code></p>
+
+<p>Get the translation for a string. This is mostly only intended for scripts
+bundled with Aegisub (as there's no way for you to add your own
+translations), but if you happen to be using strings that are present in
+Aegisub it may be useful.</p>
+
+<p>Note that in the bundled macros this is always aliased to <code>tr</code> for the sake
+of the string extractor.</p>
+
+<h2 id="gettinginformationonthevideo"><a name="index4h2"></a>Getting information on the video</h2>
+
+<p>Automation 4 Lua offers two functions designed to be able to work with
+frame-based timing without having to consider whether the video source is
+VFR or CFR.</p>
+
+<p>The primary purpose of these functions is to be able to generate per-frame
+effects, i.e. get the timestamps of a number of sequential frames and
+calculate coordinates, sizes etc. for an object for each of those frames.</p>
+
+<p>One thing to remember when using these functions is that, considering a
+one-dimensional time line, a time stamp is a point on the time line, while
+a video frame spans a range of the time line, from its beginning time to
+its ending time. The ending time of a frame is the beginning time of the
+next. The beginning time of a frame is included in the range while the
+ending time is excluded from the range.</p>
+
+<h3 id="aegisub.frame_from_ms"><a name="index1h3"></a>aegisub.frame_from_ms</h3>
+
+<p>Synopsis: <code>frame = aegisub.frame_from_ms(ms)</code></p>
+
+<p>Use loaded frame rate data to convert an absolute time given in
+<strong>milliseconds</strong> into a <strong>frame</strong> number.</p>
+<dl>
+<dt><strong><code>@ms</code></strong> (<code>number</code>)</dt>
+<dd>Absolute time from the beginning of the video, for
+ which to determine the frame number.</dd>
+
+<dt><strong><code>frame</code></strong> (<code>number</code>)</dt>
+<dd>Frame number corresponding to the time in ms, or <code>nil</code> if there is no
+ frame rate data loaded.</dd>
+</dl>
+
+
+<p>If the time is in the middle of the frame it is &quot;rounded down&quot; to the frame
+number that contains the given time.</p>
+
+<h3 id="aegisub.ms_from_frame"><a name="index2h3"></a>aegisub.ms_from_frame</h3>
+
+<p>Synopsis: <code>ms = aegisub.ms_from_frame(frame)</code></p>
+
+<p>Use loaded frame rate data to convert a <strong>frame</strong> number of the video into
+an absolute time in <strong>milliseconds</strong>.</p>
+<dl>
+<dt><strong><code>@frame</code></strong> (<code>number</code>)</dt>
+<dd>Frame to obtain the beginning time of.</dd>
+
+<dt><strong><code>ms</code></strong> (<code>number</code>)</dt>
+<dd>First integer millisecond time stamp to lie within the frame, or <code>nil</code> if
+ there is no frame rate data loaded.</dd>
+</dl>
+
+
+<p>Because beginning times of frames can have better precision than one
+millisecond this function rounds up and returns the first whole millisecond
+that is guaranteed to be within the frame.</p>
+
+<h3 id="aegisub.video_size"><a name="index3h3"></a>aegisub.video_size</h3>
+
+<p>Synopsis: <code>xres, yres, ar, artype = aegisub.video_size()</code></p>
+
+<p>Get information about the resolution and aspect-ratio of the loaded video,
+if any.</p>
+<dl>
+<dt><strong><code>xres</code></strong> (<code>number</code>)</dt>
+<dd>Coded width of the video in pixels, or <code>nil</code> if there is no video loaded.</dd>
+
+<dt><strong><code>yres</code></strong> (<code>number</code>)</dt>
+<dd>Coded height of the video in pixels, or <code>nil</code> if there is no video loaded.</dd>
+
+<dt><strong><code>ar</code></strong> (<code>number</code>)</dt>
+<dd>Custom display aspect ratio override. Meaningless unless <code>artype</code> is 4.</dd>
+
+<dt><strong><code>artype</code></strong> (<code>number</code>)</dt>
+<dd>
+<p>There are 5 values that <code>artype</code> can take:</p>
+
+<ul>
+<li>0: The video has square pixels, i.e. PAR is 1.00 and DAR is <code>xres</code>/<code>yres</code>.</li>
+<li>1: The video is 4:3, i.e. DAR is 1.33.</li>
+<li>2: The video is 16:9, i.e. DAR is 1.78.</li>
+<li>3: The video is 2.35 format, i.e. DAR is 2.35.</li>
+<li>4: The DAR is whatever the <code>ar</code> return value contains.</li>
+</ul></dd>
+</dl>
+
+
+<h3 id="aegisub.keyframes"><a name="index4h3"></a>aegisub.keyframes</h3>
+
+<p>Synopsis <code>keyframes = aegisub.keyframes()</code></p>
+
+<p>Get a list of what video frames are keyframes.</p>
+<dl>
+<dt><strong><code>keyframes</code></strong> (<code>table</code>)</dt>
+<dd>A sorted table where each entry is the frame number of a keyframe. If
+ no keyframe data is loaded, the table will be empty.</dd>
+</dl>
+
+
+<h2 id="aegisub.decode_path"><a name="index5h2"></a>aegisub.decode_path</h2>
+
+<p>Synopsis <code>path = aegisub.decode_path(encoded_path)</code></p>
+
+<p>Convert a path beginning with a <a href="../../../Aegisub_path_specifiers/">path specifier</a>
+to an absolute path.</p>
+<dl>
+<dt><strong><code>@encoded_path</code></strong> (<code>string</code>)</dt>
+<dd>A string which may optionally begin with an Aegisub <a href="../../../Aegisub_path_specifiers/">path specifier</a>.</dd>
+
+<dt><strong><code>@path</code></strong> (<code>string</code>)</dt>
+<dd>If <code>encoded_path</code> began with a valid <a href="../../../Aegisub_path_specifiers/">path
+ specifier</a>, an absolute path. If it began with an
+ invalid path specifier (such as if ?video was used when no video is open),
+ a string that is unlikely to be useful in any way. Any other strings are
+ passed through untouched.</dd>
+</dl>
+
+
+<div class="navbox">
+<div><a href="../../">Automation 4</a></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><a href="../../Manager/">Automation Manager</a> • <a href="../../Running_macros/">Running macros</a> • <a href="../../../Exporting/">Using export filters</a> • <a href="../../Included_macros/">Standard macros</a> • <a href="../../Overview_of_changes_from_Automation_3/">Changes from Automation 3</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../Karaoke_Templater/">Karaoke Templater</a> reference: </th>
+            <td><a href="../../Karaoke_Templater/Declaring_template_and_code_lines/">Declaring templates</a> • <a href="../../Karaoke_Templater/Template_execution_rules_and_order/">Execution order</a> • <a href="../../Karaoke_Templater/Template_modifiers/">Modifiers</a> • <a href="../../Karaoke_Templater/Inline_variables/">Inline-variables ($-variables)</a> <br> <a href="../../Karaoke_Templater/Code_lines_and_blocks/">Code lines and blocks</a> • <a href="../../Karaoke_Templater/Code_execution_environment/">Execution envirionment</a></td>
+        </tr>
+        <tr>
+            <th><a href="../">Lua API</a> reference: </th>
+            <td><a href="../Registration/">Registration</a> • <a href="../Subtitle_file_interface/">Subtitles object</a> • <a href="../Progress_reporting/">Progress reporting</a> • <a href="../Dialogs/">Dialogs</a> • <span class="selflink">Misc. APIs</span></td>
+        </tr>
+        <tr>
+            <th><a href="../Modules/">Lua Modules</a>: </th>
+            <td><a href="../Modules/karaskel.lua/">karaskel.lua</a> • <a href="../Modules/utils.lua/">utils.lua</a> • <a href="../Modules/unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="../Modules/clipboard/">clipboard</a> • <a href="../Modules/re/">re</a></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="../Modules/karaskel.lua/#Style_table">Style tables</a> • <a href="../Modules/karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="../Modules/karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/">Inline effects</a> • <a href="../../../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5><a name="index1h5"></a>Navigation</h5>
+
+<ul>
+    <li><a href="../../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5><a name="index2h5"></a>Introduction</h5>
+
+<ul>
+    <li><a href="../../../About/">What is Aegisub?</a></li>
+    <li><a href="../../../Highlights/">Highlights</a></li>
+    <li><a href="../../../Credits/">Credits</a></li>
+    <li><a href="../../../Support/">Support Aegisub</a></li>
+    <li><a href="../../../FAQ/">FAQ</a></li>
+    <li><a href="../../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5><a name="index3h5"></a>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5><a name="index4h5"></a>Typesetting</h5>
+
+<ul>
+    <li><a href="../../../Typesetting/">Introduction</a></li>
+    <li><a href="../../../Video/">Working with Video</a></li>
+    <li><a href="../../../Styles/">Editing styles</a></li>
+    <li><a href="../../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5><a name="index5h5"></a>Timing</h5>
+
+<ul>
+    <li><a href="../../../Audio/">Working with Audio</a></li>
+    <li><a href="../../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5><a name="index6h5"></a>Automation</h5>
+
+<ul>
+    <li><a href="../../">Overview</a></li>
+    <li><a href="../../Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../">Lua Reference</a></li>
+</ul>
+
+<h5><a name="index7h5"></a>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../../Options/">Aegisub Options</a></li>
+    <li><a href="../../../Properties/">Script Properties</a></li>
+    <li><a href="../../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../">Lua</a>
+                    
+                    <a href="../Modules/karaskel.lua/">Modules/karaskel.lua</a>
+                    
+                    <a href="../Progress_reporting/">Progress reporting</a>
+                    
+                    <a href="../../../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Sat 25 Feb 2012 08:06:40 AM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

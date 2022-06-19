@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Styles/">
+        <title>Styles - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../">Aegisub</a> / 
+                        Styles
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>A <strong>style</strong> in the ASS format is a set of typographic formatting rules that is
+applied to dialogue lines. The style parameters can be overridden with
+<a href="../ASS_Tags/">override tags</a>; the styles exist so that you won't have to type out
+all the overrides for each line.</p>
+
+<h2 id="thestylesmanager">The styles manager</h2>
+
+<p>Aegisub's styles manager tool (accessed from the Subtitles menu) provides
+various means of organizing, saving and editing styles. It looks like this:</p>
+
+<center><img src="../img/Style_manager.png" alt="Style manager.png" /></center>
+
+<p>As you can see, the window is divided into two halves. The right half displays
+all styles that you currently have accessible in your currently loaded script;
+the left represents a style storage. Style storages are used by Aegisub to let
+you save styles and quickly import them into scripts. You can have as many
+storages as you want; some people prefer to keep all their styles in one
+storage, others sort their styles by font, by show or alphabetically. The drop
+down menu at the top lets you choose what storage you want to view.</p>
+
+<p>In the bottom part of the window there's two almost identical sets of buttons;
+one set for the storage and one for the current script. They are:</p>
+
+<ul>
+<li><strong>New</strong> - Create a new style, either in the storage or in the current script.</li>
+<li><strong>Edit</strong> - Edit the selected style using the style editor (see below).</li>
+<li><strong>Copy</strong> - Create a copy of the selected style and bring up the style editor
+ for it.</li>
+<li><strong>Delete</strong> - Delete the selected style(s).</li>
+<li><strong>Copy to script</strong> and <strong>Copy to storage</strong> - copies the selected styles
+ between the storage and the current script.</li>
+<li><strong>Import from script</strong> - Lets you import one or more styles from another
+ script to the current one.</li>
+</ul>
+
+<p>Pressing Ctrl-C in the styles manager will copy the selected style(s) to the
+clipboard as a text string. This also works the other way around; you can copy
+one or more style lines from another program and press Ctrl-V (paste) in the
+styles manager; this will insert them into the current script.</p>
+
+<h2 id="thestyleeditor">The style editor</h2>
+
+<p>Pressing the &quot;Edit&quot; button or double clicking a style name will bring up the
+style editor, which lets you tweak all the parameters available. <strong>Note</strong>: some
+parameters that are available as override tags (i.e. <code>\be</code>) are <em>not</em> available
+as style parameters; conversely, some parameters that are available in the
+styles editor (i.e. the &quot;opaque box&quot; outline option) are <em>not</em> available as a
+style override. This is an unfortunate and occasionally annoying format
+limitation.</p>
+
+<p>To return to the style editor:</p>
+
+<center><img src="../img/Style_editor.png" alt="Style editor.png" /></center>
+
+<ul>
+<li><p><strong>Style name</strong> - The name of the style. You can't have two styles with the
+ same name in the same script.</p></li>
+<li><p><strong>Font</strong> - This section controls the font settings. The drop down menu lets
+ you choose the typeface (any font installed on your system will show up in
+ this list) and the number to the right controls the size in points. The
+ check boxes below set the bold/italic/underline/strikeout parameters.</p></li>
+<li><p><strong>Colors</strong> - This controls the four text colors (primary, secondary, outline
+ and shadow). The meaning of each of them is as follows:</p></li>
+<li><p><em>Primary</em> - used as the &quot;fill&quot; (main) color of the text.</p></li>
+<li><p><em>Secondary</em> - secondary fill color, only used for karaoke effects (see
+<code>\k</code> and its relatives on the <a href="../ASS_Tags/#karaokeeffect">override tags page</a>).</p></li>
+<li><p><em>Outline</em> - used as outline (border) color.</p></li>
+<li><p><em>Shadow</em> - used as shadow color.</p></li>
+</ul>
+
+<blockquote>
+<p>The four colored boxes show you the current color for each of the four text
+ colors; clicking on them opens the <a href="../Colour_Picker/">color picker</a>. The spin
+ controls/number boxes below each colored box controls the transparency of
+ that color. The transparency (or &quot;alpha&quot;) is given as a number between 0
+ (opaque) and 255 (completely transparent).</p>
+</blockquote>
+
+<ul>
+<li><p><strong>Margins</strong> - Controls how close to the borders of the video frame the text
+ will be positioned (and hence also when automatic line breaking will kick in;
+ but do note that there is no option for text justification). Each value
+ (left, right, vertical) is given in script resolution pixels (see <a href="../Properties/">script
+ properties</a>). For alignments (<code>\an</code>) 1-3, the vertical
+ margin is relative to the bottom of the video frame; for 4-6 it doesn't have
+ any meaning, and for 7-9 it is relative to the top of the video frame.</p></li>
+<li><p><strong>Alignment</strong> - Controls the alignment of the text. The numbers correspond to
+ the arguments to the <code>\an</code> tag. Alignments 1, 4 and 7 are flush left; 3, 6
+ and 9 are flush right; 2, 5 and 8 are centered. 1, 2 and 3 are &quot;subtitles&quot;
+ (i.e. drawn at the bottom of the frame); 4, 5 and 6 are &quot;midtitles&quot; (i.e.
+ centered vertically on the frame); 7, 8 and 9 are &quot;toptitles&quot; (i.e. drawn at
+ the top of the frame). Do note that there is no such thing as a justified
+ alignment; this is a format limitation.</p></li>
+<li><p><strong>Outline</strong> - Controls the outline (border) thickness (and style) and the
+ shadow offset.</p></li>
+<li><p>For the outline, the number is the thickness of the border in script pixels
+if ScaledBorderAndShadow is enabled (see <a href="../Properties/">script properties</a>);
+if it is disabled the thickness is given in video pixels instead. Setting
+it to 0 disables the outline.</p></li>
+<li><p>The shadow on the other hand is a copy of the main text, shifted down and
+to the right the specified distance. The distance is in script pixels if
+ScaledBorderAndShadow is enabled, and video pixels otherwise. Setting it to
+0 disables shadow.</p></li>
+<li><p>Finally, the check box marked &quot;Opaque box&quot; controls whether the outline
+should be drawn as described above (which happens if it is unticked), or
+replaced by an opaque background bounding box. Note that the rendering of
+Opaque box outlines is broken when the font scale is anything other than
+100%.</p></li>
+<li><p><strong>Miscellaneous</strong> - this section has various other parameters, namely:</p></li>
+<li><p><em>Scale X</em> and <em>Scale Y</em> - Controls text stretching in the horizontal (X)
+and vertical (Y) direction respectively. The value is given in percent, so
+100 means no stretching is done. You should not use this for normal text
+sizing; use the point value in the Font area instead since that uses
+hinting information from the font.</p></li>
+<li><p><em>Rotation</em> - Controls rotation of the text. The value is the angle of the
+rotation in degrees (360 degrees to a full circle) and may be negative or
+larger than 360 (setting it to 360, 720 etc. is the same as setting it to
+0 except for when <a href="../ASS_Tags/#animatedtransform">animated transforms</a> are
+involved).</p></li>
+<li><p><em>Spacing</em> - Controls the horizontal spacing between letters. 0 means the
+font defaults are used. May be negative for less spacing, or positive for
+more. It is currently unknown what unit is used.</p></li>
+<li><p><em>Encoding</em> - Controls which codepage is used to map codepoints to glyphs;
+it has nothing to do with the actual text encoding of the script. This is
+only meaningful on Windows using VSFilter, where it is used to get some old
+(particularly Japanese) fonts without proper Unicode mappings to render
+properly. On other systems and renderers, Freetype2 provides the proper
+mappings. If you didn't understand a word of the above, pretend this
+setting doesn't exist, as it is rarely important.</p></li>
+<li><p><strong>Preview</strong> - Shows a preview of what the text will look like using the
+ current style parameters. The text field lets you input some sample text to
+ preview, and the colored box controls the color of the background.</p></li>
+</ul>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><span class="selflink">Editing styles</span></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../ASS_Tags/">ASS Tags</a>
+                    
+                    <a href="../Editing_Subtitles/">Editing Subtitles</a>
+                    
+                    <a href="../Overview/">Overview</a>
+                    
+                    <a href="../Video/">Video</a>
+                    
+                    <a href="../sidebar/">sidebar</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:47:35 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:37 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

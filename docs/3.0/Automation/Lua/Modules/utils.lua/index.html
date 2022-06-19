@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Automation/Lua/Modules/utils/">
+        <title>utils.lua - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../../../../">Aegisub</a> / <a href="../../../">Automation</a> / <a href="../../">Lua</a> / <a href="../">Modules</a> / 
+                        utils.lua
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>The Automation 4 Lua include file <code>utils.lua</code> contains various support
+functions to aid writing Lua scripts. There is no general theme for the
+file.</p>
+
+<h2 id="tablefunctions">Table functions</h2>
+
+<p>Duplicating tables in various ways is a common task. <code>utils.lua</code> provides
+some functions to handle the most common cases.</p>
+
+<h3 id="table.copy">table.copy</h3>
+
+<p>Synopsis: <code>newtable = table.copy(oldtable)</code></p>
+
+<p>Makes a shallow copy of the table passed as parameter. Shallow here means
+that it does not dive into contained tables and copy those as well, so if
+<code>oldtable.st</code> refers to a table, <code>newtable.st</code> will refer to the same
+table, such that modifying <code>newtable.st</code> will also be reflected in
+<code>oldtable.st</code> and vice versa.</p>
+
+<h3 id="copy_line">copy_line</h3>
+
+<p>Alias for <code>table.copy</code>. Included to help transitioning from Automation 3.</p>
+
+<h3 id="table.copy_deep">table.copy_deep</h3>
+
+<p>Synopsis: <code>newtable = table.copy_deep(oldtable)</code></p>
+
+<p>Makes a deep copy of the table passed as parameter. While this function
+attempts to handle circular references and not do infinite recursion on
+them, it might not work in all cases. You will rarely need to use this
+function; if you think you need to do a deep copy, consider your task an
+extra time.</p>
+
+<p>Warning: This function has not been heavily tested.</p>
+
+<h2 id="colourfunctions">Colour functions</h2>
+
+<p>It is often useful to do various transformations on colour data. Several
+functions for this are included.</p>
+
+<h3 id="ass_color">ass_color</h3>
+
+<p>Synopsis: <code>colorstring = ass_color(r, g, b)</code></p>
+
+<p>Makes an ASS colour string in the form <code>&amp;HBBGGRR</code> from the given <code>r</code>, <code>g</code>
+and <code>b</code> arguments.</p>
+
+<p>Warning: The arguments are not checked for range. Values outside the 0..255
+range will produce garbage output.</p>
+
+<h3 id="ass_alpha">ass_alpha</h3>
+
+<p>Synopsis: <code>alphastring = ass_alpha(a)</code></p>
+
+<p>Makes an ASS alpha string in the form <code>&amp;HAA&amp;</code> from the given <code>a</code> argument.</p>
+
+<p>Does not check input range.</p>
+
+<h3 id="ass_style_color">ass_style_color</h3>
+
+<p>Synopsis: <code>colorstring = ass_style_color(r, g, b, a)</code></p>
+
+<p>Makes an ASS colour string suitable for use in Style definitions, i.e. in
+format <code>&amp;HAABBGGRR</code>.</p>
+
+<p>Does not check input range.</p>
+
+<h3 id="extract_color">extract_color</h3>
+
+<p>Synopsis: <code>r, g, b, a = extract_color(colorstring)</code></p>
+
+<p>Extracts colour components from a colour string. Several formats of colour strings are recognised:</p>
+
+<ul>
+<li>Style definition: <code>&amp;HAABBGGRR</code></li>
+<li>Inline override: <code>&amp;HBBGGRR&amp;</code></li>
+<li>Alpha override: <code>&amp;HAA&amp;</code></li>
+<li>HTML with alpha: <code>#RRGGBBAA</code></li>
+</ul>
+
+<p>Note that this function always returns four numbers when passed a valid
+colour string. Unused values (depends on the format of the colour string)
+are assigned 0 (zero.) If an unrecognised colour string is passed, <code>nil</code> is
+returned.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>r, g, b, a = extract_color(&quot;&amp;H7F&amp;&quot;)
+</code></pre>
+
+<p><code>r</code>, <code>g</code>, and <code>b</code> will be 0; <code>a</code> will be 127.</p></div></div>
+
+<h3 id="alpha_from_style">alpha_from_style</h3>
+
+<p>Synopsis: <code>alphastring = alpha_from_style(coloralphastring)</code></p>
+
+<p>Returns the alpha part of a colour string, as an alpha override string,
+i.e. <code>&amp;HAA&amp;</code> format. This function is a composition of <code>extract_color</code> and
+<code>ass_alpha</code>.</p>
+
+<h3 id="color_from_style">color_from_style</h3>
+
+<p>Synopsis: <code>colorstring = color_from_style(coloralphastring)</code></p>
+
+<p>Returns the colour part of a colour string, as a colour override string,
+i.e. <code>&amp;HBBGGRR&amp;</code> format. This function is a composition of <code>extract_color</code>
+and <code>ass_color</code>.</p>
+
+<h3 id="hsv_to_rgb">HSV_to_RGB</h3>
+
+<p>Synopsis: <code>r, g, b = HSV_to_RGB(h, s, v)</code></p>
+
+<p>Transforms a colour given in Hue, Saturation, Value space into Red, Green, Blue space.</p>
+
+<p><code>h</code> is given in degrees. The nominal range is 0..359; values outside this
+range will be translated into it. Input range of <code>s</code> and <code>v</code> are 0..1.
+These are not range checked. Output range of <code>r</code>, <code>g</code> and <code>b</code> are 0..255.</p>
+
+<h2 id="stringfunctions">String functions</h2>
+
+<p>Because the Lua standard <code>string</code> library is fairly limited, a few
+additional helper functions are provided. See also <a href="../unicode.lua/">unicode.lua</a>.</p>
+
+<h3 id="string.trim">string.trim</h3>
+
+<p>Synopsis: <code>outstring = string.trim(instring)</code></p>
+
+<p>Removes all space characters at the start and end of the input string, and
+returns the transformed string.</p>
+
+<p>Warning: This function is not UTF-8 safe. It uses the Lua regex <code>%s</code> class
+to match spaces, which in some legacy encodings will result in it also
+matching some prefix bytes in UTF-8 encoded text.</p>
+
+<h3 id="string.headtail">string.headtail</h3>
+
+<p>Synopsis: <code>head, tail = string.headtail(instring)</code></p>
+
+<p>Splits a string by first space-sequence into a &quot;head&quot; and a &quot;tail&quot;, similar
+to the handling of linked lists in several functional languages.</p>
+
+<p>If <code>instring</code> does not contain any space characters it returns <code>instring, &quot;&quot;</code>.</p>
+
+<h3 id="string.words">string.words</h3>
+
+<p>Synopsis: <code>for word in string.words(instring) do ... end</code></p>
+
+<p>Returns an iterator function for use in a <code>for</code> loop, to loop over all the
+words in the string using <code>string.headtail</code> semantics.</p>
+
+<h2 id="numericfunctions">Numeric functions</h2>
+
+<p>Functions to handle various operations on numbers.</p>
+
+<h3 id="clamp">clamp</h3>
+
+<p>Synopsis: <code>outval = clamp(inval, min, max)</code></p>
+
+<p>Clamps <code>inval</code> to be in range <code>min</code>..<code>max</code>.</p>
+
+<h3 id="interpolate">interpolate</h3>
+
+<p>Synopsis: <code>outval = interpolate(t, a, b)</code></p>
+
+<p>Interpolates between <code>a</code> and <code>b</code>. <code>t</code> is the time variable in range 0..1.
+Values outside this range are clamped.</p>
+
+<h3 id="interpolate_color">interpolate_color</h3>
+
+<p>Synopsis: <code>outcolor = interpolate_color(t, color1, color2)</code></p>
+
+<p>Interpolate between <code>color1</code> and <code>color2</code> with <code>t</code> as time variable in
+range 0..1. <code>color1</code>, <code>color2</code> and <code>outcolor</code> are colour strings,
+and <code>outcolour</code> will be in colour override format.</p>
+
+<h3 id="interpolate_alpha">interpolate_alpha</h3>
+
+<p>Synopsis: <code>outalpha = interpolate_alpha(t, alpha1, alpha2)</code></p>
+
+<p>Similar to <code>interpolate_color</code>, but interpolates alpha values instead. Also
+works on colour strings, and will return an alpha override string.</p>
+
+<div class="navbox">
+<div><a href="../../../">Automation 4</a></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><a href="../../../Manager/">Automation Manager</a> • <a href="../../../Running_macros/">Running macros</a> • <a href="../../../../Exporting/">Using export filters</a> • <a href="../../../Included_macros/">Standard macros</a> • <a href="../../../Overview_of_changes_from_Automation_3/">Changes from Automation 3</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../../Karaoke_Templater/">Karaoke Templater</a> reference: </th>
+            <td><a href="../../../Karaoke_Templater/Declaring_template_and_code_lines/">Declaring templates</a> • <a href="../../../Karaoke_Templater/Template_execution_rules_and_order/">Execution order</a> • <a href="../../../Karaoke_Templater/Template_modifiers/">Modifiers</a> • <a href="../../../Karaoke_Templater/Inline_variables/">Inline-variables ($-variables)</a> <br> <a href="../../../Karaoke_Templater/Code_lines_and_blocks/">Code lines and blocks</a> • <a href="../../../Karaoke_Templater/Code_execution_environment/">Execution envirionment</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../">Lua API</a> reference: </th>
+            <td><a href="../../Registration/">Registration</a> • <a href="../../Subtitle_file_interface/">Subtitles object</a> • <a href="../../Progress_reporting/">Progress reporting</a> • <a href="../../Dialogs/">Dialogs</a> • <a href="../../Miscellaneous_APIs/">Misc. APIs</a></td>
+        </tr>
+        <tr>
+            <th><a href="../">Lua Modules</a>: </th>
+            <td><a href="../karaskel.lua/">karaskel.lua</a> • <span class="selflink">utils.lua</span> • <a href="../unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="../clipboard/">clipboard</a> • <a href="../re/">re</a></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="../karaskel.lua/#Style_table">Style tables</a> • <a href="../karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="../karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../../../Karaoke_inline-fx/">Inline effects</a> • <a href="../../../../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../../../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../../../../About/">What is Aegisub?</a></li>
+    <li><a href="../../../../Highlights/">Highlights</a></li>
+    <li><a href="../../../../Credits/">Credits</a></li>
+    <li><a href="../../../../Support/">Support Aegisub</a></li>
+    <li><a href="../../../../FAQ/">FAQ</a></li>
+    <li><a href="../../../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../../../../Typesetting/">Introduction</a></li>
+    <li><a href="../../../../Video/">Working with Video</a></li>
+    <li><a href="../../../../Styles/">Editing styles</a></li>
+    <li><a href="../../../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../../../../Audio/">Working with Audio</a></li>
+    <li><a href="../../../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../../../">Overview</a></li>
+    <li><a href="../../../Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../../">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../../../Options/">Aegisub Options</a></li>
+    <li><a href="../../../../Properties/">Script Properties</a></li>
+    <li><a href="../../../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../../../Karaoke_Templater/Code_execution_environment/">Karaoke Templater/Code execution environment</a>
+                    
+                    <a href="../">Modules</a>
+                    
+                    <a href="../karaskel.lua/">karaskel.lua</a>
+                    
+                    <a href="../../../../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Sat 25 Feb 2012 08:06:40 AM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,334 @@
+body {
+    background-color: #ffffff; /* white */
+    color: #333; /* dark grey */
+    font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Sans-Serif;
+    font-size: 72.5%;
+}
+
+#content {
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+
+code {
+    font: 1.1em 'Courier New', Courier, Fixed;
+}
+
+strong code {
+    font-weight: bold;
+}
+
+acronym, abbr, span.caps {
+    font-size: 0.9em;
+    letter-spacing: .07em;
+}
+
+#sidebar {
+    font-size: 1.1em;
+    line-height: 1.0em;
+    background-color: #FFFAD5;
+    color: #444444;
+    position: absolute;
+    top: 10px;
+    width: 175px;
+}
+
+#sidebar a:hover {
+    color: #173A7B;
+}
+#sidebar .selected a {
+    color: #FD9A26; /* orange */
+    font-weight: bolder;
+}
+
+#sidebar h5 {
+    margin: 0;
+    padding: 0.25em;
+    background-color: #FFF39F;
+}
+
+#sidebar ul {
+    margin-bottom: 1em;
+}
+
+#sidebar li {
+    font-size: 0.9em;
+    margin: 0.2em 0;
+}
+
+/* Special stylized non-IE bullets
+ *    Does not work in Internet Explorer, which merely default to normal bullets. */
+
+html>body #sidebar ul {
+    list-style: none;
+    margin-left: 0px;
+    padding: 0 0 0 30px;
+    padding-left: 10px;
+    text-indent: -10px;
+} 
+
+html>body #sidebar li {
+    margin-left: 10px;
+}
+
+html>body #sidebar ul li:before {
+    content: "\00BB \0020";
+}
+
+
+#toc {
+    background-color: #f8f8f8; 
+    border: 1px solid #1860AC; 
+}
+
+#toctitle {
+    font-size: 150%;
+    font-weight: bold;
+    margin: .5em;
+    color: #1860AC;
+}
+
+#footer {
+    color: #999999;
+}
+
+
+/* Links -------------------------------------------------------------*/
+a {
+    text-decoration: none;
+    color: #2153B0;
+}
+a:hover {
+    text-decoration: underline;
+    color: #173A7B;
+}
+
+p a:visited {color: #5A3696;} /* purple */
+#content a.new {color: #CC2200;} /* red */
+
+
+#toc a {color: #2153B0;} /* blue */
+#toc a:hover {color: #173A7B;} /* dark blue */
+#toc p a:visited {color: #2153B0;} /* blue */
+
+#footer a {color: #999999;}
+#footer a:hover {color: #173A7B;} /* dark blue */
+
+/* LINK ICONS
+ * ** keep the whitespace in front of the ^=, hides rule from konqueror
+ * ** this is css3, the validator doesn't like it when validating as css2
+ * */
+#bodyContent a[href ^="http://"] {
+    background: url("img/external.png") center right no-repeat;
+    padding-right: 13px;
+}
+
+#bodyContent a[href ^="https://"], .link-https {
+    background: url("img/lock_icon.gif") center right no-repeat;
+    padding-right: 16px;
+}
+
+#bodyContent a[href ^="mailto:"], .link-mailto {
+    background: url("img/mail_icon.gif") center right no-repeat;
+    padding-right: 18px;
+}
+
+#bodyContent a[href ^="news://"] {
+    background: url("img/news_icon.png") center right no-repeat;
+    padding-right: 18px;
+}
+
+#bodyContent a[href ^="ftp://"], .link-ftp {
+    background: url("img/file_icon.gif") center right no-repeat;
+    padding-right: 18px;
+}
+
+#bodyContent a[href ^="irc://"], .link-irc {
+    background: url("img/discussionitem_icon.gif")  center right no-repeat;
+    padding-right: 18px;
+}
+
+
+/* Structure & Frame -------------------------------------------------*/
+html {
+    height: 100%;
+    margin-bottom: 1px;
+}
+
+body {
+    text-align: center;
+}
+
+#globalWrapper {
+    margin: 10px 10px 0 10px;
+    text-align: left;
+}
+
+#column-content {
+    margin-top: 23px;
+    margin-left: 190px;
+}
+
+#footer {
+    clear: both;
+    height: 5em;
+    margin: 3em 0 3em 200px;
+}
+
+/* Headers -----------------------------------------------------------*/
+h1, h2 {
+    border-bottom: 1px dotted #333333;
+    line-height: 1.1em;
+    padding-bottom: 0.2em;
+}
+
+h1#title {
+    margin: 0;
+    border-bottom-style: solid;
+    border-bottom-color: #d5d5d5;
+    font-size: 1.8em;
+    color: #1860AC
+}
+
+/* Lists -------------------------------------------------------------*/
+ul, ol {
+    margin: 10px;
+    padding-left: 15px;
+}
+
+html>body li {
+    margin-left: 10px;
+}
+
+dt {
+    font-weight: bold;
+    margin-bottom: .1em;
+}
+
+dl {
+    margin-top: .2em;
+    margin-bottom: .5em;
+}
+
+dd {
+    line-height: 1.5em;
+    margin-left: 2em;
+    margin-bottom: .1em;
+}
+
+/* Various Tags & Classes --------------------------------------------*/
+#siteSub, .urlexpansion, .printfooter {
+    display: none;
+}
+
+.visualClear {
+    clear: both;
+}
+
+/* Content -----------------------------------------------------------*/
+/* BEGIN Table of Contents */
+#toc {
+    float: right;
+    margin: 0 0 1em 1em;
+}
+#toc td {padding: 0.5em;}
+#toc .tocindent {margin-left: 1em;}
+#toc .tocline {margin-bottom: 0px;}
+#toc p {margin: 0}
+#toc .editsection {margin-top: 0.7em;}
+#toc h2, .toc h2 {display: inline; border: 0;}
+.toctoggle {padding-left: 5px;}
+/* END Table of Contents */
+
+img { border: 0px solid #333; }
+
+pre {
+    border: 1px dashed #808080;
+    padding: 3px;
+    margin: auto;
+    background-color: #ffffef;
+    color: #000;
+    font-size: 1.0em;
+    word-wrap: break-word;
+    overflow: auto;
+}
+tt {
+    font-size: 1.1em;
+    color: #885B00;
+}
+
+table p { margin: 0; }
+
+/* navbox stuff */
+.navbox {
+    border-top: 2px solid #448;
+    border-bottom: 1px solid #448;
+    background: #f0f0ff;
+    margin: 1em;
+    padding: 0.5em;
+}
+
+.navbox div {
+    text-align: center;
+    font-weight: bold;
+    background:#ddf;
+}
+
+.navbox table {
+    font-size: smaller;
+}
+
+.navbox td {
+    text-align: center;
+}
+
+/* todo template */
+.todo {
+    margin-left: 2em;
+    margin-top: 0.5em;
+    padding-right: 4em;
+    margin-right: 3em;
+    border: 1px solid #F9FD96;
+    background-color: #FDFEE7;
+    padding-left: 1em;
+}
+
+.tagusage {
+    whitespace: pre;
+    font-family: "Courier New", monospace;
+    margin: 0;
+    margin-left: 4em;
+}
+
+.examplebox {
+    padding: 0.3em;
+    border-left: 1px solid #aaa;
+    margin: 0.3em 2em;
+    background: #f0f0e9;
+    padding-left: 0.8em;
+}
+
+.exampleheader {
+    margin: 0;
+    padding-bottom: 0.3em;
+    font-size: 115%;
+    font-weight: bold;
+}
+
+.examplecontents {
+    margin-left: 1em;
+}
+
+.karatable, .karatable th, .karatable td {
+    text-align: left;
+    border: gray solid 1px;
+    border-collapse: collapse;
+}
+
+.karatable th, .karatable td {
+    padding: 3px;
+}
+
+.karatable th, .karatable td {
+    padding: 3px;
+}

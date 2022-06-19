@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Audio/">
+        <title>Audio - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title"><a name="index1h1"></a>
+                        <a href="../">Aegisub</a> / 
+                        Audio
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <div id="toc">
+    <div id="toctitle">Contents</div>
+    
+<div class="toc">
+	<ol>
+		<li class="L2"><a href="#index1h2">Opening audio</a>
+		<ol>
+			<li class="L3"><a href="#index1h3">Supported formats</a>
+			</li>
+			<li class="L3"><a href="#index2h3">Audio caching</a>
+			</li>
+		</ol>
+		</li>
+	</ol>
+</div>
+
+</div>
+
+<p>Aegisub has a fairly advanced, customizable audio mode with both the
+traditional waveform display as well as an alternative spectrum display.
+Several different timing modes are available for both normal dialog timing
+and karaoke timing.</p>
+
+<h2 id="openingaudio"><a name="index1h2"></a>Opening audio</h2>
+
+<p>To load an audio file into Aegisub, just go to the <em>Audio</em> menu and press
+<em>Open audio file</em>. If you have a video file (with an included audio track)
+already loaded, you can use <em>Open audio from video</em> instead, which obviously
+will load the audio track from the video file you currently have loaded. You
+can open any type of audio file that your <a href="../Options/#advancedaudio">audio
+provider</a> can decode (more on this below). In
+addition, if you simply wish to use the audio display without loading any
+real audio, you can choose <em>Open 2h30 Blank Audio</em> or <em>Open 2h30 Noise
+Audio</em>.</p>
+
+<p>If opening audio fails with an error that mentions the audio player, or if
+playing audio results in no sound, switching to a <a href="../Options/#advancedaudio">different audio
+player</a> may help.</p>
+
+<h3 id="supportedformats"><a name="index1h3"></a>Supported formats</h3>
+
+<p>Aegisub normally uses FFMS2 to open audio, which can reliably open audio is
+nearly any format you an think of. On Windows, Aegisub can also use
+DirectShow (via Avisynth), which can be faster as it does not have to index
+the audio files before opening them. However, DirectShow is considerably
+less reliable, and extremely insane things may happen if you open a file
+with multiple audio tracks via Avisynth.</p>
+
+<p>Aegisub only supports mono audio. Multichannel audio will be automatically
+downmixed, but the results may be of poor quality for sources of more than
+two channels.</p>
+
+<h3 id="audiocaching"><a name="index2h3"></a>Audio caching</h3>
+
+<p>If you're loading any audio format that isn't an uncompressed (PCM)
+Microsoft WAV file, Aegisub needs to decode and cache it first. When loaded,
+the audio is downmixed to mono (see the <a href="../Options/#avisynthwindowsonly">audio downmixer
+option</a> if you want to grab one channel only
+instead), decompressed to PCM (a.k.a. WAV), and (by default) loaded into a
+RAM cache. This means that you will need a <em>large amount</em> of RAM to open a
+long compressed audio file. If your computer doesn't have a lot of RAM, or
+if you're working with a full-length movie, refer to the <a href="../Options/#cache">audio cache
+option</a> for instructions on how to make Aegisub use its
+(slower) hard drive cache instead; or decompress the file to WAV first since
+Aegisub can read from WAVs directly without need for caching.</p>
+
+<p>The exact amount of memory used for any given audio file can be calculated
+with the following formula:
+ s = ( b * r * l ) / 8
+where <em>s</em> is the amount of memory (in bytes - divide by 1024 to get kB), <em>b</em>
+is the number of bits per sample (always 16 in the current implementation),
+<em>r</em> is the sample rate in Hz (usually 48000, or 44100 in some cases), and
+<em>l</em> is the length of the audio (in seconds).</p>
+
+<p>For example, for a 25 minute audio clip at 48 kHz, you will need (16 * 48000
+* 25 * 60)/8 = 144000000 bytes ~= 137 MB.</p>
+
+<p>Loading and decompressing the audio into the cache will take a few seconds;
+Aegisub will display a progress indicator while loading the audio.</p>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5><a name="index1h5"></a>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5><a name="index2h5"></a>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5><a name="index3h5"></a>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5><a name="index4h5"></a>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5><a name="index5h5"></a>Timing</h5>
+
+<ul>
+    <li><span class="selflink">Working with Audio</span></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5><a name="index6h5"></a>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5><a name="index7h5"></a>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Audio_Timing_Tutorial/">Audio Timing Tutorial</a>
+                    
+                    <a href="../Editing_Subtitles/">Editing Subtitles</a>
+                    
+                    <a href="../Overview/">Overview</a>
+                    
+                    <a href="../Timing/">Timing</a>
+                    
+                    <a href="../sidebar/">sidebar</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:51:14 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:44 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

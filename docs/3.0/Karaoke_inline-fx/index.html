@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Karaoke_inline-fx/">
+        <title>Karaoke inline-fx - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../">Aegisub</a> / 
+                        Karaoke inline-fx
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>Karaoke inline-fx (inline effects) is a way of marking up <a href="../Timing/#karaoketiming">timed
+karaoke</a> to assign different effects to different
+parts of a line.</p>
+
+<p>By itself, inline-fx markup doesn't do anything, it only has an effect when
+a <a href="../Automation/">karaoke effect script</a> that understands it is applied to
+the timed karaoke.</p>
+
+<h2 id="themarkup">The markup</h2>
+
+<p>Inline-fx tags are (otherwise invalid) ASS override tags of the form
+<code>\-effectname</code>, where <em>effectname</em> is the name of the inline-fx defined.</p>
+
+<p>Like normal override tags, an inline-fx tag affects the syllable it is
+placed in and every following syllable, until the next syllable with an
+inline-fx tag in it.</p>
+
+<p>At the start of each line the inline-fx is reset to nothing.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>Here is a timed karaoke line with inline-fx markup:</p>
+
+<pre><code>{\k40}zu{\k20}t{\k42}to {\k32<u>\-paint</u>}e{\k17}ga{\k45}i{\k32}te{\k26}ta {\k24<u>\-cloud</u>}yu{\k55}me</code></pre>
+
+<p>These syllables get inline-fx assigned like this:</p>
+
+<table>
+<colgroup>
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+    <th>Syllable</th>
+    <th>Inline-fx</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+    <td>zu</td>
+    <td>(blank)</td>
+</tr>
+<tr>
+    <td>t</td>
+    <td>(blank)</td>
+</tr>
+<tr>
+    <td>to</td>
+    <td>(blank)</td>
+</tr>
+<tr>
+    <td>e</td>
+    <td><code>paint</code></td>
+</tr>
+<tr>
+    <td>ga</td>
+    <td><code>paint</code></td>
+</tr>
+<tr>
+    <td>i</td>
+    <td><code>paint</code></td>
+</tr>
+<tr>
+    <td>te</td>
+    <td><code>paint</code></td>
+</tr>
+<tr>
+    <td>ta</td>
+    <td><code>paint</code></td>
+</tr>
+<tr>
+    <td>yu</td>
+    <td><code>cloud</code></td>
+</tr>
+<tr>
+    <td>me</td>
+    <td><code>cloud</code></td>
+</tr>
+</tbody>
+</table>
+</div></div>
+
+<h2 id="usageinkaraoketemplater">Usage in Karaoke Templater</h2>
+
+<p>If you use <a href="../Automation/Karaoke_Templater/">Karaoke Templater</a> to create
+effects, you can use the <em>fx</em> modifier on templates to make that template
+affect only syllables with a specific inline-fx. It isn't possible
+(directly) to match only syllables with blank inline-fx.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>With the sample timed karaoke from above, you could have the following templates:</p>
+
+<p><code><pre>template syl: {base effect applied for all syllables}
+template syl <u>fx paint</u>: {overlay effect applied only to the 'paint' syllables}
+template syl <u>fx cloud</u>: {overlay effect applied only to the 'cloud' syllables}</pre></code></p>
+
+<p>The idea here is to have a base effect and then some of the syllables get
+some more effects on top of that.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>It is possible to match only syllables with blank inline-fx in
+kara-templater by using an <em>fxgroup</em> that enables or disables basing on
+inline-fx. You can also use _fxgroup_s to have templates that run for
+multiple inline-fx.</p>
+
+<p><code><pre><u>code syl</u>: fxgroup.blankfx = (syl.inline_fx == &quot;&quot;)
+template syl <u>fxgroup blankfx</u>: {effect only applied on blank inline-fx syllables}</pre></code></p>
+
+<p>The important thing is that the code line runs per syllable and runs before
+any per-syllable templates that must use it.</p></div></div>
+
+<h2 id="usageinluascripts">Usage in Lua scripts</h2>
+
+<p>The inline-fx tags are parsed by
+<a href="../Automation/Lua/Modules/karaskel.lua/#karaskel.preproc_line_text"><code>karaskel.preproc line text</code></a>
+so they will only work if you have applied at least that much karaskel
+pre-processing on your subtitle lines.</p>
+
+<p>The inline-fx for a syllable is then available as <code>syl.inline_fx</code>, which
+you can compare to a string to conditionally apply effects.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>In some code that runs per-syllable in your script:</p>
+
+<pre><code>if syl.inline_fx == &quot;&quot; then
+    apply_base_effect(subs, meta, line, syl)
+elseif syl.inline_fx == &quot;paint&quot; then
+    apply_paint_effect(subs, meta, line, syl)
+elseif syl.inline_fx == &quot;cloud&quot; then
+    apply_cloud_effect(subs, meta, line, syl)
+end
+</code></pre>
+
+<p>Simply compare the inline-fx name to the various possibilities and run the
+right effect code.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>In some code that runs per-syllable in your script:
+At top-level of your script:</p>
+
+<pre><code>effects = {}
+effects[&quot;&quot;] = function(subs, meta, line, syl)
+    -- base effect code here
+end
+effects.paint = function(subs, meta, line, syl)
+    -- paint effect code here
+end
+effects.cloud = function(subs, meta, line, syl)
+    -- cloud effect code here
+end
+</code></pre>
+
+<p>Then later, in some per-syllable processing code:</p>
+
+<pre><code>effects[syl.inline_fx](subs, meta, line, syl)
+</code></pre>
+
+<p>First, a table is created and filled with functions for applying the
+different effects. The keys used for the table are the names of the
+possible inline-fx. When the effect has to be applied, the right function
+is looked up in the effect table and then called.</p></div></div>
+
+<div class="navbox">
+<div><a href="../Automation/">Automation 4</a></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><a href="../Automation/Manager/">Automation Manager</a> • <a href="../Automation/Running_macros/">Running macros</a> • <a href="../Exporting/">Using export filters</a> • <a href="../Automation/Included_macros/">Standard macros</a> • <a href="../Automation/Overview_of_changes_from_Automation_3/">Changes from Automation 3</a></td>
+        </tr>
+        <tr>
+            <th><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a> reference: </th>
+            <td><a href="../Automation/Karaoke_Templater/Declaring_template_and_code_lines/">Declaring templates</a> • <a href="../Automation/Karaoke_Templater/Template_execution_rules_and_order/">Execution order</a> • <a href="../Automation/Karaoke_Templater/Template_modifiers/">Modifiers</a> • <a href="../Automation/Karaoke_Templater/Inline_variables/">Inline-variables ($-variables)</a> <br> <a href="../Automation/Karaoke_Templater/Code_lines_and_blocks/">Code lines and blocks</a> • <a href="../Automation/Karaoke_Templater/Code_execution_environment/">Execution envirionment</a></td>
+        </tr>
+        <tr>
+            <th><a href="../Automation/Lua/">Lua API</a> reference: </th>
+            <td><a href="../Automation/Lua/Registration/">Registration</a> • <a href="../Automation/Lua/Subtitle_file_interface/">Subtitles object</a> • <a href="../Automation/Lua/Progress_reporting/">Progress reporting</a> • <a href="../Automation/Lua/Dialogs/">Dialogs</a> • <a href="../Automation/Lua/Miscellaneous_APIs/">Misc. APIs</a></td>
+        </tr>
+        <tr>
+            <th><a href="../Automation/Lua/Modules/">Lua Modules</a>: </th>
+            <td><a href="../Automation/Lua/Modules/karaskel.lua/">karaskel.lua</a> • <a href="../Automation/Lua/Modules/utils.lua/">utils.lua</a> • <a href="../Automation/Lua/Modules/unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="../Automation/Lua/Modules/clipboard/">clipboard</a> • <a href="../Automation/Lua/Modules/re/">re</a></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="../Automation/Lua/Modules/karaskel.lua/#Style_table">Style tables</a> • <a href="../Automation/Lua/Modules/karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="../Automation/Lua/Modules/karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <span class="selflink">Inline effects</span> • <a href="../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Automation/Karaoke_Templater/Template_modifiers/">Automation/Karaoke Templater/Template modifiers</a>
+                    
+                    <a href="../Automation/Lua/Modules/karaskel.lua/">Automation/Lua/Modules/karaskel.lua</a>
+                    
+                    <a href="../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:52:11 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:54 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

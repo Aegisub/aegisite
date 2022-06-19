@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Automation/Included_macros/">
+        <title>Included macros - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title"><a name="index1h1"></a>
+                        <a href="../../">Aegisub</a> / <a href="../">Automation</a> / 
+                        Included macros
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <div id="toc">
+    <div id="toctitle">Contents</div>
+    
+<div class="toc">
+	<ol>
+		<li class="L2"><a href="#index1h2">Apply karaoke template</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Make full-width</a>
+		</li>
+		<li class="L2"><a href="#index3h2">Automatic karaoke lead-in</a>
+		</li>
+		<li class="L2"><a href="#index4h2">Clean tags</a>
+		</li>
+		<li class="L2"><a href="#index5h2">Add Edgeblur</a>
+		</li>
+		<li class="L2"><a href="#index6h2">Strip tags</a>
+		</li>
+		<li class="L2"><a href="#index7h2">Select Overlaps</a>
+		</li>
+	</ol>
+</div>
+
+</div>
+
+<p>Aegisub includes several macros. Here's a line-up of them.</p>
+
+<h2 id="applykaraoketemplate"><a name="index1h2"></a>Apply karaoke template</h2>
+
+<p>This is the macro incantation of Karaoke Templater. See the page on
+<a href="../Karaoke_Templater/">Karaoke Templater</a> for how to use this.</p>
+
+<p>This macro is only available when there is at least one template line in the
+subtitle file.</p>
+
+<h2 id="makefull-width"><a name="index2h2"></a>Make full-width</h2>
+
+<p>Converts all ASCII characters to Japanese &quot;full-width&quot; variations of them.</p>
+
+<p>This can be useful if you need to typeset a sign translation vertically,
+such that the letters are &quot;stacked&quot;.</p>
+
+<p>This macro modifies all lines that are currently selected in the subtitles
+grid.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>Here's a typeset sign:</p>
+
+<pre><code>{\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&amp;H25485A&amp;\c&amp;HDEEBF1&amp;\pos(456,184)\frz-90}Sign text
+</code></pre>
+
+<p>Notice that it uses an &quot;@-font&quot;, a variation that exists of every CJK font
+that has &quot;fullwidth&quot; characters rotated 90 degrees from the baseline.
+Fullwidth characters include not just these fullwidth variations of the
+Latin alphabet but also Japanese kana and kanji, hanzi, hanja and various
+punctuation characters.</p>
+
+<p>Now after running this macro on the line:</p>
+
+<pre><code>{\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&amp;H25485A&amp;\c&amp;HDEEBF1&amp;\pos(456,184)\frz-90}Ｓｉｇｎ ｔｅｘｔ
+</code></pre>
+
+<p>This is what it looks before and after running the macro:</p>
+
+<p><img src="../../img/StackedSign1.png" alt="StackedSign1.png" /> <img src="../../img/StackedSign2.png" alt="StackedSign2.png" /></p></div></div>
+
+<h2 id="automatickaraokelead-in"><a name="index3h2"></a>Automatic karaoke lead-in</h2>
+
+<p>Automatically join several karaoke-timed lines up timing-wise and add
+appropriate <code>\k</code> tags in front of them.</p>
+
+<p>This macro is designed to help creating karaoke effects, most importantly
+creating transitions and lead-ins for lines. It's well suited for using when
+the karaoke is timed but before applying effects, such as karaoke templates.</p>
+
+<p>This macro requires at least two lines to be selected and it only works
+sensibly if the start-time of each selected line is larger than the
+start-time of the selected line that comes before it. It changes the timing
+of the selected lines and adds <code>\k</code> tags at the start of them except the
+first.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>Here's two lines of &quot;tightly&quot; timed karaoke:</p>
+
+<pre><code>Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
+Dialogue: 0,0:00:46.57,0:00:48.56,Default,,0000,0000,0000,,{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+</code></pre>
+
+<p>Both lines start exactly when the first word starts being sung, and they end
+exactly when the last word ends.</p>
+
+<p>Now if the <em>Automatic karaoke lead-in</em> macro is run on these two lines, they
+are changed into this:
+<pre><code>Dialogue: 0,0:00:44.46,<u>0:00:46.28</u>,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
+Dialogue: 0,<u>0:00:46.28</u>,0:00:48.56,Default,,0000,0000,0000,,<u>{\k29}</u>{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+</code></pre></p>
+
+<p>The start-time of the second line is changed so it matches the end-time of
+the first line, and a <code>\k</code> tag is added to the start of the line, to make
+up for the shift otherwise created by this. This effectively creates an
+empty syllable that can be used as a &quot;spacer&quot; to create fade-in and fade-out
+effects.</p>
+
+<p>The macro also shows this message:</p>
+
+<pre><code>Smallest inter-line duration: 290 milliseconds
+</code></pre>
+
+<p>This simply says that the smallest duration between two lines it found, was
+290 milliseconds, or 0.29 seconds, so that's as much time you have to make
+fade-in, fade-out and other transition effects, if you want every
+syllable-highlight to be fully visible.</p></div></div>
+
+<h2 id="cleantags"><a name="index4h2"></a>Clean tags</h2>
+
+<p>This macro does various cleaning up on the override tags in all selected
+lines.</p>
+
+<ul>
+<li>Combines adjacent override blocks (i.e { ... }) except if both of the
+ block contains \k tags each then they will be left as is</li>
+<li>Push any \k tags in override blocks to the front (e.g. from {\frz90\k40}
+ to {\k40\frz90}). Special care will be taken for multiple \k tags within
+ one block to preserve the ordering</li>
+<li>Move line-wide tags (i.e. tags whose effects affect the whole line -- \a
+ \an \org \pos \move \fade \fad) to the beginning of the lines</li>
+<li>Remove all but first line-wide tags of the same class (note: \pos and
+ \move are from the same class -- only first of them works in a line,
+ therefore the script will find the first \move or \pos and retain whic of
+ the two comes first and remove others. The same are done for \fad and
+ \fade)</li>
+<li>Remove spaces in comma-separated parameters (e.g. \pos(200 , 200) becomes
+ \pos(200,200))</li>
+</ul>
+
+<p>This macro is also available as an export filter.</p>
+
+<p>The main intended function of this macro is to make
+<a href="../Lua/Modules/karaskel.lua/">karaskel.lua</a> split karaoke lines more
+sensibly into syllable structures, see the example.</p>
+
+<p>This macro modifies all selected lines in the grid, re-writing all tag
+blocks in them.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>Original line:</p>
+
+<pre><code>{\r\frz90\k80}Test {\r\fry180\k60}me
+</code></pre>
+
+<p>Karaskel creates these syllable structures:</p>
+
+<ul>
+<li>0 = {\r\frz90}</li>
+<li>1 = Test {\r\fry180}</li>
+<li>2 = me</li>
+</ul>
+
+<p>After running <em>Clean Tags</em> on the line:</p>
+
+<pre><code>{\k80\r\frz90}Test {\k60\r\fry180}me
+</code></pre>
+
+<p>Now karaskel creates these syllable structures:</p>
+
+<ul>
+<li>0 =</li>
+<li>1 = {\r\frz90}Test</li>
+<li>2 = {\r\fry180}me</li>
+</ul>
+
+<p>The cleaned up version is generally what you'd want since it places the
+override tags inside the syllables they affect.</p></div></div>
+
+<h2 id="addedgeblur"><a name="index5h2"></a>Add Edgeblur</h2>
+
+<p>Add <a href="../../ASS_Tags/#bluredges"><code>\be1</code></a> to all selected lines. Lightly blurring the
+edges of all dialogue lines can noticeably improve compressibility when
+<a href="../../Attaching_subtitles_to_video/">hardsubbing</a> (especially when using older
+codecs such as XviD), but edgeblur cannot be set in the style due to format
+limitations.</p>
+
+<h2 id="striptags"><a name="index6h2"></a>Strip tags</h2>
+
+<p>Remove all ASS override blocks and the tags within from the selected lines.</p>
+
+<h2 id="selectoverlaps"><a name="index7h2"></a>Select Overlaps</h2>
+
+<p>Select all lines which begin while another line is still active. This can be
+useful for catching timing errors, or for setting an alternate style for these
+lines, which improves readability.</p>
+
+<div class="navbox">
+<div><a href="../">Automation 4</a></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><a href="../Manager/">Automation Manager</a> • <a href="../Running_macros/">Running macros</a> • <a href="../../Exporting/">Using export filters</a> • <span class="selflink">Standard macros</span> • <a href="../Overview_of_changes_from_Automation_3/">Changes from Automation 3</a></td>
+        </tr>
+        <tr>
+            <th><a href="../Karaoke_Templater/">Karaoke Templater</a> reference: </th>
+            <td><a href="../Karaoke_Templater/Declaring_template_and_code_lines/">Declaring templates</a> • <a href="../Karaoke_Templater/Template_execution_rules_and_order/">Execution order</a> • <a href="../Karaoke_Templater/Template_modifiers/">Modifiers</a> • <a href="../Karaoke_Templater/Inline_variables/">Inline-variables ($-variables)</a> <br> <a href="../Karaoke_Templater/Code_lines_and_blocks/">Code lines and blocks</a> • <a href="../Karaoke_Templater/Code_execution_environment/">Execution envirionment</a></td>
+        </tr>
+        <tr>
+            <th><a href="../Lua/">Lua API</a> reference: </th>
+            <td><a href="../Lua/Registration/">Registration</a> • <a href="../Lua/Subtitle_file_interface/">Subtitles object</a> • <a href="../Lua/Progress_reporting/">Progress reporting</a> • <a href="../Lua/Dialogs/">Dialogs</a> • <a href="../Lua/Miscellaneous_APIs/">Misc. APIs</a></td>
+        </tr>
+        <tr>
+            <th><a href="../Lua/Modules/">Lua Modules</a>: </th>
+            <td><a href="../Lua/Modules/karaskel.lua/">karaskel.lua</a> • <a href="../Lua/Modules/utils.lua/">utils.lua</a> • <a href="../Lua/Modules/unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="../Lua/Modules/clipboard/">clipboard</a> • <a href="../Lua/Modules/re/">re</a></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="../Lua/Modules/karaskel.lua/#Style_table">Style tables</a> • <a href="../Lua/Modules/karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="../Lua/Modules/karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../Karaoke_inline-fx/">Inline effects</a> • <a href="../../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5><a name="index1h5"></a>Navigation</h5>
+
+<ul>
+    <li><a href="../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5><a name="index2h5"></a>Introduction</h5>
+
+<ul>
+    <li><a href="../../About/">What is Aegisub?</a></li>
+    <li><a href="../../Highlights/">Highlights</a></li>
+    <li><a href="../../Credits/">Credits</a></li>
+    <li><a href="../../Support/">Support Aegisub</a></li>
+    <li><a href="../../FAQ/">FAQ</a></li>
+    <li><a href="../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5><a name="index3h5"></a>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5><a name="index4h5"></a>Typesetting</h5>
+
+<ul>
+    <li><a href="../../Typesetting/">Introduction</a></li>
+    <li><a href="../../Video/">Working with Video</a></li>
+    <li><a href="../../Styles/">Editing styles</a></li>
+    <li><a href="../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5><a name="index5h5"></a>Timing</h5>
+
+<ul>
+    <li><a href="../../Audio/">Working with Audio</a></li>
+    <li><a href="../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5><a name="index6h5"></a>Automation</h5>
+
+<ul>
+    <li><a href="../">Overview</a></li>
+    <li><a href="../Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Lua/">Lua Reference</a></li>
+</ul>
+
+<h5><a name="index7h5"></a>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../Options/">Aegisub Options</a></li>
+    <li><a href="../../Properties/">Script Properties</a></li>
+    <li><a href="../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../">Automation</a>
+                    
+                    <a href="../../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Tue 28 Feb 2012 08:24:24 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Automation/Lua/Registration/">
+        <title>Registration - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../../../">Aegisub</a> / <a href="../../">Automation</a> / <a href="../">Lua</a> / 
+                        Registration
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p><strong>Registration</strong> covers presenting your <a href="../">Automation 4 Lua</a>
+script to Aegisub, providing information about it and registering what
+<em>features</em> it provides.</p>
+
+<h2 id="featuresexplained">Features explained</h2>
+
+<p>One of the primary concepts in Automation 4 is the <em>feature</em>. A feature is
+something a script makes available for Aegisub to call back in response to a
+user action.</p>
+
+<p>A feature is not a plain callback. Rather, it's usually a set of several
+callback functions as well as some information on how they should be
+presented to the user in the GUI.</p>
+
+<p>One feature is the <strong>macro</strong>. A macro is presented as an item in the
+Automation menu. A macro has a name (the title show in the menu), a
+description (the text shown on the status bar when hovering over the menu
+item), a processing function (the function called when the user selects the
+menu item) and an optional validation function (determines whether the macro
+can even do any work in the current state.)</p>
+
+<p>Another feature is the <strong>export filter</strong>. The export filter is presented in
+the <a href="../../../Exporting/">Export</a> dialogue and can be applied during an export
+operation. Export filters also have a name, description, processing function
+and then an optional configuration panel provider. The configuration panel
+provider is a function that returns a configuration dialogue definition
+structure which will be displayed in the Export dialogue when the export
+filter is enabled. The settings filled into the configuration panel are
+passed to the processing function when it is run.</p>
+
+<h2 id="scriptinformationglobals">Script information globals</h2>
+
+<p>A script can set a few global variables to provide metadata about the script
+to Aegisub. The information given with these variables are displayed in the
+<a href="../../Manager/">Manager</a> dialogue and the Script Info dialogue.</p>
+
+<ul>
+<li><strong>script_name</strong> (string) - Name of the script. This should be short.</li>
+<li><strong>script_description</strong> (string) - Description of the purpose of the
+ script. Shouldn't be too long either.</li>
+<li><strong>script_version</strong> (string or number) - Version number/name of the script.
+ This is freeform; no specific meaning is assigned to this.</li>
+<li><strong>script_author</strong> (string) - Author credits for the script.</li>
+</ul>
+
+<p>All of these are optional; a script does not have to provide any of these.
+If no script name is given, the file name is used instead for display
+purposes.</p>
+
+<h2 id="registrationfunctions">Registration functions</h2>
+
+<p>The registration functions are the functions provided by Automation 4 Lua
+you can call to make a feature available to Aegisub. You will usually call
+these in the top level, at the very bottom of your script.</p>
+
+<h3 id="aegisub.register_macro">aegisub.register_macro</h3>
+
+<p>Synopsis: <code>aegisub.register_macro(name, description, processing_function, validation_function)</code></p>
+
+<p>Register a macro feature.</p>
+
+<ul>
+<li><strong>name</strong> (string) - The name displayed on the Automation menu. This should
+ be very short, try three words or less, and should be in command tense.</li>
+<li><strong>description</strong> (string) - The description displayed on the status bar
+ when the user hovers the mouse over the menu item. This should be a
+ concise description of what the macro does. Try to keep it at most 60
+ characters.</li>
+<li><strong>processing_function</strong> (function) - The function that is called when the
+ user selects the menu item. This must be a function with the <a href="./#macroprocessingfunction">macro
+ processing function API</a>.</li>
+<li><strong>validation_function</strong> (function, optional) - This function is called to
+ determine whether the menu item should be available to the user or not.
+ (Grayed out or not.) If no validation function is provided the macro is
+ always available. This function must follow the <a href="./#macrovalidationfunction">macro validation
+ function API</a>.</li>
+</ul>
+
+<h3 id="aegisub.register_filter">aegisub.register_filter</h3>
+
+<p>Synopsis: <code>aegisub.register_filter(name, description, priority, processing_function, configuration_panel_provider)</code></p>
+
+<p>Register an export filter feature.</p>
+
+<ul>
+<li><p><strong>name</strong> (string) - The name displayed in the export filters list. The
+ name should be rather short.</p></li>
+<li><p><strong>description</strong> (string) - The description displayed in the description
+ box when the user highlights the export filter in the Export dialogue.</p></li>
+<li><p><strong>priority</strong> (number) - Determines the initial ordering of export filter
+ application. Filters with higher priority are applied earlier than filters
+ with lower priority. The user can change the filter application order in
+ the Export dialogue. Priorities of the Aegisub built in export filters:</p></li>
+<li><p>Transform Framerate = 1000 (karaoke effects should have higher priority
+than this)</p></li>
+<li><p>Clean Script Info = 0 (your script might depend on the information
+cleaned by this)</p></li>
+<li><p>Fix Styles = -5000 (should almost always run last)</p></li>
+<li><p><strong>processing_function</strong> (function) - The function that is called when the
+ user initiates the export operation. This must be a function with the
+ <a href="./#exportfilterprocessingfunction">export filter processing function
+ API</a>.</p></li>
+<li><p><strong>configuration_panel_provider</strong> (function, optional) - A function that
+ provides a configuration panel for the export filter. If this function is
+ not provided the export filter will not have a configuration panel. This
+ function must follow the <a href="./#exportfilterconfigurationpanelprovider">export filter configuration panel provider
+ API</a>.</p></li>
+</ul>
+
+<h2 id="featurecallbackfunctions">Feature callback functions</h2>
+
+<p>These are the callback functions you provide to the registration functions.</p>
+
+<h3 id="macroprocessingfunction">Macro processing function</h3>
+
+<p>Signature: <code>process_macro(subtitles, selected_lines, active_line)</code></p>
+
+<p>Macro processing functions passed to
+<a href="./#aegisub.register_macro"><code>aegisub.register macro</code></a>
+must have this signature. The name <code>process_macro</code> is a placeholder for your
+own function name.</p>
+
+<ul>
+<li><strong>subtitles</strong> (user data) - The <a href="../Subtitle_file_interface/">subtitles
+ object</a> you use to manipulate
+ the subtitles with.</li>
+<li><strong>selected_lines</strong> (table) - An array with indexes of the selected lines.
+ The values in this table are line indexes in the <em>subtitles</em> object at its
+ initial state. Only <code>dialogue</code> class lines can ever be selected.</li>
+<li><strong>active_line</strong> (number) - The line that is currently available for
+ editing in the subtitle editing area. This is an index into the
+ <em>subtitles</em> object. This line will usually also be selected, but this is
+ not a strict requirement.</li>
+</ul>
+
+<p><strong>Return value:</strong>
+The macro processing function can return up to two values: a new
+<code>selected_lines</code> table containing indices of the lines to select after the
+macro returns, and an index of the line to make the new <code>active_line</code>. If
+set, the new active line index must be one of the lines in the new
+<code>selected_lines</code> table.</p>
+
+<h3 id="macrovalidationfunction">Macro validation function</h3>
+
+<p>Signature: <code>validate_macro(subtitles, selected_lines, active_line)</code></p>
+
+<p>Macro validation functions passed to
+<a href="./#aegisub.register_macro"><code>aegisub.register macro</code></a>
+must have this signature. The name <code>validate_macro</code> is a placeholder for
+your own function name.</p>
+
+<p><strong>Important, execution time:</strong> Validation functions should always run very
+fast. Do as little work as possible inside this function, because it is run
+every time the user pulls open the Automation menu, and every millisecond
+you spend in <code>validate_macro</code> is one millisecond delay in opening the menu.
+Consider that the user might have very large files open. Don't block the UI.</p>
+
+<ul>
+<li><strong>subtitles</strong> (user data) - The <a href="../Subtitle_file_interface/">subtitles
+ object</a> for the current subtitle
+ file. This is <strong>read-only</strong>. You cannot modify the subtitles in the
+ validation function, and attempting to do so will cause a run-time error.</li>
+<li><strong>selected_lines</strong> (table) - An array with indexes of the selected lines.
+ The values in this table are line indexes in the <em>subtitles</em> object at its
+ initial state. Only <code>dialogue</code> class lines can ever be selected.</li>
+<li><strong>active_line</strong> (number) - The line that is currently available for
+ editing in the subtitle editing area. This is an index into the
+ <em>subtitles</em> object.</li>
+</ul>
+
+<p><strong>Return value:</strong>
+Boolean, <code>true</code> if the macro can run given the current
+state of <em>subtitles</em>, <em>selected_lines</em> and <em>active_line</em>, <code>false</code> if it can
+not.</p>
+
+<p>In addition to the primary return value, the validation function can return
+a string. If it does, the description of the macro is set to the string.
+This is intended for reporting information to the user about why the macro
+cannot be run, but there may be more uses for it.</p>
+
+<h3 id="exportfilterprocessingfunction">Export filter processing function</h3>
+
+<p>Signature: <code>process_filter(subtitles, settings)</code></p>
+
+<p>Export filter processing functions passed to
+<a href="./#aegisub.register_filter"><code>aegisub.register filter</code></a>
+must have this signature. The name <code>process_filter</code> is a placeholder for
+your own function name.</p>
+
+<p>You do not have to worry about undo issues with export filters. You always
+work on a copy of the subtitle file.</p>
+
+<ul>
+<li><strong>subtitles</strong> (user data) - The <a href="../Subtitle_file_interface/">subtitles
+ object</a> you use to manipulate
+ the subtitles with. This is a copy of the open subtitles file, so
+ modifying this subtitles object does not modify the open file and will
+ only affect the exported file.</li>
+<li><strong>settings</strong> (table) - Configuration settings entered into the
+ configuration panel or an empty table if there is no configuration panel.
+ See the page on <a href="../Dialogs/">configuration
+ dialogues</a> for more information
+ on the format of this table.</li>
+</ul>
+
+<p><strong>Return value:</strong>
+Nothing.</p>
+
+<h3 id="exportfilterconfigurationpanelprovider">Export filter configuration panel provider</h3>
+
+<p>Signature: <code>get_filter_configuration_panel(subtitles, old_settings)</code></p>
+
+<p>Export filter configuration panel providers passed to
+<a href="./#aegisub.register_filter"><code>aegisub.register filter</code></a>
+must have this signature. The name <code>get_filter_configuration_panel</code> is a
+placeholder for your own function name.</p>
+
+<p><strong>Important, execution time:</strong>
+This function is called automatically when
+the user opens the Export dialogue, and Aegisub blocks until it returns with
+a configuration panel. Consider that the user might have a very large file
+open, and that every millisecond spent creating your configuration dialogue
+is one more millisecond the user has to wait for the Export dialogue to
+open. Don't block the UI.</p>
+
+<ul>
+<li><strong>subtitles</strong> (user data) - The <a href="../Subtitle_file_interface/">subtitles
+ object</a> for the current subtitle
+ file. This is <strong>read-only</strong>. You cannot modify the subtitles in the filter
+ configuration provider. Attempting to modify the subtitles will cause a
+ run-time error.</li>
+<li><strong>old_settings</strong> (table) - Previous configuration settings entered into
+ the configuration panel, if any. When an Automation 4 export filter is
+ run, any configuration settings are automatically stored to the original
+ file. If any stored settings exist for this filter, they are passed as
+ <em>old_settings</em> so you can use them as a base for filling in defaults.</li>
+</ul>
+
+<p><strong>Return value:</strong>
+A configuration dialogue table. See the page on
+<a href="../Dialogs/">configuration dialogues</a> for
+more information on the format of this table.</p>
+
+<div class="navbox">
+<div><a href="../../">Automation 4</a></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><a href="../../Manager/">Automation Manager</a> • <a href="../../Running_macros/">Running macros</a> • <a href="../../../Exporting/">Using export filters</a> • <a href="../../Included_macros/">Standard macros</a> • <a href="../../Overview_of_changes_from_Automation_3/">Changes from Automation 3</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../Karaoke_Templater/">Karaoke Templater</a> reference: </th>
+            <td><a href="../../Karaoke_Templater/Declaring_template_and_code_lines/">Declaring templates</a> • <a href="../../Karaoke_Templater/Template_execution_rules_and_order/">Execution order</a> • <a href="../../Karaoke_Templater/Template_modifiers/">Modifiers</a> • <a href="../../Karaoke_Templater/Inline_variables/">Inline-variables ($-variables)</a> <br> <a href="../../Karaoke_Templater/Code_lines_and_blocks/">Code lines and blocks</a> • <a href="../../Karaoke_Templater/Code_execution_environment/">Execution envirionment</a></td>
+        </tr>
+        <tr>
+            <th><a href="../">Lua API</a> reference: </th>
+            <td><span class="selflink">Registration</span> • <a href="../Subtitle_file_interface/">Subtitles object</a> • <a href="../Progress_reporting/">Progress reporting</a> • <a href="../Dialogs/">Dialogs</a> • <a href="../Miscellaneous_APIs/">Misc. APIs</a></td>
+        </tr>
+        <tr>
+            <th><a href="../Modules/">Lua Modules</a>: </th>
+            <td><a href="../Modules/karaskel.lua/">karaskel.lua</a> • <a href="../Modules/utils.lua/">utils.lua</a> • <a href="../Modules/unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="../Modules/clipboard/">clipboard</a> • <a href="../Modules/re/">re</a></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="../Modules/karaskel.lua/#Style_table">Style tables</a> • <a href="../Modules/karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="../Modules/karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/">Inline effects</a> • <a href="../../../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../../../About/">What is Aegisub?</a></li>
+    <li><a href="../../../Highlights/">Highlights</a></li>
+    <li><a href="../../../Credits/">Credits</a></li>
+    <li><a href="../../../Support/">Support Aegisub</a></li>
+    <li><a href="../../../FAQ/">FAQ</a></li>
+    <li><a href="../../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../../../Typesetting/">Introduction</a></li>
+    <li><a href="../../../Video/">Working with Video</a></li>
+    <li><a href="../../../Styles/">Editing styles</a></li>
+    <li><a href="../../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../../../Audio/">Working with Audio</a></li>
+    <li><a href="../../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../../">Overview</a></li>
+    <li><a href="../../Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../../Options/">Aegisub Options</a></li>
+    <li><a href="../../../Properties/">Script Properties</a></li>
+    <li><a href="../../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Dialogs/">Dialogs</a>
+                    
+                    <a href="../">Lua</a>
+                    
+                    <a href="../Subtitle_file_interface/">Subtitle file interface</a>
+                    
+                    <a href="../../../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Tue 28 Feb 2012 08:48:34 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

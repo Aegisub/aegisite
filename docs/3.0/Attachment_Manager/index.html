@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Attachment_Manager/">
+        <title>Attachment Manager - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title"><a name="index1h1"></a>
+                        <a href="../">Aegisub</a> / 
+                        Attachment Manager
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <div id="toc">
+    <div id="toctitle">Contents</div>
+    
+<div class="toc">
+	<ol>
+		<li class="L2"><a href="#index1h2">Overview</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Limitations and downsides</a>
+		<ol>
+			<li class="L3"><a href="#index1h3">Supported formats</a>
+			</li>
+			<li class="L3"><a href="#index2h3">Compatibility issues</a>
+			</li>
+			<li class="L3"><a href="#index3h3">Size</a>
+			</li>
+			<li class="L3"><a href="#index4h3">Speed</a>
+			</li>
+		</ol>
+		</li>
+	</ol>
+</div>
+
+</div>
+
+<p>The attachment manager allows you to attach fonts and/or pictures to your
+script (by encoding them as text). This is occasionally useful for sharing
+fonts between everyone who is working on a script without having to send the
+fonts as separate files. However, it is quite limited and is prone to causing
+problems.</p>
+
+<h2 id="overview"><a name="index1h2"></a>Overview</h2>
+
+<center><img src="../img/Attachment_list.png" alt="Attachment list.png" /></center>
+
+<p>The entire dialogue is fairly self-explanatory. The two &quot;Attach ...&quot; buttons
+add attachments, &quot;Extract&quot; extracts existing attachments into separate files,
+and &quot;Delete&quot; deletes attachments from the subtitles file.</p>
+
+<h2 id="limitationsanddownsides"><a name="index2h2"></a>Limitations and downsides</h2>
+
+<h3 id="supportedformats"><a name="index1h3"></a>Supported formats</h3>
+
+<p>The SSA format specification only allows certain filetypes to be attached. For
+fonts, only .ttf is allowed. For pictures, .bmp, .gif, .ico, .jpg and .wmf are
+allowed (note the absence of .png). None of the SSA commands which <em>use</em> the
+images are implemented in anything but SubStation Alpha, so it is very unlikely
+that attaching pictures is actually a useful thing to do.</p>
+
+<h3 id="compatibilityissues"><a name="index2h3"></a>Compatibility issues</h3>
+
+<p>Many SSA/ASS editors ignore or strip attachments. The original SubStation Alpha
+(v4.08) will work fine, but only for real SSA files. Sabbu will complain about
+unrecognized fields, and strip the attachments if you save the file. Most other
+editors either ignore the attachments or crash when encountering them.</p>
+
+<p>A notable exception is mkvmerge, which will convert the attached files to
+Matroska attachments on muxing. If you demux the script again, the attachments
+will be stripped from the script, but they're still there as MKV attachments.</p>
+
+<h3 id="size"><a name="index3h3"></a>Size</h3>
+
+<p>Unfortunately, storing binary data as text (in this case, a variant of
+UUEncoding) is not very efficient. The attached files will take considerably
+more space as script attachments than they do as separate files.</p>
+
+<h3 id="speed"><a name="index4h3"></a>Speed</h3>
+
+<p>Aegisub's undo system makes a complete copy of the loaded file on every change.
+Normally this is very fast, but attachments can significantly slow this down
+due to the large size.</p>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5><a name="index1h5"></a>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5><a name="index2h5"></a>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5><a name="index3h5"></a>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5><a name="index4h5"></a>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5><a name="index5h5"></a>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5><a name="index6h5"></a>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5><a name="index7h5"></a>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><span class="selflink">Attachment Manager</span></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Overview/">Overview</a>
+                    
+                    <a href="../sidebar/">sidebar</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:52 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

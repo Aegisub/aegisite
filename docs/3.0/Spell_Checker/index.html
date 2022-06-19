@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Spell_Checker/">
+        <title>Spell Checker - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../">Aegisub</a> /
+                        Spell Checker
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>To help you with quality assurance of your subtitle scripts, Aegisub
+features a complete spell checker. It uses the Hunspell library, which is
+based on OpenOffice.org's MySpell, which means it's at least as good as one
+you'd find in a sophisticated word processing program. It can be found in
+the <em>Subtitles</em> menu -&gt; <em>Spell Checker</em>. It also spell-checks as you type
+and can to some degree be controlled from the subtitle edit box's
+right-click menu (see <a href="../Editing_Subtitles/">editing subtitles</a>).</p>
+
+<h3 id="thespellcheckerdialog">The spell checker dialog</h3>
+
+<center><img src="../img/spell_checker.png" alt="spell checker.png" /></center>
+
+<p>The spell checker dialog will go through all misspelled words it can find in
+your script. The area in the lower left of the box displays suggestions to
+replace the misspelled word with; to the right there are a number of
+buttons:</p>
+
+<ul>
+<li><strong>Skip Comments</strong> - ignore misspelled words in commented out lines.</li>
+<li><strong>Replace</strong> - replaces the found misspelled word with the chosen
+ replacement. Note that the list box can be double-clicked to do this as
+ well.</li>
+<li><strong>Replace All</strong> - replaces <em>all instances</em> of the found misspelled word
+ <em>in the entire script</em> with the chosen replacement.</li>
+<li><strong>Ignore</strong> - ignores <em>this instance</em> of the misspelled word.</li>
+<li><strong>Ignore All</strong> - ignores <em>all instances</em> of this word.</li>
+<li><strong>Add to dictionary</strong> - adds the found word to the dictionary so it will
+ not be detected as misspelled again. Note that it is currently not possible
+ to remove words added from within Aegisub.</li>
+</ul>
+
+<p>At the bottom of the dialog box there is a dropdown box to choose the spell
+checker language.</p>
+
+<h3 id="dictionaries">Dictionaries</h3>
+
+<p>Aegisub comes with a US English dictionary. Installers for many other
+languages are available <a href="#{download_release_url "dictionaries"}">on our
+website</a>. If we don't
+supply a dictionary for your language, check <a href="https://wiki.mozilla.org/L10n:Dictionaries">Mozilla's set of
+dictionaries</a>, or simply Google
+for &quot;hunspell <i>&lt;language&gt;</i> dictionary&quot;.</p>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><span class="selflink">Spell Checker</span></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+
+
+
+                <div id="backlinks">
+                    Links:
+
+                    <a href="../Overview/">Overview</a>
+
+                    <a href="../sidebar/">sidebar</a>
+
+
+                </div><!-- #backlinks -->
+
+
+
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:48 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

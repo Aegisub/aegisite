@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Options/">
+        <title>Options - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title"><a name="index1h1"></a>
+                        <a href="../">Aegisub</a> / 
+                        Options
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <div id="toc">
+    <div id="toctitle">Contents</div>
+    
+<div class="toc">
+	<ol>
+		<li class="L2"><a href="#index1h2">General</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Audio</a>
+		<ol>
+			<li class="L3"><a href="#index1h3">Display Visual Options</a>
+			</li>
+			<li class="L3"><a href="#index2h3">Audio labels</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index3h2">Video</a>
+		<ol>
+			<li class="L3"><a href="#index3h3">Script resolution</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index4h2">Interface</a>
+		<ol>
+			<li class="L3"><a href="#index4h3">Colors</a>
+			</li>
+			<li class="L3"><a href="#index5h3">Color Schemes</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index5h2">Hotkeys</a>
+		<ol>
+			<li class="L3"><a href="#index6h3">Hotkey Contexts</a>
+			</li>
+			<li class="L3"><a href="#index7h3">Setting hotkeys</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index6h2">Backup</a>
+		<ol>
+			<li class="L3"><a href="#index8h3">Automatic Save</a>
+			</li>
+			<li class="L3"><a href="#index9h3">Automatic Backup</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index7h2">Automation</a>
+		</li>
+		<li class="L2"><a href="#index8h2">Advanced Audio</a>
+		<ol>
+			<li class="L3"><a href="#index10h3">Cache</a>
+			</li>
+			<li class="L3"><a href="#index11h3">Spectrum</a>
+			</li>
+			<li class="L3"><a href="#index12h3">Avisynth (Windows only)</a>
+			</li>
+			<li class="L3"><a href="#index13h3">FFmpegSource</a>
+			</li>
+			<li class="L3"><a href="#index14h3">Portaudio</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index9h2">Advanced Video</a>
+		<ol>
+			<li class="L3"><a href="#index15h3">Avisynth</a>
+			</li>
+			<li class="L3"><a href="#index16h3">FFmpegSource</a>
+			</li>
+		</ol>
+		</li>
+	</ol>
+</div>
+
+</div>
+
+<p>Aegisub is highly customizable and hence has a large amount of user-changeable
+options. These are available in the options dialog box, found in the View menu.
+This page is a reference of all the available options.</p>
+
+<p>Aegisub stores all its configuration in a plain text file called <em>config.json</em>
+which by default is stored in the <a href="../Aegisub_path_specifiers/">?user</a> directory.
+If you want to reset Aegisub to its default options without reinstalling the
+program, you can just delete config.json and restart Aegisub.</p>
+
+<h2 id="general"><a name="index1h2"></a>General</h2>
+<dl>
+<dt><center><img src="../img/preferences-general.png" alt="preferences-general.png" /></center></dt>
+<dt><strong>Auto Check for Updates</strong></dt>
+<dd>If enabled, Aegisub will periodically check whether there is a newer version
+available, and alert you if there is. Requires a working connection to the
+internet.</dd>
+
+<dt><strong>Show main toolbar</strong></dt>
+<dd>If disabled, Aegisub's main toolbar is hidden.</dd>
+
+<dt><strong>Toolbar icon size</strong></dt>
+<dd>The size of icons to use in all of the toolbars in Aegisub. Currently the
+only valid values are 16 and 24.</dd>
+
+<dt><strong>Automatically load linked files</strong></dt>
+<dd>Whenever you save a script, Aegisub also stores some information about what
+video, audio and timecodes files you had open while working on it, inside the
+script itself. This option decides what Aegisub does with these files that are
+&quot;linked&quot; to the script when opening it. If set to &quot;ask&quot;, Aegisub will ask you
+if you want to load linked files. If set to &quot;never&quot;, Aegisub will never load
+linked files, and likewise if set to &quot;always&quot;, Aegisub will always try to load
+linked files (and report an error if the file(s) were not found).</dd>
+
+<dt><strong>Undo levels</strong></dt>
+<dd>The maximum number of changes that can be undone. The higher this value, the
+more memory Aegisub will use.</dd>
+
+<dt><strong>Recently Used Lists</strong></dt>
+<dd>Maximum number of items to remember for all of the various lists of recently
+used items in Aegisub. The memory impact from increasing these is trivial, but
+larger lists may get unwieldy to use.</dd>
+</dl>
+
+
+<h2 id="audio"><a name="index2h2"></a>Audio</h2>
+<dl>
+<dt><center><img src="../img/preferences-audio.png" alt="preferences-audio.png" /></center></dt>
+<dt><strong>Lock scroll on cursor</strong></dt>
+<dd>When enabled, the audio waveform view will automatically scroll to follow the
+playback cursor if it gets too close to either of the edges.</dd>
+
+<dt><strong>Snap markers by default</strong></dt>
+<dd>When enabled, Aegisub will default to snapping audio markers to other markers
+in the audio display (such as keyframes and the start or end times of other
+lines) when moving them by clicking or dragging them if they are close enough.
+Snapping can be toggled on or off by holding down shift.</dd>
+
+<dt><strong>Default mouse wheel to zoom</strong></dt>
+<dd>When enabled, the mouse wheel will zoom the audio display horizontally by
+default, and scroll the audio display when Ctrl is held down. If disabled, this
+is reversed.</dd>
+
+<dt><strong>Auto-focus on mouse over</strong></dt>
+<dd>If enabled, moving the mouse cursor over the audio waveform will
+automatically give it focus (as opposed to requiring a click).</dd>
+
+<dt><strong>Play audio when stepping in video</strong></dt>
+<dd>When enabled, frame stepping plays the audio for that frame.</dd>
+
+<dt><strong>Default timing length</strong></dt>
+<dd>The default length of a new untimed line, in milliseconds.</dd>
+
+<dt><strong>Default lead-in length</strong></dt>
+<dt><strong>Default lead-out length</strong></dt>
+<dd>The duration added to the start of a line by the &quot;add lead-in&quot; and &quot;add
+lead-out&quot; functions. Also used in (and set by) the <a href="../Timing_Post-Processor/">timing
+postprocessor</a>.</dd>
+
+<dt><strong>Marker drag-start sensitivity</strong></dt>
+<dd>The distance in pixels that a marker must be dragged for it to register as a
+drag. Higher values reduce the chance of accidental changes, at the cost of
+worse responsiveness.</dd>
+
+<dt><strong>Left-click-drag moves end marker</strong></dt>
+<dd>When enabled, left clicking will set the start time of the line to the
+clicked point, then set the end time of the line to the point dragged to,
+making it possible to time a line with a single click-drag movement. When
+disabled, left-click-drag always updates only the start time of the line, as
+right-click does with the end time.</dd>
+
+<dt><strong>Line boundary thickness</strong></dt>
+<dd>The width, in pixels, of the line start and end markers.</dd>
+
+<dt><strong>Maximum snap distance</strong></dt>
+<dd>Maximum distance to snap markers to other markers, in pixels.</dd>
+
+<dt><strong>Show inactive lines</strong></dt>
+<dd>Controls how lines surrounding the currently selected line are displayed in
+the audio waveform. &quot;Don't show&quot; will only display the current line. &quot;Show
+previous&quot; will show the previous line (in the grid, <em>not</em> chronologically) in
+gray in addition to the current line. &quot;Show next and previous&quot; will show the
+lines before and after the current line (in the grid, <em>not</em> chronologically).
+&quot;Show all&quot; will show all lines in gray in addition to the current line.</dd>
+
+<dt><strong>Include commented inactive lines</strong></dt>
+<dd>If disabled, commented lines will be skipped over when picking which inactive
+lines to show in the audio display (making &quot;Show previous&quot; into &quot;Show last
+uncommented line before this line&quot;, and so on).</dd>
+</dl>
+
+
+<h3 id="displayvisualoptions"><a name="index1h3"></a>Display Visual Options</h3>
+<dl>
+<dt><strong>keyframes</strong></dt>
+<dd>If enabled, lines marking the positions of keyframes in the video will be
+drawn on the audio waveform when in dialogue timing mode (the default).</dd>
+
+<dt><strong>Karaoke keyframes</strong></dt>
+<dd>If enabled, lines marking the positions of keyframes in the video will be
+drawn on the audio waveform when in karaoke timing mode.</dd>
+
+<dt><strong>Draw cursor time</strong></dt>
+<dd>If enabled, a timestamp showing the time since the start of the file will be
+drawn near the top of the audio waveform cursor.</dd>
+
+<dt><strong>Video position</strong></dt>
+<dd>If enabled, a line is drawn in the audio display marking the start time of
+the current video frame.</dd>
+
+<dt><strong>Waveform style</strong></dt>
+<dd>
+<p>Selects which of the waveform rendering styles to use</p>
+<dl>
+<dt>Maximum + Average</dt>
+<dd>The waveform is two-tone, indicating both the maximum value of a sample
+ within a pixel's time range, and in a brighter color, the average value
+ of all samples within the time range.</dd>
+
+<dt>Maximum</dt>
+<dd>The waveform displays only the maximum value, as previous versions of
+ Aegisub did.</dd>
+</dl>
+</dd>
+</dl>
+
+
+<h3 id="audiolabels"><a name="index2h3"></a>Audio labels</h3>
+
+<p>These options control the appearance of labels drawn in the audio display for
+karaoke syllables.</p>
+<dl>
+<dt><strong>Font Face</strong></dt>
+<dd>The font to use for audio labels.</dd>
+
+<dt><strong>Font Size</strong></dt>
+<dd>The font size to use for audio labels.</dd>
+</dl>
+
+
+<h2 id="video"><a name="index3h2"></a>Video</h2>
+<dl>
+<dt><center><img src="../img/preferences-video.png" alt="preferences-video.png" /></center></dt>
+<dt><strong>Show keyframes in slider</strong></dt>
+<dd>When enabled, Aegisub will draw keyframe markers on the video seek slider.</dd>
+
+<dt><strong>Seek video to line start on selection change</strong></dt>
+<dd>When enabled, whenever the active line is changed Aegisub will automatically
+seek the video to the first frame of the new line. Note that this can by done
+manually by double-clicking on the grid, or by pressing Ctrl-1.</dd>
+
+<dt><strong>Always show visual tools</strong></dt>
+<dd>When disabled, the visual typesetting tools are only rendered when the mouse
+is over the video display.</dd>
+
+<dt><strong>Automatically open audio when opening video</strong></dt>
+<dd>When enabled, when you open a video file which also has audio data, Aegisub
+will automatically load the audio.</dd>
+
+<dt><strong>Default zoom</strong></dt>
+<dd>The default video zoom level. Useful if you have a very big or very small screen.</dd>
+
+<dt><strong>Fast jump step in frames</strong></dt>
+<dd>Decides how big &quot;jumps&quot; Aegisub will make when you use the fast seek feature
+(Alt-rightarrow and Alt-leftarrow). Measured in frames.</dd>
+
+<dt><strong>Screenshot save path</strong></dt>
+<dd>Decides where Aegisub should save screenshots. The default is <code>?video</code>, which
+means they are saved to wherever the video is, but you can change it to any
+path you like. <a href="../Aegisub_path_specifiers/">Aegisub path specifiers</a> are supported; another option
+directly available in the dropdown is <code>?script</code>, which is wherever the script
+is.</dd>
+</dl>
+
+
+<h3 id="scriptresolution"><a name="index3h3"></a>Script resolution</h3>
+<dl>
+<dt><strong>Use resolution of first video opened</strong></dt>
+<dd>When enabled, Aegisub will automatically set the script resolution to the
+video resolution if you open a video and the script resolution is not yet set.
+If this is disabled, Aegisub instead sets the script resolution to a
+configurable default.</dd>
+
+<dt><strong>Match video resolution on open</strong></dt>
+<dd>Controls what Aegisub will do about script resolution when you open a video.
+If set to &quot;never&quot;, Aegisub will do nothing if the script resolution doesn't
+match the video resolution. If set to &quot;ask&quot;, Aegisub will ask you if you want
+to change the script resolution to match the video resolution if they don't
+match. If set to &quot;always&quot;, Aegisub will always change the script resolution to
+match the video resolution automatically. &quot;always&quot; is not recommended since it
+just changes script resolution without resampling anything, so it will most
+likely break existing typesetting.</dd>
+</dl>
+
+
+<h2 id="interface"><a name="index4h2"></a>Interface</h2>
+
+<center><img src="../img/preferences-interface.png" alt="preferences-interface.png" /></center>
+<dl>
+<dt><strong>Enable call tips</strong></dt>
+<dd>When enabled, Aegisub will detect when you are writing an <a href="../ASS_Tags/">override
+tag</a> and display a small box with a brief reference of the syntax of
+the tag in question until you close the tag. This is called a &quot;call tip&quot; and
+the feature may be familiar to users of various programming IDEs.</dd>
+
+<dt><strong>Overwrite in time boxes</strong></dt>
+<dd>Controls the behavior of all time edit boxes in the program. By default, all
+time edit boxes in Aegisub behave like as if you had pressed the Insert button,
+so every digit you type overwrites what is already there, and you cannot erase
+numbers that are already there, you have to overwrite them. Unticking this box
+disables this behavior and makes the time edit boxes behave just like normal
+text edit boxes (almost).</dd>
+
+<dt><strong>Enable syntax highlighting</strong></dt>
+<dd>Enables or disables syntax highlighting of override tags in the main edit
+box.</dd>
+
+<dt><strong>Path to dictionary files</strong></dt>
+<dd>Decides where Aegisub will look for dictionary files for its spellchecker and
+thesaurus. By default it looks in <code>?data/dictionaries</code>, but if you have your
+own dictionaries in the correct format somewhere else, feel free to point
+Aegisub there instead.</dd>
+
+<dt><strong>Font</strong></dt>
+<dd>Decides the font and fontsize used for the subtitle edit box and other edit
+boxes.</dd>
+
+<dt><strong>Allow grid to take focus</strong></dt>
+<dd>When enabled, the subtitles grid acts as its own area of the program and it
+can have focus, just like the audio or the video can, and while it does you can
+use the arrow keys/mouse wheel to scroll around it etc. On the other hand, if
+you disable this option, the focus will stay where it was before whenever you
+click in the grid. This means you can't use keyboard shortcuts in the grid
+anymore, but on the other hand it means you can click in the grid to go to a
+line without losing the audio focus and so on. Use at your own discretion.</dd>
+
+<dt><strong>Highlight visible subtitles</strong></dt>
+<dd>When enabled, all subtitle lines that are currently visible in the video
+frame (or at least <em>should</em> be visible; Aegisub does not account for alpha and
+such trickery in this case; it cares only about the timing of the line) will be
+highlighted in the grid with a special background color (see the &quot;Line in frame
+background&quot; option below).</dd>
+
+<dt><strong>Hide overrides symbol</strong></dt>
+<dd>The character that will be shown instead of override blocks if tag hiding is
+active. Note that despite the name, this can be more than one character if you
+so desire.</dd>
+
+<dt><strong>Font</strong></dt>
+<dd>Decides the font and font size of all text in the grid.</dd>
+</dl>
+
+
+<h3 id="colors"><a name="index4h3"></a>Colors</h3>
+
+<center><img src="../img/preferences-colours.png" alt="preferences-colours.png" /></center>
+
+<h4 id="audiodisplay"><a name="index1h4"></a>Audio Display</h4>
+<dl>
+<dt><strong>Play cursor</strong></dt>
+<dd>The color of the playback cursor.</dd>
+
+<dt><strong>Line boundary start</strong></dt>
+<dt><strong>Line boundary end</strong></dt>
+<dt><strong>Line boundary inactive line</strong></dt>
+<dd>The respective colors of the various line boundary markers.</dd>
+
+<dt><strong>Syllable boundary</strong></dt>
+<dd>The color of a syllable boundary line in karaoke mode.</dd>
+</dl>
+
+
+<h3 id="colorschemes"><a name="index5h3"></a>Color Schemes</h3>
+
+<p>Controls the color scheme used for the waveform/spectrum and some of the UI
+elements. Aegisub currently does not have a UI for editing the color schemes or
+creating new ones, but if you're feeling adventurous they can be found in
+config.json.</p>
+
+<h4 id="syntaxhighlighting"><a name="index2h4"></a>Syntax Highlighting</h4>
+<dl>
+<dt><strong>Normal</strong></dt>
+<dd>The color of normal text.</dd>
+
+<dt><strong>Brackets</strong></dt>
+<dd>The color of brackets that start/end override blocks.</dd>
+
+<dt><strong>Slashes and parentheses</strong></dt>
+<dd>The color of backslashes and parentheses within override blocks.</dd>
+
+<dt><strong>Tags</strong></dt>
+<dd>The color of tag names within override blocks.</dd>
+
+<dt><strong>Parameters</strong></dt>
+<dd>The color of parameters to override tags.</dd>
+
+<dt><strong>Error</strong></dt>
+<dd>The error color for invalid syntax within an override block.</dd>
+
+<dt><strong>Error background</strong></dt>
+<dd>Background color for errors.</dd>
+
+<dt><strong>Line break</strong></dt>
+<dd>Color for \N, \n and \h outside of override blocks.</dd>
+
+<dt><strong>Karaoke templates</strong></dt>
+<dd>Color for karaoke templater blocks on template lines.</dd>
+</dl>
+
+
+<h4 id="subtitlegrid"><a name="index3h4"></a>Subtitle Grid</h4>
+<dl>
+<dt><strong>Standard foreground</strong></dt>
+<dt><strong>Standard background</strong></dt>
+<dd>The normal color of lines in the grid. &quot;Foreground&quot; is the text color, and
+&quot;Background&quot; is obviously the background color.</dd>
+
+<dt><strong>Selection foreground</strong></dt>
+<dt><strong>Selection background</strong></dt>
+<dd>The color of selected lines in the grid.</dd>
+
+<dt><strong>Comment background</strong></dt>
+<dt><strong>Selected comment background</strong></dt>
+<dd>The background color of commented-out lines and selected commented-out lines,
+respectively.</dd>
+
+<dt><strong>Collision foreground</strong></dt>
+<dd>The text color of lines whose timings overlap with the currently active line.</dd>
+
+<dt><strong>Line in frame background</strong></dt>
+<dd>The background color of lines currently visible in the video frame.</dd>
+
+<dt><strong>Header</strong></dt>
+<dt><strong>Left column</strong></dt>
+<dt><strong>Active line border</strong></dt>
+<dt><strong>Lines</strong></dt>
+<dd>The color of the grid lines and fixed columns/headers.</dd>
+</dl>
+
+
+<h2 id="hotkeys"><a name="index5h2"></a>Hotkeys</h2>
+
+<center><img src="../img/preferences-hotkeys.png" alt="preferences-hotkeys.png" /></center>
+
+<p>This page lists all hotkeys currently set in Aegisub, and allows you to add,
+remove or change them.</p>
+
+<h3 id="hotkeycontexts"><a name="index6h3"></a>Hotkey Contexts</h3>
+
+<p>Aegisub supports setting different hotkeys depending on what part of the
+program has focus.</p>
+
+<p>The &quot;Default&quot; group is for hotkeys which should work regardless of what in
+Aegisub currently has keyboard focus. Hotkeys set in Default are overridden by
+the more specific categories when applicable.</p>
+
+<p>The &quot;Always&quot; group sets hotkeys which are enabled by Medusa mode, which apply
+everywhere in the program and override all other keypresses, including ordinary
+typing in edit boxes.</p>
+
+<p>All other hotkey contexts should be self-explanatory.</p>
+
+<h3 id="settinghotkeys"><a name="index7h3"></a>Setting hotkeys</h3>
+
+<p>To modify a hotkey, first click on the row to select it, then click on the
+hotkey field in the row, then press the key(s) that should trigger the command.
+Accept the new hotkey by clicking on another row.</p>
+
+<p>To add a new hotkey, select the context you want to add the hotkey to, then
+click the New button. There is currently no list of commands available, but
+between the existing hotkeys and the auto-complete you can probably guess the
+command name for the thing you want to do. Everything on any of the menus or
+any of the toolbars <em>except</em> the subtitles edit box toolbar has a command.</p>
+
+<div class="todo">**Todo:** Add a list of commands available</div>
+
+<h2 id="backup"><a name="index6h2"></a>Backup</h2>
+
+<center><img src="../img/preferences-backup.png" alt="preferences-backup.png" /></center>
+
+<h3 id="automaticsave"><a name="index8h3"></a>Automatic Save</h3>
+<dl>
+<dt><strong>Enable</strong></dt>
+<dd>If enabled, Aegisub will periodically save a copy of the script you are
+working on to the autosave path.</dd>
+
+<dt><strong>Interval in seconds</strong></dt>
+<dd>How often should Aegisub autosave.</dd>
+
+<dt><strong>Path</strong></dt>
+<dd>Decides where to save autosaved copies of scripts you are working on. By
+default set to <code>autosave</code> in your Aegisub <code>?user</code> directory (see the
+<a href="../Aegisub_path_specifiers/">Aegisub path specifiers</a> page for details).</dd>
+
+<dt><strong>Autosave after every change</strong></dt>
+<dd>If enabled, Aegisub will save the file after every change made to it. Note
+that this currently causes some problems with the undo system.</dd>
+</dl>
+
+
+<h3 id="automaticbackup"><a name="index9h3"></a>Automatic Backup</h3>
+<dl>
+<dt><strong>Enable</strong></dt>
+<dd>If enabled, Aegisub will save a backup copy of each script you open,
+immediately on opening it. By default, it is saved to <code>?user/autoback/</code>, but
+this can be changed (see below).</dd>
+
+<dt><strong>Path</strong></dt>
+<dd>Decides where to save automatic backup copies of scripts. By default set to
+<code>autoback</code> in your Aegisub <code>?user</code> directory.</dd>
+</dl>
+
+
+<h2 id="automation"><a name="index7h2"></a>Automation</h2>
+
+<center><img src="../img/preferences-automation.png" alt="preferences-automation.png" /></center>
+<dl>
+<dt><strong>Base path</strong></dt>
+<dd>A base directory where you put non-autoloaded automation scripts. Used only
+for saving paths to script files in the subtitles.</dd>
+
+<dt><strong>Include path</strong></dt>
+<dd>List of directories where include files and modules are searched for.
+Directories are separated with a pipe character, <code>|</code>.</dd>
+
+<dt><strong>Auto-load path</strong></dt>
+<dd>List of directories that are searched for scripts on startup, which are then
+automatically loaded. Directories are separated with a pipe character, <code>|</code>.</dd>
+
+<dt><strong>Trace level</strong></dt>
+<dd>When a script sends a message to the debug console it can also specify a
+trace level. If the trace level of a message is lower than the value given
+here, the message is not logged. The names given to the levels are only
+suggestions and they don't have any effect on the execution of the script.
+(i.e. a &quot;Fatal&quot; level message will not cause the script to terminate.)</dd>
+
+<dt><strong>Thread priority</strong></dt>
+<dd>Priority given to the script execution thread. If you're on a
+single-core/single-CPU system having this on lower than normal will make other
+programs more responsive while long-running scripts are active.</dd>
+
+<dt><strong>Autoreload on Export</strong></dt>
+<dd>Automatically reloads the specified sets of scripts when the <a href="../Exporting/">Exporting</a>
+dialogue is opened. In that case you will have to enter the
+<a href="../Automation/Manager/">Manager</a> window and determine the cause of the error.</dd>
+</dl>
+
+
+<h2 id="advancedaudio"><a name="index8h2"></a>Advanced Audio</h2>
+
+<center><img src="../img/preferences-advanced-audio.png" alt="preferences-advanced-audio.png" /></center>
+<dl>
+<dt><strong>Audio provider</strong></dt>
+<dd>
+<p>What backend to to use for loading audio. Currently there are only two
+ methods.</p>
+<dl>
+<dt><em>avisynth</em> (Windows only)</dt>
+<dd>Uses <a href="http://www.avisynth.org">Avisynth</a> to load audio. All file types
+ will be loaded with DirectShowSource(), except for AVS files which will
+ be opened with Import().</dd>
+
+<dt><em>FFmpegSource</em></dt>
+<dd>Uses <a href="http://code.google.com/p/ffmpegsource/">FFMS2</a> to load audio.
+ Generally more reliable than opening via DirectShowSource, but slower
+ due to that it has to index files first.</dd>
+</dl>
+
+
+<p>Regardless of this setting, the internal PCM WAV reader will always be
+tried first for WAV files.</p></dd>
+
+<dt><strong>Audio player</strong></dt>
+<dd>
+<p>What method to use for playing back audio. The options depend on the platform.</p>
+<dl>
+<dt><em>DirectSound</em> (Windows only)</dt>
+<dd>Uses Microsoft DirectSound to play back audio. This is the best
+ tested and most stable audio player.</dd>
+
+<dt><em>DirectSound-old</em> (Windows only)</dt>
+<dd>Aegisub's original implementation of the DirectSound player. If
+ you have audio playback problems when using the DirectSound player this
+ one may work better (but probably won't).</dd>
+
+<dt><em>alsa</em> (Linux only)</dt>
+<dd>Uses the <a href="http://www.alsa-project.org/">Advanced Linux Sound
+ Architecture</a> to play back audio. ALSA is
+ the native sound architecture of Linux and is not available on any
+ other systems.</dd>
+
+<dt><em>pulse</em> (Linux and other *NIX-like systems)</dt>
+<dd>Plays sound back through a <a href="http://pulseaudio.org/">PulseAudio</a>
+ sound server. This is the least-tested and least likely to work of the
+ audio players, and is only recommended if your audio setup makes
+ non-pulse players undesirable.</dd>
+
+<dt><em>portaudio</em></dt>
+<dd>Use the <a href="http://www.portaudio.com/">PortAudio</a> API to play back
+ sound. PortAudio has different playback implementations on different
+ platforms. On most Unices it uses Open Sound System (OSS) for output.
+ It is currently the only Windows audio player which supports
+ selecting the output device.</dd>
+
+<dt><em>openal</em></dt>
+<dd>Uses the <a href="http://www.openal.com/">OpenAL</a> API to play back audio.
+ This is the recommended player on OS X. It is normally not included in
+ windows builds due to that it adds an extra dependency for little
+ benefit.</dd>
+</dl>
+</dd>
+</dl>
+
+
+<h3 id="cache"><a name="index10h3"></a>Cache</h3>
+<dl>
+<dt><strong>Cache type</strong></dt>
+<dd>Use RAM unless you have very little of it, then use Hard Disk. The cache is
+not needed and not used when PCM WAV files are opened. If you disable caching,
+audio playback might become very unreliable.</dd>
+
+<dt><strong>Path</strong></dt>
+<dt><strong>File name</strong></dt>
+<dd>These options determine where the hard disk audio cache will be located. Only
+used if cache is set to hard disk. You shouldn't need to change this unless
+you're low on disk space. For the name, the string expects a printf-style &quot;%i&quot;
+parameter, that will be replaced with a number. &quot;%02i&quot; is used by default.
+Don't change that unless you know what you are doing.</dd>
+</dl>
+
+
+<h3 id="spectrum"><a name="index11h3"></a>Spectrum</h3>
+<dl>
+<dt><strong>Spectrum quality</strong></dt>
+<dd>Determines the quality of the audio spectrum display. Higher quality settings
+result in larger CPU and RAM use. Each consecutive setting uses a bit more CPU
+than the previous, and double the amount of RAM. For 48 kHz sample rate audio,
+one minute of audio uses this much memory at the different settings:</dd>
+</dl>
+
+
+<blockquote>
+<p>0 &quot;regular&quot; - 11 MB
+1 &quot;better&quot; - 22 MB
+2 &quot;high&quot; - 44 MB
+3 &quot;insane&quot; - 88 MB</p>
+
+<p>: The amount of memory used does not depend on the number of channels (Aegisub always works in mono) or the bit-depth (the spectrum is always calculated in 32 bit floating point) of the audio.</p>
+</blockquote>
+
+<div class="todo">**Todo:** this is probably wrong</div>
+<dl>
+<dt><strong>Cache memory max</strong></dt>
+<dd>The maximum amount of memory to use for audio spectrum caching. The results
+of the calculations to display the audio spectrum are cached to make scrolling
+through the audio smoother. The amount of spectrum display that can be cached
+in an amount of memory depends on the quality setting above. The default cache
+size of 128 MB results a little less than 6 minutes of audio at 48 kHz in
+quality 1. If you set this smaller than 5 MB, the default of 128 MB will be
+used instead. You probably shouldn't set this to more than 1/4 of your amount
+of physical RAM installed.</dd>
+</dl>
+
+
+<h3 id="avisynthwindowsonly"><a name="index12h3"></a>Avisynth (Windows only)</h3>
+<dl>
+<dt><strong>Avisynth down-mixer</strong></dt>
+<dd>Aegisub can only use mono (single-channel) audio. This option determines
+which Avisynth function to use to convert audio to mono.</dd>
+
+<dt><strong>Force sample rate</strong></dt>
+<dd>Convert all audio opened to the given sample rate. Forcing the sample rate to
+the sample rate used by your sound card (rather than having the audio player do
+it) can potentially improve audio performance and fix playback issues.</dd>
+</dl>
+
+
+<h3 id="ffmpegsource"><a name="index13h3"></a>FFmpegSource</h3>
+<dl>
+<dt><strong>Audio indexing error handling mode</strong></dt>
+<dd>
+<p>What to do if an error occurs while indexing an audio track.</p>
+<dl>
+<dt><em>Ignore</em></dt>
+<dd>Ignore the error and continue decoding the file. This mode can let you
+ open some corrupted files, but can cause audio/video desync.</dd>
+
+<dt><em>Clear</em></dt>
+<dd>Pretend that the track with the error does not exist in the file.</dd>
+
+<dt><em>Stop</em> (default)</dt>
+<dd>Stop indexing at the point of the error and return all audio data before
+ the error. This is the default due to that corrupted audio packets at
+ the very end of files are fairly common.</dd>
+
+<dt><em>Abort</em></dt>
+<dd>Refuse to open the file at all.</dd>
+</dl>
+</dd>
+
+<dt><strong>Always index all audio tracks</strong></dt>
+<dd>If disabled, opening a video file will only index the video tracks, forcing
+you to reindex the file to open audio tracks from the same file.</dd>
+</dl>
+
+
+<h3 id="portaudio"><a name="index14h3"></a>Portaudio</h3>
+<dl>
+<dt><strong>Portaudio device</strong></dt>
+<dd>What output device to use when playing audio through portaudio.</dd>
+</dl>
+
+
+<h2 id="advancedvideo"><a name="index9h2"></a>Advanced Video</h2>
+
+<center><img src="../img/preferences-advanced-video.png" alt="preferences-advanced-video.png" /></center>
+<dl>
+<dt><strong>Video provider</strong></dt>
+<dd>
+<p>Decides what method Aegisub should use to load video. What options you have
+ available here depends on how your copy of Aegisub was compiled and what
+ operating system you are running under. The following alternatives exist:</p>
+<dl>
+<dt><em>avisynth</em> (Windows only)</dt>
+<dd>Uses <a href="http://www.avisynth.org">Avisynth</a> to load video. Versatile,
+ supports loading almost all common formats as well as .d2v files
+ (indexed DVD VOBs) if the correct plugin is supplied. Note that Aegisub
+ can install its own avisynth.dll instead of using your system
+ installation if so desired. Requires Video for Windows decoders for AVI
+ files for best performance. Uses DirectShow for most formats, so it
+ isn't recommended for anything but AVI, d2v and opening Avisynth
+ scripts.</dd>
+
+<dt><em>FFmpegSource</em></dt>
+<dd>Uses <a href="http://code.google.com/p/ffmpegsource/">FFMS2</a> to load video.
+ Generally the most reliable option.</dd>
+</dl>
+</dd>
+
+<dt><strong>Subtitles provider</strong></dt>
+<dd>
+<p>Decides what backend Aegisub uses to render subtitles on the video.
+ If you install additional CSRI renderers such as VSFilterMod or
+ xy-VSFilter (by placing the dlls in the CSRI directory within Aegisub's
+ directory), they will be listed here along with the default ones.</p>
+<dl>
+<dt><em>CSRI/vsfilter_textsub</em> (Windows only)</dt>
+<dd>Use VSFilter 2.40 to render subtitles. This is the standard subtitle
+ renderer which defines the ASS format used by Aegisub.</dd>
+
+<dt><em>libass</em></dt>
+<dd>Use <a href="http://code.google.com/p/libass/">libass</a> to render subtitles.
+ libass is far faster than VSFilter and (somewhat) cross-platform, but
+ unfortunately still has some rendering differences from VSFilter and
+ font-related issues on Windows. If you are doing complex typesetting
+ that will be <a href="../Attaching_subtitles_to_video/#softsubbing">softsubbed</a> it
+ is a good idea to check your work with both VSFilter and libass, as an
+ increasing number of users are using libass.</dd>
+</dl>
+</dd>
+
+<dt><strong>Force BT.601</strong></dt>
+<dd>
+<p>Pretend all YUV videos are BT.601, for VSFilter compatibility.</p>
+
+<p>When VSFilter is used as a DirectShow filter, it always uses the BT.601
+color matrix for converting the subtitles from RGB to YUV. This means that
+if the video uses BT.709 (as most HD video and the occasional DVD does),
+colors which match the video in Aegisub will not match the video in the
+player. This option makes Aegisub always convert videos to RGB using
+BT.601, making the colors shown in Aegisub incorrect, but making it so that
+if the colors match in Aegisub, they will match in the player.</p>
+
+<p>To make things more exciting, VSFilter will use the <em>correct</em> color space
+when used as the internal subtitle renderer in MPC-HC, so enabling this
+option will result in <em>mismatched</em> colors in that case. As the ISR is
+currently broken in many ways (e.g. it is impossible to accurately position
+subtitles with it), we recommend not worrying about it for now.</p>
+
+<p>This comparison may make this clearer:</p>
+
+<p><img src="../img/bt601.png" alt="bt601.png" /></p>
+
+<p>Aegisub now writes what colorspace should be used for RGB -&gt; YUV
+conversions to the subtitle file, so hopefully this mess will be resolved
+by renderer improvements sometime in the future.</p></dd>
+</dl>
+
+
+<h3 id="avisynth"><a name="index15h3"></a>Avisynth</h3>
+<dl>
+<dt><strong>Allow pre-2.56a Avisynth</strong></dt>
+<dd>Support using ancient versions of Avisynth that a few people refuse to
+upgrade past for various bad reasons.</dd>
+
+<dt><strong>Avisynth memory limit</strong></dt>
+<dd>Frame cache memory limit for Avisynth. Raising this generally does not
+improve performance and should be done only if you're opening overcomplicated
+Avisynth scripts directly.</dd>
+</dl>
+
+
+<h3 id="ffmpegsource"><a name="index16h3"></a>FFmpegSource</h3>
+<dl>
+<dt><strong>Debug log verbosity</strong></dt>
+<dd>Set ffmpeg/libav's verbosity level. Only has an effect when you have a
+debugger attached to Aegisub.</dd>
+
+<dt><strong>Decoding threads</strong></dt>
+<dd>Maximum number of threads to use to decode video, or -1 to choose
+automatically. Setting this to 1 can fix some decoding issues at the cost of
+performance. There is rarely any reason to set it to a value other than 1 or
+-1.</dd>
+
+<dt><strong>Enable unsafe seeking</strong></dt>
+<dd>Disable some of FFMS2's sanity checks when seeking in video. Makes it
+possible to open some files which FFMS2 cannot seek frame-accurately in.</dd>
+</dl>
+
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5><a name="index1h5"></a>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5><a name="index2h5"></a>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5><a name="index3h5"></a>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5><a name="index4h5"></a>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5><a name="index5h5"></a>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5><a name="index6h5"></a>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5><a name="index7h5"></a>Miscellaneous</h5>
+
+<ul>
+    <li><span class="selflink">Aegisub Options</span></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+                <div class="tags">
+                    Tags:
+                    
+                    <a href="../TODO/" rel="tag">/TODO</a>
+                    
+                </div>
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Audio/">Audio</a>
+                    
+                    <a href="../Automation/Manager/">Automation/Manager</a>
+                    
+                    <a href="../Automation/Running_macros/">Automation/Running macros</a>
+                    
+                    <a href="../Editing_Subtitles/">Editing Subtitles</a>
+                    
+                    <a href="../Keyboard_shortcuts/">Keyboard shortcuts</a>
+                    
+                    <a href="../Overview/">Overview</a>
+                    
+                    <a href="../Timing/">Timing</a>
+                    
+                    <a href="../Video/">Video</a>
+                    
+                    <a href="../Visual_Typesetting/">Visual Typesetting</a>
+                    
+                    <a href="../sidebar/">sidebar</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Mon 16 Apr 2012 07:43:35 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:41 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

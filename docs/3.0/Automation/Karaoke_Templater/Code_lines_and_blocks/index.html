@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Automation/Karaoke_Templater/Code_lines_and_blocks/">
+        <title>Code lines and blocks - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../../../">Aegisub</a> / <a href="../../">Automation</a> / <a href="../">Karaoke Templater</a> / 
+                        Code lines and blocks
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>Code lines and blocks in Karaoke Templater allows you to create advanced effects by incorporating small snippets of Lua code. This can range from simple mathematical expressions adding two numbers to complex functions that for example could generate various shapes in cycling colours.</p>
+
+<p>Both code lines and code blocks are run in a separate semi-closed execution environment, meaning they are mostly undisturbed by the primary Lua environment the Karaoke Templater script itself runs in. For an overview of what variables are available in the code line/block execution environment see: <a href="../Code_execution_environment/">Code execution environment</a>.</p>
+
+<h2 id="codelines">Code lines</h2>
+
+<p>A code line is a special kind of template line. Instead of using the <code>template</code> keyword in the Effect field it uses the <code>code</code> keyword. A code line contains only Lua code and does not by itself produce any lines in the resulting file.</p>
+
+<p>The two primary uses of code lines are:</p>
+
+<ul>
+<li>Defining/updating variables for use later in templates</li>
+<li>Defining functions for use later in templates</li>
+</ul>
+
+<div></div>
+
+<p>For example, if you need a random number, but also need to use it twice in one template, you can use a code line to first generate the number and store it to a variable, then use that variable in your template line.</p>
+
+<p>Another example could be defining a function that produces a random colour.</p>
+
+<h3 id="classesofcodelines">Classes of code lines</h3>
+
+<p>Like there's multiple classes of template lines there's also multiple classes of code lines. Some of them are the same, and some only exist for one or the other.</p>
+
+<p>You specify the class of the code line in the Effect field after the <code>code</code> keyword. The possible classes are:</p>
+
+<p><strong>once</strong></p>
+
+<blockquote>
+<p>Code lines in the <code>once</code> class are run exactly one time, before any templates are applied. This is usually the best place to define functions and general tables of values you need to look up later.
+This is the default class, if you don't specify a class for a code line it's automatically in the <code>once</code> class.</p>
+</blockquote>
+
+<p><strong>line</strong></p>
+
+<blockquote>
+<p>Code lines in the <code>line</code> class are run when a new line is encountered. They are run once per line. They are run interspersed with <code>line</code>/<code>pre-line</code> templates in the order they appear. (There are no &quot;pre-line&quot; code lines.)</p>
+</blockquote>
+
+<p><strong>syl</strong></p>
+
+<blockquote>
+<p>Code lines in the <code>syl</code> class are run when a new syllable is encountered. They run once per syllable. They are run interspersed with <code>syl</code> templates.</p>
+</blockquote>
+
+<p><strong>furi</strong></p>
+
+<blockquote>
+<p>Code lines in the <code>furi</code> class are run when a new furigana syllable is encountered. They run once per furigana syllable. They are run interspersed with <code>furi</code> templates.</p>
+</blockquote>
+
+<p>You <em>cannot</em> have templates with <code>char</code> or <code>multi</code> modifiers run per-character/per-highlight interspersed with code lines. This is a limitation of the execution model. This may or may not change in later versions of Karaoke Templater.</p>
+
+<h2 id="codeblocks">Code blocks</h2>
+
+<p>A code block is a block of Lua code within a template line. Code blocks are used to insert more complex things than can be expressed with <a href="../Inline_variables/">inline variables</a>.</p>
+
+<p>Code blocks are required to be single Lua expressions, since a <code>return</code> statement is automatically prepended to the code. This means you (among other things) can't do assignments or use <code>if</code> statements within code blocks, you must use a code line if you want to do any of those things. (There is a way to do basic conditionals in code blocks though, see below.)</p>
+
+<p>You create a code block by surrounding the code by exclamation marks, like this:</p>
+
+<pre><code>{\t($start,**!syl.start_time+20!**,\bord0)}
+</code></pre>
+
+<p>It is possible to use inline variables within code blocks. They are expanded before the code block is parsed, so to the Lua interpreter the inline variables look like regular constants.</p>
+
+<h3 id="hintsforusingcodeblocks">Hints for using code blocks</h3>
+
+<p>Most simple mathematical expressions work just like you'd expect them to. Operator precedence rules are those of regular arithmetic.</p>
+
+<p>A code block should always return a string or numeric value, if it returns a boolean, a table or something else it might cause a warning and the resulting line containing the wrong output.</p>
+
+<p>To create simple conditionals within code blocks you can use the <code>and</code> and <code>or</code> operators to chain values and conditions. For example:</p>
+
+<pre><code>{\k**!(syl.duration&gt;100) and &quot;f&quot; or &quot;&quot;!**$kdur}
+</code></pre>
+
+<p>If the syllable duration is longer than 100 ms the first sub-expression is true, and the code block returns <tt>&quot;f&quot;</tt>, otherwise the entire <code>and</code> expression is false, and the right-hand argument of the <code>or</code> expression is returned.</p>
+
+<p>In Lua, <code>and</code> binds stronger than <code>or</code> meaning that <code>and</code> expressions are evaluated first. In the above expression the effective grouping is like this: <code>((syl.duration &gt; 100) and &quot;f&quot;) or &quot;&quot;</code></p>
+
+<div class="navbox">
+<div><a href="../../">Automation 4</a></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><a href="../../Manager/">Automation Manager</a> • <a href="../../Running_macros/">Running macros</a> • <a href="../../../Exporting/">Using export filters</a> • <a href="../../Included_macros/">Standard macros</a> • <a href="../../Overview_of_changes_from_Automation_3/">Changes from Automation 3</a></td>
+        </tr>
+        <tr>
+            <th><a href="../">Karaoke Templater</a> reference: </th>
+            <td><a href="../Declaring_template_and_code_lines/">Declaring templates</a> • <a href="../Template_execution_rules_and_order/">Execution order</a> • <a href="../Template_modifiers/">Modifiers</a> • <a href="../Inline_variables/">Inline-variables ($-variables)</a> <br> <span class="selflink">Code lines and blocks</span> • <a href="../Code_execution_environment/">Execution envirionment</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../Lua/">Lua API</a> reference: </th>
+            <td><a href="../../Lua/Registration/">Registration</a> • <a href="../../Lua/Subtitle_file_interface/">Subtitles object</a> • <a href="../../Lua/Progress_reporting/">Progress reporting</a> • <a href="../../Lua/Dialogs/">Dialogs</a> • <a href="../../Lua/Miscellaneous_APIs/">Misc. APIs</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../Lua/Modules/">Lua Modules</a>: </th>
+            <td><a href="../../Lua/Modules/karaskel.lua/">karaskel.lua</a> • <a href="../../Lua/Modules/utils.lua/">utils.lua</a> • <a href="../../Lua/Modules/unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="../../Lua/Modules/clipboard/">clipboard</a> • <a href="../../Lua/Modules/re/">re</a></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="../../Lua/Modules/karaskel.lua/#Style_table">Style tables</a> • <a href="../../Lua/Modules/karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="../../Lua/Modules/karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/">Inline effects</a> • <a href="../../../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../../../About/">What is Aegisub?</a></li>
+    <li><a href="../../../Highlights/">Highlights</a></li>
+    <li><a href="../../../Credits/">Credits</a></li>
+    <li><a href="../../../Support/">Support Aegisub</a></li>
+    <li><a href="../../../FAQ/">FAQ</a></li>
+    <li><a href="../../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../../../Typesetting/">Introduction</a></li>
+    <li><a href="../../../Video/">Working with Video</a></li>
+    <li><a href="../../../Styles/">Editing styles</a></li>
+    <li><a href="../../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../../../Audio/">Working with Audio</a></li>
+    <li><a href="../../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../../">Overview</a></li>
+    <li><a href="../">Karaoke Templater</a></li>
+    <li><a href="../../Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../../Options/">Aegisub Options</a></li>
+    <li><a href="../../../Properties/">Script Properties</a></li>
+    <li><a href="../../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../">Karaoke Templater</a>
+                    
+                    <a href="../../Lua/Modules/">Lua/Modules</a>
+                    
+                    <a href="../../../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Sat 25 Feb 2012 08:06:40 AM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

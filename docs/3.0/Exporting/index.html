@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Exporting/">
+        <title>Exporting - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title"><a name="index1h1"></a>
+                        <a href="../">Aegisub</a> / 
+                        Exporting
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <div id="toc">
+    <div id="toctitle">Contents</div>
+    
+<div class="toc">
+	<ol>
+		<li class="L2"><a href="#index1h2">The export dialog</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Filters</a>
+		<ol>
+			<li class="L3"><a href="#index1h3">Limit to visible lines</a>
+			</li>
+			<li class="L3"><a href="#index2h3">Karaoke template</a>
+			</li>
+			<li class="L3"><a href="#index3h3">Transform framerate</a>
+			</li>
+			<li class="L3"><a href="#index4h3">Clean tags</a>
+			</li>
+			<li class="L3"><a href="#index5h3">Clean script info</a>
+			</li>
+			<li class="L3"><a href="#index6h3">Fix styles</a>
+			</li>
+		</ol>
+		</li>
+	</ol>
+</div>
+
+</div>
+
+<p>In addition to the normal &quot;Save&quot; and &quot;Save as&quot; functions, Aegisub also has an &quot;Export&quot; feature, which can transform the entire script through various export filters. This is used for a number of things ranging from framerate conversions over karaoke effect generation to just saving to other formats and/or character sets.</p>
+
+<h2 id="theexportdialog"><a name="index1h2"></a>The export dialog</h2>
+
+<center><img src="../img/Export.png" alt="Export.png" /></center>
+
+<p>The upper half of the window contains the available filters. Ticking one or more of them will apply them in the order they are listed; use the move up/down buttons to change the order. The lower half contains a brief description of the selected filter.</p>
+
+<p>Some filters have configuration parameters; those that do will extend the window to the right and put any settings controls there.</p>
+
+<p>The dropdown menu at the bottom controls what text encoding will be used for the exported file. May be useful for exporting to legacy programs that do not support Unicode.</p>
+
+<p>When you click the &quot;Export&quot; button, do note that you can choose other formats than ASS to save to. Also note that this will almost always mean that a lot of formatting tags will be stripped.</p>
+
+<h2 id="filters"><a name="index2h2"></a>Filters</h2>
+
+<p>The following filters are available in the default installation:</p>
+
+<h3 id="limittovisiblelines"><a name="index1h3"></a>Limit to visible lines</h3>
+
+<p>Exports only the lines that are currently visible on the active video frame. Does nothing if you do not have video loaded. Script headers and styles etc. are also exported.</p>
+
+<h3 id="karaoketemplate"><a name="index2h3"></a>Karaoke template</h3>
+
+<p>Filters the script through the automation script &quot;karaoke templater&quot; to generate karaoke effects. See the <a href="../Automation/Karaoke_Templater/">karaoke templater</a> and <a href="../Automation/">automation overview</a> pages for further details.</p>
+
+<h3 id="transformframerate"><a name="index3h3"></a>Transform framerate</h3>
+
+<p>In &quot;constant&quot; output mode, recalculates every single timestamp in the script (including ones contained in <a href="../ASS_Tags/">override tags</a>) to work with a new framerate. Note that this means that the entire script will be &quot;sped up&quot; or &quot;slowed down&quot;. Can be used for NTSC-&gt;PAL conversions or vice versa.</p>
+
+<p>In &quot;variable&quot; output mode, uses the framerate of the loaded video (or the specified one, if different from the video's) and the loaded timecodes to recalculate every single timestamp in the script so that the exported subtitles can be hardsubbed on the loaded video and still sync up after timecodes are taken into account. Does nothing if you do not have timecodes loaded. See <a href="../Video/#variableframeratevideo">variable framerate video</a> for further details.</p>
+
+<h3 id="cleantags"><a name="index4h3"></a>Clean tags</h3>
+
+<p>Filters the script through the &quot;clean tags&quot; automation script, which tries to clean up the override tag blocks by concatenating adjacent blocks and removing redundant tags (more specifically, the second instance of tags that can only be specified once per line).</p>
+
+<h3 id="cleanscriptinfo"><a name="index5h3"></a>Clean script info</h3>
+
+<p>Cleans the script headers by removing all lines that are not absolutely essential for proper display of the script. If you're paranoid, you should consider using this for scripts that you plan on distributing in the original form, since Aegisub stores things like the path to the last opened video/audio etc. in the script headers.</p>
+
+<h3 id="fixstyles"><a name="index6h3"></a>Fix styles</h3>
+
+<p>Goes through all the lines of the script and checks what style they use; any lines that use a style that isn't available in the current script is replaced with Default.</p>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5><a name="index1h5"></a>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5><a name="index2h5"></a>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5><a name="index3h5"></a>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><span class="selflink">Exporting Subtitles</span></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5><a name="index4h5"></a>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5><a name="index5h5"></a>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5><a name="index6h5"></a>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5><a name="index7h5"></a>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Automation/">Automation</a>
+                    
+                    <a href="../Automation/Lua/Registration/">Automation/Lua/Registration</a>
+                    
+                    <a href="../Automation/Manager/">Automation/Manager</a>
+                    
+                    <a href="../Options/">Options</a>
+                    
+                    <a href="../Overview/">Overview</a>
+                    
+                    <a href="../sidebar/">sidebar</a>
+                    
+                    <a href="../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:37 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

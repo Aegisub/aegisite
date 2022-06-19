@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Timing_Post-Processor/">
+        <title>Timing Post-Processor - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title"><a name="index1h1"></a>
+                        <a href="../">Aegisub</a> / 
+                        Timing Post-Processor
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <div id="toc">
+    <div id="toctitle">Contents</div>
+    
+<div class="toc">
+	<ol>
+		<li class="L2"><a href="#index1h2">Overview</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Apply to styles</a>
+		</li>
+		<li class="L2"><a href="#index3h2">Options</a>
+		</li>
+		<li class="L2"><a href="#index4h2">Lead-in/Lead-out</a>
+		</li>
+		<li class="L2"><a href="#index5h2">Make adjacent subtitles continuous</a>
+		</li>
+		<li class="L2"><a href="#index6h2">Keyframe snapping</a>
+		</li>
+	</ol>
+</div>
+
+</div>
+
+<p>The timing postprocessor is a highly useful tool for automatically correcting
+timing in various ways.</p>
+
+<h2 id="overview"><a name="index1h2"></a>Overview</h2>
+
+<p>As shown in the screenshot, there are three functions:</p>
+
+<ul>
+<li>Add lead-in and/or lead-out</li>
+<li>Make lines that start close to each other continuous by extending or
+contracting their start and/or end times</li>
+<li>Snapping line starts/ends to video keyframes (only available if a video is
+loaded)</li>
+</ul>
+
+<center><img src="../img/Dialog_timing_processor.png" alt="Dialog timing processor.png" /></center>
+
+<p>The processing gets applied in the order it is displayed in the dialogue box.
+That is to say, first lead-in is added, then lead-out, then a check for
+adjacent lines is performed and lines that are closer than the given threshold
+are made continuous, and lastly, line start/ends get snapped to keyframes.</p>
+
+<h2 id="applytostyles"><a name="index2h2"></a>Apply to styles</h2>
+
+<p>This field determines which styles will get processed - check all you want to
+process. This is useful for only processing dialogue lines while leaving signs
+and/or karaoke alone.</p>
+
+<h2 id="options"><a name="index3h2"></a>Options</h2>
+
+<p>Check &quot;Affect Selection Only&quot; to restrict the operation to the selected lines.
+If this is left unchecked, all lines in the file whose style match the selected
+ones will be affected.</p>
+
+<h2 id="lead-inlead-out"><a name="index4h2"></a>Lead-in/Lead-out</h2>
+
+<p>This function extends the start and end times of the line, a procedure known as
+adding lead-in and lead-out. The postprocessor will add the given time (in
+milliseconds) to each line start and end, respectively. You can add both
+lead-in and lead-out, only one, or none, by checking and unchecking the boxes
+as appropriate. Adding lead-in or out will never make lines overlap if they do
+not already overlap. Unlike in 2.1.x, if a gap between lines is too short for
+both the lead-in and lead-out, the lead-in will be prioritized.</p>
+
+<h2 id="makeadjacentsubtitlescontinuous"><a name="index5h2"></a>Make adjacent subtitles continuous</h2>
+
+<p>This function will check if any two lines' starts and ends are closer in time
+than the given threshold (in milliseconds). If they are, one or both will get
+their start and/or end time moved so that they are continuous (i.e. one appears
+directly following the next, without any subtitle-less frames in between).</p>
+
+<p>The <em>Bias</em> slider determines how the lines are extended. Sliding it all the way
+to the right will extend the end time of the first line all the way to the
+start time of the second, without touching the second line at all. Sliding it
+all the way to the left will instead make the start time of the second line
+extend backwards to the end of the first line, without touching the first line
+at all. Putting it in the middle will extend the end time of the first line and
+the start time of the second equally, so that they meet in the middle. Anything
+in between will makes the lines &quot;meet&quot; where the slider is, so to speak. For
+example, if the threshold was 1000, and the slider was 3/4ths of the way to the
+right (roughly as shown in the screenshot), the end time of the first line
+would get extended by 750 ms, and the start time of the second extended
+backwards with 250 ms.</p>
+
+<p>Note that as Lead-in and out are applied before this, the overlap elimination
+via <em>Max overlap</em> generally only has an effect if it is greater than the
+Lead-in plus the Lead-out.</p>
+
+<h2 id="keyframesnapping"><a name="index6h2"></a>Keyframe snapping</h2>
+
+<p>The keyframe snapping function is a kind of automatic scenetimer. It is
+probably the most useful of the three, but will only work if there is a video
+or keyframe loaded, because of its dependency on keyframes. See the <a href="../Video/#keyframes">keyframes
+section of the working with video page</a>.</p>
+
+<p>The keyframe snapping function will look at how close the start and end of
+lines are to the nearest keyframe, and if they are closer than the given
+threshold, it will get extended or shortened to the keyframe.</p>
+
+<p>There are four thresholds to consider:</p>
+<dl>
+<dt><em>Starts before</em></dt>
+<dd>If the line starts less than this many milliseconds (inclusive) <em>before</em> a
+ keyframe, its start time will get moved forward so that the line starts on
+ the keyframe.</dd>
+
+<dt><em>Starts after</em></dt>
+<dd>If the line starts less than this many milliseconds (inclusive) <em>after</em> a
+ keyframe, its start time will get moved backward so that the line starts on
+ the keyframe.</dd>
+
+<dt><em>Ends before</em></dt>
+<dd>If the line ends less than this many milliseconds (inclusive) <em>before</em> a
+ keyframe, its end time will get moved forward so that the line ends on the
+ frame before the keyframe.</dd>
+
+<dt><em>Ends after</em></dt>
+<dd>if the line ends less than this many milliseconds (inclusive) <em>after</em> a
+ keyframe, its end time will get moved backward so that the line ends on the
+ frame before the keyframe.</dd>
+</dl>
+
+
+<p>When using this feature, remember your lead-in/out times! Your <em>Starts before</em>
+and <em>Ends after</em> thresholds should normally be at least as long as your lead-in
+and lead-out, or lines which were initially scene-timed may be turned into
+bleeds.</p>
+
+<p>Another thing you can do with the keyframe snapping feature is using it to
+correct one-frame bleeds really, really fast. If your script is full of them,
+just set all the thresholds to 50, disable the lead-in/out adding and the
+adjacent line snapping, choose your dialogue style, and hit Apply. Problem
+solved.</p>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5><a name="index1h5"></a>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5><a name="index2h5"></a>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5><a name="index3h5"></a>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5><a name="index4h5"></a>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5><a name="index5h5"></a>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><span class="selflink">Timing Post-Processor</span></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5><a name="index6h5"></a>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5><a name="index7h5"></a>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Options/">Options</a>
+                    
+                    <a href="../Overview/">Overview</a>
+                    
+                    <a href="../Timing/">Timing</a>
+                    
+                    <a href="../sidebar/">sidebar</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Mon 30 Apr 2012 05:04:27 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:42 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

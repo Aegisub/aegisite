@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Automation/Lua/Modules/re/">
+        <title>re - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title"><a name="index1h1"></a>
+                        <a href="../../../../">Aegisub</a> / <a href="../../../">Automation</a> / <a href="../../">Lua</a> / <a href="../">Modules</a> / 
+                        re
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <div id="toc">
+    <div id="toctitle">Contents</div>
+    
+<div class="toc">
+	<ol>
+		<li class="L2"><a href="#index1h2">Usage</a>
+		<ol>
+			<li class="L3"><a href="#index1h3">Match Tables</a>
+			</li>
+			<li class="L3"><a href="#index2h3">Flags</a>
+			</li>
+			<li class="L3"><a href="#index3h3">re.compile</a>
+			</li>
+			<li class="L3"><a href="#index4h3">re.split</a>
+			</li>
+			<li class="L3"><a href="#index5h3">re.gsplit</a>
+			</li>
+			<li class="L3"><a href="#index6h3">re.find</a>
+			</li>
+			<li class="L3"><a href="#index7h3">re.gfind</a>
+			</li>
+			<li class="L3"><a href="#index8h3">re.match</a>
+			</li>
+			<li class="L3"><a href="#index9h3">re.gmatch</a>
+			</li>
+			<li class="L3"><a href="#index10h3">re.sub</a>
+			</li>
+		</ol>
+		</li>
+	</ol>
+</div>
+
+</div>
+
+<p>The <code>re</code> module is a wrapper around wxRegex, intended as a full replacement for
+Lua's built in regular expressions. It has two main advantages over Lua's:</p>
+
+<ol>
+<li>Full Unicode support. Lua regular expressions operate on bytes rather than
+characters, which frequently causes problems with multibyte characters.</li>
+<li>A more powerful and flexible syntax. Lua's regular expressions are fairly
+minimal (out of necessity; <a href="http://www.pcre.org/">PCRE</a> is larger than all
+of Lua combined). wxRegex on the other hand, uses Henry Spencer's regex
+library.</li>
+</ol>
+
+<h2 id="usage"><a name="index1h2"></a>Usage</h2>
+
+<p>Import this module with <code>require &quot;re&quot;</code>.</p>
+
+<p>See <a href="http://docs.wxwidgets.org/trunk/overview_resyntax.html">wx's
+documentation</a> for
+information about the regular expression syntax. Note that Aegisub uses
+<em>advanced regular expressions</em> (ARE).</p>
+
+<h3 id="matchtables"><a name="index1h3"></a>Match Tables</h3>
+
+<p>Several of the functions below return Match Tables, which are tables containing
+the following fields:</p>
+<dl>
+<dt><strong><code>str</code></strong> (<code>string</code>)</dt>
+<dd>The text matched by a pattern or capturing expression</dd>
+
+<dt><strong><code>first</code></strong> (<code>number</code>)</dt>
+<dd>The start index of <code>str</code> in the original string which had a regular
+expression applied to it. Note that this index is one-based and is in bytes,
+rather than characters, to match Lua's string indexing.</dd>
+
+<dt><strong><code>last</code></strong> (<code>number</code>)</dt>
+<dd>The end index of <code>str</code> in the original string which had a regular expression
+applied to it. Note that this index is one-based, inclusive, and is in bytes,
+rather than characters, to match Lua's string indexing.</dd>
+</dl>
+
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>&gt;&gt;&gt; re.match(&quot;b&quot;, &quot;abc&quot;)
+{
+    {
+        [&quot;str&quot;] = &quot;b&quot;,
+        [&quot;first&quot;] = 2,
+        [&quot;last&quot;] = 2
+    }
+}
+</code></pre></div></div>
+
+<h3 id="flags"><a name="index2h3"></a>Flags</h3>
+
+<p>The following flags may be passed to all of the static functions (including
+<code>re.compile</code>). Flags must come after all supplied non-flag arguments, but
+optional arguments can be skipped.</p>
+<dl>
+<dt>re.ICASE</dt>
+<dd>Ignore case when matching.</dd>
+
+<dt>re.NOSUB:</dt>
+<dd>Don't set backreferences and capture groups. Can improve performance when
+they aren't needed.</dd>
+
+<dt>re.NEWLINE:</dt>
+<dd>Treat newlines as normal characters, matched by '.'.</dd>
+</dl>
+
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>&gt;&gt;&gt; re.match(&quot;a&quot;, &quot;A&quot;)
+nil
+&gt;&gt;&gt; re.match(&quot;a&quot;, &quot;A&quot;, re.ICASE, re.NOSUB)
+{
+    {
+        [&quot;str&quot;] = &quot;A&quot;,
+        [&quot;first&quot;] = 1,
+        [&quot;last&quot;] = 1
+    }
+}
+</code></pre></div></div>
+
+<h3 id="re.compile"><a name="index3h3"></a>re.compile</h3>
+
+<p>Synopsis: <code>expr = re.compile(pattern, [FLAGS])</code></p>
+
+<p>Compile a regular expression. Reusing a compiled regular expression is faster
+than recompiling it each time it is used, and is usually more readable as well.</p>
+<dl>
+<dt><strong><code>@pattern</code></strong> (<code>string</code>)</dt>
+<dd>Regular expression to compile.</dd>
+
+<dt><strong><code>expr</code></strong> (<code>table</code>)</dt>
+<dd>A table with all of the functions listed below, except without the pattern
+and flags arguments.</dd>
+</dl>
+
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>&gt;&gt;&gt; expr = re.compile(&quot;a&quot;)
+&gt;&gt;&gt; expr:split(&quot;banana&quot;)
+{
+    &quot;b&quot;,
+    &quot;n&quot;,
+    &quot;n&quot;
+}
+</code></pre></div></div>
+
+<h3 id="re.split"><a name="index4h3"></a>re.split</h3>
+
+<p>Synopsis: <code>chunks = re.split(pattern, str, skip_empty=false, max_splits=0)</code></p>
+
+<p>Split the string at each of the occurrences of <code>pattern</code>.</p>
+<dl>
+<dt><strong><code>@pattern</code></strong> (<code>string</code>)</dt>
+<dd>Regular expression to split the string on. Capturing groups in the pattern
+are ignored.</dd>
+
+<dt><strong><code>@str</code></strong> (<code>string</code>)</dt>
+<dd>String to split.</dd>
+
+<dt><strong><code>@skip_empty</code></strong> (<code>boolean</code>)</dt>
+<dd>Do not include zero-length chunks in the results.</dd>
+
+<dt><strong><code>@max_splits</code></strong> (<code>number</code>)</dt>
+<dd>If greater than zero, the maximum numbers of times to split the string (i.e.
+<code>#chunks</code> will be at most <code>max_splits + 1</code>).</dd>
+
+<dt><strong><code>chunks</code></strong> (<code>table</code>)</dt>
+<dd>A table containing each of the sections of <code>str</code> between the matches of
+<code>pattern</code>.</dd>
+</dl>
+
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>&gt;&gt;&gt; re.split(&quot;,&quot;, &quot;a,,b,c&quot;)
+{
+    &quot;a&quot;,
+    &quot;&quot;,
+    &quot;b&quot;,
+    &quot;c&quot;
+}
+</code></pre></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>&gt;&gt;&gt; re.split(&quot;,&quot;, &quot;a,,b,c&quot;, true)
+{
+    &quot;a&quot;,
+    &quot;b&quot;,
+    &quot;c&quot;
+}
+</code></pre></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>&gt;&gt;&gt; re.split(&quot;,&quot;, &quot;a,,b,c&quot;, false, 1)
+{
+    &quot;a&quot;,
+    &quot;,b,c&quot;,
+}
+</code></pre></div></div>
+
+<h3 id="re.gsplit"><a name="index5h3"></a>re.gsplit</h3>
+
+<p>Synopsis: <code>iter = re.gsplit(pattern, str, skip_empty=false, max_splits=0)</code></p>
+
+<p>Iterator version of re.split.</p>
+<dl>
+<dt><strong><code>@pattern</code></strong> (<code>string</code>)</dt>
+<dd>Regular expression to split the string on. Capturing groups in the pattern
+are ignored.</dd>
+
+<dt><strong><code>@str</code></strong> (<code>string</code>)</dt>
+<dd>String to split.</dd>
+
+<dt><strong><code>@skip_empty</code></strong> (<code>boolean</code>)</dt>
+<dd>Do not include zero-length chunks in the results.</dd>
+
+<dt><strong><code>@max_splits</code></strong> (<code>number</code>)</dt>
+<dd>If greater than zero, the maximum numbers of times to split the string (i.e.
+<code>#chunks</code> will be at most <code>max_splits + 1</code>).</dd>
+
+<dt><strong><code>iter</code></strong> (<code>iterator over strings</code>)</dt>
+<dd>An iterator over each of the sections of <code>str</code> between the matches of
+<code>pattern</code>.</dd>
+</dl>
+
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>&gt;&gt;&gt; for str in re.gsplit(&quot;,&quot;, &quot;a,,b,c&quot;) do
+&gt;&gt;&gt;     print str
+&gt;&gt;&gt; end
+a
+
+b
+c
+</code></pre></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>&gt;&gt;&gt; for str in re.gsplit(&quot;,&quot;, &quot;a,,b,c&quot;, true) do
+&gt;&gt;&gt;     print str
+&gt;&gt;&gt; end
+a
+b
+c
+</code></pre></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>&gt;&gt;&gt; for str in re.gsplit(&quot;,&quot;, &quot;a,,b,c&quot;, false, 1) do
+&gt;&gt;&gt;     print str
+&gt;&gt;&gt; end
+a
+,b,c
+</code></pre></div></div>
+
+<h3 id="re.find"><a name="index6h3"></a>re.find</h3>
+
+<p>Synopsis: <code>matches = re.find(pattern, str)</code></p>
+
+<p>Find all non-overlapping substrings of <code>str</code> which match <code>pattern</code>.</p>
+<dl>
+<dt><strong><code>@pattern</code></strong> (<code>string</code>)</dt>
+<dd>Pattern to search for. Capturing groups in the pattern are ignored.</dd>
+
+<dt><strong><code>@str</code></strong> (<code>string</code>)</dt>
+<dd>String to search for the pattern in.</dd>
+
+<dt><strong><code>matches</code></strong> (<code>table</code> or <code>nil</code>)</dt>
+<dd>A table of <a href="./#matchtables">Match Tables</a> for all matches, or <code>nil</code> if
+there were none.</dd>
+</dl>
+
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>&gt;&gt;&gt; re.find(&quot;.&quot;, &quot;☃☃&quot;)
+{
+    {
+        [&quot;str&quot;] = &quot;☃&quot;,
+        [&quot;first&quot;] = 1,
+        [&quot;last&quot;] = 3
+    },
+    {
+        [&quot;str&quot;] = &quot;☃&quot;,
+        [&quot;first&quot;] = 4,
+        [&quot;last&quot;] = 6
+    }
+}
+</code></pre></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>function contains_an_a(str)
+    if re.find(&quot;a&quot;, str)
+        print &quot;Has an a&quot;
+    else
+        print &quot;Doesn't have an a&quot;
+    end
+end
+&gt;&gt;&gt; contains_an_a(&quot;abc&quot;)
+Has an a
+&gt;&gt;&gt; contains_an_a(&quot;def&quot;)
+Doesn't have an a
+</code></pre></div></div>
+
+<h3 id="re.gfind"><a name="index7h3"></a>re.gfind</h3>
+
+<p>Synopsis: <code>iter = re.gfind(pattern, str)</code></p>
+
+<p>Iterate over all non-overlapping substrings of <code>str</code> which match <code>pattern</code>.</p>
+<dl>
+<dt><strong><code>@pattern</code></strong> (<code>string</code>)</dt>
+<dd>Pattern to search for. Capturing groups in the pattern are ignored.</dd>
+
+<dt><strong><code>@str</code></strong> (<code>string</code>)</dt>
+<dd>String to search for the pattern in.</dd>
+
+<dt><strong><code>iter</code></strong> (<code>iterator over string, number, number</code>)</dt>
+<dd>An iterator which produces three values at each step: a matched string, the
+started index of the match in the source string, and the inclusive end index of
+the match in the source string.</dd>
+</dl>
+
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>&gt;&gt;&gt; for str, start_idx, end_idx in re.gfind(&quot;.&quot;, &quot;☃☃&quot;) do
+&gt;&gt;&gt;     print string.format(&quot;%d-%d: %s&quot;, start_idx, end_idx, str)
+&gt;&gt;&gt; end
+1-3: ☃
+4-6: ☃
+</code></pre></div></div>
+
+<h3 id="re.match"><a name="index8h3"></a>re.match</h3>
+
+<p>Synopsis: <code>matches = re.match(pattern, str)</code></p>
+
+<p>Match a pattern against a string. This differs from <code>find</code> in that <code>find</code>
+returns all matches and does not capture subgroups, while this returns only a
+single match along with the captured subgroups.</p>
+<dl>
+<dt><strong><code>@pattern</code></strong> (<code>string</code>)</dt>
+<dd>Pattern to search for.</dd>
+
+<dt><strong><code>@str</code></strong> (<code>string</code>)</dt>
+<dd>String to search for the pattern in.</dd>
+
+<dt><strong><code>matches</code></strong> (<code>table</code> or <code>nil</code>)</dt>
+<dd><code>nil</code> if the pattern did not match the string. Otherwise, a table containing
+a <a href="./#matchtables">Match Table</a> for the full match, followed by a <a href="./#matchtables">Match
+Table</a> for each capturing subexpression in the pattern (if
+any).</dd>
+</dl>
+
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>&gt;&gt;&gt; re.match(&quot;(\d+) (\d+) (\d+)&quot;, &quot;{250 1173 380}Help!&quot;)
+{
+    {
+        [&quot;str&quot;] = &quot;250 1173 380&quot;,
+        [&quot;first&quot;] = 2,
+        [&quot;last&quot;] = 13
+    },
+    {
+        [&quot;str&quot;] = &quot;250&quot;,
+        [&quot;first&quot;] = 2,
+        [&quot;last&quot;] = 4
+    },
+    {
+        [&quot;str&quot;] = &quot;1173&quot;,
+        [&quot;first&quot;] = 6,
+        [&quot;last&quot;] = 9,
+    },
+    {
+        [&quot;str&quot;] = &quot;380&quot;
+        [&quot;first&quot;] = 11,
+        [&quot;last&quot;] = 13
+    }
+}
+</code></pre></div></div>
+
+<h3 id="re.gmatch"><a name="index9h3"></a>re.gmatch</h3>
+
+<p>Synopsis: <code>iter = re.gmatch(pattern, str)</code></p>
+
+<p>Iterator version of <a href="./#re.match"><code>re.match</code></a>.</p>
+<dl>
+<dt><strong><code>@pattern</code></strong> (<code>string</code>)</dt>
+<dd>Pattern to search for.</dd>
+
+<dt><strong><code>@str</code></strong> (<code>string</code>)</dt>
+<dd>String to search for the pattern in.</dd>
+
+<dt><strong><code>matches</code></strong> (<code>iterator over table</code>)</dt>
+<dd>An iterator which returns a table containing a <a href="./#matchtables">Match
+Table</a> for the full match (if it matched), followed by a
+<a href="./#matchtables">Match Table</a> for each capturing subexpression in the pattern
+(if any).</dd>
+</dl>
+
+
+<h3 id="re.sub"><a name="index10h3"></a>re.sub</h3>
+
+<p>Synopsis: <code>out_str, rep_count = re.sub(pattern, replace, str, max_count=0)</code></p>
+
+<p>Replace each occurrence of <code>pattern</code> in <code>str</code> with <code>replace</code>.</p>
+<dl>
+<dt><strong><code>@pattern</code></strong> (<code>string</code>)</dt>
+<dd>Pattern to search for.</dd>
+
+<dt><strong><code>@replace</code></strong> (<code>string</code> or <code>function</code>)</dt>
+<dd>
+<p>Replacement for matches. This may be either a string which is inserted, or a
+ function which is called for each match.</p>
+
+<p>If <code>replace</code> is a string, it may contain references to the matches. <code>&amp;</code> and
+<code>\0</code> are replaced with the full match, and <code>\&lt;number&gt;</code> is replaced with the
+appropriate captured subexpression.</p>
+
+<p>If <code>replace</code> is a function, it is called for either the entire match (if
+there are no capturing subexpressions), or for each captured subexpression.
+It is passed the match string, start index of the match, and end index of
+the match. If it returns a string, the match is replaced with the return
+value. If it returns anything else, then the source string is left
+unchanged.</p></dd>
+
+<dt><strong><code>@max_count</code></strong> (<code>number</code>)</dt>
+<dd>If greater than zero, the maximum number of replacements to make.</dd>
+
+<dt><strong><code>out_str</code></strong> (<code>string</code>)</dt>
+<dd>The input string, with replacements applied.</dd>
+
+<dt><strong><code>rep_count</code></strong> (<code>number</code>)</dt>
+<dd>The number of replacements that were made.</dd>
+</dl>
+
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>Replace all instances of \k with \kf:</p>
+
+<pre><code>&gt;&gt;&gt; re.sub(&quot;{\\k10}a{\\k15}b{\\k30}c&quot;, &quot;\\\\k&quot;, &quot;\\kf&quot;)
+{\kf10}a{\kf15}b{\kf30}c
+</code></pre></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>Replace all instances of \k and \K with \kf:</p>
+
+<pre><code>&gt;&gt;&gt; re.sub(&quot;{\\K10}a{\\K15}b{\\k30}c&quot;, &quot;\\\\k&quot;, &quot;\\kf&quot;, re.ICASE)
+{\kf10}a{\kf15}b{\kf30}c
+</code></pre></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p>Add one to each \k duration:</p>
+
+<pre><code>function add_one(str)
+    return tostring(tonumber(str) + 1)
+end
+&gt;&gt;&gt; re.sub(&quot;{\\k10}a{\\k15}b{\\k30}c&quot;, &quot;\\\\k([[:digit:]]+)&quot;, add_one)
+{\k11}a{\k16}b{\k31}c
+</code></pre></div></div>
+
+<div class="navbox">
+<div><a href="../../../">Automation 4</a></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><a href="../../../Manager/">Automation Manager</a> • <a href="../../../Running_macros/">Running macros</a> • <a href="../../../../Exporting/">Using export filters</a> • <a href="../../../Included_macros/">Standard macros</a> • <a href="../../../Overview_of_changes_from_Automation_3/">Changes from Automation 3</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../../Karaoke_Templater/">Karaoke Templater</a> reference: </th>
+            <td><a href="../../../Karaoke_Templater/Declaring_template_and_code_lines/">Declaring templates</a> • <a href="../../../Karaoke_Templater/Template_execution_rules_and_order/">Execution order</a> • <a href="../../../Karaoke_Templater/Template_modifiers/">Modifiers</a> • <a href="../../../Karaoke_Templater/Inline_variables/">Inline-variables ($-variables)</a> <br> <a href="../../../Karaoke_Templater/Code_lines_and_blocks/">Code lines and blocks</a> • <a href="../../../Karaoke_Templater/Code_execution_environment/">Execution envirionment</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../">Lua API</a> reference: </th>
+            <td><a href="../../Registration/">Registration</a> • <a href="../../Subtitle_file_interface/">Subtitles object</a> • <a href="../../Progress_reporting/">Progress reporting</a> • <a href="../../Dialogs/">Dialogs</a> • <a href="../../Miscellaneous_APIs/">Misc. APIs</a></td>
+        </tr>
+        <tr>
+            <th><a href="../">Lua Modules</a>: </th>
+            <td><a href="../karaskel.lua/">karaskel.lua</a> • <a href="../utils.lua/">utils.lua</a> • <a href="../unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="../clipboard/">clipboard</a> • <span class="selflink">re</span></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="../karaskel.lua/#Style_table">Style tables</a> • <a href="../karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="../karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../../../Karaoke_inline-fx/">Inline effects</a> • <a href="../../../../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5><a name="index1h5"></a>Navigation</h5>
+
+<ul>
+    <li><a href="../../../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5><a name="index2h5"></a>Introduction</h5>
+
+<ul>
+    <li><a href="../../../../About/">What is Aegisub?</a></li>
+    <li><a href="../../../../Highlights/">Highlights</a></li>
+    <li><a href="../../../../Credits/">Credits</a></li>
+    <li><a href="../../../../Support/">Support Aegisub</a></li>
+    <li><a href="../../../../FAQ/">FAQ</a></li>
+    <li><a href="../../../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5><a name="index3h5"></a>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5><a name="index4h5"></a>Typesetting</h5>
+
+<ul>
+    <li><a href="../../../../Typesetting/">Introduction</a></li>
+    <li><a href="../../../../Video/">Working with Video</a></li>
+    <li><a href="../../../../Styles/">Editing styles</a></li>
+    <li><a href="../../../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5><a name="index5h5"></a>Timing</h5>
+
+<ul>
+    <li><a href="../../../../Audio/">Working with Audio</a></li>
+    <li><a href="../../../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5><a name="index6h5"></a>Automation</h5>
+
+<ul>
+    <li><a href="../../../">Overview</a></li>
+    <li><a href="../../../Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../../">Lua Reference</a></li>
+</ul>
+
+<h5><a name="index7h5"></a>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../../../Options/">Aegisub Options</a></li>
+    <li><a href="../../../../Properties/">Script Properties</a></li>
+    <li><a href="../../../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../">Modules</a>
+                    
+                    <a href="../../../../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Sun 04 Mar 2012 11:54:27 AM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

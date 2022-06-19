@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Automation/Lua/Modules/">
+        <title>Modules - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title"><a name="index1h1"></a>
+                        <a href="../../../">Aegisub</a> / <a href="../../">Automation</a> / <a href="../">Lua</a> / 
+                        Modules
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <div id="toc">
+    <div id="toctitle">Contents</div>
+    
+<div class="toc">
+	<ol>
+		<li class="L2"><a href="#index1h2">Using modules</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Modules reference</a>
+		</li>
+	</ol>
+</div>
+
+</div>
+
+<p>A number of Lua modules are included with Aegisub. Some of these, such as
+<a href="./karaskel.lua/">karaskel.lua</a> implement subtitle-specific functionality, while others
+such as <a href="./re/">re</a> fill holes in the Lua standard library.</p>
+
+<h2 id="usingmodules"><a name="index1h2"></a>Using modules</h2>
+
+<p>Simply write <code>require &quot;modulename&quot;</code> at the top level of a script. For
+example, to include the <a href="./re/">re</a> modules, <code>require &quot;re&quot;</code>.</p>
+
+<p>In previous versions of Aegisub, <code>include</code> was used, but this is now
+deprecated as it suffers from several limitations.</p>
+
+<p>To use modules in <a href="../../Karaoke_Templater/">Karaoke Templater</a>,
+place the require statement in a <a href="../../Karaoke_Templater/Code_lines_and_blocks/#classesofcodelines">code
+once</a>
+line. Note that <code>karaskel.lua</code>, <code>utils.lua</code> and <code>unicode.lua</code> do not have
+to be <code>require</code>d in <a href="../../Karaoke_Templater/">Karaoke Templater</a>, as
+they are automatically imported.</p>
+
+<h2 id="modulesreference"><a name="index2h2"></a>Modules reference</h2>
+<dl>
+<dt><a href="./utils.lua/">utils.lua</a></dt>
+<dd>An assorted collection of various utility functions which don't fit into
+any coherent categories, especially for handling colours.</dd>
+
+<dt><a href="./karaskel.lua/">karaskel.lua</a></dt>
+<dd>The karaoke skeleton is a collection of functions mainly intended to do
+text layout of timed karaoke for creating advanced karaoke effects, as well
+as a number of other helper functions.</dd>
+
+<dt><a href="./unicode.lua/">unicode.lua</a></dt>
+<dd>All data passed in and out of Aegisub through the Automation 4 Lua
+interface are encoded in UTF-8, but Lua doesn't natively provide support
+for this. A number of helper functions are provided here.</dd>
+
+<dt><span class="createlink">cleantags.lua</span></dt>
+<dd>A function to clean up ASS tags in a line.</dd>
+
+<dt><a href="./clipboard/">clipboard</a></dt>
+<dd>Functions for copying and pasting text.</dd>
+
+<dt><a href="./re/">re</a></dt>
+<dd>Bindings for
+<a href="http://docs.wxwidgets.org/trunk/overview_resyntax.html">wxRegex</a>, which
+has full Unicode support and more features than Lua's built in regular
+expression.</dd>
+</dl>
+
+
+<div class="navbox">
+<div><a href="../../">Automation 4</a></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><a href="../../Manager/">Automation Manager</a> • <a href="../../Running_macros/">Running macros</a> • <a href="../../../Exporting/">Using export filters</a> • <a href="../../Included_macros/">Standard macros</a> • <a href="../../Overview_of_changes_from_Automation_3/">Changes from Automation 3</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../Karaoke_Templater/">Karaoke Templater</a> reference: </th>
+            <td><a href="../../Karaoke_Templater/Declaring_template_and_code_lines/">Declaring templates</a> • <a href="../../Karaoke_Templater/Template_execution_rules_and_order/">Execution order</a> • <a href="../../Karaoke_Templater/Template_modifiers/">Modifiers</a> • <a href="../../Karaoke_Templater/Inline_variables/">Inline-variables ($-variables)</a> <br> <a href="../../Karaoke_Templater/Code_lines_and_blocks/">Code lines and blocks</a> • <a href="../../Karaoke_Templater/Code_execution_environment/">Execution envirionment</a></td>
+        </tr>
+        <tr>
+            <th><a href="../">Lua API</a> reference: </th>
+            <td><a href="../Registration/">Registration</a> • <a href="../Subtitle_file_interface/">Subtitles object</a> • <a href="../Progress_reporting/">Progress reporting</a> • <a href="../Dialogs/">Dialogs</a> • <a href="../Miscellaneous_APIs/">Misc. APIs</a></td>
+        </tr>
+        <tr>
+            <th><span class="selflink">Lua Modules</span>: </th>
+            <td><a href="./karaskel.lua/">karaskel.lua</a> • <a href="./utils.lua/">utils.lua</a> • <a href="./unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="./clipboard/">clipboard</a> • <a href="./re/">re</a></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="./karaskel.lua/#Style_table">Style tables</a> • <a href="./karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="./karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/">Inline effects</a> • <a href="../../../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5><a name="index1h5"></a>Navigation</h5>
+
+<ul>
+    <li><a href="../../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5><a name="index2h5"></a>Introduction</h5>
+
+<ul>
+    <li><a href="../../../About/">What is Aegisub?</a></li>
+    <li><a href="../../../Highlights/">Highlights</a></li>
+    <li><a href="../../../Credits/">Credits</a></li>
+    <li><a href="../../../Support/">Support Aegisub</a></li>
+    <li><a href="../../../FAQ/">FAQ</a></li>
+    <li><a href="../../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5><a name="index3h5"></a>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5><a name="index4h5"></a>Typesetting</h5>
+
+<ul>
+    <li><a href="../../../Typesetting/">Introduction</a></li>
+    <li><a href="../../../Video/">Working with Video</a></li>
+    <li><a href="../../../Styles/">Editing styles</a></li>
+    <li><a href="../../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5><a name="index5h5"></a>Timing</h5>
+
+<ul>
+    <li><a href="../../../Audio/">Working with Audio</a></li>
+    <li><a href="../../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5><a name="index6h5"></a>Automation</h5>
+
+<ul>
+    <li><a href="../../">Overview</a></li>
+    <li><a href="../../Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../">Lua Reference</a></li>
+</ul>
+
+<h5><a name="index7h5"></a>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../../Options/">Aegisub Options</a></li>
+    <li><a href="../../../Properties/">Script Properties</a></li>
+    <li><a href="../../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../../Karaoke_Templater/Code_execution_environment/">Karaoke Templater/Code execution environment</a>
+                    
+                    <a href="../">Lua</a>
+                    
+                    <a href="./karaskel.lua/">Modules/karaskel.lua</a>
+                    
+                    <a href="../../../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Sun 04 Mar 2012 10:16:56 AM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

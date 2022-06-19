@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Automation/Karaoke_Templater/Code_execution_environment/">
+        <title>Code execution environment - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../../../">Aegisub</a> / <a href="../../">Automation</a> / <a href="../">Karaoke Templater</a> / 
+                        Code execution environment
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>The Lua code in code blocks and on code lines is run in a separate global
+environment such that it won't accidentally disturb the main script
+function.</p>
+
+<p>You can store your own data in this environment for use later, for example
+pre-compute some values on code-lines and later insert them using code
+blocks, but it also contains several pre-defined variables and functions
+designed to make it easier writing effect templates.</p>
+
+<p>It's important to understand that the contents of code execution
+environment and the
+<a href="../Inline_variables/">inline-variables</a>
+($-variables) are not related. You cannot change an inline-variable by
+changing something in the code execution environment nor can you add new
+ones. However, you can create and re-define the contents of the code
+execution environment.</p>
+
+<h2 id="lineandsyllableinformation">Line and syllable information</h2>
+
+<p>The code execution environment contains a few variables pointing to the
+current line and syllable structure being processed, as well as some more
+supporting tables. These are just references to the structures produced by
+<a href="../../Lua/Modules/karaskel.lua/#datastructures">karaskel</a> and are not
+modified in any way.</p>
+
+<p>You should treat all of these except <code>line</code> as read-only. If you change the
+other ones, the kara-templater script might start misbehaving.</p>
+
+<ul>
+<li><strong>line</strong> - The line currently being produced. Changing this will affect
+ the resulting line in the file. See the <strong><a href="../../Lua/Modules/karaskel.lua/#dialoguelinetable">reference for dialogue line
+ tables</a></strong>.</li>
+<li><strong>orgline</strong> - The original line. This is the source line the current
+ syllable is located on.</li>
+<li><strong>syl</strong> - The current syllable structure. If the current template is a
+ <em>furi</em> template, it's the current furigana syllable. If the current
+ template has one or both of the <em>char</em> or <em>multi</em> modifiers, this is a
+ pseudo-syllable structure, a copy of the original syllable structure with
+ several values changed to look like the current part of the syllable
+ being processed. Also see the <strong><a href="../../Lua/Modules/karaskel.lua/#karaokeandfuriganasyllabletables">reference for syllable
+ tables</a></strong>.</li>
+<li><strong>basesyl</strong> - Usually the same as <code>syl</code>, except when the template has the
+ <em>char</em> or <em>multi</em> modifier, then this is the original syllable. (If <code>syl
+  == basesyl</code> is true, then the current template is neither <em>char</em> nor
+ <em>multi</em>.)</li>
+<li><strong>meta</strong> - Contains various metadata about the script, namely the
+ contents of the <em>Script Info</em> section. Most importantly, it has the
+ <code>res_x</code> and <code>res_y</code> fields describing the script resolution.</li>
+</ul>
+
+<p>All of these variables are reset to <code>nil</code> whenever processing starts for a
+new line, except <code>meta</code>. They are then set to the relevant value whenever
+processing hits a new stage. This means that, for example <em>pre-line</em>
+templates only has <code>line</code> and <code>orgline</code> set and both <code>syl</code> and <code>basesyl</code>
+are <code>nil</code>. In <em>code once</em> templates, all of the variables except <code>meta</code> are
+<code>nil</code>.</p>
+
+<h2 id="standardlibrariesandrelatedthings">Standard libraries and related things</h2>
+
+<p>Both the <a href="http://www.lua.org/manual/5.1/manual.html#5.4"><strong>string</strong></a> and
+<a href="http://www.lua.org/manual/5.1/manual.html#5.6"><strong>math</strong></a> Lua standard
+libraries are imported into the execution environment, as they are
+generally useful.</p>
+
+<p>You can also access the main execution environment of the kara-templater
+script itself using the <strong><code>_G</code></strong> (underscore capital-G) variable and
+through that access the rest of the Lua standard library and any <a href="../../Lua/Modules/">loaded
+modules</a>. For example, <code>_G.table.sort</code> refers to
+the regular <code>table.sort</code> function. See the <a href="http://www.lua.org/manual/5.1/manual.html#5">Lua 5.1
+manual</a> for details on the
+available libraries.</p>
+
+<p>For backwards compatibility, several of the included modules
+(<a href="../../Lua/Modules/karaskel.lua/">karaskel.lua</a>,
+<a href="../../Lua/Modules/unicode.lua/">unicode.lua</a> and
+<a href="../../Lua/Modules/utils.lua/">utils.lua</a>) are automatically loaded
+and will be accessible via <code>_G</code> by default. All others must be explicitly
+<code>require</code>d on a code line.</p>
+
+<p>There is also the self-reference <strong><code>tenv</code></strong> variable which refers to the
+code execution environment itself. This means that <code>tenv.tenv == tenv</code> is
+true.</p>
+
+<h2 id="utilityfunctions">Utility functions</h2>
+
+<p>These functions help do more complex modifications of the output line (the
+<code>line</code> variable) and are unavoidable when creating complex effects.</p>
+
+<h3 id="retime">retime</h3>
+
+<p>Synopsis: <code>retime(mode, startadjust, endadjust)</code></p>
+
+<p><img src="../../../img/Auto4-kara-templater-retime-explanation.png" alt="Auto4-kara-templater-retime-explanation.png" /></p>
+
+<p>This function is usually used once in a template in a code block by itself.
+It adjusts the start and end time of the output line in various ways.</p>
+
+<p>The <em>mode</em> parameter determines how the start and end times of the line are
+changed, it must be a string with one of the following values. Because it
+must be a string, the name of the mode must be enclosed in quotation marks!</p>
+
+<p>The <em>startadjust</em> and <em>endadjust</em> parameters slightly change meaning based
+on the mode, but generally is a number of milliseconds added to the &quot;base&quot;
+time controlled by the mode.</p>
+
+<p>Possible _mode_s:</p>
+
+<ul>
+<li><strong>abs</strong> or <strong>set</strong> - Both <em>startadjust</em> and <em>endadjust</em> are used as
+ absolute time values to set the start and end time of the line directly.</li>
+<li><strong>preline</strong> - Intended to make effects that happen before the actual line
+ start. Both start and end time of the line are set to the start time of
+ the line, then <em>startadjust</em> is added to the start time and <em>endadjust</em>
+ added to the end time. Usually <em>startadjust</em> should be negative here and
+ <em>endadjust</em> be zero.</li>
+<li><strong>line</strong> - Use the regular line timings and just add <em>startadjust</em> to the
+ start time and <em>endadjust</em> to the end time.</li>
+<li><strong>start2syl</strong> - Intended to make the look of the syllable from the start
+ of the line until it is highlighted. The start time of the line is kept
+ and the end time is set to the start time of the syllable. Use
+ <em>startadjust</em> and <em>endadjust</em> to offset the times.</li>
+<li><strong>presyl</strong> - Similar to <em>preline</em> but for the syllable timing instead.</li>
+<li><strong>syl</strong> - From start of syllable to end of syllable.</li>
+<li><strong>postsyl</strong> - Similar to <em>presyl</em> but the base timing is the syllable end
+ time instead of start time. You will usually want to use a zero
+ <em>addstart</em> and positive <em>addend</em> here.</li>
+<li><strong>syl2end</strong> - The time from the end of the syllable to the end of line,
+ similar to <em>start2syl</em>.</li>
+<li><strong>postline</strong> - Similar to <em>postsyl</em> but for the line timing instead.</li>
+</ul>
+
+<p>There is also a special <em>mode</em>:</p>
+
+<ul>
+<li><strong>sylpct</strong> - Both of <em>startadjust</em> and <em>endadjust</em> are treated as
+ percentage values from 0 to 100 and are used to set the line timing to
+ cover that part of the syllable's time.</li>
+</ul>
+
+<p>Be careful with the <code>retime</code> function on <em>line</em> templates. If you use it
+directly on a <em>line</em> template it will probably not do what you want. You
+should only use it on <em>pre-line</em>, <em>syl</em> and <em>furi</em> templates. You should
+also only use it once in each template.</p>
+
+<p>The <code>retime</code> function always returns the empty string (<code>&quot;&quot;</code>) which will
+cause it to output nothing when used in code blocks, but still evaluate to
+true if used in boolean expressions.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>template syl: !retime(&quot;preline&quot;, -1000, 0)!{\pos($scenter,$smiddle)\an5\fscx0\fscy0\t(\fscx100\fscy100)}
+</code></pre>
+
+<p>This creates a kind of &quot;pop-in&quot; effect for the syllables that lasts 1
+second (1000 milliseconds) before the actual line timing. The two important
+things to code: Quotation marks around <code>&quot;preline&quot;</code> and that the start
+offset is negative, -1000, because the start time needs to be moved
+backwards.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>template syl: !retime(&quot;syl&quot;, 0, 0)!{\pos($x,$y)\t(\fscx360)}
+</code></pre>
+
+<p>Makes the syllable spin around itself during its highlight. Unless you also
+have <em>syl</em> templates retimed to <code>start2syl</code> and <code>syl2end</code> the
+syllable will only be visible during its highlight. Note how retiming a
+syllable line to just the syllable time makes it unneeded to put start and
+end times in the <code>\t</code> tag, as they default to the duration of the entire
+line and here the duration of the line is the duration of the syllable.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>template syl: !retime(&quot;sylpct&quot;, 0, 50)!{\move($x,$y,$x,!$y-10!)}
+template syl: !retime(&quot;sylpct&quot;, 50, 100)!{\move($x,!$y-10!,$x,$y)}
+</code></pre>
+
+<p>These two templates together makes the syllable move 10 pixels upwards
+during the first half of its highlight and back down during the last half.
+Using <code>retime</code> is an easy way to get multiple <code>\move</code> tags to affect the
+same syllable; there can only be one <code>\move</code> tag on one line, but if you
+split the line into many &quot;chained&quot; times you can create an effect of the
+same syllable moving in several directions.</p></div></div>
+
+<h3 id="relayer">relayer</h3>
+
+<p>Synopsis: <code>relayer(newlayer)</code></p>
+
+<p>Change the Layer field of the generated line to <em>newlayer</em>.</p>
+
+<p><strong>Note:</strong> If you want a template to always generate lines with a static
+layer number, you do not need to use this function. You can just set the
+Layer field on the template line, and it will transfer to the generated
+lines. This function is only needed when the layer number is dynamic.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>template syl: !relayer(syl.i*5+20)!
+</code></pre>
+
+<p>Each syllable generated from the line gets a progressively higher layer
+number. The first syllable gets in layer 25, the second in layer 30 and so
+on, each syllable getting a layer 5 larger than the previous.</p></div></div>
+
+<h3 id="restyle">restyle</h3>
+
+<p>Synopsis: <code>restyle(newstyle)</code></p>
+
+<p>Change the Style field on the generated line to <em>newstyle</em>.</p>
+
+<p><strong><em>Be careful</em></strong> <em>that this does not update the sizing and positioning
+information.</em> If you want to use sizing or positioning information such as
+<code>$x</code>, <code>$lwidth</code>, <code>line.middle</code> and <code>syl.right</code> you must change to a style
+that uses the same font name, font size, boldness, italics, font encoding,
+X and Y scaling, character spacing, alignment and margins. If you change to
+a style where any of those properties are different, the positioning and
+sizing information will be invalid.</p>
+
+<p>No example because the function has limited use.</p>
+
+<h3 id="maxloop">maxloop</h3>
+
+<p>Synopsis: <code>maxloop(newmax)</code></p>
+
+<p>Dynamically control the number of times a template will be looped.</p>
+
+<p><strong><em>Be careful</em></strong> <em>that you do not make a template that loops forever.</em></p>
+
+<p>You do not need to use the loop modifier on templates to use this function.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>template syl: !maxloop(syl.width + 2*line.styleref.outline)!{\clip(!line.left+syl.left-line.styleref.outline+j-1!,0,!line.left+syl.left-line.styleref.outline+j!,!meta.res_y!)\an5\move(!line.left+syl.center!,!line.middle!,!line.left+syl.center!,!line.middle+math.random(-20,20)!,$start,$end)\shad0}
+</code></pre>
+
+<p>Cut each syllable into a number of slivers, depending on the size of the
+syllable. Each sliver moves randomly on highlight.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><pre><code>template syl: !maxloop(j+1)!
+</code></pre>
+
+<p>Makes an infinite loop. It continually sets <code>j</code> one higher, making the loop
+never complete.</p></div></div>
+
+<h3 id="loopctl">loopctl</h3>
+
+<p>Synopsis: <code>loopctl(newj, newmaxj)</code></p>
+
+<p>Control both loop variables. This function has questionable utility.</p>
+
+<p><em>newj</em> sets the new value of <code>tenv.j</code> and <em>newmaxj</em> sets the new value of
+<code>tenv.maxj</code>.</p>
+
+<p>No example because the function has limited use.</p>
+
+<h2 id="templateexecutiondata">Template execution data</h2>
+
+<p>These variables either give some further information on the status of the
+executing template or modify the rules for template execution in some way.
+They generally work together with specific template modifiers.</p>
+
+<h3 id="loopingtemplates">Looping templates</h3>
+
+<p>When a template with the <em>loop</em> or <em>repeat</em> modifier is running, two new
+variables are introduced in the code execution environment, <strong><code>j</code></strong> and
+<strong><code>maxj</code></strong>.</p>
+
+<ul>
+<li><strong>maxj</strong> is the number of loops, i.e. simply the parameter given to the
+ <em>loop</em> modifier.</li>
+<li><strong>j</strong> is the loop iteration counter. It starts at 1 in the first
+ iteration and <em>maxj</em> in the last.</li>
+</ul>
+
+<p>If you change <code>j</code> or <code>maxj</code> while a template is executing, you can affect
+the number of iterations the loop makes. The
+<a href="./#maxloop"><code>maxloop</code></a>
+function is convenient for making dynamic loops.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p><code><pre>template syl loop 5: {\an5\pos($scenter,$smiddle)\1a&amp;HFF&amp;\3a&amp;Hcc&amp;\t($start,$end,\fscx!100+<u>j</u>*10!\fscy!100+<u>j</u>*10!\3a&amp;HFF&amp;)}</pre></code></p>
+
+<p>The syllable fill is hidden so only the border is visible, then several
+copies of the that border-only line is made through the loop, and made to
+&quot;explode&quot; to different, growing sizes using the <code>j</code> variable.</p>
+
+<p>This example assumes that the style definition has shadow disabled but it
+does have a border.</p></div></div>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p><code><pre>template syl loop 20: {\move($x,$y,!$x+15*math.cos(math.pi*2*<u>j</u>/<u>maxj</u>)!,!$y+15*math.sin(math.pi*2*<u>j</u>/<u>maxj</u>)!,$start,$end)\t($start,$end,\alpha&amp;HFF&amp;)}</code></pre></p>
+
+<p>Here looping is used to <a href="http://en.wikipedia.org/wiki/Unit_circle#Trigonometric_functions_on_the_unit_circle">calculate several points on a
+circle</a>
+with radius 15 and make the syllables move out to those. Just by changing
+the number of loops in the Effect field you can make a more detailed circle
+because <code>j/maxj</code> is used to calculate how large a portion of the total
+number of loops have been completed.</p></div></div>
+
+<h3 id="conditionaltemplateswithfxgroup">Conditional templates with fxgroup</h3>
+
+<p>The <em>fxgroup</em> modifier uses a special table <strong><code>fxgroup</code></strong> in the code
+execution environment to control whether a template will be executed or
+not.</p>
+
+<p>The parameter given to the <em>fxgroup</em> modifier names a key (always a string)
+in the <code>fxgroup</code> table in the execution environment, and when a template
+assigned to an fxgroup is about to be executed, the value for that key in
+the <code>fxgroup</code> table is looked up. If the value is true or the key doesn't
+exist, the template is executed, if it's false the template is skipped.</p>
+
+<p>While you can technically use any text string for fxgroup names, because
+they're used in Lua code it's best to avoid ones that overlap with Lua
+reserved words such as <code>end</code>, <code>break</code>, <code>return</code> and several more.</p>
+
+<div class="examplebox"><div class="exampleheader">Example</div><div class="examplecontents"><p><code><pre>code syl: <u>fxgroup.long = (syl.duration &gt; 200)</u>
+template syl noblank: all here:
+template syl <u>fxgroup long</u>: is long:
+karaoke: {\k10}huh? {\k40}wee~~</code></pre></p>
+
+<p>It's important to understand the template execution order to understand
+this example. For each input syllable (i.e. &quot;huh?&quot; and &quot;wee~~&quot;) all the
+templates and code lines are run in the order they appear.</p>
+
+<p>This means that for &quot;huh?&quot;, first the code line is run. It determines that
+the duration of that syllable is less than 200 ms and thus sets
+<em>fxgroup.long</em> to false. The first template has no fxgroup, so it's applied
+to the syllable then, outputting a line &quot;all here: huh?&quot;, but the second
+template has fxgroup &quot;long&quot;. This fxgroup was disabled for that syllable by
+the code line, so that template is not run at all.</p>
+
+<p>For &quot;wee~~&quot;, the code line determines that its duration is longer than 200
+ms, so the &quot;long&quot; fxgroup is enabled. Then the first template outputs its
+line, &quot;all here: wee~~&quot;, and when the second template is to run, its
+fxgroup is enabled now so it's also run, outputting &quot;is long: wee~~&quot;.</p>
+
+<p>Neither of the two templates will output anything for the zeroth syllable.
+The first template, because it has the &quot;noblank&quot; modifier, and the second
+because the zero'th syllable's duration is too short for the fxgroup to be
+enabled.</p></div></div>
+
+<div class="navbox">
+<div><a href="../../">Automation 4</a></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><a href="../../Manager/">Automation Manager</a> • <a href="../../Running_macros/">Running macros</a> • <a href="../../../Exporting/">Using export filters</a> • <a href="../../Included_macros/">Standard macros</a> • <a href="../../Overview_of_changes_from_Automation_3/">Changes from Automation 3</a></td>
+        </tr>
+        <tr>
+            <th><a href="../">Karaoke Templater</a> reference: </th>
+            <td><a href="../Declaring_template_and_code_lines/">Declaring templates</a> • <a href="../Template_execution_rules_and_order/">Execution order</a> • <a href="../Template_modifiers/">Modifiers</a> • <a href="../Inline_variables/">Inline-variables ($-variables)</a> <br> <a href="../Code_lines_and_blocks/">Code lines and blocks</a> • <span class="selflink">Execution envirionment</span></td>
+        </tr>
+        <tr>
+            <th><a href="../../Lua/">Lua API</a> reference: </th>
+            <td><a href="../../Lua/Registration/">Registration</a> • <a href="../../Lua/Subtitle_file_interface/">Subtitles object</a> • <a href="../../Lua/Progress_reporting/">Progress reporting</a> • <a href="../../Lua/Dialogs/">Dialogs</a> • <a href="../../Lua/Miscellaneous_APIs/">Misc. APIs</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../Lua/Modules/">Lua Modules</a>: </th>
+            <td><a href="../../Lua/Modules/karaskel.lua/">karaskel.lua</a> • <a href="../../Lua/Modules/utils.lua/">utils.lua</a> • <a href="../../Lua/Modules/unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="../../Lua/Modules/clipboard/">clipboard</a> • <a href="../../Lua/Modules/re/">re</a></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="../../Lua/Modules/karaskel.lua/#Style_table">Style tables</a> • <a href="../../Lua/Modules/karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="../../Lua/Modules/karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/">Inline effects</a> • <a href="../../../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../../../About/">What is Aegisub?</a></li>
+    <li><a href="../../../Highlights/">Highlights</a></li>
+    <li><a href="../../../Credits/">Credits</a></li>
+    <li><a href="../../../Support/">Support Aegisub</a></li>
+    <li><a href="../../../FAQ/">FAQ</a></li>
+    <li><a href="../../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../../../Typesetting/">Introduction</a></li>
+    <li><a href="../../../Video/">Working with Video</a></li>
+    <li><a href="../../../Styles/">Editing styles</a></li>
+    <li><a href="../../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../../../Audio/">Working with Audio</a></li>
+    <li><a href="../../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../../">Overview</a></li>
+    <li><a href="../">Karaoke Templater</a></li>
+    <li><a href="../../Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../../Options/">Aegisub Options</a></li>
+    <li><a href="../../../Properties/">Script Properties</a></li>
+    <li><a href="../../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Code_lines_and_blocks/">Code lines and blocks</a>
+                    
+                    <a href="../Inline_variables/">Inline variables</a>
+                    
+                    <a href="../">Karaoke Templater</a>
+                    
+                    <a href="../Template_execution_rules_and_order/">Template execution rules and order</a>
+                    
+                    <a href="../Template_modifiers/">Template modifiers</a>
+                    
+                    <a href="../../../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Sat 25 Feb 2012 08:06:40 AM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

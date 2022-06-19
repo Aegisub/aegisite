@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Automation/Lua/Progress_reporting/">
+        <title>Progress reporting - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../../../">Aegisub</a> / <a href="../../">Automation</a> / <a href="../">Lua</a> / 
+                        Progress reporting
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>There functions are used to report various status and progress back to the GUI
+while a script is running.</p>
+
+<h2 id="progressreporting">Progress reporting</h2>
+
+<p>A progress dialogue box is always shown when an Automation 4 Lua script is
+running. You can use these functions to control what is displayed in it.</p>
+
+<h3 id="aegisub.progress.set">aegisub.progress.set</h3>
+
+<p>Synopsis: <code>aegisub.progress.set(percent)</code></p>
+
+<p>Set the position of the percent-done bar in the progress window.</p>
+<dl>
+<dt><strong><code>percent</code></strong> (<code>number</code>)</dt>
+<dd>Number from 0 to 100.</dd>
+</dl>
+
+
+<h3 id="aegisub.progress.task">aegisub.progress.task</h3>
+
+<p>Synopsis: <code>aegisub.progress.task(msg, ...)</code></p>
+
+<p>Set the &quot;task&quot; text in the progress window, which is the small text below the
+progress bar showing what the script is currently doing.</p>
+<dl>
+<dt><strong><code>msg</code></strong> (<code>string</code>)</dt>
+<dd>A format string specifying the message. See the Lua standard string library
+<code>string.format</code> function for details on format strings.</dd>
+
+<dt><strong><code>...</code></strong></dt>
+<dd>Parameters to the format string.</dd>
+</dl>
+
+
+<h3 id="aegisub.progress.title">aegisub.progress.title</h3>
+
+<p>Synopsis: <code>aegisub.progress.title(title, ...)</code></p>
+
+<p>Set the title of the progress window, which is is the large text displayed
+above the progress bar. This text should usually not change while the script
+is running. By default this is set to the name of the macro running.</p>
+<dl>
+<dt><strong><code>title</code></strong> (<code>string</code>)</dt>
+<dd>A format string specifying the title. See the Lua standard string library
+<code>string.format</code> function for details on format strings.
+<strong><code>...</code></strong></dd>
+
+<dd>Parameters to the format string.</dd>
+</dl>
+
+
+<h3 id="aegisub.progress.is_cancelled">aegisub.progress.is_cancelled</h3>
+
+<p>Synopsis: <code>cancelled = aegisub.progress.is_cancelled()</code></p>
+
+<p>Tells whether the user has clicked on the Cancel button.</p>
+
+<p>You should call this function regularly during long operations, and if it's
+true call <a href="../Miscellaneous_APIs/#aegisub.cancel"><code>aegisub.cancel()</code></a> to
+rollback all changes and immediately end execution of the script.</p>
+<dl>
+<dt><strong><code>cancelled</code></strong> (<code>boolean</code>)</dt>
+<dd><code>false</code> if the user has not clicked the Cancel button, <code>true</code> if the user has
+clicked Cancel. If <code>is_cancelled</code> returns <code>true</code> all subsequent calls to it in
+the current execution will also return <code>true</code>.</dd>
+</dl>
+
+
+<h2 id="debugoutput">Debug output</h2>
+
+<p>The primary support for script debugging in Automation 4 Lua is through sending
+debug messages to the message log integrated in the progress window.</p>
+
+<p>If a script shows a debug or other message, the progress window stays open
+after the script has finished running until the user clicks the Close button.
+Please consider whether it's really that important that the user sees your
+messages. Blocking other input to the program to display something that might
+be irrelevant to the user can create a bad experience.</p>
+
+<h3 id="aegisub.debug.out">aegisub.debug.out</h3>
+
+<p>Synopsis:</p>
+
+<ul>
+<li><code>aegisub.debug.out(msg, ...)</code></li>
+<li><code>aegisub.debug.out(level, msg, ...)</code></li>
+<li><code>aegisub.log(msg, ...)</code></li>
+<li><code>aegisub.log(level, msg, ...)</code></li>
+</ul>
+
+<p>The two names are synonymous; you can use either name depending on your
+preference.</p>
+
+<p>Sends a message to the message log, optionally with a specific severity level.
+The user can control in Aegisub's options the highest level messages that will
+be shown.</p>
+<dl>
+<dt><strong><code>level</code></strong> (<code>number</code>)</dt>
+<dd>Severity level of the message. This parameter is optional. If you leave it
+out (by entirely skipping it) the message will always be shown.</dd>
+</dl>
+
+
+<p>**'msg<code>** (</code>string<code>)
+: A format string specifying the message. See the Lua standard string library
+</code>string.format` function for details on format strings.</p>
+<dl>
+<dt><strong><code>...</code></strong></dt>
+<dd>Parameters to the format string.</dd>
+</dl>
+
+
+<p>The following severity levels are suggested:</p>
+<dl>
+<dt>0: &quot;fatal&quot;</dt>
+<dd>Something really bad happened and the script can't continue. Level 0 messages
+are always shown. Note that Aegisub does not automatically terminate your
+script. Call <a href="../Miscellaneous_APIs/#aegisub.cancel"><code>aegisub.cancel()</code></a>
+afterwards if you want it to.</dd>
+
+<dt>1: &quot;error&quot;</dt>
+<dd>A real error occurred so the user should expect something to have gone wrong
+even though you tried to recover. A fatal error might happen later.</dd>
+
+<dt>2: &quot;warning&quot;</dt>
+<dd>It looks like something is wrong and the user ought to know because it might
+mean something needs to be fixed.</dd>
+
+<dt>3: &quot;hint&quot;</dt>
+<dd>A tip or otherwise on how the user can improve things, or hints that
+something might cause a warning or error later on.</dd>
+
+<dt>4: &quot;debug&quot;</dt>
+<dd>Information meant to help fix errors in the script, such as dumps of variable
+contents.</dd>
+
+<dt>5: &quot;trace&quot;</dt>
+<dd>Extremely verbose information about what the script is doing, such as a
+message for each single step done with lots of variable dumps.</dd>
+</dl>
+
+
+<div class="navbox">
+<div><a href="../../">Automation 4</a></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><a href="../../Manager/">Automation Manager</a> • <a href="../../Running_macros/">Running macros</a> • <a href="../../../Exporting/">Using export filters</a> • <a href="../../Included_macros/">Standard macros</a> • <a href="../../Overview_of_changes_from_Automation_3/">Changes from Automation 3</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../Karaoke_Templater/">Karaoke Templater</a> reference: </th>
+            <td><a href="../../Karaoke_Templater/Declaring_template_and_code_lines/">Declaring templates</a> • <a href="../../Karaoke_Templater/Template_execution_rules_and_order/">Execution order</a> • <a href="../../Karaoke_Templater/Template_modifiers/">Modifiers</a> • <a href="../../Karaoke_Templater/Inline_variables/">Inline-variables ($-variables)</a> <br> <a href="../../Karaoke_Templater/Code_lines_and_blocks/">Code lines and blocks</a> • <a href="../../Karaoke_Templater/Code_execution_environment/">Execution envirionment</a></td>
+        </tr>
+        <tr>
+            <th><a href="../">Lua API</a> reference: </th>
+            <td><a href="../Registration/">Registration</a> • <a href="../Subtitle_file_interface/">Subtitles object</a> • <span class="selflink">Progress reporting</span> • <a href="../Dialogs/">Dialogs</a> • <a href="../Miscellaneous_APIs/">Misc. APIs</a></td>
+        </tr>
+        <tr>
+            <th><a href="../Modules/">Lua Modules</a>: </th>
+            <td><a href="../Modules/karaskel.lua/">karaskel.lua</a> • <a href="../Modules/utils.lua/">utils.lua</a> • <a href="../Modules/unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="../Modules/clipboard/">clipboard</a> • <a href="../Modules/re/">re</a></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="../Modules/karaskel.lua/#Style_table">Style tables</a> • <a href="../Modules/karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="../Modules/karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/">Inline effects</a> • <a href="../../../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../../../About/">What is Aegisub?</a></li>
+    <li><a href="../../../Highlights/">Highlights</a></li>
+    <li><a href="../../../Credits/">Credits</a></li>
+    <li><a href="../../../Support/">Support Aegisub</a></li>
+    <li><a href="../../../FAQ/">FAQ</a></li>
+    <li><a href="../../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../../../Typesetting/">Introduction</a></li>
+    <li><a href="../../../Video/">Working with Video</a></li>
+    <li><a href="../../../Styles/">Editing styles</a></li>
+    <li><a href="../../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../../../Audio/">Working with Audio</a></li>
+    <li><a href="../../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../../">Overview</a></li>
+    <li><a href="../../Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../../Options/">Aegisub Options</a></li>
+    <li><a href="../../../Properties/">Script Properties</a></li>
+    <li><a href="../../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../">Lua</a>
+                    
+                    <a href="../../../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Sat 25 Feb 2012 08:06:40 AM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

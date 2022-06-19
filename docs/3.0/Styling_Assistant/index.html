@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Styling_Assistant/">
+        <title>Styling Assistant - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../">Aegisub</a> / 
+                        Styling Assistant
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>The Styling assistant is a powerful tool for subtitles that have multiple
+styles, such as cases when several actors have their own style, or for some
+other reason you have many different styles for dialog lines.</p>
+
+<h2 id="overview">Overview</h2>
+
+<center><img src="../img/styling_assistant.png" alt="styling assistant.png" /></center>
+
+<p>As seen from the image above, the assistant is composed of the following:</p>
+
+<ul>
+<li>Current line field</li>
+<li>Styles available field</li>
+<li>Set style window</li>
+<li>Keys field</li>
+<li>Seek video to line start time checkbox</li>
+<li>Play audio button</li>
+<li>Play video button</li>
+</ul>
+
+<p>The Current line field displays the line in the subtitles for which the
+style will be set. The text in it cannot be edited.</p>
+
+<p>Styles available field displays the styles available in the script. The
+styles have to be imported through the Styles Manager or created with its
+help. The styles can then be set for the selected line in the subtitles by
+clicking on the desired style.</p>
+
+<p>The set style window is the main aspect of the Styling Assistant. Through
+it, styles can be applied to the line in the subtitles easily and without
+much work. It support autocomplete, so it helps to select the desired
+style after some characters are written in the window.</p>
+
+<p>The Keys fields displays the keyboard shortcuts that are used for work with
+the assistant.</p>
+
+<p>If the Seek video to line start time checkbox is checked and video is
+loaded, the video will seek to the beginning of each line which is
+displayed for styling.</p>
+
+<p>The play audio and video buttons play the audio or video for the current
+line, to aid in determining what character is saying the line.</p>
+
+<h2 id="theautocompletefunction">The autocomplete function</h2>
+
+<center><img src="../img/Styling_autocomplete.png" alt="Styling autocomplete.png" /></center>
+
+<p>This window displays how the autocomplete function works. The characters
+that were typed are on the white background and the rest of the name is
+displayed as being selected. The selected part is what autocomplete sets as
+the style that matches with the typed characters.</p>
+
+<center><img src="../img/Styling_invalid.png" alt="Styling invalid.png" /></center>
+
+<p>This image shows the response to a name that doesn't exist. The background
+of the window is colored red to show that no style on the list of selected
+styles matches the entered text.</p>
+
+<h2 id="howtouse">How to use</h2>
+
+<p>Usage is simple. Select the first line you want to style and open the
+assistant. Then you look at text, video and/or audio to determine who is
+speaking it and type first few letters of style name, after which
+autocomplete should kick in. Hit enter to go to next line and proceed until
+you're finished. The other way is to double click on a style in the Styles
+available list and the style will be applied to the selected line.</p>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><span class="selflink">Styling Assistant</span></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../Shift_Times/">Shift times</a></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Overview/">Overview</a>
+                    
+                    <a href="../sidebar/">sidebar</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:40 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Automation/Karaoke_Templater/Tutorial_2/">
+        <title>Tutorial 2 - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../../../">Aegisub</a> / <a href="../../">Automation</a> / <a href="../">Karaoke Templater</a> / 
+                        Tutorial 2
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>In <a href="../Tutorial_1/">the previous tutorial</a> we saw how to use the basic features of Karaoke Templater to make simple karaoke effects. We'll continue where we left off here, by expanding on the basics from last tutorial.</p>
+
+<div class="todo">**Todo:** make and insert screenshots</div>
+
+<h2 id="preparations">Preparations</h2>
+
+<p>As before, you'll still need some timed karaoke and a video to preview the effects. I won't go into further details with that here.</p>
+
+<h2 id="addingafadeout">Adding a fadeout</h2>
+
+<p>To recap, here's the effect from the end of last tutorial:</p>
+
+<pre><code>{\r\k$kdur\t($start,$end,\1c&amp;H00FF00&amp;)\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)}
+</code></pre>
+
+<p>We'll add a fadeout effect to this now, having each syllable fade out <em>after</em> it has been sung, not while. We'll have to do a little maths to make this: Start the fadeout at <code>$end</code> and have it continue until <code>$end+200</code>, ie. have it fade out for 200 milliseconds after the syllable.</p>
+
+<p>Change the template to this:</p>
+
+<pre><code>{\r\k$kdur\t($start,$end,\1c&amp;H00FF00&amp;)\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)\t($end,!$end+200!,\alpha&amp;HFF&amp;)}
+</code></pre>
+
+<p>Then try applying templates again. You should see the old effect happen as usual, but this time afterwards, each syllable fades out.</p>
+
+<p>The magic in this is the exclamation marks here: <code>!$end+200!</code></p>
+
+<p>When you have a pair of exclamation marks like that, everything in between them is treated as an <em>expression</em> (actually a very small Lua program, but don't worry about that yet.) Here we use an expression to take the end-time of the syllable and add 200 to it, getting a new number. The end result is that the <tt>\t</tt> fadeout effect lasts from <code>$end</code> and until 200 milliseconds later.</p>
+
+<h2 id="tweakingthegrowshrinkeffect">Tweaking the grow/shrink effect</h2>
+
+<p>Maybe you think the growing-shrinking effect looks a bit odd, switching right in the middle. It might look better if it was at the maximum height earlier, and used more time shrinking back to normal. Well, that can be changed:</p>
+
+<pre><code>{\r\k$kdur\t($start,$end,\1c&amp;H00FF00&amp;)\t($start,!$start+$dur*0.3!,\fscy120)\t(!$start+$dur*0.3!,$end,\fscy100)}
+</code></pre>
+
+<p>With this, the growing-part will only take the first three-tenths of the syllable duration, and the shrinking the rest. We used one new variable here, <code>$dur</code>. This is the duration of the syllable in milliseconds, just like <code>$kdur</code> is the duration in centiseconds. (We could actually just as well just have used <code>$kdur</code> here, and then multiplied by 3 instead of 0.3.)</p>
+
+<p>Note that I removed the fadeout from here, it's just to make the line shorter and easier to read. You can add it back if you want.</p>
+
+<p>Hopefully this tutorial has given you some more ideas of what you can do. In <span class="createlink">the next one</span> we'll add another layer to the effect by using multiple templates!</p>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../../../About/">What is Aegisub?</a></li>
+    <li><a href="../../../Highlights/">Highlights</a></li>
+    <li><a href="../../../Credits/">Credits</a></li>
+    <li><a href="../../../Support/">Support Aegisub</a></li>
+    <li><a href="../../../FAQ/">FAQ</a></li>
+    <li><a href="../../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../../../Typesetting/">Introduction</a></li>
+    <li><a href="../../../Video/">Working with Video</a></li>
+    <li><a href="../../../Styles/">Editing styles</a></li>
+    <li><a href="../../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../../../Audio/">Working with Audio</a></li>
+    <li><a href="../../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../../">Overview</a></li>
+    <li><a href="../">Karaoke Templater</a></li>
+    <li><a href="../../Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../../Options/">Aegisub Options</a></li>
+    <li><a href="../../../Properties/">Script Properties</a></li>
+    <li><a href="../../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+                <div class="tags">
+                    Tags:
+                    
+                    <a href="../../../TODO/" rel="tag">/TODO</a>
+                    
+                </div>
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../">Karaoke Templater</a>
+                    
+                    <a href="../Tutorial_1/">Tutorial 1</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Sat 25 Feb 2012 08:06:40 AM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

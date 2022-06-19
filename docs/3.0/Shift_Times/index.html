@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Shift_Times/">
+        <title>Shift Times - Aegisub Manual</title>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../">Aegisub</a> / 
+                        Shift Times
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>The <strong>shift times</strong> tool is a batch processor for timestamps; it adjusts the
+start/end timestamps of many subtitle lines at once in various ways. It is
+located under <em>Timing</em> -&gt; <em>Shift Times</em>.</p>
+
+<p>It looks like this:</p>
+
+<center><img src="../img/shift_times.png" alt="shift times.png" /></center>
+
+<p>The left part of the window contain the options.</p>
+
+<h3 id="shiftby">Shift by</h3>
+
+<p>These controls decide in which direction and by how much each timestamp will
+be modified.</p>
+
+<ul>
+<li><strong>Time</strong> - How much you want to adjust each timestamp, in
+ hours:minutes:seconds.centiseconds.</li>
+<li><strong>Frames</strong> - If you have video loaded, you can specify the adjustment time
+ as a number of frames instead. Note that shifting by zero frames will snap
+ the timestamps to the frame times without doing any shifting.</li>
+<li><strong>Forward</strong> or <strong>Backward</strong> - controls in which direction the timestamps
+ are adjusted.</li>
+</ul>
+
+<h3 id="affect">Affect</h3>
+
+<p>These controls decide what lines will be processed.</p>
+
+<ul>
+<li><strong>All rows</strong> - Applies the time shifting to all lines in the script.</li>
+<li><strong>Selected rows</strong> - Applies the time shifting only to the selected lines.</li>
+<li><strong>Selection onward</strong> - Applies the time shifting to the first selected
+ line and all lines below it (in the grid).</li>
+</ul>
+
+<h3 id="times">Times</h3>
+
+<p>These controls decide what timestamps will be processed.</p>
+
+<ul>
+<li><strong>Start and End times</strong> - Both start and end times of the affected lines
+ will be modified by the given amount.</li>
+<li><strong>Start times only</strong> - Only the start times of the affected lines will be
+ modified. Note that this makes the lines longer (if you shift backwards)
+ or shorter (if you shift forwards) and can even make them have a duration
+ of zero.</li>
+<li><strong>End times only</strong> - Only the end times of the affected lines will be
+ modified. Note that this makes the lines longer (if you shift forwards) or
+ shorter (if you shift backwards) and can even make them have a duration of
+ zero.</li>
+</ul>
+
+<p>Note that if a line is shifted so that its start or end time stamp would be
+negative, that timestamp is zeroed instead. This can be used to clear all
+timings from an entire script, by shifting backwards by longer than the
+latest timestamp in the script.</p>
+
+<h3 id="loadfromhistory">Load from history</h3>
+
+<p>This is a history of all time shiftings you have done since last time you
+cleared the shift history (with the clear button). The format is a number of
+fields separated by commas. The fields are:</p>
+
+<ul>
+<li>Filename of the script (e.g. &quot;example.ass&quot;)</li>
+<li>Shift amount and direction (e.g. &quot;0:00:05.00 forward&quot;)</li>
+<li>What times were affected, &quot;s&quot; for start, &quot;e&quot; for end, &quot;s+e&quot; for both
+ What rows were affected; &quot;sel start-end&quot; for selections, &quot;all&quot; for all
+ rows (e.g. &quot;sel 1-40&quot;)</li>
+</ul>
+
+<p>To load the settings from a history entry simply double-click it.</p>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../About/">What is Aegisub?</a></li>
+    <li><a href="../Highlights/">Highlights</a></li>
+    <li><a href="../Credits/">Credits</a></li>
+    <li><a href="../Support/">Support Aegisub</a></li>
+    <li><a href="../FAQ/">FAQ</a></li>
+    <li><a href="../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../Paste_Over/">Paste Over</a></li>
+    <li><a href="../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../Typesetting/">Introduction</a></li>
+    <li><a href="../Video/">Working with Video</a></li>
+    <li><a href="../Styles/">Editing styles</a></li>
+    <li><a href="../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../Audio/">Working with Audio</a></li>
+    <li><a href="../Timing/">Timing subtitles to audio</a></li>
+    <li><span class="selflink">Shift times</span></li>
+    <li><a href="../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../Automation/">Overview</a></li>
+    <li><a href="../Automation/Karaoke_Templater/">Karaoke Templater</a></li>
+    <li><a href="../Automation/Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../Options/">Aegisub Options</a></li>
+    <li><a href="../Properties/">Script Properties</a></li>
+    <li><a href="../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../Fix_Timing_Tutorial/">Fix Timing Tutorial</a>
+                    
+                    <a href="../Overview/">Overview</a>
+                    
+                    <a href="../Timing/">Timing</a>
+                    
+                    <a href="../sidebar/">sidebar</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Fri 24 Feb 2012 06:05:48 PM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>

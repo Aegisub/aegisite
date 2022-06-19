@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="canonical" href="http://docs.aegisub.org/3.2/Automation/Karaoke_Templater/Declaring_template_and_code_lines/">
+        <title>Declaring template and code lines - Aegisub Manual</title>
+        <link rel="stylesheet" href="../../../style.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div id="globalWrapper">
+            <div id="column-content">
+                <div id="content">
+
+                    <a name="top" id="contentTop"></a>
+                    <h1 id="title">
+                        <a href="../../../">Aegisub</a> / <a href="../../">Automation</a> / <a href="../">Karaoke Templater</a> / 
+                        Declaring template and code lines
+                    </h1>
+
+                    <div id="bodyContent">
+                        <div id="contentSub"></div>
+                        <p>This page describes how a template line or code line is declared.</p>
+
+<ul>
+<li>Template lines and code lines are always marked Comment.</li>
+</ul>
+
+<div></div>
+
+<ul>
+<li>The first space-separated word in the Effect field determines whether a line is a template line, a code line, a timed karaoke line, a styled karaoke line or something otherwise undetermined.</li>
+</ul>
+
+<div></div>
+
+<ul>
+<li>If the first word in the Effect field is <code>template</code>, the line is a template line.</li>
+</ul>
+
+<div></div>
+
+<ul>
+<li>If the first word in the Effect field is <code>code</code>, the line is a code line.</li>
+</ul>
+
+<div></div>
+
+<ul>
+<li>If the Effect field is exactly equal to <code>fx</code>, the line is a styled karaoke line. Styled karaoke lines are deleted during execution of Karaoke Templater.</li>
+</ul>
+
+<div></div>
+
+<ul>
+<li>If the Effect field is <code>Karaoke</code>, <code>karaoke</code> or empty, the line is a timed karaoke line.</li>
+</ul>
+
+<div></div>
+
+<ul>
+<li>If the Effect field contains anything else, the line is an undetermined type and is not touched by Karaoke Templater.</li>
+</ul>
+
+<div></div>
+
+<p>Template lines and code lines can have additional text after the <code>template</code> or <code>code</code> keywords. This text is parsed as a series of space-separated words and is called modifiers. See <a href="../Template_modifiers/">Template modifiers</a> for more information on this.</p>
+
+<div class="navbox">
+<div><a href="../../">Automation 4</a></div>
+<table>
+        <tr>
+            <th>Overview: </th>
+            <td><a href="../../Manager/">Automation Manager</a> • <a href="../../Running_macros/">Running macros</a> • <a href="../../../Exporting/">Using export filters</a> • <a href="../../Included_macros/">Standard macros</a> • <a href="../../Overview_of_changes_from_Automation_3/">Changes from Automation 3</a></td>
+        </tr>
+        <tr>
+            <th><a href="../">Karaoke Templater</a> reference: </th>
+            <td><span class="selflink">Declaring templates</span> • <a href="../Template_execution_rules_and_order/">Execution order</a> • <a href="../Template_modifiers/">Modifiers</a> • <a href="../Inline_variables/">Inline-variables ($-variables)</a> <br> <a href="../Code_lines_and_blocks/">Code lines and blocks</a> • <a href="../Code_execution_environment/">Execution envirionment</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../Lua/">Lua API</a> reference: </th>
+            <td><a href="../../Lua/Registration/">Registration</a> • <a href="../../Lua/Subtitle_file_interface/">Subtitles object</a> • <a href="../../Lua/Progress_reporting/">Progress reporting</a> • <a href="../../Lua/Dialogs/">Dialogs</a> • <a href="../../Lua/Miscellaneous_APIs/">Misc. APIs</a></td>
+        </tr>
+        <tr>
+            <th><a href="../../Lua/Modules/">Lua Modules</a>: </th>
+            <td><a href="../../Lua/Modules/karaskel.lua/">karaskel.lua</a> • <a href="../../Lua/Modules/utils.lua/">utils.lua</a> • <a href="../../Lua/Modules/unicode.lua/">unicode.lua</a> • <span class="createlink">cleantags.lua</span> • <a href="../../Lua/Modules/clipboard/">clipboard</a> • <a href="../../Lua/Modules/re/">re</a></td>
+        </tr>
+        <tr>
+            <th>Karaskel concepts: </th>
+            <td><a href="../../Lua/Modules/karaskel.lua/#Style_table">Style tables</a> • <a href="../../Lua/Modules/karaskel.lua/#Dialogue_line_table">Dialogue line tables</a> • <a href="../../Lua/Modules/karaskel.lua/#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/">Inline effects</a> • <a href="../../../Furigana_karaoke/">Furigana</a></td>
+        </tr>
+</table>
+</div>
+
+                        <div class="visualClear"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="sidebar">
+                <h5>Navigation</h5>
+
+<ul>
+    <li><a href="../../../Main_Page/">Main Page</a></li>
+</ul>
+
+<h5>Introduction</h5>
+
+<ul>
+    <li><a href="../../../About/">What is Aegisub?</a></li>
+    <li><a href="../../../Highlights/">Highlights</a></li>
+    <li><a href="../../../Credits/">Credits</a></li>
+    <li><a href="../../../Support/">Support Aegisub</a></li>
+    <li><a href="../../../FAQ/">FAQ</a></li>
+    <li><a href="../../../Tutorials/">Tutorials</a></li>
+</ul>
+
+<h5>Working with Subtitles</h5>
+
+<ul>
+    <li><a href="../../../Editing_Subtitles/">Editing Subtitles</a></li>
+    <li><a href="../../../Exporting/">Exporting Subtitles</a></li>
+    <li><a href="../../../Attaching_subtitles_to_video/">Applying Subtitles</a></li>
+    <li><a href="../../../Spell_Checker/">Spell Checker</a></li>
+    <li><a href="../../../Translation_Assistant/">Translation Assistant</a></li>
+    <li><a href="../../../Paste_Over/">Paste Over</a></li>
+    <li><a href="../../../Select_Lines/">Select Lines</a></li>
+</ul>
+
+<h5>Typesetting</h5>
+
+<ul>
+    <li><a href="../../../Typesetting/">Introduction</a></li>
+    <li><a href="../../../Video/">Working with Video</a></li>
+    <li><a href="../../../Styles/">Editing styles</a></li>
+    <li><a href="../../../Visual_Typesetting/">Visual Typesetting</a></li>
+    <li><a href="../../../ASS_Tags/">ASS Override Tags</a></li>
+    <li><a href="../../../Colour_Picker/">Colour Picker</a></li>
+    <li><a href="../../../Styling_Assistant/">Styling Assistant</a></li>
+    <li><a href="../../../Resolution_Resampler/">Resolution Resampler</a></li>
+    <li><a href="../../../Fonts_Collector/">Fonts Collector</a></li>
+</ul>
+
+<h5>Timing</h5>
+
+<ul>
+    <li><a href="../../../Audio/">Working with Audio</a></li>
+    <li><a href="../../../Timing/">Timing subtitles to audio</a></li>
+    <li><a href="../../../Shift_Times/">Shift times</a></li>
+    <li><a href="../../../Timing_Post-Processor/">Timing Post-Processor</a></li>
+    <li><a href="../../../Kanji_Timer/">Kanji Timer</a></li>
+</ul>
+
+<h5>Automation</h5>
+
+<ul>
+    <li><a href="../../">Overview</a></li>
+    <li><a href="../">Karaoke Templater</a></li>
+    <li><a href="../../Lua/">Lua Reference</a></li>
+</ul>
+
+<h5>Miscellaneous</h5>
+
+<ul>
+    <li><a href="../../../Options/">Aegisub Options</a></li>
+    <li><a href="../../../Properties/">Script Properties</a></li>
+    <li><a href="../../../Attachment_Manager/">Attachment Manager</a></li>
+</ul>
+
+            </div>
+            
+        </div>
+
+        <div id="footer" class="pagefooter">
+            <div id="pageinfo">
+
+                
+
+                
+                <div id="backlinks">
+                    Links:
+                    
+                    <a href="../">Karaoke Templater</a>
+                    
+                    <a href="../../../templates/Automation_navbox/">templates/Automation navbox</a>
+                    
+                    
+                </div><!-- #backlinks -->
+                
+
+                
+
+                <div class="pagedate">
+                    Last edited <span class="date">Fri 06 Apr 2012 07:44:09 PM PDT</span>
+                    <!-- Created <span class="date">Sat 25 Feb 2012 08:06:40 AM PST</span> -->
+                </div>
+
+            </div><!-- #pageinfo -->
+        </div><!-- .pagefooter #footer -->
+    </div>
+</body>
+</html>
