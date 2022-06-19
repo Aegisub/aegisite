@@ -4,6 +4,8 @@ menu:
   docs:
     parent: introduction
 weight: 2400
+aliases:
+  - /docs/3.2/Aegisub_Manual/General_disclaimer/
 ---
 
 **This manual is a work in progress.** It is at present incomplete and no information in it can be taken for granted. We attempt to be accurate on every point, to a reasonable degree.

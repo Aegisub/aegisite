@@ -508,7 +508,7 @@ previous_versions:
 
     - filename: aegisub-3.1.2.tar.xz
       type: Source
-      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.2/Aegisub-3.1.2.dmg
+      link: https://github.com/Aegisub/Aegisub/releases/download/v3.1.2/aegisub-3.1.2.tar.xz
       md5: d00c1ee88eb50e9311f4acbeb74149ed
       sha512: d15e16f9f98c01447b72cde1998c915a2bfc1aa918a4380b54303de8e88ef881f46c3896ab9dc5eddaf4f1376f0908abd8427dbf6af395e6e0b3969ddca402ab
 

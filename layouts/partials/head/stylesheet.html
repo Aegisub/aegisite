@@ -8,4 +8,10 @@
   {{ $secureCSS := $css | resources.Fingerprint "sha512" -}}
   <link rel="stylesheet" href="{{ $secureCSS.Permalink }}" integrity="{{ $secureCSS.Data.Integrity }}" crossorigin="anonymous">
 {{ end -}}
-<noscript><style>img.lazyload { display: none; }</style></noscript>
+<noscript><style>
+img.lazyload { display: none; }
+.collapse:not(.show) { display: block; }
+button.btn-toggle { cursor: unset; }
+button.btn-toggle::before { display: none; }
+.doks-subnavbar { display: none; }
+</style></noscript>
