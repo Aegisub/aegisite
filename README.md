@@ -25,9 +25,6 @@ Other [commands](https://getdoks.org/docs/prologue/commands/) for common tasks.
 ![audio_display](/img/3.2/audio_display.png)
 ```
 
-## Deploy
-
-+ Change **baseurl** in `config\production\config.toml`
 + Change **branches** in `.github\workflows\pages.yml`
 
 ## Documentation
