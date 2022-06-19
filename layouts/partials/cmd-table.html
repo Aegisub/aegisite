@@ -1,0 +1,27 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Display</th>
+      <th scope="col">Help</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ $pageLang := .Page.Lang}}
+    {{ range .Site.Data.commands_32 }}
+      <!-- TODO: check "eq $pageLang .locale" for all lang -->
+      {{ if in (slice         
+        (and (eq $pageLang "en") (eq .locale "en_US"))
+        (and (eq $pageLang "zh-cn") (eq .locale "zh_CN"))
+        (eq $pageLang .locale)) true}}
+        {{ range .commands }}
+        <tr>
+          <td>{{ .name }}</td>
+          <td>{{ .display }}</td>
+          <td>{{ .help }}</td>
+        </tr>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </tbody>
+</table>

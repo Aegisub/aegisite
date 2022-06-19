@@ -1,0 +1,15 @@
+en:
+  languageCode: en-us
+  languageName: English
+  contentDir: content/en
+  weight: 10
+  params:
+    languageISO: EN
+
+zh-cn:
+  languageCode: zh-cn
+  languageName: 简体中文
+  contentDir: content/zh-cn
+  weight: 15
+  params:
+    languageISO: ZH
