@@ -11,6 +11,8 @@ tags:
   - kumaji
   - future
   - subtitle formats
+aliases:
+  - /blog/2009/02/kumaji-explained.html
 ---
 
 Kumaji is an advanced subtitle rendering engine, in development.

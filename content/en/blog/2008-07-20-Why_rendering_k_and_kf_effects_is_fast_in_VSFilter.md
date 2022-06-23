@@ -11,6 +11,8 @@ tags:
   - vsfilter internals
   - karaoke
   - optimisation
+aliases:
+  - /blog/2008/07/why-rendering-k-and-kf-effects-is-fast.html
 ---
 
 *This is a repost of something I wrote earlier [on the AnimeSuki forums](http://forums.animesuki.com/showpost.php?p=1629372&postcount=72), in relation to a discussion of how much CPU time various kinds of karaoke effects take to render.*

@@ -9,6 +9,8 @@ tags:
   - old-post
   - aegisub-tan
   - mascot
+aliases:
+  - /blog/2008/07/epic-of-aegisub-tan.html
 ---
 
 A while ago, jfs and I thought that it would be interesting to have a mascot for Aegisub, similar to the [OS-tans](http://en.wikipedia.org/wiki/Os-tan) from Futaba. She would be a chibi-style mascot, wearing light plate armor and holding a staff, and she would be seen in places like the splash screen, or in "loading" and "Aegisub crashed" dialogs, with different expressions to show her "mood" (e.g. crying when Aegisub crashes).

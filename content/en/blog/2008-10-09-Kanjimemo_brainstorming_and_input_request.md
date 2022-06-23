@@ -13,6 +13,8 @@ tags:
   - hiragana
   - kanjimemo
   - japanese
+aliases:
+  - /blog/2008/10/kanjimemo-brainstorming-and-input.html
 ---
 
 <p style="font-size:40pt;text-align: center;">漢字メモ？</p>

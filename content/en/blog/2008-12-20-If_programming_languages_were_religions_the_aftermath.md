@@ -8,6 +8,8 @@ weight: 50
 tags:
   - old-post
   - offtopic
+aliases:
+  - /blog/2008/12/if-programming-languages-were-religions_20.html
 ---
 
 Until December 15 2008, aegisub.net would typically get ~350 hits per day. Between December 16 and 19, it got a total of 266 thousand hits, thanks to the "[If programming languages were religions...](/blog/2008-12-15-if_programming_languages_were_religions.../)" post. So, first of all: Thanks, everybody! All feedback, positive and negative, was greatly appreciated.

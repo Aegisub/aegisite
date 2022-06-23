@@ -10,6 +10,8 @@ tags:
   - aegisub
   - windows
   - windows 9x
+aliases:
+  - /blog/2008/08/aegisub-for-windows-me-and-98-never.html
 ---
 
 You may wonder why there is no version of Aegisub that works on Windows 95, 98, 98 SE or Me, together knows as Windows 9x. The reason is part technical-practical and part ideological.

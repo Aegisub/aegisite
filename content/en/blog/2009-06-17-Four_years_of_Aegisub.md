@@ -10,6 +10,8 @@ tags:
   - aegisub
   - history
   - hollowpromises
+aliases:
+  - /blog/2009/06/four-years-of-aegisub.html
 ---
 
 Today it's just about four years since Aegisub was first conceived.

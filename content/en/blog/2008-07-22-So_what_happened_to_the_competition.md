@@ -16,6 +16,8 @@ tags:
   - ass
   - medusa
   - ssatool
+aliases:
+  - /blog/2008/07/so-what-happened-to-competition.html
 ---
 
 On July 9 2006, the last actively maintained ASS-Based General-Purpose Subtitling Software (henceforth ABGPSS) competition that Aegisub had - Sabbu - was dropped by its creator, kryptolus. Sabbu was an important program in the sense that it was the first ABGPSS to support Unicode and to be cross-platform. With Medusa and SubStation Alpha long dead, Subtitles Workshop being far from usable for anime fansubbing purposes, and SSATool designed for very specific purposes, Aegisub obtained monopoly on the ABGPSS business.

@@ -8,6 +8,8 @@ weight: 50
 tags:
   - old-post
   - aegisub
+aliases:
+  - /blog/2012/02/bit-of-statistics.html
 ---
 
 As you may know, we have an automatic update checker in Aegisub, you may have noticed it telling you about the 2.1.9 release yesterday.

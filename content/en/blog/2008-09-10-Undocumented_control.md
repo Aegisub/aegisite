@@ -9,6 +9,8 @@ tags:
   - old-post
   - aegisub
   - tips
+aliases:
+  - /blog/2008/09/undocumented-control.html
 ---
 
 First, let me apologise for the bad pun in the title up front.

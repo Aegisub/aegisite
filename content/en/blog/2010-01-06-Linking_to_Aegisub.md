@@ -8,6 +8,8 @@ weight: 50
 tags:
   - old-post
   - announcement
+aliases:
+  - /blog/2010/01/linking-to-aegisub.html
 ---
 
 Okay, since Aegisub has had a lot of different websites and lots of different URLs throughout the years, I thought it'd be time to clear up things a bit.

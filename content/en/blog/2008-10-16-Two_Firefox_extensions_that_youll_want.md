@@ -12,6 +12,8 @@ tags:
   - furigana
   - hiragana
   - japanese
+aliases:
+  - /blog/2008/10/two-firefox-extensions-that-youll-want.html
 ---
 
 If you do any sort of Japanese reading on the Internet, you'll want these two Firefox extensions:

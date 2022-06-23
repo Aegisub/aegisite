@@ -8,6 +8,8 @@ weight: 50
 tags:
   - old-post
   - aegisub
+aliases:
+  - /blog/2011/06/not-dead-yet.html
 ---
 
 Aegisub is still alive!

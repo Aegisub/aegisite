@@ -12,6 +12,8 @@ tags:
   - flame bait
   - humor
   - offtopic
+aliases:
+  - /blog/2008/12/if-programming-languages-were-religions.html
 ---
 
 And now, for some off-topic:

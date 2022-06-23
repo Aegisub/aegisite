@@ -10,6 +10,8 @@ tags:
   - old-post
   - experimental builds
   - mac
+aliases:
+  - /blog/2008/11/mac-progress.html
 ---
 
 We get asked "what about the mac version?" once in a while and yes, it's the eternal problem.

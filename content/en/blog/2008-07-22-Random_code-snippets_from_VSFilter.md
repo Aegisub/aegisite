@@ -9,6 +9,8 @@ tags:
   - old-post
   - vsfilter
   - programming
+aliases:
+  - /blog/2008/07/random-code-snippets-from-vsfilter.html
 ---
 
 I've been reading and hacking on the VSFilter code more than is probably healthy, and have over the time found a lot of funny/strange clips of code.

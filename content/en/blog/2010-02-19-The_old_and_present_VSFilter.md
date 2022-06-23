@@ -12,6 +12,8 @@ tags:
   - history
   - future
   - subtitle formats
+aliases:
+  - /blog/2010/02/old-and-present-vsfilter.html
 ---
 
 A short while ago, yet another fork of the VSFilter subtitle renderer has surfaced, introducing more extensions. Let it be clear immediately: **Aegisub will not support any new extensions to the ASS subtitle format.** We strongly urge you to not use any extensions, and as for why, please read on.

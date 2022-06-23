@@ -16,6 +16,8 @@ tags:
   - subtitle formats
   - ass
   - matroska
+aliases:
+  - /blog/2008/07/universal-subtitle-format-post-mortem.html
 ---
 
 The Universal Subtitle Format (USF) was an ambitious project. It was a XML-based subtitle format, supposed to replace the old and problematic community standard, Advanced Substation Alpha (ASS). It was chosen as the default subtitle format for the [Matroska](http://www.matroska.org) multimedia container, and was the primary format of Medusa's unfortunate successor, ChronoSub.

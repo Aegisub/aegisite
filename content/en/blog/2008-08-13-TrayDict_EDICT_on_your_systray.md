@@ -16,6 +16,8 @@ tags:
   - edict
   - japanese
   - roomaji
+aliases:
+  - /blog/2008/08/traydict-edict-on-your-systray.html
 ---
 
 A while ago, I posted about [Kanamemo](/blog/2008-07-24-kanamemo_a_tool_for_the_apprentice_weeaboo/), a tool that I made to help me learn Hiragana and Katakana. Another tool that I've made to help me in the learning of the Japanese language was TrayDict:

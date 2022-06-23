@@ -12,6 +12,8 @@ tags:
   - tips
   - ass
   - typesetting
+aliases:
+  - /blog/2008/12/dont-use-fad-on-fades-to-black.html
 ---
 
 Dear typesetters,

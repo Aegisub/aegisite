@@ -8,6 +8,8 @@ weight: 50
 tags:
   - old-post
   - announcement
+aliases:
+  - /blog/2008/07/aegisub-development-blog-now-open.html
 ---
 
 This is a bit of an experiment, something we (at the Aegisub team) have talked about a few times: A development blog.

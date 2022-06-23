@@ -12,6 +12,8 @@ tags:
   - hiragana
   - utility
   - japanese
+aliases:
+  - /blog/2008/07/kanamemo-tool-for-apprentice-weeaboo.html
 ---
 
 Back in 2006, when I decided to learn Hiragana and Katakana, I looked around for flashcard programs to help me in my task. After finding that none of them actually worked as I thought that they SHOULD, I decided to roll my own. The result is Kanamemo:

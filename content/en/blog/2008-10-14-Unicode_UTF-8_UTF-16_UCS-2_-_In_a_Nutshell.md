@@ -12,6 +12,8 @@ tags:
   - katakana
   - hiragana
   - unicode
+aliases:
+  - /blog/2008/10/unicode-utf-8-utf-16-ucs-2-in-nutshell.html
 ---
 
 I have noticed that lots of people have no idea what exactly is the whole "Unicode", "UTF-8", "UTF-16" and "UCS-2" stuff, aside from the fact that it's somehow related to the display of foreign characters. The objective of this post is to briefly explain them and dispel some of the myths associated with them.
