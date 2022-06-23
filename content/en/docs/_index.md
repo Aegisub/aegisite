@@ -5,7 +5,7 @@ type: simple-page
 
 <p>
 <br />
-<a href="3.2" class="btn btn-primary" role="button">3.2 Manual</a> User manual for 3.2.
+<a href="latest" class="btn btn-primary" role="button">3.4 Manual</a> User manual for 3.4.
 </p>
 <!-- <a href="3.1" class="btn btn-light" role="button">3.1 Manual</a>User manual for 3.1. -->
 <p>

@@ -5,7 +5,7 @@ type: simple-page
 
 <p>
 <br />
-<a href="3.2" class="btn btn-primary" role="button">3.2 手册</a> 3.2版本的用户手册，正在翻译。
+<a href="latest" class="btn btn-primary" role="button">3.4 手册</a> 3.4版本的用户手册，正在翻译。
 </p>
 <!-- <a href="3.1" class="btn btn-light" role="button">3.1 Manual</a>User manual for 3.1. -->
 <p>
