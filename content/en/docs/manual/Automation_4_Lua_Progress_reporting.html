@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Automation_4_Lua_Progress_reporting by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:22 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Automation 4 Lua Progress reporting,Automation,Automation 4 Lua Configuration dialogues,Automation 4 Lua Miscellaneous APIs,Automation 4 Lua Registration,Automation 4 Lua Subtitle file interface,Automation 4 karaskel.lua,Automation 4 unicode.lua,Automation 4 utils.lua,Automation Manager,Exporting" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Automation 4 Lua Progress reporting - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Automation_4_Lua_Progress_reporting";
+		var wgTitle = "Automation 4 Lua Progress reporting";
+		var wgAction = "view";
+		var wgArticleId = "67";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 721;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Automation_4_Lua_Progress_reporting">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Automation 4 Lua Progress reporting</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>There functions are used to report various status and progress back to the GUI while a script is running.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Progress_reporting"><span class="tocnumber">1</span> <span class="toctext">Progress reporting</span></a>
+<ul>
+<li class="toclevel-2"><a href="#aegisub.progress.set"><span class="tocnumber">1.1</span> <span class="toctext">aegisub.progress.set</span></a></li>
+<li class="toclevel-2"><a href="#aegisub.progress.task"><span class="tocnumber">1.2</span> <span class="toctext">aegisub.progress.task</span></a></li>
+<li class="toclevel-2"><a href="#aegisub.progress.title"><span class="tocnumber">1.3</span> <span class="toctext">aegisub.progress.title</span></a></li>
+<li class="toclevel-2"><a href="#aegisub.progress.is_cancelled"><span class="tocnumber">1.4</span> <span class="toctext">aegisub.progress.is_cancelled</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Debug_output"><span class="tocnumber">2</span> <span class="toctext">Debug output</span></a>
+<ul>
+<li class="toclevel-2"><a href="#aegisub.debug.out"><span class="tocnumber">2.1</span> <span class="toctext">aegisub.debug.out</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Progress_reporting" id="Progress_reporting"></a><h2> <span class="mw-headline"> Progress reporting </span></h2>
+<p>A progress dialogue box is always shown when an Automation 4 Lua script is running. You can use these functions to control what is displayed in it.
+</p>
+<a name="aegisub.progress.set" id="aegisub.progress.set"></a><h3> <span class="mw-headline"> aegisub.progress.set </span></h3>
+<p>Synopsis: <code>aegisub.progress.set(percent)</code>
+</p><p>Set the position of the percent-done bar in the progress window.
+</p>
+<ul><li> <b>percent</b> (number) - Number from 0 to 100.
+</li></ul>
+<a name="aegisub.progress.task" id="aegisub.progress.task"></a><h3> <span class="mw-headline"> aegisub.progress.task </span></h3>
+<p>Synopsis: <code>aegisub.progress.task(msg, ...)</code>
+</p><p>Set the "task" text in the progress window, this is the small text below the progress bar showing what the script is currently doing.
+</p>
+<ul><li> <b>msg</b> (string) - A format string specifying the message, see the Lua standard string library <code>string.format</code> function for details on format strings.
+</li><li> <b>...</b> - Parameters to the format string.
+</li></ul>
+<a name="aegisub.progress.title" id="aegisub.progress.title"></a><h3> <span class="mw-headline"> aegisub.progress.title </span></h3>
+<p>Synopsis: <code>aegisub.progress.title(title, ...)</code>
+</p><p>Set the title of the progress window, this is the large text displayed above the progress bar. This text should usually not changing while the script is running. By default this is set to the name of the feature running, eg. the name of the macro (menu item text) if it's a macro.
+</p>
+<ul><li> <b>title</b> (string) - A format string specifying the title, see the Lua standard string library <code>string.format</code> function for details on format strings.
+</li><li> <b>...</b> - Parameters to the format string.
+</li></ul>
+<a name="aegisub.progress.is_cancelled" id="aegisub.progress.is_cancelled"></a><h3> <span class="mw-headline"> aegisub.progress.is_cancelled </span></h3>
+<p>Synopsis: <code>cancelled = aegisub.progress.is_cancelled()</code>
+</p><p>Tells whether the user has clicked on the Cancel button.
+</p><p>You should call this function regularly during long operations, and stop the execution of your script as quickly as possible. If you're a macro you should either roll back all changes you have made if possible, or <a href="Automation_4_Lua_Subtitle_file_interface.html#Creating_an_undo_point" title="Automation 4 Lua Subtitle file interface">set an undo point</a> so the user can undo the changes made by the script.
+</p>
+<ul><li> <b>cancelled</b> (bool) - <code>false</code> if the user has not clicked the Cancel button, <code>true</code> if the user has clicked Cancel. If <code>is_cancelled</code> returns <code>true</code> all subsequent calls to it in the current execution will also return <code>true</code>.
+</li></ul>
+<a name="Debug_output" id="Debug_output"></a><h2> <span class="mw-headline"> Debug output </span></h2>
+<p>The primary support for script debugging in Automation 4 Lua is through sending debug messages to the message log integrated in the progress window.
+</p><p>If a script shows a debug or other message, the progress window stays open after the script has finished running, until the user clicks the Close button. Please consider whether it's really that important that the user sees your messages, blocking other input to the program to display something that might be irrelevant to the user can create a bad experience.
+</p>
+<a name="aegisub.debug.out" id="aegisub.debug.out"></a><h3> <span class="mw-headline"> aegisub.debug.out </span></h3>
+<p>Synopsis:
+</p>
+<ul><li> <code>aegisub.debug.out(msg, ...)</code>
+</li><li> <code>aegisub.debug.out(level, msg, ...)</code>
+</li><li> <code>aegisub.log(msg, ...)</code>
+</li><li> <code>aegisub.log(level, msg, ...)</code>
+</li></ul>
+<p>The two names are synonymous, you can use either name depending on your preference.
+</p><p>Sends a message to the message log, optionally with a specific severity level. The user can control in Aegisub's options the highest level messages that will be shown.
+</p>
+<ul><li> <b>level</b> (number) - Severity level of the message. This parameter is optional, if you leave it out (by entirely skipping it) the message will always be shown.
+</li><li> '<i>msg</i> (string) - A format string specifying the message, see the Lua standard string library <code>string.format</code> function for details on format strings.
+</li><li> <b>...</b> - Parameters to the format string.
+</li></ul>
+<p>The following severity levels are suggested:
+</p>
+<ul><li> 0 "fatal" - Something really bad happened and the script can't continue. Level 0 messages are always shown. Note that Aegisub won't terminate your script because you display a level 0 message, you will still have to do that yourself.
+</li><li> 1 "error" - A real error occurred so the user should expect something to have gone wrong even though you tried to recover. A fatal error might happen later.
+</li><li> 2 "warning" - It looks like something is wrong and the user ought to know because it might mean something needs to be fixed.
+</li><li> 3 "hint" - A tip or otherwise on how the user can improve things, or hints that something might cause a warning or error later on.
+</li><li> 4 "debug" - Information meant to help fix errors in the script, such as dumps of variable contents.
+</li><li> 5 "trace" - Extremely verbose information about what the script is doing, literally a message for each single step done with lots of variable dumps.
+</li></ul>
+<div style="border-top: 2px solid #448; border-bottom: 1px solid #448; background: #f0f0ff; margin: 1em; padding: 0.5em;">
+<div style="text-align:center; font-weight:bold; background:#ddf;"><a href="Automation.html" title="Automation">Automation 4</a></div>
+<table style="width:100%; font-size: smaller;">
+<tr><th>Overview:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_Manager.html" title="Automation Manager">Automation Manager</a>&nbsp;&bull; 
+<a href="Running_Automation_macros.html" title="Running Automation macros">Running macros</a>&nbsp;&bull; 
+<a href="Exporting.html" title="Exporting">Using export filters</a>&nbsp;&bull; 
+<a href="Using_the_included_macros.html" title="Using the included macros">Standard macros</a>&nbsp;&bull; 
+<a href="Overview_of_changes_from_Automation_3.html" title="Overview of changes from Automation 3">Changes from Automation 3</a>&nbsp;&bull; 
+<a href="Moving_from_Automation_3.html" title="Moving from Automation 3">Moving from Automation 3</a>
+</p>
+</td></tr>
+<tr><th><a href="Karaoke_Templater.html" title="Karaoke Templater">Karaoke Templater</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Karaoke_Templater_Reference__Declaring_template_and_code_lines.html" title="Karaoke Templater Reference: Declaring template and code lines">Declaring templates</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_execution_rules_and_order.html" title="Karaoke Templater Reference: Template execution rules and order">Execution order</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_modifiers.html" title="Karaoke Templater Reference: Template modifiers">Modifiers</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Inline_variables.html" title="Karaoke Templater Reference: Inline variables">Inline-variables ($-variables)</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_lines_and_blocks.html" title="Karaoke Templater Reference: Code lines and blocks">Code lines and blocks</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_execution_environment.html" title="Karaoke Templater Reference: Code execution environment">Execution envirionment</a>
+</p>
+</td></tr>
+<tr><th><a href="Lua_Reference.html" title="Lua Reference">Lua</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_Lua_Registration.html" title="Automation 4 Lua Registration">Registration</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Subtitle_file_interface.html" title="Automation 4 Lua Subtitle file interface">Subtitles object</a>&nbsp;&bull; 
+<strong class="selflink">Progress reporting</strong>&nbsp;&bull; 
+<a href="Automation_4_Lua_Configuration_dialogues.html" title="Automation 4 Lua Configuration dialogues">Config dialogues</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Miscellaneous_APIs.html" title="Automation 4 Lua Miscellaneous APIs">Misc. APIs</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel.lua</a>&nbsp;&bull; 
+<a href="Automation_4_utils.html" title="Automation 4 utils.lua">utils.lua</a>&nbsp;&bull; 
+<a href="Automation_4_unicode.html" title="Automation 4 unicode.lua">unicode.lua</a>&nbsp;&bull; 
+cleantags.lua
+</p>
+</td></tr>
+<tr><th>Karaskel concepts:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_karaskel.html#Style_table" title="Automation 4 karaskel.lua">Style tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Dialogue_line_table" title="Automation 4 karaskel.lua">Dialogue line tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Karaoke_and_furigana_syllable_tables" title="Automation 4 karaskel.lua">Syllable tables</a>&nbsp;&bull; 
+<a href="Karaoke_inline-fx.html" title="Karaoke inline-fx">Inline effects</a>&nbsp;&bull; 
+<a href="Furigana_karaoke.html" title="Furigana karaoke">Furigana</a>
+</p>
+</td></tr>
+</table>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 54/1000000
+Post-expand include size: 2701/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:67-0!1!0!!en!2!edit=0 and timestamp 20120831082501 -->
+<div class="printfooter">
+Retrieved from "<a href="Automation_4_Lua_Progress_reporting.html">http://docs.aegisub.org/manual/Automation_4_Lua_Progress_reporting</a>"</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks">Category:&#32;<span dir='ltr'><a href="Category_Lua_Reference.html" title="Category:Lua Reference">Lua Reference</a></span></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.061 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Automation_4_Lua_Progress_reporting by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:22 GMT -->
+</html>

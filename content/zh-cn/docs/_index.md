@@ -12,6 +12,9 @@ type: simple-page
 <br />
 <a href="{{< relref path="docs" lang="en">}}3.0" class="btn btn-outline-secondary" role="button">3.0 手册</a> 3.0.0 - 3.0.4版本的用户手册（英文）。
 </p>
-<!-- User manual for 2.1.6 - 2.1.9 releases. -->
+<p>
+<br />
+<a href="{{< relref path="docs" lang="en">}}manual" class="btn btn-outline-secondary" role="button">2.1 手册</a> 2.1.6 - 2.1.9版本的用户手册（英文）。
+</p>
 
 <br />

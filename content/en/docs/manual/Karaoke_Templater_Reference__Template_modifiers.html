@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Karaoke_Templater_Reference:_Template_modifiers by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:20 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Karaoke Templater Reference: Template modifiers,Automation,Automation 4 Lua Configuration dialogues,Automation 4 Lua Miscellaneous APIs,Automation 4 Lua Progress reporting,Automation 4 Lua Registration,Automation 4 Lua Subtitle file interface,Automation 4 karaskel.lua,Automation 4 unicode.lua,Automation 4 utils.lua,Automation Manager" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Karaoke Templater Reference: Template modifiers - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Karaoke_Templater_Reference:_Template_modifiers";
+		var wgTitle = "Karaoke Templater Reference: Template modifiers";
+		var wgAction = "view";
+		var wgArticleId = "73";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 714;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Karaoke_Templater_Reference_Template_modifiers">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Karaoke Templater Reference: Template modifiers</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>Template lines and code lines can take a number of modifiers.
+</p><p>This is a space-separated list of words in the Effect field following the <code>template</code> or <code>code</code> keyword.
+</p><p>While modifiers can be combined to some extent, not all are compatible, and not all work on both code lines and for templates.
+</p><p>There is a special set of modifiers that declare the class of the template line or code line.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Class_declaring_modifiers"><span class="tocnumber">1</span> <span class="toctext">Class declaring modifiers</span></a>
+<ul>
+<li class="toclevel-2"><a href="#once"><span class="tocnumber">1.1</span> <span class="toctext">once</span></a></li>
+<li class="toclevel-2"><a href="#line_.5Bname.5D"><span class="tocnumber">1.2</span> <span class="toctext">line [name]</span></a></li>
+<li class="toclevel-2"><a href="#pre-line_.5Bname.5D"><span class="tocnumber">1.3</span> <span class="toctext">pre-line [name]</span></a></li>
+<li class="toclevel-2"><a href="#syl"><span class="tocnumber">1.4</span> <span class="toctext">syl</span></a></li>
+<li class="toclevel-2"><a href="#furi"><span class="tocnumber">1.5</span> <span class="toctext">furi</span></a></li>
+<li class="toclevel-2"><a href="#syl_furi"><span class="tocnumber">1.6</span> <span class="toctext">syl furi</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Other_modifiers"><span class="tocnumber">2</span> <span class="toctext">Other modifiers</span></a>
+<ul>
+<li class="toclevel-2"><a href="#all"><span class="tocnumber">2.1</span> <span class="toctext">all</span></a></li>
+<li class="toclevel-2"><a href="#char"><span class="tocnumber">2.2</span> <span class="toctext">char</span></a></li>
+<li class="toclevel-2"><a href="#fx_name"><span class="tocnumber">2.3</span> <span class="toctext">fx name</span></a></li>
+<li class="toclevel-2"><a href="#fxgroup_name"><span class="tocnumber">2.4</span> <span class="toctext">fxgroup name</span></a></li>
+<li class="toclevel-2"><a href="#keeptags"><span class="tocnumber">2.5</span> <span class="toctext">keeptags</span></a></li>
+<li class="toclevel-2"><a href="#multi"><span class="tocnumber">2.6</span> <span class="toctext">multi</span></a></li>
+<li class="toclevel-2"><a href="#noblank"><span class="tocnumber">2.7</span> <span class="toctext">noblank</span></a></li>
+<li class="toclevel-2"><a href="#notext"><span class="tocnumber">2.8</span> <span class="toctext">notext</span></a></li>
+<li class="toclevel-2"><a href="#repeat_n.2C_loop_n"><span class="tocnumber">2.9</span> <span class="toctext">repeat n, loop n</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Class_declaring_modifiers" id="Class_declaring_modifiers"></a><h2> <span class="mw-headline"> Class declaring modifiers </span></h2>
+<p>Both template lines and code lines can be produced without having a class modifier. Having one is still recommended for clarity, however.
+</p><p>A template line without a class modifier is implicitly given the <code>syl</code> modifier.
+</p><p>A code line without a class modifier is implicitly given the <code>once</code> modifier.
+</p>
+<a name="once" id="once"></a><h3> <span class="mw-headline"> once </span></h3>
+<p>This class modifier is only valid for code lines.
+</p><p>Code lines with the <code>once</code> modifier are run exactly once during Karaoke Templater execution, and are always run before any other code lines or templates. They are run in the order they are declared.
+</p><p>"code once" lines are primarily intended to declare functions for use in templates.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>code once</u>,function setlayer(newlayer) line.layer &#x3d; newlayer; return ""; end
+</pre>
+<p>This example declares a new function that changes the Layer field in the output line.
+</p>
+</div></div>
+<a name="line_.5Bname.5D" id="line_.5Bname.5D"></a><h3> <span class="mw-headline"> line <i>[name]</i> </span></h3>
+<p>This class modifier is valid for both code lines and template lines.
+</p><p>When used on template lines it takes an optional parameter naming the line template the template line participates in. The template name must not match any template modifier names.
+</p><p>Anonymous line templates (with no template name given) can not have pre-line template text.
+</p><p>Code lines can not be named, they must be anonymous.
+</p><p>Named line template lines append to the template text in the order they appear. The appending of template text happens at template parse time, not at execution time.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>code line</u>,fxgroup.funky &#x3d; line.actor &#x3d;&#x3d; "funky"
+</pre>
+<p>This code line is run once per input line. It enables/disables an effect group named "funky" depending on the Actor field of the input line.
+</p>
+</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template line</u>,{\r\t($start,$end,\bord0)}
+</pre>
+<p>This template line declares an anonymous line template. The effect produced will transform the border of each syllable to zero during the syllable's duration.
+</p>
+</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template line jumper</u>,{\r\t($start,$mid,\frz-0.1)\t($mid,$end,\frz0}
+</pre>
+<p>This template line appends to a line template named "jumper"  or creates it if it doesn't exist. Together with the pre-line template example given below, this will produce a "jumping" effect for the syllables.
+</p>
+</div></div>
+<a name="pre-line_.5Bname.5D" id="pre-line_.5Bname.5D"></a><h3> <span class="mw-headline"> pre-line <i>[name]</i> </span></h3>
+<p>This class modifier is only valid for template lines.
+</p><p>The <code>pre-line</code> modifier takes an optional parameter naming the line template the template line participates in. The template name must not match any template modifier names.
+</p><p>Anonymous line templates with only pre-line text leave the original input line text alone and just prepends the template text to the line.
+</p><p>Named pre-line template lines append to the pre-line template text in the order they appear. The appending of template text happens at template parse time, not at execution time.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template pre-line</u>,{\be1}
+</pre>
+<p>This template line declares an anonymous line template, that will prepend <tt>{\be1}</tt> to all matching lines.
+</p>
+</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template pre-line jumper</u>,{\org(-10000,$y)}
+</pre>
+<p>This template line appends to the pre-line template text of a line template named "jumper", or creates it if it doesn't exist. Together with the line template example given above, this will produce a "jumping" effect for the syllables.
+</p>
+</div></div>
+<a name="syl" id="syl"></a><h3> <span class="mw-headline"> syl </span></h3>
+<p>This class modifier is valid for both code lines and template lines.
+</p><p>Syl templates can not be named.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl</u>,{\pos($x,$y)}
+</pre>
+<p>This template line declares a syl template that simply positions the syllable text.
+</p>
+</div></div>
+<a name="furi" id="furi"></a><h3> <span class="mw-headline"> furi </span></h3>
+<p>This class modifier is valid for both code lines and template lines.
+</p><p>Furi templates can not be named.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template furi</u>,{\pos($x,$y)}
+</pre>
+<p>This template line declares a furi template that simply positions the syllable text. It's not needed to do anything further to get correct furigana formatting.
+</p>
+</div></div>
+<a name="syl_furi" id="syl_furi"></a><h3> <span class="mw-headline"> syl furi </span></h3>
+<p>It's possible to combine the <code>syl</code> and <code>furi</code> class modifiers. This results in two identical templates being generated from the template line, one syl template and one furi template.
+</p><p>This is the only possible combination of class modifiers, they are otherwise exclusive.
+</p>
+<a name="Other_modifiers" id="Other_modifiers"></a><h2> <span class="mw-headline"> Other modifiers </span></h2>
+<a name="all" id="all"></a><h3> <span class="mw-headline"> all </span></h3>
+<p>Apply template to all styles, not just the one of the template line.
+</p><p>Applicable for both code lines and templates, and for all classes.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl all</u>,{\pos($x,$y)}
+</pre>
+<p>This template will be applied to every single syllable in the entire subtitle file, regardless of the style of the line they are on.
+</p>
+</div></div>
+<a name="char" id="char"></a><h3> <span class="mw-headline"> char </span></h3>
+<p>Make the template work per-character instead of per-syllable. This changes application order semantics in a significant way, see <a href="Karaoke_Templater_Reference__Template_execution_rules_and_order.html" title="Karaoke Templater Reference: Template execution rules and order">Template execution and order</a> for details.
+</p><p>While this will work on code lines, it is generally not useful, see the discussion on execution order.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl char</u>,{\pos($x,$y)}
+Comment: 1,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl char</u>,{\pos($x,$y)\bord0}
+</pre>
+<p>Every single character on the line will be positioned separately. For each syllable, each template will apply for all characters in one go, and not be applied interleaved.
+</p><p>For example, if there are two syllables, "ab" and "cd", and the above two templates are applied to them, the result will be 8 lines with the following text, in this order:
+</p>
+<pre>{\pos($x,$y)}a
+{\pos($x,$y)}b
+{\pos($x,$y)\bord0}a
+{\pos($x,$y)\bord0}b
+{\pos($x,$y)}c
+{\pos($x,$y)}d
+{\pos($x,$y)\bord0}c
+{\pos($x,$y)\bord0}d
+</pre>
+</div></div>
+<a name="fx_name" id="fx_name"></a><h3> <span class="mw-headline"> fx <i>name</i> </span></h3>
+<p>Make template only apply to syllables that have the named <a href="Karaoke_inline-fx.html" title="Karaoke inline-fx">inline-fx</a>. Specifying an inline-fx name is required; the name may also overlap with template modifier names though this is not recommended.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl fx drop</u>,{\move($x,$y,$x,!$y+30!,$start,$end)}
+</pre>
+<p>With this template, all syllables that have the inline-fx "drop" will get an additional line produced, where the syllables moves down 30 pixels during its duration.
+</p><p>All other template lines that don't have <i>fx</i> specified will still be applied as usual to those syllables as well.
+</p>
+</div></div>
+<p><br />
+</p>
+<a name="fxgroup_name" id="fxgroup_name"></a><h3> <span class="mw-headline"> fxgroup <i>name</i> </span></h3>
+<p>Declare template to be in the named effect group. Specifying an effect group name is required; the name may also overlap with template modifier names and Lua reserved words, though this is not recommended.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">There is an example of <i>fxgroup</i> on the <a href="Karaoke_Templater_Reference__Code_execution_environment.html#Conditional_templates_with_fxgroup" title="Karaoke Templater Reference: Code execution environment">Code execution environment</a> page.</div></div>
+<a name="keeptags" id="keeptags"></a><h3> <span class="mw-headline"> keeptags </span></h3>
+<p>Specify that the original tags must be kept in the syllable after application.
+</p><p>This has no effect when combined with <code>char</code> or <code>multi</code>.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>template line <u>keeptags</u>: {\r\t($start,!$start+1!,\frx40)\t(!$start+1!,$end,\frx0)}
+karaoke: {\k21}hi{\k10}gu{\k23}ra{\k22}shi {\k38}ga {\k37\1c&amp;H0000FF&amp;}na{\k37}ku
+</pre>
+<p>The syllables "tip" back over a bit during highlight. One of them ("na") is coloured differently by putting an override tag in the timed karaoke line, but the following syllables don't get it because of the customary <code>\r</code> at the start of the template.
+</p><p>The <i>notags</i> modifier ensures that the special colour of the special syllable gets carried over to the output.
+</p>
+</div></div>
+<a name="multi" id="multi"></a><h3> <span class="mw-headline"> multi </span></h3>
+<p>Make the template apply per-highlight in <a href="Furigana_karaoke.html" title="Furigana karaoke">multi-highlight</a> timed karaoke. This changes application order semantics in a significant way, see <a href="Karaoke_Templater_Reference__Template_execution_rules_and_order.html" title="Karaoke Templater Reference: Template execution rules and order">Template execution and order</a> for details.
+</p><p>While this will work on code lines, it is generally not useful, see the discussion on execution order.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>template syl <u>multi</u>: {\an5\pos($scenter,$smiddle)\1a&amp;HFF&amp;\t($start,$end,\bord5\3a&amp;HFF&amp;)}
+karaoke: {\k33}風<u>{\k36}#</u>{\k89}の{\k46}花<u>{\k28}#</u>{\k57}よ
+</pre>
+<p>The timed karaoke line uses basic multi-highlight markup, the <tt>#</tt> syllables, to create multi-highlight syllables. Such, the 風 (ka-ze) and 花 (ha-na) kanji each get stored as a single syllable that gets two highlights each, and the <tt>#</tt> characters aren't displayed at all in the applied effect. (They will still display if you try to play the timed karaoke line without applying any templates.)
+</p><p>The template uses the <i>multi</i> modifier to signal that it wants to use multi-highlights instead of just one highlight/application per displayed syllable. The effect is a kind of simple "exploding border", but it explodes twice on both the 風 and 花 kanji. If the <i>multi</i> modifier wasn't there, it would only explode once on each.
+</p>
+</div></div>
+<a name="noblank" id="noblank"></a><h3> <span class="mw-headline"> noblank </span></h3>
+<p>Specify that the template will not be applied to syllables considered "blank". A syllable is considered blank if its tag-stripped text consists only of a combination of ASCII whitespace characters and ideographic fullwidth space characters, or is completely empty. A syllable is also considered empty if its duration is zero.
+</p>
+<dl><dd><i>See the </i>notext<i> modifier below for an example.</i>
+</dd></dl>
+<a name="notext" id="notext"></a><h3> <span class="mw-headline"> notext </span></h3>
+<p>Specify that the original text will not be appended to the output line.
+</p><p>This is intended for use primarily with templates that output drawing tags and similar.
+</p><p>Not applicable for code lines.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>code once: sword_shape &#x3d; "m 0 0 l 5 -5 l 5 -30 l 10 -30 l 10 -32 l 2 -32 l 2 -40 l -2 -40 l -2 -32 l -10 -32 l -10 -30 l -5 -30 l -5 -5 "
+template syl notext noblank: {\an5\move($scenter,!$smiddle-30!,$scenter,$smiddle,!$start-20!,$start)\p2}!sword_shape!
+</pre>
+<p>The first code line defines a vector drawing shape for convenience, so it doesn't clutter up the actual template lines later on. The drawing is of a small simple sword pointing downwards. The effect itself is these small swords dropping down onto the syllables, by a move.
+</p><p>The template uses the <i>notext</i> modifier to avoid getting the original syllable text shown, because it's being replaced with a vector drawing here. Also the <i>noblank</i> modifier is used to avoid producing anything for "invisible" syllables, eg. we don't want a sword dropping down on a lone timed space, that just looks dumb.
+</p>
+</div></div>
+<a name="repeat_n.2C_loop_n" id="repeat_n.2C_loop_n"></a><h3> <span class="mw-headline"> repeat <i>n</i>, loop <i>n</i> </span></h3>
+<p>Specify that the template will be applied the given number of times. Specifying the number of loops is required. The number of loops must be a constant integer number, it can not be a variable or otherwise calculated dynamically.
+</p><p><code>repeat</code> and <code>loop</code> are synonymous.
+</p><p>Note that the execution order of looped line templates and looped syl/furi templates is different. See <a href="Karaoke_Templater_Reference__Template_execution_rules_and_order.html" title="Karaoke Templater Reference: Template execution rules and order">Template execution and order</a> for details.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>template syl <u>loop 4</u>: {\move($x,$y,!$x+math.random(-30,30)!,!$y+math.random(-30,30)!,$start,$end)\alpha&amp;Hc0&amp;\t($start,$end,\alpha&amp;HFF&amp;)}
+</pre>
+<p>The <i>loop</i> modifier is used to created 4 copies of the syllable for each time this template is run. Each of those move in a random direction, up to 30 pixels away in X and Y direction. They also fade out.
+</p><p>The starting alpha for each copy, <code>&amp;Hc0</code> is chosen as 256 - (256 / 4), 4 being the number of loops made. This way, the opacity for each copy adds up to exactly 256. (Technically it should be 255, but that can't be achieved with an even number of loops.)
+</p>
+</div></div>
+<dl><dd><i>Also see the examples on the <a href="Karaoke_Templater_Reference__Code_execution_environment.html#Looping_templates" title="Karaoke Templater Reference: Code execution environment">Code execution environment</a> page for more advanced usage.</i>
+</dd></dl>
+<div style="border-top: 2px solid #448; border-bottom: 1px solid #448; background: #f0f0ff; margin: 1em; padding: 0.5em;">
+<div style="text-align:center; font-weight:bold; background:#ddf;"><a href="Automation.html" title="Automation">Automation 4</a></div>
+<table style="width:100%; font-size: smaller;">
+<tr><th>Overview:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_Manager.html" title="Automation Manager">Automation Manager</a>&nbsp;&bull; 
+<a href="Running_Automation_macros.html" title="Running Automation macros">Running macros</a>&nbsp;&bull; 
+<a href="Exporting.html" title="Exporting">Using export filters</a>&nbsp;&bull; 
+<a href="Using_the_included_macros.html" title="Using the included macros">Standard macros</a>&nbsp;&bull; 
+<a href="Overview_of_changes_from_Automation_3.html" title="Overview of changes from Automation 3">Changes from Automation 3</a>&nbsp;&bull; 
+<a href="Moving_from_Automation_3.html" title="Moving from Automation 3">Moving from Automation 3</a>
+</p>
+</td></tr>
+<tr><th><a href="Karaoke_Templater.html" title="Karaoke Templater">Karaoke Templater</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Karaoke_Templater_Reference__Declaring_template_and_code_lines.html" title="Karaoke Templater Reference: Declaring template and code lines">Declaring templates</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_execution_rules_and_order.html" title="Karaoke Templater Reference: Template execution rules and order">Execution order</a>&nbsp;&bull; 
+<strong class="selflink">Modifiers</strong>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Inline_variables.html" title="Karaoke Templater Reference: Inline variables">Inline-variables ($-variables)</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_lines_and_blocks.html" title="Karaoke Templater Reference: Code lines and blocks">Code lines and blocks</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_execution_environment.html" title="Karaoke Templater Reference: Code execution environment">Execution envirionment</a>
+</p>
+</td></tr>
+<tr><th><a href="Lua_Reference.html" title="Lua Reference">Lua</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_Lua_Registration.html" title="Automation 4 Lua Registration">Registration</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Subtitle_file_interface.html" title="Automation 4 Lua Subtitle file interface">Subtitles object</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Progress_reporting.html" title="Automation 4 Lua Progress reporting">Progress reporting</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Configuration_dialogues.html" title="Automation 4 Lua Configuration dialogues">Config dialogues</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Miscellaneous_APIs.html" title="Automation 4 Lua Miscellaneous APIs">Misc. APIs</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel.lua</a>&nbsp;&bull; 
+<a href="Automation_4_utils.html" title="Automation 4 utils.lua">utils.lua</a>&nbsp;&bull; 
+<a href="Automation_4_unicode.html" title="Automation 4 unicode.lua">unicode.lua</a>&nbsp;&bull; 
+cleantags.lua
+</p>
+</td></tr>
+<tr><th>Karaskel concepts:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_karaskel.html#Style_table" title="Automation 4 karaskel.lua">Style tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Dialogue_line_table" title="Automation 4 karaskel.lua">Dialogue line tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Karaoke_and_furigana_syllable_tables" title="Automation 4 karaskel.lua">Syllable tables</a>&nbsp;&bull; 
+<a href="Karaoke_inline-fx.html" title="Karaoke inline-fx">Inline effects</a>&nbsp;&bull; 
+<a href="Furigana_karaoke.html" title="Furigana karaoke">Furigana</a>
+</p>
+</td></tr>
+</table>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 196/1000000
+Post-expand include size: 13346/2097152 bytes
+Template argument size: 6565/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:73-0!1!0!!en!2!edit=0 and timestamp 20120830201911 -->
+<div class="printfooter">
+Retrieved from "<a href="Karaoke_Templater_Reference__Template_modifiers.html">http://docs.aegisub.org/manual/Karaoke_Templater_Reference:_Template_modifiers</a>"</div>
+	    	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.073 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Karaoke_Templater_Reference:_Template_modifiers by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:20 GMT -->
+</html>

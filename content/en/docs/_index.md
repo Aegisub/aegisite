@@ -12,6 +12,9 @@ type: simple-page
 <br />
 <a href="3.0" class="btn btn-outline-secondary" role="button">3.0 Manual</a> User manual for 3.0.0 - 3.0.4.
 </p>
-<!-- User manual for 2.1.6 - 2.1.9 releases. -->
+<p>
+<br />
+<a href="manual" class="btn btn-outline-secondary" role="button">2.1 Manual</a> User manual for 2.1.6 - 2.1.9 releases.
+</p>
 
 <br />

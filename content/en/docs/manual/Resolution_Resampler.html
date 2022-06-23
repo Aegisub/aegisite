@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Resolution_Resampler by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:38:07 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Resolution Resampler" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Resolution Resampler - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Resolution_Resampler";
+		var wgTitle = "Resolution Resampler";
+		var wgAction = "view";
+		var wgArticleId = "77";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 222;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Resolution_Resampler">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Resolution Resampler</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>The Resolution Resampler is a built-in tool designed to change the resolution of the script while transforming all affected tags so it ends up looking the same. It can also offset all margins (and absolute positions) by a specific value. Uses include merging two scripts with different resolutions, converting a script for a 4:3 video to its 16:9 equivalent, and converting between 1:1 and anamorphic pixel formats.
+</p>
+<a name="Overview" id="Overview"></a><h2> <span class="mw-headline"> Overview </span></h2>
+<center><a href="File_Dialog_resample.html" class="image" title="Image:Dialog resample.png"><img alt="Image:Dialog resample.png" src="images/Dialog_resample.png" width="264" height="243" border="0" /></a></center>
+<p>There are two static boxes in the dialog, "margin offset" and "resolution". The upper box controls how much you want to increase each margin by. The second box indicates the final resolution to which the script is resized.
+</p><p>It's important to keep in mind that margin offset happens BEFORE the resolution is  changed, so the values are relative to the current script resolution. If you check the "symmetrical" checkbox, then the left and right values will be identical, and the same for top and bottom. Positive values indicate an increase in margin (that is, subtitles farther from the video border), and negative values a decrease.
+</p><p>After the margins were offset, the resolution is then resampled to the final value provided. You can click the "From video" button to copy the actual video resolution to the two fields. The "Change aspect ratio" check box indicates whether the horizontal size of subtitles should be affected to conform to the aspect ratio change. This is useful when converting between anamorphic and 1:1 formats.
+</p>
+<a name="Examples" id="Examples"></a><h2> <span class="mw-headline"> Examples </span></h2>
+<a name="4:3_SD_to_16:9_HD" id="4:3_SD_to_16:9_HD"></a><h3> <span class="mw-headline"> 4:3 SD to 16:9 HD </span></h3>
+<p>For example, if you have subtitles typeset to a 640x480 video, and want to apply the same subtitles to a 1280x720 video (which is widescreen, therefore showing more video on the left and right margins), you would set margin left to 107, while leaving top at 0 and "symmetrical" checked. Then you would set final resolution to 1280x720 (leave "Change aspect ratio" unchecked), and hit OK.
+</p>
+<center><a href="File_Resample_diagram.html" class="image" title="Image:Resample diagram.png"><img alt="Image:Resample diagram.png" src="images/Resample_diagram.png" width="400" height="300" border="0" /></a></center>
+<p>The above 107 value for the left/right margins was obtained with the following formula:
+</p>
+<pre>(OrigH * FinalW/FinalH - OrigW)/2
+</pre>
+<p>Which results in:
+</p>
+<pre>(480 * 1280/720 - 640)/2 = 107
+</pre>
+<!-- 
+NewPP limit report
+Preprocessor node count: 10/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:77-0!1!0!!en!2!edit=0 and timestamp 20120831074351 -->
+<div class="printfooter">
+Retrieved from "<a href="Resolution_Resampler.html">http://docs.aegisub.org/manual/Resolution_Resampler</a>"</div>
+	    	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.054 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Resolution_Resampler by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:38:11 GMT -->
+</html>

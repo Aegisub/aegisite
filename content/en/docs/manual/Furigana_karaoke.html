@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Furigana_karaoke by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:22 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Furigana karaoke,Automation,Automation 4 Lua Configuration dialogues,Automation 4 Lua Miscellaneous APIs,Automation 4 Lua Progress reporting,Automation 4 Lua Registration,Automation 4 Lua Subtitle file interface,Automation 4 karaskel.lua,Automation 4 unicode.lua,Automation 4 utils.lua,Automation Manager" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Furigana karaoke - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Furigana_karaoke";
+		var wgTitle = "Furigana karaoke";
+		var wgAction = "view";
+		var wgArticleId = "189";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 729;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Furigana_karaoke">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Furigana karaoke</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Multi-highlight_syntax"><span class="tocnumber">1</span> <span class="toctext">Multi-highlight syntax</span></a></li>
+<li class="toclevel-1"><a href="#Basic_furigana"><span class="tocnumber">2</span> <span class="toctext">Basic furigana</span></a></li>
+<li class="toclevel-1"><a href="#Controlling_the_layout"><span class="tocnumber">3</span> <span class="toctext">Controlling the layout</span></a></li>
+<li class="toclevel-1"><a href="#Summary"><span class="tocnumber">4</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1"><a href="#Usage_in_Karaoke_Templater"><span class="tocnumber">5</span> <span class="toctext">Usage in Karaoke Templater</span></a></li>
+<li class="toclevel-1"><a href="#Usage_in_Lua_scripts"><span class="tocnumber">6</span> <span class="toctext">Usage in Lua scripts</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<p><br />
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:258px;"><a href="File_Furigana-demo-1.html" class="image" title="Sample of basic furigana karaoke"><img alt="" src="images/Furigana-demo-1.png" width="256" height="72" border="0" class="thumbimage" /></a>  <div class="thumbcaption">Sample of basic furigana karaoke</div></div></div>
+<p><i>Furigana</i> (in Aegisub often shortened to <i>furi</i>) refers to little phonetic guide characters written along the main text in Japanese, specifically using the hiragana phonetic alphabet to describe how the ideographic kanji characters should be pronounced. Putting smaller text next to a main line of text is in general referred to as <a href="http://en.wikipedia.org/wiki/Ruby_character" class="external text" title="http://en.wikipedia.org/wiki/Ruby_character" rel="nofollow"><i>ruby text</i></a>, but since the implementation discussed here is designed specifically with Japanese furigana in mind, the ruby text is also referred to as furigana everywhere.
+</p><p>None of the subtitle formats Aegisub supports, natively support ruby text or furigana, however the <a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">Automation 4 karaskel.lua</a> standard include implements an algorithm that can create basic furigana layouts by calculating the position of every individual character.
+</p><p>This page describes the syntax the Automation 4 karaskel.lua script understands for furigana text, and how to use the layout information it calculates to actually create positioned characters.
+</p><p><a href="Karaoke_Templater.html" title="Karaoke Templater">Karaoke Templater</a> also implements support for furigana using the karaskel.lua algorithm and syntax.
+</p><p>It's important to note that the syntax is designed for karaoke, and revolves around karaoke timed text. It isn't suited for typesetting regular text (eg. dialogue lines) with general purpose ruby text, a more elaborate syntax and more complex layout engine would be required for that.
+</p>
+<a name="Multi-highlight_syntax" id="Multi-highlight_syntax"></a><h2> <span class="mw-headline"> Multi-highlight syntax </span></h2>
+<p>A prerequisite for an integral part of the furigana syntax is the multi-highlight syntax.
+</p><p>If you make the text of a syllable a number sign (#, ASCII 35, Unicode U+0023) that syllable will "join" with the previous one: The number sign is removed and the timing of the two syllables are added together, producing just one syllable. You can have multiple number sign syllables in a row, adding up multiple timings in that way.
+</p><p>The timings of the individual number sign syllables are still stored in the <a href="Automation_4_karaskel.html#Highlight_table" title="Automation 4 karaskel.lua">highlight table</a> of the generated syllable structure, but the main timing (<code>start_time</code> and <code>end_time</code>) of the syllable structure reflects only the added-together timings of the number sign syllables.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">This line shows how multi-highlight syntax is used to mark up kanji and groups of kanji that cover multiple syllables:
+<pre>{\k5}明日<u>{\k10}#{\k5}#</u>{\k10}ま{\k7}た{\k10}会{\k4}う{\k6}時<u>{\k14}#</u>
+</pre>
+<p>It generates the following syllable structures:
+</p>
+<table border="1" cellpadding="3" cellspacing="0" style="border:gray solid 1px; border-collapse:collapse; text-align:left;">
+<tr><th>Text</th><th>Syllable duration</th><th>Highlight durations</th></tr>
+<tr><td rowspan="3">明日</td><td rowspan="3">20</td><td>5</td></tr>
+<tr><td>10</td></tr>
+<tr><td>5</td></tr>
+<tr><td>ま</td><td>10</td><td>10</td></tr>
+<tr><td>た</td><td>7</td><td>7</td></tr>
+<tr><td>会</td><td>10</td><td>10</td></tr>
+<tr><td>う</td><td>4</td><td>4</td></tr>
+<tr><td rowspan="2">時</td><td rowspan="2">20</td><td>6</td></tr>
+<tr><td>14</td></tr>
+</table></div></div>
+<a name="Basic_furigana" id="Basic_furigana"></a><h2> <span class="mw-headline"> Basic furigana </span></h2>
+<p>To add furigana to a syllable, you add a pipe character (|, ASCII 124, Unicode U+007C) after the main syllable text, and then add the furigana text after the pipe. You can also add furigana to repeat-syllables (number sign syllables for multi-highlight) to have the furigana for a single main syllable span multiple furigana syllables.
+</p><p>When multiple consecutive syllables all have furigana, the furigana for all of those syllables are collected together and centered above the string of main syllables they belong to. If the string of furigana is wider than the main text the furigana is left-aligned with the main text. You can control this behaviour with special control characters, see below.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">Adding furigana to the example above:
+<pre>{\k5}明日<u>&#124;あ</u>{\k10}#<u>&#124;し</u>{\k5}#<u>&#124;た</u>{\k10}ま{\k7}た{\k10}会<u>&#124;あ</u>{\k4}う{\k6}時<u>&#124;と</u>{\k14}#<u>&#124;き</u>
+</pre>
+<p>The following syllables, highlights and furigana are produced:
+</p>
+<table border="1" cellpadding="3" cellspacing="0" style="border:gray solid 1px; border-collapse:collapse; text-align:left;">
+<tr><th>Text</th><th>Syllable duration</th><th>Highlight/furigana durations</th><th>Furigana</th></tr>
+<tr><td rowspan="3">明日</td><td rowspan="3">20</td><td>5</td><td>あ</td></tr>
+<tr><td>10</td><td>し</td></tr>
+<tr><td>5</td><td>た</td></tr>
+<tr><td>ま</td><td>10</td><td>10</td></tr>
+<tr><td>た</td><td>7</td><td>7</td></tr>
+<tr><td>会</td><td>10</td><td>10</td><td>あ</td></tr>
+<tr><td>う</td><td>4</td><td>4</td></tr>
+<tr><td rowspan="2">時</td><td rowspan="2">20</td><td>6</td><td>と</td></tr>
+<tr><td>14</td><td>き</td></tr>
+</table></div></div>
+<a name="Controlling_the_layout" id="Controlling_the_layout"></a><h2> <span class="mw-headline"> Controlling the layout </span></h2>
+<p>Often the layout produced with the plain furigana syntax isn't exactly what you want, or maybe even plain misleading. Because of this, there's two special characters that can be used to control how the furigana are laid out.
+</p><p>Both of these two special characters are placed before the first character of the furigana of a syllable, ie. right after the pipe character.
+</p><p>First is the exclamation mark (!, ASCII 33, Unicode U+0021) which marks a "sequence break". This acts as a kind of invisible divider that prevents the furigana in this syllable to merge with that of the previous syllable. You will usually use this when you have two adjacent kanji words that both have furigana, but the furigana for them need to be separate. In that case, put the exclamation mark as the first character in the furigana for the first syllable of the second word.
+</p><p>The other special character is the less-than sign (&lt;, ASCII 60, Unicode U+003C) which marks a "sequence break with float-left". It has the same sequence break semantics as the exclamation mark, but also changes the overflow behaviour. When the furigana sequence starts with a less-than sign marked furigana syllable is wider than the main text it applies to, it will always center above the main text, even if it means it has to extend over the left edge of it.
+</p><p>In all cases, if two furigana sequences extend beyound their main text such that they would overlap, the main text is moved such that the furigana won't overlap.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">Here is the same (rather contrived) sample text shown without layout control and with each of the two layout control characters:
+<table>
+<tr><td>
+<p><a href="File_Furigana-demo-4.html" class="image" title="Image:Furigana-demo-4.png"><img alt="Image:Furigana-demo-4.png" src="images/Furigana-demo-4.png" width="256" height="72" border="0" /></a>
+</p>
+</td><td>
+<p><tt>{\k10}中&#124;ちゅ{\k10}#&#124;う{\k10}国&#124;ご{\k10}#&#124;く<br />{\k10}<u>魂&#124;た</u>{\k10}#&#124;ま{\k10}#&#124;し{\k10}#&#124;い</tt>
+</p>
+</td></tr>
+<tr><td>
+<p><a href="File_Furigana-demo-3.html" class="image" title="Image:Furigana-demo-3.png"><img alt="Image:Furigana-demo-3.png" src="images/Furigana-demo-3.png" width="256" height="72" border="0" /></a>
+</p>
+</td><td>
+<p><tt>{\k10}中&#124;ちゅ{\k10}#&#124;う{\k10}国&#124;ご{\k10}#&#124;く<br />{\k10}<u>魂&#124;!た</u>{\k10}#&#124;ま{\k10}#&#124;し{\k10}#&#124;い</tt>
+</p>
+</td></tr>
+<tr><td>
+<p><a href="File_Furigana-demo-2.html" class="image" title="Image:Furigana-demo-2.png"><img alt="Image:Furigana-demo-2.png" src="images/Furigana-demo-2.png" width="256" height="72" border="0" /></a>
+</p>
+</td><td>
+<p><tt>{\k10}中&#124;ちゅ{\k10}#&#124;う{\k10}国&#124;ご{\k10}#&#124;く<br />{\k10}<u>魂&#124;&lt;た</u>{\k10}#&#124;ま{\k10}#&#124;し{\k10}#&#124;い</tt>
+</p>
+</td></tr>
+</table>
+It <i>is</i> very hard to tell the difference between the two first and the difference is indeed only a few pixels, however it is there. In the first sample, the た extends a bit over the left edge of 魂 and above 国 while it exactly left-aligns with 魂 in the second. In the second, ちゅうごく is also centered above 中国 while it isn't in the first.</div></div>
+<a name="Summary" id="Summary"></a><h2> <span class="mw-headline"> Summary </span></h2>
+<table border="1" cellpadding="3" cellspacing="0" style="border:gray solid 1px; border-collapse:collapse; text-align:center;">
+<tr>
+<th>Char</th>
+<th>ASCII</th>
+<th>Unicode</th>
+<th>Where</th>
+<th>Meaning</th>
+</tr>
+<tr><td>#</td><td>35</td><td>U+0023<br />U+FF03</td><td>Instead of main text</td><td style="text-align:left;">Extend previous syllable with another highlight</td></tr>
+<tr><td>&#124;</td><td>124</td><td>U+007C<br />U+FF5C</td><td>Between main text and furigana</td><td style="text-align:left;">Separate main text and furigana text of a syllable</td></tr>
+<tr><td>!</td><td>33</td><td>U+0021<br />U+FF01</td><td>First character of furigana</td><td style="text-align:left;">Sequence break; prevent joining furigana for this syllable with furigana from previous syllable</td></tr>
+<tr><td>&lt;</td><td>60</td><td>U+003C<br />U+FF1C</td><td>First character of furigana</td><td style="text-align:left;">Sequence break with float-left; prevent joining furigana for this syllable with furigana from previous syllable, but allow furigana to extend left of main text</td></tr>
+</table>
+<p>Note that every special character can in fact be represented by two different Unicode codepoints. The first is the regular character, corresponding to the ASCII character, while the second (high) codepoint is the <i>full width</i> version of the character. Often when using an IME (Input Method Editor) to edit Japanese text it is easier to input text in full width mode than switching the IME off to enter a single or two regular ASCII characters and switch it on again. Therefore both the half width (ASCII) and full width versions of the characters are accepted.
+</p>
+<a name="Usage_in_Karaoke_Templater" id="Usage_in_Karaoke_Templater"></a><h2> <span class="mw-headline"> Usage in Karaoke Templater </span></h2>
+<p>Furigana: <a href="Karaoke_Templater_Reference__Template_modifiers.html#furi" title="Karaoke Templater Reference: Template modifiers">The <i>furi</i> template class</a>
+</p><p>Multi-highlight:  <a href="Karaoke_Templater_Reference__Template_modifiers.html#multi" title="Karaoke Templater Reference: Template modifiers">The <i>multi</i> modifier</a>
+</p>
+<div style="margin-left: 2em; margin-right: 3em; margin-top: 0.5em; padding-left: 1em; padding-right: 4em; background-color: #FDFEE7; border: 1px solid #F9FD96;"><b>Todo:</b> elaborate</div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<p>The examples used earlier on this page are all generated using this kara-templater snippet:
+</p>
+<pre>Comment: 0,0:00:00.00,0:00:00.00,Default,,0000,0000,0000,template syl,{\pos(!line.left+syl.center!,!line.middle!)\an5\k!syl.start_time/10!\k$kdur}
+Comment: 0,0:00:00.00,0:00:00.00,Default,,0000,0000,0000,template furi,{\pos(!line.left+syl.center!,!line.middle-line.height!)\an5\k!syl.start_time/10!\k$kdur}
+Comment: 0,0:00:00.00,0:00:02.00,Default,,0000,0000,0000,karaoke,{\k15}二|ふ{\k15}#|た{\k10}人|り{\k15}だ{\k57}け{\k5}の{\k6}地|ほ{\k5}球|し{\k8}で
+Comment: 0,0:00:02.00,0:00:04.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|&lt;た{\k10}#|ま{\k10}#|し{\k10}#|い
+Comment: 0,0:00:04.00,0:00:06.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|!た{\k10}#|ま{\k10}#|し{\k10}#|い
+Comment: 0,0:00:06.00,0:00:08.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|た{\k10}#|ま{\k10}#|し{\k10}#|い</pre>
+<p>The font used in MS PMincho 30 pt with the furigana being 15 pt.
+</p>
+</div></div>
+<p><br />
+</p>
+<a name="Usage_in_Lua_scripts" id="Usage_in_Lua_scripts"></a><h2> <span class="mw-headline"> Usage in Lua scripts </span></h2>
+<p>It's all in <a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel</a>.
+</p><p>Furigana layout is automatically invoked by <code>karaskel.preproc_line_pos</code> if a furigana style exists for a line main style. The furigana style for a main style is a style with the same name, except <tt>-furigana</tt> appended to the name. Eg. the furigana style of <tt>Default</tt> is <tt>Default-furigana</tt>.
+</p><p>Karaskel can generate automatic furigana styles if the <code>generate_furigana</code> argument (second) to the <code>karaskel.collect_head</code> function is <code>true</code>. Automatic furigana styles are identical to the main style they're based on, except the font size is halved.
+</p><p>Furigana syllables are stored in <code>line.furi</code> and follows the same format as regular syllables. You have to remember setting the style of the lines you generate to the furigana style.
+</p><p>Multi-highlights are always processed even when furigana layout isn't done. Multi-highlight data are stored in <code>syl.highlights</code>.
+</p>
+<div style="margin-left: 2em; margin-right: 3em; margin-top: 0.5em; padding-left: 1em; padding-right: 4em; background-color: #FDFEE7; border: 1px solid #F9FD96;"><b>Todo:</b> more details</div>
+<p><br />
+</p>
+<div style="border-top: 2px solid #448; border-bottom: 1px solid #448; background: #f0f0ff; margin: 1em; padding: 0.5em;">
+<div style="text-align:center; font-weight:bold; background:#ddf;"><a href="Automation.html" title="Automation">Automation 4</a></div>
+<table style="width:100%; font-size: smaller;">
+<tr><th>Overview:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_Manager.html" title="Automation Manager">Automation Manager</a>&nbsp;&bull; 
+<a href="Running_Automation_macros.html" title="Running Automation macros">Running macros</a>&nbsp;&bull; 
+<a href="Exporting.html" title="Exporting">Using export filters</a>&nbsp;&bull; 
+<a href="Using_the_included_macros.html" title="Using the included macros">Standard macros</a>&nbsp;&bull; 
+<a href="Overview_of_changes_from_Automation_3.html" title="Overview of changes from Automation 3">Changes from Automation 3</a>&nbsp;&bull; 
+<a href="Moving_from_Automation_3.html" title="Moving from Automation 3">Moving from Automation 3</a>
+</p>
+</td></tr>
+<tr><th><a href="Karaoke_Templater.html" title="Karaoke Templater">Karaoke Templater</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Karaoke_Templater_Reference__Declaring_template_and_code_lines.html" title="Karaoke Templater Reference: Declaring template and code lines">Declaring templates</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_execution_rules_and_order.html" title="Karaoke Templater Reference: Template execution rules and order">Execution order</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_modifiers.html" title="Karaoke Templater Reference: Template modifiers">Modifiers</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Inline_variables.html" title="Karaoke Templater Reference: Inline variables">Inline-variables ($-variables)</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_lines_and_blocks.html" title="Karaoke Templater Reference: Code lines and blocks">Code lines and blocks</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_execution_environment.html" title="Karaoke Templater Reference: Code execution environment">Execution envirionment</a>
+</p>
+</td></tr>
+<tr><th><a href="Lua_Reference.html" title="Lua Reference">Lua</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_Lua_Registration.html" title="Automation 4 Lua Registration">Registration</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Subtitle_file_interface.html" title="Automation 4 Lua Subtitle file interface">Subtitles object</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Progress_reporting.html" title="Automation 4 Lua Progress reporting">Progress reporting</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Configuration_dialogues.html" title="Automation 4 Lua Configuration dialogues">Config dialogues</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Miscellaneous_APIs.html" title="Automation 4 Lua Miscellaneous APIs">Misc. APIs</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel.lua</a>&nbsp;&bull; 
+<a href="Automation_4_utils.html" title="Automation 4 utils.lua">utils.lua</a>&nbsp;&bull; 
+<a href="Automation_4_unicode.html" title="Automation 4 unicode.lua">unicode.lua</a>&nbsp;&bull; 
+cleantags.lua
+</p>
+</td></tr>
+<tr><th>Karaskel concepts:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_karaskel.html#Style_table" title="Automation 4 karaskel.lua">Style tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Dialogue_line_table" title="Automation 4 karaskel.lua">Dialogue line tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Karaoke_and_furigana_syllable_tables" title="Automation 4 karaskel.lua">Syllable tables</a>&nbsp;&bull; 
+<a href="Karaoke_inline-fx.html" title="Karaoke inline-fx">Inline effects</a>&nbsp;&bull; 
+<strong class="selflink">Furigana</strong>
+</p>
+</td></tr>
+</table>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 110/1000000
+Post-expand include size: 7334/2097152 bytes
+Template argument size: 3181/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:189-0!1!0!!en!2!edit=0 and timestamp 20120831062527 -->
+<div class="printfooter">
+Retrieved from "<a href="Furigana_karaoke.html">http://docs.aegisub.org/manual/Furigana_karaoke</a>"</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks">Category:&#32;<span dir='ltr'><a href="Category_Pages_with_Todo_items.html" title="Category:Pages with Todo items">Pages with Todo items</a></span></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.061 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Furigana_karaoke by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:30 GMT -->
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Lua_Reference by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:38:40 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Lua Reference,Automation,Automation 4 Lua Configuration dialogues,Automation 4 Lua Miscellaneous APIs,Automation 4 Lua Progress reporting,Automation 4 Lua Registration,Automation 4 Lua Subtitle file interface,Automation 4 karaskel.lua,Automation 4 unicode.lua,Automation 4 utils.lua,Automation Manager" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Lua Reference - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Lua_Reference";
+		var wgTitle = "Lua Reference";
+		var wgAction = "view";
+		var wgArticleId = "37";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 718;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Lua_Reference">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Lua Reference</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>The Automation 4 Lua scripting engine is based on the version 5.1 series of <a href="http://www.lua.org/" class="external text" title="http://www.lua.org" rel="nofollow">the Lua scripting language</a>.
+</p><p>This manual will not deal with the Lua language itself nor the standard libraries shipping with Lua, but only the additional functions and data structures provided by the Aegisub Automation 4 Lua interface. Please see <a href="http://www.lua.org/manual/5.1/" class="external text" title="http://www.lua.org/manual/5.1/" rel="nofollow">the Lua 5.1 manual</a> for details on the language itself and its standard libraries.
+</p>
+<a name="General_overview_of_the_organisation_of_Automation_4_Lua" id="General_overview_of_the_organisation_of_Automation_4_Lua"></a><h2> <span class="mw-headline"> General overview of the organisation of Automation 4 Lua </span></h2>
+<p>The smallest legal Automation 4 Lua script is an empty file, but that won't be able to do anything interesting.
+</p><p>There's a number of global variables a script can set to provide information about itself. This information will be displayed in the <a href="Automation_Manager.html" title="Automation Manager">Automation Manager</a> window: <code>script_name</code>, <code>script_description</code>, <code>script_author</code> and <code>script_version</code>.
+</p><p>Automation 4 Lua implements both of the currently defined "features" of Automation 4: Macro and Export Filter. One script (one file) can define zero, one or many of each of those features. For example, the Karaoke Templater script defines one macro and one export filter.
+</p><p>When an Automation 4 Lua script is loaded, its top-level code is executed once. You can put variable initialisations and such at the top level, but what you usually will do is define some of the script information globals, write some functions that do the script's work and then call the feature registration functions. This is described on the <b><a href="Automation_4_Lua_Registration.html" title="Automation 4 Lua Registration">Registration</a></b> page.
+</p><p>When the user activates a feature from the Aegisub interface (such as by selecting a macro from the Automation menu) the registered script function is run. One of the parameters passed to the function is a <i>subtitles object</i>, the primary interface to the subtitle data the script will manipulate. To some extent, the subtitles object works as an integer-indexed array, but it exposes some special interfaces to add, remove and modify subtitle lines. The subtitles object allows you to access every line in the subtitle file, including headers, style definitions, dialogue lines and comment lines. This is described on the <b><a href="Automation_4_Lua_Subtitle_file_interface.html" title="Automation 4 Lua Subtitle file interface">Subtitle file interface</a></b> page.
+</p><p>Automation 4 Lua also provides a number of helper functions in the core API for getting information on eg. the video frame timestamps and how large a piece of text will be when rendered with a given style.
+</p><p>Most things that can be implemented in clean Lua code, ie. that doesn't depend directly on Aegisub internal data structures, has been implemented outside the core API as include files. While it is possible to write Automation 4 Lua scripts without using the provided standard include files you will find that for anything but the simplest scripts you will need some of the functions provided by the includes. See below for an overview of the standard include files.
+</p>
+<a name="The_Automation_4_Lua_core_API" id="The_Automation_4_Lua_core_API"></a><h2> <span class="mw-headline"> The Automation 4 Lua core API </span></h2>
+<p>Automation 4 Lua provides various APIs that can be grouped in these general categories.
+</p>
+<ul><li> <a href="Automation_4_Lua_Registration.html" title="Automation 4 Lua Registration">Script and feature registration</a> - deals with advertising what features a script provides and a few other script meta data.
+</li><li> <a href="Automation_4_Lua_Subtitle_file_interface.html" title="Automation 4 Lua Subtitle file interface">Subtitle file interface</a> - deals with use of the <i>subtitles</i> object, the principal way of accessing and modifying the subtitle data.
+</li><li> <a href="Automation_4_Lua_Progress_reporting.html" title="Automation 4 Lua Progress reporting">Progress reporting and debug output</a> - providing feedback to the user while a script is running, outputting hints and warnings to the user and printing debug information.
+</li><li> <a href="Automation_4_Lua_Configuration_dialogues.html" title="Automation 4 Lua Configuration dialogues">Displaying dialogue boxes and getting user input</a> - requesting user input during macro execution by dialogue boxes and providing a configuration interface for export filters.
+</li><li> <a href="Automation_4_Lua_Miscellaneous_APIs.html" title="Automation 4 Lua Miscellaneous APIs">Miscellaneous APIs</a> - for eg. getting the rendered size of text and getting video frame rate information.
+</li></ul>
+<a name="Standard_include_files" id="Standard_include_files"></a><h2> <span class="mw-headline"> Standard include files </span></h2>
+<p>A number of standard include files are provided. These aren't part of the core API, but should still be considered almost essential for writing scripts.
+</p>
+<ul><li> <a href="Automation_4_utils.html" title="Automation 4 utils.lua">utils.lua</a> - A large collection of various utility functions, especially for handling colours.
+</li><li> <a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel.lua</a> - The karaoke skeleton is a collection of functions mainly intended to do text layout of timed karaoke for creating advanced karaoke effects, as well as a number of other helper functions.
+</li><li> <a href="Automation_4_unicode.html" title="Automation 4 unicode.lua">unicode.lua</a> - All data passed in and out of Aegisub through the Automation 4 Lua interface are encoded in UTF-8, but Lua doesn't natively provide support for this. A number of helper functions are provided here.
+</li><li> cleantags.lua - A function to clean up ASS tags in a line.
+</li></ul>
+<div style="border-top: 2px solid #448; border-bottom: 1px solid #448; background: #f0f0ff; margin: 1em; padding: 0.5em;">
+<div style="text-align:center; font-weight:bold; background:#ddf;"><a href="Automation.html" title="Automation">Automation 4</a></div>
+<table style="width:100%; font-size: smaller;">
+<tr><th>Overview:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_Manager.html" title="Automation Manager">Automation Manager</a>&nbsp;&bull; 
+<a href="Running_Automation_macros.html" title="Running Automation macros">Running macros</a>&nbsp;&bull; 
+<a href="Exporting.html" title="Exporting">Using export filters</a>&nbsp;&bull; 
+<a href="Using_the_included_macros.html" title="Using the included macros">Standard macros</a>&nbsp;&bull; 
+<a href="Overview_of_changes_from_Automation_3.html" title="Overview of changes from Automation 3">Changes from Automation 3</a>&nbsp;&bull; 
+<a href="Moving_from_Automation_3.html" title="Moving from Automation 3">Moving from Automation 3</a>
+</p>
+</td></tr>
+<tr><th><a href="Karaoke_Templater.html" title="Karaoke Templater">Karaoke Templater</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Karaoke_Templater_Reference__Declaring_template_and_code_lines.html" title="Karaoke Templater Reference: Declaring template and code lines">Declaring templates</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_execution_rules_and_order.html" title="Karaoke Templater Reference: Template execution rules and order">Execution order</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_modifiers.html" title="Karaoke Templater Reference: Template modifiers">Modifiers</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Inline_variables.html" title="Karaoke Templater Reference: Inline variables">Inline-variables ($-variables)</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_lines_and_blocks.html" title="Karaoke Templater Reference: Code lines and blocks">Code lines and blocks</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_execution_environment.html" title="Karaoke Templater Reference: Code execution environment">Execution envirionment</a>
+</p>
+</td></tr>
+<tr><th><strong class="selflink">Lua</strong> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_Lua_Registration.html" title="Automation 4 Lua Registration">Registration</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Subtitle_file_interface.html" title="Automation 4 Lua Subtitle file interface">Subtitles object</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Progress_reporting.html" title="Automation 4 Lua Progress reporting">Progress reporting</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Configuration_dialogues.html" title="Automation 4 Lua Configuration dialogues">Config dialogues</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Miscellaneous_APIs.html" title="Automation 4 Lua Miscellaneous APIs">Misc. APIs</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel.lua</a>&nbsp;&bull; 
+<a href="Automation_4_utils.html" title="Automation 4 utils.lua">utils.lua</a>&nbsp;&bull; 
+<a href="Automation_4_unicode.html" title="Automation 4 unicode.lua">unicode.lua</a>&nbsp;&bull; 
+cleantags.lua
+</p>
+</td></tr>
+<tr><th>Karaskel concepts:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_karaskel.html#Style_table" title="Automation 4 karaskel.lua">Style tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Dialogue_line_table" title="Automation 4 karaskel.lua">Dialogue line tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Karaoke_and_furigana_syllable_tables" title="Automation 4 karaskel.lua">Syllable tables</a>&nbsp;&bull; 
+<a href="Karaoke_inline-fx.html" title="Karaoke inline-fx">Inline effects</a>&nbsp;&bull; 
+<a href="Furigana_karaoke.html" title="Furigana karaoke">Furigana</a>
+</p>
+</td></tr>
+</table>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 42/1000000
+Post-expand include size: 2701/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:37-0!1!0!!en!2!edit=0 and timestamp 20120831053456 -->
+<div class="printfooter">
+Retrieved from "<a href="Lua_Reference.html">http://docs.aegisub.org/manual/Lua_Reference</a>"</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks">Category:&#32;<span dir='ltr'><a href="Category_Lua_Reference.html" title="Category:Lua Reference">Lua Reference</a></span></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.061 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Lua_Reference by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:38:41 GMT -->
+</html>

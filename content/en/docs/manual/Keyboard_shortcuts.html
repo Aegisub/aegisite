@@ -1,0 +1,598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Keyboard_shortcuts by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:42:14 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Options,ASS Tags,Aegisub path specifiers,Automation Manager,Exporting,Timing Post-Processor" />
+		<link rel="canonical" href="Options.html" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Options - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Options";
+		var wgTitle = "Options";
+		var wgAction = "view";
+		var wgArticleId = "74";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 604;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+		<script type="text/javascript">/*<![CDATA[*/
+redirectToFragment("#Hotkeys");
+/*]]>*/</script>		<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Options">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Options</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub">(Redirected from Keyboard shortcuts)</div>
+	    	    	    <!-- start content -->
+	    <p>Aegisub is highly customizable and hence has a large amount of user-changeable options. These are available in the options dialog box, found in the View menu. This page is a reference of all the available options.
+</p><p>Aegisub stores all its configuration in a plain text file called <i>config.dat</i>  which by default is stored in the <a href="Aegisub_path_specifiers.html" title="Aegisub path specifiers">?user</a> directory. If you want to reset Aegisub to its default options without reinstalling the program, you can just delete config.dat and restart Aegisub.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#General"><span class="tocnumber">1</span> <span class="toctext">General</span></a>
+<ul>
+<li class="toclevel-2"><a href="#General_-.3E_File_save.2Fload"><span class="tocnumber">1.1</span> <span class="toctext">General -&gt; File save/load</span></a></li>
+<li class="toclevel-2"><a href="#General_-.3E_Subtitles_edit_box"><span class="tocnumber">1.2</span> <span class="toctext">General -&gt; Subtitles edit box</span></a></li>
+<li class="toclevel-2"><a href="#General_-.3E_Subtitles_grid"><span class="tocnumber">1.3</span> <span class="toctext">General -&gt; Subtitles grid</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Video"><span class="tocnumber">2</span> <span class="toctext">Video</span></a></li>
+<li class="toclevel-1"><a href="#Audio"><span class="tocnumber">3</span> <span class="toctext">Audio</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Audio_-.3E_Display"><span class="tocnumber">3.1</span> <span class="toctext">Audio -&gt; Display</span></a></li>
+<li class="toclevel-2"><a href="#Audio_-.3E_Advanced"><span class="tocnumber">3.2</span> <span class="toctext">Audio -&gt; Advanced</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Automation"><span class="tocnumber">4</span> <span class="toctext">Automation</span></a></li>
+<li class="toclevel-1"><a href="#Hotkeys"><span class="tocnumber">5</span> <span class="toctext">Hotkeys</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="General" id="General"></a><h2> <span class="mw-headline">General</span></h2>
+<center><a href="File_Options_general.html" class="image" title="Image:Options general.png"><img alt="Image:Options general.png" src="images/Options_general.png" width="554" height="494" border="0" /></a></center>
+<ul><li> <b>Show Splash Screen</b>
+</li></ul>
+<dl><dd> If enabled, Aegisub will display its splash screen when starting up.
+</dd></dl>
+<ul><li> <b>Show Tip of the Day</b>
+</li></ul>
+<dl><dd> If enabled, Aegisub will display a (potentially) useful tip of the day after starting up.
+</dd></dl>
+<ul><li> <b>Auto Check for Updates</b>
+</li></ul>
+<dl><dd> If enabled, Aegisub will periodically check whether there is a newer version available, and alert you if there is. Requires a working connection to the internet.
+</dd></dl>
+<ul><li> <b>Save config.dat locally</b>
+</li></ul>
+<dl><dd> Normally, all configuration information for Aegisub is stored in a per-user basis in each system user's home directory. On Windows, this is <tt>%APPDATA%\Aegisub\</tt>, on Mac OS X it means <tt>$HOME/Library/Application Support/Aegisub/</tt> and on other POSIX-like systems (GNU/Linux, *BSD etc.) it's <tt>$HOME/.aegisub/</tt>. This is the default value of <tt><a href="Aegisub_path_specifiers.html" title="Aegisub path specifiers">?user</a></tt>. However, by enabling this option, <tt>?user</tt> will instead refer to the same directory as <tt><a href="Aegisub_path_specifiers.html" title="Aegisub path specifiers">?data</a></tt> (which is <i>not</i> a user-specific location), effectively making all configuration global to the installation of Aegisub.
+</dd></dl>
+<dl><dd><b>Note:</b> This option cannot be safely used if Aegisub is installed in a "usual" program directory on some operating systems unless you are the superuser, because it requires write permission to that directory or a nearby one. For example, normal users won't have write permission to the Program Files directory on Windows Vista, and most Linux distributions have similar restrictions for /usr/share.
+</dd></dl>
+<ul><li> <b>Limits for levels and recent files</b>
+</li></ul>
+<dl><dd> These boxes all control how many files Aegisub will save in the "recently opened" submenus, and also how many undo levels will be saved. Change to your preference, but beware: the more undo levels you use, the more RAM Aegisub will consume. This is particularly noticeable with large scripts. Having lots of recently opened files stored has no real drawback except making config.dat bigger and the submenus harder to navigate, though.
+</dd></dl>
+<a name="General_-.3E_File_save.2Fload" id="General_-.3E_File_save.2Fload"></a><h3> <span class="mw-headline">General -&gt; File save/load</span></h3>
+<center><a href="File_Options_file.html" class="image" title="Image:Options file.png"><img alt="Image:Options file.png" src="images/Options_file.png" width="554" height="494" border="0" /></a></center>
+<ul><li> <b>Auto-backup</b>
+</li></ul>
+<dl><dd> If enabled, Aegisub will save a backup copy of each script you open, immediately on opening it. By default, it is saved to <tt>?user/autoback/</tt>, but this can be changed (see below).
+</dd></dl>
+<ul><li> <b>Auto-save every X seconds</b>
+</li></ul>
+<dl><dd> Decides how often Aegisub should automatically save a copy of the script you are working on. Setting it to 0 disables autosaving. By default, the automatically saved copy is stored in <tt>?user/autosave/</tt> but this can be changed (see below).
+</dd></dl>
+<ul><li> <b>Auto-save path</b>
+</li></ul>
+<dl><dd> Decides where to save autosaved copies of scripts you are working on. By default set to <tt>autosave</tt> in your Aegisub <tt>?user</tt> directory (see the <a href="Aegisub_path_specifiers.html" title="Aegisub path specifiers">Aegisub path specifiers</a> page for details).
+</dd></dl>
+<ul><li> <b>Auto-backup path</b>
+</li></ul>
+<dl><dd> Decides where to save automatic backup copies of scripts. By default set to <tt>autoback</tt> in your Aegisub <tt>?user</tt> directory.
+</dd></dl>
+<ul><li> <b>Crash recovery path</b>
+</li></ul>
+<dl><dd> Decides where Aegisub should save scripts recovered from crashes. By default set to <tt>recovered</tt> in your Aegisub <tt>?user</tt> diectory.
+</dd></dl>
+<ul><li> <b>Auto-load linked files</b>
+</li></ul>
+<dl><dd> Whenever you save a script, Aegisub also stores some information about what video, audio and timecodes files you had open while working on it, inside the script itself. This option decides what Aegisub does with these files that are "linked" to the script when opening it. If set to "ask", Aegisub will ask you if you want to load linked files. If set to "never", Aegisub will never load linked files, and likewise if set to "always", Aegisub will always try to load linked files (and report an error if the file(s) were not found).
+</dd></dl>
+<a name="General_-.3E_Subtitles_edit_box" id="General_-.3E_Subtitles_edit_box"></a><h3> <span class="mw-headline">General -&gt; Subtitles edit box</span></h3>
+<center><a href="File_Options_editbox.html" class="image" title="Image:Options editbox.png"><img alt="Image:Options editbox.png" src="images/Options_editbox.png" width="554" height="494" border="0" /></a></center>
+<ul><li> <b>Enable call tips</b>
+</li></ul>
+<dl><dd> When enabled, Aegisub will detect when you are writing an <a href="ASS_Tags.html" title="ASS Tags">override tag</a> and display a small box with a brief reference of the syntax of the tag in question until you close the tag. This is called a "call tip" and the feature may be familiar to users of various programming IDE's.
+</dd></dl>
+<ul><li> <b>Link committing of times</b>
+</li></ul>
+<dl><dd> When enabled, Aegisub will commit both start and end times when you hit Enter with the mouse cursor in either time edit box. If disabled, they will be committed separately instead.
+</dd></dl>
+<ul><li> <b>Enable syntax highlighting</b>
+</li></ul>
+<dl><dd> Enables or disables syntax highlighting of override tags.
+</dd></dl>
+<ul><li> <b>Overwrite-Insertion in time boxes</b>
+</li></ul>
+<dl><dd> Controls the behavior of all time edit boxes in the program. By default, all time edit boxes in Aegisub behave like as if you had pressed the Insert button, so every digit you type overwrites what is already there, and you cannot erase numbers that are already there, you have to overwrite them. Unticking this box disables this behavior and makes the time edit boxes behave just like normal text edit boxes (almost).
+</dd></dl>
+<ul><li> <b>Path to dictionary files</b>
+</li></ul>
+<dl><dd> Decides where Aegisub will look for dictionary files for its spellchecker and thesaurus. By default it looks in <tt>?data/dictionaries</tt>, but if you have your own dictionaries in the correct format somewhere else, feel free to point Aegisub there instead.
+</dd></dl>
+<ul><li> <b>Syntax highlighter - Normal</b>
+</li><li> <b>Syntax highlighter - Brackets</b>
+</li><li> <b>Syntax highlighter - Slashes and parentheses</b>
+</li><li> <b>Syntax highlighter - Tags</b>
+</li><li> <b>Syntax highlighter - Parameters</b>
+</li><li> <b>Syntax highlighter - Error</b>
+</li><li> <b>Syntax highlighter - Error background</b>
+</li><li> <b>Syntax highlighter - Line break</b>
+</li><li> <b>Syntax highlighter - Karaoke templates</b>
+</li></ul>
+<dl><dd> All of these decide what colors the syntax highlighter should use for various parts of the text in the subtitles edit box. "Normal" is plain normal text.
+</dd></dl>
+<ul><li> <b>Modified background</b>
+</li></ul>
+<dl><dd> Decides what background color a changed but not yet committed box should have. Does not apply to the main subtitles edit box itself.
+</dd></dl>
+<ul><li> <b>Font</b>
+</li></ul>
+<dl><dd> Decides the font and fontsize used for the subtitle edit box and other edit boxes.
+</dd></dl>
+<a name="General_-.3E_Subtitles_grid" id="General_-.3E_Subtitles_grid"></a><h3> <span class="mw-headline">General -&gt; Subtitles grid</span></h3>
+<center><a href="File_Options_grid.html" class="image" title="Image:Options grid.png"><img alt="Image:Options grid.png" src="images/Options_grid.png" width="554" height="494" border="0" /></a></center>
+<ul><li> <b>Allow grid to take focus</b>
+</li></ul>
+<dl><dd> When enabled, the subtitles grid acts as its own area of the program and it can have focus, just like the audio or the video can, and while it does you can use the arrow keys/mouse wheel to scroll around it etc. On the other hand, if you disable this option, the focus will stay where it was before whenever you click in the grid. This means you can't use keyboard shortcuts in the grid anymore, but on the other hand it means you can click in the grid to go to a line without losing the audio focus and so on. Use at your own discretion.
+</dd></dl>
+<ul><li> <b>Highlight subtitles that are currently visible in the video</b>
+</li></ul>
+<dl><dd> When enabled, all subtitle lines that are currently visible in the video frame (or at least <i>should</i> be visible; Aegisub does not account for alpha and such trickery in this case, it only cares about the timing of the line) will be highlighted in the grid with a special background color (see the "Line in frame background" option below).
+</dd></dl>
+<ul><li> <b>Standard foreground</b>
+</li><li> <b>Standard background</b>
+</li></ul>
+<dl><dd> The normal color of lines in the grid. "Foreground" is the text color, and "Background" is obviously the background color.
+</dd></dl>
+<ul><li> <b>Selection foreground</b>
+</li><li> <b>Selection background</b>
+</li></ul>
+<dl><dd> The color of selected lines in the grid.
+</dd></dl>
+<ul><li> <b>Comment background</b>
+</li><li> <b>Selected comment background</b>
+</li></ul>
+<dl><dd> The background color of commented-out lines and selected commented-out lines, respectively.
+</dd></dl>
+<ul><li> <b>Collision foreground</b>
+</li></ul>
+<dl><dd> The text color of lines whose timings overlap.
+</dd></dl>
+<ul><li> <b>Line in frame background</b>
+</li></ul>
+<dl><dd> The background color of lines currently visible in the video frame.
+</dd></dl>
+<ul><li> <b>Header</b>
+</li><li> <b>Left column</b>
+</li><li> <b>Active line border</b>
+</li><li> <b>Lines</b>
+</li></ul>
+<dl><dd> The color of the grid lines and fixed columns/headers.
+</dd></dl>
+<ul><li> <b>Font</b>
+</li></ul>
+<dl><dd> Decides the font and font size of all text in the grid.
+</dd></dl>
+<ul><li> <b>Replace override tags with:</b>
+</li></ul>
+<dl><dd> The character that will be shown instead of override blocks if tag hiding is active.
+</dd></dl>
+<a name="Video" id="Video"></a><h2> <span class="mw-headline">Video</span></h2>
+<center><a href="File_Options_video.html" class="image" title="Image:Options video.png"><img alt="Image:Options video.png" src="images/Options_video.png" width="554" height="494" border="0" /></a></center>
+<ul><li> <b>Match video resolution on open</b>
+</li></ul>
+<dl><dd> Controls what Aegisub will do about script resolution when you open a video. If set to "never", Aegisub will do nothing if the script resolution doesn't match the video resolution. If set to "ask", Aegisub will ask you if you want to change the script resolution to match the video resolution if they don't match. If set to "always", Aegisub will always change the script resolution to match the video resolution automatically. "always" is not recommended since it just changes script resolution without resampling anything, so it will most likely break existing typesetting.
+</dd></dl>
+<ul><li> <b>Default zoom</b>
+</li></ul>
+<dl><dd> The default video zoom level. Useful if you have a very big or very small screen.
+</dd></dl>
+<ul><li> <b>Fast jump step in frames</b>
+</li></ul>
+<dl><dd> Decides how big "jumps" Aegisub will make when you use the fast seek feature (Alt-rightarrow and Alt-leftarrow). Measured in frames.
+</dd></dl>
+<ul><li> <b>Screenshot save path</b>
+</li></ul>
+<dl><dd> Decides where Aegisub should save screenshots. The default is <tt>?video</tt>, which means they are saved to wherever the video is, but you can change it to any path you like. <a href="Aegisub_path_specifiers.html" title="Aegisub path specifiers">Aegisub path specifiers</a> are supported; another option directly available in the dropdown is <tt>?script</tt>, which is wherever the script is.
+</dd></dl>
+<ul><li> <b>Show keyframes in slider</b>
+</li></ul>
+<dl><dd> When enabled, Aegisub will draw keyframe markers on the video seek slider. Note that this is not supported for all video formats and/or video providers.
+</dd></dl>
+<ul><li> <b>Video provider</b>
+</li></ul>
+<dl><dd> Decides what method Aegisub should use to load video. What options you have available here depends on how your copy of Aegisub was compiled and what operating system you are running under. The following alternatives exist:
+</dd><dd> - <i>avisynth</i> (Windows only)
+<dl><dd> Uses <a href="http://www.avisynth.org/" class="external text" title="http://www.avisynth.org" rel="nofollow">Avisynth</a> to load video. Versatile, supports loading almost all common formats as well as .d2v files (indexed DVD VOB's) if the correct plugin is supplied. Note that Aegisub can install its own avisynth.dll instead of using your system installation if so desired. Requires Video for Windows decoders for AVI files for best performance. Uses ffmpegsource() to load anything that isn't AVI (and tries that too for AVI's if no suitable VfW decoder is found).
+</dd></dl>
+</dd><dd> - <i>dshow</i> (Windows only)
+<dl><dd> Uses Microsoft's DirectShow framework to load video. Supports loading anything you can play in, say, Windows Media Player but is slower than Avisynth. May work with really odd formats that are not supported by ffmpegsource() but you do have a DirectShow decoder for.
+</dd></dl>
+</dd><dd> - <i>ffmpeg</i>
+<dl><dd> Uses ffmpeg directly to load video. Supports most common formats. Technically there's nothing that stops you from using this on Windows, but most Windows builds (including the official Aegisub release builds for Windows) don't have it compiled in at all (since Avisynth uses ffmpegsource() anyway).
+</dd></dl>
+</dd></dl>
+<a name="Audio" id="Audio"></a><h2> <span class="mw-headline">Audio</span></h2>
+<center><a href="File_Options_audio.html" class="image" title="Image:Options audio.png"><img alt="Image:Options audio.png" src="images/Options_audio.png" width="554" height="494" border="0" /></a></center>
+<ul><li> <b>Grab times from line upon selection</b>
+</li></ul>
+<dl><dd> This option should really be named "Selecting lines changes audio selection", because that's what it does. When enabled, clicking a line in the grid or going to it using the next/previous line hotkeys will select the corresponding area in the audio waveform. When disabled, the selected area will always stay the same until you change it.
+</dd></dl>
+<ul><li> <b>Lock scroll on cursor</b>
+</li></ul>
+<dl><dd> When enabled, the audio waveform view will automatically scroll to follow the playback cursor if it gets too close to either of the edges.
+</dd></dl>
+<ul><li> <b>Snap to adjacent lines</b>
+</li></ul>
+<dl><dd> When enabled, Aegisub will snap the audio cursor to adjacent line start or end times if it is close enough.
+</dd></dl>
+<ul><li> <b>Default mouse wheel to zoom</b>
+</li></ul>
+<dl><dd> When enabled, the mouse wheel will zoom the audio display horizontally. If disabled, it will scroll the audio display instead.
+</dd></dl>
+<ul><li> <b>Snap to keyframes</b>
+</li></ul>
+<dl><dd> When enabled, the audio cursor will snap to keyframe lines (if you have any loaded, either from a video or from a keyframe file) if it is close enough.
+</dd></dl>
+<ul><li> <b>Auto-focus on mouse over</b>
+</li></ul>
+<dl><dd> If enabled, moving the mouse cursor over the audio waveform will automatically give it focus (as opposed to requiring a click).
+</dd></dl>
+<ul><li> <b>Default timing length</b>
+</li></ul>
+<dl><dd> The default length of a new untimed line, in milliseconds.
+</dd></dl>
+<ul><li> <b>Default lead-in length</b>
+</li><li> <b>Default lead-out length</b>
+</li></ul>
+<dl><dd> The duration added to the start of a line by the "add lead-in" and "add lead-out" functions. Also used in the <a href="Timing_Post-Processor.html" title="Timing Post-Processor">timing postprocessor</a>.
+</dd></dl>
+<ul><li> <b>Show inactive lines</b>
+</li></ul>
+<dl><dd> Controls how lines surrounding the currently selected line are displayed in the audio waveform. "Don't show" will only display the current line, "Show previous" will show the previous line (in the grid, <i>not</i> chronologically) in gray in addition to the current line, and "Show all" will show all lines in gray in addition to the current line.
+</dd></dl>
+<a name="Audio_-.3E_Display" id="Audio_-.3E_Display"></a><h3> <span class="mw-headline">Audio -&gt; Display</span></h3>
+<center><a href="File_Options_audio_display.html" class="image" title="Image:Options audio display.png"><img alt="Image:Options audio display.png" src="images/Options_audio_display.png" width="554" height="494" border="0" /></a></center>
+<ul><li> <b>Draw secondary lines</b>
+</li></ul>
+<dl><dd> If enabled, lines marking seconds will be drawn in the audio waveform.
+</dd></dl>
+<ul><li> <b>Draw timeline</b>
+</li></ul>
+<dl><dd> If enabled, a timeline "ruler" with markers for each quarter second will be displayed below the audio waveform.
+</dd></dl>
+<ul><li> <b>Draw keyframes</b>
+</li></ul>
+<dl><dd> If enabled, lines marking the positions of keyframes in the video will be drawn on the audio waveform.
+</dd></dl>
+<ul><li> <b>Draw selection background</b>
+</li></ul>
+<dl><dd> If enabled, the selection will be drawn in an alternate color; if disabled only the line start and end markers will show where the selection is.
+</dd></dl>
+<ul><li> <b>Draw cursor time</b>
+</li></ul>
+<dl><dd> If enabled, a timestamp showing the time since the start of the file will be drawn near the top of the audio waveform cursor.
+</dd></dl>
+<ul><li> <b>Play cursor</b>
+</li></ul>
+<dl><dd> The color of the playback cursor.
+</dd></dl>
+<ul><li> <b>Background</b>
+</li></ul>
+<dl><dd> The color of the audio waveform background.
+</dd></dl>
+<ul><li> <b>Selection background</b>
+</li></ul>
+<dl><dd> The color of the audio waveform background when it is covered by the selection.
+</dd></dl>
+<ul><li> <b>Selection background - modified</b>
+</li></ul>
+<dl><dd> The color of the audio waveform background when it is covered by the selection and the selection is detected as modified.
+</dd></dl>
+<ul><li> <b>Seconds boundary</b>
+</li></ul>
+<dl><dd> The color of the second marker lines.
+</dd></dl>
+<ul><li> <b>Waveform</b>
+</li><li> <b>Waveform - selection</b>
+</li><li> <b>Waveform - modified</b>
+</li><li> <b>Waveform - inactive</b>
+</li></ul>
+<dl><dd> The color of the waveform itself in various situations (selected, detected as modified, and covered by an inactive line selection respectively).
+</dd></dl>
+<ul><li> <b>Boundary - start</b>
+</li><li> <b>Boundary - end</b>
+</li><li> <b>Boundary - inactive</b>
+</li></ul>
+<dl><dd> The respective colors of the various line boundary markers.
+</dd></dl>
+<ul><li> <b>Syllable text</b>
+</li></ul>
+<dl><dd> The color of a syllable's text in karaoke mode.
+</dd></dl>
+<ul><li> <b>Syllable boundary</b>
+</li></ul>
+<dl><dd> The color of a syllable boundary line in karaoke mode.
+</dd></dl>
+<p>It is not possible to change the color scheme of the spectrum display mode.
+</p>
+<a name="Audio_-.3E_Advanced" id="Audio_-.3E_Advanced"></a><h3> <span class="mw-headline">Audio -&gt; Advanced</span></h3>
+<center><a href="File_Options_audio_advanced.html" class="image" title="Image:Options audio advanced.png"><img alt="Image:Options audio advanced.png" src="images/Options_audio_advanced.png" width="554" height="494" border="0" /></a></center>
+<ul><li> <b>Audio provider</b>
+</li></ul>
+<dl><dd> What method to use for loading audio. Currently there are only two methods, which one is used depends on the platform.
+</dd><dd> - <i>avisynth</i> (Windows only)
+<dl><dd> Uses <a href="http://www.avisynth.org/" class="external text" title="http://www.avisynth.org" rel="nofollow">Avisynth</a> to load audio. All file types will be loaded with DirectShowSource(), except for AVS files which will be opened with Import().
+</dd></dl>
+</dd><dd> - <i>lavc</i>
+<dl><dd> Uses ffmpeg directly to load audio. Supports most common formats. Technically there's nothing that stops you from using this on Windows, but most Windows builds (including the official Aegisub release builds for Windows) don't have it compiled in at all.
+</dd></dl>
+</dd><dd> Regardless of this setting, the internal PCM WAV reader will always be tried first for WAV files.
+</dd></dl>
+<ul><li> <b>Audio player</b>
+</li></ul>
+<dl><dd> What method to use for playing back audio. The options depend on the platform.
+</dd><dd> - <i>dsound</i> (Windows only)
+<dl><dd> Uses Microsoft DirectSound to play back audio. This is the best tested and most stable audio player.
+</dd></dl>
+</dd><dd> - <i>alsa</i> (Linux only)
+<dl><dd> Uses the <a href="http://www.alsa-project.org/" class="external text" title="http://www.alsa-project.org/" rel="nofollow">Advanced Linux Sound Architecture</a> to play back audio. ALSA is the native sound architecture of Linux and is not available on any other systems. <i>It is possible to select the output device to use, but this is not exposed in the Options dialogue yet.</i>
+</dd></dl>
+</dd><dd> - <i>pulse</i> (Linux and other *NIX-like systems)
+<dl><dd> Plays sound back through a <a href="http://pulseaudio.org/" class="external text" title="http://pulseaudio.org/" rel="nofollow">PulseAudio</a> sound server.
+</dd></dl>
+</dd><dd> - <i>portaudio</i>
+<dl><dd> Use the <a href="http://www.portaudio.com/" class="external text" title="http://www.portaudio.com/" rel="nofollow">PortAudio</a> API to play back sound. PortAudio has different playback implementations on different platforms. On most Unices it uses Open Sound System (OSS) for output. PortAudio currently doesn't seem to work on Mac, and it is not included in Windows builds as the DirectSound player is more reliable.
+</dd></dl>
+</dd><dd> - <i>openal</i> (Windows and Mac)
+<dl><dd> Uses the <a href="http://www.openal.com/" class="external text" title="http://www.openal.com/" rel="nofollow">OpenAL</a> API to play back audio. It is the only working audio player on Mac. It is not included in Windows builds due to the extra dependency it creates, and DirectSound is more reliable.
+</dd></dl>
+</dd></dl>
+<ul><li> <b>CacheType</b>
+</li></ul>
+<dl><dd> Use RAM unless you have very little of it, then use Hard Disk. The cache is not needed and not used when PCM WAV files are opened. If you disable caching, audio playback might become very unreliable.
+</dd></dl>
+<ul><li> <b>Avisynth down-mixer</b> (Windows only)
+</li></ul>
+<dl><dd> Aegisub can only use mono (single-channel) audio. This option determines which Avisynth function to use to convert audio to mono. This option is only available in the Windows version of Aegisub.
+</dd></dl>
+<ul><li> <b>HD cache path</b>
+</li><li> <b>HD cache name</b>
+</li></ul>
+<dl><dd> These options determine where the hard disk audio cache will be located. Only used if cache is set to hard disk. You shouldn't need to change this unless you're low on disk space. For the name, the string expects a printf-style "%i" parameter, that will be replaced with a number. "%02i" is used by default, don't change that unless you know what you are doing.
+</dd></dl>
+<ul><li> <b>Spectrum cutoff</b>
+</li></ul>
+<dl><dd> The index of the smallest frequency band the audio display will show in spectrum mode. There's usually no need to change this.
+</dd></dl>
+<ul><li> <b>Spectrum quality</b>
+</li></ul>
+<dl><dd> Determines the quality of the audio spectrum display. Higher quality settings result in larger CPU and RAM use. Each consecutive setting uses a bit more CPU than the previous, and double the amount of RAM. For 48 kHz samplerate audio, one minute of audio uses this much memory at the different settings:
+<ul><li> 0 "regular" - 11 MB
+</li><li> 1 "better" - 22 MB
+</li><li> 2 "high" - 44 MB
+</li><li> 3 "insane" - 88 MB
+</li></ul>
+</dd><dd> The amount of memory used does not depend on the number of channels (Aegisub always works in mono) or the bit-depth (the spectrum is always calculated in 32 bit floating point) of the audio.
+</dd></dl>
+<ul><li> <b>Spectrum cache memory max</b>
+</li></ul>
+<dl><dd> The maximum amount of memory to use for audio spectrum caching. The results of the calculations to display the audio spectrum are cached to make scrolling through the audio smoother. The amount of spectrum display that can be cached in an amount of memory depends on the quality setting above. The default cache size of 128 MB results a little less than 6 minutes of audio at 48 kHz in quality 1. If you set this smaller than 5 MB, the default of 128 MB will be used instead. You probably shouldn't set this to more than 1/4 of your amount of physical RAM installed.
+</dd></dl>
+<a name="Automation" id="Automation"></a><h2> <span class="mw-headline">Automation</span></h2>
+<center><a href="File_Options_automation.html" class="image" title="Image:Options automation.png"><img alt="Image:Options automation.png" src="images/Options_automation.png" width="554" height="494" border="0" /></a></center>
+<ul><li> <b>Base path</b>
+</li></ul>
+<dl><dd> Not used by the Lua scripting engine. In the future this might be used by other scripting engines.
+</dd></dl>
+<ul><li> <b>Include path</b>
+</li></ul>
+<dl><dd> List of directories where include files are searched for. Directories are separated with a pipe character, <tt>|</tt>.
+</dd></dl>
+<ul><li> <b>Auto-load path</b>
+</li></ul>
+<dl><dd> List of directories that are searched for scripts on startup, which are then automatically loaded. Directories are separated with a pipe character, <tt>|</tt>.
+</dd></dl>
+<ul><li> <b>Trace level</b>
+</li></ul>
+<dl><dd> When a script sends a message to the debug console it can also specify a trace level. If the trace level of a message is lower than the value given here, the message is not logged. The names given to the levels are only suggestions, they don't have any effect on the execution of the script. (Eg. a "Fatal" level message will not cause the script to terminate.)
+</dd></dl>
+<ul><li> <b>Thread priority</b>
+</li></ul>
+<dl><dd> Priority given to the script execution thread. If you're on a single-core/single-CPU system having this on lower than normal will make other programs more responsive while long-running scripts are active.
+</dd></dl>
+<ul><li> <b>Autoreload on Export</b>
+</li></ul>
+<dl><dd> Automatically reloads the specified sets of scripts when the <a href="Exporting.html" title="Exporting">Exporting</a> dialogue is opened. Note that if a script fails to reload, no errors are displayed, it just won't show up in the Export window then. In that case you will have to enter the <a href="Automation_Manager.html" title="Automation Manager">Automation Manager</a> window and determine the cause of the error.
+</dd></dl>
+<a name="Hotkeys" id="Hotkeys"></a><h2> <span class="mw-headline">Hotkeys</span></h2>
+<center><a href="File_Options_hotkeys.html" class="image" title="Image:Options hotkeys.png"><img alt="Image:Options hotkeys.png" src="images/Options_hotkeys.png" width="554" height="494" border="0" /></a></center>
+<p>This page shows a list of all functions in Aegisub that can be bound to keyboard shortcuts, and what shortcut (if any) they are currently assigned to. Should be self explanatory.
+</p><p>Double click on a hotkey in the list to change it.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 31/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:74-0!1!0!!en!2!edit=0 and timestamp 20120831140506 -->
+<div class="printfooter">
+Retrieved from "<a href="Options.html#Hotkeys">http://docs.aegisub.org/manual/Options#Hotkeys</a>"</div>
+	    	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.060 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Keyboard_shortcuts by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:42:14 GMT -->
+</html>

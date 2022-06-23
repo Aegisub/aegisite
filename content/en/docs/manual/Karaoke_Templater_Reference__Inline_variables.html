@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Karaoke_Templater_Reference:_Inline_variables by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:20 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Karaoke Templater Reference: Inline variables,Automation,Automation 4 Lua Configuration dialogues,Automation 4 Lua Miscellaneous APIs,Automation 4 Lua Progress reporting,Automation 4 Lua Registration,Automation 4 Lua Subtitle file interface,Automation 4 karaskel.lua,Automation 4 unicode.lua,Automation 4 utils.lua,Automation Manager" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Karaoke Templater Reference: Inline variables - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Karaoke_Templater_Reference:_Inline_variables";
+		var wgTitle = "Karaoke Templater Reference: Inline variables";
+		var wgAction = "view";
+		var wgArticleId = "165";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 715;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Karaoke_Templater_Reference_Inline_variables">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Karaoke Templater Reference: Inline variables</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>This page describes the <b>inline variables</b> also known as <b>dollar variables</b> available in Karaoke Templater.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#How_to_use_inline_variables"><span class="tocnumber">1</span> <span class="toctext">How to use inline variables</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Limitations"><span class="tocnumber">1.1</span> <span class="toctext">Limitations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Line_and_syllable_variables"><span class="tocnumber">2</span> <span class="toctext">Line and syllable variables</span></a></li>
+<li class="toclevel-1"><a href="#The_variables"><span class="tocnumber">3</span> <span class="toctext">The variables</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="How_to_use_inline_variables" id="How_to_use_inline_variables"></a><h2> <span class="mw-headline"> How to use inline variables </span></h2>
+<p>All inline variables start with a dollar-sign. They only work in template lines, not in code lines. You can, however, use them in code blocks on template lines.
+</p><p>Here is an example of how a template text using inline variables could look:
+</p>
+<pre>{\pos(<b>$x</b>,<b>$y</b>)\t(<b>$start</b>,<b>$end</b>,\bord0)}
+</pre>
+<p>The highlighted parts are the inline variables in the template.
+</p><p>When a template is applied, the first thing that happens is that all inline variables are found and replaced with their value. Eg. in the above example <code>$x</code> and <code>$y</code> are replaced with the X and Y coordinates of the syllable the template is being applied to, and <code>$start</code> and <code>$end</code> are replaced by the start and end times of the syllable.
+</p><p>Case does not matter for inline variables, <code>$start</code>, <code>$START</code> and <code>$StArT</code> all work and give the same result.
+</p>
+<a name="Limitations" id="Limitations"></a><h3> <span class="mw-headline"> Limitations </span></h3>
+<p>Inline variables are not "intelligent", they do the same no matter where you place them or use them, it doesn't "know" what tag it's being used with. Not every variable can be used with success in all places, and the meaning of some are affected by usage of eg. the <a href="Karaoke_Templater_Reference__Code_execution_environment.html#retime" title="Karaoke Templater Reference: Code execution environment">retime</a> function. In these cases, inline variables may not be appropriate and you need to use code blocks.
+</p><p>Because inline variables have their values determined as the very first thing when a template is applied you can't affect their values in any way.
+</p><p>Using inline variables is an easy way to get started with an effect, but for many advanced effects they might not be the best choice.
+</p><p>All positioning and sizing inline variables (such as <code>$y</code>, <code>$right</code> and <code>$width</code> are rounded to the nearest whole pixel, unlike the values in the internal data structures which you can get in code blocks, they have sub-pixel precision.
+</p>
+<a name="Line_and_syllable_variables" id="Line_and_syllable_variables"></a><h2> <span class="mw-headline"> Line and syllable variables </span></h2>
+<p>The inline variables exist in both "line" and "syllable" variants. The "line" variants contain information about the entire line being processed, the "syllable" variants contain information about the current syllable being processed.
+</p><p>There are also "automatic" variants of most of the variables, there are either the line or the syllable variant depending on what kind of template they are used in. In pre-line templates the automatic inline variables refer to the line variants, and everywhere else they refer to the syllable variants.
+</p>
+<a name="The_variables" id="The_variables"></a><h2> <span class="mw-headline"> The variables </span></h2>
+<p>The line variables that also exist as automatic variants all start with a lowercase L ("ell") letter, the syllable variants start with the letter S.
+</p>
+<table border="1" cellpadding="3" cellspacing="0" style="border:gray solid 1px; border-collapse:collapse; text-align:left;vertical-align:top">
+
+<tr>
+<th colspan="2">Line variants
+</th></tr>
+<tr>
+<td> layer
+</td><td> line layer
+</td></tr>
+<tr>
+<td> lstart, lend, ldur, lmid
+</td><td> line start time, end time, duration and midway, all absolute times in milliseconds
+</td></tr>
+<tr>
+<td> style
+</td><td> name of the line style
+</td></tr>
+<tr>
+<td> actor
+</td><td> name of the line actor
+</td></tr>
+<tr>
+<td> margin_l, margin_r
+</td><td> effective left and right margin (line if nonzero, otherwise style)
+</td></tr>
+<tr>
+<td> margin_v, margin_t, margin_b
+</td><td> effective vertical, top and bottom margin, vertical and top is same
+</td></tr>
+<tr>
+<td> syln
+</td><td> number of syllables on line
+</td></tr>
+<tr>
+<td> li
+</td><td> line index (first physical line in file is 1)
+</td></tr>
+<tr>
+<td> lleft, lcenter, lright
+</td><td> line left, horizontal center and right edges, taking margins and alignment into account, rounded to an integer value
+</td></tr>
+<tr>
+<td> ltop, lmiddle, lbottom
+</td><td> line top, vertical middle and bottom edges, taking margins and alignment into account, rounded
+</td></tr>
+<tr>
+<td> lx, ly
+</td><td> line x and y position suitable for a \pos command when alignment is not overridden
+</td></tr>
+<tr>
+<td> lwidth, lheight
+</td><td> line width and height in pixels, this is rounded and might not match exactly with the positioning variables
+</td></tr>
+<tr>
+<th colspan="2">Syllable variants
+</th></tr>
+<tr>
+<td> sstart, send, smid
+</td><td> syllable start, end and midway times relative to start of line, suitable for putting into \t and \move
+</td></tr>
+<tr>
+<td> sdur, skdur
+</td><td> syllable duration in milliseconds and centiseconds
+</td></tr>
+<tr>
+<td> si
+</td><td> syllable index from start of line
+</td></tr>
+<tr>
+<td> sleft, scenter, sright
+</td><td> absolute left, horizontal center and right edges for syllable from left edge of screen, suitable directly for \pos and \move
+</td></tr>
+<tr>
+<td> sbottom, smiddle, stop
+</td><td> absolute bottom, vertical middle and top edges for syllable from top edge of screen, suitable directly for \pos and \move, adjusted for furigana positioning if needed
+</td></tr>
+<tr>
+<td> sx, sy
+</td><td> syllable absolute x and y position in default alignment, suitable for using directly in \pos and \move
+</td></tr>
+<tr>
+<td> swidth, sheight
+</td><td> syllable width and height in pixelsthis is rounded and might not match exactly with the positioning variables
+</td></tr>
+<tr>
+<th colspan="2">Automatic variants
+</th></tr>
+<tr>
+<td> start, end, mid
+</td><td> start and and midway time for line/syllable; absolute for lines and relative for syllables
+</td></tr>
+<tr>
+<td> dur, kdur
+</td><td> duration in milliseconds and centiseconds of line/syllable
+</td></tr>
+<tr>
+<td> i
+</td><td> line or syllable index
+</td></tr>
+<tr>
+<td> left, center, right
+</td><td> left, center and right edges of line/syllable, absolute from left screen edge
+</td></tr>
+<tr>
+<td> top, middle, bottom
+</td><td> top middle and bottom edges of line/syllable, absolute from top screen edge
+</td></tr>
+<tr>
+<td> x, y
+</td><td> x and y position of line/syllable when using default alignment
+</td></tr>
+<tr>
+<td> width, height
+</td><td> width and height of line/syllable in pixels, this is rounded and might not match exactly with the positioning variables
+</td></tr></table>
+<div style="border-top: 2px solid #448; border-bottom: 1px solid #448; background: #f0f0ff; margin: 1em; padding: 0.5em;">
+<div style="text-align:center; font-weight:bold; background:#ddf;"><a href="Automation.html" title="Automation">Automation 4</a></div>
+<table style="width:100%; font-size: smaller;">
+<tr><th>Overview:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_Manager.html" title="Automation Manager">Automation Manager</a>&nbsp;&bull; 
+<a href="Running_Automation_macros.html" title="Running Automation macros">Running macros</a>&nbsp;&bull; 
+<a href="Exporting.html" title="Exporting">Using export filters</a>&nbsp;&bull; 
+<a href="Using_the_included_macros.html" title="Using the included macros">Standard macros</a>&nbsp;&bull; 
+<a href="Overview_of_changes_from_Automation_3.html" title="Overview of changes from Automation 3">Changes from Automation 3</a>&nbsp;&bull; 
+<a href="Moving_from_Automation_3.html" title="Moving from Automation 3">Moving from Automation 3</a>
+</p>
+</td></tr>
+<tr><th><a href="Karaoke_Templater.html" title="Karaoke Templater">Karaoke Templater</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Karaoke_Templater_Reference__Declaring_template_and_code_lines.html" title="Karaoke Templater Reference: Declaring template and code lines">Declaring templates</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_execution_rules_and_order.html" title="Karaoke Templater Reference: Template execution rules and order">Execution order</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_modifiers.html" title="Karaoke Templater Reference: Template modifiers">Modifiers</a>&nbsp;&bull; 
+<strong class="selflink">Inline-variables ($-variables)</strong>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_lines_and_blocks.html" title="Karaoke Templater Reference: Code lines and blocks">Code lines and blocks</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_execution_environment.html" title="Karaoke Templater Reference: Code execution environment">Execution envirionment</a>
+</p>
+</td></tr>
+<tr><th><a href="Lua_Reference.html" title="Lua Reference">Lua</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_Lua_Registration.html" title="Automation 4 Lua Registration">Registration</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Subtitle_file_interface.html" title="Automation 4 Lua Subtitle file interface">Subtitles object</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Progress_reporting.html" title="Automation 4 Lua Progress reporting">Progress reporting</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Configuration_dialogues.html" title="Automation 4 Lua Configuration dialogues">Config dialogues</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Miscellaneous_APIs.html" title="Automation 4 Lua Miscellaneous APIs">Misc. APIs</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel.lua</a>&nbsp;&bull; 
+<a href="Automation_4_utils.html" title="Automation 4 utils.lua">utils.lua</a>&nbsp;&bull; 
+<a href="Automation_4_unicode.html" title="Automation 4 unicode.lua">unicode.lua</a>&nbsp;&bull; 
+cleantags.lua
+</p>
+</td></tr>
+<tr><th>Karaskel concepts:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_karaskel.html#Style_table" title="Automation 4 karaskel.lua">Style tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Dialogue_line_table" title="Automation 4 karaskel.lua">Dialogue line tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Karaoke_and_furigana_syllable_tables" title="Automation 4 karaskel.lua">Syllable tables</a>&nbsp;&bull; 
+<a href="Karaoke_inline-fx.html" title="Karaoke inline-fx">Inline effects</a>&nbsp;&bull; 
+<a href="Furigana_karaoke.html" title="Furigana karaoke">Furigana</a>
+</p>
+</td></tr>
+</table>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 45/1000000
+Post-expand include size: 2701/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:165-0!1!0!!en!2!edit=0 and timestamp 20120831143831 -->
+<div class="printfooter">
+Retrieved from "<a href="Karaoke_Templater_Reference__Inline_variables.html">http://docs.aegisub.org/manual/Karaoke_Templater_Reference:_Inline_variables</a>"</div>
+	    	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.054 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Karaoke_Templater_Reference:_Inline_variables by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:20 GMT -->
+</html>

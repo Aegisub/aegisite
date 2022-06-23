@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Visual_Typesetting by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:37:15 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Visual Typesetting,Options,Tutorials" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Visual Typesetting - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Visual_Typesetting";
+		var wgTitle = "Visual Typesetting";
+		var wgAction = "view";
+		var wgArticleId = "79";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 603;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Visual_Typesetting">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Visual Typesetting</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>One of the most significant changes from Aegisub 1.10 to Aegisub 2 is the inclusion of Visual Typesetting tools, which allow you to visually drag, rotate and otherwise transform subtitles on the video screen, using your mouse.
+</p><p><b>A video tutorial for this feature is available at <a href="Tutorials.html" title="Tutorials">the tutorials section</a>.</b>
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1"><a href="#Tool_Descriptions"><span class="tocnumber">2</span> <span class="toctext">Tool Descriptions</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Crosshair"><span class="tocnumber">2.1</span> <span class="toctext">Crosshair</span></a></li>
+<li class="toclevel-2"><a href="#Drag"><span class="tocnumber">2.2</span> <span class="toctext">Drag</span></a></li>
+<li class="toclevel-2"><a href="#Rotate_on_Z_axis"><span class="tocnumber">2.3</span> <span class="toctext">Rotate on Z axis</span></a></li>
+<li class="toclevel-2"><a href="#Rotate_on_XY_axes"><span class="tocnumber">2.4</span> <span class="toctext">Rotate on XY axes</span></a></li>
+<li class="toclevel-2"><a href="#Scale"><span class="tocnumber">2.5</span> <span class="toctext">Scale</span></a></li>
+<li class="toclevel-2"><a href="#Rectangular_clip"><span class="tocnumber">2.6</span> <span class="toctext">Rectangular clip</span></a></li>
+<li class="toclevel-2"><a href="#Vectorial_clip"><span class="tocnumber">2.7</span> <span class="toctext">Vectorial clip</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Overview" id="Overview"></a><h2> <span class="mw-headline"> Overview </span></h2>
+<p>With the exception of the drag tool, every other tool affects only the active line (that is, the line whose text you see on the edit box). The line must be displayed on the current frame (that is, the current frame time must lie between the subtitle duration span) to be edited by any of the tools.
+</p><p>There are currently seven different visual typesetting tools: crosshair, drag, rotate on z axis, rotate on xy axes, scale, rectangular clip and vectorial clip.
+</p>
+<center><a href="File_Visual_overview.html" class="image" title="Image:Visual overview.png"><img alt="Image:Visual overview.png" src="images/Visual_overview.png" width="349" height="327" border="0" /></a></center>
+<p>The preview of all tools can either be real-time or delayed. This behaviour can be toggled by pressing the "Toggle Real-time" button at the end of visual typesetting toolbar. When in real-time, all changes you made are immediately visible on subtitles, at the cost of slower response. Otherwise, you will only see the subtitles themselves updating when you release the mouse. However, you will still see the visual positioning aids moving in real time.
+</p>
+<a name="Tool_Descriptions" id="Tool_Descriptions"></a><h2> <span class="mw-headline"> Tool Descriptions </span></h2>
+<a name="Crosshair" id="Crosshair"></a><h3> <span class="mw-headline"> Crosshair </span></h3>
+<p>This is the standard mode. Hovering the mouse over the video will show the script coordinates under the cursor, as well as a crosshair indicating the exact point that you are looking at. Double clicking a point will position the current line (using the \pos tag) on that position.
+</p>
+<center><a href="File_Visual_crosshair.html" class="image" title="Image:Visual crosshair.png"><img alt="Image:Visual crosshair.png" src="images/Visual_crosshair.png" width="348" height="248" border="0" /></a></center>
+<p>Also, while on this mode, you can right click to bring a context menu with other options:
+</p>
+<center><a href="File_Visual_menu.html" class="image" title="Image:Visual menu.png"><img alt="Image:Visual menu.png" src="images/Visual_menu.png" width="347" height="246" border="0" /></a></center>
+<ul><li> Save PNG snapshot: Saves a PNG snapshot of the current frame to the path specified in the <a href="Options.html" title="Options">options</a>. This snapshot will be in the real video size, and WON'T be affected by zooming or aspect ratio overriding.
+</li><li> Copy image to clipboard: Same as above, but copies the frame to the clipboard, instead of saving as a PNG. You can then paste it in any image editing software.
+</li><li> Save PNG snapshot (no subtitles): Same as the previous option, but subtitles won't be visible in the image. This is only available if you're using a detached subtitles provider.
+</li><li> Copy image to clipboard (no subtitles): Same as above, but copying to clipboard.
+</li><li> Copy coordinates to clipboard: Copies the current mouse coordinates to clipboard, e.g. "230,152"
+</li></ul>
+<a name="Drag" id="Drag"></a><h3> <span class="mw-headline"> Drag </span></h3>
+<p>The drag tool has two modes. You can toggle between them by clicking the button on the auxiliary visual typesetting bar. This tool is special because, unlike every other, it can affect EVERY subtitle that is currently visible on the current frame, and not just the active one. This makes the positioning of signs composed of many lines easier.
+</p>
+<center><a href="File_Visual_drag.html" class="image" title="Image:Visual drag.png"><img alt="Image:Visual drag.png" src="images/Visual_drag.png" width="349" height="273" border="0" /></a></center>
+<p>On the positioning mode, you can simply click-and-drag subtitles across the video surface by dragging their anchor (the square). They will be positioned where you release them with the \pos command.
+</p><p>On the movement mode, there is another anchor, the end-of-movement anchor, which is represented by a circle. There will be an arrow pointing from the start-of-movement to the end-of-movement anchor. In order to set the times where the movement will start or end, move the corresponding anchor on the time where you want the subtitle to be at that anchor. For example, if you want movement to start at 5000 miliseconds after the start of the line, seek the video to 5000 miliseconds after the start of the line, and drag the start anchor there. The same goes for the end-of-movement anchor.
+</p><p>If your line has an origin point specified, you will see a third anchor, represented by a triangle, connected to the square anchor by a dotted line. You can also drag this to affect the origin position. This same anchor will be visible in the two rotation tools.
+</p>
+<a name="Rotate_on_Z_axis" id="Rotate_on_Z_axis"></a><h3> <span class="mw-headline"> Rotate on Z axis </span></h3>
+<p>On this mode, you will see a circle centered around the subtitle's pivot (either it's position, or the origin point, if defined). The circle is surrounded by 6 arcs that help mark and measure angles.
+</p>
+<center><a href="File_Visual_rotate_1.html" class="image" title="Image:Visual rotate 1.png"><img alt="Image:Visual rotate 1.png" src="images/Visual_rotate_1.png" width="349" height="246" border="0" /></a></center>
+<p>There are two functionalities in this mode, you can either drag the origin point (the triangle at the center of the circle) to move it (and insert a \org tag, if none exists), or you can click and drag anywhere else to rotate the line.
+</p><p>You will notice that there is a line connecting the center of the circle to the mouse cursor. When you click and drag, the subtitle line rotate following that line, that is, you must rotate the cursor around the center to rotate the line. Just release the mouse to finish positioning. You can also use the shift key to limit the rotation to increments of 30 degrees.
+</p><p>If the origin is far from the center, you will see a little helper line indicating where the center of the subtitles will be positioned as you rotate it.
+</p>
+<center><a href="File_Visual_rotate_2.html" class="image" title="Image:Visual rotate 2.png"><img alt="Image:Visual rotate 2.png" src="images/Visual_rotate_2.png" width="349" height="246" border="0" /></a></center>
+<a name="Rotate_on_XY_axes" id="Rotate_on_XY_axes"></a><h3> <span class="mw-headline"> Rotate on XY axes </span></h3>
+<p>This mode is somewhat similar to the previous mode, although there are a few important differences. Since this rotates on the two screen axes, the rotation is three-dimensional, and therefore harder to visualize.
+</p><p>In order to make this easier, there is a grid representing the plane in which the subtitles lie, and you rotate that grid. There are also three arrows pointing from the center, indicating the direction and orientation of the three axes.
+</p>
+<center><a href="File_Visual_rotate_xy.html" class="image" title="Image:Visual rotate xy.png"><img alt="Image:Visual rotate xy.png" src="images/Visual_rotate_xy.png" width="348" height="247" border="0" /></a></center>
+<p>To use this tool, simply hold the mouse button anywhere on the screen and move it. As you move it left and right, it will rotate the line on the Y axis, and as you move it up and down, it will rotate the line on the X axis.
+</p><p>If you hold down the ctrl key while rotating, the rotation will be limited to only one of the two axes - whichever has the greatest movement. If you hold down the shift key, rotation will happen in steps of 30 degrees.
+</p><p>As with the Z rotation tool, you can also drag the origin anchor here.
+</p>
+<a name="Scale" id="Scale"></a><h3> <span class="mw-headline"> Scale </span></h3>
+<p>This is the simplest tool, and allows you to scale subtitles on the X and Y axes. It will show one bar for each axis, showing not only the 100% size, but also the current scale.
+</p>
+<center><a href="File_Visual_scale.html" class="image" title="Image:Visual scale.png"><img alt="Image:Visual scale.png" src="images/Visual_scale.png" width="349" height="246" border="0" /></a></center>
+<p>To use this tool, simply hold down the mouse button and drag the mouse up and down (to scale on the Y axis) or left and right (to scale on the X axis). You can hold down the ctrl key to limit scaling to the axis where the biggest change happened, and shift to limit it to increments of 25%.
+</p>
+<a name="Rectangular_clip" id="Rectangular_clip"></a><h3> <span class="mw-headline"> Rectangular clip </span></h3>
+<p>The rectangular clip tool allows you to clip the subtitles so that nothing OUTSIDE an axis-aligned rectangle can be displayed (in essence, the \clip(x1,y1,x2,y2) tag).
+</p>
+<center><a href="File_Visual_clip.html" class="image" title="Image:Visual clip.png"><img alt="Image:Visual clip.png" src="images/Visual_clip.png" width="347" height="245" border="0" /></a></center>
+<p>There are two ways to use this tool. You can either click and grab one of the four vertices of the rectangle, to resize an already-existing clip, or you can click-and-drag in empty space to create a new rectangle from scratch. The areas that will be invisible will be darkened.
+</p>
+<a name="Vectorial_clip" id="Vectorial_clip"></a><h3> <span class="mw-headline"> Vectorial clip </span></h3>
+<p>Similarly to the last tool, the vectorial clip tool allows you to draw an area, so that nothing outside it will be rendered. The difference, however, is that this area can have any arbitrary shape defined by a path of lines and bézier curves.
+</p>
+<center><a href="File_Visual_vector_clip.html" class="image" title="Image:Visual vector clip.png"><img alt="Image:Visual vector clip.png" src="images/Visual_vector_clip.png" width="349" height="270" border="0" /></a></center>
+<p>This mode has 8 sub-tools:
+</p>
+<center><a href="File_Visual_vector_toolbar.html" class="image" title="Image:Visual vector toolbar.png"><img alt="Image:Visual vector toolbar.png" src="images/Visual_vector_toolbar.png" width="206" height="40" border="0" /></a></center>
+<ol><li>Drag - Allows you to drag a control point
+</li><li>Insert line - Allows you to insert a straight line from the last point to the current mouse position by clicking the point.
+</li><li>Insert bézier bicubic curve - The same as above, but it instead inserts a bicubic curve. You can then use the two control points to adjust the shape of the curve.
+</li><li>Convert between line and curve - Click on a line segment or bicubic curve to convert it to the other type.
+</li><li>Split curve - Click on a line segment or bicubic curve to split it in two, at the marked point.
+</li><li>Remove point - Click on a point to delete it.
+</li><li>Freehand shape - Click and drag with the mouse over the video and move the mouse to draw a freehand shape composed of line segments. This shape will automatically be closed, with the last point connecting to the first.
+</li><li>Freehand smooth shape - Same as above, but the shape will be smoothed with bicubic curves.
+</li></ol>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 28/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:79-0!1!0!!en!2!edit=0 and timestamp 20120831072443 -->
+<div class="printfooter">
+Retrieved from "<a href="Visual_Typesetting.html">http://docs.aegisub.org/manual/Visual_Typesetting</a>"</div>
+	    	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.055 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Visual_Typesetting by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:37:40 GMT -->
+</html>

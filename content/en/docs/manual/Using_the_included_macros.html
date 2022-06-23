@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Using_the_included_macros by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:09 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Using the included macros,Automation,Automation 4 Lua Configuration dialogues,Automation 4 Lua Miscellaneous APIs,Automation 4 Lua Progress reporting,Automation 4 Lua Registration,Automation 4 Lua Subtitle file interface,Automation 4 karaskel.lua,Automation 4 unicode.lua,Automation 4 utils.lua,Automation Manager" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Using the included macros - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Using_the_included_macros";
+		var wgTitle = "Using the included macros";
+		var wgAction = "view";
+		var wgArticleId = "39";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 708;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Using_the_included_macros">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Using the included macros</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>Aegisub includes several macros. Here's a line-up of them.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Apply_karaoke_template"><span class="tocnumber">1</span> <span class="toctext">Apply karaoke template</span></a></li>
+<li class="toclevel-1"><a href="#Make_full-width"><span class="tocnumber">2</span> <span class="toctext">Make full-width</span></a></li>
+<li class="toclevel-1"><a href="#Automatic_karaoke_lead-in"><span class="tocnumber">3</span> <span class="toctext">Automatic karaoke lead-in</span></a></li>
+<li class="toclevel-1"><a href="#Clean_tags"><span class="tocnumber">4</span> <span class="toctext">Clean tags</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Apply_karaoke_template" id="Apply_karaoke_template"></a><h2> <span class="mw-headline"> Apply karaoke template </span></h2>
+<p>This is the macro incantation of Karaoke Templater. See the page on <a href="Karaoke_Templater.html" title="Karaoke Templater">Karaoke Templater</a> for how to use this.
+</p><p>This macro is only available when there is at least one template line in the subtitle file.
+</p>
+<a name="Make_full-width" id="Make_full-width"></a><h2> <span class="mw-headline"> Make full-width </span></h2>
+<p>Converts all ASCII characters to Japanese "full-width" variations of them.
+</p><p>This can be useful if you need to typeset a sign translation vertically, such that the letters are "stacked".
+</p><p>This macro modifies all lines that are currently selected in the subtitles grid.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<p>Here's a typeset sign:
+</p>
+<pre>{\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&amp;H25485A&amp;\c&amp;HDEEBF1&amp;\pos(456,184)\frz-90}Sign text
+</pre>
+<p>Notice that it uses an "@-font", a variation that exists of every CJK font that has "fullwidth" characters rotated 90 degrees from the baseline. Fullwidth characters include not just these fullwidth variations of the Latin alphabet but also Japanese kana and kanji, hanzi, hanja and various punctuation characters.
+</p><p>Now after running this macro on the line:
+</p>
+<pre>{\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&amp;H25485A&amp;\c&amp;HDEEBF1&amp;\pos(456,184)\frz-90}Ｓｉｇｎ ｔｅｘｔ
+</pre>
+<p>This is what it looks before and after running the macro:
+</p><p><a href="File_StackedSign1.html" class="image" title="Image:StackedSign1.png"><img alt="Image:StackedSign1.png" src="images/StackedSign1.png" width="100" height="200" border="0" /></a> <a href="File_StackedSign2.html" class="image" title="Image:StackedSign2.png"><img alt="Image:StackedSign2.png" src="images/StackedSign2.png" width="100" height="250" border="0" /></a>
+</p>
+</div></div>
+<p><br />
+</p>
+<a name="Automatic_karaoke_lead-in" id="Automatic_karaoke_lead-in"></a><h2> <span class="mw-headline"> Automatic karaoke lead-in </span></h2>
+<p>Automatically join several karaoke-timed lines up timing-wise and add appropriate <code>\k</code> tags in front of them.
+</p><p>This macro is designed to help creating karaoke effects, most importantly creating transitions and lead-ins for lines. It's well suited for using when the karaoke is timed but before applying effects, such as karaoke templates.
+</p><p>This macro requires at least two lines to be selected and it only works sensibly if the start-time of each selected line is larger than the start-time of the selected line that comes before it. It changes the timing of the selected lines and adds <code>\k</code> tags at the start of them except the first.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<p>Here's two lines of "tightly" timed karaoke:
+</p>
+<pre>Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
+Dialogue: 0,0:00:46.57,0:00:48.56,Default,,0000,0000,0000,,{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+</pre>
+<p>Both lines start exactly when the first word starts being sung, and they end exactly when the last word ends.
+</p><p>Now if the <i>Automatic karaoke lead-in</i> macro is run on these two lines, they are changed into this:
+</p>
+<pre>Dialogue: 0,0:00:44.46,<u>0:00:46.28</u>,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
+Dialogue: 0,<u>0:00:46.28</u>,0:00:48.56,Default,,0000,0000,0000,,<u>{\k29}</u>{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+</pre>
+<p>The start-time of the second line is changed so it matches the end-time of the first line, and a <code>\k</code> tag  is added to the start of the line, to make up for the shift otherwise created by this. This effectively creates an empty syllable that can be used as a "spacer" to create fade-in and fade-out effects.
+</p><p>The macro also shows this message:
+</p>
+<pre>Smallest inter-line duration: 290 milliseconds
+</pre>
+<p>This simply says that the smallest duration between two lines it found, was 290 milliseconds, or 0.29 seconds, so that's as much time you have to make fade-in, fade-out and other transition effects, if you want every syllable-highlight to be fully visible.
+</p>
+</div></div>
+<p><br />
+</p>
+<a name="Clean_tags" id="Clean_tags"></a><h2> <span class="mw-headline"> Clean tags </span></h2>
+<p>This macro does various cleaning up on the override tags in all selected lines.
+</p>
+<ul><li> Combines adjacent override blocks (i.e { ... }) except if both of the block contains \k tags each then they will be left as is
+</li><li> Push any \k tags in override blocks to the front (e.g. from {\frz90\k40} to {\k40\frz90}). Special care will be taken for multiple \k tags within one block to preserve the ordering
+</li><li> Move line-wide tags (i.e. tags whose effects affect the whole line -- \a \an \org \pos \move \fade \fad) to the beginning of the lines
+</li><li> Remove all but first line-wide tags of the same class (note: \pos and \move are from the same class -- only first of them works in a line, therefore the script will find the first \move or \pos and retain whic of the two comes first and remove others. The same are done for \fad and \fade)
+</li><li> Remove spaces in comma-separated parameters (e.g. \pos(200 , 200) becomes \pos(200,200))
+</li></ul>
+<p>This macro is also available as an export filter.
+</p><p>The main intended function of this macro is to make <a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel.lua</a> split karaoke lines more sensibly into syllable structures, see the example.
+</p><p>This macro modifies all selected lines in the grid, re-writing all tag blocks in them.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<p>Original line:
+</p>
+<pre>{\r\frz90\k80}Test {\r\fry180\k60}me
+</pre>
+<p>Karaskel creates these syllable structures:
+</p>
+<ul><li> 0 &#x3d; {\r\frz90}
+</li><li> 1 &#x3d; Test {\r\fry180}
+</li><li> 2 &#x3d; me
+</li></ul>
+<p>After running <i>Clean Tags</i> on the line:
+</p>
+<pre>{\k80\r\frz90}Test {\k60\r\fry180}me
+</pre>
+<p>Now karaskel creates these syllable structures:
+</p>
+<ul><li> 0 &#x3d; 
+</li><li> 1 &#x3d; {\r\frz90}Test
+</li><li> 2 &#x3d; {\r\fry180}me
+</li></ul>
+<p>The cleaned up version is generally what you'd want since it places the override tags inside the syllables they affect.
+</p>
+</div></div>
+<p><br />
+</p>
+<div style="border-top: 2px solid #448; border-bottom: 1px solid #448; background: #f0f0ff; margin: 1em; padding: 0.5em;">
+<div style="text-align:center; font-weight:bold; background:#ddf;"><a href="Automation.html" title="Automation">Automation 4</a></div>
+<table style="width:100%; font-size: smaller;">
+<tr><th>Overview:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_Manager.html" title="Automation Manager">Automation Manager</a>&nbsp;&bull; 
+<a href="Running_Automation_macros.html" title="Running Automation macros">Running macros</a>&nbsp;&bull; 
+<a href="Exporting.html" title="Exporting">Using export filters</a>&nbsp;&bull; 
+<strong class="selflink">Standard macros</strong>&nbsp;&bull; 
+<a href="Overview_of_changes_from_Automation_3.html" title="Overview of changes from Automation 3">Changes from Automation 3</a>&nbsp;&bull; 
+<a href="Moving_from_Automation_3.html" title="Moving from Automation 3">Moving from Automation 3</a>
+</p>
+</td></tr>
+<tr><th><a href="Karaoke_Templater.html" title="Karaoke Templater">Karaoke Templater</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Karaoke_Templater_Reference__Declaring_template_and_code_lines.html" title="Karaoke Templater Reference: Declaring template and code lines">Declaring templates</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_execution_rules_and_order.html" title="Karaoke Templater Reference: Template execution rules and order">Execution order</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_modifiers.html" title="Karaoke Templater Reference: Template modifiers">Modifiers</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Inline_variables.html" title="Karaoke Templater Reference: Inline variables">Inline-variables ($-variables)</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_lines_and_blocks.html" title="Karaoke Templater Reference: Code lines and blocks">Code lines and blocks</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_execution_environment.html" title="Karaoke Templater Reference: Code execution environment">Execution envirionment</a>
+</p>
+</td></tr>
+<tr><th><a href="Lua_Reference.html" title="Lua Reference">Lua</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_Lua_Registration.html" title="Automation 4 Lua Registration">Registration</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Subtitle_file_interface.html" title="Automation 4 Lua Subtitle file interface">Subtitles object</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Progress_reporting.html" title="Automation 4 Lua Progress reporting">Progress reporting</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Configuration_dialogues.html" title="Automation 4 Lua Configuration dialogues">Config dialogues</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Miscellaneous_APIs.html" title="Automation 4 Lua Miscellaneous APIs">Misc. APIs</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel.lua</a>&nbsp;&bull; 
+<a href="Automation_4_utils.html" title="Automation 4 utils.lua">utils.lua</a>&nbsp;&bull; 
+<a href="Automation_4_unicode.html" title="Automation 4 unicode.lua">unicode.lua</a>&nbsp;&bull; 
+cleantags.lua
+</p>
+</td></tr>
+<tr><th>Karaskel concepts:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_karaskel.html#Style_table" title="Automation 4 karaskel.lua">Style tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Dialogue_line_table" title="Automation 4 karaskel.lua">Dialogue line tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Karaoke_and_furigana_syllable_tables" title="Automation 4 karaskel.lua">Syllable tables</a>&nbsp;&bull; 
+<a href="Karaoke_inline-fx.html" title="Karaoke inline-fx">Inline effects</a>&nbsp;&bull; 
+<a href="Furigana_karaoke.html" title="Furigana karaoke">Furigana</a>
+</p>
+</td></tr>
+</table>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 66/1000000
+Post-expand include size: 6110/2097152 bytes
+Template argument size: 2644/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:39-0!1!0!!en!2!edit=0 and timestamp 20120831185041 -->
+<div class="printfooter">
+Retrieved from "<a href="Using_the_included_macros.html">http://docs.aegisub.org/manual/Using_the_included_macros</a>"</div>
+	    	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.181 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Using_the_included_macros by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:12 GMT -->
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Automation_4_Lua_Miscellaneous_APIs by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:22 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Automation 4 Lua Miscellaneous APIs,Automation,Automation 4 Lua Configuration dialogues,Automation 4 Lua Progress reporting,Automation 4 Lua Registration,Automation 4 Lua Subtitle file interface,Automation 4 karaskel.lua,Automation 4 unicode.lua,Automation 4 utils.lua,Automation Manager,Exporting" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Automation 4 Lua Miscellaneous APIs - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Automation_4_Lua_Miscellaneous_APIs";
+		var wgTitle = "Automation 4 Lua Miscellaneous APIs";
+		var wgAction = "view";
+		var wgArticleId = "69";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 723;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Automation_4_Lua_Miscellaneous_APIs">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Automation 4 Lua Miscellaneous APIs</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>This page documents <b>miscellaneous API's useful for working with subtitles</b>, these can't be clearly placed into any of the other main categories and there's too few of each kind to warrant a separate category.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#aegisub.text_extents"><span class="tocnumber">1</span> <span class="toctext">aegisub.text_extents</span></a></li>
+<li class="toclevel-1"><a href="#Getting_information_on_the_video"><span class="tocnumber">2</span> <span class="toctext">Getting information on the video</span></a>
+<ul>
+<li class="toclevel-2"><a href="#aegisub.frame_from_ms"><span class="tocnumber">2.1</span> <span class="toctext">aegisub.frame_from_ms</span></a></li>
+<li class="toclevel-2"><a href="#aegisub.ms_from_frame"><span class="tocnumber">2.2</span> <span class="toctext">aegisub.ms_from_frame</span></a></li>
+<li class="toclevel-2"><a href="#aegisub.video_size"><span class="tocnumber">2.3</span> <span class="toctext">aegisub.video_size</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="aegisub.text_extents" id="aegisub.text_extents"></a><h2> <span class="mw-headline"> aegisub.text_extents </span></h2>
+<p>Synopsis: <code>width, height, descent, ext_lead = aegisub.text_extents(style, text)</code>
+</p><p>Obtain system font metrics and determine the rendered size in pixels of the given <b>text</b> when using the <b>style</b>.
+</p>
+<ul><li> <b>width</b> (number) - Width in pixels of text. This may be non-integer.
+</li><li> <b>height</b> (number) - Height in pixels of the text. This may be non-integer.
+</li><li> <b>descent</b> (number) - Length of descenders in the font. This may be non-integer.
+</li><li> <b>ext_lead</b> (number) - External leading for the font. This may be non-integer.
+</li><li> <b>style</b> (table) - A <a href="Automation_4_Lua_Subtitle_file_interface.html#Style_table" title="Automation 4 Lua Subtitle file interface">style table</a> as defined by the subtitle interface. The font name, size, weight, style, spacing and encoding is used to determine the size of the text.
+</li><li> <b>text</b> (string) - The text the extents should be determined for. This should not contain linebreaks (<tt>\n</tt> or <tt>\r\n</tt>) nor should it contain formatting codes of any kind. Formatting codes are not attempted interpreted and will be taken as verbatim text.
+</li></ul>
+<p>You should only feed plain text strings without line breaks into this function, it cannot handle any kind of formatting codes or text layout. Rather, it is intended as a helper to create text layouts by determining rendered sizes of bits and pieces of a longer text, which can then be layouted by the script.
+</p>
+<a name="Getting_information_on_the_video" id="Getting_information_on_the_video"></a><h2> <span class="mw-headline"> Getting information on the video </span></h2>
+<p>Automation 4 Lua offers two functions designed to be able to work with frame-based timing without having to consider whether the video source is VFR or CFR.
+</p><p>The primary purpose of these functions is to be able to generate per-frame effects, ie. get the timestamps of a number of sequential frames and calculate coordinates, sizes etc. for an object for each of those frames.
+</p><p>One thing to remember when using these functions is that, considering a one-dimensional time line, a time stamp is a point on the time line, while a video frame spans a range of the time line, from its beginning time to its ending time. The ending time of a frame is the beginning time of the next. The beginning time of a frame is included in the range while the ending time is excluded from the range.
+</p>
+<a name="aegisub.frame_from_ms" id="aegisub.frame_from_ms"></a><h3> <span class="mw-headline"> aegisub.frame_from_ms </span></h3>
+<p>Synopsis: <code>frame = aegisub.frame_from_ms(ms)</code>
+</p><p>Use loaded frame rate data to convert an absolute time given in <b>milliseconds</b> into a <b>frame</b> number.
+</p>
+<ul><li> <b>frame</b> (number) - Frame number corresponding to the time in ms.
+</li><li> <b>ms</b> (number) - Absolute time from the beginning of the video, for which to determine the frame number.
+</li></ul>
+<p>If the time is in the middle of the frame it is "rounded down" to the frame number that contains the given time.
+</p>
+<a name="aegisub.ms_from_frame" id="aegisub.ms_from_frame"></a><h3> <span class="mw-headline"> aegisub.ms_from_frame </span></h3>
+<p>Synopsis: <code>ms = aegisub.ms_from_frame(frame)</code>
+</p><p>Use loaded frame rate data to convert a <b>frame</b> number of the video into an absolute time in <b>milliseconds</b>.
+</p>
+<ul><li> <b>ms</b> (number) - First integer millisecond time stamp to lie within the frame.
+</li><li> <b>frame</b> (number) - Frame to obtain the beginning time of.
+</li></ul>
+<p>Because beginning times of frames can have better precision than one millisecond this function rounds up and returns the first whole millisecond that is guaranteed to be within the frame.
+</p>
+<a name="aegisub.video_size" id="aegisub.video_size"></a><h3> <span class="mw-headline"> aegisub.video_size </span></h3>
+<p>Synopsis: <code>xres, yres, ar, artype = aegisub.video_size()</code>
+</p><p>Get information about the resolution and aspect-ratio of the loaded video, if any.
+</p><p>Returns <code>nil</code> if there is no video loaded.
+</p>
+<ul><li> <b>xres</b> and <b>yres</b> (numbers) - Coded width and height of the video in pixels.
+</li><li> <b>ar</b> (number) - Custom display aspect ratio override.
+</li><li> <b>artype</b> (number) - See below.
+</li></ul>
+<p>There are 5 values that <i>artype</i> can take:
+</p>
+<ul><li> If <i>artype</i> is 0, the video has square pixels, ie. PAR is 1.00 or DAR is <i>xres</i>/<i>yres</i>.
+</li><li> If <i>artype</i> is 1, the video is 4:3, ie. DAR is 1.33.
+</li><li> If <i>artype</i> is 2, the video is 16:9, ie. DAR is 1.78
+</li><li> If <i>artype</i> is 3, the video is 2.35 format, ie. DAR is 2.35.
+</li><li> If <i>artype</i> is 4, the DAR is whatever the <i>ar</i> return value contains.
+</li></ul>
+<p>You cannot count on <i>ar</i> always having the correct value when <i>artype</i> is different from 4.
+</p>
+<div style="border-top: 2px solid #448; border-bottom: 1px solid #448; background: #f0f0ff; margin: 1em; padding: 0.5em;">
+<div style="text-align:center; font-weight:bold; background:#ddf;"><a href="Automation.html" title="Automation">Automation 4</a></div>
+<table style="width:100%; font-size: smaller;">
+<tr><th>Overview:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_Manager.html" title="Automation Manager">Automation Manager</a>&nbsp;&bull; 
+<a href="Running_Automation_macros.html" title="Running Automation macros">Running macros</a>&nbsp;&bull; 
+<a href="Exporting.html" title="Exporting">Using export filters</a>&nbsp;&bull; 
+<a href="Using_the_included_macros.html" title="Using the included macros">Standard macros</a>&nbsp;&bull; 
+<a href="Overview_of_changes_from_Automation_3.html" title="Overview of changes from Automation 3">Changes from Automation 3</a>&nbsp;&bull; 
+<a href="Moving_from_Automation_3.html" title="Moving from Automation 3">Moving from Automation 3</a>
+</p>
+</td></tr>
+<tr><th><a href="Karaoke_Templater.html" title="Karaoke Templater">Karaoke Templater</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Karaoke_Templater_Reference__Declaring_template_and_code_lines.html" title="Karaoke Templater Reference: Declaring template and code lines">Declaring templates</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_execution_rules_and_order.html" title="Karaoke Templater Reference: Template execution rules and order">Execution order</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_modifiers.html" title="Karaoke Templater Reference: Template modifiers">Modifiers</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Inline_variables.html" title="Karaoke Templater Reference: Inline variables">Inline-variables ($-variables)</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_lines_and_blocks.html" title="Karaoke Templater Reference: Code lines and blocks">Code lines and blocks</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_execution_environment.html" title="Karaoke Templater Reference: Code execution environment">Execution envirionment</a>
+</p>
+</td></tr>
+<tr><th><a href="Lua_Reference.html" title="Lua Reference">Lua</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_Lua_Registration.html" title="Automation 4 Lua Registration">Registration</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Subtitle_file_interface.html" title="Automation 4 Lua Subtitle file interface">Subtitles object</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Progress_reporting.html" title="Automation 4 Lua Progress reporting">Progress reporting</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Configuration_dialogues.html" title="Automation 4 Lua Configuration dialogues">Config dialogues</a>&nbsp;&bull; 
+<strong class="selflink">Misc. APIs</strong>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel.lua</a>&nbsp;&bull; 
+<a href="Automation_4_utils.html" title="Automation 4 utils.lua">utils.lua</a>&nbsp;&bull; 
+<a href="Automation_4_unicode.html" title="Automation 4 unicode.lua">unicode.lua</a>&nbsp;&bull; 
+cleantags.lua
+</p>
+</td></tr>
+<tr><th>Karaskel concepts:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_karaskel.html#Style_table" title="Automation 4 karaskel.lua">Style tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Dialogue_line_table" title="Automation 4 karaskel.lua">Dialogue line tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Karaoke_and_furigana_syllable_tables" title="Automation 4 karaskel.lua">Syllable tables</a>&nbsp;&bull; 
+<a href="Karaoke_inline-fx.html" title="Karaoke inline-fx">Inline effects</a>&nbsp;&bull; 
+<a href="Furigana_karaoke.html" title="Furigana karaoke">Furigana</a>
+</p>
+</td></tr>
+</table>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 48/1000000
+Post-expand include size: 2701/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:69-0!1!0!!en!2!edit=0 and timestamp 20120831185048 -->
+<div class="printfooter">
+Retrieved from "<a href="Automation_4_Lua_Miscellaneous_APIs.html">http://docs.aegisub.org/manual/Automation_4_Lua_Miscellaneous_APIs</a>"</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks">Category:&#32;<span dir='ltr'><a href="Category_Lua_Reference.html" title="Category:Lua Reference">Lua Reference</a></span></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.147 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Automation_4_Lua_Miscellaneous_APIs by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:22 GMT -->
+</html>
