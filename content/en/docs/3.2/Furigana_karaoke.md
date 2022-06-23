@@ -4,6 +4,8 @@ menu:
   docs:
     parent: tutorials
 weight: 2730
+aliases:
+  - /docs/latest/Furigana_karaoke/
 ---
 
 ![Furigana-demo-1](/img/3.2/Furigana-demo-1.png)

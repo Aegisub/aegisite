@@ -5,6 +5,8 @@ menu:
     parent: typesetting
     name: Typesetting Introduction
 weight: 4000
+aliases:
+  - /docs/latest/Typesetting/
 ---
 
 Wikipedia's definition of

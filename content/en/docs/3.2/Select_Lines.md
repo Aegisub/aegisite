@@ -4,6 +4,8 @@ menu:
   docs:
     parent: working-with-subtitles
 weight: 3600
+aliases:
+  - /docs/latest/Select_Lines/
 ---
 
 The **select lines** tool is useful for finding and selecting all lines in the

@@ -4,6 +4,8 @@ menu:
   docs:
     parent: typesetting
 weight: 4100
+aliases:
+  - /docs/latest/Video/
 ---
 
 Aegisub isn't a video (or media) player, but it still supports loading and

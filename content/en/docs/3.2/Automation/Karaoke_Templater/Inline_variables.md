@@ -4,6 +4,8 @@ menu:
   docs:
     parent: karaoke-templater
 weight: 6140
+aliases:
+  - /docs/latest/Automation/Karaoke_Templater/Inline_variables/
 ---
 
 This page describes the **inline variables** also known as **dollar variables**

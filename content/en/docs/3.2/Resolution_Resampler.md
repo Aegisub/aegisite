@@ -4,6 +4,8 @@ menu:
   docs:
     parent: typesetting
 weight: 4700
+aliases:
+  - /docs/latest/Resolution_Resampler/
 ---
 
 The Resolution Resampler is a built-in tool designed to change the [resolution of the script]({{< relref "Script_Resolution" >}}) while transforming all affected tags so it

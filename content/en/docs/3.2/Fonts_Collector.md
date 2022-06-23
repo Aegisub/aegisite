@@ -4,6 +4,8 @@ menu:
   docs:
     parent: typesetting
 weight: 4800
+aliases:
+  - /docs/latest/Fonts_Collector/
 ---
 
 The fonts collector is an automated tool that finds all fonts used in the

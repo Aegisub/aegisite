@@ -4,6 +4,8 @@ menu:
   docs:
     parent: lua-reference
 weight: 6240
+aliases:
+  - /docs/latest/Automation/Lua/Dialogs/
 ---
 
 These functions are used to display dialogs for the user to interact with.

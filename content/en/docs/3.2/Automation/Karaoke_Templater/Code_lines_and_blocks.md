@@ -4,6 +4,8 @@ menu:
   docs:
     parent: karaoke-templater
 weight: 6150
+aliases:
+  - /docs/latest/Automation/Karaoke_Templater/Code_lines_and_blocks/
 ---
 
 Code lines and blocks in Karaoke Templater allows you to create advanced

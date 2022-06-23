@@ -4,6 +4,8 @@ menu:
   docs:
     parent: introduction
 weight: 2100
+aliases:
+  - /docs/latest/Overview/
 ---
 
 ![Main-window-overview](/img/3.2/Main-window-overview.png)

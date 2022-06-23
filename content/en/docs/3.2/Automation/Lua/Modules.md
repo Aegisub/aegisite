@@ -5,6 +5,8 @@ menu:
     parent: lua-reference
     identifier: lua-modules
 weight: 6260
+aliases:
+  - /docs/latest/Automation/Lua/Modules/
 ---
 
 A number of Lua modules are included with Aegisub.

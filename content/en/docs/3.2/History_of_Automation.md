@@ -5,7 +5,7 @@ menu:
     parent: automation
 weight: 6600
 aliases:
-  - /docs/3.2/Sidebar/History_of_Automation/
+  - /docs/latest/Sidebar/History_of_Automation/
 ---
 
 The Automation system in Aegisub has evolved from a very basic and hardly useful stand-alone system for creating basic karaoke effects into a very powerful extension mechanism. Here's a short account of its history, from the principal author of the systems.

@@ -1,6 +1,8 @@
 ---
 Type: glossary
 Title: Karaoke Effect
+aliases:
+  - /docs/latest/Glossary/Karaoke_effect/
 ---
 
 **Karaoke** is (amateur) singing along to a song, usually a version of the song with the main vocals removed. When singing karaoke the lyrics to the song are usually presented on a TV screen and highlighted as they are to be sung.

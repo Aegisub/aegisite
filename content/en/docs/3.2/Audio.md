@@ -4,6 +4,8 @@ menu:
   docs:
     parent: timing
 weight: 5000
+aliases:
+  - /docs/latest/Audio/
 ---
 
 Aegisub has a fairly advanced, customizable audio mode with both the

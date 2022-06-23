@@ -4,6 +4,8 @@ menu:
   docs:
     parent: timing
 weight: 5400
+aliases:
+  - /docs/latest/Kanji_Timer/
 ---
 
 The kanji timer makes it easy to copy timed karaoke from one set of already karaoke timed lines to another set of yet untimed lines. Primarily intended for adding karaoke to Japanese songs.

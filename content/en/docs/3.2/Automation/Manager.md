@@ -4,6 +4,8 @@ menu:
   docs:
     parent: automation
 weight: 6300
+aliases:
+  - /docs/latest/Automation/Manager/
 ---
 
 The Automation Manager window is used to view, load and unload

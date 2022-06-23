@@ -4,6 +4,8 @@ menu:
   docs:
     parent: lua-modules
 weight: 6266
+aliases:
+  - /docs/latest/Automation/Lua/Modules/re/
 ---
 
 The `re` module is a wrapper around boost::regex, intended as a full

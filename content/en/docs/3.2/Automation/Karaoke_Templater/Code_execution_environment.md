@@ -4,6 +4,8 @@ menu:
   docs:
     parent: karaoke-templater
 weight: 6160
+aliases:
+  - /docs/latest/Automation/Karaoke_Templater/Code_execution_environment/
 ---
 
 The Lua code in code blocks and on code lines is run in a separate global

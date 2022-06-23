@@ -1,6 +1,8 @@
 ---
 Type: glossary
 Title: Automation script feature
+aliases:
+  - /docs/latest/Glossary/Automation_script_feature/
 ---
 
 In Automation 4 a **feature** is a function a script makes available to Aegisub. Currently two kinds of features are specified: Export filters and macros.

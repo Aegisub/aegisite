@@ -4,6 +4,8 @@ menu:
   docs:
     parent: karaoke-templater
 weight: 6120
+aliases:
+  - /docs/latest/Automation/Karaoke_Templater/Template_execution_rules_and_order/
 ---
 
 This page describes various technical details about how Karaoke Templater

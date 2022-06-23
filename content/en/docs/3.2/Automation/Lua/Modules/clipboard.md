@@ -4,6 +4,8 @@ menu:
   docs:
     parent: lua-modules
 weight: 6265
+aliases:
+  - /docs/latest/Automation/Lua/Modules/clipboard/
 ---
 
 The `clipboard` module supplies functions for reading from and writing to the clipboard.

@@ -4,6 +4,8 @@ menu:
   docs:
     parent: working-with-subtitles
 weight: 3000
+aliases:
+  - /docs/latest/Editing_Subtitles/
 ---
 
 Editing subtitles is what Aegisub is made for. This page will deal with basic

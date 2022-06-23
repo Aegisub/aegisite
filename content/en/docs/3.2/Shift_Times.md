@@ -4,6 +4,8 @@ menu:
   docs:
     parent: timing
 weight: 5200
+aliases:
+  - /docs/latest/Shift_Times/
 ---
 
 The **shift times** tool is a batch processor for timestamps; it adjusts the

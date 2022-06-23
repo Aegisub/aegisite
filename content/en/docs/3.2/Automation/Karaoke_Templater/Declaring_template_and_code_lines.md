@@ -4,6 +4,8 @@ menu:
   docs:
     parent: karaoke-templater
 weight: 6110
+aliases:
+  - /docs/latest/Automation/Karaoke_Templater/Declaring_template_and_code_lines/
 ---
 
 This page describes how a template line or code line is declared.

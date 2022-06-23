@@ -4,6 +4,8 @@ menu:
   docs:
     parent: automation
 weight: 6000
+aliases:
+  - /docs/latest/Automation/
 ---
 
 The name **Automation** covers the entire scripting functionality of Aegisub.

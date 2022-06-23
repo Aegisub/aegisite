@@ -4,6 +4,8 @@ menu:
   docs:
     parent: miscellaneous
 weight: 7500
+aliases:
+  - /docs/latest/Attachment_Manager/
 ---
 
 The attachment manager allows you to attach fonts and/or pictures to your

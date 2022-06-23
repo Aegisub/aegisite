@@ -4,6 +4,8 @@ menu:
   docs:
     parent: working-with-subtitles
 weight: 3300
+aliases:
+  - /docs/latest/Spell_Checker/
 ---
 
 To help you with quality assurance of your subtitle scripts, Aegisub

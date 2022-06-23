@@ -4,6 +4,8 @@ menu:
   docs:
     parent: lua-modules
 weight: 6261
+aliases:
+  - /docs/latest/Automation/Lua/Modules/karaskel.lua/
 ---
 
 The Automation 4 `karaskel.lua` include file contains several functions

@@ -4,6 +4,8 @@ menu:
   docs:
     parent: tutorials
 weight: 2710
+aliases:
+  - /docs/latest/Karaoke_Timing_Tutorial/
 ---
 
 This tutorial will teach you how to load a song into Aegisub, how to enter the words for the song and how to add time-codes to the words to synchronise them with the song.

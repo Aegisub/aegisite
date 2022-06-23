@@ -4,6 +4,8 @@ menu:
   docs:
     parent: miscellaneous
 weight: 7000
+aliases:
+  - /docs/latest/Options/
 ---
 
 Aegisub is highly customizable and hence has a large amount of user-changeable

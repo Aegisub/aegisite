@@ -5,6 +5,8 @@ menu:
     parent: automation
     identifier: karaoke-templater
 weight: 6100
+aliases:
+  - /docs/latest/Automation/Karaoke_Templater/
 ---
 
 **Karaoke Templater** is an [Automation]({{< relref "Automation" >}}) script that ships with Aegisub. Its

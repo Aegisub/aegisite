@@ -5,6 +5,8 @@ menu:
     parent: automation
     identifier: lua-reference
 weight: 6200
+aliases:
+  - /docs/latest/Automation/Lua/
 ---
 
 The Automation 4 Lua scripting engine is based on the version 5.1 series of

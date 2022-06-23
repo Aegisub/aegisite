@@ -4,6 +4,8 @@ menu:
   docs:
     parent: typesetting
 weight: 4300
+aliases:
+  - /docs/latest/Visual_Typesetting/
 ---
 
 {{<todo>}}Screenshots need to be updated {{</todo>}}

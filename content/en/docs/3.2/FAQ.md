@@ -4,6 +4,8 @@ menu:
   docs:
     parent: introduction
 weight: 2600
+aliases:
+  - /docs/latest/FAQ/
 ---
 
 A small collection of Frequently Asked Questions about Aegisub - mostly

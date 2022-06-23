@@ -4,6 +4,8 @@ menu:
   docs:
     parent: working-with-subtitles
 weight: 3500
+aliases:
+  - /docs/latest/Paste_Over/
 ---
 
 The **paste over** tool is a "smart" variant of the good old `Ctrl`+`C` & `Ctrl`+`V`

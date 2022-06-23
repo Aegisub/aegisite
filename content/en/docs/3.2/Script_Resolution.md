@@ -4,6 +4,8 @@ menu:
   docs:
     parent: miscellaneous
 weight: 7400
+aliases:
+  - /docs/latest/Script_Resolution/
 ---
 
 ASS subtitle files are, to some extent, video independant and can be used with video files other than the one they were created with.

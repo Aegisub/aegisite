@@ -4,6 +4,8 @@ menu:
   docs:
     parent: automation-tutorials
 weight: 6171
+aliases:
+  - /docs/latest/Automation/Karaoke_Templater/Tutorial_1/
 ---
 
 Welcome to the first tutorial in using Karaoke Templater to create [karaoke effects]({{< relref "../../Glossary/Karaoke_effect" >}}). We'll start out with something simple and

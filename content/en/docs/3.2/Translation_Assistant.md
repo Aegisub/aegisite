@@ -4,6 +4,8 @@ menu:
   docs:
     parent: working-with-subtitles
 weight: 3400
+aliases:
+  - /docs/latest/Translation_Assistant/
 ---
 
 The translation assistant is a valuable tool for translating subtitles from one language to the other. It allows you to translate in the most efficient possible manner, by letting you type the translated text without having to worry about selecting the original, or forgetting what was written in it. It also parses ASS override tags, and will skip over them.

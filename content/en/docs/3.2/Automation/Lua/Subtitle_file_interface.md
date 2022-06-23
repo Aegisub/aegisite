@@ -4,6 +4,8 @@ menu:
   docs:
     parent: lua-reference
 weight: 6220
+aliases:
+  - /docs/latest/Automation/Lua/Subtitle_file_interface/
 ---
 
 This page describes the **subtitle file interface** use in Automation 4 Lua

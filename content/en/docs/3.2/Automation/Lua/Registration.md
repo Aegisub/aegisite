@@ -4,6 +4,8 @@ menu:
   docs:
     parent: lua-reference
 weight: 6210
+aliases:
+  - /docs/latest/Automation/Lua/Registration/
 ---
 
 **Registration** covers presenting your [Automation 4 Lua]({{< relref "Lua" >}})

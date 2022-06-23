@@ -4,6 +4,8 @@ menu:
   docs:
     parent: timing
 weight: 5300
+aliases:
+  - /docs/latest/Timing_Post-Processor/
 ---
 
 The timing postprocessor is a highly useful tool for automatically correcting

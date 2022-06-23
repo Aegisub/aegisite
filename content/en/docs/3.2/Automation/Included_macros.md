@@ -4,6 +4,8 @@ menu:
   docs:
     parent: automation
 weight: 6500
+aliases:
+  - /docs/latest/Automation/Included_macros/
 ---
 
 Aegisub includes several macros. Here's a line-up of them.

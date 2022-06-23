@@ -4,6 +4,8 @@ menu:
   docs:
     parent: introduction
 weight: 2200
+aliases:
+  - /docs/latest/Highlights/
 ---
 
 Some highlights of Aegisub:

@@ -4,6 +4,8 @@ menu:
   docs:
     parent: typesetting
 weight: 4200
+aliases:
+  - /docs/latest/Styles/
 ---
 
 A **style** in the ASS format is a set of typographic formatting rules that is

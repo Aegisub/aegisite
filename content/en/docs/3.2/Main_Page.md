@@ -4,6 +4,8 @@ menu:
   docs:
     parent: navigation
 weight: 1000
+aliases:
+  - /docs/latest/Main_Page/
 ---
 
 Welcome to the Aegisub manual. See our [about]({{< relref "About" >}}) page for more

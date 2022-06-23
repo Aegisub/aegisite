@@ -4,6 +4,8 @@ menu:
   docs:
     parent: miscellaneous
 weight: 7300
+aliases:
+  - /docs/latest/Properties/
 ---
 
 The **script properties** are some headers and other options that affect the

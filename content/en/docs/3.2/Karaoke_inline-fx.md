@@ -4,6 +4,8 @@ menu:
   docs:
     parent: tutorials
 weight: 2720
+aliases:
+  - /docs/latest/Karaoke_inline-fx/
 ---
 
 Karaoke inline-fx (inline effects) is a way of marking up [timed karaoke]({{< relref "Timing#karaoketiming" >}}) to assign different effects to different

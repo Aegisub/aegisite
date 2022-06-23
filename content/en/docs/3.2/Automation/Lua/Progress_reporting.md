@@ -4,6 +4,8 @@ menu:
   docs:
     parent: lua-reference
 weight: 6230
+aliases:
+  - /docs/latest/Automation/Lua/Progress_reporting/
 ---
 
 There functions are used to report various status and progress back to the GUI

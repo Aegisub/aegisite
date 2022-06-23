@@ -4,6 +4,8 @@ menu:
   docs:
     parent: lua-reference
 weight: 6250
+aliases:
+  - /docs/latest/Automation/Lua/Miscellaneous_APIs/
 ---
 
 This page documents **miscellaneous APIs useful for working with

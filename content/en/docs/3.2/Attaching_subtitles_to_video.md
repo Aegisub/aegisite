@@ -4,6 +4,8 @@ menu:
   docs:
     parent: working-with-subtitles
 weight: 3200
+aliases:
+  - /docs/latest/Attaching_subtitles_to_video/
 ---
 
 In digital encoding, there are two main ways of including subtitles in a video:

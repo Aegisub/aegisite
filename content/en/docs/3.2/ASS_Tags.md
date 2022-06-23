@@ -4,6 +4,8 @@ menu:
   docs:
     parent: typesetting
 weight: 4400
+aliases:
+  - /docs/latest/ASS_Tags/
 ---
 
 The following is a list of every tag supported by the Advanced Substation

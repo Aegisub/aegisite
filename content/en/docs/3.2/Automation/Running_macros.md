@@ -4,6 +4,8 @@ menu:
   docs:
     parent: automation
 weight: 6400
+aliases:
+  - /docs/latest/Automation/Running_macros/
 ---
 
 [Automation]({{< relref "Automation" >}}) [macros]({{< relref "../Glossary/Macro" >}}) appear as options in the Automation

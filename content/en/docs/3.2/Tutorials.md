@@ -5,6 +5,8 @@ menu:
     parent: introduction
     identifier: tutorials
 weight: 2700
+aliases:
+  - /docs/latest/Tutorials/
 ---
 
 The following tutorials are available for Aegisub:

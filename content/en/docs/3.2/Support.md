@@ -4,6 +4,8 @@ menu:
   docs:
     parent: introduction
 weight: 2500
+aliases:
+  - /docs/latest/Support/
 ---
 
 Do you want to support Aegisub? Well, it's easy!

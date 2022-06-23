@@ -5,6 +5,8 @@ menu:
     parent: introduction
     name: What is Aegisub?
 weight: 2000
+aliases:
+  - /docs/latest/About/
 ---
 
 Aegisub was originally created as a tool to make typesetting,

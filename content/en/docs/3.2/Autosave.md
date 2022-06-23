@@ -4,6 +4,8 @@ menu:
   docs:
     parent: miscellaneous
 weight: 7100
+aliases:
+  - /docs/latest/Autosave/
 ---
 
 By default Aegisub automatically saves a backup copy of every subtitle file you

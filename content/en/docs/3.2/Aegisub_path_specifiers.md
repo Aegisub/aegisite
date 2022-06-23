@@ -4,6 +4,8 @@ menu:
   docs:
     parent: miscellaneous
 weight: 7200
+aliases:
+  - /docs/latest/Aegisub_path_specifiers/
 ---
 
 Aegisub uses a simple system for denoting file locations. Most pathnames in

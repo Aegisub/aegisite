@@ -4,6 +4,8 @@ menu:
   docs:
     parent: timing
 weight: 5100
+aliases:
+  - /docs/latest/Timing/
 ---
 
 ## The main audio view

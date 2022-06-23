@@ -4,6 +4,8 @@ menu:
   docs:
     parent: karaoke-templater
 weight: 6130
+aliases:
+  - /docs/latest/Automation/Karaoke_Templater/Template_modifiers/
 ---
 
 Template lines and code lines can take a number of modifiers.
