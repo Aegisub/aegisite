@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Options/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:01 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>选项 - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../Automation/index.html">概述</a>
+</li>
+<li>
+<a href="../Automation/Karaoke_Templater/index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../Automation/Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li class='active'>
+<a href="index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>选项</h1>
+<ol id="markdown-toc">
+  <li><a id="markdown-toc-section" href="#section">通用</a>    <ol>
+      <li><a id="markdown-toc-section-1" href="#section-1">默认样式</a></li>
+    </ol>
+  </li>
+  <li><a id="markdown-toc-section-2" href="#section-2">音频</a>    <ol>
+      <li><a id="markdown-toc-section-3" href="#section-3">显示/视觉选项</a></li>
+      <li><a id="markdown-toc-section-4" href="#section-4">音频标签</a></li>
+    </ol>
+  </li>
+  <li><a id="markdown-toc-section-5" href="#section-5">视频</a>    <ol>
+      <li><a id="markdown-toc-section-6" href="#section-6">脚本分辨率</a></li>
+    </ol>
+  </li>
+  <li><a id="markdown-toc-section-7" href="#section-7">界面</a>    <ol>
+      <li><a id="markdown-toc-section-8" href="#section-8">颜色</a></li>
+      <li><a id="markdown-toc-section-10" href="#section-10">音频配色方案</a></li>
+    </ol>
+  </li>
+  <li><a id="markdown-toc-section-13" href="#section-13">热键</a>    <ol>
+      <li><a id="markdown-toc-section-14" href="#section-14">热键组</a></li>
+      <li><a id="markdown-toc-section-15" href="#section-15">设置热键</a></li>
+    </ol>
+  </li>
+  <li><a id="markdown-toc-section-16" href="#section-16">备份</a>    <ol>
+      <li><a id="markdown-toc-section-17" href="#section-17">自动保存</a></li>
+      <li><a id="markdown-toc-section-18" href="#section-18">自动备份</a></li>
+    </ol>
+  </li>
+  <li><a id="markdown-toc-section-19" href="#section-19">自动化</a></li>
+  <li><a id="markdown-toc-section-20" href="#section-20">高级音频设置</a>    <ol>
+      <li><a id="markdown-toc-section-21" href="#section-21">缓存</a></li>
+      <li><a id="markdown-toc-section-22" href="#section-22">频谱模式</a></li>
+      <li><a id="markdown-toc-avisynth-windows" href="#avisynth-windows">Avisynth (仅限Windows)</a></li>
+      <li><a id="markdown-toc-ffmpegsource" href="#ffmpegsource">FFmpegSource</a></li>
+      <li><a id="markdown-toc-portaudio" href="#portaudio">Portaudio</a></li>
+    </ol>
+  </li>
+  <li><a id="markdown-toc-section-23" href="#section-23">高级视频设置</a>    <ol>
+      <li><a id="markdown-toc-avisynth" href="#avisynth">Avisynth</a></li>
+      <li><a id="markdown-toc-ffmpegsource-1" href="#ffmpegsource-1">FFmpegSource</a></li>
+    </ol>
+  </li>
+</ol>
+
+<p>Aegisub是可高度定制的软件，因而它有大量的选项供用户选择。这些选项都在选项对话框中，您可以在“查看”菜单里找到。这个页面提供可用选项的说明。</p>
+
+<p>Aegisub将所有配置都以纯文本的形式储存在 <em>config.json</em> 文件中，它默认位于<a href="../Aegisub_path_specifiers/index.html">?user</a>目录。
+如果您想恢复默认设置而不想重装Aegisub的话，您只需把config.json删掉并重启Aegisub即可。</p>
+
+<h2 id="section">通用</h2>
+
+<dl>
+  <dt><img class="center" alt="" width="642" height="617" src="../img/preferences-general-4485026f.png" /></dt>
+  <dt><strong>自动检查更新</strong></dt>
+  <dd>如果启用，Aegisub会定期检查是否有新版本可用，如果有就会提醒您。
+当然，这需要您的电脑能接入互联网。</dd>
+  <dt><strong>显示主工具栏</strong></dt>
+  <dd>如果禁用，Aegisub的主要工具栏会被隐藏。</dd>
+  <dt><strong>在字幕文件中保存用户界面状态</strong></dt>
+  <dd>默认情况下，Aegisub会在字幕文件中保存当前滚动到的位置和所选行的编号，以便您在下次打开字幕文件时可以自动恢复到保存时的状态。不过，如果您对您的字幕文件使用版本控制的话，您可能希望关闭这个功能来减少对更改的干扰。</dd>
+  <dt><strong>工具栏图标大小</strong></dt>
+  <dd>Aegisub所有工具栏的图标的大小。目前有效值仅为16或24。</dd>
+  <dt><strong>自动载入链接的文件</strong></dt>
+  <dd>当您保存脚本时，Aegisub同时也在字幕文件里保存了您打开的音视频和时间码文件的信息。
+这个选项决定了Aegisub在打开字幕文件时，如何处理这些与字幕文件所关联的文件。如果设为“询问”，Aegisub会在打开文件时让您选择是否加载链接的文件。如果设为“从不”，Aegisub不会加载链接的文件，同样的如果设为“总是”，Aegisub将尝试载入关联的文件（并会在找不到相关文件时弹出错误报告）。</dd>
+  <dt><strong>恢复操作的最大数量</strong></dt>
+  <dd>改变撤销的最大数量。这个值越大，Aegisub将占用的内存就越多。</dd>
+  <dt><strong>最近使用过的列表</strong></dt>
+  <dd>Aegisub的各种最近使用列表记录的项目的最大值。它对内存几乎没有影响，但太长的列表看起来会不方便。</dd>
+</dl>
+
+<h3 id="section-1">默认样式</h3>
+
+<p><img class="center" alt="" width="642" height="617" src="../img/preferences-default-styles-78ca0383.png" /></p>
+
+<h2 id="section-2">音频</h2>
+
+<dl>
+  <dt><img class="center" alt="" width="642" height="617" src="../img/preferences-audio-3ffdfe1c.png" /></dt>
+  <dt><strong>锁定光标卷动</strong></dt>
+  <dd>当启用时，当视频播放光标离音频波形视图左右边缘较近时，波形将自动随着光标滚动。</dd>
+  <dt><strong>默认紧贴标记</strong></dt>
+  <dd>当启用时，如果两个音频视图的标记（例如关键帧，其他行的开始结束时间点）离得足够近的话，Aegisub会在您点击或拖动音频标记时，把它们吸附到音频视图的其他标记上。
+您可以按住shift再拖动来临时开启或关闭吸附功能。</dd>
+  <dt><strong>默认使用鼠标滚轮缩放</strong></dt>
+  <dd>当启用时，鼠标滚轮默认会用来水平缩放频谱视图，按住Ctrl键时滚动频谱视图。如果禁用则相反。</dd>
+  <dt><strong>随鼠标移动自动定位</strong></dt>
+  <dd>如果启用，当鼠标光标移动到音频频谱上将会自动激活它（而不需要再单击一下）。</dd>
+  <dt><strong>在视频步进时播放音频</strong></dt>
+  <dd>当启用时，视频按帧步进时会播放那帧的音频。</dd>
+  <dt><strong>默认计时长度</strong></dt>
+  <dd>新建行的默认持续时间，单位为毫秒。</dd>
+  <dt><strong>默认提前开始时间长度</strong></dt>
+  <dt><strong>默认延后结束时间长度</strong></dt>
+  <dd>使用“开始时间提前”和“结束时间延后”功能所增加的时间长度。同时也可在<a href="../Timing_Post-Processor/index.html">时间后续处理器</a>里使用和设置。</dd>
+  <dt><strong>标记拖动灵敏度</strong></dt>
+  <dd>能够视为拖动的鼠标移动的像素距离。较高的值可以降低误操作的可能，不过响应能力会降低。</dd>
+  <dt><strong>左键点击拖动动作结束标记</strong></dt>
+  <dd>当启用时，左键单击频谱的某一位置会设置一行的开始时间点，然后拖动到的地方会设为结束时间点，
+使得打一行轴只需简单的单击——拖动就可完成。当禁用时，左键单击并拖动只会设置一行的开始时间，需要再右击来设置结束时间。</dd>
+  <dt><strong>边线宽度</strong></dt>
+  <dd>行的开始和结束标记的宽度，单位为像素。</dd>
+  <dt><strong>最大紧贴标记距离</strong></dt>
+  <dd>在这个距离内的标记会自动吸附，单位为像素。</dd>
+  <dt><strong>显示非活动行</strong></dt>
+  <dd>控制当前行附近的行将如何显示在音频波形视图上。“不显示”将只会显示当前行。“显示前一个”将用灰色显示除当前行的上一行（是字幕栏里的上一行， <em>不是</em> 按时间顺序）。“显示前一个和下一个”将会用灰色显示当前行的前一行和后一行。“显示全部”将会用灰色显示除当前行之外的所有行。</dd>
+  <dt><strong>包括非活动注释行</strong></dt>
+  <dd>如果禁用，注释行将会被跳过，例如“显示前一个”会变成“显示前一个非注释行”。</dd>
+</dl>
+
+<h3 id="section-3">显示/视觉选项</h3>
+
+<dl>
+  <dt><strong>关键帧</strong></dt>
+  <dd>如果启用，视频关键帧将会在默认情况下以线条的形式标记在音频波形视图上。</dd>
+  <dt><strong>卡拉OK模式关键帧</strong></dt>
+  <dd>如果启用，视频关键帧将会在卡拉OK模式下以线条的形式标记在音频波形视图上。</dd>
+  <dt><strong>显示光标所在的时间</strong></dt>
+  <dd>如果启用，会在音频波形上方显示出光标所指位置的时间点。</dd>
+  <dt><strong>显示视频位置</strong></dt>
+  <dd>如果启用，视频当前帧的开始时间会以线条的形式标记在音频波形视图上。</dd>
+  <dt><strong>波形样式</strong></dt>
+  <dd>选择使用何种波形渲染样式
+
+    <dl>
+      <dt>最大 + 平均</dt>
+      <dd>波形会是两个通道，其中一个表示一个像素的时间范围内最大的一个音频样本的值，用较亮的颜色表示，和所有音频样本的平均值。</dd>
+      <dt>最大</dt>
+      <dd>波形只显示最大值，和之前的Aegisub版本一样。</dd>
+    </dl>
+  </dd>
+</dl>
+
+<h3 id="section-4">音频标签</h3>
+<p>这些选项控制在音频栏显示的卡拉OK音节的外观。</p>
+
+<dl>
+  <dt><strong>字体</strong></dt>
+  <dd>音频标签所用的字体。</dd>
+  <dt><strong>字体大小</strong></dt>
+  <dd>音频标签的字体大小。</dd>
+</dl>
+
+<h2 id="section-5">视频</h2>
+
+<dl>
+  <dt><img class="center" alt="" width="642" height="617" src="../img/preferences-video-d5a15e5f.png" /></dt>
+  <dt><strong>在滑动条上显示关键帧</strong></dt>
+  <dd>当启用时，Aegisub会在视频进度条上显示关键帧。</dd>
+  <dt><strong>选择的行改变后，视频位置变为所选行的开始时间</strong></dt>
+  <dd>当启用时，每当所选的行改变后，Aegisub都会自动将视频播放位置移至所选行的第一帧。
+注意双击行或者按Ctrl+1也可以实现这个功能。</dd>
+  <dt><strong>只有当鼠标处在视频上时才显示可视化编辑工具</strong></dt>
+  <dd>当启用时，可视化编辑工具只有在光标处在视频上时才会显示。</dd>
+  <dt><strong>打开视频时自动加载音频</strong></dt>
+  <dd>当启用时，当您打开的视频文件包含音轨，Aegisub将会自动加载音频。</dd>
+  <dt><strong>默认缩放</strong></dt>
+  <dd>默认视频缩放级别。当您的屏幕非常大或非常小时很有用。</dd>
+  <dt><strong>快速步进帧数</strong></dt>
+  <dd>决定当您使用快速步进功能（Alt+左方向键 和 Alt+有方向键）时一步“跳”多远。以帧为单位。</dd>
+  <dt><strong>截图保存路径</strong></dt>
+  <dd>决定Aegisub把截图保存到哪。默认位置是<code>?video</code>，就是存到视频文件所在的文件夹，但您可以改成您想要的路径。支持<a href="../Aegisub_path_specifiers/index.html">Aegisub路径表示符</a>；下拉菜单里另一个可选选项是<code>?script</code>，即保存到字幕文件的位置。</dd>
+</dl>
+
+<h3 id="section-6">脚本分辨率</h3>
+
+<dl>
+  <dt><strong>使用第一次打开的视频的分辨率</strong></dt>
+  <dd>当启用时，如果您打开了一个视频，且当前脚本没有设置分辨率，Aegisub将会自动把视频分辨率设为脚本分辨率。如果禁用，Aegisub会将脚本分辨率设为下面指定的默认分辨率。</dd>
+  <dt><strong>在打开时匹配视频分辨率</strong></dt>
+  <dd>设置Aegisub在您打开视频时如何处理脚本分辨率。
+如果设为“从不”，Aegisub在视频和脚本分辨率不同时不会做任何事。如果设为“询问”，Aegisub在视频和脚本分辨率不同时会询问您是否改变脚本分辨率来适应视频。如果设为“使用视频分辨率”，则自动将脚本分辨率直接设为视频分辨率。如果设为“重设分辨率”则会重设脚本的分辨率来匹配视频。</dd>
+</dl>
+
+<h2 id="section-7">界面</h2>
+
+<p><img class="center" alt="" width="642" height="617" src="../img/preferences-interface-3ede1ef2.png" /></p>
+
+<dl>
+  <dt><strong>启用提示</strong></dt>
+  <dd>当启用时，Aegisub将自动识别您打的<a href="../ASS_Tags/index.html">特效标签</a>，并显示一个这个标签的语法提示框，直至您闭合这个标签。这个功能叫做“语法提示”，和一些编程集成开发环境(IDE)的体验相似。</dd>
+  <dt><strong>时间框内覆盖写入</strong></dt>
+  <dd>控制这个程序里所有时间编辑框的行为。默认情况下，Aegisub的所有时间编辑框就像您按下Insert键一样，所以您输入的每个数字都会覆盖已经存在的数字，并且无法删除已存在的数字，您只能覆盖它们。取消这个选项来禁用这个功能，并让所有时间编辑框像（大部分）常规文本编辑框一样。</dd>
+  <dt><strong>启用语法高亮</strong></dt>
+  <dd>启用或禁用主编辑框特效标签的语法高亮功能。</dd>
+  <dt><strong>字典文件路径</strong></dt>
+  <dd>决定Aegisub将在哪里寻找拼写检查和同义词词典文件。默认会在<code>?data/dictionaries</code>里找，但如果您在其他目录有自己的词典，您可以随意把它改为其他的目录。</dd>
+  <dt><strong>字体</strong></dt>
+  <dd>决定字幕编辑框和其他编辑框中文字的字体和字体大小。</dd>
+  <dt><strong>每行最大字符数</strong></dt>
+  <dd>如果字符计数器的数值高于这个数字，它的背景色会变为红色来提醒你已超过最大行的长度。行的长度并不会受到限制。</dd>
+  <dt><strong>每秒字符数警告阈值</strong></dt>
+  <dt><strong>每秒字符数报错阈值</strong></dt>
+  <dd>字/秒栏的背景颜色的开始出现警告颜色，和变为错误颜色的阈值。</dd>
+  <dt><strong>忽略空格</strong></dt>
+  <dd>如果启用，空格不会计入字符数。（译者注：全角空格启用后也会计入字符数。）</dd>
+  <dt><strong>忽略标点符号</strong></dt>
+  <dd>如果启用，标点符号格不会计入字符数。</dd>
+  <dt><strong>单击激活编辑框</strong></dt>
+  <dd>当启用时，字幕栏将变成程序独立的一个区域，并且可以像音频或视频框一样被激活，激活后就可以用方向键或鼠标滚轮来滚动字幕栏等等。相反，如果你禁用这个选项，焦点就会留在你之前点击过的栏。这意味着你不能在字幕栏使用键盘快捷键，但另一方面也意味着你可以用鼠标点到另一行而不会失去音频框的焦点（译者注：就是说你在字幕栏选取新的一行后，依然可以用qwert这些音频框的快捷键来播放相应音频）。自己根据情况来选择的吧。</dd>
+  <dt><strong>突出可见字幕</strong></dt>
+  <dd>当启用时，所有当前视频帧可见的（或只是 <em>应该</em> 可见的；Aegisub不能分辨像透明这样的情况，它只看时间轴）字幕行会在字幕栏里以特殊的背景色（参阅下面的“在当前帧显示的行背景色”选项）高亮出来。</dd>
+  <dt><strong>隐藏特效标签</strong></dt>
+  <dd>当隐藏标签开启时，将会代替特效标签区显示的字符。注意尽管只是符号，但如果你愿意的话，你可以使用不止一个字符。</dd>
+  <dt><strong>字体</strong></dt>
+  <dd>Decides the font and font size of all text in the grid.
+决定字幕栏显示的字体和字体大小。</dd>
+</dl>
+
+<h3 id="section-8">颜色</h3>
+
+<p><img class="center" alt="" width="642" height="617" src="../img/preferences-colours-c1eaba6e.png" /></p>
+
+<h4 id="section-9">音频播放</h4>
+
+<dl>
+  <dt><strong>播放游标</strong></dt>
+  <dd>播放光标的颜色。</dd>
+  <dt><strong>边线色 - 起始</strong></dt>
+  <dt>：音频图中开始时间线的颜色。</dt>
+  <dt><strong>边线色 - 结束</strong></dt>
+  <dt>：音频图总结束时间线的颜色。</dt>
+  <dt><strong>边线色 - 非活动行</strong></dt>
+  <dd>音频图中非活动行的时间线颜色。
+<strong>音节边线色</strong></dd>
+  <dd>音频图中音节边缘时间线的颜色。</dd>
+</dl>
+
+<h3 id="section-10">音频配色方案</h3>
+<p>为波形/频谱选择现有的颜色方案，并没有在Aegisub中直接添加本颜色方案的方法。如果你想试试更改，可以在config.json中修改。</p>
+
+<h4 id="section-11">语法高亮</h4>
+
+<dl>
+  <dt><strong>正常</strong></dt>
+  <dd>正常文字的颜色。</dd>
+  <dt><strong>大括号</strong></dt>
+  <dd>ASS特效标签使用的闭合大括号的颜色。</dd>
+  <dt><strong>斜杠和圆括号</strong></dt>
+  <dd>ASS特效标签中使用的斜杠和圆括号的颜色。</dd>
+  <dt><strong>标签</strong></dt>
+  <dd>ASS特效标签本身的颜色。</dd>
+  <dt><strong>参数</strong></dt>
+  <dd>ASS特效标签参数的颜色。</dd>
+  <dt><strong>错误</strong></dt>
+  <dd>指示无效表达式的颜色。</dd>
+  <dt><strong>错误背景</strong></dt>
+  <dd>指示错误的背景色。</dd>
+  <dt><strong>换行符类</strong></dt>
+  <dd>\N, \n 和 \h 的颜色。</dd>
+  <dt><strong>卡拉OK模板</strong></dt>
+  <dd>卡拉OK模板部分的颜色。</dd>
+</dl>
+
+<h4 id="section-12">字幕栏</h4>
+
+<dl>
+  <dt><strong>普通行前景色</strong></dt>
+  <dt><strong>普通行背景色</strong></dt>
+  <dd>在字幕栏中显示的颜色。前景色为文本颜色，背景色即为背景颜色。</dd>
+  <dt><strong>选取行前景色</strong></dt>
+  <dt><strong>选取行背景色</strong></dt>
+  <dd>在字幕栏中，已选择行的前景色和背景色。</dd>
+  <dt><strong>注释行背景色</strong></dt>
+  <dt><strong>选中注释行背景色</strong></dt>
+  <dd>文字表面含义。</dd>
+  <dt><strong>冲突行前景色</strong></dt>
+  <dd>和活动行时间重叠的行的前景色。</dd>
+  <dt><strong>在当前帧显示的行背景色</strong></dt>
+  <dd>文字表面含义。</dd>
+  <dt><strong>表头背景色</strong></dt>
+  <dt><strong>左边栏颜色</strong></dt>
+  <dt><strong>活动行边框颜色</strong></dt>
+  <dt><strong>分隔线颜色</strong></dt>
+  <dd>分隔字幕栏各个区块的分隔线颜色。</dd>
+</dl>
+
+<h2 id="section-13">热键</h2>
+
+<p><img class="center" alt="" width="642" height="705" src="../img/preferences-hotkeys-4c313e45.png" /></p>
+
+<p>此页面列出当前Aegisub设置的所有热键（译者注：即快捷键），并允许你添加，删除或更改。</p>
+
+<h3 id="section-14">热键组</h3>
+<p>Aegisub supports setting different hotkeys depending on what part of the
+program has focus.</p>
+
+<p>The "Default" group is for hotkeys which should work regardless of what in
+Aegisub currently has keyboard focus. Hotkeys set in Default are overridden by
+the more specific categories when applicable.</p>
+
+<p>The "Always" group sets hotkeys which are enabled by Medusa mode, which apply
+everywhere in the program and override all other keypresses, including ordinary
+typing in edit boxes.</p>
+
+<p>All other hotkey contexts should be self-explanatory.</p>
+
+<h3 id="section-15">设置热键</h3>
+<p>To modify a hotkey, first click on the row to select it, then click on the
+hotkey field in the row, then press the key(s) that should trigger the command.
+Accept the new hotkey by clicking on another row.</p>
+
+<p>To add a new hotkey, select the context you want to add the hotkey to, then
+click the New button. Enter the <a href="../Commands/index.html">command name</a>, then set the hotkey
+as when editing them.</p>
+
+<p><strong>译者注：由于一个Bug，3.x版本添加热键时需切换为英文界面再添加，这个Bug会在3.3版时被修复。</strong></p>
+
+<h2 id="section-16">备份</h2>
+
+<p><img class="center" alt="" width="642" height="617" src="../img/preferences-backup-7e9cada5.png" /></p>
+
+<h3 id="section-17">自动保存</h3>
+
+<dl>
+  <dt><strong>启用</strong></dt>
+  <dd>如果启用自动保存，Aegisub将每隔一段时间自动保存一份当前编辑的字幕文件副本到设定目录下。</dd>
+  <dt><strong>保存间隔（秒）</strong></dt>
+  <dd>设定两次自动保存的间隔时间。</dd>
+  <dt><strong>保存路径</strong></dt>
+  <dd>设定自动保存的字幕文件副本的存放位置。默认设定为<code>?user/autosave/</code>
+对于Windows 7系统。实际的默认路径为 <code>%UserProfile%\AppData\Roaming\Aegisub\autosave</code>
+（对于其他系统，请参考<a href="../Aegisub_path_specifiers/index.html">Aegisub path specifiers</a> ）</dd>
+  <dt><strong>每次更改后自动保存</strong></dt>
+  <dd>如果启用此设定，Aegisub将在每次更改后自动保存文件。
+需要注意的是，目前此功能和'编辑'菜单的 '恢复' 功能存在一些冲突问题。</dd>
+</dl>
+
+<h3 id="section-18">自动备份</h3>
+
+<dl>
+  <dt><strong>启用</strong></dt>
+  <dd>如果启用自动备份，Aegisub每打开一个字幕文件，都会为其自动备份一个副本到设定目录下。</dd>
+  <dt><strong>保存路径</strong></dt>
+  <dd>设定自动备份的字幕文件副本的存放位置。默认设定为<code>?user/autoback/</code>
+对于Windows 7系统。实际的默认路径为 <code>%UserProfile%\AppData\Roaming\Aegisub\autoback</code>
+（对于其他系统，请参考<a href="../Aegisub_path_specifiers/index.html">Aegisub path specifiers</a> ）</dd>
+</dl>
+
+<h2 id="section-19">自动化</h2>
+
+<p><img class="center" alt="" width="642" height="617" src="../img/preferences-automation-b2d0946b.png" /></p>
+
+<dl>
+  <dt><strong>根路径</strong></dt>
+  <dd>A base directory where you put non-autoloaded automation scripts. Used only
+for saving paths to script files in the subtitles.</dd>
+  <dt><strong>包含(include)路径</strong></dt>
+  <dd>List of directories where include files and modules are searched for.
+Directories are separated with a pipe character, <code>|</code>.</dd>
+  <dt><strong>自动载入路径</strong></dt>
+  <dd>List of directories that are searched for scripts on startup, which are then
+automatically loaded. Directories are separated with a pipe character, <code>|</code>.</dd>
+  <dt><strong>跟踪等级</strong></dt>
+  <dd>When a script sends a message to the debug console it can also specify a
+trace level. If the trace level of a message is lower than the value given
+here, the message is not logged. The names given to the levels are only
+suggestions and they don't have any effect on the execution of the script.
+(i.e. a "Fatal" level message will not cause the script to terminate.)</dd>
+  <dt><strong>线程优先级</strong></dt>
+  <dt>译者注：3.x版没这个选项。</dt>
+  <dd>
+    <p>Priority given to the script execution thread. If you're on a
+single-core/single-CPU system having this on lower than normal will make other
+programs more responsive while long-running scripts are active.</p>
+  </dd>
+  <dt><strong>自动重新载入导出</strong></dt>
+  <dd>Automatically reloads the specified sets of scripts when the <a href="../Exporting/index.html">Exporting</a>
+dialogue is opened. In that case you will have to enter the
+<a href="../Automation/Manager/index.html">Automation/Manager</a> window and determine the cause of the error.</dd>
+</dl>
+
+<h2 id="section-20">高级音频设置</h2>
+
+<p><img class="center" alt="" width="642" height="617" src="../img/preferences-advanced-audio-2a340b1b.png" /></p>
+
+<dl>
+  <dt><strong>音频来自</strong></dt>
+  <dd>选择使用何种后台处理方式来载入音频。目前提供两种可选方式。
+
+    <dl>
+      <dt><em>avisynth</em> (仅限Windows)</dt>
+      <dd>使用 <a href="http://www.avisynth.org/">Avisynth</a> 载入音频。
+所有类型的文件都将会在Avisynth脚本中以DirectShowSource()方式被载入，但*.avs脚本文件会以Import()方式被载入。
+译者注：如果你懂得编写AVS脚本的话，甚至可以使用LwlibavAudioSource()等五花八门的方式载入音频文件。
+但如果你不懂如何写AVS，这个方式就不要考虑了。因为DirectShowSource()这种“高级”滤镜实在是和人品有关，
+推荐还是用下面的FFMS2载入音频。</dd>
+      <dt><em>FFmpegSource</em></dt>
+      <dd>使用 <a href="http://code.google.com/p/ffmpegsource/">FFMS2</a> 载入音频。
+比使用DirectShowSource()方式载入更加可靠，但是载入速度相对会慢一些。缘于FFMS2需要先索引一遍媒体文件，通常这
+会花费一些时间，时间长短视文件大小以及电脑性能而异。</dd>
+    </dl>
+
+    <p>值得注意的是，无论这里如何设置，对于WAV文件，PCM WAV Reader都将优先被使用。</p>
+  </dd>
+  <dt><strong>音频播放器</strong></dt>
+  <dd>使用何种方案来播放音频，选项因平台而异。
+
+    <dl>
+      <dt><em>DirectSound</em> (仅限Windows)</dt>
+      <dd>使用“Microsoft DirectSound”来播放音频。这是目前广泛测试而又最稳定可靠的音频播放器。</dd>
+      <dt><em>DirectSound-old</em> (仅限Windows)</dt>
+      <dd>早期的Aegisub使用的“DirectSound”播放器。
+如果你在使用上面的播放器时出现了人品问题，也许可以试试这个（祝你好运）。</dd>
+      <dt><em>alsa</em> (仅限Linux)</dt>
+      <dd>使用<a href="http://www.alsa-project.org/">Advanced Linux Sound Architecture</a>来播放音频。
+ALSA是Linux系统的原生音频架构并且它无法在其他任何系统上使用。</dd>
+      <dt><em>pulse</em> (仅限Linux和其他“类UNIX”系统, eg: FreeBSD、OpenBSD)</dt>
+      <dd>通过一个<a href="http://pulseaudio.org/">PulseAudio</a>声音服务器来播放音频。
+这是最缺乏测试而又很可能无法正常工作的音频播放器，因此仅推荐那些讨厌non-pulse播放器的人使用。</dd>
+      <dt><em>portaudio</em></dt>
+      <dd>调用<a href="http://www.portaudio.com/">PortAudio</a>的API来播放音频。
+PortAudio在不同平台上拥有不同的音频播放解决方案。在绝大多数的类UNIX系统上使用Open Sound System (OSS)
+来输出音频。它也是当今在Windows系统上唯一支持选择输出设备的音频播放器。</dd>
+      <dt><em>openal</em></dt>
+      <dd>调用<a href="http://www.openal.com/">OpenAL</a>的API来播放音频。
+这是在OS X系统上的推荐方案。但OpenAL通常不会随Windows安装时自带，因为它会让巨硬觉得不爽。</dd>
+    </dl>
+  </dd>
+</dl>
+
+<h3 id="section-21">缓存</h3>
+
+<dl>
+  <dt><strong>缓存类型</strong></dt>
+  <dd>推荐选择内存，如果你的计算机安装内存十分小，那么就选择硬盘吧。
+值得注意的是，打开PCM WAV文件时不需要使用任何缓存！但如果你关闭缓存的话，音频播放可能会变得极不稳定！</dd>
+  <dt><strong>缓存路径</strong></dt>
+  <dt><strong>缓存文件名</strong></dt>
+  <dd>这些选项决定硬盘上的音频缓存的存储位置。仅缓存类型设置为“硬盘”的情况下生效。
+在硬盘空间充足的情况下切勿更改这些设置。对于缓存文件名来说，它应该满足C语言的输出风格即"%i"形参，
+形参会被一个数字所取代。"%02i"就是默认值。千万不要随意修改这些设定，除非您清楚的知道您在干什么。</dd>
+</dl>
+
+<p>译者注：对于缓存文件命名，个人翻译的也不是很到位，不理解的看下面原文吧，要是原文也看不懂= =。那就不要改这个了2333</p>
+
+<p>“ For the name, the string expects a printf-style "%i" parameter, that will be replaced with a number. "%02i" is used 
+ by default. Don't change that unless you know what you are doing. ”</p>
+
+<h3 id="section-22">频谱模式</h3>
+
+<dl>
+  <dt><strong>质量</strong></dt>
+  <dd>设定显示频谱的质量。越高质量等级的设定会导致越高的CPU和内存占用。
+每提高一个等级的设定，CPU占用会略微提高，内存占用则会达到上一等级的两倍。
+对于采样率48KHz、时长1分钟的音频来说，不同质量等级的设定占用的内存如下表。
+
+    <table class="table table-bordered table-condensed">
+    <tr><th>0 "一般质量"</th><td>11 MB</td>
+    <tr><th>1 "较好质量"</th><td>22 MB</td>
+    <tr><th>2 "高质量"</th><td>44 MB</td>
+    <tr><th>3 "极高质量"</th><td>88 MB</td>
+  &lt;/table&gt;
+
+  值得注意的是，内存的占用量和音频的声道数以及位深无关。
+  因为Aegisub一直工作在转换后的单声道模式下，并且频谱也是一直以32位浮点精度计算的。
+
+</tr></tr></tr></tr></table>
+  </dd>
+</dl>
+<p><div class='todo'>
+<strong><p>以上均属杜撰(=・ω・=)</p>
+</strong>
+</div>
+</p>
+
+<dl>
+  <dt><strong>缓存最大容量</strong></dt>
+  <dd>设定频谱缓存所占用的最大内存数量。
+已计算好的频谱会被缓存到内存中，以保证滚动频谱时不发生卡顿。
+并且能缓存的频谱长度，在一定量的缓存限制下，是与频谱的质量等级设定有关的。
+以48Khz采样率的音频为例，在频谱质量设定为“较好质量”的情况下，默认的128M缓存约能缓存六分钟的频谱。
+但需要注意的是，如果你的缓存设置小于5MB，则Aegisub会自动套用默认的缓存大小（128M）。
+建议最大缓存容量不要超过你电脑安装物理内存的四分之一。
+（当然也不要超过32位程序所能使用的3GB内存上限，如果你使用的是64位Aegisub，请无视这条。但不推荐使用64位Aegisub，BUG很多）</dd>
+</dl>
+
+<h3 id="avisynth-windows">Avisynth (仅限Windows)</h3>
+
+<dl>
+  <dt><strong>Avisynth down-mixer（声道混合/提取）</strong></dt>
+  <dd>Aegisub仅能使用单声道音频。这个选项设定Avisynth如何将音频转换为单声道。
+  ConvertToMomo：将立体声或多声道重新混合成单声道。
+  GetLeftChannel：仅提取左声道。
+  GetRightChannel：仅提取右声道。</dd>
+  <dt><strong>强制采样率</strong></dt>
+  <dd>强制转换所有被打开的音频采样率为给定值。默认0则不做转换。
+若使用硬件声卡完成这一转换，则可潜在提升音频表现力以及修复一些播放问题。
+  （原作者说软件播放器转换不行。这玄学吗？）</dd>
+</dl>
+
+<h3 id="ffmpegsource">FFmpegSource</h3>
+
+<dl>
+  <dt><strong>音频索引错误处理模式</strong></dt>
+  <dd>若索引音频时出现错误，则有下面几种处理模式可选~
+
+    <dl>
+      <dt><em>忽略</em></dt>
+      <dd>忽略错误并且继续解码文件。这个模式可以让你打开一些受损的媒体文件，但可能导致音画不同步。</dd>
+      <dt><em>清除</em></dt>
+      <dd>假设媒体文件中不存在这条有错误的音轨。</dd>
+      <dt><em>停止</em> (默认值)</dt>
+      <dd>停止索引文件并且返回错误发生前的所有正常音轨数据。这是Aegisub的默认值，因为在音轨末端遭遇到受损的音频数据是很常见的。
+  （笔者表示貌似不常见 QAQ ）</dd>
+      <dt><em>取消</em></dt>
+      <dd>直接取消打开整个媒体文件。</dd>
+    </dl>
+  </dd>
+  <dt><strong>总是索引所有音轨</strong></dt>
+  <dd>一旦禁用，打开视频文件只会索引视频轨道，音轨文件则还需要手动再载入一次。</dd>
+</dl>
+
+<h3 id="portaudio">Portaudio</h3>
+
+<dl>
+  <dt><strong>Portaudio 设备</strong></dt>
+  <dd>当使用PortAudio输出音频时可在这里选择输出音频的设备。</dd>
+</dl>
+
+<h2 id="section-23">高级视频设置</h2>
+
+<p><img class="center" alt="" width="642" height="617" src="../img/preferences-advanced-video-bb72af2f.png" /></p>
+
+<dl>
+  <dt><strong>视频来自</strong></dt>
+  <dd>使用何种方式来载入视频。可用选项取决于你安装的Aegisub版本和运行Aegisub的平台。
+视实际情况可能存在以下选项：
+
+    <dl>
+      <dt><em>avisynth</em> (仅限Windows)</dt>
+      <dd>使用<a href="http://www.avisynth.org/">Avisynth</a>来载入视频。
+  Avisynth支持载入绝大多数常见格式的媒体以及<em>.d2v文件（注：d2v文件是DVD VOB媒体文件的索引文件，
+  但对</em>.d2v文件的支持需要正确安装相关Avisynth源滤镜，即DGSource）。
+  需要注意的是Aegisub可以使用独立于系统安装的Avisynth。
+  最后提醒一句：若使用Avisynth载入视讯，则只推荐载入*.avi *.d2v *.avs文件以获(fang)得(zhi)最(ren)佳(pin)体(wen)验(ti)。
+  当然，如果你会编写AVS脚本，就当上面是一堆废话吧~(=・ω・=)
+  同样的，如果你不明觉厉的话，请下移目光↓</dd>
+      <dt><em>FFmpegSource</em></dt>
+      <dd>使用<a href="http://code.google.com/p/ffmpegsource/">FFMS2</a>来载入视频。
+  如果你看不懂上面在说些什么，那么FFMS2就是你最好的选择。它支持绝大多数常见视频格式并且通常极为可靠。
+  但对于较大的媒体文件可能会花费几十秒乃至几分钟的索引时间。</dd>
+    </dl>
+  </dd>
+  <dt><strong>字幕来自</strong></dt>
+  <dd>选择使用何种方式来渲染字幕。
+  如果你自行安装了其他的CSRI字幕渲染器，例如 VSFilterMod 或 xy-VSFilter，则它们都会自动出现在可选列表中。
+  （安装这两种渲染器只需要把其对应的DLL文件放入Aegisub安装目录下的CSRI目录内即可）
+
+    <dl>
+      <dt><em>CSRI/vsfilter_textsub</em> (仅限Windows)</dt>
+      <dd>使用VSFilter 2.40来渲染字幕。这是Aegisub针对ASS格式字幕文件使用的标准渲染器。</dd>
+      <dt><em>libass</em></dt>
+      <dd>使用<a href="http://code.google.com/p/libass/">libass</a>来渲染字幕。
+  libass渲染速度远快于VSFilter，并且libass一定程度上可以跨平台使用。
+  它和VSFilter的渲染方式有些不同，但不幸的是，libass在Windows平台上有一些已知的字体渲染BUG。
+  鉴于越来越多的人开始使用libass，如果你在制作复杂的软字幕，那么最好同时用libass和VSFilter检查一下你的字幕渲染情况。</dd>
+    </dl>
+  </dd>
+  <dt><strong>强制BT.601</strong></dt>
+  <dd>由于VSFilter的兼容性问题，假定所有YUV色彩格式输入的的视频均为BT.601色域。
+
+    <p>当VSFilter被用作播放器的DirectShow字幕滤镜时，VSFilter总默认将渲染好的字幕从RGB色彩格式转换为BT.601色域的YUV格式。
+  这意味着如果视频是BT.709色域（实际上绝大多数高清视频和少数DVD就是这种色域），
+  那么你在Aegisub中看到的情形将和在播放器中看到情形不一致。
+  （例如在Aeg娘中做好的与视频色彩匹配的字幕，而在播放器中的外挂字幕色彩就会出现偏差）
+  这个选项强制Aeg娘将所有载入的YUV色彩格式视频假定为BT.601色域并做YUV BT.601 -&gt; RGB的转换，
+  虽然这可能导致不正确的的色彩显示，但能保证你在Aegisub中看到的效果和在播放器中看到的效果相同。
+  译者注：Aeg娘里显示的视频都是转换后的RGB格式。字幕也是在RGB模式下渲染后直接输出到视频上的。</p>
+
+    <p>更有趣的是，当VSFilter作为MPC-HC的内置字幕渲染器时，VSFilter就会使用“正确的”色域，
+  在这种情况下，结果却会产生与预期“不匹配的”色彩。
+  （因为VSFilter仅以BT.601色域为目标进行RGB渲染，但此时的RGB -&gt;YUV转换是以正确的BT.709色域转换的，
+  可惜的是RGB -&gt; YUV 这个过程在MPC-HC里并不是由VSFilter完成的，所以会出现颜色偏差）
+  这都是因为ISR目前打破了很多老规矩（例如：目前不可能用它精准的定位字幕），我们建议目前不必为这事担心。
+  （毕竟也操不上心233）</p>
+
+    <p>也许下面的图片对比能帮助你理解的更清楚。</p>
+
+    <p><img alt="" width="606" height="226" src="../img/bt601-c9807f44.png" /></p>
+
+    <p>Aegisub现已在生成的字幕文件中注明了DirectShow时应该使用的色域来进行的RGB -&gt; YUV转换，
+  希望以后能依靠字幕渲染器的改进来解决这个烂摊子。</p>
+
+    <p>最后带点译者的话：
+  VSFilter只以BT.601做RGB &lt;-&gt; YUV转换，当VSFilter被用作播放器的DirectShow字幕滤镜渲染时，
+  字幕那一块的视频图像会被单独切出来以BT.601做YUV -&gt; RGB的转换，然后在RGB下渲染字幕，
+  渲染完成后再同样以BT.601做RGB -&gt; YUV的转换，随后将这块图像拼回原视频中。
+  可见如果视频是BT.709色域。这样就会带来色彩偏差。
+  而Force BT.601正是让BT.709的视频在Aeg娘里以“错误”的方式被从YUV转换成RGB，然后做RGB取样得到字幕颜色。
+  最终在播放器DirectShow的字幕也是以RGB渲染后，再转回“错误”的YUV BT.601。
+  而这个错误的方式就是“Force BT.601”，或者我称为“Pretend BT.601”，
+  这个设定只是以BT.601的规范对视频进行了YUV -&gt; RGB转换，最终字幕渲染完成后再RGB -&gt; YUV正好还原到了Pretend BT.601的视频。
+  此时的“Pretend BT.601”其实就是真正的BT.709。
+  如此便保证了你在Aeg娘里设定的字幕匹配色在播放器里也是匹配的。</p>
+  </dd>
+</dl>
+
+<p>Original Text For Reference：</p>
+
+<p><strong>Force BT.601</strong>
+Pretend all YUV videos are BT.601, for VSFilter compatibility.
+When VSFilter is used as a DirectShow filter, it always uses the BT.601 color matrix for converting the subtitles 
+from RGB to YUV. This means that if the video uses BT.709 (as most HD video and the occasional DVD does), colors 
+which match the video in Aegisub will not match the video in the player. This option makes Aegisub always convert 
+videos to RGB using BT.601, making the colors shown in Aegisub incorrect, but making it so that if the colors match 
+in Aegisub, they will match in the player.</p>
+
+<p>To make things more exciting, VSFilter will use the correct color space when used as the internal subtitle renderer 
+in MPC-HC, so enabling this option will result in mismatched colors in that case. As the ISR is currently broken in 
+many ways (e.g. it is impossible to accurately position subtitles with it), we recommend not worrying about it for now.</p>
+
+<h3 id="avisynth">Avisynth</h3>
+
+<dl>
+  <dt><strong>允许pre-2.56a Avisynth（允许使用旧版本的Avisynth）</strong></dt>
+  <dd>支持使用2.56a前的老版本的Avisynth，因为有些人的信仰难以动摇。</dd>
+  <dt><strong>Avisynth 内存限额</strong></dt>
+  <dd>设定Avisynth能够使用最大内存。
+通常增加内存缓存大小并不能加快处理速度，除非你直接载入了非常复杂的AVS脚本。
+  （例如：载入了一个带有EP降噪滤镜或是Contra sharp滤镜的AVS脚本，
+  在没有足够内存加速处理的情况下，会非常卡，建议载入的AVS脚本不要过于复杂。）</dd>
+</dl>
+
+<h3 id="ffmpegsource-1">FFmpegSource</h3>
+
+<dl>
+  <dt><strong>Debug日志的详细级别</strong></dt>
+  <dd>设定ffmpeg/libav的日志详细级别。此选项仅在你对Aegisub启用调试器时才有设定价值。</dd>
+  <dt><strong>解码线程</strong></dt>
+  <dd>设定用于解码视频的最多线程数，-1 意味着自动选择。
+如果你在解码视频时碰到了意外问题，将其设置为 1 也许能解决一些解码问题。但这也会牺牲一定的解码速度。
+通常不推荐 -1 和 1 以外的设定值。</dd>
+  <dt><strong>允许可能不安全的定位</strong></dt>
+  <dd>启用此选项会禁用一些FFMS2对于媒体文件的完整性检查。
+在某些情况下有可能借此打开一些FFMS2原本因帧定位问题而无法打开的媒体文件。但通常不建议开启。</dd>
+</dl>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Options/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:13 GMT -->
+</html>
+

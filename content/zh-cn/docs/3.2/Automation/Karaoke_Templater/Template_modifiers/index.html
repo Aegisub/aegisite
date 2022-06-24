@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Karaoke_Templater/Template_modifiers/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:40 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>模版修饰语 - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../../../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../../../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../../../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../../../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../../../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../../../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../../../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../../../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../../../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../../../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../../../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../../../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../../../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../../../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../../../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../../../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../../../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../../../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../../../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../../../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../../../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../../../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../../../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../../../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../../../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../../../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../../index.html">概述</a>
+</li>
+<li>
+<a href="../index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../../Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../../../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../../../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../../../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>模版修饰语</h1>
+<p>template行和code行都可以带上几种修饰语</p>
+
+<p>在修饰语和模板行类型中间请留一个半角空格，即在<code>template</code> 或 <code>code</code> 后面添加空格后再添加修饰语。</p>
+
+<p>修饰语在一定程度上而不是所有情况下都是兼容的，它不是对所有的 code行和 template行都有效。</p>
+
+<p>有一套修饰语用来声明 template行或 code行的类型。</p>
+
+<h2 id="section">声明类的修饰语</h2>
+
+<p>模板行(template line)和代码行(code line)都可以在没有声明类的修饰语的情况下起作用。不过为了避免混淆还是推荐声明一下。</p>
+
+<p>在没有声明类的修饰语的情况下，template行默认使用 <code>syl</code> 修饰语。</p>
+
+<p>在没有声明类的修饰语的情况下， code行默认使用once修饰语。</p>
+
+<h3 id="once">once</h3>
+
+<p>这个声明类的修饰语只对 code行有效。</p>
+
+<p>带有 <code>once</code> 修饰语的 code行在一次卡拉OK执行器的执行过程中只运行一次，一般都先于其它的code行或者模板行。它们是按声明的顺序执行的。</p>
+
+<p>"code once" 行基本用来声明模板中使用的函数。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,&lt;u&gt;code once&lt;/u&gt;,function setlayer(newlayer) line.layer = newlayer; return ""; end
+</code></pre></div>
+<p>这个例子声明了一个新的函数，它用来控制输出行的 层次(Layer) 信息。</p>
+</div>
+</div>
+
+<h3 id="line-name">line <em>[name]</em></h3>
+
+<p>这个声明类的修饰语对 code行和 template行都有效。</p>
+
+<p>需要注意的是，具有相同模板名称的两个模板行在应用时会被拼接到一起，这个名称可以自定义，但不能与现有的修饰语相同。</p>
+
+<p>无名称模板不能含有行前内容。(can not have pre-line template text)</p>
+
+<p>Code行不能被命名。</p>
+
+<p>已命名模板行的顺序合并是在卡拉OK模板执行器解析模板时发生的，而不是在模板执行时。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,&lt;u&gt;code line&lt;/u&gt;,fxgroup.funky = line.actor == "funky"
+</code></pre></div>
+<p>这个 code 行对每个输入行运行一次。它开启/关闭一个特效群，依靠输入行的说话人信息进行判断。</p>
+</div>
+</div>
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'>
+<div class="highlight"><pre class="highlight plaintext"><code>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,&lt;u&gt;template line&lt;/u&gt;,{\r\t($start,$end,\bord0)}
+</code></pre></div>
+<p>这个模板行声明了一个无名称的行类模板。效果是在音节的持续时间内边框粗度由默认值变成0。</p>
+</div>
+</div>
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,&lt;u&gt;template line jumper&lt;/u&gt;,{\r\t($start,$mid,\frz-0.1)\t($mid,$end,\frz0}
+</code></pre></div>
+<p>这个模板行声明了一个名称为”jumper”的行类模板，配合下面给出的行前(pre-line)模板，能产生 “跳跃” 的特效。</p>
+</div>
+</div>
+
+<h3 id="pre-line-name">pre-line <em>[name]</em></h3>
+
+<p>这个类型的修饰语只对行类模板有效。</p>
+
+<p><code>pre-line</code> 修饰语后可以添加模板名称，具有相同模板名称的模板会一起被应用。这个模板名称不能与现有的任何修饰语相同。</p>
+
+<p>无名称模板如果只有 pre-line 修饰语，那么模板执行后输入行会被保留，同时生成的新行前加入了模板行的内容。</p>
+
+<p>有名称的 pre-line 模板行会按顺序把模板内容叠加。最后合成的一个模板再进行应用，所以这些模板内容是在解析模板时进行的，而不是执行时。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,&lt;u&gt;template pre-line&lt;/u&gt;,{\be1}
+</code></pre></div>
+<p>这个模板行声明了一个无名称的行类模板，这个模板会给每个匹配到的行添加 <tt>{\be1}</tt> 标签。</p>
+</div>
+</div>
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,&lt;u&gt;template pre-line jumper&lt;/u&gt;,{\org(-10000,$y)}
+</code></pre></div>
+<p>这个模板行会和名称为 “jumper” 的模板进行合成，如果不存在这样的模板行，它会自己创建。和上面的模板一起使用，会使每个音节产生 “跳跃” 效果。</p>
+</div>
+</div>
+
+<h3 id="syl">syl</h3>
+
+<p>这个修饰语对 code行和 template行都可用。</p>
+
+<p>Syl(音节)类的模板不能被命名。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,&lt;u&gt;template syl&lt;/u&gt;,{\pos($x,$y)}
+</code></pre></div>
+<p>这个模板行声明了一个 syl 类模板，它的作用是拆分音节后保持音节字符原来的位置。</p>
+</div>
+</div>
+
+<h3 id="furi">furi</h3>
+
+<p>这个类型的修饰语对 code行 和 template行都有效。</p>
+
+<p>Furi(假名标注)类模板不能被命名。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,&lt;u&gt;template furi&lt;/u&gt;,{\pos($x,$y)}
+</code></pre></div>
+<p>这个模板行声明了一个furi 类模板，它用来简单地修改音节字符的位置。你需要做的只是在输入行中写出标准的假名标注格式。</p>
+</div>
+</div>
+
+<h3 id="syl-furi">syl furi</h3>
+
+<p>同时使用 <code>syl</code> 和 <code>furi</code> 类修饰语是可行的。它会生成两个不同的行，这两个行分别由 syl 类模板和 furi 类模板生成。</p>
+
+<p>这是同时使用多类修饰语的唯一可能性，换句话说是独有的用法。</p>
+
+<h2 id="section-1">其它修饰语</h2>
+
+<h3 id="all">all</h3>
+
+<p>把模板应用到所有的样式上，而不只是和模板行样式相同的行。</p>
+
+<p>对 code行和 template行都可用。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,&lt;u&gt;template syl all&lt;/u&gt;,{\pos($x,$y)}
+</code></pre></div>
+<p>这个模板会被应用于字幕文件中多有单独的音节，无视样式。</p>
+</div>
+</div>
+
+<h3 id="char">char</h3>
+
+<p>使模板的工作对象变为每个字符，而不是每个音节。它会以值得注意的方式改变应用顺序，查看 <a href="../Template_execution_rules_and_order/index.html">模板执行和执行顺序</a> 来获取相信信息。</p>
+
+<p>它用于 code行时，一般没什么意义，在上面的链接中可以了解到。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,&lt;u&gt;template syl char&lt;/u&gt;,{\pos($x,$y)}
+Comment: 1,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,&lt;u&gt;template syl char&lt;/u&gt;,{\pos($x,$y)\bord0}
+</code></pre></div>
+<p>行中每个单独字符都会被分别定位。对于每个音节，每个模板对其中字符的应用也是一气呵成的，而不是被交错应用。</p>
+
+<p>举个例子，如果行里有两个音节，”ab” 和 “cd”，上面给出的两个模板被应用于这两个音节，产生的结果会有8行:</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>{\pos($x,$y)}a
+{\pos($x,$y)}b
+{\pos($x,$y)\bord0}a
+{\pos($x,$y)\bord0}b
+{\pos($x,$y)}c
+{\pos($x,$y)}d
+{\pos($x,$y)\bord0}c
+{\pos($x,$y)\bord0}d
+</code></pre></div></div>
+</div>
+
+<h3 id="fx-name">fx <em>name</em></h3>
+
+<p>使模板只应用于含有内联特效 <a href="../../../Karaoke_inline-fx/index.html">(inline-fx)</a> 的音节。指定内联特效名称是必要的；内联特效名称也不建议和修饰语重复。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,&lt;u&gt;template syl fx drop&lt;/u&gt;,{\move($x,$y,$x,!$y+30!,$start,$end)}
+</code></pre></div>
+<p>使用这个模板，所有含有内联特效 “drop” 的音节会被模板处理，效果是音节会在持续时间向下移动30像素。</p>
+
+<p>其它的不含有内联特效的模板会照常被应用。</p>
+</div>
+</div>
+
+<h3 id="fxgroup-name">fxgroup <em>name</em></h3>
+
+<p>声明这个模板属于一个有名称的特效组。指定特效组名称是必要的；该名称不建议和修饰语重复，也不建议和Lua保留词重复。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><p>有一个 <em>fxgroup</em> 的例子，见 <a href="../Code_execution_environment/index.html#conditionaltemplateswithfxgroup">代码执行环境Code execution environment</a></p>
+</div>
+</div>
+
+<h3 id="keeptags">keeptags</h3>
+
+<p>使原始的标签在应用完模板后得到保留。</p>
+
+<p>这个修饰语在 <code>char</code> 或 <code>multi</code>下没有效果。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>template line &lt;u&gt;keeptags&lt;/u&gt;: {\r\t($start,!$start+1!,\frx40)\t(!$start+1!,$end,\frx0)}
+karaoke: {\k21}hi{\k10}gu{\k23}ra{\k22}shi {\k38}ga {\k37\1c&amp;H0000FF&amp;}na{\k37}ku
+</code></pre></div>
+<p>音节 “沿X轴翻转”，并在高亮的时间内翻转回去。其中的一个音节 (“na”) 和其它音节颜色不同。后面的音节不会受影响，因为存在 <code>\r</code> 标签。</p>
+
+<p><em>notags</em> 修饰语能确保应用模板后不再含有特殊音节的特殊颜色。</p>
+</div>
+</div>
+
+<h3 id="multi">multi</h3>
+
+<p>使模板对每个高亮应用一次 ，见<a href="../../../Furigana_karaoke/index.html">多次高亮</a> 。它会改变模板执行顺序，详见 <a href="../Template_execution_rules_and_order/index.html">模板执行顺序</a> 。</p>
+
+<p>当它被用于 code行时，基本没什么卵用，具体可以参照执行顺序。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>template syl &lt;u&gt;multi&lt;/u&gt;: {\an5\pos($scenter,$smiddle)\1a&amp;HFF&amp;\t($start,$end,\bord5\3a&amp;HFF&amp;)}
+karaoke: {\k33}風&lt;u&gt;{\k36}#&lt;/u&gt;{\k89}の{\k46}花&lt;u&gt;{\k28}#&lt;/u&gt;{\k57}よ
+</code></pre></div>
+<p>打好K的时间轴使用了多次高亮(multi-highlight)标记， <tt>#</tt> 被用来创建多次高亮音节。比如，風 (ka-ze) 和 花 (ha-na) 日文汉字实际上都对应两个音节，在这种情况下它们被存储成一个音节，但是会有两次高亮， <tt>#</tt> 字符在应用模板后不会显示 (当然，在应用模板前还是存在的…..)</p>
+
+<p>模板使用 <em>multi</em> 修饰语来标识它会使一个音节多次高亮。这个效果是一种简单的 “边框扩张”，但是在唱到 風 和 花 时，会产生两次这个效果。如果没有 <em>multi</em> 修饰语的话，一个汉字只会产生一次效果。</p>
+</div>
+</div>
+
+<h3 id="noblank">noblank</h3>
+
+<p>说明该模板不会对被认为是"空"的音节起作用。一个音节在几种情况下会被认为是空，去掉音节前的标签后：
+1.剩下的是ASCII的空格
+2.剩下全角空格
+3.真正是空的
+特殊情况
+4.音节的持续时间是0 (\k0)</p>
+
+<blockquote>
+  <p>_ 查看 <em>notext</em> 修饰语的例子_</p>
+</blockquote>
+
+<h3 id="notext">notext</h3>
+
+<p>说明原文本在应用模板后不会在输出行中被显示。</p>
+
+<p>这个修饰语一般用来达到清除文本同时输出图形一类的目的。</p>
+
+<p>code行不可用。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>code once: sword_shape = "m 0 0 l 5 -5 l 5 -30 l 10 -30 l 10 -32 l 2 -32 l 2 -40 l -2 -40 l -2 -32 l -10 -32 l -10 -30 l -5 -30 l -5 -5 "
+template syl notext noblank: {\an5\move($scenter,!$smiddle-30!,$scenter,$smiddle,!$start-20!,$start)\p2}!sword_shape!
+</code></pre></div>
+<p>第一个 code行为了方便定义了一个矢量绘图。这个图形是一个简单的剑尖朝下的剑形。这个效果是使用\move标签使剑的图形向下落到音节上。</p>
+
+<p>这个模板使用了 <em>notext</em> 修饰语来防止生成的行中带有原文本，因为生成的行中我们只需要剑的形状，使用模板只是为了使用音节的时间和定位信息。<em>noblank</em> 修饰语会保证剑形不会落空到 “不可见的” 音节上。如果那个不可见的音节恰好是个长时间的空格，不加 <em>noblank</em> 修饰，那效果看起来会比较悲剧。</p>
+</div>
+</div>
+
+<h3 id="repeat-n-loop-n">repeat <em>n</em>, loop <em>n</em></h3>
+
+<p>模板会按照给定数值多次执行。需要给定数字。循环次数必须是正整数，不可是变量或者算式。</p>
+
+<p><code>repeat</code> 和 <code>loop</code> 是等价的。</p>
+
+<p>注意 loop 修饰的行模板和 loop 修饰的 音节/假名标记(syl/furi)模板执行顺序不同。详见 <a href="../Template_execution_rules_and_order/index.html">模板执行顺序</a> 。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>template syl &lt;u&gt;loop 4&lt;/u&gt;: {\move($x,$y,!$x+math.random(-30,30)!,!$y+math.random(-30,30)!,$start,$end)\alpha&amp;HC0&amp;\t($start,$end,\alpha&amp;HFF&amp;)}
+</code></pre></div>
+<p>其中 <em>loop</em> 修饰语用于创建4个音节的副本。这四个副本每个都沿随机方向移动，在X/Y方向上最大范围30像素，带有淡出。</p>
+
+<p>每个音节副本的初始透明度都是 <code>&amp;HC0</code>，因为C0(HEX)=256-(256/4)=192，4由循环数确定。这样每个副本的不透明度实际上叠加到了256。 (更科学的数字应该是255，但是靠偶数次循环实现不了)</p>
+</div>
+</div>
+<blockquote>
+  <p><em>可以在 <a href="../Code_execution_environment/index.html#loopingtemplates">代码执行环境</a> 页面看到更多高级用法。</em></p>
+</blockquote>
+
+<div class='navbox'>
+<div><a href="../../index.html">自动化</a></div>
+<table>
+<tr>
+<th>概述:</th>
+<td><a href="../../Manager/index.html">自动化脚本管理器</a> • <a href="../../Running_macros/index.html">运行宏</a> • <a href="../../../Exporting/index.html">使用导出滤镜</a> • <a href="../../Included_macros/index.html">示例宏</a></td>
+</tr>
+<tr>
+<th><a href="../index.html">卡拉OK模版执行器</a> 相关:</th>
+<td><a href="../Declaring_template_and_code_lines/index.html">声明模版</a> • <a href="../Template_execution_rules_and_order/index.html">模版执行顺序</a> • <a href="index.html">修饰语</a> • <a href="../Inline_variables/index.html">内联变量($变量)</a> <br> <a href="../Code_lines_and_blocks/index.html">code行和code区</a> • <a href="../Code_execution_environment/index.html">代码执行环境</a></td>
+</tr>
+<tr>
+<th><a href="../../Lua/index.html">Lua API</a> 相关:</th>
+<td><a href="../../Lua/Registration/index.html">注册</a> • <a href="../../Lua/Subtitle_file_interface/index.html">字幕对象</a> • <a href="../../Lua/Progress_reporting/index.html">进度反馈</a> • <a href="../../Lua/Dialogs/index.html">对话框</a> • <a href="../../Lua/Miscellaneous_APIs/index.html">其他APIs</a></td>
+</tr>
+<tr>
+<th><a href="../../Lua/Modules/index.html">Lua 模块</a>:</th>
+<td><a href="../../Lua/Modules/karaskel.lua/index.html">karaskel.lua</a> • <a href="../../Lua/Modules/util/index.html">util</a> • <a href="../../Lua/Modules/unicode/index.html">unicode</a> • <a href="#">cleantags.lua</a> • <a href="../../Lua/Modules/clipboard/index.html">clipboard</a> • <a href="../../Lua/Modules/re/index.html">re</a></td>
+</tr>
+<tr>
+<th>Karaskel 概念:</th>
+<td><a href="../../Lua/Modules/karaskel.lua/index.html#style-table">Style tables</a> • <a href="../../Lua/Modules/karaskel.lua/index.html#dialogue-line-table">Dialogue line tables</a> • <a href="../../Lua/Modules/karaskel.lua/index.html#karaoke-and-furigana-syllable-tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/index.html">内联特效</a> • <a href="../../../Furigana_karaoke/index.html">注音假名</a></td>
+</tr>
+</table>
+</div>
+
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Karaoke_Templater/Template_modifiers/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:40 GMT -->
+</html>
+

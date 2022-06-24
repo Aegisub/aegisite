@@ -7,7 +7,11 @@ type: simple-page
 <br />
 <a href="latest" class="btn btn-primary" role="button">3.4 手册</a> 3.4版本的用户手册，正在翻译。
 </p>
-
+<p>
+<br />
+<a href="3.2" class="btn btn-outline-secondary" role="button">3.2 手册</a> 3.2版本的用户手册，正在翻译。
+</p>
+<p>
 <p>
 <br />
 <a href="{{< relref path="docs" lang="en">}}3.1" class="btn btn-outline-secondary" role="button">3.1 手册</a> 3.1版本的用户手册（英文）。

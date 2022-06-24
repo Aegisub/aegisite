@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Spell_Checker/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:13:17 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>拼写检查器 - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li class='active'>
+<a href="index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../Automation/index.html">概述</a>
+</li>
+<li>
+<a href="../Automation/Karaoke_Templater/index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../Automation/Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>拼写检查器</h1>
+<p>为了保障字幕的质量，Aegisub 特意为您准备了一个完善的拼写检查器。它采用了由 OpenOffice.org 的 MySpell 发展而来的 Hunspell 拼写检查库，这意味着 Aegisub 的纠错能力将不亚于同样使用了 Hunspell 的高级文字处理软件<small>（※译者注：例如 WPS Office、印象笔记等）</small>。您可以通过“<em>字幕 -&gt; 拼写检查器</em> ”打开它，它会在您输入内容的同时进行检查。此外，字幕编辑框的右键菜单中也有与之相关的选项（详见 <a href="../Editing_Subtitles/index.html">编辑字幕</a>）。</p>
+
+<h3 id="section">拼写检查对话框</h3>
+<p><img class="center" alt="" width="458" height="418" src="../img/spell_checker-ac16e246.png" /></p>
+
+<p>拼写检查对话框将会引导您逐一订正字幕中出现的拼写错误。左侧方框中展示的是针对当前误拼单词的修改建议，它的右侧有一些复选框和按钮：</p>
+
+<dl class="dl-horizontal">
+  <dt>忽略注释</dt>
+  <dd>在检查时跳过注释行。如果您的注释行主要是卡拉OK脚本、未翻译的原文之类的内容，那么建议您勾选。</dd>
+  <dt>忽略大写的单词</dt>
+  <dd>在检查时跳过大写的单词。如果您的字幕中含有大量生造的首字母缩略词<small>（※译者注：例如仅限于汉语圈使用的“<abbr title="Anime, Comics and Games">ACG</abbr>”就会被判定为拼写错误）</small>，并且您不想花时间把它们添加到词典中，就可以勾选此项。</dd>
+  <dt>替换</dt>
+  <dd>用选中的修改建议替换当前误拼单词。直接双击某一条建议也是同样的效果。</dd>
+  <dt>全部替换</dt>
+  <dd>用选中的修改建议替换<em>整个字幕文件中</em> 与当前误拼单词相同的<em>所有</em> 拼写错误。</dd>
+  <dt>忽略</dt>
+  <dd>忽略<em>此次</em> 拼写错误，但在下一次发现相同错误时依然会提示。</dd>
+  <dt>忽略全部</dt>
+  <dd>忽略与当前误拼单词相同的<em>所有</em> 拼写错误，但在下一次启动拼写检查时依然会提示。</dd>
+  <dt>添加至词典</dt>
+  <dd>将当前误拼单词添加到词典中，从而使其不会再被判定为拼写错误。</dd>
+  <dt>从词典移除</dt>
+  <dd>将当前显示在<strong>替换为</strong>一栏的单词从词典中移除。只能移除之前<strong>添加至词典</strong>的单词，对于词典中固有的单词则无效。</dd>
+</dl>
+
+<p>对话框底部的下拉列表可以选择拼写检查的语言。</p>
+
+<p><small>▲译者提示：以单词“future”为例，假设它有几次被误拼为“futrue”，另有几次被误拼为“fuutre”，那么当我们对"futrue"选择“全部替换”时，所有的“futrue”就会被一次性订正，而对于“fuutre”则需另行操作。因为这是两种不同的拼写错误，即便主观上两者对应同一个单词；“忽略全部”也是同理。</small></p>
+
+<h3 id="section-1">词典</h3>
+<p>Aegisub 的 Windows 版本包含了英语(美国)词典，其他语种词典的安装程序可以在 <a href="https://aegi.vmoe.info/downloads/#dictionaries">我们的网站</a> 上下载。如果没有找到您所需要的语言，可以查看 <a href="https://wiki.mozilla.org/L10n:Dictionaries">Mozilla 词典集</a>，或者在 Google 中搜索“hunspell <i>&lt;language&gt;</i> dictionary”。欢迎您协助我们扩充其他语种的词典——如果我们的开发团队中没有人使用某一种语言，那我们也许就很难找到它对应的词典。</p>
+
+<p>OS X 版本则已经内置了现有的全部词典。</p>
+
+<p>在各个发行版的 Linux 系统中，您可以通过软件包管理器来安装 hunspell 词典。您可能需要在 Aegisub 中将 <a href="../Options/index.html#section-7">词典文件路径</a> 设置为它们实际安装的位置；常见的路径为 <code>/usr/share/hunspell</code>。</p>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Spell_Checker/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:13:19 GMT -->
+</html>
+
