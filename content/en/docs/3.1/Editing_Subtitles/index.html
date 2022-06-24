@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from docs.aegisub.org/3.1/Editing_Subtitles/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:46:36 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>Editing Subtitles - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href='../../3.2/Editing_Subtitles/index.html' rel='canonical'>
+<link href="../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----MIIHJwYJKoZIhvcNAQcEoIIHGDCCBxQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYCF/CdSADVe5JGNHY0ajf2Ss7MRtEkipxJ3mWKQEDo0OdPwFjFc/+xOEcJtduO0PzcNWeE3i0QVt+0AKHaXla9fIYeixCgw+j2apsgDi+itShvnrLt6/XSaVYBYjqNLCzYm4piHbHua9uBEPo0MvET4ZimJhF/yFP7PTmsyR/+HRTELMAkGBSsOAwIaBQAwgaQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIZtx+6lgqvzSAgYB5/Hosn9AcEAFSH1GKgyah7QmB0Xqhlr5PzoI98gftPBMU4411ECMXIFX3xuTd1DbKtINakaOmDg612ZzUZgadhEvwKzwiwee3BWIKjFtLINevdu+6FvSvlNnYJWUm+0txwvEs4udrUFKwRxWiN5EQQMrGmHrViOyatjSAuMToMKCCA4cwggODMIIC7KADAgECAgEAMA0GCSqGSIb3DQEBBQUAMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTAeFw0wNDAyMTMxMDEzMTVaFw0zNTAyMTMxMDEzMTVaMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAwUdO3fxEzEtcnI7ZKZL412XvZPugoni7i7D7prCe0AtaHTc97CYgm7NsAtJyxNLixmhLV8pyIEaiHXWAh8fPKW+R017+EmXrr9EaquPmsVvTywAAE1PMNOKqo2kl4Gxiz9zZqIajOm1fZGWcGS0f5JQ2kBqNbvbg2/Za+GJ/qwUCAwEAAaOB7jCB6zAdBgNVHQ4EFgQUlp98u8ZvF71ZP1LXChvsENZklGswgbsGA1UdIwSBszCBsIAUlp98u8ZvF71ZP1LXChvsENZklGuhgZSkgZEwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tggEAMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADgYEAgV86VpqAWuXvX6Oro4qJ1tYVIT5DgWpE692Ag422H7yRIr/9j/iKG4Thia/Oflx4TdL+IFJBAyPK9v6zZNZtBgPBynXb048hsP16l2vi0k5Q2JKiPDsEfBhGI+HnxLXEaUWAcVfCsQFvd2A1sxRr67ip5y2wwBelUecP3AjJ+YcxggGaMIIBlgIBATCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwCQYFKw4DAhoFAKBdMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE0MDEwMzE0Mzc0NFowIwYJKoZIhvcNAQkEMRYEFFm9tXQlYXaST8+Vq7Ms6lYgjat7MA0GCSqGSIb3DQEBAQUABIGAp1Uqwm3BrsAY29a9wtrY5p1shbKWq9P+8anOpGD2vKBls89fFMmF/3pp1zBPkjwnLkfFXv5FA8r+oONLrduLJGDlg6Wr7dC6Gmx0zAMQCLdvOqd6CjQWgiG+Qcc28Gc4ijc2IIufp9IxkqNaoVzd2uGLbkzKnBVhb2WTWRuKnDo=-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../Main_Page/index.html">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../About/index.html">What is Aegisub?</a>
+</li>
+<li>
+<a href="../Highlights/index.html">Highlights</a>
+</li>
+<li>
+<a href="../Credits/index.html">Credits</a>
+</li>
+<li>
+<a href="../Support/index.html">Support Aegisub</a>
+</li>
+<li>
+<a href="../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../Tutorials/index.html">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li class='active'>
+<a href="index.html">Editing Subtitles</a>
+</li>
+<li>
+<a href="../Exporting/index.html">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../Attaching_subtitles_to_video/index.html">Applying Subtitles</a>
+</li>
+<li>
+<a href="../Spell_Checker/index.html">Spell Checker</a>
+</li>
+<li>
+<a href="../Translation_Assistant/index.html">Translation Assistant</a>
+</li>
+<li>
+<a href="../Paste_Over/index.html">Paste Over</a>
+</li>
+<li>
+<a href="../Select_Lines/index.html">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../Typesetting/index.html">Introduction</a>
+</li>
+<li>
+<a href="../Video/index.html">Working with Video</a>
+</li>
+<li>
+<a href="../Styles/index.html">Editing styles</a>
+</li>
+<li>
+<a href="../Visual_Typesetting/index.html">Visual Typesetting</a>
+</li>
+<li>
+<a href="../ASS_Tags/index.html">ASS Override Tags</a>
+</li>
+<li>
+<a href="../Colour_Picker/index.html">Colour Picker</a>
+</li>
+<li>
+<a href="../Styling_Assistant/index.html">Styling Assistant</a>
+</li>
+<li>
+<a href="../Resolution_Resampler/index.html">Resolution Resampler</a>
+</li>
+<li>
+<a href="../Fonts_Collector/index.html">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../Audio/index.html">Working with Audio</a>
+</li>
+<li>
+<a href="../Timing/index.html">Timing subtitles to audio</a>
+</li>
+<li>
+<a href="../Shift_Times/index.html">Shift times</a>
+</li>
+<li>
+<a href="../Timing_Post-Processor/index.html">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../Kanji_Timer/index.html">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../Automation/index.html">Overview</a>
+</li>
+<li>
+<a href="../Automation/Karaoke_Templater/index.html">Karaoke Templater</a>
+</li>
+<li>
+<a href="../Automation/Lua/index.html">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../Options/index.html">Aegisub Options</a>
+</li>
+<li>
+<a href="../Properties/index.html">Script Properties</a>
+</li>
+<li>
+<a href="../Attachment_Manager/index.html">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>Editing Subtitles</h1>
+<ol id="markdown-toc">
+  <li><a href="#opening-subtitles">Opening subtitles</a>    <ol>
+      <li><a href="#supported-formats">Supported formats</a></li>
+      <li><a href="#importing-subtitles-from-mkv">Importing subtitles from MKV</a></li>
+      <li><a href="#importing-plain-text-scripts">Importing plain text scripts</a></li>
+    </ol>
+  </li>
+  <li><a href="#editing-subtitles">Editing subtitles</a>    <ol>
+      <li><a href="#the-subtitles-edit-box">The subtitles edit box</a></li>
+      <li><a href="#the-subtitles-grid">The subtitles grid</a></li>
+    </ol>
+  </li>
+</ol>
+
+<p>Editing subtitles is what Aegisub is made for. This page will deal with basic
+text editing of subtitle lines; for more information on the typography of
+subtitles, see <a href="../Typesetting/index.html">typesetting</a>. For information on the timing of
+subtitle lines, see <a href="../Audio/index.html">working with audio</a>.</p>
+
+<h2 id="opening-subtitles">Opening subtitles</h2>
+
+<p>In the <em>File</em> menu, there are four menu choices that relate to opening or
+creating subtitles:</p>
+
+<dl class="horizontal-wide">
+  <dt>New subtitles</dt>
+  <dd>Create a new, blank script (i.e. close the current file).</dd>
+  <dt>Open subtitles</dt>
+  <dd>Open an existing subtitles file or import subtitles from a <a href="http://www.matroska.org/">Matroska
+container file</a>.</dd>
+  <dt>Open subtitles with charset</dt>
+  <dd>Opens subtitles but lets you choose what character set Aegisub will
+use to interpret the file. Usually not needed, but if you have a file
+in an unusual charset Aegisub will occasionally misdetect it.</dd>
+  <dt>Open subtitles from video</dt>
+  <dd>Open the subtitles muxed into the currently open video file. This
+currently only works with Matroska video files.</dd>
+  <dt>Open <a href="../Autosave/index.html">Autosaved Subtitles</a></dt>
+  <dd>Open a file created by Aegisub's autosave. Useful if Aegisub crashes when you
+had unsaved changes or just if you want to open an older version of a file.</dd>
+</dl>
+
+<p>When you open a subtitles file that is not detected as Unicode, Aegisub will
+attempt to guess what character set it is encoded with. If it is unsure, it
+will ask you to choose from two or more likely alternatives. If the result
+looks garbled or otherwise incorrect, try reopening it with another character
+set.</p>
+
+<h3 id="supported-formats">Supported formats</h3>
+<p>Aegisub supports reading the following subtitle formats:</p>
+
+<ul>
+  <li>Advanced Substation Alpha, also known as SSA v4+ (.ass)</li>
+  <li>Substation Alpha v4 (.ssa)</li>
+  <li><a href="http://zuggy.wz.cz/">SubRip</a> Text (.srt)</li>
+  <li>MPEG4 Timed Text (limited support at best; broken at worst), also known as
+ISO/IEC 14496-17, MPEG-4 Part 17 or just TTXT (.ttxt)</li>
+  <li>MicroDVD (.sub)</li>
+  <li>Plain "dialog script" formatted text (see below)</li>
+</ul>
+
+<h3 id="importing-subtitles-from-mkv">Importing subtitles from MKV</h3>
+<p>Loading subtitles directly from Matroska files can also be done. The following
+CodecIDs are supported:</p>
+
+<ul>
+  <li>S_TEXT/UTF8 (SRT)</li>
+  <li>S_TEXT/ASS (ASS/SSA v4+)</li>
+  <li>S_TEXT/SSA (SSA v4)</li>
+</ul>
+
+<h3 id="importing-plain-text-scripts">Importing plain text scripts</h3>
+<p>Aegisub also supports importing "dialogue-formatted" plain text scripts. For example:</p>
+
+<pre class="highlight text">Actor 1: Well do I understand your speech, yet few strangers do so.
+         Why then do you not speak in the Common Tongue,
+         as is the custom in the West, if you wish to be answered?
+# TL check: The above seems to be a quote from the lord of the rings, look it up later
+Actor 2: What are you babbling about?
+</pre>
+<p>This will result in five subtitle lines, one being commented out. The first
+three will have the actor field set to "Actor 1", and the fifth will have it
+set to "Actor 2" (the comment line's actor field will be blank).</p>
+
+<p>When you open a file with the extension .txt, Aegisub will ask you about what
+characters it should use as the actor separator and comment starter,
+respectively. In the example above, the actor separator is a colon
+("<code>:</code>") and the comment starter is a hash ("<code>#</code>").</p>
+
+<h2 id="editing-subtitles">Editing subtitles</h2>
+<p>Editing subtitles in Aegisub is done in two areas: the subtitle edit box (where
+you type in or edit text) and the subtitles grid. Changes made in both the
+edit box and the grid normally modify all selected lines, and not just the
+line displayed in the edit box.</p>
+
+<h3 id="the-subtitles-edit-box">The subtitles edit box</h3>
+<p><img src="../img/subs_edit_box-f9de0843.png" /></p>
+
+<p>The edit box is just a plain editing area with a number of associated controls.
+They are:</p>
+
+<ol>
+  <li>Flags the line as a comment. Comment lines will not be displayed on the
+ video.</li>
+  <li>The <a href="../Styles/index.html">style</a> used for this line.</li>
+  <li>The actor speaking this line. Has no actual effect on subtitle display but
+ can be useful for editing purposes.</li>
+  <li>Effect for this line. There are a few predefined effects which can be
+ applied via this field, but renderer support for them is spotty and using
+ <a href="../ASS_Tags/index.html">override tags</a> is nearly always a better idea. This is commonly
+ used as a metadata field for automation scripts.</li>
+  <li>The number of characters on the longest line of this subtitle.</li>
+  <li>Layer for this line. If you override positioning with an <a href="../ASS_Tags/index.html">override
+ tag</a> so that two or more lines are displayed on top of each
+ other, this field controls which one is drawn where; higher layer numbers
+ are drawn on top of lower ones.</li>
+  <li>Start time for the line.</li>
+  <li>End time for the line.</li>
+  <li>Duration for the line. If you modify this field, the end time will be
+ modified as a result.</li>
+  <li>Left margin for this line. 0 means use the margin specified in the
+ style.</li>
+  <li>Right margin for this line. 0 means use the margin specified in the
+ style.</li>
+  <li>Vertical margin for this line. 0 means use the margin specified in the
+ style.</li>
+  <li>Inserts a bold override tag (<code>\b1</code>) at the cursor position. If the text
+ is already bold, inserts a corresponding closing tag (<code>\b0</code>).</li>
+  <li>Inserts an italics override tag (<code>\i1</code>) at the cursor position. If the
+ text is already italic, inserts a corresponding closing tag (<code>\i0</code>).</li>
+  <li>Inserts an underline override tag (<code>\u1</code>) at the cursor position. If the
+ text is already italic, inserts a corresponding closing tag (<code>\u0</code>).</li>
+  <li>Inserts an strikeout override tag (<code>\s1</code>) at the cursor position. If the
+ text is already italic, inserts a corresponding closing tag (<code>\s0</code>).</li>
+  <li>Brings up a font selection window and inserts a font face name tag
+ (<code>\fnFontName</code>) with the given font name, as well as the chosen effect
+ tags.</li>
+  <li>Brings up the <a href="../Colour_Picker/index.html">color picker</a> and lets you choose a
+ color; then inserts a primary color override tag (<code>\c</code>) with the chosen
+ color at the cursor position.</li>
+  <li>Brings up the <a href="../Colour_Picker/index.html">color picker</a> and lets you choose a
+ color; then inserts a secondary color override tag (<code>\2c</code>) with the chosen
+ color at the cursor position.</li>
+  <li>Brings up the <a href="../Colour_Picker/index.html">color picker</a> and lets you choose a
+ color; then inserts an outline color override tag (<code>\3c</code>) with the chosen
+ color at the cursor position.</li>
+  <li>Brings up the <a href="../Colour_Picker/index.html">color picker</a> and lets you choose a
+ color; then inserts a shadow color override tag (<code>\4c</code>) with the chosen
+ color at the cursor position.</li>
+  <li>Move to the next line, creating a new one at the end of the file if
+ needed. Note that unlike in previous versions of Aegisub, changes do
+ not need to be committed using this button.</li>
+  <li>Changes display between times and frames. Note that this does not change
+ how times are actually stored in the script.</li>
+</ol>
+
+<h4 id="show-original">Show Original</h4>
+
+<p>Checking the Show Original box switches the edit box to the following mode:</p>
+
+<p><img src="../img/subs_edit_box_original-90acaabb.png" /></p>
+
+<p>The top half of the edit box is read-only, and show the text that the currently
+selected line had when it was first selected. This can be useful for
+translating subtitles into another language, or just for editing subtitles.</p>
+
+<dl>
+  <dt>Revert</dt>
+  <dd>Replace the text of the line with the text shown in the upper box. A simple
+way to undo all the changes you made to the line if you change your mind.</dd>
+  <dt>Clear</dt>
+  <dd>Clear the line.</dd>
+  <dt>Clear Text</dt>
+  <dd>Clear the text of the line, but leave all override tags in place. Can help
+with translating typeset signs to another language.</dd>
+  <dt>Insert Original</dt>
+  <dd>Insert the original text of the line at the cursor position.</dd>
+</dl>
+
+<h4 id="context-menu">Context menu</h4>
+
+<p>If you right-click anywhere in the edit box, you get the following menu:
+<img src="../img/Subs_Edit_Context-cfe069f2.png" /></p>
+
+<p>Select all, copy, cut and paste all do what you'd expect them to.</p>
+
+<dl class="dl-horizontal">
+  <dt>Spell checker</dt>
+  <dd>If you right-click on a word that has been detected as misspelled,
+the spell checker will suggest some likely alternative. You can also
+set which language it will use for checking from this menu, or add
+words that it doesn't recognize but you know to be correctly spelled to
+the dictionary. For more information on spell checking in Aegisub, see
+the <a href="../Spell_Checker/index.html">Spell Checker</a> page.</dd>
+  <dt>Thesaurus</dt>
+  <dd>Suggests alternative words similar to the highlighted word.</dd>
+  <dt>Split line</dt>
+  <dd>Splits the line into two new lines at the cursor position. Preserve
+times keeps the old line's timing for both lines. Estimate times tries
+to guess where the split is based on the length of the text on each
+side of the cursor. At video frame makes the first half of the line end
+on the previous frame, and the second half start on the current frame.</dd>
+</dl>
+
+<h3 id="the-subtitles-grid">The subtitles grid</h3>
+<p><img src="../img/Subs_grid-5dfe45ee.png" /></p>
+
+<p>The subtitles grid shows all lines (comments and otherwise) in the entire
+file.</p>
+
+<p>Some common controls:</p>
+
+<ul>
+  <li>To move lines up or down in the grid, select them, hold down the Alt key
+and press the up- or down-arrow keys.</li>
+  <li>To select multiple lines, hold down either Ctrl or Shift and click.
+Ctrl-click selects one more line per click; Shift-click selects all the
+lines between the first clicked and the last clicked.</li>
+  <li>To change the active line shown in the edit box without changing the
+selection, hold down alt and click on the new line.</li>
+  <li>To sort all lines in the grid, open the <em>Subtitle</em> menu, and under <em>Sort
+Lines</em> select the field to sort the lines on.</li>
+  <li>To change the way <a href="../ASS_Tags/index.html">override tags</a> are displayed in the grid,
+click the "cycle through tag hiding modes" button on the toolbar.</li>
+</ul>
+
+<p><img src="../img/Subs_grid_tags-f45cf97d.png" /></p>
+
+<p>The lines have different (configurable) colors representing different
+things; see the <a href="../Options/index.html#General_-.3E_Subtitles_grid">subtitles grid section of the options
+page</a> for details on what the colors
+mean.</p>
+
+<p>By default, the following columns are visible:</p>
+
+<dl class="horizontal-narrow">
+  <dt><strong>#</strong></dt>
+  <dd>The line number.</dd>
+  <dt>Start</dt>
+  <dd>The start time of the line.</dd>
+  <dt>End</dt>
+  <dd>The end time of the line.</dd>
+  <dt>Style</dt>
+  <dd>The style used for this line.</dd>
+  <dt>Text</dt>
+  <dd>The text of the line (this is what will be displayed on the video).</dd>
+</dl>
+
+<p>The following columns will be displayed if any line in the script uses them:</p>
+
+<dl class="horizontal-narrow">
+  <dt>L</dt>
+  <dd>The layer of the line (see above).</dd>
+  <dt>Actor</dt>
+  <dd>The actor speaking the line.</dd>
+  <dt>Effect</dt>
+  <dd>The effect for this line.</dd>
+  <dt>Left</dt>
+  <dd>The left margin.</dd>
+  <dt>Right</dt>
+  <dd>The right margin.</dd>
+  <dt>Vert</dt>
+  <dd>The vertical margin.</dd>
+</dl>
+
+<p>You can also right-click the top line of the grid (the one with the column
+names) to manually select which columns you want to be visible.</p>
+
+<p>Right-clicking any other line in the grid gives you the following menu
+(many of the options are also available in other menus):</p>
+
+<p><img src="../img/grid_context_menu-920a18a8.png" /></p>
+
+<dl>
+  <dt><strong>Insert (before/after)</strong></dt>
+  <dd>Inserts a new empty line before or after the selected line. The new line
+will be timed start at 0:00:00.00 and go to 0:00:05.00.</dd>
+  <dt><strong>Insert at video time (before/after)</strong></dt>
+  <dd>Same as the above, but the new line will be timed to start at the current
+video frame. Not enabled unless you have video loaded.</dd>
+  <dt><strong>Duplicate</strong></dt>
+  <dd>Duplicates the selected line(s).</dd>
+  <dt><strong>Split lines before current frame</strong></dt>
+  <dd>Duplicate the selected line(s), set the end time of the original line
+to the frame before the current video frame, and set the start time of
+the copy to the current video frame. Useful for frame-by-frame
+typesetting and for splitting a line at a scene change to let it move
+down if it collided with a no-longer-visible line. Only enabled if you
+have video loaded.</dd>
+  <dt><strong>Split lines after current frame</strong></dt>
+  <dd>As above, but it splits off the portion of the line after the current
+frame rather than the potion before the current frame, for when doing
+frame-by-frame typesetting from the last to the first frame of a line.</dd>
+  <dt><strong>Split (by karaoke)</strong></dt>
+  <dd>Splits the line into one new line per syllable, as delimited by karaoke
+override tags (<code>\k</code> and its relatives). The timing of the first line will
+start at the original line's start time and end at that time plus the
+length of the first syllable; the following lines will start at the end of
+the previous and last for the duration of the syllable.</dd>
+  <dt><strong>Swap</strong></dt>
+  <dd>Swaps the places (in the grid) of two selected lines.</dd>
+  <dt><strong>Join (keep first)</strong></dt>
+  <dd>Joins two or more lines, discarding the text of all but the first. The
+new line will be timed to start at the first line's start time and end at
+the last line's end time. Only enabled if you have more than one line
+selected.</dd>
+  <dt><strong>Join (concatenate)</strong></dt>
+  <dd>Same as above, but concatenates the text of all selected lines instead. A
+space is inserted between the texts of each source line.</dd>
+  <dt><strong>Join (as karaoke)</strong></dt>
+  <dd>Does the inverse of <em>Split (by karaoke)</em>, i.e.  the same as <em>Join
+(concatenate)</em> but inserts <code>\k</code> tags with the timing of each source line in
+the joined line.</dd>
+  <dt><strong>Make times continuous (change start/change end)</strong></dt>
+  <dd>Modifies the timing of the selected lines so that the end time of each
+line is the same as the start time of the next line. Change start/change
+end determines whether the function changes the end time or the start time
+of each line. Only  enabled when you have more than one line selected.</dd>
+  <dt><strong>Recombine lines</strong></dt>
+  <dd>Given two or more lines with the same text being partially present in all
+of them, creates one line per text fragment instead. This is mostly useful
+for correcting subs ripped from DVDs, which frequently look something like
+this:
+
+    <p><img src="../img/Recombine_01-122d62ee.png" /></p>
+
+    <p>After recombine lines, the result is:</p>
+
+    <p><img src="../img/Recombine_02-c2d25bbb.png" /></p>
+  </dd>
+  <dt><strong>Create audio clip</strong></dt>
+  <dd>Saves a segment of the loaded audio corresponding to the timing of the
+selected lines (starting at the earliest start time and ending at the
+latest end time) as an uncompressed WAV file. Only enabled if you have
+audio loaded.</dd>
+  <dt><strong>Cut/Copy/Paste</strong></dt>
+  <dd>Cuts/copies/pastes entire lines. Note that the lines are copied as plain
+text and can be copied and pasted freely between text editors, chat
+programs, web browsers, other instances of Aegisub etc.</dd>
+  <dt><strong>Paste Lines Over…</strong></dt>
+  <dd>Open the <a href="../Paste_Over/index.html">Paste Over</a> dialog.</dd>
+  <dt><strong>Delete</strong></dt>
+  <dd>Deletes the selected lines.</dd>
+</dl>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com/'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from docs.aegisub.org/3.1/Editing_Subtitles/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:46:36 GMT -->
+</html>
+

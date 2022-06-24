@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from docs.aegisub.org/3.1/Timing/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:48:23 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>Timing - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href='../../3.2/Timing/index.html' rel='canonical'>
+<link href="../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../Main_Page/index.html">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../About/index.html">What is Aegisub?</a>
+</li>
+<li>
+<a href="../Highlights/index.html">Highlights</a>
+</li>
+<li>
+<a href="../Credits/index.html">Credits</a>
+</li>
+<li>
+<a href="../Support/index.html">Support Aegisub</a>
+</li>
+<li>
+<a href="../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../Tutorials/index.html">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li>
+<a href="../Editing_Subtitles/index.html">Editing Subtitles</a>
+</li>
+<li>
+<a href="../Exporting/index.html">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../Attaching_subtitles_to_video/index.html">Applying Subtitles</a>
+</li>
+<li>
+<a href="../Spell_Checker/index.html">Spell Checker</a>
+</li>
+<li>
+<a href="../Translation_Assistant/index.html">Translation Assistant</a>
+</li>
+<li>
+<a href="../Paste_Over/index.html">Paste Over</a>
+</li>
+<li>
+<a href="../Select_Lines/index.html">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../Typesetting/index.html">Introduction</a>
+</li>
+<li>
+<a href="../Video/index.html">Working with Video</a>
+</li>
+<li>
+<a href="../Styles/index.html">Editing styles</a>
+</li>
+<li>
+<a href="../Visual_Typesetting/index.html">Visual Typesetting</a>
+</li>
+<li>
+<a href="../ASS_Tags/index.html">ASS Override Tags</a>
+</li>
+<li>
+<a href="../Colour_Picker/index.html">Colour Picker</a>
+</li>
+<li>
+<a href="../Styling_Assistant/index.html">Styling Assistant</a>
+</li>
+<li>
+<a href="../Resolution_Resampler/index.html">Resolution Resampler</a>
+</li>
+<li>
+<a href="../Fonts_Collector/index.html">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../Audio/index.html">Working with Audio</a>
+</li>
+<li class='active'>
+<a href="index.html">Timing subtitles to audio</a>
+</li>
+<li>
+<a href="../Shift_Times/index.html">Shift times</a>
+</li>
+<li>
+<a href="../Timing_Post-Processor/index.html">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../Kanji_Timer/index.html">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../Automation/index.html">Overview</a>
+</li>
+<li>
+<a href="../Automation/Karaoke_Templater/index.html">Karaoke Templater</a>
+</li>
+<li>
+<a href="../Automation/Lua/index.html">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../Options/index.html">Aegisub Options</a>
+</li>
+<li>
+<a href="../Properties/index.html">Script Properties</a>
+</li>
+<li>
+<a href="../Attachment_Manager/index.html">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>Timing</h1>
+<ol id="markdown-toc">
+  <li><a href="#the-main-audio-view">The main audio view</a></li>
+  <li><a href="#basic-audio-timing">Basic audio timing</a>    <ol>
+      <li><a href="#timing-protips">Timing protips</a></li>
+      <li><a href="#the-spectrum-analyzer-mode">The spectrum analyzer mode</a></li>
+    </ol>
+  </li>
+  <li><a href="#karaoke-timing">Karaoke timing</a></li>
+</ol>
+
+<h2 id="the-main-audio-view">The main audio view</h2>
+
+<p>When your audio file has loaded, Aegisub will transform into something like
+the screenshot below:
+<img src="../img/audio_display-732b2ace.png" /></p>
+
+<p>You can click and drag just below the audio timeline to change the height of
+the audio waveform/spectrum display.</p>
+
+<p>Green and red buttons are toggle buttons. A green background indicates that
+the option is turned on, while a red background indicates that the option is
+turned off. The buttons and controls are as follows (many of these have
+<a href="../Keyboard_shortcuts/index.html">keyboard shortcuts</a> associated with them by default):</p>
+
+<ol>
+  <li>Go to previous line, discarding any unsaved changes (previous syllable
+  when in <a href="../Audio/index.html#karaokemode">karaoke mode</a>)</li>
+  <li>Go to next line, discarding any unsaved changes (next syllable when in
+  karaoke mode)</li>
+  <li>Play selected area of the audio waveform</li>
+  <li>Play currently selected line</li>
+  <li>Pause playback</li>
+  <li>Play 500ms before selection start</li>
+  <li>Play 500ms after selection end</li>
+  <li>Play first 500ms of selection</li>
+  <li>Play last 500ms of selection</li>
+  <li>Play from selection start to end of file (or until pause is pressed)</li>
+  <li>Add lead-in (how much is determined by the <a href="../Options/index.html#audio">audio lead in
+  setting</a>)</li>
+  <li>Add lead-out (exactly like the above, but the setting is called <a href="../Options/index.html#audio">audio
+  lead out</a>, logically enough)</li>
+  <li>Commit (save) changes</li>
+  <li>Scroll view to selection/go to selection</li>
+  <li>Toggle auto-commit (if enabled, all timing changes are committed
+  instantly rather than waiting for the user to press commit)</li>
+  <li>Toggle auto next line on commit (if this is enabled, Aegisub will
+  automatically select the next line when the current line is committed by
+  the user. Auto-commits do not trigger this, for obvious reasons)</li>
+  <li>Toggle auto-scrolling (will center waveform on the currently selected
+  line automatically when enabled)</li>
+  <li>Toggle spectrum analyzer mode (see below)</li>
+  <li>Toggle Medusa-style timing shortcuts</li>
+  <li>Toggle karaoke mode</li>
+  <li>Audio display zoom (horizontal)</li>
+  <li>Audio display zoom (vertical)</li>
+  <li>Audio volume</li>
+  <li>Toggle linking of vertical audio zoom slider with volume slider</li>
+</ol>
+
+<h2 id="basic-audio-timing">Basic audio timing</h2>
+<p>When you click on a line in the subtitles grid, Aegisub will highlight it in
+the audio display and, if you have auto-scrolling enabled, scroll the audio
+display so it's centered on the line (during normal timing, it's usually a good
+idea to disable auto-scrolling). You'll notice various vertical lines in the
+audio display; the pink ones indicate keyframes in the video if you have it
+loaded (see the <a href="../Video/index.html">Working with video</a> section), the white broken line
+indicates the currently visible video frame, and the thick red and orange ones
+are the line start and end markers (respectively) for the current line. To
+(re-)define the start and end times of the line, you can either left-click to
+set the start time and right-click to set the end time, or just drag-and-drop
+the line boundaries.  Press the <em>play</em> button (keyboard shortcut <em>s</em> by
+default) to listen to the selection, or the various other playing buttons to
+listen to parts of the selection or the audio surrounding it. When you are
+satisfied with the timing, press commit to save the line and move onto the next
+one. Then repeat once for every line; it's as simple as that.</p>
+
+<h3 id="timing-protips">Timing protips</h3>
+<p>If you want to finish timing your movie or episode within any reasonable
+amount of time, there's some things you should note:</p>
+
+<ul>
+  <li>Use keyboard shortcuts! They speed up your work by several orders of
+magnitude.</li>
+  <li>You don't need to have video displayed while timing. If you think you do,
+there's a good change you're doing something wrong. Scene-timing, i.e.
+syncing line start/ends to scene changes, can be done later. Either
+manually, or with the <a href="../Timing_Post-Processor/index.html">timing postprocessor</a>.</li>
+  <li>Use "go to next line on commit".</li>
+  <li>Experiment with different timing styles when you're new and stick to one
+that suits you. Then practice. Lots.</li>
+  <li>Aegisub heavily relies on the concept of "focus", and doing things in a
+way that require you to switch back and forth between video/audio/subtitle
+edit box a lot will cost you a lot of time. Do it in several "passes"
+instead.</li>
+  <li>The spectrum analyzer mode looks weird at first, but usually makes it lot
+easier to "see" where lines start and end, especially when there is
+background noise.</li>
+  <li>With practice, it's often faster and easier to time something from scratch
+than fix bad timing, due to that fixing bad timing requires spending a small
+amount of time thinking about each line.</li>
+  <li>If you want to delete all timing data and start over, a simple way is to use
+the <a href="../Shift_Times/index.html">shift times dialog</a> to shift all lines backwards by
+9:59:59.99.</li>
+</ul>
+
+<p>One common timing style (preferred by the author of this page) goes something
+like the following: Turn on "go to next line on commit" but disable
+auto-committing, auto-scrolling and Medusa timing shortcuts. Keep the four main
+fingers of your left hand on s/d/f/g. You won't be using the thumb so do
+whatever you want with it. Keep your right hand on the mouse. Now select (by
+left- and right-clicking) an area in the waveform that seems likely to contain
+a line of speech matching the current subtitle line, and hit <em>s</em> to play it
+back.  While it's playing, adjust the start time if necessary. When the
+playback marker has passed the end time mark, adjust the end time as well. If
+greater accuracy is needed, play the last 500ms of the selection by pressing
+<em>d</em>, 500ms before the selection start by pressing <em>q</em>, 500ms after the
+selection end by pressing <em>w</em>, or the first 500ms of the selection by pressing
+<em>e</em>. As you grow more experienced, you won't be using anything else than <em>s</em>
+very much, except maybe <em>d</em> and <em>q</em>. When you're satisfied with the timing, hit
+<em>g</em> to commit changes and go on to the next line. Scroll the audio display
+forward by pressing <em>f</em>. If you need to scroll it backwards, use <em>a</em>. To go to
+next or previous line without committing changes, use <em>z</em> and <em>x</em>.</p>
+
+<p>This style has the advantage that you never need to move your hands at all.
+With some training, it can also be very fast; audio timing 350-400 lines of
+dialog to a 25-minute episode can easily be done in less than 40 minutes,
+and less verbose scripts can sometimes be done faster than real time.</p>
+
+<p>Of course, this style may not feel comfortable for all people; you should
+experiment with other timing styles before deciding which one is best for
+you.</p>
+
+<h3 id="the-spectrum-analyzer-mode">The spectrum analyzer mode</h3>
+<p><img src="../img/spectrum-4f90108d.png" /></p>
+
+<p>When you press the spectrum analyzer button, the waveform does no longer
+show amplitude (signal strength) on the vertical axis - instead it shows
+frequency. The higher up, the higher the frequency. The colors instead
+indicate amplitude, with black/dark blue being silence and white being the
+strongest sound. This may seem confusing, but since the frequency window is
+set to fit human voices rather well, it can make it easy to tell where a
+line (or a word in karaoke mode) starts and ends when there's a lot of
+background noise (or music) that makes it hard to tell from the normal
+waveform. It can be especially useful when timing karaoke. Play around with
+it for a little while, and you'll understand how it works.</p>
+
+<p>Note that in spectrum analyzer mode, the "vertical zoom" slider is redefined
+to control color intensity instead, since the colors indicate signal
+strength.</p>
+
+<p>Because calculating the spectrum data is very CPU intensive, it in initially
+set to be in a medium quality. You can increase the quality of the spectrum
+in the <a href="../Audio/index.html#options">audio options</a>. This is mostly important when you built
+Aegisub yourself and did not use FFTW3; FFTW3 is fast enough that the default
+quality is bumped up a bit.</p>
+
+<h2 id="karaoke-timing">Karaoke timing</h2>
+<p><div class='todo'>
+<strong><p>here be dragons</p>
+</strong>
+</div>
+</p>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com/'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from docs.aegisub.org/3.1/Timing/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:48:27 GMT -->
+</html>
+

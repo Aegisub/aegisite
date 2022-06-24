@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from docs.aegisub.org/3.1/Commands/nl/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:49:15 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>nl - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href='../../../3.2/Commands/nl/index.html' rel='canonical'>
+<link href="../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../../Main_Page/index.html">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../../About/index.html">What is Aegisub?</a>
+</li>
+<li>
+<a href="../../Highlights/index.html">Highlights</a>
+</li>
+<li>
+<a href="../../Credits/index.html">Credits</a>
+</li>
+<li>
+<a href="../../Support/index.html">Support Aegisub</a>
+</li>
+<li>
+<a href="../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../Tutorials/index.html">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li>
+<a href="../../Editing_Subtitles/index.html">Editing Subtitles</a>
+</li>
+<li>
+<a href="../../Exporting/index.html">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../../Attaching_subtitles_to_video/index.html">Applying Subtitles</a>
+</li>
+<li>
+<a href="../../Spell_Checker/index.html">Spell Checker</a>
+</li>
+<li>
+<a href="../../Translation_Assistant/index.html">Translation Assistant</a>
+</li>
+<li>
+<a href="../../Paste_Over/index.html">Paste Over</a>
+</li>
+<li>
+<a href="../../Select_Lines/index.html">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../../Typesetting/index.html">Introduction</a>
+</li>
+<li>
+<a href="../../Video/index.html">Working with Video</a>
+</li>
+<li>
+<a href="../../Styles/index.html">Editing styles</a>
+</li>
+<li>
+<a href="../../Visual_Typesetting/index.html">Visual Typesetting</a>
+</li>
+<li>
+<a href="../../ASS_Tags/index.html">ASS Override Tags</a>
+</li>
+<li>
+<a href="../../Colour_Picker/index.html">Colour Picker</a>
+</li>
+<li>
+<a href="../../Styling_Assistant/index.html">Styling Assistant</a>
+</li>
+<li>
+<a href="../../Resolution_Resampler/index.html">Resolution Resampler</a>
+</li>
+<li>
+<a href="../../Fonts_Collector/index.html">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../../Audio/index.html">Working with Audio</a>
+</li>
+<li>
+<a href="../../Timing/index.html">Timing subtitles to audio</a>
+</li>
+<li>
+<a href="../../Shift_Times/index.html">Shift times</a>
+</li>
+<li>
+<a href="../../Timing_Post-Processor/index.html">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../../Kanji_Timer/index.html">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../../Automation/index.html">Overview</a>
+</li>
+<li>
+<a href="../../Automation/Karaoke_Templater/index.html">Karaoke Templater</a>
+</li>
+<li>
+<a href="../../Automation/Lua/index.html">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../../Options/index.html">Aegisub Options</a>
+</li>
+<li>
+<a href="../../Properties/index.html">Script Properties</a>
+</li>
+<li>
+<a href="../../Attachment_Manager/index.html">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'><a href="../index.html">Commands</a> / nl</h1>
+<table style='width: 100%; margin-bottom: 2em'>
+<tr>
+<td>
+<a href='../en_US/index.html'>English (U.S.)</a>
+</td>
+<td>
+<a href='../ar/index.html'>Arabic</a>
+</td>
+<td>
+<a href='../bg/index.html'>Bulgarian</a>
+</td>
+<td>
+<a href='../ca/index.html'>Catalan</a>
+</td>
+<td>
+<a href='../cs/index.html'>Czech</a>
+</td>
+<td>
+<a href='../da/index.html'>Danish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../de/index.html'>German</a>
+</td>
+<td>
+<a href='../el/index.html'>Greek</a>
+</td>
+<td>
+<a href='../es/index.html'>Spanish</a>
+</td>
+<td>
+<a href='../eu/index.html'>Basque</a>
+</td>
+<td>
+<a href='../fa/index.html'>Farsi</a>
+</td>
+<td>
+<a href='../fi/index.html'>Finnish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../fr_FR/index.html'>French</a>
+</td>
+<td>
+<a href='../gl/index.html'>Galician</a>
+</td>
+<td>
+<a href='../hu/index.html'>Hungarian</a>
+</td>
+<td>
+<a href='../id/index.html'>Indonesian</a>
+</td>
+<td>
+<a href='../it/index.html'>Italian</a>
+</td>
+<td>
+<a href='../ja/index.html'>Japanese</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../ko/index.html'>Korean</a>
+</td>
+<td>
+<a href='index.html'>Dutch</a>
+</td>
+<td>
+<a href='../pl/index.html'>Polish</a>
+</td>
+<td>
+<a href='../pt_BR/index.html'>Portuguese (Brazilian)</a>
+</td>
+<td>
+<a href='../pt_PT/index.html'>Portuguese</a>
+</td>
+<td>
+<a href='../ru/index.html'>Russian</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../sr_YU/index.html'>Serbian (Cyrillic)</a>
+</td>
+<td>
+<a href='../sr_YU%40latin/index.html'>Serbian (Latin)</a>
+</td>
+<td>
+<a href='../vi/index.html'>Vietnamese</a>
+</td>
+<td>
+<a href='../zh_CN/index.html'>Chinese (Simplified)</a>
+</td>
+<td>
+<a href='../zh_TW/index.html'>Chinese</a>
+</td>
+</tr>
+</table>
+<table class='karatable'>
+<tr>
+<th>Name</th>
+<th>Display</th>
+<th>Help</th>
+</tr>
+<tr>
+<td>am/manager</td>
+<td>Automatisatie</td>
+<td>Automatisatiebeheerder openen</td>
+</tr>
+<tr>
+<td>am/meta</td>
+<td>Automatisatie</td>
+<td>Open automation manager. Ctrl: Rescan autoload folder. Ctrl+Shift: Rescan autoload folder and reload all automation scripts</td>
+</tr>
+<tr>
+<td>am/reload</td>
+<td>Automatisatiescripts opnieuw laden</td>
+<td>Alle automatisatiescripts herladen en de autoladen-map opnieuw scannen</td>
+</tr>
+<tr>
+<td>am/reload/autoload</td>
+<td>Automatisch geladen automatisatiescripts opnieuw laden</td>
+<td>Map met automatisch geladen automatisatiescripts opnieuw scannen</td>
+</tr>
+<tr>
+<td>app/about</td>
+<td>Over</td>
+<td>Over Aegisub</td>
+</tr>
+<tr>
+<td>app/display/audio_subs</td>
+<td>Audio + ondertitels</td>
+<td>Display audio and the subtitles grid only</td>
+</tr>
+<tr>
+<td>app/display/full</td>
+<td>Volledige weergave</td>
+<td>Display audio, video and then subtitles grid</td>
+</tr>
+<tr>
+<td>app/display/subs</td>
+<td>Alleen ondertitels</td>
+<td>Display the subtitles grid only</td>
+</tr>
+<tr>
+<td>app/display/video_subs</td>
+<td>Video + ondertitels</td>
+<td>Display video and the subtitles grid only</td>
+</tr>
+<tr>
+<td>app/exit</td>
+<td>Afsluiten</td>
+<td>De toepassing afsluiten</td>
+</tr>
+<tr>
+<td>app/language</td>
+<td>Taal</td>
+<td>Aegisub-interfacetaal selecteren</td>
+</tr>
+<tr>
+<td>app/log</td>
+<td>Logvenster</td>
+<td>Gebeurtenislogboek weergeven</td>
+</tr>
+<tr>
+<td>app/new_window</td>
+<td>Nieuw venster</td>
+<td>Een nieuw toepassingsvenster openen</td>
+</tr>
+<tr>
+<td>app/options</td>
+<td>Opties</td>
+<td>Aegisub configureren</td>
+</tr>
+<tr>
+<td>app/toggle/global_hotkeys</td>
+<td>Globale sneltoets-overrides in-/uitschakelen</td>
+<td>Toggle global hotkey overrides (Medusa Mode)</td>
+</tr>
+<tr>
+<td>app/toggle/toolbar</td>
+<td>Werkbalk verbergen</td>
+<td>Hoofdwerkbalk in-/uitschakelen</td>
+</tr>
+<tr>
+<td>app/updates</td>
+<td>Controleren op updates</td>
+<td>Controleer of er een nieuwe versie van Aegisub beschikbaar is</td>
+</tr>
+<tr>
+<td>audio/close</td>
+<td>Audio sluiten</td>
+<td>Close the currently open audio file</td>
+</tr>
+<tr>
+<td>audio/commit</td>
+<td>Toepassen</td>
+<td>Aanpassingen in audiotiming die in behandeling zijn, toepassen</td>
+</tr>
+<tr>
+<td>audio/commit/default</td>
+<td>Toepassen en standaard-timing gebruiken voor volgende regel</td>
+<td>Aanpassingen in audiotiming die in behandeling zijn, toepassen en de tijden van de volgende regel naar standaard herstellen</td>
+</tr>
+<tr>
+<td>audio/commit/next</td>
+<td>Toepassen en naar volgende regel gaan</td>
+<td>Aanpassingen in audiotiming die in behandeling zijn, toepassen en naar de volgende regel gaan</td>
+</tr>
+<tr>
+<td>audio/commit/stay</td>
+<td>Toepassen en op de huidige regel blijven</td>
+<td>Aanpassingen in audiotiming die in behandeling zijn, toepassen en op de huidige regel blijven</td>
+</tr>
+<tr>
+<td>audio/go_to</td>
+<td>Ga naar selectie</td>
+<td>Scroll the audio display to center on the current audio selection</td>
+</tr>
+<tr>
+<td>audio/karaoke</td>
+<td>Karaoke-modus in-/uitschakelen</td>
+<td>Karaoke-modus in-/uitschakelen</td>
+</tr>
+<tr>
+<td>audio/open</td>
+<td>Audiobestand openen</td>
+<td>Open an audio file</td>
+</tr>
+<tr>
+<td>audio/open/blank</td>
+<td>2h30 lege audio openen</td>
+<td>Een 150 minuten lange lege audioclip openen, voor debuggen</td>
+</tr>
+<tr>
+<td>audio/open/noise</td>
+<td>2h30 ruis openen</td>
+<td>Een 150 minuten lange met ruis gevulde audioclip openen, voor debuggen</td>
+</tr>
+<tr>
+<td>audio/open/video</td>
+<td>Audio van video openen</td>
+<td>Open the audio from the current video file</td>
+</tr>
+<tr>
+<td>audio/opt/autocommit</td>
+<td>Alle veranderingen automatisch toepassen</td>
+<td>Alle veranderingen automatisch toepassen</td>
+</tr>
+<tr>
+<td>audio/opt/autonext</td>
+<td>Auto go to next line on commit</td>
+<td>Automatically go to next line on commit</td>
+</tr>
+<tr>
+<td>audio/opt/autoscroll</td>
+<td>Auto scroll audio display to selected line</td>
+<td>Auto scroll audio display to selected line</td>
+</tr>
+<tr>
+<td>audio/opt/spectrum</td>
+<td>Spectrum-analyzermodus</td>
+<td>Spectrum-analyzermodus</td>
+</tr>
+<tr>
+<td>audio/opt/vertical_link</td>
+<td>Verticale zoom en volumeschuivers koppelen</td>
+<td>Verticale zoom en volumeschuivers koppelen</td>
+</tr>
+<tr>
+<td>audio/play/current</td>
+<td>Huidige audioselectie afspelen</td>
+<td>De huidige audioselectie afspelen; wijzigingen gemaakt tijdens het afspelen worden genegeerd</td>
+</tr>
+<tr>
+<td>audio/play/line</td>
+<td>Huidige regel afspelen</td>
+<td>Play the audio for the current line</td>
+</tr>
+<tr>
+<td>audio/play/selection</td>
+<td>Audioselectie afspelen</td>
+<td>Audio afspelen totdat het einde van de selectie bereikt is</td>
+</tr>
+<tr>
+<td>audio/play/selection/after</td>
+<td>500 ms na selectie afspelen</td>
+<td>500 ms na selectie afspelen</td>
+</tr>
+<tr>
+<td>audio/play/selection/before</td>
+<td>500 ms vóór selectie afspelen</td>
+<td>500 ms vóór selectie afspelen</td>
+</tr>
+<tr>
+<td>audio/play/selection/begin</td>
+<td>Eerste 500 ms van selectie afspelen</td>
+<td>Eerste 500 ms van selectie afspelen</td>
+</tr>
+<tr>
+<td>audio/play/selection/end</td>
+<td>Laatste 500 ms van selectie afspelen</td>
+<td>Laatste 500 ms van selectie afspelen</td>
+</tr>
+<tr>
+<td>audio/play/to_end</td>
+<td>Afspelen van selectiebegin tot einde van bestand</td>
+<td>Afspelen van selectiebegin tot einde van bestand</td>
+</tr>
+<tr>
+<td>audio/play/toggle</td>
+<td>Audioselectie afspelen of stoppen</td>
+<td>Play selection, or stop playback if it's already playing</td>
+</tr>
+<tr>
+<td>audio/save/clip</td>
+<td>Audioclip aanmaken</td>
+<td>Save an audio clip of the selected line</td>
+</tr>
+<tr>
+<td>audio/scroll/left</td>
+<td>Naar links scrollen</td>
+<td>De audioweergave naar links scrollen</td>
+</tr>
+<tr>
+<td>audio/scroll/right</td>
+<td>Naar rechts scrollen</td>
+<td>De audioweergave naar rechts scrollen</td>
+</tr>
+<tr>
+<td>audio/stop</td>
+<td>Afspelen stoppen</td>
+<td>Stop audio and video playback</td>
+</tr>
+<tr>
+<td>audio/view/spectrum</td>
+<td>Spectrumweergave</td>
+<td>Audio weergeven als frequentie-kracht spectrogram</td>
+</tr>
+<tr>
+<td>audio/view/waveform</td>
+<td>Golfvormweergave</td>
+<td>Audio weergeven als een lineaire amplitudegrafiek</td>
+</tr>
+<tr>
+<td>automation/lua/clean-info/Clean Script Info</td>
+<td>Clean Script Info</td>
+<td>Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.</td>
+</tr>
+<tr>
+<td>automation/lua/cleantags-autoload/Clean Tags</td>
+<td>Clean Tags</td>
+<td>Clean subtitle lines by re-arranging ASS tags and override blocks within the lines</td>
+</tr>
+<tr>
+<td>automation/lua/kara-templater/Apply karaoke template</td>
+<td>Apply karaoke template</td>
+<td>Applies karaoke effects from templates</td>
+</tr>
+<tr>
+<td>automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in</td>
+<td>Automatic karaoke lead-in</td>
+<td>Join up the ends of selected lines and add \k tags to shift karaoke</td>
+</tr>
+<tr>
+<td>automation/lua/macro-1-edgeblur/Add edgeblur</td>
+<td>Add edgeblur</td>
+<td>Adds \be1 tags to all selected lines</td>
+</tr>
+<tr>
+<td>automation/lua/macro-2-mkfullwitdh/Make fullwidth</td>
+<td>Make fullwidth</td>
+<td>Convert Latin letters to SJIS fullwidth letters</td>
+</tr>
+<tr>
+<td>automation/lua/select-overlaps/Select overlaps</td>
+<td>Select overlaps</td>
+<td>Select lines which begin while another non-comment line is active</td>
+</tr>
+<tr>
+<td>automation/lua/strip-tags/Strip tags</td>
+<td>Strip tags</td>
+<td>Remove all override tags from selected lines</td>
+</tr>
+<tr>
+<td>edit/clear</td>
+<td>Wissen</td>
+<td>Clear the current line's text</td>
+</tr>
+<tr>
+<td>edit/clear/text</td>
+<td>Clear Text</td>
+<td>Clear the current line's text, leaving override tags</td>
+</tr>
+<tr>
+<td>edit/color/outline</td>
+<td>Outline Color</td>
+<td>Set the outline color (\3c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/primary</td>
+<td>Primary Color</td>
+<td>Set the primary fill color (\c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/secondary</td>
+<td>Secondary Color</td>
+<td>Set the secondary (karaoke) fill color (\2c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/shadow</td>
+<td>Shadow Color</td>
+<td>Set the shadow color (\4c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/find_replace</td>
+<td>Zoeken en vervangen</td>
+<td>Woorden in ondertitels zoeken en vervangen</td>
+</tr>
+<tr>
+<td>edit/font</td>
+<td>Lettertype</td>
+<td>Select a font face and size</td>
+</tr>
+<tr>
+<td>edit/insert_original</td>
+<td>Origineel invoegen</td>
+<td>Insert the original line text at the cursor</td>
+</tr>
+<tr>
+<td>edit/line/copy</td>
+<td>Regels kopiëren</td>
+<td>Copy subtitles to the clipboard</td>
+</tr>
+<tr>
+<td>edit/line/cut</td>
+<td>Regels knippen</td>
+<td>Ondertitels knippen</td>
+</tr>
+<tr>
+<td>edit/line/delete</td>
+<td>Regels verwijderen</td>
+<td>Geselecteerde regels verwijderen</td>
+</tr>
+<tr>
+<td>edit/line/duplicate</td>
+<td>Regels dupliceren</td>
+<td>De geselecteerde regels dupliceren</td>
+</tr>
+<tr>
+<td>edit/line/join/as_karaoke</td>
+<td>Als karaoke</td>
+<td>Join selected lines in a single one, as karaoke</td>
+</tr>
+<tr>
+<td>edit/line/join/concatenate</td>
+<td>Aaneenschakelen</td>
+<td>Join selected lines in a single one, concatenating text together</td>
+</tr>
+<tr>
+<td>edit/line/join/keep_first</td>
+<td>Eerste behouden</td>
+<td>Join selected lines in a single one, keeping text of first and discarding remaining</td>
+</tr>
+<tr>
+<td>edit/line/paste</td>
+<td>Regels plakken</td>
+<td>Ondertitels plakken</td>
+</tr>
+<tr>
+<td>edit/line/paste/over</td>
+<td>Regels plakken over</td>
+<td>Ondertitels plakken over andere</td>
+</tr>
+<tr>
+<td>edit/line/recombine</td>
+<td>Regels opnieuw combineren</td>
+<td>Recombine subtitles which have been split and merged</td>
+</tr>
+<tr>
+<td>edit/line/split/after</td>
+<td>Split lines after current frame</td>
+<td>Split the current line into a line which ends on the current frame and a line which starts on the next frame</td>
+</tr>
+<tr>
+<td>edit/line/split/before</td>
+<td>Split lines before current frame</td>
+<td>Split the current line into a line which ends on the previous frame and a line which starts on the current frame</td>
+</tr>
+<tr>
+<td>edit/line/split/by_karaoke</td>
+<td>Regels splitsen (op karaoke)</td>
+<td>Use karaoke timing to split line into multiple smaller lines</td>
+</tr>
+<tr>
+<td>edit/line/split/estimate</td>
+<td>Splitsen op cursor (tijden inschatten)</td>
+<td>Split the current line at the cursor, dividing the original line's duration between the new ones</td>
+</tr>
+<tr>
+<td>edit/line/split/preserve</td>
+<td>Splitsen op cursor (tijden behouden)</td>
+<td>Split the current line at the cursor, setting both lines to the original line's times</td>
+</tr>
+<tr>
+<td>edit/line/split/video</td>
+<td>Split at cursor (at video frame)</td>
+<td>Split the current line at the cursor, dividing the line's duration at the current video frame</td>
+</tr>
+<tr>
+<td>edit/redo</td>
+<td>Niets om opnieuw te doen</td>
+<td>Redo last undone action</td>
+</tr>
+<tr>
+<td>edit/revert</td>
+<td>Revert</td>
+<td>Revert the active line to its initial state (shown in the upper editor)</td>
+</tr>
+<tr>
+<td>edit/style/bold</td>
+<td>Toggle Bold</td>
+<td>Toggle bold (\b) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/italic</td>
+<td>Toggle Italics</td>
+<td>Toggle italics (\i) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/strikeout</td>
+<td>Toggle Strikeout</td>
+<td>Toggle strikeout (\s) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/underline</td>
+<td>Toggle Underline</td>
+<td>Toggle underline (\u) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/undo</td>
+<td>Niets om ongedaan te maken</td>
+<td>Undo last action</td>
+</tr>
+<tr>
+<td>grid/line/next</td>
+<td>Volgende regel</td>
+<td>Naar de volgende ondertitelregel gaan</td>
+</tr>
+<tr>
+<td>grid/line/next/create</td>
+<td>Volgende regel</td>
+<td>Naar de volgende ondertitelregel gaan; indien nodig wordt er een nieuwe regel aangemaakt</td>
+</tr>
+<tr>
+<td>grid/line/prev</td>
+<td>Vorige regel</td>
+<td>Naar de vorige ondertitelregel gaan</td>
+</tr>
+<tr>
+<td>grid/move/down</td>
+<td>Regel omlaag verplaatsen</td>
+<td>De geselecteerde regels een rij omlaag verplaatsen</td>
+</tr>
+<tr>
+<td>grid/move/up</td>
+<td>Regel omhoog verplaatsen</td>
+<td>De geselecteerde regels een rij omhoog verplaatsen</td>
+</tr>
+<tr>
+<td>grid/sort/actor</td>
+<td>Naam acteur</td>
+<td>Alle ondertitels sorteren op hun acteurnamen</td>
+</tr>
+<tr>
+<td>grid/sort/actor/selected</td>
+<td>Naam acteur</td>
+<td>Geselecteerde ondertitels sorteren op hun acteurnamen</td>
+</tr>
+<tr>
+<td>grid/sort/effect</td>
+<td>Effect</td>
+<td>Alle ondertitels sorteren op hun effecten</td>
+</tr>
+<tr>
+<td>grid/sort/effect/selected</td>
+<td>Effect</td>
+<td>Geselecteerde ondertitels sorteren op hun effecten</td>
+</tr>
+<tr>
+<td>grid/sort/end</td>
+<td>Eindtijd</td>
+<td>Alle ondertitels sorteren op hun eindtijden</td>
+</tr>
+<tr>
+<td>grid/sort/end/selected</td>
+<td>Eindtijd</td>
+<td>Geselecteerde ondertitels sorteren op hun eindtijden</td>
+</tr>
+<tr>
+<td>grid/sort/layer</td>
+<td>Laag</td>
+<td>Alle ondertitels sorteren op hun laagnummer</td>
+</tr>
+<tr>
+<td>grid/sort/layer/selected</td>
+<td>Laag</td>
+<td>Geselecteerde ondertitels sorteren op hun laagnummer</td>
+</tr>
+<tr>
+<td>grid/sort/start</td>
+<td>Starttijd</td>
+<td>Alle ondertitels sorteren op hun begintijden</td>
+</tr>
+<tr>
+<td>grid/sort/start/selected</td>
+<td>Starttijd</td>
+<td>Geselecteerde ondertitels sorteren op hun begintijden</td>
+</tr>
+<tr>
+<td>grid/sort/style</td>
+<td>Stijlnaam</td>
+<td>Alle ondertitels sorteren op hun stijlnamen</td>
+</tr>
+<tr>
+<td>grid/sort/style/selected</td>
+<td>Stijlnaam</td>
+<td>Geselecteerde ondertitels sorteren op hun stijlnamen</td>
+</tr>
+<tr>
+<td>grid/swap</td>
+<td>Regels wisselen</td>
+<td>Swap the two selected lines</td>
+</tr>
+<tr>
+<td>grid/tag/cycle_hiding</td>
+<td>Labelverbergingsmodussen doorlopen</td>
+<td>Doorlopen van modussen om labels te verbergen</td>
+</tr>
+<tr>
+<td>grid/tags/hide</td>
+<td>Labels verbergen</td>
+<td>Override-labels verbergen in het ondertitelraster</td>
+</tr>
+<tr>
+<td>grid/tags/show</td>
+<td>Labels weergeven</td>
+<td>Volledige override-labels weergeven in het ondertitelraster</td>
+</tr>
+<tr>
+<td>grid/tags/simplify</td>
+<td>Labels vereenvoudigen</td>
+<td>Override-labels in het ondertitelraster vervangen door een vereenvoudigde tijdelijke aanduiding</td>
+</tr>
+<tr>
+<td>help/bugs</td>
+<td>Bug tracker</td>
+<td>Bezoek de bugtracker van Aegisub om bugs te rapporteren en nieuwe functies aan te vragen</td>
+</tr>
+<tr>
+<td>help/contents</td>
+<td>Inhoud</td>
+<td>Helponderwerpen</td>
+</tr>
+<tr>
+<td>help/forums</td>
+<td>Forums</td>
+<td>De forums van Aegisub bezoeken</td>
+</tr>
+<tr>
+<td>help/irc</td>
+<td>IRC-kanaal</td>
+<td>Het officiële IRC-kanaal van Aegisub bezoeken</td>
+</tr>
+<tr>
+<td>help/video</td>
+<td>Visueel zetwerk</td>
+<td>De pagina in de handleiding voor visueel zetwerk openen</td>
+</tr>
+<tr>
+<td>help/website</td>
+<td>Website</td>
+<td>De officiële website van Aegisub bezoeken</td>
+</tr>
+<tr>
+<td>keyframe/close</td>
+<td>Keyframes sluiten</td>
+<td>Discard the currently loaded keyframes and use those from the video, if any</td>
+</tr>
+<tr>
+<td>keyframe/open</td>
+<td>Keyframes openen</td>
+<td>Open a keyframe list file</td>
+</tr>
+<tr>
+<td>keyframe/save</td>
+<td>Keyframes opslaan</td>
+<td>Save the current list of keyframes to a file</td>
+</tr>
+<tr>
+<td>subtitle/attachment</td>
+<td>Bijlagen</td>
+<td>Open the attachment manager dialog</td>
+</tr>
+<tr>
+<td>subtitle/find</td>
+<td>Zoeken</td>
+<td>Search for text in the subtitles</td>
+</tr>
+<tr>
+<td>subtitle/find/next</td>
+<td>Volgende zoeken</td>
+<td>Find next match of last search</td>
+</tr>
+<tr>
+<td>subtitle/insert/after</td>
+<td>Na huidige</td>
+<td>Insert a new line after the current one</td>
+</tr>
+<tr>
+<td>subtitle/insert/after/videotime</td>
+<td>Na huidige, op videotijd</td>
+<td>Insert a new line after the current one, starting at video time</td>
+</tr>
+<tr>
+<td>subtitle/insert/before</td>
+<td>Voor huidige</td>
+<td>Insert a new line before the current one</td>
+</tr>
+<tr>
+<td>subtitle/insert/before/videotime</td>
+<td>Voor huidige, op videotijd</td>
+<td>Insert a new line before the current one, starting at video time</td>
+</tr>
+<tr>
+<td>subtitle/new</td>
+<td>Nieuwe ondertitels</td>
+<td>Nieuwe ondertitels</td>
+</tr>
+<tr>
+<td>subtitle/open</td>
+<td>Ondertitels openen</td>
+<td>Open a subtitles file</td>
+</tr>
+<tr>
+<td>subtitle/open/autosave</td>
+<td>Open Autosaved Subtitles</td>
+<td>Open a previous version of a file which was autosaved by Aegisub</td>
+</tr>
+<tr>
+<td>subtitle/open/charset</td>
+<td>Ondertitels openen met tekenset</td>
+<td>Open a subtitles file with a specific file encoding</td>
+</tr>
+<tr>
+<td>subtitle/open/video</td>
+<td>Ondertitels van video openen</td>
+<td>Open the subtitles from the current video file</td>
+</tr>
+<tr>
+<td>subtitle/properties</td>
+<td>Eigenschappen</td>
+<td>Scripteigenschappen-venster openen</td>
+</tr>
+<tr>
+<td>subtitle/save</td>
+<td>Ondertitels opslaan</td>
+<td>Save the current subtitles</td>
+</tr>
+<tr>
+<td>subtitle/save/as</td>
+<td>Ondertitels opslaan als</td>
+<td>Save subtitles with another name</td>
+</tr>
+<tr>
+<td>subtitle/select/all</td>
+<td>Alles selecteren</td>
+<td>Select all dialogue lines</td>
+</tr>
+<tr>
+<td>subtitle/select/visible</td>
+<td>Zichtbare selecteren</td>
+<td>Select all dialogue lines that are visible on the current video frame</td>
+</tr>
+<tr>
+<td>subtitle/spellcheck</td>
+<td>Spellingscontrole</td>
+<td>Spellingscontrole openen</td>
+</tr>
+<tr>
+<td>time/continuous/end</td>
+<td>Einde wijzigen</td>
+<td>Change end times of lines to the next line's start time</td>
+</tr>
+<tr>
+<td>time/continuous/start</td>
+<td>Begin wijzigen</td>
+<td>Change start times of lines to the previous line's end time</td>
+</tr>
+<tr>
+<td>time/frame/current</td>
+<td>Naar huidig frame gaan</td>
+<td>Selectie verschiven zodat de actieve regel begint op het huidige frame</td>
+</tr>
+<tr>
+<td>time/lead/both</td>
+<td>Lead-in en -out toevoegen</td>
+<td>Add both lead in and out to the selected lines</td>
+</tr>
+<tr>
+<td>time/lead/in</td>
+<td>Lead-in toevoegen</td>
+<td>Add the lead in time to the selected lines</td>
+</tr>
+<tr>
+<td>time/lead/out</td>
+<td>Lead-out toevoegen</td>
+<td>Add the lead out time to the selected lines</td>
+</tr>
+<tr>
+<td>time/length/decrease</td>
+<td>Lengte verminderen</td>
+<td>De lengte van de huidige timing-unit verminderen</td>
+</tr>
+<tr>
+<td>time/length/decrease/shift</td>
+<td>Lengte verminderen en verschuiven</td>
+<td>De lengte van de huidige timing-unit verminderen en de volgende items verschuiven</td>
+</tr>
+<tr>
+<td>time/length/increase</td>
+<td>Lengte vergroten</td>
+<td>De lengte van de huidige timing-unit vergroten</td>
+</tr>
+<tr>
+<td>time/length/increase/shift</td>
+<td>Lengte vergroten en verschuiven</td>
+<td>De lengte van de huidige timing-unit vergroten en de volgende items verschuiven</td>
+</tr>
+<tr>
+<td>time/next</td>
+<td>Volgende regel</td>
+<td>Volgende regel of lettergreep</td>
+</tr>
+<tr>
+<td>time/prev</td>
+<td>Vorige regel</td>
+<td>Vorige regel of lettergreep</td>
+</tr>
+<tr>
+<td>time/shift</td>
+<td>Tijden verschuiven</td>
+<td>Ondertitels verschuiven op tijd of frames</td>
+</tr>
+<tr>
+<td>time/snap/end_video</td>
+<td>Einde op video uitlijnen</td>
+<td>Einde van geselecteerde ondertitels op huidig videoframe zetten</td>
+</tr>
+<tr>
+<td>time/snap/scene</td>
+<td>Uitlijnen op scène</td>
+<td>Begin en einde van ondertitels instellen op de keyframes rond het huidige videoframe</td>
+</tr>
+<tr>
+<td>time/snap/start_video</td>
+<td>Begin op video uitlijnen</td>
+<td>Het begin van de geselecteerde ondertitels op het huidige videoframe instellen</td>
+</tr>
+<tr>
+<td>time/start/decrease</td>
+<td>Begintijd naar achter schuiven</td>
+<td>De begintijd van de huidige timing-unit naar achter schuiven</td>
+</tr>
+<tr>
+<td>time/start/increase</td>
+<td>Begintijd naar voor schuiven</td>
+<td>De begintijd van de huidige timing-unit naar voor schuiven</td>
+</tr>
+<tr>
+<td>timecode/close</td>
+<td>Timecodes-bestand sluiten</td>
+<td>Close the currently open timecodes file</td>
+</tr>
+<tr>
+<td>timecode/open</td>
+<td>Timecodes-bestand openen</td>
+<td>Open a VFR timecodes v1 or v2 file</td>
+</tr>
+<tr>
+<td>timecode/save</td>
+<td>Timecodes-bestand opslaan</td>
+<td>Save a VFR timecodes v2 file</td>
+</tr>
+<tr>
+<td>tool/export</td>
+<td>Ondertitels exporteren</td>
+<td>Save a copy of subtitles in a different format or with processing applied to it</td>
+</tr>
+<tr>
+<td>tool/font_collector</td>
+<td>Lettertype-collector</td>
+<td>Lettertype-collector openen</td>
+</tr>
+<tr>
+<td>tool/line/select</td>
+<td>Regels selecteren</td>
+<td>Select lines based on defined criteria</td>
+</tr>
+<tr>
+<td>tool/resampleres</td>
+<td>Resolutie wijzigen</td>
+<td>Resample subtitles to maintain their current appearance at a different script resolution</td>
+</tr>
+<tr>
+<td>tool/style/assistant</td>
+<td>Stijl-assistent</td>
+<td>Stijl-assistent openen</td>
+</tr>
+<tr>
+<td>tool/style/manager</td>
+<td>Stijlbeheerder</td>
+<td>Open the styles manager</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/commit</td>
+<td>Wijzigingen accepteren</td>
+<td>Wijzigingen toepassen en naar de volgende regel gaan</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/preview</td>
+<td>Voorbeeld van wijzigingen</td>
+<td>Wijzigingen toepassen en op de huidige regel blijven</td>
+</tr>
+<tr>
+<td>tool/time/kanji</td>
+<td>Kanji-timer</td>
+<td>Open the Kanji timer copier</td>
+</tr>
+<tr>
+<td>tool/time/postprocess</td>
+<td>Timing-nabewerking</td>
+<td>Post-process the subtitle timing to add lead-ins and lead-outs, snap timing to scene changes, etc.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant</td>
+<td>Vertaalassistent</td>
+<td>Vertaalassistent openen</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/commit</td>
+<td>Wijzigingen accepteren</td>
+<td>Wijzigingen toepassen en naar de volgende regel gaan</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/insert_original</td>
+<td>Origineel invoegen</td>
+<td>De onvertaalde tekst invoegen</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/next</td>
+<td>Volgende regel</td>
+<td>Naar de volgende regel gaan zonder wijzigingen toe te passen</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/prev</td>
+<td>Vorige regel</td>
+<td>Naar de vorige regel gaan zonder wijzigingen toe te passen</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/preview</td>
+<td>Voorbeeld van wijzigingen</td>
+<td>Wijzigingen toepassen en op de huidige regel blijven</td>
+</tr>
+<tr>
+<td>video/aspect/cinematic</td>
+<td>Bioscoop (2.35)</td>
+<td>Force video to 2.35 aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/custom</td>
+<td>Aangepast</td>
+<td>Force video to a custom aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/default</td>
+<td>Standaard</td>
+<td>Use video's original aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/full</td>
+<td>Traditioneel (4:3)</td>
+<td>Force video to 4:3 aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/wide</td>
+<td>Breedbeeld (16:9)</td>
+<td>Force video to 16:9 aspect ratio</td>
+</tr>
+<tr>
+<td>video/close</td>
+<td>Video sluiten</td>
+<td>Close the currently open video file</td>
+</tr>
+<tr>
+<td>video/copy_coordinates</td>
+<td>Coördinaten naar klembord kopiëren</td>
+<td>De huidige coördinaten van de muis op de video naar het klembord kopiëren</td>
+</tr>
+<tr>
+<td>video/detach</td>
+<td>Video losmaken</td>
+<td>Detach the video display from the main window, displaying it in a separate Window</td>
+</tr>
+<tr>
+<td>video/details</td>
+<td>Videodetails weergeven</td>
+<td>Show video details</td>
+</tr>
+<tr>
+<td>video/focus_seek</td>
+<td>Focus op videoschuifbalk schakelen</td>
+<td>Toggle focus between the video slider and the previous thing to have focus</td>
+</tr>
+<tr>
+<td>video/frame/copy</td>
+<td>Afbeelding naar klembord kopiëren</td>
+<td>Het momenteel weergegeven beeld naar het klembord kopiëren</td>
+</tr>
+<tr>
+<td>video/frame/copy/raw</td>
+<td>Afbeelding naar klembord kopiëren (geen ondertitels)</td>
+<td>Het momenteel weergegeven beeld naar het klembord kopiëren, zonder de ondertitels</td>
+</tr>
+<tr>
+<td>video/frame/next</td>
+<td>Volgend beeld</td>
+<td>Zoeken naar het volgende beeld</td>
+</tr>
+<tr>
+<td>video/frame/next/boundary</td>
+<td>Volgende grens</td>
+<td>Seek to the next beginning or end of a subtitle</td>
+</tr>
+<tr>
+<td>video/frame/next/keyframe</td>
+<td>Volgend keyframe</td>
+<td>Zoeken naar het volgende keyframe</td>
+</tr>
+<tr>
+<td>video/frame/next/large</td>
+<td>Snelle sprong voorwaarts</td>
+<td>Snelle sprong voorwaarts</td>
+</tr>
+<tr>
+<td>video/frame/prev</td>
+<td>Vorig beeld</td>
+<td>Zoeken naar het vorige beeld</td>
+</tr>
+<tr>
+<td>video/frame/prev/boundary</td>
+<td>Vorige grens</td>
+<td>Seek to the previous beginning or end of a subtitle</td>
+</tr>
+<tr>
+<td>video/frame/prev/keyframe</td>
+<td>Vorig keyframe</td>
+<td>Zoeken naar het vorige keyframe</td>
+</tr>
+<tr>
+<td>video/frame/prev/large</td>
+<td>Snelle sprong achterwaarts</td>
+<td>Snelle sprong achterwaarts</td>
+</tr>
+<tr>
+<td>video/frame/save</td>
+<td>PNG-snapshot opslaan</td>
+<td>Het momenteel weergegeven beeld opslaan als een PNG-bestand in de videomap</td>
+</tr>
+<tr>
+<td>video/frame/save/raw</td>
+<td>PNG-snapshot opslaan (geen ondertitels)</td>
+<td>Het momenteel weergegeven beeld zonder ondertitels opslaan als een PNG-bestand in de videomap</td>
+</tr>
+<tr>
+<td>video/jump</td>
+<td>Springen naar</td>
+<td>Springen naar een frame of tijd</td>
+</tr>
+<tr>
+<td>video/jump/end</td>
+<td>Video naar einde springen</td>
+<td>Jump the video to the end frame of current subtitle</td>
+</tr>
+<tr>
+<td>video/jump/start</td>
+<td>Video naar begin springen</td>
+<td>Jump the video to the start frame of current subtitle</td>
+</tr>
+<tr>
+<td>video/open</td>
+<td>Video openen</td>
+<td>Open a video file</td>
+</tr>
+<tr>
+<td>video/open/dummy</td>
+<td>Dummy-video gebruiken</td>
+<td>Open a placeholder video clip with solid color</td>
+</tr>
+<tr>
+<td>video/opt/autoscroll</td>
+<td>Autoscrollen van video in-/uitschakelen</td>
+<td>Toggle automatically seeking video to the start time of selected lines</td>
+</tr>
+<tr>
+<td>video/play</td>
+<td>Afspelen</td>
+<td>Video beginnen afspelen op deze positie</td>
+</tr>
+<tr>
+<td>video/play/line</td>
+<td>Regel afspelen</td>
+<td>Huidige regel afspelen</td>
+</tr>
+<tr>
+<td>video/show_overscan</td>
+<td>Overscan-masker weergeven</td>
+<td>Een masker over de video weergeven dat gebieden aantoont die mogelijk afgesneden worden door overscan op televisietoestellen</td>
+</tr>
+<tr>
+<td>video/stop</td>
+<td>Video stoppen</td>
+<td>Afspelen van video stoppen</td>
+</tr>
+<tr>
+<td>video/subtitles_provider/cycle</td>
+<td>Cycle active subtitles provider</td>
+<td>Cycle through the available subtitles providers</td>
+</tr>
+<tr>
+<td>video/tool/clip</td>
+<td>Bijsnijden</td>
+<td>Ondertitels bijsnijden tot een rechthoek</td>
+</tr>
+<tr>
+<td>video/tool/cross</td>
+<td>Standaard</td>
+<td>Standaardmodus, dubbelklikken zet positie</td>
+</tr>
+<tr>
+<td>video/tool/drag</td>
+<td>Slepen</td>
+<td>Ondertitels slepen</td>
+</tr>
+<tr>
+<td>video/tool/rotate/xy</td>
+<td>XY-roteren</td>
+<td>Ondertitels om hun X- en Y-as roteren</td>
+</tr>
+<tr>
+<td>video/tool/rotate/z</td>
+<td>Z-roteren</td>
+<td>Ondertitels om hun Z-as roteren</td>
+</tr>
+<tr>
+<td>video/tool/scale</td>
+<td>Schalen</td>
+<td>Ondertitels schalen op X- en Y-assen</td>
+</tr>
+<tr>
+<td>video/tool/vector_clip</td>
+<td>Vectorieel bijsnijden</td>
+<td>Ondertitels bijsnijden tot een vectorieel gebied</td>
+</tr>
+<tr>
+<td>video/zoom/100</td>
+<td>100 %</td>
+<td>Zoom instellen op 100 %</td>
+</tr>
+<tr>
+<td>video/zoom/200</td>
+<td>200 %</td>
+<td>Zoom instellen op 200 %</td>
+</tr>
+<tr>
+<td>video/zoom/50</td>
+<td>50 %</td>
+<td>Zoom instellen op 50 %</td>
+</tr>
+<tr>
+<td>video/zoom/in</td>
+<td>Inzoomen</td>
+<td>Video inzoomen</td>
+</tr>
+<tr>
+<td>video/zoom/out</td>
+<td>Uitzoomen</td>
+<td>Video uitzoomen</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com/'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from docs.aegisub.org/3.1/Commands/nl/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:49:15 GMT -->
+</html>
+

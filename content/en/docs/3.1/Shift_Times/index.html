@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from docs.aegisub.org/3.1/Shift_Times/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:48:30 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>Shift Times - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href='../../3.2/Shift_Times/index.html' rel='canonical'>
+<link href="../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../Main_Page/index.html">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../About/index.html">What is Aegisub?</a>
+</li>
+<li>
+<a href="../Highlights/index.html">Highlights</a>
+</li>
+<li>
+<a href="../Credits/index.html">Credits</a>
+</li>
+<li>
+<a href="../Support/index.html">Support Aegisub</a>
+</li>
+<li>
+<a href="../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../Tutorials/index.html">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li>
+<a href="../Editing_Subtitles/index.html">Editing Subtitles</a>
+</li>
+<li>
+<a href="../Exporting/index.html">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../Attaching_subtitles_to_video/index.html">Applying Subtitles</a>
+</li>
+<li>
+<a href="../Spell_Checker/index.html">Spell Checker</a>
+</li>
+<li>
+<a href="../Translation_Assistant/index.html">Translation Assistant</a>
+</li>
+<li>
+<a href="../Paste_Over/index.html">Paste Over</a>
+</li>
+<li>
+<a href="../Select_Lines/index.html">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../Typesetting/index.html">Introduction</a>
+</li>
+<li>
+<a href="../Video/index.html">Working with Video</a>
+</li>
+<li>
+<a href="../Styles/index.html">Editing styles</a>
+</li>
+<li>
+<a href="../Visual_Typesetting/index.html">Visual Typesetting</a>
+</li>
+<li>
+<a href="../ASS_Tags/index.html">ASS Override Tags</a>
+</li>
+<li>
+<a href="../Colour_Picker/index.html">Colour Picker</a>
+</li>
+<li>
+<a href="../Styling_Assistant/index.html">Styling Assistant</a>
+</li>
+<li>
+<a href="../Resolution_Resampler/index.html">Resolution Resampler</a>
+</li>
+<li>
+<a href="../Fonts_Collector/index.html">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../Audio/index.html">Working with Audio</a>
+</li>
+<li>
+<a href="../Timing/index.html">Timing subtitles to audio</a>
+</li>
+<li class='active'>
+<a href="index.html">Shift times</a>
+</li>
+<li>
+<a href="../Timing_Post-Processor/index.html">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../Kanji_Timer/index.html">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../Automation/index.html">Overview</a>
+</li>
+<li>
+<a href="../Automation/Karaoke_Templater/index.html">Karaoke Templater</a>
+</li>
+<li>
+<a href="../Automation/Lua/index.html">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../Options/index.html">Aegisub Options</a>
+</li>
+<li>
+<a href="../Properties/index.html">Script Properties</a>
+</li>
+<li>
+<a href="../Attachment_Manager/index.html">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>Shift Times</h1>
+<p>The <strong>shift times</strong> tool is a batch processor for timestamps; it adjusts the
+start/end timestamps of many subtitle lines at once in various ways. It is
+located under <em>Timing</em> -&gt; <em>Shift Times</em>.</p>
+
+<p>It looks like this:</p>
+
+<p><img src="../img/shift_times-a0702157.png" class="center" /></p>
+
+<p>The left part of the window contain the options.</p>
+
+<h3 id="shift-by">Shift by</h3>
+
+<p>These controls decide in which direction and by how much each timestamp will
+be modified.</p>
+
+<dl class="horizontal-wide">
+  <dt>Time</dt>
+  <dd>How much you want to adjust each timestamp, in
+hours:minutes:seconds.centiseconds.</dd>
+  <dt>Frames</dt>
+  <dd>If you have video loaded, you can specify the adjustment time as a
+number of frames instead. Note that shifting by zero frames will snap
+the timestamps to the frame times without doing any shifting.</dd>
+  <dt>Forward or Backward</dt>
+  <dd>Controls in which direction the timestamps are adjusted.</dd>
+</dl>
+
+<h3 id="affect">Affect</h3>
+
+<p>These controls decide what lines will be processed.</p>
+
+<dl class="horizontal-wide">
+  <dt>All rows</dt>
+  <dd>Applies the time shifting to all lines in the script.</dd>
+  <dt>Selected rows</dt>
+  <dd>Applies the time shifting only to the selected lines.</dd>
+  <dt>Selection onward</dt>
+  <dd>Applies the time shifting to the first selected line and all lines
+below it (in the grid).</dd>
+</dl>
+
+<h3 id="times">Times</h3>
+
+<p>These controls decide what timestamps will be processed.</p>
+
+<dl class="horizontal-wide">
+  <dt>Start and End times</dt>
+  <dd>Both start and end times of the affected lines will be modified by
+the given amount.</dd>
+  <dt>Start times only</dt>
+  <dd>Only the start times of the affected lines will be modified. Note
+that this makes the lines longer (if you shift backwards) or shorter
+(if you shift forwards) and can even make them have a duration of zero.</dd>
+  <dt>End times only</dt>
+  <dd>Only the end times of the affected lines will be modified. Note that
+this makes the lines longer (if you shift forwards) or shorter (if you
+shift backwards) and can even make them have a duration of zero.</dd>
+</dl>
+
+<p>Note that if a line is shifted so that its start or end time stamp would be
+negative, that timestamp is zeroed instead. This can be used to clear all
+timings from an entire script, by shifting backwards by longer than the
+latest timestamp in the script.</p>
+
+<h3 id="load-from-history">Load from history</h3>
+
+<p>This is a history of all time shiftings you have done since last time you
+cleared the shift history (with the clear button). The format is a number of
+fields separated by commas. The fields are:</p>
+
+<ul>
+  <li>Filename of the script (e.g. "example.ass")</li>
+  <li>Shift amount and direction (e.g. "0:00:05.00 forward")</li>
+  <li>What times were affected, "s" for start, "e" for end, "s+e" for both
+What rows were affected; "sel start-end" for selections, "all" for all
+rows (e.g. "sel 1-40")</li>
+</ul>
+
+<p>To load the settings from a history entry simply double-click it.</p>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com/'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from docs.aegisub.org/3.1/Shift_Times/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:48:30 GMT -->
+</html>
+

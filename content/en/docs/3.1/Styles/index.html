@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from docs.aegisub.org/3.1/Styles/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:46:58 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>Styles - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href='../../3.2/Styles/index.html' rel='canonical'>
+<link href="../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../Main_Page/index.html">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../About/index.html">What is Aegisub?</a>
+</li>
+<li>
+<a href="../Highlights/index.html">Highlights</a>
+</li>
+<li>
+<a href="../Credits/index.html">Credits</a>
+</li>
+<li>
+<a href="../Support/index.html">Support Aegisub</a>
+</li>
+<li>
+<a href="../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../Tutorials/index.html">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li>
+<a href="../Editing_Subtitles/index.html">Editing Subtitles</a>
+</li>
+<li>
+<a href="../Exporting/index.html">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../Attaching_subtitles_to_video/index.html">Applying Subtitles</a>
+</li>
+<li>
+<a href="../Spell_Checker/index.html">Spell Checker</a>
+</li>
+<li>
+<a href="../Translation_Assistant/index.html">Translation Assistant</a>
+</li>
+<li>
+<a href="../Paste_Over/index.html">Paste Over</a>
+</li>
+<li>
+<a href="../Select_Lines/index.html">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../Typesetting/index.html">Introduction</a>
+</li>
+<li>
+<a href="../Video/index.html">Working with Video</a>
+</li>
+<li class='active'>
+<a href="index.html">Editing styles</a>
+</li>
+<li>
+<a href="../Visual_Typesetting/index.html">Visual Typesetting</a>
+</li>
+<li>
+<a href="../ASS_Tags/index.html">ASS Override Tags</a>
+</li>
+<li>
+<a href="../Colour_Picker/index.html">Colour Picker</a>
+</li>
+<li>
+<a href="../Styling_Assistant/index.html">Styling Assistant</a>
+</li>
+<li>
+<a href="../Resolution_Resampler/index.html">Resolution Resampler</a>
+</li>
+<li>
+<a href="../Fonts_Collector/index.html">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../Audio/index.html">Working with Audio</a>
+</li>
+<li>
+<a href="../Timing/index.html">Timing subtitles to audio</a>
+</li>
+<li>
+<a href="../Shift_Times/index.html">Shift times</a>
+</li>
+<li>
+<a href="../Timing_Post-Processor/index.html">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../Kanji_Timer/index.html">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../Automation/index.html">Overview</a>
+</li>
+<li>
+<a href="../Automation/Karaoke_Templater/index.html">Karaoke Templater</a>
+</li>
+<li>
+<a href="../Automation/Lua/index.html">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../Options/index.html">Aegisub Options</a>
+</li>
+<li>
+<a href="../Properties/index.html">Script Properties</a>
+</li>
+<li>
+<a href="../Attachment_Manager/index.html">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>Styles</h1>
+<p>A <strong>style</strong> in the ASS format is a set of typographic formatting rules that is
+applied to dialogue lines. The style parameters can be overridden with
+<a href="../ASS_Tags/index.html">override tags</a>; the styles exist so that you won't have to type out
+all the overrides for each line.</p>
+
+<h2 id="the-styles-manager">The styles manager</h2>
+
+<p>Aegisub's styles manager tool (accessed from the Subtitles menu) provides
+various means of organizing, saving and editing styles. It looks like this:</p>
+
+<p><img src="../img/Style_manager-8979db2b.png" class="center" /></p>
+
+<p>As you can see, the window is divided into two halves. The right half displays
+all styles that you currently have accessible in your currently loaded script;
+the left represents a style storage. Style storages are used by Aegisub to let
+you save styles and quickly import them into scripts. You can have as many
+storages as you want; some people prefer to keep all their styles in one
+storage, others sort their styles by font, by show or alphabetically. The drop
+down menu at the top lets you choose what storage you want to view.</p>
+
+<p>In the bottom part of the window there's two almost identical sets of buttons;
+one set for the storage and one for the current script. They are:</p>
+
+<dl>
+  <dt>New</dt>
+  <dd>Create a new style, either in the storage or in the current script.</dd>
+  <dt>Edit</dt>
+  <dd>Edit the selected style using the style editor (see below).</dd>
+  <dt>Copy</dt>
+  <dd>Create a copy of the selected style and bring up the style editor for it.</dd>
+  <dt>Delete</dt>
+  <dd>Delete the selected style(s).</dd>
+  <dt>Copy to script and Copy to storage</dt>
+  <dd>Copies the selected styles between the storage and the current script.</dd>
+  <dt>Import from script</dt>
+  <dd>Import one or more styles from another script to the current one.</dd>
+</dl>
+
+<p>Pressing Ctrl-C in the styles manager will copy the selected style(s) to the
+clipboard as a text string. This also works the other way around; you can copy
+one or more style lines from another program and press Ctrl-V (paste) in the
+styles manager; this will insert them into the current script.</p>
+
+<h2 id="the-style-editor">The style editor</h2>
+
+<p>Pressing the "Edit" button or double clicking a style name will bring up the
+style editor, which lets you tweak all the parameters available. <strong>Note</strong>: some
+parameters that are available as override tags (i.e. <code>\be</code>) are <em>not</em> available
+as style parameters; conversely, some parameters that are available in the
+styles editor (i.e. the "opaque box" outline option) are <em>not</em> available as a
+style override. This is an unfortunate and occasionally annoying format
+limitation.</p>
+
+<p>To return to the style editor:</p>
+
+<p><img src="../img/Style_editor-d9360165.png" class="center" /></p>
+
+<dl class="dl-horizontal">
+  <dt>Style name</dt>
+  <dd>The name of the style. You can't have two styles with the same name in the
+same script.</dd>
+  <dt>Font</dt>
+  <dd>This section controls the font settings. The drop down menu lets you choose
+the typeface (any font installed on your system will show up in this list) and
+the number to the right controls the size in points. The check boxes below set
+the bold/italic/underline/strikeout parameters.</dd>
+  <dt>Colors</dt>
+  <dd>This controls the four text colors (primary, secondary, outline and shadow).
+The meaning of each of them is as follows:
+
+    <dl class="horizontal-narrow">
+      <dt>Primary</dt>
+      <dd>The main "fill" color of the body of the text.</dd>
+      <dt>Secondary</dt>
+      <dd>Secondary fill color, used for karaoke effects (see <code>\k</code> and its
+  relatives on the <a href="../ASS_Tags/index.html#karaokeeffect">override tags page</a>).</dd>
+      <dt>Outline</dt>
+      <dd>The border color of the text.</dd>
+      <dt>Shadow</dt>
+      <dd>The color of the shadow, which is displayed under the main text and
+  offset by the shadow width defined to the right.</dd>
+    </dl>
+
+    <p>The four colored boxes show you the current color for each of the four text
+  colors; clicking on them opens the <a href="../Colour_Picker/index.html">color picker</a>. The spin
+  controls/number boxes below each colored box controls the transparency of
+  that color. The transparency (or "alpha") is given as a number between 0
+  (opaque) and 255 (completely transparent).</p>
+  </dd>
+  <dt>Margins</dt>
+  <dd>Controls how close to the borders of the video frame the text will be
+positioned (and hence also when automatic line breaking will kick in; but do
+note that there is no option for text justification). Each value (left, right,
+vertical) is given in script resolution pixels (see <a href="../Properties/index.html">script
+properties</a>). For alignments (<code>\an</code>) 1-3, the vertical margin is
+relative to the bottom of the video frame; for 4-6 it doesn't have any meaning,
+and for 7-9 it is relative to the top of the video frame.</dd>
+  <dt>Alignment</dt>
+  <dd>Controls the alignment of the text. The numbers correspond to the arguments
+to the <code>\an</code> tag. Alignments 1, 4 and 7 are flush left; 3, 6 and 9 are flush
+right; 2, 5 and 8 are centered. 1, 2 and 3 are "subtitles" (i.e. drawn at the
+bottom of the frame); 4, 5 and 6 are "midtitles" (i.e.  entered vertically on
+the frame); 7, 8 and 9 are "toptitles" (i.e. drawn at the top of the frame). Do
+note that there is no such thing as a justified alignment; this is a format
+limitation.</dd>
+  <dt>Outline</dt>
+  <dd>Controls the outline (border) thickness (and style) and the shadow offset.
+
+    <ul>
+      <li>For the outline, the number is the thickness of the border in script pixels
+if ScaledBorderAndShadow is enabled (see <a href="../Properties/index.html">script properties</a>);
+if it is disabled the thickness is given in video pixels instead. Setting
+it to 0 disables the outline.</li>
+      <li>The shadow on the other hand is a copy of the main text, shifted down and
+to the right the specified distance. The distance is in script pixels if
+ScaledBorderAndShadow is enabled, and video pixels otherwise. Setting it to
+0 disables shadow.</li>
+      <li>Finally, the check box marked "Opaque box" controls whether the outline
+should be drawn as described above (which happens if it is unticked), or
+replaced by an opaque background bounding box. Note that the rendering of
+Opaque box outlines is broken when the font scale is anything other than
+100%.</li>
+    </ul>
+  </dd>
+  <dt>Miscellaneous</dt>
+  <dd>This section has various other parameters, namely:
+
+    <dl class="horizontal-narrow">
+      <dt>Scale X/Y</dt>
+      <dd>Controls text stretching in the horizontal (X) and vertical (Y) direction
+  respectively. The value is given in percent, so 100 means no stretching is
+  done. You should not use this for normal text sizing; use the point value
+  in the Font area instead since that uses hinting information from the font.</dd>
+      <dt>Rotation</dt>
+      <dd>Controls rotation of the text. The value is the angle of the rotation in
+  degrees (360 degrees to a full circle) and may be negative or larger than
+  360 (setting it to 360, 720 etc. is the same as setting it to 0 except for
+  when <a href="../ASS_Tags/index.html#animatedtransform">animated transforms</a> are involved).</dd>
+      <dt>Spacing</dt>
+      <dd>Controls the horizontal spacing between letters. 0 means the font
+  defaults are used. May be negative for less spacing, or positive for more.
+  The value is the additional gap in pixels between each character; whether
+  these are script pixels or video pixels is not well defined.</dd>
+      <dt>Encoding</dt>
+      <dd>Controls which codepage is used to map codepoints to glyphs; it has
+  nothing to do with the actual text encoding of the script. This is only
+  meaningful on Windows using VSFilter, where it is used to get some old
+  (particularly Japanese) fonts without proper Unicode mappings to render
+  properly. On other systems and renderers, Freetype2 provides the proper
+  mappings. If you didn't understand a word of the above, pretend this
+  setting doesn't exist, as it is rarely important.</dd>
+      <dt>Preview</dt>
+      <dd>Shows a preview of what the text will look like using the current style
+  parameters. The text field lets you input some sample text to preview, and
+  the colored box controls the color of the background.</dd>
+    </dl>
+  </dd>
+</dl>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com/'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from docs.aegisub.org/3.1/Styles/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:47:02 GMT -->
+</html>
+
