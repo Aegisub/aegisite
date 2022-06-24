@@ -12,7 +12,7 @@ aliases:
   - /blog/2008/12/if-programming-languages-were-religions_20.html
 ---
 
-Until December 15 2008, aegisub.net would typically get ~350 hits per day. Between December 16 and 19, it got a total of 266 thousand hits, thanks to the "[If programming languages were religions...](/blog/2008-12-15-if_programming_languages_were_religions.../)" post. So, first of all: Thanks, everybody! All feedback, positive and negative, was greatly appreciated.
+Until December 15 2008, aegisub.net would typically get ~350 hits per day. Between December 16 and 19, it got a total of 266 thousand hits, thanks to the "[If programming languages were religions...](/blog/if-programming-languages-were-religions/)" post. So, first of all: Thanks, everybody! All feedback, positive and negative, was greatly appreciated.
 
 First it was put on [Digg](http://digg.com/programming/If_programming_languages_were_religions). Then on [reddit](http://www.reddit.com/r/programming/comments/7juuy/if_programming_languages_were_religions/). Then, to my great surprise, on [Slashdot](http://entertainment.slashdot.org/article.pl?sid=08/12/17/1329209)... and on [slashdot.jp](http://slashdot.jp/developers/08/12/19/032237.shtml). [Stumbleupon](http://www.stumbleupon.com/url/www.aegisub.net/2008/12/if-programming-languages-were-religions.html). And even on one of my favourite blogs, [Pharyngula](https://scienceblogs.com/pharyngula/2008/12/19/if-programming-languages-were). It was linked on many IRC channels and blogs around the Internet... Several of my friends wrote to tell me that they had seen it linked in some internal forum or mail list. I never expected this kind of reaction!
 

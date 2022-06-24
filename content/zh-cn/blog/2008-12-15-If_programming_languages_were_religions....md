@@ -53,7 +53,7 @@ And now, for some off-topic:
 
 Thanks to jfs and other people on #aegisub for the suggestions. Keep in mind, this list is a joke, and is not meant to offend anyone. Also, if you're a Muslim, please don't kill me. ;)
 
-Note: I wrote a [follow-up](/blog/2008-12-20-if_programming_languages_were_religions_the_aftermath/) to this article, regarding the overwhelming reaction that it received.
+Note: I wrote a [follow-up](/blog/if-programming-languages-were-religions-the-aftermath/) to this article, regarding the overwhelming reaction that it received.
 
 Note 2: This article is also hosted at my official blog [here](http://higherorderfun.com/blog/2011/02/16/if-programming-languages-were-religions/).
 
