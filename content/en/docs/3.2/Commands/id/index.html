@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from docs.aegisub.org/3.2/Commands/id/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:49:15 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>id - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href='index.html' rel='canonical'>
+<link href="../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../../Main_Page/index.html">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../../About/index.html">What is Aegisub?</a>
+</li>
+<li>
+<a href="../../Highlights/index.html">Highlights</a>
+</li>
+<li>
+<a href="../../Credits/index.html">Credits</a>
+</li>
+<li>
+<a href="../../Support/index.html">Support Aegisub</a>
+</li>
+<li>
+<a href="../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../Tutorials/index.html">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li>
+<a href="../../Editing_Subtitles/index.html">Editing Subtitles</a>
+</li>
+<li>
+<a href="../../Exporting/index.html">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../../Attaching_subtitles_to_video/index.html">Applying Subtitles</a>
+</li>
+<li>
+<a href="../../Spell_Checker/index.html">Spell Checker</a>
+</li>
+<li>
+<a href="../../Translation_Assistant/index.html">Translation Assistant</a>
+</li>
+<li>
+<a href="../../Paste_Over/index.html">Paste Over</a>
+</li>
+<li>
+<a href="../../Select_Lines/index.html">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../../Typesetting/index.html">Introduction</a>
+</li>
+<li>
+<a href="../../Video/index.html">Working with Video</a>
+</li>
+<li>
+<a href="../../Styles/index.html">Editing styles</a>
+</li>
+<li>
+<a href="../../Visual_Typesetting/index.html">Visual Typesetting</a>
+</li>
+<li>
+<a href="../../ASS_Tags/index.html">ASS Override Tags</a>
+</li>
+<li>
+<a href="../../Colour_Picker/index.html">Colour Picker</a>
+</li>
+<li>
+<a href="../../Styling_Assistant/index.html">Styling Assistant</a>
+</li>
+<li>
+<a href="../../Resolution_Resampler/index.html">Resolution Resampler</a>
+</li>
+<li>
+<a href="../../Fonts_Collector/index.html">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../../Audio/index.html">Working with Audio</a>
+</li>
+<li>
+<a href="../../Timing/index.html">Timing subtitles to audio</a>
+</li>
+<li>
+<a href="../../Shift_Times/index.html">Shift times</a>
+</li>
+<li>
+<a href="../../Timing_Post-Processor/index.html">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../../Kanji_Timer/index.html">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../../Automation/index.html">Overview</a>
+</li>
+<li>
+<a href="../../Automation/Karaoke_Templater/index.html">Karaoke Templater</a>
+</li>
+<li>
+<a href="../../Automation/Lua/index.html">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../../Options/index.html">Aegisub Options</a>
+</li>
+<li>
+<a href="../../Properties/index.html">Script Properties</a>
+</li>
+<li>
+<a href="../../Attachment_Manager/index.html">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'><a href="../index.html">Commands</a> / id</h1>
+<table style='width: 100%; margin-bottom: 2em'>
+<tr>
+<td>
+<a href='../en_US/index.html'>English (U.S.)</a>
+</td>
+<td>
+<a href='../ar/index.html'>Arabic</a>
+</td>
+<td>
+<a href='../bg/index.html'>Bulgarian</a>
+</td>
+<td>
+<a href='../ca/index.html'>Catalan</a>
+</td>
+<td>
+<a href='../cs/index.html'>Czech</a>
+</td>
+<td>
+<a href='../da/index.html'>Danish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../de/index.html'>German</a>
+</td>
+<td>
+<a href='../el/index.html'>Greek</a>
+</td>
+<td>
+<a href='../es/index.html'>Spanish</a>
+</td>
+<td>
+<a href='../eu/index.html'>Basque</a>
+</td>
+<td>
+<a href='../fa/index.html'>Farsi</a>
+</td>
+<td>
+<a href='../fi/index.html'>Finnish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../fr_FR/index.html'>French</a>
+</td>
+<td>
+<a href='../gl/index.html'>Galician</a>
+</td>
+<td>
+<a href='../hu/index.html'>Hungarian</a>
+</td>
+<td>
+<a href='index.html'>Indonesian</a>
+</td>
+<td>
+<a href='../it/index.html'>Italian</a>
+</td>
+<td>
+<a href='../ja/index.html'>Japanese</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../ko/index.html'>Korean</a>
+</td>
+<td>
+<a href='../nl/index.html'>Dutch</a>
+</td>
+<td>
+<a href='../pl/index.html'>Polish</a>
+</td>
+<td>
+<a href='../pt_BR/index.html'>Portuguese (Brazilian)</a>
+</td>
+<td>
+<a href='../pt_PT/index.html'>Portuguese</a>
+</td>
+<td>
+<a href='../ru/index.html'>Russian</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../sr_YU/index.html'>Serbian (Cyrillic)</a>
+</td>
+<td>
+<a href='../sr_YU%40latin/index.html'>Serbian (Latin)</a>
+</td>
+<td>
+<a href='../vi/index.html'>Vietnamese</a>
+</td>
+<td>
+<a href='../zh_CN/index.html'>Chinese (Simplified)</a>
+</td>
+<td>
+<a href='../zh_TW/index.html'>Chinese</a>
+</td>
+</tr>
+</table>
+<table class='karatable'>
+<tr>
+<th>Name</th>
+<th>Display</th>
+<th>Help</th>
+</tr>
+<tr>
+<td>am/manager</td>
+<td>Otomatisasi</td>
+<td>Buka pengelola otomatisasi</td>
+</tr>
+<tr>
+<td>am/meta</td>
+<td>Otomatisasi</td>
+<td>Buka pengelola otomatisasi. Ctrl: Pindai ulang skrip di map autoload. CTrl+Shift: Pindai ulang skrip di map autoload dan semua skrip otomatisasi</td>
+</tr>
+<tr>
+<td>am/reload</td>
+<td>Muat ulang skrip otomatisasi</td>
+<td>Muat ulang semua skrip otomatisasi dan pindai ulang map autoload</td>
+</tr>
+<tr>
+<td>am/reload/autoload</td>
+<td>Muat ulang skrip otomatisasi</td>
+<td>Pindai ulang skrip Otomatisasi di map autoload</td>
+</tr>
+<tr>
+<td>app/about</td>
+<td>Tentang</td>
+<td>Tentang Aegisub</td>
+</tr>
+<tr>
+<td>app/display/audio_subs</td>
+<td>Audio dan Takarir</td>
+<td>Tampilkan audio dan baris takarir</td>
+</tr>
+<tr>
+<td>app/display/full</td>
+<td>Semua</td>
+<td>Tampilkan audio, video dan kemudian baris takarir</td>
+</tr>
+<tr>
+<td>app/display/subs</td>
+<td>Lihat Takarir</td>
+<td>Tampilkan baris takarir</td>
+</tr>
+<tr>
+<td>app/display/video_subs</td>
+<td>Video dan Takarir</td>
+<td>Tampilkan video dan baris takarir</td>
+</tr>
+<tr>
+<td>app/exit</td>
+<td>Keluar</td>
+<td>Keluar dari aplikasi</td>
+</tr>
+<tr>
+<td>app/language</td>
+<td>Bahasa</td>
+<td>Pilih bahasa tatap muka Aegisub</td>
+</tr>
+<tr>
+<td>app/log</td>
+<td>Jendela Log</td>
+<td>Lihat log</td>
+</tr>
+<tr>
+<td>app/new_window</td>
+<td>Jendela baru</td>
+<td>Buka jendela aplikasi baru</td>
+</tr>
+<tr>
+<td>app/options</td>
+<td>Pengaturan</td>
+<td>Konfigurasi Aegisub</td>
+</tr>
+<tr>
+<td>app/toggle/global_hotkeys</td>
+<td>Alihan tombol cepat global</td>
+<td>Alihan tombol cepat global (Mode Medusa)</td>
+</tr>
+<tr>
+<td>app/toggle/toolbar</td>
+<td>Sembunyikan Toolbar</td>
+<td>Alihan Toolbar Utama</td>
+</tr>
+<tr>
+<td>app/updates</td>
+<td>Periksa pemutakhiran</td>
+<td>Periksa versi terbaru Aegisub</td>
+</tr>
+<tr>
+<td>audio/close</td>
+<td>Tutup Audio</td>
+<td>Tutup berkas audio yang sedang terbuka</td>
+</tr>
+<tr>
+<td>audio/commit</td>
+<td>Terapkan</td>
+<td>Terapkan semua tempo audio yang tertunda</td>
+</tr>
+<tr>
+<td>audio/commit/default</td>
+<td>Terapkan dan gunakan tempo awal untuk baris selanjutnya</td>
+<td>Terapkan semua tempo audio yang ditunda dan ubah ke baris selanjutnya</td>
+</tr>
+<tr>
+<td>audio/commit/next</td>
+<td>Terapkan dan lanjut ke baris selanjutnya</td>
+<td>Terapkan semua tempo audio yang ditunda dan lanjut ke baris selanjutnya</td>
+</tr>
+<tr>
+<td>audio/commit/stay</td>
+<td>Terapkan dan tetap pada baris saat ini</td>
+<td>Terapkan semua tempo audio yang ditunda dan tetap dibaris saat ini</td>
+</tr>
+<tr>
+<td>audio/go_to</td>
+<td>Ke seleksi</td>
+<td>Gulirkan tampilan audio ke tengah dari seleksi audio saat ini</td>
+</tr>
+<tr>
+<td>audio/karaoke</td>
+<td>Alihan mode karaoke</td>
+<td>Alihan mode karaoke</td>
+</tr>
+<tr>
+<td>audio/open</td>
+<td>Buka Berkas Audio</td>
+<td>Buka berkas audio</td>
+</tr>
+<tr>
+<td>audio/open/blank</td>
+<td>Buka Audio Tanpa Suara (2 Jam 30 Menit)</td>
+<td>Buka 150 menit klip audio tanpa suara, untuk debugging</td>
+</tr>
+<tr>
+<td>audio/open/noise</td>
+<td>Buka Audio Dengan Suara Bising (2 Jam 30 Menit)</td>
+<td>Buka 150 menit klip audio dengan suara bising, untuk debugging</td>
+</tr>
+<tr>
+<td>audio/open/video</td>
+<td>Buka Audio dari Video</td>
+<td>Buka audio dari video saat ini</td>
+</tr>
+<tr>
+<td>audio/opt/autocommit</td>
+<td>Otomatis terapkan semua perubahan</td>
+<td>Otomatis terapkan semua perubahan</td>
+</tr>
+<tr>
+<td>audio/opt/autonext</td>
+<td>Otomatis pindah ke baris selanjutnya ketika diterapkan</td>
+<td>Otomatis pindah ke baris selanjutnya ketika diterapkan</td>
+</tr>
+<tr>
+<td>audio/opt/autoscroll</td>
+<td>Otomatis gulirkan tampilan audio ke baris yang terpilih</td>
+<td>Otomatis gulirkan tampilan audio ke baris yang terpilih</td>
+</tr>
+<tr>
+<td>audio/opt/spectrum</td>
+<td>Mode Spektrum</td>
+<td>Mode Spektrum</td>
+</tr>
+<tr>
+<td>audio/opt/vertical_link</td>
+<td>Sambungkan pembesar detil audio dengan volume audio</td>
+<td>Sambungkan pembesar detil audio dengan volume audio</td>
+</tr>
+<tr>
+<td>audio/play/current</td>
+<td>Putar seleksi audio saat ini</td>
+<td>Jalankan audio saat ini dan abaikan perubahan yang dibuat terakhir</td>
+</tr>
+<tr>
+<td>audio/play/line</td>
+<td>Putar video dibaris ini</td>
+<td>Putar audio di baris saat ini</td>
+</tr>
+<tr>
+<td>audio/play/selection</td>
+<td>Putar seleksi audio</td>
+<td>Jalankan audio sampai akhir dari seleksi</td>
+</tr>
+<tr>
+<td>audio/play/selection/after</td>
+<td>Putar 500 milidetik setelah seleksi</td>
+<td>Putar 500 milidetik setelah seleksi</td>
+</tr>
+<tr>
+<td>audio/play/selection/before</td>
+<td>Putar 500 milidetik sebelum seleksi</td>
+<td>Putar 500 milidetik sebelum seleksi</td>
+</tr>
+<tr>
+<td>audio/play/selection/begin</td>
+<td>Putar 500 milidetik awal seleksi</td>
+<td>Putar 500 milidetik awal seleksi</td>
+</tr>
+<tr>
+<td>audio/play/selection/end</td>
+<td>Putar 500 milidetik akhir seleksi</td>
+<td>Putar 500 milidetik akhir seleksi</td>
+</tr>
+<tr>
+<td>audio/play/to_end</td>
+<td>Putar seleksi dari awal sampai akhir</td>
+<td>Putar seleksi dari awal sampai akhir</td>
+</tr>
+<tr>
+<td>audio/play/toggle</td>
+<td>Jalankan seleksi audio atau berhenti</td>
+<td>Jalankan atau hentikan seleksi jika sudah diputar</td>
+</tr>
+<tr>
+<td>audio/save/clip</td>
+<td>Buat klip audio</td>
+<td>Simpan klip audio dari baris yang terpilih</td>
+</tr>
+<tr>
+<td>audio/scroll/left</td>
+<td>Gulir ke kiri</td>
+<td>Gulir tampilan audio ke kiri</td>
+</tr>
+<tr>
+<td>audio/scroll/right</td>
+<td>Gulir ke kanan</td>
+<td>Gulir tampilan audio ke kanan</td>
+</tr>
+<tr>
+<td>audio/stop</td>
+<td>Hentikan video</td>
+<td>Hentikan audio dan video</td>
+</tr>
+<tr>
+<td>audio/view/spectrum</td>
+<td>Tampilkan Spektrum</td>
+<td>Tampilkan grafis audio dengan mode spektograf</td>
+</tr>
+<tr>
+<td>audio/view/waveform</td>
+<td>Tampilkan Gelombang</td>
+<td>Tampilkan grafis audio dengan mode gelombang</td>
+</tr>
+<tr>
+<td>automation/lua/cleantags-autoload/Clean Tags</td>
+<td>Clean Tags</td>
+<td>Clean subtitle lines by re-arranging ASS tags and override blocks within the lines</td>
+</tr>
+<tr>
+<td>automation/lua/kara-templater/Apply karaoke template</td>
+<td>Apply karaoke template</td>
+<td>Applies karaoke effects from templates</td>
+</tr>
+<tr>
+<td>automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in</td>
+<td>Automatic karaoke lead-in</td>
+<td>Join up the ends of selected lines and add \k tags to shift karaoke</td>
+</tr>
+<tr>
+<td>automation/lua/macro-1-edgeblur/Add edgeblur</td>
+<td>Add edgeblur</td>
+<td>Adds \be1 tags to all selected lines</td>
+</tr>
+<tr>
+<td>automation/lua/macro-2-mkfullwitdh/Make fullwidth</td>
+<td>Make fullwidth</td>
+<td>Convert Latin letters to SJIS fullwidth letters</td>
+</tr>
+<tr>
+<td>automation/lua/select-overlaps/Select overlaps</td>
+<td>Select overlaps</td>
+<td>Select lines which begin while another non-comment line is active</td>
+</tr>
+<tr>
+<td>automation/lua/strip-tags/Strip tags</td>
+<td>Strip tags</td>
+<td>Remove all override tags from selected lines</td>
+</tr>
+<tr>
+<td>edit/clear</td>
+<td>Bersihkan</td>
+<td>Bersihkan semua teks dan label di baris saat ini</td>
+</tr>
+<tr>
+<td>edit/clear/text</td>
+<td>Bersihkan Teks</td>
+<td>Bersihkan teks di baris dan hanya menyisakan label ASS</td>
+</tr>
+<tr>
+<td>edit/color/outline</td>
+<td>Warna Garis Luar</td>
+<td>Atur warna garis luar (\3c) pada posisi saat ini</td>
+</tr>
+<tr>
+<td>edit/color/primary</td>
+<td>Warna Primer</td>
+<td>Atur warna utama (\1c) pada posisi saat ini</td>
+</tr>
+<tr>
+<td>edit/color/secondary</td>
+<td>Warna Sekuder</td>
+<td>Atur warna sekunder (karaoke) (\2c) pada posisi saat ini</td>
+</tr>
+<tr>
+<td>edit/color/shadow</td>
+<td>Warna Bayang</td>
+<td>Atur warna bayang (\4c) pada posisi saat ini</td>
+</tr>
+<tr>
+<td>edit/find_replace</td>
+<td>Cari dan Ganti</td>
+<td>Cari dan ganti kata-kata di takarir </td>
+</tr>
+<tr>
+<td>edit/font</td>
+<td>Rupa Huruf</td>
+<td>Pilih ukuran dan rupa huruf</td>
+</tr>
+<tr>
+<td>edit/insert_original</td>
+<td>Salin dan Sisipkan</td>
+<td>Salin dan sisipkan teks ke kotak sunting sesuai dengan posisi kursor</td>
+</tr>
+<tr>
+<td>edit/line/copy</td>
+<td>Salin Baris</td>
+<td>Salin takarir ke memori</td>
+</tr>
+<tr>
+<td>edit/line/cut</td>
+<td>Potong Baris</td>
+<td>Potong Takarir</td>
+</tr>
+<tr>
+<td>edit/line/delete</td>
+<td>Hapus Baris</td>
+<td>Hapus baris yang terpilih saat ini</td>
+</tr>
+<tr>
+<td>edit/line/duplicate</td>
+<td>Gandakan Baris</td>
+<td>Gandakan baris yang terpilih</td>
+</tr>
+<tr>
+<td>edit/line/join/as_karaoke</td>
+<td>Sebagai Karaoke</td>
+<td>Gabungkan baris yang terpilih jadi satu baris, menjadi karaoke</td>
+</tr>
+<tr>
+<td>edit/line/join/concatenate</td>
+<td>Satukan</td>
+<td>Gabungkan baris yang terpilih jadi satu baris, dan satukan semua teks</td>
+</tr>
+<tr>
+<td>edit/line/join/keep_first</td>
+<td>Keep First</td>
+<td>Gabungkan baris yang terpilih jadi satu baris, teks awal tidak berubah dan hapus sisanya</td>
+</tr>
+<tr>
+<td>edit/line/paste</td>
+<td>Tempel Baris</td>
+<td>Tempel takarir</td>
+</tr>
+<tr>
+<td>edit/line/paste/over</td>
+<td>Tempel Baris di atas</td>
+<td>Tempel takarir di atas yang lainnya</td>
+</tr>
+<tr>
+<td>edit/line/recombine</td>
+<td>Gabungkan Baris</td>
+<td>Gabung takarir yang telah terpisah dan jadikan satu</td>
+</tr>
+<tr>
+<td>edit/line/split/after</td>
+<td>Pisah baris menjadi dua setelah frame ini</td>
+<td>Pisah baris saat ini menjadi baris dimana akhir dari frame saat ini dan baris dimana muncul di frame berikutnya</td>
+</tr>
+<tr>
+<td>edit/line/split/before</td>
+<td>Pisah baris menjadi dua sebelum frame ini</td>
+<td>Pisah baris saat ini menjadi baris dimana akhir dari frame sebelumnya dan baris dimana muncul di frame saat ini</td>
+</tr>
+<tr>
+<td>edit/line/split/by_karaoke</td>
+<td>Pisah Baris (oleh karaoke)</td>
+<td>Gunakan tempo karaoke untuk memisahkan baris ke baris yang lebih kecil</td>
+</tr>
+<tr>
+<td>edit/line/split/estimate</td>
+<td>Pisah dengan kursor (estimasi waktu)</td>
+<td>Pisah baris saat ini dengan kursor, membagi durasi baris asli dengan yang baru</td>
+</tr>
+<tr>
+<td>edit/line/split/preserve</td>
+<td>Pisah dengan kursor (tetapkan waktu)</td>
+<td>Pisah baris saat ini dengan kursor, atur kedua baris tersebut ke waktu baris yang asli</td>
+</tr>
+<tr>
+<td>edit/line/split/video</td>
+<td>Pisah dengan kursor (sesuai dengan frame video)</td>
+<td>Pisahkan baris saat ini pada kursor, membagi durasi baris sesuai dengan frame video yang terpilih saat ini</td>
+</tr>
+<tr>
+<td>edit/redo</td>
+<td>Tak perlu mengulang</td>
+<td>Ulangi satu langkah terakhir</td>
+</tr>
+<tr>
+<td>edit/revert</td>
+<td>Salin</td>
+<td>Salin teks baris secara keseluruhan (seperti yang ditampilkan di jendala atas)</td>
+</tr>
+<tr>
+<td>edit/style/bold</td>
+<td>Alihkan Huruf Tebal</td>
+<td>Alihkan huruf tebal (\b) dari seleksi saat ini atau dari posisi kursor saat ini</td>
+</tr>
+<tr>
+<td>edit/style/italic</td>
+<td>Alihkan Huruf Miring</td>
+<td>Alihkan huruf miring (\i) dari seleksi saat ini atau dari posisi kursor saat ini</td>
+</tr>
+<tr>
+<td>edit/style/strikeout</td>
+<td>Alihkan Coret</td>
+<td>Alihkan coret (\s) dari seleksi saat ini atau dari posisi kursor saat ini</td>
+</tr>
+<tr>
+<td>edit/style/underline</td>
+<td>Alihkan Garis Bawah</td>
+<td>Alihkan garis bawah (\u) dari seleksi saat ini atau dari posisi kursor saat ini</td>
+</tr>
+<tr>
+<td>edit/undo</td>
+<td>Tak perlu mengurung</td>
+<td>Urungkan satu langkah terakhir</td>
+</tr>
+<tr>
+<td>grid/line/next</td>
+<td>Baris Selanjutnya</td>
+<td>Maju ke baris selanjutnya</td>
+</tr>
+<tr>
+<td>grid/line/next/create</td>
+<td>Baris Selanjutnya</td>
+<td>Maju ke baris selanjutnya atau buat baris baru</td>
+</tr>
+<tr>
+<td>grid/line/prev</td>
+<td>Baris Sebelumnya</td>
+<td>Jalan ke baris sebelumnya</td>
+</tr>
+<tr>
+<td>grid/move/down</td>
+<td>Pindahkan baris kebawah</td>
+<td>Pindahkan baris yang terpilih kebawah satu baris</td>
+</tr>
+<tr>
+<td>grid/move/up</td>
+<td>Pindahkan baris ke atas</td>
+<td>Pindahkan baris yang terpilih ke atas satu baris</td>
+</tr>
+<tr>
+<td>grid/sort/actor</td>
+<td>Nama Aktor</td>
+<td>Sortir semua takarir berdasarkan nama aktor</td>
+</tr>
+<tr>
+<td>grid/sort/actor/selected</td>
+<td>Nama Aktor</td>
+<td>Sortir takarir yang dipilih berdasarkan nama aktor</td>
+</tr>
+<tr>
+<td>grid/sort/effect</td>
+<td>Efek</td>
+<td>Sortir semua takarir berdasarkan nama efek</td>
+</tr>
+<tr>
+<td>grid/sort/effect/selected</td>
+<td>Efek</td>
+<td>Sortir takarir yang dipilih berdasarkan nama efek</td>
+</tr>
+<tr>
+<td>grid/sort/end</td>
+<td>Waktu Akhir</td>
+<td>Sortir semua takarir berdasarkan waktu akhir</td>
+</tr>
+<tr>
+<td>grid/sort/end/selected</td>
+<td>Waktu Akhir</td>
+<td>Sortir takarir yang dipilih berdasarkan waktu akhir</td>
+</tr>
+<tr>
+<td>grid/sort/layer</td>
+<td>Layar </td>
+<td>Sortir semua takarir berdasarkan nomor layar</td>
+</tr>
+<tr>
+<td>grid/sort/layer/selected</td>
+<td>Layar </td>
+<td>Sortir takarir yang dipilih berdasarkan nomor layar</td>
+</tr>
+<tr>
+<td>grid/sort/start</td>
+<td>Waktu Awal</td>
+<td>Sortir semua takarir berdasarkan waktu mulai</td>
+</tr>
+<tr>
+<td>grid/sort/start/selected</td>
+<td>Waktu Awal</td>
+<td>Sortir takarir yang dipilih berdasarkan waktu awal</td>
+</tr>
+<tr>
+<td>grid/sort/style</td>
+<td>Nama Gaya</td>
+<td>Sortir semua takarir berdasarkan nama gaya</td>
+</tr>
+<tr>
+<td>grid/sort/style/selected</td>
+<td>Nama Gaya</td>
+<td>Sortir takarir yang dipilih berdasarkan nama gaya</td>
+</tr>
+<tr>
+<td>grid/swap</td>
+<td>Tukar Baris</td>
+<td>Tukar dua baris yang terpilih</td>
+</tr>
+<tr>
+<td>grid/tag/cycle_hiding</td>
+<td>Putar Label ASS</td>
+<td>Ubah tampilan label ASS</td>
+</tr>
+<tr>
+<td>grid/tags/hide</td>
+<td>Sembunyikan Label</td>
+<td>Lambang label ASS di dalam baris takarir</td>
+</tr>
+<tr>
+<td>grid/tags/show</td>
+<td>Tampilkan Semua Label</td>
+<td>Tampilkan semua label ASS di dalam baris takarir</td>
+</tr>
+<tr>
+<td>grid/tags/simplify</td>
+<td>Sederhanakan Label</td>
+<td>Sederhanakan label ASS di dalam baris takarir</td>
+</tr>
+<tr>
+<td>help/bugs</td>
+<td>Pencari Bug</td>
+<td>Kunjungi pencari bug Aegisub untuk melaporkan kesalahan atau meminta fitur baru</td>
+</tr>
+<tr>
+<td>help/contents</td>
+<td>Konten</td>
+<td>Topik Bantuan</td>
+</tr>
+<tr>
+<td>help/forums</td>
+<td>Forum</td>
+<td>Kunjungi forum Aegisub</td>
+</tr>
+<tr>
+<td>help/irc</td>
+<td>Saluran IRC</td>
+<td>Kunjungi saluran resmi IRC Aegisub</td>
+</tr>
+<tr>
+<td>help/video</td>
+<td>Tata Huruf Visual</td>
+<td>Buka halaman bantuan Tata Huruf Visual</td>
+</tr>
+<tr>
+<td>help/website</td>
+<td>Situs</td>
+<td>Kunjungi situs resmi Aegisub</td>
+</tr>
+<tr>
+<td>keyframe/close</td>
+<td>Tutup Keyframe</td>
+<td>Jika ada, tutup keyframe yang saat ini sedang dimuat oleh video</td>
+</tr>
+<tr>
+<td>keyframe/open</td>
+<td>Buka Keyframe</td>
+<td>Buka daftar berkas keyframe</td>
+</tr>
+<tr>
+<td>keyframe/save</td>
+<td>Simpan Keyframe</td>
+<td>Simpan daftar keyframe saat ini ke berkas</td>
+</tr>
+<tr>
+<td>subtitle/attachment</td>
+<td>Lampiran</td>
+<td>Buka dialog pengelola lampiran</td>
+</tr>
+<tr>
+<td>subtitle/find</td>
+<td>Cari</td>
+<td>Cari teks di dalam takarir</td>
+</tr>
+<tr>
+<td>subtitle/find/next</td>
+<td>Cari selanjutnya</td>
+<td>Cari berikutnya yang sesuai dengan pencarian terakhir</td>
+</tr>
+<tr>
+<td>subtitle/insert/after</td>
+<td>Setelahnya</td>
+<td>Sisipkan baris disetelahnya</td>
+</tr>
+<tr>
+<td>subtitle/insert/after/videotime</td>
+<td>Setelahnya, pada Waktu Video</td>
+<td>Sisipkan baris baru disetelahnya, dimulai pada waktu video</td>
+</tr>
+<tr>
+<td>subtitle/insert/before</td>
+<td>Sebelumnya</td>
+<td>Sisipkan baris baru disebelumnya</td>
+</tr>
+<tr>
+<td>subtitle/insert/before/videotime</td>
+<td>Sebelumnya, sesuai pada Waktu Video</td>
+<td>Sisipkan baris baru disebelumnya, dimulai pada waktu video</td>
+</tr>
+<tr>
+<td>subtitle/new</td>
+<td>Takarir Baru</td>
+<td>Takarir baru</td>
+</tr>
+<tr>
+<td>subtitle/open</td>
+<td>Buka Takarir</td>
+<td>Buka berkas takarir</td>
+</tr>
+<tr>
+<td>subtitle/open/autosave</td>
+<td>Buka Berkas Penyimpanan Otomatis</td>
+<td>Buka berkas yang tersimpan secara otomatis oleh Aegisub</td>
+</tr>
+<tr>
+<td>subtitle/open/charset</td>
+<td>Buka Takarir dengan Set Karakter</td>
+<td>Buka berkas takarir dengan enkoding khusus</td>
+</tr>
+<tr>
+<td>subtitle/open/video</td>
+<td>Buka Takarir dari Video</td>
+<td>Buka takarir dari berkas video</td>
+</tr>
+<tr>
+<td>subtitle/properties</td>
+<td>Informasi Dasar</td>
+<td>Buka informasi dasar skrip</td>
+</tr>
+<tr>
+<td>subtitle/save</td>
+<td>Simpan Takarir</td>
+<td>Simpan takarir saat ini</td>
+</tr>
+<tr>
+<td>subtitle/save/as</td>
+<td>Simpan Takarir sebagai</td>
+<td>Simpan takarir dengan nama lain</td>
+</tr>
+<tr>
+<td>subtitle/select/all</td>
+<td>Pilih Semua</td>
+<td>Pilih semua baris dialog</td>
+</tr>
+<tr>
+<td>subtitle/select/visible</td>
+<td>Pilih yang terlihat</td>
+<td>Pilih semua baris dialo yang terlihat dalam video</td>
+</tr>
+<tr>
+<td>subtitle/spellcheck</td>
+<td>Pemeriksa Ejaan</td>
+<td>Buka pemeriksa ejaan</td>
+</tr>
+<tr>
+<td>time/continuous/end</td>
+<td>Ubah Akhir</td>
+<td>Ubah waktu akhir baris terpilih dengan waktu akhir baris berikutnya</td>
+</tr>
+<tr>
+<td>time/continuous/start</td>
+<td>Ubah Awal</td>
+<td>Ubah waktu mulai baris terpilih dengan waktu akhir baris sebelumnya</td>
+</tr>
+<tr>
+<td>time/frame/current</td>
+<td>Geser seleksi ke Frame saat ini</td>
+<td>Geser seleksi sesuai dengan frame pada video</td>
+</tr>
+<tr>
+<td>time/lead/both</td>
+<td>Tambah transisi awal dan akhir</td>
+<td>Tambahkan transisi awal dan akhir ke baris yang terpilih</td>
+</tr>
+<tr>
+<td>time/lead/in</td>
+<td>Tambah transisi awal</td>
+<td>Tambahkan transisi awal waktu pada baris yang terpilih</td>
+</tr>
+<tr>
+<td>time/lead/out</td>
+<td>Tambah transisi akhir</td>
+<td>Tambahkan transisi akhir waktu pada baris yang terpilih</td>
+</tr>
+<tr>
+<td>time/length/decrease</td>
+<td>Kurangi durasi</td>
+<td>Kurangi durasi dari unit tempo yang terpilih</td>
+</tr>
+<tr>
+<td>time/length/decrease/shift</td>
+<td>Kurangi durasi dan geser</td>
+<td>Kurangi durasi dari unit tempo yang terpilih dan geser baris selanjutnya</td>
+</tr>
+<tr>
+<td>time/length/increase</td>
+<td>Tingkatkan durasi</td>
+<td>Tingkatkan panjang durasi dari unit tempo yang terpilih</td>
+</tr>
+<tr>
+<td>time/length/increase/shift</td>
+<td>Tingkatkan durasi dan geser</td>
+<td>Tingkatkan panjang durasi unit tempo yang terpilih dan geser baris selanjutnya</td>
+</tr>
+<tr>
+<td>time/next</td>
+<td>Baris Selanjutnya</td>
+<td>Baris berikutnya atau suku kata</td>
+</tr>
+<tr>
+<td>time/prev</td>
+<td>Baris Sebelumnya</td>
+<td>Baris sebelumnya atau suku kata</td>
+</tr>
+<tr>
+<td>time/shift</td>
+<td>Geser Waktu</td>
+<td>Geser takarir dengan waktu atau frame</td>
+</tr>
+<tr>
+<td>time/snap/end_video</td>
+<td>Kaitkan ke Akhir video</td>
+<td>Atur dari akhir takarir pada frame video saat ini</td>
+</tr>
+<tr>
+<td>time/snap/scene</td>
+<td>Kait ke Adegan</td>
+<td>Atur awal dan akhir takarir ke keyframe disekitar frame video saat ini</td>
+</tr>
+<tr>
+<td>time/snap/start_video</td>
+<td>Kaitkan ke Awal Video</td>
+<td>Atur dari awal takarir pada frame video saat ini</td>
+</tr>
+<tr>
+<td>time/start/decrease</td>
+<td>Geser waktu awal ke belakang</td>
+<td>Geserkan waktu awal dari tempo yang terpilih ke belakang</td>
+</tr>
+<tr>
+<td>time/start/increase</td>
+<td>Geser waktu awal ke depan</td>
+<td>Geserkan waktu awal dari tempo yang terpilih ke depan</td>
+</tr>
+<tr>
+<td>timecode/close</td>
+<td>Tutup Berkas Timecode</td>
+<td>Tutup berkas timecode yang saat ini sedang dibuka</td>
+</tr>
+<tr>
+<td>timecode/open</td>
+<td>Buka Berkas Timecode</td>
+<td>Buka berkas timecode VFR v1 atau v2</td>
+</tr>
+<tr>
+<td>timecode/save</td>
+<td>Simpan Berkas Timecode</td>
+<td>Simpan berkas timecode VFR v2</td>
+</tr>
+<tr>
+<td>tool/export</td>
+<td>Ekspor Takarir</td>
+<td>Simpan salinan takarir ke format lain atau untuk proses lainnya</td>
+</tr>
+<tr>
+<td>tool/font_collector</td>
+<td>Pengumpul Huruf</td>
+<td>Buka pengumpul huruf</td>
+</tr>
+<tr>
+<td>tool/line/select</td>
+<td>Pilih Baris</td>
+<td>Pilih baris berdasarkan kriteria yang dipilih</td>
+</tr>
+<tr>
+<td>tool/resampleres</td>
+<td>Reka Ulang Resolusi</td>
+<td>Reka ulang takarir untuk mempertahankan tampilan takarir pada resolusi takarir yang berbeda</td>
+</tr>
+<tr>
+<td>tool/style/assistant</td>
+<td>Asisten Pengaya</td>
+<td>Buka asisten pengaya</td>
+</tr>
+<tr>
+<td>tool/style/manager</td>
+<td>Pengelola Gaya</td>
+<td>Buka pengelola gaya</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/commit</td>
+<td>Terapkan perubahan</td>
+<td>Terapkan perubahan dan lanjut ke baris selanjutnya</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/preview</td>
+<td>Pratinjau perubahan</td>
+<td>Terapkan perubahan dan tetap dibaris saat ini</td>
+</tr>
+<tr>
+<td>tool/time/kanji</td>
+<td>Tempo Kanji</td>
+<td>Buka penyalin Tempo Kanji</td>
+</tr>
+<tr>
+<td>tool/time/postprocess</td>
+<td>Pasca-Proses Tempo</td>
+<td>Pasca-proses tempo takarir untuk membuat waktu awal dan akhir, kaitkan tempo sesuai dengan perubahan adegan dan lain-lain.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant</td>
+<td>Asisten Penterjemah</td>
+<td>Buka asisten penterjemah</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/commit</td>
+<td>Terapkan perubahan</td>
+<td>Terapkan perubahan dan lanjut ke baris selanjutnya</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/insert_original</td>
+<td>Salin dan Sisipkan</td>
+<td>Masukkan teks yang belum diterjemahkan</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/next</td>
+<td>Baris Selanjutnya</td>
+<td>Otomatis ke baris berikutnya ketika diterapkan</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/prev</td>
+<td>Baris Sebelumnya</td>
+<td>Pindah ke baris sebelumnya tanpa perubahan</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/preview</td>
+<td>Pratinjau perubahan</td>
+<td>Terapkan perubahan dan tetap dibaris saat ini</td>
+</tr>
+<tr>
+<td>video/aspect/cinematic</td>
+<td>Sinema (2.35)</td>
+<td>Paksa aspek rasio video ke 2.35</td>
+</tr>
+<tr>
+<td>video/aspect/custom</td>
+<td>Kustom</td>
+<td>Paksa aspek rasio video ke ukuran kustom</td>
+</tr>
+<tr>
+<td>video/aspect/default</td>
+<td>Standar</td>
+<td>Gunakan aspek rasio dari video</td>
+</tr>
+<tr>
+<td>video/aspect/full</td>
+<td>Layar Penuh (4:3)</td>
+<td>Paksa aspek rasio video ke 4:3</td>
+</tr>
+<tr>
+<td>video/aspect/wide</td>
+<td>Layar Lebar (16:9)</td>
+<td>Paksa aspek rasio video ke 16:9</td>
+</tr>
+<tr>
+<td>video/close</td>
+<td>Tutup Video</td>
+<td>Tutup berkas video saat ini</td>
+</tr>
+<tr>
+<td>video/copy_coordinates</td>
+<td>Salin koordinat ke Memori</td>
+<td>Salin koordinat saat ini ke memori</td>
+</tr>
+<tr>
+<td>video/detach</td>
+<td>Lepas Video</td>
+<td>Lepas video dari jndela utama, dan menampilkan dua jendela terpisah</td>
+</tr>
+<tr>
+<td>video/details</td>
+<td>Lihat Detil Video</td>
+<td>Tampilkan detil video</td>
+</tr>
+<tr>
+<td>video/focus_seek</td>
+<td>Alihan penggeser fokus video</td>
+<td>Alihan fokus antara penggeser video dengan yang sebelumnya untuk mendapatkan fokus</td>
+</tr>
+<tr>
+<td>video/frame/copy</td>
+<td>Salin gambar ke Memori</td>
+<td>Salin frame saat ini ke clipboard</td>
+</tr>
+<tr>
+<td>video/frame/copy/raw</td>
+<td>Salin gambar ke Memori (tanpa takarir)</td>
+<td>Saling frame saat ini ke clipboard tanpa takarir</td>
+</tr>
+<tr>
+<td>video/frame/next</td>
+<td>Frame Berikutnya </td>
+<td>Geser ke frame berikutnya</td>
+</tr>
+<tr>
+<td>video/frame/next/boundary</td>
+<td>Batas Berikutnya</td>
+<td>Lompat ke berikutnya atau ke akhir takarir</td>
+</tr>
+<tr>
+<td>video/frame/next/keyframe</td>
+<td>Keyframe Berikutnya</td>
+<td>Geser ke keyfrrame berikutnya</td>
+</tr>
+<tr>
+<td>video/frame/next/large</td>
+<td>Lompat ke depan</td>
+<td>Lompat ke depan</td>
+</tr>
+<tr>
+<td>video/frame/prev</td>
+<td>Frame Sebelumnya</td>
+<td>Geser ke frame sebelumnya</td>
+</tr>
+<tr>
+<td>video/frame/prev/boundary</td>
+<td>Batas Sebelumnya</td>
+<td>Lompat ke sebelumnya atau ke akhir takarir</td>
+</tr>
+<tr>
+<td>video/frame/prev/keyframe</td>
+<td>Keyframe Sebelumnya</td>
+<td>Geser ke keyframe sebelumnya</td>
+</tr>
+<tr>
+<td>video/frame/prev/large</td>
+<td>Lompat ke belakang</td>
+<td>Lompat ke belakang</td>
+</tr>
+<tr>
+<td>video/frame/save</td>
+<td>Simpan gambar PNG</td>
+<td>Simpan gambar frame saat ini ke PNG di dalam direktori video</td>
+</tr>
+<tr>
+<td>video/frame/save/raw</td>
+<td>Simpan gambar PNG (tanpa takarir)</td>
+<td>Simpan gambar frame saat ini ke PNG tanpa takarirr di dalam direktori video</td>
+</tr>
+<tr>
+<td>video/jump</td>
+<td>Lompat ke</td>
+<td>Lompat ke frame atau waktu</td>
+</tr>
+<tr>
+<td>video/jump/end</td>
+<td>Lompat ke kakhir video</td>
+<td>Lompat video ke akhir frame dari takarir saat ini</td>
+</tr>
+<tr>
+<td>video/jump/start</td>
+<td>Lompat ke awal video</td>
+<td>Lompat video ke awal frame dari takarir saat ini</td>
+</tr>
+<tr>
+<td>video/open</td>
+<td>Buka Video...</td>
+<td>Buka berkas video</td>
+</tr>
+<tr>
+<td>video/open/dummy</td>
+<td>Gunakan Video Tiruan</td>
+<td>Buat video klip tiruan dengan warna solid</td>
+</tr>
+<tr>
+<td>video/opt/autoscroll</td>
+<td>Alihkan penggulir otomatis pada video</td>
+<td>Otomatis alihkan penggeseran video ke awal baris</td>
+</tr>
+<tr>
+<td>video/play</td>
+<td>Putar</td>
+<td>Putar video dimulai pada posisi ini</td>
+</tr>
+<tr>
+<td>video/play/line</td>
+<td>Putar baris</td>
+<td>Putar video dibaris ini</td>
+</tr>
+<tr>
+<td>video/show_overscan</td>
+<td>Tampilkan Batas Video</td>
+<td>Tampilkan pembatas video, menunjukkan area di video sebagai batas aman penempatan teks</td>
+</tr>
+<tr>
+<td>video/stop</td>
+<td>Hentikan video</td>
+<td>Hentikan pemutar video</td>
+</tr>
+<tr>
+<td>video/subtitles_provider/cycle</td>
+<td>Putar penyedia takarir yang aktif</td>
+<td>Putar penyedia takarir yang tersedia</td>
+</tr>
+<tr>
+<td>video/tool/clip</td>
+<td>Klip</td>
+<td>Buat garis kotak pada takarir</td>
+</tr>
+<tr>
+<td>video/tool/cross</td>
+<td>Standar</td>
+<td>Mode Standar, Klik dua kali untuk mengatur posisi</td>
+</tr>
+<tr>
+<td>video/tool/drag</td>
+<td>Geser</td>
+<td>Geser Takarir.</td>
+</tr>
+<tr>
+<td>video/tool/rotate/xy</td>
+<td>Rotasi sumbu XY</td>
+<td>Putar takarir sesuai dengan sumbu X dan Y</td>
+</tr>
+<tr>
+<td>video/tool/rotate/z</td>
+<td>Rotasi sumbu  Z</td>
+<td>Putar takarir sesuai dengan sumbu Z</td>
+</tr>
+<tr>
+<td>video/tool/scale</td>
+<td>Skala</td>
+<td>Skala takarir berdasarkan sumbu X dan Y.</td>
+</tr>
+<tr>
+<td>video/tool/vector_clip</td>
+<td>Klip Vektor</td>
+<td>Buat garis vektor pada takarir</td>
+</tr>
+<tr>
+<td>video/zoom/100</td>
+<td>100%</td>
+<td>Atur pembesaran ke 100%</td>
+</tr>
+<tr>
+<td>video/zoom/200</td>
+<td>200%</td>
+<td>Atur pembesaran ke 200%</td>
+</tr>
+<tr>
+<td>video/zoom/50</td>
+<td>50%</td>
+<td>Atur pembesaran ke 50%</td>
+</tr>
+<tr>
+<td>video/zoom/in</td>
+<td>Besarkan</td>
+<td>Besarkan video</td>
+</tr>
+<tr>
+<td>video/zoom/out</td>
+<td>Kecilkan</td>
+<td>Kecilkan video</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com/'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from docs.aegisub.org/3.2/Commands/id/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:49:15 GMT -->
+</html>
+

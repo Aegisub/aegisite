@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from docs.aegisub.org/3.2/Automation/Lua/Modules/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:47:21 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>Modules - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href='index.html' rel='canonical'>
+<link href="../../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../../../Main_Page/index.html">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../../../About/index.html">What is Aegisub?</a>
+</li>
+<li>
+<a href="../../../Highlights/index.html">Highlights</a>
+</li>
+<li>
+<a href="../../../Credits/index.html">Credits</a>
+</li>
+<li>
+<a href="../../../Support/index.html">Support Aegisub</a>
+</li>
+<li>
+<a href="../../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../../Tutorials/index.html">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li>
+<a href="../../../Editing_Subtitles/index.html">Editing Subtitles</a>
+</li>
+<li>
+<a href="../../../Exporting/index.html">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../../../Attaching_subtitles_to_video/index.html">Applying Subtitles</a>
+</li>
+<li>
+<a href="../../../Spell_Checker/index.html">Spell Checker</a>
+</li>
+<li>
+<a href="../../../Translation_Assistant/index.html">Translation Assistant</a>
+</li>
+<li>
+<a href="../../../Paste_Over/index.html">Paste Over</a>
+</li>
+<li>
+<a href="../../../Select_Lines/index.html">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../../../Typesetting/index.html">Introduction</a>
+</li>
+<li>
+<a href="../../../Video/index.html">Working with Video</a>
+</li>
+<li>
+<a href="../../../Styles/index.html">Editing styles</a>
+</li>
+<li>
+<a href="../../../Visual_Typesetting/index.html">Visual Typesetting</a>
+</li>
+<li>
+<a href="../../../ASS_Tags/index.html">ASS Override Tags</a>
+</li>
+<li>
+<a href="../../../Colour_Picker/index.html">Colour Picker</a>
+</li>
+<li>
+<a href="../../../Styling_Assistant/index.html">Styling Assistant</a>
+</li>
+<li>
+<a href="../../../Resolution_Resampler/index.html">Resolution Resampler</a>
+</li>
+<li>
+<a href="../../../Fonts_Collector/index.html">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../../../Audio/index.html">Working with Audio</a>
+</li>
+<li>
+<a href="../../../Timing/index.html">Timing subtitles to audio</a>
+</li>
+<li>
+<a href="../../../Shift_Times/index.html">Shift times</a>
+</li>
+<li>
+<a href="../../../Timing_Post-Processor/index.html">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../../../Kanji_Timer/index.html">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../../index.html">Overview</a>
+</li>
+<li>
+<a href="../../Karaoke_Templater/index.html">Karaoke Templater</a>
+</li>
+<li>
+<a href="../index.html">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../../../Options/index.html">Aegisub Options</a>
+</li>
+<li>
+<a href="../../../Properties/index.html">Script Properties</a>
+</li>
+<li>
+<a href="../../../Attachment_Manager/index.html">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'><a href="../../index.html">Automation</a> / <a href="../index.html">Lua</a> / Modules</h1>
+<ol id="markdown-toc">
+  <li><a href="#using-modules">Using modules</a></li>
+  <li><a href="#modules-reference">Modules reference</a></li>
+</ol>
+
+<p>A number of Lua modules are included with Aegisub.
+Some of these, such as <a href="karaskel.lua/index.html">karaskel.lua</a> implement subtitle-specific functionality, while others such as <a href="re/index.html">re</a> fill holes in the Lua standard library.</p>
+
+<h2 id="using-modules">Using modules</h2>
+<p>Simply write <code>modulename = require 'aegisub.modulename'</code> at the top level of a script.
+For example, to include the <a href="re/index.html">re</a> modules, <code>re = require 'aegisub.re'</code>.</p>
+
+<p>Note that if you look at older scripts you will probably see several other methods for including modules, such as <code>include</code>.
+These have been deprecated in favor of following the modern lua module style introduced with Lua 5.2.</p>
+
+<p>To use modules in <a href="../../Karaoke_Templater/index.html">Karaoke Templater</a>, place the require statement in a <a href="../../Karaoke_Templater/Code_lines_and_blocks/index.html#classesofcodelines">code once</a> line.
+Note that <code>karaskel.lua</code>, <code>utils.lua</code> and <code>unicode.lua</code> do not have to be <code>require</code>d in <a href="../../Karaoke_Templater/index.html">Karaoke Templater</a>, as they are automatically imported.</p>
+
+<h2 id="modules-reference">Modules reference</h2>
+
+<dl>
+  <dt><a href="util/index.html">util</a></dt>
+  <dd>An assorted collection of various utility functions which don't fit into any coherent categories, especially for handling colours.</dd>
+  <dt><a href="karaskel.lua/index.html">karaskel.lua</a></dt>
+  <dd>The karaoke skeleton is a collection of functions mainly intended to do
+text layout of timed karaoke for creating advanced karaoke effects, as well
+as a number of other helper functions.</dd>
+  <dt><a href="unicode/index.html">unicode</a></dt>
+  <dd>All data passed in and out of Aegisub through the Automation 4 Lua interface are encoded in UTF-8, but Lua doesn't natively provide support for this.
+Several helper functions are provided here.</dd>
+  <dt>cleantags.lua</dt>
+  <dd>A function to clean up ASS tags in a line.</dd>
+  <dt><a href="clipboard/index.html">clipboard</a></dt>
+  <dd>Functions for copying and pasting text.</dd>
+  <dt><a href="re/index.html">re</a></dt>
+  <dd>Bindings for ICU regular expressions via <a href="http://www.boost.org/doc/libs/1_53_0/libs/regex/doc/html/index.html">boost.regex</a>, which has full Unicode support and more features than Lua's built in regular expression.</dd>
+  <dt><a href="http://www.inf.puc-rio.br/~roberto/lpeg/">lpeg</a></dt>
+  <dd>PEG library for writing parsers.</dd>
+  <dt><a href="https://github.com/agladysh/luabins">luabins</a></dt>
+  <dd>A serialization library for saving tables to extradata or config files</dd>
+  <dt><a href="http://keplerproject.github.io/luafilesystem/">lfs</a></dt>
+  <dd>Some assorted filesystem functionality not supported by the Lua standard library.</dd>
+</dl>
+
+<div class='navbox'>
+<div><a href="../../index.html">Automation</a></div>
+<table>
+<tr>
+<th>Overview:</th>
+<td><a href="../../Manager/index.html">Automation Manager</a> • <a href="../../Running_macros/index.html">Running macros</a> • <a href="../../../Exporting/index.html">Using export filters</a> • <a href="../../Included_macros/index.html">Standard macros</a></td>
+</tr>
+<tr>
+<th><a href="../../Karaoke_Templater/index.html">Karaoke Templater</a> reference:</th>
+<td><a href="../../Karaoke_Templater/Declaring_template_and_code_lines/index.html">Declaring templates</a> • <a href="../../Karaoke_Templater/Template_execution_rules_and_order/index.html">Execution order</a> • <a href="../../Karaoke_Templater/Template_modifiers/index.html">Modifiers</a> • <a href="../../Karaoke_Templater/Inline_variables/index.html">Inline-variables ($-variables)</a> <br> <a href="../../Karaoke_Templater/Code_lines_and_blocks/index.html">Code lines and blocks</a> • <a href="../../Karaoke_Templater/Code_execution_environment/index.html">Execution envirionment</a></td>
+</tr>
+<tr>
+<th><a href="../index.html">Lua API</a>  reference:</th>
+<td><a href="../Registration/index.html">Registration</a> • <a href="../Subtitle_file_interface/index.html">Subtitles object</a> • <a href="../Progress_reporting/index.html">Progress reporting</a> • <a href="../Dialogs/index.html">Dialogs</a> • <a href="../Miscellaneous_APIs/index.html">Misc. APIs</a></td>
+</tr>
+<tr>
+<th><a href="index.html">Lua Modules</a>:</th>
+<td><a href="karaskel.lua/index.html">karaskel.lua</a> • <a href="util/index.html">util</a> • <a href="unicode/index.html">unicode</a> • <a href="#">cleantags.lua</a> • <a href="clipboard/index.html">clipboard</a> • <a href="re/index.html">re</a></td>
+</tr>
+<tr>
+<th>Karaskel concepts:</th>
+<td><a href="karaskel.lua/index.html#Style_table">Style tables</a> • <a href="karaskel.lua/index.html#Dialogue_line_table">Dialogue line tables</a> • <a href="karaskel.lua/index.html#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/index.html">Inline effects</a> • <a href="../../../Furigana_karaoke/index.html">Furigana</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com/'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from docs.aegisub.org/3.2/Automation/Lua/Modules/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:47:21 GMT -->
+</html>
+
