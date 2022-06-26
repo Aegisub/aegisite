@@ -14,7 +14,7 @@ main:
     url: https://github.com/Aegisub/Aegisub/issues
     weight: 30
   - name: Blog
-    url: /blog/
+    url: ../blog/
     weight: 40
 
 # header-bar/right side: social menus
