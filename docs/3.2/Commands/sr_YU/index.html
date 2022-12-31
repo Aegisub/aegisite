@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from docs.aegisub.org/3.2/Commands/sr_YU/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:49:15 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>sr YU - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href='index.html' rel='canonical'>
+<link href="../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../../Main_Page/index.html">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../../About/index.html">What is Aegisub?</a>
+</li>
+<li>
+<a href="../../Highlights/index.html">Highlights</a>
+</li>
+<li>
+<a href="../../Credits/index.html">Credits</a>
+</li>
+<li>
+<a href="../../Support/index.html">Support Aegisub</a>
+</li>
+<li>
+<a href="../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../Tutorials/index.html">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li>
+<a href="../../Editing_Subtitles/index.html">Editing Subtitles</a>
+</li>
+<li>
+<a href="../../Exporting/index.html">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../../Attaching_subtitles_to_video/index.html">Applying Subtitles</a>
+</li>
+<li>
+<a href="../../Spell_Checker/index.html">Spell Checker</a>
+</li>
+<li>
+<a href="../../Translation_Assistant/index.html">Translation Assistant</a>
+</li>
+<li>
+<a href="../../Paste_Over/index.html">Paste Over</a>
+</li>
+<li>
+<a href="../../Select_Lines/index.html">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../../Typesetting/index.html">Introduction</a>
+</li>
+<li>
+<a href="../../Video/index.html">Working with Video</a>
+</li>
+<li>
+<a href="../../Styles/index.html">Editing styles</a>
+</li>
+<li>
+<a href="../../Visual_Typesetting/index.html">Visual Typesetting</a>
+</li>
+<li>
+<a href="../../ASS_Tags/index.html">ASS Override Tags</a>
+</li>
+<li>
+<a href="../../Colour_Picker/index.html">Colour Picker</a>
+</li>
+<li>
+<a href="../../Styling_Assistant/index.html">Styling Assistant</a>
+</li>
+<li>
+<a href="../../Resolution_Resampler/index.html">Resolution Resampler</a>
+</li>
+<li>
+<a href="../../Fonts_Collector/index.html">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../../Audio/index.html">Working with Audio</a>
+</li>
+<li>
+<a href="../../Timing/index.html">Timing subtitles to audio</a>
+</li>
+<li>
+<a href="../../Shift_Times/index.html">Shift times</a>
+</li>
+<li>
+<a href="../../Timing_Post-Processor/index.html">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../../Kanji_Timer/index.html">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../../Automation/index.html">Overview</a>
+</li>
+<li>
+<a href="../../Automation/Karaoke_Templater/index.html">Karaoke Templater</a>
+</li>
+<li>
+<a href="../../Automation/Lua/index.html">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../../Options/index.html">Aegisub Options</a>
+</li>
+<li>
+<a href="../../Properties/index.html">Script Properties</a>
+</li>
+<li>
+<a href="../../Attachment_Manager/index.html">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'><a href="../index.html">Commands</a> / sr YU</h1>
+<table style='width: 100%; margin-bottom: 2em'>
+<tr>
+<td>
+<a href='../en_US/index.html'>English (U.S.)</a>
+</td>
+<td>
+<a href='../ar/index.html'>Arabic</a>
+</td>
+<td>
+<a href='../bg/index.html'>Bulgarian</a>
+</td>
+<td>
+<a href='../ca/index.html'>Catalan</a>
+</td>
+<td>
+<a href='../cs/index.html'>Czech</a>
+</td>
+<td>
+<a href='../da/index.html'>Danish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../de/index.html'>German</a>
+</td>
+<td>
+<a href='../el/index.html'>Greek</a>
+</td>
+<td>
+<a href='../es/index.html'>Spanish</a>
+</td>
+<td>
+<a href='../eu/index.html'>Basque</a>
+</td>
+<td>
+<a href='../fa/index.html'>Farsi</a>
+</td>
+<td>
+<a href='../fi/index.html'>Finnish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../fr_FR/index.html'>French</a>
+</td>
+<td>
+<a href='../gl/index.html'>Galician</a>
+</td>
+<td>
+<a href='../hu/index.html'>Hungarian</a>
+</td>
+<td>
+<a href='../id/index.html'>Indonesian</a>
+</td>
+<td>
+<a href='../it/index.html'>Italian</a>
+</td>
+<td>
+<a href='../ja/index.html'>Japanese</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../ko/index.html'>Korean</a>
+</td>
+<td>
+<a href='../nl/index.html'>Dutch</a>
+</td>
+<td>
+<a href='../pl/index.html'>Polish</a>
+</td>
+<td>
+<a href='../pt_BR/index.html'>Portuguese (Brazilian)</a>
+</td>
+<td>
+<a href='../pt_PT/index.html'>Portuguese</a>
+</td>
+<td>
+<a href='../ru/index.html'>Russian</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='index.html'>Serbian (Cyrillic)</a>
+</td>
+<td>
+<a href='../sr_YU%40latin/index.html'>Serbian (Latin)</a>
+</td>
+<td>
+<a href='../vi/index.html'>Vietnamese</a>
+</td>
+<td>
+<a href='../zh_CN/index.html'>Chinese (Simplified)</a>
+</td>
+<td>
+<a href='../zh_TW/index.html'>Chinese</a>
+</td>
+</tr>
+</table>
+<table class='karatable'>
+<tr>
+<th>Name</th>
+<th>Display</th>
+<th>Help</th>
+</tr>
+<tr>
+<td>am/manager</td>
+<td>Аутоматизација</td>
+<td>Отворите аутоматизациони управљач.</td>
+</tr>
+<tr>
+<td>am/meta</td>
+<td>Аутоматизација</td>
+<td>Open automation manager. Ctrl: Rescan autoload folder. Ctrl+Shift: Rescan autoload folder and reload all automation scripts</td>
+</tr>
+<tr>
+<td>am/reload</td>
+<td>Поново учитајте аутоматизационе скриптове.</td>
+<td>Поново учитај све аутоматизационе скриптове и скенирај самопокретајућу фасциклу</td>
+</tr>
+<tr>
+<td>am/reload/autoload</td>
+<td>Поново учитајте самопокретајуће аутоматизационе скриптове.</td>
+<td>Поново скенирај самопокретајућу фасциклу аутоматизације</td>
+</tr>
+<tr>
+<td>app/about</td>
+<td>О програму</td>
+<td>О Иџисабу</td>
+</tr>
+<tr>
+<td>app/display/audio_subs</td>
+<td>Приказ звука и титла</td>
+<td>Display audio and the subtitles grid only</td>
+</tr>
+<tr>
+<td>app/display/full</td>
+<td>Целокупан приказ</td>
+<td>Display audio, video and then subtitles grid</td>
+</tr>
+<tr>
+<td>app/display/subs</td>
+<td>Приказ титла</td>
+<td>Display the subtitles grid only</td>
+</tr>
+<tr>
+<td>app/display/video_subs</td>
+<td>Приказ слике и титла</td>
+<td>Display video and the subtitles grid only</td>
+</tr>
+<tr>
+<td>app/exit</td>
+<td>Изађи</td>
+<td>Изађите из програма.</td>
+</tr>
+<tr>
+<td>app/language</td>
+<td>Језик</td>
+<td>Изаберите језик корисничког окружења.</td>
+</tr>
+<tr>
+<td>app/log</td>
+<td>Дневник</td>
+<td>Погледајте дневник догађања унутар програма.</td>
+</tr>
+<tr>
+<td>app/new_window</td>
+<td>Нови прозор</td>
+<td>Отворите нови прозор програма.</td>
+</tr>
+<tr>
+<td>app/options</td>
+<td>Поставке</td>
+<td>Подесите програм.</td>
+</tr>
+<tr>
+<td>app/toggle/global_hotkeys</td>
+<td>Укључите/искључите глобално заобилажење пречица.</td>
+<td>Toggle global hotkey overrides (Medusa Mode)</td>
+</tr>
+<tr>
+<td>app/toggle/toolbar</td>
+<td>Сакриј алатну траку</td>
+<td>Прикажите/сакријте главну алатну траку.</td>
+</tr>
+<tr>
+<td>app/updates</td>
+<td>Провера доградњи</td>
+<td>Проверите да ли је доступна нова верзија Иџисаба.</td>
+</tr>
+<tr>
+<td>audio/close</td>
+<td>Затварање звука</td>
+<td>Close the currently open audio file</td>
+</tr>
+<tr>
+<td>audio/commit</td>
+<td>Примени</td>
+<td>Примените измене у времену звука.</td>
+</tr>
+<tr>
+<td>audio/commit/default</td>
+<td>Примените и користите подразумевано време за следећи титл.</td>
+<td>Примените измене у времену звука и поништите време следећег титла на подразумевано.</td>
+</tr>
+<tr>
+<td>audio/commit/next</td>
+<td>Примените и идите на следећи титл.</td>
+<td>Примените измене у времену звука и идите на следећи титл.</td>
+</tr>
+<tr>
+<td>audio/commit/stay</td>
+<td>Примени и остани на текућем титлу</td>
+<td>Примените измене у времену звука и останите на текућем титлу.</td>
+</tr>
+<tr>
+<td>audio/go_to</td>
+<td>Идите на изабрани титл.</td>
+<td>Scroll the audio display to center on the current audio selection</td>
+</tr>
+<tr>
+<td>audio/karaoke</td>
+<td>Укључи/искључи караоке</td>
+<td>Укључи/искључи караоке</td>
+</tr>
+<tr>
+<td>audio/open</td>
+<td>Отварање звучног снимка</td>
+<td>Open an audio file</td>
+</tr>
+<tr>
+<td>audio/open/blank</td>
+<td>Отвори празан звучни снимак (2 ч. и 30 мин.)</td>
+<td>Отвори празан звучни снимак од 150 минута ради отклањања грешака</td>
+</tr>
+<tr>
+<td>audio/open/noise</td>
+<td>Отвори шумни звучни запис (2 ч. и 30 мин.)</td>
+<td>Отвори шумни звучни снимак од 150 минута ради отклањања грешака</td>
+</tr>
+<tr>
+<td>audio/open/video</td>
+<td>Отварање звука из видео-снимка</td>
+<td>Open the audio from the current video file</td>
+</tr>
+<tr>
+<td>audio/opt/autocommit</td>
+<td>Аутоматски примењује све измене.</td>
+<td>Аутоматски примењује све измене.</td>
+</tr>
+<tr>
+<td>audio/opt/autonext</td>
+<td>Auto go to next line on commit</td>
+<td>Automatically go to next line on commit</td>
+</tr>
+<tr>
+<td>audio/opt/autoscroll</td>
+<td>Auto scroll audio display to selected line</td>
+<td>Auto scroll audio display to selected line</td>
+</tr>
+<tr>
+<td>audio/opt/spectrum</td>
+<td>Режим анализирања спектра.</td>
+<td>Режим анализирања спектра.</td>
+</tr>
+<tr>
+<td>audio/opt/vertical_link</td>
+<td>Повежите усправно увећање са јачином звука.</td>
+<td>Повежите усправно увећање са јачином звука.</td>
+</tr>
+<tr>
+<td>audio/play/current</td>
+<td>Пусти текући одабир звука</td>
+<td>Пустите текући одабир звука, занемарујући измене направљене при извођењу.</td>
+</tr>
+<tr>
+<td>audio/play/line</td>
+<td>Пустите изабрани титл.</td>
+<td>Play the audio for the current line</td>
+</tr>
+<tr>
+<td>audio/play/selection</td>
+<td>Пусти одабир звука</td>
+<td>Пустите звук док се не дође до краја изабраног.</td>
+</tr>
+<tr>
+<td>audio/play/selection/after</td>
+<td>Пустите пола секунде после изабраног.</td>
+<td>Пустите пола секунде после изабраног.</td>
+</tr>
+<tr>
+<td>audio/play/selection/before</td>
+<td>Пустите пола секунде пре изабраног.</td>
+<td>Пустите пола секунде пре изабраног.</td>
+</tr>
+<tr>
+<td>audio/play/selection/begin</td>
+<td>Пустите почетних пола секунди изабраног.</td>
+<td>Пустите почетних пола секунди изабраног.</td>
+</tr>
+<tr>
+<td>audio/play/selection/end</td>
+<td>Пустите завршних пола секунди изабраног.</td>
+<td>Пустите завршних пола секунди изабраног.</td>
+</tr>
+<tr>
+<td>audio/play/to_end</td>
+<td>Пустите од изабраног дела до краја датотеке.</td>
+<td>Пустите од изабраног дела до краја датотеке.</td>
+</tr>
+<tr>
+<td>audio/play/toggle</td>
+<td>Пусти одабир звука или заустави</td>
+<td>Play selection, or stop playback if it's already playing</td>
+</tr>
+<tr>
+<td>audio/save/clip</td>
+<td>Направи звучни запис</td>
+<td>Save an audio clip of the selected line</td>
+</tr>
+<tr>
+<td>audio/scroll/left</td>
+<td>Клизај улево</td>
+<td>Клизајте приказ звука улево.</td>
+</tr>
+<tr>
+<td>audio/scroll/right</td>
+<td>Клизај удесно</td>
+<td>Клизајте приказ звука удесно.</td>
+</tr>
+<tr>
+<td>audio/stop</td>
+<td>Заустави извођење</td>
+<td>Stop audio and video playback</td>
+</tr>
+<tr>
+<td>audio/view/spectrum</td>
+<td>Приказ спектра</td>
+<td>Прикажите звук као спектрограм фреквенција.</td>
+</tr>
+<tr>
+<td>audio/view/waveform</td>
+<td>Приказ таласног облика</td>
+<td>Прикажите звук као графикон линеарних амплитуда.</td>
+</tr>
+<tr>
+<td>automation/lua/cleantags-autoload/Clean Tags</td>
+<td>Clean Tags</td>
+<td>Clean subtitle lines by re-arranging ASS tags and override blocks within the lines</td>
+</tr>
+<tr>
+<td>automation/lua/kara-templater/Apply karaoke template</td>
+<td>Apply karaoke template</td>
+<td>Applies karaoke effects from templates</td>
+</tr>
+<tr>
+<td>automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in</td>
+<td>Automatic karaoke lead-in</td>
+<td>Join up the ends of selected lines and add \k tags to shift karaoke</td>
+</tr>
+<tr>
+<td>automation/lua/macro-1-edgeblur/Add edgeblur</td>
+<td>Add edgeblur</td>
+<td>Adds \be1 tags to all selected lines</td>
+</tr>
+<tr>
+<td>automation/lua/macro-2-mkfullwitdh/Make fullwidth</td>
+<td>Make fullwidth</td>
+<td>Convert Latin letters to SJIS fullwidth letters</td>
+</tr>
+<tr>
+<td>automation/lua/select-overlaps/Select overlaps</td>
+<td>Select overlaps</td>
+<td>Select lines which begin while another non-comment line is active</td>
+</tr>
+<tr>
+<td>automation/lua/strip-tags/Strip tags</td>
+<td>Strip tags</td>
+<td>Remove all override tags from selected lines</td>
+</tr>
+<tr>
+<td>edit/clear</td>
+<td>Очисти</td>
+<td>Clear the current line's text</td>
+</tr>
+<tr>
+<td>edit/clear/text</td>
+<td>Clear Text</td>
+<td>Clear the current line's text, leaving override tags</td>
+</tr>
+<tr>
+<td>edit/color/outline</td>
+<td>Outline Color</td>
+<td>Set the outline color (\3c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/primary</td>
+<td>Primary Color</td>
+<td>Set the primary fill color (\c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/secondary</td>
+<td>Secondary Color</td>
+<td>Set the secondary (karaoke) fill color (\2c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/shadow</td>
+<td>Shadow Color</td>
+<td>Set the shadow color (\4c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/find_replace</td>
+<td>Проналажење и замена</td>
+<td>Пронађите и замените речи у титлу.</td>
+</tr>
+<tr>
+<td>edit/font</td>
+<td>Лик фонта</td>
+<td>Select a font face and size</td>
+</tr>
+<tr>
+<td>edit/insert_original</td>
+<td>Унеси изворни</td>
+<td>Insert the original line text at the cursor</td>
+</tr>
+<tr>
+<td>edit/line/copy</td>
+<td>Умножавање</td>
+<td>Copy subtitles to the clipboard</td>
+</tr>
+<tr>
+<td>edit/line/cut</td>
+<td>Исецање</td>
+<td>Исеците титлове.</td>
+</tr>
+<tr>
+<td>edit/line/delete</td>
+<td>Брисање</td>
+<td>Обришите изабране титлове.</td>
+</tr>
+<tr>
+<td>edit/line/duplicate</td>
+<td>Удвостручивање</td>
+<td>Удвостручите изабране титлове.</td>
+</tr>
+<tr>
+<td>edit/line/join/as_karaoke</td>
+<td>Као караоке</td>
+<td>Join selected lines in a single one, as karaoke</td>
+</tr>
+<tr>
+<td>edit/line/join/concatenate</td>
+<td>Стапање</td>
+<td>Join selected lines in a single one, concatenating text together</td>
+</tr>
+<tr>
+<td>edit/line/join/keep_first</td>
+<td>Задржавање првог титла</td>
+<td>Join selected lines in a single one, keeping text of first and discarding remaining</td>
+</tr>
+<tr>
+<td>edit/line/paste</td>
+<td>Убацивање</td>
+<td>Убаците титлове.</td>
+</tr>
+<tr>
+<td>edit/line/paste/over</td>
+<td>Убацивање титлова преко других</td>
+<td>Убаците титлове преко других.</td>
+</tr>
+<tr>
+<td>edit/line/recombine</td>
+<td>Поновно сједињавање</td>
+<td>Recombine subtitles which have been split and merged</td>
+</tr>
+<tr>
+<td>edit/line/split/after</td>
+<td>Split lines after current frame</td>
+<td>Split the current line into a line which ends on the current frame and a line which starts on the next frame</td>
+</tr>
+<tr>
+<td>edit/line/split/before</td>
+<td>Split lines before current frame</td>
+<td>Split the current line into a line which ends on the previous frame and a line which starts on the current frame</td>
+</tr>
+<tr>
+<td>edit/line/split/by_karaoke</td>
+<td>Раздвој титлове (караоке)</td>
+<td>Use karaoke timing to split line into multiple smaller lines</td>
+</tr>
+<tr>
+<td>edit/line/split/estimate</td>
+<td>Подели показивачем (процени време)</td>
+<td>Split the current line at the cursor, dividing the original line's duration between the new ones</td>
+</tr>
+<tr>
+<td>edit/line/split/preserve</td>
+<td>Подели показивачем (сачувај време)</td>
+<td>Split the current line at the cursor, setting both lines to the original line's times</td>
+</tr>
+<tr>
+<td>edit/line/split/video</td>
+<td>Split at cursor (at video frame)</td>
+<td>Split the current line at the cursor, dividing the line's duration at the current video frame</td>
+</tr>
+<tr>
+<td>edit/redo</td>
+<td>Нема шта да се понови</td>
+<td>Redo last undone action</td>
+</tr>
+<tr>
+<td>edit/revert</td>
+<td>Revert</td>
+<td>Revert the active line to its initial state (shown in the upper editor)</td>
+</tr>
+<tr>
+<td>edit/style/bold</td>
+<td>Toggle Bold</td>
+<td>Toggle bold (\b) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/italic</td>
+<td>Toggle Italics</td>
+<td>Toggle italics (\i) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/strikeout</td>
+<td>Toggle Strikeout</td>
+<td>Toggle strikeout (\s) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/underline</td>
+<td>Toggle Underline</td>
+<td>Toggle underline (\u) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/undo</td>
+<td>Нема шта да се опозове</td>
+<td>Undo last action</td>
+</tr>
+<tr>
+<td>grid/line/next</td>
+<td>Следећи титл</td>
+<td>Идите на следећи титл.</td>
+</tr>
+<tr>
+<td>grid/line/next/create</td>
+<td>Следећи титл</td>
+<td>Идите на следећи титл уз прављење новог (ако је потребно).</td>
+</tr>
+<tr>
+<td>grid/line/prev</td>
+<td>Претходни титл</td>
+<td>Идите на претходни титл.</td>
+</tr>
+<tr>
+<td>grid/move/down</td>
+<td>Помери надоле</td>
+<td>Померите изабране титлове за један ред надоле.</td>
+</tr>
+<tr>
+<td>grid/move/up</td>
+<td>Помери нагоре</td>
+<td>Померите изабране титлове за један ред нагоре.</td>
+</tr>
+<tr>
+<td>grid/sort/actor</td>
+<td>Име глумца</td>
+<td>Поређајте све титлове по именима глумаца.</td>
+</tr>
+<tr>
+<td>grid/sort/actor/selected</td>
+<td>Име глумца</td>
+<td>Поређајте изабране титлове по именима глумаца.</td>
+</tr>
+<tr>
+<td>grid/sort/effect</td>
+<td>Ефекат</td>
+<td>Поређајте све титлове по ефектима.</td>
+</tr>
+<tr>
+<td>grid/sort/effect/selected</td>
+<td>Ефекат</td>
+<td>Поређајте изабране титлове по ефектима.</td>
+</tr>
+<tr>
+<td>grid/sort/end</td>
+<td>Завршно време</td>
+<td>Поређајте све титлове по завршним временима.</td>
+</tr>
+<tr>
+<td>grid/sort/end/selected</td>
+<td>Завршно време</td>
+<td>Поређајте изабране титлове по завршним временима.</td>
+</tr>
+<tr>
+<td>grid/sort/layer</td>
+<td>Слој</td>
+<td>Поређајте све титлове по бројевима слојева.</td>
+</tr>
+<tr>
+<td>grid/sort/layer/selected</td>
+<td>Слој</td>
+<td>Поређајте изабране титлове по бројевима слојева.</td>
+</tr>
+<tr>
+<td>grid/sort/start</td>
+<td>Почетно време</td>
+<td>Поређајте све титлове по почетним временима.</td>
+</tr>
+<tr>
+<td>grid/sort/start/selected</td>
+<td>Почетно време</td>
+<td>Поређајте изабране титлове по почетним временима.</td>
+</tr>
+<tr>
+<td>grid/sort/style</td>
+<td>Назив стила</td>
+<td>Поређајте све титлове по називима стилова.</td>
+</tr>
+<tr>
+<td>grid/sort/style/selected</td>
+<td>Назив стила</td>
+<td>Поређајте изабране титлове по називима стилова.</td>
+</tr>
+<tr>
+<td>grid/swap</td>
+<td>Замени титлове</td>
+<td>Swap the two selected lines</td>
+</tr>
+<tr>
+<td>grid/tag/cycle_hiding</td>
+<td>Кружи кроз режиме сакривања ознака</td>
+<td>Крећите се кроз режиме сакривања ознака.</td>
+</tr>
+<tr>
+<td>grid/tags/hide</td>
+<td>Сакривање ознака</td>
+<td>Сакријте ознаке у мрежи с титловима.</td>
+</tr>
+<tr>
+<td>grid/tags/show</td>
+<td>Приказ ознака</td>
+<td>Прикажите пуне ознаке у мрежи с титловима.</td>
+</tr>
+<tr>
+<td>grid/tags/simplify</td>
+<td>Упрошћавање ознака</td>
+<td>Замените ознаке у мрежи с титловима са упрошћеним чуваром места.</td>
+</tr>
+<tr>
+<td>help/bugs</td>
+<td>Пријава грешака</td>
+<td>Посетите страницу за пријављивање грешака и захтевање нових могућности.</td>
+</tr>
+<tr>
+<td>help/contents</td>
+<td>Садржај</td>
+<td>Теме за помоћ.</td>
+</tr>
+<tr>
+<td>help/forums</td>
+<td>Форум</td>
+<td>Посетите наш форум.</td>
+</tr>
+<tr>
+<td>help/irc</td>
+<td>ИРЦ канал</td>
+<td>Посетите наш званичан канал за ћаскање.</td>
+</tr>
+<tr>
+<td>help/video</td>
+<td>Визуелно уређивање</td>
+<td>Отворите приручник за визуелно уређивање.</td>
+</tr>
+<tr>
+<td>help/website</td>
+<td>Веб-сајт…</td>
+<td>Посетите нашу интернет страницу.</td>
+</tr>
+<tr>
+<td>keyframe/close</td>
+<td>Затвори кључне кадрове</td>
+<td>Discard the currently loaded keyframes and use those from the video, if any</td>
+</tr>
+<tr>
+<td>keyframe/open</td>
+<td>Отварање кључних кадрова</td>
+<td>Open a keyframe list file</td>
+</tr>
+<tr>
+<td>keyframe/save</td>
+<td>Чување кључних кадрова</td>
+<td>Save the current list of keyframes to a file</td>
+</tr>
+<tr>
+<td>subtitle/attachment</td>
+<td>Прилози</td>
+<td>Open the attachment manager dialog</td>
+</tr>
+<tr>
+<td>subtitle/find</td>
+<td>Проналажење</td>
+<td>Search for text in the subtitles</td>
+</tr>
+<tr>
+<td>subtitle/find/next</td>
+<td>Проналажење следећег</td>
+<td>Find next match of last search</td>
+</tr>
+<tr>
+<td>subtitle/insert/after</td>
+<td>после изабраног</td>
+<td>Insert a new line after the current one</td>
+</tr>
+<tr>
+<td>subtitle/insert/after/videotime</td>
+<td>после изабраног, уз време на снимку</td>
+<td>Insert a new line after the current one, starting at video time</td>
+</tr>
+<tr>
+<td>subtitle/insert/before</td>
+<td>пре изабраног</td>
+<td>Insert a new line before the current one</td>
+</tr>
+<tr>
+<td>subtitle/insert/before/videotime</td>
+<td>пре изабраног, уз време на снимку</td>
+<td>Insert a new line before the current one, starting at video time</td>
+</tr>
+<tr>
+<td>subtitle/new</td>
+<td>Нови титл</td>
+<td>Направите нови титл.</td>
+</tr>
+<tr>
+<td>subtitle/open</td>
+<td>Отварање титла</td>
+<td>Open a subtitles file</td>
+</tr>
+<tr>
+<td>subtitle/open/autosave</td>
+<td>Open Autosaved Subtitles</td>
+<td>Open a previous version of a file which was autosaved by Aegisub</td>
+</tr>
+<tr>
+<td>subtitle/open/charset</td>
+<td>Отварање титла са знаковима</td>
+<td>Open a subtitles file with a specific file encoding</td>
+</tr>
+<tr>
+<td>subtitle/open/video</td>
+<td>Отварање титла из видео-снимка</td>
+<td>Open the subtitles from the current video file</td>
+</tr>
+<tr>
+<td>subtitle/properties</td>
+<td>Својства</td>
+<td>Отворите својства скрипта.</td>
+</tr>
+<tr>
+<td>subtitle/save</td>
+<td>Чување титла</td>
+<td>Save the current subtitles</td>
+</tr>
+<tr>
+<td>subtitle/save/as</td>
+<td>Чување титла</td>
+<td>Save subtitles with another name</td>
+</tr>
+<tr>
+<td>subtitle/select/all</td>
+<td>Одабир свега</td>
+<td>Select all dialogue lines</td>
+</tr>
+<tr>
+<td>subtitle/select/visible</td>
+<td>Изабери видљиво</td>
+<td>Select all dialogue lines that are visible on the current video frame</td>
+</tr>
+<tr>
+<td>subtitle/spellcheck</td>
+<td>Провера правописа</td>
+<td>Проверите правопис титла.</td>
+</tr>
+<tr>
+<td>time/continuous/end</td>
+<td>Промена завршетка</td>
+<td>Change end times of lines to the next line's start time</td>
+</tr>
+<tr>
+<td>time/continuous/start</td>
+<td>Промена почетка</td>
+<td>Change start times of lines to the previous line's end time</td>
+</tr>
+<tr>
+<td>time/frame/current</td>
+<td>Померање на текући кадар</td>
+<td>Померите изабране титлове тако да први титл почиње на текућем кадру.</td>
+</tr>
+<tr>
+<td>time/lead/both</td>
+<td>Проширите почетно и завршно време:</td>
+<td>Add both lead in and out to the selected lines</td>
+</tr>
+<tr>
+<td>time/lead/in</td>
+<td>Почетак:</td>
+<td>Add the lead in time to the selected lines</td>
+</tr>
+<tr>
+<td>time/lead/out</td>
+<td>Завршетак:</td>
+<td>Add the lead out time to the selected lines</td>
+</tr>
+<tr>
+<td>time/length/decrease</td>
+<td>Смањи дужину</td>
+<td>Смањите дужину текуће временске јединице.</td>
+</tr>
+<tr>
+<td>time/length/decrease/shift</td>
+<td>Смањи дужину и помери</td>
+<td>Смањите дужину текуће временске јединице и померите следеће ставке.</td>
+</tr>
+<tr>
+<td>time/length/increase</td>
+<td>Повећај дужину</td>
+<td>Повећајте дужину текуће временске јединице.</td>
+</tr>
+<tr>
+<td>time/length/increase/shift</td>
+<td>Повећај дужину и помери</td>
+<td>Повећајте дужину текуће временске јединице и померите следеће ставке.</td>
+</tr>
+<tr>
+<td>time/next</td>
+<td>Следећи титл</td>
+<td>Следећи титл или слог.</td>
+</tr>
+<tr>
+<td>time/prev</td>
+<td>Претходни титл</td>
+<td>Претходни титл или слог.</td>
+</tr>
+<tr>
+<td>time/shift</td>
+<td>Померање времена</td>
+<td>Померите титлове путем времена или кадрова.</td>
+</tr>
+<tr>
+<td>time/snap/end_video</td>
+<td>Приањање завршетка уз видео</td>
+<td>Поставите завршно време титла на изабрани кадар.</td>
+</tr>
+<tr>
+<td>time/snap/scene</td>
+<td>Приањање уз сцену</td>
+<td>Поставите почетак и завршетак на кључне кадрове око изабраног кадра.</td>
+</tr>
+<tr>
+<td>time/snap/start_video</td>
+<td>Приањање почетка уз видео</td>
+<td>Поставите почетно време титла на изабрани кадар.</td>
+</tr>
+<tr>
+<td>time/start/decrease</td>
+<td>Помери почетно време уназад</td>
+<td>Померите почетно време текуће временске јединице уназад.</td>
+</tr>
+<tr>
+<td>time/start/increase</td>
+<td>Помери почетно време унапред</td>
+<td>Померите почетно време текуће временске јединице унапред.</td>
+</tr>
+<tr>
+<td>timecode/close</td>
+<td>Затвори временске кодове</td>
+<td>Close the currently open timecodes file</td>
+</tr>
+<tr>
+<td>timecode/open</td>
+<td>Отварање временских кодова</td>
+<td>Open a VFR timecodes v1 or v2 file</td>
+</tr>
+<tr>
+<td>timecode/save</td>
+<td>Чување временских кодова</td>
+<td>Save a VFR timecodes v2 file</td>
+</tr>
+<tr>
+<td>tool/export</td>
+<td>Извоз титла</td>
+<td>Save a copy of subtitles in a different format or with processing applied to it</td>
+</tr>
+<tr>
+<td>tool/font_collector</td>
+<td>Збирка фонтова</td>
+<td>Отворите збирку фонтова.</td>
+</tr>
+<tr>
+<td>tool/line/select</td>
+<td>Одабир титлова</td>
+<td>Select lines based on defined criteria</td>
+</tr>
+<tr>
+<td>tool/resampleres</td>
+<td>Преузорковање резолуције</td>
+<td>Resample subtitles to maintain their current appearance at a different script resolution</td>
+</tr>
+<tr>
+<td>tool/style/assistant</td>
+<td>Помоћник за стилизовање…</td>
+<td>Отворите помоћник за стилизовање.</td>
+</tr>
+<tr>
+<td>tool/style/manager</td>
+<td>Управљач стиловима</td>
+<td>Open the styles manager</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/commit</td>
+<td>Прихвати измене</td>
+<td>Примените измене и идите на следећи титл.</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/preview</td>
+<td>Прегледај измене</td>
+<td>Примените измене и останите на текућем титлу.</td>
+</tr>
+<tr>
+<td>tool/time/kanji</td>
+<td>Канџи бројач</td>
+<td>Open the Kanji timer copier</td>
+</tr>
+<tr>
+<td>tool/time/postprocess</td>
+<td>Преуређивач времена</td>
+<td>Post-process the subtitle timing to add lead-ins and lead-outs, snap timing to scene changes, etc.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant</td>
+<td>Помоћник за превођење</td>
+<td>Отворите помоћник за превођење.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/commit</td>
+<td>Прихвати измене</td>
+<td>Примените измене и идите на следећи титл.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/insert_original</td>
+<td>Унеси изворни</td>
+<td>Унесите непреведени текст.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/next</td>
+<td>Следећи титл</td>
+<td>Идите на следећи титл након примене.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/prev</td>
+<td>Претходни титл</td>
+<td>Идите на претходни титл без примењивања измена.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/preview</td>
+<td>Прегледај измене</td>
+<td>Примените измене и останите на текућем титлу.</td>
+</tr>
+<tr>
+<td>video/aspect/cinematic</td>
+<td>Биоскопска (2.35)</td>
+<td>Force video to 2.35 aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/custom</td>
+<td>Прилагоди…</td>
+<td>Force video to a custom aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/default</td>
+<td>Подразумевано</td>
+<td>Use video's original aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/full</td>
+<td>Преко целог екрана</td>
+<td>Force video to 4:3 aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/wide</td>
+<td>Широки екран</td>
+<td>Force video to 16:9 aspect ratio</td>
+</tr>
+<tr>
+<td>video/close</td>
+<td>Затварање видео-снимка</td>
+<td>Close the currently open video file</td>
+</tr>
+<tr>
+<td>video/copy_coordinates</td>
+<td>Умножи координате</td>
+<td>Умножите текуће координате миша преко снимка.</td>
+</tr>
+<tr>
+<td>video/detach</td>
+<td>Откачивање видео-снимка</td>
+<td>Detach the video display from the main window, displaying it in a separate Window</td>
+</tr>
+<tr>
+<td>video/details</td>
+<td>Приказ података о видео-снимку</td>
+<td>Show video details</td>
+</tr>
+<tr>
+<td>video/focus_seek</td>
+<td>Укључи/искључи фокус на видео-клизачу</td>
+<td>Toggle focus between the video slider and the previous thing to have focus</td>
+</tr>
+<tr>
+<td>video/frame/copy</td>
+<td>Умножи слику</td>
+<td>Умножите тренутно приказани кадар.</td>
+</tr>
+<tr>
+<td>video/frame/copy/raw</td>
+<td>Умножи слику (без титлова)</td>
+<td>Умножите тренутно приказани кадар (без титлова).</td>
+</tr>
+<tr>
+<td>video/frame/next</td>
+<td>Следећи кадар</td>
+<td>Премотајте на следећи кадар.</td>
+</tr>
+<tr>
+<td>video/frame/next/boundary</td>
+<td>Следећа граница</td>
+<td>Seek to the next beginning or end of a subtitle</td>
+</tr>
+<tr>
+<td>video/frame/next/keyframe</td>
+<td>Следећи кључни кадар</td>
+<td>Премотајте на следећи кључни кадар.</td>
+</tr>
+<tr>
+<td>video/frame/next/large</td>
+<td>Брзо прескакање унапред.</td>
+<td>Брзо прескакање унапред.</td>
+</tr>
+<tr>
+<td>video/frame/prev</td>
+<td>Претходни кадар</td>
+<td>Премотајте на претходни кадар.</td>
+</tr>
+<tr>
+<td>video/frame/prev/boundary</td>
+<td>Претходна граница</td>
+<td>Seek to the previous beginning or end of a subtitle</td>
+</tr>
+<tr>
+<td>video/frame/prev/keyframe</td>
+<td>Претходни кључни кадар</td>
+<td>Премотајте на претходни кључни кадар.</td>
+</tr>
+<tr>
+<td>video/frame/prev/large</td>
+<td>Брзо прескакање уназад.</td>
+<td>Брзо прескакање уназад.</td>
+</tr>
+<tr>
+<td>video/frame/save</td>
+<td>Усликај екран</td>
+<td>Сачувајте тренутно приказани кадар као PNG у фасцикли снимка.</td>
+</tr>
+<tr>
+<td>video/frame/save/raw</td>
+<td>Усликај екран (без титлова)</td>
+<td>Сачувајте тренутно приказани кадар (без титлова) као PNG у фасцикли видео-снимка.</td>
+</tr>
+<tr>
+<td>video/jump</td>
+<td>Прескакање</td>
+<td>Идите на одређени кадар или време.</td>
+</tr>
+<tr>
+<td>video/jump/end</td>
+<td>Премотавање видео-снимка на крај</td>
+<td>Jump the video to the end frame of current subtitle</td>
+</tr>
+<tr>
+<td>video/jump/start</td>
+<td>Премотавање видео-снимка на почетак</td>
+<td>Jump the video to the start frame of current subtitle</td>
+</tr>
+<tr>
+<td>video/open</td>
+<td>Отварање видео-снимка</td>
+<td>Open a video file</td>
+</tr>
+<tr>
+<td>video/open/dummy</td>
+<td>Отварање пробног видео-снимка</td>
+<td>Open a placeholder video clip with solid color</td>
+</tr>
+<tr>
+<td>video/opt/autoscroll</td>
+<td>Укључите/искључите праћење снимка.</td>
+<td>Toggle automatically seeking video to the start time of selected lines</td>
+</tr>
+<tr>
+<td>video/play</td>
+<td>Пусти</td>
+<td>Пустите видео-снимак почев од овог положаја.</td>
+</tr>
+<tr>
+<td>video/play/line</td>
+<td>Пусти титл</td>
+<td>Пустите изабрани титл.</td>
+</tr>
+<tr>
+<td>video/show_overscan</td>
+<td>Приказ оверскен маске</td>
+<td>Поставите маску преко слике која приказује области које могу бити исечене на телевизорима.</td>
+</tr>
+<tr>
+<td>video/stop</td>
+<td>Заустави</td>
+<td>Зауставите извођење видео-снимка.</td>
+</tr>
+<tr>
+<td>video/subtitles_provider/cycle</td>
+<td>Cycle active subtitles provider</td>
+<td>Cycle through the available subtitles providers</td>
+</tr>
+<tr>
+<td>video/tool/clip</td>
+<td>Исецање</td>
+<td>Исеците титлове на правоугаонике.</td>
+</tr>
+<tr>
+<td>video/tool/cross</td>
+<td>Стандардно</td>
+<td>Стандардно (двоклик поставља положај).</td>
+</tr>
+<tr>
+<td>video/tool/drag</td>
+<td>Превлачење</td>
+<td>Превуците титлове.</td>
+</tr>
+<tr>
+<td>video/tool/rotate/xy</td>
+<td>Окретање (XY)</td>
+<td>Окрените титлове по осама X и Y.</td>
+</tr>
+<tr>
+<td>video/tool/rotate/z</td>
+<td>Окретање (Z)</td>
+<td>Окрените титлове по Z оси.</td>
+</tr>
+<tr>
+<td>video/tool/scale</td>
+<td>Увећавање</td>
+<td>Увећајте титлове по осама X и Y.</td>
+</tr>
+<tr>
+<td>video/tool/vector_clip</td>
+<td>Векторско исецање</td>
+<td>Исеците титлове на векторске области.</td>
+</tr>
+<tr>
+<td>video/zoom/100</td>
+<td>100%</td>
+<td>Увећајте слику до 100%.</td>
+</tr>
+<tr>
+<td>video/zoom/200</td>
+<td>200%</td>
+<td>Увећајте слику до 200%.</td>
+</tr>
+<tr>
+<td>video/zoom/50</td>
+<td>50%</td>
+<td>Увећајте слику до 50%.</td>
+</tr>
+<tr>
+<td>video/zoom/in</td>
+<td>Увећај</td>
+<td>Увећајте видео-снимак.</td>
+</tr>
+<tr>
+<td>video/zoom/out</td>
+<td>Умањи</td>
+<td>Умањите видео-снимак.</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com/'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from docs.aegisub.org/3.2/Commands/sr_YU/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:49:15 GMT -->
+</html>
+

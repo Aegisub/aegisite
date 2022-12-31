@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Karaoke_Templater/Code_execution_environment/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:40 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>Code execution environment - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../../../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../../../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../../../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../../../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../../../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../../../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../../../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../../../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../../../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../../../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../../../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../../../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../../../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../../../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../../../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../../../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../../../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../../../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../../../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../../../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../../../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../../../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../../../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../../../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../../../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../../../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../../index.html">概述</a>
+</li>
+<li>
+<a href="../index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../../Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../../../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../../../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../../../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>Code execution environment</h1>
+<p>在code区和code行的Lua代码运行在一个隔离的全局环境，这让它们不会意外地影响到主脚本函数。</p>
+
+<p>为了后期使用，你可以把你的数据存放到这个环境里，例如先在code行预先计算一些数值，然后后期再用code区把它们添加进模板。
+这个环境也可以包含许多预先定义的变量和函数，它们可以让特效模板书写起更加方便。</p>
+
+<p>要知道，代码执行环境的内容和<a href="../Inline_variables/index.html">内联变量</a>是没有什么关系的，这一点很重要。你不能通过改变代码执行环境里面的东西来改变一个内联变量的值；当然，你也不能添加新的内联变量。然而，你可以创造并且重新定义代码执行环境里面的内容。</p>
+
+<h2 id="line-and-syllable-information">Line and syllable information</h2>
+
+<h2 id="section">行和音节的信息</h2>
+
+<p>代码执行环境包含一些指向当正在处理的行和音节结构的变量，这些变量就是把 <a href="../../Lua/Modules/karaskel.lua/index.html#datastructures">karaskel</a> 中的数据原封不动地拿了出来。.</p>
+
+<p>你应该将除了 <code>line</code> 以外的部分作为只读的信息进行处理。如果你改变了其中某些变量的值，卡拉OK模板执行器脚本可能会无法正确工作。</p>
+
+<ul>
+  <li><strong>line</strong> - 当前正在处理的行。改变它会引起文件中的行变化。具体请查看 <strong><a href="../../Lua/Modules/karaskel.lua/index.html#dialoguelinetable">reference for dialogue line
+tables</a></strong>。</li>
+  <li><strong>orgline</strong> - 原始行。当前处理的音节位于的原始行。</li>
+  <li><strong>syl</strong> - 当前处理音节的结构。如果当前执行的模板是一个 <em>furi</em> 类型的模板，那么获取到的则是注音假名音节。如果当前模板带有 <em>char</em> 或者 <em>multi</em> 修饰语，这是一个伪音节结构，具体可以查看 <strong><a href="../../Lua/Modules/karaskel.lua/index.html#karaokeandfuriganasyllabletables">reference for syllable
+tables</a></strong>.</li>
+  <li><strong>basesyl</strong> - 一般情况下和 <code>syl</code> 相同，在模板含有 <em>char</em> 或 <em>multi</em> 修饰语时，它将会是原始音节 (如果 <code>syl == basesyl</code> 为真，那么当前模板行既不是 <em>char</em> 也不是 <em>multi</em>)</li>
+  <li><strong>meta</strong> - 包含着多种脚本相关的元数据，名义上是 <em>Script Info</em> 的内容。最为重要的是它含有 <code>res_x</code> 和 <code>res_y</code> ，来表示脚本分辨率。</li>
+</ul>
+
+<p>在处理新一行之前，上述所有变量(除了 <code>meta</code> )都会被重设为 <code>nil</code> 。当处理进入新的一个阶段，它们会被赋予相关的值。
+这意味着，在像 <em>pre-line</em> 这样的模板中只存在 <code>line</code> 和 <code>orgline</code> ，而其中的 <code>syl</code> 和 <code>basesyl</code>
+都是 <code>nil</code>。在 <em>code once</em> 模板中，除了 <code>meta</code> 之外的所有变量都是 <code>nil</code>。</p>
+
+<h2 id="section-1">标准库及其相关</h2>
+<p><a href="http://www.lua.org/manual/5.2/manual.html#6.4"><strong>string库</strong></a> 和
+<a href="http://www.lua.org/manual/5.2/manual.html#6.6"><strong>math库</strong></a> 这两个 Lua 标准库已经被导入到了执行环境中，因为它们十分常用。</p>
+
+<p>通过使用 <strong><code>_G</code></strong> (下划线+大写G)，你也可以访问到 kara-templater 的主要执行环境，和其余的 Lua 标准库 <a href="../../Lua/Modules/index.html">loaded
+modules</a>。比如， <code>_G.table.sort</code> 实际上调用的是 <code>table.sort</code> 函数。查看 <a href="http://www.lua.org/manual/5.2/manual.html#6">Lua 5.2
+手册</a> 来获取更多有关 Lua 标准库的信息。</p>
+
+<p>为了向后兼容，
+(<a href="../../Lua/Modules/karaskel.lua/index.html">karaskel.lua</a>,
+<a href="../../Lua/Modules/unicode/index.html">unicode.lua</a> 和
+<a href="../../Lua/Modules/util/index.html">utils.lua</a>) 会被自动载入环境，且可通过 <code>_G</code> 访问。其余所有的模块/库需要通过单独在 code 行使用 <code>require</code> 来导入。</p>
+
+<p>另有自指变量 <strong><code>tenv</code></strong> 来指向执行环境本身。这意味着 <code>tenv.tenv == tenv</code> 会得到 true 的值。</p>
+
+<h2 id="section-2">常用函数</h2>
+<p>这些函数可以帮助我们对输出的行做更复杂的修饰。 (
+<code>line</code> ) 也不可避免地使得结果变得复杂。</p>
+
+<h3 id="retime">retime</h3>
+<p>摘要: <code>retime(mode, startadjust, endadjust)</code></p>
+
+<p><img alt="" width="654" height="198" src="../../../img/Auto4-kara-templater-retime-explanation-80609bb6.png" /></p>
+
+<p>This function is usually used once in a template in a code block by itself.
+It adjusts the start and end time of the output line in various ways.</p>
+
+<p>The <em>mode</em> parameter determines how the start and end times of the line are
+changed, it must be a string with one of the following values. Because it
+must be a string, the name of the mode must be enclosed in quotation marks!</p>
+
+<p>The <em>startadjust</em> and <em>endadjust</em> parameters slightly change meaning based
+on the mode, but generally is a number of milliseconds added to the "base"
+time controlled by the mode.</p>
+
+<p>Possible _mode_s:</p>
+
+<ul>
+  <li><strong>abs</strong> or <strong>set</strong> - Both <em>startadjust</em> and <em>endadjust</em> are used as
+absolute time values to set the start and end time of the line directly.</li>
+  <li><strong>preline</strong> - Intended to make effects that happen before the actual line
+start. Both start and end time of the line are set to the start time of
+the line, then <em>startadjust</em> is added to the start time and <em>endadjust</em>
+added to the end time. Usually <em>startadjust</em> should be negative here and
+<em>endadjust</em> be zero.</li>
+  <li><strong>line</strong> - Use the regular line timings and just add <em>startadjust</em> to the
+start time and <em>endadjust</em> to the end time.</li>
+  <li><strong>start2syl</strong> - Intended to make the look of the syllable from the start
+of the line until it is highlighted. The start time of the line is kept
+and the end time is set to the start time of the syllable. Use
+<em>startadjust</em> and <em>endadjust</em> to offset the times.</li>
+  <li><strong>presyl</strong> - Similar to <em>preline</em> but for the syllable timing instead.</li>
+  <li><strong>syl</strong> - From start of syllable to end of syllable.</li>
+  <li><strong>postsyl</strong> - Similar to <em>presyl</em> but the base timing is the syllable end
+time instead of start time. You will usually want to use a zero
+<em>addstart</em> and positive <em>addend</em> here.</li>
+  <li><strong>syl2end</strong> - The time from the end of the syllable to the end of line,
+similar to <em>start2syl</em>.</li>
+  <li><strong>postline</strong> - Similar to <em>postsyl</em> but for the line timing instead.</li>
+</ul>
+
+<p>There is also a special <em>mode</em>:</p>
+
+<ul>
+  <li><strong>sylpct</strong> - Both of <em>startadjust</em> and <em>endadjust</em> are treated as
+percentage values from 0 to 100 and are used to set the line timing to
+cover that part of the syllable's time.</li>
+</ul>
+
+<p>Be careful with the <code>retime</code> function on <em>line</em> templates. If you use it
+directly on a <em>line</em> template it will probably not do what you want. You
+should only use it on <em>pre-line</em>, <em>syl</em> and <em>furi</em> templates. You should
+also only use it once in each template.</p>
+
+<p>The <code>retime</code> function always returns the empty string (<code>""</code>) which will
+cause it to output nothing when used in code blocks, but still evaluate to
+true if used in boolean expressions.</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>template syl: !retime("preline", -1000, 0)!{\pos($scenter,$smiddle)\an5\fscx0\fscy0\t(\fscx100\fscy100)}
+</code></pre></div>
+<p>This creates a kind of “pop-in” effect for the syllables that lasts 1
+second (1000 milliseconds) before the actual line timing. The two important
+things to code: Quotation marks around <code>"preline"</code> and that the start
+offset is negative, -1000, because the start time needs to be moved
+backwards.</p>
+</div>
+</div>
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>template syl: !retime("syl", 0, 0)!{\pos($x,$y)\t(\fscx360)}
+</code></pre></div>
+<p>Makes the syllable spin around itself during its highlight. Unless you also
+have <em>syl</em> templates retimed to <code>start2syl</code> and <code>syl2end</code> the
+syllable will only be visible during its highlight. Note how retiming a
+syllable line to just the syllable time makes it unneeded to put start and
+end times in the <code>\t</code> tag, as they default to the duration of the entire
+line and here the duration of the line is the duration of the syllable.</p>
+</div>
+</div>
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>template syl: !retime("sylpct", 0, 50)!{\move($x,$y,$x,!$y-10!)}
+template syl: !retime("sylpct", 50, 100)!{\move($x,!$y-10!,$x,$y)}
+</code></pre></div>
+<p>These two templates together makes the syllable move 10 pixels upwards
+during the first half of its highlight and back down during the last half.
+Using <code>retime</code> is an easy way to get multiple <code>\move</code> tags to affect the
+same syllable; there can only be one <code>\move</code> tag on one line, but if you
+split the line into many “chained” times you can create an effect of the
+same syllable moving in several directions.</p>
+</div>
+</div>
+
+<h3 id="relayer">relayer</h3>
+<p>Synopsis: <code>relayer(newlayer)</code></p>
+
+<p>Change the Layer field of the generated line to <em>newlayer</em>.</p>
+
+<p><strong>Note:</strong> If you want a template to always generate lines with a static
+layer number, you do not need to use this function. You can just set the
+Layer field on the template line, and it will transfer to the generated
+lines. This function is only needed when the layer number is dynamic.</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>template syl: !relayer(syl.i*5+20)!
+</code></pre></div>
+<p>Each syllable generated from the line gets a progressively higher layer
+number. The first syllable gets in layer 25, the second in layer 30 and so
+on, each syllable getting a layer 5 larger than the previous.</p>
+</div>
+</div>
+
+<h3 id="restyle">restyle</h3>
+<p>Synopsis: <code>restyle(newstyle)</code></p>
+
+<p>Change the Style field on the generated line to <em>newstyle</em>.</p>
+
+<p><strong><em>Be careful</em></strong> <em>that this does not update the sizing and positioning
+information.</em> If you want to use sizing or positioning information such as
+<code>$x</code>, <code>$lwidth</code>, <code>line.middle</code> and <code>syl.right</code> you must change to a style
+that uses the same font name, font size, boldness, italics, font encoding,
+X and Y scaling, character spacing, alignment and margins. If you change to
+a style where any of those properties are different, the positioning and
+sizing information will be invalid.</p>
+
+<p>No example because the function has limited use.</p>
+
+<h3 id="maxloop">maxloop</h3>
+<p>Synopsis: <code>maxloop(newmax)</code></p>
+
+<p>Dynamically control the number of times a template will be looped.</p>
+
+<p><strong><em>Be careful</em></strong> <em>that you do not make a template that loops forever.</em></p>
+
+<p>You do not need to use the loop modifier on templates to use this function.</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>template syl: !maxloop(syl.width + 2*line.styleref.outline)!{\clip(!line.left+syl.left-line.styleref.outline+j-1!,0,!line.left+syl.left-line.styleref.outline+j!,!meta.res_y!)\an5\move(!line.left+syl.center!,!line.middle!,!line.left+syl.center!,!line.middle+math.random(-20,20)!,$start,$end)\shad0}
+</code></pre></div>
+<p>Cut each syllable into a number of slivers, depending on the size of the
+syllable. Each sliver moves randomly on highlight.</p>
+</div>
+</div>
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>template syl: !maxloop(j+1)!
+</code></pre></div>
+<p>Makes an infinite loop. It continually sets <code>j</code> one higher, making the loop
+never complete.</p>
+</div>
+</div>
+
+<h3 id="loopctl">loopctl</h3>
+<p>Synopsis: <code>loopctl(newj, newmaxj)</code></p>
+
+<p>Control both loop variables. This function has questionable utility.</p>
+
+<p><em>newj</em> sets the new value of <code>tenv.j</code> and <em>newmaxj</em> sets the new value of
+<code>tenv.maxj</code>.</p>
+
+<p>No example because the function has limited use.</p>
+
+<h3 id="remember-and-recall">remember and recall</h3>
+<p>Synopsis:
+* <code>remember(name, value)</code>
+* <code>remember_if(name, value, condition)</code>
+* <code>recall(name)</code>
+* <code>recall(name, default)</code></p>
+
+<p>This suite of functions lets you calculate a value in one template and re-use
+it in later templates. This is especially useful together with the
+<code>math.random</code> function, since remember/recall will let you choose a random
+value in one template and use the same random value in a later template for the
+same syllable.</p>
+
+<p><em>name</em> is a user-chosen name to identify the saved value. It should be a string,
+so usually written as a string literal with quotes.</p>
+
+<p><em>value</em> is the value to store. It can be any Lua value, although string and
+number values are the most useful.</p>
+
+<p><em>default</em> is a value to recall if nothing has been stored with the name yet.</p>
+
+<p><em>condition</em> controls whether the value will actually get stored or not.</p>
+
+<p>The <code>remember</code> and <code>remember_if</code> functions both return the given <em>value</em>
+unchanged. This means you can put a <code>remember</code> call anywhere you would put
+the bare value.</p>
+
+<p>The <code>remember_if</code> function will only store the value if the given <em>condition</em>
+is a truthy value (i.e. not <code>nil</code> or <code>false</code>.) It still returns the value even
+if the condition is falsey.</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>template syl: {\frz!remember("entryrotation",math.random(100,200))!\fscx300\fscy300\t(0,300,\frz0\fscx100\fscy100)\pos($x,$y)}
+template syl: {\frz-!recall("entryrotation")!\fscx300\fscy300\t(0,300,\frz0\fscx100\fscy100)\pos($x,$y)\fad(300,0)}
+</code></pre></div>
+<p>The first line chooses a random number between 100 and 200 degrees, and stores
+the chosen value with the name <code>"entryrotation"</code>. It then uses that number to set
+a rotation and transform it to 0, causing the syllable to rotate to its correct
+position.</p>
+
+<p>The second line loads the same number back, since it uses the name
+<code>"entryrotation"</code> for recall. It places a minus sign in front of it, but
+otherwise does the same effect. The result is two copies of the syllable
+rotating opposite each other, but the same amount.</p>
+</div>
+</div>
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><div class="highlight"><pre class="highlight plaintext"><code>template syl: {\fscx!remember_if("longsyllables", recall("longsyllables", 100)+10, #syl.duration&gt;200)!}
+</code></pre></div>
+<p>Here <code>remember_if</code> and <code>recall</code> are combined, together with a default value,
+to set up a value that updates itself every time it is used.</p>
+
+<p>The name “longsyllables” is attempted recalled, innermost, but if it doesn’t
+exist yet the value 100 is used instead. Then 10 is added to it, and if the
+syllable has a duration longer than 200 ms, the value (recalled + 10) gets
+stored back.</p>
+
+<p>The effect is that the <code>\fscx</code> gets 10 bigger for all syllables, every time
+a “long” syllable is encountered.</p>
+</div>
+</div>
+
+<h2 id="template-execution-data">Template execution data</h2>
+<p>These variables either give some further information on the status of the
+executing template or modify the rules for template execution in some way.
+They generally work together with specific template modifiers.</p>
+
+<h3 id="looping-templates">Looping templates</h3>
+<p>When a template with the <em>loop</em> or <em>repeat</em> modifier is running, two new
+variables are introduced in the code execution environment, <strong><code>j</code></strong> and
+<strong><code>maxj</code></strong>.</p>
+
+<ul>
+  <li><strong>maxj</strong> is the number of loops, i.e. simply the parameter given to the
+<em>loop</em> modifier.</li>
+  <li><strong>j</strong> is the loop iteration counter. It starts at 1 in the first
+iteration and <em>maxj</em> in the last.</li>
+</ul>
+
+<p>If you change <code>j</code> or <code>maxj</code> while a template is executing, you can affect
+the number of iterations the loop makes. The
+<a href="index.html#maxloop">`maxloop`</a>
+function is convenient for making dynamic loops.</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><p><code>&lt;pre&gt;template syl loop 5: {\an5\pos($scenter,$smiddle)\1a&amp;HFF&amp;\3a&amp;Hcc&amp;\t($start,$end,\fscx!100+<u>j</u>\*10!\fscy!100+<u>j</u>\*10!\3a&amp;HFF&amp;)}&lt;/pre&gt;</code></p>
+
+<p>The syllable fill is hidden so only the border is visible, then several
+copies of the that border-only line is made through the loop, and made to
+“explode” to different, growing sizes using the <code>j</code> variable.</p>
+
+<p>This example assumes that the style definition has shadow disabled but it
+does have a border.</p>
+</div>
+</div>
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><p><code>&lt;pre&gt;template syl loop 20: {\move($x,$y,!$x+15\*math.cos(math.pi\*2\*<u>j</u>/<u>maxj</u>)!,!$y+15\*math.sin(math.pi\*2\*<u>j</u>/<u>maxj</u>)!,$start,$end)\t($start,$end,\alpha&amp;HFF&amp;)}</code>&lt;/pre&gt;</p>
+
+<p>Here looping is used to <a href="http://en.wikipedia.org/wiki/Unit_circle#Trigonometric_functions_on_the_unit_circle">calculate several points on a
+circle</a>
+with radius 15 and make the syllables move out to those. Just by changing
+the number of loops in the Effect field you can make a more detailed circle
+because <code>j/maxj</code> is used to calculate how large a portion of the total
+number of loops have been completed.</p>
+</div>
+</div>
+
+<h3 id="conditional-templates-with-fxgroup">Conditional templates with fxgroup</h3>
+<p>The <em>fxgroup</em> modifier uses a special table <strong><code>fxgroup</code></strong> in the code
+execution environment to control whether a template will be executed or
+not.</p>
+
+<p>The parameter given to the <em>fxgroup</em> modifier names a key (always a string)
+in the <code>fxgroup</code> table in the execution environment, and when a template
+assigned to an fxgroup is about to be executed, the value for that key in
+the <code>fxgroup</code> table is looked up. If the value is true or the key doesn't
+exist, the template is executed, if it's false the template is skipped.</p>
+
+<p>While you can technically use any text string for fxgroup names, because
+they're used in Lua code it's best to avoid ones that overlap with Lua
+reserved words such as <code>end</code>, <code>break</code>, <code>return</code> and several more.</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><p><code>&lt;pre&gt;code syl: <u>fxgroup.long = (syl.duration &gt; 200)</u>
+template syl noblank: all here:
+template syl <u>fxgroup long</u>: is long:
+karaoke: {\k10}huh? {\k40}wee~~</code>&lt;/pre&gt;</p>
+
+<p>It’s important to understand the template execution order to understand
+this example. For each input syllable (i.e. “huh?” and “wee~~”) all the
+templates and code lines are run in the order they appear.</p>
+
+<p>This means that for “huh?”, first the code line is run. It determines that
+the duration of that syllable is less than 200 ms and thus sets
+<em>fxgroup.long</em> to false. The first template has no fxgroup, so it’s applied
+to the syllable then, outputting a line “all here: huh?”, but the second
+template has fxgroup “long”. This fxgroup was disabled for that syllable by
+the code line, so that template is not run at all.</p>
+
+<p>For “wee~~”, the code line determines that its duration is longer than 200
+ms, so the “long” fxgroup is enabled. Then the first template outputs its
+line, “all here: wee~~”, and when the second template is to run, its
+fxgroup is enabled now so it’s also run, outputting “is long: wee~~”.</p>
+
+<p>Neither of the two templates will output anything for the zeroth syllable.
+The first template, because it has the “noblank” modifier, and the second
+because the zero’th syllable’s duration is too short for the fxgroup to be
+enabled.</p>
+</div>
+</div>
+
+<div class='navbox'>
+<div><a href="../../index.html">自动化</a></div>
+<table>
+<tr>
+<th>概述:</th>
+<td><a href="../../Manager/index.html">自动化脚本管理器</a> • <a href="../../Running_macros/index.html">运行宏</a> • <a href="../../../Exporting/index.html">使用导出滤镜</a> • <a href="../../Included_macros/index.html">示例宏</a></td>
+</tr>
+<tr>
+<th><a href="../index.html">卡拉OK模版执行器</a> 相关:</th>
+<td><a href="../Declaring_template_and_code_lines/index.html">声明模版</a> • <a href="../Template_execution_rules_and_order/index.html">模版执行顺序</a> • <a href="../Template_modifiers/index.html">修饰语</a> • <a href="../Inline_variables/index.html">内联变量($变量)</a> <br> <a href="../Code_lines_and_blocks/index.html">code行和code区</a> • <a href="index.html">代码执行环境</a></td>
+</tr>
+<tr>
+<th><a href="../../Lua/index.html">Lua API</a> 相关:</th>
+<td><a href="../../Lua/Registration/index.html">注册</a> • <a href="../../Lua/Subtitle_file_interface/index.html">字幕对象</a> • <a href="../../Lua/Progress_reporting/index.html">进度反馈</a> • <a href="../../Lua/Dialogs/index.html">对话框</a> • <a href="../../Lua/Miscellaneous_APIs/index.html">其他APIs</a></td>
+</tr>
+<tr>
+<th><a href="../../Lua/Modules/index.html">Lua 模块</a>:</th>
+<td><a href="../../Lua/Modules/karaskel.lua/index.html">karaskel.lua</a> • <a href="../../Lua/Modules/util/index.html">util</a> • <a href="../../Lua/Modules/unicode/index.html">unicode</a> • <a href="#">cleantags.lua</a> • <a href="../../Lua/Modules/clipboard/index.html">clipboard</a> • <a href="../../Lua/Modules/re/index.html">re</a></td>
+</tr>
+<tr>
+<th>Karaskel 概念:</th>
+<td><a href="../../Lua/Modules/karaskel.lua/index.html#style-table">Style tables</a> • <a href="../../Lua/Modules/karaskel.lua/index.html#dialogue-line-table">Dialogue line tables</a> • <a href="../../Lua/Modules/karaskel.lua/index.html#karaoke-and-furigana-syllable-tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/index.html">内联特效</a> • <a href="../../../Furigana_karaoke/index.html">注音假名</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Karaoke_Templater/Code_execution_environment/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:40 GMT -->
+</html>
+

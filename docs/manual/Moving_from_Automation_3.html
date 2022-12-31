@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Moving_from_Automation_3 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:20 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Moving from Automation 3,Automation,Automation 4 Lua Configuration dialogues,Automation 4 Lua Miscellaneous APIs,Automation 4 Lua Progress reporting,Automation 4 Lua Registration,Automation 4 Lua Subtitle file interface,Automation 4 karaskel.lua,Automation 4 unicode.lua,Automation 4 utils.lua,Automation Manager" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Moving from Automation 3 - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Moving_from_Automation_3";
+		var wgTitle = "Moving from Automation 3";
+		var wgAction = "view";
+		var wgArticleId = "20";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 739;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Moving_from_Automation_3">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Moving from Automation 3</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>If you're an avid user of Automation 3 (Lua) scripting from Aegisub 1.10 and earlier you will be happy to know that Aegisub 2 still supports Automation 3 scripts with no or only very small changes to them.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Things_to_look_out_for"><span class="tocnumber">1</span> <span class="toctext">Things to look out for</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Karaoke_tables"><span class="tocnumber">1.1</span> <span class="toctext">Karaoke tables</span></a></li>
+<li class="toclevel-2"><a href="#colorstring_to_rgb_function"><span class="tocnumber">1.2</span> <span class="toctext">colorstring_to_rgb function</span></a></li>
+<li class="toclevel-2"><a href="#New_script_file_name_extension"><span class="tocnumber">1.3</span> <span class="toctext">New script file name extension</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Good_news"><span class="tocnumber">2</span> <span class="toctext">Good news</span></a></li>
+<li class="toclevel-1"><a href="#Running_Automation_3_scripts"><span class="tocnumber">3</span> <span class="toctext">Running Automation 3 scripts</span></a></li>
+<li class="toclevel-1"><a href="#Why_use_Automation_4_instead.3F"><span class="tocnumber">4</span> <span class="toctext">Why use Automation 4 instead?</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Things_to_look_out_for" id="Things_to_look_out_for"></a><h2> <span class="mw-headline"> Things to look out for </span></h2>
+<a name="Karaoke_tables" id="Karaoke_tables"></a><h3> <span class="mw-headline"> Karaoke tables </span></h3>
+<p>The karaoke tables are no longer generated by Aegisub but in <tt>karaskel</tt>. If you're using <tt>karaskel</tt> already you shouldn't need to worry about this.
+</p><p>If you aren't using <tt>karaskel</tt>, here's how to get the karaoke tables:
+</p><p>First you will need the <tt>karaskel-base</tt>. Put this line as some of the first in your script:
+</p>
+<pre>include("karaskel-base.auto3")
+</pre>
+<p>You will then need to call a function in <code>process_lines</code>:
+</p>
+<pre>karaskel.parse_syllable_data(meta, styles, lines)
+</pre>
+<p>That line should be the very first thing you do in <code>process_lines</code>. It will modify <code>lines</code> so it also includes the karaoke data.
+</p>
+<a name="colorstring_to_rgb_function" id="colorstring_to_rgb_function"></a><h3> <span class="mw-headline"> <i>colorstring_to_rgb</i> function </span></h3>
+<p>This should also not be a problem if you're using the include files as it has been recommended to do.
+</p><p>The <code>aegisub.colorstring_to_rgb</code> function was moved from being an internal function implemented in C++ to being in the <tt>utils</tt> include. If you're using <tt>karaskel</tt>, you also have <tt>utils</tt> included. Otherwise you can include it manually like this:
+</p>
+<pre>include("utils.auto3")
+</pre>
+<a name="New_script_file_name_extension" id="New_script_file_name_extension"></a><h3> <span class="mw-headline"> New script file name extension </span></h3>
+<p>As shown above, the <tt>.lua</tt> extension is no longer officially used for Automation 3 scripts. It should continue to work in most cases, however. Specifically, all the include files still also exist with <tt>.lua</tt> extension. These will detect whether you're using an Automation 3 or Automation 4 script and include the correct version of the include file for you.
+</p><p>It can in some cases be problematic to have a main script called <tt>.lua</tt> since those will first be loaded with the Automation 4 Lua 5.1 engine, which means that the Automation 4 includes will also be used at first. Only after the script has been loaded it's possible to test whether it's actually an Automation 3 script. If a <tt>.lua</tt> file is found to be an Automation 3 script after being loaded as an Automation 4 one, it's reloaded as an Automation 3 one instead.
+</p><p>If you find that this auto-detection fails to work for your script and it instead fails to load, or is just left loaded as a (non-functioning) Automation 4 script, manually rename the file to <tt>.auto3</tt>.
+</p>
+<a name="Good_news" id="Good_news"></a><h2> <span class="mw-headline"> Good news </span></h2>
+<p>The <code>text_extents</code> function now uses the Automation 4 version of the calculation, which should be 100% VSFilter compatible in all cases. This means all weird spacing problems should be resolved. (There might still be some half-pixel-off errors due to rounding.)
+</p>
+<a name="Running_Automation_3_scripts" id="Running_Automation_3_scripts"></a><h2> <span class="mw-headline"> Running Automation 3 scripts </span></h2>
+<p>With the Apply button gone from the <a href="Automation_Manager.html" title="Automation Manager">Automation Manager</a> you might be wondering how to run Automation 3 scripts.
+</p><p>You use them from the <a href="Exporting.html" title="Exporting">Export dialog</a>. (Automation 3 scripts have always first and foremost been export filters.) You do <i>not</i> have to go to the Automation Manager window every time to reload a script, nor do you have to use the old "self-include-reload" trick. All local Automation scripts are automatically reloaded whenever you open the Export dialog.
+</p>
+<a name="Why_use_Automation_4_instead.3F" id="Why_use_Automation_4_instead.3F"></a><h2> <span class="mw-headline"> Why use Automation 4 instead? </span></h2>
+<p>Since Automation 3 still works you might be tempted to continue using it. Here are some reasons not to:
+</p>
+<ul><li> Simpler script file structure. There are less required elements and you are somewhat more free in how to express things.
+</li><li> Several array indexing inconsistencies have been corrected, everything is now indexed from one as the custom in Lua programming is. The exception to this rule is for karaoke tables, these have retained the "zero'th" syllable, everything before the first karaoke tag.
+</li><li> The pre-calculations performed by <tt><a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel</a></tt> provide more useful information and more advanced position. It's also more modular, allowing you to control what is pre-calculated and when.
+</li><li> You get direct access to the <code>Script Info</code> and <code>Styles</code> sections of the subtitle file, allowing you to modify styles and header information, also adding and removing it.
+</li><li> The ability to write macros. Macros are easier to access than the old semi-workaround that was the Apply button, and they have access to information about the lines selected in the subtitle grid.
+</li></ul>
+<p>But of course you shouldn't start rewriting all your existing scripts to Automation 4 unless you have a really good reason.
+</p><p>If you decide to write scripts for Automation 4 Lua you can read the <a href="Overview_of_changes_from_Automation_3.html" title="Overview of changes from Automation 3">overview of changes from Automation 3</a> page for a jumpstart.
+</p>
+<div style="border-top: 2px solid #448; border-bottom: 1px solid #448; background: #f0f0ff; margin: 1em; padding: 0.5em;">
+<div style="text-align:center; font-weight:bold; background:#ddf;"><a href="Automation.html" title="Automation">Automation 4</a></div>
+<table style="width:100%; font-size: smaller;">
+<tr><th>Overview:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_Manager.html" title="Automation Manager">Automation Manager</a>&nbsp;&bull; 
+<a href="Running_Automation_macros.html" title="Running Automation macros">Running macros</a>&nbsp;&bull; 
+<a href="Exporting.html" title="Exporting">Using export filters</a>&nbsp;&bull; 
+<a href="Using_the_included_macros.html" title="Using the included macros">Standard macros</a>&nbsp;&bull; 
+<a href="Overview_of_changes_from_Automation_3.html" title="Overview of changes from Automation 3">Changes from Automation 3</a>&nbsp;&bull; 
+<strong class="selflink">Moving from Automation 3</strong>
+</p>
+</td></tr>
+<tr><th><a href="Karaoke_Templater.html" title="Karaoke Templater">Karaoke Templater</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Karaoke_Templater_Reference__Declaring_template_and_code_lines.html" title="Karaoke Templater Reference: Declaring template and code lines">Declaring templates</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_execution_rules_and_order.html" title="Karaoke Templater Reference: Template execution rules and order">Execution order</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_modifiers.html" title="Karaoke Templater Reference: Template modifiers">Modifiers</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Inline_variables.html" title="Karaoke Templater Reference: Inline variables">Inline-variables ($-variables)</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_lines_and_blocks.html" title="Karaoke Templater Reference: Code lines and blocks">Code lines and blocks</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_execution_environment.html" title="Karaoke Templater Reference: Code execution environment">Execution envirionment</a>
+</p>
+</td></tr>
+<tr><th><a href="Lua_Reference.html" title="Lua Reference">Lua</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_Lua_Registration.html" title="Automation 4 Lua Registration">Registration</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Subtitle_file_interface.html" title="Automation 4 Lua Subtitle file interface">Subtitles object</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Progress_reporting.html" title="Automation 4 Lua Progress reporting">Progress reporting</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Configuration_dialogues.html" title="Automation 4 Lua Configuration dialogues">Config dialogues</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Miscellaneous_APIs.html" title="Automation 4 Lua Miscellaneous APIs">Misc. APIs</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel.lua</a>&nbsp;&bull; 
+<a href="Automation_4_utils.html" title="Automation 4 utils.lua">utils.lua</a>&nbsp;&bull; 
+<a href="Automation_4_unicode.html" title="Automation 4 unicode.lua">unicode.lua</a>&nbsp;&bull; 
+cleantags.lua
+</p>
+</td></tr>
+<tr><th>Karaskel concepts:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_karaskel.html#Style_table" title="Automation 4 karaskel.lua">Style tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Dialogue_line_table" title="Automation 4 karaskel.lua">Dialogue line tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Karaoke_and_furigana_syllable_tables" title="Automation 4 karaskel.lua">Syllable tables</a>&nbsp;&bull; 
+<a href="Karaoke_inline-fx.html" title="Karaoke inline-fx">Inline effects</a>&nbsp;&bull; 
+<a href="Furigana_karaoke.html" title="Furigana karaoke">Furigana</a>
+</p>
+</td></tr>
+</table>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 54/1000000
+Post-expand include size: 2701/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:20-0!1!0!!en!2!edit=0 and timestamp 20120831185042 -->
+<div class="printfooter">
+Retrieved from "<a href="Moving_from_Automation_3.html">http://docs.aegisub.org/manual/Moving_from_Automation_3</a>"</div>
+	    	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.161 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Moving_from_Automation_3 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:20 GMT -->
+</html>

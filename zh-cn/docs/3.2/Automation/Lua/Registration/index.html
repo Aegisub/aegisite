@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Lua/Registration/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:40 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>注册 - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../../../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../../../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../../../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../../../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../../../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../../../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../../../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../../../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../../../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../../../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../../../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../../../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../../../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../../../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../../../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../../../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../../../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../../../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../../../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../../../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../../../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../../../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../../../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../../../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../../../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../../../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../../index.html">概述</a>
+</li>
+<li>
+<a href="../../Karaoke_Templater/index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../../../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../../../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../../../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>注册</h1>
+<p><strong>注册</strong> 涵盖了以下内容：使你自己编写的Lua脚本<a href="../index.html">Automation 4 Lua</a>出现在Aegisub中、
+提供和脚本有关的信息、该脚本提供了什么样的 <em>特性</em>。</p>
+
+<h2 id="feature">有关特性(Feature)的解释</h2>
+
+<p>Automation 4 中的一个最基础的概念就是 <em>特性</em> 。特性决定了Aegisub如何响应用户的动作去调用脚本。</p>
+
+<p>特性不是简单的回调。它通常是一组几个回调函数,以及如何在GUI中向用户呈现它们的一些信息。</p>
+
+<p>一种特性的类型是 <strong>macro</strong> (宏)，宏会被作为一个小项展示在自动化菜单中，它有一个名字(即菜单中显示的内容)，
+一段描述(当鼠标悬停在该项时，状态栏显示的说明文本)，一个处理函数(当用户点按该项时执行的函数)
+还有一个可选的有效性确认函数(决定这个宏在当前状态下是否可以运行，如：卡拉OK模板执行器就具有这个属性，如果检测不到template行，该项为灰色不可用)</p>
+
+<p>另外一种特性是 <strong>export filter</strong>(导出滤镜)。导出滤镜会被展示在<a href="../../../Exporting/index.html">Export</a> 对话框中，在进行导出操作时被应用
+导出滤镜也有名字、描述、处理函数，同时提供了配置面板函数。使用配置面板函数可以返回一个配置面板对话框，
+在执行导出滤镜的时候会被展示给用户，在配置面板中输入的参数和配置可以传递给处理函数作为参数。</p>
+
+<h2 id="section">全局脚本信息变量</h2>
+
+<p>一个脚本中，可以设置一些全局变量，来给Aegisub提供一些元数据。
+这些全局变量会被展示在<a href="../../Manager/index.html">Automation Manager</a> 对话框中和脚本信息对话框中。</p>
+
+<ul>
+  <li><strong>script_name</strong> (脚本名，字符串) - 脚本的名称，应尽量简洁</li>
+  <li><strong>script_description</strong> (脚本描述，字符串) - 描述该脚本可以达成什么目的，也不建议太长。</li>
+  <li><strong>script_version</strong> (脚本版本号，字符串或数字) - 脚本的版本号</li>
+  <li><strong>script_author</strong> (脚本作者，字符串) - 脚本作者信息</li>
+</ul>
+
+<p>上述的变量均为可选项，即使一个脚本头部没有定义这些变量，Aegisub也会调取文件名来显示。</p>
+
+<h2 id="section-1">注册函数</h2>
+
+<p>注册函数是指一些Automation 4 提供的现成 Lua 函数，可以方便你把一项特性变为Aegisub可用的形式
+你经常会在顶部或者底部调用它。</p>
+
+<h3 id="aegisubregistermacro">aegisub.register_macro</h3>
+
+<p>摘要: <code>aegisub.register_macro(name, description, processing_function, validation_function, is_active_function)</code></p>
+
+<p>将脚本注册成为一个具有marco(宏)特性的项。</p>
+
+<ul>
+  <li>
+    <p><strong>name</strong> (名称，字符串) - 自动化 菜单中显示出来的名字。尽量简洁。</p>
+
+    <p>如果名字中有向前斜杠(/)，名字会被斜杠分开，斜杠后的内容在自动化菜单中表现为子项。
+例如，如果你注册了宏 "Foo/Bar" 和 "Foo/Baz"，自动化菜单中， "Foo" 下会有 "Bar" 和 "Baz" 两个子项。</p>
+
+    <p>菜单可以支持多级的嵌套，不过多级嵌套不是什么好主意</p>
+  </li>
+  <li>
+    <p><strong>description</strong> (描述，字符串) - 当鼠标悬停在该项时，状态栏显示的说明文本。
+建议这部分写的简明直接，描述清楚该脚本是做什么的。</p>
+  </li>
+  <li>
+    <p><strong>processing_function</strong> (处理函数，函数) - 当用户点击了这项时，调用的处理函数 <a href="index.html#macroprocessingfunction">macro
+processing function API</a>.。</p>
+  </li>
+  <li>
+    <p><strong>validation_function</strong> (有效性检测函数，函数, 可选) - 这个函数被用来检测当前项是否可用。
+(灰色还是正常)。如果不设置该函数，宏则一直处于可用状态。
+这个函数遵循 <a href="index.html#macrovalidationfunction">macro validation
+function API</a> 中的说明。</p>
+  </li>
+  <li>
+    <p><strong>is_active_function</strong> (活动检测函数，函数, 可选) - 这个函数会在当前可用项的左侧显示一个对勾。
+规则同有效检测函数</p>
+  </li>
+</ul>
+
+<h3 id="aegisubregisterfilter">aegisub.register_filter</h3>
+
+<p>摘要: <code>aegisub.register_filter(name, description, priority, processing_function, configuration_panel_provider)</code></p>
+
+<p>将脚本注册成为一个具有filter(滤镜)特性的项。</p>
+
+<ul>
+  <li><strong>name</strong> (名称，字符串) - 在 导出滤镜 列表中呈现的名称，应尽可能简洁。</li>
+  <li><strong>description</strong> (描述，字符串) - 当用户选中该导出滤镜时，在描述框中显示的描述文字。</li>
+  <li>
+    <p><strong>priority</strong> (优先级，数字) - 决定导出滤镜的应用顺序。高优先级的滤镜会被优先应用。
+用户可以在 导出 对话框中修改顺序。
+Aegisub内置导出滤镜的优先级顺序:</p>
+
+    <ul>
+      <li>帧率转换 = 1000 (卡拉OK效果应该比这个有更高的优先级)</li>
+      <li>清除脚本信息 = 0 (你的脚本可能依赖于这个脚本会清理掉的信息，所以它最后被应用)</li>
+      <li>修复样式 = -5000 (一般总是最后运行)</li>
+    </ul>
+  </li>
+  <li><strong>processing_function</strong> (处理函数，函数) - 当用户执行导出操作时调用的处理函数。
+这个函数需要符合 <a href="index.html#exportfilterprocessingfunction">export filter processing function
+API</a>的要求。</li>
+  <li><strong>configuration_panel_provider</strong> (配置面板函数，函数，可选) - 为导出滤镜提供了配置面板的函数
+如果不写这个函数，导出滤镜不会具有配置面板。需要遵循 <a href="index.html#exportfilterconfigurationpanelprovider">export filter configuration panel provider
+API</a> 的要求。</li>
+</ul>
+
+<h2 id="feature-callback-functions">Feature callback functions</h2>
+
+<p>These are the callback functions you provide to the registration functions.</p>
+
+<h3 id="macro-processing-function">Macro processing function</h3>
+
+<p>Signature: <code>process_macro(subtitles, selected_lines, active_line)</code></p>
+
+<p>Macro processing functions passed to
+<a href="index.html#aegisub.register_macro">`aegisub.register_macro`</a>
+must have this signature. The name <code>process_macro</code> is a placeholder for your
+own function name.</p>
+
+<ul>
+  <li><strong>subtitles</strong> (user data) - The <a href="../Subtitle_file_interface/index.html">subtitles
+object</a> you use to manipulate
+the subtitles with.</li>
+  <li><strong>selected_lines</strong> (table) - An array with indexes of the selected lines.
+The values in this table are line indexes in the <em>subtitles</em> object at its
+initial state. Only <code>dialogue</code> class lines can ever be selected.</li>
+  <li><strong>active_line</strong> (number) - The line that is currently available for
+editing in the subtitle editing area. This is an index into the
+<em>subtitles</em> object. This line will usually also be selected, but this is
+not a strict requirement.</li>
+</ul>
+
+<p><strong>Return value:</strong>
+The macro processing function can return up to two values: a new
+<code>selected_lines</code> table containing indices of the lines to select after the
+macro returns, and an index of the line to make the new <code>active_line</code>. If
+set, the new active line index must be one of the lines in the new
+<code>selected_lines</code> table.</p>
+
+<h3 id="macro-validation-function">Macro validation function</h3>
+
+<p>Signature: <code>validate_macro(subtitles, selected_lines, active_line)</code></p>
+
+<p>Macro validation functions passed to
+<a href="index.html#aegisub.register_macro">`aegisub.register_macro`</a>
+must have this signature. The name <code>validate_macro</code> is a placeholder for
+your own function name.</p>
+
+<p><strong>Important, execution time:</strong> Validation functions should always run very
+fast. Do as little work as possible inside this function, because it is run
+every time the user pulls open the Automation menu, and every millisecond
+you spend in <code>validate_macro</code> is one millisecond delay in opening the menu.
+Consider that the user might have very large files open. Don't block the UI.</p>
+
+<ul>
+  <li><strong>subtitles</strong> (user data) - The <a href="../Subtitle_file_interface/index.html">subtitles
+object</a> for the current subtitle
+file. This is <strong>read-only</strong>. You cannot modify the subtitles in the
+validation function, and attempting to do so will cause a run-time error.</li>
+  <li><strong>selected_lines</strong> (table) - An array with indexes of the selected lines.
+The values in this table are line indexes in the <em>subtitles</em> object at its
+initial state. Only <code>dialogue</code> class lines can ever be selected.</li>
+  <li><strong>active_line</strong> (number) - The line that is currently available for
+editing in the subtitle editing area. This is an index into the
+<em>subtitles</em> object.</li>
+</ul>
+
+<p><strong>Return value:</strong>
+Boolean, <code>true</code> if the macro can run given the current
+state of <em>subtitles</em>, <em>selected_lines</em> and <em>active_line</em>, <code>false</code> if it can
+not.</p>
+
+<p>In addition to the primary return value, the validation function can return
+a string. If it does, the description of the macro is set to the string.
+This is intended for reporting information to the user about why the macro
+cannot be run, but there may be more uses for it.</p>
+
+<h3 id="export-filter-processing-function">Export filter processing function</h3>
+
+<p>Signature: <code>process_filter(subtitles, settings)</code></p>
+
+<p>Export filter processing functions passed to
+<a href="index.html#aegisub.register_filter">`aegisub.register_filter`</a>
+must have this signature. The name <code>process_filter</code> is a placeholder for
+your own function name.</p>
+
+<p>You do not have to worry about undo issues with export filters. You always
+work on a copy of the subtitle file.</p>
+
+<ul>
+  <li><strong>subtitles</strong> (user data) - The <a href="../Subtitle_file_interface/index.html">subtitles
+object</a> you use to manipulate
+the subtitles with. This is a copy of the open subtitles file, so
+modifying this subtitles object does not modify the open file and will
+only affect the exported file.</li>
+  <li><strong>settings</strong> (table) - Configuration settings entered into the
+configuration panel or an empty table if there is no configuration panel.
+See the page on <a href="../Dialogs/index.html">configuration
+dialogues</a> for more information
+on the format of this table.</li>
+</ul>
+
+<p><strong>Return value:</strong>
+Nothing.</p>
+
+<h3 id="export-filter-configuration-panel-provider">Export filter configuration panel provider</h3>
+
+<p>Signature: <code>get_filter_configuration_panel(subtitles, old_settings)</code></p>
+
+<p>Export filter configuration panel providers passed to
+<a href="index.html#aegisub.register_filter">`aegisub.register_filter`</a>
+must have this signature. The name <code>get_filter_configuration_panel</code> is a
+placeholder for your own function name.</p>
+
+<p><strong>Important, execution time:</strong>
+This function is called automatically when
+the user opens the Export dialogue, and Aegisub blocks until it returns with
+a configuration panel. Consider that the user might have a very large file
+open, and that every millisecond spent creating your configuration dialogue
+is one more millisecond the user has to wait for the Export dialogue to
+open. Don't block the UI.</p>
+
+<ul>
+  <li><strong>subtitles</strong> (user data) - The <a href="../Subtitle_file_interface/index.html">subtitles
+object</a> for the current subtitle
+file. This is <strong>read-only</strong>. You cannot modify the subtitles in the filter
+configuration provider. Attempting to modify the subtitles will cause a
+run-time error.</li>
+  <li><strong>old_settings</strong> (table) - Previous configuration settings entered into
+the configuration panel, if any. When an Automation 4 export filter is
+run, any configuration settings are automatically stored to the original
+file. If any stored settings exist for this filter, they are passed as
+<em>old_settings</em> so you can use them as a base for filling in defaults.</li>
+</ul>
+
+<p><strong>Return value:</strong>
+A configuration dialogue table. See the page on
+<a href="../Dialogs/index.html">configuration dialogues</a> for
+more information on the format of this table.</p>
+
+<div class='navbox'>
+<div><a href="../../index.html">自动化</a></div>
+<table>
+<tr>
+<th>概述:</th>
+<td><a href="../../Manager/index.html">自动化脚本管理器</a> • <a href="../../Running_macros/index.html">运行宏</a> • <a href="../../../Exporting/index.html">使用导出滤镜</a> • <a href="../../Included_macros/index.html">示例宏</a></td>
+</tr>
+<tr>
+<th><a href="../../Karaoke_Templater/index.html">卡拉OK模版执行器</a> 相关:</th>
+<td><a href="../../Karaoke_Templater/Declaring_template_and_code_lines/index.html">声明模版</a> • <a href="../../Karaoke_Templater/Template_execution_rules_and_order/index.html">模版执行顺序</a> • <a href="../../Karaoke_Templater/Template_modifiers/index.html">修饰语</a> • <a href="../../Karaoke_Templater/Inline_variables/index.html">内联变量($变量)</a> <br> <a href="../../Karaoke_Templater/Code_lines_and_blocks/index.html">code行和code区</a> • <a href="../../Karaoke_Templater/Code_execution_environment/index.html">代码执行环境</a></td>
+</tr>
+<tr>
+<th><a href="../index.html">Lua API</a> 相关:</th>
+<td><a href="index.html">注册</a> • <a href="../Subtitle_file_interface/index.html">字幕对象</a> • <a href="../Progress_reporting/index.html">进度反馈</a> • <a href="../Dialogs/index.html">对话框</a> • <a href="../Miscellaneous_APIs/index.html">其他APIs</a></td>
+</tr>
+<tr>
+<th><a href="../Modules/index.html">Lua 模块</a>:</th>
+<td><a href="../Modules/karaskel.lua/index.html">karaskel.lua</a> • <a href="../Modules/util/index.html">util</a> • <a href="../Modules/unicode/index.html">unicode</a> • <a href="#">cleantags.lua</a> • <a href="../Modules/clipboard/index.html">clipboard</a> • <a href="../Modules/re/index.html">re</a></td>
+</tr>
+<tr>
+<th>Karaskel 概念:</th>
+<td><a href="../Modules/karaskel.lua/index.html#style-table">Style tables</a> • <a href="../Modules/karaskel.lua/index.html#dialogue-line-table">Dialogue line tables</a> • <a href="../Modules/karaskel.lua/index.html#karaoke-and-furigana-syllable-tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/index.html">内联特效</a> • <a href="../../../Furigana_karaoke/index.html">注音假名</a></td>
+</tr>
+</table>
+</div>
+
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Lua/Registration/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:40 GMT -->
+</html>
+

@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Audio_Timing_Tutorial by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:35:28 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Audio,Audio,Keyboard shortcuts,Options,Timing Post-Processor,Video" />
+		<link rel="canonical" href="Audio.html" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Audio - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Audio";
+		var wgTitle = "Audio";
+		var wgAction = "view";
+		var wgArticleId = "47";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 658;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+		<script type="text/javascript">/*<![CDATA[*/
+redirectToFragment("#Basic_audio_timing");
+/*]]>*/</script>		<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Audio">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Audio</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub">(Redirected from Audio Timing Tutorial)</div>
+	    	    	    <!-- start content -->
+	    <p>Aegisub has a fairly advanced, customizable audio mode with both the traditional waveform display as well as an alternative spectrum display. Several different timing modes are available for both normal dialog timing and karaoke timing.
+</p>
+<div style="margin-left: 2em; margin-right: 3em; margin-top: 0.5em; padding-left: 1em; padding-right: 4em; background-color: #FDFEE7; border: 1px solid #F9FD96;"><b>Todo:</b> This page should probably be split into several smaller ones to make it easier to digest, easier to link, less confusing and wall-of-text and to promote going more in depth with the separate topics.</div>
+<p><br />
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Opening_audio"><span class="tocnumber">1</span> <span class="toctext">Opening audio</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Supported_formats:_Windows"><span class="tocnumber">1.1</span> <span class="toctext">Supported formats: Windows</span></a></li>
+<li class="toclevel-2"><a href="#Supported_formats:_non-Windows"><span class="tocnumber">1.2</span> <span class="toctext">Supported formats: non-Windows</span></a></li>
+<li class="toclevel-2"><a href="#Audio_caching"><span class="tocnumber">1.3</span> <span class="toctext">Audio caching</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#The_main_audio_view"><span class="tocnumber">2</span> <span class="toctext">The main audio view</span></a></li>
+<li class="toclevel-1"><a href="#Basic_audio_timing"><span class="tocnumber">3</span> <span class="toctext">Basic audio timing</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Timing_protips"><span class="tocnumber">3.1</span> <span class="toctext">Timing protips</span></a></li>
+<li class="toclevel-2"><a href="#The_spectrum_analyzer_mode"><span class="tocnumber">3.2</span> <span class="toctext">The spectrum analyzer mode</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Karaoke_timing"><span class="tocnumber">4</span> <span class="toctext">Karaoke timing</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Opening_audio" id="Opening_audio"></a><h2> <span class="mw-headline">Opening audio</span></h2>
+<p>To load an audio file into Aegisub, just go to the <i>Audio</i> menu and press <i>Open audio file</i>. If you have a video file (with an included audio track) already loaded, you can use <i>Open audio from video</i> instead, which obviously will load the audio track from the video file you currently have loaded. You can open any type of audio file that your <a href="Options.html#Audio_provider" title="Options">audio provider</a> can decode, more on this below.
+</p>
+<a name="Supported_formats:_Windows" id="Supported_formats:_Windows"></a><h4> <span class="mw-headline">Supported formats: Windows</span></h4>
+<p>Under Microsoft Windows, your audio provider is <i>Avisynth</i> by default, which means that any audio format that your DirectShow environment knows how to decode is supported (at least in theory). For example, if you want to load an AC3 file, you will need an AC3 DirectShow decoder (e.g. AC3filter or ffdshow). <i>Note:</i> some formats seem pretty buggy at the moment. Ones more or less guaranteed to work are (16-bit) PCM-WAV, MP3 and Vorbis, so if your audio doesn't work, try transcoding to one of them, at least temporarily.
+</p><p><b>Warning:</b> If you have opened a video file with more than one audio track (most commonly an MKV or OGM file), and try to open audio from it, Aegisub is completely at the mercy of the splitter when it comes to what audio stream is delivered. Some splitters may deliver both audio streams at once (this will happen for dual audio AVI's, when using the default Windows splitter), and since Aegisub very much doesn't expect that, you will get weird results (and probably crashes). Just remux the file to single audio, or better yet, decompress the desired audio stream to WAV.
+</p>
+<a name="Supported_formats:_non-Windows" id="Supported_formats:_non-Windows"></a><h4> <span class="mw-headline">Supported formats: non-Windows</span></h4>
+<p>On all other operating systems (MacOS X, GNU/Linux, the BSD variants etc.) your audio provider is <i>ffmpeg</i>, which means you can use any audio format that ffmpeg supports (and was compiled with).
+</p>
+<a name="Audio_caching" id="Audio_caching"></a><h3> <span class="mw-headline">Audio caching</span></h3>
+<p>If you're loading any audio format that isn't an uncompressed (PCM) Microsoft WAV file, Aegisub needs to decode and cache it first. When loaded, the audio is downmixed to mono (see the <a href="Options.html#Audio_downmixer" title="Options">audio downmixer option</a> if you want to grab one channel only instead), decompressed to PCM (a.k.a. WAV), and (by default) loaded into a RAM cache. This means that you will need a <i>large amount</i> of RAM to open a long compressed audio file. If your computer doesn't have a lot of RAM, or if you're working with a full-length movie, refer to the <a href="Options.html#Audio_cache" title="Options">audio cache option</a> for instructions on how to make Aegisub use its (slower) hard drive cache instead; or decompress the file to WAV first since Aegisub can read from WAV's directly without need for caching.
+</p><p>The exact amount of memory used for any given audio file can be calculated with the following formula:
+</p>
+<pre>s = ( b * r * l ) / 8
+</pre>
+<p>where <i>s</i> is the amount of memory (in bytes - divide by 1024 to get kB), <i>b</i> is the number of bits per sample (always 16 in the current implementation), <i>r</i> is the sample rate in Hz (usually 48000, or 44100 in some cases), and <i>l</i> is the length of the audio (in seconds).
+</p><p>For example, for a 25 minute audio clip at 48 kHz, you will need (16 * 48000 * 25 * 60)/8 = 144000000 bytes ~= 137 MB.
+</p><p>Loading and decompressing the audio into the cache will take a few seconds; Aegisub will display a progress indicator while loading the audio.
+</p>
+<a name="The_main_audio_view" id="The_main_audio_view"></a><h2> <span class="mw-headline">The main audio view</span></h2>
+<p>When your audio file has loaded, Aegisub will transform into something like the screenshot below:
+<a href="File_Audio-box-waveform.html" class="image" title="Image:Audio-box-waveform.png"><img alt="Image:Audio-box-waveform.png" src="images/Audio-box-waveform.png" width="654" height="193" border="0" /></a>
+</p><p>You can click and drag just below the audio timeline to change the height of the audio waveform/spectrum display.
+</p><p>Green and red buttons are toggle buttons. A green background indicates that the option is turned on, while a red background indicates that the option is turned off. The buttons and controls are as follows (many of these have <a href="Keyboard_shortcuts.html" title="Keyboard shortcuts" class="mw-redirect">keyboard shortcuts</a> associated with them by default):
+</p>
+<ol><li> Go to previous line, discarding any unsaved changes (previous syllable when in <a href="Audio.html#Karaoke_mode" title="Audio">karaoke mode</a>)
+</li><li> Go to next line, discarding any unsaved changes (next syllable when in karaoke mode)
+</li><li> Play selected area of the audio waveform
+</li><li> Play currently selected line
+</li><li> Pause playback
+</li><li> Play 500ms before selection start
+</li><li> Play 500ms after selection end
+</li><li> Play first 500ms of selection
+</li><li> Play last 500ms of selection
+</li><li> Play from selection start to end of file (or until pause is pressed)
+</li><li> Add lead-in (how much is determined by the <a href="Options.html#Audio" title="Options">audio lead in setting</a>)
+</li><li> Add lead-out (exactly like the above, but the setting is called <a href="Options.html#Audio" title="Options">audio lead out</a>, logically enough)
+</li><li> Commit (save) changes
+</li><li> Scroll view to selection/go to selection
+</li><li> Toggle auto-commit (all timing changes will be committed immediately, without the user pressing commit, if this is enabled)
+</li><li> Toggle auto next line on commit (if this is enabled, Aegisub will automatically select the next line when the current line is committed; enabling both this and auto-commit at the same time is strongly discouraged)
+</li><li> Toggle auto-scrolling (will center waveform on the currently selected line automatically when enabled)
+</li><li> Toggle spectrum analyzer mode (see below)
+</li><li> Toggle Medusa-style timing shortcuts
+</li><li> Audio display zoom (horizontal)
+</li><li> Audio display zoom (vertical)
+</li><li> Audio volume
+</li><li> Toggle linking of vertical audio zoom slider with volume slider
+</li><li> Toggle karaoke mode
+</li><li> Join selected syllables (karaoke mode only)
+</li><li> Split selected syllables (karaoke mode only)
+</li></ol>
+<a name="Basic_audio_timing" id="Basic_audio_timing"></a><h2> <span class="mw-headline">Basic audio timing</span></h2>
+<p>When you click on a line in the subtitles grid, Aegisub will highlight it in the audio display and, if you have auto-scrolling enabled, scroll the audio display so it's centered on the line (during normal timing, it's probably a good idea to disable auto-scrolling). You'll notice various vertical lines in the audio display; the dark blue ones indicate second boundaries, the pink ones indicate keyframes in the video if you have it loaded (see the <a href="Video.html" title="Video">Working with video</a> section), the white broken line indicates the currently visible video frame, and the thick red and orange ones are the line start and end markers (respectively) for the current line. To (re-)define the start and end times of the line, you can either left-click to set the start time and right-click to set the end time, or just drag-and-drop the line boundaries. The selection background will turn red and display the word "Modified" in the top left corner of the audio display when you've changed the timing but haven't saved the changes yet. It will remain red until you either press the commit button (<i>enter</i> or <i>g</i> by default) or go to another line (discards changes). If you have auto-commit on, the background will never turn red since all changes will be saved immediately. Press the <i>play</i> button (keyboard shortcut <i>s</i> by default) to listen to the selection, or the various other playing buttons to listen to parts of the selection or the audio surrounding it. When you are satisfied with the timing, press commit. Then repeat once for every line; it's as simple as that.
+</p>
+<a name="Timing_protips" id="Timing_protips"></a><h3> <span class="mw-headline">Timing protips</span></h3>
+<p>If you want to finish timing your movie or episode within any reasonable amount of time, there's some things you should note:
+</p>
+<ul><li> Use keyboard shortcuts! They speed up your work by several orders of magnitude.
+</li><li> You don't need to have video displayed while timing. Scene-timing, i.e. syncing line start/ends to scene changes, can be done later. Either manually, or with the <a href="Timing_Post-Processor.html" title="Timing Post-Processor">timing postprocessor</a>.
+</li><li> Use "go to next line on commit".
+</li><li> Experiment with different timing styles when you're new and stick to one that suits you. Then practice. Lots.
+</li><li> Aegisub heavily relies on the concept of "focus", and doing things in a way that require you to switch back and forth between video/audio/subtitle edit box a lot will cost you a lot of time. Do it in several "passes" instead.
+</li><li> The spectrum analyzer mode can make it a lot easier to "see" where lines start and end.
+</li></ul>
+<p>One common timing style (preferred by the author of this page) goes something like the following:
+Turn on "go to next line on commit" but disable auto-commiting, auto-scrolling and Medusa timing shortcuts. Keep the four main fingers of your left hand on s/d/f/g. You won't be using the thumb so do whatever you want with it. Keep your right hand on the mouse. Now select (by left- and right-clicking) an area in the waveform that seems likely to contain a line of speech matching the current subtitle line, and hit <i>s</i> to play it back. While it's playing, adjust the start time if necessary. When the playback marker has passed the end time mark, adjust the end time as well. If greater accuracy is needed, play the last 250ms of the selection by pressing <i>d</i>, 250ms before the selection start by pressing <i>q</i>, 250ms after the selection end by pressing <i>w</i>, or the first 250ms of the selection by pressing <i>e</i>. As you grow more experienced, you won't be using anything else than <i>s</i> very much, except maybe <i>d</i> and <i>q</i>. When you're satisfied with the timing, hit <i>g</i> to commit changes and go on to the next line. Scroll the audio display forward by pressing <i>f</i>. If you need to scroll it backwards, use <i>a</i>. To go to next or previous line without committing changes, use <i>z</i> and <i>x</i>.
+</p><p>This style has the advantage that you never need to move your hands at all. With some training, it can also be very fast; audio timing 350-400 lines of dialog to a 25-minute episode can easily be done in less than 40 minutes.
+</p><p>Of course, this style may not feel comfortable for all people; you should experiment with other timing styles before deciding which one is best for you.
+</p>
+<a name="The_spectrum_analyzer_mode" id="The_spectrum_analyzer_mode"></a><h3> <span class="mw-headline">The spectrum analyzer mode</span></h3>
+<p><a href="File_Audio-box-spectrum.html" class="image" title="Image:Audio-box-spectrum.png"><img alt="Image:Audio-box-spectrum.png" src="images/Audio-box-spectrum.png" width="654" height="193" border="0" /></a>
+</p><p>When you press the spectrum analyzer button, the waveform does no longer show amplitude (signal strength) on the vertical axis - instead it shows frequency. The higher up, the higher the frequency. The colors instead indicate amplitude, with black/dark blue being silence and white being the strongest sound. This may seem confusing, but since the frequency window is set to fit human voices rather well, it can make it easy to tell where a line (or a word in karaoke mode) starts and ends when there's a lot of background noise (or music) that makes it hard to tell from the normal waveform. It can be especially useful when timing karaoke. Play around with it for a little while, and you'll understand how it works.
+</p><p>Note that in spectrum analyzer mode, the "vertical zoom" slider is redefined to control color intensity instead, since the colors indicate signal strength.
+</p><p>Because calculating the spectrum data is very CPU intensive, it in initially set to be in a medium quality. You can increase the quality of the spectrum in the <a href="Audio.html#Options" title="Audio">audio options</a>.
+</p>
+<a name="Karaoke_timing" id="Karaoke_timing"></a><h2> <span class="mw-headline">Karaoke timing</span></h2>
+<div style="margin-left: 2em; margin-right: 3em; margin-top: 0.5em; padding-left: 1em; padding-right: 4em; background-color: #FDFEE7; border: 1px solid #F9FD96;"><b>Todo:</b> here be dragons</div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 38/1000000
+Post-expand include size: 645/2097152 bytes
+Template argument size: 213/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:47-0!1!0!!en!2!edit=0 and timestamp 20120831175418 -->
+<div class="printfooter">
+Retrieved from "<a href="Audio.html#Basic_audio_timing">http://docs.aegisub.org/manual/Audio#Basic_audio_timing</a>"</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks">Category:&#32;<span dir='ltr'><a href="Category_Pages_with_Todo_items.html" title="Category:Pages with Todo items">Pages with Todo items</a></span></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.078 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Audio_Timing_Tutorial by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:35:35 GMT -->
+</html>

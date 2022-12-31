@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Included_macros/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:38 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>附带的宏 - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----MIIHJwYJKoZIhvcNAQcEoIIHGDCCBxQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYCF/CdSADVe5JGNHY0ajf2Ss7MRtEkipxJ3mWKQEDo0OdPwFjFc/+xOEcJtduO0PzcNWeE3i0QVt+0AKHaXla9fIYeixCgw+j2apsgDi+itShvnrLt6/XSaVYBYjqNLCzYm4piHbHua9uBEPo0MvET4ZimJhF/yFP7PTmsyR/+HRTELMAkGBSsOAwIaBQAwgaQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIZtx+6lgqvzSAgYB5/Hosn9AcEAFSH1GKgyah7QmB0Xqhlr5PzoI98gftPBMU4411ECMXIFX3xuTd1DbKtINakaOmDg612ZzUZgadhEvwKzwiwee3BWIKjFtLINevdu+6FvSvlNnYJWUm+0txwvEs4udrUFKwRxWiN5EQQMrGmHrViOyatjSAuMToMKCCA4cwggODMIIC7KADAgECAgEAMA0GCSqGSIb3DQEBBQUAMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTAeFw0wNDAyMTMxMDEzMTVaFw0zNTAyMTMxMDEzMTVaMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAwUdO3fxEzEtcnI7ZKZL412XvZPugoni7i7D7prCe0AtaHTc97CYgm7NsAtJyxNLixmhLV8pyIEaiHXWAh8fPKW+R017+EmXrr9EaquPmsVvTywAAE1PMNOKqo2kl4Gxiz9zZqIajOm1fZGWcGS0f5JQ2kBqNbvbg2/Za+GJ/qwUCAwEAAaOB7jCB6zAdBgNVHQ4EFgQUlp98u8ZvF71ZP1LXChvsENZklGswgbsGA1UdIwSBszCBsIAUlp98u8ZvF71ZP1LXChvsENZklGuhgZSkgZEwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tggEAMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADgYEAgV86VpqAWuXvX6Oro4qJ1tYVIT5DgWpE692Ag422H7yRIr/9j/iKG4Thia/Oflx4TdL+IFJBAyPK9v6zZNZtBgPBynXb048hsP16l2vi0k5Q2JKiPDsEfBhGI+HnxLXEaUWAcVfCsQFvd2A1sxRr67ip5y2wwBelUecP3AjJ+YcxggGaMIIBlgIBATCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwCQYFKw4DAhoFAKBdMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE0MDEwMzE0Mzc0NFowIwYJKoZIhvcNAQkEMRYEFFm9tXQlYXaST8+Vq7Ms6lYgjat7MA0GCSqGSIb3DQEBAQUABIGAp1Uqwm3BrsAY29a9wtrY5p1shbKWq9P+8anOpGD2vKBls89fFMmF/3pp1zBPkjwnLkfFXv5FA8r+oONLrduLJGDlg6Wr7dC6Gmx0zAMQCLdvOqd6CjQWgiG+Qcc28Gc4ijc2IIufp9IxkqNaoVzd2uGLbkzKnBVhb2WTWRuKnDo=-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../index.html">概述</a>
+</li>
+<li>
+<a href="../Karaoke_Templater/index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>附带的宏</h1>
+<ol id="markdown-toc">
+  <li><a id="markdown-toc-ok" href="#ok">应用卡拉OK模版</a></li>
+  <li><a id="markdown-toc-section" href="#section">转换为全角字符</a></li>
+  <li><a id="markdown-toc-automatic-karaoke-lead-in" href="#automatic-karaoke-lead-in">Automatic karaoke lead-in</a></li>
+  <li><a id="markdown-toc-section-1" href="#section-1">整理特效标签</a></li>
+  <li><a id="markdown-toc-section-2" href="#section-2">添加边角模糊</a></li>
+  <li><a id="markdown-toc-section-3" href="#section-3">删除特效标签</a></li>
+  <li><a id="markdown-toc-select-overlaps" href="#select-overlaps">选择重叠行（Select Overlaps）</a></li>
+</ol>
+
+<p>这里列出了Aegisub自带了几个宏。</p>
+
+<h2 id="ok">应用卡拉OK模版</h2>
+<p>这个是卡拉OK脚本执行器的宏，用法请参见<a href="../Karaoke_Templater/index.html">卡拉OK脚本执行器</a>。</p>
+
+<p>这个宏只有在字幕文件中至少有一行模版行时才可用。</p>
+
+<h2 id="section">转换为全角字符</h2>
+<p>将所有ASCII半角字符转为日文的全角字符。</p>
+
+<p>当你想把竖向排版一些翻译的字母“叠”起来时，可能会有用。</p>
+
+<p>这个宏会修改在字幕栏中当前选择的所有行。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><p>这有一个有排版的文本：</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>{\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&amp;H25485A&amp;\c&amp;HDEEBF1&amp;\pos(456,184)\frz-90}Sign text
+</code></pre></div>
+<p>注意这里使用了“@字体”，这是所有CJK字体都有的一种字形，它可以使所有全角字符从基线旋转90度。全角字符不只包括拉丁字母的全角变化版本，日语的假名和日文的汉字、中文的汉字、韩语的汉字以及各种标点符号。</p>
+
+<p>现在运行了这个宏后：</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>{\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&amp;H25485A&amp;\c&amp;HDEEBF1&amp;\pos(456,184)\frz-90}Ｓｉｇｎ ｔｅｘｔ
+</code></pre></div>
+<p>这是运行宏前后对比：</p>
+
+<p><img src="../../img/StackedSign1-fb0d8806.png" /> <img src="../../img/StackedSign2-fe9e47e5.png" /></p>
+</div>
+</div>
+
+<h2 id="automatic-karaoke-lead-in">Automatic karaoke lead-in</h2>
+<p>自动连接选中的卡拉OK行并添加适当的 <code>\k</code> 标签。</p>
+
+<p>设计这个宏的初衷是为了辅助制作卡拉OK特效，尤其是创作过渡或者入场效果。
+它很适合被用在应用特效之前。</p>
+
+<p>运行这个宏至少需要选中两行，并且下一行的开始时间要晚于前一行的结束时间。
+它会改变除了第一行以外的开始时间，使得每行中间没有空隙，并且添加重新计算过的 <code>\k</code> 标签到第一个音节。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><p>这里是两行“紧密相连的” 卡拉OK行:</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
+Dialogue: 0,0:00:46.57,0:00:48.56,Default,,0000,0000,0000,,{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+</code></pre></div>
+<p>每一行都会随着第一个音节的开始而开始，随着最后一个音节的结束而结束。</p>
+
+<p>现在如果对这两行应用 <em>Automatic karaoke lead-in</em> 宏，结果会变成这样：</p>
+
+<pre><code>Dialogue: 0,0:00:44.46,<u>0:00:46.28</u>,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
+Dialogue: 0,<u>0:00:46.28</u>,0:00:48.56,Default,,0000,0000,0000,,<u>{\k29}</u>{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+</code></pre>
+
+<p>第二行的开始时间变成了与第一行结束时间紧邻的情况，并且一个 <code>\k</code> 标签被添加到了第二行的开头。
+这个标签对应的空音节我们称之为“间隔”，利用这个部分的时间可以制作入场效果。</p>
+
+<p>这个宏执行会显示这条信息:</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>Smallest inter-line duration: 290 milliseconds
+</code></pre></div>
+<p>简而言之，这是说明相邻两行的间隔时间被确定为
+290 ms, 或 0.29s, 以便于你确定入场退场特效中使用的时间参数等，同时也可以改善字幕的可读性。</p>
+</div>
+</div>
+
+<h2 id="section-1">整理特效标签</h2>
+<p>这个宏会用不同方式整理所选行的特效标签。</p>
+
+<ul>
+  <li>合并相邻的特效标签区（即 { … }），如果相邻的两个标签区都有\k标签，则不会合并</li>
+  <li>将\k标签移动到特效标签区的前面（例如将{\frz90\k40}
+转为 {\k40\frz90}）。同时会保持一个区中多个\k标签的顺序</li>
+  <li>移动行标签（即会影响整个行的特效标签—— \a
+\an \org \pos \move \fade \fad）至行首</li>
+  <li>移除第一个以外的行标签（注意：\pos和\move是同一类标签——一行中只有第一个是有效的，因此这个脚本会找出所有的\move或\pos并留下靠前的一个并会删除其他的。同样的也适用于\fad和\fade标签）。</li>
+  <li>移除参数中用来分隔逗号的空格（例如 \pos(200 , 200) 改为  \pos(200,200)）</li>
+</ul>
+
+<p>这个宏也可用作导出滤镜。</p>
+
+<p>The main intended function of this macro is to make
+<a href="../Lua/Modules/karaskel.lua/index.html">karaskel.lua</a> split karaoke lines more
+sensibly into syllable structures, see the example.
+这个宏主要功能是为了让<a href="../Lua/Modules/karaskel.lua/index.html">karaskel.lua</a>能够更聪明地将卡拉OK行分割为音节结构，请看如下的例子。</p>
+
+<p>这个宏会修改所有字幕栏中所选行，重写这些行里的所有标签区。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><p>原字幕行</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>{\r\frz90\k80}Test {\r\fry180\k60}me
+</code></pre></div>
+<p>Karaskel会创建这些音节结构：</p>
+
+<ul>
+  <li>0 = {\r\frz90}</li>
+  <li>1 = Test {\r\fry180}</li>
+  <li>2 = me</li>
+</ul>
+
+<p>该行执行 <em>整理特效标签</em> 后：</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>{\k80\r\frz90}Test {\k60\r\fry180}me
+</code></pre></div>
+<p>现在Karaskel会创建这些音节结构：</p>
+
+<ul>
+  <li>0 =</li>
+  <li>1 = {\r\frz90}Test</li>
+  <li>2 = {\r\fry180}me</li>
+</ul>
+
+<p>它会把特效标签放到处理过的音节上，所以整理后的版本通常是你想要的。</p>
+</div>
+</div>
+
+<h2 id="section-2">添加边角模糊</h2>
+<p>向所选行插入<code>[[\be1|ASS_Tags#bluredges]]</code>标签。轻微模糊所有字幕行的边缘可以显著提高<a href="../../Attaching_subtitles_to_video/index.html">内嵌字幕</a>的压缩率（尤其是使用像XviD这些旧的编码时），但由于字幕格式的限制，边缘模糊无法通过样式来调整。</p>
+
+<h2 id="section-3">删除特效标签</h2>
+<p>移除所选行中所有ASS特效标签区和它里面的标签。</p>
+
+<h2 id="select-overlaps">选择重叠行（Select Overlaps）</h2>
+<p>选择所有在时间上和其他行的时间轴有重叠的行。这个脚本在查找时间轴错误，或者想为这些重叠的行设置一个新样式来提高可读性时会有些帮助。</p>
+
+<div class='navbox'>
+<div><a href="../index.html">自动化</a></div>
+<table>
+<tr>
+<th>概述:</th>
+<td><a href="../Manager/index.html">自动化脚本管理器</a> • <a href="../Running_macros/index.html">运行宏</a> • <a href="../../Exporting/index.html">使用导出滤镜</a> • <a href="index.html">示例宏</a></td>
+</tr>
+<tr>
+<th><a href="../Karaoke_Templater/index.html">卡拉OK模版执行器</a> 相关:</th>
+<td><a href="../Karaoke_Templater/Declaring_template_and_code_lines/index.html">声明模版</a> • <a href="../Karaoke_Templater/Template_execution_rules_and_order/index.html">模版执行顺序</a> • <a href="../Karaoke_Templater/Template_modifiers/index.html">修饰语</a> • <a href="../Karaoke_Templater/Inline_variables/index.html">内联变量($变量)</a> <br> <a href="../Karaoke_Templater/Code_lines_and_blocks/index.html">code行和code区</a> • <a href="../Karaoke_Templater/Code_execution_environment/index.html">代码执行环境</a></td>
+</tr>
+<tr>
+<th><a href="../Lua/index.html">Lua API</a> 相关:</th>
+<td><a href="../Lua/Registration/index.html">注册</a> • <a href="../Lua/Subtitle_file_interface/index.html">字幕对象</a> • <a href="../Lua/Progress_reporting/index.html">进度反馈</a> • <a href="../Lua/Dialogs/index.html">对话框</a> • <a href="../Lua/Miscellaneous_APIs/index.html">其他APIs</a></td>
+</tr>
+<tr>
+<th><a href="../Lua/Modules/index.html">Lua 模块</a>:</th>
+<td><a href="../Lua/Modules/karaskel.lua/index.html">karaskel.lua</a> • <a href="../Lua/Modules/util/index.html">util</a> • <a href="../Lua/Modules/unicode/index.html">unicode</a> • <a href="#">cleantags.lua</a> • <a href="../Lua/Modules/clipboard/index.html">clipboard</a> • <a href="../Lua/Modules/re/index.html">re</a></td>
+</tr>
+<tr>
+<th>Karaskel 概念:</th>
+<td><a href="../Lua/Modules/karaskel.lua/index.html#style-table">Style tables</a> • <a href="../Lua/Modules/karaskel.lua/index.html#dialogue-line-table">Dialogue line tables</a> • <a href="../Lua/Modules/karaskel.lua/index.html#karaoke-and-furigana-syllable-tables">Syllable tables</a> • <a href="../../Karaoke_inline-fx/index.html">内联特效</a> • <a href="../../Furigana_karaoke/index.html">注音假名</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Included_macros/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:40 GMT -->
+</html>
+

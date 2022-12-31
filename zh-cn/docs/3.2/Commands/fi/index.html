@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Commands/fi/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:16:51 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>fi - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../../Automation/index.html">概述</a>
+</li>
+<li>
+<a href="../../Automation/Karaoke_Templater/index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../../Automation/Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>fi</h1>
+<table style='width: 100%; margin-bottom: 2em'>
+<tr>
+<td>
+<a href='../en_US/index.html'>English (U.S.)</a>
+</td>
+<td>
+<a href='../ar/index.html'>Arabic</a>
+</td>
+<td>
+<a href='../bg/index.html'>Bulgarian</a>
+</td>
+<td>
+<a href='../ca/index.html'>Catalan</a>
+</td>
+<td>
+<a href='../cs/index.html'>Czech</a>
+</td>
+<td>
+<a href='../da/index.html'>Danish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../de/index.html'>German</a>
+</td>
+<td>
+<a href='../el/index.html'>Greek</a>
+</td>
+<td>
+<a href='../es/index.html'>Spanish</a>
+</td>
+<td>
+<a href='../eu/index.html'>Basque</a>
+</td>
+<td>
+<a href='../fa/index.html'>Farsi</a>
+</td>
+<td>
+<a href='index.html'>Finnish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../fr_FR/index.html'>French</a>
+</td>
+<td>
+<a href='../gl/index.html'>Galician</a>
+</td>
+<td>
+<a href='../hu/index.html'>Hungarian</a>
+</td>
+<td>
+<a href='../id/index.html'>Indonesian</a>
+</td>
+<td>
+<a href='../it/index.html'>Italian</a>
+</td>
+<td>
+<a href='../ja/index.html'>Japanese</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../ko/index.html'>Korean</a>
+</td>
+<td>
+<a href='../nl/index.html'>Dutch</a>
+</td>
+<td>
+<a href='../pl/index.html'>Polish</a>
+</td>
+<td>
+<a href='../pt_BR/index.html'>Portuguese (Brazilian)</a>
+</td>
+<td>
+<a href='../pt_PT/index.html'>Portuguese</a>
+</td>
+<td>
+<a href='../ru/index.html'>Russian</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../sr_YU/index.html'>Serbian (Cyrillic)</a>
+</td>
+<td>
+<a href='../sr_YU%40latin/index.html'>Serbian (Latin)</a>
+</td>
+<td>
+<a href='../vi/index.html'>Vietnamese</a>
+</td>
+<td>
+<a href='../zh_CN/index.html'>Chinese (Simplified)</a>
+</td>
+<td>
+<a href='../zh_TW/index.html'>Chinese</a>
+</td>
+</tr>
+</table>
+<table class='karatable'>
+<tr>
+<th>Name</th>
+<th>Display</th>
+<th>Help</th>
+</tr>
+<tr>
+<td>am/manager</td>
+<td>Automaatio</td>
+<td>Avaa automaatiohallinta</td>
+</tr>
+<tr>
+<td>am/meta</td>
+<td>Automaatio</td>
+<td>Open automation manager. Ctrl: Rescan autoload folder. Ctrl+Shift: Rescan autoload folder and reload all automation scripts</td>
+</tr>
+<tr>
+<td>am/reload</td>
+<td>Lataa Automation-skriptit uudelleen</td>
+<td>Skannaa automaattilatauskansio uudelleen ja lataa kaikki Automation-skriptit uudelleen</td>
+</tr>
+<tr>
+<td>am/reload/autoload</td>
+<td>Lataa automaattilatauskansion Automation-skriptit uudelleen</td>
+<td>Skannaa Automationin automaattilatauskansio uudelleen</td>
+</tr>
+<tr>
+<td>app/about</td>
+<td>Tietoa</td>
+<td>Tietoa Aegisubista</td>
+</tr>
+<tr>
+<td>app/display/audio_subs</td>
+<td>Näytä ääniraita ja tekstitys</td>
+<td>Näytä näkymässä ääniraita ja tekstitykset</td>
+</tr>
+<tr>
+<td>app/display/full</td>
+<td>Näytä kaikki</td>
+<td>Näytä näkymässä kaikki eli video, ääniraita ja tekstitykset</td>
+</tr>
+<tr>
+<td>app/display/subs</td>
+<td>Näytä vain tekstitys</td>
+<td>Näytä näkymässä vain tekstitys</td>
+</tr>
+<tr>
+<td>app/display/video_subs</td>
+<td>Näytä video ja tekstitys</td>
+<td>Näytä näkymässä video ja tekstitykset</td>
+</tr>
+<tr>
+<td>app/exit</td>
+<td>Lopeta</td>
+<td>Lopettaa ohjelman</td>
+</tr>
+<tr>
+<td>app/language</td>
+<td>Kieli</td>
+<td>Valitse Aegisubin kieli</td>
+</tr>
+<tr>
+<td>app/log</td>
+<td>Loki-ikkuna</td>
+<td>Näytä tapahtumahistoria</td>
+</tr>
+<tr>
+<td>app/new_window</td>
+<td>Uusi ohjelmaikkuna</td>
+<td>Avaa uuden ohjelmaikkunan</td>
+</tr>
+<tr>
+<td>app/options</td>
+<td>Asetukset</td>
+<td>Aegisubin asetukset</td>
+</tr>
+<tr>
+<td>app/toggle/global_hotkeys</td>
+<td>Globaalit pikanäppäinkorvaukset päälle/pois</td>
+<td>Globaalit pikanäppäinkorvaukset päälle/pois (Medusa Mode)</td>
+</tr>
+<tr>
+<td>app/toggle/toolbar</td>
+<td>Piilota työkalurivi</td>
+<td>Näytä tai piilota työkalurivi</td>
+</tr>
+<tr>
+<td>app/updates</td>
+<td>Tarkista päivitykset</td>
+<td>Tarkista, onko Aegisubista saatavilla uutta versiota</td>
+</tr>
+<tr>
+<td>audio/close</td>
+<td>Sulje ääniraita</td>
+<td>Sulje avattu ääniraita</td>
+</tr>
+<tr>
+<td>audio/commit</td>
+<td>Hyväksy</td>
+<td>Hyväksy kaikki odottavat äänen ajoitusmuutokset</td>
+</tr>
+<tr>
+<td>audio/commit/default</td>
+<td>Hyväksy ja oletusajasta seuraava rivi</td>
+<td>Hyväksy kaikki odottavat äänen ajoitusmuutokset ja nollaa seuraavan rivin ajoitus oletusarvoihin</td>
+</tr>
+<tr>
+<td>audio/commit/next</td>
+<td>Hyväksy ja siirry seuraavalle riville</td>
+<td>Hyväksy kaikki odottavat äänen ajoitusmuutokset ja siirry seuraavalle riville</td>
+</tr>
+<tr>
+<td>audio/commit/stay</td>
+<td>Hyväksy ja pysy nykyisellä rivillä</td>
+<td>Hyväksy kaikki odottavat äänen ajoitusmuutokset ja pysy nykyisellä rivillä</td>
+</tr>
+<tr>
+<td>audio/go_to</td>
+<td>Siirry valintaan</td>
+<td>Scroll the audio display to center on the current audio selection</td>
+</tr>
+<tr>
+<td>audio/karaoke</td>
+<td>Karaoken ajoitustila päälle/pois</td>
+<td>Karaoken ajoitustila päälle/pois</td>
+</tr>
+<tr>
+<td>audio/open</td>
+<td>Avaa äänitiedosto</td>
+<td>Avaa ääniraita tiedostosta</td>
+</tr>
+<tr>
+<td>audio/open/blank</td>
+<td>Avaa 2 h 30 min tyhjä ääniraita</td>
+<td>Avaa 150 minuutin pituinen tyhjä äänileike vianjäljitystä varten</td>
+</tr>
+<tr>
+<td>audio/open/noise</td>
+<td>Avaa 2 h 30 min kohinaääniraita</td>
+<td>Avaa 150 minuutin pituinen kohinaäänileike vianjäljitystä varten</td>
+</tr>
+<tr>
+<td>audio/open/video</td>
+<td>Avaa videosta</td>
+<td>Avaa ääniraita avatusta videosta</td>
+</tr>
+<tr>
+<td>audio/opt/autocommit</td>
+<td>Hyväksyy automaattisesti kaikki muutokset</td>
+<td>Hyväksyy automaattisesti kaikki muutokset</td>
+</tr>
+<tr>
+<td>audio/opt/autonext</td>
+<td>Siirry hyväksyttäessä automaattisesti seuraavalle riville</td>
+<td>Siirry hyväksyttäessä automaattisesti seuraavalle riville</td>
+</tr>
+<tr>
+<td>audio/opt/autoscroll</td>
+<td>Selaa ääniraitaa automaattisesti valitun rivin mukaan</td>
+<td>Selaa ääniraitaa automaattisesti valitun rivin mukaan</td>
+</tr>
+<tr>
+<td>audio/opt/spectrum</td>
+<td>Aallokon analysointitapa</td>
+<td>Aallokon analysointitapa</td>
+</tr>
+<tr>
+<td>audio/opt/vertical_link</td>
+<td>Kytke korkeus- ja äänenvoimakkuusvetimet yhteen</td>
+<td>Kytke korkeus- ja äänenvoimakkuusvetimet yhteen</td>
+</tr>
+<tr>
+<td>audio/play/current</td>
+<td>Toista nykyinen äänivalinta</td>
+<td>Toista nykyinen äänivalinta ohittaen toistamisen aikana tehdyt muutokset</td>
+</tr>
+<tr>
+<td>audio/play/line</td>
+<td>Toista valittu rivi</td>
+<td>Toista nykyisen rivin ääni</td>
+</tr>
+<tr>
+<td>audio/play/selection</td>
+<td>Toista äänivalinta</td>
+<td>Toista ääntä kunnes saavutetaan valinnan loppu</td>
+</tr>
+<tr>
+<td>audio/play/selection/after</td>
+<td>Toista 500 ms valinnan jälkeen</td>
+<td>Toista 500 ms valinnan jälkeen</td>
+</tr>
+<tr>
+<td>audio/play/selection/before</td>
+<td>Toista 500 ms ennen valintaa</td>
+<td>Toista 500 ms ennen valintaa</td>
+</tr>
+<tr>
+<td>audio/play/selection/begin</td>
+<td>Toista valinnan ensimmäiset 500 ms</td>
+<td>Toista valinnan ensimmäiset 500 ms</td>
+</tr>
+<tr>
+<td>audio/play/selection/end</td>
+<td>Toista valinnan viimeiset 500 ms</td>
+<td>Toista valinnan viimeiset 500 ms</td>
+</tr>
+<tr>
+<td>audio/play/to_end</td>
+<td>Toista valinnan alusta tiedoston loppuun</td>
+<td>Toista valinnan alusta tiedoston loppuun</td>
+</tr>
+<tr>
+<td>audio/play/toggle</td>
+<td>Toista äänivalinta tai pysäytä</td>
+<td>Toista valinta tai pysäytä toisto, jos ääntä toistetaan jo</td>
+</tr>
+<tr>
+<td>audio/save/clip</td>
+<td>Luo ääniraita</td>
+<td>Tallenna ääniraita valitun rivin ajoituksesta</td>
+</tr>
+<tr>
+<td>audio/scroll/left</td>
+<td>Selaa vasemmalle</td>
+<td>Selaa ääniraitaa vasemmalle</td>
+</tr>
+<tr>
+<td>audio/scroll/right</td>
+<td>Selaa oikealle</td>
+<td>Selaa ääniraitaa oikealle</td>
+</tr>
+<tr>
+<td>audio/stop</td>
+<td>Pysäytä toisto</td>
+<td>Pysäytä äänen ja videon toisto</td>
+</tr>
+<tr>
+<td>audio/view/spectrum</td>
+<td>Spektrinäyttö</td>
+<td>Näytä ääniraita taajuus–teho-spektrografina</td>
+</tr>
+<tr>
+<td>audio/view/waveform</td>
+<td>Aaltomuotonäyttö</td>
+<td>Näytä ääniraita lineaarisena amplitudikaaviona</td>
+</tr>
+<tr>
+<td>automation/lua/cleantags-autoload/Clean Tags</td>
+<td>Clean Tags</td>
+<td>Clean subtitle lines by re-arranging ASS tags and override blocks within the lines</td>
+</tr>
+<tr>
+<td>automation/lua/kara-templater/Apply karaoke template</td>
+<td>Apply karaoke template</td>
+<td>Applies karaoke effects from templates</td>
+</tr>
+<tr>
+<td>automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in</td>
+<td>Automatic karaoke lead-in</td>
+<td>Join up the ends of selected lines and add \k tags to shift karaoke</td>
+</tr>
+<tr>
+<td>automation/lua/macro-1-edgeblur/Add edgeblur</td>
+<td>Add edgeblur</td>
+<td>Adds \be1 tags to all selected lines</td>
+</tr>
+<tr>
+<td>automation/lua/macro-2-mkfullwitdh/Make fullwidth</td>
+<td>Make fullwidth</td>
+<td>Convert Latin letters to SJIS fullwidth letters</td>
+</tr>
+<tr>
+<td>automation/lua/select-overlaps/Select overlaps</td>
+<td>Select overlaps</td>
+<td>Select lines which begin while another non-comment line is active</td>
+</tr>
+<tr>
+<td>automation/lua/strip-tags/Strip tags</td>
+<td>Strip tags</td>
+<td>Remove all override tags from selected lines</td>
+</tr>
+<tr>
+<td>edit/clear</td>
+<td>Tyhjennä</td>
+<td>Tyhjennä nykyisen rivin teksti</td>
+</tr>
+<tr>
+<td>edit/clear/text</td>
+<td>Tyhjennä teksti</td>
+<td>Clear the current line's text, leaving override tags</td>
+</tr>
+<tr>
+<td>edit/color/outline</td>
+<td>Reunaviivan väri</td>
+<td>Set the outline color (\3c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/primary</td>
+<td>Ensisijainen väri</td>
+<td>Set the primary fill color (\c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/secondary</td>
+<td>Toissijainen väri</td>
+<td>Set the secondary (karaoke) fill color (\2c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/shadow</td>
+<td>Varjon väri</td>
+<td>Set the shadow color (\4c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/find_replace</td>
+<td>Etsi ja korvaa</td>
+<td>Etsi ja korvaa sanoja riveistä</td>
+</tr>
+<tr>
+<td>edit/font</td>
+<td>Fontti</td>
+<td>Valitse fontti ja fonttikoko</td>
+</tr>
+<tr>
+<td>edit/insert_original</td>
+<td>Lisää alkuteksti</td>
+<td>Lisää rivin alkuperäinen teksti kohdistimen kohtaan</td>
+</tr>
+<tr>
+<td>edit/line/copy</td>
+<td>Kopioi rivit</td>
+<td>Kopioi tekstitykset leikepöydälle</td>
+</tr>
+<tr>
+<td>edit/line/cut</td>
+<td>Leikkaa rivit</td>
+<td>Leikkaa rivit</td>
+</tr>
+<tr>
+<td>edit/line/delete</td>
+<td>Poista rivit</td>
+<td>Poista valitut rivit</td>
+</tr>
+<tr>
+<td>edit/line/duplicate</td>
+<td>Monista rivit</td>
+<td>Monistaa valitut rivit</td>
+</tr>
+<tr>
+<td>edit/line/join/as_karaoke</td>
+<td>Karaokena</td>
+<td>Yhdistä rivit yhteen karaoketavuttaen sanat</td>
+</tr>
+<tr>
+<td>edit/line/join/concatenate</td>
+<td>Yhteen</td>
+<td>Yhdistä rivit ja liitä jälkimmäisen teksti ensimmäisen perään</td>
+</tr>
+<tr>
+<td>edit/line/join/keep_first</td>
+<td>Pidä ensimmäinen</td>
+<td>Yhdistä rivit ja pidä vain ensimmäisen teksti</td>
+</tr>
+<tr>
+<td>edit/line/paste</td>
+<td>Liitä rivit</td>
+<td>Liitä rivejä</td>
+</tr>
+<tr>
+<td>edit/line/paste/over</td>
+<td>Liitä rivit korvaten</td>
+<td>Liitä rivejä toisten rivien päälle</td>
+</tr>
+<tr>
+<td>edit/line/recombine</td>
+<td>Koosta rivit</td>
+<td>Koosta uudelleen (recombine) rivit, jotka on ensin jaettu ja sitten yhdistetty</td>
+</tr>
+<tr>
+<td>edit/line/split/after</td>
+<td>Split lines after current frame</td>
+<td>Split the current line into a line which ends on the current frame and a line which starts on the next frame</td>
+</tr>
+<tr>
+<td>edit/line/split/before</td>
+<td>Split lines before current frame</td>
+<td>Split the current line into a line which ends on the previous frame and a line which starts on the current frame</td>
+</tr>
+<tr>
+<td>edit/line/split/by_karaoke</td>
+<td>Jaa rivit (karaoketavujen kohdalta)</td>
+<td>Jaa rivit lyhyemmiksi karaokeajoituksessa määrätyistä kohdista</td>
+</tr>
+<tr>
+<td>edit/line/split/estimate</td>
+<td>Jaa kohdistimen kohdalta (arvioi ajat)</td>
+<td>Split the current line at the cursor, dividing the original line's duration between the new ones</td>
+</tr>
+<tr>
+<td>edit/line/split/preserve</td>
+<td>Jaa kohdistimen kohdalta (säilytä ajat)</td>
+<td>Split the current line at the cursor, setting both lines to the original line's times</td>
+</tr>
+<tr>
+<td>edit/line/split/video</td>
+<td>Split at cursor (at video frame)</td>
+<td>Split the current line at the cursor, dividing the line's duration at the current video frame</td>
+</tr>
+<tr>
+<td>edit/redo</td>
+<td>Ei voi tehdä uudelleen</td>
+<td>Tee viimeisin toiminto uudelleen</td>
+</tr>
+<tr>
+<td>edit/revert</td>
+<td>Revert</td>
+<td>Revert the active line to its initial state (shown in the upper editor)</td>
+</tr>
+<tr>
+<td>edit/style/bold</td>
+<td>Lihavointi päälle/pois</td>
+<td>Toggle bold (\b) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/italic</td>
+<td>Kursivointi päälle/pois</td>
+<td>Toggle italics (\i) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/strikeout</td>
+<td>Yliviivaus päälle/pois</td>
+<td>Toggle strikeout (\s) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/underline</td>
+<td>Alleviivaus päälle/pois</td>
+<td>Toggle underline (\u) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/undo</td>
+<td>Ei voi kumota</td>
+<td>Kumoa viimeisin toiminto</td>
+</tr>
+<tr>
+<td>grid/line/next</td>
+<td>Seuraava rivi</td>
+<td>Siirry seuraavalle tekstitysriville</td>
+</tr>
+<tr>
+<td>grid/line/next/create</td>
+<td>Seuraava rivi</td>
+<td>Siirry seuraavalle tekstitysriville; jos sitä ei ole, se luodaan</td>
+</tr>
+<tr>
+<td>grid/line/prev</td>
+<td>Edellinen rivi</td>
+<td>Siirry edelliselle riville</td>
+</tr>
+<tr>
+<td>grid/move/down</td>
+<td>Siirrä riviä alemmas</td>
+<td>Siirrä valittuja rivejä yksi rivi alemmas</td>
+</tr>
+<tr>
+<td>grid/move/up</td>
+<td>Siirrä riviä ylemmäs</td>
+<td>Siirrä valittuja rivejä yksi rivi ylemmäs</td>
+</tr>
+<tr>
+<td>grid/sort/actor</td>
+<td>Näyttelijän nimi</td>
+<td>Järjestä kaikki rivit näyttelijän nimen perusteella</td>
+</tr>
+<tr>
+<td>grid/sort/actor/selected</td>
+<td>Näyttelijän nimi</td>
+<td>Järjestä valitut rivit näyttelijän nimen perusteella</td>
+</tr>
+<tr>
+<td>grid/sort/effect</td>
+<td>Tehoste</td>
+<td>Järjestä kaikki rivit tehosteen perusteella</td>
+</tr>
+<tr>
+<td>grid/sort/effect/selected</td>
+<td>Tehoste</td>
+<td>Järjestä valitut rivit tehosteen perusteella</td>
+</tr>
+<tr>
+<td>grid/sort/end</td>
+<td>Loppuaika</td>
+<td>Järjestä kaikki rivit loppuajan perusteella</td>
+</tr>
+<tr>
+<td>grid/sort/end/selected</td>
+<td>Loppuaika</td>
+<td>Järjestä valitut rivit loppuajan perusteella</td>
+</tr>
+<tr>
+<td>grid/sort/layer</td>
+<td>Taso</td>
+<td>Järjestä kaikki rivit tasoluvun perusteella</td>
+</tr>
+<tr>
+<td>grid/sort/layer/selected</td>
+<td>Taso</td>
+<td>Järjestä valitut rivit tasoluvun perusteella</td>
+</tr>
+<tr>
+<td>grid/sort/start</td>
+<td>Alkuaika</td>
+<td>Järjestä kaikki rivit alkuajan perusteella</td>
+</tr>
+<tr>
+<td>grid/sort/start/selected</td>
+<td>Alkuaika</td>
+<td>Järjestä valitut rivit alkuajan perusteella</td>
+</tr>
+<tr>
+<td>grid/sort/style</td>
+<td>Tyylin nimi</td>
+<td>Järjestä kaikki rivit tyylin nimen perusteella</td>
+</tr>
+<tr>
+<td>grid/sort/style/selected</td>
+<td>Tyylin nimi</td>
+<td>Järjestä valitut rivit tyylin nimen perusteella</td>
+</tr>
+<tr>
+<td>grid/swap</td>
+<td>Vaihda rivien paikat</td>
+<td>Vaihda kahden valitun rivin paikat</td>
+</tr>
+<tr>
+<td>grid/tag/cycle_hiding</td>
+<td>Tagien piilotus, kuvio tai näyttö </td>
+<td>Tagien piilotus, kuvio tai näyttö</td>
+</tr>
+<tr>
+<td>grid/tags/hide</td>
+<td>Piilota tagit</td>
+<td>Piilota korvaustagit tekstitysrivistöstä</td>
+</tr>
+<tr>
+<td>grid/tags/show</td>
+<td>Näytä tagit</td>
+<td>Näytä korvaustagit tekstitysrivistössä kokonaan</td>
+</tr>
+<tr>
+<td>grid/tags/simplify</td>
+<td>Yksinkertaista tagit</td>
+<td>Näytä tekstitysrivistössä korvaustagien paikalla yksinkertaiset symbolit</td>
+</tr>
+<tr>
+<td>help/bugs</td>
+<td>Vianseuranta</td>
+<td>Tutustu Aegisubin vianseurantaan kertoaksesi vioista tai ehdottaaksesi uusia ominaisuuksia</td>
+</tr>
+<tr>
+<td>help/contents</td>
+<td>Käyttöohje</td>
+<td>Ohjeen aiheet</td>
+</tr>
+<tr>
+<td>help/forums</td>
+<td>Keskustelu</td>
+<td>Tutustu Aegisubin keskustelualueeseen</td>
+</tr>
+<tr>
+<td>help/irc</td>
+<td>IRC-kanava</td>
+<td>Tule käymään Aegisubin virallisella IRC-kanavalla</td>
+</tr>
+<tr>
+<td>help/video</td>
+<td>Visuaalinen tekstinasettelu</td>
+<td>Käyttöohjeen sivu: visuaalinen tekstinasettelu</td>
+</tr>
+<tr>
+<td>help/website</td>
+<td>Kotisivu</td>
+<td>Käy tutustumassa Aegisubin viralliseen kotisivustoon</td>
+</tr>
+<tr>
+<td>keyframe/close</td>
+<td>Sulje avainkuvat</td>
+<td>Discard the currently loaded keyframes and use those from the video, if any</td>
+</tr>
+<tr>
+<td>keyframe/open</td>
+<td>Avaa avainkuvat</td>
+<td>Avaa avainkuvalista</td>
+</tr>
+<tr>
+<td>keyframe/save</td>
+<td>Tallenna avainkuvat</td>
+<td>Tallenna nykyinen avainkuvalista tiedostoon</td>
+</tr>
+<tr>
+<td>subtitle/attachment</td>
+<td>Liitteet</td>
+<td>Avaa tekstitystiedostoon liitettyjen tiedostojen hallintaikkuna</td>
+</tr>
+<tr>
+<td>subtitle/find</td>
+<td>Etsi</td>
+<td>Etsiä tekstiä tekstityksistä</td>
+</tr>
+<tr>
+<td>subtitle/find/next</td>
+<td>Etsi seuraava</td>
+<td>Etsi viimeisimmän haun seuraava osuma</td>
+</tr>
+<tr>
+<td>subtitle/insert/after</td>
+<td>Jälkeen</td>
+<td>Lisää uusi rivi valitun rivin jälkeen</td>
+</tr>
+<tr>
+<td>subtitle/insert/after/videotime</td>
+<td>Jälkeen, videokuvan ajalla</td>
+<td>Lisää rivi valitun rivin jälkeen, videon ajalla</td>
+</tr>
+<tr>
+<td>subtitle/insert/before</td>
+<td>Ennen</td>
+<td>Lisää uusi rivi ennen valittua riviä</td>
+</tr>
+<tr>
+<td>subtitle/insert/before/videotime</td>
+<td>Ennen, videokuvan ajalla</td>
+<td>Lisää uusi rivi ennen valittua riviä, videon ajalla</td>
+</tr>
+<tr>
+<td>subtitle/new</td>
+<td>Uusi tekstitys</td>
+<td>Uusi tekstitystiedosto</td>
+</tr>
+<tr>
+<td>subtitle/open</td>
+<td>Avaa tekstitys</td>
+<td>Avaa tekstitystiedosto</td>
+</tr>
+<tr>
+<td>subtitle/open/autosave</td>
+<td>Avaa automaattisesti tallennettu tekstitys</td>
+<td>Avaa Aegisubin automaattisesti tallentama aiempi versio tiedostosta</td>
+</tr>
+<tr>
+<td>subtitle/open/charset</td>
+<td>Avaa tekstitys merkistöllä</td>
+<td>Avaa tekstitystiedosto tietyllä merkistöllä</td>
+</tr>
+<tr>
+<td>subtitle/open/video</td>
+<td>Avaa tekstitys videosta</td>
+<td>Avaa tekstitys avatusta videotiedostosta</td>
+</tr>
+<tr>
+<td>subtitle/properties</td>
+<td>Asetukset</td>
+<td>Avaa tekstitystiedoston tekijät ja asetukset</td>
+</tr>
+<tr>
+<td>subtitle/save</td>
+<td>Tallenna tekstitys</td>
+<td>Tallenna nykyinen tekstitys</td>
+</tr>
+<tr>
+<td>subtitle/save/as</td>
+<td>Tallenna tekstitys nimellä</td>
+<td>Tallenna tekstitystiedosto toisella nimellä</td>
+</tr>
+<tr>
+<td>subtitle/select/all</td>
+<td>Valitse kaikki</td>
+<td>Valitse kaikki tekstitysrivit</td>
+</tr>
+<tr>
+<td>subtitle/select/visible</td>
+<td>Valitse näkyvät</td>
+<td>Select all dialogue lines that are visible on the current video frame</td>
+</tr>
+<tr>
+<td>subtitle/spellcheck</td>
+<td>Oikoluku</td>
+<td>Avaa oikoluku</td>
+</tr>
+<tr>
+<td>time/continuous/end</td>
+<td>Siirrä loppua</td>
+<td>Change end times of lines to the next line's start time</td>
+</tr>
+<tr>
+<td>time/continuous/start</td>
+<td>Siirrä alkua</td>
+<td>Change start times of lines to the previous line's end time</td>
+</tr>
+<tr>
+<td>time/frame/current</td>
+<td>Siirrä nykyiseen kuvaan</td>
+<td>Siirrä valintaa siten, että aktiivinen rivi alkaa nykyisestä kuvasta</td>
+</tr>
+<tr>
+<td>time/lead/both</td>
+<td>Lisää etu- ja jälkiaikaa</td>
+<td>Add both lead in and out to the selected lines</td>
+</tr>
+<tr>
+<td>time/lead/in</td>
+<td>Lisää etuaikaa</td>
+<td>Add the lead in time to the selected lines</td>
+</tr>
+<tr>
+<td>time/lead/out</td>
+<td>Lisää jälkiaikaa</td>
+<td>Add the lead out time to the selected lines</td>
+</tr>
+<tr>
+<td>time/length/decrease</td>
+<td>Lyhennä</td>
+<td>Lyhennä nykyistä ajoitusyksikköä</td>
+</tr>
+<tr>
+<td>time/length/decrease/shift</td>
+<td>Lyhennä nykyistä ajoitusyksikköä ja siirrä</td>
+<td>Lyhennä nykyistä ajoitusyksikköä ja siirrä seuraavia yksiköitä</td>
+</tr>
+<tr>
+<td>time/length/increase</td>
+<td>Pidennä</td>
+<td>Pidennä nykyistä ajoitusyksikköä</td>
+</tr>
+<tr>
+<td>time/length/increase/shift</td>
+<td>Pidennä yksikköä ja siirrä</td>
+<td>Pidennä nykyistä ajoitusyksikköä ja siirrä seuraavia yksiköitä</td>
+</tr>
+<tr>
+<td>time/next</td>
+<td>Seuraava rivi</td>
+<td>Seuraava rivi tai tavu</td>
+</tr>
+<tr>
+<td>time/prev</td>
+<td>Edellinen rivi</td>
+<td>Edellinen rivi tai tavu</td>
+</tr>
+<tr>
+<td>time/shift</td>
+<td>Siirrä aikoja</td>
+<td>Siirtää käännöksien ajoituksia ajan tai kuvien mukaan</td>
+</tr>
+<tr>
+<td>time/snap/end_video</td>
+<td>Aseta rivien loppuaika videosta</td>
+<td>Aseta valittujen rivien loppuajaksi nykyisen videokuvan aika</td>
+</tr>
+<tr>
+<td>time/snap/scene</td>
+<td>Sovita kohtaukseen</td>
+<td>Aseta tekstityksen alku- ja loppuajaksi nykyisen kuvan viereisten avainkuvien ajat</td>
+</tr>
+<tr>
+<td>time/snap/start_video</td>
+<td>Aseta rivien alkuaika videosta</td>
+<td>Aseta valittujen rivien alkuajaksi nykyisen videokuvan aika</td>
+</tr>
+<tr>
+<td>time/start/decrease</td>
+<td>Siirrä alkuaikaa taaksepäin</td>
+<td>Siirrä nykyisen ajoitusyksikön alkuaikaa taaksepäin</td>
+</tr>
+<tr>
+<td>time/start/increase</td>
+<td>Siirrä alkuaikaa eteenpäin</td>
+<td>Siirrä nykyisen ajoitusyksikön alkuaikaa eteenpäin</td>
+</tr>
+<tr>
+<td>timecode/close</td>
+<td>Sulje aikakoodit</td>
+<td>Sulje avattu aikakooditiedosto</td>
+</tr>
+<tr>
+<td>timecode/open</td>
+<td>Avaa aikakoodit</td>
+<td>Avaa VFR aikakoodit v1 tai v2 tiedosto</td>
+</tr>
+<tr>
+<td>timecode/save</td>
+<td>Tallenna aikakoodit</td>
+<td>Tallenna VFR aikakoodi v2 tiedosto</td>
+</tr>
+<tr>
+<td>tool/export</td>
+<td>Vie tekstitys</td>
+<td>Save a copy of subtitles in a different format or with processing applied to it</td>
+</tr>
+<tr>
+<td>tool/font_collector</td>
+<td>Fonttikeräin</td>
+<td>Avaa fonttikeräimen</td>
+</tr>
+<tr>
+<td>tool/line/select</td>
+<td>Valitse rivejä</td>
+<td>Valitse rivit annettujen tietojen perusteella</td>
+</tr>
+<tr>
+<td>tool/resampleres</td>
+<td>Muuta tarkkuutta</td>
+<td>Resample subtitles to maintain their current appearance at a different script resolution</td>
+</tr>
+<tr>
+<td>tool/style/assistant</td>
+<td>Tyyliavustaja</td>
+<td>Avaa tyyliavustaja</td>
+</tr>
+<tr>
+<td>tool/style/manager</td>
+<td>Tyylien hallinta</td>
+<td>Avaa tyylien hallinta</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/commit</td>
+<td>Hyväksy muutokset</td>
+<td>Hyväksy muutokset ja siirry seuraavalle riville</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/preview</td>
+<td>Esikatsele muutokset</td>
+<td>Hyväksy muutokset ja pysy nykyisellä rivillä</td>
+</tr>
+<tr>
+<td>tool/time/kanji</td>
+<td>Kanjiajoitin</td>
+<td>Avaa kanjiajoitin</td>
+</tr>
+<tr>
+<td>tool/time/postprocess</td>
+<td>Ajoituksen jälkikäsittely</td>
+<td>Post-process the subtitle timing to add lead-ins and lead-outs, snap timing to scene changes, etc.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant</td>
+<td>Käännösavustaja</td>
+<td>Avaa käännösavustajan</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/commit</td>
+<td>Hyväksy muutokset</td>
+<td>Hyväksy muutokset ja siirry seuraavalle riville</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/insert_original</td>
+<td>Lisää alkuteksti</td>
+<td>Lisää kääntämätön teksti</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/next</td>
+<td>Seuraava rivi</td>
+<td>Siirry seuraavalle riville hyväksymättä muutoksia</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/prev</td>
+<td>Edellinen rivi</td>
+<td>Siirry edelliselle riville hyväksymättä muutoksia</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/preview</td>
+<td>Esikatsele muutokset</td>
+<td>Hyväksy muutokset ja pysy nykyisellä rivillä</td>
+</tr>
+<tr>
+<td>video/aspect/cinematic</td>
+<td>Elokuvateatterimainen (2.35)</td>
+<td>Pakota video 2.35 kuvasuhteeseen</td>
+</tr>
+<tr>
+<td>video/aspect/custom</td>
+<td>Erikoinen</td>
+<td>Pakota video erikoiseen kuvasuhteeseen</td>
+</tr>
+<tr>
+<td>video/aspect/default</td>
+<td>Oletus</td>
+<td>Käytä videon alkuperäistä kuvasuhdetta</td>
+</tr>
+<tr>
+<td>video/aspect/full</td>
+<td>Kokoruutu (4:3)</td>
+<td>Pakota video 4:3 kuvasuhteeseen</td>
+</tr>
+<tr>
+<td>video/aspect/wide</td>
+<td>Laajakuva (16:9)</td>
+<td>Pakota video 16:9 kuvasuhteeseen</td>
+</tr>
+<tr>
+<td>video/close</td>
+<td>Sulje video</td>
+<td>Sulje avattu video</td>
+</tr>
+<tr>
+<td>video/copy_coordinates</td>
+<td>Kopioi koordinaatit</td>
+<td>Kopioi kuvan päällä olevan hiiren nykyiset koordinaatit leikepöydälle</td>
+</tr>
+<tr>
+<td>video/detach</td>
+<td>Irrota video</td>
+<td>Irrota videonäkymä pääikkunasta omaksi ikkunakseen</td>
+</tr>
+<tr>
+<td>video/details</td>
+<td>Näytä videon tiedot</td>
+<td>Näytä videon tiedot</td>
+</tr>
+<tr>
+<td>video/focus_seek</td>
+<td>Kohdista kuvaselainta tai poista sen kohdistus</td>
+<td>Vaihda kohdistusta kuvaselaimen ja viimeksi kohdistetun elementin välillä</td>
+</tr>
+<tr>
+<td>video/frame/copy</td>
+<td>Kopioi</td>
+<td>Kopioi näkyvissä oleva kuva leikepöydälle</td>
+</tr>
+<tr>
+<td>video/frame/copy/raw</td>
+<td>Kopioi (ei tekstityksiä)</td>
+<td>Kopioi näkyvissä oleva kuva leikepöydälle ilman tekstitystä</td>
+</tr>
+<tr>
+<td>video/frame/next</td>
+<td>Seuraava kuva</td>
+<td>Siirry seuraavaan kuvaan</td>
+</tr>
+<tr>
+<td>video/frame/next/boundary</td>
+<td>Seuraava raja</td>
+<td>Siirry seuraavaan tekstityksen alkuun tai loppuun</td>
+</tr>
+<tr>
+<td>video/frame/next/keyframe</td>
+<td>Seuraava avainkuva</td>
+<td>Siirry seuraavaan avainkuvaan</td>
+</tr>
+<tr>
+<td>video/frame/next/large</td>
+<td>Nopea hyppy eteenpäin</td>
+<td>Nopea hyppy eteenpäin</td>
+</tr>
+<tr>
+<td>video/frame/prev</td>
+<td>Edellinen kuva</td>
+<td>Siirry edelliseen kuvaan</td>
+</tr>
+<tr>
+<td>video/frame/prev/boundary</td>
+<td>Edellinen raja</td>
+<td>Siirry edelliseen tekstityksen alkuun tai loppuun</td>
+</tr>
+<tr>
+<td>video/frame/prev/keyframe</td>
+<td>Edellinen avainkuva</td>
+<td>Siirry edelliseen avainkuvaan</td>
+</tr>
+<tr>
+<td>video/frame/prev/large</td>
+<td>Nopea hyppy taaksepäin</td>
+<td>Nopea hyppy taaksepäin</td>
+</tr>
+<tr>
+<td>video/frame/save</td>
+<td>Tallenna PNG-kuvankaappaus</td>
+<td>Tallenna näkyvissä oleva kuva PNG-tiedostoksi videon kansioon</td>
+</tr>
+<tr>
+<td>video/frame/save/raw</td>
+<td>Tallenna PNG-kuvankaappaus (ilman tekstityksiä)</td>
+<td>Tallenna näkyvissä oleva kuva ilman tekstityksiä PNG-tiedostoksi videon kansioon</td>
+</tr>
+<tr>
+<td>video/jump</td>
+<td>Hyppää</td>
+<td>Siirry kuvaan tai aikaan</td>
+</tr>
+<tr>
+<td>video/jump/end</td>
+<td>Siirrä video rivin loppuun</td>
+<td>Siirrä video valitun tekstitysrivin loppukuvaan</td>
+</tr>
+<tr>
+<td>video/jump/start</td>
+<td>Siirrä video rivin alkuun</td>
+<td>Siirrä video valitun tekstitysrivin alkukuvaan</td>
+</tr>
+<tr>
+<td>video/open</td>
+<td>Avaa video</td>
+<td>Avaa videotiedosto</td>
+</tr>
+<tr>
+<td>video/open/dummy</td>
+<td>Käytä tyhjää kuvaa</td>
+<td>Avaa yksivärinen tyhjä videoleike</td>
+</tr>
+<tr>
+<td>video/opt/autoscroll</td>
+<td>Välitön kuvaselaus valitun tekstirivin mukaan</td>
+<td>Toggle automatically seeking video to the start time of selected lines</td>
+</tr>
+<tr>
+<td>video/play</td>
+<td>Toista</td>
+<td>Toista video</td>
+</tr>
+<tr>
+<td>video/play/line</td>
+<td>Toista rivi</td>
+<td>Toista valittu rivi</td>
+</tr>
+<tr>
+<td>video/show_overscan</td>
+<td>Näytä overscan-peite</td>
+<td>Peittää videon päältä alueita viitaten alueisiin jotka mahdollisesti menee ruudun ylitse overscanin takia televisioissa</td>
+</tr>
+<tr>
+<td>video/stop</td>
+<td>Pysäytä video</td>
+<td>Pysäytä video</td>
+</tr>
+<tr>
+<td>video/subtitles_provider/cycle</td>
+<td>Cycle active subtitles provider</td>
+<td>Cycle through the available subtitles providers</td>
+</tr>
+<tr>
+<td>video/tool/clip</td>
+<td>Klippaa</td>
+<td>Piirrä tekstistä näkymään vain nelikulmainen alue</td>
+</tr>
+<tr>
+<td>video/tool/cross</td>
+<td>Sijainti</td>
+<td>Kaksoisnapsautus asettaa tekstin sijainnin</td>
+</tr>
+<tr>
+<td>video/tool/drag</td>
+<td>Vedä</td>
+<td>Vedä tekstiä</td>
+</tr>
+<tr>
+<td>video/tool/rotate/xy</td>
+<td>Pyöritä XY</td>
+<td>Pyöritä tekstiä X- ja Y-akseleiden ympäri</td>
+</tr>
+<tr>
+<td>video/tool/rotate/z</td>
+<td>Pyöritä Z</td>
+<td>Pyöritä tekstiä Z-akselin ympäri</td>
+</tr>
+<tr>
+<td>video/tool/scale</td>
+<td>Skaalaa</td>
+<td>Skaalaa tekstiä X- ja Y-akseleiden suhteen</td>
+</tr>
+<tr>
+<td>video/tool/vector_clip</td>
+<td>Vektori klippaus</td>
+<td>Piirrä vektoreilla näkymään tekstistä määrätty alue</td>
+</tr>
+<tr>
+<td>video/zoom/100</td>
+<td>100 %</td>
+<td>Aseta kuvan koko 100 %</td>
+</tr>
+<tr>
+<td>video/zoom/200</td>
+<td>200 %</td>
+<td>Aseta kuvan koko 200 %</td>
+</tr>
+<tr>
+<td>video/zoom/50</td>
+<td>50 %</td>
+<td>Aseta kuvan koko 50 %</td>
+</tr>
+<tr>
+<td>video/zoom/in</td>
+<td>Lähennä</td>
+<td>Lähennä videota</td>
+</tr>
+<tr>
+<td>video/zoom/out</td>
+<td>Loitonna</td>
+<td>Loitonna videota</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Commands/fi/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:16:51 GMT -->
+</html>
+

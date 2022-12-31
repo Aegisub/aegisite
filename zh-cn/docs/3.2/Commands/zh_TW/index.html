@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Commands/zh_TW/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:16:53 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>zh TW - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../../Automation/index.html">概述</a>
+</li>
+<li>
+<a href="../../Automation/Karaoke_Templater/index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../../Automation/Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>zh TW</h1>
+<table style='width: 100%; margin-bottom: 2em'>
+<tr>
+<td>
+<a href='../en_US/index.html'>English (U.S.)</a>
+</td>
+<td>
+<a href='../ar/index.html'>Arabic</a>
+</td>
+<td>
+<a href='../bg/index.html'>Bulgarian</a>
+</td>
+<td>
+<a href='../ca/index.html'>Catalan</a>
+</td>
+<td>
+<a href='../cs/index.html'>Czech</a>
+</td>
+<td>
+<a href='../da/index.html'>Danish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../de/index.html'>German</a>
+</td>
+<td>
+<a href='../el/index.html'>Greek</a>
+</td>
+<td>
+<a href='../es/index.html'>Spanish</a>
+</td>
+<td>
+<a href='../eu/index.html'>Basque</a>
+</td>
+<td>
+<a href='../fa/index.html'>Farsi</a>
+</td>
+<td>
+<a href='../fi/index.html'>Finnish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../fr_FR/index.html'>French</a>
+</td>
+<td>
+<a href='../gl/index.html'>Galician</a>
+</td>
+<td>
+<a href='../hu/index.html'>Hungarian</a>
+</td>
+<td>
+<a href='../id/index.html'>Indonesian</a>
+</td>
+<td>
+<a href='../it/index.html'>Italian</a>
+</td>
+<td>
+<a href='../ja/index.html'>Japanese</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../ko/index.html'>Korean</a>
+</td>
+<td>
+<a href='../nl/index.html'>Dutch</a>
+</td>
+<td>
+<a href='../pl/index.html'>Polish</a>
+</td>
+<td>
+<a href='../pt_BR/index.html'>Portuguese (Brazilian)</a>
+</td>
+<td>
+<a href='../pt_PT/index.html'>Portuguese</a>
+</td>
+<td>
+<a href='../ru/index.html'>Russian</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../sr_YU/index.html'>Serbian (Cyrillic)</a>
+</td>
+<td>
+<a href='../sr_YU%40latin/index.html'>Serbian (Latin)</a>
+</td>
+<td>
+<a href='../vi/index.html'>Vietnamese</a>
+</td>
+<td>
+<a href='../zh_CN/index.html'>Chinese (Simplified)</a>
+</td>
+<td>
+<a href='index.html'>Chinese</a>
+</td>
+</tr>
+</table>
+<table class='karatable'>
+<tr>
+<th>Name</th>
+<th>Display</th>
+<th>Help</th>
+</tr>
+<tr>
+<td>am/manager</td>
+<td>自動化</td>
+<td>打開自動化腳本管理器</td>
+</tr>
+<tr>
+<td>am/meta</td>
+<td>自動化</td>
+<td>打開自動化腳本管理器。按Ctrl：重新掃描自動載入資料夾。按Ctrl + Shift：重新掃描自動載入資料夾，並重新載入所有自動化腳本</td>
+</tr>
+<tr>
+<td>am/reload</td>
+<td>重新載入自動化腳本</td>
+<td>重新載入所有自動化腳本，並重新掃描自動載入資料夾</td>
+</tr>
+<tr>
+<td>am/reload/autoload</td>
+<td>重新載入自動載入的自動化腳本</td>
+<td>重新掃描自動化自動載入資料夾</td>
+</tr>
+<tr>
+<td>app/about</td>
+<td>關於</td>
+<td>關於 Aegisub</td>
+</tr>
+<tr>
+<td>app/display/audio_subs</td>
+<td>音訊+字幕模式</td>
+<td>僅顯示音訊和字幕</td>
+</tr>
+<tr>
+<td>app/display/full</td>
+<td>完全模式</td>
+<td>顯示音訊、視訊和字幕欄</td>
+</tr>
+<tr>
+<td>app/display/subs</td>
+<td>僅字幕模式</td>
+<td>僅顯示字幕欄</td>
+</tr>
+<tr>
+<td>app/display/video_subs</td>
+<td>視訊+字幕模式</td>
+<td>僅顯示視訊和字幕欄</td>
+</tr>
+<tr>
+<td>app/exit</td>
+<td>退出</td>
+<td>退出程式</td>
+</tr>
+<tr>
+<td>app/language</td>
+<td>語言</td>
+<td>選擇Aegisub介面語言</td>
+</tr>
+<tr>
+<td>app/log</td>
+<td>日誌視窗</td>
+<td>檢視事件記錄</td>
+</tr>
+<tr>
+<td>app/new_window</td>
+<td>新建視窗</td>
+<td>打開一個新的應用視窗</td>
+</tr>
+<tr>
+<td>app/options</td>
+<td>選項</td>
+<td>配置Aegisub</td>
+</tr>
+<tr>
+<td>app/toggle/global_hotkeys</td>
+<td>切換全域熱鍵模式</td>
+<td>切換全域熱鍵模式（Medusa模式）</td>
+</tr>
+<tr>
+<td>app/toggle/toolbar</td>
+<td>隱藏工具列</td>
+<td>開啟和關閉主工具列</td>
+</tr>
+<tr>
+<td>app/updates</td>
+<td>檢查更新</td>
+<td>檢查是否有可用的新版Aegisub</td>
+</tr>
+<tr>
+<td>audio/close</td>
+<td>關閉音訊</td>
+<td>關閉當前開啟的音訊檔案</td>
+</tr>
+<tr>
+<td>audio/commit</td>
+<td>提交</td>
+<td>提交所有在波形上對時間的更改</td>
+</tr>
+<tr>
+<td>audio/commit/default</td>
+<td>提交並在下一行使用預設的計時</td>
+<td>提交所有掛起的音頻計時更改,並重置下一行的時間為缺省</td>
+</tr>
+<tr>
+<td>audio/commit/next</td>
+<td>接受更改並移動到下一行</td>
+<td>提交所有通過音訊對時間的更改並移動到下一行</td>
+</tr>
+<tr>
+<td>audio/commit/stay</td>
+<td>提交並留在當前行</td>
+<td>提交所有通過音訊對時間的更改並留在當前行</td>
+</tr>
+<tr>
+<td>audio/go_to</td>
+<td>轉至所選部分</td>
+<td>捲動音訊使所選部分顯示在中間</td>
+</tr>
+<tr>
+<td>audio/karaoke</td>
+<td>切換卡拉OK模式</td>
+<td>切換卡拉OK模式</td>
+</tr>
+<tr>
+<td>audio/open</td>
+<td>打開音訊檔</td>
+<td>打開一個音訊檔</td>
+</tr>
+<tr>
+<td>audio/open/blank</td>
+<td>打開150分鐘(2h30min)的空白音訊</td>
+<td>打開一個150分鐘的空白音訊片段用於除錯</td>
+</tr>
+<tr>
+<td>audio/open/noise</td>
+<td>打開150分鐘(2h30min)的噪音</td>
+<td>打開一個150分鐘的噪音片段用於除錯</td>
+</tr>
+<tr>
+<td>audio/open/video</td>
+<td>從視訊中打開音訊</td>
+<td>從當前視訊檔中打開音訊</td>
+</tr>
+<tr>
+<td>audio/opt/autocommit</td>
+<td>自動提交所有更改</td>
+<td>自動提交所有更改</td>
+</tr>
+<tr>
+<td>audio/opt/autonext</td>
+<td>提交後自動轉至下一行</td>
+<td>提交後自動轉至下一行</td>
+</tr>
+<tr>
+<td>audio/opt/autoscroll</td>
+<td>自動捲動音訊顯示至所選行</td>
+<td>自動捲動音訊顯示至所選行</td>
+</tr>
+<tr>
+<td>audio/opt/spectrum</td>
+<td>頻譜分析模式</td>
+<td>頻譜分析模式</td>
+</tr>
+<tr>
+<td>audio/opt/vertical_link</td>
+<td>同時調節垂直縮放與音量</td>
+<td>同時調節垂直縮放與音量</td>
+</tr>
+<tr>
+<td>audio/play/current</td>
+<td>播放當前選擇部分音訊</td>
+<td>播放當前選擇部分音訊，播放時忽略所做的更改</td>
+</tr>
+<tr>
+<td>audio/play/line</td>
+<td>播放當前行</td>
+<td>播放當前行</td>
+</tr>
+<tr>
+<td>audio/play/selection</td>
+<td>播放選擇部分音訊</td>
+<td>播放音訊，直到選擇結束為止</td>
+</tr>
+<tr>
+<td>audio/play/selection/after</td>
+<td>播放所選部分之後 500 毫秒</td>
+<td>播放所選部分之後 500 毫秒</td>
+</tr>
+<tr>
+<td>audio/play/selection/before</td>
+<td>播放所選部分之前 500 毫秒</td>
+<td>播放所選部分之前 500 毫秒</td>
+</tr>
+<tr>
+<td>audio/play/selection/begin</td>
+<td>播放所選部分頭 500 毫秒</td>
+<td>播放所選部分頭 500 毫秒</td>
+</tr>
+<tr>
+<td>audio/play/selection/end</td>
+<td>播放所選部分末 500 毫秒</td>
+<td>播放所選部分末 500 毫秒</td>
+</tr>
+<tr>
+<td>audio/play/to_end</td>
+<td>播放所選部分起始至音訊結束</td>
+<td>播放所選部分起始至音訊結束</td>
+</tr>
+<tr>
+<td>audio/play/toggle</td>
+<td>播放選擇部分音訊或停止</td>
+<td>播放選擇部分音訊，或停止重播如果已經在播放中</td>
+</tr>
+<tr>
+<td>audio/save/clip</td>
+<td>創建音訊剪輯</td>
+<td>創建所選行的音訊剪輯</td>
+</tr>
+<tr>
+<td>audio/scroll/left</td>
+<td>音訊向左捲動</td>
+<td>向左捲動音訊的顯示</td>
+</tr>
+<tr>
+<td>audio/scroll/right</td>
+<td>音訊向右捲動</td>
+<td>向右捲動音訊的顯示</td>
+</tr>
+<tr>
+<td>audio/stop</td>
+<td>停止播放</td>
+<td>停止音訊和視訊重播</td>
+</tr>
+<tr>
+<td>audio/view/spectrum</td>
+<td>顯示頻譜</td>
+<td>以頻譜方式顯示音訊</td>
+</tr>
+<tr>
+<td>audio/view/waveform</td>
+<td>顯示波形</td>
+<td>以波形方式顯示音訊</td>
+</tr>
+<tr>
+<td>automation/lua/cleantags-autoload/Clean Tags</td>
+<td>Clean Tags</td>
+<td>Clean subtitle lines by re-arranging ASS tags and override blocks within the lines</td>
+</tr>
+<tr>
+<td>automation/lua/kara-templater/Apply karaoke template</td>
+<td>Apply karaoke template</td>
+<td>Applies karaoke effects from templates</td>
+</tr>
+<tr>
+<td>automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in</td>
+<td>Automatic karaoke lead-in</td>
+<td>Join up the ends of selected lines and add \k tags to shift karaoke</td>
+</tr>
+<tr>
+<td>automation/lua/macro-1-edgeblur/Add edgeblur</td>
+<td>Add edgeblur</td>
+<td>Adds \be1 tags to all selected lines</td>
+</tr>
+<tr>
+<td>automation/lua/macro-2-mkfullwitdh/Make fullwidth</td>
+<td>Make fullwidth</td>
+<td>Convert Latin letters to SJIS fullwidth letters</td>
+</tr>
+<tr>
+<td>automation/lua/select-overlaps/Select overlaps</td>
+<td>Select overlaps</td>
+<td>Select lines which begin while another non-comment line is active</td>
+</tr>
+<tr>
+<td>automation/lua/strip-tags/Strip tags</td>
+<td>Strip tags</td>
+<td>Remove all override tags from selected lines</td>
+</tr>
+<tr>
+<td>edit/clear</td>
+<td>清除</td>
+<td>清除當前行的所有文本</td>
+</tr>
+<tr>
+<td>edit/clear/text</td>
+<td>清除文本</td>
+<td>清除當前行的文本，只保留tag</td>
+</tr>
+<tr>
+<td>edit/color/outline</td>
+<td>邊框顏色</td>
+<td>設置邊框填充色標籤(\3c)，應用於游標的位置之後</td>
+</tr>
+<tr>
+<td>edit/color/primary</td>
+<td>主要顏色</td>
+<td>設置主要填充色標籤(\c)，應用於游標的位置之後</td>
+</tr>
+<tr>
+<td>edit/color/secondary</td>
+<td>次要顏色</td>
+<td>設置次要填充色（用於卡拉OK效果）標籤(\2c)，應用於滑鼠的位置之後</td>
+</tr>
+<tr>
+<td>edit/color/shadow</td>
+<td>陰影顏色</td>
+<td>設置陰影填充色標籤(\4c)，應用於游標的位置之後</td>
+</tr>
+<tr>
+<td>edit/find_replace</td>
+<td>搜索替換</td>
+<td>在字幕中查找並替換字串</td>
+</tr>
+<tr>
+<td>edit/font</td>
+<td>字體</td>
+<td>設置字體和大小</td>
+</tr>
+<tr>
+<td>edit/insert_original</td>
+<td>插入原文</td>
+<td>在游標處插入原文</td>
+</tr>
+<tr>
+<td>edit/line/copy</td>
+<td>複製行</td>
+<td>複製字幕到剪貼板</td>
+</tr>
+<tr>
+<td>edit/line/cut</td>
+<td>剪下行</td>
+<td>剪下字幕</td>
+</tr>
+<tr>
+<td>edit/line/delete</td>
+<td>刪除行</td>
+<td>刪除當前所選行</td>
+</tr>
+<tr>
+<td>edit/line/duplicate</td>
+<td>重複行</td>
+<td>重複所選行</td>
+</tr>
+<tr>
+<td>edit/line/join/as_karaoke</td>
+<td>視為卡拉OK</td>
+<td>將所選行合併為一行，視為卡拉OK</td>
+</tr>
+<tr>
+<td>edit/line/join/concatenate</td>
+<td>連接</td>
+<td>將所選行合併為一個，文本結合為整體</td>
+</tr>
+<tr>
+<td>edit/line/join/keep_first</td>
+<td>保留首行</td>
+<td>將所選行合併為一個，僅保留首行文本</td>
+</tr>
+<tr>
+<td>edit/line/paste</td>
+<td>貼上行</td>
+<td>貼上字幕</td>
+</tr>
+<tr>
+<td>edit/line/paste/over</td>
+<td>選擇性貼上…</td>
+<td>在選擇區域內貼上字幕</td>
+</tr>
+<tr>
+<td>edit/line/recombine</td>
+<td>重組行</td>
+<td>重組已被分割及合併的字幕</td>
+</tr>
+<tr>
+<td>edit/line/split/after</td>
+<td>以當前影格後分割行</td>
+<td>將當前行以當前影格的時間為界分割為兩行，一行在當前影格結束，另一行在下一影格開始</td>
+</tr>
+<tr>
+<td>edit/line/split/before</td>
+<td>以當前影格前分割行</td>
+<td>將當前行以當前影格的時間為界分割為兩行，一行在前一影格結束，另一行在當前影格開始</td>
+</tr>
+<tr>
+<td>edit/line/split/by_karaoke</td>
+<td>分割行（按照卡拉OK）</td>
+<td>使用卡拉OK計時把行分成多個更小的行</td>
+</tr>
+<tr>
+<td>edit/line/split/estimate</td>
+<td>在游標處分割（概略計時）</td>
+<td>在游標處分割所選行，將新的兩行的開始結束時間概略分割原始行的開始結束時間</td>
+</tr>
+<tr>
+<td>edit/line/split/preserve</td>
+<td>在游標處分割 (保留原計時)</td>
+<td>在游標處分割所選行，將新的兩行的開始結束時間設為原始行的開始結束時間</td>
+</tr>
+<tr>
+<td>edit/line/split/video</td>
+<td>在游標處分割（以視訊影格）</td>
+<td>在游標處分割所選行，以當前影格的時間分割行的持續時間</td>
+</tr>
+<tr>
+<td>edit/redo</td>
+<td>無法重做</td>
+<td>重做上次撤銷的操作</td>
+</tr>
+<tr>
+<td>edit/revert</td>
+<td>還原</td>
+<td>恢復編輯方塊的內容到它原來的狀態（編輯方塊上方顯示的內容）</td>
+</tr>
+<tr>
+<td>edit/style/bold</td>
+<td>加粗</td>
+<td>在游標位置添加加粗標籤(\b)</td>
+</tr>
+<tr>
+<td>edit/style/italic</td>
+<td>斜體</td>
+<td>在游標位置添加斜體標籤(\i)</td>
+</tr>
+<tr>
+<td>edit/style/strikeout</td>
+<td>刪除線</td>
+<td>在游標位置添加刪除線標籤(\s)</td>
+</tr>
+<tr>
+<td>edit/style/underline</td>
+<td>底線</td>
+<td>在游標位置添加底線標籤(\u)</td>
+</tr>
+<tr>
+<td>edit/undo</td>
+<td>無法恢復</td>
+<td>恢復上次操作</td>
+</tr>
+<tr>
+<td>grid/line/next</td>
+<td>下一行</td>
+<td>移動到下一字幕行</td>
+</tr>
+<tr>
+<td>grid/line/next/create</td>
+<td>下一行</td>
+<td>移動到下一字幕行，如果需要則創建新一行</td>
+</tr>
+<tr>
+<td>grid/line/prev</td>
+<td>上一行</td>
+<td>移動到上一字幕行</td>
+</tr>
+<tr>
+<td>grid/move/down</td>
+<td>下移行</td>
+<td>將選中的行下移一行</td>
+</tr>
+<tr>
+<td>grid/move/up</td>
+<td>上移行</td>
+<td>將選中的行上移一行</td>
+</tr>
+<tr>
+<td>grid/sort/actor</td>
+<td>說話人</td>
+<td>按照說話人排序所有字幕</td>
+</tr>
+<tr>
+<td>grid/sort/actor/selected</td>
+<td>說話人</td>
+<td>按照說話人排序所選字幕</td>
+</tr>
+<tr>
+<td>grid/sort/effect</td>
+<td>特效</td>
+<td>按照特效排序所有字幕</td>
+</tr>
+<tr>
+<td>grid/sort/effect/selected</td>
+<td>特效</td>
+<td>按照特效排序所選字幕</td>
+</tr>
+<tr>
+<td>grid/sort/end</td>
+<td>結束時間</td>
+<td>按照結束時間排序所有字幕</td>
+</tr>
+<tr>
+<td>grid/sort/end/selected</td>
+<td>結束時間</td>
+<td>按照結束時間排序所選字幕</td>
+</tr>
+<tr>
+<td>grid/sort/layer</td>
+<td>層級</td>
+<td>按照層級排序所有字幕</td>
+</tr>
+<tr>
+<td>grid/sort/layer/selected</td>
+<td>層級</td>
+<td>按照層級排序所選字幕</td>
+</tr>
+<tr>
+<td>grid/sort/start</td>
+<td>開始時間</td>
+<td>按照開始時間排序所有字幕</td>
+</tr>
+<tr>
+<td>grid/sort/start/selected</td>
+<td>開始時間</td>
+<td>按照開始時間排序所選字幕</td>
+</tr>
+<tr>
+<td>grid/sort/style</td>
+<td>樣式名稱</td>
+<td>按照樣式名稱排序所有字幕</td>
+</tr>
+<tr>
+<td>grid/sort/style/selected</td>
+<td>樣式名稱</td>
+<td>按照樣式名稱排序所選字幕</td>
+</tr>
+<tr>
+<td>grid/swap</td>
+<td>互換行</td>
+<td>互換兩個所選行</td>
+</tr>
+<tr>
+<td>grid/tag/cycle_hiding</td>
+<td>切換標籤隱藏模式</td>
+<td>切換標籤隱藏模式</td>
+</tr>
+<tr>
+<td>grid/tags/hide</td>
+<td>隱藏所有標籤</td>
+<td>在字幕欄隱藏特效標籤</td>
+</tr>
+<tr>
+<td>grid/tags/show</td>
+<td>顯示所有標籤</td>
+<td>在字幕欄顯示特效標籤</td>
+</tr>
+<tr>
+<td>grid/tags/simplify</td>
+<td>顯示簡化標籤</td>
+<td>將字幕欄的特效標籤替換為符號顯示</td>
+</tr>
+<tr>
+<td>help/bugs</td>
+<td>Bug追蹤器</td>
+<td>訪問Aegisub的bug追蹤器來報告bug和要求新增功能</td>
+</tr>
+<tr>
+<td>help/contents</td>
+<td>幫助</td>
+<td>說明主題</td>
+</tr>
+<tr>
+<td>help/forums</td>
+<td>論壇</td>
+<td>訪問Aegisub的論壇</td>
+</tr>
+<tr>
+<td>help/irc</td>
+<td>IRC 頻道</td>
+<td>訪問Aegisub的官方IRC頻道</td>
+</tr>
+<tr>
+<td>help/video</td>
+<td>視覺化排版</td>
+<td>打開視覺化排版的操作手冊頁面</td>
+</tr>
+<tr>
+<td>help/website</td>
+<td>網站</td>
+<td>訪問Aegisub的官方網站</td>
+</tr>
+<tr>
+<td>keyframe/close</td>
+<td>關閉關鍵影格</td>
+<td>丟棄當前載入的關鍵影格，並使用來自視訊的關鍵影格，如果有的話</td>
+</tr>
+<tr>
+<td>keyframe/open</td>
+<td>打開關鍵影格</td>
+<td>打開一個關鍵影格列表檔</td>
+</tr>
+<tr>
+<td>keyframe/save</td>
+<td>儲存關鍵影格</td>
+<td>儲存當前的關鍵影格列表</td>
+</tr>
+<tr>
+<td>subtitle/attachment</td>
+<td>附件</td>
+<td>打開附件管理器對話方塊</td>
+</tr>
+<tr>
+<td>subtitle/find</td>
+<td>查找</td>
+<td>在字幕中查找文本</td>
+</tr>
+<tr>
+<td>subtitle/find/next</td>
+<td>查找下一個</td>
+<td>查找下一個匹配的搜索</td>
+</tr>
+<tr>
+<td>subtitle/insert/after</td>
+<td>當前行之後</td>
+<td>在當前行之後插入一行</td>
+</tr>
+<tr>
+<td>subtitle/insert/after/videotime</td>
+<td>當前行之後，以視訊時間起始</td>
+<td>在當前行之後插入一行，以視訊時間作為開始時間</td>
+</tr>
+<tr>
+<td>subtitle/insert/before</td>
+<td>當前行之前</td>
+<td>在當前行之前插入一行</td>
+</tr>
+<tr>
+<td>subtitle/insert/before/videotime</td>
+<td>當前行之前，以視訊時間起始</td>
+<td>在當前行之前插入一行，以視訊時間作為開始時間</td>
+</tr>
+<tr>
+<td>subtitle/new</td>
+<td>新建字幕</td>
+<td>新建字幕</td>
+</tr>
+<tr>
+<td>subtitle/open</td>
+<td>打開字幕</td>
+<td>打開字幕檔案</td>
+</tr>
+<tr>
+<td>subtitle/open/autosave</td>
+<td>打開自動儲存的字幕</td>
+<td>打開一個Aegisub自動儲存的舊版本檔</td>
+</tr>
+<tr>
+<td>subtitle/open/charset</td>
+<td>打開字幕並指定編碼</td>
+<td>以指定編碼打開字幕檔</td>
+</tr>
+<tr>
+<td>subtitle/open/video</td>
+<td>從視訊中打開字幕</td>
+<td>從當前視訊中打開內嵌字幕</td>
+</tr>
+<tr>
+<td>subtitle/properties</td>
+<td>配置</td>
+<td>打開腳本配置視窗</td>
+</tr>
+<tr>
+<td>subtitle/save</td>
+<td>儲存字幕</td>
+<td>儲存當前字幕檔案</td>
+</tr>
+<tr>
+<td>subtitle/save/as</td>
+<td>另存為字幕</td>
+<td>以其它檔案名儲存字幕</td>
+</tr>
+<tr>
+<td>subtitle/select/all</td>
+<td>全選</td>
+<td>選擇所有行</td>
+</tr>
+<tr>
+<td>subtitle/select/visible</td>
+<td>選擇可見行</td>
+<td>選擇當前視訊影格中可見的所有行</td>
+</tr>
+<tr>
+<td>subtitle/spellcheck</td>
+<td>拼寫檢查器</td>
+<td>打開拼寫檢查器</td>
+</tr>
+<tr>
+<td>time/continuous/end</td>
+<td>更改結束時間</td>
+<td>更改字幕時間，使結束時間到後一行的開始時間為止</td>
+</tr>
+<tr>
+<td>time/continuous/start</td>
+<td>更改開始時間</td>
+<td>更改字幕時間，使開始時間從前一行的結束時間開始</td>
+</tr>
+<tr>
+<td>time/frame/current</td>
+<td>平移至當前影格</td>
+<td>平移所選行使選中的行始於當前影格</td>
+</tr>
+<tr>
+<td>time/lead/both</td>
+<td>結束延後：</td>
+<td>同時開始提前、結束延後所選行</td>
+</tr>
+<tr>
+<td>time/lead/in</td>
+<td>開始提前：</td>
+<td>開始提前所選行</td>
+</tr>
+<tr>
+<td>time/lead/out</td>
+<td>結束延後：</td>
+<td>結束延後所選行</td>
+</tr>
+<tr>
+<td>time/length/decrease</td>
+<td>減少長度</td>
+<td>減少長度為現在的時間軸</td>
+</tr>
+<tr>
+<td>time/length/decrease/shift</td>
+<td>減少長度與偏移</td>
+<td>減少當前時間軸長度並平移下面的項目</td>
+</tr>
+<tr>
+<td>time/length/increase</td>
+<td>增加長度</td>
+<td>增加長度為現在的時間軸</td>
+</tr>
+<tr>
+<td>time/length/increase/shift</td>
+<td>增加長度與偏移</td>
+<td>增加當前時間軸長度並平移下面的項目</td>
+</tr>
+<tr>
+<td>time/next</td>
+<td>下一行</td>
+<td>下一行／音節</td>
+</tr>
+<tr>
+<td>time/prev</td>
+<td>上一行</td>
+<td>上一行／音節</td>
+</tr>
+<tr>
+<td>time/shift</td>
+<td>平移時間</td>
+<td>按照時間或影格平移字幕</td>
+</tr>
+<tr>
+<td>time/snap/end_video</td>
+<td>視訊抓取為結束時間</td>
+<td>將當前視訊影格設為所選字幕的結束時間</td>
+</tr>
+<tr>
+<td>time/snap/scene</td>
+<td>緊貼鏡頭</td>
+<td>設置字幕的開始與結束緊貼至當前視訊影格附近的關鍵影格</td>
+</tr>
+<tr>
+<td>time/snap/start_video</td>
+<td>視訊抓取為開始時間</td>
+<td>將當前視訊影格設為所選字幕的開始時間</td>
+</tr>
+<tr>
+<td>time/start/decrease</td>
+<td>向後平移開始時間</td>
+<td>向後平移當前時間軸的開始時間</td>
+</tr>
+<tr>
+<td>time/start/increase</td>
+<td>向前平移開始時間</td>
+<td>向前平移當前時間軸的開始時間</td>
+</tr>
+<tr>
+<td>timecode/close</td>
+<td>關閉時間碼檔</td>
+<td>關閉當前打開的時間碼檔</td>
+</tr>
+<tr>
+<td>timecode/open</td>
+<td>打開時間碼檔…</td>
+<td>打開一個可變影格時間碼(VFR timecode)v1或v2檔</td>
+</tr>
+<tr>
+<td>timecode/save</td>
+<td>儲存時間碼檔</td>
+<td>儲存一個可變影格時間碼(VFR timecode)v1或v2檔</td>
+</tr>
+<tr>
+<td>tool/export</td>
+<td>匯出字幕</td>
+<td>儲存一個處理後的不同格式的字幕副本</td>
+</tr>
+<tr>
+<td>tool/font_collector</td>
+<td>字體收集器</td>
+<td>打開字體收集器</td>
+</tr>
+<tr>
+<td>tool/line/select</td>
+<td>選擇多行</td>
+<td>按照指定要求選擇多行</td>
+</tr>
+<tr>
+<td>tool/resampleres</td>
+<td>重設解析度</td>
+<td>更改解析度並修改字幕以配合更改</td>
+</tr>
+<tr>
+<td>tool/style/assistant</td>
+<td>樣式助手</td>
+<td>打開樣式助手</td>
+</tr>
+<tr>
+<td>tool/style/manager</td>
+<td>樣式管理器</td>
+<td>打開樣式管理器</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/commit</td>
+<td>接受更改</td>
+<td>接受更改並移動到下一行</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/preview</td>
+<td>預覽更改</td>
+<td>接受更改並停留在當前行</td>
+</tr>
+<tr>
+<td>tool/time/kanji</td>
+<td>漢字計時器</td>
+<td>打開漢字計時器</td>
+</tr>
+<tr>
+<td>tool/time/postprocess</td>
+<td>時間後續處理器</td>
+<td>執行時間後續處理器來處理時間開始提前、結束延後以及鏡頭計時等</td>
+</tr>
+<tr>
+<td>tool/translation_assistant</td>
+<td>翻譯助手</td>
+<td>打開翻譯助手</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/commit</td>
+<td>接受更改</td>
+<td>接受更改並移動到下一行</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/insert_original</td>
+<td>插入原文</td>
+<td>插入未翻譯的文本</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/next</td>
+<td>下一行</td>
+<td>不提交更改移至下一行</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/prev</td>
+<td>上一行</td>
+<td>不提交更改移至上一行</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/preview</td>
+<td>預覽更改</td>
+<td>接受更改並停留在當前行</td>
+</tr>
+<tr>
+<td>video/aspect/cinematic</td>
+<td>電影（2.35）</td>
+<td>強制視訊為2.35縱橫比</td>
+</tr>
+<tr>
+<td>video/aspect/custom</td>
+<td>自訂…</td>
+<td>強制視訊為自訂縱橫比</td>
+</tr>
+<tr>
+<td>video/aspect/default</td>
+<td>預設編碼</td>
+<td>保持視訊原始縱橫比</td>
+</tr>
+<tr>
+<td>video/aspect/full</td>
+<td>全屏4:3</td>
+<td>強制視訊為4:3縱橫比</td>
+</tr>
+<tr>
+<td>video/aspect/wide</td>
+<td>寬屏16:9</td>
+<td>強制視訊為16:9縱橫比</td>
+</tr>
+<tr>
+<td>video/close</td>
+<td>關閉視訊</td>
+<td>關閉當前打開的視訊檔</td>
+</tr>
+<tr>
+<td>video/copy_coordinates</td>
+<td>複製座標至剪貼板</td>
+<td>複製當前滑鼠在視訊上的座標到剪貼板</td>
+</tr>
+<tr>
+<td>video/detach</td>
+<td>拆分視訊</td>
+<td>從主介面分離視訊，在一個單獨視窗顯示</td>
+</tr>
+<tr>
+<td>video/details</td>
+<td>顯示視頻屬性</td>
+<td>顯示視頻屬性</td>
+</tr>
+<tr>
+<td>video/focus_seek</td>
+<td>切換視訊滑塊焦點</td>
+<td>使焦點在視訊滑塊與之前的焦點之間切換</td>
+</tr>
+<tr>
+<td>video/frame/copy</td>
+<td>複製圖像至剪貼板</td>
+<td>將當前顯示的畫面複製到剪貼板</td>
+</tr>
+<tr>
+<td>video/frame/copy/raw</td>
+<td>複製圖像至剪貼板（不帶字幕）</td>
+<td>將當前顯示的畫面複製到剪貼板，不帶字幕</td>
+</tr>
+<tr>
+<td>video/frame/next</td>
+<td>下一影格</td>
+<td>移至下一影格</td>
+</tr>
+<tr>
+<td>video/frame/next/boundary</td>
+<td>下一個字幕開始/結束時刻</td>
+<td>移至前一行字幕的開始或結束時間</td>
+</tr>
+<tr>
+<td>video/frame/next/keyframe</td>
+<td>下一關鍵影格</td>
+<td>移至下一關鍵影格</td>
+</tr>
+<tr>
+<td>video/frame/next/large</td>
+<td>快速向前跳影格</td>
+<td>快速向前跳影格</td>
+</tr>
+<tr>
+<td>video/frame/prev</td>
+<td>上一影格</td>
+<td>移至上一影格</td>
+</tr>
+<tr>
+<td>video/frame/prev/boundary</td>
+<td>上一個字幕開始/結束時刻</td>
+<td>移至上一個字幕開始/結束時刻</td>
+</tr>
+<tr>
+<td>video/frame/prev/keyframe</td>
+<td>上一關鍵影格</td>
+<td>移至上一關鍵影格</td>
+</tr>
+<tr>
+<td>video/frame/prev/large</td>
+<td>快速向後跳影格</td>
+<td>快速向後跳影格</td>
+</tr>
+<tr>
+<td>video/frame/save</td>
+<td>儲存 PNG 截圖</td>
+<td>儲存當前顯示影格為PNG格式到視訊所在目錄</td>
+</tr>
+<tr>
+<td>video/frame/save/raw</td>
+<td>儲存 PNG 截圖（不帶字幕）</td>
+<td>儲存當前顯示影格（不帶字幕）為PNG格式到視訊所在目錄</td>
+</tr>
+<tr>
+<td>video/jump</td>
+<td>跳至</td>
+<td>跳至指定影格或時間</td>
+</tr>
+<tr>
+<td>video/jump/end</td>
+<td>視訊跳至結束時間</td>
+<td>視訊跳至當前字幕的結束影格</td>
+</tr>
+<tr>
+<td>video/jump/start</td>
+<td>視訊跳至開始時間</td>
+<td>視訊跳至當前字幕的起始影格</td>
+</tr>
+<tr>
+<td>video/open</td>
+<td>打開視訊…</td>
+<td>打開一個視訊檔</td>
+</tr>
+<tr>
+<td>video/open/dummy</td>
+<td>使用空白視訊</td>
+<td>打開一個純色的空白視訊片段</td>
+</tr>
+<tr>
+<td>video/opt/autoscroll</td>
+<td>切換視訊自動捲動</td>
+<td>自動將視訊移至所選字幕的開始時間</td>
+</tr>
+<tr>
+<td>video/play</td>
+<td>播放</td>
+<td>從該位置開始播放視訊</td>
+</tr>
+<tr>
+<td>video/play/line</td>
+<td>播放字幕行</td>
+<td>播放當前行</td>
+</tr>
+<tr>
+<td>video/show_overscan</td>
+<td>顯示過掃描遮罩</td>
+<td>在視訊上顯示一個遮罩，表示這些區域可能在一些電視上會因過掃描而被剪下</td>
+</tr>
+<tr>
+<td>video/stop</td>
+<td>停止視訊</td>
+<td>停止視訊重播</td>
+</tr>
+<tr>
+<td>video/subtitles_provider/cycle</td>
+<td>切換字幕來源</td>
+<td>在可用的字幕來源中切換</td>
+</tr>
+<tr>
+<td>video/tool/clip</td>
+<td>裁剪</td>
+<td>裁剪字幕為一個矩形</td>
+</tr>
+<tr>
+<td>video/tool/cross</td>
+<td>標準</td>
+<td>標準模式，按兩下設定位置</td>
+</tr>
+<tr>
+<td>video/tool/drag</td>
+<td>拖放</td>
+<td>拖放字幕</td>
+</tr>
+<tr>
+<td>video/tool/rotate/xy</td>
+<td>旋轉 XY</td>
+<td>繞X軸和Y軸旋轉字幕</td>
+</tr>
+<tr>
+<td>video/tool/rotate/z</td>
+<td>旋轉 Z</td>
+<td>繞Z軸旋轉字幕</td>
+</tr>
+<tr>
+<td>video/tool/scale</td>
+<td>縮放</td>
+<td>沿X軸和Y軸方向縮放</td>
+</tr>
+<tr>
+<td>video/tool/vector_clip</td>
+<td>向量裁剪</td>
+<td>裁剪字幕為一個向量區域</td>
+</tr>
+<tr>
+<td>video/zoom/100</td>
+<td>100%</td>
+<td>設置縮放為100%</td>
+</tr>
+<tr>
+<td>video/zoom/200</td>
+<td>200%</td>
+<td>設置縮放為200%</td>
+</tr>
+<tr>
+<td>video/zoom/50</td>
+<td>50%</td>
+<td>設置縮放為50%</td>
+</tr>
+<tr>
+<td>video/zoom/in</td>
+<td>放大</td>
+<td>放大視訊</td>
+</tr>
+<tr>
+<td>video/zoom/out</td>
+<td>縮小</td>
+<td>縮小視訊</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Commands/zh_TW/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:16:53 GMT -->
+</html>
+

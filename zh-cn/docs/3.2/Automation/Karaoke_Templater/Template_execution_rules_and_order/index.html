@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Karaoke_Templater/Template_execution_rules_and_order/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:40 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>卡拉OK模板执行环境和顺序 - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../../../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../../../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../../../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../../../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../../../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../../../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../../../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../../../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../../../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../../../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../../../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../../../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../../../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../../../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../../../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../../../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../../../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../../../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../../../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../../../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../../../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../../../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../../../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../../../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../../../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../../../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../../index.html">概述</a>
+</li>
+<li>
+<a href="../index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../../Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../../../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../../../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../../../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>卡拉OK模板执行环境和顺序</h1>
+<ol id="markdown-toc">
+  <li><a id="markdown-toc-section" href="#section">概念</a></li>
+  <li><a id="markdown-toc-start-up" href="#start-up">启动(Start-up)</a>    <ol>
+      <li><a id="markdown-toc-section-1" href="#section-1">收集，解析并编译模板</a></li>
+      <li><a id="markdown-toc-clean-up" href="#clean-up">清除(Clean-up)</a></li>
+      <li><a id="markdown-toc-tenv" href="#tenv">初始化 <em>tenv</em></a></li>
+    </ol>
+  </li>
+  <li><a id="markdown-toc-once-" href="#once-">运行 <em>once</em> 模板</a></li>
+  <li><a id="markdown-toc-iterate-throughok" href="#iterate-throughok">循环访问(Iterate through)卡拉OK行</a>    <ol>
+      <li><a id="markdown-toc-section-2" href="#section-2">模板匹配行</a></li>
+    </ol>
+  </li>
+  <li><a id="markdown-toc-line-" href="#line-">应用 <em>line</em> 类模板</a></li>
+  <li><a id="markdown-toc-syl--furi-" href="#syl--furi-">应用 <em>syl</em> 和 <em>furi</em> 类模板</a></li>
+  <li><a id="markdown-toc-section-3" href="#section-3">过程描述</a></li>
+</ol>
+
+<p>本页描述了许多有关 卡拉OK模板执行器(<em>kara-templater</em>) 的工作方式，并且会解释为什么许多东西起作用，而另一些不起作用。</p>
+
+<p>大多数的细节你在卡拉OK模板执行器中是不需要用到的，但是如果你在某些脚本中看到了你不理解的行为，那么本页面可能会解释它。</p>
+
+<h2 id="section">概念</h2>
+<p>有些术语和概念在本页全篇中都有使用。这些名称和脚本中使用的相似或者完全相同。（译者注：在使用时需要保留英文，故翻译内容保留重要英文）</p>
+
+<dl>
+  <dt><strong><code>tenv</code></strong></dt>
+  <dd><strong>t</strong>emplate <strong>env</strong>ironment(模板环境)的缩写, 或者 <a href="../Code_execution_environment/index.html">代码执行环境</a>。</dd>
+  <dt><strong><code>varctx</code></strong></dt>
+  <dd><strong>var</strong>iable <strong>c</strong>on<strong>t</strong>e<strong>x</strong>t(内联变量环境), <a href="../Inline_variables/index.html">内联变量</a>存储在的实际区域。</dd>
+  <dt><strong><code>template</code></strong></dt>
+  <dd>卡拉OK模板执行器(kara-templater)中最基本的 "执行单元(execution unit)" , 事实上一个模板就是一个迷你程序，这个程序由 卡拉OK模板执行器 编译并执行。</dd>
+  <dt><strong><code>code template</code></strong></dt>
+  <dd>以Lua代码块方式行使功能的模板，但是一般情况下不会直接输出字幕对象。(用 <em>code</em> 关键字声明)</dd>
+  <dt><strong><code>output template</code></strong></dt>
+  <dd>会产生字幕行(字幕对象)的一类模板，一般以打好K值的行作为输入。(用 <em>template</em> 关键字声明)</dd>
+  <dt><strong><code>code line</code></strong></dt>
+  <dd>字幕文件中的一行，该行定义了一个code模板(code 模板)。</dd>
+  <dt><strong><code>template line</code></strong></dt>
+  <dd>字幕文件中的一行，该行定义了一个输出模板(output template), 或者整个输出模板中的一部分。
+(一个 <em>line</em> 类输出模板可以对应多个模板行)</dd>
+  <dt><strong><code>class(类)</code></strong></dt>
+  <dd>一个类指的是一种类型的模板。有四种基本的模板类, <em>once</em>, <em>line</em>,
+<em>syl</em> and <em>furi</em>, 第一个类只对code模板有用。</dd>
+  <dt><strong><code>modifier(修饰语)</code></strong></dt>
+  <dd>修饰语会影响模板作用的方式和作用的顺序。</dd>
+  <dt><strong><code>template text</code></strong> 或 <strong><code>text</code></strong></dt>
+  <dd>模板的"文本" 部分，可以是code模板中的 Lua 代码，或者是输出模板中的模板代码。 <em>line</em> 类输出模板还有一个 <em>pre-line text</em> 。</dd>
+</dl>
+
+<h2 id="start-up">启动(Start-up)</h2>
+<p>卡拉OK模板执行器(后文均简称模板应用器)做的第一件事是使用 <a href="../../Lua/Modules/karaskel.lua/index.html">卡拉OK框架(karaskel)</a> 来收集一些基础的字幕文件信息。这个过程中总是会伴随着传递 <code>真(true)</code>值给 <em>generate_furigana</em> (生成假名标注)，它属于<code>karaskel.collect_head</code> 函数，这意味着 <a href="../../../Furigana_karaoke/index.html">假名标注(furigana)</a> 的样式会被生成，除非它们早就存在。</p>
+
+<p>然后模板应用器会收集文件中的所有模板行(template line)信息。</p>
+
+<h3 id="section-1">收集，解析并编译模板</h3>
+<p>文件中的每一行都会被检查是否是一行模板，例如，被打上注释并且特效栏(Effect field)填写着 <em>code</em> 或者 <em>template</em> 的行会被作为模板行。</p>
+
+<p>细节在这里并不重要。你要知道的是 特效栏关键字后的修饰语会作为一个参数起作用。</p>
+
+<p>当遇到一个 <em>line</em> 类的模板行时，模板应用器首先会检查是否有其他和这行具有一样模板名称的行。如果没有，则会以该名称新建一行，并按照给定的修饰语进行初始化。如果已经存在这样的行, <em>该模板行中的文本会被加入到当前模板行中统一成一个新模板行</em> 。最终应用的修饰语决定于后一个模板行的修饰语，而非当前行。应用模板的过程中，修饰语没有办法从模板中移除。特殊的是 <em>pre-line</em> 模板行的文本会被添加到 <em>pre-line text</em> (被置于所有代码的最前面)。</p>
+
+<p>不同类的模板会被分别放置到各自的 "bucket" 中，所以 <em>line</em> 和 <em>syl</em> 模板不会被一起保存。(应用模板后不会产生同类合并效果)</p>
+
+<h3 id="clean-up">清除(Clean-up)</h3>
+<p>在所有模板信息都被收集后。所有不需要的行会被从字幕文件中删除，最常见的情况是，第二次应用同一个模板时第一次生成的 <em>fx(在Effect栏)</em> 行会先被清除。</p>
+
+<h3 id="tenv">初始化 <em>tenv</em></h3>
+<p>在开始实际应用模板之前的最后一项工作就是初始化运行环境。基本上，在所有的模板运行之前，都会被放置到 <em>tenv</em>。详见 <a href="../Code_execution_environment/index.html">代码执行环境</a> ("基本上"是指除了 <code>line</code>, <code>orgline</code>, <code>syl</code>
+和 <code>basesyl</code>.)</p>
+
+<h2 id="once-">运行 <em>once</em> 模板</h2>
+<p>所有的 <em>once</em> 类模板会被首先执行。这个过程中没有什么激动人心的事情发生，发生的仅仅是一些额外的文件被添加到了 <em>tenv</em>。</p>
+
+<h2 id="iterate-throughok">循环访问(Iterate through)卡拉OK行</h2>
+<p>字幕文件中的每个非模板行都会被浏览并且按顺序应用上模板。</p>
+
+<ul>
+  <li>如果一行的注释已经打勾，但是特效栏没有写着<code>Karaoke</code>，那么应用模板时这行会被跳过。</li>
+  <li>如果一行没被打上注释，并且特效栏写着除了<code>Karaoke</code>或者空白以外的文本，它也会被跳过。</li>
+  <li>模板应用器会试图匹配所有非模板行。</li>
+</ul>
+
+<p>如果通过了以上几点，剩下的每一行都会以三个步骤被应用上模板。</p>
+
+<p>首先，所有的 <em>line</em> 类模板会试图匹配非模板行然后再逐一在karaoke行上运行。下面会给出"模板匹配行的顺序"的概念。</p>
+
+<p>接下来，所有行内的音节会按顺序被浏览，所有的 <em>syl</em> 类模板最终会被应用在每个音节上。</p>
+
+<p>最后，会过一遍所有注音假名的音节，来尝试将所有 <em>furi</em> 类模板匹配相应行，然后在注音假名上应用模板。</p>
+
+<p>值得注意的是，音节和注音假名音节是会被解析并储存的音节，而不是用multi时的虚拟音节，或是用char时的虚拟音节，并且不是一个组合。</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><p>假设有三个 <code>syl</code> 类模板: A, B 和 C.</p>
+
+<ul>
+  <li>A 是一个规则的模板，不带有 <em>multi</em> 或者 <em>char</em> 修饰语。</li>
+  <li>B 模板含有 <em>multi</em> 修饰语，但是不含有 <em>char</em> 修饰语。</li>
+  <li>C 含有 <em>char</em> 和 <em>multi</em> 修饰语。</li>
+</ul>
+
+<p>现在这三个模板会被应用到一行中，这行含有两个音节(syllable)。以下是过程:</p>
+
+<ul>
+  <li>音节1 被选出
+    <ul>
+      <li>模板A匹配到这行，音节1被匹配。
+        <ul>
+          <li>模板A被应用到音节1。</li>
+        </ul>
+      </li>
+      <li>模板B匹配到这行，音节1被匹配。
+        <ul>
+          <li>音节1被分解为多音节标注的虚拟音节1.1 和 1.2</li>
+          <li>模板B被应用到虚拟音节1.1。</li>
+          <li>模板B被应用到虚拟音节1.2。</li>
+        </ul>
+      </li>
+      <li>模板C匹配到这行。
+        <ul>
+          <li>音节1被分解为以字符为单位的虚拟音节1.a 和 1.b</li>
+          <li>音节 1.a 和 1.b 被进一步分解为 1.a1, 1.a2, 1.b1 和 1.b2。</li>
+          <li>模板C被应用到虚拟音节 1.a1。</li>
+          <li>模板C被应用到虚拟音节 1.a2。</li>
+          <li>模板C被应用到虚拟音节 1.b1。</li>
+          <li>模板C被应用到虚拟音节 1.b2。</li>
+        </ul>
+      </li>
+      <li>音节2 被选出
+        <ul>
+          <li>进行和上面相似的过程。</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>想知道更多有关 多音节标注 和 以字符为单位的虚拟音节的内容，请看下面。</p>
+</div>
+</div>
+
+<p>如果任何一个模板在以上三个步骤中匹配到了“打好K值的行”，执行过模板后这样的行就会被打上注释，并且特效栏会显示 <code>karaoke</code> 。</p>
+
+<h3 id="section-2">模板匹配行</h3>
+<p>模板的匹配总是以行为单位，而不是音节或其他单位。</p>
+
+<ul>
+  <li>如果模板含有 <em>fxgroup</em> 修饰语，那么名字和 fxgroup 名相同的行会被无视。</li>
+  <li>如果模板含有 <em>all</em> 修饰语，它会匹配任何行。</li>
+  <li>如果模板和某行有一样的样式，它会匹配到这行。（这是最常见的情况）</li>
+  <li>其他情况下模板不会匹配到行。</li>
+</ul>
+
+<h2 id="line-">应用 <em>line</em> 类模板</h2>
+<p><div class='todo'>
+<strong><p>待编写(原文如此)</p>
+</strong>
+</div>
+</p>
+
+<h2 id="syl--furi-">应用 <em>syl</em> 和 <em>furi</em> 类模板</h2>
+<p><div class='todo'>
+<strong><p>待编写(原文如此)</p>
+</strong>
+</div>
+</p>
+
+<h2 id="section-3">过程描述</h2>
+<p>(这部分内容的具体代码可以在Aegisub安装目录下的automation/autoload/kara-templater.lua中读到)</p>
+<pre>卡拉OK模板执行器执行的主要过程:
+1. 收集头部信息
+   1. 找到所有的头部信息，基本有播放分辨率（X/Y）。
+   2. 找到所有的样式。
+   3. 生成对应样式的假名标注样式。
+2. 收集模板并删除已存在的 "fx" 行lines。
+3. 初始化 tenv
+   1. 添加 "string", "math" 和 "_G" 标记
+   2. 添加 "tenv"自引用
+   3. 添加 "retime" 函数
+   4. 添加空的 "fxgroup" 表
+4. 运行每一个"code once" 模板
+5. 对于字幕文件中每个待处理的对话行:
+   a. 如果特效栏以 "code" 或 "template"开始:
+      1. 跳过行
+   b. 否则:
+      1. 如果特效栏不是空的，也不是 "karaoke":
+         a. 跳过行
+      2. 如果特效栏是空的，并且该行被打上注释:
+         a. 跳过行
+      3. 用karaskel(卡拉OK框架)预处理行
+      4. 初始化 varctx(内联变量环境)
+      5. 重置 tenv
+         1. 把 "orgline" 作为输入
+         2. 把 "line", "syl" 和 "basesyl" 置空
+      6. 对于每个 "line" 模板:
+         如果样式匹配或者作用范围是"all":
+         循环过程("template.loops")多次:
+         1. 置 "tenv.j" 为循环计数器
+         2. a. 如果模板是 code 行:
+               1. 置 "tenv.line" 为输入行
+               2. 运行 code 代码
+            b. 否则:
+               1. 产生输出行作为输入行的副本
+               2. 置 "tenv.line" t为输出行
+               3. 初始化 输出行层(output line Layer)为模板层(template Layer)
+               4. 初始化 输出行文本为空
+               5. 如果模板含有 pre-line:
+                  1. 运行 pre-line 模板
+                  2. 在输出结果上附加文本
+               6. a. 如果模板匹配到规则的行:
+                     对于输入行中的每个音节:
+                     1. 置 "tenv.syl" 为音节
+                     2. 为音节更新 varctx 
+                     3. 运行 line 模板
+                     4. 在输出结果上附加文本
+                     5. 如果未设置 "notext" :
+                        a. 如果设置 "keeptags" :
+                           1. 在输出文本上附上 "syl.text" 
+                        b. 否则:
+                           1. 在输出文本上附上 "syl.text_stripped"(剥离原标签的文本)
+                  b. 否则:
+                     a. 如果设置了 "keeptags" :
+                        1. 在输出文本上附上 "syl.text" 
+                     b. 否则
+                        1. 在输出文本上附上 "syl.text_stripped"
+               7. 把输出行的特效栏填上 "fx"
+               8. 把输出行整合到字幕文件中
+      7. 对于行中每个主要的音节:
+         对于每个 "syl" 模板:
+         如果样式匹配或者作用范围是"all":
+         如果模板不是在一个无效的fxgroup中:
+         1. 置 "tenv.syl" 为音节
+         2. 为音节更新 varctx 
+         3. 如果音节的inlinefx(内联特效)没有匹配到对应的模板:
+            1. 跳过音节
+         4. 如果模板设置了 "noblank" 并且这个音节是个空格:
+            1. 跳过音节
+         5. 如果模板有"char"修饰:
+            1. 建立 "charsyl" 作为音节的副本
+            2. 置 "tenv.basesyl"(基础音节)为当前的"tenv.syl"
+            3. 置 "tenv.syl" 为"charsyl"(字符音节)
+            4. 对于音节中每个 Unicode 编码的字符:
+               1. 对"charsyl"计算虚拟音节数 
+               2. 为"字符音节"更新 varctx  
+               3. 对虚拟音节继续进行音节的处理过程 (从 5.b.7.6.)
+         6. 如果模板有"multi"修饰:
+            1. 建立 "hlsyl"(音节) 作为音节的副本
+            2. 除非 "tenv.basesyl" 早就存在,否则置为 "hlsyl"
+            3. 置 "tenv.syl" 为 "hlsyl"
+            4. 对于音节上每个标记:
+               1. 对"hlsyl"计算虚拟音节数
+               2. 为"标记音节"更新 varctx  
+               3. 对虚拟音节继续进行音节的处理过程 (从 5.b.7.7.)
+         7. a. 如果模板是 code 行:
+               1. 置 "tenv.line" 为输入行
+               2. 运行 code 代码
+            b. 否则:
+               1. 置 "tenv.line" 为输入行
+               2. 运行 code 代码
+			   循环过程("template.loops")多次:
+               1. 置 "tenv.j" 为循环计数器
+               2. 创建输出行
+               3. 置输出行的样式为虚拟音节样式
+               4. 置输出行层为模板层
+               5. 置 "tenv.line" 为输出行
+               6. 运行模板
+               7. 置输出行文本为结果
+               8. a. 如果设置了 "keeptags" :
+                     1. 在输出文本上附上 "syl.text"
+                  b. 如果未设置 "keeptags" :
+                     1. 在输出行文本上附上 "syl.text_stripped"
+                  c. 其他情况下什么都不会发生
+               9. 置输出行的特效栏内容为"fx"
+              10. 把输出行整合到字幕文件中
+      8. 对于行中的每个假名部分:
+         和音节处理方式相同 (5.b.7.)
+      9. 如果有非 code 模板应用到行:
+         1. 把输入行置为注释
+         2. 置输入行的特效栏文本为 "karaoke"
+         3. 存储修饰过的输入行到字幕文件
+
+运行 code 行:
+1. 编译行文本为 Lua 函数
+2. 如果编译失败, 报告错误
+3. 置已编译的函数的环境到 tenv
+4. 循环过程("template.loops")多次::
+   1. 置 "tenv.j" 为循环计数器
+   2. 运行已编译的函数
+   3. 如果发生错误，报告它
+
+运行一行单独的模板:
+1. 置结果文本为模板
+2. 如果存在 varctx:
+   对于结果文本中的每个属于 "$([a-zA-Z_]+)" 的字符:
+   1. 将捕获到的文本转化为小写
+   2. a. 如果捕获到的名称在 varctx中:
+         1. 替换结果文本中的这部分为 varctx中的值
+      b. 否则:
+         1. 警告
+         2. 保持原文本不变
+3. 对于结果文本中匹配到 "!(.-)!" 的情况:
+   1. 附加 "结果 " 到捕获的代码中
+   2. 按照Lua函数的方式编译 捕获到的代码
+   3. 如果编译失败，报告错误
+   4. 置已编译的函数的环境到 tenv 中
+   5. 运行已编译的函数
+      a. 如果已编译的函数产生了错误:
+         1. 报告错误
+         2. 在结果文本中保留了匹配到的内容
+      b. 否则:
+         1. 用函数运行的结果替换掉匹配到的内容</pre>
+
+<p><div class='todo'>
+<strong><p>把这变得更合理一些？(Turn this into something more reasonable?)</p>
+</strong>
+</div>
+</p>
+
+<div class='navbox'>
+<div><a href="../../index.html">自动化</a></div>
+<table>
+<tr>
+<th>概述:</th>
+<td><a href="../../Manager/index.html">自动化脚本管理器</a> • <a href="../../Running_macros/index.html">运行宏</a> • <a href="../../../Exporting/index.html">使用导出滤镜</a> • <a href="../../Included_macros/index.html">示例宏</a></td>
+</tr>
+<tr>
+<th><a href="../index.html">卡拉OK模版执行器</a> 相关:</th>
+<td><a href="../Declaring_template_and_code_lines/index.html">声明模版</a> • <a href="index.html">模版执行顺序</a> • <a href="../Template_modifiers/index.html">修饰语</a> • <a href="../Inline_variables/index.html">内联变量($变量)</a> <br> <a href="../Code_lines_and_blocks/index.html">code行和code区</a> • <a href="../Code_execution_environment/index.html">代码执行环境</a></td>
+</tr>
+<tr>
+<th><a href="../../Lua/index.html">Lua API</a> 相关:</th>
+<td><a href="../../Lua/Registration/index.html">注册</a> • <a href="../../Lua/Subtitle_file_interface/index.html">字幕对象</a> • <a href="../../Lua/Progress_reporting/index.html">进度反馈</a> • <a href="../../Lua/Dialogs/index.html">对话框</a> • <a href="../../Lua/Miscellaneous_APIs/index.html">其他APIs</a></td>
+</tr>
+<tr>
+<th><a href="../../Lua/Modules/index.html">Lua 模块</a>:</th>
+<td><a href="../../Lua/Modules/karaskel.lua/index.html">karaskel.lua</a> • <a href="../../Lua/Modules/util/index.html">util</a> • <a href="../../Lua/Modules/unicode/index.html">unicode</a> • <a href="#">cleantags.lua</a> • <a href="../../Lua/Modules/clipboard/index.html">clipboard</a> • <a href="../../Lua/Modules/re/index.html">re</a></td>
+</tr>
+<tr>
+<th>Karaskel 概念:</th>
+<td><a href="../../Lua/Modules/karaskel.lua/index.html#style-table">Style tables</a> • <a href="../../Lua/Modules/karaskel.lua/index.html#dialogue-line-table">Dialogue line tables</a> • <a href="../../Lua/Modules/karaskel.lua/index.html#karaoke-and-furigana-syllable-tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/index.html">内联特效</a> • <a href="../../../Furigana_karaoke/index.html">注音假名</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Karaoke_Templater/Template_execution_rules_and_order/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:40 GMT -->
+</html>
+

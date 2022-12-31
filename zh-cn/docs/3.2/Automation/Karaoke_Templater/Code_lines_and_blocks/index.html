@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Karaoke_Templater/Code_lines_and_blocks/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:40 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>Code行 和 Code区 - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../../../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../../../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../../../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../../../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../../../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../../../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../../../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../../../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../../../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../../../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../../../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../../../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../../../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../../../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../../../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../../../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../../../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../../../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../../../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../../../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../../../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../../../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../../../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../../../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../../../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../../../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../../index.html">概述</a>
+</li>
+<li>
+<a href="../index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../../Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../../../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../../../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../../../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>Code行 和 Code区</h1>
+<p>Code行和Code区是由卡拉OK模板执行器产生的概念，它们允许你使用小段的Lua代码来创作高级特效。
+代码可以是几个数字之间的简单运算，也可以是复杂的函数，例如生成各种各样的图形和颜色。</p>
+
+<p>Code行和Code区的代码执行都是在一个半封闭的执行环境进行的，这意味着它们的执行几乎不会受自带的Lua运行环境影响。想知道什么样的变量可以应用在Code行/区，可以查看: <a href="../Code_execution_environment/index.html">代码执行环境</a>。</p>
+
+<h2 id="code-">Code 行</h2>
+
+<p>Code行是一种特殊的template行。它不使用<code>template</code>来声明，而是使用<code>code</code>。 
+一个Code行中只应该含有Lua代码，并且无法独立作用生成新的行。</p>
+
+<p>Code行的两种用途:</p>
+
+<ul>
+  <li>定义/更新变量，为变量在template行中的使用做准备</li>
+  <li>定义函数，为函数在template行中的使用做准备</li>
+</ul>
+
+<p>例如，如果你需要一个随机数，但是需要在template行中两次用到同一个随机数，你可以采用code line来生成这个随机数，然后再在template行中使用它。</p>
+
+<p>另一个例子是定义一个返回随机颜色的函数。</p>
+
+<h3 id="code">Code行的类型</h3>
+
+<p>就像template行一样，Code行也有很多种类。有一些和template是类似的，有一些只在code中独立存在或者只在template中独立存在。</p>
+
+<p>你通过在特效栏的 <code>code</code> 后添加关键词(修饰语)来进行code行类型的指定。
+可用的类型(修饰语)有:</p>
+
+<dl>
+  <dt>once</dt>
+  <dd><code>once</code> 类型的code行在模板执行器的整个运行过程中只执行一次。通常用来定义函数或者一个通用的表，以便你之后多次调用。它是默认类型，如果你不指定code行类型，那么它默认以 <code>once</code> 的规则执行。</dd>
+  <dt>line</dt>
+  <dd><code>line</code> 类型的code行每检测到一行karaoke行便执行一次。这个类型的code行一般与 <code>line</code>/<code>pre-line</code> 类型的模板配合使用。
+(code行并没有"pre-line"这个类别)</dd>
+  <dt>syl</dt>
+  <dd><code>syl</code> 类型的code行每检测到一个音节便执行一次。它与 <code>syl</code> 类型的template行配合使用。</dd>
+  <dt>furi</dt>
+  <dd><code>furi</code> 类型的code行每检测到一个注音音节便执行一次。它与 <code>furi</code> 类型的template行配合使用。</dd>
+</dl>
+
+<p>你 <em>不能</em> 用 <code>char</code> 或者 <code>multi</code> 修饰语来配合code行使用。这是执行模式带来的限制。这一点在未来的卡拉OK模板执行器中也不会改变。</p>
+
+<h2 id="code--1">Code 区</h2>
+
+<p>Code区是在template行中使用Lua代码的一个区块。插入一个Code区，就可以在里面使用复杂的东西，这类东西可以表述为 <a href="../Inline_variables/index.html">内联变量</a>。</p>
+
+<p>Code区要求是一个单独的Lua表达式，因为 <code>return</code>这种步骤已经预先包含在了code区的规则中。
+这意味着你无法在code区中使用类似 <code>if</code> 这种表达式，如果你一定要使用，只能在code行中进行。(虽然有一种方式可以在code区基本实现if逻辑，请继续阅读)</p>
+
+<p>code区的插入方式是使用一对半角感叹号(!)，两个感叹号中间的区域即code区，如下:</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>{\t($start,**!syl.start_time+20!**,\bord0)}
+</code></pre></div>
+<p>在code区中可以使用内联变量。它们在code区执行前就已经被赋值，所以对于Lua解释器来说，它们就是常量。</p>
+
+<h3 id="code-1">code区使用的小提示</h3>
+
+<p>大多数的简单数学表达式都像你所想的一样正常执行。
+因为执行顺序就和我们学习的算术顺序一致。</p>
+
+<p>Code区总是返回一串字符或者数学数值，如果要求它返回一个布尔型(boolean)或者一个表(table)或者其它乱七八糟的东西，它就会报错或者在生成的行中包含一些错误的信息。</p>
+
+<p>想要在code区进行简单的逻辑判断需要使用 <code>and</code> 和 <code>or</code>，例如:</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>{\k**!syl.duration &gt; 100 and "f" or ""!**$kdur}
+</code></pre></div>
+<p>如果音节持续时间大于 100 ms ，子表达式1为真，code区会返回 <tt>"f"</tt> 作为结果。否则整个 <code>and</code>
+表达为false，右边的参数 <code>or</code> 表达式会被执行并返回空。</p>
+
+<p>在Lua中， <code>and</code> 的优先级高于 <code>or</code> ，这意味着 <code>and</code> 表达式会先被评估。如果用小括号分组表示优先级，就像这样:
+<code>((syl.duration &gt; 100) and "f") or ""</code></p>
+
+<div class='navbox'>
+<div><a href="../../index.html">自动化</a></div>
+<table>
+<tr>
+<th>概述:</th>
+<td><a href="../../Manager/index.html">自动化脚本管理器</a> • <a href="../../Running_macros/index.html">运行宏</a> • <a href="../../../Exporting/index.html">使用导出滤镜</a> • <a href="../../Included_macros/index.html">示例宏</a></td>
+</tr>
+<tr>
+<th><a href="../index.html">卡拉OK模版执行器</a> 相关:</th>
+<td><a href="../Declaring_template_and_code_lines/index.html">声明模版</a> • <a href="../Template_execution_rules_and_order/index.html">模版执行顺序</a> • <a href="../Template_modifiers/index.html">修饰语</a> • <a href="../Inline_variables/index.html">内联变量($变量)</a> <br> <a href="index.html">code行和code区</a> • <a href="../Code_execution_environment/index.html">代码执行环境</a></td>
+</tr>
+<tr>
+<th><a href="../../Lua/index.html">Lua API</a> 相关:</th>
+<td><a href="../../Lua/Registration/index.html">注册</a> • <a href="../../Lua/Subtitle_file_interface/index.html">字幕对象</a> • <a href="../../Lua/Progress_reporting/index.html">进度反馈</a> • <a href="../../Lua/Dialogs/index.html">对话框</a> • <a href="../../Lua/Miscellaneous_APIs/index.html">其他APIs</a></td>
+</tr>
+<tr>
+<th><a href="../../Lua/Modules/index.html">Lua 模块</a>:</th>
+<td><a href="../../Lua/Modules/karaskel.lua/index.html">karaskel.lua</a> • <a href="../../Lua/Modules/util/index.html">util</a> • <a href="../../Lua/Modules/unicode/index.html">unicode</a> • <a href="#">cleantags.lua</a> • <a href="../../Lua/Modules/clipboard/index.html">clipboard</a> • <a href="../../Lua/Modules/re/index.html">re</a></td>
+</tr>
+<tr>
+<th>Karaskel 概念:</th>
+<td><a href="../../Lua/Modules/karaskel.lua/index.html#style-table">Style tables</a> • <a href="../../Lua/Modules/karaskel.lua/index.html#dialogue-line-table">Dialogue line tables</a> • <a href="../../Lua/Modules/karaskel.lua/index.html#karaoke-and-furigana-syllable-tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/index.html">内联特效</a> • <a href="../../../Furigana_karaoke/index.html">注音假名</a></td>
+</tr>
+</table>
+</div>
+
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Karaoke_Templater/Code_lines_and_blocks/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:40 GMT -->
+</html>
+

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from docs.aegisub.org/3.1/Automation/Lua/Dialogs/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:49:13 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>Dialogs - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href='../../../../3.2/Automation/Lua/Dialogs/index.html' rel='canonical'>
+<link href="../../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../../../Main_Page/index.html">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../../../About/index.html">What is Aegisub?</a>
+</li>
+<li>
+<a href="../../../Highlights/index.html">Highlights</a>
+</li>
+<li>
+<a href="../../../Credits/index.html">Credits</a>
+</li>
+<li>
+<a href="../../../Support/index.html">Support Aegisub</a>
+</li>
+<li>
+<a href="../../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../../Tutorials/index.html">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li>
+<a href="../../../Editing_Subtitles/index.html">Editing Subtitles</a>
+</li>
+<li>
+<a href="../../../Exporting/index.html">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../../../Attaching_subtitles_to_video/index.html">Applying Subtitles</a>
+</li>
+<li>
+<a href="../../../Spell_Checker/index.html">Spell Checker</a>
+</li>
+<li>
+<a href="../../../Translation_Assistant/index.html">Translation Assistant</a>
+</li>
+<li>
+<a href="../../../Paste_Over/index.html">Paste Over</a>
+</li>
+<li>
+<a href="../../../Select_Lines/index.html">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../../../Typesetting/index.html">Introduction</a>
+</li>
+<li>
+<a href="../../../Video/index.html">Working with Video</a>
+</li>
+<li>
+<a href="../../../Styles/index.html">Editing styles</a>
+</li>
+<li>
+<a href="../../../Visual_Typesetting/index.html">Visual Typesetting</a>
+</li>
+<li>
+<a href="../../../ASS_Tags/index.html">ASS Override Tags</a>
+</li>
+<li>
+<a href="../../../Colour_Picker/index.html">Colour Picker</a>
+</li>
+<li>
+<a href="../../../Styling_Assistant/index.html">Styling Assistant</a>
+</li>
+<li>
+<a href="../../../Resolution_Resampler/index.html">Resolution Resampler</a>
+</li>
+<li>
+<a href="../../../Fonts_Collector/index.html">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../../../Audio/index.html">Working with Audio</a>
+</li>
+<li>
+<a href="../../../Timing/index.html">Timing subtitles to audio</a>
+</li>
+<li>
+<a href="../../../Shift_Times/index.html">Shift times</a>
+</li>
+<li>
+<a href="../../../Timing_Post-Processor/index.html">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../../../Kanji_Timer/index.html">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../../index.html">Overview</a>
+</li>
+<li>
+<a href="../../Karaoke_Templater/index.html">Karaoke Templater</a>
+</li>
+<li>
+<a href="../index.html">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../../../Options/index.html">Aegisub Options</a>
+</li>
+<li>
+<a href="../../../Properties/index.html">Script Properties</a>
+</li>
+<li>
+<a href="../../../Attachment_Manager/index.html">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'><a href="../../index.html">Automation</a> / <a href="../index.html">Lua</a> / Dialogs</h1>
+<ol id="markdown-toc">
+  <li><a href="#display-dialog-functions">Display dialog functions</a>    <ol>
+      <li><a href="#aegisubdialogdisplay">aegisub.dialog.display</a></li>
+      <li><a href="#aegisubdialogopen">aegisub.dialog.open</a></li>
+      <li><a href="#aegisubdialogsave">aegisub.dialog.save</a></li>
+    </ol>
+  </li>
+  <li><a href="#configuration-dialog-interface">Configuration Dialog interface</a>    <ol>
+      <li><a href="#dialog-control-table-format">Dialog Control table format</a></li>
+      <li><a href="#dialog-definition-table-format">Dialog Definition table format</a></li>
+      <li><a href="#dialog-result-table-format">Dialog Result table format</a></li>
+      <li><a href="#dialog-button-ids">Dialog button IDs</a></li>
+    </ol>
+  </li>
+</ol>
+
+<p>These functions are used to display dialogs for the user to interact with.</p>
+
+<h2 id="display-dialog-functions">Display dialog functions</h2>
+
+<h3 id="aegisubdialogdisplay">aegisub.dialog.display</h3>
+<p>Synopsis: <code>button, result_table = aegisub.dialog.display(dialog, buttons, button_ids)</code></p>
+
+<p>This function displays a configuration dialog to the user and waits for it to
+close. It then returns whether the user accepted or cancelled the dialog, and
+what values were input.</p>
+
+<dl>
+  <dt><strong><code>@dialog</code></strong> (<code>table</code>)</dt>
+  <dd>A <a href="../../../Automation/Lua/Dialogs/index.html#dialog-definition-table-format">Dialog Definition
+table</a> containing
+the controls to be in the dialog.</dd>
+  <dt><strong><code>@buttons</code></strong> (<code>table</code>)</dt>
+  <dd>Optional. This is an array of strings defining the buttons that appear in
+the dialog. If this is left out, empty or is otherwise not a table, the
+standard Ok and Cancel buttons appear.<br />
+The strings in this table are used as labels on the buttons, and for
+identifying them in the return values of the function.</dd>
+  <dt><strong><code>@button_ids</code></strong> (<code>table</code>)</dt>
+  <dd>Optional. A table which specifies which buttons in the dialog correspond to
+which <a href="../../../Automation/Lua/Dialogs/index.html#dialog-button-ids">platform button IDs</a>, making it possible to
+specify which button will be triggered if the user hits Enter or ESC.</dd>
+  <dt><strong><code>button</code></strong> (<code>boolean</code> or <code>string</code>)</dt>
+  <dd>If no custom buttons were specified, this is a boolean telling whether
+Ok (true) or Cancel (false) were clicked in the dialog. If custom buttons
+were specified, this is the text on the button clicked by the user. Even if
+custom buttons were specified, this can still be boolean false if the user
+closes the dialog without pressing any button.</dd>
+  <dt><strong><code>result_table</code></strong> (<code>table</code>)</dt>
+  <dd>The <a href="../../../Automation/Lua/Dialogs/index.html#dialog-result-table-format">Dialog Result
+table</a> corresponding to
+the values the user input in the dialog.</dd>
+</dl>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><pre class="highlight lua"><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span><span class="n">class</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">Times to frobulate&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">},</span>
+    <span class="p">{</span><span class="n">class</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">intedit&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">times&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">}</span>
+<span class="p">}</span>
+<span class="n">btn</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">aegisub</span><span class="p">.</span><span class="n">dialog</span><span class="p">.</span><span class="n">display</span><span class="p">(</span><span class="n">config</span><span class="p">,</span>
+        <span class="p">{</span><span class="s2">&quot;</span><span class="s">Frobulate&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">Nevermind&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;</span><span class="s">ok&quot;</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">Frobulate&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">cancel&quot;</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">Nevermind&quot;</span><span class="p">})</span>
+<span class="k">if</span> <span class="n">btn</span> <span class="k">then</span>
+    <span class="n">frobulate</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">times</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+
+<h3 id="aegisubdialogopen">aegisub.dialog.open</h3>
+<p>Synopsis: <code>file_name = aegisub.dialog.open(title, default_file, default_dir, wildcards, allow_multiple=false, must_exist=true)</code></p>
+
+<p>Open a standard file open dialog to ask the user for a filename. Returns
+the path to the selected file(s), or nil if the user canceled.</p>
+
+<dl>
+  <dt><strong><code>@title</code></strong> (<code>string</code>)</dt>
+  <dd>Title of the dialog</dd>
+  <dt><strong><code>@default_file</code></strong> (<code>string</code>)</dt>
+  <dd>Default filename to preselect. May be empty.</dd>
+  <dt><strong><code>@default_dir</code></strong> (<code>string</code>)</dt>
+  <dd>Initial directory to show in the open dialog. If empty, the
+last used directory is shown.</dd>
+  <dt><strong><code>@wildcards</code></strong> (<code>string</code>)</dt>
+  <dd>File filters to show. If empty, a sane default will be used.<br />
+E.g. "All Files (<em>.</em>)|<em>.</em>|XYZ files (<em>.xyz)|</em>.xyz"</dd>
+  <dt><strong><code>@allow_multiple</code></strong> (<code>boolean</code>)</dt>
+  <dd>Let the user select multiple files. If this is true, a table of
+filenames will be returned rather than a single string, even
+if only one file is selected by the user.</dd>
+  <dt><strong><code>@must_exist</code></strong> (<code>boolean</code>)</dt>
+  <dd>Only let the user select files that actually exist.</dd>
+  <dt><strong><code>file_name</code></strong> (<code>nil</code>, <code>string</code>, or <code>table</code>)</dt>
+  <dd><code>nil</code> if the user cancelled. A <code>string</code> containing the path to the
+selected file if <code>allow_multiple</code> is false, or a table containing the
+paths to all selected files if <code>allow_multiple</code> is true.</dd>
+</dl>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><pre class="highlight lua"><span class="n">filename</span> <span class="o">=</span> <span class="n">aegisub</span><span class="p">.</span><span class="n">dialog</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'</span><span class="s">Select file to read'</span><span class="p">,</span> <span class="s1">'</span><span class="s">'</span><span class="p">,</span> <span class="s1">'</span><span class="s">'</span><span class="p">,</span>
+                               <span class="s1">'</span><span class="s">Text files (.txt)|*.txt'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">filename</span> <span class="k">then</span> <span class="n">aegisub</span><span class="p">.</span><span class="n">cancel</span><span class="p">()</span> <span class="k">end</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="nb">io.open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'</span><span class="s">rb'</span><span class="p">)</span>
+<span class="o">...</span><span class="p">.</span>
+</pre></div>
+</div>
+
+<h3 id="aegisubdialogsave">aegisub.dialog.save</h3>
+<p>Synopsis: <code>file_name = aegisub.dialog.save(title, default_file, default_dir, wildcards, dont_prompt_for_overwrite=false)</code></p>
+
+<p>Open a standard file save dialog to ask the user for a filename.  Returns
+the path to the selected file, or nil if the user canceled.</p>
+
+<dl>
+  <dt><strong><code>@title</code></strong> (<code>string</code>)</dt>
+  <dd>Title of the dialog</dd>
+  <dt><strong><code>@default_file</code></strong> (<code>string</code>)</dt>
+  <dd>Default filename to preselect. May be empty.</dd>
+  <dt><strong><code>@default_dir</code></strong> (<code>string</code>)</dt>
+  <dd>Initial directory to show in the open dialog. If empty, the
+last used directory is shown.</dd>
+  <dt><strong><code>@wildcards</code></strong> (<code>string</code>)</dt>
+  <dd>File filters to show. If empty, a sane default will be used.<br />
+E.g. "All Files (<em>.</em>)|<em>.</em>|XYZ files (<em>.xyz)|</em>.xyz"</dd>
+  <dt><strong><code>@dont_prompt_for_overwrite</code></strong> (<code>boolean</code>)</dt>
+  <dd>Don't ask the user to confirm that they wish to overwrite the file if
+they select a filename that already exists.</dd>
+  <dt><strong><code>file_name</code></strong> (<code>nil</code>or  <code>string</code>)</dt>
+  <dd><code>nil</code> if the user cancelled, and a <code>string</code> containing the path to the
+selected file otherwise.</dd>
+</dl>
+
+<h2 id="configuration-dialog-interface">Configuration Dialog interface</h2>
+
+<p>This section describes the tables passed to and received from
+<code>aegisub.dialog.display</code> and the <a href="../../../Automation/Lua/Registration/index.html#exportfilterconfigurationpanelprovider">export filter configuration
+panel</a>.</p>
+
+<p>This file describes the functions and data structures used for the
+Configuration Dialog functionality in Automation 4.</p>
+
+<h3 id="dialog-control-table-format">Dialog Control table format</h3>
+
+<p>A Dialog Control table describes a single control in a configuration dialog,
+which can display information to the user and allow them to change it.</p>
+
+<p>There are a number of different classes of controls, and the keys a Dialog
+Control table must contain depends on the control class.</p>
+
+<p>Common keys for all control classes:</p>
+
+<dl>
+  <dt><strong><code>class</code></strong> (<code>string</code>)</dt>
+  <dd>Defines which class this control has. Must be one of:
+
+    <ul>
+      <li>"label",</li>
+      <li>"edit", "intedit", "floatedit", "textbox",</li>
+      <li>"dropdown",</li>
+      <li>"checkbox",</li>
+      <li>"color", "coloralpha", "alpha"</li>
+    </ul>
+  </dd>
+  <dt><strong><code>x</code></strong> (<code>number</code>)</dt>
+  <dt><strong><code>y</code></strong> (<code>number</code>)</dt>
+  <dt><strong><code>width</code></strong> (<code>number</code>)</dt>
+  <dt><strong><code>height</code></strong> (<code>number</code>)</dt>
+  <dd>Determines the position and size of the control in the dialog. These values
+are used to create a grid containing the controls. They should all be
+integer. The top left corner is <code>x</code>,<code>y</code>=0,0.
+If any of width and height are set to zero or less, it will be set to one
+instead.</dd>
+</dl>
+
+<p>Keys defined for all classes except "label":</p>
+
+<dl>
+  <dt><strong><code>hint</code></strong> (<code>string</code>)</dt>
+  <dd>A string displayed to the user as tooltip, when hovering over the control.</dd>
+  <dt><strong><code>name</code></strong> (<code>string</code>)</dt>
+  <dd>A name that uniquely identifies the control. This is recommended to be a
+string easily used as an identifier in Lua, since it will be used to access
+the value input into the control.</dd>
+</dl>
+
+<p>Keys defined only for "label" and "checkbox" classes:</p>
+
+<dl>
+  <dt><strong><code>label</code></strong> (<code>string</code>)</dt>
+  <dd>The text displayed to the user on the control.</dd>
+</dl>
+
+<p>Key defined only for the "edit" and "textbox" classes:</p>
+
+<dl>
+  <dt><strong><code>text</code></strong> (<code>string</code>)</dt>
+  <dd>The contents of the control when the dialog is first displayed.
+This can contain newlines if the control is of the "textbox" class.</dd>
+</dl>
+
+<p>Keys defined only for the "intedit" and "floatedit" classes:</p>
+
+<dl>
+  <dt><strong><code>value</code></strong> (<code>number</code>)</dt>
+  <dd>The value in the control when the dialog is first displayed. For the
+"intedit" class, if this is a non-integer number it will be truncated.</dd>
+  <dt><strong><code>min</code></strong> (<code>number or nil</code>)</dt>
+  <dt><strong><code>max</code></strong> (<code>number or nil</code>)</dt>
+  <dd>If one of these are nil, the other must also be nil. (i.e. undefined.) If
+both are present, the control gets a spin button that the user can click
+to update the value of the control. The user won't be able to enter
+values outside the (inclusive) range between <code>min</code> and <code>max</code>.</dd>
+</dl>
+
+<p>Key defined only for the "floatedit" class:</p>
+
+<dl>
+  <dt><strong><code>step</code></strong> (<code>number or nil</code>)</dt>
+  <dd>Specifies the size of change when the spin buttons are clicked. If nil,
+spin buttons will not be displayed even if <code>min</code> and <code>max</code> are set (but
+the values accepted will still be limited). Note that this does not
+require that <code>min</code> and <code>max</code> be set.</dd>
+</dl>
+
+<p>Keys defined only for the "dropdown" class:</p>
+
+<dl>
+  <dt><strong><code>items</code></strong> (<code>table</code>)</dt>
+  <dd>This is an Array Table containing only strings. They are used for the
+options displayed to the user in the dropdown box.
+All strings in the array table should be unique. (There is not way to
+distinguish non-unique strings from each other.)</dd>
+  <dt><strong><code>value</code></strong> (<code>string</code>)</dt>
+  <dd>Determines which item is selected when the dialog is first displayed. If
+this is not one of the items specified, no item is selected. This is case-
+sensitive.</dd>
+</dl>
+
+<p>Key defined only for the "checkbox" class:</p>
+
+<dl>
+  <dt><strong><code>value</code></strong> (<code>boolean</code>)</dt>
+  <dd>Determines whether the checkbox is checked or not when the dialog is first
+displayed.</dd>
+</dl>
+
+<p>Keys defined only for the "color", "coloralpha" and "alpha" classes:</p>
+
+<dl>
+  <dt><strong><code>value</code></strong> (<code>string</code>)</dt>
+  <dd>A color value in VB or HTML hexadecimal format.
+For the "color" class, this should be a 3 byte value, i.e. "#RRGGBB".
+For the "coloralpha" class, this should be a 4 byte value, i.e. "#RRGGBBAA".
+For the "alpha" class, this should be a one-byte value, i.e. "#AA".</dd>
+</dl>
+
+<h3 id="dialog-definition-table-format">Dialog Definition table format</h3>
+
+<p>The Dialog Definition table is simply an array of Dialog Control tables.</p>
+
+<p>Note, however, that while the visual ordering of the controls are decided
+entirely by the "x", "y", "width" and "height" of the controls, the
+"tab order" of the controls is decided by their ordering in the Dialog
+Definition table. Your users will thank you if you make these match up.</p>
+
+<h3 id="dialog-result-table-format">Dialog Result table format</h3>
+
+<p>A Dialog Result table contains the user input from a configuration dialog.</p>
+
+<p>The control "<code>name</code>" properties are used as keys in this table.</p>
+
+<p>The type of the value for each entry in the table depends on the class of the
+control. The control classes map to types in the following manner:</p>
+
+<dl>
+  <dt><strong><code>label</code></strong>: <code>nil</code></dt>
+  <dd>Since the user cannot change a label, they do not produce any value.</dd>
+  <dt><strong><code>edit</code></strong>, <strong><code>textbox</code></strong>: <code>string</code></dt>
+  <dd>The text input in the box. This can contain newlines in the case of a
+<strong><code>textbox</code></strong> class control.</dd>
+  <dt><strong><code>intedit</code></strong>, <strong><code>floatedit</code></strong>: <code>number</code></dt>
+  <dd>The number input into the control, guaranteed to be within the
+constraints set by the class (integer or float) and the min/max properties.</dd>
+  <dt><strong><code>dropdown</code></strong>: <code>string</code></dt>
+  <dd>The case-exact text of the selected item.</dd>
+  <dt><strong><code>checkbox</code></strong>: <code>boolean</code></dt>
+  <dd>The checked-state of the checkbox.</dd>
+  <dt><strong><code>color</code></strong>, <strong><code>coloralpha</code></strong>, <strong><code>alpha</code></strong>: <code>string</code></dt>
+  <dd>A VB colorstring following the same scheme as for setting the
+<strong><code>value</code></strong> property.</dd>
+</dl>
+
+<p>Dialog result tables are purely output from the dialog. Changing them and then
+redisplaying the dialog will not have any effect.</p>
+
+<h3 id="dialog-button-ids">Dialog button IDs</h3>
+<p>Legal values for button IDs are:
+        ok
+        yes
+        save
+        apply
+        close
+        no
+        cancel
+        help
+        context_help</p>
+
+<p>Note that many combinations of button IDs do not make sense and may have
+strange effects. For example, having both <code>cancel</code> and <code>close</code> buttons is a bad
+idea.</p>
+
+<p>Buttons with an ID of <code>cancel</code> return false, as if ESC was pressed. A
+button with an ID of <code>close</code> results in that button being triggered on
+ESC rather than cancel.</p>
+
+<p>Buttons with an ID of <code>ok</code>, <code>yes</code> and <code>save</code> are set as the default
+affirmative button for the dialog.</p>
+
+<p>Buttons with the ID <code>help</code> will be displayed as a question mark in a circle on
+the left side of the dialog on OS X.</p>
+
+<div class='navbox'>
+<div><a href="../../../Automation/index.html">Automation</a></div>
+<table>
+<tr>
+<th>Overview:</th>
+<td><a href="../../../Automation/Manager/index.html">Automation Manager</a> • <a href="../../../Automation/Running_macros/index.html">Running macros</a> • <a href="../../../Exporting/index.html">Using export filters</a> • <a href="../../../Automation/Included_macros/index.html">Standard macros</a></td>
+</tr>
+<tr>
+<th><a href="../../../Automation/Karaoke_Templater/index.html">Karaoke Templater</a> reference:</th>
+<td><a href="../../../Automation/Karaoke_Templater/Declaring_template_and_code_lines/index.html">Declaring templates</a> • <a href="../../../Automation/Karaoke_Templater/Template_execution_rules_and_order/index.html">Execution order</a> • <a href="../../../Automation/Karaoke_Templater/Template_modifiers/index.html">Modifiers</a> • <a href="../../../Automation/Karaoke_Templater/Inline_variables/index.html">Inline-variables ($-variables)</a> <br> <a href="../../../Automation/Karaoke_Templater/Code_lines_and_blocks/index.html">Code lines and blocks</a> • <a href="../../../Automation/Karaoke_Templater/Code_execution_environment/index.html">Execution envirionment</a></td>
+</tr>
+<tr>
+<th><a href="../../../Automation/Lua/index.html">Lua API</a>  reference:</th>
+<td><a href="../../../Automation/Lua/Registration/index.html">Registration</a> • <a href="../../../Automation/Lua/Subtitle_file_interface/index.html">Subtitles object</a> • <a href="../../../Automation/Lua/Progress_reporting/index.html">Progress reporting</a> • <a href="../../../Automation/Lua/Dialogs/index.html">Dialogs</a> • <a href="../../../Automation/Lua/Miscellaneous_APIs/index.html">Misc. APIs</a></td>
+</tr>
+<tr>
+<th><a href="../../../Automation/Lua/Modules/index.html">Lua Modules</a>:</th>
+<td><a href="../../../Automation/Lua/Modules/karaskel.lua/index.html">karaskel.lua</a> • <a href="../../../Automation/Lua/Modules/util/index.html">util</a> • <a href="../../../Automation/Lua/Modules/unicode/index.html">unicode</a> • <a href="#">cleantags.lua</a> • <a href="../../../Automation/Lua/Modules/clipboard/index.html">clipboard</a> • <a href="../../../Automation/Lua/Modules/re/index.html">re</a></td>
+</tr>
+<tr>
+<th>Karaskel concepts:</th>
+<td><a href="../../../Automation/Lua/Modules/karaskel.lua/index.html#Style_table">Style tables</a> • <a href="../../../Automation/Lua/Modules/karaskel.lua/index.html#Dialogue_line_table">Dialogue line tables</a> • <a href="../../../Automation/Lua/Modules/karaskel.lua/index.html#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/index.html">Inline effects</a> • <a href="../../../Furigana_karaoke/index.html">Furigana</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com/'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from docs.aegisub.org/3.1/Automation/Lua/Dialogs/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:49:13 GMT -->
+</html>
+

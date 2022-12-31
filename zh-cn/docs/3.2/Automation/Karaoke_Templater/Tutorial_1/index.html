@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Karaoke_Templater/Tutorial_1/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:16 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>自动化/卡拉OK模板执行器/教程一 - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../../../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../../../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../../../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../../../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../../../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../../../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../../../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../../../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../../../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../../../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../../../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../../../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../../../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../../../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../../../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../../../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../../../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../../../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../../../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../../../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../../../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../../../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../../../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../../../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../../../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../../../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../../index.html">概述</a>
+</li>
+<li>
+<a href="../index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../../Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../../../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../../../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../../../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>自动化/卡拉OK模板执行器/教程一</h1>
+<p>欢迎来到这里！这是有关卡拉OK模板执行器的第一篇教程，它可以帮助你创作 <a href="../../../Glossary/Karaoke_effect/index.html">卡拉OK特效</a>。在一系列教程里，我们由简单到复杂来进行教学。</p>
+
+<h2 id="okkaraoke-templater">找到卡拉OK模板执行器(Karaoke Templater)</h2>
+
+<p>你可以用两种方式运行卡拉OK模板应用器。我们主要讲解其中一种。</p>
+
+<p>在Aegisub中的自动化菜单下找到卡拉OK模板应用器。</p>
+
+<p><img alt="" width="173" height="113" src="../../../img/Automation-menu-kara-templater-gray-d0c1f148.png" /></p>
+
+<p>你可以看见一个叫做 <em>应用卡拉OK模板</em> 的选项，现在它应该是灰色的不可用状态。点击它可以应用写好的卡拉OK模板，然而现在它是不可用的，因为你还没有写好模板，跟随着教程，你会写出自己的卡拉OK模板。</p>
+
+<p>如果你没有这个选项，你的Aegisub可能没有安装完整，或者损坏了。你需要修复安装才能使用卡拉OK模板执行器。</p>
+
+<p>但是还有其他的东西需要确认。</p>
+
+<h2 id="k">获取打好K值的行</h2>
+
+<p>卡拉OK模板执行能做许多事，但是它没办法猜到歌曲的歌词，也没办法猜测歌词和音乐的同步信息。你不得不亲自给歌词制作卡拉OK时间。你可以在 <a href="../../../Karaoke_Timing_Tutorial/index.html">Karaoke Timing Tutorial</a> 中找到给歌词制作卡拉OK时间（K值）的方法。</p>
+
+<p>我们把基础的含有卡拉OK时间信息的歌词称为K值歌词(\k timing)，但它们不含有特效，对于 <em>k值歌词</em> 。当它被应用了卡拉OK特效后，我们称它 <em>styled karaoke</em> 。</p>
+
+<p>如果你是从头开始这项工作，在已经有歌词文本的情况下，你需要在歌词所在的窗口点击 <em>编辑</em>→<em>复制</em>，然后到Aegisub中点击 <em>编辑</em>→<em>粘贴</em>，这样就把歌词导入了Aegisub。</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>Dialogue: 0,0:00:01.85,0:00:09.06,Default,,0000,0000,0000,,{\k97}shi{\k41}ta{\k0} {\k20}no{\k10} {\k30}u{\k80}e{\k53} {\k23}a{\k21}ma{\k39}ku{\k7}  {\k24}to{\k24}ke{\k31}ru{\k0} {\k37}wa{\k23}ta{\k92}gu{\k69}mo
+Dialogue: 0,0:00:09.28,0:00:16.21,Default,,0000,0000,0000,,{\k79}ki{\k61}su{\k0} {\k9}o{\k0} {\k37}shi{\k98}te{\k40}  {\k23}ku{\k25}ro{\k40}i{\k0} {\k28}tsu{\k19}ba{\k51}sa{\k0} {\k11}no{\k0} {\k34}shi{\k138}ta
+</code></pre></div>
+<p>如果你已经给歌词打好K值，那么我们可以开始下一步了。</p>
+
+<h3 id="section">读取视频</h3>
+
+<p>你不必读取任何音频，但是读取视频是个好主意。如果你没有可用的视频，可以使用 <em>视频</em>→<em>使用空白视频</em> 。这不是个有趣的视频，但在它上面可以预览你的字幕。</p>
+
+<h2 id="k-">编写一个 <em>K值替换</em> 模板</h2>
+
+<p>目前，我们有了除了确切的模板以外的一切，现在我们来编写它。
+首先，介绍如何添加一行模板。你做的每一步的意义后面都有相应的解释。</p>
+
+<ol>
+  <li>选中字幕文件中的第一行。</li>
+  <li>选择 <em>字幕</em>→<em>插入行</em>→<em>当前行之前</em> 来建立一个新行。这一行将会是我们的"卡拉OK模板行"。它 <em>不需要</em> 作为文件中的第一行，但是写在文件的开头有助于你自己保持清晰的思路。</li>
+  <li>确认新建的行样式与你想要应用模板的行(打好K值的行)有相同的 <em>样式</em> 。</li>
+  <li>把这行的 <em>注释</em> 打上勾。你在字幕栏会看到这行颜色改变。</li>
+  <li>找到 <em>特效</em> 栏，它位于 <em>样式和说话人</em> 栏的右侧。在里面键入 "<code>template line</code>" 。(别打上引号!) 敲 <em>回车</em> 来保存特效栏内容。</li>
+  <li>最后，键入文本作为模板行的内容，再次按 <em>回车</em> 保存。例如 <code>{\r\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)}</code></li>
+</ol>
+
+<p><div class='todo'>
+<strong><p>插入一张截屏来展示做完这几步后看起来是什么样子。</p>
+</strong>
+</div>
+</p>
+
+<p>现在再看看 <em>自动化</em> 菜单。如果你正确地编写了模板， <em>应用卡拉OK模板</em> 看起来是可用的。如果还是灰色的，请按上述步骤检查。</p>
+
+<p>点击 <em>应用卡拉OK模板</em> 来观察卡拉OK模板执行器如何工作。</p>
+
+<p><div class='todo'>
+<strong><p>另一张截图，展示应用完模板的效果.</p>
+</strong>
+</div>
+</p>
+
+<p>如果你已经读取了视频，那么现在应该能在Aegisub里预览到效果了。</p>
+
+<p>注意到模板行还在它原来的位置，打好K值的行变成了注释行，这些行的特效栏会被填写上 <em>karaoke</em> 。
+卡拉OK模板执行器会保留原来的行，所以你不必担心丢失它们。但是它还有另外的功能。</p>
+
+<h2 id="section-1">有关特效的拓展内容</h2>
+
+<p>如果上面这些读懂了，也做成功了，那就看看下面:</p>
+
+<ol>
+  <li>把模板行的文本改成: <code>{\r\k$kdur\t($start,$end,\1c&amp;H00FF00&amp;)\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)}</code></li>
+  <li>再次应用模板</li>
+</ol>
+
+<p><div class='todo'>
+<strong><p>再添加一张截图</p>
+</strong>
+</div>
+</p>
+
+<p>卡拉OK模板执行器重新利用了打好K值的行，并且赋予它们特效。你也可以尝试改变被注释的打好K的行，然后重新应用模板。</p>
+
+<p>像这样，你可以逐渐制作出理想的特效，并且随之预览它。</p>
+
+<h2 id="section-2">所以这意味着什么?</h2>
+
+<p>学习每部分的教程有何意义？下面的解释虽然没能涵盖所有的事情，但是对现在的你来说应该是足够了。</p>
+
+<ul>
+  <li><em>模板行</em> 是字幕文件中以特殊方式标记出来的行。
+ 它们总是以注释行的形式出现，并且在它们的特效栏文本中，第一个单词必须是 <code>template</code>。</li>
+  <li>存在着几种类别的模板行。在这篇教程中我们只展示了其中一种的用法，这种模板行类型( <em>template class</em> )，被称作 <em>行模板(line
+template)</em> 。是的，这可能有点令人迷惑。它之所以叫这个名字是因为它使用一行打好K的行，对应生成一个结果行(结果行包含原来行的所有音节)。特效栏的第二个单词声明了这个模板的类型为 <code>line(行)</code>。(译者注：如果你使用 <code>syl</code> 替换掉 <code>line</code>，那么生成的结果行数目与原行含有的\k数目，即音节数相同，起到拆行为音节的效果)</li>
+  <li>所以，<code>template line</code> 意味着这是一个 <em>行类型</em> 的 <em>模板行</em> 。</li>
+</ul>
+<ul>
+  <li>模板行只会对具有相同样式的打好K的行生效。</li>
+</ul>
+<ul>
+  <li>卡拉OK模板执行器执行模板后，结果行的特效栏将会带有 <code>fx</code> 。这两个字母用来提醒卡拉OK模板执行器，下一次应用模板时，这行应当被替换(事实上是被移除)。</li>
+</ul>
+<ul>
+  <li>模板行中的主文本被称为 <em>模板内容</em> 。在 <em>line</em> 类模板中，每个 \k 标签会被模板内容匹配替换一次。</li>
+  <li>模板内容中可以使用几种 <em>变量</em> 。这些变量是短小的单词，有着美元标志＄比如 <code>$start</code>, <code>$end</code>, <code>$mid</code> 和 <code>$kdur</code>。
+变量在应用模板时会被具体音节的属性值(位置时间信息等)替换。
+    <ul>
+      <li><code>$start</code> 会被音节的开始时间替换掉。它以毫秒为单位，相对于行的开始时间计算，可以用来配合具有时间参数的特效标签例如 \t, \move 和 \fade 等。</li>
+      <li>相似地，<code>$end</code> 是音节相对于行开始时间的结束时间，以毫秒为单位。</li>
+      <li>稍微有些特殊的是 <code>$mid</code>，它是音节的 <em>中间时间</em> ，处于 <code>$start</code> 和 <code>$end</code> 中间。在上面的示例模板中，我们让音节在前半时间变高(事实上，我们总是使音节在前半段产生这种变化)。
+并在后半段时间恢复到原来的大小。它也是以毫秒为单位的。</li>
+      <li><code>$kdur</code> 变量，它比较特殊，因为是以厘秒为单位。它等同于 \k 标签后面的数字，使用它的目的几乎都是把 \k标签 放回到行中，就像我们上面的模板中写的。</li>
+    </ul>
+  </li>
+</ul>
+
+<p>知道了这些，你应该已经可以创作许多特效啦。配合着 <a href="../../../ASS_Tags/index.html">ASS特效标签</a> ，发挥想象，会有更丰富的效果。</p>
+
+<p>你也可以 <a href="../Tutorial_2/index.html">继续下一篇教程</a>，在那里你可以了解如何对变量做一些数学上的调整，来获取一些变型。</p>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Karaoke_Templater/Tutorial_1/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:16 GMT -->
+</html>
+

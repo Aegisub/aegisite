@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Commands/cs/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:16:51 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>cs - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../../Automation/index.html">概述</a>
+</li>
+<li>
+<a href="../../Automation/Karaoke_Templater/index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../../Automation/Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>cs</h1>
+<table style='width: 100%; margin-bottom: 2em'>
+<tr>
+<td>
+<a href='../en_US/index.html'>English (U.S.)</a>
+</td>
+<td>
+<a href='../ar/index.html'>Arabic</a>
+</td>
+<td>
+<a href='../bg/index.html'>Bulgarian</a>
+</td>
+<td>
+<a href='../ca/index.html'>Catalan</a>
+</td>
+<td>
+<a href='index.html'>Czech</a>
+</td>
+<td>
+<a href='../da/index.html'>Danish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../de/index.html'>German</a>
+</td>
+<td>
+<a href='../el/index.html'>Greek</a>
+</td>
+<td>
+<a href='../es/index.html'>Spanish</a>
+</td>
+<td>
+<a href='../eu/index.html'>Basque</a>
+</td>
+<td>
+<a href='../fa/index.html'>Farsi</a>
+</td>
+<td>
+<a href='../fi/index.html'>Finnish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../fr_FR/index.html'>French</a>
+</td>
+<td>
+<a href='../gl/index.html'>Galician</a>
+</td>
+<td>
+<a href='../hu/index.html'>Hungarian</a>
+</td>
+<td>
+<a href='../id/index.html'>Indonesian</a>
+</td>
+<td>
+<a href='../it/index.html'>Italian</a>
+</td>
+<td>
+<a href='../ja/index.html'>Japanese</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../ko/index.html'>Korean</a>
+</td>
+<td>
+<a href='../nl/index.html'>Dutch</a>
+</td>
+<td>
+<a href='../pl/index.html'>Polish</a>
+</td>
+<td>
+<a href='../pt_BR/index.html'>Portuguese (Brazilian)</a>
+</td>
+<td>
+<a href='../pt_PT/index.html'>Portuguese</a>
+</td>
+<td>
+<a href='../ru/index.html'>Russian</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../sr_YU/index.html'>Serbian (Cyrillic)</a>
+</td>
+<td>
+<a href='../sr_YU%40latin/index.html'>Serbian (Latin)</a>
+</td>
+<td>
+<a href='../vi/index.html'>Vietnamese</a>
+</td>
+<td>
+<a href='../zh_CN/index.html'>Chinese (Simplified)</a>
+</td>
+<td>
+<a href='../zh_TW/index.html'>Chinese</a>
+</td>
+</tr>
+</table>
+<table class='karatable'>
+<tr>
+<th>Name</th>
+<th>Display</th>
+<th>Help</th>
+</tr>
+<tr>
+<td>am/manager</td>
+<td>Automatizace</td>
+<td>Otevřít správce Automatizace</td>
+</tr>
+<tr>
+<td>am/meta</td>
+<td>Automatizace</td>
+<td>Open automation manager. Ctrl: Rescan autoload folder. Ctrl+Shift: Rescan autoload folder and reload all automation scripts</td>
+</tr>
+<tr>
+<td>am/reload</td>
+<td>Znovu načíst skripty Automatizace</td>
+<td>Znovu načíst všechny skripty Automatizace a projít složku pro automatické načítání</td>
+</tr>
+<tr>
+<td>am/reload/autoload</td>
+<td>Znovu načíst automaticky načítané skripty Automatizace</td>
+<td>Projít složku pro automatické načítání Automatizace</td>
+</tr>
+<tr>
+<td>app/about</td>
+<td>O aplikaci</td>
+<td>O aplikaci Aegisub</td>
+</tr>
+<tr>
+<td>app/display/audio_subs</td>
+<td>Zobrazení audia s titulky</td>
+<td>Display audio and the subtitles grid only</td>
+</tr>
+<tr>
+<td>app/display/full</td>
+<td>Plné zobrazení</td>
+<td>Display audio, video and then subtitles grid</td>
+</tr>
+<tr>
+<td>app/display/subs</td>
+<td>Zobrazení samostatných titulků</td>
+<td>Display the subtitles grid only</td>
+</tr>
+<tr>
+<td>app/display/video_subs</td>
+<td>Zobrazení videa s titulky</td>
+<td>Display video and the subtitles grid only</td>
+</tr>
+<tr>
+<td>app/exit</td>
+<td>Konec</td>
+<td>Ukončí aplikaci</td>
+</tr>
+<tr>
+<td>app/language</td>
+<td>Jazyk</td>
+<td>Zvolit jazyk pro rozhraní Aegisubu</td>
+</tr>
+<tr>
+<td>app/log</td>
+<td>Okno logování</td>
+<td>Zobrazit log událostí</td>
+</tr>
+<tr>
+<td>app/new_window</td>
+<td>Nové okno</td>
+<td>Otevře nové okno aplikace</td>
+</tr>
+<tr>
+<td>app/options</td>
+<td>Možnosti</td>
+<td>Otevře nabídku možností Aegisubu</td>
+</tr>
+<tr>
+<td>app/toggle/global_hotkeys</td>
+<td>Přepnout globální klávesové zkratky</td>
+<td>Toggle global hotkey overrides (Medusa Mode)</td>
+</tr>
+<tr>
+<td>app/toggle/toolbar</td>
+<td>Skrýt panel</td>
+<td>Přepnout hlavní panel</td>
+</tr>
+<tr>
+<td>app/updates</td>
+<td>Zkontrolovat aktualizace</td>
+<td>Zkontroluje dostupnost nové verze Aegisubu</td>
+</tr>
+<tr>
+<td>audio/close</td>
+<td>Zavřít audio</td>
+<td>Close the currently open audio file</td>
+</tr>
+<tr>
+<td>audio/commit</td>
+<td>Potvrdit</td>
+<td>Potvrdit všechny čekající změny časování</td>
+</tr>
+<tr>
+<td>audio/commit/default</td>
+<td>Potvrdit a pro další řádek použít výchozí časování</td>
+<td>Potvrdit všechny čekající změny časování a nastavit časy následujícího řádku na výchozí</td>
+</tr>
+<tr>
+<td>audio/commit/next</td>
+<td>Potvrdit a posunout na následující řádek</td>
+<td>Potvrdit všechny čekající změny časování a posunout na následující řádek</td>
+</tr>
+<tr>
+<td>audio/commit/stay</td>
+<td>Potvrdit a zůstat na aktuálním řádku</td>
+<td>Potvrdit všechny čekající změny časování a zůstat na aktuálním řádku</td>
+</tr>
+<tr>
+<td>audio/go_to</td>
+<td>Přejít k výběru</td>
+<td>Scroll the audio display to center on the current audio selection</td>
+</tr>
+<tr>
+<td>audio/karaoke</td>
+<td>Přepnout na karaoke režim</td>
+<td>Přepnout na karaoke režim</td>
+</tr>
+<tr>
+<td>audio/open</td>
+<td>Načíst audio</td>
+<td>Open an audio file</td>
+</tr>
+<tr>
+<td>audio/open/blank</td>
+<td>Načíst prázdné audio 2h30</td>
+<td>Otevřít 150 minut prázdného audio klipu, pro ladění</td>
+</tr>
+<tr>
+<td>audio/open/noise</td>
+<td>Otevřít ruchové audio 2h30</td>
+<td>Otevřít 150 minut ruchového audio klipu, pro ladění</td>
+</tr>
+<tr>
+<td>audio/open/video</td>
+<td>Načíst audio z videa</td>
+<td>Open the audio from the current video file</td>
+</tr>
+<tr>
+<td>audio/opt/autocommit</td>
+<td>Automaticky potvrzovat všechny změny</td>
+<td>Automaticky potvrzovat všechny změny</td>
+</tr>
+<tr>
+<td>audio/opt/autonext</td>
+<td>Auto go to next line on commit</td>
+<td>Automatically go to next line on commit</td>
+</tr>
+<tr>
+<td>audio/opt/autoscroll</td>
+<td>Auto scroll audio display to selected line</td>
+<td>Auto scroll audio display to selected line</td>
+</tr>
+<tr>
+<td>audio/opt/spectrum</td>
+<td>Režim spektrálního analyzátoru</td>
+<td>Režim spektrálního analyzátoru</td>
+</tr>
+<tr>
+<td>audio/opt/vertical_link</td>
+<td>Propojit vertikální zoom a ovládání hlasitosti</td>
+<td>Propojit vertikální zoom a ovládání hlasitosti</td>
+</tr>
+<tr>
+<td>audio/play/current</td>
+<td>Přehrát aktuálně označené audio</td>
+<td>Přehrát aktuální audio výběr, ignorovat změny provedené během přehrávání</td>
+</tr>
+<tr>
+<td>audio/play/line</td>
+<td>Přehrát řádek</td>
+<td>Play the audio for the current line</td>
+</tr>
+<tr>
+<td>audio/play/selection</td>
+<td>Přehrát označené audio</td>
+<td>Přehrát audio až do konce výběru</td>
+</tr>
+<tr>
+<td>audio/play/selection/after</td>
+<td>Přehrát 500 ms za výběrem</td>
+<td>Přehrát 500 ms za výběrem</td>
+</tr>
+<tr>
+<td>audio/play/selection/before</td>
+<td>Přehrát 500 ms před výběrem</td>
+<td>Přehrát 500 ms před výběrem</td>
+</tr>
+<tr>
+<td>audio/play/selection/begin</td>
+<td>Přehrát prvních 500 ms výběru</td>
+<td>Přehrát prvních 500 ms výběru</td>
+</tr>
+<tr>
+<td>audio/play/selection/end</td>
+<td>Přehrát posledních 500 ms výběru</td>
+<td>Přehrát posledních 500 ms výběru</td>
+</tr>
+<tr>
+<td>audio/play/to_end</td>
+<td>Přehrát od počátku výběru do konce souboru</td>
+<td>Přehrát od počátku výběru do konce souboru</td>
+</tr>
+<tr>
+<td>audio/play/toggle</td>
+<td>Přehrát audio výběr nebo zastavit</td>
+<td>Play selection, or stop playback if it's already playing</td>
+</tr>
+<tr>
+<td>audio/save/clip</td>
+<td>Vytvořit audio klip</td>
+<td>Save an audio clip of the selected line</td>
+</tr>
+<tr>
+<td>audio/scroll/left</td>
+<td>Posun doleva</td>
+<td>Posunout zobrazení audia doleva</td>
+</tr>
+<tr>
+<td>audio/scroll/right</td>
+<td>Posun doprava</td>
+<td>Posunout zobrazení audia doprava</td>
+</tr>
+<tr>
+<td>audio/stop</td>
+<td>Zastavit přehrávání</td>
+<td>Stop audio and video playback</td>
+</tr>
+<tr>
+<td>audio/view/spectrum</td>
+<td>Zobrazení zvukového spektra</td>
+<td>Zobrazit audio jako frekvenční spektrograf</td>
+</tr>
+<tr>
+<td>audio/view/waveform</td>
+<td>Zobrazení zvukové vlny</td>
+<td>Zobrazit audio jako amplitudový graf</td>
+</tr>
+<tr>
+<td>automation/lua/cleantags-autoload/Clean Tags</td>
+<td>Clean Tags</td>
+<td>Clean subtitle lines by re-arranging ASS tags and override blocks within the lines</td>
+</tr>
+<tr>
+<td>automation/lua/kara-templater/Apply karaoke template</td>
+<td>Apply karaoke template</td>
+<td>Applies karaoke effects from templates</td>
+</tr>
+<tr>
+<td>automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in</td>
+<td>Automatic karaoke lead-in</td>
+<td>Join up the ends of selected lines and add \k tags to shift karaoke</td>
+</tr>
+<tr>
+<td>automation/lua/macro-1-edgeblur/Add edgeblur</td>
+<td>Add edgeblur</td>
+<td>Adds \be1 tags to all selected lines</td>
+</tr>
+<tr>
+<td>automation/lua/macro-2-mkfullwitdh/Make fullwidth</td>
+<td>Make fullwidth</td>
+<td>Convert Latin letters to SJIS fullwidth letters</td>
+</tr>
+<tr>
+<td>automation/lua/select-overlaps/Select overlaps</td>
+<td>Select overlaps</td>
+<td>Select lines which begin while another non-comment line is active</td>
+</tr>
+<tr>
+<td>automation/lua/strip-tags/Strip tags</td>
+<td>Strip tags</td>
+<td>Remove all override tags from selected lines</td>
+</tr>
+<tr>
+<td>edit/clear</td>
+<td>Vymazat</td>
+<td>Clear the current line's text</td>
+</tr>
+<tr>
+<td>edit/clear/text</td>
+<td>Clear Text</td>
+<td>Clear the current line's text, leaving override tags</td>
+</tr>
+<tr>
+<td>edit/color/outline</td>
+<td>Outline Color</td>
+<td>Set the outline color (\3c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/primary</td>
+<td>Primary Color</td>
+<td>Set the primary fill color (\c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/secondary</td>
+<td>Secondary Color</td>
+<td>Set the secondary (karaoke) fill color (\2c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/shadow</td>
+<td>Shadow Color</td>
+<td>Set the shadow color (\4c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/find_replace</td>
+<td>Najít a nahradit</td>
+<td>Najde a nahradí slova v titulcích</td>
+</tr>
+<tr>
+<td>edit/font</td>
+<td>Název písma</td>
+<td>Select a font face and size</td>
+</tr>
+<tr>
+<td>edit/insert_original</td>
+<td>Vložit originál</td>
+<td>Insert the original line text at the cursor</td>
+</tr>
+<tr>
+<td>edit/line/copy</td>
+<td>Kopírovat řádky</td>
+<td>Copy subtitles to the clipboard</td>
+</tr>
+<tr>
+<td>edit/line/cut</td>
+<td>Vyjmout řádky</td>
+<td>Vyjmout titulky</td>
+</tr>
+<tr>
+<td>edit/line/delete</td>
+<td>Smazat řádky</td>
+<td>Smaže zvolené řádky</td>
+</tr>
+<tr>
+<td>edit/line/duplicate</td>
+<td>Zdvojit řádky</td>
+<td>Zdvojí zvolené řádky</td>
+</tr>
+<tr>
+<td>edit/line/join/as_karaoke</td>
+<td>Jako karaoke</td>
+<td>Join selected lines in a single one, as karaoke</td>
+</tr>
+<tr>
+<td>edit/line/join/concatenate</td>
+<td>Zřetězit</td>
+<td>Join selected lines in a single one, concatenating text together</td>
+</tr>
+<tr>
+<td>edit/line/join/keep_first</td>
+<td>Zachovat první</td>
+<td>Join selected lines in a single one, keeping text of first and discarding remaining</td>
+</tr>
+<tr>
+<td>edit/line/paste</td>
+<td>Vložit řádky</td>
+<td>Vložit titulky</td>
+</tr>
+<tr>
+<td>edit/line/paste/over</td>
+<td>Překopírovat titulky</td>
+<td>Překopíruje titulky přes ostatní</td>
+</tr>
+<tr>
+<td>edit/line/recombine</td>
+<td>Zkombinovat řádky</td>
+<td>Recombine subtitles which have been split and merged</td>
+</tr>
+<tr>
+<td>edit/line/split/after</td>
+<td>Split lines after current frame</td>
+<td>Split the current line into a line which ends on the current frame and a line which starts on the next frame</td>
+</tr>
+<tr>
+<td>edit/line/split/before</td>
+<td>Split lines before current frame</td>
+<td>Split the current line into a line which ends on the previous frame and a line which starts on the current frame</td>
+</tr>
+<tr>
+<td>edit/line/split/by_karaoke</td>
+<td>Rozdělit řádky (pomocí karaoke)</td>
+<td>Use karaoke timing to split line into multiple smaller lines</td>
+</tr>
+<tr>
+<td>edit/line/split/estimate</td>
+<td>Rozdělit v místě kurzoru (odhadnout časování)</td>
+<td>Split the current line at the cursor, dividing the original line's duration between the new ones</td>
+</tr>
+<tr>
+<td>edit/line/split/preserve</td>
+<td>Rozdělit v místě kurzoru (zachovat časování)</td>
+<td>Split the current line at the cursor, setting both lines to the original line's times</td>
+</tr>
+<tr>
+<td>edit/line/split/video</td>
+<td>Split at cursor (at video frame)</td>
+<td>Split the current line at the cursor, dividing the line's duration at the current video frame</td>
+</tr>
+<tr>
+<td>edit/redo</td>
+<td>Nelze nic obnovit</td>
+<td>Redo last undone action</td>
+</tr>
+<tr>
+<td>edit/revert</td>
+<td>Revert</td>
+<td>Revert the active line to its initial state (shown in the upper editor)</td>
+</tr>
+<tr>
+<td>edit/style/bold</td>
+<td>Toggle Bold</td>
+<td>Toggle bold (\b) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/italic</td>
+<td>Toggle Italics</td>
+<td>Toggle italics (\i) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/strikeout</td>
+<td>Toggle Strikeout</td>
+<td>Toggle strikeout (\s) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/underline</td>
+<td>Toggle Underline</td>
+<td>Toggle underline (\u) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/undo</td>
+<td>Nelze nic vrátit</td>
+<td>Undo last action</td>
+</tr>
+<tr>
+<td>grid/line/next</td>
+<td>Následující řádek</td>
+<td>Posunout na následující řádek</td>
+</tr>
+<tr>
+<td>grid/line/next/create</td>
+<td>Následující řádek</td>
+<td>Posunout na následující řádek, podle potřeby vytvořit nový</td>
+</tr>
+<tr>
+<td>grid/line/prev</td>
+<td>Předchozí řádek</td>
+<td>Posunout na předchozí řádek</td>
+</tr>
+<tr>
+<td>grid/move/down</td>
+<td>Přesunout řádek dolů</td>
+<td>Přesunout zvolené řádky o jeden dolů</td>
+</tr>
+<tr>
+<td>grid/move/up</td>
+<td>Přesunout řádek nahoru</td>
+<td>Přesunout zvolené řádky o jeden nahoru</td>
+</tr>
+<tr>
+<td>grid/sort/actor</td>
+<td>Postava</td>
+<td>Seřadí všechny titulky podle jména postav</td>
+</tr>
+<tr>
+<td>grid/sort/actor/selected</td>
+<td>Postava</td>
+<td>Seřadí označené titulky podle jména postav</td>
+</tr>
+<tr>
+<td>grid/sort/effect</td>
+<td>Efekt</td>
+<td>Seřadí všechny titulky podle efektů</td>
+</tr>
+<tr>
+<td>grid/sort/effect/selected</td>
+<td>Efekt</td>
+<td>Seřadí označené titulky podle efektů</td>
+</tr>
+<tr>
+<td>grid/sort/end</td>
+<td>Konec</td>
+<td>Seřadí všechny titulky podle koncového času</td>
+</tr>
+<tr>
+<td>grid/sort/end/selected</td>
+<td>Konec</td>
+<td>Seřadí označené titulky podle koncového času</td>
+</tr>
+<tr>
+<td>grid/sort/layer</td>
+<td>Vrstva</td>
+<td>Seřadí všechny titulky podle čísla vrstvy</td>
+</tr>
+<tr>
+<td>grid/sort/layer/selected</td>
+<td>Vrstva</td>
+<td>Seřadí označené titulky podle čísla vrstvy</td>
+</tr>
+<tr>
+<td>grid/sort/start</td>
+<td>Počátek</td>
+<td>Seřadí titulky podle času jejich počátků</td>
+</tr>
+<tr>
+<td>grid/sort/start/selected</td>
+<td>Počátek</td>
+<td>Seřadí označené titulky podle počátečního času</td>
+</tr>
+<tr>
+<td>grid/sort/style</td>
+<td>Jméno stylu</td>
+<td>Seřadí všechny titulky podle jména stylu</td>
+</tr>
+<tr>
+<td>grid/sort/style/selected</td>
+<td>Jméno stylu</td>
+<td>Seřadí označené titulky podle jména stylu</td>
+</tr>
+<tr>
+<td>grid/swap</td>
+<td>Zaměnit řádky</td>
+<td>Swap the two selected lines</td>
+</tr>
+<tr>
+<td>grid/tag/cycle_hiding</td>
+<td>Přepínač módů zobrazení Tagů</td>
+<td>Přepíná mezi jednotlivými módy pro zobrazení Tagů</td>
+</tr>
+<tr>
+<td>grid/tags/hide</td>
+<td>Skrýt tagy</td>
+<td>Skrýt prioritní tagy v mřížce titulků</td>
+</tr>
+<tr>
+<td>grid/tags/show</td>
+<td>Zobrazit tagy</td>
+<td>Zobrazit v poli titulků plné prioritní tagy</td>
+</tr>
+<tr>
+<td>grid/tags/simplify</td>
+<td>Zjednodušit tagy</td>
+<td>Prioritní tagy v poli titulků nahradit za zjednodušené zástupné znaky</td>
+</tr>
+<tr>
+<td>help/bugs</td>
+<td>Bug Tracker</td>
+<td>Otevře Bug Tracker Aegisubu - pro hlášení chyb a žádosti o nové funkce</td>
+</tr>
+<tr>
+<td>help/contents</td>
+<td>Obsah</td>
+<td>Témata nápovědy</td>
+</tr>
+<tr>
+<td>help/forums</td>
+<td>Fóra</td>
+<td>Otevře fóra Aegisubu</td>
+</tr>
+<tr>
+<td>help/irc</td>
+<td>IRC kanál</td>
+<td>Otevře oficiální IRC (internet relay chat) kanál Aegisubu</td>
+</tr>
+<tr>
+<td>help/video</td>
+<td>Grafická sazba</td>
+<td>Otevřít manuál na stránce s Grafickou sazbou</td>
+</tr>
+<tr>
+<td>help/website</td>
+<td>Web Aegisubu</td>
+<td>Otevře oficiální stránky Aegisubu</td>
+</tr>
+<tr>
+<td>keyframe/close</td>
+<td>Zavřít klíčové snímky</td>
+<td>Discard the currently loaded keyframes and use those from the video, if any</td>
+</tr>
+<tr>
+<td>keyframe/open</td>
+<td>Načíst klíčové snímky</td>
+<td>Open a keyframe list file</td>
+</tr>
+<tr>
+<td>keyframe/save</td>
+<td>Uložit klíčové snímky</td>
+<td>Save the current list of keyframes to a file</td>
+</tr>
+<tr>
+<td>subtitle/attachment</td>
+<td>Přílohy</td>
+<td>Open the attachment manager dialog</td>
+</tr>
+<tr>
+<td>subtitle/find</td>
+<td>Najít</td>
+<td>Search for text in the subtitles</td>
+</tr>
+<tr>
+<td>subtitle/find/next</td>
+<td>Najít další</td>
+<td>Find next match of last search</td>
+</tr>
+<tr>
+<td>subtitle/insert/after</td>
+<td>Za aktuální</td>
+<td>Insert a new line after the current one</td>
+</tr>
+<tr>
+<td>subtitle/insert/after/videotime</td>
+<td>Za aktuální, čas z videa</td>
+<td>Insert a new line after the current one, starting at video time</td>
+</tr>
+<tr>
+<td>subtitle/insert/before</td>
+<td>Před aktuální</td>
+<td>Insert a new line before the current one</td>
+</tr>
+<tr>
+<td>subtitle/insert/before/videotime</td>
+<td>Před aktuální, čas z videa</td>
+<td>Insert a new line before the current one, starting at video time</td>
+</tr>
+<tr>
+<td>subtitle/new</td>
+<td>Nové titulky</td>
+<td>Nové titulky</td>
+</tr>
+<tr>
+<td>subtitle/open</td>
+<td>Otevřít titulky</td>
+<td>Open a subtitles file</td>
+</tr>
+<tr>
+<td>subtitle/open/autosave</td>
+<td>Open Autosaved Subtitles</td>
+<td>Open a previous version of a file which was autosaved by Aegisub</td>
+</tr>
+<tr>
+<td>subtitle/open/charset</td>
+<td>Otevřít titulky se specifickou znakovou sadou...</td>
+<td>Open a subtitles file with a specific file encoding</td>
+</tr>
+<tr>
+<td>subtitle/open/video</td>
+<td>Otevřít titulky z videa</td>
+<td>Open the subtitles from the current video file</td>
+</tr>
+<tr>
+<td>subtitle/properties</td>
+<td>Vlastnosti</td>
+<td>Otevře okno s vlastnostmi ASS skriptu</td>
+</tr>
+<tr>
+<td>subtitle/save</td>
+<td>Uložit titulky</td>
+<td>Save the current subtitles</td>
+</tr>
+<tr>
+<td>subtitle/save/as</td>
+<td>Uložit titulky jako</td>
+<td>Save subtitles with another name</td>
+</tr>
+<tr>
+<td>subtitle/select/all</td>
+<td>Vybrat vše</td>
+<td>Select all dialogue lines</td>
+</tr>
+<tr>
+<td>subtitle/select/visible</td>
+<td>Označit viditelné</td>
+<td>Select all dialogue lines that are visible on the current video frame</td>
+</tr>
+<tr>
+<td>subtitle/spellcheck</td>
+<td>Kontrola pravopisu</td>
+<td>Otevře kontrolu pravopisu</td>
+</tr>
+<tr>
+<td>time/continuous/end</td>
+<td>Změnit konec</td>
+<td>Change end times of lines to the next line's start time</td>
+</tr>
+<tr>
+<td>time/continuous/start</td>
+<td>Změnit počátek</td>
+<td>Change start times of lines to the previous line's end time</td>
+</tr>
+<tr>
+<td>time/frame/current</td>
+<td>Posunout na aktuální snímek</td>
+<td>Posunout vybrané řádky tak, aby počátek prvního odpovídal aktuálnímu snímku</td>
+</tr>
+<tr>
+<td>time/lead/both</td>
+<td>Přidat nástup a zakončení</td>
+<td>Add both lead in and out to the selected lines</td>
+</tr>
+<tr>
+<td>time/lead/in</td>
+<td>Přidat nástup</td>
+<td>Add the lead in time to the selected lines</td>
+</tr>
+<tr>
+<td>time/lead/out</td>
+<td>Přidat zakončení</td>
+<td>Add the lead out time to the selected lines</td>
+</tr>
+<tr>
+<td>time/length/decrease</td>
+<td>Zkrátit délku</td>
+<td>Zkrátit délku aktuální časované jednotky</td>
+</tr>
+<tr>
+<td>time/length/decrease/shift</td>
+<td>Zkrátit délku a posunout</td>
+<td>Zkrátit délku aktuální časované jednotky a posunout následující řádky</td>
+</tr>
+<tr>
+<td>time/length/increase</td>
+<td>Prodloužit délku</td>
+<td>Prodloužit délku aktuální časované jednotky</td>
+</tr>
+<tr>
+<td>time/length/increase/shift</td>
+<td>Prodloužit délku a posunout</td>
+<td>Prodloužit délku aktuální časované jednotky a posunout následující řádky</td>
+</tr>
+<tr>
+<td>time/next</td>
+<td>Následující řádek</td>
+<td>Následující řádek nebo slabika</td>
+</tr>
+<tr>
+<td>time/prev</td>
+<td>Předchozí řádek</td>
+<td>Předchozí řádek nebo slabika</td>
+</tr>
+<tr>
+<td>time/shift</td>
+<td>Posun časování</td>
+<td>Posune časování podle času či snímků</td>
+</tr>
+<tr>
+<td>time/snap/end_video</td>
+<td>Navázat konec na video</td>
+<td>Nastaví konec titulku na aktuální snímek videa</td>
+</tr>
+<tr>
+<td>time/snap/scene</td>
+<td>Navázat na scénu</td>
+<td>Navázat počátek a konec titulku na klíčové snímky kolem aktuáního snímku</td>
+</tr>
+<tr>
+<td>time/snap/start_video</td>
+<td>Navázat počátek na video</td>
+<td>Nastaví počátek titulku na aktuální snímek videa</td>
+</tr>
+<tr>
+<td>time/start/decrease</td>
+<td>Posunout počáteční čas dozadu</td>
+<td>Posunout počáteční čas aktuální časované jednotky dozadu</td>
+</tr>
+<tr>
+<td>time/start/increase</td>
+<td>Posunout počátek dopředu</td>
+<td>Posunout počáteční čas aktuální časované jednotky dopředu</td>
+</tr>
+<tr>
+<td>timecode/close</td>
+<td>Zavřít časový kód</td>
+<td>Close the currently open timecodes file</td>
+</tr>
+<tr>
+<td>timecode/open</td>
+<td>Načíst soubor časových kódů</td>
+<td>Open a VFR timecodes v1 or v2 file</td>
+</tr>
+<tr>
+<td>timecode/save</td>
+<td>Uložit soubor časových kódů</td>
+<td>Save a VFR timecodes v2 file</td>
+</tr>
+<tr>
+<td>tool/export</td>
+<td>Export titulků</td>
+<td>Save a copy of subtitles in a different format or with processing applied to it</td>
+</tr>
+<tr>
+<td>tool/font_collector</td>
+<td>Sběrač fontů</td>
+<td>Otevře sběrač fontů</td>
+</tr>
+<tr>
+<td>tool/line/select</td>
+<td>Zvolit řádky</td>
+<td>Select lines based on defined criteria</td>
+</tr>
+<tr>
+<td>tool/resampleres</td>
+<td>Znovunačíst rozlišení</td>
+<td>Resample subtitles to maintain their current appearance at a different script resolution</td>
+</tr>
+<tr>
+<td>tool/style/assistant</td>
+<td>Pomocník pro aplikaci stylů</td>
+<td>Otevře Pomocníka pro aplikaci stylů</td>
+</tr>
+<tr>
+<td>tool/style/manager</td>
+<td>Správce stylů</td>
+<td>Open the styles manager</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/commit</td>
+<td>Potvrdit změny</td>
+<td>Potvrdit změny a posunout na další řádek</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/preview</td>
+<td>Náhled změn</td>
+<td>Potvrdit změny a zůstat na aktuálním řádku</td>
+</tr>
+<tr>
+<td>tool/time/kanji</td>
+<td>Časovač Kanji</td>
+<td>Open the Kanji timer copier</td>
+</tr>
+<tr>
+<td>tool/time/postprocess</td>
+<td>Dodatečné zpracování časování</td>
+<td>Post-process the subtitle timing to add lead-ins and lead-outs, snap timing to scene changes, etc.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant</td>
+<td>Překladatelův pomocník</td>
+<td>Otevře překladatelova pomocníka</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/commit</td>
+<td>Potvrdit změny</td>
+<td>Potvrdit změny a posunout na další řádek</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/insert_original</td>
+<td>Vložit originál</td>
+<td>Vložit nepřeložený text</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/next</td>
+<td>Následující řádek</td>
+<td>Přejít na následující řádek bez použití změn</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/prev</td>
+<td>Předchozí řádek</td>
+<td>Posunout na předchozí řádek bez potvrzení změn</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/preview</td>
+<td>Náhled změn</td>
+<td>Potvrdit změny a zůstat na aktuálním řádku</td>
+</tr>
+<tr>
+<td>video/aspect/cinematic</td>
+<td>Filmový pás (2.35)</td>
+<td>Force video to 2.35 aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/custom</td>
+<td>Vlastní</td>
+<td>Force video to a custom aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/default</td>
+<td>Default</td>
+<td>Use video's original aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/full</td>
+<td>Obrazovka (4:3)</td>
+<td>Force video to 4:3 aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/wide</td>
+<td>Širokoúhlé (16:9)</td>
+<td>Force video to 16:9 aspect ratio</td>
+</tr>
+<tr>
+<td>video/close</td>
+<td>Zavřít video</td>
+<td>Close the currently open video file</td>
+</tr>
+<tr>
+<td>video/copy_coordinates</td>
+<td>Zkopírovat souřadnice do schránky</td>
+<td>Zkopírovat do schránky aktuální souřadnice myši ve videu</td>
+</tr>
+<tr>
+<td>video/detach</td>
+<td>Oddělit video</td>
+<td>Detach the video display from the main window, displaying it in a separate Window</td>
+</tr>
+<tr>
+<td>video/details</td>
+<td>Zobrazit informace o videu</td>
+<td>Show video details</td>
+</tr>
+<tr>
+<td>video/focus_seek</td>
+<td>Přepnout zaměření posuvníku videa</td>
+<td>Toggle focus between the video slider and the previous thing to have focus</td>
+</tr>
+<tr>
+<td>video/frame/copy</td>
+<td>Zkopírovat obrázek do schránky</td>
+<td>Zkopírovat do schránky aktuálně zobrazený snímek</td>
+</tr>
+<tr>
+<td>video/frame/copy/raw</td>
+<td>Zkopírovat obrázek do schránky (bez titulků)</td>
+<td>Zkopírovat do schránky aktuálně zobrazený snímek, bez titulků</td>
+</tr>
+<tr>
+<td>video/frame/next</td>
+<td>Následující snímek</td>
+<td>Posunout na následující snímek</td>
+</tr>
+<tr>
+<td>video/frame/next/boundary</td>
+<td>Následující hranice</td>
+<td>Seek to the next beginning or end of a subtitle</td>
+</tr>
+<tr>
+<td>video/frame/next/keyframe</td>
+<td>Následující klíčový snímek</td>
+<td>Posunout na následující klíčový snímek</td>
+</tr>
+<tr>
+<td>video/frame/next/large</td>
+<td>Rychlý skok dopředu</td>
+<td>Rychlý skok dopředu</td>
+</tr>
+<tr>
+<td>video/frame/prev</td>
+<td>Předchozí snímek</td>
+<td>Posunout na předchozí snímek</td>
+</tr>
+<tr>
+<td>video/frame/prev/boundary</td>
+<td>Předchozí hranice</td>
+<td>Seek to the previous beginning or end of a subtitle</td>
+</tr>
+<tr>
+<td>video/frame/prev/keyframe</td>
+<td>Předchozí klíčový snímek</td>
+<td>Posunout na předchozí klíčový snímek</td>
+</tr>
+<tr>
+<td>video/frame/prev/large</td>
+<td>Rychle skočit zpět</td>
+<td>Rychle skočit zpět</td>
+</tr>
+<tr>
+<td>video/frame/save</td>
+<td>Uložit PNG snímek</td>
+<td>Uložit aktuálně zobrazený snímek do PNG souboru v adresáři videa</td>
+</tr>
+<tr>
+<td>video/frame/save/raw</td>
+<td>Uložit PNG snímek (bez titulků)</td>
+<td>Uložit aktuálně zobrazený snímek bez titulků do PNG souboru v adresáři videa</td>
+</tr>
+<tr>
+<td>video/jump</td>
+<td>Přejít na</td>
+<td>Přejde na zvolený snímek nebo čas</td>
+</tr>
+<tr>
+<td>video/jump/end</td>
+<td>Přejít na konec videa</td>
+<td>Jump the video to the end frame of current subtitle</td>
+</tr>
+<tr>
+<td>video/jump/start</td>
+<td>Přejít na začátek videa</td>
+<td>Jump the video to the start frame of current subtitle</td>
+</tr>
+<tr>
+<td>video/open</td>
+<td>Otevřít video</td>
+<td>Open a video file</td>
+</tr>
+<tr>
+<td>video/open/dummy</td>
+<td>Použít náhradní video</td>
+<td>Open a placeholder video clip with solid color</td>
+</tr>
+<tr>
+<td>video/opt/autoscroll</td>
+<td>Přepnout automatické posouvání videa</td>
+<td>Toggle automatically seeking video to the start time of selected lines</td>
+</tr>
+<tr>
+<td>video/play</td>
+<td>Přehrát</td>
+<td>Přehrát video od této pozice</td>
+</tr>
+<tr>
+<td>video/play/line</td>
+<td>Přehrát řádek</td>
+<td>Přehrát řádek</td>
+</tr>
+<tr>
+<td>video/show_overscan</td>
+<td>Televizní maska</td>
+<td>Zobrazí masku označující oblasti, které by mohly být oříznuty při zobrazení na televizi</td>
+</tr>
+<tr>
+<td>video/stop</td>
+<td>Zastavit video</td>
+<td>Zastavit přehrávání videa</td>
+</tr>
+<tr>
+<td>video/subtitles_provider/cycle</td>
+<td>Cycle active subtitles provider</td>
+<td>Cycle through the available subtitles providers</td>
+</tr>
+<tr>
+<td>video/tool/clip</td>
+<td>Výřez</td>
+<td>Vytvoří obdélníkový výřez pro zobrazení titulků</td>
+</tr>
+<tr>
+<td>video/tool/cross</td>
+<td>Standard</td>
+<td>Standardní nastavení, dvojklik určuje pozici</td>
+</tr>
+<tr>
+<td>video/tool/drag</td>
+<td>Posun</td>
+<td>Posune titulky</td>
+</tr>
+<tr>
+<td>video/tool/rotate/xy</td>
+<td>Rotovat přes XY</td>
+<td>Rotace titulků vůči osám X a Y</td>
+</tr>
+<tr>
+<td>video/tool/rotate/z</td>
+<td>Rotovat přes Z</td>
+<td>Rotace titulků vůči ose Z</td>
+</tr>
+<tr>
+<td>video/tool/scale</td>
+<td>Poměr</td>
+<td>Změna poměru titulků v osách X a Y</td>
+</tr>
+<tr>
+<td>video/tool/vector_clip</td>
+<td>Vektorový výřez</td>
+<td>Vytvoří vektorový výřez pro zobrazení titulků</td>
+</tr>
+<tr>
+<td>video/zoom/100</td>
+<td>100%</td>
+<td>Nastavit zoom na 100%</td>
+</tr>
+<tr>
+<td>video/zoom/200</td>
+<td>200%</td>
+<td>Nastavit zoom na 200%</td>
+</tr>
+<tr>
+<td>video/zoom/50</td>
+<td>50%</td>
+<td>Nastavit zoom na 50%</td>
+</tr>
+<tr>
+<td>video/zoom/in</td>
+<td>Zvětšit</td>
+<td>Zvětšit video</td>
+</tr>
+<tr>
+<td>video/zoom/out</td>
+<td>Zmenšit</td>
+<td>Zmenšit video</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Commands/cs/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:16:51 GMT -->
+</html>
+

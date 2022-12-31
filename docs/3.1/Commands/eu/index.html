@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from docs.aegisub.org/3.1/Commands/eu/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:49:15 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>eu - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href='../../../3.2/Commands/eu/index.html' rel='canonical'>
+<link href="../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../../Main_Page/index.html">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../../About/index.html">What is Aegisub?</a>
+</li>
+<li>
+<a href="../../Highlights/index.html">Highlights</a>
+</li>
+<li>
+<a href="../../Credits/index.html">Credits</a>
+</li>
+<li>
+<a href="../../Support/index.html">Support Aegisub</a>
+</li>
+<li>
+<a href="../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../Tutorials/index.html">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li>
+<a href="../../Editing_Subtitles/index.html">Editing Subtitles</a>
+</li>
+<li>
+<a href="../../Exporting/index.html">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../../Attaching_subtitles_to_video/index.html">Applying Subtitles</a>
+</li>
+<li>
+<a href="../../Spell_Checker/index.html">Spell Checker</a>
+</li>
+<li>
+<a href="../../Translation_Assistant/index.html">Translation Assistant</a>
+</li>
+<li>
+<a href="../../Paste_Over/index.html">Paste Over</a>
+</li>
+<li>
+<a href="../../Select_Lines/index.html">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../../Typesetting/index.html">Introduction</a>
+</li>
+<li>
+<a href="../../Video/index.html">Working with Video</a>
+</li>
+<li>
+<a href="../../Styles/index.html">Editing styles</a>
+</li>
+<li>
+<a href="../../Visual_Typesetting/index.html">Visual Typesetting</a>
+</li>
+<li>
+<a href="../../ASS_Tags/index.html">ASS Override Tags</a>
+</li>
+<li>
+<a href="../../Colour_Picker/index.html">Colour Picker</a>
+</li>
+<li>
+<a href="../../Styling_Assistant/index.html">Styling Assistant</a>
+</li>
+<li>
+<a href="../../Resolution_Resampler/index.html">Resolution Resampler</a>
+</li>
+<li>
+<a href="../../Fonts_Collector/index.html">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../../Audio/index.html">Working with Audio</a>
+</li>
+<li>
+<a href="../../Timing/index.html">Timing subtitles to audio</a>
+</li>
+<li>
+<a href="../../Shift_Times/index.html">Shift times</a>
+</li>
+<li>
+<a href="../../Timing_Post-Processor/index.html">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../../Kanji_Timer/index.html">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../../Automation/index.html">Overview</a>
+</li>
+<li>
+<a href="../../Automation/Karaoke_Templater/index.html">Karaoke Templater</a>
+</li>
+<li>
+<a href="../../Automation/Lua/index.html">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../../Options/index.html">Aegisub Options</a>
+</li>
+<li>
+<a href="../../Properties/index.html">Script Properties</a>
+</li>
+<li>
+<a href="../../Attachment_Manager/index.html">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'><a href="../index.html">Commands</a> / eu</h1>
+<table style='width: 100%; margin-bottom: 2em'>
+<tr>
+<td>
+<a href='../en_US/index.html'>English (U.S.)</a>
+</td>
+<td>
+<a href='../ar/index.html'>Arabic</a>
+</td>
+<td>
+<a href='../bg/index.html'>Bulgarian</a>
+</td>
+<td>
+<a href='../ca/index.html'>Catalan</a>
+</td>
+<td>
+<a href='../cs/index.html'>Czech</a>
+</td>
+<td>
+<a href='../da/index.html'>Danish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../de/index.html'>German</a>
+</td>
+<td>
+<a href='../el/index.html'>Greek</a>
+</td>
+<td>
+<a href='../es/index.html'>Spanish</a>
+</td>
+<td>
+<a href='index.html'>Basque</a>
+</td>
+<td>
+<a href='../fa/index.html'>Farsi</a>
+</td>
+<td>
+<a href='../fi/index.html'>Finnish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../fr_FR/index.html'>French</a>
+</td>
+<td>
+<a href='../gl/index.html'>Galician</a>
+</td>
+<td>
+<a href='../hu/index.html'>Hungarian</a>
+</td>
+<td>
+<a href='../id/index.html'>Indonesian</a>
+</td>
+<td>
+<a href='../it/index.html'>Italian</a>
+</td>
+<td>
+<a href='../ja/index.html'>Japanese</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../ko/index.html'>Korean</a>
+</td>
+<td>
+<a href='../nl/index.html'>Dutch</a>
+</td>
+<td>
+<a href='../pl/index.html'>Polish</a>
+</td>
+<td>
+<a href='../pt_BR/index.html'>Portuguese (Brazilian)</a>
+</td>
+<td>
+<a href='../pt_PT/index.html'>Portuguese</a>
+</td>
+<td>
+<a href='../ru/index.html'>Russian</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../sr_YU/index.html'>Serbian (Cyrillic)</a>
+</td>
+<td>
+<a href='../sr_YU%40latin/index.html'>Serbian (Latin)</a>
+</td>
+<td>
+<a href='../vi/index.html'>Vietnamese</a>
+</td>
+<td>
+<a href='../zh_CN/index.html'>Chinese (Simplified)</a>
+</td>
+<td>
+<a href='../zh_TW/index.html'>Chinese</a>
+</td>
+</tr>
+</table>
+<table class='karatable'>
+<tr>
+<th>Name</th>
+<th>Display</th>
+<th>Help</th>
+</tr>
+<tr>
+<td>am/manager</td>
+<td>Berezgaitasuna</td>
+<td>Ireki berezgaitasun kudeatzailea</td>
+</tr>
+<tr>
+<td>am/meta</td>
+<td>Berezgaitasuna</td>
+<td>Ireki berezgaitasun kudeatzailea. Ktrl: Bermihatu berezgertatze agiritegia. Ktrl+Aldatu: Bermihatu berez-gertatze agiritegia eta birgertatu berezgaitasun eskript guztiak</td>
+</tr>
+<tr>
+<td>am/reload</td>
+<td>Birgertatu Berezgaitasun eskriptak</td>
+<td>Birgertatu Berezgaitasun eskript guztiak eta bermihatu berezgertatze agiritegia</td>
+</tr>
+<tr>
+<td>am/reload/autoload</td>
+<td>Birgertatu berezgertatu Berezgaitasun eskriptak</td>
+<td>Birmihatu Berezgaitasun berezgertatze agiritegia</td>
+</tr>
+<tr>
+<td>app/about</td>
+<td>Honi buruz</td>
+<td>Aegisub-ri buruz</td>
+</tr>
+<tr>
+<td>app/display/audio_subs</td>
+<td>Audioa + Azpidatzia Ikuspegia</td>
+<td>Erakutsi audio eta azpidatzi saretxoak bakarrik</td>
+</tr>
+<tr>
+<td>app/display/full</td>
+<td>Ikuspegi osoa</td>
+<td>Erakutsi audioa, bideoa eta orduan azpidatzi saretxoa</td>
+</tr>
+<tr>
+<td>app/display/subs</td>
+<td>Azpidatzia Bakarrik Ikuspegia</td>
+<td>Erakutsi azpidatzi saretxoa bakarrik</td>
+</tr>
+<tr>
+<td>app/display/video_subs</td>
+<td>Bideoa + Azpidatzia Ikuspegia</td>
+<td>Erakutsi bideoa eta azpidatzi saretxoa bakarrik</td>
+</tr>
+<tr>
+<td>app/exit</td>
+<td>Irten</td>
+<td>Irten aplikaziotik</td>
+</tr>
+<tr>
+<td>app/language</td>
+<td>Hizkuntza</td>
+<td>Hautatu Aegisub interfaze hizkuntza</td>
+</tr>
+<tr>
+<td>app/log</td>
+<td>Ohar leihoa</td>
+<td>Ikusi gertaera oharra</td>
+</tr>
+<tr>
+<td>app/new_window</td>
+<td>Leiho Berria</td>
+<td>Ireki aplikazio leiho berri bat</td>
+</tr>
+<tr>
+<td>app/options</td>
+<td>Aukerak</td>
+<td>Itxuratu Aegisub</td>
+</tr>
+<tr>
+<td>app/toggle/global_hotkeys</td>
+<td>Aldatu lastertekla orokor ezeztapenak</td>
+<td>Aldatu lastertekla orokor ezeztapenak (Medusa Modua)</td>
+</tr>
+<tr>
+<td>app/toggle/toolbar</td>
+<td>Ezkutatu Tresnabarra</td>
+<td>Aldatu tresnabarra nagusia</td>
+</tr>
+<tr>
+<td>app/updates</td>
+<td>Egiaztatu eguneraketak</td>
+<td>Egiaztatu Aegisuberen bertsio berriren bat  eskuragarri dagoen</td>
+</tr>
+<tr>
+<td>audio/close</td>
+<td>Itxi Audioa</td>
+<td>Itxi orain irekita dagoen audio agiria</td>
+</tr>
+<tr>
+<td>audio/commit</td>
+<td>Aurkeztu</td>
+<td>Aurkeztu egiteke dauden audio denborapen aldaketak</td>
+</tr>
+<tr>
+<td>audio/commit/default</td>
+<td>Aurkeztu eta erabili berezko denborapena hurrengo lerroarentzat</td>
+<td>Aurkeztu egiteke dauden audio denborapen aldaketak eta berrezarri hurrengo lerroaren denborak berezkoetan</td>
+</tr>
+<tr>
+<td>audio/commit/next</td>
+<td>Aurkeztu eta mugitu hurrengo lerrora</td>
+<td>Aurkeztu egiteke dauden audio denborapen aldaketak eta mugitu hurrengo lerrora</td>
+</tr>
+<tr>
+<td>audio/commit/stay</td>
+<td>Aurkeztu eta gelditu oraingo lerroan</td>
+<td>Aurkeztu egiteke dauden audio denborapen aldaketak eta gelditu oraingo lerroan</td>
+</tr>
+<tr>
+<td>audio/go_to</td>
+<td>Joan hautapenera</td>
+<td>Irristatu audio erakuspena oraingo audio hautapenean erdiratzeko</td>
+</tr>
+<tr>
+<td>audio/karaoke</td>
+<td>Aldatu karaoke modua</td>
+<td>Aldatu karaoke modua</td>
+</tr>
+<tr>
+<td>audio/open</td>
+<td>Ireki Audio Agiria</td>
+<td>Ireki audio agiria bat</td>
+</tr>
+<tr>
+<td>audio/open/blank</td>
+<td>Ireki 2h30 Blank Audioa</td>
+<td>Ireki 150 minutuko audio ebakin hutsa, garbiketarako</td>
+</tr>
+<tr>
+<td>audio/open/noise</td>
+<td>Ireki 2h30 Noise Audioa</td>
+<td>Ireki 150 minutuko zarataz-beteriko audio ebakina, garbiketarako </td>
+</tr>
+<tr>
+<td>audio/open/video</td>
+<td>Ireki Audioa Bideotik</td>
+<td>Ireki audioa oraingo bideo agiritik</td>
+</tr>
+<tr>
+<td>audio/opt/autocommit</td>
+<td>Berezgaitasunez aurkeztu aldaketa denak</td>
+<td>Berezgaitasunez aurkeztu aldaketa denak</td>
+</tr>
+<tr>
+<td>audio/opt/autonext</td>
+<td>Berez joan hurrengo lerrora aurkezterakoan</td>
+<td>Berezgaitasunez joan hurrengo lerrora aurkezterakoan</td>
+</tr>
+<tr>
+<td>audio/opt/autoscroll</td>
+<td>Berez irristatu audio erakuspena hautaturiko lerrora</td>
+<td>Berez irristatu audio erakuspena hautaturiko lerrora</td>
+</tr>
+<tr>
+<td>audio/opt/spectrum</td>
+<td>Argilitza aztergailu modua</td>
+<td>Argilitza aztergailu modua</td>
+</tr>
+<tr>
+<td>audio/opt/vertical_link</td>
+<td>Lotu zoom zutia eta bolumen irristariak</td>
+<td>Lotu zoom zutia eta bolumen irristariak</td>
+</tr>
+<tr>
+<td>audio/play/current</td>
+<td>Irakurri oraingo audio hautapena</td>
+<td>Irakurri oraingo audio hautapen, irakurketan zehar eginiko aldaketak ezikusiz</td>
+</tr>
+<tr>
+<td>audio/play/line</td>
+<td>Irakurri oraingo lerroa</td>
+<td>Irakurri oraingo lerrorako audioa</td>
+</tr>
+<tr>
+<td>audio/play/selection</td>
+<td>Irakurri audio hautapena</td>
+<td>Irakurri audioa hautapenaren amaiera erdietsi arte</td>
+</tr>
+<tr>
+<td>audio/play/selection/after</td>
+<td>Irakurri 500 sm hautapenaren ondoren</td>
+<td>Irakurri 500 sm hautapenaren ondoren</td>
+</tr>
+<tr>
+<td>audio/play/selection/before</td>
+<td>Irakurri 500 sm hautapenaren aurretik</td>
+<td>Irakurri 500 sm hautapenaren aurretik</td>
+</tr>
+<tr>
+<td>audio/play/selection/begin</td>
+<td>Irakurri hautapenaren lehen 500 sm-ak</td>
+<td>Irakurri hautapenaren lehen 500 sm-ak</td>
+</tr>
+<tr>
+<td>audio/play/selection/end</td>
+<td>Irakurri hautapenaren azken 500 sm-ak</td>
+<td>Irakurri hautapenaren azken 500 sm-ak</td>
+</tr>
+<tr>
+<td>audio/play/to_end</td>
+<td>Irakurri hautapenaren hasieratik agiriaren amaierara arte</td>
+<td>Irakurri hautapenaren hasieratik agiriaren amaierara arte</td>
+</tr>
+<tr>
+<td>audio/play/toggle</td>
+<td>Irakurri audio hautapena edo gelditu</td>
+<td>Irakurri hautapena, edo gelditu irakurketa jadanik irakurtzen ari bada</td>
+</tr>
+<tr>
+<td>audio/save/clip</td>
+<td>Sortu audio ebakina</td>
+<td>Gorde hautaturiko lerroaren audio ebakin bat </td>
+</tr>
+<tr>
+<td>audio/scroll/left</td>
+<td>Irristaria Ezkerrera</td>
+<td>Irristatu audio erakuspena ezkerrera</td>
+</tr>
+<tr>
+<td>audio/scroll/right</td>
+<td>Irristaria Eskuinera</td>
+<td>Irristatu audio erakuspena eskuinera</td>
+</tr>
+<tr>
+<td>audio/stop</td>
+<td>Gelditu irakurketa</td>
+<td>Gelditu audio eta bideo irakurketa</td>
+</tr>
+<tr>
+<td>audio/view/spectrum</td>
+<td>Argilitza Erakuspena</td>
+<td>Erakutsi audioa maiztasun-indar argilitza bat bezala</td>
+</tr>
+<tr>
+<td>audio/view/waveform</td>
+<td>Uhinera Erakuspena</td>
+<td>Erakutsi audioa zabalera lerrokatu grafika bezala</td>
+</tr>
+<tr>
+<td>automation/lua/clean-info/Clean Script Info</td>
+<td>Clean Script Info</td>
+<td>Removes all but the absolutely required fields from the Script Info section. You might want to run this on files that you plan to distribute in original form.</td>
+</tr>
+<tr>
+<td>automation/lua/cleantags-autoload/Clean Tags</td>
+<td>Clean Tags</td>
+<td>Clean subtitle lines by re-arranging ASS tags and override blocks within the lines</td>
+</tr>
+<tr>
+<td>automation/lua/kara-templater/Apply karaoke template</td>
+<td>Apply karaoke template</td>
+<td>Applies karaoke effects from templates</td>
+</tr>
+<tr>
+<td>automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in</td>
+<td>Automatic karaoke lead-in</td>
+<td>Join up the ends of selected lines and add \k tags to shift karaoke</td>
+</tr>
+<tr>
+<td>automation/lua/macro-1-edgeblur/Add edgeblur</td>
+<td>Add edgeblur</td>
+<td>Adds \be1 tags to all selected lines</td>
+</tr>
+<tr>
+<td>automation/lua/macro-2-mkfullwitdh/Make fullwidth</td>
+<td>Make fullwidth</td>
+<td>Convert Latin letters to SJIS fullwidth letters</td>
+</tr>
+<tr>
+<td>automation/lua/select-overlaps/Select overlaps</td>
+<td>Select overlaps</td>
+<td>Select lines which begin while another non-comment line is active</td>
+</tr>
+<tr>
+<td>automation/lua/strip-tags/Strip tags</td>
+<td>Strip tags</td>
+<td>Remove all override tags from selected lines</td>
+</tr>
+<tr>
+<td>edit/clear</td>
+<td>Garbitu</td>
+<td>Garbitu oraingo lerroaren idazkia</td>
+</tr>
+<tr>
+<td>edit/clear/text</td>
+<td>Garbitu Idazkia</td>
+<td>Garbitu oraingo lerroaren idazkia, ezeztapen etiketak utziz</td>
+</tr>
+<tr>
+<td>edit/color/outline</td>
+<td>Inguru Margoa</td>
+<td>Ezarri inguru margoa (\3c) kurtsorearen kokapenean</td>
+</tr>
+<tr>
+<td>edit/color/primary</td>
+<td>Lehen Margoa</td>
+<td>Ezarri lehen betetze margoa (\c) kurtsorearen kokapenean</td>
+</tr>
+<tr>
+<td>edit/color/secondary</td>
+<td>Bigarren Margoa</td>
+<td>Ezarri bigarren (karaoke) betetze margoa (\2c) kurtsorearen kokapenean</td>
+</tr>
+<tr>
+<td>edit/color/shadow</td>
+<td>Itzal Margoa</td>
+<td>Ezarri itzal margoa (\4c) kurtsorearen kokapenean</td>
+</tr>
+<tr>
+<td>edit/find_replace</td>
+<td>Bilatu eta Ordeztu...</td>
+<td>Bilatu eta ordeztu hitzak azpidatzian</td>
+</tr>
+<tr>
+<td>edit/font</td>
+<td>Hizki Aldea</td>
+<td>Hautatu hizki alde eta neurri bat</td>
+</tr>
+<tr>
+<td>edit/insert_original</td>
+<td>Txertatu Jatorrizkoa</td>
+<td>Txertatu jatorrizko lerro idazkia kurtsorean</td>
+</tr>
+<tr>
+<td>edit/line/copy</td>
+<td>Kopiatu Lerroak</td>
+<td>Kopiatu azpidatzia gakora</td>
+</tr>
+<tr>
+<td>edit/line/cut</td>
+<td>Ebaki Lerroak</td>
+<td>Ebaki azpidatzia</td>
+</tr>
+<tr>
+<td>edit/line/delete</td>
+<td>Ezabatu Lerroak</td>
+<td>Ezabatu orain hautaturiko lerroak</td>
+</tr>
+<tr>
+<td>edit/line/duplicate</td>
+<td>Bikoiztu Lerroak</td>
+<td>Bikoiztu hautaturiko lerroak</td>
+</tr>
+<tr>
+<td>edit/line/join/as_karaoke</td>
+<td>Karaoke Bezala</td>
+<td>Batu hautaturiko lerroak bakar batean, karaoke bezala</td>
+</tr>
+<tr>
+<td>edit/line/join/concatenate</td>
+<td>Kateadura</td>
+<td>Batu hautaturiko lerroak bakar batean, idazkiak elkarrekin kateduratuz</td>
+</tr>
+<tr>
+<td>edit/line/join/keep_first</td>
+<td>Heutsi Lehenari</td>
+<td>Batu hautaturiko lerroak bakar batean, lehenaren idazkiari heutsiz eta gainontzekoa baztertuz</td>
+</tr>
+<tr>
+<td>edit/line/paste</td>
+<td>Itsatsi Lerroak</td>
+<td>Itsatsi azpidatzia</td>
+</tr>
+<tr>
+<td>edit/line/paste/over</td>
+<td>Itsatsi Lerrroak Gainean</td>
+<td>Itsatsi azpidatzia besteen gainean</td>
+</tr>
+<tr>
+<td>edit/line/recombine</td>
+<td>Birnahastu Lerroak</td>
+<td>Birnahastu banandu eta batu diren azpidatziak</td>
+</tr>
+<tr>
+<td>edit/line/split/after</td>
+<td>Banandu lerroak oraingo framearen ondoren</td>
+<td>Banandu oraingo lerroa oraingo framean amaitzen den lerro batean eta hurrengo framean hasten den lerro batean</td>
+</tr>
+<tr>
+<td>edit/line/split/before</td>
+<td>Banandu lerroak oraingo framearen aurretik</td>
+<td>Banandu oraingo lerroa aurreko framean amaitzen den lerro batean eta oraingo framean hasten den lerro batean</td>
+</tr>
+<tr>
+<td>edit/line/split/by_karaoke</td>
+<td>Banandu Lerroak (karaokea)</td>
+<td>Erabili karaoke denborapena lerroa lerro txiki anitzetan banantzeko</td>
+</tr>
+<tr>
+<td>edit/line/split/estimate</td>
+<td>Banandu kurtsorean (ustezko denborak)</td>
+<td>Banandu oraingo lerroa kurtsorean, jatorrizko lerroaren iraupena berrien artean bananduz</td>
+</tr>
+<tr>
+<td>edit/line/split/preserve</td>
+<td>Banandu kurtsorean (heutsi denborak)</td>
+<td>Banandu oraingo lerroa kurtsorean, bi lerroak jatorrizko lerroaren denboran ezarriz</td>
+</tr>
+<tr>
+<td>edit/line/split/video</td>
+<td>Banandu kurtsorean (bideo framean)</td>
+<td>Banandu oraingo lerroa kurtsorean, lerroaren iraupena oraingo bideo framean bananduz</td>
+</tr>
+<tr>
+<td>edit/redo</td>
+<td>Ezer ez berregiteko</td>
+<td>Berregin desegindako azken ekintza</td>
+</tr>
+<tr>
+<td>edit/revert</td>
+<td>Alderantzizkatu</td>
+<td>Lehengoratu gaitutako lerroa bere hasierako egoerara (goiko editatzailean erakutsia)</td>
+</tr>
+<tr>
+<td>edit/style/bold</td>
+<td>Aldatu Lodia</td>
+<td>Aldatu lodia (\b) oraingo hautapenean edo kurtsorearen oraingo kokapenean</td>
+</tr>
+<tr>
+<td>edit/style/italic</td>
+<td>Aldatu Etzanak</td>
+<td>Aldatu etzanak (\i) oraingo hautapenean edo kurtsorearen oraingo kokapenean</td>
+</tr>
+<tr>
+<td>edit/style/strikeout</td>
+<td>Aldatu Marratuta</td>
+<td>Aldatu marratua (\s) oraingo hautapenean edo kurtsorearen oraingo kokapenean</td>
+</tr>
+<tr>
+<td>edit/style/underline</td>
+<td>Aldatu Azpimarra</td>
+<td>Aldatu azpimarra (\u) oraingo hautapenean edo kurtsorearen oraingo kokapenean</td>
+</tr>
+<tr>
+<td>edit/undo</td>
+<td>Ezer ez desegiteko</td>
+<td>Desegin azken ekintza</td>
+</tr>
+<tr>
+<td>grid/line/next</td>
+<td>Hurrengo Lerroa</td>
+<td>Mugitu hurrengo azpidatzi lerrora</td>
+</tr>
+<tr>
+<td>grid/line/next/create</td>
+<td>Hurrengo Lerroa</td>
+<td>Mugitu hurrengo azpidatzi lerrora, berri bat sortuz beharrezkoa bada</td>
+</tr>
+<tr>
+<td>grid/line/prev</td>
+<td>Aurreko Lerroa</td>
+<td>Mugitu aurreko lerrora</td>
+</tr>
+<tr>
+<td>grid/move/down</td>
+<td>Mugitu lerroa behera</td>
+<td>Mugitu hautaturiko lerroak lerro bat behera</td>
+</tr>
+<tr>
+<td>grid/move/up</td>
+<td>Mugitu lerroa gora</td>
+<td>Mugitu hautaturiko lerroak lerro bat gora</td>
+</tr>
+<tr>
+<td>grid/sort/actor</td>
+<td>Antzezle Izena</td>
+<td>Antolatu azpidatzi guztiak beren antzezle izenez</td>
+</tr>
+<tr>
+<td>grid/sort/actor/selected</td>
+<td>Antzezle Izena</td>
+<td>Antolatu hautaturiko azpidatzi guztiak beren antzezle izenez</td>
+</tr>
+<tr>
+<td>grid/sort/effect</td>
+<td>Eragina</td>
+<td>Antolatu azpidatzi guztiak beren eraginez</td>
+</tr>
+<tr>
+<td>grid/sort/effect/selected</td>
+<td>Eragina</td>
+<td>Antolatu hautaturiko azpidatzi guztiak beren eraginez</td>
+</tr>
+<tr>
+<td>grid/sort/end</td>
+<td>Amaiera Denbora</td>
+<td>Antolatu azpidatzi guztiak beren amaiera denboraz</td>
+</tr>
+<tr>
+<td>grid/sort/end/selected</td>
+<td>Amaiera Denbora</td>
+<td>Antolatu hautaturiko azpidatzi guztiak beren amaiera denboraz</td>
+</tr>
+<tr>
+<td>grid/sort/layer</td>
+<td>Geruza</td>
+<td>Antolatu azpidatzi guztiak beren geruza zenbakiaz</td>
+</tr>
+<tr>
+<td>grid/sort/layer/selected</td>
+<td>Geruza</td>
+<td>Antolatu hautaturiko azpidatzi guztiak beren geruza zenbakiaz</td>
+</tr>
+<tr>
+<td>grid/sort/start</td>
+<td>Hasiera Denbora</td>
+<td>Antolatu azpidatzi guztiak beren hasiera denboraz</td>
+</tr>
+<tr>
+<td>grid/sort/start/selected</td>
+<td>Hasiera Denbora</td>
+<td>Antolatu azpidatzi guztiak beren hasiera denboraz</td>
+</tr>
+<tr>
+<td>grid/sort/style</td>
+<td>Estilo Izena</td>
+<td>Antolatu hautaturiko azpidatzi guztiak beren hasiera denboraz</td>
+</tr>
+<tr>
+<td>grid/sort/style/selected</td>
+<td>Estilo Izena</td>
+<td>Antolatu hautaturiko azpidatzi guztiak beren estilo izenez</td>
+</tr>
+<tr>
+<td>grid/swap</td>
+<td>Trukatu Lerroak</td>
+<td>Trukatu hautaturiko bi lerroak</td>
+</tr>
+<tr>
+<td>grid/tag/cycle_hiding</td>
+<td>Aldikatu Etiketa Ezkutzatze Modua</td>
+<td>Aldikatu etiketa ezkutatze moduen artean</td>
+</tr>
+<tr>
+<td>grid/tags/hide</td>
+<td>Ezkutatu Etiketak</td>
+<td>Ezkutatu ezeztaturiko etiketak azpidatzi saretxoan</td>
+</tr>
+<tr>
+<td>grid/tags/show</td>
+<td>Erakutsi Etiketak</td>
+<td>Erakutsi ezeztaturiko etiketa denak azpidatzi saretxoan</td>
+</tr>
+<tr>
+<td>grid/tags/simplify</td>
+<td>Etiketa Arruntak</td>
+<td>Ordeztu azpidatzi saretxoan ezeztaturiko etiketak kokatzaile arrundu batekin</td>
+</tr>
+<tr>
+<td>help/bugs</td>
+<td>Akats Aztarnaria</td>
+<td>Ikusi Aegisub akats aztarnaria matxurak jakinarazteko eta ezaugarri berriak eskatzeko</td>
+</tr>
+<tr>
+<td>help/contents</td>
+<td>Eskuliburua</td>
+<td>Laguntza gaiak</td>
+</tr>
+<tr>
+<td>help/forums</td>
+<td>Eztabaidaguneak</td>
+<td>Ikusi Aegisub eztabaidaguneak</td>
+</tr>
+<tr>
+<td>help/irc</td>
+<td>IRC Bidea</td>
+<td>Ikusi Aegisub IRC bide ofiziala</td>
+</tr>
+<tr>
+<td>help/video</td>
+<td>Ikus Idaz-ezarpena</td>
+<td>Ireki eskuliburu orrialdea Ikus Idaz-ezarpenarako</td>
+</tr>
+<tr>
+<td>help/website</td>
+<td>Webgunea</td>
+<td>Ikusi Aegisub webgune ofiziala</td>
+</tr>
+<tr>
+<td>keyframe/close</td>
+<td>Itxi Giltzaframeak</td>
+<td>Baztertu orain gertaturiko giltzaframeak eta erabili bideokoak, egonez gero</td>
+</tr>
+<tr>
+<td>keyframe/open</td>
+<td>Ireki Giltzaframeak</td>
+<td>Ireki giltzaframe zerrenda agiri bat</td>
+</tr>
+<tr>
+<td>keyframe/save</td>
+<td>Gorde Giltzaframeak</td>
+<td>Gorde oraingo giltzaframe zerrenda agiri batean</td>
+</tr>
+<tr>
+<td>subtitle/attachment</td>
+<td>Eranspenak</td>
+<td>Ireki eranspen kudeatzaile elkarrizketa</td>
+</tr>
+<tr>
+<td>subtitle/find</td>
+<td>Bilatu</td>
+<td>Bilatu idazkia azpidatzian</td>
+</tr>
+<tr>
+<td>subtitle/find/next</td>
+<td>Bilatu Hurrengoa</td>
+<td>Bilatu azken bilaketarekin bat datorren hurrengoa</td>
+</tr>
+<tr>
+<td>subtitle/insert/after</td>
+<td>Oraingoaren Ondoren</td>
+<td>Txertatu lerro berri bat oraingoaren ondoren</td>
+</tr>
+<tr>
+<td>subtitle/insert/after/videotime</td>
+<td>Oraingoaren Ondoren, Bideo Denboran</td>
+<td>Txertatu lerro bat oraingoaren ondoren, bideo denboratik hasiz</td>
+</tr>
+<tr>
+<td>subtitle/insert/before</td>
+<td>Oraingoaren Aurretik</td>
+<td>Txertatu lerro bat oraingoaren aurretik</td>
+</tr>
+<tr>
+<td>subtitle/insert/before/videotime</td>
+<td>Oraingoaren Aurretik, Bideo Denboran</td>
+<td>Txertatu lerro bat oraingoaren aurretik, bideo denboratik hasiz</td>
+</tr>
+<tr>
+<td>subtitle/new</td>
+<td>Azpidatzi Berria</td>
+<td>Azpidatzi berria</td>
+</tr>
+<tr>
+<td>subtitle/open</td>
+<td>Ireki Azpidatzia</td>
+<td>Ireki azpidatzi agiri bat</td>
+</tr>
+<tr>
+<td>subtitle/open/autosave</td>
+<td>Ireki Berez-gordetako Azpidatzia</td>
+<td>Ireki Aegisub-ek berez-gordetako agiri baten aurreko bertsio bat </td>
+</tr>
+<tr>
+<td>subtitle/open/charset</td>
+<td>Ireki Azpidatzia Hizki-kodearekin</td>
+<td>Ireki azpidatzi agiri bat adierazitako agiri kodeaketa batekin</td>
+</tr>
+<tr>
+<td>subtitle/open/video</td>
+<td>Ireki azpidatzia bideotik</td>
+<td>Ireki azpidatzia oraingo bideo agiritik</td>
+</tr>
+<tr>
+<td>subtitle/properties</td>
+<td>Ezaugarriak</td>
+<td>Ireki eskriptaren ezaugarri leihoa</td>
+</tr>
+<tr>
+<td>subtitle/save</td>
+<td>Gorde Azpidatzia</td>
+<td>Gorde oraingo azpidatzia</td>
+</tr>
+<tr>
+<td>subtitle/save/as</td>
+<td>Gorde Azpidatzia honela</td>
+<td>Gorde azpidatzia beste izen batekin</td>
+</tr>
+<tr>
+<td>subtitle/select/all</td>
+<td>Hautatu Denak</td>
+<td>Hautatu elkarrizketa lerro guztiak</td>
+</tr>
+<tr>
+<td>subtitle/select/visible</td>
+<td>Hautatu Ikusgarri</td>
+<td>Select all dialogue lines that are visible on the current video frame</td>
+</tr>
+<tr>
+<td>subtitle/spellcheck</td>
+<td>Idaz Egiaztatzailea</td>
+<td>Ireki idaz egiaztatzailea</td>
+</tr>
+<tr>
+<td>time/continuous/end</td>
+<td>Aldatu Amaiera</td>
+<td>Aldatu lerroen amaiera denborak hurrengo lerroaren hasiera denborara</td>
+</tr>
+<tr>
+<td>time/continuous/start</td>
+<td>Aldatu Hasiera</td>
+<td>Aldatu lerroen hasiera denborak aurreko lerroaren amaiera denborara</td>
+</tr>
+<tr>
+<td>time/frame/current</td>
+<td>Aldatu Oraingo Framera</td>
+<td>Aldatu hautapena eragindako lerroa oraingo framean hasten delarik</td>
+</tr>
+<tr>
+<td>time/lead/both</td>
+<td>Gehitu sarrera eta aterapena</td>
+<td>Gehitu biak sarrera eta irteera hautaturiko lerroetara</td>
+</tr>
+<tr>
+<td>time/lead/in</td>
+<td>Gehitu sarrera</td>
+<td>Gehitu sarrera denbora hautaturiko lerroetara</td>
+</tr>
+<tr>
+<td>time/lead/out</td>
+<td>Gehitu aterapena</td>
+<td>Gehitu irteera denbora hautaturiko lerroetara</td>
+</tr>
+<tr>
+<td>time/length/decrease</td>
+<td>Gutxitu luzera</td>
+<td>Gutxitu oraingo denbora bateko luzera</td>
+</tr>
+<tr>
+<td>time/length/decrease/shift</td>
+<td>Gutxitu luzera eta aldatu</td>
+<td>Gutxitu oraingo denbora bateko luzera eta aldatu hurrengo gaiak</td>
+</tr>
+<tr>
+<td>time/length/increase</td>
+<td>Handitu luzera</td>
+<td>Handitu oraingo denbora batekoaren luzera</td>
+</tr>
+<tr>
+<td>time/length/increase/shift</td>
+<td>Handitu luzera eta aldatu</td>
+<td>Handitu oraingo denbora bateko luzera eta aldatu hurrengo gaiak</td>
+</tr>
+<tr>
+<td>time/next</td>
+<td>Hurrengo Lerroa</td>
+<td>Hurrengo lerroa edo hizkia</td>
+</tr>
+<tr>
+<td>time/prev</td>
+<td>Aurreko Lerroa</td>
+<td>Aurreko lerroa edo hizkia</td>
+</tr>
+<tr>
+<td>time/shift</td>
+<td>Aldatu Denborak</td>
+<td>Aldatu azpidatziak denboraz edo frameaz</td>
+</tr>
+<tr>
+<td>time/snap/end_video</td>
+<td>Zehaztu Amaiera Bideora</td>
+<td>Ezarri hautaturiko azpidatziaren amaiera oraingo bideo framean</td>
+</tr>
+<tr>
+<td>time/snap/scene</td>
+<td>Zehaztu Agerraldira</td>
+<td>Ezarri azpidatziaren hasiera eta amaiera giltzaframean oraingo bideo framearen inguruan</td>
+</tr>
+<tr>
+<td>time/snap/start_video</td>
+<td>Zehaztu Hasiera Bideora</td>
+<td>Ezarri hautaturiko azpidatziaren hasiera oraingo bideo framean</td>
+</tr>
+<tr>
+<td>time/start/decrease</td>
+<td>Aldatu hasiera denbora atzera</td>
+<td>Aldatu oraingo denbora bateko hasiera denbora atzera</td>
+</tr>
+<tr>
+<td>time/start/increase</td>
+<td>Aldatu hasiera denbora aurrera</td>
+<td>Aldatu oraingo denbora bateko hasiera denbora aurrera</td>
+</tr>
+<tr>
+<td>timecode/close</td>
+<td>Itxi Denbora-kode Agiria</td>
+<td>Itxi orain irekita dagoen denbora-kode agiria</td>
+</tr>
+<tr>
+<td>timecode/open</td>
+<td>Ireki Denbora-kode Agiria</td>
+<td>Ireki VFR denbora-kode v1 edo v2 agiria</td>
+</tr>
+<tr>
+<td>timecode/save</td>
+<td>Gorde Denbora-kode Agiria</td>
+<td>Gorde VFR denbora-kode v2 agiria</td>
+</tr>
+<tr>
+<td>tool/export</td>
+<td>Esportatu Azpidatzia</td>
+<td>Gorde azpidatzien kopia bat heuskarri ezberdin batean edo prozesapena ezarrita</td>
+</tr>
+<tr>
+<td>tool/font_collector</td>
+<td>Hizki Biltzailea</td>
+<td>Ireki hizki biltzailea</td>
+</tr>
+<tr>
+<td>tool/line/select</td>
+<td>Hautatu Lerroak</td>
+<td>Hautatu lerroak adierazitako irizpidean ohinarrituta</td>
+</tr>
+<tr>
+<td>tool/resampleres</td>
+<td>Berlaginketa Bereizmena</td>
+<td>Birlagindu azpidatziak beren oraingo itxura mantentzeko eskriptaren bereizmen ezberdin batean</td>
+</tr>
+<tr>
+<td>tool/style/assistant</td>
+<td>Estilo Laguntzailea</td>
+<td>Ireki estilo laguntzailea</td>
+</tr>
+<tr>
+<td>tool/style/manager</td>
+<td>Estilo Kudeatzailea</td>
+<td>Ireki estiloen kudeatzailea</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/commit</td>
+<td>Onartu aldaketak</td>
+<td>Aurkeztu aldaketak eta mugitu hurrengo lerrora</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/preview</td>
+<td>Aurreko aldaketak</td>
+<td>Aurkeztu aldaketak eta gelditu oraingo lerroan</td>
+</tr>
+<tr>
+<td>tool/time/kanji</td>
+<td>Kanji Denboragailua</td>
+<td>Ireki Kanji denboragailu kopiatzailea</td>
+</tr>
+<tr>
+<td>tool/time/postprocess</td>
+<td>Denborapen Prozesatu-ondorena</td>
+<td>Prozesapen-ondorengotu azpidatzi denborapena sarrerak, amaierak, agerraldi denborapena eta aldaketak etab. gehitzeko.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant</td>
+<td>Itzulpen Laguntzailea</td>
+<td>Ireki itzulpen laguntzailea</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/commit</td>
+<td>Onartu aldaketak</td>
+<td>Aurkeztu aldaketak eta mugitu hurrengo lerrora</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/insert_original</td>
+<td>Txertatu Jatorrizkoa</td>
+<td>Txertatu itzuligabeko idazkia</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/next</td>
+<td>Hurrengo Lerroa</td>
+<td>Mugitu hurrengo lerrora aldaketak aurkeztu gabe</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/prev</td>
+<td>Aurreko Lerroa</td>
+<td>Mugitu aurreko lerrora aldaketak aurkeztu gabe</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/preview</td>
+<td>Aurreko aldaketak</td>
+<td>Aurkeztu aldaketak eta gelditu oraingo lerroan</td>
+</tr>
+<tr>
+<td>video/aspect/cinematic</td>
+<td>Zinematik (2.35)</td>
+<td>Behartu bideoaren ikuspegi maila 2.35-era</td>
+</tr>
+<tr>
+<td>video/aspect/custom</td>
+<td>Egilea</td>
+<td>Behartu bideoa norbere ikuspegi mailara</td>
+</tr>
+<tr>
+<td>video/aspect/default</td>
+<td>Berezkoa</td>
+<td>Erabili bideoaren jatorrizko ikuspegi maila</td>
+</tr>
+<tr>
+<td>video/aspect/full</td>
+<td>Ikusleiho-osoa (4:3)</td>
+<td>Behartu bideoaren ikuspegi maila 4:3-ra</td>
+</tr>
+<tr>
+<td>video/aspect/wide</td>
+<td>Ikusleiho-zabala (16:9)</td>
+<td>Behartu bideoaren ikuspegi maila 16:9-ra</td>
+</tr>
+<tr>
+<td>video/close</td>
+<td>Itxi Bideoa</td>
+<td>Itxi orain irekita dagoen bideoa</td>
+</tr>
+<tr>
+<td>video/copy_coordinates</td>
+<td>Kopiatu antolakuntza Gakora</td>
+<td>Kopiatu bideoaren gaineko oraingo saguaren antolakuntza gakora</td>
+</tr>
+<tr>
+<td>video/detach</td>
+<td>Banandu Bideoa</td>
+<td>Banandu bideo erakuspna leiho nagusitik, beste leiho batean erakutsiz</td>
+</tr>
+<tr>
+<td>video/details</td>
+<td>Erakutsi Bideoaren Xehetasunak</td>
+<td>Erakutsi bideoaren xehetasunak</td>
+</tr>
+<tr>
+<td>video/focus_seek</td>
+<td>Aldatu bideo irristari fokua</td>
+<td>Aldatu fokua bideo irristariaren eta aurretik fokutua zegoen gauzaren artean</td>
+</tr>
+<tr>
+<td>video/frame/copy</td>
+<td>Kopiatu irudia Gakora</td>
+<td>Kopiatu orain erakusten den framea gakora</td>
+</tr>
+<tr>
+<td>video/frame/copy/raw</td>
+<td>Kopiatu irudia Gakora (azpidatziak ez)</td>
+<td>Kopiatu orain erakusten den framea gakora, azpidatzirik gabe</td>
+</tr>
+<tr>
+<td>video/frame/next</td>
+<td>Hurrengo Framea</td>
+<td>Bilatu hurrengo framean</td>
+</tr>
+<tr>
+<td>video/frame/next/boundary</td>
+<td>Hurrengo Muga</td>
+<td>Bilatu hurrengo azpidatzi hasiera edo amaieran</td>
+</tr>
+<tr>
+<td>video/frame/next/keyframe</td>
+<td>Hurrengo Giltzaframea</td>
+<td>Bilatu hurrengo giltzaframean</td>
+</tr>
+<tr>
+<td>video/frame/next/large</td>
+<td>Jauzi azkarra aurrera</td>
+<td>Jauzi azkarra aurrera</td>
+</tr>
+<tr>
+<td>video/frame/prev</td>
+<td>Aurreko Framea</td>
+<td>Bilatu aurreko framean</td>
+</tr>
+<tr>
+<td>video/frame/prev/boundary</td>
+<td>Aurreko Muga</td>
+<td>Bilatu aurreko azpidatziaren hasiera edo amaieran</td>
+</tr>
+<tr>
+<td>video/frame/prev/keyframe</td>
+<td>Aurreko Giltzaframea</td>
+<td>Bilatu aurreko giltzaframean</td>
+</tr>
+<tr>
+<td>video/frame/prev/large</td>
+<td>Jauzi azkarra atzera</td>
+<td>Jauzi azkarra atzera</td>
+</tr>
+<tr>
+<td>video/frame/save</td>
+<td>Gorde PNG argazkia</td>
+<td>Gorde orain erakusten den framea PNG agiri bezala bideoaren zuzenbidean</td>
+</tr>
+<tr>
+<td>video/frame/save/raw</td>
+<td>Gorde PNG argazkia (azpidatziak ez)</td>
+<td>Gorde orain erakusten den framea azpidatzi gabe PNG agiri bezala bideoaren zuzenbidean</td>
+</tr>
+<tr>
+<td>video/jump</td>
+<td>Jauzi hona</td>
+<td>Jauzi framera edo denborara</td>
+</tr>
+<tr>
+<td>video/jump/end</td>
+<td>Jauzi Bideoa Amaierara</td>
+<td>Jauzi bideoa oraingo azpidatziko amaiera framera</td>
+</tr>
+<tr>
+<td>video/jump/start</td>
+<td>Jauzi Bideoa Hasierara</td>
+<td>Jauzi bideoa oraingo azpidatziko hasiera framera</td>
+</tr>
+<tr>
+<td>video/open</td>
+<td>Ireki Bideoa</td>
+<td>Ireki bideo agiri bat</td>
+</tr>
+<tr>
+<td>video/open/dummy</td>
+<td>Erabili Irudizko Bideoa</td>
+<td>Ireki bideo ebakin bat margo solidoarekin</td>
+</tr>
+<tr>
+<td>video/opt/autoscroll</td>
+<td>Aldatu bideoaren berez-irristatzea</td>
+<td>Aldatu berezgaitasunez bideo bilaketa hautaturiko lerroen hasiera denborara</td>
+</tr>
+<tr>
+<td>video/play</td>
+<td>Irakurri</td>
+<td>Bideo irakurketa hemen hasten da</td>
+</tr>
+<tr>
+<td>video/play/line</td>
+<td>Irakurri lerroa</td>
+<td>Irakurri oraingo lerroa</td>
+</tr>
+<tr>
+<td>video/show_overscan</td>
+<td>Erakutsi Gainmihaketa Mozorroa</td>
+<td>Erakutsi mozorro bat bideoaren gainean, telebisten gainmihaketak moztu ditzakeen eremuak adieraziz</td>
+</tr>
+<tr>
+<td>video/stop</td>
+<td>Gelditu bideoa</td>
+<td>Gelditu bideo irakurketa</td>
+</tr>
+<tr>
+<td>video/subtitles_provider/cycle</td>
+<td>Aldikatu gaitutako azpidatzi hornitzailea</td>
+<td>Aldikatu azpidatzi hornitzaile eskuragarrien artean</td>
+</tr>
+<tr>
+<td>video/tool/clip</td>
+<td>Klipa</td>
+<td>Klipatu azpidatziak laukiluze batera</td>
+</tr>
+<tr>
+<td>video/tool/cross</td>
+<td>Estandarra</td>
+<td>Modu estandarra, klik bikoitzak kokapena ezartzen du</td>
+</tr>
+<tr>
+<td>video/tool/drag</td>
+<td>Arrastatu</td>
+<td>Arrastatu azpidatziak</td>
+</tr>
+<tr>
+<td>video/tool/rotate/xy</td>
+<td>Itzulikatu XY</td>
+<td>Itzulikatu azpidatziak beren X eta Y ardatzean</td>
+</tr>
+<tr>
+<td>video/tool/rotate/z</td>
+<td>Itzulikatu Z</td>
+<td>Itzulikatu azpidatziak beren Z ardatzean</td>
+</tr>
+<tr>
+<td>video/tool/scale</td>
+<td>Neurritu</td>
+<td>Neurriratu azpidatziak X eta Y ardatzetan</td>
+</tr>
+<tr>
+<td>video/tool/vector_clip</td>
+<td>Bektore Klipa</td>
+<td>Klipatu azpidatziak eremu bektorial batera</td>
+</tr>
+<tr>
+<td>video/zoom/100</td>
+<td>%100</td>
+<td>Ezarri zooma %100-ean</td>
+</tr>
+<tr>
+<td>video/zoom/200</td>
+<td>%200</td>
+<td>Ezarri zooma %200-ean</td>
+</tr>
+<tr>
+<td>video/zoom/50</td>
+<td>%50</td>
+<td>Ezarri zooma %50-ean</td>
+</tr>
+<tr>
+<td>video/zoom/in</td>
+<td>Zooma Gehitu</td>
+<td>Handitu bideo zooma</td>
+</tr>
+<tr>
+<td>video/zoom/out</td>
+<td>Zooma Gutxitu</td>
+<td>Gutxitu bideo zooma</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com/'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from docs.aegisub.org/3.1/Commands/eu/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:49:15 GMT -->
+</html>
+

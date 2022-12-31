@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Automation_4_Lua_Subtitle_file_interface by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:22 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Automation 4 Lua Subtitle file interface,Automation,Automation 4 Lua Configuration dialogues,Automation 4 Lua Miscellaneous APIs,Automation 4 Lua Progress reporting,Automation 4 Lua Registration,Automation 4 karaskel.lua,Automation 4 unicode.lua,Automation 4 utils.lua,Automation Manager,Exporting" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Automation 4 Lua Subtitle file interface - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Automation_4_Lua_Subtitle_file_interface";
+		var wgTitle = "Automation 4 Lua Subtitle file interface";
+		var wgAction = "view";
+		var wgArticleId = "66";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 720;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Automation_4_Lua_Subtitle_file_interface">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Automation 4 Lua Subtitle file interface</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>This page describes the <b>subtitle file interface</b> use in Automation 4 Lua scripts to manipulate subtitle files.
+</p><p>There is one special object (the <b>subtitles</b> user data object) which has a number of functions, and a number of table formats defined.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#The_subtitles_object"><span class="tocnumber">1</span> <span class="toctext">The subtitles object</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Retrieve_number_of_lines"><span class="tocnumber">1.1</span> <span class="toctext">Retrieve number of lines</span></a></li>
+<li class="toclevel-2"><a href="#Read_line"><span class="tocnumber">1.2</span> <span class="toctext">Read line</span></a></li>
+<li class="toclevel-2"><a href="#Append_line"><span class="tocnumber">1.3</span> <span class="toctext">Append line</span></a></li>
+<li class="toclevel-2"><a href="#Insert_line"><span class="tocnumber">1.4</span> <span class="toctext">Insert line</span></a></li>
+<li class="toclevel-2"><a href="#Replace_line"><span class="tocnumber">1.5</span> <span class="toctext">Replace line</span></a></li>
+<li class="toclevel-2"><a href="#Delete_line"><span class="tocnumber">1.6</span> <span class="toctext">Delete line</span></a></li>
+<li class="toclevel-2"><a href="#Creating_an_undo_point"><span class="tocnumber">1.7</span> <span class="toctext">Creating an undo point</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Line_data_tables"><span class="tocnumber">2</span> <span class="toctext">Line data tables</span></a>
+<ul>
+<li class="toclevel-2"><a href="#clear_class"><span class="tocnumber">2.1</span> <span class="toctext">clear class</span></a></li>
+<li class="toclevel-2"><a href="#comment_class"><span class="tocnumber">2.2</span> <span class="toctext">comment class</span></a></li>
+<li class="toclevel-2"><a href="#head_class"><span class="tocnumber">2.3</span> <span class="toctext">head class</span></a></li>
+<li class="toclevel-2"><a href="#info_class"><span class="tocnumber">2.4</span> <span class="toctext">info class</span></a></li>
+<li class="toclevel-2"><a href="#format_class"><span class="tocnumber">2.5</span> <span class="toctext">format class</span></a></li>
+<li class="toclevel-2"><a href="#style_class"><span class="tocnumber">2.6</span> <span class="toctext">style class</span></a></li>
+<li class="toclevel-2"><a href="#dialogue_class"><span class="tocnumber">2.7</span> <span class="toctext">dialogue class</span></a></li>
+<li class="toclevel-2"><a href="#unknown_class"><span class="tocnumber">2.8</span> <span class="toctext">unknown class</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="The_subtitles_object" id="The_subtitles_object"></a><h2> <span class="mw-headline"> The subtitles object </span></h2>
+<p>Most (currently all) Automation 4 Lua feature functions are passed a <b>subtitles object</b> when called. This object is used to obtain data from and manipulate the subtitles the feature is being applied on.
+</p><p>A subtitles object can have two special properties depending on the context it is created for:
+</p>
+<ul><li> <b>Read-only</b> - Some feature functions must not be allowed to modify the subtitle file at all. This includes for example <a href="Automation_4_Lua_Registration.html#Macro_validation_function" title="Automation 4 Lua Registration">macro validation functions</a> and <a href="Automation_4_Lua_Registration.html#_Export_filter_configuration_panel_provider" title="Automation 4 Lua Registration">export filter configuration panel providers</a>, because this would be outside user expectations.
+</li><li> <b>Allow undo points</b> - Only some feature functions allow undo points to be set. Currently this is only <a href="Automation_4_Lua_Registration.html#Macro_processing_function" title="Automation 4 Lua Registration">macro processing functions</a>. Due to the current (2.1/2.2) implementation of the Undo system in Aegisub, attempting to set undo points in any other context can cause data corruption, and thus is disallowed.
+</li></ul>
+<p>To allow the most flexibility, the subtitles object represents a complete ASS format file, line by line, including all meta-lines such as section headers, blank lines and semicolon comments.
+</p><p>The subtitles object supports the following operations:
+</p>
+<ul><li> Retrieve number of lines
+</li><li> Read line
+</li><li> Append line (to end of file)
+</li><li> Insert line (at arbitrary position in file)
+</li><li> Replace line
+</li><li> Delete line
+</li><li> Create undo point
+</li></ul>
+<p>These operations are described in detail below. In all operation synopses and examples, <code>subtitles</code> is used for name of the subtitles object being operated on.
+</p>
+<a name="Retrieve_number_of_lines" id="Retrieve_number_of_lines"></a><h3> <span class="mw-headline"> Retrieve number of lines </span></h3>
+<p>Synopsis:
+</p>
+<ul><li> <code>num_lines = #subtitles</code>
+</li><li> <code>num_lines = subtitles.n</code>
+</li></ul>
+<p>This operation retrieves the total number of lines in the subtitle file currently. This number only changes by using the other operations on the subtitle object, it cannot change spontaneously during the execution of a script.
+</p>
+<ul><li> <b>num_lines</b> (number) - Number of lines in subtitle file.
+</li></ul>
+<p>The first syntax is the preferred one, per normal Lua 5.1 coding style.
+</p>
+<a name="Read_line" id="Read_line"></a><h3> <span class="mw-headline"> Read line </span></h3>
+<p>Synopsis: <code>line = subtitles[i]</code>
+</p><p>This retrieves the indexed line and creates a new table object with data about it.
+</p>
+<ul><li> <b>line</b> (table) - Table with data about the retrieved line. Will be <b>nil</b> if the line indexed is out of range.
+</li><li> <b>i</b> (number) - Index into the subtitles file of the line number to retrieve. This is one-based, the first line in the file has index 1.
+</li></ul>
+<p>Aegisub internally stores the subtitle file as a linked list, which means that random access is slow, but sequential access is fast. While Automation 4 Lua presents the subtitles as if it was an array, it internally maintains a cursor used to optimise for sequential access. It is faster to access a line with an index close to the one you last accessed than to access one further away. It is always fast to access lines near the beginning or end of the file.
+</p>
+<a name="Append_line" id="Append_line"></a><h3> <span class="mw-headline"> Append line </span></h3>
+<p>Synopsis:
+</p>
+<ul><li> <code>subtitles[0] = line</code>
+</li><li> <code>subtitles.append(line)</code>
+</li><li> <code>subtitles.append(line1, line2, ...)</code>
+</li></ul>
+<p>Append one or more lines to the end of the subtitles file. In the first syntax, it is the number 0 (zero) used for index. (Setting index 0 causes an append operation.)
+</p><p>The third syntax supports appending multiple lines with one single operation.
+</p>
+<ul><li> <b>line</b> (table) - The line object table to append to the subtitles file.
+</li></ul>
+<p>The latter function-call syntax is preferred for readability. The table index setting syntax is slightly faster.
+</p><p>Appending a line always runs in constant time, it does not move the cursor otherwise used to optimise sequential access.
+</p>
+<a name="Insert_line" id="Insert_line"></a><h3> <span class="mw-headline"> Insert line </span></h3>
+<p>Synopsis:
+</p>
+<ul><li> <code>subtitles[-i] = line</code>
+</li><li> <code>subtitles.insert(i, line)</code>
+</li><li> <code>subtitles.insert(i, line1, line2, ...)</code>
+</li></ul>
+<p>Inserts one or more lines into the subtitles file before the numbered line. In the first syntax, you supply a negative index, eg. to insert a line before line 5 you supply index -5 (negative 5.)
+</p><p>Inserting lines will move lines after the inserted lines to move down in index, such that old indexes will no longer be valid.
+</p>
+<ul><li> <b>i</b> (number) - Index to insert before.
+</li><li> <b>line</b> (table) - The line object table to insert into the subtitles file.
+</li></ul>
+<p>The latter function-call syntax is preferred for readability. The table index setting syntax is slightly faster.
+</p><p>Inserting lines uses the list cursor and will move it.
+</p>
+<a name="Replace_line" id="Replace_line"></a><h3> <span class="mw-headline"> Replace line </span></h3>
+<p>Synopsis: <code>subtitles[i] = line</code>
+</p><p>Delete the indexed line and insert the given line in its stead.
+</p>
+<ul><li> <b>i</b> (number) - The line index to replace at.
+</li><li> <b>line</b> (table) - The line object table to replace with.
+</li></ul>
+<p>Replacing lines uses the list cursor and will move it.
+</p>
+<a name="Delete_line" id="Delete_line"></a><h3> <span class="mw-headline"> Delete line </span></h3>
+<p>Synopsis:
+</p>
+<ul><li> <code>subtitles[i] = nil</code>
+</li><li> <code>subtitles.delete(i)</code>
+</li><li> <code>subtitles.delete(i1, i2, ...)</code>
+</li><li> <code>subtitles.deleterange(first, last)</code>
+</li></ul>
+<p>Remove one or more from the subtitles file. All lines after the deleted line(s) will move up to fill the deleted indexes, so old indexes will no longer be valid.
+</p><p>The third syntax supports deleting multiple indexed lines in one call. The indexes given must all be correct for the subtitle file's state before any lines are deleted.
+</p><p>The fourth syntax deletes a range of lines, both indexed lines inclusive.
+</p>
+<ul><li> <b>i</b> (number) - Index of the line to delete.
+</li><li> <b>first</b>, <b>last</b> (numbers) - Indices of the first and last lines of the range to delete.
+</li></ul>
+<p>Deleting lines uses the list cursor and will move it.
+</p>
+<a name="Creating_an_undo_point" id="Creating_an_undo_point"></a><h3> <span class="mw-headline"> Creating an undo point </span></h3>
+<p>Synopsis: <code>aegisub.set_undo_point(description)</code>
+</p><p>You must always set an undo point at the end of running a macro, otherwise the Undo and Redo functions stop working correctly. You can set multiple undo points while running a single macro, but be aware that it might confuse the user. (You can try to see what happens if you don't set an undo point after changing the subtitle file, just don't release scripts without this to the public!)
+</p><p>Only available in macro processing functions, and doesn't make sense anywhere else either.
+</p>
+<ul><li> <b>description</b> (string) - Text to appear in the Edit menu for the Undo and Redo items to describe the action that can be undone.
+</li></ul>
+<p>The behaviour of the undo system will change in the next major release of Aegisub, but that's far away. The exact way it will manifest in Automation 4 scripts can't be known yet.
+</p><p>This is not really a function in the subtitles object, but it is still closely tied to it.
+</p>
+<a name="Line_data_tables" id="Line_data_tables"></a><h2> <span class="mw-headline"> Line data tables </span></h2>
+<p>When you read lines from the subtitle file object they will always be one of a few classes of lines, and when you write lines back to the subtitle file they must also follow the format of one of those classes.
+</p><p>The line data objects are regular Lua tables with some specific fields defined.
+</p><p>Here's a list of the different classes of lines:
+</p>
+<ul><li> <b>clear</b> - blank line, there's nothing (or only whitespace) on the line
+</li><li> <b>comment</b> - semicolon-comment, a line starting with a semicolon, usually ignored
+</li><li> <b>head</b> - a section heading in the file, such as <tt>[Script Info]</tt>
+</li><li> <b>info</b> - a key/value pair in the Script Info section of the file
+</li><li> <b>format</b> - a Format line in the file, usually ignored
+</li><li> <b>style</b> - a regular style definition line
+</li><li> <b>dialogue</b> - a dialogue line, which may be a comment or not; these are the lines you see in the grid in Aegisub
+</li><li> <b>unknown</b> - an unknown kind of line
+</li></ul>
+<p>There's three fields that always exist in all line data tables:
+</p>
+<ul><li> <b>class</b> (string) - The name of the class of line this is, see the list above.
+</li><li> <b>raw</b> (string) - The raw text of the line, from first to last character on the physical line.
+</li><li> <b>section</b> (string) - Which section of the file the line belongs to. If the line is placed before the first section heading, this field is <code>nil</code>.
+</li></ul>
+<a name="clear_class" id="clear_class"></a><h3> <span class="mw-headline"> <tt>clear</tt> class </span></h3>
+<p>This class doesn't define any additional fields.
+</p>
+<a name="comment_class" id="comment_class"></a><h3> <span class="mw-headline"> <tt>comment</tt> class </span></h3>
+<p>This class defines one additional field:
+</p>
+<ul><li> <b>text</b> (string) - The text that follows the semicolon. Basically the same as the <tt>raw</tt> field with the first character chopped off.
+</li></ul>
+<a name="head_class" id="head_class"></a><h3> <span class="mw-headline"> <tt>head</tt> class </span></h3>
+<p>The <tt>head</tt> class doesn't define any additional fields, but the <tt>section</tt> field contains the name of the new section started.
+</p>
+<a name="info_class" id="info_class"></a><h3> <span class="mw-headline"> <tt>info</tt> class </span></h3>
+<p>This class defines two additional fields:
+</p>
+<ul><li> <b>key</b> (string) - The part of the line before the first colon, with leading and trailing spaces removed.
+</li><li> <b>value</b> (string) - Everything after the first colon on the line, also with leading and trailing spaces removed.
+</li></ul>
+<a name="format_class" id="format_class"></a><h3> <span class="mw-headline"> <tt>format</tt> class </span></h3>
+<p>This class defines one additional field:
+</p>
+<ul><li> <b>fields</b> (array table) - An array table of strings, the field names listed in the order they appear on the format line.
+</li></ul>
+<a name="style_class" id="style_class"></a><h3> <span class="mw-headline"> <tt>style</tt> class </span></h3>
+<p>This class defines a large number of additional fields. It's usually processed by the <i>karaskel</i> and modified a bit by that. See the <i>karaskel.lua</i> section on <a href="Automation_4_karaskel.html#Style_table" title="Automation 4 karaskel.lua">style tables</a> for more information about this class.
+</p>
+<a name="dialogue_class" id="dialogue_class"></a><h3> <span class="mw-headline"> <tt>dialogue</tt> class </span></h3>
+<p>This class defines a large number of additional fields. It's usually processed by the <i>karaskel</i> and has many calculated fields added by that. See the <i>karaskel.lua</i> section on <a href="Automation_4_karaskel.html#Dialogue_line_table" title="Automation 4 karaskel.lua">dialogue line tables</a> for more information on this class.
+</p>
+<a name="unknown_class" id="unknown_class"></a><h3> <span class="mw-headline"> <tt>unknown</tt> class </span></h3>
+<p>No additional fields are defined by this class, due to its nature. This might be things like files embedded into the subtitles. You shouldn't try to work with these lines unless you really know what you're doing, deleting, modifying and inserting <tt>unknown</tt> lines has undefined consequences. (That means, even if it works today it might not work tomorrow or in the next version of Aegisub.)
+</p>
+<div style="border-top: 2px solid #448; border-bottom: 1px solid #448; background: #f0f0ff; margin: 1em; padding: 0.5em;">
+<div style="text-align:center; font-weight:bold; background:#ddf;"><a href="Automation.html" title="Automation">Automation 4</a></div>
+<table style="width:100%; font-size: smaller;">
+<tr><th>Overview:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_Manager.html" title="Automation Manager">Automation Manager</a>&nbsp;&bull; 
+<a href="Running_Automation_macros.html" title="Running Automation macros">Running macros</a>&nbsp;&bull; 
+<a href="Exporting.html" title="Exporting">Using export filters</a>&nbsp;&bull; 
+<a href="Using_the_included_macros.html" title="Using the included macros">Standard macros</a>&nbsp;&bull; 
+<a href="Overview_of_changes_from_Automation_3.html" title="Overview of changes from Automation 3">Changes from Automation 3</a>&nbsp;&bull; 
+<a href="Moving_from_Automation_3.html" title="Moving from Automation 3">Moving from Automation 3</a>
+</p>
+</td></tr>
+<tr><th><a href="Karaoke_Templater.html" title="Karaoke Templater">Karaoke Templater</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Karaoke_Templater_Reference__Declaring_template_and_code_lines.html" title="Karaoke Templater Reference: Declaring template and code lines">Declaring templates</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_execution_rules_and_order.html" title="Karaoke Templater Reference: Template execution rules and order">Execution order</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_modifiers.html" title="Karaoke Templater Reference: Template modifiers">Modifiers</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Inline_variables.html" title="Karaoke Templater Reference: Inline variables">Inline-variables ($-variables)</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_lines_and_blocks.html" title="Karaoke Templater Reference: Code lines and blocks">Code lines and blocks</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_execution_environment.html" title="Karaoke Templater Reference: Code execution environment">Execution envirionment</a>
+</p>
+</td></tr>
+<tr><th><a href="Lua_Reference.html" title="Lua Reference">Lua</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_Lua_Registration.html" title="Automation 4 Lua Registration">Registration</a>&nbsp;&bull; 
+<strong class="selflink">Subtitles object</strong>&nbsp;&bull; 
+<a href="Automation_4_Lua_Progress_reporting.html" title="Automation 4 Lua Progress reporting">Progress reporting</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Configuration_dialogues.html" title="Automation 4 Lua Configuration dialogues">Config dialogues</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Miscellaneous_APIs.html" title="Automation 4 Lua Miscellaneous APIs">Misc. APIs</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel.lua</a>&nbsp;&bull; 
+<a href="Automation_4_utils.html" title="Automation 4 utils.lua">utils.lua</a>&nbsp;&bull; 
+<a href="Automation_4_unicode.html" title="Automation 4 unicode.lua">unicode.lua</a>&nbsp;&bull; 
+cleantags.lua
+</p>
+</td></tr>
+<tr><th>Karaskel concepts:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_karaskel.html#Style_table" title="Automation 4 karaskel.lua">Style tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Dialogue_line_table" title="Automation 4 karaskel.lua">Dialogue line tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Karaoke_and_furigana_syllable_tables" title="Automation 4 karaskel.lua">Syllable tables</a>&nbsp;&bull; 
+<a href="Karaoke_inline-fx.html" title="Karaoke inline-fx">Inline effects</a>&nbsp;&bull; 
+<a href="Furigana_karaoke.html" title="Furigana karaoke">Furigana</a>
+</p>
+</td></tr>
+</table>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 84/1000000
+Post-expand include size: 2701/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:66-0!1!0!!en!2!edit=0 and timestamp 20120830210040 -->
+<div class="printfooter">
+Retrieved from "<a href="Automation_4_Lua_Subtitle_file_interface.html">http://docs.aegisub.org/manual/Automation_4_Lua_Subtitle_file_interface</a>"</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks">Category:&#32;<span dir='ltr'><a href="Category_Lua_Reference.html" title="Category:Lua Reference">Lua Reference</a></span></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.062 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Automation_4_Lua_Subtitle_file_interface by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:22 GMT -->
+</html>

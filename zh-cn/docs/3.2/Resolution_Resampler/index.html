@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Resolution_Resampler/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:13:53 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>重设分辨率 - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----MIIHJwYJKoZIhvcNAQcEoIIHGDCCBxQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYCF/CdSADVe5JGNHY0ajf2Ss7MRtEkipxJ3mWKQEDo0OdPwFjFc/+xOEcJtduO0PzcNWeE3i0QVt+0AKHaXla9fIYeixCgw+j2apsgDi+itShvnrLt6/XSaVYBYjqNLCzYm4piHbHua9uBEPo0MvET4ZimJhF/yFP7PTmsyR/+HRTELMAkGBSsOAwIaBQAwgaQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIZtx+6lgqvzSAgYB5/Hosn9AcEAFSH1GKgyah7QmB0Xqhlr5PzoI98gftPBMU4411ECMXIFX3xuTd1DbKtINakaOmDg612ZzUZgadhEvwKzwiwee3BWIKjFtLINevdu+6FvSvlNnYJWUm+0txwvEs4udrUFKwRxWiN5EQQMrGmHrViOyatjSAuMToMKCCA4cwggODMIIC7KADAgECAgEAMA0GCSqGSIb3DQEBBQUAMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTAeFw0wNDAyMTMxMDEzMTVaFw0zNTAyMTMxMDEzMTVaMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAwUdO3fxEzEtcnI7ZKZL412XvZPugoni7i7D7prCe0AtaHTc97CYgm7NsAtJyxNLixmhLV8pyIEaiHXWAh8fPKW+R017+EmXrr9EaquPmsVvTywAAE1PMNOKqo2kl4Gxiz9zZqIajOm1fZGWcGS0f5JQ2kBqNbvbg2/Za+GJ/qwUCAwEAAaOB7jCB6zAdBgNVHQ4EFgQUlp98u8ZvF71ZP1LXChvsENZklGswgbsGA1UdIwSBszCBsIAUlp98u8ZvF71ZP1LXChvsENZklGuhgZSkgZEwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tggEAMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADgYEAgV86VpqAWuXvX6Oro4qJ1tYVIT5DgWpE692Ag422H7yRIr/9j/iKG4Thia/Oflx4TdL+IFJBAyPK9v6zZNZtBgPBynXb048hsP16l2vi0k5Q2JKiPDsEfBhGI+HnxLXEaUWAcVfCsQFvd2A1sxRr67ip5y2wwBelUecP3AjJ+YcxggGaMIIBlgIBATCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwCQYFKw4DAhoFAKBdMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE0MDEwMzE0Mzc0NFowIwYJKoZIhvcNAQkEMRYEFFm9tXQlYXaST8+Vq7Ms6lYgjat7MA0GCSqGSIb3DQEBAQUABIGAp1Uqwm3BrsAY29a9wtrY5p1shbKWq9P+8anOpGD2vKBls89fFMmF/3pp1zBPkjwnLkfFXv5FA8r+oONLrduLJGDlg6Wr7dC6Gmx0zAMQCLdvOqd6CjQWgiG+Qcc28Gc4ijc2IIufp9IxkqNaoVzd2uGLbkzKnBVhb2WTWRuKnDo=-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li class='active'>
+<a href="index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../Automation/index.html">概述</a>
+</li>
+<li>
+<a href="../Automation/Karaoke_Templater/index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../Automation/Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>重设分辨率</h1>
+<p>重设分辨率是一个Aegisub自带的工具，用来修改 <a href="../Script_Resolution/index.html">脚本分辨率</a> 同时修改所有与脚本分辨率相关的特效标签，所以应用过后看起来的效果能保持一致。它能根据分辨率修正所有边距的偏移量(甚至绝对位置)。它的用途包括：合并两个不同分辨率的脚本文件；对一个脚本进行4:3到16:9的比例适配；也能在像素宽高比1:1和变形像素比例之间进行转化。</p>
+
+<h2 id="section">总览</h2>
+<p><img class="center" alt="" width="331" height="548" src="../img/resolution_resampler-76d4bd1a.png" /></p>
+
+<p>重设分辨率工具有三个主要部分：原分辨率，重设分辨率(目标分辨率)，若原分辨率和重设分辨率不同做的调整。</p>
+
+<p>默认情况下，原分辨率为当前脚本属性中的脚本分辨率，重设分辨率一般都设为视频分辨率，一般情况下这个分辨率就是你想要的。
+更改原分辨率设置只对修复明显的分辨率错误或者排版方面错误有用。</p>
+
+<p>如果你想把SD改为HD分辨率，你可能会同时需要把YCbCr matrix(色彩空间)从TV.601改成TV.709，反之则需要从TV.709改成TV.601。</p>
+
+<p>如果新旧分辨率的横纵比不同，你有以下四种选择：</p>
+
+<ol>
+  <li>拉伸字幕到新的横纵比。
+这种选择是针对原分辨率和重设分辨率都是变形的情况，会保持字幕图像的一致性。</li>
+  <li>自动增加边距来保证字幕匹配。
+当新视频有黑边或者比旧视频显示的内容更多时，选用这个方法。</li>
+  <li>自动减小边距来保证字幕匹配。
+当旧视频有黑边而新视频没有时，选用这个方法。</li>
+  <li>用户自定义所有行的边距。
+注意边距是在重设尺寸 <em>之前</em> 被增加，而不是之后。</li>
+</ol>
+
+<h2 id="section-1">例子</h2>
+
+<h3 id="sd--169-hd">4:3 SD 转为 16:9 HD</h3>
+<p>举个例子，如果你已经在640x480分辨率下为视频排版字幕，想要把这个字幕文件和1280x720的视频适配起来，你可以使用上图中的重设分辨率工具。</p>
+
+<h3 id="x480--640x480">变形分辨率 720x480 转为 640x480</h3>
+<p>对于这种情况，你应该把原分辨率设置为720x480，重设分辨率设为640x480，选择 "拉伸"。</p>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Resolution_Resampler/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:13:53 GMT -->
+</html>
+
