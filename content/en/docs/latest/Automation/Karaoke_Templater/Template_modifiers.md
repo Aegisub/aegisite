@@ -175,7 +175,7 @@ Every single character on the line will be positioned separately. For each sylla
 
 For example, if there are two syllables, "ab" and "cd", and the above two templates are applied to them, the result will be 8 lines with the following text, in this order:
 
-```plaintext
+```ass
 {\pos($x,$y)}a
 {\pos($x,$y)}b
 {\pos($x,$y)\bord0}a
@@ -283,7 +283,7 @@ Note that the execution order of looped line templates and looped syl/furi templ
 
 {{<example-box>}}
 
-```plaintext
+```ass
 template syl <u>loop 4</u>: {\move($x,$y,!$x+math.random(-30,30)!,!$y+math.random(-30,30)!,$start,$end)\alpha&Hc0&\t($start,$end,\alpha&HFF&)}
 ```
 

@@ -14,7 +14,7 @@ weight: 6140
 
 下面是一个在模板中使用内联变量的例子：
 
-```plaintext
+```ass
 {\pos(**$x**,**$y**)\t(**$start**,**$end**,\bord0)}
 ```
 

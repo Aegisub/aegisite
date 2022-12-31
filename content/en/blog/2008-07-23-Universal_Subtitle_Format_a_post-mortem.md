@@ -59,7 +59,7 @@ But let's have a look at the format itself. This is a simple "Hello World" in US
 
 The above sample is the "official" sample included with the specs, stripped down to make a suitable "hello world". For comparison, I've re-created the script in ASS:
 
-```plaintext
+```ass
 [Script Info]
 ScriptType: v4.00+
 PlayResX: 640
@@ -77,7 +77,7 @@ Dialogue: 0,0:00:11.00,0:00:15.00,NarratorSpeaking,,0000,0000,0000,,What can be 
 
 For further comparison, this is what the same script would look like in the current draft of AS5:
 
-```plaintext
+```ass
 [AS5]
 ScriptType: AS5
 Resolution: 640x480

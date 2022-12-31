@@ -90,7 +90,7 @@ so you rarely need to use this. Font weights are multiples of 100, such that
 
 {{<example-box>}}
 
-```plaintext
+```ass
 I am {\b1}not{\b0} amused.
 ```
 
@@ -99,7 +99,7 @@ The word "not" is written in boldface.
 
 {{<example-box>}}
 
-```plaintext
+```ass
 {\b100}How {\b300}bold {\b500}can {\b700}you {\b900}get?
 ```
 
@@ -145,7 +145,7 @@ Disable border entirely.
 {{<example-box>}}
 
 ```plaintext
-bord3.7
+\bord3.7
 ```
 
 Set the border width to 3.7 pixels
@@ -600,7 +600,7 @@ _style_, will reset the style to that specific style.
 
 {{<example-box>}}
 
-```plaintext
+```ass
 -Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?
 ```
 
@@ -842,7 +842,7 @@ between those two points, following the acceleration function described above.
 
 {{<example-box>}}
 
-```plaintext
+```ass
 {\1c&HFF0000&\t(\1c&H0000FF&)}Hello!
 ```
 
@@ -850,7 +850,7 @@ The text starts out blue, but fades towards red so it is completely red when the
 {{</example-box>}}
 {{<example-box>}}
 
-```plaintext
+```ass
 {\an5\t(0,5000,\frz3600)}Wheee
 ```
 
@@ -858,7 +858,7 @@ Makes the text rotate 10 times, counterclockwise, lasting for 5 seconds.
 {{</example-box>}}
 {{<example-box>}}
 
-```plaintext
+```ass
 {\an5\t(0,5000,0.5,\frz3600)}Wheee
 ```
 
@@ -866,7 +866,7 @@ Same as above, but it will start fast and slow down, still doing the 10 rotation
 {{</example-box>}}
 {{<example-box>}}
 
-```plaintext
+```ass
 {\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}Boo!
 ```
 
@@ -1010,17 +1010,23 @@ from the ASS specs):
 
 - Square:
 
+  ```ass
   {\\p1}m 0 0 l 100 0 100 100 0 100{\\p0}
+  ```
 
 - Rounded square:
 
+  ```ass
   {\\p1}m 0 0 s 100 0 100 100 0 100 c{\\p0}
+  ```
 
   (c equals to "p 0 0 100 0 100 100" in this case)
 
 - Circle (almost):
 
-  {\\p1}m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0{\\p0}
+  ```ass
+  {\p1}m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0{\p0}
+  ```
 
   (note that the 2nd 'b' is optional here)
 

@@ -55,7 +55,7 @@ number sign syllables.
 This line shows how multi-highlight syntax is used to mark up kanji and groups
 of kanji that cover multiple syllables:
 
-```plaintext
+```ass
 {\k5}明日{\k10}#{\k5}#{\k10}ま{\k7}た{\k10}会{\k4}う{\k6}時{\k14}#
 ```
 
@@ -92,7 +92,7 @@ with special control characters, see below.
 {{<example-box>}}
 Adding furigana to the example above:
 
-```plaintext
+```ass
 {\k5}明日|あ{\k10}#|し{\k5}#|た{\k10}ま{\k7}た{\k10}会|あ{\k4}う{\k6}時|と{\k14}#|き
 ```
 

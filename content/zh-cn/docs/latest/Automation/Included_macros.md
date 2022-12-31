@@ -25,7 +25,7 @@ weight: 6500
 {{<example-box>}}
 这有一个有排版的文本：
 
-```plaintext
+```ass
 {\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&H25485A&\c&HDEEBF1&\pos(456,184)\frz-90}Sign text
 ```
 
@@ -33,7 +33,7 @@ weight: 6500
 
 现在运行了这个宏后：
 
-```plaintext
+```ass
 {\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&H25485A&\c&HDEEBF1&\pos(456,184)\frz-90}Ｓｉｇｎ ｔｅｘｔ
 ```
 
@@ -56,7 +56,7 @@ weight: 6500
 {{<example-box>}}
 这里是两行"紧密相连的" 卡拉OK行:
 
-```plaintext
+```ass
 Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
 Dialogue: 0,0:00:46.57,0:00:48.56,Default,,0000,0000,0000,,{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
 ```
@@ -65,7 +65,7 @@ Dialogue: 0,0:00:46.57,0:00:48.56,Default,,0000,0000,0000,,{\k13}Ne{\k13}ver {\k
 
 现在如果对这两行应用 *Automatic karaoke lead-in* 宏，结果会变成这样：
 
-```plaintext
+```ass
 Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
 Dialogue: 0,0:00:46.28,0:00:48.56,Default,,0000,0000,0000,,{\k29}{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
 ```
@@ -110,7 +110,7 @@ lines more sensibly into syllable structures, see the example.
 {{<example-box>}}
 原字幕行
 
-```plaintext
+```ass
 {\r\frz90\k80}Test {\r\fry180\k60}me
 ```
 
@@ -122,7 +122,7 @@ Karaskel会创建这些音节结构：
 
 该行执行 *整理特效标签* 后：
 
-```plaintext
+```ass
 {\k80\r\frz90}Test {\k60\r\fry180}me
 ```
 

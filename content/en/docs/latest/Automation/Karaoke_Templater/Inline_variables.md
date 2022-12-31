@@ -19,7 +19,7 @@ lines.
 
 Here is an example of how a template text using inline variables could look:
 
-```plaintext
+```ass
 {\pos(**$x**,**$y**)\t(**$start**,**$end**,\bord0)}
 ```
 

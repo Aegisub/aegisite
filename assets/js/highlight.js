@@ -10,6 +10,7 @@ import markdown from 'highlight.js/lib/languages/markdown';
 import cpp from 'highlight.js/lib/languages/cpp';
 import java from 'highlight.js/lib/languages/java';
 import lua from 'highlight.js/lib/languages/lua';
+import ass from 'highlightjs-ass';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('json', json);
@@ -23,6 +24,7 @@ hljs.registerLanguage('xml', xml);
 hljs.registerLanguage('cpp', cpp);
 hljs.registerLanguage('java', java);
 hljs.registerLanguage('lua', lua);
+hljs.registerLanguage('ass', ass);
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('pre code:not(.language-mermaid)').forEach((block) => {
