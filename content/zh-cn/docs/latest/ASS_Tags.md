@@ -134,7 +134,7 @@ so you rarely need to use this. Font weights are multiples of 100, such that
 
 {{<example-box>}}
 
-```plaintext
+```ass
 I am {\b1}not{\b0} amused.
 ```
 
@@ -145,7 +145,7 @@ The word "not" is written in boldface.
 
 {{<example-box>}}
 
-```plaintext
+```ass
 {\b100}How {\b300}bold {\b500}can {\b700}you {\b900}get?
 ```
 
@@ -207,7 +207,7 @@ Disable border entirely. 完全隐藏边框。
 {{<example-box>}}
 
 ```plaintext
-bord3.7
+\bord3.7
 ```
 
 Set the border width to 3.7 pixels 设置边框宽度为3.7个像素
@@ -886,7 +886,7 @@ _style_, will reset the style to that specific style.
 
 {{<example-box>}}
 
-```plaintext
+```ass
 -Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?
 ```
 
@@ -1259,7 +1259,7 @@ between those two points, following the acceleration function described above.
 
 {{<example-box>}}
 
-```plaintext
+```ass
 {\1c&HFF0000&\t(\1c&H0000FF&)}Hello!
 ```
 
@@ -1269,7 +1269,7 @@ The text starts out blue, but fades towards red so it is completely red when the
 {{</example-box>}}
 {{<example-box>}}
 
-```plaintext
+```ass
 {\an5\t(0,5000,\frz3600)}Wheee
 ```
 
@@ -1279,7 +1279,7 @@ Makes the text rotate 10 times, counterclockwise, lasting for 5 seconds.
 {{</example-box>}}
 {{<example-box>}}
 
-```plaintext
+```ass
 {\an5\t(0,5000,0.5,\frz3600)}Wheee
 ```
 
@@ -1289,7 +1289,7 @@ Same as above, but it will start fast and slow down, still doing the 10 rotation
 {{</example-box>}}
 {{<example-box>}}
 
-```plaintext
+```ass
 {\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}Boo!
 ```
 

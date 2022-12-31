@@ -29,7 +29,7 @@ At the start of each line the inline-fx is reset to nothing.
 {{<example-box>}}
 Here is a timed karaoke line with inline-fx markup:
 
-```plaintext
+```ass
 {\k40}zu{\k20}t{\k42}to {\k32\-paint}e{\k17}ga{\k45}i{\k32}te{\k26}ta {\k24\-cloud}yu{\k55}me
 ```
 

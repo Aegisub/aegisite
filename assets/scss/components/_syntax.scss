@@ -20,6 +20,7 @@ Based on Ascetic by (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
 .hljs-section,
 .hljs-addition,
 .hljs-attribute,
+.hljs-title,
 .hljs-link {
   color: $pink-500;
 }
@@ -57,6 +58,25 @@ Based on Ascetic by (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
 [data-dark-mode] body .hljs-section,
 [data-dark-mode] body .hljs-addition,
 [data-dark-mode] body .hljs-attribute,
+[data-dark-mode] body .hljs-title,
 [data-dark-mode] body .hljs-link {
   color: $blue-300;
+}
+
+.hljs-params,
+.hljs-attr {
+  color: $purple;
+}
+
+.hljs-char {
+  color: $brown;
+}
+
+[data-dark-mode] body .hljs-params,
+[data-dark-mode] body .hljs-attr {
+  color: #738eb9;
+}
+
+[data-dark-mode] body .hljs-char {
+  color: $brown;
 }

@@ -42,7 +42,7 @@ Shortly before Gabest dropped development of VSFilter, he introduced the "ASS2" 
 
 So what *is* \\kt? It's "set absolute timing", it allows you to move both back and forth in time of highlight without highlighting other syllables. It is probably best illustrated with an example:
 
-```plaintext
+```ass
 {\kf10}ABC {\kt20\kf10}DEF {\kt10\kf10}GHI
 ```
 

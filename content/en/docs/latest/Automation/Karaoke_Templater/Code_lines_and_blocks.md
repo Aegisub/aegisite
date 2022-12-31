@@ -83,7 +83,7 @@ do basic conditionals in code blocks though, see below.)
 You create a code block by surrounding the code by exclamation marks, like
 this:
 
-```plaintext
+```ass
 {\t($start,**!syl.start_time+20!**,\bord0)}
 ```
 
@@ -103,7 +103,7 @@ line containing the wrong output.
 To create simple conditionals within code blocks you can use the `and` and `or`
 operators to chain values and conditions. For example:
 
-```plaintext
+```ass
 {\k**!syl.duration > 100 and "f" or ""!**$kdur}
 ```
 

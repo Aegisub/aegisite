@@ -20,7 +20,7 @@ weight: 6172
 
 回忆一下，这是上一篇教程给出的示例模板:
 
-```plaintext
+```ass
 {\r\k$kdur\t($start,$end,\1c&H00FF00&)\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)}
 ```
 
@@ -31,7 +31,7 @@ weight: 6172
 
 对模板做如下修改:
 
-```plaintext
+```ass
 {\r\k$kdur\t($start,$end,\1c&H00FF00&)\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)\t($end,!$end+200!,\alpha&HFF&)}
 ```
 
@@ -48,7 +48,7 @@ weight: 6172
 
 也许你觉得只是伸长/收缩以中间时间作为分界有些不合适。你也许觉得达到最大高度早于中间时间，剩余的时间用于变回原样比较合适。我们就做如下修改:
 
-```plaintext
+```ass
 {\r\k$kdur\t($start,$end,\1c&H00FF00&)\t($start,!$start+$dur*0.3!,\fscy120)\t(!$start+$dur*0.3!,$end,\fscy100)}
 ```
 

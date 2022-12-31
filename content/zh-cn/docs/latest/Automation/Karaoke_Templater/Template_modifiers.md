@@ -195,7 +195,7 @@ Comment: 1,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl char</u
 举个例子，如果行里有两个音节，"ab" 和
 "cd"，上面给出的两个模板被应用于这两个音节，产生的结果会有8行:
 
-```plaintext
+```ass
 {\pos($x,$y)}a
 {\pos($x,$y)}b
 {\pos($x,$y)\bord0}a

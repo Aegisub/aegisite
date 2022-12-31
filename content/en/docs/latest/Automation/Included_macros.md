@@ -31,7 +31,7 @@ grid.
 {{<example-box>}}
 Here's a typeset sign:
 
-```plaintext
+```ass
 {\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&H25485A&\c&HDEEBF1&\pos(456,184)\frz-90}Sign text
 ```
 
@@ -43,7 +43,7 @@ punctuation characters.
 
 Now after running this macro on the line:
 
-```plaintext
+```ass
 {\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&H25485A&\c&HDEEBF1&\pos(456,184)\frz-90}Ｓｉｇｎ ｔｅｘｔ
 ```
 
@@ -70,7 +70,7 @@ first.
 {{<example-box>}}
 Here's two lines of "tightly" timed karaoke:
 
-```plaintext
+```ass
 Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
 Dialogue: 0,0:00:46.57,0:00:48.56,Default,,0000,0000,0000,,{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
 ```
@@ -81,7 +81,7 @@ exactly when the last word ends.
 Now if the _Automatic karaoke lead-in_ macro is run on these two lines, they
 are changed into this:
 
-```plaintext
+```ass
 Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
 Dialogue: 0,0:00:46.28,0:00:48.56,Default,,0000,0000,0000,,{\k29}{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
 ```
@@ -136,7 +136,7 @@ blocks in them.
 {{<example-box>}}
 Original line:
 
-```plaintext
+```ass
 {\r\frz90\k80}Test {\r\fry180\k60}me
 ```
 
@@ -148,7 +148,7 @@ Karaskel creates these syllable structures:
 
 After running _Clean Tags_ on the line:
 
-```plaintext
+```ass
 {\k80\r\frz90}Test {\k60\r\fry180}me
 ```
 

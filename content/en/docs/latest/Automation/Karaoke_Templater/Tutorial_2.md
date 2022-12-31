@@ -20,7 +20,7 @@ As before, you'll still need some timed karaoke and a video to preview the effec
 
 To recap, here's the effect from the end of last tutorial:
 
-```plaintext
+```ass
 {\r\k$kdur\t($start,$end,\1c&H00FF00&)\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)}
 ```
 
@@ -28,7 +28,7 @@ We'll add a fadeout effect to this now, having each syllable fade out _after_ it
 
 Change the template to this:
 
-```plaintext
+```ass
 {\r\k$kdur\t($start,$end,\1c&H00FF00&)\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)\t($end,!$end+200!,\alpha&HFF&)}
 ```
 
@@ -42,7 +42,7 @@ When you have a pair of exclamation marks like that, everything in between them 
 
 Maybe you think the growing-shrinking effect looks a bit odd, switching right in the middle. It might look better if it was at the maximum height earlier, and used more time shrinking back to normal. Well, that can be changed:
 
-```plaintext
+```ass
 {\r\k$kdur\t($start,$end,\1c&H00FF00&)\t($start,!$start+$dur*0.3!,\fscy120)\t(!$start+$dur*0.3!,$end,\fscy100)}
 ```
 
