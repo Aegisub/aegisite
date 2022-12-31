@@ -1,6 +1,9 @@
 User-agent: *
 {{ if eq (hugo.Environment) "production" -}}
-Allow: /
+Disallow: /docs/3.2/
+Disallow: /docs/3.1/
+Disallow: /docs/3.0/
+Disallow: /docs/manual/
 {{ else -}}
 Disallow: /
 {{ end }}
