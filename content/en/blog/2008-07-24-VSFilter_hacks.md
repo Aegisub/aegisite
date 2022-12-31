@@ -12,6 +12,8 @@ tags:
   - vsfilter
   - tips
   - ass
+aliases:
+  - /blog/2008/07/vsfilter-hacks.html
 ---
 
 There's lots of versions of Gabest's VSFilter subtitle renderer around, some people are even still using versions that are several years old and are missing features and bugfixes. There's cases of people still distributing these old versions around, sometimes as part of a package with other software such as [VirtualDub](http://www.virtualdub.org/).

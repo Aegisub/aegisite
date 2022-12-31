@@ -1,0 +1,693 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/ASS_Tags by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:37:40 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="ASS Tags,Properties,Styles,Tutorials,Typesetting Tutorial" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		<link rel="canonical" href="../3.1/ASS_Tags/index.html" />
+		
+		
+		
+    <title>ASS Tags - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "ASS_Tags";
+		var wgTitle = "ASS Tags";
+		var wgAction = "view";
+		var wgArticleId = "25";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 826;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-ASS_Tags">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">ASS Tags</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>The following is a list of every tag supported by the Advanced Substation Alpha format. This is basically a detailed version of ass-quickref.txt. See the tutorial for an introduction to typesetting, using some basic tags.
+</p><p>Override tags always follow the same form: They start with a backslash \ character, then a name, and after the name a parameter to the tag.
+</p><p>Some tags are "complex" and take more than one parameter, in that case the parameters are put inside parentheses with commas between the parameters.
+</p><p><b>Note on typography:</b><br />
+On this page, everything written in <i>italics</i> with <code>&lt;</code> angle brackets <code>&gt;</code> around, means it is a parameter and you must enter a value instead of it. The angle brackets are not part of the value you should enter. Use the examples as a guide to how the tags should be entered. In general, the same rules apply to all tags, in how they look.
+</p>
+<a name="Special_characters" id="Special_characters"></a><h2> <span class="mw-headline">Special characters</span></h2>
+<p>The following tags are written in the middle of the text, and not inside override blocks (i.e. not between { and }).
+</p>
+<a name="Soft_line_break" id="Soft_line_break"></a><h3> <span class="mw-headline">Soft line break</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\n</p>
+<p>Insert a forced line break, but only when in wrapping mode 2. (See <a href="#Wrap_style" title="">the \q tag</a>.) Note that this is a lowercase n.
+</p><p>In all other wrapping modes, this is replaced by a regular space.
+</p>
+<a name="Hard_line_break" id="Hard_line_break"></a><h3> <span class="mw-headline">Hard line break</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\N</p>
+<p>Insert a forced line break, regardless of wrapping mode. Note that this is an uppercase N.
+</p>
+<a name="Hard_space" id="Hard_space"></a><h3> <span class="mw-headline">Hard space</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\h</p>
+<p>Insert a non-breaking "hard" space. The line will never break automatically right before or after a hard space, and hard spaces are not folded when they appear at the start or end of a displayed line.
+</p>
+<a name="Override_tags" id="Override_tags"></a><h2> <span class="mw-headline">Override tags</span></h2>
+<p>These tags must be in an override block, that is, they must be between a { and a }, and will affect all text following the block, unless they get re-overridden.
+</p>
+<a name="Italics" id="Italics"></a><h3> <span class="mw-headline">Italics</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\i1<br />\i0</p>
+<p>Switch <i>italics</i> text on or off. Use <code>\i1</code> to enable italics for the following text and <code>\i0</code> to disable italics again.
+</p>
+<a name="Bold" id="Bold"></a><h3> <span class="mw-headline">Bold</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\b1<br />\b0<br />\b<i>&lt;weight&gt;</i></p>
+<p>Switch <b>boldface</b> text on or off. Use <code>\b1</code> to enable boldface for the following text and <code>\b0</code> to disable boldface again.
+</p><p>The <code>\b<i>&lt;weight&gt;</i></code> form allows you to specify an explicit weight to use. Note that most fonts only support one or two weights so you rarely need to use this. Font weights are multiples of 100, such that 100 is the lowest, 400 is "normal", 700 is "bold" and 900 is the heaviest.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>I am {\b1}not[\b0} amused.</pre>
+The word "not" is written in boldface.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>{\b100}How {\b300}bold {\b500}can {\b700}you {\b900}get?</pre>
+The words are written with increasingly greater weight. Note that most fonts do not have more than one or two different weights and you will only be able to see "not bold" and "bold" in that case.</div></div>
+<a name="Underline" id="Underline"></a><h3> <span class="mw-headline">Underline</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\u1<br />\u0</p>
+<p>Switch <u>underlined</u> text on or off. Use <code>\u1</code> to enable underlining for the following text and <code>\u0</code> to disable underlining again.
+</p>
+<a name="Strikeout" id="Strikeout"></a><h3> <span class="mw-headline">Strikeout</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\s1<br />\s0</p>
+<p>Switch <s>striked out</s> text on or off. Use <code>\s1</code> to enable strikeout for the following text and <code>\s0</code> to disable strikeout again.
+</p>
+<a name="Border_size" id="Border_size"></a><h3> <span class="mw-headline">Border size</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\bord<i>&lt;size&gt;</i></p>
+<p>Change the width of the border around the text. Set the size to 0 (zero) to disable the border entirely.
+</p><p>If "scale border and shadow" (see <a href="Properties.html" title="Properties">script properties</a>) is enabled, the value is given in script resolution pixels, otherwise it is given in video resolution pixels (which means the border thickness will vary depending on the resolution of the video on which the subtitles are rendered.)
+</p><p>The value is not limited to whole integer pixels, it can have decimal places.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\bord0</pre>
+Disable border entirely.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>bord3.7</pre>
+Set the border width to 3.7 pixels</div></div>
+<a name="Border_size_.28extended.29" id="Border_size_.28extended.29"></a><h3> <span class="mw-headline">Border size (extended)</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\xbord<i>&lt;size&gt;</i><br />\ybord<i>&lt;size&gt;</i></p>
+<dl><dd><i>These tags are only available in VSFilter 2.39 and later, and might not be safe for softsubbing.</i>
+</dd></dl>
+<p>Use the <code>\xbord</code> <code>\ybord</code> tags to set the border size in X and Y direction separately. This can be useful for correcting the border size for anamorphic rendering of subtitles.
+</p><p>Note that if you use <code>\bord</code> after <code>\xbord</code> or <code>\ybord</code> on a line, it will override both of them.
+</p><p>You can set the border width to 0 (zero) in one of the directions to entirely disable border in that direction.
+</p>
+<a name="Shadow_distance" id="Shadow_distance"></a><h3> <span class="mw-headline">Shadow distance</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\shad<i>&lt;depth&gt;</i></p>
+<p>Set the distance from the text to position the shadow. Set the depth to 0 (zero) to disable shadow entirely. Works similar to <a href="#Border_size" title="">\bord</a>.
+</p><p>The shadow distance can not be negative with this tag.
+</p>
+<a name="Shadow_distance_.28extended.29" id="Shadow_distance_.28extended.29"></a><h3> <span class="mw-headline">Shadow distance (extended)</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\xshad<i>&lt;depth&gt;</i><br />\yshad<i>&lt;depth&gt;</i></p>
+<dl><dd><i>These tags are only available in VSFilter 2.39 and later, and might not be safe for softsubbing.</i>
+</dd></dl>
+<p>Set the distance from the text to position the shadow at, with X and Y position set separately. Shadow is only disabled if both X and Y distance is 0.
+</p><p>Note that you can set the distance negative with these tags to position the shadow to the top or left of the text.
+</p>
+<a name="Blur_edges" id="Blur_edges"></a><h3> <span class="mw-headline">Blur edges</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\be0<br />\be1<br />\be<i>&lt;strength&gt;</i></p>
+<dl><dd><i>The <code>\be<i>&lt;strength&gt;</i></code> version is only available in VSFilter 2.39 and later and might not be safe for softsubbing.</i>
+</dd></dl>
+<p>Enable or disable a subtle softening-effect for the edges of the text. The effect isn't always very visible, but it can in some cases make the text look better. It is usually more visible at smaller text sizes.
+</p><p>Be aware that this tag blurs the <i>edges</i> of the text, not everything. This means that if the text has a border (set with <a href="#Border_width" title="">\bord</a>) the border will be blurred, but if there is no border, the main text will be blurred instead.
+</p><p>In the extended version, <i>strength</i> is the number of times to apply the regular effect. Note that at high values the effect de-generates into nothingness, and generally isn't very useful. The <i>strength</i> must be an integer number.
+</p>
+<a name="Blur_edges_.28gaussian_kernel.29" id="Blur_edges_.28gaussian_kernel.29"></a><h3> <span class="mw-headline">Blur edges (gaussian kernel)</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\blur<i>&lt;strength&gt;</i></p>
+<dl><dd><i>This tag is only available in VSFilter 2.39 and later, and might not be safe for softsubbing.</i>
+</dd></dl>
+<p>In general, this has the same function as the <a href="#Blur_edges" title="">\be</a> tag, but uses a more advanced algorithm that looks better at high strengths. Unlike <code>\be</code>, the <i>strength</i> can be non-integer here. Set <i>strength</i> to 0 (zero) to disable the effect. Be careful, setting <i>strength</i> too high can take a lot of CPU time to render.
+</p><p>Be aware that this tag blurs the <i>edges</i> of the text, not everything. This means that if the text has a border (set with <a href="#Border_width" title="">\bord</a>) the border will be blurred, but if there is no border, the main text will be blurred instead.
+</p>
+<a name="Font_name" id="Font_name"></a><h3> <span class="mw-headline">Font name</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\fn<i>&lt;name&gt;</i></p>
+<p>Set the font face to use for the following text. There should be no space between <code>\fn</code> and the font name, and you should not put parentheses or similar around the font name either.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\fnArial</pre>
+The text following this tag will be in Arial font.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\fnTimes New Roman</pre>
+The text following this tag will be in Times New Roman font.</div></div>
+<a name="Font_size" id="Font_size"></a><h3> <span class="mw-headline">Font size</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\fs<i>&lt;size&gt;</i></p>
+<p>Set the size of the font. The size specified is the height in script pixels, so at font size 40 one line of text is 40 pixels tall. (Technical note: it's really typographic (desktop publishing) points, not script pixels, but since the rendering is always done at 72 DPI (as per the de facto standard), one point ends up being exactly equal to one script resolution pixel.)
+</p><p>You can only specify integer font sizes.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\fs10</pre>
+The following text will use a size 10 font.</div></div>
+<a name="Font_scale" id="Font_scale"></a><h3> <span class="mw-headline">Font scale</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\fscx<i>&lt;scale&gt;</i><br />\fscy<i>&lt;scale&gt;</i></p>
+<p>Adjust the size of the text in X (<code>\fscx</code> or Y (<code>\fscy</code>) direction. The <i>scale</i> given is in percent, so 100 means "original size".
+</p><p>This is not the same as setting the font size, as setting the size is subject to <a href="http://en.wikipedia.org/wiki/Font_hinting" class="external text" title="http://en.wikipedia.org/wiki/Font_hinting" rel="nofollow">font hinting</a> while scaling the text modifies the text shape after hinting.
+</p><p>These tags also affect <a href="#Vector_drawings" title="">vector drawings</a>.
+</p><p>You can use font scaling to correct for anamorphic rendering and to specify text size more precisely than with <a href="#Font_size" title="">\fs</a>.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\fscx150</pre>
+Make the text 50% wider than normal.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\fscy50</pre>
+Make the text half height.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\fscx200\fscy200</pre>
+Make the text double size.</div></div>
+<a name="Letter_spacing" id="Letter_spacing"></a><h3> <span class="mw-headline">Letter spacing</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\fsp<i>&lt;spacing&gt;</i></p>
+<p>Changes the spacing between the individual letters in the text. You can use this to spread the text more out visually. The <i>spacing</i> is given in script resolution pixels.
+</p>
+<a name="Text_rotation" id="Text_rotation"></a><h3> <span class="mw-headline">Text rotation</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\frx<i>&lt;amount&gt;</i><br />\fry<i>&lt;amount&gt;</i><br />\frz<i>&lt;amount&gt;</i><br />\fr<i>&lt;amount&gt;</i></p>
+<p>Rotates the text along the X, Y or Z axis. The <code>\fr</code> tag is a shortcut for <code>\frz</code>.
+</p>
+<ul><li> The <b>X axis</b> runs horizontally on the screen. Rotating on it (with positive values) causes an effect where the top of the text moves farther "into" the screen while the bottom moves "out" of the screen.
+</li><li> The <b>Y axis</b> runs vertically on the screen. Rotating on it (with positive values) causes the text to rotate so that the left moves "outside" the screen, when the right moves "into" the screen.
+</li><li> The <b>Z axis</b> runs perpendicular to the screen. Rotating on it (with positive values) causes the text to rotate in 2D, counterclockwise (as standard for degrees).
+</li></ul>
+<p>The rotation <i>amount</i> is given in mathematical degrees, such that 360 degrees is a full rotation, and rotating any multiple of 360 is the same as not rotating. It is legal to specify negative rotation amounts, as well as amounts larger than 360 degrees.
+</p><p>The rotation is performed around the subtitle line origin point, this is described with the <a href="#Rotation_origin" title="">\org</a> tag.
+</p><p>These tags also affect <a href="#Vector_drawings" title="">vector drawings</a>.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\frx45</pre>
+Rotate the text 45 degrees on the X axis.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\fry-45</pre>
+Rotate the text 45 degrees in opposite direction on the Y axis.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\frz180</pre>
+Rotate the text 180 degrees on the Z axis, making it upside-down.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">The following two rotations produce the same result:
+<pre>\frz-30
+\frz330</pre>
+This is because 330 degrees is 30 degrees less than a full rotation of 360 degrees.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\t(\frz3600)</pre>
+Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the <a href="#Animated_transform" title="">\t</a> tag.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">The following screenshots illustrate the effect of rotating on the different axes:<br />
+<a href="File_Fr_sample01.html" class="image" title="Image:fr_sample01.jpg"><img alt="Image:fr_sample01.jpg" src="images/Fr_sample01.jpg" width="352" height="240" border="0" /></a><br /><a href="File_Fr_sample02.html" class="image" title="Image:fr_sample02.jpg"><img alt="Image:fr_sample02.jpg" src="images/Fr_sample02.jpg" width="352" height="240" border="0" /></a><br /><a href="File_Fr_sample03.html" class="image" title="Image:fr_sample03.jpg"><img alt="Image:fr_sample03.jpg" src="images/Fr_sample03.jpg" width="352" height="240" border="0" /></a></div></div>
+<a name="Text_shearing" id="Text_shearing"></a><h3> <span class="mw-headline">Text shearing</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\fax<i>&lt;factor&gt;</i><br />\fay<i>&lt;factor&gt;</i></p>
+<dl><dd><i>These tags are only available in VSFilter 2.39 and later, and might not be safe for softsubbing.</i>
+</dd></dl>
+<p>Perform a shearing (perspective distortion) transformation of the text. A <i>factor</i> of 0 (zero) means no distortion.
+</p><p>Usually <i>factor</i> will be a small number, not larger than 2 as that creates a very strong distortion.
+</p><p>Shearing is performed after rotation, on the rotated coordinates. The coordinate system used for shearing is not affected by the <a href="#Rotation_origin" title="">rotation origin</a>.
+</p>
+<div style="margin-left: 2em; margin-right: 3em; margin-top: 0.5em; padding-left: 1em; padding-right: 4em; background-color: #FDFEE7; border: 1px solid #F9FD96;"><b>Todo:</b> We need a screenshot illustrating the effect.</div>
+<a name="Font_encoding" id="Font_encoding"></a><h3> <span class="mw-headline">Font encoding</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\fe<i>&lt;id&gt;</i></p>
+<p>Set the Windows font encoding used to select the font mapping table used to translate Unicode codepoints to glyph indices in the font. For some fonts without a Unicode mapping table this might be required to get text in certain languages to work. For fonts that do have a Unicode mapping table, it might be used to pick regional variations, such as picking the correct glyph for a Han ideogram that is different in Simplified Chinese, Traditional Chinese, Japanese and Korean.
+</p><p>Some common font encoding ID's are:
+</p>
+<ul><li> 0 - ANSI, Windows CP-1252 for Western-European languages.
+</li><li> 1 - Default, depends on the configuration of the user's system, but also allows the font sub-system to dynamically pick a different mapping table in some circumstances.
+</li></ul>
+<div style="margin-left: 2em; margin-right: 3em; margin-top: 0.5em; padding-left: 1em; padding-right: 4em; background-color: #FDFEE7; border: 1px solid #F9FD96;"><b>Todo:</b> Is that really correct?</div>
+<ul><li> 2 - Symbol, codepoints in the 0-255 range are translated to per-font defined symbol glyphs, this is used for fonts such as Wingdings.
+</li><li> 128 - Shift-JIS, used for Japanese.
+</li><li> 129 and 130, respectively Hangeul and Johab, two encoding schemes for Korean.
+</li><li> 134 - GB2312, used for Simplified Chinese.
+</li><li> 136 - BIG5, used for Traditional Chinese.
+</li><li> 162 - Turkish.
+</li><li> 163 - Vietnamese.
+</li><li> 177 - Hebrew.
+</li><li> 178 - Arabic.
+</li></ul>
+<p>A more complete list can be seen the <a href="Styles.html#The_style_editor" title="Styles">style editor</a> dialog box.
+</p><p>In ASS files stored in non-Unicode encodings, this tag also affects what codepage the text following it should be interpreted in. Aegisub doesn't support this use and some renderers might not support it either, it is recommended you do not rely on this and instead always store your files in a Unicode encoding. (Aegisub stores files in Unicode UTF-8 by default.)
+</p>
+<a name="Set_color" id="Set_color"></a><h3> <span class="mw-headline">Set color</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\c&amp;H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&amp;<br />\1c&amp;H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&amp;<br />\2c&amp;H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&amp;<br />\3c&amp;H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&amp;<br />\4c&amp;H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&amp;</p>
+<p>Set the color of the following text. The <code>\c</code> tag is an abbreviation of <code>\1c</code>.
+</p>
+<ul><li> <code>\1c</code> sets the primary fill color.
+</li><li> <code>\2c</code> sets the secondary fill color, this is only used for pre-highlight in standard karaoke.
+</li><li> <code>\3c</code> sets the border color.
+</li><li> <code>\4c</code> sets the shadow color.
+</li></ul>
+<p>The color codes are given in <a href="http://en.wikipedia.org/wiki/Hexadecimal" class="external text" title="http://en.wikipedia.org/wiki/Hexadecimal" rel="nofollow">hexadecimal</a> in Blue Green Red order. Note that this is the opposite order of eg. HTML color codes. Color codes must always start with <code>&amp;H</code> and end with <code>&amp;</code>.
+</p><p>The Pick Color toolbar buttons <a href="File_Pick-color-toolbar-buttons.html" class="image" title="Image:pick-color-toolbar-buttons.png"><img alt="Image:pick-color-toolbar-buttons.png" src="images/Pick-color-toolbar-buttons.png" width="119" height="22" border="0" /></a> can assist in picking colors and entering the color codes.
+</p>
+<a name="Set_alpha" id="Set_alpha"></a><h3> <span class="mw-headline">Set alpha</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\alpha&amp;H<i>&lt;aa&gt;</i><br />\1a&amp;H<i>&lt;aa&gt;</i><br />\2a&amp;H<i>&lt;aa&gt;</i><br />\3a&amp;H<i>&lt;aa&gt;</i><br />\4a&amp;H<i>&lt;aa&gt;</i></p>
+<p>Set the alpha (transparency) of the text.
+</p>
+<ul><li> <code>\alpha</code> sets the alpha of all components at once.
+</li><li> <code>\1a</code> sets the primary fill alpha.
+</li><li> <code>\2a</code> sets the secondary fill alpha, this is only used for pre-highlight in standard karaoke.
+</li><li> <code>\3a</code> sets the border alpha.
+</li><li> <code>\4a</code> sets the shadow alpha.
+</li></ul>
+<p>An alpha of 00 (zero) means opaque/fully visible, and an alpha of FF (ie. 255 in decimal) is fully transparent/invisible.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\alpha&amp;H80&amp;</pre>
+Set the alpha of all components to hexadecimal 80, decimal 128, making the text 50% transparent in general.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\1a&amp;HFF&amp;</pre>
+Set the primary fill alpha to hexadecimal FF, decimal 255, making it invisible and effectively leaving only the border and shadow.</div></div>
+<a name="Line_alignment" id="Line_alignment"></a><h3> <span class="mw-headline">Line alignment</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\an<i>&lt;pos&gt;</i></p>
+<p>Specify the alignment of the line. The alignment specifies the position of the line when no <a href="#Set_position" title="">position override</a> or <a href="#Movement" title="">movement</a> is in effect, and otherwise specifies the anchor point of positioning.
+</p><p>The <code>\an</code> tag uses "numpad" values for the <i>pos</i>, ie. the alignment values correspond to the positions of the digits on the numeric keypad on a regular keyboard:
+</p>
+<ul><li> 1: Bottom left
+</li><li> 2: Bottom center
+</li><li> 3: Bottom right
+</li><li> 4: Middle left
+</li><li> 5: Middle center
+</li><li> 6: Middle right
+</li><li> 7: Top left
+</li><li> 8: Top center
+</li><li> 9: Top right
+</li></ul>
+<a name="Line_alignment_.28legacy.29" id="Line_alignment_.28legacy.29"></a><h3> <span class="mw-headline">Line alignment (legacy)</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\a<i>&lt;pos&gt;</i></p>
+<p>Specify the alignment of the line using legacy alignment codes from SubStation Alpha. This tag is supported but considered deprecated; you should usually use <code>\an</code> in new scripts instead, as it is more intuitive.
+</p><p>Calculate <i>pos</i> as follows: Use 1 for left-alignment, 2 for center alignment and 3 for right-alignment. If you want sub-titles you're done. To get top-titles, add 4 to the number, to get mid-titles add 8 to the number:
+</p>
+<ul><li> 1: Bottom left
+</li><li> 2: Bottom center
+</li><li> 3: Bottom right
+</li><li> 5: Top left
+</li><li> 6: Top center
+</li><li> 7: Top right
+</li><li> 9: Middle left
+</li><li> 10: Middle center
+</li><li> 11: Middle right
+</li></ul>
+<a name="Karaoke_effect" id="Karaoke_effect"></a><h3> <span class="mw-headline">Karaoke effect</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\k<i>&lt;duration&gt;</i><br />\K<i>&lt;duration&gt;</i><br />\kf<i>&lt;duration&gt;</i><br />\ko<i>&lt;duration&gt;</i></p>
+<dl><dd><i>Please note that these tags alone only create some very specific effects and all other effects are created with a combination of multiple different tags.</i>
+</dd></dl>
+<p>The <code>\k</code> family of tags mark up subtitles for karaoke effects by specifying the duration of each syllable. You place a <code>\k</code> tag before each syllable in the line.
+</p><p>The <i>duration</i> is given in centiseconds, ie. a <i>duration</i> of 100 is equivalent to 1 second. You generally don't enter <code>\k</code> tags manually but rather use karaoke timing tools such as <a href="Tutorials.html#Karaoke_Timing" title="Tutorials">Aegisub's karaoke mode</a>.
+</p><p>The different <code>\k</code> tags create various effects:
+</p>
+<ul><li> <code>\k</code>: Before highlight, the syllable is filled with the secondary color and alpha. When the syllable starts, the fill is instantly changed to use primary color and alpha.
+</li><li> <code>\K</code> and <code>\kf</code>: These two are identical. Note that <code>\K</code> is an uppercase K and is different from lowercase <code>\k</code>. The syllable fill starts out secondary color, when the syllable starts, the fill changes from secondary to primary with a sweep from left to right, so the sweep ends when the syllable time is over.
+</li><li> <code>\ko</code>: Similar to <code>\k</code>, except that before highlight, the border/outline of the syllable is removed, and appears instantly when the syllable starts.
+</li></ul>
+<p><i>Note: There is an additional karaoke tag, <code>\kt</code>, which is very different from the other ones. Aegisub does not support that tag and so it is not documented.</i>
+</p>
+<a name="Wrap_style" id="Wrap_style"></a><h3> <span class="mw-headline">Wrap style</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\q<i>&lt;style&gt;</i></p>
+<p>Determine how line breaking is applied to the subtitle line. The following <i>style</i>s are available:
+</p>
+<ul><li> 0: Smart wrapping, make each line approximately equally long, but top line wider when equal width is impossible. Only <code>\N</code> forces line breaks.
+</li><li> 1: End-of-line wrapping, fill as much text in a line as possible, then break to next line. Only <code>\N</code> forces line breaks.
+</li><li> 2: No word wrapping, wide lines will extend beyound the edges of the screen. Both <code>\n</code> and <code>\N</code> force line breaks.
+</li><li> 3: Smart wrapping, similar to style 0, but bottom lines are made wider.
+</li></ul>
+<a name="Reset_style" id="Reset_style"></a><h3> <span class="mw-headline">Reset style</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\r<br />\r<i>&lt;style&gt;</i></p>
+<p>Reset the style. This cancels all style overrides in effect, including <a href="#Animated_transform" title="">animations</a>, for all following text.
+</p><p>The first form that does not specify a <i>style</i> will reset to the style defined for the entire line, while the second form, that specifies the name of a <i>style</i>, will reset the style to that specific style.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>-Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?</pre>
+Assuming the current line style is "Default", this has first "Hey" in the Default style, then follows on next line "Huh?" in the style "Alternate", and on the third line the style is reset to "Default" for the "Who are you?" text.</div></div>
+<a name="Set_position" id="Set_position"></a><h3> <span class="mw-headline">Set position</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\pos(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>)</p>
+<p>Set the position of the line. The <i>X</i> and <i>Y</i> coordinates must be integers and are given in the script resolution coordinate system. The meaning of <i>X</i> and <i>Y</i> changes slightly depending on <a href="#Line_alignment" title="">alignment</a>.
+</p>
+<dl><dd><i>In VSFilter 2.39 and later, you can use non-integer numbers for coordinates. Note that this might not be safe for softsubbing.</i>
+</dd></dl>
+<p>The alignment of the subtitle line is used as anchor point for the position, eg. when you have a line with alignment top-left, the top-left corner of the subtitle is placed at the coordinates given to <code>\pos</code>, and for bottom-center alignment, the bottom center of the subtitle is placed at the coordinates given.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">The following screenshots illustrate the way alignment affects positioning. The green cross marks the point (320,240) on the video.<br />
+<a href="File_Pos_sample01.html" class="image" title="Image:pos_sample01.jpg"><img alt="Image:pos_sample01.jpg" src="images/Pos_sample01.jpg" width="480" height="360" border="0" /></a><br /><a href="File_Pos_sample02.html" class="image" title="Image:pos_sample02.jpg"><img alt="Image:pos_sample02.jpg" src="images/Pos_sample02.jpg" width="480" height="360" border="0" /></a><br /><a href="File_Pos_sample03.html" class="image" title="Image:pos_sample03.jpg"><img alt="Image:pos_sample03.jpg" src="images/Pos_sample03.jpg" width="480" height="360" border="0" /></a></div></div>
+<a name="Movement" id="Movement"></a><h3> <span class="mw-headline">Movement</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\move(<i>&lt;x1&gt;</i>,<i>&lt;y1&gt;</i>,<i>&lt;x2&gt;</i>,<i>&lt;y2&gt;</i>)<br />\move(<i>&lt;x1&gt;</i>,<i>&lt;y1&gt;</i>,<i>&lt;x2&gt;</i>,<i>&lt;y2&gt;</i>,<i>&lt;t1&gt;</i>,<i>&lt;t2&gt;</i>)</p>
+<p>The <code>\move</code> tag works similar to <a href="#Set_position" title=""><code>\pos</code></a> in that it positions the subtitle line, the difference is that <code>\move</code> makes the subtitle move.
+</p><p>The two versions of <code>\move</code> differ in that one makes the movement occur over the entire duration of the subtitle, while on the other you specify the time over which the movement occurs.
+</p><p>The coordinates <i>x1</i>, <i>y1</i>, <i>x2</i> and <i>y2</i> are given in the script resolution coordinate system, like <code>\pos</code>. The subtitle starts out at point (<i>x1</i>,<i>y1</i>) and moves with constant speed so it ends up at (<i>x2</i>,<i>y2</i>). <a href="#Line_alignment" title="">Alignment</a> influences movement coordinates the same way as it influences <code>\pos</code> coordinates.
+</p>
+<dl><dd><i>In VSFilter 2.39 and later, you can use non-integer numbers for the X and Y coordinates. Note that this might not be safe for softsubbing.</i>
+</dd></dl>
+<p>In the second version, the times <i>t1</i> and <i>t2</i> are given in milliseconds, ie. one thousandth of a second, and are relative to the start time of the subtitle. For example, a <i>t1</i> value of 1500 means that the movement begins 1.5 seconds (one and a half second) after the line has appeared on screen. When you specify times for the movement, the position of the subtitle is as follows:
+</p>
+<ol><li> Before <i>t1</i>, the subtitle is stationary at point (<i>x1</i>,<i>y1</i>).
+</li><li> Between <i>t1</i> and <i>t2</i>, the subtitle moves with constant speed from (<i>x1</i>,<i>y1</i>) to (<i>x2</i>,<i>y2</i>).
+</li><li> After <i>t2</i> the subtitle is stationary at point (<i>x2</i>,<i>y2</i>).
+</li></ol>
+<p>Note that it is legal to have <i>t1</i> and <i>t2</i> specify times greater than the duration of the line, but it might not be very useful to do so. Specifying both <i>t1</i> and <i>t2</i> as 0 (zero) is the same as using the first version of <code>\move</code>, ie. the movement will occur from the start time of the line to the end time of the line.
+</p><p>There are some things <b><code>\move</code> can not do</b>:
+</p>
+<ul><li> Non-constant-speed movement is not possible. The movement can not, for example, start out slow and end fast.
+</li><li> There can only be one positioning or movement tag in a line. Putting both a <code>\pos</code> and a <code>\move</code> tag in a line will not work. It will also not work to put two or more <code>\move</code> tags in a single line.
+</li></ul>
+<p>If you need to do do any of those two you will need to split the movement into segments that are done on separate subtitle lines. (How to do this is outside the scope of this page.)
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\move(100,150,300,350)</pre>
+When the line appears on screen, the subtitle is at (100,150). While the subtitle is displayed, it moves at constant speed such that it will arrive at point (300,350) at the same time it disappears.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\move(100,150,300,350,500,1500)</pre>
+The line appears at (100,150). After the line has been displayed for half a second (500 milliseconds) it begins moving towards (300,350) such that it will arrive at the point a second and a half (1500 milliseconds) after the line first appeared on screen.</div></div>
+<a name="Rotation_origin" id="Rotation_origin"></a><h3> <span class="mw-headline">Rotation origin</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\org(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>)</p>
+<p>Set the origin point used for <a href="#Text_rotation" title="">rotation</a>. This affects all rotations of the line. The <i>X</i> and <i>Y</i> coordinates are given in integer script resolution pixels.
+</p><p>When there is no <code>\org</code> tag in a line, the rotation origin is implicitly the same as the <a href="#Set_position" title="">position anchor point</a>. This means that the rotation origin will move if the line moves and there is no origin set with <code>\org</code>. Note that you can <i>not</i> animate the <code>\org</code> tag, you are limited to a fixed origin if you use it.
+</p><p>If the rotation origin is placed on the vanishing point in a 3D scene, 3D rotations of subtitle line will produce the correct perspective to match the scene.
+</p><p>It's perfectly possible (and occasionally useful) to place the origin point far outside the actual image; if it is sufficiently far away, doing appropriately calculated small rotations will seem to move the text along a straight (or almost straight) line through the image. This is somewhat hard to control, but can be used to work around format limitations with \move, such as the inability to do accelerated moves or several moves per line.
+</p><p>There can be at most one <code>\org</code> tag in a single line, if you put more than one in a single line, only the first is used.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\org(320,240)</pre>
+Fix the rotation origin at point (320,240).</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\org(10000,0)</pre>
+Placing the rotation origin at a far away point allows you to use slight <code>\frz</code> rotations to produce "jumping" effects; the text will move up or down without seeming to rotate.</div></div>
+<a name="Fade" id="Fade"></a><h3> <span class="mw-headline">Fade</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\fad(<i>&lt;fadein&gt;</i>,<i>&lt;fadeout&gt;</i>)</p>
+<p>Produce a fade-in and fade-out effect. The <i>fadein</i> and <i>fadeout</i> times are given in milliseconds, ie. 1000 means one second. You can specify <i>fadein</i> or <i>fadeout</i> as 0 (zero) to not have any fade effect on that end.
+</p><p>Adding a fade effect does not extend the duration of the line, rather the start or end of the line's display time is used for the fade effect. For this reason, you should be careful that <i>fadein</i>+<i>fadeout</i> is not greater than the duration of the line. For example, for a line displayed for 4 seconds, the sum of <i>fadein</i>+<i>fadeout</i> should not be greater than 4000.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\fad(1200,250)</pre>
+Fade in the line in the first 1.2 seconds it is to be displayed, and fade it out for the last one quarter second it is displayed.</div></div>
+<a name="Fade_.28complex.29" id="Fade_.28complex.29"></a><h3> <span class="mw-headline">Fade (complex)</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\fade(<i>&lt;a1&gt;</i>,<i>&lt;a2&gt;</i>,<i>&lt;a3&gt;</i>,<i>&lt;t1&gt;</i>,<i>&lt;t2&gt;</i>,<i>&lt;t3&gt;</i>,<i>&lt;t4&gt;</i>)</p>
+<p>Perform a five-part fade using three alpha values <i>a1</i>, <i>a2</i> and <i>a3</i> and four times <i>t1</i>, <i>t2</i>, <i>t3</i> and <i>t4</i>.
+</p><p>The alpha values are given in <i>decimal</i> and are between 0 and 255, with 0 being fully visible and 255 being invisible. The time values are given in milliseconds after the start of the line. All seven parameters are required. (For most common fade effects the <code><a href="#Fade" title="">\fad</a></code> tag works fine.)
+</p>
+<ul><li> Before <i>t1</i>, the line has alpha <i>a1</i>.
+</li><li> Between <i>t1</i> and <i>t2</i> the line fades from alpha <i>a1</i> to alpha <i>a2</i>.
+</li><li> Between <i>t2</i> and <i>t3</i> the line has alpha <i>a2</i> constantly.
+</li><li> Between <i>t3</i> and <i>t4</i> the line fades from alpha <i>a2</i> to alpha <i>a3</i>.
+</li><li> After <i>t4</i> the line has alpha <i>a3</i>.
+</li></ul>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\fade(255,32,224,0,500,2000,2200)</pre>
+Starts invisible, fades to almost totally opaque, then fades to almost totally invisible. First fade starts when the line starts and lasts 500 milliseconds. Second fade starts 1500 milliseconds later, and lasts 200 milliseconds.</div></div>
+<a name="Animated_transform" id="Animated_transform"></a><h3> <span class="mw-headline">Animated transform</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\t(<i>&lt;style modifiers&gt;</i>)<br />\t(<i>&lt;accel&gt;</i>,<i>&lt;style modifiers&gt;</i>)<br />\t(<i>&lt;t1&gt;</i>,<i>&lt;t2&gt;</i>,<i>&lt;style modifiers&gt;</i>)<br />\t(<i>&lt;t1&gt;</i>,<i>&lt;t2&gt;</i>,<i>&lt;accel&gt;</i>,<i>&lt;style modifiers&gt;</i>)</p>
+<p>Perform a gradual, animated transformation from one style to another. The <i>style modifiers</i> are other override tags as specified in this reference. Only a limited set of the override tags are animateable with <code>\t</code>:
+</p>
+<table><tr>
+<th width="33%">Font</th>
+<th width="33%">Geometry</th>
+<th width="34%">Other effects</th>
+</tr><tr>
+<td valign="top">\fs<br />
+<p>\fsp<br />
+\c<br />
+\1c<br />
+\2c<br />
+\3c<br />
+\4c<br />
+\alpha<br />
+\1a<br />
+\2a<br />
+\3a<br />
+</p>
+\4a</td>
+<td valign="top">\fscx<br />
+<p>\fscy<br />
+\frx<br />
+\fry<br />
+\frz<br />
+</p>
+\fr</td>
+<td valign="top">\bord<br />
+<p>\shad<br />
+</p>
+\clip</td>
+</tr></table>
+<dl><dd><i>In VSFilter 2.39 and later, the following additional tags can also be animated with <code>\t</code>:</i>
+</dd><dd><i>\fax \fay \be \blur \xbord \ybord \xshad \yshad \iclip</i>
+</dd></dl>
+<p><i>Note: For \clip and \iclip, only the rectangle versions can be animated. The vector drawing versions cannot be animated.</i>
+</p><p>The <i>t1</i> and <i>t2</i> parameters specify the time interval to perform the transformation over. In the versions without <i>t1</i> and <i>t2</i> the transformation is performed over the entire duration of the line. The times are given in milliseconds and are relative to the start time of the line. (For the rest of the description of <code>\t</code>, <i>t1</i> and <i>t2</i> are assumed to be specified, or implicitly be respectively 0 and the duration of the line.)
+</p><p>The <i>accel</i> parameter can be used to make the animation non-linear and instead follow an exponential curve. An <i>accel</i> parameter of 1 (one) causes the animation speed to be linear. A value bewteen 0 and 1 causes the animation to start fast and end slow. A value greater than 1 causes the animation to start slow and end fast. (For the mathematically inclined, the function is <i>y</i> = <i>x<sup>accel</sup></i> with <i>x</i> ∈ [0;1] = (<i>t</i>-<i>t1</i>)/(<i>t2</i>-<i>t1</i>), <i>t</i> being the current time.)
+</p><p>Before <i>t1</i>, the style is as all tags before the <code>\t</code> tag specify. After <i>t2</i> the style is as all tags before the <code>\t</code> tag, and further overridden by the given <i>style overrides</i>. Between <i>t1</i> and <i>t2</i> the style is gradually animated between those two points, following the acceleration function described above.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>{\1c&amp;HFF0000&amp;\t(\1c&amp;H0000FF&amp;)}Hello!</pre>
+The text starts out blue, but fades towards red so it is completely red when the line ends.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>{\an5\t(0,5000,\frz3600)}Wheee</pre>
+Makes the text rotate 10 times, counterclockwise, lasting for 5 seconds.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>{\an5\t(0,5000,0.5,\frz3600)}Wheee</pre>
+Same as above, but it will start fast and slow down, still doing the 10 rotations in 5 seconds.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>{\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}Boo!</pre>
+Text starts at zero size, ie. invisible, then grows to 100% size in both X and Y direction.</div></div>
+<a name="Clip_.28rectangle.29" id="Clip_.28rectangle.29"></a><h3> <span class="mw-headline">Clip (rectangle)</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\clip(<i>&lt;x1&gt;</i>,<i>&lt;y1&gt;</i>,<i>&lt;x2&gt;</i>,<i>&lt;y2&gt;</i>)<br />\iclip(<i>&lt;x1&gt;</i>,<i>&lt;y1&gt;</i>,<i>&lt;x2&gt;</i>,<i>&lt;y2&gt;</i>)</p>
+<dl><dd><i>The <code>\iclip</code> tag is only available in VSFilter 2.39 and later, and might not be safe for softsubbing.</i>
+</dd></dl>
+<p>Define a rectangle to clip the line, only the part of the line that is inside the rectangle is visible. The <code>\iclip</code> tag has the opposite effect, it defines a rectangle where the line is not shown.
+</p><p>The <i>x1</i>, <i>y1</i>, <i>x2</i> and <i>y2</i> coordinates are given in script resolution pixels and are relative to the top-left corner of the video. The coordinates must be integers, there is no possibility to use non-integer coordinates. (Increasing the script resolution will not increase the precision, the clipping always happens on video pixel boundaries.)
+</p><p><i>Note: If you use the <code>\iclip</code> tag anywhere on a line, all clips on that line will be treated as "inverse" regardless of whether a regular <code>\clip</code> occurs later or the <code>\iclip</code> has taken effect yet through <code>\t</code> or similar.</i>
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\clip(0,0,320,240)</pre>
+Assuming 640x480 script resolution, only the part of the line within the top left quadrant is visible.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\iclip(0,0,320,240)</pre>
+Similar to above, but instead the part of the line within the top left quadrant is hidden.</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">Example of <code>\clip(0,0,704,245)</code> on a 704x480 video:<br /> <a href="File_Clip_sample01.html" class="image" title="Image:clip_sample01.jpg"><img alt="Image:clip_sample01.jpg" src="images/Clip_sample01.jpg" width="528" height="360" border="0" /></a> </div></div>
+<a name="Clip_.28vector_drawing.29" id="Clip_.28vector_drawing.29"></a><h3> <span class="mw-headline">Clip (vector drawing)</span></h3>
+<p style="whitespace: pre; font-family: &#39;Courier New&#39;,monospace; margin:0; margin-left: 4em;">\clip(<i>&lt;drawing commands&gt;</i>)<br />\clip(<i>&lt;scale&gt;</i>,<i>&lt;drawing commands&gt;</i>)<br />\iclip(<i>&lt;drawing commands&gt;</i>)<br />\iclip(<i>&lt;scale&gt;</i>,<i>&lt;drawing commands&gt;</i>)</p>
+<dl><dd><i>The <code>\iclip</code> tags are only available in VSFilter 2.39 and later, and may not be safe for softsubbing.</i>
+</dd></dl>
+<p>Use the shape defined by a vector drawing to selectively display (<code>\clip</code>) or hide (<code>\iclip</code>) parts of the line.
+</p><p>The <i>drawing commands</i> are drawing commands as those used with the <code>\p</code> tag, the coordinates are given in script resolution pixels and are relative to the top left corner of the video.
+</p><p>If the <i>scale</i> is not specified it is assumed to be 1 (one), meaning that coordinates correspond directly to pixels. The <i>scale</i> works the same way as the <i>scale</i> for <code>\p</code> drawings.
+</p><p>Unlike the rectangular clip, the vector drawing clip can <i>not</i> be animated with <code>\t</code>. If you need to animate a vector drawing clip, you must create multiple similar subtitle lines with each their own "frame" of the clipping animation.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;"><pre>\clip(1,m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0)</pre>
+Only show the portion of the line within the defined pseudo-circle.</div></div>
+<p><i>Beware: VSFilter 2.37 has a bug that causes vector drawing clips to be rendered incorrectly. The solution is to use a newer or older version.</i>
+</p><p><i>Note: If you use the <code>\iclip</code> tag anywhere on a line, all clips on that line will be treated as "inverse" regardless of whether a regular <code>\clip</code> occurs later or the <code>\iclip</code> has taken effect yet through <code>\t</code> or similar.</i>
+</p>
+<a name="Drawing_tags" id="Drawing_tags"></a><h2> <span class="mw-headline">Drawing tags</span></h2>
+<p>Advanced Substation Alpha also supports some advanced drawing tags that allow you to draw with vectorial graphics. Certain familiarity with vectors and splines will make the understanding of this much simpler.
+</p>
+<a name=".5Cp.3C0.2F1.2F...3E_-_Toggle_drawing_mode" id=".5Cp.3C0.2F1.2F...3E_-_Toggle_drawing_mode"></a><h3> <span class="mw-headline">\p&lt;0/1/..&gt; - Toggle drawing mode</span></h3>
+<p>Setting this tag to 1 or above enables drawing mode. Text after this override block will then be interpreted as drawing instructions, and not as actually visible text. Setting this to zero disables drawing mode, restoring normal behavior. When turning on, the value might be any integer larger than zero, and will be interpreted as the scale, in 2^(value-1) mode. This is done to allow sub-pixel accuracy.
+e.g.:
+</p>
+<pre>\p1
+</pre>
+<p>(Enables drawing with normal coordinates)
+</p>
+<pre>\p0
+</pre>
+<p>(Disables drawing)
+</p>
+<pre>\p2
+</pre>
+<p>(Enables drawing, and resolution is doubled. So drawing to 200,200 will actually draw to 100,100)
+</p>
+<pre>\p4
+</pre>
+<p>(Enables drawing, and resolution is 8x larger (2^(4-1)). So drawing to 400,400 will actually draw to 50,50)
+</p>
+<a name=".5Cpbo.3Cy.3E_-_Baseline_offset" id=".5Cpbo.3Cy.3E_-_Baseline_offset"></a><h3> <span class="mw-headline">\pbo&lt;y&gt; - Baseline offset</span></h3>
+<p>Defines baseline offset for drawing. This is basically an Y offset to all coordinates.
+e.g.:
+</p>
+<pre>\pbo-50
+</pre>
+<p>(Draws everything 50 pixels above specified)
+</p>
+<pre>\pbo100
+</pre>
+<p>(Draws everything 100 pixels below specified)
+</p>
+<a name="Drawing_commands" id="Drawing_commands"></a><h2> <span class="mw-headline">Drawing commands</span></h2>
+<p>These commands should appear either in a \clip tag (vectorial overload) or between \p# and \p0, outside override blocks.
+For example (taken straight from the ASS specs):
+</p>
+<ul><li>Square:
+</li></ul>
+<pre>{\p1}m 0 0 l 100 0 100 100 0 100{\p0}
+</pre>
+<ul><li>Rounded square:
+</li></ul>
+<pre>{\p1}m 0 0 s 100 0 100 100 0 100 c{\p0}
+</pre>
+<dl><dd>(c equals to "p 0 0 100 0 100 100" in this case)
+</dd></dl>
+<ul><li>Circle (almost):
+</li></ul>
+<pre>{\p1}m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0{\p0}
+</pre>
+<dl><dd>(note that the 2nd 'b' is optional here)
+</dd></dl>
+<p>Drawing commands use the primary color for fill and outline color for borders. They also display shadow. The idea of drawing vectors is that there is an invisible "cursor" (think of it as the mouse pointer in a drawing program, or as a pen moving through the image) on the video frame, and you tell it to move to other positions. As it moves, it draws on the area behind it, and when you close the line formed, it fills it with the primary color.
+</p>
+<a name="m_.3Cx.3E_.3Cy.3E_-_Move" id="m_.3Cx.3E_.3Cy.3E_-_Move"></a><h3> <span class="mw-headline">m &lt;x&gt; &lt;y&gt; - Move</span></h3>
+<p>Moves the cursor to x,y. If you have an unclosed shape, it will automatically be closed, as the program assumes that you are now drawing a new, independent shape. All drawing routines must start with this command.
+</p>
+<a name="n_.3Cx.3E_.3Cy.3E_-_Move_.28no_closing.29" id="n_.3Cx.3E_.3Cy.3E_-_Move_.28no_closing.29"></a><h3> <span class="mw-headline">n &lt;x&gt; &lt;y&gt; - Move (no closing)</span></h3>
+<p>Moves the cursor to x,y, without closing the current shape.
+</p>
+<a name="l_.3Cx.3E_.3Cy.3E_-_Line" id="l_.3Cx.3E_.3Cy.3E_-_Line"></a><h3> <span class="mw-headline">l &lt;x&gt; &lt;y&gt; - Line</span></h3>
+<p>Draws a line from the current cursor position to x,y, and moves the cursor there afterwards.
+</p>
+<a name="b_.3Cx1.3E_.3Cy1.3E_.3Cx2.3E_.3Cy2.3E_.3Cx3.3E_.3Cy3.3E_-_Cubic_B.C3.A9zier_curve" id="b_.3Cx1.3E_.3Cy1.3E_.3Cx2.3E_.3Cy2.3E_.3Cx3.3E_.3Cy3.3E_-_Cubic_B.C3.A9zier_curve"></a><h3> <span class="mw-headline">b &lt;x1&gt; &lt;y1&gt; &lt;x2&gt; &lt;y2&gt; &lt;x3&gt; &lt;y3&gt; - Cubic Bézier curve</span></h3>
+<p>Draws a cubic (3rd degree) Bézier curve from the cursor position to (x3,y3), using (x1,y1) and (x2,y2) as the control points. Check the <a href="http://en.wikipedia.org/wiki/Bézier_curve" class="external text" title="http://en.wikipedia.org/wiki/B%C3%A9zier_curve" rel="nofollow">article on Wikipedia</a> for more information about Bézier curves. In this picture taken from that article, P0 is the cursor position, P1 is x1,y1, P2 is x2,y2 and P3 is x3,y3:<br />
+<a href="File_Bezier.html" class="image" title="Image:Bezier.png"><img alt="Image:Bezier.png" src="images/Bezier.png" width="350" height="136" border="0" /></a><br />
+Note that the curve begins at P0, heads towards P1, then arrives at P3 coming from P2's direction.
+</p>
+<a name="s_.3Cx1.3E_.3Cy1.3E_.3Cx2.3E_.3Cy2.3E_.3Cx3.3E_.3Cy3.3E_.._.3CxN.3E_.3CyN.3E_-_Cubic_b-spline" id="s_.3Cx1.3E_.3Cy1.3E_.3Cx2.3E_.3Cy2.3E_.3Cx3.3E_.3Cy3.3E_.._.3CxN.3E_.3CyN.3E_-_Cubic_b-spline"></a><h3> <span class="mw-headline">s &lt;x1&gt; &lt;y1&gt; &lt;x2&gt; &lt;y2&gt; &lt;x3&gt; &lt;y3&gt; .. &lt;xN&gt; &lt;yN&gt; - Cubic b-spline</span></h3>
+<p>Draws a cubic (3rd degree) uniform b-spline to point N. This must contain at least 3 coordinates (and is, in that case, the same as b). This basically lets you chain several cubic Bézier curves together. Check this other article on Wikipedia for more information.
+</p>
+<a name="p_.3Cx.3E_.3Cy.3E_-_Extend_b-spline" id="p_.3Cx.3E_.3Cy.3E_-_Extend_b-spline"></a><h3> <span class="mw-headline">p &lt;x&gt; &lt;y&gt; - Extend b-spline</span></h3>
+<p>Extends the b-spline to x,y. This is essentially the same as adding another pair of coordinates at the end of s.
+</p>
+<a name="c_-_Close_b-spline" id="c_-_Close_b-spline"></a><h3> <span class="mw-headline">c - Close b-spline</span></h3>
+<p>Closes the b-spline.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 982/1000000
+Post-expand include size: 59145/2097152 bytes
+Template argument size: 45186/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:25-0!1!0!!en!2!edit=0 and timestamp 20120830214146 -->
+<div class="printfooter">
+Retrieved from "<a href="ASS_Tags.html">http://docs.aegisub.org/manual/ASS_Tags</a>"</div>
+	    <div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks">Category:&#32;<span dir='ltr'><a href="Category_Pages_with_Todo_items.html" title="Category:Pages with Todo items">Pages with Todo items</a></span></div></div></div>	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.062 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/ASS_Tags by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:37:58 GMT -->
+</html>

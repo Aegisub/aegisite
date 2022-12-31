@@ -9,6 +9,8 @@ tags:
   - old-post
   - aegisub
   - announcement
+aliases:
+  - /blog/2008/08/svn-server-moved.html
 ---
 
 Some time ago our [SVN](http://subversion.tigris.org/) server (source code management) stopped working. We aren't sure what went wrong, and since we haven't been able to reach the administrator of it we've had to move the repository to a new server.

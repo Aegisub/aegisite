@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from docs.aegisub.org/3.2/Commands/it/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:49:15 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>it - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href='index.html' rel='canonical'>
+<link href="../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../../Main_Page/index.html">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../../About/index.html">What is Aegisub?</a>
+</li>
+<li>
+<a href="../../Highlights/index.html">Highlights</a>
+</li>
+<li>
+<a href="../../Credits/index.html">Credits</a>
+</li>
+<li>
+<a href="../../Support/index.html">Support Aegisub</a>
+</li>
+<li>
+<a href="../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../Tutorials/index.html">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li>
+<a href="../../Editing_Subtitles/index.html">Editing Subtitles</a>
+</li>
+<li>
+<a href="../../Exporting/index.html">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../../Attaching_subtitles_to_video/index.html">Applying Subtitles</a>
+</li>
+<li>
+<a href="../../Spell_Checker/index.html">Spell Checker</a>
+</li>
+<li>
+<a href="../../Translation_Assistant/index.html">Translation Assistant</a>
+</li>
+<li>
+<a href="../../Paste_Over/index.html">Paste Over</a>
+</li>
+<li>
+<a href="../../Select_Lines/index.html">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../../Typesetting/index.html">Introduction</a>
+</li>
+<li>
+<a href="../../Video/index.html">Working with Video</a>
+</li>
+<li>
+<a href="../../Styles/index.html">Editing styles</a>
+</li>
+<li>
+<a href="../../Visual_Typesetting/index.html">Visual Typesetting</a>
+</li>
+<li>
+<a href="../../ASS_Tags/index.html">ASS Override Tags</a>
+</li>
+<li>
+<a href="../../Colour_Picker/index.html">Colour Picker</a>
+</li>
+<li>
+<a href="../../Styling_Assistant/index.html">Styling Assistant</a>
+</li>
+<li>
+<a href="../../Resolution_Resampler/index.html">Resolution Resampler</a>
+</li>
+<li>
+<a href="../../Fonts_Collector/index.html">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../../Audio/index.html">Working with Audio</a>
+</li>
+<li>
+<a href="../../Timing/index.html">Timing subtitles to audio</a>
+</li>
+<li>
+<a href="../../Shift_Times/index.html">Shift times</a>
+</li>
+<li>
+<a href="../../Timing_Post-Processor/index.html">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../../Kanji_Timer/index.html">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../../Automation/index.html">Overview</a>
+</li>
+<li>
+<a href="../../Automation/Karaoke_Templater/index.html">Karaoke Templater</a>
+</li>
+<li>
+<a href="../../Automation/Lua/index.html">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../../Options/index.html">Aegisub Options</a>
+</li>
+<li>
+<a href="../../Properties/index.html">Script Properties</a>
+</li>
+<li>
+<a href="../../Attachment_Manager/index.html">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'><a href="../index.html">Commands</a> / it</h1>
+<table style='width: 100%; margin-bottom: 2em'>
+<tr>
+<td>
+<a href='../en_US/index.html'>English (U.S.)</a>
+</td>
+<td>
+<a href='../ar/index.html'>Arabic</a>
+</td>
+<td>
+<a href='../bg/index.html'>Bulgarian</a>
+</td>
+<td>
+<a href='../ca/index.html'>Catalan</a>
+</td>
+<td>
+<a href='../cs/index.html'>Czech</a>
+</td>
+<td>
+<a href='../da/index.html'>Danish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../de/index.html'>German</a>
+</td>
+<td>
+<a href='../el/index.html'>Greek</a>
+</td>
+<td>
+<a href='../es/index.html'>Spanish</a>
+</td>
+<td>
+<a href='../eu/index.html'>Basque</a>
+</td>
+<td>
+<a href='../fa/index.html'>Farsi</a>
+</td>
+<td>
+<a href='../fi/index.html'>Finnish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../fr_FR/index.html'>French</a>
+</td>
+<td>
+<a href='../gl/index.html'>Galician</a>
+</td>
+<td>
+<a href='../hu/index.html'>Hungarian</a>
+</td>
+<td>
+<a href='../id/index.html'>Indonesian</a>
+</td>
+<td>
+<a href='index.html'>Italian</a>
+</td>
+<td>
+<a href='../ja/index.html'>Japanese</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../ko/index.html'>Korean</a>
+</td>
+<td>
+<a href='../nl/index.html'>Dutch</a>
+</td>
+<td>
+<a href='../pl/index.html'>Polish</a>
+</td>
+<td>
+<a href='../pt_BR/index.html'>Portuguese (Brazilian)</a>
+</td>
+<td>
+<a href='../pt_PT/index.html'>Portuguese</a>
+</td>
+<td>
+<a href='../ru/index.html'>Russian</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../sr_YU/index.html'>Serbian (Cyrillic)</a>
+</td>
+<td>
+<a href='../sr_YU%40latin/index.html'>Serbian (Latin)</a>
+</td>
+<td>
+<a href='../vi/index.html'>Vietnamese</a>
+</td>
+<td>
+<a href='../zh_CN/index.html'>Chinese (Simplified)</a>
+</td>
+<td>
+<a href='../zh_TW/index.html'>Chinese</a>
+</td>
+</tr>
+</table>
+<table class='karatable'>
+<tr>
+<th>Name</th>
+<th>Display</th>
+<th>Help</th>
+</tr>
+<tr>
+<td>am/manager</td>
+<td>Automation</td>
+<td>Apre il manager delle automazioni</td>
+</tr>
+<tr>
+<td>am/meta</td>
+<td>Automation</td>
+<td>Open automation manager. Ctrl: Rescan autoload folder. Ctrl+Shift: Rescan autoload folder and reload all automation scripts</td>
+</tr>
+<tr>
+<td>am/reload</td>
+<td>Ricarica script Automation</td>
+<td>Ricarica tutti gli script Automation e riscansiona la cartella di autocaricamento</td>
+</tr>
+<tr>
+<td>am/reload/autoload</td>
+<td>Ricarica script Automation autocaricate</td>
+<td>Riscansiona la cartella di autocaricamento Automation</td>
+</tr>
+<tr>
+<td>app/about</td>
+<td>Info su</td>
+<td>Info su Aegisub</td>
+</tr>
+<tr>
+<td>app/display/audio_subs</td>
+<td>Visualizza Audio+Sub</td>
+<td>Display audio and the subtitles grid only</td>
+</tr>
+<tr>
+<td>app/display/full</td>
+<td>Visualizza tutto</td>
+<td>Display audio, video and then subtitles grid</td>
+</tr>
+<tr>
+<td>app/display/subs</td>
+<td>Visualizza Solo Sub</td>
+<td>Display the subtitles grid only</td>
+</tr>
+<tr>
+<td>app/display/video_subs</td>
+<td>Visualizza Video+Sub</td>
+<td>Display video and the subtitles grid only</td>
+</tr>
+<tr>
+<td>app/exit</td>
+<td>Esci</td>
+<td>Chiude l'applicazione</td>
+</tr>
+<tr>
+<td>app/language</td>
+<td>Lingua</td>
+<td>Seleziona la lingua dell'interfaccia di Aegisub</td>
+</tr>
+<tr>
+<td>app/log</td>
+<td>Finestra di Log</td>
+<td>Mostra il log degli eventi</td>
+</tr>
+<tr>
+<td>app/new_window</td>
+<td>Nuova Finestra</td>
+<td>Apre una nuova finestra di Aegisub</td>
+</tr>
+<tr>
+<td>app/options</td>
+<td>Opzioni</td>
+<td>Configura Aegisub</td>
+</tr>
+<tr>
+<td>app/toggle/global_hotkeys</td>
+<td>Hotkey globali override</td>
+<td>Toggle global hotkey overrides (Medusa Mode)</td>
+</tr>
+<tr>
+<td>app/toggle/toolbar</td>
+<td>Nascondi toolbar</td>
+<td>Mostra/nascondi la toolbar principale</td>
+</tr>
+<tr>
+<td>app/updates</td>
+<td>Controlla Aggiornamenti</td>
+<td>Controlla se e disponibile una nuova versione di Aegisub</td>
+</tr>
+<tr>
+<td>audio/close</td>
+<td>Chiudi Audio</td>
+<td>Close the currently open audio file</td>
+</tr>
+<tr>
+<td>audio/commit</td>
+<td>Conferma</td>
+<td>Conferma ogni modifica del tempo audio in sospeso</td>
+</tr>
+<tr>
+<td>audio/commit/default</td>
+<td>Conferma e usa il tempo predefinito per la prossima riga</td>
+<td>Conferma ogni modifica del tempo audio in sospeso e regola il tempo della prossima riga su predefinito</td>
+</tr>
+<tr>
+<td>audio/commit/next</td>
+<td>Conferma e sposta alla prossima riga</td>
+<td>Conferma ogni modifica del tempo audio in sospeso e sposta alla prossima riga</td>
+</tr>
+<tr>
+<td>audio/commit/stay</td>
+<td>Conferma e rimani sulla riga corrente</td>
+<td>Conferma ogni modifica del tempo audio in sospeso e rimani su questa riga</td>
+</tr>
+<tr>
+<td>audio/go_to</td>
+<td>Vai alla selezione</td>
+<td>Scroll the audio display to center on the current audio selection</td>
+</tr>
+<tr>
+<td>audio/karaoke</td>
+<td>Passa a modalita Karaoke</td>
+<td>Passa a modalita Karaoke</td>
+</tr>
+<tr>
+<td>audio/open</td>
+<td>Apri File Audio</td>
+<td>Open an audio file</td>
+</tr>
+<tr>
+<td>audio/open/blank</td>
+<td>Apri 2h30 di audio vuoto</td>
+<td>Apri una clip audio vuota da 150 minuti, per il debugging</td>
+</tr>
+<tr>
+<td>audio/open/noise</td>
+<td>Apri 2h30 di Audio con rumore</td>
+<td>Apri una clip audio con rumore da 150 minuti, per il debugging</td>
+</tr>
+<tr>
+<td>audio/open/video</td>
+<td>Apri Audio preso dal Video</td>
+<td>Open the audio from the current video file</td>
+</tr>
+<tr>
+<td>audio/opt/autocommit</td>
+<td>Conferma automaticamente ogni modifica</td>
+<td>Conferma automaticamente ogni modifica</td>
+</tr>
+<tr>
+<td>audio/opt/autonext</td>
+<td>Auto go to next line on commit</td>
+<td>Automatically go to next line on commit</td>
+</tr>
+<tr>
+<td>audio/opt/autoscroll</td>
+<td>Auto scroll audio display to selected line</td>
+<td>Auto scroll audio display to selected line</td>
+</tr>
+<tr>
+<td>audio/opt/spectrum</td>
+<td>Modalita analisi spettro</td>
+<td>Modalita analisi spettro</td>
+</tr>
+<tr>
+<td>audio/opt/vertical_link</td>
+<td>Unisci lo zoom verticale e gli slider del volume</td>
+<td>Unisci lo zoom verticale e gli slider del volume</td>
+</tr>
+<tr>
+<td>audio/play/current</td>
+<td>Riproduci selezione audio corrente</td>
+<td>Riproduci la sezione audio corrente, ignorando le modifiche effettuate (durante la riproduzione)</td>
+</tr>
+<tr>
+<td>audio/play/line</td>
+<td>Riproduci riga corrente</td>
+<td>Play the audio for the current line</td>
+</tr>
+<tr>
+<td>audio/play/selection</td>
+<td>Riproduci selezione audio</td>
+<td>Riproduci l'audio fino alla fine della selezione</td>
+</tr>
+<tr>
+<td>audio/play/selection/after</td>
+<td>Riproduci 500 ms dopo la selezione</td>
+<td>Riproduci 500 ms dopo la selezione</td>
+</tr>
+<tr>
+<td>audio/play/selection/before</td>
+<td>Riproduci 500 ms prima della selezione</td>
+<td>Riproduci 500 ms prima della selezione</td>
+</tr>
+<tr>
+<td>audio/play/selection/begin</td>
+<td>Riproduci i primi 500 ms della selezione</td>
+<td>Riproduci i primi 500 ms della selezione</td>
+</tr>
+<tr>
+<td>audio/play/selection/end</td>
+<td>Riproduci gli ultimi 500 ms della selezione</td>
+<td>Riproduci gli ultimi 500 ms della selezione</td>
+</tr>
+<tr>
+<td>audio/play/to_end</td>
+<td>Riproduci dall'inizio della selezione fino a fine file</td>
+<td>Riproduci dall'inizio della selezione fino a fine file</td>
+</tr>
+<tr>
+<td>audio/play/toggle</td>
+<td>Riproduci la sezione audio o fermala</td>
+<td>Play selection, or stop playback if it's already playing</td>
+</tr>
+<tr>
+<td>audio/save/clip</td>
+<td>Crea clip audio</td>
+<td>Save an audio clip of the selected line</td>
+</tr>
+<tr>
+<td>audio/scroll/left</td>
+<td>Scorri a Sinistra</td>
+<td>Scorri display audio a sinistra</td>
+</tr>
+<tr>
+<td>audio/scroll/right</td>
+<td>Scorri a Destra</td>
+<td>Scorri il display audio a destra</td>
+</tr>
+<tr>
+<td>audio/stop</td>
+<td>Ferma riproduzione</td>
+<td>Stop audio and video playback</td>
+</tr>
+<tr>
+<td>audio/view/spectrum</td>
+<td>Mostra Spettro</td>
+<td>Mostra audio come spettrografo a frequenza di rete</td>
+</tr>
+<tr>
+<td>audio/view/waveform</td>
+<td>Mostra Forma dell'onda</td>
+<td>Mostra audio come grafico lineare di ampiezza</td>
+</tr>
+<tr>
+<td>automation/lua/cleantags-autoload/Clean Tags</td>
+<td>Clean Tags</td>
+<td>Clean subtitle lines by re-arranging ASS tags and override blocks within the lines</td>
+</tr>
+<tr>
+<td>automation/lua/kara-templater/Apply karaoke template</td>
+<td>Apply karaoke template</td>
+<td>Applies karaoke effects from templates</td>
+</tr>
+<tr>
+<td>automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in</td>
+<td>Automatic karaoke lead-in</td>
+<td>Join up the ends of selected lines and add \k tags to shift karaoke</td>
+</tr>
+<tr>
+<td>automation/lua/macro-1-edgeblur/Add edgeblur</td>
+<td>Add edgeblur</td>
+<td>Adds \be1 tags to all selected lines</td>
+</tr>
+<tr>
+<td>automation/lua/macro-2-mkfullwitdh/Make fullwidth</td>
+<td>Make fullwidth</td>
+<td>Convert Latin letters to SJIS fullwidth letters</td>
+</tr>
+<tr>
+<td>automation/lua/select-overlaps/Select overlaps</td>
+<td>Select overlaps</td>
+<td>Select lines which begin while another non-comment line is active</td>
+</tr>
+<tr>
+<td>automation/lua/strip-tags/Strip tags</td>
+<td>Strip tags</td>
+<td>Remove all override tags from selected lines</td>
+</tr>
+<tr>
+<td>edit/clear</td>
+<td>Azzera</td>
+<td>Clear the current line's text</td>
+</tr>
+<tr>
+<td>edit/clear/text</td>
+<td>Clear Text</td>
+<td>Clear the current line's text, leaving override tags</td>
+</tr>
+<tr>
+<td>edit/color/outline</td>
+<td>Outline Color</td>
+<td>Set the outline color (\3c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/primary</td>
+<td>Primary Color</td>
+<td>Set the primary fill color (\c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/secondary</td>
+<td>Secondary Color</td>
+<td>Set the secondary (karaoke) fill color (\2c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/color/shadow</td>
+<td>Shadow Color</td>
+<td>Set the shadow color (\4c) at the cursor position</td>
+</tr>
+<tr>
+<td>edit/find_replace</td>
+<td>Cerca e Sostituisci</td>
+<td>Cerca e sostituisci parole nei sottotitoli</td>
+</tr>
+<tr>
+<td>edit/font</td>
+<td>Tipo di font</td>
+<td>Select a font face and size</td>
+</tr>
+<tr>
+<td>edit/insert_original</td>
+<td>Inserisci Originale</td>
+<td>Insert the original line text at the cursor</td>
+</tr>
+<tr>
+<td>edit/line/copy</td>
+<td>Copia Righe</td>
+<td>Copy subtitles to the clipboard</td>
+</tr>
+<tr>
+<td>edit/line/cut</td>
+<td>Taglia Righe</td>
+<td>Taglia i sottotitoli</td>
+</tr>
+<tr>
+<td>edit/line/delete</td>
+<td>Cancella Righe</td>
+<td>Cancella le righe selezionate</td>
+</tr>
+<tr>
+<td>edit/line/duplicate</td>
+<td>Duplica Righe</td>
+<td>Duplica le righe selezionate</td>
+</tr>
+<tr>
+<td>edit/line/join/as_karaoke</td>
+<td>Come Karaoke</td>
+<td>Join selected lines in a single one, as karaoke</td>
+</tr>
+<tr>
+<td>edit/line/join/concatenate</td>
+<td>Concatena</td>
+<td>Join selected lines in a single one, concatenating text together</td>
+</tr>
+<tr>
+<td>edit/line/join/keep_first</td>
+<td>Mantieni la Prima</td>
+<td>Join selected lines in a single one, keeping text of first and discarding remaining</td>
+</tr>
+<tr>
+<td>edit/line/paste</td>
+<td>Incolla Righe</td>
+<td>Incolla i sottotitoli</td>
+</tr>
+<tr>
+<td>edit/line/paste/over</td>
+<td>Incolla Righe Su</td>
+<td>Incolla i sottotitoli su altre righe</td>
+</tr>
+<tr>
+<td>edit/line/recombine</td>
+<td>Ricombina Righe</td>
+<td>Recombine subtitles which have been split and merged</td>
+</tr>
+<tr>
+<td>edit/line/split/after</td>
+<td>Split lines after current frame</td>
+<td>Split the current line into a line which ends on the current frame and a line which starts on the next frame</td>
+</tr>
+<tr>
+<td>edit/line/split/before</td>
+<td>Split lines before current frame</td>
+<td>Split the current line into a line which ends on the previous frame and a line which starts on the current frame</td>
+</tr>
+<tr>
+<td>edit/line/split/by_karaoke</td>
+<td>Dividi Righe (per karaoke)</td>
+<td>Use karaoke timing to split line into multiple smaller lines</td>
+</tr>
+<tr>
+<td>edit/line/split/estimate</td>
+<td>Dividi sul cursore (calcola i tempi)</td>
+<td>Split the current line at the cursor, dividing the original line's duration between the new ones</td>
+</tr>
+<tr>
+<td>edit/line/split/preserve</td>
+<td>Dividi sul cursore (salva i tempi)</td>
+<td>Split the current line at the cursor, setting both lines to the original line's times</td>
+</tr>
+<tr>
+<td>edit/line/split/video</td>
+<td>Split at cursor (at video frame)</td>
+<td>Split the current line at the cursor, dividing the line's duration at the current video frame</td>
+</tr>
+<tr>
+<td>edit/redo</td>
+<td>Niente da annullare</td>
+<td>Redo last undone action</td>
+</tr>
+<tr>
+<td>edit/revert</td>
+<td>Revert</td>
+<td>Revert the active line to its initial state (shown in the upper editor)</td>
+</tr>
+<tr>
+<td>edit/style/bold</td>
+<td>Toggle Bold</td>
+<td>Toggle bold (\b) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/italic</td>
+<td>Toggle Italics</td>
+<td>Toggle italics (\i) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/strikeout</td>
+<td>Toggle Strikeout</td>
+<td>Toggle strikeout (\s) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/style/underline</td>
+<td>Toggle Underline</td>
+<td>Toggle underline (\u) for the current selection or at the current cursor position</td>
+</tr>
+<tr>
+<td>edit/undo</td>
+<td>Niente da annullare</td>
+<td>Undo last action</td>
+</tr>
+<tr>
+<td>grid/line/next</td>
+<td>Riga Successiva</td>
+<td>Sposta alla prossima riga del sottotitolo</td>
+</tr>
+<tr>
+<td>grid/line/next/create</td>
+<td>Riga Successiva</td>
+<td>Sposta alla prossima riga del sottotitolo, creandone una nuova se necessario</td>
+</tr>
+<tr>
+<td>grid/line/prev</td>
+<td>Riga Precedente</td>
+<td>Sposta su riga precedente</td>
+</tr>
+<tr>
+<td>grid/move/down</td>
+<td>Sposta riga giù</td>
+<td>Sposta le righe selezionate una riga in basso</td>
+</tr>
+<tr>
+<td>grid/move/up</td>
+<td>Sposta righe su</td>
+<td>Sposta le righe selezionate una riga in alto</td>
+</tr>
+<tr>
+<td>grid/sort/actor</td>
+<td>Nome Attore</td>
+<td>Ordina tutti i sottotitoli per nomi attori</td>
+</tr>
+<tr>
+<td>grid/sort/actor/selected</td>
+<td>Nome Attore</td>
+<td>Ordina sottotitoli selezionati per nomi attori</td>
+</tr>
+<tr>
+<td>grid/sort/effect</td>
+<td>Effetto</td>
+<td>Ordina tutti i sottotitoli per effetti</td>
+</tr>
+<tr>
+<td>grid/sort/effect/selected</td>
+<td>Effetto</td>
+<td>Ordina sottotitoli selezionati per effetti</td>
+</tr>
+<tr>
+<td>grid/sort/end</td>
+<td>Tempo Finale</td>
+<td>Ordina tutti i sottotitoli per tempo finale</td>
+</tr>
+<tr>
+<td>grid/sort/end/selected</td>
+<td>Tempo Finale</td>
+<td>Ordina sottotitoli selezionati per tempo finale</td>
+</tr>
+<tr>
+<td>grid/sort/layer</td>
+<td>Livello</td>
+<td>Ordina tutti i sottotitoli per numero livello</td>
+</tr>
+<tr>
+<td>grid/sort/layer/selected</td>
+<td>Livello</td>
+<td>Ordina sottotitoli selezionati per numero livello</td>
+</tr>
+<tr>
+<td>grid/sort/start</td>
+<td>Tempo d'Inizio</td>
+<td>Ordina tutti i sottotitoli per tempo d'inizio</td>
+</tr>
+<tr>
+<td>grid/sort/start/selected</td>
+<td>Tempo d'Inizio</td>
+<td>Ordina sottotitoli selezionatiper tempo d'inizio</td>
+</tr>
+<tr>
+<td>grid/sort/style</td>
+<td>Nome stile</td>
+<td>Ordina tutti i sottotitoli per nomi stile</td>
+</tr>
+<tr>
+<td>grid/sort/style/selected</td>
+<td>Nome stile</td>
+<td>Ordina i sottotitoli selezionati per nomi stile</td>
+</tr>
+<tr>
+<td>grid/swap</td>
+<td>Scambia Righe</td>
+<td>Swap the two selected lines</td>
+</tr>
+<tr>
+<td>grid/tag/cycle_hiding</td>
+<td>Cambia Metodo Nascondi-Tag</td>
+<td>Cambia le modalita del nascondi-tag</td>
+</tr>
+<tr>
+<td>grid/tags/hide</td>
+<td>Nascondi Tag</td>
+<td>Nascondi tag override nella griglia dei sottotitoli</td>
+</tr>
+<tr>
+<td>grid/tags/show</td>
+<td>Mostra Tag</td>
+<td>Mostra ogni tag override nella griglia dei sottititoli</td>
+</tr>
+<tr>
+<td>grid/tags/simplify</td>
+<td>Semplifica Tag</td>
+<td>Sostituisci tag override nella griglia dei sottititoli con un variabile semplificata</td>
+</tr>
+<tr>
+<td>help/bugs</td>
+<td>Bug Tracker</td>
+<td>Visita il bug tracker di Aegisub per riportare bug e richiedere nuove funzionalità</td>
+</tr>
+<tr>
+<td>help/contents</td>
+<td>Contenuti</td>
+<td>Argomenti d'aiuto</td>
+</tr>
+<tr>
+<td>help/forums</td>
+<td>Forum</td>
+<td>Visita il forum di Aegisub</td>
+</tr>
+<tr>
+<td>help/irc</td>
+<td>Canale IRC</td>
+<td>Visita il canale IRC ufficiale di Aegisub</td>
+</tr>
+<tr>
+<td>help/video</td>
+<td>typesetting visivo</td>
+<td>Apre la pagina della guida per i Visual Typesetting</td>
+</tr>
+<tr>
+<td>help/website</td>
+<td>Sito Web</td>
+<td>Visita il sito web ufficiale di Aegisub</td>
+</tr>
+<tr>
+<td>keyframe/close</td>
+<td>Chiudi Keyframe</td>
+<td>Discard the currently loaded keyframes and use those from the video, if any</td>
+</tr>
+<tr>
+<td>keyframe/open</td>
+<td>Apri Keyframe</td>
+<td>Open a keyframe list file</td>
+</tr>
+<tr>
+<td>keyframe/save</td>
+<td>Salva Keyframe</td>
+<td>Save the current list of keyframes to a file</td>
+</tr>
+<tr>
+<td>subtitle/attachment</td>
+<td>Allegati</td>
+<td>Open the attachment manager dialog</td>
+</tr>
+<tr>
+<td>subtitle/find</td>
+<td>Trova</td>
+<td>Search for text in the subtitles</td>
+</tr>
+<tr>
+<td>subtitle/find/next</td>
+<td>Trova Successivo</td>
+<td>Find next match of last search</td>
+</tr>
+<tr>
+<td>subtitle/insert/after</td>
+<td>Dopo la corrente</td>
+<td>Insert a new line after the current one</td>
+</tr>
+<tr>
+<td>subtitle/insert/after/videotime</td>
+<td>Dopo la corrente, al Tempo Video</td>
+<td>Insert a new line after the current one, starting at video time</td>
+</tr>
+<tr>
+<td>subtitle/insert/before</td>
+<td>Prima della corrente</td>
+<td>Insert a new line before the current one</td>
+</tr>
+<tr>
+<td>subtitle/insert/before/videotime</td>
+<td>Prima della corrente, al Tempo Video</td>
+<td>Insert a new line before the current one, starting at video time</td>
+</tr>
+<tr>
+<td>subtitle/new</td>
+<td>Nuovi sottotitoli</td>
+<td>Nuovi sottotitoli</td>
+</tr>
+<tr>
+<td>subtitle/open</td>
+<td>Apri sottotitoli</td>
+<td>Open a subtitles file</td>
+</tr>
+<tr>
+<td>subtitle/open/autosave</td>
+<td>Open Autosaved Subtitles</td>
+<td>Open a previous version of a file which was autosaved by Aegisub</td>
+</tr>
+<tr>
+<td>subtitle/open/charset</td>
+<td>Apri Sottititoli con Charset</td>
+<td>Open a subtitles file with a specific file encoding</td>
+</tr>
+<tr>
+<td>subtitle/open/video</td>
+<td>Apri Sottotitoli da Video</td>
+<td>Open the subtitles from the current video file</td>
+</tr>
+<tr>
+<td>subtitle/properties</td>
+<td>Proprietà</td>
+<td>Apre la finestra delle proprietà</td>
+</tr>
+<tr>
+<td>subtitle/save</td>
+<td>Salva Sottotitoli</td>
+<td>Save the current subtitles</td>
+</tr>
+<tr>
+<td>subtitle/save/as</td>
+<td>Salva Sottotitoli come</td>
+<td>Save subtitles with another name</td>
+</tr>
+<tr>
+<td>subtitle/select/all</td>
+<td>Seleziona Tutto</td>
+<td>Select all dialogue lines</td>
+</tr>
+<tr>
+<td>subtitle/select/visible</td>
+<td>Seleziona Visibile</td>
+<td>Select all dialogue lines that are visible on the current video frame</td>
+</tr>
+<tr>
+<td>subtitle/spellcheck</td>
+<td>Controllo Ortografia</td>
+<td>Apre il controllo dell'ortografia</td>
+</tr>
+<tr>
+<td>time/continuous/end</td>
+<td>Cambia Fine</td>
+<td>Change end times of lines to the next line's start time</td>
+</tr>
+<tr>
+<td>time/continuous/start</td>
+<td>Cambia Inizio</td>
+<td>Change start times of lines to the previous line's end time</td>
+</tr>
+<tr>
+<td>time/frame/current</td>
+<td>Sposta al frame corrente</td>
+<td>Sposta selezione, così la riga selezionata inizierà al frame corrente</td>
+</tr>
+<tr>
+<td>time/lead/both</td>
+<td>Aggiungi lead in e out</td>
+<td>Add both lead in and out to the selected lines</td>
+</tr>
+<tr>
+<td>time/lead/in</td>
+<td>Aggiungi lead in</td>
+<td>Add the lead in time to the selected lines</td>
+</tr>
+<tr>
+<td>time/lead/out</td>
+<td>Aggiungi lead out</td>
+<td>Add the lead out time to the selected lines</td>
+</tr>
+<tr>
+<td>time/length/decrease</td>
+<td>Decrementa lunghezza</td>
+<td>Decrementa lunghezza di questa unità di tempo</td>
+</tr>
+<tr>
+<td>time/length/decrease/shift</td>
+<td>Decrementa lunghezza e sposta</td>
+<td>Decrementa lunghezza e sposta gli oggetti successivi</td>
+</tr>
+<tr>
+<td>time/length/increase</td>
+<td>Incrementa lunghezza</td>
+<td>Incrementa lunghezza di questa unità di tempo</td>
+</tr>
+<tr>
+<td>time/length/increase/shift</td>
+<td>Incrementa lunghezza e sposta</td>
+<td>Incrementa lunghezza di questa unità di tempo e sposta gli oggetti successivi</td>
+</tr>
+<tr>
+<td>time/next</td>
+<td>Riga Successiva</td>
+<td>Riga/sillaba successiva</td>
+</tr>
+<tr>
+<td>time/prev</td>
+<td>Riga Precedente</td>
+<td>Riga/sillaba precedente</td>
+</tr>
+<tr>
+<td>time/shift</td>
+<td>Sposta Tempi</td>
+<td>Cambia i sottotitoli in base al tempo o ai frame</td>
+</tr>
+<tr>
+<td>time/snap/end_video</td>
+<td>Fissa Fine del Video</td>
+<td>Imposta fine del sottotitolo selezionato sul frame video corrente</td>
+</tr>
+<tr>
+<td>time/snap/scene</td>
+<td>Fissa alla Scena</td>
+<td>Imposta inizio e fine dei sottotitoli sui keyframe intorno al frame video corrente</td>
+</tr>
+<tr>
+<td>time/snap/start_video</td>
+<td>Fissa Inizio del Video</td>
+<td>Imposta inizio del sottotitolo selezionato sul frame video corrente</td>
+</tr>
+<tr>
+<td>time/start/decrease</td>
+<td>Sposta il tempo d'inizio avanti</td>
+<td>Sposta il tempo d'inizio di questa unità di tempo indietro</td>
+</tr>
+<tr>
+<td>time/start/increase</td>
+<td>Sposta tempo iniziale in avanti</td>
+<td>Sposta il tempo d'inizio di questa unità di tempo avanti</td>
+</tr>
+<tr>
+<td>timecode/close</td>
+<td>Chiudi File Timecode</td>
+<td>Close the currently open timecodes file</td>
+</tr>
+<tr>
+<td>timecode/open</td>
+<td>Apri File Timecode</td>
+<td>Open a VFR timecodes v1 or v2 file</td>
+</tr>
+<tr>
+<td>timecode/save</td>
+<td>Salva File Timecode</td>
+<td>Save a VFR timecodes v2 file</td>
+</tr>
+<tr>
+<td>tool/export</td>
+<td>Esporta Sottotitoli</td>
+<td>Save a copy of subtitles in a different format or with processing applied to it</td>
+</tr>
+<tr>
+<td>tool/font_collector</td>
+<td>Raccolta Font</td>
+<td>Apre la raccolta dei font</td>
+</tr>
+<tr>
+<td>tool/line/select</td>
+<td>Seleziona Righe</td>
+<td>Select lines based on defined criteria</td>
+</tr>
+<tr>
+<td>tool/resampleres</td>
+<td>Ricampiona Risoluzione</td>
+<td>Resample subtitles to maintain their current appearance at a different script resolution</td>
+</tr>
+<tr>
+<td>tool/style/assistant</td>
+<td>Assistente agli Stili</td>
+<td>Apre l'assistente agli stili</td>
+</tr>
+<tr>
+<td>tool/style/manager</td>
+<td>Manager degli stili</td>
+<td>Open the styles manager</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/commit</td>
+<td>Accetta modifiche</td>
+<td>Conferma modifiche e sposta nella prossima riga</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/preview</td>
+<td>Anteprima modifiche</td>
+<td>Conferma modifiche e rimane su questa riga</td>
+</tr>
+<tr>
+<td>tool/time/kanji</td>
+<td>Kanji Timer</td>
+<td>Open the Kanji timer copier</td>
+</tr>
+<tr>
+<td>tool/time/postprocess</td>
+<td>Timing Post-Processor</td>
+<td>Post-process the subtitle timing to add lead-ins and lead-outs, snap timing to scene changes, etc.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant</td>
+<td>Assistente alla Traduzione</td>
+<td>Apre l'assistente alla traduzione</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/commit</td>
+<td>Accetta modifiche</td>
+<td>Conferma modifiche e sposta nella prossima riga</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/insert_original</td>
+<td>Inserisci Originale</td>
+<td>Inserisci il testo non tradotto</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/next</td>
+<td>Riga Successiva</td>
+<td>Vai alla riga successiva senza confermare modifiche</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/prev</td>
+<td>Riga Precedente</td>
+<td>Sposta sulla riga precedente senza confermare la modifica</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/preview</td>
+<td>Anteprima modifiche</td>
+<td>Conferma modifiche e rimane su questa riga</td>
+</tr>
+<tr>
+<td>video/aspect/cinematic</td>
+<td>Cinematic (2.35)</td>
+<td>Force video to 2.35 aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/custom</td>
+<td>Personalizzato</td>
+<td>Force video to a custom aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/default</td>
+<td>Default</td>
+<td>Use video's original aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/full</td>
+<td>Fullscreen (4:3)</td>
+<td>Force video to 4:3 aspect ratio</td>
+</tr>
+<tr>
+<td>video/aspect/wide</td>
+<td>Widescreen (16:9)</td>
+<td>Force video to 16:9 aspect ratio</td>
+</tr>
+<tr>
+<td>video/close</td>
+<td>Chiudi Video</td>
+<td>Close the currently open video file</td>
+</tr>
+<tr>
+<td>video/copy_coordinates</td>
+<td>Copia coordinate negli Appunti</td>
+<td>Copia le coordinate prese dal mouse puntato sul video negli appunti</td>
+</tr>
+<tr>
+<td>video/detach</td>
+<td>Stacca Video</td>
+<td>Detach the video display from the main window, displaying it in a separate Window</td>
+</tr>
+<tr>
+<td>video/details</td>
+<td>Mostra dettagli video</td>
+<td>Show video details</td>
+</tr>
+<tr>
+<td>video/focus_seek</td>
+<td>Abilita/disabilita focus dello slider video</td>
+<td>Toggle focus between the video slider and the previous thing to have focus</td>
+</tr>
+<tr>
+<td>video/frame/copy</td>
+<td>Copia immagine negli Appunti</td>
+<td>Copia il frame visualizzato al momento negli appunti</td>
+</tr>
+<tr>
+<td>video/frame/copy/raw</td>
+<td>Copia immagine negli Appunti (senza sub)</td>
+<td>Copia il frame correntemente visualizzato negli appunti, senza sottotitoli</td>
+</tr>
+<tr>
+<td>video/frame/next</td>
+<td>Frame Successivo</td>
+<td>Cerca nel frame successivo</td>
+</tr>
+<tr>
+<td>video/frame/next/boundary</td>
+<td>Limite Successivo</td>
+<td>Seek to the next beginning or end of a subtitle</td>
+</tr>
+<tr>
+<td>video/frame/next/keyframe</td>
+<td>Keyframe Successivo</td>
+<td>Cerca nel keyframe successivo</td>
+</tr>
+<tr>
+<td>video/frame/next/large</td>
+<td>Salto avanti veloce</td>
+<td>Salto avanti veloce</td>
+</tr>
+<tr>
+<td>video/frame/prev</td>
+<td>Frame Precedente</td>
+<td>Cerca nel frame precedente</td>
+</tr>
+<tr>
+<td>video/frame/prev/boundary</td>
+<td>Limite Precedente</td>
+<td>Seek to the previous beginning or end of a subtitle</td>
+</tr>
+<tr>
+<td>video/frame/prev/keyframe</td>
+<td>Keyframe Precedente</td>
+<td>Cerca nel keyframe precedente</td>
+</tr>
+<tr>
+<td>video/frame/prev/large</td>
+<td>Salta indietro veloce</td>
+<td>Salta indietro veloce</td>
+</tr>
+<tr>
+<td>video/frame/save</td>
+<td>Salva snapshot [PNG]</td>
+<td>Salva il frame correntemente visualizzato in un file PNG nella cartella del video</td>
+</tr>
+<tr>
+<td>video/frame/save/raw</td>
+<td>Salva snapshot [PNG] (senza sub)</td>
+<td>Salva il frame correntemente visualizzato senza sottotitoli in un file PNG nella cartella del video</td>
+</tr>
+<tr>
+<td>video/jump</td>
+<td>Vai a</td>
+<td>Scorre fino ad un fotogramma od un tempo</td>
+</tr>
+<tr>
+<td>video/jump/end</td>
+<td>Porta Video alla Fine</td>
+<td>Jump the video to the end frame of current subtitle</td>
+</tr>
+<tr>
+<td>video/jump/start</td>
+<td>Riporta Video all'Inizio</td>
+<td>Jump the video to the start frame of current subtitle</td>
+</tr>
+<tr>
+<td>video/open</td>
+<td>Apri Video</td>
+<td>Open a video file</td>
+</tr>
+<tr>
+<td>video/open/dummy</td>
+<td>Usa Video Fittizio</td>
+<td>Open a placeholder video clip with solid color</td>
+</tr>
+<tr>
+<td>video/opt/autoscroll</td>
+<td>Abilita/Disabilita autoscorrimento video</td>
+<td>Toggle automatically seeking video to the start time of selected lines</td>
+</tr>
+<tr>
+<td>video/play</td>
+<td>Riproduci</td>
+<td>Riproduci video iniziando da questo punto</td>
+</tr>
+<tr>
+<td>video/play/line</td>
+<td>Riproduci riga</td>
+<td>Riproduci riga corrente</td>
+</tr>
+<tr>
+<td>video/show_overscan</td>
+<td>Mostra Maschera Overscan</td>
+<td>Mostra una maschera sul video, indicando aree che sulle TV potrebbero essere tagliate</td>
+</tr>
+<tr>
+<td>video/stop</td>
+<td>Ferma video</td>
+<td>Ferma playback video</td>
+</tr>
+<tr>
+<td>video/subtitles_provider/cycle</td>
+<td>Cycle active subtitles provider</td>
+<td>Cycle through the available subtitles providers</td>
+</tr>
+<tr>
+<td>video/tool/clip</td>
+<td>Clip</td>
+<td>Ritaglia sottotitoli in un rettangolo</td>
+</tr>
+<tr>
+<td>video/tool/cross</td>
+<td>Standard</td>
+<td>Modalita standard, doppio click imposta la posizione</td>
+</tr>
+<tr>
+<td>video/tool/drag</td>
+<td>Trascina</td>
+<td>Trascina sottotitoli</td>
+</tr>
+<tr>
+<td>video/tool/rotate/xy</td>
+<td>Ruota XY</td>
+<td>Ruota i sottotitoli nei loro assi X ed Y</td>
+</tr>
+<tr>
+<td>video/tool/rotate/z</td>
+<td>Ruota Z</td>
+<td>Ruota sottotitoli sul loro asse Z</td>
+</tr>
+<tr>
+<td>video/tool/scale</td>
+<td>Bilancia</td>
+<td>Bilancia sottotitoli sugli assi X ed Y</td>
+</tr>
+<tr>
+<td>video/tool/vector_clip</td>
+<td>Clip Vettoriale</td>
+<td>Ritaglia sottotitoli in un'area vettoriale</td>
+</tr>
+<tr>
+<td>video/zoom/100</td>
+<td>100%</td>
+<td>Imposta zoom al 100%</td>
+</tr>
+<tr>
+<td>video/zoom/200</td>
+<td>200%</td>
+<td>Imposta zoom al 200%</td>
+</tr>
+<tr>
+<td>video/zoom/50</td>
+<td>50%</td>
+<td>Imposta zoom al 50%</td>
+</tr>
+<tr>
+<td>video/zoom/in</td>
+<td>Zoom avanti</td>
+<td>Zoom video avanti</td>
+</tr>
+<tr>
+<td>video/zoom/out</td>
+<td>Zoom indietro</td>
+<td>Zoom video indietro</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com/'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from docs.aegisub.org/3.2/Commands/it/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:49:15 GMT -->
+</html>
+

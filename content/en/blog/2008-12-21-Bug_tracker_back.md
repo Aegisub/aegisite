@@ -9,6 +9,8 @@ tags:
   - old-post
   - announcement
   - bugtracker
+aliases:
+  - /blog/2008/12/bug-tracker-back.html
 ---
 
 Yep, we got the bug tracker back online!

@@ -18,7 +18,7 @@ tags:
   - roomaji
 ---
 
-A while ago, I posted about [Kanamemo](/blog/2008-07-24-kanamemo_a_tool_for_the_apprentice_weeaboo/), a tool that I made to help me learn Hiragana and Katakana. Another tool that I've made to help me in the learning of the Japanese language was TrayDict:
+A while ago, I posted about [Kanamemo](/blog/kanamemo-a-tool-for-the-apprentice-weeaboo/), a tool that I made to help me learn Hiragana and Katakana. Another tool that I've made to help me in the learning of the Japanese language was TrayDict:
 
 ![](/img/blog/old/traydict.png)
 

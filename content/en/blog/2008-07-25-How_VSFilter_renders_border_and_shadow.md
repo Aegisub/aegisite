@@ -9,6 +9,8 @@ tags:
   - old-post
   - vsfilter
   - vsfilter internals
+aliases:
+  - /blog/2008/07/how-vsfilter-renders-border-and-shadow.html
 ---
 
 If you've ever used the \\be or the new \\blur tag you might wonder, why do they blur *edges* and not everything?

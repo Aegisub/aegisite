@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Autosave - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href="../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../Main_Page/">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../About/">What is Aegisub?</a>
+</li>
+<li>
+<a href="../Highlights/">Highlights</a>
+</li>
+<li>
+<a href="../Credits/">Credits</a>
+</li>
+<li>
+<a href="../Support/">Support Aegisub</a>
+</li>
+<li>
+<a href="../FAQ/">FAQ</a>
+</li>
+<li>
+<a href="../Tutorials/">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li>
+<a href="../Editing_Subtitles/">Editing Subtitles</a>
+</li>
+<li>
+<a href="../Exporting/">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../Attaching_subtitles_to_video/">Applying Subtitles</a>
+</li>
+<li>
+<a href="../Spell_Checker/">Spell Checker</a>
+</li>
+<li>
+<a href="../Translation_Assistant/">Translation Assistant</a>
+</li>
+<li>
+<a href="../Paste_Over/">Paste Over</a>
+</li>
+<li>
+<a href="../Select_Lines/">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../Typesetting/">Introduction</a>
+</li>
+<li>
+<a href="../Video/">Working with Video</a>
+</li>
+<li>
+<a href="../Styles/">Editing styles</a>
+</li>
+<li>
+<a href="../Visual_Typesetting/">Visual Typesetting</a>
+</li>
+<li>
+<a href="../ASS_Tags/">ASS Override Tags</a>
+</li>
+<li>
+<a href="../Colour_Picker/">Colour Picker</a>
+</li>
+<li>
+<a href="../Styling_Assistant/">Styling Assistant</a>
+</li>
+<li>
+<a href="../Resolution_Resampler/">Resolution Resampler</a>
+</li>
+<li>
+<a href="../Fonts_Collector/">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../Audio/">Working with Audio</a>
+</li>
+<li>
+<a href="../Timing/">Timing subtitles to audio</a>
+</li>
+<li>
+<a href="../Shift_Times/">Shift times</a>
+</li>
+<li>
+<a href="../Timing_Post-Processor/">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../Kanji_Timer/">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../Automation/">Overview</a>
+</li>
+<li>
+<a href="../Automation/Karaoke_Templater/">Karaoke Templater</a>
+</li>
+<li>
+<a href="../Automation/Lua/">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../Options/">Aegisub Options</a>
+</li>
+<li>
+<a href="../Properties/">Script Properties</a>
+</li>
+<li>
+<a href="../Attachment_Manager/">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>Autosave</h1>
+<p>By default Aegisub automatically saves a backup copy of every subtitle file you
+open, along with another copy every minute (if any changes have been made in
+the last minute). These copies can be found in %APPDATA%\Aegisub\autosave on
+Windows, ~/.aegisub/autosave on Linux, and ~/Library/Application
+Support/Aegisub/autosave on OS X. In addition, they can be browsed directly
+within Aegisub at File → Open Autosaved File…</p>
+
+<p><img src="../img/autosave-menu-8fece29c.png" class="center" /></p>
+
+<p><img src="../img/autosave-dialog-42f5439a.png" class="center" /></p>
+
+<p>Aegisub automatically cleans up old files in the autosave directory, so the
+automatic backups should not be used for long-term storage of files.</p>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+</html>
+

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from docs.aegisub.org/3.2/Styling_Assistant/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:41:07 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>Styling Assistant - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href='index.html' rel='canonical'>
+<link href="../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../Main_Page/index.html">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../About/index.html">What is Aegisub?</a>
+</li>
+<li>
+<a href="../Highlights/index.html">Highlights</a>
+</li>
+<li>
+<a href="../Credits/index.html">Credits</a>
+</li>
+<li>
+<a href="../Support/index.html">Support Aegisub</a>
+</li>
+<li>
+<a href="../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../Tutorials/index.html">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li>
+<a href="../Editing_Subtitles/index.html">Editing Subtitles</a>
+</li>
+<li>
+<a href="../Exporting/index.html">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../Attaching_subtitles_to_video/index.html">Applying Subtitles</a>
+</li>
+<li>
+<a href="../Spell_Checker/index.html">Spell Checker</a>
+</li>
+<li>
+<a href="../Translation_Assistant/index.html">Translation Assistant</a>
+</li>
+<li>
+<a href="../Paste_Over/index.html">Paste Over</a>
+</li>
+<li>
+<a href="../Select_Lines/index.html">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../Typesetting/index.html">Introduction</a>
+</li>
+<li>
+<a href="../Video/index.html">Working with Video</a>
+</li>
+<li>
+<a href="../Styles/index.html">Editing styles</a>
+</li>
+<li>
+<a href="../Visual_Typesetting/index.html">Visual Typesetting</a>
+</li>
+<li>
+<a href="../ASS_Tags/index.html">ASS Override Tags</a>
+</li>
+<li>
+<a href="../Colour_Picker/index.html">Colour Picker</a>
+</li>
+<li class='active'>
+<a href="index.html">Styling Assistant</a>
+</li>
+<li>
+<a href="../Resolution_Resampler/index.html">Resolution Resampler</a>
+</li>
+<li>
+<a href="../Fonts_Collector/index.html">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../Audio/index.html">Working with Audio</a>
+</li>
+<li>
+<a href="../Timing/index.html">Timing subtitles to audio</a>
+</li>
+<li>
+<a href="../Shift_Times/index.html">Shift times</a>
+</li>
+<li>
+<a href="../Timing_Post-Processor/index.html">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../Kanji_Timer/index.html">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../Automation/index.html">Overview</a>
+</li>
+<li>
+<a href="../Automation/Karaoke_Templater/index.html">Karaoke Templater</a>
+</li>
+<li>
+<a href="../Automation/Lua/index.html">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../Options/index.html">Aegisub Options</a>
+</li>
+<li>
+<a href="../Properties/index.html">Script Properties</a>
+</li>
+<li>
+<a href="../Attachment_Manager/index.html">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>Styling Assistant</h1>
+<p>The Styling assistant is a powerful tool for subtitles that have multiple
+styles, such as cases when several actors have their own style, or for some
+other reason you have many different styles for dialog lines.</p>
+
+<h2 id="overview">Overview</h2>
+<p><img src="../img/styling_assistant-a747693f.png" class="center" /></p>
+
+<p>As seen from the image above, the assistant is composed of the following:</p>
+
+<ul>
+  <li>Current line field </li>
+  <li>Styles available field </li>
+  <li>Set style window </li>
+  <li>Keys field </li>
+  <li>Seek video to line start time checkbox</li>
+  <li>Play audio button</li>
+  <li>Play video button</li>
+</ul>
+
+<p>The Current line field displays the line in the subtitles for which the
+style will be set. The text in it cannot be edited.</p>
+
+<p>Styles available field displays the styles available in the script. The
+styles have to be imported through the Styles Manager or created with its
+help. The styles can then be set for the selected line in the subtitles by
+clicking on the desired style.</p>
+
+<p>The set style window is the main aspect of the Styling Assistant. Through
+it, styles can be applied to the line in the subtitles easily and without
+much work. It support autocomplete, so it helps to select the desired
+style after some characters are written in the window.</p>
+
+<p>The Keys fields displays the keyboard shortcuts that are used for work with
+the assistant.</p>
+
+<p>If the Seek video to line start time checkbox is checked and video is
+loaded, the video will seek to the beginning of each line which is
+displayed for styling.</p>
+
+<p>The play audio and video buttons play the audio or video for the current
+line, to aid in determining what character is saying the line.</p>
+
+<h2 id="the-autocomplete-function">The autocomplete function</h2>
+<p><img src="../img/Styling_autocomplete-28ac4a6c.png" class="center" /></p>
+
+<p>This window displays how the autocomplete function works. The characters
+that were typed are on the white background and the rest of the name is
+displayed as being selected. The selected part is what autocomplete sets as
+the style that matches with the typed characters.</p>
+
+<p><img src="../img/Styling_invalid-60de0342.png" class="center" /></p>
+
+<p>This image shows the response to a name that doesn't exist. The background
+of the window is colored red to show that no style on the list of selected
+styles matches the entered text.</p>
+
+<h2 id="how-to-use">How to use</h2>
+<p>Usage is simple. Select the first line you want to style and open the
+assistant. Then you look at text, video and/or audio to determine who is
+speaking it and type first few letters of style name, after which
+autocomplete should kick in. Hit enter to go to next line and proceed until
+you're finished. The other way is to double click on a style in the Styles
+available list and the style will be applied to the selected line.</p>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com/'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from docs.aegisub.org/3.2/Styling_Assistant/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:41:10 GMT -->
+</html>
+

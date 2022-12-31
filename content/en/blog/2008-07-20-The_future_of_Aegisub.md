@@ -14,6 +14,8 @@ tags:
   - athenasub
   - future
   - unix
+aliases:
+  - /blog/2008/07/future-of-aegisub.html
 ---
 
 Greetings to all readers, and welcome to our new blog!

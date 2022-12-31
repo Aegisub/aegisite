@@ -9,6 +9,8 @@ tags:
   - old-post
   - aegisub
   - tips
+aliases:
+  - /blog/2008/07/five-cool-things-in-aegisub-that-people.html
 ---
 
 One thing that I've noticed while talking to users of Aegisub is that there are a number of features that people just don't realize Aegisub has. Here are five of them:

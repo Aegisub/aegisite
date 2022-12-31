@@ -10,6 +10,8 @@ tags:
   - tag tips
   - vsfilter
   - ass
+aliases:
+  - /blog/2008/11/font-hinting-and-you.html
 ---
 
 ![Image showing the difference between Arial size 8 scaled 40x and Arial size 320.](/img/blog/old/font-hinting.png)

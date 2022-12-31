@@ -30,4 +30,4 @@ The source code for the program has been available at the Aegisub repository for
 
 I have been meaning to write a similar tool for kanji+words (by mining data from EDICT and KANJIDIC), but my sloth has been preventing me from doing so.
 
-\[EDIT\] If you want to build it natively on Linux, see [this](/blog/2008-10-10-kanamemo_on_linux/).
+\[EDIT\] If you want to build it natively on Linux, see [this](/blog/kanamemo-on-linux/).

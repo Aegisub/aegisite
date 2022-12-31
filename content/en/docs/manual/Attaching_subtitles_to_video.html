@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Attaching_subtitles_to_video by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:35:36 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Attaching subtitles to video" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Attaching subtitles to video - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Attaching_subtitles_to_video";
+		var wgTitle = "Attaching subtitles to video";
+		var wgAction = "view";
+		var wgArticleId = "57";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 248;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Attaching_subtitles_to_video">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Attaching subtitles to video</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>In digital encoding, there are two main ways of including subtitles in a video. There is softsubbing, and hardsubbing. Both methods has unique advantages and disadvantages, along with various arguments both for and against each method.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Hardsubbing"><span class="tocnumber">1</span> <span class="toctext">Hardsubbing</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Advantages_of_Hardsubbing"><span class="tocnumber">1.1</span> <span class="toctext">Advantages of Hardsubbing</span></a></li>
+<li class="toclevel-2"><a href="#Disadvantages_of_Hardsubbing"><span class="tocnumber">1.2</span> <span class="toctext">Disadvantages of Hardsubbing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Softsubbing"><span class="tocnumber">2</span> <span class="toctext">Softsubbing</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Advantages_of_Softsubbing"><span class="tocnumber">2.1</span> <span class="toctext">Advantages of Softsubbing</span></a></li>
+<li class="toclevel-2"><a href="#Disadvantages_of_Softsubbing"><span class="tocnumber">2.2</span> <span class="toctext">Disadvantages of Softsubbing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#What_method_do_I_choose.3F"><span class="tocnumber">3</span> <span class="toctext">What method do I choose?</span></a></li>
+<li class="toclevel-1"><a href="#Hardsubbing_with_Avisynth"><span class="tocnumber">4</span> <span class="toctext">Hardsubbing with Avisynth</span></a></li>
+<li class="toclevel-1"><a href="#Hardsubbing_with_VirtualDub"><span class="tocnumber">5</span> <span class="toctext">Hardsubbing with VirtualDub</span></a></li>
+<li class="toclevel-1"><a href="#Softsubbing_2"><span class="tocnumber">6</span> <span class="toctext">Softsubbing</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Variant_1:_softsubs_inside_the_video_container"><span class="tocnumber">6.1</span> <span class="toctext">Variant 1: softsubs inside the video container</span></a></li>
+<li class="toclevel-2"><a href="#Variant_2:_distributing_script_files"><span class="tocnumber">6.2</span> <span class="toctext">Variant 2: distributing script files</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Hardsubbing" id="Hardsubbing"></a><h2> <span class="mw-headline">Hardsubbing</span></h2>
+<p>Hardsubbing is a method that "burns in" subtitles into the actual video portion of a movie. Digital hardsubs are much like subtitled VHS tapes; the subtitles cannot be turned off.
+</p>
+<a name="Advantages_of_Hardsubbing" id="Advantages_of_Hardsubbing"></a><h3> <span class="mw-headline">Advantages of Hardsubbing</span></h3>
+<p>Hardsubbing is usually much less demanding on the playback device. Since the text is already part of the video, it will only take as much processing as the unsubtitled video would. You are also often able to make special effects that would be difficult to replicate in a soft subtitle format, because of the large amount of CPU usage required to renderer them. Even in softsubbed anime fansubs, the opening and closing karaoke are often hardsubbed because of the special effects used.
+</p><p>Some people argue that with hardsubs, scripts are harder to steal, since the text is embedded in the image - thieves cannot simply extract subtitles as in a softsub. However, the presence of very good subtitle extractors designed for the purpose of extracting this embedded text removes much of the argument that hardsubs prevent script stealing.
+</p><p>Many playback devices and computer platforms cannot display the special fonts and formattings that softsubs contain, but this problem is removed with hardsubs, where the style is preserved. Also, these stylings will show back exactly the same on any device, unlike softsubs which depend on the playback device to properly intrepret and display the stylings.
+</p>
+<a name="Disadvantages_of_Hardsubbing" id="Disadvantages_of_Hardsubbing"></a><h3> <span class="mw-headline">Disadvantages of Hardsubbing</span></h3>
+<p>Despite what some may call numerous advantages for hardsubbing, there are several distinct disadvantages that should be evaluated before making a decision.
+</p><p>The method of hardsubbing requires that the source video is re-encoded so the subtitles can be written on the image. This, by the nature of lossy video encoding, causes a reduction in video quality.
+</p><p>Subtitles add a sharp contrast in a video image due to their nature. This will cause compression artifacts along the edges of the encoded subtitle, and blurring of the subtitle. This effect is especially evident at lower bitrates.
+</p><p>Under typical circumstances, the inclusion of the subtitles will cause an increase in the bitrate needed for the video to keep the same quality. This, of course, means an increased filesize, or lower quality at the same size. The increase in bitrate necessary is typically around 3 to 10%.
+</p><p>Changing the subtitles requires a re-encode of the video source, which can add a lot of time and extra work to the release process.
+</p>
+<a name="Softsubbing" id="Softsubbing"></a><h2> <span class="mw-headline">Softsubbing</span></h2>
+<p>Softsubbing is a method that keeps subtitles seperate from the video and relies on the playback device to combine the two when the video is being played. This method can be best compared to subtitles on most DVDs. The subtitling can be turned on or off as needed, and multiple languages can be supported with just one combined media file. Unlike with a DVD though, digital softsubs are actually text (DVD subtitles are pictures) which adds many nice features at the cost of complexity.
+</p>
+<a name="Advantages_of_Softsubbing" id="Advantages_of_Softsubbing"></a><h3> <span class="mw-headline">Advantages of Softsubbing</span></h3>
+<p>Softsubs are much clearer on display. Since they are not part of the video image, video compression does not affect them, and with a good subtitle renderer, they are sharp and crisp - a huge benefit to readability.
+</p><p>Softsubs can be smaller. Since the subtitle is just a text file, it can take up less room because it isn't hogging video bitrate. This allows for an encoder to either make a smaller file with the same video quality, or a same-sized file with higher video quality.
+</p><p>People with vision problems have an opportunity to adjust how the subtitles look on-screen.
+</p><p>Without a huge impact on size, multiple languages can be supported in one video file.
+</p><p>If you find a subtitling mistake in a file, you can fix it without having to re-encode the video - saving a lot of time.
+</p>
+<a name="Disadvantages_of_Softsubbing" id="Disadvantages_of_Softsubbing"></a><h3> <span class="mw-headline">Disadvantages of Softsubbing</span></h3>
+<p>Softsubs add processing complexity to the video. The playback device has to render and overlay the text before displaying the video, as a result, this means that low-powered devices will not be able to play the video.
+</p><p>Since the subtitles are bundled as straight text they are very easy to extract and use. This makes things easier on bootleggers or other script stealers. Note that grabbing subtitles from a hardsub is very easy currently, so this argument doesn't hold much weight.
+</p><p>The playback device is responsible for rendering the subtitles on screen. As a result, they might not look the same as the subtitler intended. In some cases, the playback device might not support the subtitle format, or might have bugs with it.
+</p><p>The AVI file format is not reliable for supporting softsubs, if you plan to use it. Please note that Matroska (MKV) is very well supported by computers, so this isn't a major negative.
+</p><p>Subtitles with effects added (usually for karaoke) take up a lot of processing time, and may cause playback issues if the device cannot handle the processing requirements. A solution for this is to hardsub the complex parts such as opening and ending karaoke, and softsub the normal dialog.
+</p>
+<a name="What_method_do_I_choose.3F" id="What_method_do_I_choose.3F"></a><h2> <span class="mw-headline">What method do I choose?</span></h2>
+<p>The method you should choose depends greatly on your audience. Will they have relatively new and powerful playback devices? Will they possibly be able to install something to play back softsubs if they don't have it? Is your destination a digital format (Matroska, DVD, etc.) or will you be printing to tape?
+</p><p>While every situation will be different, you can use some of the following suggestions to guide you. These are based on making a digital format for playback on a computer system.
+</p><p>If you want your file playable on the largest range of computers and operating systems, you will want to hardsub.
+</p><p>If your audience will have relatively new machines (500 MHz or greater) and will be running on a platform where your subtitle format is well-supported, softsubs are a good idea.
+</p><p>If you want to speed up your release process, use softsubs. They are faster to fix if an error is found.
+</p>
+<a name="Hardsubbing_with_Avisynth" id="Hardsubbing_with_Avisynth"></a><h2> <span class="mw-headline">Hardsubbing with Avisynth</span></h2>
+<p>Many people use the Avisynth package to add filters to their video to clean up defects, or otherwise manipulate the video image before encoding it. It is a very flexible tool, and can be also used to add subtitles directly to the video stream, allowing an easy and scriptable method to hardsub a video.
+</p><p>If you are unfamiliar with Avisynth, it is recommended that you look into it, as it has lots of nice features and a large community contributing video filters, allowing easy video fixes for any source. This tutorial assumes you have some basic knowledge of Avisynth.
+</p><p>To allow adding subtitles to the video stream, you need the VSFilter plugin (you may also use <a href="http://asa.diac24.net/" class="external text" title="http://asa.diac24.net/" rel="nofollow">Asa</a>, but at the time of writing, it's not as complete as VSFilter is). You can find this on the "csri" folder in your Aegisub installation.
+</p><p>To just add subtitles, you will want to make a simple AVS file containing the script lines you need. Simply create a plain-text file in notepad (or your favourite text editor) and save it with the .avs extension (beware that Windows might be hiding your extension, and you might actually be making a .avs.txt file). Here is an example:
+</p>
+<pre>LoadPlugin("c:\program files\aegisub\csri\vsfilter.dll")
+AVISource("c:\projects\project1\video\mycoolvideo.avi")
+TextSub("c:\projects\project1\subs\mainsubtitles.ass")
+TextSub("c:\projects\project1\subs\endkaraoke.ass")
+</pre>
+<p>The above script will take an AVI file (mycoolvideo.avi), and then draw the contents of two subtitle files on the video. You can then encode this video in any program that supports AVS, such as <a href="http://www.virtualdub.org/" class="external text" title="http://www.virtualdub.org" rel="nofollow">VirtualDub</a>. To do so, just open the .avs file in the program, and follow the normal encoding procedure for it.
+</p><p>Keep in mind that, due to a bug in VSFilter, the path to the subtitle files MUST be absolute.
+</p>
+<a name="Hardsubbing_with_VirtualDub" id="Hardsubbing_with_VirtualDub"></a><h2> <span class="mw-headline">Hardsubbing with VirtualDub</span></h2>
+<p>If you're already familiar with VirtualDub filters, and don't intend to do any other video processing, you should note that it's possible to use VSFilter as a VirtualDub filter as well. Just rename the .dll to .vdf and copy it to the VirtualDub plugins folder. The filter will then be available as "TextSub".
+</p><p><b>Warning</b>: VirtualDub comes with a TextSub of its own, that is called "TextSub 2.23". This is a very old version that, amongst many other issues, cannot parse UTF-8 (the default Aegisub encoding) files properly. This will result in any non-ASCII characters being rendered as gibberish. NEVER USE THIS FILTER.
+</p>
+<a name="Softsubbing_2" id="Softsubbing_2"></a><h2> <span class="mw-headline">Softsubbing</span></h2>
+<p>Softsubbing a video can be done in several ways. On Windows using a DirectShow player, such as Media Player Classic, ZoomPlayer or even Windows Media Player, you need VSFilter installed to view the subtitles. If you use MPlayer, you need libass and FontConfig compiled to correctly view all the formatting. Please note that VLC does currently not support softsubs very well; it is strongly recommended that you avoid it for viewing softsubbed files.
+</p>
+<a name="Variant_1:_softsubs_inside_the_video_container" id="Variant_1:_softsubs_inside_the_video_container"></a><h3> <span class="mw-headline">Variant 1: softsubs inside the video container</span></h3>
+<p>Matroska Video (MKV) is currently the best container for this method (MP4, OGM and even AVI can technically contain softsubs, but none supports font attachments, and all of them has various other issues). Using a muxer that supports attachments (i.e. <a href="http://www.bunkus.org/videotools/mkvtoolnix/" class="external text" title="http://www.bunkus.org/videotools/mkvtoolnix/" rel="nofollow">mkvmerge GUI</a>), you simply add your subtitle files to the Matroska file as separate tracks (just like you add audio and video tracks), and any fonts as attachments (make sure they have the MIME type application/x-truetype-font). The fonts will then be installed temporarily by Haali Media Splitter (on Windows) or MPlayer (on *nix and MacOS X) during playback.
+</p>
+<a name="Variant_2:_distributing_script_files" id="Variant_2:_distributing_script_files"></a><h3> <span class="mw-headline">Variant 2: distributing script files</span></h3>
+<p>This method works best when you want to encode the video in an AVI wrapper. You simply send the raw subtitle files along with the video. The viewer then needs to load them in a player that supports external subtitles. When using this method, you either need to make sure you use fonts that everyone can be expected to have installed, or distribute a separate ZIP archive with the fonts. For obvious reasons, this method isn't recommended.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 37/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:57-0!1!0!!en!2!edit=0 and timestamp 20120831043823 -->
+<div class="printfooter">
+Retrieved from "<a href="Attaching_subtitles_to_video.html">http://docs.aegisub.org/manual/Attaching_subtitles_to_video</a>"</div>
+	    	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.055 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Attaching_subtitles_to_video by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:35:36 GMT -->
+</html>

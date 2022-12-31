@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from docs.aegisub.org/3.2/Commands/el/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:49:15 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>el - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href='index.html' rel='canonical'>
+<link href="../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../../Main_Page/index.html">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../../About/index.html">What is Aegisub?</a>
+</li>
+<li>
+<a href="../../Highlights/index.html">Highlights</a>
+</li>
+<li>
+<a href="../../Credits/index.html">Credits</a>
+</li>
+<li>
+<a href="../../Support/index.html">Support Aegisub</a>
+</li>
+<li>
+<a href="../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../Tutorials/index.html">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li>
+<a href="../../Editing_Subtitles/index.html">Editing Subtitles</a>
+</li>
+<li>
+<a href="../../Exporting/index.html">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../../Attaching_subtitles_to_video/index.html">Applying Subtitles</a>
+</li>
+<li>
+<a href="../../Spell_Checker/index.html">Spell Checker</a>
+</li>
+<li>
+<a href="../../Translation_Assistant/index.html">Translation Assistant</a>
+</li>
+<li>
+<a href="../../Paste_Over/index.html">Paste Over</a>
+</li>
+<li>
+<a href="../../Select_Lines/index.html">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../../Typesetting/index.html">Introduction</a>
+</li>
+<li>
+<a href="../../Video/index.html">Working with Video</a>
+</li>
+<li>
+<a href="../../Styles/index.html">Editing styles</a>
+</li>
+<li>
+<a href="../../Visual_Typesetting/index.html">Visual Typesetting</a>
+</li>
+<li>
+<a href="../../ASS_Tags/index.html">ASS Override Tags</a>
+</li>
+<li>
+<a href="../../Colour_Picker/index.html">Colour Picker</a>
+</li>
+<li>
+<a href="../../Styling_Assistant/index.html">Styling Assistant</a>
+</li>
+<li>
+<a href="../../Resolution_Resampler/index.html">Resolution Resampler</a>
+</li>
+<li>
+<a href="../../Fonts_Collector/index.html">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../../Audio/index.html">Working with Audio</a>
+</li>
+<li>
+<a href="../../Timing/index.html">Timing subtitles to audio</a>
+</li>
+<li>
+<a href="../../Shift_Times/index.html">Shift times</a>
+</li>
+<li>
+<a href="../../Timing_Post-Processor/index.html">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../../Kanji_Timer/index.html">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../../Automation/index.html">Overview</a>
+</li>
+<li>
+<a href="../../Automation/Karaoke_Templater/index.html">Karaoke Templater</a>
+</li>
+<li>
+<a href="../../Automation/Lua/index.html">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../../Options/index.html">Aegisub Options</a>
+</li>
+<li>
+<a href="../../Properties/index.html">Script Properties</a>
+</li>
+<li>
+<a href="../../Attachment_Manager/index.html">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'><a href="../index.html">Commands</a> / el</h1>
+<table style='width: 100%; margin-bottom: 2em'>
+<tr>
+<td>
+<a href='../en_US/index.html'>English (U.S.)</a>
+</td>
+<td>
+<a href='../ar/index.html'>Arabic</a>
+</td>
+<td>
+<a href='../bg/index.html'>Bulgarian</a>
+</td>
+<td>
+<a href='../ca/index.html'>Catalan</a>
+</td>
+<td>
+<a href='../cs/index.html'>Czech</a>
+</td>
+<td>
+<a href='../da/index.html'>Danish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../de/index.html'>German</a>
+</td>
+<td>
+<a href='index.html'>Greek</a>
+</td>
+<td>
+<a href='../es/index.html'>Spanish</a>
+</td>
+<td>
+<a href='../eu/index.html'>Basque</a>
+</td>
+<td>
+<a href='../fa/index.html'>Farsi</a>
+</td>
+<td>
+<a href='../fi/index.html'>Finnish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../fr_FR/index.html'>French</a>
+</td>
+<td>
+<a href='../gl/index.html'>Galician</a>
+</td>
+<td>
+<a href='../hu/index.html'>Hungarian</a>
+</td>
+<td>
+<a href='../id/index.html'>Indonesian</a>
+</td>
+<td>
+<a href='../it/index.html'>Italian</a>
+</td>
+<td>
+<a href='../ja/index.html'>Japanese</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../ko/index.html'>Korean</a>
+</td>
+<td>
+<a href='../nl/index.html'>Dutch</a>
+</td>
+<td>
+<a href='../pl/index.html'>Polish</a>
+</td>
+<td>
+<a href='../pt_BR/index.html'>Portuguese (Brazilian)</a>
+</td>
+<td>
+<a href='../pt_PT/index.html'>Portuguese</a>
+</td>
+<td>
+<a href='../ru/index.html'>Russian</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../sr_YU/index.html'>Serbian (Cyrillic)</a>
+</td>
+<td>
+<a href='../sr_YU%40latin/index.html'>Serbian (Latin)</a>
+</td>
+<td>
+<a href='../vi/index.html'>Vietnamese</a>
+</td>
+<td>
+<a href='../zh_CN/index.html'>Chinese (Simplified)</a>
+</td>
+<td>
+<a href='../zh_TW/index.html'>Chinese</a>
+</td>
+</tr>
+</table>
+<table class='karatable'>
+<tr>
+<th>Name</th>
+<th>Display</th>
+<th>Help</th>
+</tr>
+<tr>
+<td>am/manager</td>
+<td>Αυτοματοποίηση</td>
+<td>Άνοιγμα της διαχείρισης αυτοματοποίησης</td>
+</tr>
+<tr>
+<td>am/meta</td>
+<td>Αυτοματοποίηση</td>
+<td>Άνοιγμα της Διαχείρισης Αυτοματοποίησης. Ctrl: Επανέλεγχος του φακέλου αυτόματης φόρτωσης. Ctrl+Shift: Επανέλεγχος του φακέλου αυτόματης φόρτωσης και επαναφόρτωση όλων των script αυτοματοποίησης</td>
+</tr>
+<tr>
+<td>am/reload</td>
+<td>Επαναφόρτωση των script Αυτοματοποίησης</td>
+<td>Επαναφόρτωση όλων των script Αυτοματοποίησης κι επανέλεγχος του φακέλου αυτόματης φόρτωσης</td>
+</tr>
+<tr>
+<td>am/reload/autoload</td>
+<td>Επαναφόρτωση των script Αυτοματοποίησης αυτόματης φόρτωσης</td>
+<td>Επανέλεγχος του φακέλου αυτόματης φόρτωσης Αυτοματοποίησης</td>
+</tr>
+<tr>
+<td>app/about</td>
+<td>Σχετικά</td>
+<td>Σχετικά με το Aegisub</td>
+</tr>
+<tr>
+<td>app/display/audio_subs</td>
+<td>Προβολή Ήχου+Υποτίτλων</td>
+<td>Εμφάνιση μόνο του ήχου και των υποτίτλων</td>
+</tr>
+<tr>
+<td>app/display/full</td>
+<td>Πλήρης Προβολή</td>
+<td>Εμφάνιση ήχου, βίντεο και υπότιτλων</td>
+</tr>
+<tr>
+<td>app/display/subs</td>
+<td>Προβολή Μόνο Υποτίτλων</td>
+<td>Εμφάνιση μόνο των υπότιτλων</td>
+</tr>
+<tr>
+<td>app/display/video_subs</td>
+<td>Προβολή Βίντεο+Υποτίτλων</td>
+<td>Εμφάνιση μόνο του βίντεο και των υπότιτλων</td>
+</tr>
+<tr>
+<td>app/exit</td>
+<td>Έξοδος</td>
+<td>Έξοδος από την εφαρμογή</td>
+</tr>
+<tr>
+<td>app/language</td>
+<td>Γλώσσα</td>
+<td>Επιλoγή γλώσσας εμφάνισης του Aegisub</td>
+</tr>
+<tr>
+<td>app/log</td>
+<td>Παράθυρο Καταγραφέα</td>
+<td>Προβολή του καταγραφέα συμβάντων</td>
+</tr>
+<tr>
+<td>app/new_window</td>
+<td>Νέο Παράθυρο</td>
+<td>Άνοιγμα ενός νέου παράθυρου εφαρμογής</td>
+</tr>
+<tr>
+<td>app/options</td>
+<td>Ρυθμίσεις</td>
+<td>Παραμετροποίηση Aegisub</td>
+</tr>
+<tr>
+<td>app/toggle/global_hotkeys</td>
+<td>Εναλλαγή παράκαμψης των γενικών πλήκτρων συντόμευσης</td>
+<td>Εναλλαγή παράκαμψης των γενικών πλήκτρων συντόμευσης (Λειτουργία Medusa)</td>
+</tr>
+<tr>
+<td>app/toggle/toolbar</td>
+<td>Απόκρυψη της Γραμμής Εργαλείων</td>
+<td>Εναλλαγή της κεντρικής γραμμής εργαλείων</td>
+</tr>
+<tr>
+<td>app/updates</td>
+<td>Έλεγχος για ενημερώσεις</td>
+<td>Ελέγξτε αν υπάρχει διαθέσιμη μια νεότερη έκδοση του Aegisub</td>
+</tr>
+<tr>
+<td>audio/close</td>
+<td>Κλείσιμο Ήχου</td>
+<td>Κλείσιμο του ανοιχτού αρχείου ήχου</td>
+</tr>
+<tr>
+<td>audio/commit</td>
+<td>Υποβολή</td>
+<td>Υποβολή τυχόν αλλαγών στον χρονισμό ήχου</td>
+</tr>
+<tr>
+<td>audio/commit/default</td>
+<td>Υποβολή και χρήση του προεπιλεγμένου χρονισμού για την επόμενη γραμμή</td>
+<td>Υποβολή τυχόν αλλαγών στον χρονισμό ήχου κι επαναφορά των χρόνων της επόμενης γραμμής στις προεπιλογές</td>
+</tr>
+<tr>
+<td>audio/commit/next</td>
+<td>Υποβολή και μετακίνηση στην επόμενη γραμμή</td>
+<td>Υποβολή τυχόν αλλαγών στον χρονισμό ήχου και μετακίνηση στην επόμενη γραμμή</td>
+</tr>
+<tr>
+<td>audio/commit/stay</td>
+<td>Υποβολή και παραμονή στην τρέχουσα γραμμή</td>
+<td>Υποβολή τυχόν αλλαγών στον χρονισμό ήχου και παραμονή στην τρέχουσα γραμμή</td>
+</tr>
+<tr>
+<td>audio/go_to</td>
+<td>Μετατόπιση στην επιλογή</td>
+<td>Κύλιση της προβολής ήχου στο κέντρο της τρέχουσας επιλογής ήχου</td>
+</tr>
+<tr>
+<td>audio/karaoke</td>
+<td>Εναλλαγή λειτουργίας καραόκε</td>
+<td>Εναλλαγή λειτουργίας καραόκε</td>
+</tr>
+<tr>
+<td>audio/open</td>
+<td>Άνοιγμα Αρχείου Ήχου</td>
+<td>Άνοιγμα ενός αρχείου ήχου</td>
+</tr>
+<tr>
+<td>audio/open/blank</td>
+<td>Άνοιγμα κενού ήχου 2μιση ωρών</td>
+<td>Άνοιγμα ενός κενού ήχου 150 λεπτών, για εντοπισμό σφαλμάτων</td>
+</tr>
+<tr>
+<td>audio/open/noise</td>
+<td>Άνοιγμα ήχου θορύβου 2,5 ωρών</td>
+<td>Άνοιγμα ενός ήχου με θόρυβο 150 λεπτών, για εντοπισμό σφαλμάτων</td>
+</tr>
+<tr>
+<td>audio/open/video</td>
+<td>Άνοιγμα Ήχου από Βίντεο</td>
+<td>Άνοιγμα του ήχου από το τρέχον αρχείο βίντεο</td>
+</tr>
+<tr>
+<td>audio/opt/autocommit</td>
+<td>Αυτόματη υποβολή όλων των αλλαγών</td>
+<td>Αυτόματη υποβολή όλων των αλλαγών</td>
+</tr>
+<tr>
+<td>audio/opt/autonext</td>
+<td>Αυτόματη μετάβαση στην επόμενη γραμμή μετά την υποβολή</td>
+<td>Αυτόματη μετάβαση στην επόμενη γραμμή μετά την υποβολή</td>
+</tr>
+<tr>
+<td>audio/opt/autoscroll</td>
+<td>Αυτόματη κύλιση της προβολής ήχου στην επιλεγμένη γραμμή</td>
+<td>Αυτόματη κύλιση της προβολής ήχου στην επιλεγμένη γραμμή</td>
+</tr>
+<tr>
+<td>audio/opt/spectrum</td>
+<td>Λειτουργία ανάλυσης φάσματος</td>
+<td>Λειτουργία ανάλυσης φάσματος</td>
+</tr>
+<tr>
+<td>audio/opt/vertical_link</td>
+<td>Σύνδεση ρυθμιστών κλίμακας και έντασης</td>
+<td>Σύνδεση ρυθμιστών κλίμακας και έντασης</td>
+</tr>
+<tr>
+<td>audio/play/current</td>
+<td>Αναπαραγωγή της τρέχουσας επιλογής ήχου</td>
+<td>Αναπαραγωγή της τρέχουσας επιλογής ήχου, αγνοώντας τυχόν αλλαγές κατά την αναπαραγωγή</td>
+</tr>
+<tr>
+<td>audio/play/line</td>
+<td>Αναπαραγωγή τρέχουσας γραμμής</td>
+<td>Αναπαραγωγή του ήχου για την τρέχουσα γραμμή</td>
+</tr>
+<tr>
+<td>audio/play/selection</td>
+<td>Αναπαραγωγή επιλεγμένου ήχου</td>
+<td>Αναπαραγωγή ήχου μέχρι το τέλος της επιλογής</td>
+</tr>
+<tr>
+<td>audio/play/selection/after</td>
+<td>Αναπαραγωγή 500ms μετά την επιλογή</td>
+<td>Αναπαραγωγή 500ms μετά την επιλογή</td>
+</tr>
+<tr>
+<td>audio/play/selection/before</td>
+<td>Αναπαραγωγή 500ms πριν την επιλογή</td>
+<td>Αναπαραγωγή 500ms πριν την επιλογή</td>
+</tr>
+<tr>
+<td>audio/play/selection/begin</td>
+<td>Αναπαραγωγή πρώτων 500ms της επιλογής</td>
+<td>Αναπαραγωγή πρώτων 500ms της επιλογής</td>
+</tr>
+<tr>
+<td>audio/play/selection/end</td>
+<td>Αναπαραγωγή τελευταίων 500ms της επιλογής</td>
+<td>Αναπαραγωγή τελευταίων 500ms της επιλογής</td>
+</tr>
+<tr>
+<td>audio/play/to_end</td>
+<td>Αναπαραγωγή από την αρχή της επιλογής μέχρι το τέλος του αρχείου</td>
+<td>Αναπαραγωγή από την αρχή της επιλογής μέχρι το τέλος του αρχείου</td>
+</tr>
+<tr>
+<td>audio/play/toggle</td>
+<td>Αναπαραγωγή ή διακοπή επιλεγμένου ήχου</td>
+<td>Αναπαραγωγή της επιλογής, ή διακοπή της αναπαραγωγής</td>
+</tr>
+<tr>
+<td>audio/save/clip</td>
+<td>Δημιουργία ήχου</td>
+<td>Αποθήκευση του ήχου της επιλεγμένης γραμμής</td>
+</tr>
+<tr>
+<td>audio/scroll/left</td>
+<td>Κύλιση προς τα αριστερά</td>
+<td>Κύλιση της προβολής του ήχου προς τα αριστερά</td>
+</tr>
+<tr>
+<td>audio/scroll/right</td>
+<td>Κύλιση προς τα δεξιά</td>
+<td>Κύλιση της προβολής του ήχου προς τα δεξιά</td>
+</tr>
+<tr>
+<td>audio/stop</td>
+<td>Διακοπή αναπαραγωγής</td>
+<td>Διακοπή αναπαραγωγής βίντεο και ήχου</td>
+</tr>
+<tr>
+<td>audio/view/spectrum</td>
+<td>Προβολή Φάσματος</td>
+<td>Εμφάνιση του ήχου ως φασματογράφημα</td>
+</tr>
+<tr>
+<td>audio/view/waveform</td>
+<td>Προβολή Κυμματομορφής</td>
+<td>Εμφάνιση του ήχου ως γραμμικό γράφημα έντασης</td>
+</tr>
+<tr>
+<td>automation/lua/cleantags-autoload/Clean Tags</td>
+<td>Clean Tags</td>
+<td>Clean subtitle lines by re-arranging ASS tags and override blocks within the lines</td>
+</tr>
+<tr>
+<td>automation/lua/kara-templater/Apply karaoke template</td>
+<td>Apply karaoke template</td>
+<td>Applies karaoke effects from templates</td>
+</tr>
+<tr>
+<td>automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in</td>
+<td>Automatic karaoke lead-in</td>
+<td>Join up the ends of selected lines and add \k tags to shift karaoke</td>
+</tr>
+<tr>
+<td>automation/lua/macro-1-edgeblur/Add edgeblur</td>
+<td>Add edgeblur</td>
+<td>Adds \be1 tags to all selected lines</td>
+</tr>
+<tr>
+<td>automation/lua/macro-2-mkfullwitdh/Make fullwidth</td>
+<td>Make fullwidth</td>
+<td>Convert Latin letters to SJIS fullwidth letters</td>
+</tr>
+<tr>
+<td>automation/lua/select-overlaps/Select overlaps</td>
+<td>Select overlaps</td>
+<td>Select lines which begin while another non-comment line is active</td>
+</tr>
+<tr>
+<td>automation/lua/strip-tags/Strip tags</td>
+<td>Strip tags</td>
+<td>Remove all override tags from selected lines</td>
+</tr>
+<tr>
+<td>edit/clear</td>
+<td>Εκκαθάριση</td>
+<td>Καθάρισμα του κειμένου της τρέχουσας γραμμής</td>
+</tr>
+<tr>
+<td>edit/clear/text</td>
+<td>Καθάρισμα Κειμένου</td>
+<td>Καθαρισμός του κειμένου της τρέχουσας γραμμής, αφήνοντας τις ετικέτες παράκαμψης</td>
+</tr>
+<tr>
+<td>edit/color/outline</td>
+<td>Χρώμα Περιγράμματος</td>
+<td>Ορισμός του χρώματος του περιγράμματος (\3c) στη θέση του κέρσορα</td>
+</tr>
+<tr>
+<td>edit/color/primary</td>
+<td>Βασικό Χρώμα</td>
+<td>Ορισμός του βασικού χρώματος (\c) στη θέση του κέρσορα</td>
+</tr>
+<tr>
+<td>edit/color/secondary</td>
+<td>Συμπληρωματικό Χρώμα</td>
+<td>Ορισμός του συμπληρωματικού (καραόκε) χρώματος (\2c) στη θέση του κέρσορα</td>
+</tr>
+<tr>
+<td>edit/color/shadow</td>
+<td>Χρώμα Σκιάς</td>
+<td>Ορισμός του χρώματος της σκιάς (\4c) στη θέση του κέρσορα</td>
+</tr>
+<tr>
+<td>edit/find_replace</td>
+<td>Εύρεση κι Αντικατάσταση</td>
+<td>Αναζήτηση λέξεων μέσα στους υπότιτλους κι αντικατάστασή τους </td>
+</tr>
+<tr>
+<td>edit/font</td>
+<td>Όνομα γραμματοσειράς</td>
+<td>Επιλoγή ονόματος και μεγέθους γραμματοσειράς</td>
+</tr>
+<tr>
+<td>edit/insert_original</td>
+<td>Εισαγωγή Αρχικής</td>
+<td>Εισαγωγή του αρχικού κειμένου της γραμμής στον κέρσορα</td>
+</tr>
+<tr>
+<td>edit/line/copy</td>
+<td>Αντιγραφή Γραμμών</td>
+<td>Αντιγραφή υπότιτλων στη μνήμη προχείρου</td>
+</tr>
+<tr>
+<td>edit/line/cut</td>
+<td>Αποκοπή Γραμμών</td>
+<td>Αποκοπή υπότιτλων</td>
+</tr>
+<tr>
+<td>edit/line/delete</td>
+<td>Διαγραφή Γραμμών</td>
+<td>Διαγραφή των επιλεγμένων γραμμών</td>
+</tr>
+<tr>
+<td>edit/line/duplicate</td>
+<td>Δημιουργία Διπλότυπων Γραμμών</td>
+<td>Δημιουργία διπλότυπων των επιλεγμένων γραμμών</td>
+</tr>
+<tr>
+<td>edit/line/join/as_karaoke</td>
+<td>Ως Καραόκε</td>
+<td>Ένωση των επιλεγμένων γραμμών σε μία, ως καραόκε</td>
+</tr>
+<tr>
+<td>edit/line/join/concatenate</td>
+<td>Συνένωση</td>
+<td>Ένωση των επιλεγμένων γραμμών σε μία, συνενώνοντας τα κείμενα</td>
+</tr>
+<tr>
+<td>edit/line/join/keep_first</td>
+<td>Διατήρηση του Πρώτου</td>
+<td>Ένωση των επιλεγμένων γραμμών σε μία, διατηρώντας το κείμενο της πρώτης και απορρίπτοντας το υπόλοιπο</td>
+</tr>
+<tr>
+<td>edit/line/paste</td>
+<td>Επικόλληση Γραμμών</td>
+<td>Επικόλληση υπότιτλων</td>
+</tr>
+<tr>
+<td>edit/line/paste/over</td>
+<td>Επικόλληση Γραμμών από πάνω...</td>
+<td>Επικόλληση υποτίτλων πάνω από άλλους</td>
+</tr>
+<tr>
+<td>edit/line/recombine</td>
+<td>Ανασυνδυασμός Γραμμών</td>
+<td>Ανασυνδυασμός υπότιτλων που έχουν διασπαστεί και συγχωνευθεί</td>
+</tr>
+<tr>
+<td>edit/line/split/after</td>
+<td>Διάσπαση γραμμών μετά το τρέχον frame του βίντεο</td>
+<td>Διάσπαση της τρέχουσας γραμμής σε μία γραμμή που τελειώνει στο τρέχον frame και σε μία γραμμή που αρχίζει στο επόμενο frame</td>
+</tr>
+<tr>
+<td>edit/line/split/before</td>
+<td>Διάσπαση γραμμών πριν το τρέχον frame του βίντεο</td>
+<td>Διάσπαση της τρέχουσας γραμμής σε μία γραμμή που τελειώνει στο προηγούμενο frame και σε μία γραμμή που αρχίζει στο τρέχον frame</td>
+</tr>
+<tr>
+<td>edit/line/split/by_karaoke</td>
+<td>Διάσπαση Γραμμών (μέσω καραόκε)</td>
+<td>Χρήση του χρονισμού καραόκε για τη διάσπαση της γραμμής σε πολλές μικρότερες γραμμές</td>
+</tr>
+<tr>
+<td>edit/line/split/estimate</td>
+<td>Διάσπαση στο σημείο του κέρσορα (προσέγγιση χρόνων)</td>
+<td>Διάσπαση της τρέχουσας γραμμής στον κέρσορα, μοιράζοντας τη διάρκεια της αρχικής γραμμής στις καινούριες</td>
+</tr>
+<tr>
+<td>edit/line/split/preserve</td>
+<td>Διάσπαση στο σημείο του κέρσορα (διατήρηση χρόνων)</td>
+<td>Διάσπαση της τρέχουσας γραμμής στον κέρσορα, ορίζοντας στις καινούριες γραμμές τη διάρκεια της αρχικής γραμμής</td>
+</tr>
+<tr>
+<td>edit/line/split/video</td>
+<td>Διάσπαση στον κέρσορα (στο frame του βίντεο)</td>
+<td>Διάσπαση της τρέχουσας γραμμής στον κέρσορα, μοιράζοντας τη διάρκεια της γραμμής στο τρέχον frame του βίντεο</td>
+</tr>
+<tr>
+<td>edit/redo</td>
+<td>Τίποτα προς επαναφορά</td>
+<td>Επαναφορά της τελευταίας ενέργειας που αναιρέθηκε</td>
+</tr>
+<tr>
+<td>edit/revert</td>
+<td>Επαναφορά</td>
+<td>Επαναφορά της τρέχουσας γραμμής στην αρχική της κατάσταση (όπως φαίνεται στον επάνω επεξεργαστή κειμένου)</td>
+</tr>
+<tr>
+<td>edit/style/bold</td>
+<td>Εναλλαγή Έντονης Γραφής</td>
+<td>Εναλλαγή της έντονης γραφής (\b) για την τρέχουσα επιλογή ή στην τρέχουσα θέση του κέρσορα</td>
+</tr>
+<tr>
+<td>edit/style/italic</td>
+<td>Εναλλαγή Πλάγιας Γραφής</td>
+<td>Εναλλαγή της πλάγιας γραφής (\i) για την τρέχουσα επιλογή ή στην τρέχουσα θέση του κέρσορα</td>
+</tr>
+<tr>
+<td>edit/style/strikeout</td>
+<td>Εναλλαγή Διακριτής Διαγραφής</td>
+<td>Εναλλαγή της διακριτής διαγραφής (\s) για την τρέχουσα επιλογή ή στην τρέχουσα θέση του κέρσορα</td>
+</tr>
+<tr>
+<td>edit/style/underline</td>
+<td>Εναλλαγή Υπογράμμισης</td>
+<td>Εναλλαγή της υπογράμμισης (\u) για την τρέχουσα επιλογή ή στην τρέχουσα θέση του κέρσορα</td>
+</tr>
+<tr>
+<td>edit/undo</td>
+<td>Τίποτα προς αναίρεση</td>
+<td>Αναίρεση της τελευταίας ενέργειας</td>
+</tr>
+<tr>
+<td>grid/line/next</td>
+<td>Επόμενη Γραμμή</td>
+<td>Μετακίνηση στην επόμενη γραμμή υπότιτλων</td>
+</tr>
+<tr>
+<td>grid/line/next/create</td>
+<td>Επόμενη Γραμμή</td>
+<td>Μετακίνηση στην επόμενη γραμμή υπότιτλων, δημιουργώντας μία καινούρια εάν χρειάζεται</td>
+</tr>
+<tr>
+<td>grid/line/prev</td>
+<td>Προηγούμενη Γραμμή</td>
+<td>Μετακίνηση στην προηγούμενη γραμμή</td>
+</tr>
+<tr>
+<td>grid/move/down</td>
+<td>Μετακίνηση γραμμής κάτω</td>
+<td>Μετακίνηση των επιλεγμένων γραμμών μία σειρά κάτω</td>
+</tr>
+<tr>
+<td>grid/move/up</td>
+<td>Μετακίνηση γραμμής πάνω</td>
+<td>Μετακίνηση των επιλεγμένων γραμμών μία σειρά πάνω</td>
+</tr>
+<tr>
+<td>grid/sort/actor</td>
+<td>Ηθοποιός</td>
+<td>Ταξινόμηση όλων των υποτίτλων με βάση τον ηθοποιό</td>
+</tr>
+<tr>
+<td>grid/sort/actor/selected</td>
+<td>Ηθοποιός</td>
+<td>Ταξινόμηση των επιλεγμένων υποτίτλων με βάση τον ηθοποιό</td>
+</tr>
+<tr>
+<td>grid/sort/effect</td>
+<td>Εφφέ</td>
+<td>Ταξινόμηση όλων των υποτίτλων με βάση το εφφέ</td>
+</tr>
+<tr>
+<td>grid/sort/effect/selected</td>
+<td>Εφφέ</td>
+<td>Ταξινόμηση των επιλεγμένων υποτίτλων με βάση το εφφέ</td>
+</tr>
+<tr>
+<td>grid/sort/end</td>
+<td>Χρόνος Λήξης</td>
+<td>Ταξινόμηση όλων των υποτίτλων με βάση τον χρόνο λήξης</td>
+</tr>
+<tr>
+<td>grid/sort/end/selected</td>
+<td>Χρόνος Λήξης</td>
+<td>Ταξινόμηση των επιλεγμένων υποτίτλων με βάση τον χρόνο λήξης</td>
+</tr>
+<tr>
+<td>grid/sort/layer</td>
+<td>Επίπεδο</td>
+<td>Ταξινόμηση όλων των υποτίτλων με βάση το επίπεδο</td>
+</tr>
+<tr>
+<td>grid/sort/layer/selected</td>
+<td>Επίπεδο</td>
+<td>Ταξινόμηση των επιλεγμένων υποτίτλων με βάση το επίπεδο</td>
+</tr>
+<tr>
+<td>grid/sort/start</td>
+<td>Χρόνος Έναρξης</td>
+<td>Ταξινόμηση όλων των υποτίτλων με βάση τον χρόνο έναρξης</td>
+</tr>
+<tr>
+<td>grid/sort/start/selected</td>
+<td>Χρόνος Έναρξης</td>
+<td>Ταξινόμηση των επιλεγμένων υποτίτλων με βάση τον χρόνο έναρξης</td>
+</tr>
+<tr>
+<td>grid/sort/style</td>
+<td>Όνομα Στυλ</td>
+<td>Ταξινόμηση όλων των υποτίτλων με βάση το όνομα στυλ</td>
+</tr>
+<tr>
+<td>grid/sort/style/selected</td>
+<td>Όνομα Στυλ</td>
+<td>Ταξινόμηση των επιλεγμένων υποτίτλων με βάση το όνομα στυλ</td>
+</tr>
+<tr>
+<td>grid/swap</td>
+<td>Ανταλλαγή Γραμμών</td>
+<td>Ανταλλαγή των δύο επιλεγμένων γραμμών</td>
+</tr>
+<tr>
+<td>grid/tag/cycle_hiding</td>
+<td>Κυκλική Eναλλαγή Λειτουργίας Απόκρυψης των Ετικετών</td>
+<td>Κυκλική εναλλαγή μεταξύ των λειτουργιών απόκρυψης των ετικετών</td>
+</tr>
+<tr>
+<td>grid/tags/hide</td>
+<td>Απόκρυψη Ετικετών</td>
+<td>Απόκρυψη των ετικετών στον πίνακα υποτίτλων</td>
+</tr>
+<tr>
+<td>grid/tags/show</td>
+<td>Εμφάνιση Ετικετών</td>
+<td>Εμφάνιση του πλήρους περιεχομένου των ετικετών στον πίνακα υπότιτλων</td>
+</tr>
+<tr>
+<td>grid/tags/simplify</td>
+<td>Απλοποίηση Ετικετών</td>
+<td>Αντικατάσταση των ετικετών στον πίνακα υπότιτλων με ένα απλό σύμβολο</td>
+</tr>
+<tr>
+<td>help/bugs</td>
+<td>Bug Tracker</td>
+<td>Επισκεφθείτε τον Bug Tracker του Aegisub για να αναφέρετε σφάλματα στο λογισμικό ή να ζητήσετε νέες δυνατότητες</td>
+</tr>
+<tr>
+<td>help/contents</td>
+<td>Περιεχόμενα</td>
+<td>Θέματα βοήθειας</td>
+</tr>
+<tr>
+<td>help/forums</td>
+<td>Φόρουμ</td>
+<td>Επισκεφθείτε το φόρουμ του Aegisub</td>
+</tr>
+<tr>
+<td>help/irc</td>
+<td>Κανάλι IRC</td>
+<td>Επισκεφθείτε το επίσημο κανάλι του Aegisub στο IRC</td>
+</tr>
+<tr>
+<td>help/video</td>
+<td>Οπτική Στοιχειοθέτηση</td>
+<td>Άνοιγμα της σελίδας του εγχειριδίου για την οπτική στοιχειοθέτηση</td>
+</tr>
+<tr>
+<td>help/website</td>
+<td>Ιστοσελίδα</td>
+<td>Επισκεφθείτε την επίσημη ιστοσελίδα του Aegisub</td>
+</tr>
+<tr>
+<td>keyframe/close</td>
+<td>Κλείσιμο Keyframes</td>
+<td>Απόρριψη των τρεχόντων keyframe και χρήση αυτών του βίντεο, εάν υπάρχουν</td>
+</tr>
+<tr>
+<td>keyframe/open</td>
+<td>Άνοιγμα Keyframes</td>
+<td>Άνοιγμα ενός αρχείου με λίστα keyframe</td>
+</tr>
+<tr>
+<td>keyframe/save</td>
+<td>Αποθήκευση Keyframes</td>
+<td>Αποθήκευση του τρέχοντος αρχείου με λίστα keyframe</td>
+</tr>
+<tr>
+<td>subtitle/attachment</td>
+<td>Συνημμένα</td>
+<td>Άνοιγμα της διαχείρισης συνημμένων</td>
+</tr>
+<tr>
+<td>subtitle/find</td>
+<td>Αναζήτηση</td>
+<td>Αναζήτηση για κείμενο στους υπότιτλους</td>
+</tr>
+<tr>
+<td>subtitle/find/next</td>
+<td>Αναζήτηση Επόμενου</td>
+<td>Αναζήτηση της επόμενης ταύτισης της τελευταίας αναζήτησης</td>
+</tr>
+<tr>
+<td>subtitle/insert/after</td>
+<td>Μετά την Τρέχουσα</td>
+<td>Εισαγωγής καινούριας γραμμής μετά την τρέχουσα</td>
+</tr>
+<tr>
+<td>subtitle/insert/after/videotime</td>
+<td>Μετά την Τρέχουσα, στον Χρόνο του Βίντεο</td>
+<td>Εισαγωγής καινούριας γραμμής μετά την τρέχουσα, ξεκινώντας στον χρόνο του βίντεο</td>
+</tr>
+<tr>
+<td>subtitle/insert/before</td>
+<td>Πριν την Τρέχουσα</td>
+<td>Εισαγωγής καινούριας γραμμής πριν την τρέχουσα</td>
+</tr>
+<tr>
+<td>subtitle/insert/before/videotime</td>
+<td>Πριν την Τρέχουσα, στον Χρόνο του Βίντεο</td>
+<td>Εισαγωγής καινούριας γραμμής πριν την τρέχουσα, με έναρξη τον χρόνο του βίντεο</td>
+</tr>
+<tr>
+<td>subtitle/new</td>
+<td>Νέοι Υπότιτλοι</td>
+<td>Νέοι υπότιτλοι</td>
+</tr>
+<tr>
+<td>subtitle/open</td>
+<td>Άνοιγμα Υπότιτλων</td>
+<td>Άνοιγμα ενός αρχείου υπότιτλων</td>
+</tr>
+<tr>
+<td>subtitle/open/autosave</td>
+<td>Άνοιγμα Υπότιτλων Αυτόματα Αποθηκευμένων</td>
+<td>Άνοιγμα μιας προηγούμενης έκδοσης του αρχείου που αποθηκεύτηκε αυτόματα από το Aegisub</td>
+</tr>
+<tr>
+<td>subtitle/open/charset</td>
+<td>Άνοιγμα Υπότιτλων με Σετ Χαρακτήρων</td>
+<td>Άνοιγμα ενός αρχείου υπότιτλων με συγκεκριμένο σετ χαρακτήρων</td>
+</tr>
+<tr>
+<td>subtitle/open/video</td>
+<td>Άνοιγμα Υπότιτλων από Βίντεο</td>
+<td>Άνοιγμα υπότιτλων από το τρέχον αρχείο βίντεο</td>
+</tr>
+<tr>
+<td>subtitle/properties</td>
+<td>Ιδιότητες</td>
+<td>Άνοιγμα παραθύρου με τις ιδιότητες του script</td>
+</tr>
+<tr>
+<td>subtitle/save</td>
+<td>Αποθήκευση Υπότιτλων</td>
+<td>Αποθήκευση του τρέχοντος αρχείου υπότιτλων</td>
+</tr>
+<tr>
+<td>subtitle/save/as</td>
+<td>Αποθήκευση Υπότιτλων ως...</td>
+<td>Αποθήκευση των υπότιτλων με άλλο όνομα</td>
+</tr>
+<tr>
+<td>subtitle/select/all</td>
+<td>Επιλογή Όλων</td>
+<td>Επιλογή όλων των γραμμών διαλόγων</td>
+</tr>
+<tr>
+<td>subtitle/select/visible</td>
+<td>Επιλογή ορατών</td>
+<td>Επιλογή όλων των γραμμών που είναι ορατές στο τρέχον frame του βίντεο</td>
+</tr>
+<tr>
+<td>subtitle/spellcheck</td>
+<td>Ορθογραφικός Έλεγχος</td>
+<td>Άνοιγμα ορθογραφικού ελέγχου</td>
+</tr>
+<tr>
+<td>time/continuous/end</td>
+<td>Αλλαγή Λήξης</td>
+<td>Αλλαγή των χρόνων λήξης των γραμμών στους χρόνους έναρξης των επόμενων</td>
+</tr>
+<tr>
+<td>time/continuous/start</td>
+<td>Αλλαγή Έναρξης</td>
+<td>Αλλαγή των χρόνων έναρξης των γραμμών στους χρόνους λήξης των προηγούμενων</td>
+</tr>
+<tr>
+<td>time/frame/current</td>
+<td>Μετατόπιση στο Τρέχον Frame</td>
+<td>Μετατόπιση της επιλογής ώστε η ενεργή γραμμή να ξεκινάει στο τρέχον frame</td>
+</tr>
+<tr>
+<td>time/lead/both</td>
+<td>Προσθήκη lead in και lead out</td>
+<td>Προσθήκη χρόνων lead in και lead out στις επιλεγμένες γραμμές</td>
+</tr>
+<tr>
+<td>time/lead/in</td>
+<td>Προσθήκη lead in</td>
+<td>Προσθήκη χρόνου lead in στις επιλεγμένες γραμμές</td>
+</tr>
+<tr>
+<td>time/lead/out</td>
+<td>Προσθήκη lead out</td>
+<td>Προσθήκη χρόνου lead out στις επιλεγμένες γραμμές</td>
+</tr>
+<tr>
+<td>time/length/decrease</td>
+<td>Μείωση διάρκειας</td>
+<td>Μείωση της διάρκειας της τρέχουσας μονάδας χρονισμού</td>
+</tr>
+<tr>
+<td>time/length/decrease/shift</td>
+<td>Μείωση διάρκειας και μετατόπιση</td>
+<td>Μείωση της διάρκειας της τρέχουσας μονάδας χρονισμού και μετατόπιση των αντικειμένων που ακολουθούν</td>
+</tr>
+<tr>
+<td>time/length/increase</td>
+<td>Αύξηση διάρκειας</td>
+<td>Αύξηση της διάρκειας της τρέχουσας μονάδας χρονισμού</td>
+</tr>
+<tr>
+<td>time/length/increase/shift</td>
+<td>Αύξηση διάρκειας και μετατόπιση</td>
+<td>Αύξηση της διάρκειας της τρέχουσας μονάδας χρονισμού και μετατόπιση των αντικειμένων που ακολουθούν</td>
+</tr>
+<tr>
+<td>time/next</td>
+<td>Επόμενη Γραμμή</td>
+<td>Επόμενη γραμμή ή συλλαβή</td>
+</tr>
+<tr>
+<td>time/prev</td>
+<td>Προηγούμενη Γραμμή</td>
+<td>Προηγούμενη γραμμή ή συλλαβή</td>
+</tr>
+<tr>
+<td>time/shift</td>
+<td>Μετατόπιση Χρόνων</td>
+<td>Μετατόπιση υποτίτλων σύμφωνα με χρόνο ή frame</td>
+</tr>
+<tr>
+<td>time/snap/end_video</td>
+<td>Προσκόλληση Λήξης στο Βίντεο</td>
+<td>Ορισμός της λήξης των επιλεγμένων υπότιτλων στο τρέχον frame του βίντεο</td>
+</tr>
+<tr>
+<td>time/snap/scene</td>
+<td>Προσκόλληση στη Σκηνή</td>
+<td>Ορισμός της έναρξης και της λήξης των υπότιτλων στα keyframe γύρω από το τρέχον frame</td>
+</tr>
+<tr>
+<td>time/snap/start_video</td>
+<td>Προσκόλληση Έναρξης στο Βίντεο</td>
+<td>Ορισμός της έναρξης των επιλεγμένων υπότιτλων στο τρέχον frame του βίντεο</td>
+</tr>
+<tr>
+<td>time/start/decrease</td>
+<td>Μετατόπιση του χρόνου έναρξης προς τα πίσω</td>
+<td>Μετατόπιση του χρόνου έναρξης της τρέχουσας μονάδας χρονισμού προς τα πίσω</td>
+</tr>
+<tr>
+<td>time/start/increase</td>
+<td>Μετατόπιση χρόνου έναρξης προς τα εμπρός</td>
+<td>Μετατόπιση του χρόνου έναρξης της τρέχουσας μονάδας χρονισμού προς τα εμπρός</td>
+</tr>
+<tr>
+<td>timecode/close</td>
+<td>Κλείσιμο Αρχείου Timecodes</td>
+<td>Κλείσιμο του ανοιχτού αρχείου timecode</td>
+</tr>
+<tr>
+<td>timecode/open</td>
+<td>Άνοιγμα Αρχείου Timecodes</td>
+<td>Άνοιγμα ενός αρχείου με VFR timecode έκδοσης 1 ή 2</td>
+</tr>
+<tr>
+<td>timecode/save</td>
+<td>Αποθήκευση Αρχείου Timecodes</td>
+<td>Αποθήκευση ενός αρχείου με VFR Timecode έκδοσης 2</td>
+</tr>
+<tr>
+<td>tool/export</td>
+<td>Εξαγωγή Υπότιτλων...</td>
+<td>Αποθήκευση ενός αντίγραφου των υπότιτλων σε διαφορετική μορφή ή μετά από επεξεργασία</td>
+</tr>
+<tr>
+<td>tool/font_collector</td>
+<td>Συλλογή Γραμματοσειρών</td>
+<td>Άνοιγμα της συλλογής γραμματοσειρών</td>
+</tr>
+<tr>
+<td>tool/line/select</td>
+<td>Επιλογή γραμμών</td>
+<td>Επιλογή γραμμών σύμφωνα με κριτήρια</td>
+</tr>
+<tr>
+<td>tool/resampleres</td>
+<td>Μετατροπή Ανάλυσης</td>
+<td>Μετατροπή των υπότιτλων ώστε να διατηρήσουν την τρέχουσα εμφάνισή τους σε διαφορετική ανάλυση script</td>
+</tr>
+<tr>
+<td>tool/style/assistant</td>
+<td>Βοηθός Στυλ</td>
+<td>Άνοιγμα του βοηθού στυλ</td>
+</tr>
+<tr>
+<td>tool/style/manager</td>
+<td>Διαχείριση Στυλ</td>
+<td>Άνοιγμα διαχείρισης στυλ</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/commit</td>
+<td>Αποδοχή αλλαγών</td>
+<td>Υποβολή των αλλαγών και μετακίνηση στην επόμενη γραμμή</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/preview</td>
+<td>Προεπισκόπηση αλλαγών</td>
+<td>Υποβολή των αλλαγών και παραμονή στην τρέχουσα γραμμή</td>
+</tr>
+<tr>
+<td>tool/time/kanji</td>
+<td>Χρονιστής Kanji</td>
+<td>Άνοιγμα Χρονιστή Kanji</td>
+</tr>
+<tr>
+<td>tool/time/postprocess</td>
+<td>Επεξεργαστής Χρονισμών</td>
+<td>Επεξεργασία των χρονισμών για την προσθήκη lead-in, lead-out, χρονισμό σκηνών, κτλ.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant</td>
+<td>Βοηθός Μετάφρασης</td>
+<td>Άνοιγμα βοηθού μετάφρασης</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/commit</td>
+<td>Αποδοχή αλλαγών</td>
+<td>Υποβολή των αλλαγών και μετακίνηση στην επόμενη γραμμή</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/insert_original</td>
+<td>Εισαγωγή Αρχικής</td>
+<td>Εισαγωγή του αμετάφραστου κειμένου</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/next</td>
+<td>Επόμενη Γραμμή</td>
+<td>Μετακίνηση στην επόμενη γραμμή χωρίς υποβολή των αλλαγών</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/prev</td>
+<td>Προηγούμενη Γραμμή</td>
+<td>Μετακίνηση στην προηγούμενη γραμμή χωρίς υποβολή των αλλαγών</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/preview</td>
+<td>Προεπισκόπηση αλλαγών</td>
+<td>Υποβολή των αλλαγών και παραμονή στην τρέχουσα γραμμή</td>
+</tr>
+<tr>
+<td>video/aspect/cinematic</td>
+<td>Σινεματίκ (2.35)</td>
+<td>Επιβάλλει στο βίντεο αναλογία εικόνας 2.35</td>
+</tr>
+<tr>
+<td>video/aspect/custom</td>
+<td>Προσαρμογή</td>
+<td>Επιβολή προσαρμοσμένης αναλογίας εικόνας</td>
+</tr>
+<tr>
+<td>video/aspect/default</td>
+<td>Προκαθορισμένο</td>
+<td>Διατήρηση αρχικής αναλογίας εικόνας στο βίντεο</td>
+</tr>
+<tr>
+<td>video/aspect/full</td>
+<td>Πλήρης Οθόνη (4:3)</td>
+<td>Επιβάλλει στο βίντεο αναλογία εικόνας 4:3</td>
+</tr>
+<tr>
+<td>video/aspect/wide</td>
+<td>Ευρεία Οθόνη (16:9)</td>
+<td>Επιβάλλει στο βίντεο αναλογία εικόνας 16:9</td>
+</tr>
+<tr>
+<td>video/close</td>
+<td>Κλείσιμο Βίντεο</td>
+<td>Κλείσιμο του ανοιχτού αρχείου βίντεο</td>
+</tr>
+<tr>
+<td>video/copy_coordinates</td>
+<td>Αντιγραφή συντεταγμένων στη μνήμη προχείρου</td>
+<td>Αντιγραφή των τρέχοντων συντεταγμένων του ποντικιού στη μνήμη προχείρου</td>
+</tr>
+<tr>
+<td>video/detach</td>
+<td>Απόσπαση του Βίντεο</td>
+<td>Απόσπαση της προβολής βίντεο από το κεντρικό παράθυρο, και εμφάνισή του σε ξεχωριστό Παράθυρο</td>
+</tr>
+<tr>
+<td>video/details</td>
+<td>Εμφάνιση Λεπτομερειών Βίντεο</td>
+<td>Εμφάνιση των λεπτομερειών του βίντεο</td>
+</tr>
+<tr>
+<td>video/focus_seek</td>
+<td>Εναλλαγή της εστίασης του ρυθμιστή βίντεο</td>
+<td>Εναλλαγή της εστίασης ανάμεσα στον ρυθμιστή του βίντεο και το προηγούμενο κομμάτι που είχε εστίαση</td>
+</tr>
+<tr>
+<td>video/frame/copy</td>
+<td>Αντιγραφή εικόνας στη μνήμη προχείρου</td>
+<td>Αντιγραφή του τρέχοντος ορατού frame στη μνήμη προχείρου</td>
+</tr>
+<tr>
+<td>video/frame/copy/raw</td>
+<td>Αντιγραφή της εικόνας στη μνήμη προχείρου (χωρίς υπότιτλους)</td>
+<td>Αντιγραφή του τρέχοντος ορατού frame στη μνήμη προχείρου, χωρίς τους υπότιτλους</td>
+</tr>
+<tr>
+<td>video/frame/next</td>
+<td>Επόμενο Frame</td>
+<td>Μετακίνηση στο επόμενο frame</td>
+</tr>
+<tr>
+<td>video/frame/next/boundary</td>
+<td>Επόμενο Όριο</td>
+<td>Μετακίνηση στην επόμενη αρχή ή τέλος υπότιτλου</td>
+</tr>
+<tr>
+<td>video/frame/next/keyframe</td>
+<td>Επόμενο Keyframe</td>
+<td>Μετακίνηση στο επόμενο keyframe</td>
+</tr>
+<tr>
+<td>video/frame/next/large</td>
+<td>Γρήγορο άλμα προς τα εμπρός</td>
+<td>Γρήγορο άλμα προς τα εμπρός</td>
+</tr>
+<tr>
+<td>video/frame/prev</td>
+<td>Προηγούμενο frame</td>
+<td>Μετακίνηση στο προηγούμενο frame</td>
+</tr>
+<tr>
+<td>video/frame/prev/boundary</td>
+<td>Προηγούμενο Όριο</td>
+<td>Μετακίνηση στην προηγούμενη αρχή ή τέλος υπότιτλου</td>
+</tr>
+<tr>
+<td>video/frame/prev/keyframe</td>
+<td>Προηγούμενο Keyframe</td>
+<td>Μετακίνηση στο προηγούμενο keyframe</td>
+</tr>
+<tr>
+<td>video/frame/prev/large</td>
+<td>Γρήγορο άλμα προς τα πίσω</td>
+<td>Γρήγορο άλμα προς τα πίσω</td>
+</tr>
+<tr>
+<td>video/frame/save</td>
+<td>Αποθήκευση στιγμιότυπου σε PNG</td>
+<td>Αποθήκευση του τρέχοντος ορατού frame σε ένα αρχείο PNG στον φάκελο του βίντεο</td>
+</tr>
+<tr>
+<td>video/frame/save/raw</td>
+<td>Αποθήκευση στιγμιότυπου σε PNG (χωρίς υπότιτλους)</td>
+<td>Αποθήκευση του τρέχοντος ορατού frame χωρίς τους υπότιτλους σε ένα αρχείο PNG στον φάκελο του βίντεο</td>
+</tr>
+<tr>
+<td>video/jump</td>
+<td>Άλμα σε</td>
+<td>Άλμα σε frame ή χρόνο</td>
+</tr>
+<tr>
+<td>video/jump/end</td>
+<td>Άλμα του Βίντεο στη Λήξη</td>
+<td>Άλμα του βίντεο στο τελευταίο frame του τρέχοντος υπότιτλου</td>
+</tr>
+<tr>
+<td>video/jump/start</td>
+<td>Άλμα του Βίντεο στην Έναρξη</td>
+<td>Άλμα του βίντεο στο πρώτο frame του τρέχοντος υπότιτλου</td>
+</tr>
+<tr>
+<td>video/open</td>
+<td>Άνοιγμα Βίντεο</td>
+<td>Άνοιγμα ενός αρχείου βίντεο</td>
+</tr>
+<tr>
+<td>video/open/dummy</td>
+<td>Χρήση Πλαστού Βίντεο...</td>
+<td>Άνοιγμα ενός βίντεο με ενιαίο χρώμα</td>
+</tr>
+<tr>
+<td>video/opt/autoscroll</td>
+<td>Εναλλαγή λειτουργίας αυτόματης κύλισης του βίντεο</td>
+<td>Εναλλαγή της αυτόματης μετακίνησης του βίντεο στον χρόνο έναρξης των επιλεγμένων γραμμών</td>
+</tr>
+<tr>
+<td>video/play</td>
+<td>Αναπαραγωγή</td>
+<td>Αναπαραγωγή βίντεο ξεκινώντας από αυτή τη θέση</td>
+</tr>
+<tr>
+<td>video/play/line</td>
+<td>Αναπαραγωγή γραμμής</td>
+<td>Αναπαραγωγή τρέχουσας γραμμής</td>
+</tr>
+<tr>
+<td>video/show_overscan</td>
+<td>Εμφάνιση Μάσκας Overscan</td>
+<td>Εμφάνιση μιας μάσκας πάνω από το βίντεο, υποδεικνύοντας περιοχές που μπορεί να αποκοπούν σε τηλεοράσεις λόγω overscan</td>
+</tr>
+<tr>
+<td>video/stop</td>
+<td>Διακοπή βίντεο</td>
+<td>Διακοπή αναπαραγωγής βίντεο</td>
+</tr>
+<tr>
+<td>video/subtitles_provider/cycle</td>
+<td>Εναλλαγή ενεργού παροχέα υπότιτλων</td>
+<td>Εναλλαγή των διαθέσιμων παροχέων υπότιτλων</td>
+</tr>
+<tr>
+<td>video/tool/clip</td>
+<td>Αποκοπή</td>
+<td>Αποκοπή υπότιτλων σε ένα ορθογώνιο</td>
+</tr>
+<tr>
+<td>video/tool/cross</td>
+<td>Τυπική</td>
+<td>Τυπική λειτουργία, το διπλό κλικ θέτει τη θέση</td>
+</tr>
+<tr>
+<td>video/tool/drag</td>
+<td>Σύρσιμο</td>
+<td>Σύρσιμο υπότιτλων</td>
+</tr>
+<tr>
+<td>video/tool/rotate/xy</td>
+<td>Περιστροφή στους άξονες XY</td>
+<td>Περιστροφή υπότιτλων στους άξονες X και Y</td>
+</tr>
+<tr>
+<td>video/tool/rotate/z</td>
+<td>Περιστροφή στον άξονα Z</td>
+<td>Περιστροφή υπότιτλων στον άξονα Z</td>
+</tr>
+<tr>
+<td>video/tool/scale</td>
+<td>Κλίμακα</td>
+<td>Αλλαγή κλίμακας υπότιτλων στους άξονες X και Y</td>
+</tr>
+<tr>
+<td>video/tool/vector_clip</td>
+<td>Διανυσματική Αποκοπή</td>
+<td>Αποκοπή υπότιτλων σε μία περιοχή ορισμένη από διανύσματα</td>
+</tr>
+<tr>
+<td>video/zoom/100</td>
+<td>100%</td>
+<td>Ορισμός κλίμακας σε 100%</td>
+</tr>
+<tr>
+<td>video/zoom/200</td>
+<td>200%</td>
+<td>Ορισμός κλίμακας σε 200%</td>
+</tr>
+<tr>
+<td>video/zoom/50</td>
+<td>50%</td>
+<td>Ορισμός κλίμακας σε 50%</td>
+</tr>
+<tr>
+<td>video/zoom/in</td>
+<td>Μεγέθυνση</td>
+<td>Μεγέθυνση βίντεο</td>
+</tr>
+<tr>
+<td>video/zoom/out</td>
+<td>Σμίκρυνση</td>
+<td>Σμίκρυνση βίντεο</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com/'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from docs.aegisub.org/3.2/Commands/el/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:49:15 GMT -->
+</html>
+

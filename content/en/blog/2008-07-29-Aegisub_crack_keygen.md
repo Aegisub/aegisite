@@ -9,6 +9,8 @@ tags:
   - old-post
   - aegisub
   - funny stuff
+aliases:
+  - /blog/2008/07/aegisub-crack-keygen.html
 ---
 
 Damn, it seems people started pirating Aegisub.

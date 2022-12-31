@@ -16,6 +16,8 @@ tags:
   - ass
   - medusa
   - ssatool
+aliases:
+  - /blog/2008/07/so-what-happened-to-competition.html
 ---
 
 On July 9 2006, the last actively maintained ASS-Based General-Purpose Subtitling Software (henceforth ABGPSS) competition that Aegisub had - Sabbu - was dropped by its creator, kryptolus. Sabbu was an important program in the sense that it was the first ABGPSS to support Unicode and to be cross-platform. With Medusa and SubStation Alpha long dead, Subtitles Workshop being far from usable for anime fansubbing purposes, and SSATool designed for very specific purposes, Aegisub obtained monopoly on the ABGPSS business.
@@ -42,7 +44,7 @@ Sabbu was an important step in the right direction. This was the only program st
 
 So the situation now is that Aegisub has nothing to compete against. I do not deny that this is somewhat frustrating - many people claim that the entire fansubbing community is driven by fierce competition between groups, and the same holds true of its tools.
 
-Sure, Subtitles Workshop does many of the things that Aegisub does - but it does many essential things very poorly, and has horrible support for ASS. Certainly, there are specific tools (many kept "in house" by paranoid fansubbers who actually believe that they have much to gain from that practice) to do many tasks, especially karaoke. Even SSATool is [being incorporated](/docs/3.2/kanji_timer/) into Aegisub ever since its developer joined our staff. But I miss the thrill of having a real, actively-developed tool to compete against.
+Sure, Subtitles Workshop does many of the things that Aegisub does - but it does many essential things very poorly, and has horrible support for ASS. Certainly, there are specific tools (many kept "in house" by paranoid fansubbers who actually believe that they have much to gain from that practice) to do many tasks, especially karaoke. Even SSATool is [being incorporated](/docs/3.2/Kanji_Timer/) into Aegisub ever since its developer joined our staff. But I miss the thrill of having a real, actively-developed tool to compete against.
 
 Since the dawn of time (since before I started Aegisub in June 2005, that is), there have been rumors that [a certain fansubber](http://www.draders.com/) has been working on [a certain fansubbing tool](http://perseus.draders.com/) whose ultimate goal would be to replace Medusa (even the name implies that). Well, Medusa has, I believe, been replaced. Perhaps there is still hope for some fun game in the back stage of the community?
 

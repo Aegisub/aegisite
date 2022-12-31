@@ -11,6 +11,8 @@ tags:
   - C++
   - programming
   - offtopic
+aliases:
+  - /blog/2008/11/three-things-that-java-could-learn-from.html
 ---
 
 This is a mostly off-topic rant that is being posted because I know that a good portion of our user base is composed of programmers.

@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Sidebar:History_of_Automation by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:04 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Sidebar:History of Automation" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Sidebar:History of Automation - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Sidebar:History_of_Automation";
+		var wgTitle = "Sidebar:History of Automation";
+		var wgAction = "view";
+		var wgArticleId = "8";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 24;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Sidebar_History_of_Automation">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Sidebar:History of Automation</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>The Automation system in Aegisub has evolved from a very basic and hardly useful stand-alone system for creating basic karaoke effects into a very powerful extension mechanism. Here's a short account of its history, from the principal author of the systems.
+</p>
+<a name="Automation_1.2C_really_just_Karaoke_Effector" id="Automation_1.2C_really_just_Karaoke_Effector"></a><h2> <span class="mw-headline"> Automation 1, really just Karaoke Effector </span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="File_Effector_screenshot.html" class="image" title="The main window of Effector."><img alt="" src="images/180px-Effector_screenshot.png" width="180" height="156" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="File_Effector_screenshot.html" class="internal" title="Enlarge"><img src="images/magnify-clip.png" width="15" height="11" alt="" /></a></div>The main window of <i>Effector</i>.</div></div></div>
+<p>The <i>Karaoke Effector</i> program was originally created for making karaoke effects for a small translation project, that later died. It was written in Borland Delphi and used Lua 5.0 for scripting. This use of Lua is the primary reason I even call it "Automation 1" today. It basically allowed creating effects similar to what the <i>simple-k-replacer</i> script from Automation 3 does, but in a more complicated and not as usable way.
+</p><p>If you want to try this relic from the museum, you can download it here: <a href="http://www.animereactor.dk/aegisub/effector.rar" class="external free" title="http://www.animereactor.dk/aegisub/effector.rar" rel="nofollow">http://www.animereactor.dk/aegisub/effector.rar</a>
+</p>
+<a name="Automation_2.2C_the_Python_engine_that_never_happened" id="Automation_2.2C_the_Python_engine_that_never_happened"></a><h2> <span class="mw-headline"> Automation 2, the Python engine that never happened </span></h2>
+<p>Automation 2 was intended to be the scripting system in Aegisub, I drafted the specifications for it while Aegisub was still only in internal pre-alpha development. It was planned to use Python for scripting language and be quite flexible. It just proved to be an overall bad design (which on hindsight might have been a good thing) and it was never implemented. Instead I started looking into Lua again and drafting what became Automation 3.
+</p><p>I don't think there's much of any proof of the work on Automation 2 left now. The main thing to be said about it is that the current Automation 4 achieves everything Automation 2 was intended to be, and even more.
+</p>
+<a name="Automation_3.2C_back_to_Lua_and_something_usable" id="Automation_3.2C_back_to_Lua_and_something_usable"></a><h2> <span class="mw-headline"> Automation 3, back to Lua and something usable </span></h2>
+<p>After the fiasco of Automation 2 and Python I went "browsing languages" again and ended up going back to Lua, and also went for a much less ambitious design. This proved to work and ended up as the Automation 3 system. Originally Automation 3 was also intended to be somewhat extensible and down the road support more than just the basic modification of subtitle lines, this is evident from the <i>kind="basic_ass"</i> statement required in all Automation 3 scripts. Unfortunately the overall architecture of Automation 3 in the end didn't allow it to be extended either way, and the first rough ideas for Automation 4 started forming.
+</p><p>In the end Automation 3 did prove very successful though and has done a great job.
+</p>
+<a name="Automation_4.2C_unlimited_feature_works.3F" id="Automation_4.2C_unlimited_feature_works.3F"></a><h2> <span class="mw-headline"> Automation 4, unlimited feature works? </span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="File_Hello-auto4.html" class="image" title="Automation 4 first &quot;working&quot;, dated 2006-05-16."><img alt="" src="images/180px-Hello-auto4.png" width="180" height="129" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="File_Hello-auto4.html" class="internal" title="Enlarge"><img src="images/magnify-clip.png" width="15" height="11" alt="" /></a></div>Automation 4 first "working", dated 2006-05-16.</div></div></div>
+<p>As the flaws of Automation 3 started showing through the design of Automation 4 begun. Lots of people had been crying for other languages, especially Perl and Python, so support for multiple scripting languages went into the core design. The development of Automation 4 was much on and off, standing still for months at a time. Originally it was planned for Aegisub 1.09, then got pushed to 1.10 and then finally to 1.11, which then grew into Aegisub 2 because of the load of new features and major redesigns in that version, Automation 4 one of them.
+</p><p>In mid-May 2006 Automation 4/Lua was finally in a "working" state, if I am to trust the timestamp of <i>hello-auto4.png</i> but first now, more than a year later, it's really useful. A testament to my laziness.
+</p>
+<dl><dd><i>- Niels Martin Hansen, July 2nd, 2007</i>
+</dd></dl>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 13/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:8-0!1!0!!en!2!edit=0 and timestamp 20120831185040 -->
+<div class="printfooter">
+Retrieved from "<a href="Sidebar_History_of_Automation.html">http://docs.aegisub.org/manual/Sidebar:History_of_Automation</a>"</div>
+	    	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.083 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Sidebar:History_of_Automation by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:09 GMT -->
+</html>

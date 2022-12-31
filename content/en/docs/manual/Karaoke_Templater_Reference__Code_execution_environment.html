@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Karaoke_Templater_Reference:_Code_execution_environment by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:20 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Karaoke Templater Reference: Code execution environment,Automation,Automation 4 Lua Configuration dialogues,Automation 4 Lua Miscellaneous APIs,Automation 4 Lua Progress reporting,Automation 4 Lua Registration,Automation 4 Lua Subtitle file interface,Automation 4 karaskel.lua,Automation 4 unicode.lua,Automation 4 utils.lua,Automation Manager" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Karaoke Templater Reference: Code execution environment - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Karaoke_Templater_Reference:_Code_execution_environment";
+		var wgTitle = "Karaoke Templater Reference: Code execution environment";
+		var wgAction = "view";
+		var wgArticleId = "185";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 829;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Karaoke_Templater_Reference_Code_execution_environment">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Karaoke Templater Reference: Code execution environment</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub"></div>
+	    	    	    <!-- start content -->
+	    <p>The Lua code in code blocks and on code lines is run in a separate global environment such that it won't accidentally disturb the main script function.
+</p><p>You can store your own data in this environment for use later, for example pre-compute some values on code-lines and later insert them using code blocks, but it also contains several pre-defined variables and functions designed to make it easier writing effect templates.
+</p><p>It's important to understand that the contents of code execution environment and the <a href="Karaoke_Templater_Reference__Inline_variables.html" title="Karaoke Templater Reference: Inline variables">inline-variables</a> ($-variables) are not related. You cannot change an inline-variable by changing something in the code execution environment nor can you add new ones. However, you can create and re-define the contents of the code execution environment.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Line_and_syllable_information"><span class="tocnumber">1</span> <span class="toctext">Line and syllable information</span></a></li>
+<li class="toclevel-1"><a href="#Standard_libraries_and_related_things"><span class="tocnumber">2</span> <span class="toctext">Standard libraries and related things</span></a></li>
+<li class="toclevel-1"><a href="#Utility_functions"><span class="tocnumber">3</span> <span class="toctext">Utility functions</span></a>
+<ul>
+<li class="toclevel-2"><a href="#retime"><span class="tocnumber">3.1</span> <span class="toctext">retime</span></a></li>
+<li class="toclevel-2"><a href="#relayer"><span class="tocnumber">3.2</span> <span class="toctext">relayer</span></a></li>
+<li class="toclevel-2"><a href="#restyle"><span class="tocnumber">3.3</span> <span class="toctext">restyle</span></a></li>
+<li class="toclevel-2"><a href="#maxloop"><span class="tocnumber">3.4</span> <span class="toctext">maxloop</span></a></li>
+<li class="toclevel-2"><a href="#loopctl"><span class="tocnumber">3.5</span> <span class="toctext">loopctl</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Template_execution_data"><span class="tocnumber">4</span> <span class="toctext">Template execution data</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Looping_templates"><span class="tocnumber">4.1</span> <span class="toctext">Looping templates</span></a></li>
+<li class="toclevel-2"><a href="#Conditional_templates_with_fxgroup"><span class="tocnumber">4.2</span> <span class="toctext">Conditional templates with fxgroup</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Line_and_syllable_information" id="Line_and_syllable_information"></a><h2> <span class="mw-headline"> Line and syllable information </span></h2>
+<p>The code execution environment contains a few variables pointing to the current line and syllable structure being processed, as well as some more supporting tables. These are just references to the structures produced by <a href="Automation_4_karaskel.html#Data_structures" title="Automation 4 karaskel.lua">karaskel</a> and are not modified in any way.
+</p><p>You should treat these as read-only, except <code>line</code>. If you change the other ones, the kara-templater script might start misbehaving.
+</p>
+<ul><li> <b>line</b> - The line currently being produced, changing this will affect the resulting line in the file. See the <b><a href="Automation_4_karaskel.html#Dialogue_line_table" title="Automation 4 karaskel.lua">reference for dialogue line tables</a></b>.
+</li><li> <b>orgline</b> - The original line, this is the source line the current syllable is located on.
+</li><li> <b>syl</b> - The current syllable structure. If the current template is a <i>furi</i> template, it's the current furigana syllable. If the current template has one or both of the <i>char</i> or <i>multi</i> modifiers, this is a pseudo-syllable structure, a copy of the original syllable structure with several values changed to look like the current part of the syllable being processed. Also see the <b><a href="Automation_4_karaskel.html#Karaoke_and_furigana_syllable_tables" title="Automation 4 karaskel.lua">reference for syllable tables</a></b>.
+</li><li> <b>basesyl</b> - Usually the same as <code>syl</code>, except when the template has the <i>char</i> or <i>multi</i> modifier, then this is the original syllable. (If <code>syl == basesyl</code> is true, then the current template is neither <i>char</i> nor <i>multi</i>.)
+</li><li> <b>meta</b> - Contains various metadata about the script, namely the contents of the <i>Script Info</i> section. Most importantly, it has the <code>res_x</code> and <code>res_y</code> fields describing the script resolution.
+</li></ul>
+<p>All of these variables are reset to <code>nil</code> whenever processing starts for a new line, except <code>meta</code>. They are then set to the relevant value whenever processing hits a new stage. This means that, for example <i>pre-line</i> templates only has <code>line</code> and <code>orgline</code> set and both <code>syl</code> and <code>basesyl</code> are <code>nil</code>. In <i>code once</i> templates, all of the variables except <code>meta</code> are <code>nil</code>.
+</p>
+<a name="Standard_libraries_and_related_things" id="Standard_libraries_and_related_things"></a><h2> <span class="mw-headline"> Standard libraries and related things </span></h2>
+<p>Both the <a href="http://www.lua.org/manual/5.1/manual.html#5.4" class="external text" title="http://www.lua.org/manual/5.1/manual.html#5.4" rel="nofollow"><b>string</b></a> and <a href="http://www.lua.org/manual/5.1/manual.html#5.6" class="external text" title="http://www.lua.org/manual/5.1/manual.html#5.6" rel="nofollow"><b>math</b></a> Lua standard libraries are imported into the execution environment, as they are generally useful.
+</p><p>You can also access the main execution environment of the kara-templater script itself using the <code><b>_G</b></code> (underscore capital-G) variable and through that access the rest of the Lua standard library. For example, <code>_G.table.sort</code> refers to the regular <code>table.sort</code> function. See the <a href="http://www.lua.org/manual/5.1/manual.html#5" class="external text" title="http://www.lua.org/manual/5.1/manual.html#5" rel="nofollow">Lua 5.1 manual</a> for details on the available libraries.
+</p><p>You can also access the Automation 4 Lua standard libraries through the <code>_G</code> variable: <a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel.lua</a>, <a href="Automation_4_unicode.html" title="Automation 4 unicode.lua">unicode.lua</a> and <a href="Automation_4_utils.html" title="Automation 4 utils.lua">utils.lua</a>.
+</p><p>There is also the self-reference <code><b>tenv</b></code> variable, this refers to the code execution environment itself. This means that <code>tenv.tenv == tenv</code> is true.
+</p>
+<a name="Utility_functions" id="Utility_functions"></a><h2> <span class="mw-headline"> Utility functions </span></h2>
+<p>These functions help do more complex modifications of the output line (the <code>line</code> variable) and are unavoidable when creating complex effects.
+</p><p>Currently there is just one, but it is possible to define your own functions in code lines.
+</p>
+<a name="retime" id="retime"></a><h3> <span class="mw-headline"> retime </span></h3>
+<p>Synopsis: <code>retime(mode, startadjust, endadjust)</code>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:656px;"><a href="File_Auto4-kara-templater-retime-explanation.html" class="image" title="A graphical explanation of the different modes of the retimefunction."><img alt="" src="images/Auto4-kara-templater-retime-explanation.png" width="654" height="198" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="File_Auto4-kara-templater-retime-explanation.html" class="internal" title="Enlarge"><img src="images/magnify-clip.png" width="15" height="11" alt="" /></a></div>A graphical explanation of the different modes of the <code>retime</code>function.</div></div></div>
+<p>This function is usually used once in a template in a code block by itself. It adjusts the start and end time of the output line in various ways.
+</p><p>The <i>mode</i> parameter determines how the start and end times of the line are changed, it must be a string with one of the following values. Because it must be a string, the name of the mode must be enclosed in quotation marks!
+</p><p>The <i>startadjust</i> and <i>endadjust</i> parameters slightly change meaning based on the mode, but generally is a number of milliseconds added to the "base" time controlled by the mode.
+</p><p>Possible <i>mode</i>s:
+</p>
+<ul><li> <b>abs</b> or <b>set</b> - Both <i>startadjust</i> and <i>endadjust</i> are used as absolute time values to set the start and end time of the line directly.
+</li><li> <b>preline</b> - Intended to make effects that happen before the actual line start. Both start and end time of the line are set to the start time of the line, then <i>startadjust</i> is added to the start time and <i>endadjust</i> added to the end time. Usually <i>startadjust</i> should be negative here and <i>endadjust</i> be zero.
+</li><li> <b>line</b> - Use the regular line timings and just add <i>startadjust</i> to the start time and <i>endadjust</i> to the end time.
+</li><li> <b>start2syl</b> - Intended to make the look of the syllable from the start of the line until it is highlighted. The start time of the line is kept and the end time is set to the start time of the syllable. Use <i>startadjust</i> and <i>endadjust</i> to offset the times.
+</li><li> <b>presyl</b> - Similar to <i>preline</i> but for the syllable timing instead.
+</li><li> <b>syl</b> - From start of syllable to end of syllable.
+</li><li> <b>postsyl</b> - Similar to <i>presyl</i> but the base timing is the syllable end time instead of start time. You will usually want to use a zero <i>addstart</i> and positive <i>addend</i> here.
+</li><li> <b>syl2end</b> - The time from the end of the syllable to the end of line, similar to <i>start2syl</i>.
+</li><li> <b>postline</b> - Similar to <i>postsyl</i> but for the line timing instead.
+</li></ul>
+<p>There is also a special <i>mode</i>:
+</p>
+<ul><li> <b>sylpct</b> - Both of <i>startadjust</i> and <i>endadjust</i> are treated as percentage values from 0 to 100 and are used to set the line timing to cover that part of the syllable's time.
+</li></ul>
+<p>Be careful with the <code>retime</code> function on <i>line</i> templates, if you use it directly on a <i>line</i> template it will probably not do what you want. You should only use it on <i>pre-line</i>, <i>syl</i> and <i>furi</i> templates. You should also only use it once in each template.
+</p><p>The <code>retime</code> function always returns the empty string (<code>""</code>) which will cause it to output nothing when used in code blocks, but still evaluate to true if used in boolean expressions.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>template syl:&nbsp;!retime("preline", -1000, 0)!{\pos($scenter,$smiddle)\an5\fscx0\fscy0\t(\fscx100\fscy100)}
+</pre>
+<p>This creates a kind of "pop-in" effect for the syllables that lasts 1 second (1000 milliseconds) before the actual line timing. The two important things to code: Quotation marks around <code>"preline"</code> and that the start offset is negative, -1000, because the start time needs to be moved backwards.
+</p>
+</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>template syl:&nbsp;!retime("syl", 0, 0)!{\pos($x,$y)\t(\fscx360)}
+</pre>
+<p>Makes the syllable spin around itself during its highlight. Unless you also have <i>syl</i> templates retimed to <tt>start2syl</tt> and <tt>syl2end</tt> the syllable will only be visible during its highlight. Note how retiming a syllable line to just the syllable time makes it unneeded to put start and end times in the <code>\t</code> tag, they default to the duration of the entire line and here the duration of the line is the duration of the syllable.
+</p>
+</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>template syl:&nbsp;!retime("sylpct", 0, 50)!{\move($x,$y,$x,!$y-10!)}
+template syl:&nbsp;!retime("sylpct", 50, 100)!{\move($x,!$y-10!,$x,$y)}
+</pre>
+<p>These two templates together makes the syllable move 10 pixels upwards during the first half of its highlight and back down during the last half. Using <code>retime</code> is an easy way to get multiple <code>\move</code> tags to affect the same syllable; there can only be one <code>\move</code> tag on one line, but if you split the line into many "chained" times you can create an effect of the same syllable moving in several directions.
+</p>
+</div></div>
+<a name="relayer" id="relayer"></a><h3> <span class="mw-headline"> relayer </span></h3>
+<p>Synopsis: <code>relayer(newlayer)</code>
+</p><p>Change the Layer field of the generated line to <i>newlayer</i>.
+</p><p><b>Note:</b> If you want a template to always generate lines with a static layer number, you do not need to use this function. You can just set the Layer field on the template line, it will transfer to the generated lines.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>template syl:&nbsp;!relayer(syl.i*5+20)!
+</pre>
+<p>Each syllable generated from the line gets a progressively higher layer number. The first syllable gets in layer 25, the second in layer 30 and so on, each syllable getting a layer 5 larger than the previous.
+</p>
+</div></div>
+<a name="restyle" id="restyle"></a><h3> <span class="mw-headline"> restyle </span></h3>
+<p>Synopsis: <code>restyle(newstyle)</code>
+</p><p>Change the Style field on the generated line to <i>newstyle</i>. 
+</p><p><i><b>Be careful</b> that this does not update the sizing and positioning information.</i> If you want to use sizing or positioning information such as <code>$x</code>, <code>$lwidth</code>, <code>line.middle</code> and <code>syl.right</code> you must change to a style that uses the same font name, font size, boldness, italics, font encoding, X and Y scaling, character spacing, alignment and margins. If you change to a style where any of those properties are different, the positioning and sizing information will be invalid.
+</p><p>No example because the function has limited use.
+</p>
+<a name="maxloop" id="maxloop"></a><h3> <span class="mw-headline"> maxloop </span></h3>
+<p>Synopsis: <code>maxloop(newmax)</code>
+</p><p>Dynamically control the number of times a template will be looped.
+</p><p><i><b>Be careful</b> that using this function incorrectly might result in a template that loops forever, until Aegisub runs out of memory or you cancel the template application.</i>
+</p><p>You do not need to use the loop modifier on templates to use this function.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>template syl:&nbsp;!maxloop(syl.width + 2*line.styleref.outline)!{\clip(!line.left+syl.left-line.styleref.outline+j-1!,0,!line.left+syl.left-line.styleref.outline+j!,!meta.res_y!)\an5\move(!line.left+syl.center!,!line.middle!,!line.left+syl.center!,!line.middle+math.random(-20,20)!,$start,$end)\shad0}
+</pre>
+<p>Cut each syllable into a number of slivers, the actual number depends on the size of the syllable. Each sliver moves randomly on highlight.
+</p>
+</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>template syl:&nbsp;!maxloop(j+1)!
+</pre>
+<p>Makes an infinite loop. It continually sets <code>j</code> one higher, making the loop never complete.
+</p>
+</div></div>
+<a name="loopctl" id="loopctl"></a><h3> <span class="mw-headline"> loopctl </span></h3>
+<p>Synopsis: <code>loopctl(newj, newmaxj)</code>
+</p><p>Control both loop variables. This function has questionable utility.
+</p><p><i>newj</i> sets the new value of <code>tenv.j</code> and <i>newmaxj</i> sets the new value of <code>tenv.maxj</code>.
+</p><p>No example because the function has limited use.
+</p>
+<a name="Template_execution_data" id="Template_execution_data"></a><h2> <span class="mw-headline"> Template execution data </span></h2>
+<p>These variables either give some further information on the status of the executing template or modify the rules for template execution in some way. They generally work together with specific template modifiers.
+</p>
+<a name="Looping_templates" id="Looping_templates"></a><h3> <span class="mw-headline"> Looping templates </span></h3>
+<p>When a template with the <i>loop</i> or <i>repeat</i> modifier is running, two new variables are introduced in the code execution environment, <code><b>j</b></code> and <code><b>maxj</b></code>.
+</p>
+<ul><li> <b>maxj</b> is the number of loops, ie. simply the parameter given to the <i>loop</i> modifier.
+</li><li> <b>j</b> is the loop iteration counter, it starts at 1 in the first iteration and <i>maxj</i> in the last.
+</li></ul>
+<p>If you change <code>j</code> or <code>maxj</code> while a template is executing, you can affect the number of iterations the loop makes. The <code><a href="#maxloop" title="">maxloop</a></code> function is convenient for making dynamic loops.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>template syl loop 5: {\an5\pos($scenter,$smiddle)\1a&amp;HFF&amp;\3a&amp;Hcc&amp;\t($start,$end,\fscx!100+<u>j</u>*10!\fscy!100+<u>j</u>*10!\3a&amp;HFF&amp;)}
+</pre>
+<p>The syllable fill is hidden so only the border is visible, then several copies of the that border-only line is made through the loop, and made to "explode" to different, growing sizes using the <code>j</code> variable.
+</p><p>This example assumes that the style definition has shadow disabled but it does have a border.
+</p>
+</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>template syl loop 20: {\move($x,$y,!$x+15*math.cos(math.pi*2*<u>j</u>/<u>maxj</u>)!,!$y+15*math.sin(math.pi*2*<u>j</u>/<u>maxj</u>)!,$start,$end)\t($start,$end,\alpha&amp;HFF&amp;)}
+</pre>
+<p>Here looping is used to <a href="http://en.wikipedia.org/wiki/Unit_circle#Trigonometric_functions_on_the_unit_circle" class="external text" title="http://en.wikipedia.org/wiki/Unit_circle#Trigonometric_functions_on_the_unit_circle" rel="nofollow">calculate several points on a circle</a> with radius 15 and make the syllables move out to those. Just by changing the number of loops in the Effect field you can make a more detailed circle because <code>j/maxj</code> is used to calculate how large a portion of the total number of loops have been completed.
+</p>
+</div></div>
+<a name="Conditional_templates_with_fxgroup" id="Conditional_templates_with_fxgroup"></a><h3> <span class="mw-headline"> Conditional templates with fxgroup </span></h3>
+<p>The <i>fxgroup</i> modifier uses a special table <code><b>fxgroup</b></code> in the code execution environment to control whether a template will be executed or not.
+</p><p>The parameter given to the <i>fxgroup</i> modifier names a key (always a string) in the <code>fxgroup</code> table in the execution environment, and when a template assigned to an fxgroup is about to be executed, the value for that key in the <code>fxgroup</code> table is looked up. If the value is true or the key doesn't exist, the template is executed, if it's false the template is skipped.
+</p><p>While you can technically use any text string for fxgroup names, because they're used in Lua code it's best to avoid ones that overlap with Lua reserved words such as <code>end</code>, <code>break</code>, <code>return</code> and several more.
+</p>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">
+<pre>code syl: <u>fxgroup.long &#x3d; (syl.duration &gt; 200)</u>
+template syl noblank: all here: 
+template syl <u>fxgroup long</u>: is long: 
+karaoke: {\k10}huh? {\k40}wee~~
+</pre>
+<p>It's important to understand the template execution order to understand this example. For each input syllable (ie. "huh?" and "wee~~") all the templates and code lines are run in the order they appear.
+</p><p>This means that for "huh?", first the code line is run. It determines that the duration of that syllable is less than 200 ms and thus sets <i>fxgroup.long</i> to false. The first template has no fxgroup, so it's applied to the syllable then, outputting a line "all here: huh?", but the second template has fxgroup "long". This fxgroup was disabled for that syllable by the code line, so that template is not run at all.
+</p><p>For "wee~~", the code line determines that its duration is longer than 200 ms, so the "long" fxgroup is enabled. Then the first template outputs its line, "all here: wee~~", and when the second template is to run, its fxgroup is enabled now so it's also run, outputting "is long: wee~~".
+</p><p>Neither of the two templates will output anything for the zero'th syllable. The first template, because it has the "noblank" modifier, and the second because the zero'th syllable's duration is too short for the fxgroup to be enabled.
+</p>
+</div></div>
+<p><br />
+</p>
+<div style="border-top: 2px solid #448; border-bottom: 1px solid #448; background: #f0f0ff; margin: 1em; padding: 0.5em;">
+<div style="text-align:center; font-weight:bold; background:#ddf;"><a href="Automation.html" title="Automation">Automation 4</a></div>
+<table style="width:100%; font-size: smaller;">
+<tr><th>Overview:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_Manager.html" title="Automation Manager">Automation Manager</a>&nbsp;&bull; 
+<a href="Running_Automation_macros.html" title="Running Automation macros">Running macros</a>&nbsp;&bull; 
+<a href="Exporting.html" title="Exporting">Using export filters</a>&nbsp;&bull; 
+<a href="Using_the_included_macros.html" title="Using the included macros">Standard macros</a>&nbsp;&bull; 
+<a href="Overview_of_changes_from_Automation_3.html" title="Overview of changes from Automation 3">Changes from Automation 3</a>&nbsp;&bull; 
+<a href="Moving_from_Automation_3.html" title="Moving from Automation 3">Moving from Automation 3</a>
+</p>
+</td></tr>
+<tr><th><a href="Karaoke_Templater.html" title="Karaoke Templater">Karaoke Templater</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Karaoke_Templater_Reference__Declaring_template_and_code_lines.html" title="Karaoke Templater Reference: Declaring template and code lines">Declaring templates</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_execution_rules_and_order.html" title="Karaoke Templater Reference: Template execution rules and order">Execution order</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Template_modifiers.html" title="Karaoke Templater Reference: Template modifiers">Modifiers</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Inline_variables.html" title="Karaoke Templater Reference: Inline variables">Inline-variables ($-variables)</a>&nbsp;&bull; 
+<a href="Karaoke_Templater_Reference__Code_lines_and_blocks.html" title="Karaoke Templater Reference: Code lines and blocks">Code lines and blocks</a>&nbsp;&bull; 
+<strong class="selflink">Execution envirionment</strong>
+</p>
+</td></tr>
+<tr><th><a href="Lua_Reference.html" title="Lua Reference">Lua</a> reference:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_Lua_Registration.html" title="Automation 4 Lua Registration">Registration</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Subtitle_file_interface.html" title="Automation 4 Lua Subtitle file interface">Subtitles object</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Progress_reporting.html" title="Automation 4 Lua Progress reporting">Progress reporting</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Configuration_dialogues.html" title="Automation 4 Lua Configuration dialogues">Config dialogues</a>&nbsp;&bull; 
+<a href="Automation_4_Lua_Miscellaneous_APIs.html" title="Automation 4 Lua Miscellaneous APIs">Misc. APIs</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html" title="Automation 4 karaskel.lua">karaskel.lua</a>&nbsp;&bull; 
+<a href="Automation_4_utils.html" title="Automation 4 utils.lua">utils.lua</a>&nbsp;&bull; 
+<a href="Automation_4_unicode.html" title="Automation 4 unicode.lua">unicode.lua</a>&nbsp;&bull; 
+cleantags.lua
+</p>
+</td></tr>
+<tr><th>Karaskel concepts:</th><td style="text-align: center; background:#f8f8ff;">
+<p><a href="Automation_4_karaskel.html#Style_table" title="Automation 4 karaskel.lua">Style tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Dialogue_line_table" title="Automation 4 karaskel.lua">Dialogue line tables</a>&nbsp;&bull; 
+<a href="Automation_4_karaskel.html#Karaoke_and_furigana_syllable_tables" title="Automation 4 karaskel.lua">Syllable tables</a>&nbsp;&bull; 
+<a href="Karaoke_inline-fx.html" title="Karaoke inline-fx">Inline effects</a>&nbsp;&bull; 
+<a href="Furigana_karaoke.html" title="Furigana karaoke">Furigana</a>
+</p>
+</td></tr>
+</table>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 129/1000000
+Post-expand include size: 9692/2097152 bytes
+Template argument size: 4696/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:185-0!1!0!!en!2!edit=0 and timestamp 20120831122155 -->
+<div class="printfooter">
+Retrieved from "<a href="Karaoke_Templater_Reference__Code_execution_environment.html">http://docs.aegisub.org/manual/Karaoke_Templater_Reference:_Code_execution_environment</a>"</div>
+	    	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.055 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Karaoke_Templater_Reference:_Code_execution_environment by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:45:22 GMT -->
+</html>

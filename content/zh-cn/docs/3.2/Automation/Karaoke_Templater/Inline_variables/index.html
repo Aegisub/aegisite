@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Karaoke_Templater/Inline_variables/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:40 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>内联变量 - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../../../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../../../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../../../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../../../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../../../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../../../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../../../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../../../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../../../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../../../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../../../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../../../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../../../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../../../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../../../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../../../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../../../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../../../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../../../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../../../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../../../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../../../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../../../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../../../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../../../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../../../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../../index.html">概述</a>
+</li>
+<li>
+<a href="../index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../../Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../../../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../../../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../../../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>内联变量</h1>
+<p>本文档讲解在卡拉OK模板自动化时可用的<strong>内联变量</strong>（<strong>$变量</strong>）。</p>
+
+<h2 id="inline-variables">如何使用内联变量（inline variables）</h2>
+
+<p>所有的内联变量头部都是一个$符号。内联变量只能用在template行，而不能用于code行。不过你可以在模板行的code区使用它们。</p>
+
+<p>下面是一个在模板中使用内联变量的例子：</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>{\pos(**$x**,**$y**)\t(**$start**,**$end**,\bord0)}
+</code></pre></div>
+<p>高亮部分为内联变量。</p>
+
+<p>当一个模板被应用时，首先要做的就是把所有的内联变量都找到，然后把它们替换成对应的值。例如在上面的模板中<code>$x</code>和<code>$y</code>就被每个音节的位置属性(坐标x,y)替代, <code>$start</code>和<code>$end</code>分别被音节的开始时间和结束时间替代。</p>
+
+<p>字母的大小写对于内联变量的使用没有影响，<code>$start</code>, <code>$START</code> 或是 <code>$StArT</code> 都会起作用。</p>
+
+<h3 id="section">限制</h3>
+
+<p>内联变量并不“聪明”：无论你把它们放在哪或是如何使用它们，都只会生成同样的代码，它也不知道自己被用在了什么标签上。不是每个变量都能在所有的地方成功使用，某些变量的含义受用法的影响，例如 retime 函数。这些情况下，内联变量也许不适合使用，而你需要使用code区。</p>
+
+<p>因为内联变量是在你应用模版时首先被赋值的，所以你无法通过任何方式来改变它的值。</p>
+
+<p>对于做特效来说，使用内联变量是一个简便的方式，但对于多数高级特效来说，使用它们也许不是最好的选择。</p>
+
+<p>所有的位置、大小内联变量（例如<code>$y</code> <code>$right</code> <code>$width</code>）都约取最近的数据（像素数取整）,不像你通过code区从内部数据结构得到的值，可精确到亚像素精度。（即小数点后面有数字）</p>
+
+<h2 id="line-syllable">行（Line）变量和 音节（Syllable）变量</h2>
+
+<p>内联变量同时适用“line”和“syllable”两种模式。“line”模式时，变量为被处理行的信息，“syl”模式时，则为被处理的音节的信息。</p>
+
+<p>内联变量中也有很多变量能够自动适应，它们既能变成line模式，也能变成syl模式，这取决于它们的template修饰语。
+自适应变量只有在pre-line中，会自动为行变量，其它地方将自动为音节变量</p>
+
+<h2 id="section-1">变量</h2>
+
+<p>记忆方法：行变量开头是小写l，音节变量开头是小写s</p>
+
+<h4 id="line-variants">行变量  Line variants</h4>
+
+<dl class="horizontal-wide">
+  <dt>layer</dt>
+  <dd>行所在层数</dd>
+  <dt>lstart, lend, ldur, lmid</dt>
+  <dd>行的开始时间、结束时间、持续时间、中点时间（=0.5*[开始时间+结束时间]）, 都以毫秒(ms)为单位</dd>
+  <dt>style</dt>
+  <dd>行的样式名称</dd>
+  <dt>actor</dt>
+  <dd>说话人名称</dd>
+  <dt>margin_l, margin_r</dt>
+  <dd>有效左边距和右边距（如该行值为非零数，否则将取决于样式）</dd>
+  <dt>margin_v, margin_t, margin_b</dt>
+  <dd>有效垂直边距、顶部和底部边距, 垂直边距和顶部边距含义相同</dd>
+  <dt>syln</dt>
+  <dd>行内音节的个数</dd>
+  <dt>li</dt>
+  <dd>行数（文件中的第一个自然行对应数值为1)</dd>
+  <dt>lleft, lcenter, lright</dt>
+  <dd>行的左边缘、水平中心和右边缘距离, 会将设置好的边距和对齐方式算在内, 取整数</dd>
+  <dt>ltop, lmiddle, lbottom</dt>
+  <dd>行的上边缘、垂直中心和下边缘距离，会将设置好的边距和对齐方式算在内，取整数</dd>
+  <dt>lx, ly</dt>
+  <dd>对\pos代码使用的x,y坐标（当对齐方式未被重写时）</dd>
+  <dt>lwidth, lheight</dt>
+  <dd>行的宽度和高度（以像素为单位）, 这两个变量会被取整，所以也许和位置变量（positioning variables）不完全吻合</dd>
+</dl>
+
+<h4 id="syllable-variants">音节变量  Syllable variants</h4>
+
+<dl class="horizontal-wide">
+  <dt>sstart, send, smid</dt>
+  <dd>音节（相对于行）的开始时间、结束时间、中点时间，适合配合\t和\move使用</dd>
+  <dt>sdur, skdur</dt>
+  <dd>音节的持续时间，前者以毫秒为单位，后者以厘秒为单位</dd>
+  <dt>si</dt>
+  <dd>该行的第几个音节</dd>
+  <dt>sleft, scenter, sright</dt>
+  <dd>音节的绝对的左边缘、水平中心和右边缘距离,从屏幕左边缘开始计算, 配合\pos和\move</dd>
+  <dt>sbottom, smiddle, stop</dt>
+  <dd>音节的绝对的下边缘、垂直中心和上边缘距离,从屏幕左边缘开始计算, 配合\pos和\move, 可根据假名定位进行调整</dd>
+  <dt>sx, sy</dt>
+  <dd>音节在默认对齐方式下的绝对位置(x,y)，配合\pos和\move</dd>
+  <dt>swidth, sheight</dt>
+  <dd>音节的宽度和高度（以像素为单位）这两个变量会被取整，所以也许和位置变量不完全吻合</dd>
+</dl>
+
+<h4 id="automatic-variants">自适应变量  Automatic variants</h4>
+
+<dl class="horizontal-wide">
+  <dt>start, end, mid</dt>
+  <dd>行或音节的开始时间、结束时间、中点时间，行是绝对时间，音节是相对行的时间（通用，自动进行判断）</dd>
+  <dt>dur, kdur</dt>
+  <dd>行或音节的持续时间，前者以1ms为单位1，后者以10ms为单位1</dd>
+  <dt>i</dt>
+  <dd>行数或音节数</dd>
+  <dt>left, center, right</dt>
+  <dd>行或音节的绝对的左边缘、水平中心和右边缘距离, 从屏幕左边缘开始计算</dd>
+  <dt>top, middle, bottom</dt>
+  <dd>行或音节的绝对的上边缘、垂直中心和下边缘距离，从屏幕左边缘开始计算</dd>
+  <dt>x, y</dt>
+  <dd>行或音节的默认对齐方式下的坐标（x,y）</dd>
+  <dt>width, height</dt>
+  <dd>行或音节的宽度和高度，这两个变量会被取整，所以也许和位置变量不完全吻合</dd>
+</dl>
+
+<div class='navbox'>
+<div><a href="../../index.html">自动化</a></div>
+<table>
+<tr>
+<th>概述:</th>
+<td><a href="../../Manager/index.html">自动化脚本管理器</a> • <a href="../../Running_macros/index.html">运行宏</a> • <a href="../../../Exporting/index.html">使用导出滤镜</a> • <a href="../../Included_macros/index.html">示例宏</a></td>
+</tr>
+<tr>
+<th><a href="../index.html">卡拉OK模版执行器</a> 相关:</th>
+<td><a href="../Declaring_template_and_code_lines/index.html">声明模版</a> • <a href="../Template_execution_rules_and_order/index.html">模版执行顺序</a> • <a href="../Template_modifiers/index.html">修饰语</a> • <a href="index.html">内联变量($变量)</a> <br> <a href="../Code_lines_and_blocks/index.html">code行和code区</a> • <a href="../Code_execution_environment/index.html">代码执行环境</a></td>
+</tr>
+<tr>
+<th><a href="../../Lua/index.html">Lua API</a> 相关:</th>
+<td><a href="../../Lua/Registration/index.html">注册</a> • <a href="../../Lua/Subtitle_file_interface/index.html">字幕对象</a> • <a href="../../Lua/Progress_reporting/index.html">进度反馈</a> • <a href="../../Lua/Dialogs/index.html">对话框</a> • <a href="../../Lua/Miscellaneous_APIs/index.html">其他APIs</a></td>
+</tr>
+<tr>
+<th><a href="../../Lua/Modules/index.html">Lua 模块</a>:</th>
+<td><a href="../../Lua/Modules/karaskel.lua/index.html">karaskel.lua</a> • <a href="../../Lua/Modules/util/index.html">util</a> • <a href="../../Lua/Modules/unicode/index.html">unicode</a> • <a href="#">cleantags.lua</a> • <a href="../../Lua/Modules/clipboard/index.html">clipboard</a> • <a href="../../Lua/Modules/re/index.html">re</a></td>
+</tr>
+<tr>
+<th>Karaskel 概念:</th>
+<td><a href="../../Lua/Modules/karaskel.lua/index.html#style-table">Style tables</a> • <a href="../../Lua/Modules/karaskel.lua/index.html#dialogue-line-table">Dialogue line tables</a> • <a href="../../Lua/Modules/karaskel.lua/index.html#karaoke-and-furigana-syllable-tables">Syllable tables</a> • <a href="../../../Karaoke_inline-fx/index.html">内联特效</a> • <a href="../../../Furigana_karaoke/index.html">注音假名</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Automation/Karaoke_Templater/Inline_variables/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:14:40 GMT -->
+</html>
+

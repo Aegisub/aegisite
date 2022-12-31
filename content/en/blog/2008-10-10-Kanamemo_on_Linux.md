@@ -9,9 +9,11 @@ tags:
   - old-post
   - kanamemo
   - linux
+aliases:
+  - /blog/2008/10/kanamemo-on-linux.html
 ---
 
-Tomman has figured out how to build [Kanamemo](/blog/2008-07-24-kanamemo_a_tool_for_the_apprentice_weeaboo/) on Linux... So, in case you're interested:
+Tomman has figured out how to build [Kanamemo](/blog/kanamemo-a-tool-for-the-apprentice-weeaboo/) on Linux... So, in case you're interested:
 
 <http://tomman.monkeeh.com/temp/linux_build_instruc.txt>
 

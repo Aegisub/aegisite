@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Commands/hu/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:16:51 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>hu - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../../Styles/index.html">编辑样式</a>
+</li>
+<li>
+<a href="../../Visual_Typesetting/index.html">可视化排版</a>
+</li>
+<li>
+<a href="../../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../../Automation/index.html">概述</a>
+</li>
+<li>
+<a href="../../Automation/Karaoke_Templater/index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../../Automation/Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>hu</h1>
+<table style='width: 100%; margin-bottom: 2em'>
+<tr>
+<td>
+<a href='../en_US/index.html'>English (U.S.)</a>
+</td>
+<td>
+<a href='../ar/index.html'>Arabic</a>
+</td>
+<td>
+<a href='../bg/index.html'>Bulgarian</a>
+</td>
+<td>
+<a href='../ca/index.html'>Catalan</a>
+</td>
+<td>
+<a href='../cs/index.html'>Czech</a>
+</td>
+<td>
+<a href='../da/index.html'>Danish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../de/index.html'>German</a>
+</td>
+<td>
+<a href='../el/index.html'>Greek</a>
+</td>
+<td>
+<a href='../es/index.html'>Spanish</a>
+</td>
+<td>
+<a href='../eu/index.html'>Basque</a>
+</td>
+<td>
+<a href='../fa/index.html'>Farsi</a>
+</td>
+<td>
+<a href='../fi/index.html'>Finnish</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../fr_FR/index.html'>French</a>
+</td>
+<td>
+<a href='../gl/index.html'>Galician</a>
+</td>
+<td>
+<a href='index.html'>Hungarian</a>
+</td>
+<td>
+<a href='../id/index.html'>Indonesian</a>
+</td>
+<td>
+<a href='../it/index.html'>Italian</a>
+</td>
+<td>
+<a href='../ja/index.html'>Japanese</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../ko/index.html'>Korean</a>
+</td>
+<td>
+<a href='../nl/index.html'>Dutch</a>
+</td>
+<td>
+<a href='../pl/index.html'>Polish</a>
+</td>
+<td>
+<a href='../pt_BR/index.html'>Portuguese (Brazilian)</a>
+</td>
+<td>
+<a href='../pt_PT/index.html'>Portuguese</a>
+</td>
+<td>
+<a href='../ru/index.html'>Russian</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href='../sr_YU/index.html'>Serbian (Cyrillic)</a>
+</td>
+<td>
+<a href='../sr_YU%40latin/index.html'>Serbian (Latin)</a>
+</td>
+<td>
+<a href='../vi/index.html'>Vietnamese</a>
+</td>
+<td>
+<a href='../zh_CN/index.html'>Chinese (Simplified)</a>
+</td>
+<td>
+<a href='../zh_TW/index.html'>Chinese</a>
+</td>
+</tr>
+</table>
+<table class='karatable'>
+<tr>
+<th>Name</th>
+<th>Display</th>
+<th>Help</th>
+</tr>
+<tr>
+<td>am/manager</td>
+<td>Automatizáció</td>
+<td>Automatizációs scriptek alkalmazása a feliratfájlra.</td>
+</tr>
+<tr>
+<td>am/meta</td>
+<td>Automatizáció</td>
+<td>Automatizációs scriptek kezelése. Ctrl: autoload mappa újraolvasása. Ctrl+Shift: autoload mappa újraolvasása és a scriptek újra betöltése.</td>
+</tr>
+<tr>
+<td>am/reload</td>
+<td>Automatizációs scriptek újratöltése</td>
+<td>Minden automatikusan betöltődő script újratöltése és az autoload mappa újraolvasása.</td>
+</tr>
+<tr>
+<td>am/reload/autoload</td>
+<td>Az automatikusan betöltődő scriptek mappájának újratöltése.</td>
+<td>Az automatikusan betöltődő scriptek mappájának újraolvasása.</td>
+</tr>
+<tr>
+<td>app/about</td>
+<td>Névjegy</td>
+<td>Az Aegisub névjegye</td>
+</tr>
+<tr>
+<td>app/display/audio_subs</td>
+<td>Audió és felirat</td>
+<td>Csak a hangsávot és a feliratot mutatja.</td>
+</tr>
+<tr>
+<td>app/display/full</td>
+<td>Teljes nézet</td>
+<td>Hangot, videót és feliratot egyaránt megjelenít.</td>
+</tr>
+<tr>
+<td>app/display/subs</td>
+<td>Csak felirat</td>
+<td>Csak a feliratsorokat jeleníti meg.</td>
+</tr>
+<tr>
+<td>app/display/video_subs</td>
+<td>Videó és felirat</td>
+<td>Csak a videót és a feliratot jeleníti meg.</td>
+</tr>
+<tr>
+<td>app/exit</td>
+<td>Kilépés</td>
+<td>Kilép a programból.</td>
+</tr>
+<tr>
+<td>app/language</td>
+<td>Nyelv</td>
+<td>Az Aegisub nyelvének kiválasztása.</td>
+</tr>
+<tr>
+<td>app/log</td>
+<td>Naplózás</td>
+<td>Napló megtekintése</td>
+</tr>
+<tr>
+<td>app/new_window</td>
+<td>Új programablak</td>
+<td>Megnyit egy új programablakot.</td>
+</tr>
+<tr>
+<td>app/options</td>
+<td>Beállítások</td>
+<td>Az Aegisub beállításai</td>
+</tr>
+<tr>
+<td>app/toggle/global_hotkeys</td>
+<td>Globális gyorsgombok felülbírálása</td>
+<td>Globális gyorsgombok felülbírálása (Medusa mód)</td>
+</tr>
+<tr>
+<td>app/toggle/toolbar</td>
+<td>Eszközsor elrejtése</td>
+<td>Az eszközsor elrejtése vagy megjelenítése</td>
+</tr>
+<tr>
+<td>app/updates</td>
+<td>Frissítések keresése</td>
+<td>Ellenőrzi, hogy az Aegisubnak van-e frissebb verziója.</td>
+</tr>
+<tr>
+<td>audio/close</td>
+<td>Audió bezárása</td>
+<td>Bezárja a megnyitott hangsávot.</td>
+</tr>
+<tr>
+<td>audio/commit</td>
+<td>Elfogad</td>
+<td>Minden függő audió időzítést elfogad.</td>
+</tr>
+<tr>
+<td>audio/commit/default</td>
+<td>Elfogad, majd a következő sor idejét alapértékre állítja.</td>
+<td>Minden függő audió időzítést elfogad és a következő sor idejét alapértékre állítja.</td>
+</tr>
+<tr>
+<td>audio/commit/next</td>
+<td>Elfogad, majd a következő sorra ugrik.</td>
+<td>Minden függő audió időzítést elfogad és a következő sorra ugrik.</td>
+</tr>
+<tr>
+<td>audio/commit/stay</td>
+<td>Elfogad és marad a jelenlegi soron.</td>
+<td>Minden audió időzítést elfogad és az jelenlegi soron marad.</td>
+</tr>
+<tr>
+<td>audio/go_to</td>
+<td>Ugorjon a kijelölthöz</td>
+<td>A kijelölt szakaszhoz ugrik az audió képi megjelenítésén.</td>
+</tr>
+<tr>
+<td>audio/karaoke</td>
+<td>Karaoke mód ki- és bekapcsolása</td>
+<td>Karaoke mód ki- és bekapcsolása</td>
+</tr>
+<tr>
+<td>audio/open</td>
+<td>Audió megnyitása</td>
+<td>Megnyit egy hangfájlt.</td>
+</tr>
+<tr>
+<td>audio/open/blank</td>
+<td>2 h 30 min néma hangsáv megnyitása</td>
+<td>Létrehoz egy 150 perc hosszú, néma hangsávot hibakeresés céljából.</td>
+</tr>
+<tr>
+<td>audio/open/noise</td>
+<td>2 h 30 min zajos hangsáv megnyitása</td>
+<td>Létrehoz egy 150 perc hosszú, zajjal föltöltött hangsávot hibakeresés céljából.</td>
+</tr>
+<tr>
+<td>audio/open/video</td>
+<td>Audió megnyitása videóból</td>
+<td>Hangsáv kiolvasása a videófájlból.</td>
+</tr>
+<tr>
+<td>audio/opt/autocommit</td>
+<td>Változások automatikus elfogadása</td>
+<td>Változások automatikus elfogadása</td>
+</tr>
+<tr>
+<td>audio/opt/autonext</td>
+<td>Elfogadja a változásokat és a következő sorra ugrik.</td>
+<td>Elfogadja a változásokat és a következő sorra ugrik.</td>
+</tr>
+<tr>
+<td>audio/opt/autoscroll</td>
+<td>A keresősáv ugorjon a kiválasztott sorhoz.</td>
+<td>A keresősáv ugorjon a kiválasztott sorhoz.</td>
+</tr>
+<tr>
+<td>audio/opt/spectrum</td>
+<td>Spektrum analizátor</td>
+<td>Spektrum analizátor</td>
+</tr>
+<tr>
+<td>audio/opt/vertical_link</td>
+<td>Függőleges nagyítás összekapcsolása a hangerővel.</td>
+<td>Függőleges nagyítás összekapcsolása a hangerővel.</td>
+</tr>
+<tr>
+<td>audio/play/current</td>
+<td>Jelenleg kijelölt sor lejátszása</td>
+<td>Jelenlegi kijelölés lejátszása, figyelmen kívül hagyva a módosításokat.</td>
+</tr>
+<tr>
+<td>audio/play/line</td>
+<td>Kijelölt sor lejátszása.</td>
+<td>Jelenlegi sor hangjának lejátszása</td>
+</tr>
+<tr>
+<td>audio/play/selection</td>
+<td>Kijelölés lejátszása</td>
+<td>Kijelölt hang lejátszása</td>
+</tr>
+<tr>
+<td>audio/play/selection/after</td>
+<td>Kijelölt utáni 500ms lejátszása</td>
+<td>Kijelölt utáni 500ms lejátszása</td>
+</tr>
+<tr>
+<td>audio/play/selection/before</td>
+<td>Kijelölt előtti 500ms lejátszása</td>
+<td>Kijelölt előtti 500ms lejátszása</td>
+</tr>
+<tr>
+<td>audio/play/selection/begin</td>
+<td>Kijelölten belüli első 500ms lejátszása</td>
+<td>Kijelölten belüli első 500ms lejátszása</td>
+</tr>
+<tr>
+<td>audio/play/selection/end</td>
+<td>Kijelölten belüli utolsó 500ms lejátszása</td>
+<td>Kijelölten belüli utolsó 500ms lejátszása</td>
+</tr>
+<tr>
+<td>audio/play/to_end</td>
+<td>Lejátszás a kijelölt kezdetétől a fájl végéig.</td>
+<td>Lejátszás a kijelölt kezdetétől a fájl végéig.</td>
+</tr>
+<tr>
+<td>audio/play/toggle</td>
+<td>Kijelölés lejátszása vagy leállítása</td>
+<td>Kijelölés lejátszása vagy a jelenlegi lejátszás leállítása.</td>
+</tr>
+<tr>
+<td>audio/save/clip</td>
+<td>Audióklip készítése</td>
+<td>Audióklipet készít a kiválasztott sorhoz.</td>
+</tr>
+<tr>
+<td>audio/scroll/left</td>
+<td>Balra teker</td>
+<td>Balra tekeri a hangsáv képi megjelenítését.</td>
+</tr>
+<tr>
+<td>audio/scroll/right</td>
+<td>Jobbra teker</td>
+<td>Jobbra tekeri a hangsáv képi megjelenítését.</td>
+</tr>
+<tr>
+<td>audio/stop</td>
+<td>Lejátszás megállítása</td>
+<td>Audió- és videólejátszás leállítása</td>
+</tr>
+<tr>
+<td>audio/view/spectrum</td>
+<td>Spektrum megjelenés</td>
+<td>Audió megjelenítése egy frekvencia-erősség spektrogrammon.</td>
+</tr>
+<tr>
+<td>audio/view/waveform</td>
+<td>Hullámforma megjelenés</td>
+<td>Audió megjelenítése lineáris amplitúdó formában.</td>
+</tr>
+<tr>
+<td>automation/lua/cleantags-autoload/Clean Tags</td>
+<td>Clean Tags</td>
+<td>Clean subtitle lines by re-arranging ASS tags and override blocks within the lines</td>
+</tr>
+<tr>
+<td>automation/lua/kara-templater/Apply karaoke template</td>
+<td>Apply karaoke template</td>
+<td>Applies karaoke effects from templates</td>
+</tr>
+<tr>
+<td>automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in</td>
+<td>Automatic karaoke lead-in</td>
+<td>Join up the ends of selected lines and add \k tags to shift karaoke</td>
+</tr>
+<tr>
+<td>automation/lua/macro-1-edgeblur/Add edgeblur</td>
+<td>Add edgeblur</td>
+<td>Adds \be1 tags to all selected lines</td>
+</tr>
+<tr>
+<td>automation/lua/macro-2-mkfullwitdh/Make fullwidth</td>
+<td>Make fullwidth</td>
+<td>Convert Latin letters to SJIS fullwidth letters</td>
+</tr>
+<tr>
+<td>automation/lua/select-overlaps/Select overlaps</td>
+<td>Select overlaps</td>
+<td>Select lines which begin while another non-comment line is active</td>
+</tr>
+<tr>
+<td>automation/lua/strip-tags/Strip tags</td>
+<td>Strip tags</td>
+<td>Remove all override tags from selected lines</td>
+</tr>
+<tr>
+<td>edit/clear</td>
+<td>Törlés</td>
+<td>Sor szövegének teljes törlése.</td>
+</tr>
+<tr>
+<td>edit/clear/text</td>
+<td>Szöveg törlése</td>
+<td>Kitörli a sor szövegét, de meghagyja a felülíró címkéket.</td>
+</tr>
+<tr>
+<td>edit/color/outline</td>
+<td>Körvonal színe</td>
+<td>Körvonal színének (\3c) beállítása a kurzornál.</td>
+</tr>
+<tr>
+<td>edit/color/primary</td>
+<td>Elsődleges szín</td>
+<td>Elsődleges szín (\c) beállítása a kurzornál.</td>
+</tr>
+<tr>
+<td>edit/color/secondary</td>
+<td>Másodlagos szín</td>
+<td>Másodlegos szín (\2c) beállítása a kurzornál.</td>
+</tr>
+<tr>
+<td>edit/color/shadow</td>
+<td>Árnyék színe</td>
+<td>Árnyék színének (\4c) beállítása a kurzornál.</td>
+</tr>
+<tr>
+<td>edit/find_replace</td>
+<td>Keresés és csere</td>
+<td>Megkeresi és kicseréli a szavakat.</td>
+</tr>
+<tr>
+<td>edit/font</td>
+<td>Betűtípus</td>
+<td>Betű típusának és méretének kiválasztása.</td>
+</tr>
+<tr>
+<td>edit/insert_original</td>
+<td>Eredetiből beilleszt</td>
+<td>Beszúrja az eredeti sort a kurzorhoz.</td>
+</tr>
+<tr>
+<td>edit/line/copy</td>
+<td>Másolás</td>
+<td>Felirat mentése a Vágólapra.</td>
+</tr>
+<tr>
+<td>edit/line/cut</td>
+<td>Kivágás</td>
+<td>Kivágja a feliratsorokat.</td>
+</tr>
+<tr>
+<td>edit/line/delete</td>
+<td>Sor törlése</td>
+<td>Törli a kijelölt sort, sorokat.</td>
+</tr>
+<tr>
+<td>edit/line/duplicate</td>
+<td>Ismétlés</td>
+<td>Ismételje meg a kiválasztott sort, sorokat.</td>
+</tr>
+<tr>
+<td>edit/line/join/as_karaoke</td>
+<td>Karaokeként</td>
+<td>Karaoke címkéket felhasználva összeilleszti a kiválasztott sorokat.</td>
+</tr>
+<tr>
+<td>edit/line/join/concatenate</td>
+<td>Összefűzés</td>
+<td>Összeilleszti a kiválasztott sorokat tartalmuk összevonásával.</td>
+</tr>
+<tr>
+<td>edit/line/join/keep_first</td>
+<td>Első megtartása</td>
+<td>Összeilleszti a kiválasztott sorokat megtartva az első tartalmát és törölve a többiét.</td>
+</tr>
+<tr>
+<td>edit/line/paste</td>
+<td>Beillesztés</td>
+<td>Beilleszti a feliratsorokat.</td>
+</tr>
+<tr>
+<td>edit/line/paste/over</td>
+<td>Irányított beillesztés</td>
+<td>Különböző szempontok szerinti beillesztés.</td>
+</tr>
+<tr>
+<td>edit/line/recombine</td>
+<td>Sorok egyesítése</td>
+<td>Szétválasztás és összeillesztés után egyesíti a feliratsorokat.</td>
+</tr>
+<tr>
+<td>edit/line/split/after</td>
+<td>Sor szétválasztása képkocka mögé</td>
+<td>A szétválasztás jelenlegi sora a jelenlegi képkockával végződik, a másik sor pedig a következővel kezdődik.</td>
+</tr>
+<tr>
+<td>edit/line/split/before</td>
+<td>Sor szétválasztása képkocka elé</td>
+<td>A szétválasztás jelenlegi sora a jelenlegi képkockával kezdődik, a másik sor pedig az előzővel végződik.</td>
+</tr>
+<tr>
+<td>edit/line/split/by_karaoke</td>
+<td>Szétválasztás (karaokevel)</td>
+<td>A karaoke időzítését felhasználva választja szét a sorokat.</td>
+</tr>
+<tr>
+<td>edit/line/split/estimate</td>
+<td>Kurzornál szétválaszt (idők becslése)</td>
+<td>Az eredeti sor idejét fölosztja a szétválasztott sorok közt.</td>
+</tr>
+<tr>
+<td>edit/line/split/preserve</td>
+<td>Kurzornál szétválaszt (idők megtartása)</td>
+<td>A szétválasztott sorok ideje megegyezik az eredeti sor idejével.</td>
+</tr>
+<tr>
+<td>edit/line/split/video</td>
+<td>Kurzornál szétválaszt (jelenlegi képkockánál)</td>
+<td>Az eredeti sor idejét a jelenlegi képkocka mentén osztja föl a szétválasztott sorok közt.</td>
+</tr>
+<tr>
+<td>edit/redo</td>
+<td>Nincs mit újra végrehajtani</td>
+<td>Mégis meghagyja az előző tevékenységet.</td>
+</tr>
+<tr>
+<td>edit/revert</td>
+<td>Visszaállít</td>
+<td>Visszaállítja a szerkesztett sort az eredeti állapotába, ahogyan az a felső sorban látható.</td>
+</tr>
+<tr>
+<td>edit/style/bold</td>
+<td>Félkövér stílus kiválasztása.</td>
+<td>A kijelölés vagy a kurzor utáni szöveg legyen félkövér (\b).</td>
+</tr>
+<tr>
+<td>edit/style/italic</td>
+<td>Dőlt stílus kiválasztása.</td>
+<td>A kijelölés vagy a kurzor utáni szöveg legyen dőlt (\i).</td>
+</tr>
+<tr>
+<td>edit/style/strikeout</td>
+<td>Áthúzott stílus kiválasztása.</td>
+<td>A kijelölés vagy a kurzor utáni szöveg legyen áthúzott (\s).</td>
+</tr>
+<tr>
+<td>edit/style/underline</td>
+<td>Aláhúzott stílus kiválasztása.</td>
+<td>A kijelölés vagy a kurzor utáni szöveg legyen aláhúzott (\u).</td>
+</tr>
+<tr>
+<td>edit/undo</td>
+<td>Nincs mit visszavonni</td>
+<td>Visszavonja a legutóbbi tevékenységet.</td>
+</tr>
+<tr>
+<td>grid/line/next</td>
+<td>Következő sor</td>
+<td>A következő feliratsorra ugrik</td>
+</tr>
+<tr>
+<td>grid/line/next/create</td>
+<td>Következő sor</td>
+<td>A következő feliratsorra ugrik, ha kell, új sort létrehozva.</td>
+</tr>
+<tr>
+<td>grid/line/prev</td>
+<td>Előző sor</td>
+<td>Az előző feliratsorra ugrik</td>
+</tr>
+<tr>
+<td>grid/move/down</td>
+<td>Sor lefelé mozgatása</td>
+<td>Egy sorral lefelé tolja a kijelölt sorokat</td>
+</tr>
+<tr>
+<td>grid/move/up</td>
+<td>Sor fölfelé mozgatása</td>
+<td>Egy sorral fölfelé tolja a kijelölt sorokat</td>
+</tr>
+<tr>
+<td>grid/sort/actor</td>
+<td>Színész neve</td>
+<td>A színész neve szerint rendez minden sort.</td>
+</tr>
+<tr>
+<td>grid/sort/actor/selected</td>
+<td>Színész neve</td>
+<td>A színész neve szerint rendezi a kiválasztott sorokat.</td>
+</tr>
+<tr>
+<td>grid/sort/effect</td>
+<td>Effekt</td>
+<td>Az effekt neve szerint rendez minden sort.</td>
+</tr>
+<tr>
+<td>grid/sort/effect/selected</td>
+<td>Effekt</td>
+<td>Az effekt neve szerint rendezi a kiválasztott sorokat.</td>
+</tr>
+<tr>
+<td>grid/sort/end</td>
+<td>Sor vége</td>
+<td>Kezdeti idő szerint rendez minden sort.</td>
+</tr>
+<tr>
+<td>grid/sort/end/selected</td>
+<td>Sor vége</td>
+<td>Kezdeti idő szerint rendezi a kiválasztott sorokat.</td>
+</tr>
+<tr>
+<td>grid/sort/layer</td>
+<td>Réteg</td>
+<td>A réteg száma szerint rendez minden sort.</td>
+</tr>
+<tr>
+<td>grid/sort/layer/selected</td>
+<td>Réteg</td>
+<td>A réteg száma szerint rendezi a kiválasztott sorokat.</td>
+</tr>
+<tr>
+<td>grid/sort/start</td>
+<td>Sor kezdete</td>
+<td>Befejezési idő szerint rendez minden sort.</td>
+</tr>
+<tr>
+<td>grid/sort/start/selected</td>
+<td>Sor kezdete</td>
+<td>Befejezési idő szerint rendezi a kiválasztott sorokat.</td>
+</tr>
+<tr>
+<td>grid/sort/style</td>
+<td>Stílus neve</td>
+<td>A stílus neve szerint rendez minden sort.</td>
+</tr>
+<tr>
+<td>grid/sort/style/selected</td>
+<td>Stílus neve</td>
+<td>A stílus neve szerint rendezi a kiválasztott sorokat.</td>
+</tr>
+<tr>
+<td>grid/swap</td>
+<td>Sorok felcserélése</td>
+<td>Felcseréli a két kiválasztott sort.</td>
+</tr>
+<tr>
+<td>grid/tag/cycle_hiding</td>
+<td>Címkék megjelenítési módjai közt váltogat.</td>
+<td>Címkék megjelenítési lehetőségei közül válogat.</td>
+</tr>
+<tr>
+<td>grid/tags/hide</td>
+<td>Címkék elrejtése</td>
+<td>Címkék elrejtése a feliratsor táblázatban</td>
+</tr>
+<tr>
+<td>grid/tags/show</td>
+<td>Címkék megjelenítése</td>
+<td>Felülíró címkék nevének és értékének megjelenítése</td>
+</tr>
+<tr>
+<td>grid/tags/simplify</td>
+<td>Egyszerű címkék</td>
+<td>Felülíró címkék helyett jelzésszintű karakterek megjelenítése</td>
+</tr>
+<tr>
+<td>help/bugs</td>
+<td>Programhibák jelentése</td>
+<td>Az Aegisub bug trackere, ahol programhibákat jelenthet vagy új funkciók beépítését kérheti.</td>
+</tr>
+<tr>
+<td>help/contents</td>
+<td>Témakörök</td>
+<td>Súgó témakörök megjelenítése.</td>
+</tr>
+<tr>
+<td>help/forums</td>
+<td>Fórum</td>
+<td>Az Aegisub hivatalos fóruma.</td>
+</tr>
+<tr>
+<td>help/irc</td>
+<td>IRC csatorna</td>
+<td>Az Aegisub hivatalos IRC csatornája.</td>
+</tr>
+<tr>
+<td>help/video</td>
+<td>Vizuális szerkesztés</td>
+<td>Vizuális szerkesztés kézikönyv megnyitása.</td>
+</tr>
+<tr>
+<td>help/website</td>
+<td>Honlap</td>
+<td>Az Aegisub hivatalos honlapja.</td>
+</tr>
+<tr>
+<td>keyframe/close</td>
+<td>Kulcskocka fájl bezárása</td>
+<td>Ne használja a jelenleg betöltött kulcskockákat, hanem lehetőség szerint használja a videóban lévőt.</td>
+</tr>
+<tr>
+<td>keyframe/open</td>
+<td>Kulcskockák megnyitása</td>
+<td>Megnyit egy kulcskocka listát tartalmazó fájlt.</td>
+</tr>
+<tr>
+<td>keyframe/save</td>
+<td>Kulcskockák mentése</td>
+<td>Lementi a jelenlegi kulcskocka listát.</td>
+</tr>
+<tr>
+<td>subtitle/attachment</td>
+<td>Mellékletek</td>
+<td>Mellékletkezelő megnyitása.</td>
+</tr>
+<tr>
+<td>subtitle/find</td>
+<td>Keres</td>
+<td>Szavak keresése a feliratfájlban.</td>
+</tr>
+<tr>
+<td>subtitle/find/next</td>
+<td>Következőt keres</td>
+<td>A következő egyező szóra ugrik.</td>
+</tr>
+<tr>
+<td>subtitle/insert/after</td>
+<td>Beszúrás mögé</td>
+<td>Beszúr egy új sort a jelenlegi mögé.</td>
+</tr>
+<tr>
+<td>subtitle/insert/after/videotime</td>
+<td>Beszúrás mögé, a videó idejével</td>
+<td>Beszúr egy új sort a jelenlegi mögé és a videó idejével indítja.</td>
+</tr>
+<tr>
+<td>subtitle/insert/before</td>
+<td>Beszúrás elé</td>
+<td>Beszúr egy új sort a jelenlegi elé.</td>
+</tr>
+<tr>
+<td>subtitle/insert/before/videotime</td>
+<td>Beszúrás elé, a videó idejével</td>
+<td>Beszúr egy új sort a jelenlegi elé és a videó idejével indítja.</td>
+</tr>
+<tr>
+<td>subtitle/new</td>
+<td>Új felirat</td>
+<td>Új felirat</td>
+</tr>
+<tr>
+<td>subtitle/open</td>
+<td>Felirat megnyitása</td>
+<td>Megnyit egy feliratfájlt.</td>
+</tr>
+<tr>
+<td>subtitle/open/autosave</td>
+<td>Automentet felirat megnyitása</td>
+<td>Az Aegisub által automentett feliratfájl korábbi változatának megnyitása.</td>
+</tr>
+<tr>
+<td>subtitle/open/charset</td>
+<td>Felirat megnyitása karakterkódolással</td>
+<td>Előre megadott karakterkódolással nyit meg egy feliratfájlt.</td>
+</tr>
+<tr>
+<td>subtitle/open/video</td>
+<td>Felirat megnyitása videóból</td>
+<td>Feliratsáv kiolvasása a videófájlból.</td>
+</tr>
+<tr>
+<td>subtitle/properties</td>
+<td>Felirat adatai</td>
+<td>Feliratfájl adatainak megnyitása.</td>
+</tr>
+<tr>
+<td>subtitle/save</td>
+<td>Felirat mentése</td>
+<td>Megnyitott felirat mentése.</td>
+</tr>
+<tr>
+<td>subtitle/save/as</td>
+<td>Felirat mentése másként</td>
+<td>Megnyitott felirat mentése más néven.</td>
+</tr>
+<tr>
+<td>subtitle/select/all</td>
+<td>Az összes kijelölése</td>
+<td>Minden parbeszéd sor kiválasztása.</td>
+</tr>
+<tr>
+<td>subtitle/select/visible</td>
+<td>Láthatók kijelölése</td>
+<td>Select all dialogue lines that are visible on the current video frame</td>
+</tr>
+<tr>
+<td>subtitle/spellcheck</td>
+<td>Helyesírás-ellenőrző</td>
+<td>Helyesírási hibák után keres a feliratfájlban.</td>
+</tr>
+<tr>
+<td>time/continuous/end</td>
+<td>Vége illesztése</td>
+<td>A sor végének az idejét a következő kezdeti idejével teszi egyenlővé.</td>
+</tr>
+<tr>
+<td>time/continuous/start</td>
+<td>Kezdet illesztése</td>
+<td>A sor kezdeti idejét az előző végének az idejével teszi egyenlővé.</td>
+</tr>
+<tr>
+<td>time/frame/current</td>
+<td>Sorokat a képkockához tolja</td>
+<td>A kijelölt feliratsorokat eltolja úgy, hogy az első kezdetét a jelenlegi képkockával indítja.</td>
+</tr>
+<tr>
+<td>time/lead/both</td>
+<td>Bevezetés és kivezetés növelése.</td>
+<td>Be- és kivezetési idő hozzáadása a kijelölt sorhoz.</td>
+</tr>
+<tr>
+<td>time/lead/in</td>
+<td>Bevezetés növelése</td>
+<td>Bevezetés idejének növelése.</td>
+</tr>
+<tr>
+<td>time/lead/out</td>
+<td>Kivezetés növelése</td>
+<td>Kivezetés idejének növelése.</td>
+</tr>
+<tr>
+<td>time/length/decrease</td>
+<td>Hossz csökkentése</td>
+<td>Időzített egység hosszának csökkentése.</td>
+</tr>
+<tr>
+<td>time/length/decrease/shift</td>
+<td>Hossz csökkentése és eltolás</td>
+<td>Időzített egység hosszának csökkentése és a rákövetkező elemek eltolása.</td>
+</tr>
+<tr>
+<td>time/length/increase</td>
+<td>Hossz növelése</td>
+<td>Időzített egység hosszának növelése</td>
+</tr>
+<tr>
+<td>time/length/increase/shift</td>
+<td>Hossz növelése és eltolás</td>
+<td>Időzített egység hosszának növelése és a rákövetkező elemek eltolása.</td>
+</tr>
+<tr>
+<td>time/next</td>
+<td>Következő sor</td>
+<td>Következő sor/szótag</td>
+</tr>
+<tr>
+<td>time/prev</td>
+<td>Előző sor</td>
+<td>Előző sor/szótag</td>
+</tr>
+<tr>
+<td>time/shift</td>
+<td>Időeltolás</td>
+<td>Idő vagy képkocka szerint eltolja a sorokat.</td>
+</tr>
+<tr>
+<td>time/snap/end_video</td>
+<td>Vége illesztése a videóhoz</td>
+<td>A feliratsor végét a jelenlegi képkockához illeszti.</td>
+</tr>
+<tr>
+<td>time/snap/scene</td>
+<td>Illesztés a jelenethez</td>
+<td>A kijelölt feliratsorok kezdetét és végét a jelenlegi jelenet kulcskocka határaihoz illeszti.</td>
+</tr>
+<tr>
+<td>time/snap/start_video</td>
+<td>Kezdet illesztése a videóhoz</td>
+<td>A feliratsor kezdetét a jelenlegi képkockához illeszti.</td>
+</tr>
+<tr>
+<td>time/start/decrease</td>
+<td>Kezdőidő hátratolása</td>
+<td>Időzített egység kezdő idejének hátratolása.</td>
+</tr>
+<tr>
+<td>time/start/increase</td>
+<td>Kezdet idejének előretolása</td>
+<td>Időzített egység kezdő idejének előretolása.</td>
+</tr>
+<tr>
+<td>timecode/close</td>
+<td>Időkód bezárása</td>
+<td>Bezárja a megnyitott időkód fájlt.</td>
+</tr>
+<tr>
+<td>timecode/open</td>
+<td>Időkód megnyitása</td>
+<td>Megnyit egy VFR időkódokat tartalmató fájlt (v1 vagy v2).</td>
+</tr>
+<tr>
+<td>timecode/save</td>
+<td>Időkód mentése</td>
+<td>Elmenti a VFR időkódokat tartalmató fájlt v2-es formátumban.</td>
+</tr>
+<tr>
+<td>tool/export</td>
+<td>Felirat exportálása</td>
+<td>A felirat másolatának más formátumba mentése, átdolgozása.</td>
+</tr>
+<tr>
+<td>tool/font_collector</td>
+<td>Betűtípus összegyűjtő</td>
+<td>Betűtípus összegyűjtő megnyitása.</td>
+</tr>
+<tr>
+<td>tool/line/select</td>
+<td>Sorok kijelölése</td>
+<td>Sorok kijelölése megadott szempontok szerint.</td>
+</tr>
+<tr>
+<td>tool/resampleres</td>
+<td>Felbontás módosítása</td>
+<td>Megváltoztatja a felirat felbontását és megfelelően módosítja a tőle függő értékeket.</td>
+</tr>
+<tr>
+<td>tool/style/assistant</td>
+<td>Dekoráló segéd</td>
+<td>Különböző stílusok gyors hozzárendelése a felratsorokhoz.</td>
+</tr>
+<tr>
+<td>tool/style/manager</td>
+<td>Stíluskezelő</td>
+<td>Stíluskezelő megnyitása.</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/commit</td>
+<td>Elfogad és tovább</td>
+<td>Változások elfogadása, majd új sorra ugrás</td>
+</tr>
+<tr>
+<td>tool/styling_assistant/preview</td>
+<td>Elfogad és marad</td>
+<td>Változások elfogadása, de maradjon a jelenlegi soron</td>
+</tr>
+<tr>
+<td>tool/time/kanji</td>
+<td>Kandzsi időzítő</td>
+<td>Már létező karaoke sorhoz időzít egy másik, nem időzített sort.</td>
+</tr>
+<tr>
+<td>tool/time/postprocess</td>
+<td>Időzítési utómunkák</td>
+<td>Utólagos időzítési javításokra, jelenetidőzítésre és egyéb módosításokra ad lehetőséget.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant</td>
+<td>Fordító segéd</td>
+<td>Feliratsorok egyszerű és gyors fordítása.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/commit</td>
+<td>Elfogad és tovább</td>
+<td>Változások elfogadása, majd új sorra ugrás</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/insert_original</td>
+<td>Eredetiből beilleszt</td>
+<td>Lefordítatlan szöveg beillesztése</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/next</td>
+<td>Következő sor</td>
+<td>Nem menti a változásokat és a következő sorra ugrik.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/prev</td>
+<td>Előző sor</td>
+<td>Nem menti a változásokat és az előző sorra ugrik.</td>
+</tr>
+<tr>
+<td>tool/translation_assistant/preview</td>
+<td>Elfogad és marad</td>
+<td>Változások elfogadása, de maradjon a jelenlegi soron</td>
+</tr>
+<tr>
+<td>video/aspect/cinematic</td>
+<td>CinemaScope (2,35)</td>
+<td>2,35-ös képarányba kényszeríti a videót.</td>
+</tr>
+<tr>
+<td>video/aspect/custom</td>
+<td>Egyéni képarány</td>
+<td>Egyénileg megadott képarányba kényszeríti a videót.</td>
+</tr>
+<tr>
+<td>video/aspect/default</td>
+<td>Alapértelmezett</td>
+<td>A videót saját képarányában jeleníti meg.</td>
+</tr>
+<tr>
+<td>video/aspect/full</td>
+<td>Teljesképernyős (4:3)</td>
+<td>4:3-as képarányba kényszeríti a videót.</td>
+</tr>
+<tr>
+<td>video/aspect/wide</td>
+<td>Szélesvásznú (16:9)</td>
+<td>16:9-es képarányba kényszeríti a videót.</td>
+</tr>
+<tr>
+<td>video/close</td>
+<td>Videó bezárása</td>
+<td>Bezárja a megnyitott videófájlt.</td>
+</tr>
+<tr>
+<td>video/copy_coordinates</td>
+<td>Koordináták mentése a Vágólapra</td>
+<td>Lementi a kurzor által kijelölt videó koordinátákat a vágólapra.</td>
+</tr>
+<tr>
+<td>video/detach</td>
+<td>Videó leválasztása</td>
+<td>Leválasztja a videót és egy külön ablakban jeleníti meg.</td>
+</tr>
+<tr>
+<td>video/details</td>
+<td>Videó adatai</td>
+<td>Megjeleníti a betöltött videó adatait.</td>
+</tr>
+<tr>
+<td>video/focus_seek</td>
+<td>Videó keresősávra fókuszálás kapcsolása</td>
+<td>Videó keresősáv és a korábbi aktív felület közti fókusz kapcsolása.</td>
+</tr>
+<tr>
+<td>video/frame/copy</td>
+<td>Kép mentése a Vágólapra</td>
+<td>Lemásolja a jelenlegi képkockát a vágólapra</td>
+</tr>
+<tr>
+<td>video/frame/copy/raw</td>
+<td>Kép mentése a Vágólapra (felirat nélkül)</td>
+<td>Lemásolja a jelenlegi képkockát feliratok nélkül a vágólapra</td>
+</tr>
+<tr>
+<td>video/frame/next</td>
+<td>Következő képkocka</td>
+<td>A következő képkockára ugrik.</td>
+</tr>
+<tr>
+<td>video/frame/next/boundary</td>
+<td>Következő határvonal</td>
+<td>A következő felirat határvonalára ugrik.</td>
+</tr>
+<tr>
+<td>video/frame/next/keyframe</td>
+<td>Következő kulcskocka</td>
+<td>A következő kulcskockára ugrik.</td>
+</tr>
+<tr>
+<td>video/frame/next/large</td>
+<td>Gyorstekerés előre</td>
+<td>Gyorstekerés előre</td>
+</tr>
+<tr>
+<td>video/frame/prev</td>
+<td>Előző képkocka</td>
+<td>Az előző képkockára ugrik.</td>
+</tr>
+<tr>
+<td>video/frame/prev/boundary</td>
+<td>Eőző határvonal</td>
+<td>Az előző felirat határvonalára ugrik.</td>
+</tr>
+<tr>
+<td>video/frame/prev/keyframe</td>
+<td>Előző kulcskocka</td>
+<td>Az előző kulcskockára ugrik.</td>
+</tr>
+<tr>
+<td>video/frame/prev/large</td>
+<td>Gyorstekerés hátra</td>
+<td>Gyorstekerés hátra</td>
+</tr>
+<tr>
+<td>video/frame/save</td>
+<td>PNG kép mentése</td>
+<td>Lementi a jelenlegi képkockát egy PNG fájlba a videó mappájába.</td>
+</tr>
+<tr>
+<td>video/frame/save/raw</td>
+<td>PNG kép mentése (felirat nélkül)</td>
+<td>Feliratok nélkül lementi a jelenlegi képkockát egy PNG fájlba a videó mappájába.</td>
+</tr>
+<tr>
+<td>video/jump</td>
+<td>Ugrás</td>
+<td>A megadott időhöz vagy képkockához ugrik.</td>
+</tr>
+<tr>
+<td>video/jump/end</td>
+<td>Ugrás a sor végére</td>
+<td>A feliratsor végére ugrik a videóban.</td>
+</tr>
+<tr>
+<td>video/jump/start</td>
+<td>Ugrás a sor kezdetére</td>
+<td>A feliratsor kezdetére ugrik a videóban.</td>
+</tr>
+<tr>
+<td>video/open</td>
+<td>Videó megnyitása...</td>
+<td>Megnyit egy videófájlt.</td>
+</tr>
+<tr>
+<td>video/open/dummy</td>
+<td>Próbavideó használata</td>
+<td>Egy egyöntetű színből álló videóklipet készít.</td>
+</tr>
+<tr>
+<td>video/opt/autoscroll</td>
+<td>Videókövetés ki- és bekapcsolása</td>
+<td>Videókövetés ki- és bekapcsolása.</td>
+</tr>
+<tr>
+<td>video/play</td>
+<td>Lejátszás</td>
+<td>Videó lejátszása a jelenlegi pozíciótól.</td>
+</tr>
+<tr>
+<td>video/play/line</td>
+<td>Sor lejátszása</td>
+<td>Kijelölt sor lejátszása.</td>
+</tr>
+<tr>
+<td>video/show_overscan</td>
+<td>Túlskálázási maszk megjelenítése</td>
+<td>A televíziók túlskálázási eljárása miatt esetlegesen levágásra kerülő részek megjelölése.</td>
+</tr>
+<tr>
+<td>video/stop</td>
+<td>Videó leállítása</td>
+<td>Lejátszás leállítása</td>
+</tr>
+<tr>
+<td>video/subtitles_provider/cycle</td>
+<td>Felirat kimeneti vezérlőit jeleníti meg.</td>
+<td>Az elérhető felirat kimeneti vezérlők listázása.</td>
+</tr>
+<tr>
+<td>video/tool/clip</td>
+<td>Körbevágás</td>
+<td>Felirat körbevágása téglalappal.</td>
+</tr>
+<tr>
+<td>video/tool/cross</td>
+<td>Hagyományos</td>
+<td>Hagyományos elhelyezés, duplaklikk a helyzetberakáshoz.</td>
+</tr>
+<tr>
+<td>video/tool/drag</td>
+<td>Elhelyezés</td>
+<td>Felirat elhelyezése</td>
+</tr>
+<tr>
+<td>video/tool/rotate/xy</td>
+<td>Forgatás XY</td>
+<td>Felirat forgatása az X és az Y tengely mentén.</td>
+</tr>
+<tr>
+<td>video/tool/rotate/z</td>
+<td>Forgatás Z</td>
+<td>Felirat forgatása a Z tengely mentén.</td>
+</tr>
+<tr>
+<td>video/tool/scale</td>
+<td>Méretezés</td>
+<td>Felirat méretezése az X és Y tengelyen.</td>
+</tr>
+<tr>
+<td>video/tool/vector_clip</td>
+<td>Vektoros körbevágás</td>
+<td>Felirat körbevágása vektorábrával.</td>
+</tr>
+<tr>
+<td>video/zoom/100</td>
+<td>100%</td>
+<td>100%-ra nagyítja a videót.</td>
+</tr>
+<tr>
+<td>video/zoom/200</td>
+<td>200%</td>
+<td>200%-ra nagyítja a videót.</td>
+</tr>
+<tr>
+<td>video/zoom/50</td>
+<td>50%</td>
+<td>50%-ra nagyítja a videót.</td>
+</tr>
+<tr>
+<td>video/zoom/in</td>
+<td>Nagyítás</td>
+<td>Nagyítja a videót.</td>
+</tr>
+<tr>
+<td>video/zoom/out</td>
+<td>Kicsinyítés</td>
+<td>Kicsinyíti a videót.</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Commands/hu/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:16:51 GMT -->
+</html>
+

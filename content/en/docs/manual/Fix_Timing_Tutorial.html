@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    
+<!-- Mirrored from docs.aegisub.org/manual/Fix_Timing_Tutorial by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:35:40 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Shift Times" />
+		<link rel="canonical" href="Shift_Times.html" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		
+		
+		
+    <title>Shift Times - Aegisub Manual</title>
+    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "css/main.css"; /*]]>*/</style>
+    <link rel="stylesheet" type="text/css" media="print" href="css/commonPrint.css" />
+    <!--[if lt IE 5.5000]><style type="text/css">@import "./css/IE50Fixes.css";</style><![endif]-->
+    <!--[if IE 5.5000]><style type="text/css">@import "./css/IE55Fixes.css";</style><![endif]-->
+    <!--[if gte IE 6]><style type="text/css">@import "./css/IE60Fixes.css";</style><![endif]-->
+    <!--[if IE]><script type="text/javascript" src="/manual_real/skins/common/IEFixes.js"></script>
+    <meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    
+    <script type= "text/javascript">/*<![CDATA[*/
+		var skin = "aegisub";
+		var stylepath = "/manual_real/skins";
+		var wgArticlePath = "/manual/$1";
+		var wgScriptPath = "/manual_real";
+		var wgScript = "../manual_real/index.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "../index.html";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Shift_Times";
+		var wgTitle = "Shift Times";
+		var wgAction = "view";
+		var wgArticleId = "113";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 532;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="js/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="../manual_real/index7ca3.html?title=-&amp;action=raw&amp;gen=js&amp;useskin=aegisub"><!-- site js --></script>
+    <!-- Head Scripts -->
+				<script type="text/javascript" src="js/ajax.js"></script>
+              <style>
+          .editsection { display: none; }
+        </style>
+          </head>
+    <body  class="mediawiki  ltr ns-0 ns-subject page-Shift_Times">
+
+   
+   
+   <div id="globalWrapper">
+    <div id="column-content">
+     <div id="content">
+
+	  
+
+	  <a name="top" id="contentTop"></a>
+	  	  <h1 class="firstHeading">Shift Times</h1>
+	  <div id="bodyContent">
+	    <h3 id="siteSub">From Aegisub Manual</h3>
+	    <div id="contentSub">(Redirected from Fix Timing Tutorial)</div>
+	    	    	    <!-- start content -->
+	    <p>The <b>shift times</b> tool is a batch processor for timestamps; it adjusts the start/end timestamps of many subtitle lines at once in various ways. It is located under <i>Timing</i> -&gt; <i>Shift Times</i>.
+</p><p>It looks like this:
+</p>
+<center><a href="File_Shift_times.html" class="image" title="Image:Shift times.png"><img alt="Image:Shift times.png" src="images/Shift_times.png" width="567" height="330" border="0" /></a></center>
+<p>The left part of the window contain the options. 
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Shift_by"><span class="tocnumber">1</span> <span class="toctext">Shift by</span></a></li>
+<li class="toclevel-1"><a href="#Affect"><span class="tocnumber">2</span> <span class="toctext">Affect</span></a></li>
+<li class="toclevel-1"><a href="#Times"><span class="tocnumber">3</span> <span class="toctext">Times</span></a></li>
+<li class="toclevel-1"><a href="#History"><span class="tocnumber">4</span> <span class="toctext">History</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Shift_by" id="Shift_by"></a><h3> <span class="mw-headline">Shift by</span></h3>
+<p>These controls decide in which direction and by how much each timestamp will be modified.
+</p>
+<ul><li> <b>Time</b> - How much you want to adjust each timestamp, in hours:minutes:seconds.centiseconds.
+</li><li> <b>Frames</b> - If you have video loaded, you can specify the adjustment time as a number of frames instead.
+</li><li> <b>Forward</b> or <b>Backward</b> - controls in which direction the timestamps are adjusted.
+</li></ul>
+<a name="Affect" id="Affect"></a><h3> <span class="mw-headline">Affect</span></h3>
+<p>These controls decide what lines will be processed.
+</p>
+<ul><li> <b>All rows</b> - Applies the time shifting to all lines in the script.
+</li><li> <b>Selected rows</b> - Applies the time shifting only to the selected lines.
+</li><li> <b>Selection onward</b> - Applies the time shifting to the selected line(s) and all lines below (in the grid) the last selected line.
+</li></ul>
+<a name="Times" id="Times"></a><h3> <span class="mw-headline">Times</span></h3>
+<p>These controls decide what timestamps will be processed.
+</p>
+<ul><li> <b>Start and End times</b> - Both start and end times of the affected lines will be modified by the given amount.
+</li><li> <b>Start times only</b> - Only the start times of the affected lines will be modified. Note that this makes the lines longer (if you shift backwards) or shorter (if you shift forwards) and can even make them have a duration of zero.
+</li><li> <b>End times only</b> - Only the end times of the affected lines will be modified. Note that this makes the lines longer (if you shift forwards) or shorter (if you shift backwards) and can even make them have a duration of zero.
+</li></ul>
+<p>Note that if a line is shifted so that its start or end time stamp would be negative, that timestamp is zeroed instead. This can be used to clear all timings from an entire script, by shifting backwards by longer than the latest timestamp in the script.
+</p>
+<a name="History" id="History"></a><h3> <span class="mw-headline">History</span></h3>
+<p>This is a history of all time shiftings you have done since last time you cleared the shift history (with the clear button). The format is a number of fields separated by commas. The fields are:
+</p>
+<ul><li> Filename of the script (e.g. "example.ass")
+</li><li> Shift amount and direction (e.g. "0:00:05.00 forward")
+</li><li> What times were affected, "s" for start, "e" for end, "s+e" for both
+</li><li> What rows were affected; "sel start-end" for selections, "all" for all rows (e.g. "sel 1-40")
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 13/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key manual:pcache:idhash:113-0!1!0!!en!2!edit=0 and timestamp 20120831023746 -->
+<div class="printfooter">
+Retrieved from "<a href="Shift_Times.html">http://docs.aegisub.org/manual/Shift_Times</a>"</div>
+	    	    <!-- end content -->
+	    <div class="visualClear"></div>
+	  </div>
+	 </div>
+    </div>
+    <div id="column-one">
+	 <div class="portlet" id="p-logo">
+	  <a style="background-image: url(images/aegisub_small.png);"
+	    href="Main_Page.html"
+	    title="Main Page"></a>
+	 </div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+	  <h5>Navigation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-mainpage"><a href="Main_Page.html">Main Page</a></li>
+	     	      
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Introduction'>
+	  <h5>Introduction</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-What-is-Aegisub?"><a href="About.html">What is Aegisub?</a></li>
+	     	      <li id="n-Highlights"><a href="Highlights.html">Highlights</a></li>
+	     	      <li id="n-Credits"><a href="Credits.html">Credits</a></li>
+	     	      <li id="n-Support-Aegisub"><a href="Support.html">Support Aegisub</a></li>
+	     	      <li id="n-FAQ"><a href="FAQ.html">FAQ</a></li>
+	     	      <li id="n-Tutorials"><a href="Tutorials.html">Tutorials</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Working with Subtitles'>
+	  <h5>Working with Subtitles</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Editing-Subtitles"><a href="Editing_Subtitles.html">Editing Subtitles</a></li>
+	     	      <li id="n-Exporting-Subtitles"><a href="Exporting.html">Exporting Subtitles</a></li>
+	     	      <li id="n-Applying-Subtitles"><a href="Attaching_subtitles_to_video.html">Applying Subtitles</a></li>
+	     	      <li id="n-Spell-Checker"><a href="Spell_Checker.html">Spell Checker</a></li>
+	     	      <li id="n-Translation-Assistant"><a href="Translation_Assistant.html">Translation Assistant</a></li>
+	     	      <li id="n-Paste-Over"><a href="Paste_Over.html">Paste Over</a></li>
+	     	      <li id="n-Select-Lines"><a href="Select_Lines.html">Select Lines</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Typesetting'>
+	  <h5>Typesetting</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Introduction"><a href="Typesetting.html">Introduction</a></li>
+	     	      <li id="n-Working-with-Video"><a href="Video.html">Working with Video</a></li>
+	     	      <li id="n-Editing-styles"><a href="Styles.html">Editing styles</a></li>
+	     	      <li id="n-Visual-Typesetting"><a href="Visual_Typesetting.html">Visual Typesetting</a></li>
+	     	      <li id="n-ASS-Override-Tags"><a href="ASS_Tags.html">ASS Override Tags</a></li>
+	     	      <li id="n-Colour-Picker"><a href="Colour_Picker.html">Colour Picker</a></li>
+	     	      <li id="n-Styling-Assistant"><a href="Styling_Assistant.html">Styling Assistant</a></li>
+	     	      <li id="n-Resolution-Resampler"><a href="Resolution_Resampler.html">Resolution Resampler</a></li>
+	     	      <li id="n-Fonts-Collector"><a href="Fonts_Collector.html">Fonts Collector</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Timing'>
+	  <h5>Timing</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Working-with-Audio"><a href="Audio.html">Working with Audio</a></li>
+	     	      <li id="n-Shift-times"><a href="Shift_Times.html">Shift times</a></li>
+	     	      <li id="n-Timing-Post-Processor"><a href="Timing_Post-Processor.html">Timing Post-Processor</a></li>
+	     	      <li id="n-Kanji-Timer"><a href="Kanji_Timer.html">Kanji Timer</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Automation'>
+	  <h5>Automation</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Overview"><a href="Automation.html">Overview</a></li>
+	     	      <li id="n-Karaoke-Templater"><a href="Karaoke_Templater.html">Karaoke Templater</a></li>
+	     	      <li id="n-Lua-Reference"><a href="Lua_Reference.html">Lua Reference</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<div class='portlet' id='p-Miscellaneous'>
+	  <h5>Miscellaneous</h5>
+	  <div class='pBody'>
+	    <ul>
+	    	      <li id="n-Aegisub-Options"><a href="Options.html">Aegisub Options</a></li>
+	     	      <li id="n-Script-Properties"><a href="Properties.html">Script Properties</a></li>
+	     	      <li id="n-Attachment-Manager"><a href="Attachment_Manager.html">Attachment Manager</a></li>
+	     	    </ul>
+	  </div>
+	</div>
+		<!-- end of the left (by default at least) column -->
+      <div class="visualClear"></div>
+      <div id="footer">
+		<table width = "100%">
+			<tr><td width="5%" align="left" nowrap='nowrap'></td>
+				<td align="center"></td>
+			<td width="5%" align="right" nowrap='nowrap'></td></tr></table>
+      </div>
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served in 0.062 secs. -->  </body>
+
+<!-- Mirrored from docs.aegisub.org/manual/Fix_Timing_Tutorial by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:35:46 GMT -->
+</html>

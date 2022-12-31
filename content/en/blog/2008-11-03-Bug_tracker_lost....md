@@ -10,6 +10,8 @@ tags:
   - old-post
   - announcement
   - bugtracker
+aliases:
+  - /blog/2008/11/bug-tracker-lost.html
 ---
 
 Oops.

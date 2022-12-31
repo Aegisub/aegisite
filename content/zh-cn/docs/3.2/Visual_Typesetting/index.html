@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Visual_Typesetting/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:13:27 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>可视化排版 - Aegisub 手册</title>
+<meta content='Aegisub, 字幕, VSFilter, Medusa, Sabbu, Vmoe, ' name='Keywords'>
+<meta content='https://aegi.vmoe.info/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project. Chinese translation by Vmoe Fansub.' name='Copyright'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href='index.html' rel='canonical'>
+<link href="../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../css/style-91e1dc35.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="https://aegi.vmoe.info/"><img alt="Aegisub" width="82" height="33" src="../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="https://aegi.vmoe.info/">主页</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">新闻</a>
+</li>
+<li>
+<a href="https://aegi.vmoe.info/downloads/">下载</a>
+</li>
+<li class='active'>
+<a href="https://aegi.vmoe.info/docs/">手册</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">报告Bug</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">论坛</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----
+'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/zh_CN/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='https://flattr.com/' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>导航</li>
+<li>
+<a href="../Main_Page/index.html">主页</a>
+</li>
+<li class='nav-header'>介绍</li>
+<li>
+<a href="../About/index.html">Aegisub 是什么？</a>
+</li>
+<li>
+<a href="../Highlights/index.html">亮点</a>
+</li>
+<li>
+<a href="../Credits/index.html">贡献者</a>
+</li>
+<li>
+<a href="../Support/index.html">支持 Aegisub</a>
+</li>
+<li>
+<a href="../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../Tutorials/index.html">教程</a>
+</li>
+<li class='nav-header'>制作字幕</li>
+<li>
+<a href="../Editing_Subtitles/index.html">编辑字幕</a>
+</li>
+<li>
+<a href="../Exporting/index.html">导出字幕</a>
+</li>
+<li>
+<a href="../Attaching_subtitles_to_video/index.html">应用字幕</a>
+</li>
+<li>
+<a href="../Spell_Checker/index.html">拼写检查器</a>
+</li>
+<li>
+<a href="../Translation_Assistant/index.html">翻译助手</a>
+</li>
+<li>
+<a href="../Paste_Over/index.html">选择性粘贴</a>
+</li>
+<li>
+<a href="../Select_Lines/index.html">选择多行</a>
+</li>
+<li class='nav-header'>排版</li>
+<li>
+<a href="../Typesetting/index.html">介绍</a>
+</li>
+<li>
+<a href="../Video/index.html">使用视频</a>
+</li>
+<li>
+<a href="../Styles/index.html">编辑样式</a>
+</li>
+<li class='active'>
+<a href="index.html">可视化排版</a>
+</li>
+<li>
+<a href="../ASS_Tags/index.html">ASS特效标签</a>
+</li>
+<li>
+<a href="../Colour_Picker/index.html">颜色选择器</a>
+</li>
+<li>
+<a href="../Styling_Assistant/index.html">样式助手</a>
+</li>
+<li>
+<a href="../Resolution_Resampler/index.html">重设分辨率</a>
+</li>
+<li>
+<a href="../Fonts_Collector/index.html">字体收集器</a>
+</li>
+<li class='nav-header'>时间轴</li>
+<li>
+<a href="../Audio/index.html">载入音频</a>
+</li>
+<li>
+<a href="../Timing/index.html">使用音频打轴</a>
+</li>
+<li>
+<a href="../Shift_Times/index.html">平移时间</a>
+</li>
+<li>
+<a href="../Timing_Post-Processor/index.html">时间后续处理器</a>
+</li>
+<li>
+<a href="../Kanji_Timer/index.html">汉字计时器</a>
+</li>
+<li class='nav-header'>自动化</li>
+<li>
+<a href="../Automation/index.html">概述</a>
+</li>
+<li>
+<a href="../Automation/Karaoke_Templater/index.html">卡拉OK模版</a>
+</li>
+<li>
+<a href="../Automation/Lua/index.html">Lua 相关</a>
+</li>
+<li class='nav-header'>杂项</li>
+<li>
+<a href="../Options/index.html">Aegisub选项</a>
+</li>
+<li>
+<a href="../Properties/index.html">脚本配置</a>
+</li>
+<li>
+<a href="../Attachment_Manager/index.html">附件管理器</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'>可视化排版</h1>
+<ol id="markdown-toc">
+  <li><a id="markdown-toc-section" href="#section">总览</a>    <ol>
+      <li><a id="markdown-toc-section-1" href="#section-1">播放</a></li>
+      <li><a id="markdown-toc-section-2" href="#section-2">播放当前行</a></li>
+      <li><a id="markdown-toc-section-3" href="#section-3">自动定位视频至行开始帧</a></li>
+      <li><a id="markdown-toc-section-4" href="#section-4">帧时间和编号</a></li>
+      <li><a id="markdown-toc-section-5" href="#section-5">字幕相对时间</a></li>
+      <li><a id="markdown-toc-section-6" href="#section-6">缩放</a></li>
+      <li><a id="markdown-toc-section-7" href="#section-7">视频位置滑块</a></li>
+    </ol>
+  </li>
+  <li><a id="markdown-toc-section-8" href="#section-8">视频背景菜单</a></li>
+  <li><a id="markdown-toc-section-9" href="#section-9">左边栏工具描述</a>    <ol>
+      <li><a id="markdown-toc-section-10" href="#section-10">十字工具</a></li>
+      <li><a id="markdown-toc-section-11" href="#section-11">拖动工具</a></li>
+      <li><a id="markdown-toc-z" href="#z">沿Z轴旋转</a></li>
+      <li><a id="markdown-toc-xy" href="#xy">沿XY轴旋转</a></li>
+      <li><a id="markdown-toc-section-12" href="#section-12">缩放工具</a></li>
+      <li><a id="markdown-toc-section-13" href="#section-13">矩形裁剪</a></li>
+      <li><a id="markdown-toc-section-14" href="#section-14">矢量裁剪</a></li>
+    </ol>
+  </li>
+</ol>
+
+<p><strong>关于这个功能，你能在 <a href="../Tutorials/index.html">视频教程</a>中找到。</strong></p>
+
+<h2 id="section">总览</h2>
+<p><img class="center" alt="" width="839" height="546" src="../img/video_display-6ae60c0e.png" /></p>
+
+<h3 id="section-1">播放</h3>
+<p>播放视频, 从当前帧开始。查看
+<a href="../Video/index.html#playingvideo">使用视频</a> 来获取Aegisub中有关的信息。</p>
+
+<h3 id="section-2">播放当前行</h3>
+<p>从当前活动行的开始帧播放视频，到该行结束帧停止。</p>
+
+<h3 id="section-3">自动定位视频至行开始帧</h3>
+<p>当选择新一行时，视频自动定位到该行的开始帧。</p>
+
+<h3 id="section-4">帧时间和编号</h3>
+<p>显示当前帧数和当前帧对应的开始时间。如果当前播放的帧是关键帧，这个框区的背景色就是绿色的。</p>
+
+<p>注意，有些情况下使用 "将当前视频帧设为所选字幕的开始时间" (Ctrl-3) 和 "将当前视频帧设为所选字幕的结束时间" (Ctrl-4) 得到的结果会与预期显示的不同，这是因为一些近似取整的错误导致的。（译者注：主要发生在预览视频为60FPS或15FPS时，所谓的逐帧对不准现象，可以手动调节时间解决）</p>
+
+<h3 id="section-5">字幕相对时间</h3>
+<p>显示当前视频帧相对于当前活动行开始时间的时间（偏移量），或相对于活动行结束时间。
+当你使用含有相对时间参数的特效标签时，这两个时间十分有价值，如 <a href="../ASS_Tags/index.html#animatedtransform">\t</a> 和 <a href="../ASS_Tags/index.html#fade">\fad</a>。</p>
+
+<h3 id="section-6">缩放</h3>
+<p>缩放当前视频的显示大小。</p>
+
+<h3 id="section-7">视频位置滑块</h3>
+<p>用来定位视频位置。按住Shift的同时拖动滑块会自动吸附关键帧。默认情况下←→键可以逐帧定位视频;
+Alt-left/right可以一次性调整10帧;Shift-left/right可以跳到前后的关键帧。激活视频滑块可以用右键单击它或者按Ctrl-Space。如果视频滑块已经被激活，按Ctrl-Space可以回到之间的活动部分。</p>
+
+<h2 id="section-8">视频背景菜单</h2>
+<p>你可以右键单击视频部分打开一个背景菜单，它有以下选项:</p>
+
+<p><img class="center" alt="" width="347" height="246" src="../img/Visual_menu-cbf35c2d.png" /></p>
+
+<dl>
+  <dt>保存PNG截图</dt>
+  <dd>把当前帧保存为一张 PNG 屏幕截图，保存路径在 <a href="../Options/index.html">选项</a> 中可以调节。截图分辨率和视频分辨率相同，不会受缩放或其它因素影响。</dd>
+  <dt>复制图像至剪贴板</dt>
+  <dd>与上面功能相同，只是把这张图片复制到剪切板，而不是存储成PNG文件，你可以把它粘贴到其他编辑软件里。</dd>
+  <dt>保存PNG截图 (不带字幕)</dt>
+  <dd>和之前的功能相同，不过图片中字幕是不可见的。</dd>
+  <dt>复制图像至剪贴板 (不带字幕)</dt>
+  <dd>和上面的功能相同，但是只把它复制到剪切板。</dd>
+  <dt>复制坐标到剪切板</dt>
+  <dd>复制目前鼠标所在的坐标到剪切板, 例如"230,152"</dd>
+</dl>
+
+<h2 id="section-9">左边栏工具描述</h2>
+<p>目前有七种不同的可视化排版工具可供使用: 十字工具（标准模式定位工具）,
+拖放字幕, 绕z轴旋转字幕,绕xy轴旋转字幕,缩放工具（沿X轴或Y轴的缩放工具）,矩形裁剪工具和矢量裁剪工具。</p>
+
+<h3 id="section-10">十字工具</h3>
+
+<p>这是标准模式，点击工具后在视频区域移动光标，光标会变为十字，十字附近会显示出光标所在点相对视频的坐标。默认情况下这个坐标是相对于左上角，按下Shift后这个坐标是相对于右下角计算。双击点会把该点的坐标以 <a href="../ASS_Tags/index.html#setposition">\pos 标签</a> 的形式写入到当前行中。如果按下Alt同时双击，当前所有选择的行都会和被移动的行移动相同的距离(包括当前帧不可见的行)。(译者注:用于批量调整已有pos行的重定位，不会造成相对移动)</p>
+
+<p><img class="center" alt="" width="368" height="220" src="../img/Visual_crosshair-a1cdc00e.png" /></p>
+
+<h3 id="section-11">拖动工具</h3>
+
+<p>拖动工具有两种模式。你可以使用辅助工具条在两种模式之间切换。</p>
+
+<p><img class="center" alt="" width="270" height="217" src="../img/Visual_drag-c62c533c.png" /></p>
+
+<p>在定位模式下，你可以简单地在视频表面点击-拖动字幕（通过“锚”，即那个方块）。你松开按键时的 <a href="../ASS_Tags/index.html#setposition">\pos</a> 参数会被写入到行中。</p>
+
+<p>在移动模式下，会有另一个圆形的“锚”，它用来定位移动终点的坐标。设置好移动的起点终点后，会有一条箭头线从起点指向终点。为了更好地控制时间，建议起点按照移动的起始帧定位，终点按照移动的终止帧定位。举个例子，如果你想让一行字幕从行开始5000毫秒后开始移动，就先把视频调节到相对该行5000毫秒的时候，定起点，确定完成移动的时间，调节视频到结束时间，定终点。</p>
+
+<p>如果你的行已经定了原点，你会看见第三个三角形的“锚”，和方形锚之间以虚线连接。你可以拖动它来改变原点的定位，在选择其他的旋转工具时，锚也是可见的。</p>
+
+<p>如果按住Shift进行拖动操作，则只能进行X或者Y坐标的变化 (变化谁取决于哪个变化量大)。</p>
+
+<p>按下Ctrl同时点选锚可以进行批量操作。</p>
+
+<p>双击没有锚的部分会把当前活动锚移动到该点，和十字工具相似。如果按住 Alt 同时进行操作，已选择的行的锚定位会相对于活动行进行。（不会相对移动）</p>
+
+<h3 id="z">沿Z轴旋转</h3>
+
+<p>在此模式下，你会看见一个圆圈（以字幕中心为圆心）和字幕底边线，圆圈被6个弧度包围，用以辅助旋转和计算角度。</p>
+
+<p><img class="center" alt="" width="286" height="212" src="../img/Visual_rotate_1-74e592fe.png" /></p>
+
+<p>这个工具提供了两种可调节功能。你可以定位旋转中心（原点），相当于使用 <a href="../ASS_Tags/index.html#rotationorigin">\org</a> 标签)，或者你随意点击来确定旋转的角度。</p>
+
+<p>你会注意到圆心和光标有一条连线，当你按住鼠标左键的同时拖动时，可以看到字幕旋转的实际效果。旋转角度合适时松开鼠标。按住Ctrl同时进行旋转会以30°为单位角度增量进行。</p>
+
+<p>如果原点距离字幕中心较远，你会看见字幕下方有一条辅助线，它也会随着角度变化重新定位。</p>
+
+<p>如果已选多行，所有的行都会被加入旋转标签(但是不会像十字工具或者拖动工具那样相对旋转)。</p>
+
+<p><img class="center" alt="" width="307" height="213" src="../img/Visual_rotate_2-b35ed5ee.png" /></p>
+
+<h3 id="xy">沿XY轴旋转</h3>
+<p>这个模式和上面的模式相似，尽管有很多要点不同。因为这个旋转同时定位两个轴的旋转角，所以看起来是3D的，因此也更难准确使用。</p>
+
+<p>为了使它更容易用，字幕所在平面会显示为一个网状辅助平面。从原点有三条射线，指明XYZ轴正方向。</p>
+
+<p><img class="center" alt="" width="345" height="207" src="../img/Visual_rotate_xy-5ddcd17f.png" /></p>
+
+<p>使用这个工具时，你只需要按住鼠标按键，在视频区域移动光标。当你左右方向移动时，字幕会沿着Y轴旋转，上下移动时会沿着X轴旋转。</p>
+
+<p>如果你在旋转的过程中同时按住Shift，则只沿着两轴中的一条旋转，按住Ctrl进行操作时会以30°为单位进行旋转。</p>
+
+<p>如果已选多行，所有的行都会被加入旋转标签(但是不会像十字工具或者拖动工具那样相对旋转)。</p>
+
+<p>和Z轴旋转工具一样，你也可以拖动原点的“锚“。</p>
+
+<h3 id="section-12">缩放工具</h3>
+<p>这是所有工具里用起来最简单的，它允许你按X和Y轴方向缩放字幕的大小。每个轴向都有一个指示条，显示着 100%尺寸和当前尺寸。</p>
+
+<p><img class="center" alt="" width="324" height="200" src="../img/Visual_scale-b7450030.png" /></p>
+
+<p>使用这个工具，只需要按住鼠标左键同时拖动，上下拖动会改变Y轴的缩放，左右拖动会改变X轴的缩放。按住Shift的同时操作只会改变单独一个轴的缩放量，取决于哪个方向移动得较大，按住Ctrl操作会把单位缩放量限制在25%。</p>
+
+<h3 id="section-13">矩形裁剪</h3>
+<p>矩形裁剪工具允许你裁剪字幕的显示范围，字幕处在矩形外的部分不会被显示出来(相当于通过图形使用<code>\clip(x1,y1,x2,y2)</code> 标签)。（译者注：当你使用iclip时，矩形内的部分不会显示）</p>
+
+<p><img class="center" alt="" width="272" height="209" src="../img/Visual_clip-a77ebcd1.png" /></p>
+
+<p>使用这个工具有两种方式。你可以点击拖动矩形四角中的一个，来调节已存在的矩形，也可以点击视频的空白处点击拖动，来创建一个新的矩形，字幕中看不见的区域是暗颜色的。</p>
+
+<h3 id="section-14">矢量裁剪</h3>
+<p>和上面的工具相似，不过这个工具可以绘制矢量区域，区域外部的字幕不会被渲染。不同点在于，这个工具可以通过贝塞尔曲线的形式拟合各种图形。</p>
+
+<p><img class="center" alt="" width="392" height="397" src="../img/Visual_vector_clip-0ab6cd67.png" /></p>
+
+<p>这个模式下含有8个子工具:</p>
+
+<p><img class="center" alt="" width="65" height="209" src="../img/Visual_vector_toolbar-81a11f04.png" /></p>
+
+<p>1.拖动，允许你拖动控制点
+2.插入线段，允许你插入一条从最后一个点出发，到鼠标位置结束（点击）的一条线段。
+3.插入一条贝塞尔曲线段，和上面的相同，但是它会多出两个控制点，用来调节曲线形状。
+4.在直线和曲线间转化，在线段或三次曲线上点击使它们之间相互转化。
+5.分割曲线，在线段或三次曲线上点击，使它们在点击处分为两段
+6.移除控制点，点击删除控制点
+7.徒手绘制图形（直线），在视频上点击并用鼠标拖动，绘制手绘图形，该图形会自动闭合，由初始点连接到终点，由直线段围成。
+8.徒手绘制图形（平滑曲线）和7的功能相似，不过图形由曲线段围成。</p>
+
+<p>和拖动工具一样，利用Ctrl也可以进行多点选择。默认情况下所有控制点都是选中状态；想要整体去除选中，可以在拖动模式下点击空白处。多控制点可以一次性被选中，你需要在移动模式下点击拖动鼠标，进行框选。</p>
+
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Aegisub 非官方中文网站由
+<a href='http://vmoe.info/'>Vmoe字幕组</a>
+提供支持，不保证内容绝对准确，请以
+<a href='http://www.aegisub.org/'>Aegisub 官网</a>
+为准。
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from aegi.vmoe.info/docs/3.2/Visual_Typesetting/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jun 2022 03:13:38 GMT -->
+</html>
+

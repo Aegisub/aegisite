@@ -8,6 +8,8 @@ weight: 50
 tags:
   - old-post
   - future
+aliases:
+  - /blog/2009/10/getting-ready-for-218.html
 ---
 
 It's been a little over three months since we released 2.1.7 stable, and we are happy to announce that version 2.1.8 is getting closer every day.

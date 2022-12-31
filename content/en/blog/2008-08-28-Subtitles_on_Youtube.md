@@ -10,6 +10,8 @@ tags:
   - youtube
   - tips
   - subtitle formats
+aliases:
+  - /blog/2008/08/subtitles-on-youtube.html
 ---
 
 Recently [Youtube](http://www.youtube.com/) got a new features: [Subtitles and captions](http://help.youtube.com/support/youtube/bin/answer.py?answer=100079&topic=15328). You can upload a subtitle file to your own videos, so the viewers can get subs. Softsubs, that is. And you can add as many as you want.

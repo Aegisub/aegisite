@@ -9,6 +9,8 @@ tags:
   - old-post
   - aegisub
   - localisation
+aliases:
+  - /blog/2011/06/call-for-translators.html
 ---
 
 Version 2.1.9 is still getting closer to being ready for release, although there's still some actual issues needing, at the very least, testing.

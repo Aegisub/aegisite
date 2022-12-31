@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from docs.aegisub.org/3.2/Automation/Included_macros/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:46:34 GMT -->
+<head>
+<meta charset='utf-8'>
+<title>Included macros - Aegisub Manual</title>
+<meta content='Aegisub, Subtitles, VSFilter, Medusa, Sabbu, ' name='Keywords'>
+<meta content='http://www.aegisub.org/' name='Author'>
+<meta content='Copyright (C) 2012 Aegisub Project.' name='Copyright'>
+<link href='index.html' rel='canonical'>
+<link href="../../img/favicon.ico" rel="icon" type="image/ico" />
+<link href="../../css/style-144d38ad.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<div class='container-fluid'>
+<a class="brand" style="padding: 3px 10px" href="http://www.aegisub.org/"><img alt="Aegisub" width="82" height="33" src="../../img/logo-top-bar-aeef0634.png" />
+</a>
+<ul class='nav'>
+<li>
+<a href="http://www.aegisub.org/">Home</a>
+</li>
+<li>
+<a href="http://blog.aegisub.org/">News</a>
+</li>
+<li>
+<a href="http://www.aegisub.org/downloads/">Downloads</a>
+</li>
+<li class='active'>
+<a href="../../../index.html">Manual</a>
+</li>
+<li>
+<a href="http://devel.aegisub.org/">Bug Tracker</a>
+</li>
+<li>
+<a href="http://forum.aegisub.org/">Forum</a>
+</li>
+<li>
+<a href="irc://irc.rizon.net/aegisub">IRC</a>
+</li>
+</ul>
+<ul class='nav pull-right'>
+<li>
+<form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='padding: 13px 0 6px 0; margin: 0' target='_top'>
+<input name='cmd' type='hidden' value='_s-xclick'>
+<input name='encrypted' type='hidden' value='-----BEGIN PKCS7-----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-----END PKCS7-----'>
+<input alt='PayPal - The safer, easier way to pay online!' border='0' name='submit' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif' type='image'>
+<img alt='' border='0' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1'>
+</form>
+</li>
+<li>
+<a href='http://flattr.com/thing/922938/Aegisub-Advanced-Subtitle-Editor' target='_blank'>
+<img alt='Flattr this' src='http://api.flattr.com/button/flattr-badge-large.png' title='Flattr this'>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='fluid-row'>
+<div class='span3'>
+<ul id='manual-sidebar'>
+<li class='nav-header'>Navigation</li>
+<li>
+<a href="../../Main_Page/index.html">Main Page</a>
+</li>
+<li class='nav-header'>Introduction</li>
+<li>
+<a href="../../About/index.html">What is Aegisub?</a>
+</li>
+<li>
+<a href="../../Highlights/index.html">Highlights</a>
+</li>
+<li>
+<a href="../../Credits/index.html">Credits</a>
+</li>
+<li>
+<a href="../../Support/index.html">Support Aegisub</a>
+</li>
+<li>
+<a href="../../FAQ/index.html">FAQ</a>
+</li>
+<li>
+<a href="../../Tutorials/index.html">Tutorials</a>
+</li>
+<li class='nav-header'>Working with Subtitles</li>
+<li>
+<a href="../../Editing_Subtitles/index.html">Editing Subtitles</a>
+</li>
+<li>
+<a href="../../Exporting/index.html">Exporting Subtitles</a>
+</li>
+<li>
+<a href="../../Attaching_subtitles_to_video/index.html">Applying Subtitles</a>
+</li>
+<li>
+<a href="../../Spell_Checker/index.html">Spell Checker</a>
+</li>
+<li>
+<a href="../../Translation_Assistant/index.html">Translation Assistant</a>
+</li>
+<li>
+<a href="../../Paste_Over/index.html">Paste Over</a>
+</li>
+<li>
+<a href="../../Select_Lines/index.html">Select Lines</a>
+</li>
+<li class='nav-header'>Typesetting</li>
+<li>
+<a href="../../Typesetting/index.html">Introduction</a>
+</li>
+<li>
+<a href="../../Video/index.html">Working with Video</a>
+</li>
+<li>
+<a href="../../Styles/index.html">Editing styles</a>
+</li>
+<li>
+<a href="../../Visual_Typesetting/index.html">Visual Typesetting</a>
+</li>
+<li>
+<a href="../../ASS_Tags/index.html">ASS Override Tags</a>
+</li>
+<li>
+<a href="../../Colour_Picker/index.html">Colour Picker</a>
+</li>
+<li>
+<a href="../../Styling_Assistant/index.html">Styling Assistant</a>
+</li>
+<li>
+<a href="../../Resolution_Resampler/index.html">Resolution Resampler</a>
+</li>
+<li>
+<a href="../../Fonts_Collector/index.html">Fonts Collector</a>
+</li>
+<li class='nav-header'>Timing</li>
+<li>
+<a href="../../Audio/index.html">Working with Audio</a>
+</li>
+<li>
+<a href="../../Timing/index.html">Timing subtitles to audio</a>
+</li>
+<li>
+<a href="../../Shift_Times/index.html">Shift times</a>
+</li>
+<li>
+<a href="../../Timing_Post-Processor/index.html">Timing Post-Processor</a>
+</li>
+<li>
+<a href="../../Kanji_Timer/index.html">Kanji Timer</a>
+</li>
+<li class='nav-header'>Automation</li>
+<li>
+<a href="../index.html">Overview</a>
+</li>
+<li>
+<a href="../Karaoke_Templater/index.html">Karaoke Templater</a>
+</li>
+<li>
+<a href="../Lua/index.html">Lua Reference</a>
+</li>
+<li class='nav-header'>Miscellaneous</li>
+<li>
+<a href="../../Options/index.html">Aegisub Options</a>
+</li>
+<li>
+<a href="../../Properties/index.html">Script Properties</a>
+</li>
+<li>
+<a href="../../Attachment_Manager/index.html">Attachment Manager</a>
+</li>
+</ul>
+</div>
+<div class='span9' id='manual-body'>
+<h1 class='page-header'><a href="../index.html">Automation</a> / Included macros</h1>
+<ol id="markdown-toc">
+  <li><a href="#apply-karaoke-template">Apply karaoke template</a></li>
+  <li><a href="#make-full-width">Make full-width</a></li>
+  <li><a href="#automatic-karaoke-lead-in">Automatic karaoke lead-in</a></li>
+  <li><a href="#clean-tags">Clean tags</a></li>
+  <li><a href="#add-edgeblur">Add Edgeblur</a></li>
+  <li><a href="#strip-tags">Strip tags</a></li>
+  <li><a href="#select-overlaps">Select Overlaps</a></li>
+</ol>
+
+<p>Aegisub includes several macros. Here's a line-up of them.</p>
+
+<h2 id="apply-karaoke-template">Apply karaoke template</h2>
+<p>This is the macro incantation of Karaoke Templater. See the page on
+<a href="../Karaoke_Templater/index.html">Karaoke Templater</a> for how to use this.</p>
+
+<p>This macro is only available when there is at least one template line in the
+subtitle file.</p>
+
+<h2 id="make-full-width">Make full-width</h2>
+<p>Converts all ASCII characters to Japanese "full-width" variations of them.</p>
+
+<p>This can be useful if you need to typeset a sign translation vertically,
+such that the letters are "stacked".</p>
+
+<p>This macro modifies all lines that are currently selected in the subtitles
+grid.</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><p>Here’s a typeset sign:</p>
+
+<pre class="highlight text">{\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&amp;H25485A&amp;\c&amp;HDEEBF1&amp;\pos(456,184)\frz-90}Sign text
+</pre>
+<p>Notice that it uses an “@-font”, a variation that exists of every CJK font
+that has “fullwidth” characters rotated 90 degrees from the baseline.
+Fullwidth characters include not just these fullwidth variations of the
+Latin alphabet but also Japanese kana and kanji, hanzi, hanja and various
+punctuation characters.</p>
+
+<p>Now after running this macro on the line:</p>
+
+<pre class="highlight text">{\fn@DFPGothic-EB\fs26\shad0\fe128\bord3\3c&amp;H25485A&amp;\c&amp;HDEEBF1&amp;\pos(456,184)\frz-90}Ｓｉｇｎ ｔｅｘｔ
+</pre>
+<p>This is what it looks before and after running the macro:</p>
+
+<p><img src="../../img/StackedSign1-fb0d8806.png" /> <img src="../../img/StackedSign2-fe9e47e5.png" /></p>
+</div>
+</div>
+
+<h2 id="automatic-karaoke-lead-in">Automatic karaoke lead-in</h2>
+<p>Automatically join several karaoke-timed lines up timing-wise and add
+appropriate <code>\k</code> tags in front of them.</p>
+
+<p>This macro is designed to help creating karaoke effects, most importantly
+creating transitions and lead-ins for lines. It's well suited for using when
+the karaoke is timed but before applying effects, such as karaoke templates.</p>
+
+<p>This macro requires at least two lines to be selected and it only works
+sensibly if the start-time of each selected line is larger than the
+start-time of the selected line that comes before it. It changes the timing
+of the selected lines and adds <code>\k</code> tags at the start of them except the
+first.</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><p>Here’s two lines of “tightly” timed karaoke:</p>
+
+<pre class="highlight text">Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
+Dialogue: 0,0:00:46.57,0:00:48.56,Default,,0000,0000,0000,,{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+</pre>
+<p>Both lines start exactly when the first word starts being sung, and they end
+exactly when the last word ends.</p>
+
+<p>Now if the <em>Automatic karaoke lead-in</em> macro is run on these two lines, they
+are changed into this:</p>
+<pre><code>Dialogue: 0,0:00:44.46,<u>0:00:46.28</u>,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
+Dialogue: 0,<u>0:00:46.28</u>,0:00:48.56,Default,,0000,0000,0000,,<u>{\k29}</u>{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+</code></pre>
+
+<p>The start-time of the second line is changed so it matches the end-time of
+the first line, and a <code>\k</code> tag  is added to the start of the line, to make
+up for the shift otherwise created by this. This effectively creates an
+empty syllable that can be used as a “spacer” to create fade-in and fade-out
+effects.</p>
+
+<p>The macro also shows this message:</p>
+
+<pre class="highlight text">Smallest inter-line duration: 290 milliseconds
+</pre>
+<p>This simply says that the smallest duration between two lines it found, was
+290 milliseconds, or 0.29 seconds, so that’s as much time you have to make
+fade-in, fade-out and other transition effects, if you want every
+syllable-highlight to be fully visible.</p>
+</div>
+</div>
+
+<h2 id="clean-tags">Clean tags</h2>
+<p>This macro does various cleaning up on the override tags in all selected
+lines.</p>
+
+<ul>
+  <li>Combines adjacent override blocks (i.e { … }) except if both of the
+block contains \k tags each then they will be left as is</li>
+  <li>Push any \k tags in override blocks to the front (e.g. from {\frz90\k40}
+to {\k40\frz90}). Special care will be taken for multiple \k tags within
+one block to preserve the ordering</li>
+  <li>Move line-wide tags (i.e. tags whose effects affect the whole line – \a
+\an \org \pos \move \fade \fad) to the beginning of the lines</li>
+  <li>Remove all but first line-wide tags of the same class (note: \pos and
+\move are from the same class – only first of them works in a line,
+therefore the script will find the first \move or \pos and retain whic of
+the two comes first and remove others. The same are done for \fad and
+\fade)</li>
+  <li>Remove spaces in comma-separated parameters (e.g. \pos(200 , 200) becomes
+\pos(200,200))</li>
+</ul>
+
+<p>This macro is also available as an export filter.</p>
+
+<p>The main intended function of this macro is to make
+<a href="../Lua/Modules/karaskel.lua/index.html">karaskel.lua</a> split karaoke lines more
+sensibly into syllable structures, see the example.</p>
+
+<p>This macro modifies all selected lines in the grid, re-writing all tag
+blocks in them.</p>
+
+<div class='examplebox'>
+<div class='exampleheader'>Example</div>
+<div class='examplecontents'><p>Original line:</p>
+
+<pre class="highlight text">{\r\frz90\k80}Test {\r\fry180\k60}me
+</pre>
+<p>Karaskel creates these syllable structures:</p>
+
+<ul>
+  <li>0 = {\r\frz90}</li>
+  <li>1 = Test {\r\fry180}</li>
+  <li>2 = me</li>
+</ul>
+
+<p>After running <em>Clean Tags</em> on the line:</p>
+
+<pre class="highlight text">{\k80\r\frz90}Test {\k60\r\fry180}me
+</pre>
+<p>Now karaskel creates these syllable structures:</p>
+
+<ul>
+  <li>0 = </li>
+  <li>1 = {\r\frz90}Test</li>
+  <li>2 = {\r\fry180}me</li>
+</ul>
+
+<p>The cleaned up version is generally what you’d want since it places the
+override tags inside the syllables they affect.</p>
+</div>
+</div>
+
+<h2 id="add-edgeblur">Add Edgeblur</h2>
+<p>Add <a href="../../ASS_Tags/index.html#bluredges">`\be1`</a> to all selected lines. Lightly blurring the
+edges of all dialogue lines can noticeably improve compressibility when
+<a href="../../Attaching_subtitles_to_video/index.html">hardsubbing</a> (especially when using older
+codecs such as XviD), but edgeblur cannot be set in the style due to format
+limitations.</p>
+
+<h2 id="strip-tags">Strip tags</h2>
+<p>Remove all ASS override blocks and the tags within from the selected lines.</p>
+
+<h2 id="select-overlaps">Select Overlaps</h2>
+<p>Select all lines which begin while another line is still active. This can be
+useful for catching timing errors, or for setting an alternate style for these
+lines, which improves readability.</p>
+
+<div class='navbox'>
+<div><a href="../index.html">Automation</a></div>
+<table>
+<tr>
+<th>Overview:</th>
+<td><a href="../Manager/index.html">Automation Manager</a> • <a href="../Running_macros/index.html">Running macros</a> • <a href="../../Exporting/index.html">Using export filters</a> • <a href="index.html">Standard macros</a></td>
+</tr>
+<tr>
+<th><a href="../Karaoke_Templater/index.html">Karaoke Templater</a> reference:</th>
+<td><a href="../Karaoke_Templater/Declaring_template_and_code_lines/index.html">Declaring templates</a> • <a href="../Karaoke_Templater/Template_execution_rules_and_order/index.html">Execution order</a> • <a href="../Karaoke_Templater/Template_modifiers/index.html">Modifiers</a> • <a href="../Karaoke_Templater/Inline_variables/index.html">Inline-variables ($-variables)</a> <br> <a href="../Karaoke_Templater/Code_lines_and_blocks/index.html">Code lines and blocks</a> • <a href="../Karaoke_Templater/Code_execution_environment/index.html">Execution envirionment</a></td>
+</tr>
+<tr>
+<th><a href="../Lua/index.html">Lua API</a>  reference:</th>
+<td><a href="../Lua/Registration/index.html">Registration</a> • <a href="../Lua/Subtitle_file_interface/index.html">Subtitles object</a> • <a href="../Lua/Progress_reporting/index.html">Progress reporting</a> • <a href="../Lua/Dialogs/index.html">Dialogs</a> • <a href="../Lua/Miscellaneous_APIs/index.html">Misc. APIs</a></td>
+</tr>
+<tr>
+<th><a href="../Lua/Modules/index.html">Lua Modules</a>:</th>
+<td><a href="../Lua/Modules/karaskel.lua/index.html">karaskel.lua</a> • <a href="../Lua/Modules/util/index.html">util</a> • <a href="../Lua/Modules/unicode/index.html">unicode</a> • <a href="#">cleantags.lua</a> • <a href="../Lua/Modules/clipboard/index.html">clipboard</a> • <a href="../Lua/Modules/re/index.html">re</a></td>
+</tr>
+<tr>
+<th>Karaskel concepts:</th>
+<td><a href="../Lua/Modules/karaskel.lua/index.html#Style_table">Style tables</a> • <a href="../Lua/Modules/karaskel.lua/index.html#Dialogue_line_table">Dialogue line tables</a> • <a href="../Lua/Modules/karaskel.lua/index.html#Karaoke_and_furigana_syllable_tables">Syllable tables</a> • <a href="../../Karaoke_inline-fx/index.html">Inline effects</a> • <a href="../../Furigana_karaoke/index.html">Furigana</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+</div>
+
+<footer class='footer span12 pagination-centered'>
+<p>
+Hosting kindly provided by
+<a href='http://www.networkredux.com/'>NetworkRedux</a>
+</p>
+</footer>
+</body>
+
+<!-- Mirrored from docs.aegisub.org/3.2/Automation/Included_macros/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 19:46:36 GMT -->
+</html>
+
