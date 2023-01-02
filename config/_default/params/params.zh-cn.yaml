@@ -107,6 +107,9 @@ options:
   multilingualMode: true
   docsVersioning: false
   fullWidth: true
+  navbarSticky: true
+  toTopButton: false
+  scrollSpy: false
 
 menu:
   section:
