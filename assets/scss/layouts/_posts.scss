@@ -1,6 +1,8 @@
 .home .card,
 .contributors.list .card,
-.blog.list .card {
+.blog.list .card,
+.blog.single .card,
+.categories.list .card {
   margin-top: 2rem;
   margin-bottom: 2rem;
   transition: transform 0.3s;
@@ -8,14 +10,24 @@
 
 .home .card:hover,
 .contributors.list .card:hover,
-.blog.list .card:hover {
+.blog.list .card:hover,
+.blog.single .card:hover,
+.categories.list .card:hover {
   transform: scale(1.025);
 }
 
+.contributors.list .card.card-terms:hover,
+.categories.list .card.card-terms:hover {
+  transform: none;
+}
+
 .home .card-body,
-.contributors.list .card-body,
-.blog.list .card-body {
+.contributors.list .card-body {
   padding: 0 2rem 1rem;
+}
+
+.contributors.list .card-terms .card-body {
+  padding: 1rem;
 }
 
 .blog-header {
