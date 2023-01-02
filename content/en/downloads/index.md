@@ -1,5 +1,7 @@
 ---
 title: Downloads
+type: downloads
+layout: Downloads
 ---
 
 The [Latest Release](https://github.com/Aegisub/Aegisub/releases/latest) version is **{{< current-version-number >}}**, released {{< current-version-date >}}

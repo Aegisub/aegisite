@@ -5,7 +5,7 @@
 # header-bar/left side: main menus
 main:
   - name: Downloads
-    url: /downloads/main/
+    url: /downloads/
     weight: 10
   - name: Docs
     url: /docs/
