@@ -32,7 +32,7 @@ schemaName: Aegisub
 #schemaAuthorTwitter: 'https://twitter.com/henkverlinde'
 #schemaAuthorLinkedIn: 'https://www.linkedin.com/in/henkverlinde/'
 #schemaAuthorGitHub: 'https://github.com/h-enk'
-schemaLocale: zh_CN
+schemaLocale: zh-CN
 schemaLogo: logo-aegisub.png
 schemaLogoWidth: 512
 schemaLogoHeight: 512
