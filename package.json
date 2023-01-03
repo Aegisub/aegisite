@@ -1,18 +1,16 @@
 {
-  "name": "@hyas/doks",
-  "description": "Doks theme",
-  "version": "0.4.3",
+  "name": "aegisite",
+  "description": "Aegisub Website",
+  "version": "0.5.0",
+  "private": true,
   "engines": {
     "node": ">=16.16.0"
   },
   "browserslist": [
     "defaults"
   ],
-  "repository": "https://github.com/h-enk/doks",
+  "repository": "https://github.com/Aegisub/aegisite",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "init": "shx rm -rf .git && git init -b main",
     "create": "exec-bin node_modules/.bin/hugo/hugo new",
