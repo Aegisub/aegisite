@@ -95,7 +95,6 @@ editPage: false
 lastMod: false
 
 options:
-  lazySizes: true
   clipBoard: true
   instantPage: true
   flexSearch: false

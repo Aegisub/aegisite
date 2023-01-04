@@ -52,7 +52,6 @@
     "hugo-installer": "^4.0.1",
     "instant.page": "^5.1",
     "katex": "^0.16",
-    "lazysizes": "^5.3",
     "markdownlint-cli2": "^0.6.0",
     "netlify-plugin-submit-sitemap": "^0.4.0",
     "node-fetch": "^3.3",

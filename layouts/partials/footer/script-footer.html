@@ -16,12 +16,6 @@
 
 {{ $slice := slice $app -}}
 
-{{ if .Site.Params.options.lazySizes -}}
-  {{ $lazySizes := resources.Get "js/lazysizes.js" -}}
-  {{ $lazySizes := $lazySizes | js.Build -}}
-  {{ $slice = $slice | append $lazySizes -}}
-{{ end -}}
-
 {{ if .Site.Params.options.clipBoard -}}
   {{ $clipBoard := resources.Get "js/clipboard.js" -}}
   {{ $clipBoard := $clipBoard | js.Build -}}
