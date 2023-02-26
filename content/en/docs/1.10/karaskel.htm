@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Karaskel</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Advanced">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Karaskel</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="utils_lua.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="karaskel_lua.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p>Karaskel is the name for a family of include files provided with Automation. The Karaskel scripts provide much of the skeleton code you often need when writing karaoke generation scripts, allowing you to focus on the effect itself, rather than how to structure your code and calculate various positions etc.</p>
+<p>&nbsp;</p>
+<p>The primary idea of Karaskel is to pre-calculate a lot of often-needed positioning and timing information, and structure the output generation by automatically calling certain functions for handling lines and syllables. You can see some basic sample scripts using Karaskel in <a href="demoscripts.htm">demos</a> 8, 9 and 10. Consider demo 6 and 7 as samples of how <span style="font-style: italic;">not</span> to do karaoke generation scripts, those both bloat and are hard to read because of not using Karaskel.</p>
+<p>&nbsp;</p>
+<p>There are two Karaskel available, the "basic" and the "advanced". Chances are you'll be using the advanced one most of the time. Here's a quick rundown of the two skeletons:</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;"><a href="karaskel_lua.htm">Simple</a>:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td>Works on the <span style="font-style: italic;">one line in, one line out</span> principle.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td>You write a function to generate a replacement text for each syllable.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td>You can optionally add additional text at the start/end of each line.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td>Not much different from the <span style="font-style: italic;">simple-k-replacer </span>factorybrew script, except possibly more manageable.</td></tr></table></div><p>&nbsp;</p>
+<p><span style="font-weight: bold;"><a href="karaskel_adv_lua.htm">Advanced</a>:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td>Works with <span style="font-style: italic;">one line in, any number out</span> principle.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td>You write a function to generate a number of lines for each syllable.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td>Support for <span style="font-style: italic;">furigana</span> (see demo 10.)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td>Most similar to <span style="font-style: italic;">multi-template</span>, but much more manageable for complex effects.</td></tr></table></div><p>&nbsp;</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">New fields added by the pre-calculation</span></p>
+<p>&nbsp;</p>
+<p>The syllable data pre-calculation function adds a number of new fields to both line tables and syllable tables:</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">meta.res_x</span> (number)</p>
+<p><span style="font-style: italic;">meta.res_y</span> (number)</p>
+<p style="margin: 0px 0px 0px 24px;">These two might be zero or undefined in some cases. In these cases, Karaskel mimics VSFilter behaviour, and calculates one from the other, or in the case of both being zero, uses the default of 384x288.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">line.i</span> (number)</p>
+<p style="margin: 0px 0px 0px 24px;">Index of the line, as counted in the <span style="font-style: italic;">lines</span> array. Zero-based.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">line.prev</span> (table)</p>
+<p><span style="font-style: italic;">line.next</span> (table)</p>
+<p style="margin: 0px 0px 0px 24px;">References to the next and previous lines in the file. Allows accessing the lines in a doubly-linked-list manner. Make sure you check these for being non-nil before using them!</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">line.styleref</span> (table)</p>
+<p style="margin: 0px 0px 0px 24px;">Reference to the style table describing the style used by this line. In case the line names an undefined style, the first defined style is picked instead. (This is to avoid seemingly random hard-to-debug crashes. Whenever such a substitution is done, a warning is output.)</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">line.text_stripped</span> (string)</p>
+<p style="margin: 0px 0px 0px 24px;">While this isn't a new field, the meaning of it is changed in the case of furigana being enabled. When furigana is enabled, this is changed to contain only the baseline text, ie. without any furigana text.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">line.width</span> (number)</p>
+<p><span style="font-style: italic;">line.height</span> (number)</p>
+<p><span style="font-style: italic;">line.ascent</span> (number)</p>
+<p><span style="font-style: italic;">line.extlead</span> (number)</p>
+<p style="margin: 0px 0px 0px 24px;">The simple results of <span style="font-style: italic;">aegisub.text_extents</span> being applied to the line, using <span style="font-style: italic;">line.styleref</span> for style.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">line.centerleft</span> (number)</p>
+<p><span style="font-style: italic;">line.centerright</span> (number)</p>
+<p style="margin: 0px 0px 0px 24px;">Left and right edges of the line, when horizontally centered on screen. Note that these are currently incorrect when the left and right margins are different. Useful in conjunction with <span style="font-style: italic;">syl.left</span>, <span style="font-style: italic;">syl.center</span> and <span style="font-style: italic;">syl.right</span> for per-syllable positioning lines centered on screen.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">line.duration</span> (number)</p>
+<p style="margin: 0px 0px 0px 24px;">Duration of the line in milliseconds.</p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span style="font-style: italic;">line.ool_fx</span> (table)</p>
+<p style="margin: 0px 0px 0px 24px;">String-indexed table of out-of-line effects. The first word (space-separated) on each <span style="font-style: italic;">ool fx </span>line defines the <span style="font-style: italic;">name</span> of that ool fx, and the name is used as index here. See <span style="font-style: italic;">karaskel.process_lines</span> or <a href="http://www.malakith.net/aegiwiki/index.php?title=Out-of-line_karaoke_fx" target="_blank" class="weblink">the wiki</a> for more information.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">syl.i</span> (number)</p>
+<p style="margin: 0px 0px 0px 24px;">Index of the syllable on the line, zero-indexed, with index zero meaning the before-first syllable. (Testing for index zero can be a simple way of doing start-of-line initialisation.)</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">syl.inline_fx</span> (string)</p>
+<p style="margin: 0px 0px 0px 24px;">Name of the <span style="font-style: italic;">inline fx</span> for this syllable. This is reset to the default per line. If an inline fx isn't defined explicitly for a syllable, it has the same as the previous one. An inline fx is defined with a specially formed override tag, like this: {\-foo} placed first in the syllable. This defines the inline fx to be "foo". Also see <a href="http://www.malakith.net/aegiwiki/index.php?title=Karaoke_inline_fx" target="_blank" class="weblink">the wiki</a>.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">syl.width</span> (number)</p>
+<p><span style="font-style: italic;">syl.height</span> (number)</p>
+<p><span style="font-style: italic;">syl.ascent</span> (number)</p>
+<p><span style="font-style: italic;">syl.extlead</span> (number)</p>
+<p style="margin: 0px 0px 0px 24px;"><span style="font-style: italic;">text_extents</span> results for the syllable.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">syl.left</span> (number)</p>
+<p><span style="font-style: italic;">syl.right</span> (number)</p>
+<p><span style="font-style: italic;">syl.center</span> (number)</p>
+<p style="margin: 0px 0px 0px 24px;">Left edge, right edge and center of syllable, relative to the left edge of the line. Note that these are (attempted) corrected for per-syllable positioning, with spaces stripped and other manipulations. The effect of these manipulations aren't extensively tested, but it seems to work correctly.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">syl.furigana</span> (table)</p>
+<p style="margin: 0px 0px 0px 24px;">Table with furigana data for this syllable. Only generated when <span style="font-style: italic;">karaskel.engage_furigana = true</span>.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">syl.highlights</span> (table)</p>
+<p style="margin: 0px 0px 0px 24px;">Table with multiple-highlight data for tihs syllable. Only generated when <span style="font-style: italic;">karaskel.engage_furigana = true</span>.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">syl.text_stripped</span> (string)</p>
+<p style="margin: 0px 0px 0px 24px;">Modified the same way as <span style="font-style: italic;">line.text_stripped</span> when furigana is enabled.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">syl.start_time</span> (number)</p>
+<p><span style="font-style: italic;">syl.end_time</span> (number)</p>
+<p style="margin: 0px 0px 0px 24px;">Start and end times of the syllable, relative to the line start time, in milliseconds.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Additional options</span></p>
+<p>&nbsp;</p>
+<p>The two Karaskel scripts are both based off a base, named <span style="font-style: italic;">karaskel-base.lua</span>. Most importantly, this is where the <span style="font-style: italic;">karaskel.precalc_syllable_data</span> function is defined, so if you want that function but nothing else of the Karaskel, you only need to include <span style="font-style: italic;">karaskel-base.lua</span>.</p>
+<p>&nbsp;</p>
+<p>Furthermore, the Karaskel base defines some variables you can use to customise its behaviour, mostly related to what is pre-calculated, and whether debugging messages should be displayed. The following options are available. These should be set in the script including a Karaskel, as demonstrated in demo 10, <span style="font-style: italic;">furigana</span>.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">karaskel.engage_positioning</span> (boolean)</p>
+<p style="margin: 0px 0px 0px 24px;">Enables syllable positioning calculation. This is automatically enabled by <span style="font-style: italic;">karaskel-adv.</span></p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span style="font-style: italic;">karaskel.precdalc_start_progress</span> (number)</p>
+<p><span style="font-style: italic;">karaskel.precdalc_end_progress</span> (number)</p>
+<p style="margin: 0px 0px 0px 24px;">These two variables define the range the progress bar covers while syllable data are pre-calculated. They default to 0 and 50.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">karaskel.engage_furigana</span> (boolean)</p>
+<p style="margin: 0px 0px 0px 24px;">Enables furigana parsing and calculations. See <a href="http://www.malakith.net/aegiwiki/index.php?title=Furigana_karaoke_syntax" target="_blank" class="weblink">the wiki page</a> on furigana for more information.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">karaskel.furigana_scale</span> (number)</p>
+<p style="margin: 0px 0px 0px 24px;">Defines the scale of furigana text relative to the baseline text size. The default is 0.4, meaning furigana is 40% the size of normal text.</p>
+<p style="margin: 0px 0px 0px 24px;">Note that furigana is automatically "squished" to make space for all characters.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">karaskel.inline_fx_default</span> (string)</p>
+<p style="margin: 0px 0px 0px 24px;">Default <span style="font-style: italic;">inline fx</span> name. See <a href="http://www.malakith.net/aegiwiki/index.php?title=Karaoke_inline_fx" target="_blank" class="weblink">the wiki page</a> on <span style="font-style: italic;">inline fx</span> for more information.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">karaskel.ool_fx_style</span> (boolean/string)</p>
+<p style="margin: 0px 0px 0px 24px;">Names the style defining out-of-line effects. Can be either false, to signify that out-of-line effects are not used, or a string naming a style. Defaults to false. <a href="http://www.malakith.net/aegiwiki/index.php?title=Out-of-line_karaoke_fx" target="_blank" class="weblink">Wiki page</a></p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">karaske.engage_trace</span> (boolean)</p>
+<p style="margin: 0px 0px 0px 24px;">Whether to show debugging messages. Rarely useful, just leave it at false.</p>
+<p>&nbsp;</p>
+
+</div>
+</body>
+</html>

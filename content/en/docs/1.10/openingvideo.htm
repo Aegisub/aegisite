@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Working with video</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Working with Video</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="editingsubtitles.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="openingaudio.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p><span style="font-weight: bold;">Opening Video</span></p>
+<p>&nbsp;</p>
+<p>To open a video, simply go to <span style="font-style: italic;">Video -&gt; Open Video...</span> and choose a file. Aegisub accepts AVI, D2V, VOB and AVS files by default. Loading of the D2V and VOB formats requires you to have a plugin that provides the mpeg2source() (such as dgdecode or mpeg2dec3) function in your Avisynth plugin autoloading folder.</p>
+<p>You can also open any other format that DirectShow recognizes (e.g. MKV and OGM) by selecting <span style="font-style: italic;">All Files</span>, but beware that DirectShow is not required to give you the exact frame, so seeking might not be exact! If you do this anyway, Aegisub will warn you about it.</p>
+<p>&nbsp;</p>
+<p>Once you open the video, Aegisub will switch to Video Mode, which looks something like this:</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><img src="videomode.png" width="882" height="638" border="0" alt="videomode"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold; text-decoration: underline;">The video toolbar controls</span></p>
+<p>&nbsp;</p>
+<p><img src="video-controls.png" width="536" height="52" border="0" alt="video-controls"></p>
+<p><span style="font-size: 8pt; font-family: 'MS Sans Serif';">&nbsp;</span></p>
+<p>The second bar under the video screen is the <span style="font-style: italic;">Seek Bar</span>. You can use this bar to navigate through the video using the mouse, by dragging it, or using the keyboard <span style="font-style: italic;">Left Arrow</span> and <span style="font-style: italic;">Right Arrow</span> keys to step frame by frame. The black lines at the top indicate keyframes.</p>
+<p>&nbsp;</p>
+<p>Holding down the <span style="font-style: italic;">Shift</span> key while pressing <span style="font-style: italic;">Left Arrow</span> or <span style="font-style: italic;">Right Arrow</span> will cause the program to jump to the next keyframe. This functionality is only available for AVI and MKV files at the moment.</p>
+<p>&nbsp;</p>
+<p>Holding down the <span style="font-style: italic;">Control</span> key while pressing <span style="font-style: italic;">Left Arrow</span> and <span style="font-style: italic;">Right Arrow</span> will make program jump between start and end timecodes of each line. This is especially useful to look for subtitles "bleeding" into adjascent scenes.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic; color: #0000ff;">Hint</span>: You can right click the <span style="font-style: italic;">Seek Bar</span> to focus it without changing its position. This is useful if you want to adjust position with keyboard, as left clicking can accidentally move the bar. Also, you can use the <span style="font-style: italic;">Ctrl+Space</span> shortcut to toggle focus between the seek bar and whatever was focused before.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Playback</span></p>
+<p>&nbsp;</p>
+<p>You can play the video from current frame to end by pressing the <span style="font-style: italic;">Play</span> button. Also, you can play only current active line by pressing the <span style="font-style: italic;">Play Line</span> button. Press the <span style="font-style: italic;">Pause</span> button to, well, pause. Aegisub does playback via software rendering, which means that it is quite CPU intensive.</p>
+<p>&nbsp;</p>
+<p>Aegisub also supports audio playback along with video, but you must first load the audio via the <span style="font-style: italic;">Audio</span> menu.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic; color: #ff0000;">Note and mantra:</span><span style="font-style: italic;"> </span><span style="text-decoration: underline;">Aegisub is not a media player. Do not expect it to play video/audio perfectly.</span> There are ZERO guarantees that the video and audio will be in sync, or even play at the right speed at all! If you want a media player, <span style="font-style: italic;">use </span>a media player.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Zooming</span></p>
+<p>&nbsp;</p>
+<p>The drop-down menu above the video window (the one with a percentage in it) is the zooming menu. It defaults to 75% of original size - a reasonable value for a NTSC-resolution video source and a 1024x768 display. It is possible to change this default value in the <a href="options.htm">options file</a> (config.dat). The setting is called <span class="f_CourierFixed">video default zoom</span>, logically enough.</p>
+<p>&nbsp;</p>
+<p>You can also change zoom levels with the "magnifying glass" buttons in the toolbar. </p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Motion tracking</span></p>
+<p>&nbsp;</p>
+<p>The two rightmost buttons below the video belong to <a href="fextracker.htm">FexTracker</a>, a highly useful motion tracker tool. It's complicated enough to have its own manual page, and is thus documented in the tools section and not here.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Position displays</span></p>
+<p>&nbsp;</p>
+<p>To the right of the zoom bar are two boxes. The first is the current frame box; it will tell you the current frame time and frame number. This value is always accurate, provided that you are working with a seeking-accurate file (e.g. a XviD in AVI without null frames). Also, the background of this box becomes green if the current frame is a keyframe.</p>
+<p>&nbsp;</p>
+<p>The second box indicates the time, in milliseconds, of current frame relative to current line start and end. This is the value you must enter in some ASS tags, such as <span style="font-style: italic;">\move()</span>, if you want something to happen at this frame.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold; text-decoration: underline;">The Video menu</span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Adjusting Aspect Ratio</span></p>
+<p>&nbsp;</p>
+<p><img src="anamorphic.png" width="231" height="117" border="0" alt="anamorphic"></p>
+<p>&nbsp;</p>
+<p>Sometimes, you might deal with anamorphic video, that is, video whose true aspect ratio does not correspond to the display aspect ratio. For example, some widescreen videos are stored as 704x480 and resized to something that is 16:9 (such as 853x480) during playback.</p>
+<p>&nbsp;</p>
+<p>Under the <span style="font-style: italic;">Video</span> menu, you will find five override options:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-style: italic;">Default Aspect Ratio -</span> leaves video intact</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-style: italic;">Fullscreen Aspect Ratio</span> - forces 4:3</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-style: italic;">Widescreen Aspect Ratio</span> - forces 16:9</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Comment" style="font-style: italic;">2:35 Aspect Ratio -</span><span class="f_Comment"> forces 2.35:1</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-style: italic;">Custom Aspect Ratio - </span>Forces any fractional aspect ratio of your choice, or a specific resolution. The latter way is the <span style="font-style: italic;">only</span> way to change the video height (see the note below). If you enter an aspect ratio (as opposed to a resolution), you can use either a fraction (such as 4:3) or a decimal number (such as 2.35) - the latter example is equivalent to writing "2.35:1". To force a specific resolution, enter it as <span style="font-style: italic;">WIDTHxHEIGHT</span> (example: 852x480).</td></tr></table></div><p>&nbsp;</p>
+<p><span style="font-style: italic; color: #007f00;">Note:</span> All the modes, except Custom (in specific-resolution mode) and Default, modify the video width, not the height.</p>
+<p><span style="font-style: italic; color: #007f00;">Note 2: </span>The video is resized <span style="font-style: italic;">after</span> the subs has been applied (the same thing happens when playing softsubs in DirectShow).</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Jumping to a position</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><img src="jump.png" width="228" height="45" border="0" alt="jump"></p>
+<p>To jump to a specific position in video, go to the <span style="font-style: italic;">Video-&gt;Jump to</span>... menu, or hit the shortcut <span style="font-style: italic;">Ctrl+J</span>. This allows you to jump to either a specific time or specific frame.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Jumping to a subtitle line/snapping a line to a video position</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><img src="video_menu_snap.png" width="232" height="152" border="0" alt="video_menu_snap"><span style="font-weight: bold;"></span></p>
+<p>There are six "subtitle interaction" controls. They all have a <span style="font-style: italic;">Ctrl+&lt;number&gt;</span> shortcut by default, and most of them are extremely useful for timing purposes.</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-style: italic;">Jump video to start</span> - Seeks the video display to the frame where the currently selected subtitle line starts.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-style: italic;">Jump video to end </span>-<span style="font-style: italic;"> </span>Seeks the video display to the frame where the currently selected subtitle line ends.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-style: italic;">Snap start to video </span>- Sets the currently selected subtitle line start time to the currently displayed frame.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-style: italic;">Snap end to video </span>- Sets the currently selected subtitle line end time to the currently displayed frame.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-style: italic;">Snap to scene</span> - Attempts to fit the currently selected subtitle line to the currently displayed "scene" by setting the line start and end times to their respectively closest keyframes.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-style: italic;">Shift to current frame</span> - Shifts the currently selected subtitle line so that its duration is preserved, but now starts on the currently displayed frame.</td></tr></table></div><p><span style="font-style: italic; font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Variable Frame Rate</span></p>
+<p>&nbsp;</p>
+<p><img src="vfr.png" width="226" height="60" border="0" alt="vfr"></p>
+<p>Some videos are Variable Frame Rate (VFR) - meaning they don't follow a constant frame rate. Aegisub supports these in two ways: by loading specific timecode files to override the frame rate from video; and by loading a Matroska video via DirectShow. Due to aforementioned issues, it's recommended that you open an AVI and apply timecodes to it.</p>
+<p>&nbsp;</p>
+<p>In order to load a timecodes file, go to <span style="font-style: italic;">Video -&gt; Open Timecodes...</span> and choose the file. Aegisub supports Matroska v1 and v2 timecodes files.</p>
+<p>&nbsp;</p>
+<p>If you don't do this, subtitles will most likely appear at the wrong time. Also, if you export the subtitles, you can enable VFR compensation (useful when hardsubbing).</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Positioning</span></p>
+<p>&nbsp;</p>
+<p><img src="typeset_05.jpg" width="528" height="297" border="0" alt="typeset_05"></p>
+<p>&nbsp;</p>
+<p>Putting mouse over video (when it's not playing) will show a crosshair with coordinates of current position. This can be used for any ASS override tags which require coordinates as a parameter, such as <span style="font-style: italic;">\pos(), \move()</span> and the drawing commands.</p>
+<p>&nbsp;</p>
+<p>Double click the video to add a <span style="font-style: italic;">\pos()</span> tag at the current video location.</p>
+<p>&nbsp;</p>
+<p>Additionally, holding down <span style="font-style: italic;">Shift</span> will make the coordinates relative to the bottom right corner of the video (instead of the default upper left), which can be useful in certain cases. Note that you have to move the mouse while holding shift to get the display to update.</p>
+
+</div>
+</body>
+</html>

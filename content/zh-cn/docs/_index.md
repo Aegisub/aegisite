@@ -25,5 +25,9 @@ type: simple-page
 <br />
 <a href="{{< relref path="docs" lang="en">}}manual/" class="btn btn-outline-secondary" role="button">2.1 手册</a> 2.1.6 - 2.1.9版本的用户手册（英文）。
 </p>
+<p>
+<br />
+<a href="{{< relref path="docs" lang="en">}}1.10/" class="btn btn-outline-secondary" role="button">1.10 Manual</a> User manual for 1.10.
+</p>
 
 <br />

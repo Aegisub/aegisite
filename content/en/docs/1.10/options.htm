@@ -1,0 +1,470 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Options</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Options</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="keyboardshortcuts.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="attaching_subtitles_to_video.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p><span style="font-weight: bold;">What is the Aegisub config.dat file?</span></p>
+<p>&nbsp;</p>
+<p>The config.dat file in the Aegisub directory stores all the Aegisub settings and some history over recently opened files, recently used search strings etc. It's a plain text file, so you can open it in any normal text editor (e.g. notepad). Since Aegisub doesn't yet have an options dialog, this is the only way to change a lot of options (for now, at least).</p>
+<p>&nbsp;</p>
+<p>The settings are in the form of: <span style="font-weight: bold;">"some setting=value"</span>, with one setting per line. The first line is always "[Config]" - don't remove it. If you delete config.dat, all settings will be restored to their default values and the file will be recreated when you restart Aegisub. If the file doesn't exist after installation, it's because you never ran Aegisub (it's created with default values the first time the program runs). Note that renamed or deprecated settings are not automatically removed from config.dat, so you may have old settings in it that doesn't do anything anymore. It is generally safe to assume that anything not documented on this page is obsolete and unneeded.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Important note: </span>some of these settings are completely harmless and can be very useful for tweaking Aegisub to your personal preference. <span style="font-style: italic;">However,</span> some of them are <span style="font-weight: bold;">not </span>intended to be changed by the casual user, and there are some that can <span style="font-weight: bold;">completely break</span> your Aegisub installation and/or all scripts you save if you change them. This means: <span style="font-weight: bold;">read the documentation carefully</span> before changing any settings - the dangerous ones are marked as such.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Options Conventions used</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">foo=BOOL</span> means that "foo" takes a boolean value as its argument - i.e., it can be either true or false, with 1 meaning true, and 0 meaning false, as per standard. Making "<span class="f_CourierFixed">foo=1</span>" will cause setting "foo" to be <span style="font-weight: bold;">on </span>or <span style="font-weight: bold;">enabled.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">foo=NUM</span> means that "foo" takes a decimal number as its argument. If any limits apply, those are mentioned in the explanation about the setting.</p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">foo=STRING</span> means that "foo" takes an (almost) arbitrary text string as its argument. This is often used for paths or directory names, in which case all the operating system's limits apply. In Windows, this means that the string can't contain any of the following characters (slash and backslash are allowed, but both work as directory separators):</p>
+<p style="text-align: center;"><span class="f_CourierFixed">\ / : * ? " &lt; &gt; | </span></p>
+<p style="text-align: center;"><span style="font-style: italic;">&nbsp;</span></p>
+<p><span class="f_CourierFixed">foo=HEX</span> means that "foo" takes a six-digit hexadecimal number, preceded by a # sign, as its argument. This is used for colors, and the syntax is the familiar RRGGBB one (<span style="font-weight: bold;">note: </span>it's <span style="font-style: italic;">backwards</span> compared to ASS, which has BBGGRR). That is, "<span class="f_CourierFixed">foo=#FF0000</span>" will set "foo" to full intensity red.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Settings list</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span class="f_CourierFixed">allow ancient avisynth=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Aegisub normally requires Avisynth 2.5.6a or later. Enabling this setting prevents Aegisub from complaining when running with an older version of Avisynth. This might lead to weird issues and/or complete audio/video breakage, so it's </span><span class="f_Normal-indented" style="font-weight: bold;">not recommended</span><span class="f_Normal-indented">. The only ones who should use this options are people who want to test Aegisub under Wine (Avisynth versions from 2.5.3 on doesn't work in Wine, you have to use 2.5.2) or people who are trying to find out how much stuff breaks. Obviously defaults to disabled (0).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio autocommit=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">If this is true (1), dragging the markers in the audio view will commit changes immediately, thus making the Commit button unnecessary. Identical to the Autocommit button in the GUI - use that instead of editing config.dat. Defaults to 0.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio autofocus=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">When true, the audio display area will automatically gain focus upon mouseover. Defaults to disabled (0), since it can be very annoying.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio autoscroll=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Has the same effect as clicking the "Auto" button in the audio view. When it is enabled, it scrolls the audio view to center on the line you click. Just use the button instead of editing config.dat. Defaults to 1.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio background=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of the background in the audio view, as a hexadecimal RRGGBB value. Defaults to #000000 (black).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio cache=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Determines the way Aegisub caches audio. Valid values are:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">0 - Cache disabled, which means streaming (reading from the file on demand). This is almost always a Bad Thing, since it results in bad performance, inaccurate seeking and inaccurate pointers (for Vorbis, the audio can be off the indicated value by a second or more).</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">1 - RAM cache. This is the default. RAM caching means that Aegisub decompresses the entire audio stream to the RAM, which is fast, but might be inconvenient for a full-length movie or if you are short on RAM.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">2 - Hard drive cache. This resembles RAM caching, but the stream is decompressed to disk instead, which is slower, but better if you are low on RAM or have a full-length movie to work with.</span></td></tr></table></div><p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio display height=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The height of the audio display, in pixels. This can be changed from inside Aegisub, so generally there's no need to touch this setting. Defaults to 100.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio downmixer=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">This is the AviSynth function that will be used to give you the one channel audio that Aegisub uses. Valid values are:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented" style="font-weight: bold;">GetLeftChannel</span><span class="f_Normal-indented"> - Grabs the left channel only</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented" style="font-weight: bold;">GetRightChannel</span><span class="f_Normal-indented"> - Grabs the right channel only</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented" style="font-weight: bold;">ConvertToMono</span><span class="f_Normal-indented"> - Merges all channels into one (this is the default)</span></td></tr></table></div><p class="p_Normal-indented"><span class="f_Normal-indented">GetLeft/GetRightChannel are slightly faster than ConvertToMono, but when using only one channel, the waveform might not be precise.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio draw secondary lines=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Controls whether additional boundary lines are drawn on the audio display. This includes video keyframe markers and minute-markers. Defaults to true (1). </span><span class="f_Normal-indented">Note:</span><span class="f_Normal-indented"> This setting was called </span><span class="f_CourierFixed">audio draw boundary</span><span class="f_Normal-indented"> lines prior to beta 1.08.</span></p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span class="f_CourierFixed">audio draw selection background=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Controls whether the background for the current audio selection is shown in different colors or not. Defaults to true (1).</span></p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span class="f_CourierFixed">audio inactive lines display mode=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Controls how Aegisub displays the lines surrounding the currently selected one in audio mode. Valid modes are:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">0 - Disabled (only show the current line)</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">1 - Show the previous and next lines in grey (this is the default behaviour)</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">2 - Show all unselected lines in grey</span></td></tr></table></div><p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span class="f_CourierFixed">audio lead in=NUM</span></p>
+<p><span class="f_CourierFixed">audio lead out=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The amount of lead-in/lead-out that is added when the corresponding buttons are pressed in Aegisub. Values are given in miliseconds and defaults to 100 (lead-in) and 300 (lead-out).</span></p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span class="f_CourierFixed">audio line boundaries thickness=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Thickness in pixels of the boundary lines for the current audio selection. Defaults to 2.</span></p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span class="f_CourierFixed">audio line boundary start=HEX</span></p>
+<p><span class="f_CourierFixed">audio line boundary end=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of respectively the start and end line boundaries in the audio view, as hexadecimal RRGGBB values. Both default to #FF0000 (red).</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">&nbsp;</span></p>
+<p><span class="f_CourierFixed">audio line boundary inactive line=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of the lines surrounding the currently selected one in the audio waveform (see the </span><span class="f_CourierFixed">audio inactive lines display mode </span><span class="f_Normal-indented">setting). Defaults to #808080.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio lock scroll on cursor=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">If set to true, the audio display will automatically scroll to follow the playback cursor when playing audio. Many people find this feature very annoying, and hence it defaults to disabled (0).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio play cursor=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of the playing cursor/pointer in the audio view, as a hexadecimal RRGGBB value. Defaults to #FFFFFF.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio sample rate=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">If set to a nonzero value, Aegisub will convert the audio to the given samplerate (in Hertz) on loading. 0 (the default value) means keep the original samplerate. Note: Resampling the audio is ridicolously slow and can easily double the audio loading times. It is doubtful if there's anything to gain from resampling, so just leave this option at 0.</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">&nbsp;</span></p>
+<p><span class="f_CourierFixed">audio seconds boundaries=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of the lines that marks the seconds boundaries in the audio view, as a hexadecimal RRGGBB value. Defaults to #0064FF.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio selection background=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of the background of the selected area in the audio view, as a hexadecimal RRGGBB value. Defaults to #404040.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio selection background modified=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of the background of the selected area, when modified but not yet committed, in the audio view, as a hexadecimal RRGGBB value. Defaults to #5C0000.</span></p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span class="f_CourierFixed">audio spectrum=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Has the same effect as clicking the spectrum analyzer button in Aegisub. Use that button instead of editing config.dat. Defaults to off (0).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio spectrum cutoff=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The range of the spectrum analyzer (it goes from 0 to the given value). Unfortunately, noone knows what unit it is given in (due to the FFT code being such a mess), so don't ask about it. Defaults to 32 (presumeably a good value, so leave it there).</span></p>
+<p style="margin: 0px 0px 0px 18px;">&nbsp;</p>
+<p><span class="f_CourierFixed">audio spectrum invert selection=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">If true, the selected audio area will have inverted colors when in spectrum analyzer mode. Defaults to true (1).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio spectrum window=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The size of the spectrum analyzer's FFT (fast fourier transform). The actual value used is 2 to the power of the given value. This indicates the number of samples from the audio signal used in the analysis and also determines the number of discrete frequency bands. When a high number of frequency bands are used, the bands have a smaller bandwidth, which allows for more accurate frequency readings. This means that setting this value lower will make Aegisub's spectrum analyzer mode faster but more inaccurate. Defaults to 11, which means the actual size becomes 2^11 = 2048 (a good value - changing it is not recommended, but if you want to experiment, feel free to do so </span><span class="f_Normal-indented">at your own risk</span><span class="f_Normal-indented">).</span></p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span class="f_CourierFixed">audio ssa allow autocommit=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Allows or disallows having autocommit (see the </span><span class="f_Normal-indented">"</span><span class="f_CourierFixed">audio autocommit</span><span class="f_Normal-indented">"</span><span class="f_Normal-indented"> option) on when timing audio in SSA mode. Defaults to false (0). </span><span class="f_Normal-indented" style="font-style: italic;">Note</span><span class="f_Normal-indented">:</span><span class="f_Normal-indented"> this setting was previously known as </span><span class="f_CourierFixed">audio allow ssa autocommit</span><span class="f_Normal-indented">.</span></p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span class="f_CourierFixed">audio ssa mode=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Has the same effect as clicking the SSA button in Aegisub. Use that instead of editing config.dat. Defaults to false (0).</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">&nbsp;</span></p>
+<p><span class="f_CourierFixed">audio ssa next line on commit=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">In SSA mode, turning this on will make Aegisub automatically go to the next line when you press Commit. Defaults to off (0).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio syllable boundaries=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of the syllable boundaries in audio view's karaoke mode, as a hexadecimal RRGGBB value. Defaults to #FFFF00.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio syllable text=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of the syllable text in audio view's karaoke mode, as a hexadecimal RRGGBB value. Defaults to #FF0000.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio waveform=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of the audio waveform, as a hexadecimal RRGGBB value. Defaults to #00C800.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio waveform inactive=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of the audio waveform of the lines surrounding the current one (see </span><span class="f_CourierFixed">audio inactive lines display mode</span><span class="f_Normal-indented">). Defaults to #404040.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio waveform modified=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of the selected area of audio waveform, when modified but not yet committed, as a hexadecimal RRGGBB value. Defaults to #FFC8C8.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio waveform selected=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of the selected area of audio waveform, as a hexadecimal RRGGBB value. Defaults to #FFFFFF.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">audio wheel default to zoom=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Controls the behaviour of the mouse wheel. If false, the mousewheel scrolls the audio display, and zooms it if shift is pressed. If true, the functions are inversed - i.e., it zooms by default and scrolls when shift is pressed. Defaults to false (0).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">auto backup=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Turns the auto backup system on or off. When on, it will save a backup of the script when opening it, to the folder specified in the </span><span class="f_CourierFixed">auto backup path</span><span class="f_Normal-indented"> setting. Defaults to 1 (on).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">auto backup path=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The path where backups of the scripts are stored, if auto backup is on. It can be both an absolute path (like </span><span class="f_CourierFixed">C:\backup\scripts</span><span class="f_Normal-indented">) or a relative one. In the latter case, it is relative to wherever aegisub.exe is. Defaults to </span><span class="f_CourierFixed">autoback</span><span class="f_Normal-indented"> (which means that the backups will be stored in a folder called "autoback" in your Aegisub folder).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">auto recovery path=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The directory where recovery scripts are saved, if Aegisub should crash. It can be both an absolute path (like C:\backup\scripts) or a relative one. In the latter case, it is relative to wherever aegisub.exe is. Defaults to </span><span class="f_CourierFixed">recovered</span><span class="f_Normal-indented"> (which means that the recovered scripts will be stored in a folder called "recovered" in your Aegisub folder).</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">&nbsp;</span></p>
+<p><span class="f_CourierFixed">auto save every seconds=NUM</span></p>
+<p style="margin: 0px 0px 0px 13px;">Makes Aegisub autosave the script you are working with to the folder specified in the <span class="f_CourierFixed">auto save path</span> setting every X seconds, where X is the number you choose. Defaults to 60. Setting it to 0 or less than 0 disables autosave.</p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">auto save path=STRING</span></p>
+<p style="margin: 0px 0px 0px 13px;">The path where autosaves of the scripts are stored, if autosave is on. It can be either an absolute path (like <span class="f_CourierFixed">C:\autosave\scripts</span>) or a relative one. In the latter case, it is relative to wherever aegisub.exe is. Defaults to <span class="f_CourierFixed">autosave</span> (which means that the autosaves will be stored in a folder called "autosave" in your Aegisub folder).</p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">autoload linked files=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Controls how Aegisub loads video/audio/timecodes files associated with the script, when opening it. It has three modes:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">0 - Never load any associated files</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">1 - Always load associated files</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">2 - Ask to load associated files when script is opened (this is the default behaviour)</span></td></tr></table></div><p class="p_Normal-indented"><span class="f_Normal-indented">&nbsp;</span></p>
+<p><span class="f_CourierFixed">automation include path=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The include path for automation scripts. Defaults to Aegisub directory/automation/include.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">automation script editor=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The path to the .exe of the text editor used to edit automation scripts. This line does not exist by default, it gets created when you set it for the first time.</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">&nbsp;</span></p>
+<p><span class="f_CourierFixed">avisynth memorymax=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The maximum allowed memory for Avisynth (Aegisub's audio/video handler) to use, in megabytes (the same as Avisynth's </span><span class="f_CourierFixed">SetMemoryMax()</span><span class="f_Normal-indented"> function). 0 means unlimited. Defaults to 64. Setting this lower than 16 or so is probably a bad idea.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">color picker recent=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The 24 most recently selected colors in the color picker dialog. This is a space-separated list of color values. Any values in excess of 24 are ignored; if less than 24 are specified, the rest is filled in with black. There is generally no point in editing these values. </span><span class="f_Normal-indented" style="font-weight: bold;">NOTE:</span><span class="f_Normal-indented"> these colors are specified in </span><span class="f_Normal-indented">ASS hex</span><span class="f_Normal-indented">, not HTML hex! This means the byte order is different from the rest of the color values used in the config file (</span><span class="f_Normal-indented">BBGGRR</span><span class="f_Normal-indented"> as opposed to the rest of the config file's RRGGBB).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">color picker mode=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The last used color spectrum mode in the color picker dialog. Setting it in Aegisub instead of changing config.dat is a good idea. Can be one of the following values (the default is 4):</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">0, 1, 2 - The RGB modes, respectively with red, green and blue for the slider bar channel.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">3 - YUV mode</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">4 - HSL mode</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">5 - HSV mode</span></td></tr></table></div><p class="p_Normal-indented"><span class="f_Normal-indented">&nbsp;</span></p>
+<p><span class="f_CourierFixed">edit box need enter background=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color used in the time boxes when their content is modified but not yet saved. Defaults to #C0C0FF.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">find affect=NUM</span></p>
+<p><span class="f_CourierFixed">find field=NUM</span></p>
+<p><span class="f_CourierFixed">find match case=BOOL</span></p>
+<p><span class="f_CourierFixed">find regexp=BOOL</span></p>
+<p><span class="f_CourierFixed">find update video=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">These are all saved settings from the Find dialog. Set them using that dialog instead of editing config.dat.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">font face=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The font for the grid and the edit box. Defaults to an empty string (nothing), which means that it ends up as whatever wxWidgets feels like using.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">font size=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The default font size of all normal text. Normal sanity limits apply. Defaults to 9 when running under Windows, but 11 under anything else (*nix, in other words).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">fonts collector destination=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The destination path of the fonts collector feature. Set it using that dialog instead of editing config.dat. Defaults to </span><span class="f_Normal-indented">?script</span><span class="f_Normal-indented">, which means "wherever the currently open script is located".</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">grid active border=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The border color of active lines in the subtitle lines grid. Defaults to #FF5BEF.</span></p>
+<p style="margin: 0px 0px 0px 18px;">&nbsp;</p>
+<p><span class="f_CourierFixed">grid allow focus=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">If set to false, the subtitles grid will not be allowed to gain focus. This means that either the audio or the video will be in focus at all times, which may be considered useful by people who get annoyed by the audio display losing focus all the time. However, it might also lead to problems with keyboard shortcuts (among other things). Defaults to 1 (enabled). Keeping it enabled is recommended - the concept of focus is central in Aegisub.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">grid background=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The background color of the grid. Defaults to #FFFFFF (white).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">grid collision foreground=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The foreground color of lines in the grid detected as colliding with other lines. Defaults to #FF0000 (red).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">grid comment background=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The background color in the grid of a line marked as a ASS/SSA comment. Defaults to #D8DEF5.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">grid font size=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The font size used in the grid. Normal sanity limits apply here as well. Defaults to 8 under Windows, 10 under anything else.</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">&nbsp;</span></p>
+<p><span class="f_CourierFixed">grid header=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The background color of the grid header line (the one at the top). Defaults to #A5CFE7.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">grid hide overrides=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Sets the way override tags (everything inside curly braces) are displayed in the grid. It has three modes:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">0 - Leave the tags as they are</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">1 - Replace the tags with string given in the "grid hide overrides char" setting (this is the default behaviour)</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">2 - Hide the tags completely</span></td></tr></table></div><p class="p_Normal-indented"><span class="f_Normal-indented">&nbsp;</span></p>
+<p><span class="f_CourierFixed">grid hide overrides char=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The character that will replace the override tags if "grid hide overrides" is on. Despite the setting name, this can actually be a string. Defaults to a "sun", for lack of a better term. The Unicode definition of the character is BLACK SUN WITH RAYS (sun - 2609).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">grid inframe background=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of a line in the grid that is currently visible in the video display. Defaults to #FFFDEA.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">grid left column=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of the leftmost column in the grid (the one with the line numbers). Defaults to #C4ECC9.</span></p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span class="f_CourierFixed">grid lines=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color of field outlines in the grid. Defaults to #808080 (dark grey).</span></p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span class="f_CourierFixed">grid selected comment background=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The background color of a comment line when selected. Defaults to #D3EEEE.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">grid selection background=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The background color of a selected line in the grid. Defaults to #CEFFE7.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">grid selection foreground=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The foreground (text) color of a selected line in the grid. Defaults to #000000 (black).</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">&nbsp;</span></p>
+<p><span class="f_CourierFixed">grid show column 0=BOOL ... grid show column 10=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">What columns (numbered from left to right) that will be shown in the grid. You can change this in the UI by right-clicking the top row of the grid, so there's no need to change this setting manually in config.dat.</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">&nbsp;</span></p>
+<p><span class="f_CourierFixed">grid standard foreground=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The standard foreground (text) color of the grid. Defaults to #000000 (black).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">highlight subs in frame=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">When true, all lines that are currently visible in the video will be highlighted in the grid with the color specified in the "grid inframe background" setting. Defaults to true (1).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">keep raw dialogue data=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Aegisub 1.09 and earlier used huge amounts of RAM, mostly due to keeping a lot of line data in memory all the time. In 1.10 the behavior was changed so that the data is generated on demand instead, lowering RAM usage by a lot. Setting this option to true will make Aegisub go back to the old behaviour. It's only intended for testing and should NOT be enabled under normal conditions. Defaults to disabled (0).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">last open audio path=STRING</span></p>
+<p><span class="f_CourierFixed">last open automation path=STRING</span></p>
+<p><span class="f_CourierFixed">last open subtitles path=STRING</span></p>
+<p><span class="f_CourierFixed">last open timecodes path=STRING</span></p>
+<p><span class="f_CourierFixed">last open video path=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">These lines store the last opened file of the respective type. These are subtly different from the "recent ..." lines mentioned below. Editing them is generally not necessary.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">link time boxes commit=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">When true, the time editing boxes will be linked so that pressing enter in one of them will commit changes in both. Defaults to true (1).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">locale code=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Sets the language to use. The default is -1, which means "Ask user when program starts", and after you have answered that, it is whatever you chose there. The language can be changed later through View -&gt; Languages, and the setting will be saved here. If some tragedy happens and you can't get to View -&gt; Languages, you can set it back to -1 to get Aegisub to ask you on start again. Setting it to a bogus value will make Aegisub fallback to English. </span><span class="f_Normal-indented" style="font-weight: bold;">Note:</span><span class="f_Normal-indented"> the locale is </span><span class="f_Normal-indented" style="font-style: italic;">not</span><span class="f_Normal-indented"> stored as a language/country code, it's just an internal number.</span></p>
+<p style="margin: 0px 0px 0px 12px;">&nbsp;</p>
+<p><span class="f_CourierFixed">recent aud #1=STRING ... recent aud #N=STRING</span></p>
+<p><span class="f_CourierFixed">recent find #1=STRING ... recent find #N=STRING</span></p>
+<p><span class="f_CourierFixed">recent replace #1=STRING ... recent find #N=STRING</span></p>
+<p><span class="f_CourierFixed">recent sub #1=STRING ... recent sub #N=STRING</span></p>
+<p><span class="f_CourierFixed">recent timecodes #1=STRING ... recent timecodes #N=STRING</span></p>
+<p><span class="f_CourierFixed">recent vid #1=STRING ... recent vid #N=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">These are the audio, find, replace, script, timecodes and video histories, respectively. There's no reason to edit them, except if you want to clear Aegisub's history, in which case you can delete them.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">recent aud max=NUM</span></p>
+<p><span class="f_CourierFixed">recent find max=NUM</span></p>
+<p><span class="f_CourierFixed">recent replace max=NUM</span></p>
+<p><span class="f_CourierFixed">recent sub max=NUM</span></p>
+<p><span class="f_CourierFixed">recent timecodes max=NUM</span></p>
+<p><span class="f_CourierFixed">recent vid max=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The maximum size of the respective recently opened files histories. Each defaults to 16. It's probably unwise to set any of these higher than 64.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">save charset=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Selects what character set ("charset") Aegisub saves the subtitles as when you press Save. </span><span class="f_Normal-indented" style="font-weight: bold;">You should NOT touch this setting unless you really know why you'd want to change it!</span><span class="f_Normal-indented"> A </span><span class="f_Normal-indented">much</span><span class="f_Normal-indented"> better (and safer) way to save to other charsets, should you feel the need to do so, is by using the File -&gt; Export... dialog, which lets you specify the charset you want to use. </span><span class="f_Normal-indented">Note:</span><span class="f_Normal-indented"> The only two settings that can be considered "not broken" is UTF-8 and UTF-16, since they're the </span><span class="f_Normal-indented" style="font-style: italic;">only</span><span class="f_Normal-indented"> ones that supports saving to all languages.</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Some examples of possible values (the default is UTF-8):</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_CourierFixed">UTF-8 </span><span class="f_Normal-indented">- Works with about every imagineable language on Earth, and some extraterrestrial too. Ever feel like subbing something in Klingon?</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_CourierFixed">UTF-16</span><span class="f_Normal-indented"> </span><span class="f_Normal-indented">- Similiar to, but not the same as UTF-8. Takes more space and is byte-order dependent, and doesn't really have any advantages over UTF-8, except it works in some broken programs (i.e. Microsoft Wordpad and ancient Vobsub versions) that can't handle UTF-8 properly.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_CourierFixed">local</span><span class="f_Normal-indented"> - Saves to whatever your system default charset is. </span><span class="f_Normal-indented" style="font-weight: bold;">Not recommended</span><span class="f_Normal-indented">,</span><span class="f_Normal-indented"> since your system default charset is</span><span class="f_Normal-indented"> </span><span class="f_Normal-indented" style="font-weight: bold;">never</span><span class="f_Normal-indented"> Unicode and</span><span class="f_Normal-indented"> will </span><span class="f_Normal-indented" style="font-weight: bold;">not</span><span class="f_Normal-indented"> handle languages other than your system default properly.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_CourierFixed">Shift_JIS</span><span class="f_Normal-indented"> - Japanese charset. </span><span class="f_Normal-indented" style="font-weight: bold;">Not recommended</span><span class="f_Normal-indented">,</span><span class="f_Normal-indented"> since it </span><span class="f_Normal-indented">only</span><span class="f_Normal-indented"> works correctly with Japanese.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_CourierFixed">ISO-8859-1</span><span class="f_Normal-indented"> - Standard western European charset, also known as Latin-1. Supports most western European languages, including the Scandinavian ones. </span><span class="f_Normal-indented" style="font-weight: bold;">Not recommended</span><span class="f_Normal-indented">, </span><span class="f_Normal-indented">for the same reasons as above.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_CourierFixed">US-ASCII</span><span class="f_Normal-indented"> - American Standards Code for Information Interchange. </span><span class="f_Normal-indented" style="font-weight: bold;">NEVER USE IT</span><span class="f_Normal-indented"> unless you really, really have to, since it's </span><span class="f_Normal-indented">only </span><span class="f_Normal-indented" style="font-style: italic;">7-bit</span><span class="f_Normal-indented"> ASCII!</span><span class="f_Normal-indented"> I.e., about the only language it supports is American English, and that with a </span><span class="f_Normal-indented" style="font-style: italic;">very</span><span class="f_Normal-indented"> limited set of accents etc..</span></td></tr></table></div><p>&nbsp;</p>
+<p><span class="f_CourierFixed">select action=NUM</span></p>
+<p><span class="f_CourierFixed">select condition=NUM</span></p>
+<p><span class="f_CourierFixed">select field=NUM</span></p>
+<p><span class="f_CourierFixed">select match case=BOOL</span></p>
+<p><span class="f_CourierFixed">select mode=NUM</span></p>
+<p><span class="f_CourierFixed">select text=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">These are all saved settings from the "Select lines" dialog. Use that to change them instead of editing config.dat.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">shift times all rows=BOOL</span></p>
+<p><span class="f_CourierFixed">shift times bytime=BOOL</span></p>
+<p><span class="f_CourierFixed">shift times direction=BOOL</span></p>
+<p><span class="f_CourierFixed">shift times length=NUM</span></p>
+<p><span class="f_CourierFixed">shift times type=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">These are all saved settings from the "Shift times" dialog. Use that dialogue to change them instead of editing config.dat.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">show associations=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">If true, Aegisub will popup a file association dialog with options to associate Aegisub with .ass, .ssa and .srt on startup, and then set this setting to false. Useful if something else stole the file associations and you want them back.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">show keyframes on video slider=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">When true, and a video file from which Aegisub knows how to get keyframe information from (i.e. an AVI) is loaded, keyframes will get displayed as grey lines on the video slider. Defaults to enabled (1).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">show splash=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">When true, Aegisub will show its splash screen on startup. Defaults to true (1).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">sync video with subs=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">When true, Aegisub will seek the video to the line start when you select a line in the grid. Defaults to true (1).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">syntax highlight brackets=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color the curly brackets will take if syntax highlighting is on. Defaults to #1432FF.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">syntax highlight enabled=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Enables or disables syntax highlighting. The colors are defined by the "syntax highlight X" settings. Defaults to enabled (true).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">syntax highlight error=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color a malformed tag detected by the syntax highlighter will get. Defaults to #C80000.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">syntax highlight normal=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color all normal text (outside tags) will get when the syntax highlighter is on. Defaults to #000000.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">syntax highlight slashes=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color all backslashes (ASS/SSA overrides) will get when the syntax highlighter is on. Defaults to #FF00C8.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">syntax highlight tags=HEX</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The color all text inside curly brackets (except backslashes) will get when the syntax highlighter is on. Defaults to #5A5A5A.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">text actor separator=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Helps determine Aegisub's behavior when importing a plain text file to subtitles. It defines what string separates the actor from the text he speaks. Defaults to </span><span class="f_CourierFixed">: </span><span class="f_Normal-indented">(a colon). A more detailed explanation of this setting as well as the </span><span class="f_CourierFixed">text comment starter</span><span class="f_Normal-indented"> setting can be found under the heading "Importing plain text files" in the <a href="editingsubtitles.htm">Working with subtitles</a> section.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">text comment starter=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Helps determine Aegisub's behavior when importing a plain text file to subtitles. All lines prefixed by this string will be imported into the script as comment lines. Defaults to </span><span class="f_CourierFixed">#</span><span class="f_Normal-indented"> (a "hash" or "square" character).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">threaded video=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Enables/disables an EXPERIMENTAL threaded video mode, which places the video in its own thread, making the interface more responsive while seeking in the video. So far a value of 0 (disabled) does not end the world, whereas a value of 1 usually causes Aegisub to die a fiery death. Will be more useful in the future.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">timing default duration=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The default duration a new line will have, in milliseconds. Also affects the way SSA mode behaves when going to the next line. Defaults to 2000.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">timing processor adjascent bias=NUM</span></p>
+<p><span class="f_CourierFixed">timing processor adjascent thres=NUM</span></p>
+<p><span class="f_CourierFixed">timing processor enable adjascent=BOOL</span></p>
+<p><span class="f_CourierFixed">timing processor enable keyframe=BOOL</span></p>
+<p><span class="f_CourierFixed">timing processor enable lead-in=BOOL</span></p>
+<p><span class="f_CourierFixed">timing processor enable lead-out=BOOL</span></p>
+<p><span class="f_CourierFixed">timing processor key end after thres=NUM</span></p>
+<p><span class="f_CourierFixed">timing processor key end before thres=NUM</span></p>
+<p><span class="f_CourierFixed">timing processor key start after thres=NUM</span></p>
+<p><span class="f_CourierFixed">timing processor key start before thres=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">These are all saved settings from the timing postprocessor dialog. Change them there instead of editing config.dat.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">tips current=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The internal number of the startup tip that was last displayed. Used to avoid displaying the same tip two times in a row. Editing it manually should not be necessary.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">tips enabled=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Enables/disables startup tips. Since they can be turned off from the tips dialog, there's no real reason to change this value. Defaults to true (1).</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">undo levels=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The maximum amount of undo levels. While a higher value might be useful in some cases, it will also consume more RAM, especially for complicated files like large karaokes (which can eat RAM at an amazing rate). The default (and recommended) value is 8. Setting it to 0 disables undoing, and while this normally is</span><span class="f_Normal-indented" style="font-weight: bold;"> not</span><span class="f_Normal-indented"> a good idea, it might be useful if you have huge (several MB) karaoke files that make Aegisub eat all your RAM on loading.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">use nonstandard milisecond times=BOOL</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Setting this to true makes Aegisub handle ASS times with millisecond precision instead of the normal centiseconds. Defaults to false (0).</span><span class="f_Normal-indented"> Do </span><span class="f_Normal-indented" style="font-weight: bold;">NOT</span><span class="f_Normal-indented"> change this setting unless you know exactly what you're doing!</span><span class="f_Normal-indented"> Normal VSFilter versions (including the one distributed with Aegisub) </span><span class="f_Normal-indented" style="font-weight: bold;">do</span><span class="f_Normal-indented"> </span><span class="f_Normal-indented" style="font-weight: bold;">not</span><span class="f_Normal-indented"> handle millisecond times correctly!</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CourierFixed">video check script res=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Controls what is done when a new video source is loaded, and the resolution of the video doesn't match the resolution set for the subtitles. It can take one of the following values:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">0 - Never change the subtitles resolution (the default behavior)</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">1 - Ask if the subtitles resolution should be changed</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_Normal-indented">2 - Always change the subtitles resolution without asking</span></td></tr></table></div><p class="p_Normal-indented"><span class="f_Normal-indented">&nbsp;</span></p>
+<p><span class="f_CourierFixed">video default zoom=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The default zoom level of the video window. Higher numbers mean bigger video and vice versa. Defaults to 7 (100%). Note that this number isn't directly related to the percentage level of the zoom - it's Aegisub's internal representation of the zoom level.</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">&nbsp;</span></p>
+<p><span class="f_CourierFixed">video fast jump step=NUM</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The number of frames that will be seeked when you press Alt+Left or Alt+Right with the video seek bar in focus. Defaults to 10.</span></p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span class="f_CourierFixed">video provider=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Determines which method is used to load video. This is a part of the ongoing work to port Aegisub to POSIX systems (such as Linux and BSD) - wxWidgets already work, but Avisynth does not, which means that video and audio does not work either. At the moment, the only valid option is </span><span class="f_CourierFixed">Avisynth</span><span class="f_Normal-indented">, since the alternatives are disabled in the current release versions. In the future you might be able to set this to </span><span class="f_CourierFixed">ffmpeg</span><span class="f_Normal-indented"> and expect video to work on both POSIX and Windows, but for now, changing this option will do nothing.</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">&nbsp;</span></p>
+<p><span class="f_CourierFixed">video resizer=STRING</span></p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">The algorithm used to resize the video display. Any Avisynth resizer that takes arguments in the </span><span class="f_CourierFixed">Resizer(x_destination, y_destination)</span><span class="f_Normal-indented"> form will work - even ones contained in plugins as long as you have them in your autoloading directory (not recommended, though, and very pointless). Valid Avisynth 2.56 built-in resizers are:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_CourierFixed">PointResize</span><span class="f_Normal-indented"> - very fast, but very ugly (nearest neighbor algorithm)</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_CourierFixed">BilinearResize</span><span class="f_Normal-indented"> - Quite fast, smoothes the image a bit, especially when upsizing</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_CourierFixed">BicubicResize</span><span class="f_Normal-indented"> - Slower but sharper than bilinear</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_CourierFixed">LanczosResize</span><span class="f_Normal-indented"> - Very sharp and very precise, but also slower than bicubic</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_CourierFixed">Lanczos4Resize</span><span class="f_Normal-indented"> - The sharpest, but also the slowest algorithm</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_CourierFixed">Spline16Resize</span><span class="f_Normal-indented"> and </span><span class="f_CourierFixed">Spline36Resize</span><span class="f_Normal-indented"> - Spline-based resizers. 16 is faster than 36.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_CourierFixed">GaussResize</span><span class="f_Normal-indented"> - Gaussian resizer. About as fast as </span><span class="f_CourierFixed">Lanczos4Resize</span><span class="f_Normal-indented">. Note that the "p" (blurring/sharpening) parameter can't be changed in Aegisub.</span></td></tr></table></div><p class="p_Normal-indented"><span class="f_Normal-indented">The default (and recommended) resizer is </span><span class="f_CourierFixed">BilinearResize</span><span class="f_Normal-indented">. If you have a very slow computer, you can try</span><span class="f_CourierFixed"> PointResize</span><span class="f_Normal-indented">, but the others are probably more or less pointless unless you plan on doing resizer tests with Aegisub.</span></p>
+
+</div>
+</body>
+</html>

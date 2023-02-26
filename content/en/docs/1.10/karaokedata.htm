@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Karaoke data</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Karaoke data</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="subtitledata.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="automationconfig.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p>A karaoke table contains information about one karaoke syllable. A karaoke syllable is defined to start with an override tag, where the first character in the tag name is <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">k</span> or <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">K</span>, followed by zero or more additional letters, followed by an integer. The tag name, including the initial <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">k</span> or <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">K</span>, is called the "kind" of the syllable, and the number is the duration.</p>
+<p>A karaoke table contains the following fields:</p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">duration</span> (number)</p>
+<p style="margin: 0px 0px 0px 27px;">Duration of the syllable, in milliseconds. The first syllable on a line always has duration 0.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">kind</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">Kind of the syllable. The first syllable on a line always has kind <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">""</span> (the empty string.)</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">text</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">Text in the syllable, including any override tags. Care is taken that any override tag blocks at the start and end of the text are properly closed. Never includes the actual karaoke tag. The first syllable on a line has all text until the first karaoke tag.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">text_stripped</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">Same as the text field, except that all override tags and drawings are stripped from here.</p>
+<p>&nbsp;</p>
+
+</div>
+</body>
+</html>

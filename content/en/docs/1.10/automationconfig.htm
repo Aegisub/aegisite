@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Configuration system</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Configuration system</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="karaokedata.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="libraryfunctions.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p>The configuration system in Automation allows you (as a script writer) to define a set of options, the user of the script can set before it's run. This way you can make generally usable scripts (eg. something to make a variation over some general karaoke effect) or just allow yourself to easily tweak some values during script development.</p>
+<p>&nbsp;</p>
+<p><img src="automation-export-config.png" width="648" height="306" border="0" alt="automation-export-config"></p>
+<p>&nbsp;</p>
+<p>The screenshot above shows the configuration defined by the script <span style="font-style: italic;">simple-k-replacer.lua</span>, which is shipped with the Aegisub distribution. The following code in the script file defines the configuration:</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">configuration&nbsp; = {</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #00007f;">-- First a label to descript what special variables can be used</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">[1] = {</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">name = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"label1"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">kind = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"label"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">label = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">[[Variables:</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">%START% = Start-time of syllable (ms)</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">%END% = End-time of syllable (ms)</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">%DUR% = Duration of syllable (cs)]]</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">hint = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">""</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #00007f;">-- No "default", since a label doesn't have a value</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">},</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #00007f;">-- Then a text field to input the string to replace \k's with</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #00007f;">-- Make the default a "NOP" string</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">[2] = {</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">name = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"k_repstr"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">kind = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"text"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">label = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"\\k replacement"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">hint = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"The string to replace \\k tags with. Should start and end with { } characters."</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">default = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"{\\k%DUR%}"</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">},</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #00007f;">-- Allow the user to specify whether to strip tags or not</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">[3] = {</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">name = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"striptags"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">kind = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"bool"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">label = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"Strip all tags"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">hint = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"Strip all formatting tags apart from the processed karaoke tags?"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">default = </span><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">false</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">}</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">}</span></p>
+<p>&nbsp;</p>
+<p>This example only shows three of the kinds of controls supported.</p>
+<p>A complete list of the supported kinds are:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Label</span> - A static text display, for eg. showing instructions to the user</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Text</span> - A simple text input control</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Integer</span> - A text input control with spin buttons, for entering integer numbers only</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Float</span> - A text input for entering only floating-point numbers</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Boolean</span> - A checkbox for selecting a true/false value</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">color</span> - A text input for entering color codes (this will be replaced with a better color-input control in the future)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Style</span> - A drop-down listbox for selecting one of the styles currently in the subtitles</td></tr></table></div><p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Implementing configuration</span></p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>Configuration is implemented in an Automation script by defining a number of controls in the global <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">configuration</span> variable and accessing the values the user set through the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">config</span> argument passed to the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"><a href="theprocess_linesfunction.htm">process_lines</a></span> function.</p>
+<p>&nbsp;</p>
+<p>The <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">configuration</span> global variable is a table containing a number of other tables, indexed by numbers starting from 1. You do not need to explicitly define the number of options anywhere.</p>
+<p>&nbsp;</p>
+<p>Each of the numbered subtables in the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">configuration</span> table should have the following fields:</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">name</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">The internal name of the configuration variable, this option defines. It must not contain the colon or pipe characters. (ASCII 58 and 124.) Required.</p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">kind</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">One of <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"label"</span>, <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"text"</span>, <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"int"</span>, <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"float"</span>, <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"bool"</span>, <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"color"</span> or <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"style"</span>. Defines what kind of control this option generates. Required.</p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">label</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">The label displayed to the left (right for <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"bool"</span> kind) of the control in the window, or just the text of the label, in case of the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"label"</span> kind of control. Required.</p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">hint</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">Tooltip displayed when the mouse hovers over the control for some time. This doesn't seem to work for <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"label"</span> kind controls. You can use this to provide a longer description than fits into the label. Required (but may be an empty string.)</p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">min</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;">The minimum value the user can enter for <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"int"</span> and <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"float"</span> kind options. Optional.</p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">max</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;">The maximum value the user can enter for <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"int"</span> and <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"float"</span> kind options. Optional.</p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">default</span> (type depends on kind)</p>
+<p style="margin: 0px 0px 0px 13px;">The default value given to this option when the script is first loaded for a subtitle file. This value is also used if the user enters an invalid value into an <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"int"</span> or <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"float"</span> text field. See the table of data-type to option kind mapping below, for what the type of this field should be.</p>
+<p>&nbsp;</p>
+<p>The data-type to option kind mapping is as follows:</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="1" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="91" style="width:91px;"><p><span style="font-weight: bold; color: #000000;">Option kind</span></p>
+</td>
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold; color: #000000;">Data-type</span></p>
+</td>
+<td valign="top" width="508" style="width:508px;"><p><span style="font-weight: bold; color: #000000;">Remarks</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="91" style="width:91px;"><p><span style="color: #000000;">label</span></p>
+</td>
+<td valign="top" width="90" style="width:90px;"><p><span style="color: #000000;">none</span></p>
+</td>
+<td valign="top" width="508" style="width:508px;"><p><span style="color: #000000;">The label kind doesn't contain or generate any data.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="91" style="width:91px;"><p><span style="color: #000000;">text</span></p>
+</td>
+<td valign="top" width="90" style="width:90px;"><p><span style="color: #000000;">string</span></p>
+</td>
+<td valign="top" width="508" style="width:508px;"><p><span style="color: #000000;">An unlimited-length UTF-8 string.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="91" style="width:91px;"><p><span style="color: #000000;">int</span></p>
+</td>
+<td valign="top" width="90" style="width:90px;"><p><span style="color: #000000;">number</span></p>
+</td>
+<td valign="top" width="508" style="width:508px;"><p><span style="color: #000000;">Might not be exactly the same value as entered, if the number os very large.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="91" style="width:91px;"><p><span style="color: #000000;">float</span></p>
+</td>
+<td valign="top" width="90" style="width:90px;"><p><span style="color: #000000;">number</span></p>
+</td>
+<td valign="top" width="508" style="width:508px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="91" style="width:91px;"><p><span style="color: #000000;">bool</span></p>
+</td>
+<td valign="top" width="90" style="width:90px;"><p><span style="color: #000000;">boolean</span></p>
+</td>
+<td valign="top" width="508" style="width:508px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="91" style="width:91px;"><p><span style="color: #000000;">color</span></p>
+</td>
+<td valign="top" width="90" style="width:90px;"><p><span style="color: #000000;">string</span></p>
+</td>
+<td valign="top" width="508" style="width:508px;"><p><span style="color: #000000;">Currently not guaranteed to be a valid ASS color code.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="91" style="width:91px;"><p><span style="color: #000000;">style</span></p>
+</td>
+<td valign="top" width="90" style="width:90px;"><p><span style="color: #000000;">string</span></p>
+</td>
+<td valign="top" width="508" style="width:508px;"><p><span style="color: #000000;">If another export filter before the Automation script changes the styles available in the subtitles, the named style might no longer exist when the script is run.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>When the script is run, the values the user has selected for the options are stored in the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">config</span> table passed to the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">process_lines</span> function. The option values are accessed using the defined <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">name</span> for them as key in the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">config</span> table. For example, this is how it's done in <span style="font-style: italic;">simple-k-replacer.lua</span>:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">if</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> config.striptags </span><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">then</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">newtext = line.karaoke[0].text_stripped</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">else</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">newtext = line.karaoke[0].text</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">end</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Storage of configuration settings in ASS files</span></p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>If you save your original subtitles file after applying an Automation script using the configuration system (either through Export or through the Apply now button in Automation Manager), the settings selected are stored in the ASS file.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Note:</span> The rest of the information on this page is in no way required to know in order to use Automation or write scripts for it. It is included only for informational purposes.</p>
+<p>&nbsp;</p>
+<p>The settings for one Automation script is saved on one line in the ASS file. Here is an example of such a line:</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">Automation Settings simple-k-replacer.lua: k_repstr:{\r\t(%START%#2C%END%#2C\fscy150)\kf%DUR%}|striptags:0</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p>(The above should be on just one line.)</p>
+<p>&nbsp;</p>
+<p>The format of such a line is as follows:</p>
+<p>&nbsp;</p>
+<p>The name of the line is "Automation Settings" plus a space plus the filename of the Automation script, with all path elements stripped off.</p>
+<p>After that follows a list of name:value pairs separated by pipe (ASCII 124) characters. The name and value in such a pair are separated by a single colon (ASCII 58) without spaces around.</p>
+<p>&nbsp;</p>
+<p>The name in a name:value pair is simply the internal name specified in the configuration table, without any mangling at all.</p>
+<p>The way the value is stored depends on the kind of the option:</p>
+<p>&nbsp;</p>
+<p>label</p>
+<p style="margin: 0px 0px 0px 13px;">Labels aren't stored in the ASS file at all.</p>
+<p>text</p>
+<p style="margin: 0px 0px 0px 13px;">Stored using the inline string encoding described below.</p>
+<p>int</p>
+<p style="margin: 0px 0px 0px 13px;">Stored in base 10 ASCII without any kind of group separators.</p>
+<p>float</p>
+<p style="margin: 0px 0px 0px 13px;">Stored in exponential base 10 notation using ASCII. (The same way as the C printf() %e argument outputs numbers.)</p>
+<p>bool</p>
+<p style="margin: 0px 0px 0px 13px;">True is stored as 1, false as 0.</p>
+<p>color</p>
+<p style="margin: 0px 0px 0px 13px;">Stored in ASS hex format without mangling.</p>
+<p>style</p>
+<p style="margin: 0px 0px 0px 13px;">Stored using inline string encoding of the style name.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Inline string encoding</span></p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>This encoding only works on ASCII characters. Unicode characters can't be encoded. This shouldn't be a problem, though, since this encoding is only used to escape characters that would otherwise be unsafe to use.</p>
+<p>&nbsp;</p>
+<p>This encoding is heavily inspired by the URL-encoding method used in HTTP, and the primary difference is the escape character used. Inline string encoding uses # (hash, sharp, ASCII 35) as escape character. The # is followed by two hexadecimal digits, which are the ASCII code of the encoded character.</p>
+<p>&nbsp;</p>
+<p>The following characters are currently encoded when saved: (All others are passed through as-is.)</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="1" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="117" style="width:117px;"><p><span style="font-weight: bold; color: #000000;">Character</span></p>
+</td>
+<td valign="top" width="69" style="width:69px;"><p><span style="font-weight: bold; color: #000000;">ASCII</span></p>
+</td>
+<td valign="top" width="121" style="width:121px;"><p><span style="font-weight: bold; color: #000000;">Encoded form</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="117" style="width:117px;"><p><span style="color: #000000;">Control codes</span></p>
+</td>
+<td valign="top" width="69" style="width:69px;"><p><span style="color: #000000;">0 to 31</span></p>
+</td>
+<td valign="top" width="121" style="width:121px;"><p><span style="color: #000000;">#00 to #1F</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="117" style="width:117px;"><p><span style="color: #000000;"># (hash/sharp)</span></p>
+</td>
+<td valign="top" width="69" style="width:69px;"><p><span style="color: #000000;">35</span></p>
+</td>
+<td valign="top" width="121" style="width:121px;"><p><span style="color: #000000;">#23</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="117" style="width:117px;"><p><span style="color: #000000;">, (comma)</span></p>
+</td>
+<td valign="top" width="69" style="width:69px;"><p><span style="color: #000000;">44</span></p>
+</td>
+<td valign="top" width="121" style="width:121px;"><p><span style="color: #000000;">#2C</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="117" style="width:117px;"><p><span style="color: #000000;">: (colon)</span></p>
+</td>
+<td valign="top" width="69" style="width:69px;"><p><span style="color: #000000;">58</span></p>
+</td>
+<td valign="top" width="121" style="width:121px;"><p><span style="color: #000000;">#3A</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="117" style="width:117px;"><p><span style="color: #000000;">| (pipe)</span></p>
+</td>
+<td valign="top" width="69" style="width:69px;"><p><span style="color: #000000;">124</span></p>
+</td>
+<td valign="top" width="121" style="width:121px;"><p><span style="color: #000000;">#7C</span></p>
+</td>
+</tr>
+</table>
+</div>
+
+</div>
+</body>
+</html>

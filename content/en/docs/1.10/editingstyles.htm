@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Editing styles</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Editing styles</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="introduction2.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="tutorial.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p>This section will give you the basics about styling and how to do it with Aegisub.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Something About Styling</span></p>
+<p>&nbsp;</p>
+<p>Styles are meant to improve subtitle aesthetics, match the video, and most importantly, be easy to read.</p>
+<p>&nbsp;</p>
+<p>The most common method is to have two styles for the subtitles. One is the standard style and the other is the alternative style, the later is used when two characters talk at the same time.</p>
+<p>&nbsp;</p>
+<p>Sometimes a typesetter uses more than two styles (often called "multicolor subtitles"). In most cases, different colors are used for the more important characters, but there are other criteria on how to style it.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><img src="styles_standard.jpg" width="528" height="360" border="0" alt="styles_standard"></p>
+<p style="text-align: center;"><img src="styles_standard_aegisub.png" width="578" height="52" border="0" alt="styles_standard_aegisub"></p>
+<p>&nbsp;</p>
+<p>This screenshot represents the use of two styles, and because there are two lines at once (a collision) both styles are used at the same time. This is the most common way to style subtitles. From the screenshot of the lines displayed, it's easy to see the different styles applied to the subtitles.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><img src="styles_multicolor_1.jpg" width="528" height="360" border="0" alt="styles_multicolor_1"></p>
+<p style="text-align: center;"><img src="styles_multicolor_aegisub_1.png" width="535" height="52" border="0" alt="styles_multicolor_aegisub_1"></p>
+<p style="text-align: center;"><img src="styles_multicolor_2.jpg" width="528" height="360" border="0" alt="styles_multicolor_2"></p>
+<p style="text-align: center;"><img src="styles_multicolor_aegisub_2.png" width="507" height="19" border="0" alt="styles_multicolor_aegisub_2"></p>
+<p>As seen on these two screenshots, the typesetter used different styles for the characters. This makes the subtitles more interesting and sometimes when there are more characters speaking it can help to make the subtitles easier to read. Looking at the screenshot of the lines, it's easy to see the different styles used from how they are named (after the character names, which makes it easier to apply them).</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Aegisub and Styles</span></p>
+<p>&nbsp;</p>
+<p>In Aegisub there is a Style Manager for editing styles. It's meant to make editing, creating and managing the styles easier. To open it, simply go to <span style="font-style: italic;">Tools -&gt; Styles Manager</span>.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><img src="style_manager_1.png" width="411" height="434" border="0" alt="style_manager_1"></p>
+<p>&nbsp;</p>
+<p>The styles manager window is simple. It's meant for selecting styles for a subtitle script, as well as creating new styles and storing them.</p>
+<p>For storing the styles, Aegisub uses the Catalog. Styles aren't stored directly in the catalog, but inside of "Storage". That makes storing easier and more accessible for the typesetter.</p>
+<p>&nbsp;</p>
+<p>Next is the Storage window. It displays the styles available in the selected Storage from the Catalog. </p>
+<p>The Current Script Window displays the styles used in the currently loaded script.</p>
+<p>&nbsp;</p>
+<p>The typesetter can add, delete and edit the styles from both the Storage and the Current style window, as well as move them from window to window.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><img src="style_manager_2.png" width="291" height="481" border="0" alt="style_manager_2"></p>
+<p>&nbsp;</p>
+<p>This window shows the style creator and editor. Here the typesetter sets the parameters as he wants them. </p>
+<p>&nbsp;</p>
+<p>Text displayed in [] displays the code for the parameters as it's used in line editing. <span style="font-style: italic;">Example: Font [\fs].</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Style Name:</span> Name of the style. Name it something simple and concise to make life a lot easier.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Fontname and Fontsize:</span> Font <span style="font-style: italic;">[\fn&lt;name&gt;]</span> used and the size <span style="font-style: italic;">[\fs&lt;size&gt;]</span>, then the other font parameters (like Italic, Bold, etc.).</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Colors:</span> Parameters for the different colors <span style="font-style: italic;">[\&lt;1,2,3,4&gt;c&amp;H&lt;bbggrr&gt;&amp;]</span>(primary, secondary,etc). Transparency is for the colors as well with <span style="font-style: italic;">[\&lt;1,2,3,4&gt;a&amp;H&lt;aa&gt;&amp;]</span>, which goes from 0 (opaque) to 255 (transparent).</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Margins:</span> 3 parameters: left, right and vertical. Values are in pixels, and represent the distance from the edge of video to the subtitle position.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Alignment </span> <span style="font-style: italic;">[\an&lt;alignment&gt;]</span><span style="font-weight: bold;">:</span> Alignment of the subtitle follows the numpad layout (e.g. 1 is lower left, 6 is middle right, 8 is top middle, etc.).</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Outline:</span> <span style="font-style: italic;">[\bord&lt;width&gt;] </span>sets the width of the border (in pixels) around text and Shadow <span style="font-style: italic;">[\shad&lt;depth&gt;]</span> sets the offset (in pixels as well) that the shadow is drawn from the subtitle.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Opaque Box:</span> Checking this will make a filled, opaque rectangle behind the subtitles instead of the usual border.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Scale X/Scale Y:</span> <span style="font-style: italic;">[\fscx&lt;percent&gt;]</span> and <span style="font-style: italic;">[\fscy&lt;percent&gt;] s</span>et the font scale in the X and Y axis. Parameter should be in percent form.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Angle</span> <span style="font-style: italic;">[\frz&lt;degrees&gt;]</span>: Degree rotation of the subtitle in the Z axis. Value in degrees.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-weight: bold;">Encoding</span> <span style="font-style: italic;">[\fe&lt;charset&gt;]</span>: The character encoding can be specified. Example: 0=ASCII, 128=Japanese. This is ignored when Unicode is in use.</td></tr></table></div><p>&nbsp;</p>
+<p><span style="font-weight: bold;">Note: </span>The code that was inside of [] is further explained in the <a href="assoverridetags.htm">ASS Override Tags</a> page. </p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Tutorial</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Tutorial</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="editingstyles.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="assoverridetags.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p><span style="font-weight: bold;">Introduction</span></p>
+<p>&nbsp;</p>
+<p>Welcome to Aegisub's typesetting tutorial. This will give you step-by-step instructions on how to make a basic typeset effect, and hopefully this knowledge will be enough to get you started. Only a few Advanced Substation Alpha (ASS) tags will be covered in this article, for information on the rest of them, please see the <a href="assoverridetags.htm">ASS Override Tags</a> page.</p>
+<p>&nbsp;</p>
+<p>Note:<span style="font-weight: bold;"> </span>This tutorial assumes you've read the <a href="introduction2.htm">Introduction</a> and <a href="editingstyles.htm">Editing styles</a> pages.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Tutorial</span></p>
+<p>&nbsp;</p>
+<p>For this lesson, we will be typesetting a simple, static sign. It says "<span style="font-style: italic;">Shuu-chan</span>" in Japanese, and we want to have the translation right next to it.</p>
+<p>&nbsp;</p>
+<p>Before you begin, please download the tutorial package from <span style="color: #0000ff; text-decoration: underline;"><a href="http://j.movax.org/aegisub_typeset_tutorial.zip" target="_blank" class="weblink">here</a></span> (~1 MB). It includes the video for the tutorial, as well as a blank script and a script with the final result.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><img src="typeset_01.jpg" width="528" height="297" border="0" alt="typeset_01"></p>
+<p>&nbsp;</p>
+<p>Start by opening the "<span style="font-style: italic;">aegisub_typeset_tut.ass</span>" script included in the tutorial package. The script that we are using is actually 800x600, which is totally different from the video resolution (704x396) - even Aspect Ratio is off. This is to illustrate the importance of trusting script resolution, not video resolution.</p>
+<p>&nbsp;</p>
+<p>Now, go to the Video menu and open the "<span style="font-style: italic;">aegisub_typeset_tut.avi</span>" file.</p>
+<p>&nbsp;</p>
+<p>Insert a new line, or select the existing blank line, and enter "<span style="font-style: italic;">Shuu-chan</span>" as its text.</p>
+<p>&nbsp;</p>
+<p>Now, time it exactly to the scene boundaries. It's important that the sign starts and ends at the exact proper frames, to prevent annoying visual artifacts ("bleeding").</p>
+<p>&nbsp;</p>
+<p>This is easily done with Aegisub. First, make sure the line is selected. Now, seek the video to the very first frame in scene. You can use the Left Arrow key to go back one frame and make sure that you HAVE picked the first frame. Once you're in the right frame, hit <span style="font-style: italic;">Ctrl+3</span>. This will set start of selected lines so they begin at the video frame.</p>
+<p>&nbsp;</p>
+<p>Hint: Whenever you are using an AVI video with keyframe information, you can use shift+left/right to jump to keyframes, which are usually placed at scene transitions. When you are viewing a keyframe, the editbox with the current time and frame number will turn green.</p>
+<p>&nbsp;</p>
+<p>At this point, you may or may not see the subs on video (depending on where is the end time set to). It doesn't matter. Seek the video to the very last frame in scene and hit <span style="font-style: italic;">Ctrl+4</span>. This will set end of subtitles to current frame, and now you should see the subtitles throughout the entire scene (but not anywhere else).</p>
+<p>&nbsp;</p>
+<p>This is what it should look like:</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><img src="typeset_02.jpg" width="528" height="297" border="0" alt="typeset_02"></p>
+<p>&nbsp;</p>
+<p>Now it's time to actually start typesetting. For starters, we will remove the border and shadow from the line, and center it on screen. To do so, we will use the following <a href="assoverridetags.htm">ASS override tags</a>:</p>
+<p>&nbsp;</p>
+<p>-<span style="font-style: italic;">\an</span>: Alignment to numpad. We will set it to 5 (centered).</p>
+<p>-<span style="font-style: italic;">\bord</span>: Border width. We will set it to 0.</p>
+<p>-<span style="font-style: italic;">\shad</span>: Shadow distance. We will set it to 0.</p>
+<p>&nbsp;</p>
+<p>Inserting the tags in the line will make it look like this:</p>
+<p><span style="color: #0000ff;">{\an5\bord0\shad0}Shuu-chan</span></p>
+<p>&nbsp;</p>
+<p>You can now hit <span style="font-style: italic;">Ctrl+Enter</span> to preview changes without changing line. It should look like this:</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><img src="typeset_03.jpg" width="528" height="297" border="0" alt="typeset_03"></p>
+<p>&nbsp;</p>
+<p>This is still far from what we want. Next, we will change the color and rotation to match the text. We will use the following tags:</p>
+<p>&nbsp;</p>
+<p>-<span style="font-style: italic;">\c</span>: Sets primary color. We will use &amp;H383B3C&amp;.</p>
+<p>-<span style="font-style: italic;">\frz</span>: Rotation on Z axis. We will use -10.</p>
+<p>&nbsp;</p>
+<p>To set the color, you can either manually enter the tag, or click the "set primary color" button over the subtitles edit box. At any rate, the line should now look like:</p>
+<p><span style="color: #0000ff;">{\an5\bord0\shad0\1c&amp;H383B3C&amp;\frz-10}Shuu-chan</span></p>
+<p>&nbsp;</p>
+<p>Hitting <span style="font-style: italic;">Ctrl+Enter</span> for preview should give you:</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><img src="typeset_04.jpg" width="528" height="297" border="0" alt="typeset_04"></p>
+<p>&nbsp;</p>
+<p>We're getting closer, but it's still totally mispositioned. We will now use Aegisub's visual typesetting facilities to position the line. Since we are using <span style="font-style: italic;">\an5</span>, the position which we specify will determine where the CENTER of subtitles will be. Move the mouse cursor over video display. It should show a crosshair with coordinates of current position, like in the picture below:</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><img src="typeset_05.jpg" width="528" height="297" border="0" alt="typeset_05"></p>
+<p>&nbsp;</p>
+<p>Since 453,164 looks like a good position, double click it to set the position there. The line should now read:</p>
+<p><span style="color: #0000ff;">{\an5\bord0\shad0\1c&amp;H383B3C&amp;\frz-10\pos(453,164)}Shuu-chan</span></p>
+<p>&nbsp;</p>
+<p>And the video should look like this:</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><img src="typeset_06.jpg" width="528" height="297" border="0" alt="typeset_06"></p>
+<p>&nbsp;</p>
+<p>Finally, the font is small and doesn't really match sign. Click the "<span style="font-style: italic;">Font Face Name</span>" button to choose a font (Ashley Script MT, in this case). Hit Ctrl+Enter to preview. Seeing it's too small, use the \fs tag to increase its size to 80. Also, the rotation seems a bit off, so I adjusted it to -12. The final line should look like:</p>
+<p><span style="color: #0000ff;">{\an5\bord0\shad0\1c&amp;H383B3C&amp;\frz-12\pos(453,164)\fnAshley Script MT\fs80}Shuu-chan</span></p>
+<p>&nbsp;</p>
+<p>And, in the video:</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><img src="typeset_07.jpg" width="528" height="297" border="0" alt="typeset_07"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Though this is a relatively simple sign, with no animation or more advanced features, it's a good starting example. From this, you should be able to figure how to use the remaining ASS Override Tags to create more advanced effects.</p>
+<p>&nbsp;</p>
+<p>Also included in the tutorial pack is a "<span style="font-style: italic;">aegisub_typeset_tut_solved.ass</span>" file, which shows what your file should look like. In particular, check if your start/end times match those in the "<span style="font-style: italic;">aegisub_typeset_tut_solved.ass</span>" file. The line should start on frame 76 (0:00:03.169) and end on frame 152 (0:00:06.339).</p>
+
+</div>
+</body>
+</html>

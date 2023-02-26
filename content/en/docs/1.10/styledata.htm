@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Style data</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Style data</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="metadata.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="subtitledata.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p>A style table contains an ASS style definition. A list of style tables is passed to the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">process_lines</span> function, and it is also used when calling the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">aegisub.text_extents</span> function. A style table contains the following fields:</p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">name</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">The name of the style. Can be used to index the style list passed to <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">process_lines</span>.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">fontname</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">fontsize</span> (number)</p>
+<p style="margin: 0px 0px 0px 27px;">Name and point size of the font. Remember font names are case sensitive.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">color1</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">Primary color for the text. In ASS hexadecimal notation.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">color2</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">Secondary color for the text.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">color3</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">Outline color.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">color4</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">Shadow color.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">bold</span> (boolean)</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">italic</span> (boolean)</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">underline</span> (boolean)</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">strikeout</span> (boolean)</p>
+<p style="margin: 0px 0px 0px 27px;">Whether the text is bold/italic/underlined/striked out.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">scale_x</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">scale_y</span> (number)</p>
+<p style="margin: 0px 0px 0px 27px;">X and Y scaling of the text in percent.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">spacing</span> (number)</p>
+<p style="margin: 0px 0px 0px 27px;">Inter-character spacing in the text in pixels.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">angle</span> (number)</p>
+<p style="margin: 0px 0px 0px 27px;">Z axis rotation of the text, in degrees.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">borderstyle</span> (number)</p>
+<p style="margin: 0px 0px 0px 27px;">Border style used. (1=outline, 3=solid box.)</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">outline</span> (number)</p>
+<p style="margin: 0px 0px 0px 27px;">Thickness of the outline, in pixels</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">shadow</span> (number)</p>
+<p style="margin: 0px 0px 0px 27px;">Distance of the shadow, in pixels.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">align</span> (number)</p>
+<p style="margin: 0px 0px 0px 27px;">Numpad style alignment for the lines.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">margin_l</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">margin_r</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">margin_v</span> (number)</p>
+<p style="margin: 0px 0px 0px 27px;">Left, right and vertical margins, in pixels.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">encoding</span> (number)</p>
+<p style="margin: 0px 0px 0px 27px;">Legacy font encoding.</p>
+<p>&nbsp;</p>
+
+</div>
+</body>
+</html>
