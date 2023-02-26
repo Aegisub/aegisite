@@ -22,4 +22,7 @@ Check CI build
 
 ## 旧版本
 
+<details>
+<summary>Download Links</summary>
 {{< previous-versions >}}
+</details>

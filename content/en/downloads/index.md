@@ -22,4 +22,7 @@ To cut down on the download size, the Windows "Full" Install includes only a US 
 
 ## Previous Versions
 
+<details>
+<summary>Download Links</summary>
 {{< previous-versions >}}
+</details>
