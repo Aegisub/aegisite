@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Other Tools</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Other Tools</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="translationassistant.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="export.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p>&nbsp;</p>
+<p>Here's the documentation for some various more or less useful tools and features that are too small to have their own page.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Find and replace</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p>This is one of the most underestimated tools in any text editor, and even more so in Aegisub. It does exactly what it says it does - find strings, and optionally replace them with other strings.</p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 12px;"><img src="find-dialogue.png" width="467" height="163" border="0" alt="find-dialogue"></p>
+<p>&nbsp;</p>
+<p>The Find dialogue is very straightforward - it finds things. The "Update Video (slow)" checkbox makes the video follow the find cursor - in other words, it makes the video jump to the line selected when the search finds anything. Checking "Match case" turns the search case sensitive (which means that a search for "foo" will NOT find "Foo" or "FOO").</p>
+<p>The regular expressions checkbox makes Aegisub interpret the search string as a Perl-style regular expression - more on that below.</p>
+<p>&nbsp;</p>
+<p>Next, the replace dialogue:</p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 12px;"><img src="replace-dialogue.png" width="487" height="188" border="0" alt="replace-dialogue"></p>
+<p>&nbsp;</p>
+<p>The "Find what" field is exactly the same as in the find dialogue, and so is the "Find next" button. It finds strings without replacing them, and hence it's an excellent method of testing that your replace string really is finding what you want to replace. "Replace next" does exactly what it says - replace the next found instance of the search string with the replacement string. "Replace all" naturally replaces all found strings with the replacement string.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline;">Regular Expressions (aka. regexes or regexps)</span></p>
+<p><span style="text-decoration: underline;">&nbsp;</span></p>
+<p>Several dialogues in Aegisub can use regular expressions. But what's a regular expression?</p>
+<p>First off, regular expressions are an awesomely powerful tool for working with text in various ways. Simply put, regular expressions provide a way to describe text strings in various ways. In many search engines, you can use a simple form of regular expressions - for example, searching for <span style="font-style: italic;">shoe* </span>will find both <span style="font-style: italic;">shoe </span>and <span style="font-style: italic;">shoes.</span> But regular expressions can be much, much more powerful than this. For the full story about regular expressions, see the <span style="color: #0000ff; text-decoration: underline;"><a href="http://en.wikipedia.org/wiki/Regular_expression" target="_blank" class="weblink">Wikipedia entry</a></span>, or the <span style="color: #0000ff; text-decoration: underline;"><a href="http://perldoc.perl.org/perlretut.html" target="_blank" class="weblink">Perl regular expressions tutorial</a></span> (note that there's quite a bit of things in there that only applies to Perl and not to the wxWindows implementation). For a full list of exactly what Perl 5 extensions are supported in wxWindows (and thus in Aegisub), see the <span style="color: #0000ff; text-decoration: underline;"><a href="http://www.wxwindows.org/manuals/2.6.3/wx_wxresyn.html" target="_blank" class="weblink">wxWindows manual entry</a></span>.</p>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline;">Some useful examples</span></p>
+<p><span style="text-decoration: underline;">&nbsp;</span></p>
+<p>You can use regexes to easily add <span class="f_CourierFixed">{\be1} </span>to the start of every line, for example. Go to the replace dialogue, check "use regular expressions", and enter the following:</p>
+<p>Find what: <span class="f_CourierFixed">^</span></p>
+<p>Replace with: <span class="f_CourierFixed">{\\be1}\1</span></p>
+<p>&nbsp;</p>
+<p>To remove them again, use this:</p>
+<p>Find what: <span class="f_CourierFixed">^\{\\be1\}(.+)</span></p>
+<p>Replace with: <span class="f_CourierFixed">\1</span></p>
+<p>&nbsp;</p>
+<p>You can do a simple, but very aggressive, tag stripper as well. The following will kill EVERYTHING inside {}'s:</p>
+<p>Find what: <span class="f_CourierFixed">\{.*?\}</span></p>
+<p>Replace with:</p>
+<p><span style="font-style: italic;">(yes, that's an empty string)</span></p>
+<p><span style="font-style: italic;">&nbsp;</span><br>
+&nbsp;</p>
+<p><span style="font-weight: bold;">Select lines</span></p>
+<p>&nbsp;</p>
+<p>The select lines dialog can be accessed from the Edit menu, and it, well... selects lines (based on the conditions given).</p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 12px;"><img src="selectlines.png" width="226" height="391" border="0" alt="selectlines"></p>
+<p>&nbsp;</p>
+<p>The dialog is fairly self-explanatory. All lines that matches or doesn't match the given text string will be selected. You can choose if the string should be searched for in the Text field (the main subtitle text), in the Style field, or in the Actor field. You can also specify if you want to search in dialogue lines, comment lines, or both. The Action setting determines what action should be taken. Set selection sets the selection to all lines that matches the given conditions. Add to selection adds all matching lines to your current selection. Subtract from selection deselects all lines that matches from your current selection. Intersect with selection is a lot simpler than it sounds - it's like Set to selection but only applies to the currently selected lines.</p>
+<p>&nbsp;</p>
+<p>You can also use regular expressions in this dialogue - see Find and replace above.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Resolution resampler</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p>The resolution resampler is an automated tool to make changing the script resolution painless. It changes all tags and styles so that everything will look the same at the new resolution.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Spell checker</span></p>
+<p>&nbsp;</p>
+<p>Early Aegisub versions (non-public alpha builds) had a spell checker, based on aspell, which was planned to be in all future versions. However, work on it was never finished and the responsible programmer got busy in Real Life. Since having it in its broken state was deemed worse than not having it at all, it was disabled and have stayed disabled on all builds since. The code is still there, though, even if it doesn't get included in the current builds, and it's certainly possible that the spell checker will be back in some future version of Aegisub.</p>
+
+</div>
+</body>
+</html>

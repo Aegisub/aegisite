@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>utils.lua</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="C:\Program Files\Aegisub\automation\include\,line table">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">utils.lua</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="demoscripts.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="karaskel.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p>This file contains several useful functions when writing advanced Automation scripts. In default installations on an English language Windows, it is located in <span style="font-style: italic;">C:\Program Files\Aegisub\automation\include\</span>, but since the <span style="font-style: italic;">automation\include\</span> directory under the Aegisub install directory is automatically searched when using the <a href="libraryfunctions.htm#Include">include</a> function, you just need to use the following line to include it:</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">include(</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"utils.lua"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">)</span></p>
+<p>&nbsp;</p>
+<p>The following functions are defines in <span style="font-style: italic;">utils.lua</span>:</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">copy_line</span> (input)</p>
+<p>Makes a shallow copy of a line table.</p>
+<p>You will usually want to use this function when generating new lines based on lines that already exist in the subs. A simple assignment can't be used, since it only copies the reference to the line table. Everything except the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">karaoke</span> table in the copied line can safely be modified without affecting other copies of the line.</p>
+<p>See <span style="font-style: italic;">9-skeleton-advanced.lua</span> (among others) for an example of how to use this function.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">input</span> (table)</p>
+<p style="margin: 0px 0px 0px 13px;">The line to copy. Expected to be a <a href="subtitledata.htm">line table</a>.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Return value</span></p>
+<p>A copy of the input line.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">ass_color</span> (r, g, b)</p>
+<p>Makes an ASS hex color code from the given RGB values.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">r</span> (number)</p>
+<p>@<span style="font-weight: bold;">g</span> (number)</p>
+<p>@<span style="font-weight: bold;">b</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;">The values of the red, green and blue components of the color to generate the color code for.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Return value</span></p>
+<p>A string being the ASS hex color code for the input.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">HSV_to_RGB</span> (H, S, V)</p>
+<p>Convert a color specified in HSV (hue, saturation, luminance) format into RGB values.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">H</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;">Hue of the color.</p>
+<p>@<span style="font-weight: bold;">S</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;">Saturation ("grayness") of the color.</p>
+<p>@<span style="font-weight: bold;">V</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;">Value ("brighness") of the color.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Return value</span></p>
+<p>Returns 3 numbers being (in order) the red, green and blue components of the specified HSV color.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">trim</span> (s)</p>
+<p>Removes whitespace at the beginning and end of the passed string.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">s</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">The string to remove whitespace from.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Return value</span></p>
+<p>The string without whitespace at the beginning or end.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">next_utf_char</span> (str, off)</p>
+<p>&nbsp;</p>
+<p>Get the index of the next character from @off in the UTF-8 string @str. That is, @off subtracted from the return-value of this function is the number of bytes taken by the UTF-8 character pointed to by @off.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">str</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">The UTF-8 string to walk.</p>
+<p>@<span style="font-weight: bold;">off</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;">The byte-offset into the string for the current character.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Return value</span></p>
+<p>An index (number) into the string for the next character.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">utf_len</span> (str)</p>
+<p>&nbsp;</p>
+<p>Get the number of characters (not bytes) in the given UTF-8 string.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">str</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">The string to get the length of.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Return value</span></p>
+<p>The number of characters in the given string.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">string.headtail</span> (s)</p>
+<p>&nbsp;</p>
+<p>Get the "head" and "tail" of a string, treating it as a list of words separated by one or more space-characters.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">s</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">The string to get head/tail of</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Return values</span></p>
+<p>Returns two strings. First is the head, second is the tail.</p>
+<p>If @s is the empty string, returns two empty strings.</p>
+<p>If @s contains no spaces, head is @s and tail is the empty string.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">xor</span> (a, b)</p>
+<p>&nbsp;</p>
+<p>Calculate the logical exclusive or of two values.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">a</span>, @<span style="font-weight: bold;">b</span> (anything)</p>
+<p style="margin: 0px 0px 0px 13px;">The two values to calculate xor of</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Return values</span></p>
+<p>If only @a is non-false, returns @a.</p>
+<p>If only @b is non-false, returns @b.</p>
+<p>Otherwise returns false.</p>
+<p>&nbsp;</p>
+
+</div>
+</body>
+</html>

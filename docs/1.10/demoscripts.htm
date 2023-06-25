@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Demo scripts</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Demo scripts</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="examples.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="utils_lua.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p>Currently nine demo scripts are provided. They are located in the folder <span style="font-style: italic;">C:\Program Files\Aegisub\automation\demos\</span> in a default installation on an English language Windows.</p>
+<p>&nbsp;</p>
+<p>1-minimal.lua</p>
+<p style="margin: 0px 0px 0px 13px;">Shows a very minimal Automation script, that only calls the output_debug function and otherwise passes the data through unchanged.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>2-dump.lua</p>
+<p style="margin: 0px 0px 0px 13px;">This script also passes the data through unchanged, but it shows how to loop through the data. Most of the data are dumped with the output_debug function.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>3-include.lua</p>
+<p style="margin: 0px 0px 0px 13px;">Includes <a href="utils_lua.htm">utils.lua</a> and uses the copy_line function to duplicate the first line in the script. It shows how to include a file and add lines to the subs.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>4-text_extents.lua</p>
+<p style="margin: 0px 0px 0px 13px;">Uses the text_extents function to get the size of the individual syllables in a karaoke and place them in correct order on screen, centered horizontally and vertically. For highlight effect, the syllables move a bit upwards.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>5-configuration.lua</p>
+<p style="margin: 0px 0px 0px 13px;">Shows how to define every kind of configuration option, and uses a few of the defined options to modify the input.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>6-simple-effect.lua</p>
+<p style="margin: 0px 0px 0px 13px;">A heavily commented script showing how to generate a relatively simple effect. See below for an example of the effect generated.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>7-advanced-effect.lua</p>
+<p style="margin: 0px 0px 0px 13px;">This demo shows how to make a rather advanced effect using multiple lines per syllable and treating syllables differently depending on what kind of tag they're timed with. See below for an example of the effect generated.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>8-skeleton.lua</p>
+<p style="margin: 0px 0px 0px 13px;">Shows how to use the <a href="karaskel_lua.htm">karaskel.lua</a> include file to avoid much of the otherwise tedious coding most Automation scripts will contain. Useful as a starting point for simple effects.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>9-skeleton-advanced.lua</p>
+<p style="margin: 0px 0px 0px 13px;">Shows how to use <a href="karaskel_adv_lua.htm">karaskel-adv.lua</a> to make more advanced effects than possible with the vanilla karaskel.lua.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>10-furigana.lua</p>
+<p class="p_Normal-indented"><span class="f_Normal-indented">Demonstrates the furigana capabilities of karaskel-adv.lua. </span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>An example of the effect generated by 6-simple-efect.lua:</p>
+<p><img src="automation-demo-6.png" width="640" height="360" border="0" alt="automation-demo-6"></p>
+<p>&nbsp;</p>
+<p>An example of the effect generated by 7-advanced-effect.lua:</p>
+<p><img src="automation-demo-7.jpg" width="640" height="480" border="0" alt="automation-demo-7"></p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Timing Postprocessor</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Timing Postprocessor</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="stylingassistant2.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="translationassistant.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p>&nbsp;</p>
+<p>The timing postprocessor is a highly useful tool for automatically correcting timing in various ways. As shown in the screenshot, there are three functions:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td>Add lead-in and/or lead-out</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td>Make lines that start close to each other continous by extending their start and/or end times</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td>Snapping line starts/ends to video keyframes (only available if a video is loaded)</td></tr></table></div><p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 24px;"><img src="timing-processor.png" width="579" height="230" border="0" alt="timing-processor"></p>
+<p>&nbsp;</p>
+<p>The processing gets applied in the order it is displayed in the dialogue box. That is to say, first lead-in/outs are added, then a check for adjascent lines is performed and lines that are closer than the given threshold are made continuous, and lastly, line start/ends get snapped to keyframes.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Apply to styles</span></p>
+<p>This field determines which styles will get processed - check all you want to process. This is useful for only processing dialogue lines while leaving signs and/or karaoke alone.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Lead-in/Lead-out</span></p>
+<p>This is fairly obvious. The postprocessor will add the given time (in milliseconds) to each line start and end, respectively. You can add both lead-in and lead-out, only one, or none, by checking and unchecking the boxes as appropriate.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Make adjascent subtitles continous</span></p>
+<p>This function will check if any two lines' starts and ends are closer in time than the given threshold (in milliseconds). If they are, one or both will get their start and/or end time moved so that they are continous (i.e. one appears directly following the next, without any subtitle-less frames in between).</p>
+<p>The <span style="font-style: italic;">Bias</span> slider determines how the lines are extended. Sliding it all the way to the right will extend the end time of the first line all the way to the start time of the second, without touching the second line at all. Sliding it all the way to the left will instead make the start time of the second line extend backwards to the end of the first line, without touching the first line at all. Putting it in the middle will extend the end time of the first line and the start time of the second equally, so that they meet in the middle. Anything in between will makes the lines "meet" where the slider is, so to speak. For example, if the threshold was 1000, and the slider was 3/4ths of the way to the right (roughly as shown in the screenshot), the end time of the first line would get extended by 750 ms, and the start time of the second extended backwards with 250 ms.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Keyframe snapping</span></p>
+<p>The keyframe snapping function is a kind of automatic scenetimer. It is probably the most useful of the three, but will only work if there is a video loaded, because of its dependency on keyframes.</p>
+<p>A brief, highly simplified explanation of what a keyframe is, for the people who missed Video 101:</p>
+<p>Modern video codecs compress video by storing as little information as possible. Instead of storing all frames in full (like a large amount of JPG pictures), they take occasionally take a <span style="font-style: italic;">keyframe</span>, which is stored fully, and for each frame after that until the next keyframe, they only store what changed in the picture since the last frame. The only reason we need to know this is because keyframes usually appear at scenechanges. The first frame in a scene is almost invariably a keyframe, but beware - far from every keyframe is a scenechange! Most codecs insert a keyframe at least once every 250-300 frames, even if there hasn't been a scenechange.</p>
+<p>&nbsp;</p>
+<p>Back to the timing postprocessor's use of this. The keyframe snapping function will look at how close the start and end of lines are to the nearest keyframe, and if they are closer than the given threshold, it will get extended or shortened to the keyframe.</p>
+<p>There are four thresholds to consider:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-style: italic;">Starts before</span> - if the line starts less than this many frames (inclusive) <span style="font-style: italic;">before</span> a keyframe, its start time will get moved <span style="font-style: italic;">forward</span> so that the line starts on the keyframe.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-style: italic;">Starts after </span>- if the line starts less than this many frames (inclusive) <span style="font-style: italic;">after</span> a keyframe, its start time will get moved <span style="font-style: italic;">backward</span> so that the line starts on the keyframe.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-style: italic;">Ends before </span>- if the line ends less than this many frames (inclusive) <span style="font-style: italic;">before</span> a keyframe, its end time will get moved <span style="font-style: italic;">forward</span> so that the line ends on the <span style="font-style: italic;">frame before</span> the keyframe.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-style: italic;">Ends after </span>- if the line ends less than this many frames (inclusive) <span style="font-style: italic;">after</span> a keyframe, its end time will get moved <span style="font-style: italic;">backward</span> so that the line ends on the <span style="font-style: italic;">frame before</span> the keyframe.</td></tr></table></div><p>&nbsp;</p>
+<p>When using this feature, remember your lead-in/out times, and the framerate of the video! At 23.976 frames per second, each frame lasts for about 42 ms. This means that if you have a lead-in of 120 ms, you can safely set the "starts before" threshold to at least 3 (3 * 42 = 126) without fear of lines starting showing up after someone has started speaking. Using the same reasoning, a lead-out of 250 ms allows you to safely have at least 6 as your "Ends after" threshold, without fear of lines ending before people stop talking. Figuring out good values for the other thresholds and/or framerates is left as an exercise for the reader.</p>
+<p>&nbsp;</p>
+<p>Another thing you can do with the keyframe snapping feature is using it to correct one-frame bleeds really, really fast. If your script is full of them, just set all the thresholds to 1 or 2, disable the lead-in/out adding and the adjascent line snapping, choose your dialogue style, and hit Apply. Problem solved.</p>
+
+</div>
+</body>
+</html>

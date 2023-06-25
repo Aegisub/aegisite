@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Basic karaskel</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Basic karaskel</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="karaskel.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="karaskel_adv_lua.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p><span style="font-weight: bold;">Implementing in your script</span></p>
+<p>&nbsp;</p>
+<p>Include <span style="font-style: italic;">karaskel.lua</span> in your own script. This will define the <span style="font-style: italic;">process_syllables</span> function, and in turn also include <span style="font-style: italic;">utils.lua</span> and <span style="font-style: italic;">karaskel-base.lua</span>.</p>
+<p>&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">include("karaskel.lua")</span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Basic usage</span></p>
+<p>&nbsp;</p>
+<p>The first and most important thing to do after including <span style="font-style: italic;">karaskel.lua</span> is to define a <span style="font-style: italic;">do_syllable</span> function:</p>
+<p>&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">function&nbsp;do_syllable(meta,&nbsp;styles,&nbsp;config,&nbsp;line,&nbsp;syl)</span></p>
+<p class="p_CodeExample"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">return&nbsp;syl.text_stripped</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">end</span></p>
+<p>&nbsp;</p>
+<p>This is a very minimalistic, boring, tag-stripping <span style="font-style: italic;">do_syllable</span> function. What you want to do in the <span style="font-style: italic;">do_syllable</span> function is to add some tags before the syllable text. See demo 8 for an example of this.</p>
+<p>&nbsp;</p>
+<p>In other words, the basic idea of the <span style="font-style: italic;">do_syllable</span> function is that you provide a replacement text for the syllable in question.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Advanced usage</span></p>
+<p>&nbsp;</p>
+<p>There are also further functions you can define to modify the behaviour of <span style="font-style: italic;">karaskel.</span></p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span style="font-style: italic;">do_line_decide</span>(meta, styles, config, line)</p>
+<p style="margin: 0px 0px 0px 24px;">Return a boolean. If you return true, this line is processed, otherwise it's ignored (passed unchanged into output.)</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">do_line_start</span>(meta, styles, config, line)</p>
+<p style="margin: 0px 0px 0px 24px;">Return a string. Adds the returned string to the beginning of the line.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">do_line_end</span>(meta, styles, config, line)</p>
+<p style="margin: 0px 0px 0px 24px;">Return a string. Adds the returned string to the end of the line.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">do_line</span>(meta, styles, config, line)</p>
+<p style="margin: 0px 0px 0px 24px;">Return an array of lines. You will usually not need to override this function, only if you need very special behaviour. If you override this function, make sure you read the original function defined in <span style="font-style: italic;">karaskel.lua</span>, or call <span style="font-style: italic;">karaskel.do_line</span> at some point. If you need to override this function, consider using the advanced karaskel instead.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>For an advanced example using <span style="font-style: italic;">karaskel.lua</span>, see <span style="font-style: italic;">simple-k-replacer.lua</span> in the factorybrews directory.</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+/* Text Styles */
+hr { color: #000000}
+body, table /* Normal */
+{
+ font-size: 10pt;
+ font-family: 'Verdana';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.f_CodeExample /* Code Example */
+{
+ font-size: 8pt;
+ font-family: 'Courier New';
+ color: #000000;
+}
+span.f_Comment /* Comment */
+{
+}
+span.f_CourierFixed /* Courier Fixed */
+{
+ font-family: 'Courier New';
+ color: #000000;
+}
+span.f_EdFormatName /* EdFormatName */
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #ffffff;
+}
+span.f_Heading1 /* Heading1 */
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #ffffff;
+}
+span.f_ImageCaption /* Image Caption */
+{
+ font-size: 8pt;
+ font-weight: bold;
+}
+span.f_Newstyle /* New style */
+{
+ font-size: 8pt;
+ font-family: 'MS Sans Serif';
+ color: #000000;
+}
+span.f_Normal-indented /* Normal-indented */
+{
+}
+span.f_Notes /* Notes */
+{
+}
+/* Paragraph styles */
+p /* Normal */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.p_CodeExample /* Code Example */
+{
+ white-space: nowrap;
+}
+.p_Comment /* Comment */
+{
+}
+.p_EdFormatName /* EdFormatName */
+{
+}
+.p_Heading1 /* Heading1 */
+{
+}
+.p_ImageCaption /* Image Caption */
+{
+}
+.p_Normal-indented /* Normal-indented */
+{
+ margin: 0px 0px 0px 15px;
+}
+.p_Notes /* Notes */
+{
+}

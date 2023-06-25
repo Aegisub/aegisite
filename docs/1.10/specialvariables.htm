@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Special variables</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span style="font-size: 12pt; font-weight: bold;">Special variables</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="theprocess_linesfunction.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="metadata.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p>The following special variables are defined.</p>
+<p>&nbsp;</p>
+<p><a name="name"></a><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">name</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">The name of the script, displayed in the UI. This must be unique, as it's used for identifying a script in the Export function in Aegisub.</p>
+<p style="margin: 0px 0px 0px 13px;">Required.</p>
+<p><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p><a name="description"></a><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">description</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">A longer description of what the script does, also for display in the UI. This doesn't need to be unique, and it can be empty.</p>
+<p style="margin: 0px 0px 0px 13px;">Required.</p>
+<p><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p><a name="version"></a><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">version</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;">The version of the Automation engine, this script is intended to.</p>
+<p style="margin: 0px 0px 0px 13px;">Required. Must have the value 3 for the current version.</p>
+<p><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p><a name="kind"></a><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">kind</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">In case Aegisub one day will support more than just the current kind of ASS transformation scripts, this variable will tell what kind of script it is.</p>
+<p style="margin: 0px 0px 0px 13px;">Required. Must have the value <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"basic_ass"</span>.</p>
+<p><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p><a name="configuration"></a><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">configuration</span> (table)</p>
+<p style="margin: 0px 0px 0px 13px;">Defines a number of options the user can select for the script before it's run. These will be presented in a graphical interface. See <a href="automationconfig.htm">Configuration system</a> for more information.</p>
+<p style="margin: 0px 0px 0px 13px;">Optional. (If not present, the result is as if it was an empty table.)</p>
+<p><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p><a name="process_lines"></a><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">process_lines</span> (function)</p>
+<p style="margin: 0px 0px 0px 13px;">The function called to process the subtitle data. <a href="theprocess_linesfunction.htm">More information here</a>.</p>
+<p style="margin: 0px 0px 0px 13px;">Required.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+</body>
+</html>

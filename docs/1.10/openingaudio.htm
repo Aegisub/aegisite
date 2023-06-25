@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Working with audio</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Working with Audio</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="openingvideo.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="keyboardshortcuts.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Opening Audio</span></p>
+<p>&nbsp;</p>
+<p>To load an audio file into Aegisub, just go to the <span style="font-style: italic;">Audio menu</span> and press <span style="font-style: italic;">Open audio file</span>. If you have a video file already loaded, you can use <span style="font-style: italic;">Open audio from video</span> instead, which obviously will load the audio track from the video file you currently have loaded. You can open any type of audio file that your DirectShow environment knows how to decode. For example, if you want to load an AC3 file, you will need an AC3 DirectShow decoder (e.g. AC3filter or ffdshow). Note, however, that some formats seem buggy at the moment. Ones more or less guaranteed to work are WAV, MP3 and Vorbis, so if your audio doesn't work, try transcoding to one of them, at least temporarily.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Warning</span><span style="font-style: italic;">:</span> If you have opened a video file with more than one audio track (most commonly an MKV or OGM file), and try to open audio from it, Aegisub is completely at the mercy of the splitter when it comes to what audio stream is delivered. Some splitters may deliver both audio streams at once (this <span style="font-style: italic;">will</span> happen for dual audio AVI's, when using the default Windows splitter), and since Aegisub very much doesn't expect that, you <span style="font-style: italic;">will</span> get weird results (and probably crashes). Just remux the file to single audio, or better yet, decompress the desired audio stream to WAV.</p>
+<p>&nbsp;</p>
+<p>When loaded, the audio is downmixed to mono (see the <span style="font-style: italic;">audio downmixer </span>option in the options documentation if you want to grab one channel only), decompressed to PCM (a.k.a. WAV), and (by default) loaded into a RAM cache. This means that you will need a <span style="font-style: italic;">large</span> amount of RAM to open a long audio file. If your computer doesn't have a lot of RAM, or if you're working with a full-length movie, refer to the <span style="font-style: italic;">audio cache</span> option in the <a href="options.htm">options documentation</a> for instructions on how to make Aegisub use its (slower) hard drive cache instead.</p>
+<p>The exact amount of memory used can be calculated with the following formula:</p>
+<p><span class="f_CourierFixed">s = ( b * r * l ) / 8</span></p>
+<p>where <span style="font-style: italic;">s</span> is the amount of memory (in bytes - divide by 1024 to get kB), <span style="font-style: italic;">b</span> is bits per sample (always 16 in the current implementation), <span style="font-style: italic;">r</span> is the sample rate in Hz (usually 48000, or 44100 in some cases), and <span style="font-style: italic;">l </span>is the length of the audio (in seconds).</p>
+<p>&nbsp;</p>
+<p>Loading and decompressing the audio into the cache takes a little while. When it is done, Aegisub will transform into something like the picture below:</p>
+<p>&nbsp;</p>
+<p><img src="audioview-basic.png" width="800" height="600" border="0" alt="audioview-basic"></p>
+<p>&nbsp;</p>
+<p>Green and red buttons are toggle buttons. A green background indicates that the option is turned on. A red background indicates that the option is turned off.</p>
+<p>&nbsp;</p>
+<p>The buttons are as follows (many of these have <a href="keyboardshortcuts.htm">keyboard shortcuts</a> associated with them):</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">1.</span></td><td>Previous line (previous syllable when in karaoke mode)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">2.</span></td><td>Next line (next syllable when in karaoke mode)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">3.</span></td><td>Play selected area of the audio waveform</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">4.</span></td><td>Play currently selected line</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">5.</span></td><td>Pause playback</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">6.</span></td><td>Play 500ms before selection start</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">7.</span></td><td>Play 500ms after selection end</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">8.</span></td><td>Play first 500ms of selection</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">9.</span></td><td>Play last 500ms of selection</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">10.</span></td><td>Play from selection start to end of file (or pause is pressed)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">11.</span></td><td>Add lead-in (how much is determined by a setting in config.dat - see the <a href="options.htm">Options</a> section, <span class="f_CourierFixed">audio lead in</span> setting)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">12.</span></td><td>Add lead-out (exactly like the above, but the option is called <span class="f_CourierFixed">audio lead out</span>, logically enough)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">13.</span></td><td>Commit (save) changes</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">14.</span></td><td>Go to selection</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">15.</span></td><td>Toggle auto-commit (all timing changes will be committed immediately, without the user pressing commit if this is on)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">16.</span></td><td>Toggle auto-scrolling (will center waveform on the currently selected line automatically)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">17.</span></td><td>Toggle SSA mode (see below)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">18.</span></td><td>Toggle spectrum analyzer mode (see below)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">19.</span></td><td>Audio display zoom (horizontal)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">20.</span></td><td>Audio display zoom (vertical)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">21.</span></td><td>Audio volume</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">22.</span></td><td>Toggle linking of vertical audio zoom slider with volume slider</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">23.</span></td><td>Toggle karaoke mode</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">24.</span></td><td>Join selected syllables (karaoke mode only)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Verdana'; color: #000000;">25.</span></td><td>Split selected syllables (karaoke mode only)</td></tr></table></div><p>&nbsp;</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Normal audio timing</span></p>
+<p>&nbsp;</p>
+<p><img src="audioview-timing.png" width="1080" height="628" border="0" alt="audioview-timing"></p>
+<p>&nbsp;</p>
+<p>When you click on a line, Aegisub will highlight it, and, if you have the <span style="font-style: italic;">Auto</span> checkbox checked, center the audio display on it (the writer of this manual section prefers to have it unchecked, as it can be quite annoying when timing). Now, you can drag around the boundaries of the selection (red lines) to change the start and end times of the line. The dark blue lines are second boundaries, and the pink ones are indicate keyframes (probably scene changes) in the video, if you have it loaded. The selection will become red and show the word <span style="font-style: italic;">Modified</span> in red on the audio display until you either press the <span style="font-style: italic;">Commit</span> button (or press Enter, which also will take you to the next line) to save the changes (if you have autocommit on, it will never turn red - all changes are saved immediately). Press the <span style="font-style: italic;">Play selection</span> button to listen to the selected area, or the other play buttons to listen to other areas around the selected area. When you are satisfied with the timing, press <span style="font-style: italic;">Commit</span>. Normal audio timing is as easy as that - it's just a lot of work, going through all of the lines and fitting them to the audio. All serious timers use <a href="keyboardshortcuts.htm">keyboard shortcuts</a> extensively - they make the timing orders of magnitude faster.</p>
+<p>&nbsp;</p>
+<p>Note: Aegisub takes up huge amounts of screen area when having both video and audio loaded. If you don't need to look at the video, but want it loaded for keyframe display, use the View menu to hide it (by choosing<span style="font-style: italic;"> Audio + Subs view</span>).</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">The SSA timing mode</span></p>
+<p>&nbsp;</p>
+<p>The SSA timing mode makes Aegisub behave more like the old Substation Alpha when timing. Many timers prefer this mode, since it can be incredibly fast. When you are in SSA mode, left-clicking on the waveform sets the line start, and right-click sets the line end. When you press Commit, Aegisub automatically goes to the next line and marks out a new selection, starting at the previous line end for you. With a liberal use of keyboard shortcuts, this timing mode can get incredibly fast.</p>
+<p>&nbsp;</p>
+<p>Note that by default, autocommitting is forced to disabled when you are in SSA mode (for good reason, since with it on, Aegisub will go to the next line immediately after you click anywhere on the graph). This can be changed in <a href="options.htm">config.dat</a>, together with a few other SSA mode quirks (such as going to the next line on committing).</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">The spectrum analyzer</span></p>
+<p>&nbsp;</p>
+<p>Pressing the spectrum analyzer button (number 18 in the screenshot above) will make the waveform look drastically different:</p>
+<p>&nbsp;</p>
+<p><img src="audioview-spectrumanalyzer.png" width="947" height="264" border="0" alt="audioview-spectrumanalyzer"></p>
+<p>&nbsp;</p>
+<p>When you press the button, the waveform does no longer show amplitude (signal strength) on the vertical axis - instead it shows frequency. The higher up, the higher the frequency. The colors indicate amplitude, with dark blue being silence and red being the strongest sound (note that by default, the colors of the selected area will be <span style="font-style: italic;">inverted</span> - see the screenshot). This may seem confusing, but since the frequency window is set to fit human voices rather well, it can make it easy to tell where a line (or a word in karaoke mode) starts and ends when there's a lot of background noise (or music) that makes it hard to tell from the normal waveform. It can be especially useful when timing karaoke. Play around with it for a little while, and you'll understand how it works.</p>
+<p>Unfortunately, the spectrum analyzer mode is quite slow.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a name="karaoketiming"></a><span style="font-weight: bold;">Karaoke timing</span></p>
+<p>&nbsp;</p>
+<p>Enter the harder part of audio timing: karaoke. Aegisub's karaoke mode is quite similar to, but not the same as, Medusa's equivalent, so if you are familiar with that, Aegisub should give you little trouble with karaoke.</p>
+<p>&nbsp;</p>
+<p>When you have timed each line to match the lines of the song, enter the karaoke mode by pressing the <span style="font-style: italic;">Karaoke</span> button. This will reward you with Aegisub changing the audio view to something like the picture below:</p>
+<p>&nbsp;</p>
+<p><img src="audioview-karaoke-1.png" width="896" height="333" border="0" alt="audioview-karaoke-1"></p>
+<p>&nbsp;</p>
+<p>The first part of karaoke timing is timing the words to match the words of the song. Here, the karaoke mode works just like the normal timing mode with one exception: you can click on a word (or later on, a syllable) to highlight it and then use the numpad + and - buttons to make fine-grained adjustments (just make sure numlock is on). Also note that the play buttons have changed slightly - next/previous line is now next/previous syllable, and most of the other buttons now work on syllables instead of on lines. Also note that the next/previous syllable buttons can take you from one line to the next if you go past/before the last/first syllable in a line - Aegisub will, however, warn you that you're about to lose all changes to the current line if you do.</p>
+<p>&nbsp;</p>
+<p>Remember that if you want to shift the beginning or end of the line, you have to exit the karaoke mode to do so. Remember to press <span style="font-style: italic;">Commit</span> before you exit the karaoke mode, or you will lose all the changes you just worked on! If you frequently forget, it might be a good idea to turn autocommiting on.</p>
+<p>&nbsp;</p>
+<p>When you have finished timing the words, it's time to split the words into syllables. Hit the Split button, and watch the word display change:</p>
+<p>&nbsp;</p>
+<p><img src="audioview-karaoke-splitter.png" width="600" height="55" border="0" alt="audioview-karaoke-splitter"></p>
+<p>&nbsp;</p>
+<p>Move the cursor (red) with the mouse, and click to place a split marker. Hit the Commit button (or press enter) to commit the splitting and write out the {\k} tags. To insert an empty (zero-length, no-text) syllable (useful for non-vocal parts between words or syllables) between two others, place the split cursor between the syllable end and the first/last character. Sometimes, it can be a good idea to add a split marker between the last character in the word and the following space (as the example above shows) - this depends on what kind of karaoke effect you are planning to do, and if there's a pause between one word and the next. If you are not the person who is going to do the effect, ask the responsible person about how they would like it.</p>
+<p>If you want some other tag than \k (like \kf or \ko), right-click the syllable to toggle.</p>
+<p>&nbsp;</p>
+<p><img src="audioview-karaoke-2.png" width="896" height="333" border="0" alt="audioview-karaoke-2"><span style="font-size: 8pt; font-family: 'MS Sans Serif';">s</span></p>
+<p>&nbsp;</p>
+<p>When you have the syllables split, time them in the now (hopefully) familiar way. If you want to insert an extra empty syllable, highlight a syllable before or after the empty one, press <span style="font-style: italic;">Split</span> and type a pipe before or after the syllable, depending on where you want the empty syllable. When you feel satisfied with the line, <span style="font-style: italic;">remember to press Commit</span>! The karaoke override tags won't be written until you do.</p>
+
+</div>
+</body>
+</html>
