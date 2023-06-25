@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Export</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Export</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="othertools.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="automation.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p>&nbsp;</p>
+<p>The Export dialogue is used for applying various heavy modifications to your script, such as conversion to other formats, <a href="automation.htm">automation</a> scripting, stripping of headers, conversion to other character sets etc. You can find it under <span style="font-style: italic;">File -&gt; Export Subtitles...</span></p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 23px;"><img src="export-subs-01.png" width="406" height="299" border="0" alt="export-subs-01"></p>
+<p>&nbsp;</p>
+<p>The bottom dropdown menu selects text encoding. The default (and recommended) encoding is UTF-8.</p>
+<p>At the top is the really interesting part: the filters list. There are three built-in filters, as displayed above. Note that the filters get applied in the order they are listed (from top to bottom).</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Transform Framerate</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p>The framerate transformation filter manipulates the subtitle timestamps (and \t and \k* tags - everything with times in it, basically) in various ways. You should generally have a video loaded when using it, but it's not required in some cases. There are two modes of operation; VFR and CFR ("Variable" or "Constant" output).</p>
+<p>Variable framerate output mode requires that you have a timecodes file loaded. You should have a video file loaded to make sure you get the correct input framerate, but it's not required (you can fill it in manually). In this mode, the filter transforms all subtitle timestamps so that the subtitles synch with the video when hardsubbing on a CFR video that is intended for muxing with a timecodes file.</p>
+<p>&nbsp;</p>
+<p>In the constant framerate output mode, you don't need a timecodes file, since then the filter converts between two constant framerates. This is mostly useful for speeding up/slowing down subtitles, i.e. a Film -&gt; PAL transfer with 4% speedup.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Clean Script Info</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p>This will clean up your script by removing all headers except the required ones. In other words, all the Aegisub-specific headers, the script credits etc. will get removed, which might be desirable for softsub distribution.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Fix Styles</span></p>
+<p>&nbsp;</p>
+<p>Makes sure the script doesn't have any "missing styles" (which will cause VSFilter to pop up an alert) by checking so that all used styles have a corresponding style definition. If styles with no definition are found, they're replaced with the Default style.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Automation scripts</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p>Most <a href="automation.htm">automation</a> scripts are applied to your subtitles as export filters.</p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 21px;"><img src="export-subs-02.png" width="746" height="377" border="0" alt="export-subs-02"></p>
+<p style="margin: 0px 0px 0px 21px;">&nbsp;</p>
+<p>Some of them has configurations within the Export dialog, as displayed above. The scripts shipped with Aegisub provide some quick documentation in the dialog as an aid.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Note:</span> If you need to do framerate transformation on karaoke effects, be sure the framerate transformation is applied after the karaoke effect, otherwise you might get weird/unexpected results.</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>process_lines</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span style="font-size: 12pt; font-weight: bold;">process_lines</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="thescriptingenvironment.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="specialvariables.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">function</span><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;"> process_lines </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">(meta, styles, lines, config)</span></p>
+<p>&nbsp;</p>
+<p>This is the prototype for the primary script function.</p>
+<p>&nbsp;</p>
+<p>The basic idea is, that the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">process_lines</span> function is called with some input subtitles, and returns a complete replacement for that input.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Arguments</span></p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">meta</span> (table)</p>
+<p style="margin: 0px 0px 0px 13px;">A <a href="metadata.htm">metadata structure</a>.</p>
+<p><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">styles</span><span style="font-weight: bold;"> </span>(table)</p>
+<p style="margin: 0px 0px 0px 13px;">A list of <a href="styledata.htm">style tables</a>.</p>
+<p style="margin: 0px 0px 0px 13px;">Index <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">-1</span> contains the number of entries. The entries have index numbers from 0 to <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">n</span>-1.</p>
+<p style="margin: 0px 0px 0px 13px;">Since each style has a name, the styles can also be indexed by their name.</p>
+<p><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">lines</span> (table)</p>
+<p style="margin: 0px 0px 0px 13px;">A list of <a href="subtitledata.htm">subtitle lines</a>.</p>
+<p style="margin: 0px 0px 0px 13px;">Index <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">n</span> contains the number of entries. The entries have index numbers from 0 to n-1.</p>
+<p><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">config</span> (table)</p>
+<p style="margin: 0px 0px 0px 13px;">A table containing the configuration settings the user has selected for this run of the script. See <a href="automationconfig.htm">Configuration system</a> for more information.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Return value</span></p>
+<p>A table in the same format as the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">lines</span> argument. It should contain an index <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">n</span>, describing the number of lines in the result. The <a href="subtitledata.htm">subtitle tables</a> contained must be indexed from 1 to <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">n</span> without "holes".</p>
+<p>This was changed in version 1.07. For compatibility, you can also use indexing from 0 to <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">n</span>-1.</p>
+<p>&nbsp;</p>
+
+</div>
+</body>
+</html>

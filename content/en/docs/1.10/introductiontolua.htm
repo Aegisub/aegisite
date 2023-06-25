@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Lua Quickstart</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Lua Quickstart</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="theautomationmanager.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="reference.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p><span style="font-weight: bold;">What is this?</span></p>
+<p>This is a really quick introduction to Lua for long-time programmers who just don't know the language but want to get coding something quickly.</p>
+<p><span style="font-style: italic;">If you have never programmed before, this is </span><span style="font-style: italic; font-weight: bold;">not</span><span style="font-style: italic;"> the right place for you!</span></p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p>Some of the things here will be specific to Aegisub, and they might even be wrong in other applications using Lua.</p>
+<p>For a more complete description, you should see the Lua manual, available at: <span style="color: #0000ff; text-decoration: underline;"><a href="http://www.lua.org/manual/5.0/" target="_blank" class="weblink">http://www.lua.org/manual/5.0/</a></span>.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">A quick example</span></p>
+<p>Here's a slightly cut down Automation script, showing most of the syntax of Lua.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>Scripts for Automation must be encoded in the UTF-8 character set. The file may start with a byte-order mark (BOM) or not.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-style: italic; color: #00007f;">-- Include some useful extra functions</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">include(</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"utils.lua"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">)</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">version, kind, configuration = 3, </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"basic_ass"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">, {}</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">name = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"Sample script"</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">description = </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"This is an example script."</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-style: italic; color: #00007f;">-- The main script function starts here</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">function</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> process_lines(meta, styles, lines, config)</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">aegisub.output_debug(string.format(</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"Number of lines to process: %d"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">, lines.n))</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">local</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> output = {}</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">output.n = lines.n</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">for</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> i = 0, lines.n-1 </span><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">do</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">if</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> lines[i].kind ~= </span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"dialog"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> </span><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">then</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">output[i] = lines[i]</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">else</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">local</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> newline = copy_line(lines[i])</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">newline.text = string.format(</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"{\\fad(700,300)\\pos(%d,30)\\k100}"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">, meta.res_x/2)</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">newline.start_time = newline.start_time - 100</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">local</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> cursylpos = 1000</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">for</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> j = 1, lines[i].karaoke.n-1 </span><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">do</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">local</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> syl = lines[i].karaoke[j]</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">newline.text = newline.text .. string.format(</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"{\\t(%d,%d,\\fscx50\\fscy50)}%s"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">, cursylpos, cursylpos + syl.duration*10, syl.text_stripped)</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">cursylpos = cursylpos + syl.duration*10</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">end</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">output[i] = newline</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">end</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">end</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">return</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> output</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">end</span></p>
+<p>&nbsp;</p>
+<p>Note: Lua is case sensitive, however, indentation does not matter.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Data types</span></p>
+<p>Lua is weakly typed, you can not declare the type of a variable.</p>
+<p>For the most part, there is automatic conversion between strings and numbers.</p>
+<p>All variables hold references to their value. Assignment copies a reference, not the actual value.</p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic;">nil</span> - The value of "nothing". Any unassigned variables will have the value <span style="font-weight: bold;">nil</span>.</p>
+<p><span style="font-style: italic;">boolean</span> - Takes the values <span style="font-weight: bold;">true</span> and <span style="font-weight: bold;">false</span>. Not compatible with <span style="font-style: italic;">number</span>.</p>
+<p><span style="font-style: italic;">number</span> - A double-precision floating-point value.</p>
+<p><span style="font-style: italic;">string</span> - A character string. In Aegisub, strings must be in UTF-8 encoding.</p>
+<p><span style="font-style: italic;">function</span> - Functions are treated as any other value.</p>
+<p><span style="font-style: italic;">table</span> - A data structure, mostly similar to a hash table. Can be indexed by any data type but <span style="font-style: italic;">nil</span>.</p>
+<p><span style="font-style: italic;">userdata</span> - A host-program defined value. Not used in Aegisub.</p>
+<p><span style="font-style: italic;">thread</span> - A thread handle. Not used in Aegisub either.</p>
+<p>&nbsp;</p>
+<p>Only <span style="font-weight: bold;">nil</span> and <span style="font-weight: bold;">false</span> are considered as false values. All other values are considered as true. (Including the number zero and the empty string.)</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Variables</span></p>
+<p>All variables hold references. Assignment copies the reference, not the value. (Tables must be copied field by field.)</p>
+<p>Unless declared otherwise, all variables are global.</p>
+<p>Local variables are statically scoped.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Declarations</span></p>
+<p>Variables come into existance by assigning something to them.</p>
+<p>Local variables are declared with the <span style="font-weight: bold;">local</span> keyword.</p>
+<p>Functions can be declared in one of two ways:</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">foo = </span><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">function</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">(bar)</span></p>
+<p style="margin: 0px 0px 0px 13px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">...</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">end</span></p>
+<p><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">and</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">function</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> foo(bar)</span></p>
+<p style="margin: 0px 0px 0px 13px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">...</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">end</span></p>
+<p>An empty table is written as an empty pair of braces:</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">foo = { }</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Operators</span></p>
+<p>Regular arithmetic is done with + - * /</p>
+<p>Note that Lua does not have a modular operator (% in C and many other languages.)</p>
+<p>You can do exponentiation with the ^ operator.</p>
+<p>String concatenation is done with the two-dots operator:</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">foo .. bar</span></p>
+<p>Assignment is done with the = operator. Assignment is not an expression (it does not return a value.) You can do multiple assignment with lists.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">foo = bar</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">a, b = c, d</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">x, y = y, x </span><span style="font-size: 9pt; font-family: 'Courier New'; font-style: italic; color: #00007f;">-- swap two values</span></p>
+<p>Comparison is done with the == ~= &gt; &lt; &gt;= &lt;= operators. (Note ~= for "not equal".) Logical conjunction, disjunction and negation is done with the <span style="font-weight: bold;">and</span>, <span style="font-weight: bold;">or</span> and <span style="font-weight: bold;">not</span> keywords.</p>
+<p>&nbsp;</p>
+<p>Accessing tables can be done in two ways. The basic way is using the array-style accessor:</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">foo[bar]</span></p>
+<p>Tables can also be used as structures in C. The following expressions are equivalent:</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">foo.bar</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">foo[</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #007f00;">"bar"</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">]</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Control structures</span></p>
+<p>None of the control structures are expressions. (They do not return a value.)</p>
+<p>&nbsp;</p>
+<p>The <span style="font-weight: bold;">if</span> statement:</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">if</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> foo </span><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">then</span></p>
+<p style="margin: 0px 0px 0px 13px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">...</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">elseif</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> bar </span><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">then</span></p>
+<p style="margin: 0px 0px 0px 13px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">...</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">else</span></p>
+<p style="margin: 0px 0px 0px 13px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">...</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">end</span></p>
+<p>Blocks are automatically generated, independent of indentation. You can have multiple <span style="font-weight: bold;">elseif</span> parts. The <span style="font-weight: bold;">else</span> part is optional. Remember that only <span style="font-weight: bold;">false</span> and <span style="font-weight: bold;">nil</span> count as false, 0 and "" among others are true.</p>
+<p>&nbsp;</p>
+<p>The <span style="font-weight: bold;">for</span> statement:</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">for</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> i = a, b </span><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">do</span></p>
+<p style="margin: 0px 0px 0px 13px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">...</span></p>
+<p style="margin: 0px 0px 0px 13px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">break</span></p>
+<p style="margin: 0px 0px 0px 13px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">...</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">end</span></p>
+<p><span style="font-style: italic;">i</span> loops through all values from <span style="font-style: italic;">a</span> to <span style="font-style: italic;">b</span>, both inclusive. There is no continue statement.</p>
+<p>The <span style="font-weight: bold;">for</span> loop also has another form, based around iterator functions, but Aegisub does not use those anywhere.</p>
+<p>&nbsp;</p>
+<p>Returning values from functions:</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">return</span><span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"> a, b</span></p>
+<p>The <span style="font-weight: bold;">return</span> statement can return any number of values, including none.</p>
+<p><span style="font-style: italic; color: #00007f;">&nbsp;</span></p>
+
+</div>
+</body>
+</html>

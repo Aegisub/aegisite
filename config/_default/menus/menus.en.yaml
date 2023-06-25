@@ -5,7 +5,7 @@
 # header-bar/left side: main menus
 main:
   - name: Downloads
-    url: /downloads/main/
+    url: /downloads/
     weight: 10
   - name: Docs
     url: /docs/
@@ -71,14 +71,16 @@ docs:
 
 # docs-sidebar/changelog
 changelogs:
-  - name: 3.2
+  - name: '3.2'
     weight: -32
-  - name: 3.1
+  - name: '3.1'
     weight: -31
-  - name: 3.0
+  - name: '3.0'
     weight: -30
-  - name: 2.1
+  - name: '2.1'
     weight: -21
+  - name: '1'
+    weight: -10
 
 
 # footer/right side

@@ -1,18 +1,16 @@
 {
-  "name": "@hyas/doks",
-  "description": "Doks theme",
-  "version": "0.4.3",
+  "name": "aegisite",
+  "description": "Aegisub Website",
+  "version": "0.5.0",
+  "private": true,
   "engines": {
-    "node": ">=16.15.0"
+    "node": ">=16.16.0"
   },
   "browserslist": [
     "defaults"
   ],
-  "repository": "https://github.com/h-enk/doks",
+  "repository": "https://github.com/Aegisub/aegisite",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "init": "shx rm -rf .git && git init -b main",
     "create": "exec-bin node_modules/.bin/hugo/hugo new",
@@ -38,34 +36,33 @@
     "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17",
-    "@babel/core": "^7.17",
-    "@babel/preset-env": "^7.17",
-    "@fullhuman/postcss-purgecss": "^4.1",
+    "@babel/cli": "^7.21",
+    "@babel/core": "^7.21",
+    "@babel/preset-env": "^7.20",
+    "@fullhuman/postcss-purgecss": "^5.0",
     "auto-changelog": "^2.4",
     "autoprefixer": "^10.4",
-    "bootstrap": "^5.1",
+    "bootstrap": "^5.2.3",
     "clipboard": "^2.0",
-    "eslint": "^8.15",
+    "eslint": "^8.35",
     "exec-bin": "^1.0.0",
-    "flexsearch": "^0.7.21",
-    "highlight.js": "^11.5",
+    "flexsearch": "^0.7.31",
+    "highlight.js": "^11.7",
     "highlightjs-ass": "github:TypesettingTools/highlightjs-ass",
-    "hugo-installer": "^3.1",
+    "hugo-installer": "^4.0.1",
     "instant.page": "^5.1",
-    "katex": "^0.15",
-    "lazysizes": "^5.3",
-    "markdownlint-cli2": "^0.4.0",
-    "netlify-plugin-submit-sitemap": "^0.3.0",
-    "node-fetch": "^3.2",
+    "katex": "^0.16",
+    "markdownlint-cli2": "^0.6.0",
+    "netlify-plugin-submit-sitemap": "^0.4.0",
+    "node-fetch": "^3.3",
     "postcss": "^8.4",
-    "postcss-cli": "^9.1",
+    "postcss-cli": "^10.1",
     "purgecss-whitelister": "^2.4",
     "shx": "^0.3.4",
-    "stylelint": "^14.8",
-    "stylelint-config-standard-scss": "^3.0"
+    "stylelint": "^15.2",
+    "stylelint-config-standard-scss": "^7.0"
   },
   "otherDependencies": {
-    "hugo": "0.99.0"
+    "hugo": "0.110.0"
   }
 }

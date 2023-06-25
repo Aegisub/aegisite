@@ -2,8 +2,8 @@
   {{ partial "header/alert.html" . }}
 {{ end -}}
 
-{{ if eq .Site.Params.options.flexSearch false -}}
-<div class="sticky-lg-top">
+{{ if eq .Site.Params.options.navbarSticky true -}}
+<div class="sticky-top">
 {{ end -}}
 
 <div class="header-bar"></div>
@@ -58,7 +58,7 @@
         </ul>
         <hr class="text-black-50 my-4 d-md-none">
         <h3 class="h6 text-uppercase mb-3 d-md-none">Socials</h3>
-        <ul class="nav flex-column flex-md-row ms-md-auto me-md-n5 pe-md-2">
+        <ul class="nav flex-column flex-md-row ms-md-auto me-md-n5 pe-md-4">
           {{ range .Site.Menus.social -}}
             <li class="nav-item">
               <a class="nav-link ps-0 py-1" href="{{ .URL | relURL }}" aria-label="View repository on GitHub">{{ .Pre | safeHTML }}<small class="ms-2 d-md-none">{{ .Name | safeHTML }}</small></a>
@@ -117,7 +117,7 @@
 
     {{ if .Site.Params.options.flexSearch -}}
     <form class="doks-search position-relative flex-grow-1 me-auto">
-      <input id="search" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
+      <input id="search" class="form-control is-search" type="search" placeholder="{{ i18n "search-text" }}" aria-label="{{ i18n "search-text" }}" autocomplete="off">
       <div id="suggestions" class="shadow bg-white rounded d-none"></div>
     </form>
     {{ end -}}

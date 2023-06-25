@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Advanced karaskel</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Advanced karaskel</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="karaskel_lua.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     
+     <img src="button_next_d.gif" border="0">
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p><span style="font-weight: bold;">Implementing in your script</span></p>
+<p>&nbsp;</p>
+<p>Include <span style="font-style: italic;">karaskel-adv.lua</span> in your own script. This will define the <span style="font-style: italic;">process_syllables</span> function, and in turn also include <span style="font-style: italic;">utils.lua</span> and <span style="font-style: italic;">karaskel-base.lua</span>.</p>
+<p>&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">include("karaskel-adv.lua")</span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Basic usage</span></p>
+<p>&nbsp;</p>
+<p>The only thing you need to do after including <span style="font-style: italic;">karaskel-adv.lua</span> is to define a <span style="font-style: italic;">do_syllable</span> function.</p>
+<p>&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">function&nbsp;do_syllable(meta,&nbsp;styles,&nbsp;config,&nbsp;line,&nbsp;syl)</span></p>
+<p class="p_CodeExample"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">local&nbsp;l&nbsp;=&nbsp;copy_line(line)</span></p>
+<p class="p_CodeExample"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">l.text&nbsp;=&nbsp;string.format("{\\an8\\pos(%d,%d)}%s",&nbsp;line.centerleft+syl.center,&nbsp;line.styleref.margin_v&nbsp;syl.text_stripped)</span></p>
+<p class="p_CodeExample"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">return&nbsp;{&nbsp;n=1,&nbsp;[1]=l&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">end</span></p>
+<p>&nbsp;</p>
+<p>This simple <span style="font-style: italic;">do_syllable</span> function lines of the syllables centered at the top of the screen. See demo 9 for a slightly more advanced example. The <span style="font-style: italic;">line-per-syllable</span> factorybrew might also be useful as an example.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Advanced usage</span></p>
+<p>&nbsp;</p>
+<p>In some cases you might want to do some special per-line processing before syllables are processed. You can override the <span style="font-style: italic;">do_line</span> function for this, just be sure to call <span style="font-style: italic;">karaskel.do_line</span> to return to normal processing afterwards.</p>
+<p>&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">function&nbsp;do_line(meta,&nbsp;styles,&nbsp;config,&nbsp;line)</span></p>
+<p class="p_CodeExample"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">aegisub.output_debug("Processing&nbsp;line:&nbsp;"&nbsp;..&nbsp;line.i)</span></p>
+<p class="p_CodeExample"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">return&nbsp;karaskel.do_line(meta,&nbsp;styles,&nbsp;config,&nbsp;line)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">end</span></p>
+<p>&nbsp;</p>
+<p>If you use <span style="font-style: italic;">inline fx</span>, you can consider a trick like this:</p>
+<p>&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">function&nbsp;do_syllable(meta,&nbsp;styles,&nbsp;config,&nbsp;line,&nbsp;syl)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;local&nbsp;result&nbsp;=&nbsp;{n=0}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;_G["fx_"..syl.inline_fx](meta,&nbsp;line,&nbsp;syl,&nbsp;result)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;result</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">end</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">function&nbsp;fx_jump(meta,&nbsp;line,&nbsp;syl,&nbsp;result)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;do&nbsp;"jump"&nbsp;effect&nbsp;here</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">end</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">function&nbsp;fx_slide(meta,&nbsp;line,&nbsp;syl,&nbsp;result)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;do&nbsp;"slide"&nbsp;effect&nbsp;here</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">end</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+
+</div>
+</body>
+</html>

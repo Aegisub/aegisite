@@ -11,7 +11,6 @@ module.exports = {
         './content/**/*.md',
       ],
       safelist: [
-        'lazyloaded',
         'table',
         'thead',
         'tbody',
@@ -22,6 +21,8 @@ module.exports = {
         'alert-link',
         'container-xxl',
         'container-fluid',
+        'img-fluid',
+        'figcaption',
         ...whitelister([
           './assets/scss/components/_alerts.scss',
           './assets/scss/components/_buttons.scss',

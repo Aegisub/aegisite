@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Subtitle data</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Subtitle data</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="styledata.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="karaokedata.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p>A subtitle table represents a single line in an ASS file. Apart from regular dialog-lines, it can also be a dialog-style comment line, a "semicolon comment" and a blank line.</p>
+<p>&nbsp;</p>
+<p>A subtitle table always contains the following field:</p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">kind</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">One of <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"dialog"</span>, <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"comment"</span>, <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"scomment"</span> and <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"blank"</span>. Describes what kind of line this is in the subtitle file. You should always test against the value of the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">kind</span> field before trying to access any other field in a subtitle table.</p>
+<p>&nbsp;</p>
+<p>If the value of kind is <span style="font-weight: bold;">"blank"</span>, no further fields are defined. (It's just a blank line.)</p>
+<p>&nbsp;</p>
+<p>If the value is <span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">"scomment"</span>, the line is a semicolon comment line, that is, a line where the first character is a semicolon. While comments like this is usually ignored during regular processing, you might find them useful to store additional parameters needed for an effect. For <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"scomment"</span> lines, the following additional field is defined:</p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">text</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">The text following the semicolon, until end of line. This includes any leading and trailing whitespace but never the semicolon or the line break character(s).</p>
+<p>&nbsp;</p>
+<p>If the value is <span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">"dialog"</span> or <span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">"comment"</span>, the line has the format of a regular dialog line. The difference is that a <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">"comment"</span> line start with the "Comment:" keyword instead of the "dialog:" keyword, and that comment lines aren't rendered when the subtitles are played back. dialog-style lines contain the following additional fields:</p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">layer</span> (number)</p>
+<p style="margin: 0px 0px 0px 27px;">The logical layer the line is rendered on. (Lines with a higher layer number are visually rendered on top of lines with a lower layer number.)</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">start_time</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">end_time</span> (number)</p>
+<p style="margin: 0px 0px 0px 27px;">Start and end time of the line, in centiseconds. To get the line durations in milliseconds (used for eg. <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">\t</span> effects), use the following calculation: <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">(end_time - start_time) * 10</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">style</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">Name of the <a href="styledata.htm">style</a> associated with this line. Can be used to look up the style in the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">styles</span> list passed to the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;"><a href="theprocess_linesfunction.htm">process_lines</a></span> function.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">name</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">Name of the character speaking this line. Not used during rendering, but might be useful for storing extra data.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">margin_l</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">margin_r</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">margin_v</span> (number)</p>
+<p style="margin: 0px 0px 0px 27px;">Left, right and vertical margin overrides for this line. Margin overriding for an edge is disabled, if the field is 0. Measured in pixels.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">effect</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">Special effect to apply to the line. <span style="font-style: italic;">TextSub</span> doesn't complain if this contains an invalid value, so apart from storing actual, valid effects, you can also store additional data here.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">text</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">The actual, unprocessed text of the line, including all override and karaoke tags.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">text_stripped</span> (string)</p>
+<p style="margin: 0px 0px 0px 27px;">The text of the line, with all override tags and drawings stripped.</p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 5pt; font-family: 'Courier New'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span style="font-size: 9pt; font-family: 'Courier New'; font-weight: bold; color: #000000;">karaoke</span> (table)</p>
+<p style="margin: 0px 0px 0px 27px;">A list of karaoke syllables in this line. Always contains at least one element. The elements are <a href="karaokedata.htm">karaoke tables</a>.</p>
+<p style="margin: 0px 0px 0px 27px;">The index <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">n</span> in this table contains the number of syllables.</p>
+<p style="margin: 0px 0px 0px 27px;">The syllables are indexed 0 to <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">n</span>-1.</p>
+<p style="margin: 0px 0px 0px 27px;">The first syllable in this list is everything before the first karaoke tag in the line, and can often safely be skipped.</p>
+<p>&nbsp;</p>
+
+</div>
+</body>
+</html>

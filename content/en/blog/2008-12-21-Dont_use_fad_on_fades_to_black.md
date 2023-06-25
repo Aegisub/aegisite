@@ -1,5 +1,6 @@
 ---
 title: Don't use \fad on fades to black
+slug: dont-use-fad-on-fades-to-black
 contributors:
   - Unknown
 date: 2008-12-21T01:01:00.011000Z

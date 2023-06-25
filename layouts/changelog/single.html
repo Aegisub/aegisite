@@ -25,6 +25,9 @@
 				</nav>
 			{{ end }}
 			<h1>Aegisub {{ .Title }} Changelog</h1>
+			{{ if .Date }}
+			<small>Released: {{ .Date.Format "January 2, 2006" }}</small>
+			{{ end }}
 			<p class="lead">{{ .Params.lead | safeHTML }}</p>
 			{{ if ne .Params.toc false -}}
 			<nav class="d-xl-none" aria-label="Quaternary navigation">

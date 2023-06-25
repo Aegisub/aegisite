@@ -1,7 +1,9 @@
 {{ $curVersion := .Site.Data.version.current }}
 {{ range (sort .Site.Data.version.previous_versions "version" "desc" ) }}
   {{ if ne .version $curVersion}}
-  <h3>{{ .version }}</h3>
+  <h3{{ if .svnRevision }} title="SVN Revision: {{ .svnRevision }}"{{ end }}>
+    {{ if .display_version }}{{ .display_version }}{{ else }}{{ .version }}{{ end }}
+  </h3>
   <table class="table table-striped">
     <thead>
       <tr>

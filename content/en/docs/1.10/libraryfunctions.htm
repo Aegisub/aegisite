@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Library functions</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span style="font-size: 12pt; font-weight: bold;">Library functions</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="automationconfig.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="examples.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p>A number of library functions are provided.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <a name="include"></a><span style="font-weight: bold;">include</span> (filename)</p>
+<p>&nbsp;</p>
+<p>Include the named script. The script search-path defined in Aegisub will be used when searching for the script.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>If the filename is relative, the regular search path will not be used, but instead the filename will be taken as relative to the directory the current script is located in.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>Note that if you use include() inside an included script, relative paths will still be taken relative to the original script, and not relative to the current included script. This is a design limitation.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>The included script is loaded as an anonymous function, which is executed in the current environment. This has two implications:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 14px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td>You can include files based on conditional statements, even in loops (to include the same file multiple times.)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 14px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td>Included files can return values using the "return" statement.</td></tr></table></div><p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">filename</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">The name of the file to include.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Return value</span></p>
+<p>Depends on the file included.</p>
+<p>If some error occurred while including the file, the script execution will be terminated. (This means that the script can fail to load, if the include function is called in during the initialization.)</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">aegisub.</span><a name="output_debug"></a><span style="font-weight: bold;">output_debug</span> (text)</p>
+<p>&nbsp;</p>
+<p>Outputs some text to a debug console.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">text</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">The text to output.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Return value</span></p>
+<p>Nothing.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">aegisub.</span><a name="set_status"></a><span style="font-weight: bold;">set_status</span> (text)</p>
+<p>&nbsp;</p>
+<p>Sets the current status-message. This is shown in the progress dialog during script processing.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">text</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">The status-message.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Return value</span></p>
+<p>Nothing.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">aegisub.</span><a name="colorstring_to_rgb"></a><span style="font-weight: bold;">colorstring_to_rgb</span> (colorstring)</p>
+<p>Convert an ASS color-string to a set of RGB values.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">colorstring</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">The color-string to convert.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Return value</span></p>
+<p>Four values, all numbers, being the color-components in the following order: Red, Green, Blue, Alpha-channel.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">aegisub.</span><a name="report_progress"></a><span style="font-weight: bold;">report_progress</span> (progress)</p>
+<p>&nbsp;</p>
+<p>Report the progress of the script. Mostly useful for scripts that take a very long time to calculate the final result.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">progress</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;">The progress of the script, in percent. The value should be between 0 and 100. If the value is out of range, it will be clamped to 0 or 100.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">aegisub.</span><a name="text_extents"></a><span style="font-weight: bold;">text_extents</span> (style, text)</p>
+<p>&nbsp;</p>
+<p>Calculate the rendered size of the given text with the given style. The result can be interpreted as a bounding box around the text, before any rotations, and not including borders and shadows.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>If you need the bounding box of the text rotated, you should get the unrotated size first, and then calculate the rotated size from that.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">style</span> (table)</p>
+<p style="margin: 0px 0px 0px 13px;">The style used to calculate the size. Must be in valid <a href="styledata.htm">style table</a> format. (Usually you can just index the styles table passed to the <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">process_lines</span> function.) Only the following fields are used in the size calculation: <span style="font-style: italic;">fontname</span>, <span style="font-style: italic;">fontsize</span>, <span style="font-style: italic;">bold</span>, <span style="font-style: italic;">italic</span>, <span style="font-style: italic;">underline</span>, <span style="font-style: italic;">strikeout</span>, <span style="font-style: italic;">scale_x</span>, <span style="font-style: italic;">scale_y</span> and <span style="font-style: italic;">spacing</span>.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>@<span style="font-weight: bold;">text</span> (string)</p>
+<p style="margin: 0px 0px 0px 13px;">The text to be used for size calculation. It should not contain any override tags or blocks, as those will be taken as part of the text and not used with their special meaning. The <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">\n</span>, <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">\N</span> and <span style="font-size: 9pt; font-family: 'Courier New'; color: #000000;">\h</span> tags are not handled either.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Return value</span></p>
+<p>This function returns four values, in this order:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 13px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27">1.</td><td>Width of the text, in pixels (number)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 13px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27">2.</td><td>Height of the text, in pixels (number)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 13px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27">3.</td><td>Descent of the font, in pixels (number)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 13px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr valign="baseline"><td width="27">4.</td><td>External leading of the font, in pixels (number)</td></tr></table></div><p>&nbsp;</p>
+<p>All return values are corrected scaling by rounded using C rounding semantics.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>You can find more information about the various typographic measurements in <span style="color: #0000ff; text-decoration: underline;"><a href="http://www.freetype.org/freetype2/docs/glyphs/glyphs-3.html#section-2" target="_blank" class="weblink">the FreeType 2 documentation</a></span>.</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>This function is currently implemented using the wxWidgets wxFont and wxDC classes, meaning it retrieves the sizing information from Windows itself. In future versions, this might be changed to use the FreeType 2 library instead. If/when that happens, several more sizing measurements will be made available.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">aegisub.frame_from_ms </span>(ms)</p>
+<p>&nbsp;</p>
+<p>Return the video frame-number for the given time.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">ms</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;">Time in milliseconds to get the frame number for.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Return value</span></p>
+<p>A number, the frame number. If there is no framerate data, returns <span style="font-weight: bold;">nil</span>.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>function <span style="font-weight: bold;">aegisub.ms_from_frame </span>(frame)</p>
+<p>&nbsp;</p>
+<p>Returns the start-time for the given video frame-number.</p>
+<p>&nbsp;</p>
+<p>@<span style="font-weight: bold;">frame</span> (number)</p>
+<p style="margin: 0px 0px 0px 13px;">Frame-number to get start-time from.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Return value</span></p>
+<p>A number, the start-time of the frame. If there is no framerate data, returns <span style="font-weight: bold;">nil</span>.</p>
+<p>&nbsp;</p>
+
+</div>
+</body>
+</html>

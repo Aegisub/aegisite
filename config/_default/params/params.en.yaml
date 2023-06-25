@@ -94,7 +94,6 @@ editPage: false
 lastMod: false
 
 options:
-  lazySizes: true
   clipBoard: true
   instantPage: true
   flexSearch: false
@@ -106,6 +105,9 @@ options:
   multilingualMode: true
   docsVersioning: false
   fullWidth: true
+  navbarSticky: true
+  toTopButton: false
+  scrollSpy: false
 
 menu:
   section:

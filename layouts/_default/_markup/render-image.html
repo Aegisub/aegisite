@@ -5,7 +5,7 @@
   {{ $image = resources.GetRemote .Destination -}}
 {{ else if (hasPrefix .Destination "/") -}}
   {{ $image = resources.Get $Destination -}}
-  <img class="img-fluid lazyload blur-up" src="{{ print .Page.Site.BaseURL (substr .Destination 1)}}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $.Text }}">
+  <img class="img-fluid" loading="lazy" src="{{ print .Page.Site.BaseURL (substr .Destination 1)}}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $.Text }}">
   {{ $simpleImage = true }}
 {{ else -}}
   {{ $image = .Page.Resources.GetMatch $Destination -}}
@@ -31,12 +31,12 @@
 
   {{ if gt $image.Width site.Params.smallLimit -}}
     <figure class="figure">
-      <img class="figure-img img-fluid lazyload blur-up" data-sizes="auto" src="{{ $lqip.Permalink }}" data-srcset="{{ $imgSrcSet }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $.Text }}">
+      <img class="figure-img img-fluid" loading="lazy" data-sizes="auto" src="{{ $lqip.Permalink }}" data-srcset="{{ $imgSrcSet }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $.Text }}">
       <noscript><img class="figure-img img-fluid" sizes="100vw" srcset="{{ $imgSrcSet }}" src="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $.Text }}"></noscript>
       {{ with $.Title }}<figcaption class="figure-caption">{{ . | safeHTML }}</figcaption>{{ end -}}
     </figure>
   {{ else -}}
-    <img class="img-fluid lazyload blur-up" src="{{ $lqip.Permalink }}" data-src="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $.Text }}">
+    <img class="img-fluid" loading="lazy" src="{{ $lqip.Permalink }}" data-src="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $.Text }}">
   {{ end -}}
 {{ else -}}
   {{ erroridf "image-not-found" (printf "Image '%s' not found" .Destination) -}}

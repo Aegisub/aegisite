@@ -2,16 +2,16 @@
 <section class="section container-fluid mt-n3 pb-3">
   <div class="row justify-content-center">
     <div class="text-center">
-      <img src="/img/logo-large.png" class="" alt="Large Aegisub Logo image">
+      <img src="/img/logo-large.png" class="img-fluid" alt="Large Aegisub Logo image" width="500" height="194">
     </div>
     <div class="col-lg-12 text-center">
       <h1 class="mt-0">{{ .Title }}</h1>
     </div>
     <div class="col-lg-14 text-center">
       <p class="lead">{{ .Params.lead | safeHTML }}</p>
-      <a class="btn btn-primary btn-lg px-4 mb-2" href="{{ "downloads/main/" | relLangURL }}" role="button">{{ i18n "get-started" }}</a>
+      <a class="btn btn-primary btn-lg px-4 mb-2" href="{{ "downloads/" | relLangURL }}" role="button">{{ i18n "get-started" }}</a>
       <p class="meta">
-        <a href="https://github.com/Aegisub/Aegisub/blob/master/LICENCE">Open-source BSD-style licenses.</a>
+        <a href="https://github.com/Aegisub/Aegisub/blob/master/LICENCE">{{ i18n "bsd-license" }}</a>
         <a href="https://github.com/Aegisub/Aegisub">GitHub v{{.Site.Data.version.current}}</a>
       </p>
     </div>

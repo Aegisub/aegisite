@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+
+
+   <title>Mini-FAQ</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+
+   <style type="text/css">
+	a:link { color: #002682 }
+	a:hover { color: #FF0000; }
+	a:visited { color: #D63078 }
+   </style>
+
+<!-- This style sheet goes into compiled HTML HELP -->
+   <style type="text/css" media="screen">
+	#nsr
+	 {
+	 padding: 6px 6px 0px 6px;
+	 border-bottom: none;
+	 background: #649CCC;
+	 vertical-align: top;
+	 z-index: 2;
+	 visibility: visible;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 width: 100%;
+	 }
+	#mainbody
+	 {
+	 left: 0;
+	 top: 0px;
+	 margin: 0;
+	 position: absolute;
+	 padding: 10px;
+	 overflow: visible;
+	 height: 100%;
+	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-position: bottom right;
+	 background-attachment: fixed;
+	 }
+   </style>
+   <style type="text/css" media="print">
+	#nsr
+	 { visibility: none; }
+	#mainbody
+	 { overflow: visible; }
+   </style>
+   <script type="text/javascript" language="JavaScript" src="nonscroll.js"></script>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body bgcolor="#FFFFFF" 
+ marginheight="0" marginwidth="0" leftmargin="0" topmargin="0"
+ scroll="no"
+>
+
+
+<div id="nsr">
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+ bgcolor="#649CCC">
+  <tr valign="top">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Mini-FAQ</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introduction.htm"
+        onmouseover="document.images.main.src='button_main_h.gif'" 
+  	onmouseout="document.images.main.src='button_main.gif'">
+        <img name=main src="button_main.gif" border=0 alt="Return to Introduction"></a>&nbsp;
+     <a href="supportaegisub.htm"
+        onmouseover="document.images.prev.src='button_prev_h.gif'" 
+  	onmouseout="document.images.prev.src='button_prev.gif'"><img name=prev src="button_prev.gif" border=0 alt="Previous page"></a>&nbsp;
+     
+
+     <a href="basics.htm"
+        onmouseover="document.images.next.src='button_next_h.gif'" 
+  	onmouseout="document.images.next.src='button_next.gif'"><img name=next src="button_next.gif" border=0 alt="Next page"></a>
+     
+     </font>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="mainbody">
+<p>&nbsp;</p>
+<p>A small collection of Frequently Asked Questions about Aegisub - mostly stuff that didn't fit anywhere else.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Karaoke effects?</span></p>
+<p><a href="karaoke.htm">Here.</a></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Can I create DVD subtitles with Aegisub?</span></p>
+<p>Not directly, but there's a nifty program called MaestroSBT (Google for it) that can convert SSA to VOBSubs. It does have quite a bunch of restrictions on what tags and other things may be used, so reading its manual first is advised. Also note that it does <span style="font-style: italic;">not</span> accept ASS - <span style="font-style: italic;">only</span> SSA. You can use Aegisub's<span style="font-style: italic;"> File -&gt; Export...</span> dialog to save real SSA files.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Does Aegisub allow saving to SRT?</span></p>
+<p>Yes, but only if it means that no information will be lost. In other words, if you have any override tags that aren't <span class="f_CourierFixed">\1c</span>, <span class="f_CourierFixed">\b</span>, or <span class="f_CourierFixed">\i</span>, Aegisub won't allow saving directly to SRT. However, you can still <span style="text-decoration: underline;">export</span> to SRT by using the <span style="font-style: italic;">File -&gt; Export...</span> dialog box. Just uncheck all the checkboxes (clean script info, VFR transform etc.).</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">What's this PRS stuff?</span></p>
+<p>Pre-Rendered Subtitles. Basically a way to "encode" ASS (text) subtitles into pictures, which can then be encoded into the video using an Avisynth filter. There's also a DirectShow renderer, but it's in early development and not ready for public use yet. PRS has a few advantages over ASS (and a few disadvantages too). One advantage is that it doesn't require much CPU power to render onto the video - all the effort is spent when "encoding" to PRS. Another is that the subtitles will look exactly as the one who rendered them intended, which is not guaranteed with ASS (not even when rendering with VSFilter, as it has had, and still has, quite a few rendering bugs). The main disadvantage is that PRS takes more space than ASS and other text-based subtitle formats do.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">I've found a bug!?</span></p>
+<p>Report it on the <a href="http://www.malakith.net/aegibug" target="_blank" class="weblink">bug tracker</a>. <span style="font-style: italic;">Please include as many details as possible in your report!</span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Why doesn't Aegisub have </span><span style="font-style: italic; font-weight: bold;">&lt;feature X&gt;</span><span style="font-weight: bold;">? </span><span style="font-style: italic; font-weight: bold;">&lt;Program Y&gt;</span><span style="font-weight: bold;"> has it!</span></p>
+<p>Quite possibly because we didn't know you wanted it. Request it on the <a href="http://www.malakith.net/aegibug" target="_blank" class="weblink">bug tracker</a> and see what happens.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Where can I find more information and/or get help?</span></p>
+<p>For Aegisub-related stuff, the <a href="http://www.malakith.net/aegisub" target="_blank" class="weblink">forums</a> and the <a href="irc://irc.chatsociety.net/aegisub" target="_blank" class="weblink">IRC channel</a> are good places to ask questions. The <a href="http://www.malakith.net/aegiwiki/index.php?title=Main_Page" target="_blank" class="weblink">Aegisub wiki</a> also contains some more obscure information not included in the manual for various reasons, and so does the forums.</p>
+<p>For general video-related questions, <a href="http://www.doom9.org" target="_blank" class="weblink">Doom9.org</a> and its forums is generally the place to go.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">I click the "Play video" button, and the video and audio aren't synchronized at all!</span></p>
+<p>That's not a question.</p>
+<p>This is because of the way Aegisub displays video, it does not guarantee sync with the audio at all. Also, sometimes AviSynth can be quite slow at delivering frames, which would make real sync playback impossible. The "play video" feature is intended to display frames in rapid succession to check that some typesetting looks right, not as a replacement for a media player application. You can be sure that, if it sounds right when you click the "play line" button for the audio, and the subtitle looks like it's at the right frames, it <span style="font-style: italic;">is</span> timed correctly to the audio and it <span style="font-style: italic;">is</span> timed correctly to the video. If you don't believe this, just test it in a real media player (or hardsub it) and see for yourself.</p>
+<p>If you absolutely <span style="font-style: italic;">must</span> have this, feel free to implement it yourself.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Are there any VSFilter bugs I should know about?</span></p>
+<p>In one word: <a href="http://asa.diac24.net/wiki/index.php/VSFilter" target="_blank" class="weblink">yes.</a></p>
+
+</div>
+</body>
+</html>

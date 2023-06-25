@@ -1,5 +1,6 @@
 ---
 title: Why rendering \k and \kf effects is fast in VSFilter
+slug: why-rendering-k-and-kf-effects-is-fast-in-vsfilter
 contributors:
   - jfs
 date: 2008-07-20T22:23:00.012000+01:00
