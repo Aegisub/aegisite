@@ -1,0 +1,64 @@
+{
+  "redirects": [
+     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "docs.aegisub.org"
+        }
+      ],
+      "destination": "https://aegisub.org/docs/:path*"
+    },
+    {
+      "source": "/:path*/",
+      "has": [
+        {
+          "type": "host",
+          "value": "docs.aegisub.org"
+        }
+      ],
+      "destination": "https://aegisub.org/docs/:path*/"
+    },
+	{
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.aegisub.org"
+        }
+      ],
+      "destination": "https://aegisub.org/blog/:path*"
+    },
+    {
+      "source": "/:path*/",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.aegisub.org"
+        }
+      ],
+      "destination": "https://aegisub.org/blog/:path*/"
+    },
+	{
+      "source": "(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ftp.aegisub.org"
+        }
+      ],
+      "destination": "https://aegisub.org/downloads/"
+    },
+	{
+      "source": "(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "devel.aegisub.org"
+        }
+      ],
+      "destination": "https://github.com/Aegisub/Aegisub"
+    }
+  ]
+}
