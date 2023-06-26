@@ -79,10 +79,10 @@ footer: >-
 # copyRight: Copyright (c) 2020-2021 Henk Verlinde
 
 # Alert
-alert: false
+alert: true
 alertDismissable: true
 alertText: >-
-  Check out the cool new Aegisub Homepage!
+  <a href="/blog/back-from-the-dead/">Blog post about the state of Aegisub</a>
 
 # Edit Page
 # repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ] is used for building the edit link based on git hoster
