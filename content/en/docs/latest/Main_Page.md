@@ -11,7 +11,7 @@ aliases:
 Welcome to the Aegisub manual. See our [about]({{< relref "About" >}}) page for more
 information on the program, or browse the topics on the left bar.
 
-Documentation related to delopment of Aegisub and building Aegisub is located
+Documentation related to development of Aegisub and building Aegisub is located
 at [the bug tracker](https://github.com/Aegisub/Aegisub/issues).
 
 ## Starting points
