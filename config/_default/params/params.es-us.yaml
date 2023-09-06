@@ -70,9 +70,9 @@ smallLimit: '300'
 # TODO: Maybe mention Hosting? NetworkRedux? Github Pages? Cloudflare Pages?
 # Footer
 footer: >-
-  Powered by <a class="text-muted" href="https://gohugo.io/">Hugo</a> and <a
+  Desarrollado con <a class="text-muted" href="https://gohugo.io/">Hugo</a> y <a
   class="text-muted" href="https://getdoks.org/">Doks</a>. <br/>
-  Copyright (c) AegiSite <a href="https://github.com/Aegisub/aegisite/graphs/contributors">contributors</a>.
+  Copyright (c) <a href="https://github.com/Aegisub/aegisite/graphs/contributors">contribuyentes</a> AegiSite.
 
 # Feed
 # copyRight: Copyright (c) 2020-2021 Henk Verlinde
@@ -81,7 +81,7 @@ footer: >-
 alert: false
 alertDismissable: true
 alertText: >-
-  Check out the cool new Aegisub Homepage!
+  ¡Échele vistazo a la nueva página de Aegisub!
 
 # Edit Page
 # repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ] is used for building the edit link based on git hoster
