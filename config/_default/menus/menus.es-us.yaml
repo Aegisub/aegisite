@@ -54,7 +54,7 @@ docs:
   - name: Trabajando con subtítulos
     weight: 300
     identifier: working-with-subtitles
-  - name: Typesetting
+  - name: Formatear
     weight: 400
     identifier: typesetting
   - name: Sincronizar

@@ -4,11 +4,9 @@ menu:
   docs:
     parent: navigation
 weight: 1000
-aliases:
-  - /docs/latest/Main_Page/
 ---
 
-Bienvenido al manual Aegisub. Vea nuestra página [acerca de nosotros]({{< relref path="About" lang="en" >}}) para más info del programa, o explore los temas en el panel a la izquierda.
+Bienvenido al manual Aegisub. Vea nuestra página [Acerca de]({{< relref path="About" >}}) para más info del programa, o explore los temas en el panel a la izquierda.
 
 Documentación relacionada con el desarrollo de Aegisub y con la compilación del mismo está ubicada en el [rastreo de errores](https://github.com/Aegisub/Aegisub/issues).
 
