@@ -51,68 +51,46 @@ Importar subítulos directamente desde archivos Matroska se puede hacer. Se sopo
 
 ### Importar guiones de texto sin formato (plain text)
 
-Aegisub also supports importing "dialogue-formatted" plain text scripts. For example:
+Aegisub también soporta la importación de guiones de texto sin formato "formato diálogo". Por ejemplo:
 
 ```plaintext
-Actor 1: Well do I understand your speech, yet few strangers do so.
-         Why then do you not speak in the Common Tongue,
-         as is the custom in the West, if you wish to be answered?
-# TL check: The above seems to be a quote from the lord of the rings, look it up later
-Actor 2: What are you babbling about?
+Actor 1: Pues, sí comprendo su habla, pero yo como comprenden pocos extranjeros.
+         ¿Por qué no habla entonces en la Lengua común,
+         según es típico en el Occidente, si desea una respuesta?
+# TL check: Arriba parece ser una cita de Señor de los anillos, lo busco luego
+Actor 2: ¿De qué locuras estás hablando?
 ```
 
-This will result in five subtitle lines, one being commented out. The first
-three will have the actor field set to "Actor 1", and the fifth will have it
-set to "Actor 2" (the comment line's actor field will be blank).
+Este resultará en cinco renglones de subtítulos, uno siendo comentario. Los primeros tres tendrán el campo de actor como "Actor 1", y el quinto lo tendrá como "Actor 2" (el actor del renglón de comentario estará en blanco).
 
-When you open a file with the extension .txt, Aegisub will ask you about what
-characters it should use as the actor separator and comment starter,
-respectively. In the example above, the actor separator is a colon
-("`:`") and the comment starter is a hash ("`#`").
+Cuando se abre un archivo con la extensión .txt, Aegisub le pedirá qué caracteres debe usar como separador de actor e inicio de comentario, respectivamente. En el ejemplo arriba, el separador de actor es el dos puntos ("`:`") e inicio de comentario el gato ("`#`").
 
 ## Editar subtítulos
 
-Editing subtitles in Aegisub is done in two areas: the subtitle edit box (where
-you type in or edit text) and the subtitles grid. Changes made in both the
-edit box and the grid normally modify all selected lines, and not just the
-line displayed in the edit box.
+Edición de subtítulos en Aegisub se hace en dos áreas: la caja edición de subtítulos (en donde se ingresa y edita texto) y la cuadrícula de subtítulos. Cambios realizados tanto en la caja edición como la cuadrícula por lo general modifican todos los renglones seleccionados, y no solo el renglón que aparece en la caja edición.
 
 ### La caja edición de subtítulos
 
 ![subs_edit_box](/img/3.2/subs_edit_box.png)
 
-The edit box is just a plain editing area with a number of associated controls.
-They are:
+La caja edición es sencillamente una zona en que editar texto sin formato un una cantidad de controles asociados.
+Son:
 
-1. Flags the line as a comment. Comment lines will not be displayed on the
-   video.
-1. The [style]({{< relref lang="en" path="Styles" >}}) used for this line.
-1. The actor speaking this line. Has no actual effect on subtitle display but
-   can be useful for editing purposes.
-1. Effect for this line. There are a few predefined effects which can be
-   applied via this field, but renderer support for them is spotty and using
-   [override tags]({{< relref lang="en" path="ASS_Tags" >}}) is nearly always a better idea. This is commonly
-   used as a metadata field for automation scripts.
-1. The number of characters on the longest line of this subtitle.
-1. Layer for this line. If you override positioning with an [override tag]({{< relref lang="en" path="ASS_Tags" >}}) so that two or more lines are displayed on top of each
-   other, this field controls which one is drawn where; higher layer numbers
-   are drawn on top of lower ones.
-1. Start time for the line.
-1. End time for the line.
-1. Duration for the line. If you modify this field, the end time will be
-   modified as a result.
-1. Left margin for this line. 0 means use the margin specified in the
-   style.
-1. Right margin for this line. 0 means use the margin specified in the
-   style.
-1. Vertical margin for this line. 0 means use the margin specified in the
-   style.
-1. Inserts a bold override tag (`\b1`) at the cursor position. If the text
-   is already bold, inserts a corresponding closing tag (`\b0`).
-1. Inserts an italics override tag (`\i1`) at the cursor position. If the
-   text is already italic, inserts a corresponding closing tag (`\i0`).
-1. Inserts an underline override tag (`\u1`) at the cursor position. If the
-   text is already italic, inserts a corresponding closing tag (`\u0`).
+1. Marcar el renglón como comentario. Renglones de comentario no aparecerán en el video.
+1. El [estilo]({{< relref lang="en" path="Styles" >}}) usado en este renglón.
+1. El actor hablando en este renglón. No tiene efecto real en la muestra de subtítulos pero puede ser útil para propósitos de edición.
+1. Efecto para este renglón. Har un par de efectos predefinidos que pueden ser aplicados con este campo, pero compatibilidad con renderizadores es inconsistente y usar [etiquetas manuales]({{< relref lang="en" path="ASS_Tags" >}}) es casi siempre más recomendable. Este campo se usa comunmente como metadatos para scripts automatizadas.
+1. El número de caracteres en el renglón más largo del subtítulo.
+1. Capa para el renglón. Si fija posiciona con una [etiqueta manual]({{< relref lang="en" path="ASS_Tags" >}}) para que dos o más renglones se muestran encima uno del otro, este campo controla cuál se dibuja dónde; números de capa mayores se dibujan encima de menores.
+1. Momento de inicio del renglón.
+1. Momento de fin del renglón.
+1. Duración del renglón. Si se modifica, el momento final será cambiado como resultado.
+1. Márgen izquierda del renglón. 0 significa usar el márgen especificado en el estilo.
+1. Márgen derecha del renglón. 0 significa usar el márgen especificado en el estilo.
+1. Márgen vertical del renglón. 0 significa usar el márgen especificado en el estilo.
+1. Inserta una etiqueta manual **negrita** (`\b1`) en la posición del cursor. Si el texto ya está en negritas, inserta una etiqueta de cierre correspondiente (`\b0`).
+1. Inserta una etiqueta manual _cursiva_ (`\i1`) en la posición del cursor. Si el texto ya está en cursiva, inserta una etiqueta de cierre correspondiente (`\i0`).
+1. Inserta una etiqueta **subrayo** (`\u1`) en la posición del cursor. Si el texto ya está subrayado, inserta una etiqueta de cierre correspondiente (`\u0`).
 1. Inserts an strikeout override tag (`\s1`) at the cursor position. If the
    text is already italic, inserts a corresponding closing tag (`\s0`).
 1. Brings up a font selection window and inserts a font face name tag
