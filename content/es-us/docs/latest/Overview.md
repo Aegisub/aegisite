@@ -17,13 +17,13 @@ trabajando. Los renglones se resaltan con colores diferentes según sus propieda
 Por ejemplo, renglones con fondo verde están seleccionados. Renglones de fondo azul son
 comentarios que no aparecerán en la pantalla. Renglones de fondo amarillo claro son visibles en el cuadro de video actual. Renglones con texto rojo se solapan en tiempo con el renglón actualmente seleccionado. Dele clic en un renglón acá para seleccionarlo para la edición.
 
-- [Editar subtítulos]({{< relref path="Editing_Subtitles" lang="en" >}})
+- [Editar subtítulos]({{< relref path="Editing_Subtitles" >}})
 
 <div></div>
 
 La **caja de edición** es donde se puede editar directamente el texto y otras propiedades de un renglón de subtítulos. Aunque se puede ingresar momentos en las cajas de tiempo aquí, uno raramente lo hace, ya que la sincronización de renglones se hace mucho más rápidamente usando la **caja audio**. Se puede también sincronizar con video. Se usa la barra de herramientas de formateo para insertar códigos de formato dentro del renglón actual. Los cuatro botones "AB" cambian los colores de diferentes elementos del renglón. Cambie el texto para el subtítulo y teclee `Enter` para entregar los cambios y pasar al siguiente renglón. Al mantener pulsado `Ctrl` a la vez que `Enter` se queda en el renglón actual en lugar de pasar al próximo, e igual entregar los cambios.
 
-- [Editar subtítulos]({{< relref path="Editing_Subtitles" lang="en" >}})
+- [Editar subtítulos]({{< relref path="Editing_Subtitles" >}})
 
 <div></div>
 
