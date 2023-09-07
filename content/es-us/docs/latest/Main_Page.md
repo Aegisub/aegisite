@@ -12,7 +12,7 @@ Documentación relacionada con el desarrollo de Aegisub y con la compilación de
 
 ## Puntos de partida
 
-[Resumen breve de Aegisub]({{< relref path="Overview" lang="en" >}})
+[Resumen breve de Aegisub]({{< relref path="Overview" >}})
 
 **Tares comunes:**
 
