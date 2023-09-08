@@ -24,25 +24,13 @@ Aegisub solo maneja audio mono. Audio multicanal será automáticamente downmixe
 
 ### Caché de audio
 
-If you're loading any audio format that isn't an uncompressed (PCM)
-Microsoft WAV file, Aegisub needs to decode and cache it first. When loaded,
-the audio is downmixed to mono (see the [opción downmixer de audio]({{<relref path="Options#avisynthwindowsonly" lang="en">}}) if you want to grab one channel only
-instead), decompressed to PCM (a.k.a. WAV), and (by default) loaded into a
-RAM cache. This means that you will need a _large amount_ of RAM to open a
-long compressed audio file. If your computer doesn't have a lot of RAM, or
-if you're working with a full-length movie, refer to the [opción audio caché]({{<relref path="Options#cache" lang="en">}}) for instructions on how to make Aegisub use its
-(slower) hard drive cache instead; or decompress the file to WAV first since
-Aegisub can read from WAVs directly without need for caching.
+Si uno se abre cualquier formato de audio que no es un archivo Microsoft WAV sin compresión (PCM), Aegisub necesita decodificar y guardarlo en caché primero. Ya cargado, el audio se reduce a mono (véase la [opción downmixer de audio]({{<relref path="Options#avisynthwindowsonly" lang="en">}}) si quiere agarrar sono un canal en su lugar), se descomprime a PCM (alias WAV) y (por defecto) se carge en un caché RAM. Esto significa que va a necesitar una _alta cantidad_ de RAM para abrir un archivo de audio comprimido largo. Si su computadora no cuenta con mucha RAM, o si uno trabaja con una película completa, pase a la [opción audio caché]({{<relref path="Options#cache" lang="en">}}) para ver instrucciones de cómo hacer que Aegisub use su caché de unidad de disco (más lento) en su lugar; o descomprima el archivo a WAV de primer paso, ya que Aegisub puede leer desde WAV directamente sin necesidad del caché.
 
-The exact amount of memory used for any given audio file can be calculated
-with the following formula:
+La cantidad exacta de memoria usada para cualquier archivo de audio se puede calcular con la fórmula siguiente:
 s = ( b * r * l ) / 8
-where _s_ is the amount of memory (in bytes - divide by 1024 to get kB), _b_
-is the number of bits per sample (always 16 in the current implementation),
-_r_ is the sample rate in Hz (usually 48000, or 44100 in some cases), and
-_l_ is the length of the audio (in seconds).
+donde _s_ es la cantidad de memoria (en bytes - divide por 1024 para kB), _b_ es la cantidad de bits por muestra (siempre 16 en la actual implementación),
+_r_ es la frecuencia de muestreo en Hz (usualmente 48000, o 44100 en algunos casos), y _l_ es la duración del audio (en segundos).
 
-For example, for a 25 minute audio clip at 48 kHz, you will need (16 * 48000 * 25 * 60)/8 = 144000000 bytes ~= 137 MB.
+Por ejemplo, con un audio de 25 minutos en 48 kHz, se va a necesitar (16 * 48000 * 25 * 60)/8 = 144000000 B ~= 137 MB.
 
-Loading and decompressing the audio into the cache takes some time.
-A progress bar is shown in the scroll bar of the audio display while audio is loading.
+Cargar y descomprimir el audio hasta el caché lleva tiempo. Una barra de progreso se enseña en la barra de traslado de la vista de audio mientras el audio esté cargando.
