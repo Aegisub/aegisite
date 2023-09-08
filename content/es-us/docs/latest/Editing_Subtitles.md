@@ -73,7 +73,7 @@ Edición de subtítulos en Aegisub se hace en dos áreas: la caja edición de su
 
 ![subs_edit_box](/img/3.2/subs_edit_box.png)
 
-La caja edición es sencillamente una zona en que editar texto sin formato un una cantidad de controles asociados.
+La caja edición es sencillamente una zona en que editar texto sin formato, con una cantidad de controles asociados.
 Son:
 
 1. Marcar el renglón como comentario. Renglones de comentario no aparecerán en el video.
@@ -88,166 +88,129 @@ Son:
 1. Márgen izquierda del renglón. 0 significa usar el márgen especificado en el estilo.
 1. Márgen derecha del renglón. 0 significa usar el márgen especificado en el estilo.
 1. Márgen vertical del renglón. 0 significa usar el márgen especificado en el estilo.
-1. Inserta una etiqueta manual **negrita** (`\b1`) en la posición del cursor. Si el texto ya está en negritas, inserta una etiqueta de cierre correspondiente (`\b0`).
+1. Inserta una etiqueta manual **negritas** (`\b1`) en la posición del cursor. Si el texto ya está en negritas, inserta una etiqueta de cierre correspondiente (`\b0`).
 1. Inserta una etiqueta manual _cursiva_ (`\i1`) en la posición del cursor. Si el texto ya está en cursiva, inserta una etiqueta de cierre correspondiente (`\i0`).
-1. Inserta una etiqueta **subrayo** (`\u1`) en la posición del cursor. Si el texto ya está subrayado, inserta una etiqueta de cierre correspondiente (`\u0`).
-1. Inserts an strikeout override tag (`\s1`) at the cursor position. If the
-   text is already italic, inserts a corresponding closing tag (`\s0`).
-1. Brings up a font selection window and inserts a font face name tag
-   (`\fnFontName`) with the given font name, as well as the chosen effect
-   tags.
-1. Brings up the [color picker]({{< relref path="Colour_Picker" lang="en" >}}) and lets you choose a
-   color; then inserts a primary color override tag (`\c`) with the chosen
-   color at the cursor position.
-1. Brings up the [color picker]({{< relref path="Colour_Picker" lang="en" >}}) and lets you choose a
-   color; then inserts a secondary color override tag (`\2c`) with the chosen
-   color at the cursor position.
-1. Brings up the [color picker]({{< relref path="Colour_Picker" lang="en" >}}) and lets you choose a
-   color; then inserts an outline color override tag (`\3c`) with the chosen
-   color at the cursor position.
-1. Brings up the [color picker]({{< relref path="Colour_Picker" lang="en" >}}) and lets you choose a
-   color; then inserts a shadow color override tag (`\4c`) with the chosen
-   color at the cursor position.
-1. Move to the next line, creating a new one at the end of the file if
-   needed. Note that unlike in previous versions of Aegisub, changes do
-   not need to be committed using this button.
-1. Changes display between times and frames. Note that this does not change
-   how times are actually stored in the script.
+1. Inserta una etiqueta manual _subrayado_ (`\u1`) en la posición del cursor. Si el texto ya está subrayado, inserta una etiqueta de cierre correspondiente (`\u0`).
+1. Inserta una etiqueta manual ~~tachado~~ (`\s1`) en la posición del cursor. Si el texto ya está tachado, inserta una etiqueta de cierre correspondiente (`\s0`).
+1. Abre una ventana de elegir tipografía e inserta una etiqueta de nombre de fuente tipográfico (`\fnFontName`) con el nombre de fuente elegido, además de las elegidas etiquetas de efectos.
+1. Abre el [paleta de colores]({{< relref path="Colour_Picker" lang="en" >}}) y le permite escoger un color; luego inserta una etiqueta manual de color principal (`\c`) con el color en la posición del cursor.
+1. Abre la [paleta de colores]({{< relref path="Colour_Picker" lang="en" >}}) y le permite escoger un color; luego inserta una etiqueta manual de color secundario (`\2c`) con el color en la posición del cursor.
+1. Abre la [paleta de colores]({{< relref path="Colour_Picker" lang="en" >}}) y le permite escoger un color; luego inserta una etiqueta manual de color de borde (`\3c`) con el color en la posición del cursor.
+1. Abre la [paleta de colores]({{< relref path="Colour_Picker" lang="en" >}}) y le permite escoger un color; luego inserta una etiqueta manual de color de sombra (`\4c`) con el color en la posición del cursor.
+1. Pasar al siguiente renglón, creando uno nuevo al final del archivo cuando necesario. Ojo que a diferencia de versiones previas de Aegisub, cambios no necesitan ser entregados con este botón.
+1. Cambiar la vista entre tiempos/momentos y cuadros. Note que esto no afecta cómo los tiempos son realmente guardados en el guión.
 
 #### Mostrar original
 
-Checking the Show Original box switches the edit box to the following mode:
+Habilitar la opción "Mostrar Original" cambia la caja edición al siguiente modo:
 
 ![subs_edit_box_original](/img/3.2/subs_edit_box_original.png)
 
-The top half of the edit box is read-only, and show the text that the currently
-selected line had when it was first selected. This can be useful for
-translating subtitles into another language, or just for editing subtitles.
+La mitad superior de la caja edición es solo lectura, y enseña el texto que el renglón actualmente seleccionado tenía cuando por primera vez se seleccionó. Esta puede ser útil para traducir, o también sólo para editar subtítulos.
 
-Revert
-: Replace the text of the line with the text shown in the upper box. A simple
-  way to undo all the changes you made to the line if you change your mind.
+Revertir
+: Reemplaza el texto de renglón con el texto enseñado en la caja superior. Es una manera sencilla de deshacer todos los cambios que se hicieron en el renglón si se cambia de idea.
 
-Clear
-: Clear the line.
+Borrar
+: Borrar el renglón.
 
-Clear Text
-: Clear the text of the line, but leave all override tags in place. Can help
-  with translating typeset signs to another language.
+Borrar texto
+: Borrar el texto del renglón pero dejar en su lugar todas las etiquetas manuales. Puede ayudar con traducir letreros sobreescritos a otro idioma.
 
-Insert Original
-: Insert the original text of the line at the cursor position.
+Insertar original
+: Insertar el texto original del renglón en la posición del cursor.
 
 #### Menú contexto
 
-If you right-click anywhere in the edit box, you get the following menu:
+Si hace clic derecho en cualquier parte de la caja edición, aparece el menú siguiente:
 
 ![Subs_Edit_Context](/img/3.2/Subs_Edit_Context.png)
 
-Select all, copy, cut and paste all do what you'd expect them to.
+Seleccionar todo, copiar, cortar y pegar se portan todos igual que uno esperaría.
 
-Spell checker
-: If you right-click on a word that has been detected as misspelled,
-  the spell checker will suggest some likely alternative. You can also
-  set which language it will use for checking from this menu, or add
-  words that it doesn't recognize but you know to be correctly spelled to
-  the dictionary. For more information on spell checking in Aegisub, see
-  the [Spell Checker]({{< relref path="Spell_Checker" lang="en" >}}) page.
+Corrector ortográfico
+: Si se hace clic derecho en una palabra que se ha detectado como mal escrito, el corrector ortográfico sugerirá unos alternativos probables. Se puede también fijar cuál idioma usará para la corrección en este menú, o agregar palabras que no reconoce pero que uno sabe que son correctos al diccionario. Para más información acerca de la corrección ortográfica en Aegisub, véase la página del [Corrector de ortografía]({{< relref path="Spell_Checker" lang="en" >}}).
 
-Thesaurus
-: Suggests alternative words similar to the highlighted word.
+Tesauro
+: Sugiere palabras alternativas similares a la palabra resaltada.
 
-Split line
-: Splits the line into two new lines at the cursor position. Preserve
-  times keeps the old line's timing for both lines. Estimate times tries
-  to guess where the split is based on the length of the text on each
-  side of the cursor. At video frame makes the first half of the line end
-  on the previous frame, and the second half start on the current frame.
+Dividir renglón
+: Divide el renglón dos nuevos a la posición del cursor. "Preservar tiempos" mantiene la sincronía del renglón original para ambos renglones nuevos. "Estimar tiempos" intenta adivinar dónde/cuándo está la división basado en la longitud del texto a cada costado del cursor. "En cuadro de video" hace que la primera mitad del renglón termine en el cuadro anterior, y que la segunda mitad empiece en el cuadro actual. 
 
 ### Cuadrícula de subtítulos
 
 ![Subs_grid](/img/3.2/Subs_grid.png)
 
-The subtitles grid shows all lines (comments and otherwise) in the entire
-file.
+La cuadrícula de subtítulos enseña todos los renglones (comentarios y demás) en el archivo entero.
 
-Some common controls:
+Algunos controles comunes:
 
-- To move lines up or down in the grid, select them, hold down the Alt key
-  and press the up- or down-arrow keys.
-- To select multiple lines, hold down either Ctrl or Shift and click.
-  Ctrl-click selects one more line per click; Shift-click selects all the
-  lines between the first clicked and the last clicked.
-- To change the active line shown in the edit box without changing the
-  selection, hold down alt and click on the new line.
-- To sort all lines in the grid, open the _Subtitle_ menu, and under _Sort
-  Lines_ select the field to sort the lines on.
-- To change the way [override tags]({{< relref path="ASS_Tags" lang="en" >}}) are displayed in the grid,
-  click the "cycle through tag hiding modes" button on the toolbar.
+- Para mover renglones arriba o abajo en la lista, selecciónelos, pulse la tecla `alt` a la vez que las teclas de mover arriba o abajo.
+- Para selecionar múltiples renglones, pulse o `ctrl` o `shift`/`mayús` y haga clic. Ctrl-clic selecciona uno o más renglones por click; Mayús-clic selecciona todos los renglones entre el primero y último cliqueados.
+- Para cambiar el renglón activo enseñado en la caja de edición sin cambiar la selección, pulse `alt` y haga clic en el nuevo renglón.
+- Para ordenar todas las filas de la cuadrícula, abra el menú _Subtítulo_, y bajo _Ordenar renglones_ seleccione el cambio en que ordenarlas.
+- Para cambiar la manera en que [etiquetas manuales]({{<relref path="ASS_Tags" lang="en">}}) se muestran en la cuadrícula, haga clic en el botón "ojear modos de ocultar etiquetas" en la barra herramientas.
 
 ![Subs_grid_tags](/img/3.2/Subs_grid_tags.png)
 
-The lines have different (configurable) colors representing different
-things; see the [subtitles grid section of the options page]({{< relref lang="en" path="Options#General\_-.3E_Subtitles_grid" >}}) for details on what the colors
-mean.
+Los renglones tienen diferentes (configurables) colores representando cosas diferentes; véase la [sección cuadrícula de subtítulos de la página de opciones]({{<relref path="Options#General\_-.3E_Subtitles_grid" lang="en">}}) para detalles acerca de qué significan los colores.
 
-By default, the following columns are visible:
+Por defecto, las columnas siguientes son visibles:
 
 **\#**
-: The line number.
+: El número de renglón.
 
-Start
-: The start time of the line.
+Inicio
+: El tiempo inicio del renglón.
 
-End
-: The end time of the line.
+Fin
+: El tiempo fin del renglón.
 
-Style
-: The style used for this line.
+Estilo
+: El estilo usado en este renglón.
 
-Text
-: The text of the line (this is what will be displayed on the video).
+Texto
+: El texto del renglón (este es lo que se verá en el video).
 
-The following columns will be displayed if any line in the script uses them:
+Las siguientes columnas serán vistas si cualquier renglón del guión las usa:
 
 L
-: The layer of the line (see above).
+: La capa del renglón (véase arriba).
 
 Actor
-: The actor speaking the line.
+: El actor hablando durante el renglón.
 
-Effect
-: The effect for this line.
+Efecto
+: El efecto de este renglón.
 
-Left
-: The left margin.
+Izquierda
+: El márgen izquierda.
 
-Right
-: The right margin.
+Derecha
+: El márgen derecha.
 
 Vert
-: The vertical margin.
+: El márgen vertical.
 
-You can also right-click the top line of the grid (the one with the column
-names) to manually select which columns you want to be visible.
+Se puede también hacer clic-derecho en la primera fila de la cuadrícula (la con los nombres de columna) para seleccionar manualmente cuáles se quiere ver.
 
-Right-clicking any other line in the grid gives you the following menu
-(many of the options are also available in other menus):
+Clic-derecho en cualquier otra fila en la cuadrícula le abre el menú siguiente
+(muchas de las opciones están también disponibles en otros menúes):
 
 ![grid_context_menu](/img/3.2/grid_context_menu.png)
 
-Insert (before/after)
+Insertar (antes/después)
 : Inserts a new empty line before or after the selected line. The new line
   will be timed start at 0:00:00.00 and go to 0:00:05.00.
 
-Insert at video time (before/after)
+Insertar en momento de video (antes/después)
 : Same as the above, but the new line will be timed to start at the current
   video frame. Not enabled unless you have video loaded.
 
-Duplicate
+Duplicar
 : Duplicates the selected line(s).
 
-Split lines before current frame
+Dividir renglones antes del cuadro actual
 : Duplicate the selected line(s), set the end time of the original line
   to the frame before the current video frame, and set the start time of
   the copy to the current video frame. Useful for frame-by-frame
@@ -255,43 +218,43 @@ Split lines before current frame
   down if it collided with a no-longer-visible line. Only enabled if you
   have video loaded.
 
-Split lines after current frame
+Dividir renglones después del cuadro actual
 : As above, but it splits off the portion of the line after the current
   frame rather than the potion before the current frame, for when doing
   frame-by-frame typesetting from the last to the first frame of a line.
 
-Split (by karaoke)
+Dividor (por karaoke)
 : Splits the line into one new line per syllable, as delimited by karaoke
   override tags (`\k` and its relatives). The timing of the first line will
   start at the original line's start time and end at that time plus the
   length of the first syllable; the following lines will start at the end of
   the previous and last for the duration of the syllable.
 
-Swap
+Intercambiar
 : Swaps the places (in the grid) of two selected lines.
 
-Join (keep first)
+Unir (mantener primero)
 : Joins two or more lines, discarding the text of all but the first. The
   new line will be timed to start at the first line's start time and end at
   the last line's end time. Only enabled if you have more than one line
   selected.
 
-Join (concatenate)
+Unir (concatenar)
 : Same as above, but concatenates the text of all selected lines instead. A
   space is inserted between the texts of each source line.
 
-Join (as karaoke)
+Unir (como karaoke)
 : Does the inverse of _Split (by karaoke)_, i.e.  the same as _Join
   (concatenate)_ but inserts `\k` tags with the timing of each source line in
   the joined line.
 
-Make times continuous (change start/change end)
+Hacer tiempos continuos (cambar inicio/cambiar fin)
 : Modifies the timing of the selected lines so that the end time of each
   line is the same as the start time of the next line. Change start/change
   end determines whether the function changes the end time or the start time
   of each line. Only  enabled when you have more than one line selected.
 
-Recombine lines
+Recombinar renglones
 : Given two or more lines with the same text being partially present in all
   of them, creates one line per text fragment instead. This is mostly useful
   for correcting subs ripped from DVDs, which frequently look something like
@@ -303,19 +266,19 @@ Recombine lines
 
   ![Recombine_02](/img/3.2/Recombine_02.png)
 
-Create audio clip
+Crear corte de audio
 : Saves a segment of the loaded audio corresponding to the timing of the
   selected lines (starting at the earliest start time and ending at the
   latest end time) as an uncompressed WAV file. Only enabled if you have
   audio loaded.
 
-Cut/Copy/Paste
+Cortar/Copiar/Pegar
 : Cuts/copies/pastes entire lines. Note that the lines are copied as plain
   text and can be copied and pasted freely between text editors, chat
   programs, web browsers, other instances of Aegisub etc.
 
-Paste Lines Over...
+Pegar renglones encima...
 : Open the [Paste Over]({{< relref path="Paste_Over" lang="en" >}}) dialog.
 
-Delete
+Eliminar
 : Deletes the selected lines.
