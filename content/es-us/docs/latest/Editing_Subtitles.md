@@ -1,12 +1,12 @@
 ---
-title: Editing Subtitles
+title: Editar subtítulos
 menu:
   docs:
     parent: working-with-subtitles
 weight: 3000
 ---
 
-La edición de subtítulos es para qué sirve sirve Aegisub. Esta página trata de edición básica de renglones de subtítulos; para más información de tipografía de subtítulos, véase [tipografía]({{< relref path="Typesetting" lang="en" >}}). Para más información acerca de cronometrar renglones de subtítulos, véase [trabajar con audio]({{< relref path="Audio" lang="en" >}}).
+La edición de subtítulos es para qué sirve sirve Aegisub. Esta página trata de edición básica de renglones de subtítulos; para más información de tipografía de subtítulos, véase [tipografía]({{<relref path="Typesetting" lang="en">}}). Para más información acerca de cronometrar renglones de subtítulos, véase [trabajar con audio]({{<relref path="Audio" lang="en">}}).
 
 ## Abrir subtitles
 
@@ -24,7 +24,7 @@ Abrir subtítulos con charset
 Abrir subtítulos desde video
 : Abrir subtítulos multiplexados en el archivo de video actualmente abierto. Esta opción actualmente solo funciona con archivos de video Matroska.
 
-Abrir [subtítulos autoguardados]({{< relref path="Autosave" lang="en" >}})
+Abrir [subtítulos autoguardados]({{<relref path="Autosave" lang="en">}})
 : Abrir un archivo creado por la función de autoguardado de Aegisub. Útil si Aegisub se cae a la vez que uno tenía cambios sin guardar, o si solo se quiere abrir una versión más antigua de un archivo.
 
 Cuando se abre un archivo de subtítulos que no se reconoce como Unicode, Aegisub intentará adivinar con qué arreglo de caracteres de ha codificado. Si no está seguro, le pedirá que escoja entre dos o más alternativas probables. Si el resultado se ve revuelto mal o incorrecto de alguna manera, intente volver a abrirlo con otro arreglo de caracteres.
@@ -77,11 +77,11 @@ La caja edición es sencillamente una zona en que editar texto sin formato, con 
 Son:
 
 1. Marcar el renglón como comentario. Renglones de comentario no aparecerán en el video.
-1. El [estilo]({{< relref lang="en" path="Styles" >}}) usado en este renglón.
+1. El [estilo]({{<relref lang="en" path="Styles">}}) usado en este renglón.
 1. El actor hablando en este renglón. No tiene efecto real en la muestra de subtítulos pero puede ser útil para propósitos de edición.
-1. Efecto para este renglón. Har un par de efectos predefinidos que pueden ser aplicados con este campo, pero compatibilidad con renderizadores es inconsistente y usar [etiquetas manuales]({{< relref lang="en" path="ASS_Tags" >}}) es casi siempre más recomendable. Este campo se usa comunmente como metadatos para scripts automatizadas.
+1. Efecto para este renglón. Har un par de efectos predefinidos que pueden ser aplicados con este campo, pero compatibilidad con renderizadores es inconsistente y usar [etiquetas manuales]({{<relref lang="en" path="ASS_Tags">}}) es casi siempre más recomendable. Este campo se usa comunmente como metadatos para scripts automatizadas.
 1. El número de caracteres en el renglón más largo del subtítulo.
-1. Capa para el renglón. Si fija posiciona con una [etiqueta manual]({{< relref lang="en" path="ASS_Tags" >}}) para que dos o más renglones se muestran encima uno del otro, este campo controla cuál se dibuja dónde; números de capa mayores se dibujan encima de menores.
+1. Capa para el renglón. Si fija posiciona con una [etiqueta manual]({{<relref lang="en" path="ASS_Tags">}}) para que dos o más renglones se muestran encima uno del otro, este campo controla cuál se dibuja dónde; números de capa mayores se dibujan encima de menores.
 1. Momento de inicio del renglón.
 1. Momento de fin del renglón.
 1. Duración del renglón. Si se modifica, el momento final será cambiado como resultado.
@@ -93,10 +93,10 @@ Son:
 1. Inserta una etiqueta manual _subrayado_ (`\u1`) en la posición del cursor. Si el texto ya está subrayado, inserta una etiqueta de cierre correspondiente (`\u0`).
 1. Inserta una etiqueta manual ~~tachado~~ (`\s1`) en la posición del cursor. Si el texto ya está tachado, inserta una etiqueta de cierre correspondiente (`\s0`).
 1. Abre una ventana de elegir tipografía e inserta una etiqueta de nombre de fuente tipográfico (`\fnFontName`) con el nombre de fuente elegido, además de las elegidas etiquetas de efectos.
-1. Abre el [paleta de colores]({{< relref path="Colour_Picker" lang="en" >}}) y le permite escoger un color; luego inserta una etiqueta manual de color principal (`\c`) con el color en la posición del cursor.
-1. Abre la [paleta de colores]({{< relref path="Colour_Picker" lang="en" >}}) y le permite escoger un color; luego inserta una etiqueta manual de color secundario (`\2c`) con el color en la posición del cursor.
-1. Abre la [paleta de colores]({{< relref path="Colour_Picker" lang="en" >}}) y le permite escoger un color; luego inserta una etiqueta manual de color de borde (`\3c`) con el color en la posición del cursor.
-1. Abre la [paleta de colores]({{< relref path="Colour_Picker" lang="en" >}}) y le permite escoger un color; luego inserta una etiqueta manual de color de sombra (`\4c`) con el color en la posición del cursor.
+1. Abre el [paleta de colores]({{<relref path="Colour_Picker" lang="en">}}) y le permite escoger un color; luego inserta una etiqueta manual de color principal (`\c`) con el color en la posición del cursor.
+1. Abre la [paleta de colores]({{<relref path="Colour_Picker" lang="en">}}) y le permite escoger un color; luego inserta una etiqueta manual de color secundario (`\2c`) con el color en la posición del cursor.
+1. Abre la [paleta de colores]({{<relref path="Colour_Picker" lang="en">}}) y le permite escoger un color; luego inserta una etiqueta manual de color de borde (`\3c`) con el color en la posición del cursor.
+1. Abre la [paleta de colores]({{<relref path="Colour_Picker" lang="en">}}) y le permite escoger un color; luego inserta una etiqueta manual de color de sombra (`\4c`) con el color en la posición del cursor.
 1. Pasar al siguiente renglón, creando uno nuevo al final del archivo cuando necesario. Ojo que a diferencia de versiones previas de Aegisub, cambios no necesitan ser entregados con este botón.
 1. Cambiar la vista entre tiempos/momentos y cuadros. Note que esto no afecta cómo los tiempos son realmente guardados en el guión.
 
@@ -129,7 +129,7 @@ Si hace clic derecho en cualquier parte de la caja edición, aparece el menú si
 Seleccionar todo, copiar, cortar y pegar se portan todos igual que uno esperaría.
 
 Corrector ortográfico
-: Si se hace clic derecho en una palabra que se ha detectado como mal escrito, el corrector ortográfico sugerirá unos alternativos probables. Se puede también fijar cuál idioma usará para la corrección en este menú, o agregar palabras que no reconoce pero que uno sabe que son correctos al diccionario. Para más información acerca de la corrección ortográfica en Aegisub, véase la página del [Corrector de ortografía]({{< relref path="Spell_Checker" lang="en" >}}).
+: Si se hace clic derecho en una palabra que se ha detectado como mal escrito, el corrector ortográfico sugerirá unos alternativos probables. Se puede también fijar cuál idioma usará para la corrección en este menú, o agregar palabras que no reconoce pero que uno sabe que son correctos al diccionario. Para más información acerca de la corrección ortográfica en Aegisub, véase la página del [Corrector de ortografía]({{<relref path="Spell_Checker" lang="en">}}).
 
 Tesauro
 : Sugiere palabras alternativas similares a la palabra resaltada.
@@ -200,85 +200,55 @@ Clic-derecho en cualquier otra fila en la cuadrícula le abre el menú siguiente
 ![grid_context_menu](/img/3.2/grid_context_menu.png)
 
 Insertar (antes/después)
-: Inserts a new empty line before or after the selected line. The new line
-  will be timed start at 0:00:00.00 and go to 0:00:05.00.
+: Inserta un nuevo renglón vacío antes o después del renglón seleccionado. El nuevo iniciará en 0:00:00.00 y durará hasta 0:00:05.00
 
 Insertar en momento de video (antes/después)
-: Same as the above, but the new line will be timed to start at the current
-  video frame. Not enabled unless you have video loaded.
+: Lo mismo que lo de arriba, pero el nuevo renglón iniciará en el cuadro actual del video. No estará habilitado a menos que se tenga video cargado.
 
 Duplicar
-: Duplicates the selected line(s).
+: Duplica los renglones seleccionados.
 
 Dividir renglones antes del cuadro actual
-: Duplicate the selected line(s), set the end time of the original line
-  to the frame before the current video frame, and set the start time of
-  the copy to the current video frame. Useful for frame-by-frame
-  typesetting and for splitting a line at a scene change to let it move
-  down if it collided with a no-longer-visible line. Only enabled if you
-  have video loaded.
+: Duplica los renglones seleccionados, fija el tiempo final del renglón original en el cuadro antes del cuadro de video actual, y fija el inicio de la copia en el cuadro de video actual. Útil para fijar texto cuadro-por-cuadro y para dividir un renglón en un cambio de escena para dejarlo bajar si se chocaba con un renglón ya no visible. Solo se habilita con video cargado.
 
 Dividir renglones después del cuadro actual
-: As above, but it splits off the portion of the line after the current
-  frame rather than the potion before the current frame, for when doing
-  frame-by-frame typesetting from the last to the first frame of a line.
+: Lo mismo que lo de arriba, pero parte la porción del renglón hasta después del cuadro actual, en lugar de la porción antes del cuadro actual, para cuando se fija texto cuadro por cuadro desde el último hasta el primer cuadro de un renglón.
 
-Dividor (por karaoke)
-: Splits the line into one new line per syllable, as delimited by karaoke
-  override tags (`\k` and its relatives). The timing of the first line will
-  start at the original line's start time and end at that time plus the
-  length of the first syllable; the following lines will start at the end of
-  the previous and last for the duration of the syllable.
+Dividir (por karaoke)
+: Divide el renglón en uno por sílaba, como se señala por etiquetas manuales de karaoke (`\k` y sus parientes). El primer renglón empezará en el tiempo inicio del renglón original, y terminar en en ese tiempo más la duración de la primera sílaba; los siguientes renglones empezarán al final del anterior y durar según sus sílabas.
 
 Intercambiar
-: Swaps the places (in the grid) of two selected lines.
+: Intercambia los lugares (en la cuadrícula) de dos renglones seleccionados.
 
 Unir (mantener primero)
-: Joins two or more lines, discarding the text of all but the first. The
-  new line will be timed to start at the first line's start time and end at
-  the last line's end time. Only enabled if you have more than one line
-  selected.
+: Combina dos o más renglones, desechando el texto de todos menos el primero. El nuevo renglón iniciará en el inicio del primer renglón y terminará al final del último renglón. Solo se habilita si estén seleccionados más que un renglón.
 
 Unir (concatenar)
-: Same as above, but concatenates the text of all selected lines instead. A
-  space is inserted between the texts of each source line.
+: Lo mismo que lo de arriba, pero concatena/encadena el texto de todos los renglones seleccionados. Un espacio se inserta entre el texto de cada renglón fuente.
 
 Unir (como karaoke)
-: Does the inverse of _Split (by karaoke)_, i.e.  the same as _Join
-  (concatenate)_ but inserts `\k` tags with the timing of each source line in
-  the joined line.
+: Hace la inversa de _Dividir (por karaoke)_– lo mismo que _Unir (concatenar)_ pero inserta etiquetas `\k` con el tiempo de cada renglón fuente en el renglón unificado.
 
 Hacer tiempos continuos (cambar inicio/cambiar fin)
-: Modifies the timing of the selected lines so that the end time of each
-  line is the same as the start time of the next line. Change start/change
-  end determines whether the function changes the end time or the start time
-  of each line. Only  enabled when you have more than one line selected.
+: Modifica la sincronía de renglones seleccionados para que el tiempo final de cada renglón es lo mismo que el tiempo de inicio del próximo. "Cambar inicio/cambiar fin" determina si la funcion cambia los tiempos de fin o de inicio de cada renglón. Solo se habilita si estén seleccionados más que un renglón.
 
 Recombinar renglones
-: Given two or more lines with the same text being partially present in all
-  of them, creates one line per text fragment instead. This is mostly useful
-  for correcting subs ripped from DVDs, which frequently look something like
-  this:
+: Dados dos o más renglones con el mismo texto estando parcialmente presente en todos, crea un renglón por fragmento de texto en su lugar. Esta función es mayormente útil para corregir subtítulos extraídos de DVDs, que con frecuencia se ven algo así:
 
   ![Recombine_01](/img/3.2/Recombine_01.png)
 
-  After recombine lines, the result is:
+  Después de recombinar renglones, el resultado es:
 
   ![Recombine_02](/img/3.2/Recombine_02.png)
 
 Crear corte de audio
-: Saves a segment of the loaded audio corresponding to the timing of the
-  selected lines (starting at the earliest start time and ending at the
-  latest end time) as an uncompressed WAV file. Only enabled if you have
-  audio loaded.
+: Guarda un segmento del audio cargado correspondiente a los renglones seleccionados (empezando con el primer tiempo de inicio y terminando con el último tiempo de fin) como archivo WAV no comprimido. Solo se habilita con audio cargado.
 
 Cortar/Copiar/Pegar
-: Cuts/copies/pastes entire lines. Note that the lines are copied as plain
-  text and can be copied and pasted freely between text editors, chat
-  programs, web browsers, other instances of Aegisub etc.
+: Corta/copia/pega renglones enteros. Fíjese que los renglones son copiados como texto sin formato y pueden ser copiados y pegados libremente entre editores de texto, programas de chat, navegadores web, otras instancias de Aegisub, etc.
 
 Pegar renglones encima...
-: Open the [Paste Over]({{< relref path="Paste_Over" lang="en" >}}) dialog.
+: Abre la ventana [Pegar encima]({{<relref path="Paste_Over" lang="en">}}).
 
 Eliminar
-: Deletes the selected lines.
+: Elimina los renglones seleccionados.
