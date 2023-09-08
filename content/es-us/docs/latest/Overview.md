@@ -17,25 +17,25 @@ trabajando. Los renglones se resaltan con colores diferentes según sus propieda
 Por ejemplo, renglones con fondo verde están seleccionados. Renglones de fondo azul son
 comentarios que no aparecerán en la pantalla. Renglones de fondo amarillo claro son visibles en el cuadro de video actual. Renglones con texto rojo se solapan en tiempo con el renglón actualmente seleccionado. Dele clic en un renglón acá para seleccionarlo para la edición.
 
-- [Editar subtítulos]({{< relref path="Editing_Subtitles" >}})
+- [Editar subtítulos]({{<relref path="Editing_Subtitles">}})
 
 <div></div>
 
 La **caja de edición** es donde se puede editar directamente el texto y otras propiedades de un renglón de subtítulos. Aunque se puede ingresar momentos en las cajas de tiempo aquí, uno raramente lo hace, ya que la sincronización de renglones se hace mucho más rápidamente usando la **caja audio**. Se puede también sincronizar con video. Se usa la barra de herramientas de formateo para insertar códigos de formato dentro del renglón actual. Los cuatro botones "AB" cambian los colores de diferentes elementos del renglón. Cambie el texto para el subtítulo y teclee `Enter` para entregar los cambios y pasar al siguiente renglón. Al mantener pulsado `Ctrl` a la vez que `Enter` se queda en el renglón actual en lugar de pasar al próximo, e igual entregar los cambios.
 
-- [Editar subtítulos]({{< relref path="Editing_Subtitles" >}})
+- [Editar subtítulos]({{<relref path="Editing_Subtitles">}})
 
 <div></div>
 
 Use la **caja audio** para sincronizar/cronometrar subtítulos (con audio) de manera rápida y precisa. La **vista audio** puede mostrar el audio que uno ha cargado de dos modos distintos, forma de onda y espectrograma; el pantallazo de arriba demuestra el modo espectrograma.
 
-- [Trabajando con audio]({{< relref path="Audio" lang="en" >}})
+- [Trabajando con audio]({{<relref path="Audio">}})
 
 <div></div>
 
 La **caja video** le permite ver cómo se verán los subtítulos en el video, pero también posibilita seleccionar momentos específicos del video en que un renglón de subtítulo debe iniciar/terminar, y también permite usar el ratón para posicionar, rotar y recortar un renglón subtítulo para, por ejemplo, corresponder a un letrero visible dentro del video.
 
-- [Trabajando con video]({{< relref path="Video" lang="en" >}})
+- [Trabajando con video]({{<relref path="Video">}})
 
 <div></div>
 

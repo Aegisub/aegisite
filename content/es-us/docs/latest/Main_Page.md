@@ -6,7 +6,7 @@ menu:
 weight: 1000
 ---
 
-Bienvenido al manual Aegisub. Vea nuestra página [Acerca de]({{< relref path="About" >}}) para más info del programa, o explore los temas en el panel a la izquierda.
+Bienvenido al manual Aegisub. Vea nuestra página [Acerca de]({{<relref path="About">}}) para más info del programa, o explore los temas en el panel a la izquierda.
 
 Documentación relacionada con el desarrollo de Aegisub y con la compilación del mismo está ubicada en el [rastreo de errores](https://github.com/Aegisub/Aegisub/issues).
 
@@ -18,7 +18,7 @@ Documentación relacionada con el desarrollo de Aegisub y con la compilación de
 
 - [Sincronizar un guión traducido al audio]({{<relref path="Audio">}})
 - [Typesetting básico de señales en pantalla]({{<relref path="Tutorials#visualtypesetting" lang="en">}})
-- [Poner subtítulos completados en el video]({{< relref path="Attaching_subtitles_to_video" lang="en" >}}) (para la reproducción o distribución)
+- [Poner subtítulos completados en el video]({{<relref path="Attaching_subtitles_to_video" lang="en">}}) (para la reproducción o distribución)
 
 <!-- -->
 
