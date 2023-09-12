@@ -117,73 +117,66 @@ La primera línea es la especificación del formato: el texto `# keyframe format
 
 ## Video de velocidad de fotogramas variable
 
-Aegisub admite la carga y el trabajo con video de velocidad de fotogramas variable El cómo y por qué de VFR está muy fuera del alcance de este manual (véase por ejemplo [el Hilo VFR en AnimeSuki](http://forums.animesuki.com/showthread.php?t=34738) o la [página del manual de Avisynth](http://avisynth.org/mediawiki/VFR) para obtener más información sobre VFR), pero hablaremos lo que hay que saber sobre cómo Aegisub lo maneja.
+Aegisub admite la carga y el trabajo con video de velocidad de fotogramas variable El cómo y por qué de VFR está muy fuera del alcance de este manual (véase por ejemplo [el hilo VFR en AnimeSuki](http://forums.animesuki.com/showthread.php?t=34738) o la [página del manual de Avisynth](http://avisynth.org/mediawiki/VFR) para obtener más información sobre VFR), pero hablaremos lo que hay que saber sobre cómo Aegisub lo maneja.
 
 ### Códigos de tiempo
 
-<!-- TODO here -->
-La carga de archivos de código de tiempo Matroska (v1 y v2) es compatible y útil si tener un VFRaC (Variable FrameRate se supone Constante; por ejemplo, los fotogramas de un VFR MKV almacenado en un AVI a un FPS constante, consulte el hilo VFR vinculado arriba para detalles) archivo de video pero quiero que los subs se sincronicen con él. Si carga un archivo VFR, Aegisub leerá automáticamente los códigos de tiempo directamente.
+La carga de archivos de código de tiempo Matroska (v1 y v2) es compatible y útil si tiene un archivo de video VFRaC (velocidad de fotogramas presumida constante; por ejemplo, los fotogramas de un MKV VFR almacenados en un AVI a un FPS constante, consulte el hilo VFR vinculado arriba para más detalles) pero quiere que los subs se sincronicen con él. Si carga un archivo VFR, Aegisub leerá automáticamente los códigos de tiempo directamente.
 
 ### VFR e incrustar subtítulos (hardsubbing)
 
-Mientras no esté codificando con GDSMux, el entorno de codificación de su el filtro de subtítulos está funcionando (es decir, Avisynth, VirtualDub o mencoder) Supongamos que el mundo es CFR y, por tanto, el archivo de entrada es VFRaC. Esto es Obviamente es un problema ya que estropea la sincronización de los subtítulos. Aegisub proporciona una forma de solucionar este problema a través del filtro de exportación Framerate Transformation, que toma la velocidad de fotogramas del archivo de entrada VFRaC y los códigos de tiempo, y luego cambia cada vez el código y anula la etiqueta en el script para que pueda ser substituido en el video VFRaC y aún se sincroniza perfectamente después de aplicar los códigos de tiempo. A Prepare un guión para el subtitulado, asegúrese de tener los códigos de tiempo cargados y luego vaya al menú _Archivo_ y presione _Exportar_. Desmarca todo excepto el Filtro _Transformar velocidad de fotogramas_. Elija el modo de salida _Variable_. necesita conoce el FPS del video en el que vas a subtitular los subtítulos; si usted tiene El video cargado Aegisub asumirá que eso es todo y lo insertará en el cuadro por usted.
+Mientras no esté codificando con GDSMux, el entorno de codificación en el que su filtro de subtítulos esté funcionando (es decir, Avisynth, VirtualDub o mencoder) supondrá que el mundo es CFR (velocidad de fotogramas constante) y, por lo tanto, que el archivo de entrada es VFRaC. Esto obviamente es un problema ya que arruina la sincronización de los subtítulos. Aegisub proporciona una forma de solucionar este problema a través del filtro de exportación Framerate Transformation (transforme de velocidad de fotogramas), que toma la velocidad de fotogramas del archivo de entrada VFRaC y los códigos de tiempo, y luego cambia cada código de tiempo y etiqueta manual en el guión para que pueda ser incrustado en el video VFRaC y aún sincronizar perfectamente después de aplicar los códigos de tiempo. Para preparar un guión para incrustar subtítulos, asegúrese de tener los códigos de tiempo cargados y luego vaya al menú _Archivo_ y dele a _Exportar_. Anule todo excepto el filtro _Transformar velocidad de fotogramas_. Elija el modo de salida _Variable_. Necesita saber el FPS del video en el que va a incrustar los subtítulos; si uno tiene el video cargado Aegisub sacará el FPS de ese video y lo insertará en el cuadro automáticamente.
 
-**Nota:** si tiene cargado un archivo Matroska u otro archivo VFR, recuerde que el El valor de FPS que informa Aegisub puede no ser el mismo que el del video que estás viendo. Voy a activar los subtítulos.
+**Nota:** si tiene cargado un archivo Matroska u otro archivo VFR, recuerde que el valor de FPS que informa Aegisub puede no ser el mismo que el del video en que va a incrustar los subtítulos.
 
 ## Video anamórfico
 
-**Consejo: Cómo evitar que se vean estirados los subtítulos**
+**Ó: Cómo evitar que se vean estirados los subtítulos**
 
-Los siguientes párrafos asumen que usted tiene un conocimiento práctico de lo que Qué es el video anamórfico y cómo funcionan las relaciones de aspecto. Si no está seguro, puede Quiero consultar a un [gentil pero bastante completo introducción](http://www.hometheaterhifi.com/volume_6_4/feature-article-enhanced-widescreen-november-99.html).
+Los siguientes párrafos suponen un conocimiento práctico de qué es el video anamórfico y de cómo funcionan las relaciones de aspecto. Si uno no está seguro, puede que quiera consultar una [introducción gradual pero bastante completa](http://www.hometheaterhifi.com/volume_6_4/feature-article-enhanced-widescreen-november-99.html).
 
 ### Estiramiento de imagen y rederizaje de subítulos
 
-Una imagen anamórfica debe ampliarse hasta alcanzar la relación de aspecto adecuada antes de se presenta al espectador. En una computadora, esto generalmente se hace mediante el video. renderizador, y por lo tanto radica un problema. La mayoría de los renderizadores de subtítulos (incluidos VSFilter, el renderizador "estándar" actual) dibuja los subtítulos en la imagen antes de que se estire, y dado que el renderizador no tiene conocimiento de ninguna relación de aspecto problemas, los subtítulos se ampliarán junto con la imagen cuando se reproduzca el video. se muestran al espectador y, por lo tanto, se verán estirados. Aegisub lo hace sus subtítulos también se representan de esta manera (ya que de esa manera será WYSIWYG con la mayoría de los jugadores); Puedes probar cómo se ve usando la opción "Anular relación de aspecto". en el menú de video.
+Una imagen anamórfica necesita ampliarse hasta alcanzar la relación de aspecto adecuada antes de presentarse al espectador. En una computadora, esto generalmente se hace mediante el renderizador de video, y aquí radica un problema. La mayoría de los renderizadores de subtítulos (incluido VSFilter, el actual renderizador "estándar") dibuja los subtítulos en la imagen antes de que se estire, y dado que el renderizador no tiene conocimiento de complicaciones por la relación de aspecto, los subtítulos se ampliarán juntos con la imagen cuando se reproduzca el video para el espectador y así se verán estirados. Aegisub renderiza sus subtítulos de esta manera también (ya que de esa manera será consistente con la mayoría de los reproductores); uno puede probar cómo se ve usando la opción "Anular relación de aspecto" en el menú de video.
 
 ### Compensar el estiramiento
 
-Afortunadamente es fácil compensar el estiramiento, ya que sabes por cómo cuánto se estirará la imagen (ya que conoces sus dimensiones originales y la relación de aspecto de la pantalla). Simplemente calcula cuánto porcentaje tendrá la imagen. estirarse en la dirección X o Y, y luego configure el ScaleX o el Parámetro ScaleY en [style]({{<relref path="Styles" lang="en">}}) (o use `\fscx` o
-`\fscy` [overrides]({{<relref path="ASS_Tags" lang="en">}})) en la misma cantidad pero en el otro dirección.
+Afortunadamente es fácil compensar el estiramiento, ya que se sabe cuánto se estirará la imagen (ya que se conocen sus dimensiones originales y la relación de aspecto de la pantalla). Calcule de qué porcentaje será la imagen estirada en la dirección X o Y, y luego fije el `ScaleX` o `ScaleY` en el [estilo]({{<relref path="Styles" lang="en">}}) (o use [etiquetas]({{<relref path="ASS_Tags" lang="en">}} `\fscx` o `\fscy`)) con la misma cantidad, pero de sentido contrario.
 
-Ejemplo: tenemos una imagen de 704x480 que sabemos que se mostrará en formato 16:9 (o 1,7777...:1). Si asumimos que el jugador estirará el ancho pero dejará el altura intacta, esto significa que el nuevo ancho será:
+Ejemplo: tenemos una imagen de 704x480 que sabemos que se mostrará en formato 16:9 (o 1.7777...:1). Si presumimos que el reproductor estirará el ancho y dejará intacto el alto, esto significa que el nuevo ancho será:
 
-```texto sin formato
+```plaintext
 (16/9) * 480 = 853.333...
 ```
 
-que en porcentaje es:
+cuyo porcentaje es:
 
-```texto sin formato
-853,333... / 704 = 1,212121...
+```plaintext
+853.333... / 704 = 1.212121...
 ```
 
-es decir, 121%. Por lo tanto, para compensar este estiramiento horizontal (dirección X) configure ScaleY en todos nuestros estilos al 121% para estirar los subtítulos en la misma proporción cantidad, y después de renderizarlos ya no se ven estirados.
+es decir, 121%. Por lo tanto, para compensar este estiramiento horizontal (dirección X) configuramos `ScaleY` en todos nuestros estilos al 121% para estirar los subtítulos por la misma cantidad, y después de renderizarlos ya no se verán estirados.
 
-**O** podemos hacer el estiramiento en la otra dirección, suponiendo que el En su lugar, el reproductor cambia la altura de la imagen. Asumiendo la misma imagen: 704 / (16 / 9) = 396
+**Ó** podemos hacer el estiramiento en la otra dirección, suponiendo que en su lugar el reproductor cambie el alto de la imagen. Usando la misma imagen: 
+704 / (16 / 9) = 396
 que corresponde a:
-396/480 = 0,825
-o 82,5%, lo que significa que podemos compensar la compresión vertical (Y) mediante configurando ScaleX al 82,5%.
+396/480 = 0.825
+o 82.5%, lo que significa que podemos compensar la compresión vertical (Y) fijando `ScaleX` en 82.5%.
 
 ### Advertencias
 
-Ambos métodos anteriores dan a los subtítulos la relación de aspecto adecuada, pero Dependiendo de cómo el jugador haga el estiramiento, es posible que obtengas variaciones sutiles. en tamaño de subtítulo. Aegisub (y de hecho la mayoría de los reproductores y renderizadores de video) siempre cambia el ancho de la imagen y nunca el alto, excepto si eliges el "personalizado" relación de aspecto y especificar una resolución. Tenga en cuenta que si utiliza Matroska contenedor, puede especificar la resolución de pantalla directamente, pero el soporte del reproductor de esto varía.
+Ambos métodos anteriores le dan a los subtítulos la relación de aspecto adecuada, pero eependiendo de cómo el reproductor haga el estiramiento, es posible que se vean variaciones sutiles del tamaño de subtítulos. Aegisub (y de hecho la mayoría de los reproductores y renderizadores de video) siempre cambia el ancho de la imagen y nunca el alto, excepto si se elige la relación de aspecto "personalizado" y especifica una resolución. Tenga en cuenta que si utiliza el contenedor Matroska, puede especificar la resolución de pantalla directamente, pero su compatibilidad con reproductores varía.
 
-Tenga en cuenta que algunos renderizadores de subtítulos extraños (sobre todo Media Player Classic) renderizador incorporado) son en realidad parte del renderizador de video y harán el renderizado de subtítulos _después_ del estiramiento anamórfico, lo que da como resultado un estiramiento subtítulos y mucha molestia. Con el renderizador libass de MPlayer, puedes realmente especificar si los subtítulos deben dibujarse antes o después de estirarlos usando el parámetro -vf para mover el renderizador de subtítulos en la cadena de filtros.
+Tenga en cuenta que algunos renderizadores de subtítulos extraños (sobre todo el renderizador incorporado de Media Player Classic) son en realidad parte del renderizador de video y que harán el renderizado de subtítulos _después_ del estiramiento anamórfico, lo que da como resultado un estiramiento de subtítulos y mucha frustración. Con el renderizador libass de MPlayer, puede de hecho especificar si los subtítulos deben dibujarse antes o después del estirado usando el parámetro `-vf` para mover el renderizador de subtítulos dentro de la cadena de filtros.
 
 ### Lectura continuada
 
-Para obtener más información sobre el video anamórfico y las relaciones de aspecto en general (un tema profundamente confuso que parece simple a simple vista) los siguientes enlaces puede ser de interés:
+Para obtener más información sobre el video anamórfico y las relaciones de aspecto en general (un tema profundamente confuso que a primera vista parece simple) los siguientes enlaces pueden ser de interés:
 
-- [Una guía rápida para la resolución y relación de aspecto de video digital
-   Conversiones](http://lipas.uwasa.fi/~f76998/video/conversion/) - Absolutamente
-   lectura esencial para cualquiera que quiera entender realmente el tema, pero
-   Desafortunadamente, mucho más que todo lo que la mayoría de la gente alguna vez quiso saber.
-   él.
-   [Widescreen.org: Aspecto
-   Ratios](http://www.widescreen.org/aspect_ratios.shtml) - la historia y
-   Razones para algunas relaciones de aspecto comunes.
+- [Una guía rápida a la resolución de video digital y la conversión de relaciones de aspecto](http://lipas.uwasa.fi/~f76998/video/conversion/) - Lectura absolutamente esencial para cualquiera que quiera entender realmente el tema, aunque desafortunadamente, mucho más que todo lo que la mayoría de la gente haya querido saber.
+- [Widescreen.org: Relaciones de aspecto](http://www.widescreen.org/aspect_ratios.shtml) - la historia y razones detrás de algunas relaciones de aspecto comunes.
 - [Wikipedia: Relación de aspecto (imagen)](<http://en.wikipedia.org/wiki/Aspect_ratio_(image)>)
-- [Wikipedia: pantalla ancha anamórfica] (http://en.wikipedia.org/wiki/Anamorphic_widescreen)
+- [Wikipedia: pantalla ancha anamórfica](http://en.wikipedia.org/wiki/Anamorphic_widescreen)
 
 ## El menú de video
 
