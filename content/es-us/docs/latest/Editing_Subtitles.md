@@ -6,7 +6,7 @@ menu:
 weight: 3000
 ---
 
-La edición de subtítulos es para qué sirve sirve Aegisub. Esta página trata de edición básica de renglones de subtítulos; para más información de tipografía de subtítulos, véase [tipografía]({{<relref path="Typesetting" lang="en">}}). Para más información acerca de cronometrar renglones de subtítulos, véase [trabajar con audio]({{<relref path="Audio" lang="en">}}).
+La edición de subtítulos es para qué sirve sirve Aegisub. Esta página trata de edición básica de renglones de subtítulos; para más información de tipografía de subtítulos, véase [tipografía]({{<relref path="Typesetting" lang="en">}}). Para más información acerca de cronometrar renglones de subtítulos, véase [trabajar con audio]({{<relref path="Audio">}}).
 
 ## Abrir subtitles
 
