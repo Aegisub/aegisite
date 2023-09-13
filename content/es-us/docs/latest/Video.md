@@ -31,12 +31,12 @@ en lugar de FFMS2. Al abrir a través de _Avisynth_, Aegisub probará varias fun
 
 `DSS2()`
 : Intenta buscar, cargar y utilizar el complemento DirectShowSource2 de Haali (viene
-   con el paquete [Haali Media Splitter](http://haali.cs.msu.ru/mkv/)
-   y con la [CCCP](http://cccp-project.net); el complemento Avisynth es
-   _avss.dll_, debe colocarse manualmente en algún lugar donde Aegisub o
-   Avisynth puede encontrarlo, vea más abajo). Eso a su vez intentará usar el entorno DirectShow de la computadora para abrir el archivo. En teoría cualquier archivo renderizable por DirectShow debe de ser compatible, pero como uno está a la merced de divisores y decodificadores de terceros, su experiencia puede variar.
-   Como regla general, si se puede reproducir en Windows Media Player, Aegisub
-   debe de poder cargarlo. Tenga en cuenta que DSS2 convierte archivos de velocidad de fotogramas variable en constante. Normalmente esto es lo que se quiere y espera. Pero si uno quiere hacer subtítulos VFR reales, no lo es.
+  con el paquete [Haali Media Splitter](http://haali.cs.msu.ru/mkv/)
+  y con la [CCCP](http://cccp-project.net); el complemento Avisynth es
+  _avss.dll_, debe colocarse manualmente en algún lugar donde Aegisub o
+  Avisynth puede encontrarlo, vea más abajo). Eso a su vez intentará usar el entorno DirectShow de la computadora para abrir el archivo. En teoría cualquier archivo renderizable por DirectShow debe de ser compatible, pero como uno está a la merced de divisores y decodificadores de terceros, su experiencia puede variar.
+  Como regla general, si se puede reproducir en Windows Media Player, Aegisub
+  debe de poder cargarlo. Tenga en cuenta que DSS2 convierte archivos de velocidad de fotogramas variable en constante. Normalmente esto es lo que se quiere y espera. Pero si uno quiere hacer subtítulos VFR reales, no lo es.
 
 `DirectShowSource()`
 : Usa DirectShowSource() (que se incluye con Avisynth) para intentar cargar el archivo. Básicamente es lo mismo que DSS2, pero mucho menos confiable y no converte VFR a CFR. Aviso: DSS es conocido por tener dificultad con saltos con precisión a fotograma. No lo use si se puede evitar.
@@ -55,14 +55,14 @@ Aegisub también permite proporcionar una superficie de video falsa sobre la que
 
 Resolución
 : La resolución del video de suplente en píxeles. Hay algunos
-   opciones predefinidas en el menú desplegable; también se puede especificar el tamaño uno mismo. Tenga en cuenta que, dado que el video de suplente es RGB, no hay restricciones particulares con respecto a anchos/altos impares.
+  opciones predefinidas en el menú desplegable; también se puede especificar el tamaño uno mismo. Tenga en cuenta que, dado que el video de suplente es RGB, no hay restricciones particulares con respecto a anchos/altos impares.
 
 Color
 : El color de la superficie del video. El color es sólido por defecto; enmarque la casilla "patrón tablero de ajedrez" si desea más variación.
 
 Fotogramas por segundo
 : Determina cuánto tiempo se muestra cada fotograma por configurar el número de
-   fotogramas por segundo (fps). Tenga en cuenta que de hecho es posible cargar códigos de tiempo VFR con video de suplente.
+  fotogramas por segundo (fps). Tenga en cuenta que de hecho es posible cargar códigos de tiempo VFR con video de suplente.
 
 Duración
 : La duración del video en fotogramas. Debajo de este número se muestra la duración resultante en horas/minutos/segundos.
@@ -184,92 +184,73 @@ Las siguientes opciones están disponibles desde el menú de video:
 
 ### Relacionado con archivo fuente
 
-Video abierto
-: Abre el video. Tenga en cuenta que si intenta abrir otro video con video
-   ya cargado, el video original se cerrará primero.
+Abrir video
+: Abre video. Tenga en cuenta que si intenta abrir otro video con video
+  ya cargado, el video original se cerrará primero.
 
 Cerrar video
-: descarga el video actualmente abierto.
+: Cierra el video actualmente abierto.
 
 Reciente
-: Muestra la lista de videos abiertos recientemente.
+: Enseña la lista de videos abiertos recientemente.
 
-Usar video ficticio
-: abre un video ficticio (ver arriba).
+Usar video suplente
+: Abre un video de suplente (véase arriba).
 
 Mostrar detalles del video
-: muestra información sobre el video actualmente abierto. Detalles mostrados
-   son nombre de archivo, cuadros por segundo (para archivos VFR el FPS promedio es
-   mostrado), resolución y relación de aspecto, longitud y decodificador. Descifrador
-   siendo qué filtro/método utilizó Aegisub para abrir el archivo.
+: Demuestra alguna información sobre el video actualmente abierto. Detalles mostrados son el nombre de archivo, cuadros/fotogramas por segundo (para archivos VFR, el FPS promedio), resolución y relación de aspecto, duración y decodificador. Decodificador siendo qué filtro/método utilizó Aegisub para abrir el archivo.
 
 ### Relacionado con códigos de tiempo
 
 Abrir archivo de códigos de tiempo
-: carga un archivo de códigos de tiempo y lo aplica al video, cambiando el
-   sincronización de video/subtítulos.
+: Carga un archivo de códigos de tiempo y lo aplica al video, cambiando la sincronización de video/subtítulos.
 
 Guardar archivo de códigos de tiempo
 : Guarda los códigos de tiempo actualmente cargados como un nuevo archivo de códigos de tiempo v2.
 
 Cerrar archivo de códigos de tiempo
-: descarga los códigos de tiempo actualmente cargados.
+: Quita los códigos de tiempo actualmente cargados.
 
 Reciente
-: muestra la lista de archivos de códigos de tiempo abiertos recientemente.
+: Muestra la lista de archivos de códigos de tiempo abiertos recientemente.
 
-### Relacionado con cuadros clave
+### Relacionado con fotogramas clave
 
 Abrir fotogramas clave
-: Carga datos de fotogramas clave del archivo proporcionado. Si ya tienes fotograma clave
-   datos cargados, serán reemplazados por los leídos del archivo.
+: Carga datos de fotogramas clave del archivo dado. Si ya tiene datos de fotograma clave cargados, serán reemplazados por los leídos del archivo.
 
 Guardar fotogramas clave
 : Guarda los datos de fotogramas clave actualmente cargados en un archivo de fotogramas clave.
 
 Cerrar fotogramas clave
-: descarga los datos del fotograma clave actualmente cargados, si los hay. Tenga en cuenta que es
-   No es posible descargar datos de fotogramas clave que se cargaron directamente desde el
-   archivo de video; Si quieres deshacerte de eso por alguna razón, carga un
-   archivo de fotogramas clave con solo el fotograma 0 marcado como fotograma clave.
+: Quita los datos de fotogramas clave actualmente cargados, si los hay. Tenga en cuenta que no es posible quitar datos de fotogramas clave que se cargaron directamente desde el archivo de video. Si quieres deshacerse de eso por alguna razón, cargue un archivo de fotogramas clave con solo el fotograma 0 marcado como fotograma clave.
 
 Reciente
-: muestra la lista de archivos de fotogramas clave cargados recientemente.
+: Enseña la lista de archivos de fotogramas clave cargados recientemente.
 
-### Relacionado con muestra
+### Relacionado con muestra/pantalla
 
-Separar video
-: Desconecta la pantalla de video y los controles relacionados del Aegisub principal
-   ventana y la mueve a su propia ventana. Para volver a adjuntar el video al
-   ventana principal, cierre la ventana separada. Esta característica puede ser
-   particularmente útil en configuraciones de múltiples monitores.
+Desconectar video
+: Desconecta la pantalla de video y los controles relacionados de la ventana de Aegisub principal y la mueve a su propia ventana. Para volver a adjuntar el video a la ventana principal, cierre la ventana separada. Esta característica puede ser particularmente útil en configuraciones de múltiples monitores.
 
 Establecer zoom
-: establece el nivel de zoom del video.
+: Establece el nivel de zoom del video.
 
-Anular relación de aspecto
-: amplía el video a la relación de aspecto especificada modificando el
-   ancho del video. Útil para video anamórfico (ver arriba).
+Especificar relación de aspecto
+: Estira el video a la relación de aspecto especificada modificando el
+  ancho del video. Útil para video anamórfico (véase arriba).
 
-Mostrar máscara de sobreexploración
-: Dibuja una "máscara" azul sobre la imagen, indicando los bordes de la
-   áreas seguras para acciones (azul oscuro) y títulos seguros (azul claro). Útil si
-   planeas mostrar tus subtítulos en un televisor sin sobreexploración ajustable
-   corrección. Para obtener más información, consulte las páginas de Wikipedia en
-   [sobreexploración](http://en.wikipedia.org/wiki/Overscan), [seguro
-   áreas](http://en.wikipedia.org/wiki/Safe_area) y [sobreexploración
-   cantidades](http://en.wikipedia.org/wiki/Overscan_amounts). Aegisub
-   sigue la [BBC
-   directrices](http://www.bbc.co.uk/guidelines/dq/pdf/tv/tv_standards_london.pdf)
-   sobre qué tan grandes deberían ser las áreas seguras.
+Mostrar capa de sobreescaneo/overscan
+: Dibuja una capa azul sobre la imagen, indicando las fronteras de las
+  zonas seguras para acciones (azul oscuro) y seguras para títulos (azul claro). Útil si piensa mostrar los subtítulos en un televisor sin correción de sobreescaneo ajustable. Para obtener más información, consulte las páginas de Wikipedia en [sobreescaneo](http://en.wikipedia.org/wiki/Overscan), [zonas seguras](http://en.wikipedia.org/wiki/Safe_area) y [cantidades de sobreescaneo](http://en.wikipedia.org/wiki/Overscan_amounts). Aegisub sigue las [recomendaciones BBC](http://www.bbc.co.uk/guidelines/dq/pdf/tv/tv_standards_london.pdf) con respecto a qué tan grandes deberían ser las zonas seguras.
 
 ### Relacionado con saltos
 
-saltar una
-: Busca el video en el tiempo o fotograma indicado.
+Saltar a
+: Salta en el video al tiempo o fotograma indicado.
 
 Saltar al inicio del video
-: Busca el video hasta la hora de inicio de la línea actualmente activa.
+: Salta el video hasta el inicio del renglón actualmente activo.
 
 Saltar al final del video
-: Busca el video hasta la hora de finalización de la línea actualmente activa.
+: Salta el video hasta el momento fin del renglón actualmente activo.

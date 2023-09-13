@@ -1,5 +1,5 @@
 ---
-title: Main Page
+title: Página de inicio
 menu:
   docs:
     parent: navigation
