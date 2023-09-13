@@ -62,70 +62,57 @@ Subtítulos con efectos añadidos (típicamente para karaoke) requieren mucho ti
 
 ## ¿Qué método elijo?
 
-El método que debes elegir depende en gran medida de tu audiencia. ¿Tendrán
-¿Dispositivos de reproducción relativamente nuevos y potentes? ¿Serán posiblemente capaces de
-¿Instalar algo para reproducir softsubs si no lo tienen? Es tuyo destino un formato digital (Matroska, DVD, etc.) o imprimirá en
-¿cinta?
+El método que debe elegir depende en gran medida de su audiencia. ¿Tendrán dispositivos de reproducción relativamente nuevos y potentes? ¿Serán posiblemente capaces de instalar algo para reproducir subs sueltos si no lo tienen? ¿Es su destino un formato digital (Matroska, DVD, etc.) o se imprimirá en cinta?
 
-Si bien cada situación será diferente, puedes utilizar algunos de los siguientes sugerencias para guiarte. Estos se basan en realizar un formato digital para reproducción en un sistema informático.
+Si bien cada situación será diferente, puede utilizar algunos de los siguientes sugerencias como guía. Estos se basan en realizar un formato digital para reproducción en una computadora.
 
 Si desea que su archivo se pueda reproducir en la mayor variedad de computadoras,
-sistemas y pequeños juguetes de plástico, querrás substituirlos.
+sistemas y pequeños juguetes de plástico, querrá incrustar.
 
-Si su audiencia se presentará en una plataforma donde su formato de subtítulos es Los softsubs con buen soporte son una buena idea.
+Si su audiencia se presentará en una plataforma donde su formato de subtítulos es bien compatible, subtitulado suelto es una buena idea.
 
-Si desea tener varios idiomas de subtítulos o si algunos de sus espectadores pueden No quiero tener subtítulos habilitados en absoluto, los softsubs son su única opción.
+Si desea tener varios idiomas de subtítulos o si algunos de sus espectadores pueden ni querer los subtítulos habilitados, los sueltos son su única opción.
 
-Si desea acelerar el proceso de lanzamiento, utilice softsubs. Son más rápidos para corregir si se encuentra un error y permitirle publicar tan pronto como se publiquen los subtítulos.
-hecho, en lugar de esperar unas horas hasta que se codifique el video.
+Si desea acelerar el proceso de lanzamiento, utilice subs sueltos. Son más rápidos para corregir si se encuentra un error y le permite publicar tan pronto como se terminen los subtítulos, en lugar de esperar unas horas hasta que se codifique el video.
 
 ## Hardsubbing con Avisynth
 
-Mucha gente usa el paquete Avisynth para agregar filtros a su video para limpiarlo.
-defectos o manipular de otro modo la imagen de video antes de codificarla. Es un Herramienta muy flexible y también se puede utilizar para agregar subtítulos directamente al video.
-Stream, lo que permite un método fácil y programable para substituir un video.
+Mucha gente usa la librería Avisynth para agregar filtros a su video para limpiarlo de defectos o manipular de otro modo la imagen de video antes de codificarla. Es una herramienta muy flexible y también se puede utilizar para agregar subtítulos directamente a la pista de video, lo que permite un método fácil y programable para substituir un video.
 
-Si no está familiarizado con Avisynth, le recomendamos que lo investigue.
-ya que tiene muchas características interesantes y una gran comunidad que contribuye con videos.
-filtros, lo que permite corregir videos fácilmente para cualquier fuente. Este tutorial asume que tener algunos conocimientos básicos de Avisynth.
+Si no está familiarizado con Avisynth, le recomendamos que lo investigue, ya que tiene muchas características interesantes y una gran comunidad que contribuye filtros de video, lo que permite corregir videos fácilmente de cualquier fuente. Este tutorial suponer que tenga algunos conocimientos básicos de Avisynth.
 
-Para permitir agregar subtítulos a la transmisión de video, tiene dos opciones: puede use VSFilter (incluido con Aegisub, en la carpeta "csri"), o puede usar
-[AssRender](http://srsfckn.biz/assrender/), que utiliza libass. La siguiente Las instrucciones asumen que está utilizando VSFilter.
+Para permitir agregar subtítulos a la pista de video, tiene dos opciones: puede usar VSFilter (incluido con Aegisub, en la carpeta "csri"), o puede usar
+[AssRender](http://srsfckn.biz/assrender/), que utiliza `libass`. Las siguientes instrucciones suponen que está utilizando VSFilter.
 
-Para simplemente agregar subtítulos, querrás crear un archivo AVS simple que contenga el líneas de guión que necesitas. Simplemente cree un archivo de texto sin formato en el bloc de notas (o en su editor de texto favorito) y guárdelo con la extensión .avs (tenga en cuenta que Windows Es posible que esté ocultando su extensión y que en realidad esté creando un .avs.txt.
-archivo). Aquí hay un ejemplo:
+Para simplemente agregar subtítulos, querrá crear un archivo AVS simple que contenga los renglones del guión que necesita. Empiece con un archivo de texto sin formato en el notepad (o en su editor de texto favorito) y guárdelo con la extensión `.avs` (tenga en cuenta que Windows quizá esté ocultando su extensión y que en realidad esté creando un archivo `.avs.txt`). Aquí hay un ejemplo:
 
-```texto sin formato
+```plaintext
 LoadPlugin("c:\archivos de programa\aegisub\csri\vsfilter.dll")
 AVISource("c:\proyectos\proyecto1\video\mycoolvideo.avi")
 TextSub("c:\proyectos\proyecto1\subs\mainsubtitles.ass")
 TextSub("c:\proyectos\proyecto1\subs\endkaraoke.ass")
 ```
 
-El script anterior tomará un archivo AVI (mycoolvideo.avi) y luego dibujará el Contenido de dos archivos de subtítulos en el video. Luego puedes codificar este video en cualquier programa que admita AVS, como [VirtualDub](http://www.virtualdub.org)
-o x264. Para hacerlo, simplemente abra el archivo .avs en el programa y siga las instrucciones procedimiento de codificación normal para ello.
+El script anterior toma un archivo AVI (`mycoolvideo.avi`) y luego dibuja el contenido de dos archivos de subtítulos en el video. Luego uno puede codificar este video en cualquier programa que admita AVS, como [VirtualDub](http://www.virtualdub.org) o `x264`. Para hacerlo, simplemente abra el archivo `.avs` en el programa y siga el procedimiento de codificación normal para ello.
 
-Tenga en cuenta que, debido a un error en VSFilter, la ruta a los archivos de subtítulos DEBE ser absoluto.
+Tenga en cuenta que, debido a un error en VSFilter, la ruta a los archivos de subtítulos **TIENE QUE** ser absoluto.
 
 ## Hardsubbing con VirtualDub
 
-Si ya está familiarizado con los filtros de VirtualDub y no tiene intención de hacer ninguno otro procesamiento de video, debe tener en cuenta que es posible usar VSFilter como Filtro VirtualDub también. Simplemente cambie el nombre del .dll a .vdf y cópielo en el Carpeta de complementos de VirtualDub. El filtro estará entonces disponible como "TextSub".
+Si ya está familiarizado con los filtros de VirtualDub y no tiene intención de hacer ningún otro procesamiento de video, debe tener en cuenta que es posible usar VSFilter como filtro para VirtualDub también. Simplemente cambie el nombre del `.dll` a `.vdf` y cópielo a la carpeta de complementos de VirtualDub. El filtro estará entonces disponible como "TextSub".
 
 **Advertencia**: VirtualDub viene con un TextSub propio, que se llama
-"Subtexto 2.23". Esta es una versión muy antigua que, entre muchas otras cuestiones,
-no puede analizar correctamente los archivos UTF-8 (la codificación Aegisub predeterminada). Esta voluntad provocar que los caracteres que no sean ASCII se representen como un galimatías. NUNCA USE ESTO FILTRAR.
+"TextSub 2.23". Esta es una versión muy antigua que, entre muchas otras cuestiones,
+no puede analizar correctamente los archivos UTF-8 (la codificación Aegisub predeterminada). Esto causará que los caracteres que no sean ASCII se rendericen como texto sin sentido. NUNCA USE ESTE FILTRO.
 
-## Substitución suave
+## Subítulos sueltos
 
-La substitución suave de un video se puede realizar de varias formas. En Windows usando DirectShow reproductor, como Media Player Classic, ZoomPlayer o incluso Windows Media Player,
-necesita VSFilter instalado para ver los subtítulos. Si usas MPlayer, necesitas libass y FontConfig compilados para ver correctamente todo el formato.
+El subtitulado suelto de un video se puede realizar de varias formas. En Windows usando un reproductor DirectShow, como Media Player Classic, ZoomPlayer o incluso Windows Media Player, necesita VSFilter instalado para ver los subtítulos. Si usa MPlayer, necesita `libass` y FontConfig compilados para ver correctamente todo el formateo.
 
-### Variante 1: softsubs dentro del contenedor de video
+### Variante 1: Sub suave dentro del contenedor de video
 
-Matroska Video (MKV) es actualmente el mejor contenedor para este método (MP4, OGM e incluso AVI técnicamente puede contener softsubs, pero ninguno admite fuentes archivos adjuntos, y todos ellos tienen varios otros problemas). Usando un muxer que admite archivos adjuntos (es decir, [mkvmerge GUI](http://www.bunkus.org/videotools/mkvtoolnix/)), simplemente agrega tu archivos de subtítulos al archivo Matroska como pistas separadas (al igual que agrega audio y pistas de video) y cualquier fuente como archivo adjunto (asegúrese de que tengan el formato MIME).
-escriba aplicación/x-truetype-font). Las fuentes se instalarán temporalmente por Haali Media Splitter (en Windows) o MPlayer (en \*nix y MacOS X) durante reproducción.
+Matroska Video (MKV) es actualmente el mejor contenedor para este método (MP4, OGM e incluso AVI técnicamente pueden contener subs sueltos, pero ninguno admite incluir archivos de fuentes tipográficos, y todos ellos tienen varios otros problemas). Usando un conmutador que admite archivos adjuntos (es decir, [mkvmerge GUI](http://www.bunkus.org/videotools/mkvtoolnix/)), simplemente agrega sus archivos de subtítulos al archivo Matroska como pistas separadas (al igual que agrega pistas de audio y de video) y cualquier fuente tipográfico como archivo adjunto (asegúrese de que tengan el formato MIME `aplicación/x-truetype-font`). Las fuentes se instalarán temporalmente por Haali Media Splitter (en Windows) o MPlayer (en \*nix y MacOS) durante la reproducción.
 
-### Variante 2: distribución de archivos de script
+### Variante 2: Distribución de archivos de guión
 
-Este método funciona mejor cuando desea codificar el video en un contenedor AVI. Tú
-simplemente envíe los archivos de subtítulos sin procesar junto con el video. El espectador necesita entonces para cargarlos en un reproductor que admita subtítulos externos. Al usar este método, debe asegurarse de utilizar fuentes que todos puedan usar Se espera que haya instalado o distribuido un archivo ZIP separado con el fuentes. Por razones obvias, no se recomienda este método.
+Este método funciona mejor cuando desea codificar el video en un contenedor AVI. Uno solo envía los archivos de subtítulos sin procesar junto con el video. El espectador necesita entonces cargarlos en un reproductor que admita subtítulos externos. Al usar este método, debe asegurarse de, o utilizar tipografías que todos hayan instalado, o distribuir un archivo ZIP separado con las tipografías. Por razones obvias, no se recomienda este método.
