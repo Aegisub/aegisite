@@ -3,7 +3,7 @@ title: ¿Qué es Aegisub?
 menu:
   docs:
     parent: introduction
-    name: What is Aegisub?
+    name: ¿Qué es Aegisub?
 weight: 2000
 ---
 
@@ -16,6 +16,6 @@ relacionadas con Aegisub) varias funciones esenciales, o tenían demasiados erro
 
 Desde entonces, Aegisub ha crecido hasta ser un editor de subtítulos completo y altamente
 personalizable. Goza de muchas herramientas convenientes para ayudar al sincronizar,
-formatear, editar y traducir subtítulos, además de un potente [ambiente de programación]({{< relref path="Automation" lang="en" >}}) llamado Automation (originalmente en gran
+formatear, editar y traducir subtítulos, además de un potente [ambiente de programación]({{<relref path="Automation" lang="en">}}) llamado Automation (originalmente en gran
 medida motivado hacia crear efectos karaoke, Automation ahora puede usarse para
 mucho más, incluyendo definición de macros y varias otras funciones útiles).
