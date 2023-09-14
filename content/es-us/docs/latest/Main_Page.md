@@ -14,10 +14,10 @@ Documentación relacionada con el desarrollo de Aegisub y con la compilación de
 
 [Resumen breve de Aegisub]({{<relref path="Overview">}})
 
-**Tares comunes:**
+**Tareas comunes:**
 
 - [Sincronizar un guión traducido al audio]({{<relref path="Audio">}})
-- [Typesetting básico de señales en pantalla]({{<relref path="Tutorials#visualtypesetting" lang="en">}})
+- [Composición tipográfica básica de señales en pantalla]({{<relref path="Tutorials#composición-tipográfica-visual">}})
 - [Poner subtítulos completados en el video]({{<relref path="Attaching_subtitles_to_video">}}) (para la reproducción o distribución)
 
 <!-- -->
@@ -27,5 +27,5 @@ Documentación relacionada con el desarrollo de Aegisub y con la compilación de
 
 <!-- -->
 
-- [Sincronizar karaoke con una canción]({{<relref path="Tutorials#karaoketiming" lang="en">}})
+- [Sincronizar karaoke con una canción]({{<relref path="Tutorials#sincronizador-kanji">}})
 - [Crear efectos al estilo karaoke]({{<relref path="Automation/Karaoke_Templater/Tutorial_1" lang="en">}})
