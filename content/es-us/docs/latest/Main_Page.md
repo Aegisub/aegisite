@@ -28,4 +28,4 @@ Documentación relacionada con el desarrollo de Aegisub y con la compilación de
 <!-- -->
 
 - [Sincronizar karaoke con una canción]({{<relref path="Tutorials#sincronizador-kanji">}})
-- [Crear efectos al estilo karaoke]({{<relref path="Automation/Karaoke_Templater/Tutorial_1" lang="en">}})
+- [Crear efectos al estilo karaoke]({{<relref path="Automation/Karaoke_Templater/Tutorial_1">}})
