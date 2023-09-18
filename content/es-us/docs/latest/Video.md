@@ -240,9 +240,9 @@ Especificar relación de aspecto
 : Estira el video a la relación de aspecto especificada modificando el
   ancho del video. Útil para video anamórfico (véase arriba).
 
-Mostrar capa de sobreescaneo/overscan
+Mostrar capa de sobredesviación/overscan
 : Dibuja una capa azul sobre la imagen, indicando las fronteras de las
-  zonas seguras para acciones (azul oscuro) y seguras para títulos (azul claro). Útil si piensa mostrar los subtítulos en un televisor sin correción de sobreescaneo ajustable. Para obtener más información, consulte las páginas de Wikipedia en [sobreescaneo](http://en.wikipedia.org/wiki/Overscan), [zonas seguras](http://en.wikipedia.org/wiki/Safe_area) y [cantidades de sobreescaneo](http://en.wikipedia.org/wiki/Overscan_amounts). Aegisub sigue las [recomendaciones BBC](http://www.bbc.co.uk/guidelines/dq/pdf/tv/tv_standards_london.pdf) con respecto a qué tan grandes deberían ser las zonas seguras.
+  zonas seguras para acciones (azul oscuro) y seguras para títulos (azul claro). Útil si piensa mostrar los subtítulos en un televisor sin correción de sobredesviación ajustable. Para obtener más información, consulte las páginas de Wikipedia en [sobredesviación](http://en.wikipedia.org/wiki/Overscan), [zonas seguras](http://en.wikipedia.org/wiki/Safe_area) y [cantidades de sobredesviación](http://en.wikipedia.org/wiki/Overscan_amounts). Aegisub sigue las [recomendaciones BBC](http://www.bbc.co.uk/guidelines/dq/pdf/tv/tv_standards_london.pdf) con respecto a qué tan grandes deberían ser las zonas seguras.
 
 ### Relacionado con saltos
 
