@@ -81,7 +81,7 @@ fields separated by commas. The fields are:
 - Filename of the script (e.g. "example.ass")
 - Shift amount and direction (e.g. "0:00:05.00 forward")
 - What times were affected, "s" for start, "e" for end, "s+e" for both
-- What rows were affected; "sel start-end" for selections, "all" for all
+  What rows were affected; "sel start-end" for selections, "all" for all
   rows (e.g. "sel 1-40")
 
 To load the settings from a history entry simply double-click it.

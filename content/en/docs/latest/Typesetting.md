@@ -41,7 +41,7 @@ so ease of recognition is vital. Some guidelines for good legibility:
   insist on serifs, "slab serif" fonts) are generally preferable, especially at
   low video resolutions, since the serifs tend get blurred out, which naturally
   looks bad. Too thin fonts are also to be avoided. Small caps fonts are bad
-  because the ascenders/descenders of <!--word missing--> help recognition of words. Using tried
+  because the ascenders/descenders of  help recognition of words. Using tried
   and trusted faces such as Helvetica, Arial or Verdana is not a bad thing; if
   you want something that looks less "boring" but still readable try a
   sans-serif font of the "humanist" variety, such as Calibri.

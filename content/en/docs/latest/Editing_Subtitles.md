@@ -158,7 +158,7 @@ Checking the Show Original box switches the edit box to the following mode:
 
 ![subs_edit_box_original](/img/3.2/subs_edit_box_original.png)
 
-The top half of the edit box is read-only, and shows the text that the currently
+The top half of the edit box is read-only, and show the text that the currently
 selected line had when it was first selected. This can be useful for
 translating subtitles into another language, or just for editing subtitles.
 
@@ -295,7 +295,7 @@ Split lines before current frame
 
 Split lines after current frame
 : As above, but it splits off the portion of the line after the current
-  frame rather than the portion before the current frame, for when doing
+  frame rather than the potion before the current frame, for when doing
   frame-by-frame typesetting from the last to the first frame of a line.
 
 Split (by karaoke)

@@ -27,7 +27,7 @@ at [the bug tracker](https://github.com/Aegisub/Aegisub/issues).
 <!-- -->
 
 - [Translating a subtitle file from one language to another]({{< relref "Translation_Assistant" >}})
-- [Correcting a subtitle that's not properly synchronised to the video]({{< relref "Fix_Timing_Tutorial" >}})<!--TODO replace w Shift_Times?-->
+- [Correcting a subtitle that's not properly synchronised to the video]({{< relref "Fix_Timing_Tutorial" >}})
 
 <!-- -->
 
