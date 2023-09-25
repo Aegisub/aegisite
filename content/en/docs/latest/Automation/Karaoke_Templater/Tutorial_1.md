@@ -39,7 +39,7 @@ lyrics yourself, or get someone else to do it. You can learn how to time
 karaoke at the [Karaoke_Timing_Tutorial]({{< relref "Karaoke_Timing_Tutorial" >}}).
 
 We'll call song lyrics with basic karaoke timing (\\k timing), but no other
-special effects, for _timed karaoke_. When an effect has been applied to the
+special effects, as _timed karaoke_. When an effect has been applied to the
 karaoke we'll call it _styled karaoke_.
 
 If you don't have any song to work with here are two lines from a song. You
