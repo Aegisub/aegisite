@@ -66,6 +66,9 @@ docs:
   - name: Otro
     weight: 700
     identifier: miscellaneous
+  - name: Tutoriales-automatización
+    weight: 800
+    identifier: automation-tutorials
 
 # docs-sidebar/downloads
 
