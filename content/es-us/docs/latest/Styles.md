@@ -1,5 +1,5 @@
 ---
-title: Editing styles
+title: Editar estilos
 menu:
   docs:
     parent: typesetting
@@ -7,7 +7,7 @@ weight: 4200
 ---
 
 Un **estilo** en formato ASS es un conjunto de reglas de formato tipográfico que se aplica a las líneas de diálogo. Los parámetros de estilo se pueden anular con
-[etiquetas manuales]({{<relref path="ASS_Tags" lang=en>}}); los estilos existen para que no hay que especificar todas las etiquetas en cada línea.
+[etiquetas manuales]({{<relref path="ASS_Tags" lang="en">}}); los estilos existen para que no hay que especificar todas las etiquetas en cada línea.
 
 ## El gestor de estilos
 
@@ -68,7 +68,7 @@ Colores
 
    **Secundario:**
    Color de relleno secundario, utilizado para efectos de karaoke (consulte `\k` y sus
-   familiares en la [página de anulación de etiquetas]({{< relref "ASS_Tags#karaokeeffect" >}})).
+   familiares en la [página de anulación de etiquetas]({{<relref path="ASS_Tags#karaokeeffect" lang="en">}})).
 
    **Contorno:**
    El color del borde del texto.
@@ -78,13 +78,13 @@ Colores
    compensado por el ancho de la sombra definido a la derecha.
 
    Los cuatro cuadros de colores le muestran el color actual de cada uno de los cuatro textos.
-   colores; al hacer clic en ellos se abre el [selector de color]({{< relref "Colour_Picker" >}}).
+   colores; al hacer clic en ellos se abre el [selector de color]({{<relref path="Colour_Picker" lang="en">}}).
 
 Márgenes
 : controla qué tan cerca de los bordes del cuadro de video estará el texto.
    posicionado (y por lo tanto también cuando se activará el salto de línea automático; pero no
    tenga en cuenta que no hay opción para la justificación del texto). Cada valor (izquierda, derecha,
-   vertical) se proporciona en píxeles de resolución de secuencia de comandos (consulte [propiedades de secuencia de comandos] ({{< relref "Propiedades" >}})). Para alineaciones (`\an`) 1-3, el margen vertical es
+   vertical) se proporciona en píxeles de resolución de secuencia de comandos (consulte [propiedades de secuencia de comandos] ({{<relref path="Properties" lang="en">}})). Para alineaciones (`\an`) 1-3, el margen vertical es
    relativo a la parte inferior del cuadro de video; para 4-6 no tiene ningún significado,
    y para 7-9 es relativo a la parte superior del cuadro de video.
 
@@ -101,7 +101,7 @@ Describir
 : Controla el grosor (y el estilo) del contorno (borde) y el desplazamiento de la sombra.
 
    - Para el contorno, el número es el grosor del borde en píxeles de escritura
-     si ScaledBorderAndShadow está habilitado (consulte [propiedades del script]({{< relref "Propiedades" >}}));
+     si ScaledBorderAndShadow está habilitado (consulte [propiedades del script]({{<relref path="Properties" lang="en">}}));
      si está deshabilitado el espesor se da en píxeles de video en cambio. Configuración
      si se pone a 0 se desactiva el contorno.
    - La sombra, por otro lado, es una copia del texto principal, desplazada hacia abajo y
@@ -127,7 +127,7 @@ Misceláneas
    : controla la rotación del texto. El valor es el ángulo de rotación en
      grados (360 grados a un círculo completo) y puede ser negativo o mayor que
      360 (establecerlo en 360, 720, etc. es lo mismo que configurarlo en 0, excepto por
-     cuando [transformaciones animadas]({{< relref "ASS_Tags#animatedtransform" >}}) están involucradas).
+     cuando [transformaciones animadas]({{<relref path="ASS_Tags#animatedtransform" lang="en">}}) están involucradas).
 
    Espaciado:
    : Controla el espacio horizontal entre letras. 0 significa la fuente
