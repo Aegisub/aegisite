@@ -77,26 +77,27 @@ Alineación
 : Controla la alineación del texto. Los números corresponden a los argumentos a la etiqueta `\an`. Las alineaciones 1, 4 y 7 están al ras a la izquierda; 3, 6 y 9 están al ras a la derecha; 2, 5 y 8 están centrados. 1, 2 y 3 son "subtítulos" (es decir, dibujados abajo en el marco); 4, 5 y 6 son "títulos intermedios" (es decir, centrados verticalmente en el marco); 7, 8 y 9 son "sobretítulos" (es decir, dibujados arriba en el marco). Tenga en cuenta que no existe tal cosa como la alineación justificada; esta es una limitación del formato.
 
 Contorno
-: Controla el grosor (y el estilo) del contorno (borde) y el desplazamiento de la sombra. <!--avance traducción-->
+: Controla el grosor (y el estilo) del contorno (borde) y el desplazamiento de la sombra.
 
-   - Para el contorno, el número es el grosor del borde en píxeles de escritura si ScaledBorderAndShadow está habilitado (consulte [propiedades del guión]({{<relref path="Properties" lang="en">}})); si está deshabilitado el espesor se da en píxeles de video en cambio. Configuración si se pone a 0 se desactiva el contorno.
-   - La sombra, por otro lado, es una copia del texto principal, desplazada hacia abajo y hacia la derecha la distancia especificada. La distancia está en píxeles de escritura si ScaledBorderAndShadow está habilitado y, en caso contrario, los píxeles de vídeo. Configurarlo en 0 desactiva la sombra.
-   - Finalmente, la casilla de verificación marcada como "Cuadro opaco" controla si el contorno debe dibujarse como se describe arriba (lo que sucede si no está marcado), o reemplazado por un cuadro delimitador de fondo opaco. Tenga en cuenta que la representación de Los contornos de los cuadros opacos se rompen cuando la escala de fuente es diferente a 100%.
+   - Para el contorno, el número es el grosor del borde en píxeles de guión si ScaledBorderAndShadow está habilitado (consulte [propiedades del guión]({{<relref path="Properties" lang="en">}})); si está deshabilitado el grosor se da en píxeles de video en cambio. Fijarlo en 0 desactiva el contorno.
+   - La sombra, por otro lado, es una copia del texto principal, desplazada hacia abajo derecha por la distancia especificada. La distancia está en píxeles de guión si ScaledBorderAndShadow está habilitado y, en caso contrario, en píxeles de vídeo. Fijarlo en 0 desactiva la sombra.
+   - Finalmente, la casilla de opción etiquetada como "Cuadro opaco" controla si el contorno debe dibujarse como se describe arriba (lo que sucede si no está habilitada), o reemplazado por un cuadro delimitador de fondo opaco. Tenga en cuenta que la representación de los contornos de cuadros opacos se quiebra cuando la escala de fuente es diferente a 100%.
 
 Otro
-: Esta sección tiene varios otros parámetros, a saber:
+: Esta sección tiene varios otros parámetros enumerados:
 
    Escala X/Y
-   : controla el texto que se extiende en dirección horizontal (X) y vertical (Y) respectivamente. El valor se da en porcentaje, por lo que 100 significa que no se realiza ningún estiramiento. hecho. No deberías usar esto para el tamaño de texto normal; utilizar el valor del punto en el área Fuente, ya que utiliza información de sugerencias de la fuente.
+   : Controla el estirado del texto en dirección horizontal (X) y vertical (Y) respectivamente. El valor se da como porcentaje, así que 100 significa que no se estira nada. No se debería usar esto para el ajuste de tamaño de texto; utilice mejor el valor de punto en la zona Fuente, ya que ese utiliza información indicativa de la fuente misma.
 
    Rotación
-   : controla la rotación del texto. El valor es el ángulo de rotación en grados (360 grados a un círculo completo) y puede ser negativo o mayor que 360 (establecerlo en 360, 720, etc. es lo mismo que configurarlo en 0, excepto por cuando [transformaciones animadas]({{<relref path="ASS_Tags#animatedtransform" lang="en">}}) están involucradas).
+   : Controla la rotación del texto. El valor es el ángulo de rotación en grados (360 grados en un círculo completo) y puede ser negativo o mayor que 360 (establecerlo en 360, 720, etc. es lo mismo que configurarlo en 0, excepto por cuando están involucradas las [transformaciones animadas]({{<relref path="ASS_Tags#animatedtransform" lang="en">}})).
 
    Espaciado:
-   : Controla el espacio horizontal entre letras. 0 significa la fuente Se utilizan los valores predeterminados. Puede ser negativo para menos espacio o positivo para más. El valor es el espacio adicional en píxeles entre cada carácter; si estos son píxeles de secuencia de comandos o píxeles de video que no están bien definidos.
+   : Controla el espacio horizontal entre letras. 0 significa que se usan los valores predeterminados del tipo de letra. Puede ser negativo para menos espacio o positivo para más. El valor es la brecha adicional en píxeles entre cada carácter; si estos son píxeles de guión o píxeles de video no está definido con precisión.
 
    Codificación:
-   : controla qué página de códigos se utiliza para asignar puntos de código a glifos; Tiene nada que ver con la codificación de texto real del guión. Esto es sólo significativo en Windows usando VSFilter, donde se usa para obtener algunos elementos antiguos fuentes (particularmente japonesas) sin asignaciones Unicode adecuadas para renderizar adecuadamente. En otros sistemas y renderizadores, Freetype2 proporciona la solución adecuada. mapeos. Si no entendiste una palabra de lo anterior, finge esto La configuración no existe, ya que rara vez es importante.
+   : Controla qué página de códigos se utiliza para mapear puntos de código a glifos. No tiene nada que ver con la codificación de texto del guión. Esto es sólo significativo en Windows usando VSFilter, donde se usa para que algunas fuentes antiguas (particularmente japonesas) sin asignaciones Unicode debidas se rendericen adecuadamente. En otros sistemas y renderizadores, Freetype2 proporciona el mapeo adecuado. Si no entendió ni una palabra de lo anterior, finja como que esta configuración no exista, ya que rara vez es importante.
 
-   Avance:
-   : Muestra una vista previa de cómo se verá el texto usando el estilo actual parámetros. El campo de texto le permite ingresar texto de muestra para obtener una vista previa y el cuadro coloreado controla el color del fondo.
+   Vista previa:
+   : Muestra una vista previa de cómo se verá el texto usando los parámetros de estilo actuales. El campo de texto le permite ingresar texto de muestra para ensayar de vista previa y el cuadro coloreado controla el color de fondo.
+   
