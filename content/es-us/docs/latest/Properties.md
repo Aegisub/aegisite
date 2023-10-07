@@ -6,24 +6,22 @@ menu:
 weight: 7300
 ---
 
-The **script properties** are some headers and other options that affect the
-entire script in various ways. They can be accessed from the _File menu_ ->
-_Properties_.
+Las **propiedades de guión** son unas cabeceras y otras opciones que afectan el guión entero de varias maneras. Se pueden acceder a través del menú _Archivo_ -> _Propiedades_.
 
-![Properties](/img/3.2/Properties.png#center)
+![Propiedades](/img/3.2/Properties.png#center)
 
-The properties are:
+Las propiedades son:
 
-- **Title**, **Original script**, **Translation**, **Editing**, **Timing**, **Synch point**, **Updated by** and **Update details** - These are for informational purposes only and do not affect rendering in any way. Set them to appropriate values if you find them useful.
+- **Título**, **Guión original**, **Traducción**, **Edición**, **Sicronización**, **Punto de sinc**, **Cambiado por** y **Detalles de cambios** - Estas son solo de propósitos informacionales y no afectan el renderizado de ninguna manera. Fíjelas en valores apropiados si a uno le parecen útiles.
 
-- **Resolution**, **YCbCr Matrix**, **Scale border and shadow** - See the [Script Resolution]({{<relref path="Script_Resolution" lang="en">}}) page for the meaning of these fields.
+- **Resolución**, **Matriz YCbCr**, **Escala de contorno y sombra** - Consulte la página [Resolución de guión]({{<relref path="Script_Resolution" lang="en">}}) para el significado de estas opciones.
 
-- **Wrap style** - Controls how the subtitle renderer will break lines that are too long to fit on one line. The modes are:
+- **Estilo de salto** - Controla cómo el renderizador de subtítulos mete saltos en renglones demasiado largos como para caber en una sola línea. Los modos son:
 
-  - 0 - The default mode. "Smart" wrapping; if a line is too long to fit on a line by itself, breaks it into two roughly evenly long lines, but prefers the top line to be wider. `\N` (note capital N) can be used to insert a manual linebreak.
-  - 1 - Inserts a linebreak when the line reaches the edges of the frame (minus margins); i.e. if it's just one word too long to fit on a line by itself, you get the last word all by itself on the bottom line. Almost never useful. As with 0, `\N` can be used for manual linebreaks.
-  - 2 - No automatic linewrapping at all; if a line is too long to fit inside the video frame, it will just continue outside the frame. `\n` and `\N` can be used to insert manual linebreaks.
-  - 3 - Same as mode 0, but prefers the bottom line to be wider. Note that for a long time VSFilter's implementation of this was buggy and would sometimes insert extra blank lines or have lines with a single word on them.
+  - 0 - El modo por defecto. Salto "inteligente"; si un renglón es demasiado largo como para caber en una línea por sí sola, se divide en dos líneas más o menos uniformes, pero prefiere que la línea superior sea más ancha. `\N` (N mayúscula) se puede usar para insertar un salto de línea manual.
+  - 1 - Inserta un salto de línea cuando el renglón llega a los bordes del marco (menos márgenes); es decir, si es solo una palabra demasiado larga para caber en una línea por sí sola, la última palabra se baja sola a la línea inferior. Casi nunca es útil. Al igual que con 0, `\N` se puede utilizar para saltos de línea manuales.
+  - 2 - Sin ajuste de línea automático; si un renglón es demasiado largo para caber dentro del marco del video, simplemente continuará fuera del marco. `\n` y `\N` se pueden usar para insertar saltos de línea manuales.
+  - 3 - Igual que el modo 0, pero prefiere que la línea inferior sea más ancha. Tenga en cuenta que durante mucho tiempo la implementación de esto por parte de VSFilter tuvo errores y, a veces, insertaba líneas en blanco adicionales o tenía líneas con una sola palabra.
 
-The wrapping mode should almost always be zero.
-Mode two is sometimes useful for long lines which are scrolled or manually line-broken, but should be set on a per-line basis with the [\\q]({{<relref path="ASS_Tags#\\q" lang="en">}}) tag.
+El modo de salto debería ser 0 siempre.
+Modo 2 a veces es útil para renglones largos que se deslizan con animación o tienen saltos manuales, pero es mejor ajustarlo a nivel renglón con la etiqueta [\\q]({{<relref path="ASS_Tags#\\q" lang="en">}}).
