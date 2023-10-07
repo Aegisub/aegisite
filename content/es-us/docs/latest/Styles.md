@@ -71,7 +71,7 @@ Colores
    Los cuatro cuadros de colores le muestran el color actual de cada uno de los cuatro colores de texto; al hacer clic en ellos se abre el [selector de color]({{<relref path="Colour_Picker" lang="en">}}).
 
 Márgenes
-: Controla qué tan cerca de los bordes del marco de video estará el texto posicionado (y por lo tanto también cuándo se activará el salto de línea automático; pero tenga en cuenta que no hay opción para la justificación del texto). Cada valor (izquierda, derecha, vertical) se proporciona en píxeles de resolución de guión (consulte [propiedades de guión] ({{<relref path="Properties" lang="en">}})). Para alineaciones (`\an`) 1-3, el margen vertical es relativo al pie del marco de video; para 4-6 no tiene ningún significado, y para 7-9 es relativo a la cima del marco de video.
+: Controla qué tan cerca de los bordes del marco de video estará el texto posicionado (y por lo tanto también cuándo se activará el salto de línea automático; pero tenga en cuenta que no hay opción para la justificación del texto). Cada valor (izquierda, derecha, vertical) se proporciona en píxeles de resolución de guión (consulte [propiedades de guión] ({{<relref path="Properties">}})). Para alineaciones (`\an`) 1-3, el margen vertical es relativo al pie del marco de video; para 4-6 no tiene ningún significado, y para 7-9 es relativo a la cima del marco de video.
 
 Alineación
 : Controla la alineación del texto. Los números corresponden a los argumentos a la etiqueta `\an`. Las alineaciones 1, 4 y 7 están al ras a la izquierda; 3, 6 y 9 están al ras a la derecha; 2, 5 y 8 están centrados. 1, 2 y 3 son "subtítulos" (es decir, dibujados abajo en el marco); 4, 5 y 6 son "títulos intermedios" (es decir, centrados verticalmente en el marco); 7, 8 y 9 son "sobretítulos" (es decir, dibujados arriba en el marco). Tenga en cuenta que no existe tal cosa como la alineación justificada; esta es una limitación del formato.
@@ -79,7 +79,7 @@ Alineación
 Contorno
 : Controla el grosor (y el estilo) del contorno (borde) y el desplazamiento de la sombra.
 
-   - Para el contorno, el número es el grosor del borde en píxeles de guión si ScaledBorderAndShadow está habilitado (consulte [propiedades del guión]({{<relref path="Properties" lang="en">}})); si está deshabilitado el grosor se da en píxeles de video en cambio. Fijarlo en 0 desactiva el contorno.
+   - Para el contorno, el número es el grosor del borde en píxeles de guión si ScaledBorderAndShadow está habilitado (consulte [propiedades del guión]({{<relref path="Properties">}})); si está deshabilitado el grosor se da en píxeles de video en cambio. Fijarlo en 0 desactiva el contorno.
    - La sombra, por otro lado, es una copia del texto principal, desplazada hacia abajo derecha por la distancia especificada. La distancia está en píxeles de guión si ScaledBorderAndShadow está habilitado y, en caso contrario, en píxeles de vídeo. Fijarlo en 0 desactiva la sombra.
    - Finalmente, la casilla de opción etiquetada como "Cuadro opaco" controla si el contorno debe dibujarse como se describe arriba (lo que sucede si no está habilitada), o reemplazado por un cuadro delimitador de fondo opaco. Tenga en cuenta que la representación de los contornos de cuadros opacos se quiebra cuando la escala de fuente es diferente a 100%.
 

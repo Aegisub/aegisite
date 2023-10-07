@@ -46,7 +46,7 @@ Para finalizar, hay tres barras en el programa: la **barra estátus** se usa par
 - [Asistente de traducción]({{<relref path="Translation_Assistant">}})
 - [Pegar encima]({{<relref path="Paste_Over" lang="en">}})
 - [Seleccionar renglones]({{<relref path="Select_Lines" lang="en">}})
-- [Gestor de estilos]({{<relref path="Styles" lang="en">}})
+- [Gestor de estilos]({{<relref path="Styles">}})
 - [Seleccionar color]({{<relref path="Colour_Picker" lang="en">}})
 - [Asistente de estilos]({{<relref path="Styling_Assistant" lang="en">}})
 - [Remuestreo de resolución]({{<relref path="Resolution_Resampler" lang="en">}})
@@ -56,7 +56,7 @@ Para finalizar, hay tres barras en el programa: la **barra estátus** se usa par
 - [Sincronizador Kanji]({{<relref path="Kanji_Timer" lang="en">}})
 - [Gestor de automatización]({{<relref path="Automation" lang="en">}})
 - [Opciones]({{<relref path="Options" lang="en">}})
-- [Propiedades de script]({{<relref path="Properties" lang="en">}})
+- [Propiedades de script]({{<relref path="Properties">}})
 - [Gestor de archivos adjuntos]({{<relref path="Attachment_Manager" lang="en">}})
 
 <div></div>

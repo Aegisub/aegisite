@@ -5,7 +5,7 @@ menu:
     parent: typesetting
 weight: 4400
 ---
-
+<!--avance traducción -->
 The following is a list of every tag supported by the Advanced Substation
 Alpha format. This is basically a detailed version of ass-quickref.txt. See
 the [tutorial]({{<relref path="Visual_Typesetting" lang="en">}}) for an introduction to typesetting,
@@ -124,7 +124,7 @@ the following text and `\s0` to disable strikeout again.
 Change the width of the border around the text. Set the size to 0 (zero) to
 disable the border entirely.
 
-If "scale border and shadow" (see [script properties]({{<relref path="Properties" lang="en">}})) is
+If "scale border and shadow" (see [script properties]({{<relref path="Properties">}})) is
 enabled, the value is given in script resolution pixels, otherwise it is given
 in video resolution pixels (which means the border thickness will vary
 depending on the resolution of the video on which the subtitles are rendered.)
@@ -428,7 +428,7 @@ Some common font encoding IDs are:
 
 {{<todo>}}Is that really correct? {{</todo>}}
 
-A more complete list can be seen the [style editor]({{<relref path="Styles#thestyleeditor" lang="en">}})
+A more complete list can be seen the [style editor]({{<relref path="Styles#eleditordeestilo">}})
 dialog box.
 
 In ASS files stored in non-Unicode encodings, this tag also affects what

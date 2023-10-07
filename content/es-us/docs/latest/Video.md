@@ -141,7 +141,7 @@ Una imagen anamórfica necesita ampliarse hasta alcanzar la relación de aspecto
 
 ### Compensar el estiramiento
 
-Afortunadamente es fácil compensar el estiramiento, ya que se sabe cuánto se estirará la imagen (ya que se conocen sus dimensiones originales y la relación de aspecto de la pantalla). Calcule de qué porcentaje será la imagen estirada en la dirección X o Y, y luego fije el `ScaleX` o `ScaleY` en el [estilo]({{<relref path="Styles" lang="en">}}) (o use [etiquetas]({{<relref path="ASS_Tags" lang="en">}} `\fscx` o `\fscy`)) con la misma cantidad, pero de sentido contrario.
+Afortunadamente es fácil compensar el estiramiento, ya que se sabe cuánto se estirará la imagen (ya que se conocen sus dimensiones originales y la relación de aspecto de la pantalla). Calcule de qué porcentaje será la imagen estirada en la dirección X o Y, y luego fije el `ScaleX` o `ScaleY` en el [estilo]({{<relref path="Styles">}}) (o use [etiquetas]({{<relref path="ASS_Tags" lang="en">}} `\fscx` o `\fscy`)) con la misma cantidad, pero de sentido contrario.
 
 Ejemplo: tenemos una imagen de 704x480 que sabemos que se mostrará en formato 16:9 (o 1.7777...:1). Si presumimos que el reproductor estirará el ancho y dejará intacto el alto, esto significa que el nuevo ancho será:
 
