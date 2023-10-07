@@ -37,7 +37,7 @@ La composición tipográfica de carteles (traducir varios textos de fondo) gener
 
 - ¿Es el cartel realmente importante para la trama? Tratar de traducir cada fragmento de texto que aparece en la pantalla vuelve loco en seguida a cualquiera, y el resultado final a menudo será ilegible de todas formas.
 - Con frecuencia, el texto de un cartel importante para la trama (como una carta) es en realidad leído en voz alta con el diálogo. Si este es el caso debería considerar omitir el subtitulado esa cartel porque tener texto y diálogo puede sobrecargar al espectador de información. No se debe componer un cartel sólo para demostrar que uno es capaz de hacerlo.
-- ¿Podrá hacer que la traducción sea fácilmente legible? Por ejemplo, si tiene muy poco espacio disponible para acomodarlo, considere colocar una nota de traducción como un título superior ¿"sobretítulo"? normal en su lugar.
+- ¿Podrá hacer que la traducción sea fácilmente legible? Por ejemplo, si tiene muy poco espacio disponible para acomodarlo, considere colocar una nota de traducción como un título superior "sobretítulo" normal en su lugar.
 
 {{<todo>}}imágenes {{</todo>}}
 

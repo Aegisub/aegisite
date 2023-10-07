@@ -41,52 +41,45 @@ Al presionar Ctrl-C en el gestor de estilos se copiarán los estilos seleccionad
 
 ## El editor de estilo
 
-Al presionar el botón "Editar" o hacer doble clic en el nombre de un estilo, aparecerá el editor de estilo, que le permite modificar todos los parámetros disponibles. **Ojo**: algunos los parámetros que están disponibles como etiquetas manuales (ej. `\be`) _no_ están disponibles como parámetros de estilo; por la otra mano, algunos parámetros que están disponibles en el editor de estilos (ej. la opción de contorno "cuadro opaco") _no_ están disponibles para etiquetas manuales. Este es una desafortunada y a veces molesta limitación del formato.
+Al presionar el botón "Editar" o hacer doble clic en el nombre de un estilo, aparecerá el editor de estilo, que le permite modificar todos los parámetros disponibles. **Ojo**: algunos de los parámetros que están disponibles como etiquetas manuales (ej. `\be`) _no_ están disponibles como parámetros de estilo; por la otra mano, algunos parámetros que están disponibles en el editor de estilos (ej. la opción de contorno "cuadro opaco") _no_ están disponibles para etiquetas manuales. Este es una desafortunada y a veces molesta limitación del formato.
 
 Volviendo al editor de estilos:
 
 ![Editor de estilos](/img/3.2/Style_editor.png#center)
 
 Nombre de estilo
-: El nombre del estilo. No puedes tener dos estilos con el mismo nombre en el mismo guión.
+: El nombre del estilo. No se puede tener dos estilos con el mismo nombre en el mismo guión.
 
 Fuente
-: Esta sección controla la configuración de fuente. El menú desplegable le permite elegir el tipo de letra (cualquier fuente instalada en su sistema aparecerá en esta lista) y el número de la derecha controla el tamaño en puntos. Las casillas de verificación a continuación configuran los parámetros negrita/cursiva/subrayado/tachado.
+: Esta sección controla la configuración de fuente tipográfica. El menú desplegable le permite elegir el tipo de letra (cualquier fuente instalada en su sistema aparecerá en esta lista) y el número de la derecha controla el tamaño en puntos. Las casillas de opciones abajo configuran los parámetros negrita/cursiva/subrayado/tachado.
 
 Colores
-: Esto controla los cuatro colores del texto (primario, secundario, contorno y sombra).
-   El significado de cada uno de ellos es el siguiente:
+: Esto controla los cuatro colores del texto (primario, secundario, contorno y sombra). El significado de cada uno de ellos es el siguiente:
 
    **Primario:**
    El color principal de "relleno" del cuerpo del texto.
 
    **Secundario:**
-   Color de relleno secundario, utilizado para efectos de karaoke (consulte `\k` y sus familiares en la [página de anulación de etiquetas]({{<relref path="ASS_Tags#karaokeeffect" lang="en">}})).
+   Color de relleno secundario, utilizado para efectos de karaoke (consulte `\k` y sus parecidos en la [página de etiquetas manuales]({{<relref path="ASS_Tags#karaokeeffect" lang="en">}})).
 
    **Contorno:**
    El color del borde del texto.
 
    **Sombra**
-   El color de la sombra, que se muestra debajo del texto principal y compensado por el ancho de la sombra definido a la derecha.
+   El color de la sombra, que se muestra debajo del texto principal y desplazado por el ancho de la sombra definido a la derecha.
 
-   Los cuatro cuadros de colores le muestran el color actual de cada uno de los cuatro textos.
-   colores; al hacer clic en ellos se abre el [selector de color]({{<relref path="Colour_Picker" lang="en">}}).
+   Los cuatro cuadros de colores le muestran el color actual de cada uno de los cuatro colores de texto; al hacer clic en ellos se abre el [selector de color]({{<relref path="Colour_Picker" lang="en">}}).
 
 Márgenes
-: controla qué tan cerca de los bordes del cuadro de video estará el texto.
-   posicionado (y por lo tanto también cuando se activará el salto de línea automático; pero no tenga en cuenta que no hay opción para la justificación del texto). Cada valor (izquierda, derecha,
-   vertical) se proporciona en píxeles de resolución de secuencia de comandos (consulte [propiedades de secuencia de comandos] ({{<relref path="Properties" lang="en">}})). Para alineaciones (`\an`) 1-3, el margen vertical es relativo a la parte inferior del cuadro de video; para 4-6 no tiene ningún significado,
-   y para 7-9 es relativo a la parte superior del cuadro de video.
+: Controla qué tan cerca de los bordes del marco de video estará el texto posicionado (y por lo tanto también cuándo se activará el salto de línea automático; pero tenga en cuenta que no hay opción para la justificación del texto). Cada valor (izquierda, derecha, vertical) se proporciona en píxeles de resolución de guión (consulte [propiedades de guión] ({{<relref path="Properties" lang="en">}})). Para alineaciones (`\an`) 1-3, el margen vertical es relativo al pie del marco de video; para 4-6 no tiene ningún significado, y para 7-9 es relativo a la cima del marco de video.
 
 Alineación
-: Controla la alineación del texto. Los números corresponden a los argumentos.
-   a la etiqueta `\an`. Las alineaciones 1, 4 y 7 están al ras a la izquierda; 3, 6 y 9 están al ras bien; 2, 5 y 8 están centrados. 1, 2 y 3 son "subtítulos" (es decir, dibujados en el parte inferior del marco); 4, 5 y 6 son "títulos intermedios" (es decir, ingresados verticalmente en el marco); 7, 8 y 9 son "títulos principales" (es decir, dibujados en la parte superior del cuadro). Hacer tenga en cuenta que no existe una alineación justificada; este es un formato limitación.
+: Controla la alineación del texto. Los números corresponden a los argumentos a la etiqueta `\an`. Las alineaciones 1, 4 y 7 están al ras a la izquierda; 3, 6 y 9 están al ras a la derecha; 2, 5 y 8 están centrados. 1, 2 y 3 son "subtítulos" (es decir, dibujados abajo en el marco); 4, 5 y 6 son "títulos intermedios" (es decir, centrados verticalmente en el marco); 7, 8 y 9 son "sobretítulos" (es decir, dibujados arriba en el marco). Tenga en cuenta que no existe tal cosa como la alineación justificada; esta es una limitación del formato.
 
 Contorno
-: Controla el grosor (y el estilo) del contorno (borde) y el desplazamiento de la sombra.
+: Controla el grosor (y el estilo) del contorno (borde) y el desplazamiento de la sombra. <!--avance traducción-->
 
-   - Para el contorno, el número es el grosor del borde en píxeles de escritura si ScaledBorderAndShadow está habilitado (consulte [propiedades del guión]({{<relref path="Properties" lang="en">}}));
-     si está deshabilitado el espesor se da en píxeles de video en cambio. Configuración si se pone a 0 se desactiva el contorno.
+   - Para el contorno, el número es el grosor del borde en píxeles de escritura si ScaledBorderAndShadow está habilitado (consulte [propiedades del guión]({{<relref path="Properties" lang="en">}})); si está deshabilitado el espesor se da en píxeles de video en cambio. Configuración si se pone a 0 se desactiva el contorno.
    - La sombra, por otro lado, es una copia del texto principal, desplazada hacia abajo y hacia la derecha la distancia especificada. La distancia está en píxeles de escritura si ScaledBorderAndShadow está habilitado y, en caso contrario, los píxeles de vídeo. Configurarlo en 0 desactiva la sombra.
    - Finalmente, la casilla de verificación marcada como "Cuadro opaco" controla si el contorno debe dibujarse como se describe arriba (lo que sucede si no está marcado), o reemplazado por un cuadro delimitador de fondo opaco. Tenga en cuenta que la representación de Los contornos de los cuadros opacos se rompen cuando la escala de fuente es diferente a 100%.
 
