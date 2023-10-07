@@ -5,132 +5,94 @@ menu:
     parent: typesetting
 weight: 4400
 ---
-<!--avance traducción -->
-The following is a list of every tag supported by the Advanced Substation
-Alpha format. This is basically a detailed version of ass-quickref.txt. See
-the [tutorial]({{<relref path="Visual_Typesetting" lang="en">}}) for an introduction to typesetting,
-using some basic tags.
 
-## Special characters
+La siguiente es una lista de todas las etiquetas admitidas por el formato Advanced Substation Alpha. Esta es básicamente una versión detallada de ass-quickref.txt. Consulte el [tutorial]({{<relref path="Visual_Typesetting" lang="en">}}) para obtener una introducción a la composición tipográfica, utilizando algunas etiquetas básicas.
 
-The following tags are written in the middle of the text, and not inside
-override blocks (i.e. not between { and }).
+## Caracteres especiales
 
-{{<tag-def-box title="Soft line break" id="\n">}}\\n{{</tag-def-box>}}
-Insert a forced line break, but only when in wrapping mode 2. (See
-[the \\q tag]({{<relref path="ASS_Tags#wrapstyle" lang="en">}})). Note that this is a lowercase n.
+Las siguientes etiquetas están escritas en el medio del texto y no dentro de bloques de anulación (es decir, no entre { y }).
 
-In all other wrapping modes, this is replaced by a regular space. This is
-rarely (if ever) actually useful. If you're not sure whether you want this or
-\\N, you probably want \\N.
+{{<tag-def-box title="Salto de línea suave" id="\n">}}\\n{{</tag-def-box>}}
+Inserte un salto de línea forzado, pero solo cuando esté en el modo de ajuste 2. (Ver
+[la etiqueta \\q]({{<relref path="ASS_Tags#wrapstyle" lang="en">}})). Tenga en cuenta que esta es una n minúscula.
 
-{{<tag-def-box title="Hard line break" id="\N">}}\\N{{</tag-def-box>}}
-Insert a forced line break, regardless of wrapping mode. Note that this is an
-uppercase N.
+En todos los demás modos de ajuste, esto se reemplaza por un espacio normal. Esto rara vez (o nunca) es realmente útil. Si no estás seguro de si quieres esto o
+\\N, probablemente quieras \\N.
 
-{{<tag-def-box title="Hard space" id="\h">}}\\h{{</tag-def-box>}}
-Insert a non-breaking "hard" space. The line will never break automatically
-right before or after a hard space, and hard spaces are not folded when they
-appear at the start or end of a displayed line.
+{{<tag-def-box title="Salto de línea" id="\N">}}\\N{{</tag-def-box>}}
+Inserte un salto de línea forzado, independientemente del modo de ajuste. Tenga en cuenta que se trata de una N mayúscula.
 
-## Override tags
+{{<tag-def-box title="Espacio duro" id="\h">}}\\h{{</tag-def-box>}}
+Inserte un espacio "duro" que no se rompa. La línea nunca se dividirá automáticamente justo antes o después de un espacio, y los espacios no se doblan cuando aparecen al principio o al final de una línea mostrada.
 
-Override tags must appear within override blocks, which begin with { and end
-with }. Any unrecognized text within override blocks is silently ignored, so
-they are also commonly used for inline comments. Mixing comments and override
-tags in the same override block is not recommended.
+## Anular etiquetas
 
-Tags fall into two general categories: those which set a property of the line
-itself, and those which modifiy only the text following them. `\pos`, `\move`,
-`\clip`, `\iclip`, `\org`, `\fade` and `\fad` are those in the first category;
-all others are in the second. Tags in the first category should appear at most
-once in a line, and where in the line they appear is unimportant. In addition,
-some of them are mutally exclusive: `\pos` and `\move`; `\clip` and `\iclip`;
-`\fad` and `\fade`. The result of inluding multiple instances of these tags or
-mutally exclusive tags will vary between renderers and is not recommended.
+Las etiquetas de anulación deben aparecer dentro de los bloques de anulación, que comienzan con { y terminan con }. Cualquier texto no reconocido dentro de los bloques de anulación se ignora silenciosamente, por lo que también se usan comúnmente para comentarios en línea. No se recomienda mezclar comentarios y etiquetas de anulación en el mismo bloque de anulación.
 
-Tags in the second category modify all text after the tag until the end of the
-line or until the property is re-overridden by another tag.
+Las etiquetas se dividen en dos categorías generales: aquellas que establecen una propiedad de la línea misma y aquellas que modifican sólo el texto que las sigue. `\pos`, `\mover`,
+`\clip`, `\iclip`, `\org`, `\fade` y `\fad` son los de la primera categoría; todos los demás están en el segundo. Las etiquetas de la primera categoría deben aparecer como máximo una vez en una línea y no importa en qué parte de la línea aparezcan. Además, algunos de ellos son mutuamente excluyentes: `\pos` y `\move`; `\clip` y `\iclip`;
+`\fad` y `\fade`. El resultado de incluir varias instancias de estas etiquetas o etiquetas mutuamente excluyentes variará entre los renderizadores y no se recomienda.
 
-Override tags always follow the same form: They start with a backslash \
-character, then a name, and after the name the parameter to the tag. If the
-parameter is omitted, the default value from the line's style is used.
+Las etiquetas de la segunda categoría modifican todo el texto después de la etiqueta hasta el final de la línea o hasta que otra etiqueta vuelva a anular la propiedad.
 
-Some tags are "complex" and take more than one parameter. In these cases,
-parameters are put inside parentheses with commas between the parameters.
+Las etiquetas de anulación siempre siguen la misma forma: comienzan con una barra invertida \, luego un nombre y, después del nombre, el parámetro de la etiqueta. Si se omite el parámetro, se utiliza el valor predeterminado del estilo de la línea.
 
-**Note on typography:**
-On this page, everything written in _italics_ with `<` angle brackets `>`
-around it is a parameter and you must enter a value instead of it. The angle
-brackets are not part of the value you should enter. Use the examples as a
-guide to how the tags should be entered. In general, the same rules apply to
-all tags in how they look.
+Algunas etiquetas son "complejas" y toman más de un parámetro. En estos casos, los parámetros se colocan entre paréntesis con comas entre los parámetros.
 
-{{<tag-def-box title="Italics" id="\i">}}
+**Nota sobre tipografía:**
+En esta página, todo lo escrito en _cursiva_ con `<` corchetes angulares `>` alrededor es un parámetro y debe ingresar un valor en su lugar. Los corchetes angulares no forman parte del valor que debe ingresar. Utilice los ejemplos como guía sobre cómo se deben ingresar las etiquetas. En general, se aplican las mismas reglas a todas las etiquetas en cuanto a su apariencia.
+
+{{<tag-def-box title="Cursiva" id="\i">}}
 \\i1
 \\i0
 {{</tag-def-box>}}
-Switch _italics_ text on or off. Use `\i1` to enable italics for the following
-text and `\i0` to disable italics again.
+Activa o desactiva el texto en cursiva. Utilice `\i1` para habilitar la cursiva para el siguiente texto y `\i0` para deshabilitarla nuevamente.
 
 {{<tag-def-box title="Bold" id="\b">}}
 \\b1
 \\b0
 \\b<i>\<weight></i>
 {{</tag-def-box>}}
-Switch **boldface** text on or off. Use `\b1` to enable boldface for the
-following text and `\b0` to disable boldface again.
+Activa o desactiva el texto en **negrita**. Utilice `\b1` para habilitar la negrita para el siguiente texto y `\b0` para desactivarla nuevamente.
 
-The <code>\\b<i>\<weight></i></code> form allows you to specify an
-explicit weight to use. Note that most fonts only support one or two weights
-so you rarely need to use this. Font weights are multiples of 100, such that
-100 is the lowest, 400 is "normal", 700 is "bold" and 900 is the heaviest.
+El formulario <code>\\b<i>\<weight></i></code> le permite especificar un peso explícito para usar. Tenga en cuenta que la mayoría de las fuentes sólo admiten uno o dos pesos, por lo que rara vez necesitará utilizarlo. Los pesos de las fuentes son múltiplos de 100, de modo que 100 es el más bajo, 400 es "normal", 700 es "negrita" y 900 es el más pesado.
 
 {{<example-box>}}
 
 ```ass
-I am {\b1}not{\b0} amused.
+No me hace ninguna gracia.
 ```
 
-The word "not" is written in boldface.
+La palabra "no" está escrita en negrita.
 {{</example-box>}}
 
 {{<example-box>}}
 
 ```ass
-{\b100}How {\b300}bold {\b500}can {\b700}you {\b900}get?
+{\b100}¿Qué {\b300}negrita {\b500}puedes {\b700}ponerte {\b900}?
 ```
 
-The words are written with increasingly greater weight. Note that most fonts
-do not have more than one or two different weights and you will only be able
-to see "not bold" and "bold" in that case.
+Las palabras se escriben con cada vez mayor peso. Tenga en cuenta que la mayoría de las fuentes no tienen más de uno o dos pesos diferentes y en ese caso solo podrá ver "sin negrita" y "negrita".
 {{</example-box>}}
 
-{{<tag-def-box title="Underline" id="\u">}}
+{{<tag-def-box title="Subrayado" id="\u">}}
 \\u1
 \\u0
 {{</tag-def-box>}}
-Switch <u>underlined</u> text on or off. Use `\u1` to enable underlining for
-the following text and `\u0` to disable underlining again.
+Activa o desactiva el texto <u>subrayado</u>. Utilice `\u1` para habilitar el subrayado en el siguiente texto y `\u0` para desactivarlo nuevamente.
 
-{{<tag-def-box title="Strikeout" id="\s">}}
+{{<tag-def-box title="Tachado" id="\s">}}
 \\s1
 \\s0
 {{</tag-def-box>}}
-Switch <s>striked out</s> text on or off. Use `\s1` to enable strikeout for
-the following text and `\s0` to disable strikeout again.
+Activa o desactiva el texto <s>tachado</s>. Utilice `\s1` para habilitar el tachado del siguiente texto y `\s0` para desactivarlo nuevamente.
 
-{{<tag-def-box title="Border size" id="\bord">}}\\bord<i>\<size></i>{{</tag-def-box>}}
-Change the width of the border around the text. Set the size to 0 (zero) to
-disable the border entirely.
+{{<tag-def-box title="Tamaño del borde" id="\bord">}}\\bord<i>\<size></i>{{</tag-def-box>}}
+Cambia el ancho del borde alrededor del texto. Establezca el tamaño en 0 (cero) para desactivar el borde por completo.
 
-If "scale border and shadow" (see [script properties]({{<relref path="Properties">}})) is
-enabled, the value is given in script resolution pixels, otherwise it is given
-in video resolution pixels (which means the border thickness will vary
-depending on the resolution of the video on which the subtitles are rendered.)
+Si "escala de borde y sombra" (consulte [propiedades del script]({{<relref path="Properties">}})) está habilitado, el valor se proporciona en píxeles de resolución del script; de lo contrario, se proporciona en píxeles de resolución de vídeo (que metro Esto significa que el grosor del borde variará según la resolución del vídeo en el que se muestran los subtítulos).
 
-The value is not limited to whole integer pixels and can have decimal places.
-Border width cannot be negative.
+El valor no se limita a píxeles enteros y puede tener decimales. El ancho del borde no puede ser negativo.
 
 {{<example-box>}}
 
@@ -138,7 +100,7 @@ Border width cannot be negative.
 \bord0
 ```
 
-Disable border entirely.
+Deshabilite el borde por completo.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -146,75 +108,52 @@ Disable border entirely.
 \bord3.7
 ```
 
-Set the border width to 3.7 pixels
+Establezca el ancho del borde en 3,7 píxeles
 {{</example-box>}}
 
-{{<tag-def-box title="Border size (extended)" id="\xbord">}}
+{{<tag-def-box title="Tamaño del borde (extendido)" id="\xbord">}}
 \\xbord<i>\<size></i>
 \\ybord<i>\<size></i>
 {{</tag-def-box>}}
-Use the `\xbord` `\ybord` tags to set the border size in X and Y direction
-separately. This can be useful for correcting the border size for anamorphic
-rendering of subtitles.
+Utilice las etiquetas `\xbord` `\ybord` para establecer el tamaño del borde en las direcciones X e Y por separado. Esto puede resultar útil para corregir el tamaño del borde para la representación anamórfica de subtítulos.
 
-Note that if you use `\bord` after `\xbord` or `\ybord` on a line, it will
-override both of them.
+Tenga en cuenta que si usa `\bord` después de `\xbord` o `\ybord` en una línea, los anulará a ambos.
 
-You can set the border width to 0 (zero) in one of the directions to entirely
-disable border in that direction.
+Puede establecer el ancho del borde en 0 (cero) en una de las direcciones para desactivar completamente el borde en esa dirección.
 
-{{<tag-def-box title="Shadow distance" id="\shad">}}\\shad<i>\<depth></i>{{</tag-def-box>}}
-Set the distance from the text to position the shadow. Set the depth to 0
-(zero) to disable shadow entirely. Works similar to [\\bord]({{<relref path="ASS_Tags#bordersize" lang="en">}}).
+{{<tag-def-box title="Distancia de sombra" id="\shad">}}\\shad<i>\<depth></i>{{</tag-def-box>}}
+Establece la distancia desde el texto para posicionar la sombra. Establecer la profundidad a 0
+(cero) para desactivar la sombra por completo. Funciona de manera similar a [\\bord]({{<relref path="ASS_Tags#bordersize" lang="en">}}).
 
-The shadow distance can not be negative with this tag.
+La distancia de la sombra no puede ser negativa con esta etiqueta.
 
-{{<tag-def-box title="Shadow distance (extended)" id="\xshad">}}
+{{<tag-def-box title="Distancia de sombra (extendida)" id="\xshad">}}
 \\xshad<i>\<depth></i>
 \\yshad<i>\<depth></i>
 {{</tag-def-box>}}
-Set the distance from the text to position the shadow at, with X and Y
-position set separately. Shadow is only disabled if both X and Y distance is
-0\.
+Establezca la distancia desde el texto para colocar la sombra, con las posiciones X e Y configuradas por separado. La sombra solo se desactiva si la distancia X e Y es 0\.
 
-Note that unlike \\shad, you can set the distance negative with these tags to
-position the shadow to the top or left of the text.
+Tenga en cuenta que, a diferencia de \\shad, puede establecer la distancia negativa con estas etiquetas para colocar la sombra en la parte superior o izquierda del texto.
 
-{{<tag-def-box title="Blur edges" id="\be">}}
+{{<tag-def-box title="Bordes borrosos" id="\be">}}
 \\be0
 \\be1
 \\be<i>\<strength></i>
 {{</tag-def-box>}}
-Enable or disable a subtle softening-effect for the edges of the text. The
-effect isn't always very visible, but it can in some cases make the text look
-better. It is usually more visible at smaller text sizes.
+Habilite o deshabilite un efecto de suavizado sutil para los bordes del texto. El efecto no siempre es muy visible, pero en algunos casos puede hacer que el texto se vea mejor. Suele ser más visible en tamaños de texto más pequeños.
 
-Be aware that this tag blurs the _edges_ of the text, not everything. This
-means that if the text has a border (set with [\\bord]({{<relref path="ASS_Tags#borderwidth" lang="en">}})) the
-border will be blurred, but if there is no border, the main text will be
-blurred instead.
+Tenga en cuenta que esta etiqueta difumina los _bordes_ del texto, no todo. Esto significa que si el texto tiene un borde (establecido con [\\bord]({{<relref path="ASS_Tags#borderwidth" lang="en">}})) el borde se verá borroso, pero si no lo hay borde, el texto principal aparecerá borroso.
 
-In the extended version, _strength_ is the number of times to apply the
-regular effect. Note that at high values the effect de-generates into
-nothingness, and generally isn't very useful. For strong blurs, `\blur` is
-generally more useful as a result. The _strength_ must be an integer number.
+En la versión extendida, _fuerza_ es la cantidad de veces que se aplica el efecto normal. Tenga en cuenta que en valores altos el efecto degenera en la nada y, en general, no es muy útil. Como resultado, para desenfoques fuertes, `\blur` generalmente es más útil. La _fuerza_ debe ser un número entero.
 
-{{<tag-def-box title="Blur edges (Gaussian kernel)" id="\blur">}}\\blur<i>\<strength></i>{{</tag-def-box>}}
-In general, this has the same function as the [`\be`]({{<relref path="ASS_Tags#bluredges" lang="en">}}) tag, but
-uses a more advanced algorithm that looks better at high strengths. Unlike
-`\be`, the _strength_ can be non-integer here. Set _strength_ to 0 (zero) to
-disable the effect. Be careful, setting _strength_ too high can take a lot of
-CPU time to render.
+{{<tag-def-box title="Bordes desenfocados (núcleo gaussiano)" id="\blur">}}\\blur<i>\<strength></i>{{</tag-def-box >}}
+En general, tiene la misma función que la etiqueta [`\be`]({{<relref path="ASS_Tags#bluredges" lang="en">}}), pero utiliza un algoritmo más avanzado que se ve mejor en niveles altos. fortalezas. A diferencia de
+`\be`, la _fuerza_ aquí puede ser no entera. Establezca _strength_ en 0 (cero) para desactivar el efecto. Tenga cuidado, configurar _strength_ demasiado alto puede requerir mucho tiempo de CPU para renderizar.
 
-Be aware that this tag blurs the _edges_ of the text, not everything. This
-means that if the text has a border (set with [`\bord`]({{<relref path="ASS_Tags#borderwidth" lang="en">}})) the
-border will be blurred, but if there is no border, the main text will be
-blurred instead.
+Tenga en cuenta que esta etiqueta difumina los _bordes_ del texto, no todo. Esto significa que si el texto tiene un borde (establecido con [`\bord`]({{<relref path="ASS_Tags#borderwidth" lang="en">}})) el borde se verá borroso, pero si hay sin borde, el texto principal aparecerá borroso.
 
-{{<tag-def-box title="Font name" id="\fn">}}\\fn<i>\<name></i>{{</tag-def-box>}}
-Set the font face to use for the following text. There should be no space
-between `\fn` and the font name, and you should not put parentheses or similar
-around the font name either.
+{{<tag-def-box title="Nombre de fuente" id="\fn">}}\\fn<i>\<name></i>{{</tag-def-box>}}
+Establezca la fuente que se utilizará para el siguiente texto. No debe haber espacios entre `\fn` y el nombre de la fuente, y tampoco debes poner paréntesis o algo similar alrededor del nombre de la fuente.
 
 {{<example-box>}}
 
@@ -222,7 +161,7 @@ around the font name either.
 \fnArial
 ```
 
-The text following this tag will be in Arial font.
+El texto que sigue a esta etiqueta estará en fuente Arial.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -230,17 +169,13 @@ The text following this tag will be in Arial font.
 \fnTimes New Roman
 ```
 
-The text following this tag will be in Times New Roman font.
+El texto que sigue a esta etiqueta estará en fuente Times New Roman.
 {{</example-box>}}
 
-{{<tag-def-box title="Font size" id="\fs">}}\\fs<i>\<size></i>{{</tag-def-box>}}
-Set the size of the font. The size specified is the height in script pixels,
-so at font size 40 one line of text is 40 pixels tall. (Technical note: it's
-really typographic (desktop publishing) points, not script pixels, but since
-the rendering is always done at 72 DPI (as per the de facto standard), one
-point ends up being exactly equal to one script resolution pixel.)
+{{<tag-def-box title="Tamaño de fuente" id="\fs">}}\\fs<i>\<size></i>{{</tag-def-box>}}
+Establece el tamaño de la fuente. El tamaño especificado es la altura en píxeles de escritura, por lo que con un tamaño de fuente 40, una línea de texto tiene 40 píxeles de alto. (Nota técnica: en realidad se trata de puntos tipográficos (edición de escritorio), no de píxeles de secuencia de comandos, pero dado que la representación siempre se realiza a 72 DPI (según el estándar de facto), un punto termina siendo exactamente igual a un píxel de resolución de secuencia de comandos).
 
-You can only specify integer font sizes.
+Sólo puede especificar tamaños de fuente enteros.
 
 {{<example-box>}}
 
@@ -248,28 +183,22 @@ You can only specify integer font sizes.
 \fs10
 ```
 
-The following text will use a size 10 font.
+El siguiente texto utilizará una fuente de tamaño 10.
 {{</example-box>}}
 
-{{<tag-def-box title="Font scale" id="\fscx">}}
+{{<tag-def-box title="Escala de fuente" id="\fscx">}}
 \\fscx<i>\<scale></i>
 \\fscy<i>\<scale></i>
 {{</tag-def-box>}}
-Adjust the size of the text in X (`\fscx` or Y (`\fscy`) direction. The
-_scale_ given is in percent, so 100 means "original size".
+Ajuste el tamaño del texto en dirección X (`\fscx` o Y (`\fscy`). La _escala_ dada está en porcentaje, por lo que 100 significa "tamaño original".
 
-This is not the same as setting the font size, as setting the size is subject
-to [font hinting](http://en.wikipedia.org/wiki/Font_hinting) while scaling the
-text modifies the text shape after hinting. As a result, this should always be
-used with `\t` rather than `\fs`, as animating changing font hinting is very
-rarely desirable.
+Esto no es lo mismo que configurar el tamaño de fuente, ya que configurar el tamaño está sujeto a [sugerencias de fuente](http://en.wikipedia.org/wiki/Font_hinting), mientras que escalar el texto modifica la forma del texto después de la sugerencia. Como resultado, esto siempre debe usarse con `\t` en lugar de `\fs`, ya que la animación de sugerencias para cambiar fuentes es muy rara. deseable.
 
-These tags also affect [vector drawings]({{<relref path="ASS_Tags#drawing-commands" lang="en">}}).
+Estas etiquetas también afectan a los [dibujos vectoriales]({{<relref path="ASS_Tags#drawing-commands" lang="en">}}).
 
-You can use font scaling to correct for anamorphic rendering and to specify
-text size more precisely than with [\\fs]({{<relref path="ASS_Tags#fontsize" lang="en">}}).
+Puede utilizar la escala de fuente para corregir la representación anamórfica y especificar el tamaño del texto con mayor precisión que con [\\fs]({{<relref path="ASS_Tags#fontsize" lang="en">}}).
 
-Note that older versions of VSFitler will truncate non-integer scales.
+Tenga en cuenta que las versiones anteriores de VSFitler truncarán las escalas que no sean enteras.
 
 {{<example-box>}}
 
@@ -277,7 +206,7 @@ Note that older versions of VSFitler will truncate non-integer scales.
 \fscx150
 ```
 
-Make the text 50% wider than normal.
+Haz el texto un 50% más ancho de lo normal.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -285,7 +214,7 @@ Make the text 50% wider than normal.
 \fscy50
 ```
 
-Make the text half height.
+Haz el texto a media altura.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -293,43 +222,37 @@ Make the text half height.
 \fscx200\fscy200
 ```
 
-Make the text double size.
+Haz que el texto duplique su tamaño.
 {{</example-box>}}
 
-{{<tag-def-box title="Letter spacing" id="\fsp">}}\\fsp<i>\<spacing></i>{{</tag-def-box>}}
-Changes the spacing between the individual letters in the text. You can use
-this to spread the text more out visually. The _spacing_ is given in script
-resolution pixels.
+{{<tag-def-box title="Espaciado entre letras" id="\fsp">}}\\fsp<i>\<spacing></i>{{</tag-def-box>}}
+Cambia el espacio entre las letras individuales del texto. Puede utilizar esto para difundir el texto más visualmente. El _espaciado_ se proporciona en píxeles de resolución de secuencia de comandos.
 
-Spacing can be negative and can have decimals.
+El espaciado puede ser negativo y tener decimales.
 
-{{<tag-def-box title="Text rotation" id="\frx">}}
+{{<tag-def-box title="Rotación de texto" id="\frx">}}
 \\frx<i>\<amount></i>
-\\fry<i>\<amount></i>
+\\freír<i>\<amount></i>
 \\frz<i>\<amount></i>
 \\fr<i>\<amount></i>
 {{</tag-def-box>}}
-Rotates the text along the X, Y or Z axis. The `\fr` tag is a shortcut for `\frz`.
+Gira el texto a lo largo del eje X, Y o Z. La etiqueta `\fr` es un atajo para `\frz`.
 
-- The **X axis** runs horizontally on the screen. Rotating on it (with
-  positive values) causes an effect where the top of the text moves farther
-  "into" the screen while the bottom moves "out" of the screen.
-- The **Y axis** runs vertically on the screen. Rotating on it (with positive
-  values) causes the text to rotate so that the left moves "outside" the
-  screen, when the right moves "into" the screen.
-- The **Z axis** runs perpendicular to the screen. Rotating on it (with
-  positive values) causes the text to rotate in 2D, counterclockwise (as
-  standard for degrees).
+- El **eje X** corre horizontalmente en la pantalla. Girando sobre él (con
+   valores positivos) provoca un efecto en el que la parte superior del texto se mueve más
+   "dentro" de la pantalla mientras que la parte inferior se mueve "fuera" de la pantalla.
+- El **eje Y** corre verticalmente en la pantalla. Girando sobre él (con positivo
+   valores) hace que el texto gire de modo que la izquierda se mueva "fuera" del
+   pantalla, cuando la derecha se mueve "dentro" de la pantalla.
+- El **eje Z** corre perpendicular a la pantalla. Girando sobre él (con
+   valores positivos) hace que el texto gire en 2D, en sentido antihorario (como
+   estándar para títulos).
 
-The rotation _amount_ is given in mathematical degrees, such that 360 degrees
-is a full rotation, and rotating any multiple of 360 is the same as not
-rotating. It is legal to specify negative rotation amounts, as well as amounts
-larger than 360 degrees.
+La _cantidad_ de rotación se da en grados matemáticos, de modo que 360 grados es una rotación completa, y rotar cualquier múltiplo de 360 es lo mismo que no rotar. Es legal especificar cantidades de rotación negativas, así como cantidades mayores a 360 grados.
 
-The rotation is performed around the subtitle line origin point, this is
-described with the [\\org]({{<relref path="ASS_Tags#rotationorigin" lang="en">}}) tag.
+La rotación se realiza alrededor del punto de origen de la línea de subtítulo, esto se describe con la etiqueta [\\org]({{<relref path="ASS_Tags#rotationorigin" lang="en">}}).
 
-These tags also affect [vector drawings]({{<relref path="ASS_Tags#vectordrawings" lang="en">}}).
+Estas etiquetas también afectan a [dibujos vectoriales]({{<relref path="ASS_Tags#vectordrawings" lang="en">}}).
 
 {{<example-box>}}
 
@@ -337,15 +260,15 @@ These tags also affect [vector drawings]({{<relref path="ASS_Tags#vectordrawings
 \frx45
 ```
 
-Rotate the text 45 degrees on the X axis.
+Gire el texto 45 grados en el eje X.
 {{</example-box>}}
 {{<example-box>}}
 
 ```plaintext
-\fry-45
+freír-45
 ```
 
-Rotate the text 45 degrees in opposite direction on the Y axis.
+Gire el texto 45 grados en dirección opuesta en el eje Y.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -353,17 +276,17 @@ Rotate the text 45 degrees in opposite direction on the Y axis.
 \frz180
 ```
 
-Rotate the text 180 degrees on the Z axis, making it upside-down.
+Gire el texto 180 grados en el eje Z, colocándolo al revés.
 {{</example-box>}}
 {{<example-box>}}
-The following two rotations produce the same result:
+Las dos rotaciones siguientes producen el mismo resultado:
 
 ```plaintext
 \frz-30
 \frz330
 ```
 
-This is because 330 degrees is 30 degrees less than a full rotation of 360 degrees.
+Esto se debe a que 330 grados son 30 grados menos que una rotación completa de 360 grados.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -371,10 +294,10 @@ This is because 330 degrees is 30 degrees less than a full rotation of 360 degre
 \t(\frz3600)
 ```
 
-Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the [\\t]({{<relref path="ASS_Tags#animatedtransform" lang="en">}}) tag.
+Realiza una animación donde el texto realiza 10 revoluciones completas en el eje Z. Consulte también la etiqueta [\\t]({{<relref path="ASS_Tags#animatedtransform" lang="en">}}).
 {{</example-box>}}
 {{<example-box>}}
-The following screenshots illustrate the effect of rotating on the different axes:
+Las siguientes capturas de pantalla ilustran el efecto de girar en los diferentes ejes:
 
 ![Fr_sample01](/img/3.2/Fr_sample01.jpg)
 
@@ -383,110 +306,93 @@ The following screenshots illustrate the effect of rotating on the different axe
 ![Fr_sample03](/img/3.2/Fr_sample03.jpg)
 {{</example-box>}}
 
-{{<tag-def-box title="Text shearing" id="\fax">}}
+{{<tag-def-box title="Corteamiento de texto" id="\fax">}}
 \\fax<i>\<factor></i>
 \\fay<i>\<factor></i>
 {{</tag-def-box>}}
-Perform a shearing (perspective distortion) transformation of the text. A
-_factor_ of 0 (zero) means no distortion.
+Realice una transformación de corte (distorsión de perspectiva) del texto. Un _factor_ de 0 (cero) significa que no hay distorsión.
 
-Usually _factor_ will be a small number; values outside the range -2 to 2 are
-unlikely to have desireable results.
+Por lo general, _factor_ será un número pequeño; Es poco probable que los valores fuera del rango -2 a 2 produzcan resultados deseables.
 
-Shearing is performed after rotation, on the rotated coordinates. The
-coordinate system used for shearing is not affected by the [rotation origin]({{<relref path="ASS_Tags#rotationorigin" lang="en">}}).
+El corte se realiza después de la rotación, en las coordenadas giradas. El sistema de coordenadas utilizado para el corte no se ve afectado por el [origen de rotación]({{<relref path="ASS_Tags#rotationorigin" lang="en">}}).
 
+<!-- TODO revisar esquila = shearing -->
 {{<example-box>}}
-![shearing](/img/3.2/shearing.png)
+![esquila](/img/3.2/shearing.png)
 {{</example-box>}}
 
-{{<tag-def-box title="Font encoding" id="\fe">}}\\fe<i>\<id></i>{{</tag-def-box>}}
-Set the Windows font encoding used to select the font mapping table used to
-translate Unicode codepoints to glyph indices in the font. For some fonts
-without a Unicode mapping table this might be required to get text in certain
-languages to work. For fonts that do have a Unicode mapping table, it might be
-used to pick regional variations, such as picking the correct glyph for a Han
-ideogram that is different in Simplified Chinese, Traditional Chinese,
-Japanese and Korean.
+{{<tag-def-box title="Codificación de fuente" id="\fe">}}\\fe<i>\<id></i>{{</tag-def-box>}}
+Configure la codificación de fuente de Windows utilizada para seleccionar la tabla de asignación de fuentes utilizada para traducir puntos de código Unicode a índices de glifos en la fuente. Para algunas fuentes sin una tabla de mapeo Unicode, esto puede ser necesario para que funcione el texto en ciertos idiomas. Para las fuentes que tienen una tabla de mapeo Unicode, se podría usar para seleccionar variaciones regionales, como elegir el glifo correcto para un ideograma Han que sea diferente en chino simplificado, chino tradicional, japonés y coreano.
 
-Some common font encoding IDs are:
+Algunas ID de codificación de fuentes comunes son:
 
-- 0 - ANSI, Windows CP-1252 for Western-European languages.
-- 1 - Default, depends on the configuration of the user's system, but also
-  allows the font sub-system to dynamically pick a different mapping table in
-  some circumstances.
-- 2 - Symbol, codepoints in the 0-255 range are translated to per-font defined
-  symbol glyphs, this is used for fonts such as Wingdings.
-- 128 - Shift-JIS, used for Japanese.
-- 129 and 130, respectively Hangeul and Johab, two encoding schemes for Korean.
-- 134 - GB2312, used for Simplified Chinese.
-- 136 - BIG5, used for Traditional Chinese.
-- 162 - Turkish.
-- 163 - Vietnamese.
-- 177 - Hebrew.
-- 178 - Arabic.
+- 0 - ANSI, Windows CP-1252 para idiomas de Europa occidental.
+- 1 - Por defecto, depende de la configuración del sistema del usuario, pero también
+   permite que el subsistema de fuentes elija dinámicamente una tabla de mapeo diferente en
+   algunas circunstancias.
+- 2 - Símbolo, los puntos de código en el rango 0-255 se traducen a definición por fuente
+   glifos de símbolos, esto se usa para fuentes como Wingdings.
+- 128 - Shift-JIS, usado para japonés.
+- 129 y 130, respectivamenteely Hangeul y Johab, dos esquemas de codificación para coreano.
+- 134 - GB2312, utilizado para chino simplificado.
+- 136 - BIG5, usado para chino tradicional.
+- 162 - turco.
+- 163 - vietnamita.
+- 177 - hebreo.
+- 178 - árabe.
 
-{{<todo>}}Is that really correct? {{</todo>}}
+{{<todo>}}¿Es eso realmente correcto? {{</todo>}}
 
-A more complete list can be seen the [style editor]({{<relref path="Styles#eleditordeestilo">}})
-dialog box.
+Una lista más completa se puede ver en el [editor de estilos]({{<relref path="Styles#eleditordeestilo">}})
+caja de diálogo.
 
-In ASS files stored in non-Unicode encodings, this tag also affects what
-codepage the text following it should be interpreted in. Aegisub doesn't
-support this use and some renderers might not support it either. It is
-recommended you do not rely on this and instead always store your files in a
-Unicode encoding. (Aegisub stores files in Unicode UTF-8 by default.)
+En archivos ASS almacenados en codificaciones que no son Unicode, esta etiqueta también afecta en qué página de códigos debe interpretarse el texto que le sigue. Aegisub no admite este uso y es posible que algunos renderizadores tampoco lo admitan. Se recomienda que no confíe en esto y, en su lugar, almacene siempre sus archivos en codificación Unicode. (Aegisub almacena archivos en Unicode UTF-8 de forma predeterminada).
 
-{{<tag-def-box title="Set color" id="\c">}}
+{{<tag-def-box title="Establecer color" id="\c">}}
 \\c&H<i>\<bb>\<gg>\<rr></i>&
 \\1c&H<i>\<bb>\<gg>\<rr></i>&
 \\2c&H<i>\<bb>\<gg>\<rr></i>&
 \\3c&H<i>\<bb>\<gg>\<rr></i>&
 \\4c&H<i>\<bb>\<gg>\<rr></i>&
 {{</tag-def-box>}}
-Set the color of the following text. The `\c` tag is an abbreviation of `\1c`.
+Establece el color del siguiente texto. La etiqueta `\c` es una abreviatura de `\1c`.
 
-- `\1c` sets the primary fill color.
-- `\2c` sets the secondary fill color. This is only used for pre-highlight in
-  standard karaoke.
-- `\3c` sets the border color.
-- `\4c` sets the shadow color.
+- `\1c` establece el color de relleno principal.
+- `\2c` establece el color de relleno secundario. Esto sólo se utiliza para resaltar previamente en
+   karaoke estándar.
+- `\3c` establece el color del borde.
+- `\4c` establece el color de la sombra.
 
-The color codes are given in
-[hexadecimal](http://en.wikipedia.org/wiki/Hexadecimal) in Blue Green Red
-order. Note that this is the opposite order of HTML color codes. Color codes
-must always start with `&H` and end with `&`.
+Los códigos de color se dan en
+[hexadecimal](http://en.wikipedia.org/wiki/Hexadecimal) en orden Azul Verde Rojo. Tenga en cuenta que este es el orden opuesto a los códigos de color HTML. Los códigos de color siempre deben comenzar con `&H` y terminar con `&`.
 
-The Pick Color toolbar buttons ![pick-color-toolbar-buttons](/img/3.2/pick-color-toolbar-buttons.png) can
-assist in picking colors and entering the color codes.
+Los botones de la barra de herramientas Seleccionar color ![pick-color-toolbar-buttons](/img/3.2/pick-color-toolbar-buttons.png) pueden ayudar a seleccionar colores e ingresar los códigos de color.
 
-{{<tag-def-box title="Set alpha" id="\alpha">}}
-\\alpha&H<i>\<aa></i>
+{{<tag-def-box title="Establecer alpha" id="\alpha">}}
+\\alfa&H<i>\<aa></i>
 \\1a&H<i>\<aa></i>
 \\2a&H<i>\<aa></i>
 \\3a&H<i>\<aa></i>
 \\4a&H<i>\<aa></i>
 {{</tag-def-box>}}
-Set the alpha (transparency) of the text.
+Establece el alfa (transparencia) del texto.
 
-- `\alpha` sets the alpha of all components at once.
-- `\1a` sets the primary fill alpha.
-- `\2a` sets the secondary fill alpha. This is only used for pre-highlight in
-  standard karaoke.
-- `\3a` sets the border alpha.
-- `\4a` sets the shadow alpha.
+- `\alpha` establece el alfa de todos los componentes a la vez.
+- `\1a` establece el alfa de relleno primario.
+- `\2a` establece el alfa de relleno secundario. Esto sólo se utiliza para resaltar previamente en
+   karaoke estándar.
+- `\3a` establece el borde alfa.
+- `\4a` establece la sombra alfa.
 
-An alpha of 00 (zero) means opaque/fully visible, and an alpha of FF (ie. 255
-in decimal) is fully transparent/invisible.
+Un alfa de 00 (cero) significa opaco/completamente visible, y un alfa de FF (es decir, 255 en decimal) es completamente transparente/invisible.
 
 {{<example-box>}}
 
 ```plaintext
-\alpha&H80&
+\alfa&H80&
 ```
 
-Set the alpha of all components to hexadecimal 80, decimal 128, making the
-text 50% transparent in general.
+Establezca el alfa de todos los componentes en hexadecimal 80, decimal 128, haciendo que el texto sea 50% transparente en general.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -494,233 +400,170 @@ text 50% transparent in general.
 \1a&HFF&
 ```
 
-Set the primary fill alpha to hexadecimal FF, decimal 255, making it invisible
-and effectively leaving only the border and shadow.
+Establezca el alfa de relleno principal en hexadecimal FF, decimal 255, haciéndolo invisible y dejando efectivamente solo el borde y la sombra.
 {{</example-box>}}
 
-{{<tag-def-box title="Line alignment" id="\an">}}\\an<i>\<pos></i>{{</tag-def-box>}}
-Specify the alignment of the line. The alignment specifies the position of the
-line when no [position override]({{<relref path="ASS_Tags#setposition" lang="en">}}) or
-[movement]({{<relref path="ASS_Tags#movement" lang="en">}}) is in effect, and otherwise specifies the
-anchor point of positioning and rotation.
+{{<tag-def-box title="Alineación de línea" id="\an">}}\\an<i>\<pos></i>{{</tag-def-box>}}
+Especifique la alineación de la línea. La alineación especifica la posición de la línea cuando no hay [anulación de posición]({{<relref path="ASS_Tags#setposition" lang="en">}}) o
+[movimiento]({{<relref path="ASS_Tags#movement" lang="en">}}) está vigente y, de lo contrario, especifica el punto de anclaje de posicionamiento y rotación.
 
-The `\an` tag uses "numpad" values for the _pos_, ie. the alignment values
-correspond to the positions of the digits on the numeric keypad on a regular
-keyboard:
+La etiqueta `\an` usa valores de "teclado numérico" para _pos_, es decir. los valores de alineación corresponden a las posiciones de los dígitos en el teclado numérico en un teclado normal:
 
-1. Bottom left
-1. Bottom center
-1. Bottom right
-1. Middle left
-1. Middle center
-1. Middle right
-1. Top left
-1. Top center
-1. Top right
+1. Abajo a la izquierda
+1. Centro inferior
+1. Abajo a la derecha
+1. Centro izquierda
+1. Centro medio
+1. Centro derecha
+1. Arriba a la izquierda
+1. Centro superior
+1. arriba a la derecha
 
-{{<tag-def-box title="Line alignment (legacy)" id="\a">}}\\a<i>\<pos></i>{{</tag-def-box>}}
-Specify the alignment of the line using legacy alignment codes from SubStation
-Alpha. This tag is supported but considered deprecated; you should usually use
-`\an` in new scripts instead, as it is more intuitive.
+{{<tag-def-box title="Alineación de línea (heredada)" id="\an">}}\\an<i>\<pos></i>{{</tag-def-box>}}
+Especifique la alineación de la línea utilizando códigos de alineación heredados de SubStation Alpha. Esta etiqueta es compatible pero se considera obsoleta; normalmente deberías usar
+`\an` en nuevos scripts, ya que es más intuitivo.
 
-The exception is that `\a6` should be used for lazy sign translating, because
-if you're going to be lazy you should do it right and save the extra character.
+La excepción es que `\a6` debe usarse para la traducción de signos diferida, porque si vas a ser vago debes hacerlo bien y guardar el carácter extra.
 
-Calculate _pos_ as follows: Use 1 for left-alignment, 2 for center alignment
-and 3 for right-alignment. If you want sub-titles you're done. To get
-top-titles, add 4 to the number, to get mid-titles add 8 to the number:
+Calcule _pos_ de la siguiente manera: use 1 para alineación a la izquierda, 2 para alineación central y 3 para alineación a la derecha. Si quieres subtítulos, ya está. Para obtener títulos principales, agregue 4 al número, para obtener títulos intermedios agregue 8 al número:
 
-- 1: Bottom left
-- 2: Bottom center
-- 3: Bottom right
-- 5: Top left
-- 6: Top center
-- 7: Top right
-- 9: Middle left
-- 10: Middle center
-- 11: Middle right
+- 1: abajo a la izquierda
+- 2: centro inferior
+- 3: abajo a la derecha
+- 5: arriba a la izquierda
+- 6: Centro superior
+- 7: arriba a la derecha
+- 9: Centro izquierda
+- 10: Centro medio
+- 11: Centro derecha
 
-{{<tag-def-box title="Karaoke effect" id="\k">}}
-\\k<i>\<duration></i>
-\\K<i>\<duration></i>
-\\kf<i>\<duration></i>
-\\ko<i>\<duration></i>
+{{<tag-def-box title="Efecto Karaoke" id="\k">}}
+\\k<i>\<duración></i>
+\\K<i>\<duración></i>
+\\kf<i>\<duración></i>
+\\ko<i>\<duración></i>
 {{</tag-def-box>}}
 
-> _Please note that these tags alone only create some very specific effects
-> and all other effects are created with a combination of multiple different
-> tags._
+> _Tenga en cuenta que estas etiquetas por sí solas solo crean algunos efectos muy específicos
+> y todos los demás efectos se crean con una combinación de múltiples diferentes
+> etiquetas._
 
-The `\k` family of tags mark up subtitles for karaoke effects by specifying
-the duration of each syllable. You place a `\k` tag before each syllable in
-the line.
+La familia de etiquetas `\k` marca los subtítulos para efectos de karaoke especificando la duración de cada sílaba. Coloca una etiqueta `\k` antes de cada sílaba en la línea.
 
-The _duration_ is given in centiseconds, ie. a _duration_ of 100 is equivalent
-to 1 second. You generally don't enter `\k` tags manually but rather use
-karaoke timing tools such as [Aegisub's karaoke mode]({{<relref path="Tutorials#karaoketiming" lang="en">}}).
+La _duración_ se da en centisegundos, es decir. una _duración_ de 100 equivale a 1 segundo. Por lo general, no ingresa etiquetas `\k` manualmente, sino que utiliza herramientas de sincronización de karaoke como [modo de karaoke de Aegisub]({{<relref path="Tutorials#karaoketiming" lang="en">}}).
 
-The different `\k` tags create various effects:
+Las diferentes etiquetas `\k` crean varios efectos:
 
-- `\k`: Before highlight, the syllable is filled with the secondary color and
-  alpha. When the syllable starts, the fill is instantly changed to use
-  primary color and alpha.
-- `\K` and `\kf`: These two are identical. Note that `\K` is an uppercase K
-  and is different from lowercase `\k`. The syllable fill starts out secondary
-  color, when the syllable starts, the fill changes from secondary to primary
-  with a sweep from left to right, so the sweep ends when the syllable time is
-  over.
-- `\ko`: Similar to `\k`, except that before highlight, the border/outline of
-  the syllable is removed, and appears instantly when the syllable starts.
+- `\k`: Antes de resaltar, la sílaba se rellena con el color secundario y
+   alfa. Cuando el comienza la sílaba, el relleno cambia instantáneamente para usar
+   color primario y alfa.
+- `\K` y `\kf`: Estos dos son idénticos. Tenga en cuenta que `\K` es una K mayúscula
+   y es diferente de `\k` minúscula. El relleno de sílaba comienza en segundo plano.
+   color, cuando comienza la sílaba, el relleno cambia de secundario a primario
+   con un barrido de izquierda a derecha, por lo que el barrido termina cuando el tiempo de la sílaba es
+   encima.
+- `\ko`: Similar a `\k`, excepto que antes de resaltar, el borde/contorno de
+   la sílaba se elimina y aparece instantáneamente cuando comienza la sílaba.
 
-_Note: There is an additional karaoke tag, `\kt`, which is very different from
-the other ones. It is rarely useful and Aegisub does not support that tag, so
-it is not documented._
+_Nota: Hay una etiqueta de karaoke adicional, `\kt`, que es muy diferente a las demás. Rara vez es útil y Aegisub no admite esa etiqueta, por lo que no está documentada.
 
-{{<tag-def-box title="Wrap style" id="\q">}}\\q<i>\<style></i>{{</tag-def-box>}}
-Determine how line breaking is applied to the subtitle line. The following
-\_style_s are available:
+{{<tag-def-box title="Estilo de envoltura" id="\q">}}\\q<i>\<style></i>{{</tag-def-box>}}
+Determine cómo se aplica el salto de línea a la línea de subtítulo. La siguiente
+\_style_s están disponibles:
 
-- 0: Smart wrapping, make each line approximately equally long, but top line
-  wider when equal width is impossible. Only `\N` forces line breaks.
-- 1: End-of-line wrapping, fill as much text in a line as possible, then break
-  to next line. Only `\N` forces line breaks.
-- 2: No word wrapping, wide lines will extend beyound the edges of the screen.
-  Both `\n` and `\N` force line breaks.
-- 3: Smart wrapping, similar to style 0, but bottom lines are made wider.
+- 0: Ajuste inteligente, haga que cada línea sea aproximadamente igual de larga, pero la línea superior
+   más ancho cuando el mismo ancho es imposible. Sólo `\N` fuerza los saltos de línea.
+- 1: Ajuste de final de línea, complete la mayor cantidad de texto posible en una línea y luego divida
+   a la siguiente línea. Sólo `\N` fuerza los saltos de línea.
+- 2: Sin ajuste de palabras, las líneas anchas se extenderán más allá de los bordes de la pantalla.
+   Tanto `\n` como `\N` fuerzan saltos de línea.
+- 3: Envoltura inteligente, similar al estilo 0, pero las líneas inferiores se hacen más anchas.
 
-{{<tag-def-box title="Reset style" id="\r">}}\\r<br>\\r<i>\<style></i>{{</tag-def-box>}}
-Reset the style. This cancels all style overrides in effect, including
-[animations]({{<relref path="ASS_Tags#animatedtransform" lang="en">}}), for all following text.
+{{<tag-def-box title="Restablecer estilo" id="\r">}}\\r<br>\\r<i>\<style></i>{{</tag-def-box>}}
+Restablecer el estilo. Esto cancela todas las anulaciones de estilo vigentes, incluidas
+[animaciones]({{<relref path="ASS_Tags#animatedtransform" lang="en">}}), para todo el texto siguiente.
 
-The first form that does not specify a _style_ will reset to the style defined
-for the entire line, while the second form, that specifies the name of a
-_style_, will reset the style to that specific style.
+El primer formulario que no especifica un _estilo_ se restablecerá al estilo definido para toda la línea, mientras que el segundo formulario, que especifica el nombre de un _estilo_, restablecerá el estilo a ese estilo específico.
 
 {{<example-box>}}
 
 ```ass
--Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?
+-Oye\N{\rAlternate}-¿Eh?\N{\r}-¿Quién eres?
 ```
 
-Assuming the current line style is "Default", this has first "Hey" in the
-Default style, then follows on next line "Huh?" in the style "Alternate", and
-on the third line the style is reset to "Default" for the "Who are you?"
-text.
+Suponiendo que el estilo de línea actual es "Predeterminado", primero tiene "Oye" en el estilo predeterminado y luego sigue en la siguiente línea "¿Eh?" en el estilo "Alternativo", y en la tercera línea el estilo se restablece a "Predeterminado" para "¿Quién eres?"
+texto.
 {{</example-box>}}
 
-{{<tag-def-box title="Set position" id="\pos">}}\\pos(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
-Set the position of the line. The _X_ and _Y_ coordinates must be integers and
-are given in the script resolution coordinate system. The meaning of _X_ and
-_Y_ changes slightly depending on [alignment]({{<relref path="ASS_Tags#linealignment" lang="en">}}).
+{{<tag-def-box title="Establecer posición" id="\pos">}}\\pos(<i>\<X></i>,<i>\<Y></i> ){{</tag-def-box>}}
+Establece la posición de la línea. Las coordenadas _X_ e _Y_ deben ser números enteros y se proporcionan en el sistema de coordenadas de resolución del script. El significado de _X_ e _Y_ cambia ligeramente dependiendo de [alineación]({{<relref path="ASS_Tags#linealignment" lang="en">}}).
 
-The alignment of the subtitle line is used as anchor point for the position.
-I.e. when you have a line with alignment top-left, the top-left corner of the
-subtitle is placed at the coordinates given to `\pos`, and for bottom-center
-alignment, the bottom center of the subtitle is placed at the coordinates
-given.
+La alineación de la línea de subtítulo se utiliza como punto de anclaje para la posición. Es decir. cuando tiene una línea con alineación superior izquierda, la esquina superior izquierda del subtítulo se coloca en las coordenadas dadas a `\pos`, y para la alineación inferior central, la esquina inferior central del subtítulo se coloca en las coordenadas dadas .
 
 {{<example-box>}}
-The following screenshots illustrate the way alignment affects positioning.
-The green cross marks the point (320,240) on the video.
+Las siguientes capturas de pantalla ilustran la forma en que la alineación afecta el posicionamiento. La cruz verde marca el punto (320,240) en el vídeo.
 
 ![Pos_sample01](/img/3.2/Pos_sample01.jpg)
 ![Pos_sample02](/img/3.2/Pos_sample02.jpg)
 ![Pos_sample03](/img/3.2/Pos_sample03.jpg)
 {{</example-box>}}
 
-{{<tag-def-box title="Movement" id="\move">}}
-\\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i>>)
-\\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i>>,<i>\<t1</i>>,<i>\<t2</i>>)
+{{<tag-def-box title="Movimiento" id="\move">}}
+\\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i> >)
+\\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i> >,<i>\<t1</i>>,<i>\<t2</i>>)
 {{</tag-def-box>}}
-The `\move` tag works similar to [`\pos`]({{<relref path="ASS_Tags#setposition" lang="en">}}) in that it
-positions the subtitle line, the difference is that `\move` makes the subtitle
-move.
+La etiqueta `\move` funciona de manera similar a [`\pos`]({{<relref path="ASS_Tags#setposition" lang="en">}}) en que posiciona la línea de subtítulo, la diferencia es que `\ move` hace que el subtítulo se mueva.
 
-The two versions of `\move` differ in that one makes the movement occur over
-the entire duration of the subtitle, while on the other you specify the time
-over which the movement occurs.
+Las dos versiones de `\move` se diferencian en que una hace que el movimiento se produzca durante toda la duración del subtítulo, mientras que la otra especifica el tiempo durante el cual se produce el movimiento.
 
-The coordinates _x1_, _y1_, _x2_ and _y2_ are given in the script resolution
-coordinate system, like `\pos`. The subtitle starts out at point (_x1_,_y1_)
-and moves with constant speed so it ends up at (_x2_,_y2_).
-[Alignment]({{<relref path="ASS_Tags#linealignment" lang="en">}}) influences movement coordinates the same
-way as it influences `\pos` coordinates.
+Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en el sistema de coordenadas de resolución del script, como `\pos`. El subtítulo comienza en el punto (_x1_,_y1_)
+y se mueve con velocidad constante por lo que termina en (_x2_,_y2_).
+[Alineación]({{<relref path="ASS_Tags#linealignment" lang="en">}}) influye en las coordenadas de movimiento de la misma manera que influye en las coordenadas `\pos`.
 
-In the second version, the times _t1_ and _t2_ are given in milliseconds, ie.
-one thousandth of a second, and are relative to the start time of the
-subtitle. For example, a _t1_ value of 1500 means that the movement begins 1.5
-seconds (one and a half second) after the line has appeared on screen. When
-you specify times for the movement, the position of the subtitle is as
-follows:
+En la segunda versión, los tiempos _t1_ y _t2_ se dan en milisegundos, es decir. una milésima de segundo, y son relativos a la hora de inicio del subtítulo. Por ejemplo, un valor _t1_ de 1500 significa que el movimiento comienza 1,5 segundos (un segundo y medio) después de que la línea haya aparecido en pantalla. Cuando especificas tiempos para el movimiento, la posición del subtítulo es la siguiente:
 
-1. Before _t1_, the subtitle is stationary at point (_x1_,_y1_).
-1. Between _t1_ and _t2_, the subtitle moves with constant speed from (_x1_,_y1_) to (_x2_,_y2_).
-1. After _t2_ the subtitle is stationary at point (_x2_,_y2_).
+1. Antes de _t1_, el subtítulo está estacionario en el punto (_x1_,_y1_). 1. Entre _t1_ y _t2_, el subtítulo se mueve con velocidad constante desde (_x1_,_y1_) a (_x2_,_y2_). 1. Después de _t2_ el subtítulo está estacionario en el punto (_x2_,_y2_).
 
-Note that it is legal to have _t1_ and _t2_ specify times greater than the
-duration of the line, but it might not be very useful to do so. Specifying
-both _t1_ and _t2_ as 0 (zero) is the same as using the first version of
-`\move`, ie. the movement will occur from the start time of the line to the
-end time of the line.
+Tenga en cuenta que es legal que _t1_ y _t2_ especifiquen tiempos mayores que la duración de la línea, pero puede que no sea muy útil hacerlo. Especificar _t1_ y _t2_ como 0 (cero) es lo mismo que usar la primera versión de
+`\ mover`, es decir. el movimiento se producirá desde la hora de inicio de la línea to la hora de finalización de la línea.
 
-There are some things **`\move` can not do**:
+Hay algunas cosas que **`\move` no se pueden hacer**:
 
-- Non-constant-speed movement is not possible. The movement can not, for
-  example, start out slow and end fast.
-- There can only be one positioning or movement tag in a line. Putting both a
-  `\pos` and a `\move` tag in a line will not work. It will also not work to
-  put two or more `\move` tags in a single line.
+- No es posible realizar movimientos a velocidad no constante. El movimiento no puede, por
+   Por ejemplo, comience lento y termine rápido.
+- Sólo puede haber una etiqueta de posicionamiento o movimiento en una línea. Poniendo ambos un
+   `\pos` y una etiqueta `\move` en una línea no funcionarán. Tampoco funcionará
+   coloque dos o más etiquetas `\move` en una sola línea.
 
-If you need to do do any of those two you will need to split the movement into
-segments that are done on separate subtitle lines. (How to do this is outside
-the scope of this page.)
+Si necesita hacer cualquiera de esos dos, deberá dividir el movimiento en segmentos que se realizan en líneas de subtítulos separadas. (Cómo hacer esto está fuera del alcance de esta página).
 
 {{<example-box>}}
 
 ```plaintext
-\move(100,150,300,350)
+\mover(100,150,300,350)
 ```
 
-When the line appears on screen, the subtitle is at (100,150). While the
-subtitle is displayed, it moves at constant speed such that it will arrive at
-point (300,350) at the same time it disappears.
+Cuando aparece la línea en la pantalla, el subtítulo está en (100,150). Mientras se muestra el subtítulo, este se mueve a velocidad constante de manera que llegará al punto (300,350) al mismo tiempo que desaparece.
 {{</example-box>}}
 {{<example-box>}}
 
 ```plaintext
-\move(100,150,300,350,500,1500)
+\mover(100,150,300,350,500,1500)
 ```
 
-The line appears at (100,150). After the line has been displayed for half a
-second (500 milliseconds) it begins moving towards (300,350) such that it will
-arrive at the point a second and a half (1500 milliseconds) after the line
-first appeared on screen.
+La línea aparece en (100,150). Después de que la línea se haya mostrado durante medio segundo (500 milisegundos), comienza a moverse hacia (300,350), de modo que llegará al punto un segundo y medio (1500 milisegundos) después de que la línea apareció por primera vez en la pantalla.
 {{</example-box>}}
 
-{{<tag-def-box title="Rotation origin" id="\org">}}\\org(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
-Set the origin point used for [rotation]({{<relref path="ASS_Tags#textrotation" lang="en">}}). This
-affects all rotations of the line. The _X_ and _Y_ coordinates are given in
-integer script resolution pixels.
+{{<tag-def-box title="Origen de rotación" id="\org">}}\\org(<i>\<X></i>,<i>\<Y></i> ){{</tag-def-box>}}
+Establezca el punto de origen utilizado para [rotación]({{<relref path="ASS_Tags#textrotation" lang="en">}}). Esto afecta a todas las rotaciones de la línea. Las coordenadas _X_ e _Y_ se proporcionan en píxeles de resolución de secuencia de comandos de números enteros.
 
-When there is no `\org` tag in a line, the rotation origin is implicitly the
-same as the [position anchor point]({{<relref path="ASS_Tags#setposition" lang="en">}}). This means that
-the rotation origin will move if the line moves and there is no origin set
-with `\org`. Note that you can _not_ animate the `\org` tag, you are limited
-to a fixed origin if you use it.
+Cuando no hay una etiqueta `\org` en una línea, el origen de rotación es implícitamente el mismo que el [punto de anclaje de posición]({{<relref path="ASS_Tags#setposition" lang="en">}}). Esto significa que el origen de la rotación se moverá si la línea se mueve y no hay un origen establecido con `\org`. Tenga en cuenta que _no_ puede animar la etiqueta `\org`, está limitado a un origen fijo si la usa.
 
-If the rotation origin is placed on the vanishing point in a 3D scene, 3D
-rotations of subtitle line will produce the correct perspective to match the
-scene.
+Si el origen de la rotación se coloca en el punto de fuga en una escena 3D, las rotaciones 3D de la línea de subtítulo producirán la perspectiva correcta para coincidir con la escena.
 
-It's perfectly possible (and occasionally useful) to place the origin point
-far outside the actual image; if it is sufficiently far away, doing
-appropriately calculated small rotations will seem to move the text along a
-straight (or almost straight) line through the image. This is somewhat hard to
-control, but can be used to work around format limitations with \\move, such as
-the inability to do accelerated moves or several moves per line.
+Es perfectamente posible (y en ocasiones útil) colocar el punto de origen muy fuera de la imagen real; si está lo suficientemente lejos, al realizar pequeñas rotaciones calculadas adecuadamente parecerá que el texto se mueve a lo largo de una línea recta (o casi recta) a través de la imagen. Esto es algo difícil de controlar, pero se puede utilizar para solucionar las limitaciones de formato con \\move, como la incapacidad de realizar movimientos acelerados o varios movimientos por línea.
 
-There can be at most one `\org` tag in a single line, if you put more than one
-in a single line, only the first is used.
+Puede haber como máximo una etiqueta `\org` en una sola línea, si pones más de una en una sola línea, solo se usa la primera.
 
 {{<example-box>}}
 
@@ -728,7 +571,7 @@ in a single line, only the first is used.
 \org(320,240)
 ```
 
-Fix the rotation origin at point (320,240).
+Fije el origen de rotación en el punto (320,240).
 {{</example-box>}}
 {{<example-box>}}
 
@@ -736,21 +579,14 @@ Fix the rotation origin at point (320,240).
 \org(10000,0)
 ```
 
-Placing the rotation origin at a far away point allows you to use slight
-`\frz` rotations to produce "jumping" effects; the text will move up or down
-without seeming to rotate.
+Colocar el origen de rotación en un punto lejano le permite utilizar una ligera
+`\frz` rotaciones para producir efectos de "salto"; el texto se moverá hacia arriba o hacia abajo sin que parezca girar.
 {{</example-box>}}
 
-{{<tag-def-box title="Fade" id="\fad">}}\\fad(<i>\<fadein></i>,<i>\<fadeout></i>){{</tag-def-box>}}
-Produce a fade-in and fade-out effect. The _fadein_ and _fadeout_ times are
-given in milliseconds, ie. 1000 means one second. You can specify _fadein_ or
-_fadeout_ as 0 (zero) to not have any fade effect on that end.
+{{<tag-def-box title="Fade" id="\fad">}}\\fad(<i>\<fadein></i>,<i>\<fadeout></i>) {{</tag-def-box>}}
+Produce un efecto de aparición y desaparición gradual. Los tiempos de _fadein_ y _fadeout_ se dan en milisegundos, es decir. 1000 significa un segundo. Puede especificar _fadein_ o _fadeout_ como 0 (cero) para no tener ningún efecto de desvanecimiento en ese extremo.
 
-Adding a fade effect does not extend the duration of the line, rather the
-start or end of the line's display time is used for the fade effect. For this
-reason, you should be careful that _fadein_+_fadeout_ is not greater than the
-duration of the line. For example, for a line displayed for 4 seconds, the sum
-of _fadein_+_fadeout_ should not be greater than 4000.
+Agregar un efecto de desvanecimiento no extiende la duración de la línea, sino que se usa el inicio o el final del tiempo de visualización de la línea para el efecto de desvanecimiento. Por esta razón, debes tener cuidado de que _fadein_+_fadeout_ no sea mayor que la duración de la línea. Por ejemplo, para una línea que se muestra durante 4 segundos, la suma de _fadein_+_fadeout_ no debe ser mayor que 4000.
 
 {{<example-box>}}
 
@@ -758,132 +594,105 @@ of _fadein_+_fadeout_ should not be greater than 4000.
 \fad(1200,250)
 ```
 
-Fade in the line in the first 1.2 seconds it is to be displayed, and fade it
-out for the last one quarter second it is displayed.
+Se desvanece la línea en los primeros 1,2 segundos que se va a mostrar y se desvanece durante el último cuarto de segundo que se muestra.
 {{</example-box>}}
 
-{{<tag-def-box title="Fade (complex)" id="\fade">}}\\fade(<i>\<a1</i>>,<i>\<a2</i>>,<i>\<a3</i>>,<i>\<t1</i>>,<i>\<t2</i>>,<i>\<t3</i>>,<i>\<t4</i>>){{</tag-def-box>}}
-Perform a five-part fade using three alpha values _a1_, _a2_ and _a3_ and four
-times _t1_, _t2_, _t3_ and _t4_.
+{{<tag-def-box title="Desvanecimiento (complejo)" id="\fade">}}\\fade(<i>\<a1</i>>,<i>\<a2</i >>,<i>\<a3</i>>,<i>\<t1</i>>,<i>\<t2</i>>,<i>\<t3</i>> ,<i>\<t4</i>>){{</tag-def-box>}}
+Realice un desvanecimiento de cinco partes utilizando tres valores alfa _a1_, _a2_ y _a3_ y cuatro veces _t1_, _t2_, _t3_ y _t4_.
 
-The alpha values are given in _decimal_ and are between 0 and 255, with 0
-being fully visible and 255 being invisible. The time values are given in
-milliseconds after the start of the line. All seven parameters are required.
-(For most common fade effects the [`\fad`]({{<relref path="ASS_Tags#fade" lang="en">}}) tag works fine.)
+Los valores alfa se dan en _decimal_ y están entre 0 y 255, siendo 0 completamente visible y 255 invisible. Los valores de tiempo se dan en milisegundos después del inicio de la línea. Se requieren los siete parámetros.
+(Para los efectos de desvanecimiento más comunes, la etiqueta [`\fad`]({{<relref path="ASS_Tags#fade" lang="en">}}) funciona bien.)
 
-- Before _t1_, the line has alpha _a1_.
-- Between _t1_ and _t2_ the line fades from alpha _a1_ to alpha _a2_.
-- Between _t2_ and _t3_ the line has alpha _a2_ constantly.
-- Between _t3_ and _t4_ the line fades from alpha _a2_ to alpha _a3_.
-- After _t4_ the line has alpha _a3_.
+- Antes de _t1_, la línea tiene alfa _a1_.
+- Entre _t1_ y _t2_ la línea se desvanece de alfa _a1_ a alfa _a2_.
+- Entre _t2_ y _t3_ la línea tiene alfa _a2_ constantemente.
+- Entre _t3_ y _t4_ la línea se desvanece de alfa _a2_ a alfa _a3_.
+- Después de _t4_ la línea tiene alfa _a3_.
 
 {{<example-box>}}
 
 ```plaintext
-\fade(255,32,224,0,500,2000,2200)
+\desvanecerse(255,32,224,0,500,2000,2200)
 ```
 
-Starts invisible, fades to almost totally opaque, then fades to almost totally
-invisible. First fade starts when the line starts and lasts 500 milliseconds.
-Second fade starts 1500 milliseconds later, and lasts 200 milliseconds.
+Comienza invisible, se desvanece hasta volverse casi totalmente opaco y luego se desvanece hasta volverse casi totalmente invisible. El primer desvanecimiento comienza cuando comienza la línea y dura 500 milisegundos. El segundo desvanecimiento comienza a los 1500 mililitros.segundos más tarde y dura 200 milisegundos.
 {{</example-box>}}
 
-{{<tag-def-box title="Animated transform" id="\t">}}
+{{<tag-def-box title="Transformación animada" id="\t">}}
 \\t(<i>\<style modifiers></i>)
 \\t(<i>\<accel></i>,<i>\<style modifiers></i>)
 \\t(<i>\<t1</i>>,<i>\<t2</i>>,<i>\<style modifiers></i>)
-\\t(<i>\<t1</i>>,<i>\<t2</i>>,<i>\<accel></i>,<i>\<style modifiers></i>)
+\\t(<i>\<t1</i>>,<i>\<t2</i>>,<i>\<accel></i>,<i>\<style modifiers></ yo>)
 {{</tag-def-box>}}
 
-Perform a gradual, animated transformation from one style to another. The
-_style modifiers_ are other override tags as specified in this reference. Only
-a limited set of the override tags are animateable with `\t`:
+Realice una transformación gradual y animada de un estilo a otro. Los _modificadores de estilo_ son otras etiquetas de anulación como se especifica en esta referencia. Sólo un conjunto limitado de etiquetas de anulación se pueden animar con `\t`:
 
-| Font    | Geometry | Other effects |
+| Fuente | Geometría | Otros efectos |
 | ------- | -------- | ------------- |
-| \\fs    | \\fscx   | \\bord        |
-| \\fsp   | \\fscy   | \\xbord       |
-| \\c     | \\frx    | \\ybord       |
-| \\1c    | \\fry    | \\shad        |
-| \\2c    | \\frz    | \\xshad       |
-| \\3c    | \\fr     | \\yshad       |
-| \\4c    | \\fax    | \\clip        |
-| \\alpha | \\fay    | \\iclip       |
-| \\1a    |          | \\be          |
-| \\2a    |          | \\blur        |
-| \\3a    |          |               |
-| \\4a    |          |               |
+| \\fs | \\fscx | \\bordar |
+| \\fsp | \\fscy | \\xbordar |
+| \\c | \\frx | \\ybord |
+| \\1c | \\freír | \\sábalo |
+| \\2c | \\frz | \\xshad |
+| \\3c | \\fr | \\yshad |
+| \\4c | \\fax | \\clip |
+| \\alfa | \\fay | \\iclip |
+| \\1a | | \\ ser |
+| \\2a | | \\ desenfoque |
+| \\3a | | |
+| \\4a | | |
 
-_Note: For `\clip` and `\iclip`, only the rectangle versions can be animated. The
-vector drawing versions cannot be animated._
+_Nota: Para `\clip` y `\iclip`, solo se pueden animar las versiones rectangulares. Las versiones de dibujos vectoriales no se pueden animar._
 
-_Note: Mixing `\clip` and `\iclip` in `\t` tags has undesireable results._
+_Nota: Mezclar `\clip` y `\iclip` en etiquetas `\t` tiene resultados no deseados._
 
-The _t1_ and _t2_ parameters specify the time interval to perform the
-transformation over. In the versions without _t1_ and _t2_ the transformation
-is performed over the entire duration of the line. The times are given in
-milliseconds and are relative to the start time of the line. (For the rest of
-the description of `\t`, _t1_ and _t2_ are assumed to be specified, or
-implicitly be respectively 0 and the duration of the line.)
+Los parámetros _t1_ y _t2_ especifican el intervalo de tiempo para realizar la transformación. En las versiones sin _t1_ y _t2_ la transformación se realiza a lo largo de toda la línea. Los tiempos se dan en milisegundos y son relativos a la hora de inicio de la línea. (Para el resto de la descripción de `\t`, se supone que _t1_ y _t2_ están especificados, o implícitamente son respectivamente 0 y la duración de la línea).
 
-The _accel_ parameter can be used to make the animation non-linear and instead
-follow an exponential curve. An _accel_ parameter of 1 (one) causes the
-animation speed to be linear. A value bewteen 0 and 1 causes the animation to
-start fast and end slow. A value greater than 1 causes the animation to start
-slow and end fast. (For the mathematically inclined, the function is _y_ = _x_
-with _x_ ∈ \[0;1\] = (_t_-_t1_)/(_t2_-_t1_), _t_ being the current time.)
+El parámetro _accel_ se puede utilizar para hacer que la animación no sea lineal y, en su lugar, siga una curva exponencial. Un parámetro _accel_ de 1 (uno) hace que la velocidad de la animación sea lineal. Un valor entre 0 y 1 hace que la animación comience rápido y termine lento. Un valor mayor que 1 hace que la animación comience lentamente y termine rápido. (Para los amantes de las matemáticas, la función es _y_ = _x_ con _x_ ∈ \[0;1\] = (_t_-_t1_)/(_t2_-_t1_), siendo _t_ la hora actual.)
 
-Before _t1_, the style is as all tags before the `\t` tag specify. After _t2_
-the style is as all tags before the `\t` tag, and further overridden by the
-given _style overrides_. Between _t1_ and _t2_ the style is gradually animated
-between those two points, following the acceleration function described above.
+Antes de _t1_, el estilo es el que especifican todas las etiquetas antes de la etiqueta `\t`. Después de _t2_, el estilo es como todas las etiquetas antes de la etiqueta `\t` y se anula aún más por las _anulaciones de estilo_ dadas. Entre _t1_ y _t2_ el estilo se anima gradualmente entre esos dos puntos, siguiendo la función de aceleración descrita anteriormente.
 
 {{<example-box>}}
 
 ```ass
-{\1c&HFF0000&\t(\1c&H0000FF&)}Hello!
+{\1c&HFF0000&\t(\1c&H0000FF&)}¡Hola!
 ```
 
-The text starts out blue, but fades towards red so it is completely red when the line ends.
+El texto comienza en azul, pero se desvanece hacia el rojo, por lo que es completamente rojo cuando termina la línea.
 {{</example-box>}}
 {{<example-box>}}
 
 ```ass
-{\an5\t(0,5000,\frz3600)}Wheee
+{\an5\t(0,5000,\frz3600)}Waaa
 ```
 
-Makes the text rotate 10 times, counterclockwise, lasting for 5 seconds.
+Hace que el texto gire 10 veces, en sentido antihorario, con una duración de 5 segundos.
 {{</example-box>}}
 {{<example-box>}}
 
 ```ass
-{\an5\t(0,5000,0.5,\frz3600)}Wheee
+{\an5\t(0,5000,0.5,\frz3600)}Ruiii
 ```
 
-Same as above, but it will start fast and slow down, still doing the 10 rotations in 5 seconds.
+Igual que el anterior, pero comenzará rápido y disminuirá, aún haciendo las 10 rotaciones en 5 segundos.
 {{</example-box>}}
 {{<example-box>}}
 
 ```ass
-{\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}Boo!
+{\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}¡Abucheo!
 ```
 
-Text starts at zero size, i.e. invisible, then grows to 100% size in both X and Y direction.
+El texto comienza con un tamaño cero, es decir, invisible, y luego crece hasta alcanzar el 100% del tamaño tanto en la dirección X como en la Y.
 {{</example-box>}}
 
-{{<tag-def-box title="Clip (rectangle)" id="\clip">}}
-\\clip(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i>>)
-\\iclip(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i>>)
+{{<tag-def-box title="Clip (rectángulo)" id="\clip">}}
+\\clip(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i> >)
+\\iclip(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i> >)
 {{</tag-def-box>}}
-Define a rectangle to clip the line, only the part of the line that is inside
-the rectangle is visible. The `\iclip` tag has the opposite effect, it defines
-a rectangle where the line is not shown.
+Defina un rectángulo para recortar la línea, solo la parte de la línea que está dentro del rectángulo es visible. La etiqueta `\iclip` tiene el efecto contrario, define un rectángulo donde no se muestra la línea.
 
-The _x1_, _y1_, _x2_ and _y2_ coordinates are given in script resolution
-pixels and are relative to the top-left corner of the video. The coordinates
-must be integers, there is no possibility to use non-integer coordinates.
-(Increasing the script resolution will not increase the precision, the
-clipping always happens on video pixel boundaries.)
+Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en píxeles de resolución de script y son relativas a la esquina superior izquierda del vídeo. Las coordenadas deben ser números enteros, no hay posibilidad de utilizar coordenadas no enteras.
+(Aumentar la resolución del script no aumentará la precisión; el recorte siempre ocurre en los límites de los píxeles del video).
 
 {{<example-box>}}
 
@@ -891,8 +700,7 @@ clipping always happens on video pixel boundaries.)
 \clip(0,0,320,240)
 ```
 
-Assuming 640x480 script resolution, only the part of the line within the top
-left quadrant is visible.
+Suponiendo una resolución de script de 640x480, solo es visible la parte de la línea dentro del cuadrante superior izquierdo.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -900,36 +708,27 @@ left quadrant is visible.
 \iclip(0,0,320,240)
 ```
 
-Similar to above, but instead the part of the line within the top left
-quadrant is hidden.
+Similar a lo anterior, pero la parte de la línea dentro del cuadrante superior izquierdo está oculta.
 {{</example-box>}}
 {{<example-box>}}
-Example of `\clip(0,0,704,245)` on a 704x480 video:
+Ejemplo de `\clip(0,0,704,245)` en un vídeo de 704x480:
 
 ![Clip_sample01](/img/3.2/Clip_sample01.jpg)
 {{</example-box>}}
 
-{{<tag-def-box title="Clip (vector drawing)" id="">}}
-\\clip(<i>\<drawing commands></i>)
-\\clip(<i>\<scale></i>,<i>\<drawing commands></i>)
-\\iclip(<i>\<drawing commands></i>)
-\\iclip(<i>\<scale></i>,<i>\<drawing commands></i>)
+{{<tag-def-box title="Clip (dibujo vectorial)" id="">}}
+\\clip(<i>\<comandos de dibujo></i>)
+\\clip(<i>\<scale></i>,<i>\<comandos de dibujo></i>)
+\\iclip(<i>\<comandos de dibujo></i>)
+\\iclip(<i>\<scale></i>,<i>\<comandos de dibujo></i>)
 {{</tag-def-box>}}
-Use the shape defined by a vector drawing to selectively display (`\clip`) or
-hide (`\iclip`) parts of the line.
+Utilice la forma definida por un dibujo vectorial para mostrar selectivamente (`\clip`) u ocultar (`\iclip`) partes de la línea.
 
-The _drawing commands_ are drawing commands as those used with the `\p` tag,
-the coordinates are given in script resolution pixels and are relative to the
-top left corner of the video.
+Los _comandos de dibujo_ son comandos de dibujo como los que se usan con la etiqueta `\p`, las coordenadas se dan en píxeles de resolución de script y son relativas a la esquina superior izquierda del video.
 
-If the _scale_ is not specified it is assumed to be 1 (one), meaning that
-coordinates correspond directly to pixels. The _scale_ works the same way as
-the _scale_ for `\p` drawings.
+Si el_scale_ no se especifica, se supone que es 1 (uno), lo que significa que las coordenadas corresponden directamente a los píxeles. La _escala_ funciona de la misma manera que la _escala_ para los dibujos `\p`.
 
-Unlike the rectangular clip, the vector drawing clip can _not_ be animated
-with `\t`. If you need to animate a vector drawing clip, you must create
-multiple similar subtitle lines with each their own "frame" of the clipping
-animation.
+A diferencia del clip rectangular, el clip de dibujo vectorial _no_ puede animarse con `\t`. Si necesita animar un clip de dibujo vectorial, debe crear varias líneas de subtítulos similares, cada una con su propio "cuadro" de la animación de recorte.
 
 {{<example-box>}}
 
@@ -937,146 +736,115 @@ animation.
 \clip(1,m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0)
 ```
 
-Only show the portion of the line within the defined pseudo-circle.
+Muestra solo la parte de la línea dentro del pseudocírculo definido.
 {{</example-box>}}
 
-## Drawing tags
+## Etiquetas de dibujo
 
-Advanced Substation Alpha also supports some advanced drawing tags that allow
-you to draw with vectorial graphics. Certain familiarity with vectors and
-splines will make the understanding of this much simpler.
+Advanced Substation Alpha también admite algunas etiquetas de dibujo avanzadas que le permiten dibujar con gráficos vectoriales. Cierta familiaridad con los vectores y los splines hará que la comprensión de esto sea mucho más sencilla.
 
-### \\p\<0/1/..> - Toggle drawing mode
+### \\p\<0/1/..> - Alternar modo de dibujo
 
-Setting this tag to 1 or above enables drawing mode. Text after this override
-block will then be interpreted as drawing instructions, and not as actually
-visible text. Setting this to zero disables drawing mode, restoring normal
-behavior. When turning on, the value might be any integer larger than zero,
-and will be interpreted as the scale, in 2^(value-1) mode. This is done to
-allow sub-pixel accuracy.
-e.g.:
+Establecer esta etiqueta en 1 o superior habilita el modo de dibujo. El texto después de este bloque de anulación se interpretará como instrucciones de dibujo y no como texto realmente visible. Establecer esto en cero desactiva el modo de dibujo, restaurando el comportamiento normal. Al activarlo, el valor puede ser cualquier número entero mayor que cero y se interpretará como la escala, en modo 2^(valor-1). Esto se hace para permitir una precisión de subpíxeles. p.ej.:
 
 ```plaintext
 \p1
 ```
 
-(Enables drawing with normal coordinates)
+(Permite dibujar con coordenadas normales)
 
 ```plaintext
 \p0
 ```
 
-(Disables drawing)
+(Desactiva el dibujo)
 
 ```plaintext
 \p2
 ```
 
-(Enables drawing, and resolution is doubled. So drawing to 200,200 will
-actually draw to 100,100)
+(Permite dibujar y la resolución se duplica. Por lo tanto, dibujar hasta 200 200 en realidad llegará a 100 100)
 
 ```plaintext
 \p4
 ```
 
-(Enables drawing, and resolution is 8x larger (2^(4-1)). So drawing to 400,400
-will actually draw to 50,50)
+(Permite dibujar y la resolución es 8 veces mayor (2^(4-1)). Por lo tanto, dibujar a 400,400 en realidad dibujará a 50,50)
 
-### \\pbo<y> - Baseline offset
+### \\pbo<y> - Desplazamiento de línea base
 
-Defines baseline offset for drawing. This is basically an Y offset to all
-coordinates.
-e.g.:
+Define el desplazamiento de la línea base para el dibujo. Esto es básicamente un desplazamiento Y para todas las coordenadas. p.ej.:
 
 ```plaintext
 \pbo-50
 ```
 
-(Draws everything 50 pixels above specified)
+(Dibuja todo lo especificado 50 píxeles arriba)
 
 ```plaintext
 \pbo100
 ```
 
-(Draws everything 100 pixels below specified)
+(Dibuja todo lo que se especifica a 100 píxeles por debajo)
 
-## Drawing commands
+## Comandos de dibujo
 
-These commands should appear either in a \\clip tag (vectorial overload) or
-between \\p# and \\p0, outside override blocks.  For example (taken straight
-from the ASS specs):
+Estos comandos deberían aparecer en una etiqueta \\clip (sobrecarga vectorial) o entre \\p# y \\p0, fuera de los bloques de anulación. Por ejemplo (tomado directamente de las especificaciones de ASS):
 
-- Square:
+- Cuadrado:
 
-  ```ass
-  {\\p1}m 0 0 l 100 0 100 100 0 100{\\p0}
-  ```
+   ```ass
+   {\\p1}m 0 0 l 100 0 100 100 0 100{\\p0}
+   ```
 
-- Rounded square:
+- Cuadrado redondeado:
 
-  ```ass
-  {\\p1}m 0 0 s 100 0 100 100 0 100 c{\\p0}
-  ```
+   ```ass
+   {\\p1}m 0 0 s 100 0 100 100 0 100 c{\\p0}
+   ```
 
-  (c equals to "p 0 0 100 0 100 100" in this case)
+   (c es igual a "p 0 0 100 0 100 100" en este caso)
 
-- Circle (almost):
+- Círculo (casi):
 
-  ```ass
-  {\p1}m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0{\p0}
-  ```
+   ```ass
+   {\p1}m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0{\p0}
+   ```
 
-  (note that the 2nd 'b' is optional here)
+   (tenga en cuenta que la segunda 'b' es opcional aquí)
 
-Drawing commands use the primary color for fill and outline color for borders.
-They also display shadow. The idea of drawing vectors is that there is an
-invisible "cursor" (think of it as the mouse pointer in a drawing program, or
-as a pen moving through the image) on the video frame, and you tell it to move
-to other positions. As it moves, it draws on the area behind it, and when you
-close the line formed, it fills it with the primary color.
+Los comandos de dibujo utilizan el color primario para el relleno y el color de contorno para los bordes. También muestran sombra. La idea de dibujar vectores es que hay un "cursor" invisible (considérelo como el puntero del mouse en un programa de dibujo, o como un lápiz que se mueve a través de la imagen) en el cuadro de video, y usted le indica que se mueva a otras posiciones. . A medida que se mueve, dibuja el área detrás de él, y cuando cierras la línea formada, la rellena con el color primario.
 
-### m \<x> \<y> - Move
+### m \<x> \<y> - Mover
 
-Moves the cursor to x,y. If you have an unclosed shape, it will automatically
-be closed, as the program assumes that you are now drawing a new, independent
-shape. All drawing routines must start with this command.
+Mueve el cursor a x,y. Si tiene una forma abierta, se cerrará automáticamente, ya que el programa asume que ahora está dibujando una forma nueva e independiente. Todas las rutinas de dibujo deben comenzar con este comando.
 
-### n \<x> \<y> - Move (no closing)
+### n \<x> \<y> - Mover (sin cerrar)
 
-Moves the cursor to x,y, without closing the current shape.
+Mueve el cursor a x,y, sin cerrar la forma actual.
 
-### l \<x> \<y> - Line
+### l \<x> \<y> - Línea
 
-Draws a line from the current cursor position to x,y, and moves the cursor
-there afterwards.
+Dibuja una línea desde la posición actual del cursor hasta x,y y luego mueve el cursor allí.
 
-### b \<x1> \<y1> \<x2> \<y2> \<x3> \<y3> - Cubic Bézier curve
+### b \<x1> \<y1> \<x2> \<y2> \<x3> \<y3> - Curva de Bézier cúbica
 
-Draws a cubic (3rd degree) Bézier curve from the cursor position to (x3,y3),
-using (x1,y1) and (x2,y2) as the control points. Check the [article on Wikipedia](http://en.wikipedia.org/wiki/B%C3%A9zier_curve) for more
-information about Bézier curves. In this picture taken from that article, P0
-is the cursor position, P1 is x1,y1, P2 is x2,y2 and P3 is x3,y3:
+Dibuja una curva de Bézier cúbica (tercer grado) desde la posición del cursor hasta (x3,y3), utilizando (x1,y1) y (x2,y2) como puntos de control. Consulte el [artículo en Wikipedia] (http://en.wikipedia.org/wiki/B%C3%A9zier_curve) para obtener más información sobre las curvas de Bézier. En esta imagen tomada de ese artículo, P0 es la posición del cursor, P1 es x1,y1, P2 es x2,y2 y P3 es x3,y3:
 
-![Bezier](/img/3.2/Bezier.png)
+![Bézier](/img/3.2/Bezier.png)
 
-Note that the curve begins at P0, heads towards P1, then arrives at P3 coming
-from P2's direction.
+Tenga en cuenta que la curva comienza en P0, se dirige hacia P1 y luego llega a P3 viniendo de la dirección de P2.
 
-### s \<x1> \<y1> \<x2> \<y2> \<x3> \<y3> .. \<xN> \<yN> - Cubic b-spline
+### s \<x1> \<y1> \<x2> \<y2> \<x3> \<y3> .. \<xN> \<yN> - B-spline cúbico
 
-Draws a cubic (3rd degree) uniform b-spline to point N. This must contain at
-least 3 coordinates (and is, in that case, the same as b). This basically lets
-you chain several cubic Bézier curves together. Check this other article on
-Wikipedia for more information.
+Dibuja un b-spline uniforme cúbico (de tercer grado) hasta el punto N. Este debe contener al menos 3 coordenadas (y es, en ese caso, lo mismo que b). Básicamente, esto le permite encadenar varias curvas cúbicas de Bézier. Consulta este otro artículo en Wikipedia para más información.
 
-### p \<x> \<y> - Extend b-spline
+### p \<x> \<y> - Extender b-spline
 
-Extends the b-spline to x,y. This is essentially the same as adding another
-pair of coordinates at the end of s.
+Extiende el b-spline a x,y. Esto es esencialmente lo mismo que agregar otro par de coordenadas al final de s.
 
-### c - Close b-spline
+### c - Cerrar b-spline
 
-Closes the b-spline.
+Cierra el b-spline.
 
-_Note: The [vector clip visual typesetting tool]({{<relref path="Visual_Typesetting#vectorial-clip" lang="en">}}) only supports the m, l and b
-commands, and may corrupt drawings which use the other commands._
+_Nota: La [herramienta de composición tipográfica visual de clip vectorial]({{<relref path="Visual_Typesetting#vectorial-clip" lang="en">}}) solo admite los comandos m, l y b, y puede dañar los dibujos que usan los otros comandos._
