@@ -6,41 +6,38 @@ menu:
 weight: 4400
 ---
 
-La siguiente es una lista de todas las etiquetas admitidas por el formato Advanced Substation Alpha. Esta es básicamente una versión detallada de ass-quickref.txt. Consulte el [tutorial]({{<relref path="Visual_Typesetting" lang="en">}}) para obtener una introducción a la composición tipográfica, utilizando algunas etiquetas básicas.
+La siguiente es una lista de todas las etiquetas admitidas por el formato Advanced Substation Alpha. Esta es básicamente una versión detallada de `ass-quickref.txt`. Consulte el [tutorial]({{<relref path="Visual_Typesetting" lang="en">}}) para obtener una introducción a la composición tipográfica, utilizando algunas etiquetas básicas.
 
 ## Caracteres especiales
 
 Las siguientes etiquetas están escritas en el medio del texto y no dentro de bloques de anulación (es decir, no entre { y }).
 
 {{<tag-def-box title="Salto de línea suave" id="\n">}}\\n{{</tag-def-box>}}
-Inserte un salto de línea forzado, pero solo cuando esté en el modo de ajuste 2. (Ver
-[la etiqueta \\q]({{<relref path="ASS_Tags#wrapstyle" lang="en">}})). Tenga en cuenta que esta es una n minúscula.
+Inserta un salto de línea forzado, pero solo cuando esté en el modo de salto 2. (Ver
+[la etiqueta \\q]({{<relref path="ASS_Tags#\q" >}})). Fíjese que es una n minúscula.
 
-En todos los demás modos de ajuste, esto se reemplaza por un espacio normal. Esto rara vez (o nunca) es realmente útil. Si no estás seguro de si quieres esto o
-\\N, probablemente quieras \\N.
+En todos los demás modos de salto, esto se reemplaza por un espacio normal. Rara vez (o nunca) es realmente útil. Si no está seguro de si quiere esto o \\N, probablemente quiere \\N.
 
-{{<tag-def-box title="Salto de línea" id="\N">}}\\N{{</tag-def-box>}}
-Inserte un salto de línea forzado, independientemente del modo de ajuste. Tenga en cuenta que se trata de una N mayúscula.
+{{<tag-def-box title="Salto de línea duro" id="\N">}}\\N{{</tag-def-box>}}
+Inserta un salto de línea forzado, independientemente del modo de ajuste. Fíjese que es una N mayúscula.
 
 {{<tag-def-box title="Espacio duro" id="\h">}}\\h{{</tag-def-box>}}
-Inserte un espacio "duro" que no se rompa. La línea nunca se dividirá automáticamente justo antes o después de un espacio, y los espacios no se doblan cuando aparecen al principio o al final de una línea mostrada.
+Inserta un espacio "duro" que no se rompa. La línea nunca se dividirá automáticamente justo antes ni después de un espacio duro, y los espacios no se colapsan cuando aparecen al principio o al final de una línea dibujada.
 
-## Anular etiquetas
+## Etiquetas manuales
 
-Las etiquetas de anulación deben aparecer dentro de los bloques de anulación, que comienzan con { y terminan con }. Cualquier texto no reconocido dentro de los bloques de anulación se ignora silenciosamente, por lo que también se usan comúnmente para comentarios en línea. No se recomienda mezclar comentarios y etiquetas de anulación en el mismo bloque de anulación.
+Las etiquetas manuales, o etiquetas de anulación, deben aparecer dentro de los bloques de anulación, que comienzan con { y terminan con }. Cualquier texto no reconocido dentro de los bloques de anulación se ignora silenciosamente, por lo que también se usan comúnmente para comentarios en línea. No se recomienda mezclar comentarios y etiquetas en el mismo bloque de anulación.
 
-Las etiquetas se dividen en dos categorías generales: aquellas que establecen una propiedad de la línea misma y aquellas que modifican sólo el texto que las sigue. `\pos`, `\mover`,
-`\clip`, `\iclip`, `\org`, `\fade` y `\fad` son los de la primera categoría; todos los demás están en el segundo. Las etiquetas de la primera categoría deben aparecer como máximo una vez en una línea y no importa en qué parte de la línea aparezcan. Además, algunos de ellos son mutuamente excluyentes: `\pos` y `\move`; `\clip` y `\iclip`;
-`\fad` y `\fade`. El resultado de incluir varias instancias de estas etiquetas o etiquetas mutuamente excluyentes variará entre los renderizadores y no se recomienda.
+Las etiquetas se dividen en dos categorías generales: aquellas que establecen una propiedad de la línea misma y aquellas que modifican sólo el texto que las sigue. `\pos`, `\move`, `\clip`, `\iclip`, `\org`, `\fade` y `\fad` son de la primera categoría; todas las demás son de la segunda. Las etiquetas de la primera categoría deben aparecer como máximo una vez en una línea y no importa en qué parte de la línea aparezcan. Además, algunas de ellas son mutuamente excluyentes: `\pos` y `\move`; `\clip` y `\iclip`; `\fad` y `\fade`. El resultado de incluir varias instancias de estas etiquetas o etiquetas mutuamente excluyentes variará entre los renderizadores y no se recomienda.
 
 Las etiquetas de la segunda categoría modifican todo el texto después de la etiqueta hasta el final de la línea o hasta que otra etiqueta vuelva a anular la propiedad.
 
-Las etiquetas de anulación siempre siguen la misma forma: comienzan con una barra invertida \, luego un nombre y, después del nombre, el parámetro de la etiqueta. Si se omite el parámetro, se utiliza el valor predeterminado del estilo de la línea.
+Las etiquetas manuales siempre siguen la misma forma: comienzan con una barra invertida (backslash) \\, luego un nombre, luego el parámetro de la etiqueta después del nombre. Si se omite el parámetro, se utiliza el valor predeterminado del estilo de la línea.
 
-Algunas etiquetas son "complejas" y toman más de un parámetro. En estos casos, los parámetros se colocan entre paréntesis con comas entre los parámetros.
+Algunas etiquetas son "complejas" y aceptan más de un parámetro. En estos casos, los parámetros se colocan entre paréntesis con comas entre los parámetros.
 
 **Nota sobre tipografía:**
-En esta página, todo lo escrito en _cursiva_ con `<` corchetes angulares `>` alrededor es un parámetro y debe ingresar un valor en su lugar. Los corchetes angulares no forman parte del valor que debe ingresar. Utilice los ejemplos como guía sobre cómo se deben ingresar las etiquetas. En general, se aplican las mismas reglas a todas las etiquetas en cuanto a su apariencia.
+En esta página, todo lo escrito en _cursiva_ rodeado por `<` corchetes angulares `>` es un parámetro y uno tiene que ingresar un valor en su lugar. Los corchetes angulares no forman parte del valor que debe ingresar. Utilice los ejemplos como guía sobre cómo se deben escribir las etiquetas. En general, se aplican las mismas reglas a todas las etiquetas en cuanto a su apariencia.
 
 {{<tag-def-box title="Cursiva" id="\i">}}
 \\i1
@@ -48,7 +45,7 @@ En esta página, todo lo escrito en _cursiva_ con `<` corchetes angulares `>` al
 {{</tag-def-box>}}
 Activa o desactiva el texto en cursiva. Utilice `\i1` para habilitar la cursiva para el siguiente texto y `\i0` para deshabilitarla nuevamente.
 
-{{<tag-def-box title="Bold" id="\b">}}
+{{<tag-def-box title="Negrita" id="\b">}}
 \\b1
 \\b0
 \\b<i>\<weight></i>
@@ -467,7 +464,8 @@ Las diferentes etiquetas `\k` crean varios efectos:
 
 _Nota: Hay una etiqueta de karaoke adicional, `\kt`, que es muy diferente a las demás. Rara vez es útil y Aegisub no admite esa etiqueta, por lo que no está documentada.
 
-{{<tag-def-box title="Estilo de envoltura" id="\q">}}\\q<i>\<style></i>{{</tag-def-box>}}
+{{<tag-def-box title="Estilo de salto" id="\q">}}\\q<i>\<style\></i>{{</tag-def-box>}}
+
 Determine cómo se aplica el salto de línea a la línea de subtítulo. La siguiente
 \_style_s están disponibles:
 
@@ -479,7 +477,7 @@ Determine cómo se aplica el salto de línea a la línea de subtítulo. La sigui
    Tanto `\n` como `\N` fuerzan saltos de línea.
 - 3: Envoltura inteligente, similar al estilo 0, pero las líneas inferiores se hacen más anchas.
 
-{{<tag-def-box title="Restablecer estilo" id="\r">}}\\r<br>\\r<i>\<style></i>{{</tag-def-box>}}
+{{<tag-def-box title="Restablecer estilo" id="\r">}}\\r<br>\\r<i>\<style\></i>{{</tag-def-box>}}
 Restablecer el estilo. Esto cancela todas las anulaciones de estilo vigentes, incluidas
 [animaciones]({{<relref path="ASS_Tags#animatedtransform" lang="en">}}), para todo el texto siguiente.
 
@@ -495,7 +493,7 @@ Suponiendo que el estilo de línea actual es "Predeterminado", primero tiene "Oy
 texto.
 {{</example-box>}}
 
-{{<tag-def-box title="Establecer posición" id="\pos">}}\\pos(<i>\<X></i>,<i>\<Y></i> ){{</tag-def-box>}}
+{{<tag-def-box title="Establecer posición" id="\pos">}}\\pos(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
 Establece la posición de la línea. Las coordenadas _X_ e _Y_ deben ser números enteros y se proporcionan en el sistema de coordenadas de resolución del script. El significado de _X_ e _Y_ cambia ligeramente dependiendo de [alineación]({{<relref path="ASS_Tags#linealignment" lang="en">}}).
 
 La alineación de la línea de subtítulo se utiliza como punto de anclaje para la posición. Es decir. cuando tiene una línea con alineación superior izquierda, la esquina superior izquierda del subtítulo se coloca en las coordenadas dadas a `\pos`, y para la alineación inferior central, la esquina inferior central del subtítulo se coloca en las coordenadas dadas .
@@ -597,7 +595,7 @@ Agregar un efecto de desvanecimiento no extiende la duración de la línea, sino
 Se desvanece la línea en los primeros 1,2 segundos que se va a mostrar y se desvanece durante el último cuarto de segundo que se muestra.
 {{</example-box>}}
 
-{{<tag-def-box title="Desvanecimiento (complejo)" id="\fade">}}\\fade(<i>\<a1</i>>,<i>\<a2</i >>,<i>\<a3</i>>,<i>\<t1</i>>,<i>\<t2</i>>,<i>\<t3</i>> ,<i>\<t4</i>>){{</tag-def-box>}}
+{{<tag-def-box title="Desvanecimiento (complejo)" id="\fade">}}\\fade(<i>\<a1</i>>,<i>\<a2</i>>,<i>\<a3</i>>,<i>\<t1</i>>,<i>\<t2</i>>,<i>\<t3</i>> ,<i>\<t4</i>>){{</tag-def-box>}}
 Realice un desvanecimiento de cinco partes utilizando tres valores alfa _a1_, _a2_ y _a3_ y cuatro veces _t1_, _t2_, _t3_ y _t4_.
 
 Los valores alfa se dan en _decimal_ y están entre 0 y 255, siendo 0 completamente visible y 255 invisible. Los valores de tiempo se dan en milisegundos después del inicio de la línea. Se requieren los siete parámetros.
@@ -622,10 +620,10 @@ Comienza invisible, se desvanece hasta volverse casi totalmente opaco y luego se
 \\t(<i>\<style modifiers></i>)
 \\t(<i>\<accel></i>,<i>\<style modifiers></i>)
 \\t(<i>\<t1</i>>,<i>\<t2</i>>,<i>\<style modifiers></i>)
-\\t(<i>\<t1</i>>,<i>\<t2</i>>,<i>\<accel></i>,<i>\<style modifiers></ yo>)
+\\t(<i>\<t1</i>>,<i>\<t2</i>>,<i>\<accel></i>,<i>\<style modifiers></i>)
 {{</tag-def-box>}}
 
-Realice una transformación gradual y animada de un estilo a otro. Los _modificadores de estilo_ son otras etiquetas de anulación como se especifica en esta referencia. Sólo un conjunto limitado de etiquetas de anulación se pueden animar con `\t`:
+Realice una transformación gradual y animada de un estilo a otro. Los _modificadores de estilo_ son otras etiquetas manuales como se especifica en esta referencia. Sólo un conjunto limitado de etiquetas manuales se pueden animar con `\t`:
 
 | Fuente | Geometría | Otros efectos |
 | ------- | -------- | ------------- |

@@ -79,9 +79,9 @@ Son:
 1. Marcar el renglón como comentario. Renglones de comentario no aparecerán en el video.
 1. El [estilo]({{<relref path="Styles">}}) usado en este renglón.
 1. El actor hablando en este renglón. No tiene efecto real en la muestra de subtítulos pero puede ser útil para propósitos de edición.
-1. Efecto para este renglón. Har un par de efectos predefinidos que pueden ser aplicados con este campo, pero compatibilidad con renderizadores es inconsistente y usar [etiquetas manuales]({{<relref lang="en" path="ASS_Tags">}}) es casi siempre más recomendable. Este campo se usa comunmente como metadatos para scripts automatizadas.
+1. Efecto para este renglón. Har un par de efectos predefinidos que pueden ser aplicados con este campo, pero compatibilidad con renderizadores es inconsistente y usar [etiquetas manuales]({{<relref path="ASS_Tags">}}) es casi siempre más recomendable. Este campo se usa comunmente como metadatos para scripts automatizadas.
 1. El número de caracteres en el renglón más largo del subtítulo.
-1. Capa para el renglón. Si fija posiciona con una [etiqueta manual]({{<relref lang="en" path="ASS_Tags">}}) para que dos o más renglones se muestran encima uno del otro, este campo controla cuál se dibuja dónde; números de capa mayores se dibujan encima de menores.
+1. Capa para el renglón. Si fija posiciona con una [etiqueta manual]({{<relref path="ASS_Tags">}}) para que dos o más renglones se muestran encima uno del otro, este campo controla cuál se dibuja dónde; números de capa mayores se dibujan encima de menores.
 1. Momento de inicio del renglón.
 1. Momento de fin del renglón.
 1. Duración del renglón. Si se modifica, el momento final será cambiado como resultado.
