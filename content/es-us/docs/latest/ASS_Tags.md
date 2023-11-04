@@ -43,21 +43,21 @@ En esta página, todo lo escrito en _cursiva_ rodeado por `<` corchetes angulare
 \\i1
 \\i0
 {{</tag-def-box>}}
-Activa o desactiva el texto en cursiva. Utilice `\i1` para habilitar la cursiva para el siguiente texto y `\i0` para deshabilitarla nuevamente.
+Activa o desactiva el texto en _cursiva_. Utilice `\i1` para habilitar la cursiva para el siguiente texto y `\i0` para deshabilitarla nuevamente.
 
 {{<tag-def-box title="Negrita" id="\b">}}
 \\b1
 \\b0
-\\b<i>\<weight></i>
+\\b<i>\<peso></i>
 {{</tag-def-box>}}
 Activa o desactiva el texto en **negrita**. Utilice `\b1` para habilitar la negrita para el siguiente texto y `\b0` para desactivarla nuevamente.
 
-El formulario <code>\\b<i>\<weight></i></code> le permite especificar un peso explícito para usar. Tenga en cuenta que la mayoría de las fuentes sólo admiten uno o dos pesos, por lo que rara vez necesitará utilizarlo. Los pesos de las fuentes son múltiplos de 100, de modo que 100 es el más bajo, 400 es "normal", 700 es "negrita" y 900 es el más pesado.
+La versión <code>\\b<i>\<peso></i></code> permite especificar un peso explícito para usar. Tenga en cuenta que la mayoría de las fuentes sólo admiten uno o dos pesos, por lo que rara vez necesitará utilizarlo. Los pesos de las fuentes son múltiplos de 100, de modo que 100 es el más bajo, 400 es "normal", 700 es "negrita" y 900 es el más pesado.
 
 {{<example-box>}}
 
 ```ass
-No me hace ninguna gracia.
+No me hace {\b1}ninguna{\b0} gracia.
 ```
 
 La palabra "no" está escrita en negrita.
@@ -66,7 +66,7 @@ La palabra "no" está escrita en negrita.
 {{<example-box>}}
 
 ```ass
-{\b100}¿Qué {\b300}negrita {\b500}puedes {\b700}ponerte {\b900}?
+{\b100}¿Qué {\b300}tan {\b500}negrita {\b700}se {\b900}alcanza?
 ```
 
 Las palabras se escriben con cada vez mayor peso. Tenga en cuenta que la mayoría de las fuentes no tienen más de uno o dos pesos diferentes y en ese caso solo podrá ver "sin negrita" y "negrita".
@@ -84,12 +84,12 @@ Activa o desactiva el texto <u>subrayado</u>. Utilice `\u1` para habilitar el su
 {{</tag-def-box>}}
 Activa o desactiva el texto <s>tachado</s>. Utilice `\s1` para habilitar el tachado del siguiente texto y `\s0` para desactivarlo nuevamente.
 
-{{<tag-def-box title="Tamaño del borde" id="\bord">}}\\bord<i>\<size></i>{{</tag-def-box>}}
-Cambia el ancho del borde alrededor del texto. Establezca el tamaño en 0 (cero) para desactivar el borde por completo.
+{{<tag-def-box title="Grosor de borde" id="\bord">}}\\bord<i>\<grosor></i>{{</tag-def-box>}}
+Cambia el grosor del borde alrededor del texto. Fije el grosor en 0 (cero) para desactivar el borde por completo.
 
-Si "escala de borde y sombra" (consulte [propiedades del script]({{<relref path="Properties">}})) está habilitado, el valor se proporciona en píxeles de resolución del script; de lo contrario, se proporciona en píxeles de resolución de vídeo (que metro Esto significa que el grosor del borde variará según la resolución del vídeo en el que se muestran los subtítulos).
+Si "escalar borde y sombra" (consulte [propiedades del guión]({{<relref path="Properties">}})) está habilitado, el valor se proporciona en píxeles de resolución del guión; de lo contrario, se proporciona en píxeles de resolución de vídeo (lo cual significa que el grosor del borde variará según la resolución del vídeo en la que se renderizan los subtítulos).
 
-El valor no se limita a píxeles enteros y puede tener decimales. El ancho del borde no puede ser negativo.
+El valor no se limita a píxeles enteros y puede tener decimales. El grosor del borde no puede ser negativo.
 
 {{<example-box>}}
 
@@ -97,7 +97,7 @@ El valor no se limita a píxeles enteros y puede tener decimales. El ancho del b
 \bord0
 ```
 
-Deshabilite el borde por completo.
+Deshabilitar el borde por completo.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -105,32 +105,32 @@ Deshabilite el borde por completo.
 \bord3.7
 ```
 
-Establezca el ancho del borde en 3,7 píxeles
+Establecer el grosor del borde en 3,7 píxeles.
 {{</example-box>}}
 
-{{<tag-def-box title="Tamaño del borde (extendido)" id="\xbord">}}
+{{<tag-def-box title="Grosor de borde (extendido)" id="\xbord">}}
 \\xbord<i>\<size></i>
 \\ybord<i>\<size></i>
 {{</tag-def-box>}}
-Utilice las etiquetas `\xbord` `\ybord` para establecer el tamaño del borde en las direcciones X e Y por separado. Esto puede resultar útil para corregir el tamaño del borde para la representación anamórfica de subtítulos.
+Utilice las etiquetas `\xbord` `\ybord` para establecer el grosor del borde en las direcciones X y Y por separado. Esto puede ser útil para corregir el tamaño del borde en caso del renderizado anamórfico de subtítulos.
 
-Tenga en cuenta que si usa `\bord` después de `\xbord` o `\ybord` en una línea, los anulará a ambos.
+Tenga en cuenta que si usa `\bord` después de `\xbord` o `\ybord` en una línea, las anulará a ambos.
 
-Puede establecer el ancho del borde en 0 (cero) en una de las direcciones para desactivar completamente el borde en esa dirección.
+Uno puede establecer el grosor del borde en 0 (cero) en una de las direcciones para desactivar completamente el borde en esa dirección.
 
-{{<tag-def-box title="Distancia de sombra" id="\shad">}}\\shad<i>\<depth></i>{{</tag-def-box>}}
-Establece la distancia desde el texto para posicionar la sombra. Establecer la profundidad a 0
-(cero) para desactivar la sombra por completo. Funciona de manera similar a [\\bord]({{<relref path="ASS_Tags#bordersize" lang="en">}}).
+{{<tag-def-box title="Distancia de sombra" id="\shad">}}\\shad<i>\<profundidad></i>{{</tag-def-box>}}
+Establece la distancia desde el texto para posicionar la sombra. Fijar la profundidad a 0
+(cero) desactiva la sombra por completo. Funciona de manera similar a [\\bord]({{<relref path="ASS_Tags#\bord">}}).
 
-La distancia de la sombra no puede ser negativa con esta etiqueta.
+La profundidad de la sombra no puede ser negativa con esta etiqueta.
 
 {{<tag-def-box title="Distancia de sombra (extendida)" id="\xshad">}}
 \\xshad<i>\<depth></i>
 \\yshad<i>\<depth></i>
 {{</tag-def-box>}}
-Establezca la distancia desde el texto para colocar la sombra, con las posiciones X e Y configuradas por separado. La sombra solo se desactiva si la distancia X e Y es 0\.
+Establece la distancia desde el texto para posicionar la sombra, con las posiciones X y Y configuradas por separado. La sombra solo se desactiva si la distancia X y Y es 0.
 
-Tenga en cuenta que, a diferencia de \\shad, puede establecer la distancia negativa con estas etiquetas para colocar la sombra en la parte superior o izquierda del texto.
+Tenga en cuenta que, a diferencia de \\shad, puede establecer la distancia negativa con estas etiquetas para colocar la sombra arriba o izquierda del texto.
 
 {{<tag-def-box title="Bordes borrosos" id="\be">}}
 \\be0
