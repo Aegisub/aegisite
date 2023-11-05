@@ -343,16 +343,16 @@ En archivos ASS almacenados en codificaciones que no son Unicode, esta etiqueta 
 Establece el color del siguiente texto. La etiqueta `\c` es una abreviatura de `\1c`.
 
 - `\1c` establece el color de relleno principal.
-- `\2c` establece el color de relleno secundario. Esto sólo se utiliza para pre resaltado en karaoke estándar.
+- `\2c` establece el color de relleno secundario. Esto sólo se usa para pre resaltado en karaoke estándar.
 - `\3c` establece el color del borde.
 - `\4c` establece el color de la sombra.
 
 Los códigos de color se dan en [hexadecimal](http://en.wikipedia.org/wiki/Hexadecimal) en orden Azul Verde Rojo. Tenga en cuenta que este es el orden opuesto a los códigos de color HTML. Los códigos de color siempre deben comenzar con `&H` y terminar con `&`.
 
-Los botones de la barra de herramientas Seleccionar color ![pick-color-toolbar-buttons](/img/3.2/pick-color-toolbar-buttons.png) pueden ayudar a seleccionar colores e ingresar los códigos de color.
+Los botones Seleccionar Color de la barra de herramientas ![pick-color-toolbar-buttons](/img/3.2/pick-color-toolbar-buttons.png) pueden ayudar a seleccionar colores e ingresar los códigos de color.
 
 {{<tag-def-box title="Establecer alfa" id="\alpha">}}
-\\alfa&H<i>\<aa></i>
+\\alpha&H<i>\<aa></i>
 \\1a&H<i>\<aa></i>
 \\2a&H<i>\<aa></i>
 \\3a&H<i>\<aa></i>
@@ -362,7 +362,7 @@ Establece el alfa (transparencia) del texto.
 
 - `\alpha` establece el alfa de todos los componentes a la vez.
 - `\1a` establece el alfa de relleno primario.
-- `\2a` establece el alfa de relleno secundario. Esto sólo se utiliza para pre resaltado en karaoke estándar.
+- `\2a` establece el alfa de relleno secundario. Esto sólo se usa para pre resaltado en karaoke estándar.
 - `\3a` establece el borde alfa.
 - `\4a` establece la sombra alfa.
 
@@ -371,10 +371,10 @@ Un alfa de 00 (cero) significa opaco/completamente visible, y un alfa de FF (es 
 {{<example-box>}}
 
 ```plaintext
-\alfa&H80&
+\alpha&H80&
 ```
 
-Establezca el alfa de todos los componentes en hexadecimal 80, decimal 128, haciendo que el texto sea 50% transparente en general.
+Fija el alfa de todos los componentes en hexadecimal 80, decimal 128, para que el texto sea 50% transparente en general.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -382,41 +382,39 @@ Establezca el alfa de todos los componentes en hexadecimal 80, decimal 128, haci
 \1a&HFF&
 ```
 
-Establezca el alfa de relleno principal en hexadecimal FF, decimal 255, haciéndolo invisible y dejando efectivamente solo el borde y la sombra.
+Fija el alfa de relleno principal en hexadecimal FF, decimal 255, para que resulte efectivamente invisible dejando solo el borde y la sombra.
 {{</example-box>}}
 
 {{<tag-def-box title="Alineación de línea" id="\an">}}\\an<i>\<pos></i>{{</tag-def-box>}}
-Especifique la alineación de la línea. La alineación especifica la posición de la línea cuando no hay [anulación de posición]({{<relref path="ASS_Tags#setposition" lang="en">}}) o
-[movimiento]({{<relref path="ASS_Tags#movement" lang="en">}}) está vigente y, de lo contrario, especifica el punto de anclaje de posicionamiento y rotación.
+Especifica la alineación de la línea. La alineación define la posición de la línea cuando no hay ni [anulación de posición]({{<relref path="ASS_Tags#\pos">}}) ni [movimiento]({{<relref path="ASS_Tags#\move">}}) en efecto. De lo contrario, especifica el punto de anclaje de posicionamiento y rotación.
 
-La etiqueta `\an` usa valores de "teclado numérico" para _pos_, es decir. los valores de alineación corresponden a las posiciones de los dígitos en el teclado numérico en un teclado normal:
+La etiqueta `\an` usa valores del "teclado numérico" ("numpad") para _pos_. Es decir, los valores de alineación corresponden a las posiciones de los dígitos en el teclado numérico de cuadrícula:
 
-1. Abajo a la izquierda
-1. Centro inferior
-1. Abajo a la derecha
+1. Bajo izquierda
+1. Bajo centro
+1. Bajo derecha
 1. Centro izquierda
-1. Centro medio
+1. Centro
 1. Centro derecha
-1. Arriba a la izquierda
-1. Centro superior
-1. arriba a la derecha
+1. Arriba izquierda
+1. Arriba centro
+1. Arriba derecha
 
-{{<tag-def-box title="Alineación de línea (heredada)" id="\an">}}\\an<i>\<pos></i>{{</tag-def-box>}}
-Especifique la alineación de la línea utilizando códigos de alineación heredados de SubStation Alpha. Esta etiqueta es compatible pero se considera obsoleta; normalmente deberías usar
-`\an` en nuevos scripts, ya que es más intuitivo.
+{{<tag-def-box title="Alineación de línea (antigua)" id="\a">}}\\a<i>\<pos></i>{{</tag-def-box>}}
+Especifica la alineación de la línea utilizando códigos de alineación heredados de SubStation Alpha. Esta etiqueta es compatible pero se considera obsoleta; normalmente uno debe usar `\an` en nuevos guiones, ya que es más intuitivo.
 
-La excepción es que `\a6` debe usarse para la traducción de signos diferida, porque si vas a ser vago debes hacerlo bien y guardar el carácter extra.
+La excepción es que `\a6` debería usarse para la traducción perezosa de signos, porque si uno va a ser holgazán ha de hacerlo bien y ahorrar la letra extra.
 
-Calcule _pos_ de la siguiente manera: use 1 para alineación a la izquierda, 2 para alineación central y 3 para alineación a la derecha. Si quieres subtítulos, ya está. Para obtener títulos principales, agregue 4 al número, para obtener títulos intermedios agregue 8 al número:
+Calcule _pos_ de la siguiente manera: use 1 para alineación a la izquierda, 2 para alineación central y 3 para alineación a la derecha. Si quiere títulos abajo, ya está. Para títulos arriba, agregue 4 al número, y para títulos intermedios agregue 8 al número:
 
-- 1: abajo a la izquierda
-- 2: centro inferior
-- 3: abajo a la derecha
-- 5: arriba a la izquierda
-- 6: Centro superior
-- 7: arriba a la derecha
+- 1: Bajo izquierda
+- 2: Bajo centro
+- 3: Bajo derecha
+- 5: Arriba izquierda
+- 6: Arriba centro
+- 7: Arriba derecha
 - 9: Centro izquierda
-- 10: Centro medio
+- 10: Centro
 - 11: Centro derecha
 
 {{<tag-def-box title="Efecto Karaoke" id="\k">}}
@@ -430,61 +428,49 @@ Calcule _pos_ de la siguiente manera: use 1 para alineación a la izquierda, 2 p
 > y todos los demás efectos se crean con una combinación de múltiples diferentes
 > etiquetas._
 
-La familia de etiquetas `\k` marca los subtítulos para efectos de karaoke especificando la duración de cada sílaba. Coloca una etiqueta `\k` antes de cada sílaba en la línea.
+La familia de etiquetas `\k` marca los subtítulos para efectos de karaoke especificando la duración de cada sílaba. Coloque una etiqueta `\k` antes de cada sílaba en la línea.
 
-La _duración_ se da en centisegundos, es decir. una _duración_ de 100 equivale a 1 segundo. Por lo general, no ingresa etiquetas `\k` manualmente, sino que utiliza herramientas de sincronización de karaoke como [modo de karaoke de Aegisub]({{<relref path="Tutorials#karaoketiming" lang="en">}}).
+La _duración_ se da en centisegundos, ej. una _duración_ de 100 equivale a 1 segundo. Por lo general, uno no ingresa etiquetas `\k` manualmente, sino que utiliza herramientas de sincronización de karaoke como [modo karaoke de Aegisub]({{<relref path="Tutorials#sincronizar-karaoke">}}).
 
 Las diferentes etiquetas `\k` crean varios efectos:
 
-- `\k`: Antes de resaltar, la sílaba se rellena con el color secundario y
-   alfa. Cuando el comienza la sílaba, el relleno cambia instantáneamente para usar
-   color primario y alfa.
-- `\K` y `\kf`: Estos dos son idénticos. Tenga en cuenta que `\K` es una K mayúscula
-   y es diferente de `\k` minúscula. El relleno de sílaba comienza en segundo plano.
-   color, cuando comienza la sílaba, el relleno cambia de secundario a primario
-   con un barrido de izquierda a derecha, por lo que el barrido termina cuando el tiempo de la sílaba es
-   encima.
-- `\ko`: Similar a `\k`, excepto que antes de resaltar, el borde/contorno de
-   la sílaba se elimina y aparece instantáneamente cuando comienza la sílaba.
+- `\k`: Antes de resaltar, la sílaba se rellena con el color y alfa secundarios. Cuando comienza la sílaba, el relleno cambia instantáneamente para usar color y alfa primarios.
+- `\K` y `\kf`: Estos dos son idénticos. Tenga en cuenta que `\K` es una K mayúscula y es diferente de `\k` minúscula. El relleno de sílaba comienza en color secundario, y cuando comienza la sílaba el relleno cambia de secundario a primario con un barrido de izquierda a derecha, y el barrido termina cuando el tiempo de la sílaba termina.
+- `\ko`: Similar a `\k`, excepto que antes de resaltar, el borde/contorno de la sílaba se elimina y aparece instantáneamente cuando comienza la sílaba.
 
-_Nota: Hay una etiqueta de karaoke adicional, `\kt`, que es muy diferente a las demás. Rara vez es útil y Aegisub no admite esa etiqueta, por lo que no está documentada.
+_Nota: Hay una etiqueta de karaoke adicional, `\kt`, que es muy diferente a las demás. Rara vez es útil y Aegisub no soporta esa etiqueta; por lo tanto no está documentada.
 
-{{<tag-def-box title="Estilo de salto" id="\q">}}\\q<i>\<style\></i>{{</tag-def-box>}}
+{{<tag-def-box title="Estilo de salto" id="\q">}}\\q<i>\<estilo></i>{{</tag-def-box>}}
 
-Determine cómo se aplica el salto de línea a la línea de subtítulo. La siguiente
-\_style_s están disponibles:
+Determina cómo se aplica el salto de línea a la línea de subtítulo. Las siguientes \_estilo_s están disponibles:
 
-- 0: Ajuste inteligente, haga que cada línea sea aproximadamente igual de larga, pero la línea superior
-   más ancho cuando el mismo ancho es imposible. Sólo `\N` fuerza los saltos de línea.
-- 1: Ajuste de final de línea, complete la mayor cantidad de texto posible en una línea y luego divida
-   a la siguiente línea. Sólo `\N` fuerza los saltos de línea.
-- 2: Sin ajuste de palabras, las líneas anchas se extenderán más allá de los bordes de la pantalla.
-   Tanto `\n` como `\N` fuerzan saltos de línea.
-- 3: Envoltura inteligente, similar al estilo 0, pero las líneas inferiores se hacen más anchas.
+- 0: Ajuste inteligente, hace que cada línea sea aproximadamente igual de larga, pero con la línea superior más ancha cuando el ancho igualado es imposible. Sólo `\N` fuerza los saltos de línea.
+- 1: Ajuste de final de línea, completa la mayor cantidad de texto posible en una línea y luego salta a la siguiente línea. Sólo `\N` fuerza los saltos de línea.
+- 2: Sin ajuste, las líneas anchas se extenderán más allá de los bordes de la pantalla. Tanto `\n` como `\N` fuerzan saltos de línea.
+- 3: Salto/ajuste inteligente, similar al estilo 0, pero las líneas inferiores se hacen más anchas.
 
-{{<tag-def-box title="Restablecer estilo" id="\r">}}\\r<br>\\r<i>\<style\></i>{{</tag-def-box>}}
-Restablecer el estilo. Esto cancela todas las anulaciones de estilo vigentes, incluidas
-[animaciones]({{<relref path="ASS_Tags#animatedtransform" lang="en">}}), para todo el texto siguiente.
+{{<tag-def-box title="Restablecer estilo" id="\r">}}\\r<br>\\r<i>\<estilo></i>{{</tag-def-box>}}
+Restablece el estilo. Esto cancela todas las anulaciones de estilo vigentes, incluidas
+[animaciones]({{<relref path="ASS_Tags#\t">}}), para todo el texto siguiente.
 
-El primer formulario que no especifica un _estilo_ se restablecerá al estilo definido para toda la línea, mientras que el segundo formulario, que especifica el nombre de un _estilo_, restablecerá el estilo a ese estilo específico.
+La primera forma que no especifica un _estilo_ restablecerá al estilo definido para toda la línea, mientras que el segundo formulario, que especifica el nombre de un _estilo_, establecerá el estilo en ese estilo específico.
 
 {{<example-box>}}
 
 ```ass
--Oye\N{\rAlternate}-¿Eh?\N{\r}-¿Quién eres?
+-Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?
 ```
 
-Suponiendo que el estilo de línea actual es "Predeterminado", primero tiene "Oye" en el estilo predeterminado y luego sigue en la siguiente línea "¿Eh?" en el estilo "Alternativo", y en la tercera línea el estilo se restablece a "Predeterminado" para "¿Quién eres?"
-texto.
+Suponiendo que el estilo de línea actual es "Default", primero tiene "Hey" en el estilo predeterminado y luego sigue en la siguiente línea "Huh?" en el estilo "Alternate", y en la tercera línea el estilo se restablece a "Default" para "Who are you?"
 {{</example-box>}}
 
-{{<tag-def-box title="Establecer posición" id="\pos">}}\\pos(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
-Establece la posición de la línea. Las coordenadas _X_ e _Y_ deben ser números enteros y se proporcionan en el sistema de coordenadas de resolución del script. El significado de _X_ e _Y_ cambia ligeramente dependiendo de [alineación]({{<relref path="ASS_Tags#linealignment" lang="en">}}).
+{{<tag-def-box title="Fijar posición" id="\pos">}}\\pos(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
+Establece la posición de la línea. Las coordenadas _X_ y _Y_ deben ser números enteros y se proporcionan en el sistema de coordenadas de resolución de guión. El significado de _X_ y _Y_ cambia ligeramente dependiendo de [alineación]({{<relref path="ASS_Tags#\an" lang="en">}}).
 
-La alineación de la línea de subtítulo se utiliza como punto de anclaje para la posición. Es decir. cuando tiene una línea con alineación superior izquierda, la esquina superior izquierda del subtítulo se coloca en las coordenadas dadas a `\pos`, y para la alineación inferior central, la esquina inferior central del subtítulo se coloca en las coordenadas dadas .
+La alineación de la línea de subtítulo se utiliza como punto de anclaje para la posición. Es decir, cuando tiene una línea con alineación arriba izquierda, la esquina superior izquierda del subtítulo se coloca en las coordenadas dadas a `\pos`, y para la alineación bajo centro, el centro inferior del subtítulo se coloca en las coordenadas dadas.
 
 {{<example-box>}}
-Las siguientes capturas de pantalla ilustran la forma en que la alineación afecta el posicionamiento. La cruz verde marca el punto (320,240) en el vídeo.
+Las siguientes capturas de pantalla demuestran la forma de que la alineación afecta el posicionamiento. La cruz verde señala el punto (320,240) en el vídeo.
 
 ![Pos_sample01](/img/3.2/Pos_sample01.jpg)
 ![Pos_sample02](/img/3.2/Pos_sample02.jpg)
