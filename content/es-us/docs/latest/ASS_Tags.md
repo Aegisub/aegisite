@@ -105,7 +105,7 @@ Deshabilitar el borde por completo.
 \bord3.7
 ```
 
-Establecer el grosor del borde en 3,7 píxeles.
+Establecer el grosor del borde en 3.7 píxeles.
 {{</example-box>}}
 
 {{<tag-def-box title="Grosor de borde (extendido)" id="\xbord">}}
@@ -119,7 +119,7 @@ Tenga en cuenta que si usa `\bord` después de `\xbord` o `\ybord` en una línea
 Uno puede establecer el grosor del borde en 0 (cero) en una de las direcciones para desactivar completamente el borde en esa dirección.
 
 {{<tag-def-box title="Distancia de sombra" id="\shad">}}\\shad<i>\<profundidad></i>{{</tag-def-box>}}
-Establece la distancia desde el texto para posicionar la sombra. Fijar la profundidad a 0
+Establece la distancia desde el texto para posicionar la sombra. Fijar la profundidad en 0
 (cero) desactiva la sombra por completo. Funciona de manera similar a [\\bord]({{<relref path="ASS_Tags#\bord">}}).
 
 La profundidad de la sombra no puede ser negativa con esta etiqueta.
@@ -137,20 +137,19 @@ Tenga en cuenta que, a diferencia de \\shad, puede establecer la distancia negat
 \\be1
 \\be<i>\<strength></i>
 {{</tag-def-box>}}
-Habilite o deshabilite un efecto de suavizado sutil para los bordes del texto. El efecto no siempre es muy visible, pero en algunos casos puede hacer que el texto se vea mejor. Suele ser más visible en tamaños de texto más pequeños.
+Habilita o deshability un efecto de suavizado sutil para los bordes del texto. El efecto no siempre es muy visible, pero en algunos casos puede hacer que el texto se vea mejor. Suele ser más visible en tamaños de texto más pequeños.
 
-Tenga en cuenta que esta etiqueta difumina los _bordes_ del texto, no todo. Esto significa que si el texto tiene un borde (establecido con [\\bord]({{<relref path="ASS_Tags#borderwidth" lang="en">}})) el borde se verá borroso, pero si no lo hay borde, el texto principal aparecerá borroso.
+Fíjese que esta etiqueta difumina solo los _bordes_ del texto, no todo. Esto significa que si el texto tiene un borde (establecido con [\\bord]({{<relref path="ASS_Tags#\bord">}})) el borde se verá borroso, pero si no hay borde, el texto principal aparecerá borroso.
 
-En la versión extendida, _fuerza_ es la cantidad de veces que se aplica el efecto normal. Tenga en cuenta que en valores altos el efecto degenera en la nada y, en general, no es muy útil. Como resultado, para desenfoques fuertes, `\blur` generalmente es más útil. La _fuerza_ debe ser un número entero.
+En la versión extendida, _fuerza_ es la cantidad de veces que se aplica el efecto normal. Tenga en cuenta que en valores altos el efecto degenera hasta la nada y, en general, no es muy útil. Como resultado, para desenfoques fuertes, `\blur` generalmente es más útil. La _fuerza_ tiene que ser un número entero.
 
-{{<tag-def-box title="Bordes desenfocados (núcleo gaussiano)" id="\blur">}}\\blur<i>\<strength></i>{{</tag-def-box >}}
-En general, tiene la misma función que la etiqueta [`\be`]({{<relref path="ASS_Tags#bluredges" lang="en">}}), pero utiliza un algoritmo más avanzado que se ve mejor en niveles altos. fortalezas. A diferencia de
-`\be`, la _fuerza_ aquí puede ser no entera. Establezca _strength_ en 0 (cero) para desactivar el efecto. Tenga cuidado, configurar _strength_ demasiado alto puede requerir mucho tiempo de CPU para renderizar.
+{{<tag-def-box title="Bordes borrosos (núcleo gaussiano)" id="\blur">}}\\blur<i>\<strength></i>{{</tag-def-box >}}
+En general, tiene la misma función que la etiqueta [`\be`]({{<relref path="ASS_Tags#\be">}}), pero utiliza un algoritmo más avanzado que se ve mejor en niveles altos de fuerza. A diferencia de `\be`, la _fuerza_ aquí puede ser no entera. Establezca _strength_ en 0 (cero) para desactivar el efecto. Con cuidado, que configurar _strength_ demasiado alto puede requerir mucho tiempo de CPU para renderizar.
 
-Tenga en cuenta que esta etiqueta difumina los _bordes_ del texto, no todo. Esto significa que si el texto tiene un borde (establecido con [`\bord`]({{<relref path="ASS_Tags#borderwidth" lang="en">}})) el borde se verá borroso, pero si hay sin borde, el texto principal aparecerá borroso.
+Tenga en cuenta que esta etiqueta difumina solo los _bordes_ del texto, no todo. Esto significa que si el texto tiene un borde (establecido con [`\bord`]({{<relref path="ASS_Tags#\bord">}})) el borde se verá borroso, pero si no hay borde, el texto principal aparecerá borroso.
 
 {{<tag-def-box title="Nombre de fuente" id="\fn">}}\\fn<i>\<name></i>{{</tag-def-box>}}
-Establezca la fuente que se utilizará para el siguiente texto. No debe haber espacios entre `\fn` y el nombre de la fuente, y tampoco debes poner paréntesis o algo similar alrededor del nombre de la fuente.
+Establece la fuente que se utilizará para el texto que sigue. No debe haber ningún espacio entre `\fn` y el nombre de la fuente, y tampoco puede poner paréntesis o algo similar alrededor del nombre de la fuente.
 
 {{<example-box>}}
 
@@ -170,7 +169,7 @@ El texto que sigue a esta etiqueta estará en fuente Times New Roman.
 {{</example-box>}}
 
 {{<tag-def-box title="Tamaño de fuente" id="\fs">}}\\fs<i>\<size></i>{{</tag-def-box>}}
-Establece el tamaño de la fuente. El tamaño especificado es la altura en píxeles de escritura, por lo que con un tamaño de fuente 40, una línea de texto tiene 40 píxeles de alto. (Nota técnica: en realidad se trata de puntos tipográficos (edición de escritorio), no de píxeles de secuencia de comandos, pero dado que la representación siempre se realiza a 72 DPI (según el estándar de facto), un punto termina siendo exactamente igual a un píxel de resolución de secuencia de comandos).
+Establece el tamaño de la fuente. El tamaño especificado es la altura en píxeles de escritura, por lo que con un tamaño de fuente 40, una línea de texto tiene 40 píxeles de alto. (Nota técnica: en realidad se trata de puntos tipográficos (edición de escritorio), no de píxeles de guión, pero dado que la representación siempre se realiza a 72 DPI (según el estándar de facto), un punto termina siendo exactamente igual a un píxel de resolución de guión).
 
 Sólo puede especificar tamaños de fuente enteros.
 
@@ -180,22 +179,22 @@ Sólo puede especificar tamaños de fuente enteros.
 \fs10
 ```
 
-El siguiente texto utilizará una fuente de tamaño 10.
+El siguiente texto será de una fuente de tamaño 10.
 {{</example-box>}}
 
 {{<tag-def-box title="Escala de fuente" id="\fscx">}}
 \\fscx<i>\<scale></i>
 \\fscy<i>\<scale></i>
 {{</tag-def-box>}}
-Ajuste el tamaño del texto en dirección X (`\fscx` o Y (`\fscy`). La _escala_ dada está en porcentaje, por lo que 100 significa "tamaño original".
+Ajusta el tamaño del texto en dirección X (`\fscx` o Y (`\fscy`). La _escala_ dada está en porcentaje, por lo que 100 significa "tamaño original".
 
-Esto no es lo mismo que configurar el tamaño de fuente, ya que configurar el tamaño está sujeto a [sugerencias de fuente](http://en.wikipedia.org/wiki/Font_hinting), mientras que escalar el texto modifica la forma del texto después de la sugerencia. Como resultado, esto siempre debe usarse con `\t` en lugar de `\fs`, ya que la animación de sugerencias para cambiar fuentes es muy rara. deseable.
+Esto no es lo mismo que configurar el tamaño de fuente, ya que configurar el tamaño está sujeto a [sugerencias de fuente](http://en.wikipedia.org/wiki/Font_hinting), mientras que escalar el texto modifica la forma del texto después de la sugerencia. Como resultado, esto siempre debe usarse con `\t` en lugar de `\fs`, ya que la animación de cambio de sugerencias para fuentes muy rara vez es deseable.
 
-Estas etiquetas también afectan a los [dibujos vectoriales]({{<relref path="ASS_Tags#drawing-commands" lang="en">}}).
+Estas etiquetas también afectan a los [dibujos vectoriales]({{<relref path="ASS_Tags#comandos-de-dibujo">}}).
 
-Puede utilizar la escala de fuente para corregir la representación anamórfica y especificar el tamaño del texto con mayor precisión que con [\\fs]({{<relref path="ASS_Tags#fontsize" lang="en">}}).
+Puede utilizar la escala de fuente para corregir la representación anamórfica y especificar el tamaño del texto con mayor precisión que con [\\fs]({{<relref path="ASS_Tags#\fs">}}).
 
-Tenga en cuenta que las versiones anteriores de VSFitler truncarán las escalas que no sean enteras.
+Tenga en cuenta que las versiones anteriores de VSFitler redondearán abajo las escalas que no sean enteras.
 
 {{<example-box>}}
 
@@ -203,7 +202,7 @@ Tenga en cuenta que las versiones anteriores de VSFitler truncarán las escalas 
 \fscx150
 ```
 
-Haz el texto un 50% más ancho de lo normal.
+Aumenta el texto un 50% más ancho de lo normal.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -211,7 +210,7 @@ Haz el texto un 50% más ancho de lo normal.
 \fscy50
 ```
 
-Haz el texto a media altura.
+Disminuye el texto a media altura.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -219,37 +218,31 @@ Haz el texto a media altura.
 \fscx200\fscy200
 ```
 
-Haz que el texto duplique su tamaño.
+Duplica el tamaño del texto.
 {{</example-box>}}
 
-{{<tag-def-box title="Espaciado entre letras" id="\fsp">}}\\fsp<i>\<spacing></i>{{</tag-def-box>}}
-Cambia el espacio entre las letras individuales del texto. Puede utilizar esto para difundir el texto más visualmente. El _espaciado_ se proporciona en píxeles de resolución de secuencia de comandos.
+{{<tag-def-box title="Espaciado entre letras" id="\fsp">}}\\fsp<i>\<espaciado></i>{{</tag-def-box>}}
+Cambia el espacio entre las letras individuales del texto. Puede utilizar esto para separar el texto más visualmente. El _espaciado_ se proporciona en píxeles de resolución de guión.
 
 El espaciado puede ser negativo y tener decimales.
 
 {{<tag-def-box title="Rotación de texto" id="\frx">}}
-\\frx<i>\<amount></i>
-\\freír<i>\<amount></i>
-\\frz<i>\<amount></i>
-\\fr<i>\<amount></i>
+\\frx<i>\<cuánto></i>
+\\freír<i>\<cuánto></i>
+\\frz<i>\<cuánto></i>
+\\fr<i>\<cuánto></i>
 {{</tag-def-box>}}
-Gira el texto a lo largo del eje X, Y o Z. La etiqueta `\fr` es un atajo para `\frz`.
+Gira el texto alrededor del eje X, Y o Z. La etiqueta `\fr` es un atajo para `\frz`.
 
-- El **eje X** corre horizontalmente en la pantalla. Girando sobre él (con
-   valores positivos) provoca un efecto en el que la parte superior del texto se mueve más
-   "dentro" de la pantalla mientras que la parte inferior se mueve "fuera" de la pantalla.
-- El **eje Y** corre verticalmente en la pantalla. Girando sobre él (con positivo
-   valores) hace que el texto gire de modo que la izquierda se mueva "fuera" del
-   pantalla, cuando la derecha se mueve "dentro" de la pantalla.
-- El **eje Z** corre perpendicular a la pantalla. Girando sobre él (con
-   valores positivos) hace que el texto gire en 2D, en sentido antihorario (como
-   estándar para títulos).
+- El **eje X** corre horizontalmente por la pantalla. Girando sobre él (con valores positivos) provoca un efecto con que la parte superior del texto se mete hacia "adentro" de la pantalla mientras que la parte inferior sale hacia "afuera" de la pantalla.
+- El **eje Y** corre verticalmente por la pantalla. Girando sobre él (con positivo valores) hace que el texto gire de modo que la izquierda sale hacia "afuera" de la pantalla, y la derecha se mete hacia "adentro" de la pantalla.
+- El **eje Z** corre perpendicular a la pantalla. Girando sobre él (con valores positivos) hace que el texto gire en 2D, en sentido antihorario (como es estándar en la matemática).
 
-La _cantidad_ de rotación se da en grados matemáticos, de modo que 360 grados es una rotación completa, y rotar cualquier múltiplo de 360 es lo mismo que no rotar. Es legal especificar cantidades de rotación negativas, así como cantidades mayores a 360 grados.
+La _cantidad_ de rotación se da en grados matemáticos, de modo que 360 grados es una rotación completa, y rotar cualquier múltiple de 360 es lo mismo que no rotar. Se permite especificar cantidades de rotación negativas, así como cantidades mayores a 360 grados.
 
-La rotación se realiza alrededor del punto de origen de la línea de subtítulo, esto se describe con la etiqueta [\\org]({{<relref path="ASS_Tags#rotationorigin" lang="en">}}).
+La rotación se realiza alrededor del punto de origen de la línea del subtítulo; esto se define con la etiqueta [\\org]({{<relref path="ASS_Tags#\org">}}).
 
-Estas etiquetas también afectan a [dibujos vectoriales]({{<relref path="ASS_Tags#vectordrawings" lang="en">}}).
+Estas etiquetas también afectan a [dibujos vectoriales]({{<relref path="ASS_Tags#comandos-de-dibujo">}}).
 
 {{<example-box>}}
 
@@ -257,7 +250,7 @@ Estas etiquetas también afectan a [dibujos vectoriales]({{<relref path="ASS_Tag
 \frx45
 ```
 
-Gire el texto 45 grados en el eje X.
+Gira el texto 45 grados por el eje X.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -265,7 +258,7 @@ Gire el texto 45 grados en el eje X.
 freír-45
 ```
 
-Gire el texto 45 grados en dirección opuesta en el eje Y.
+Gira el texto 45 grados en dirección opuesta por el eje Y.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -273,7 +266,7 @@ Gire el texto 45 grados en dirección opuesta en el eje Y.
 \frz180
 ```
 
-Gire el texto 180 grados en el eje Z, colocándolo al revés.
+Gira el texto 180 grados por el eje Z, dejándolo patas arriba.
 {{</example-box>}}
 {{<example-box>}}
 Las dos rotaciones siguientes producen el mismo resultado:
@@ -291,10 +284,10 @@ Esto se debe a que 330 grados son 30 grados menos que una rotación completa de 
 \t(\frz3600)
 ```
 
-Realiza una animación donde el texto realiza 10 revoluciones completas en el eje Z. Consulte también la etiqueta [\\t]({{<relref path="ASS_Tags#animatedtransform" lang="en">}}).
+Realiza una animación donde el texto realiza 10 revoluciones completas en el eje Z. Consulte también la etiqueta [\\t]({{<relref path="ASS_Tags#\t">}}).
 {{</example-box>}}
 {{<example-box>}}
-Las siguientes capturas de pantalla ilustran el efecto de girar en los diferentes ejes:
+Los siguientes pantallazos demuestran el efecto de girar sobre los diferentes ejes:
 
 ![Fr_sample01](/img/3.2/Fr_sample01.jpg)
 
@@ -303,34 +296,30 @@ Las siguientes capturas de pantalla ilustran el efecto de girar en los diferente
 ![Fr_sample03](/img/3.2/Fr_sample03.jpg)
 {{</example-box>}}
 
-{{<tag-def-box title="Corteamiento de texto" id="\fax">}}
+{{<tag-def-box title="Cizallamiento de texto" id="\fax">}}
 \\fax<i>\<factor></i>
 \\fay<i>\<factor></i>
 {{</tag-def-box>}}
-Realice una transformación de corte (distorsión de perspectiva) del texto. Un _factor_ de 0 (cero) significa que no hay distorsión.
+Realiza una transformación de cizallamiento (corte, transvección) del texto. Un _factor_ de 0 (cero) significa que no hay distorsión.
 
-Por lo general, _factor_ será un número pequeño; Es poco probable que los valores fuera del rango -2 a 2 produzcan resultados deseables.
+Por lo general, _factor_ será un número pequeño; es poco probable que los valores fuera del rango -2 a 2 produzcan resultados deseables.
 
-El corte se realiza después de la rotación, en las coordenadas giradas. El sistema de coordenadas utilizado para el corte no se ve afectado por el [origen de rotación]({{<relref path="ASS_Tags#rotationorigin" lang="en">}}).
+El corte se realiza después de la rotación, en las coordenadas giradas. El sistema de coordenadas utilizado para el corte no se ve afectado por el [origen de rotación]({{<relref path="ASS_Tags#\org">}}).
 
-<!-- TODO revisar esquila = shearing -->
 {{<example-box>}}
-![esquila](/img/3.2/shearing.png)
+![cizallamiento](/img/3.2/shearing.png)
 {{</example-box>}}
 
 {{<tag-def-box title="Codificación de fuente" id="\fe">}}\\fe<i>\<id></i>{{</tag-def-box>}}
-Configure la codificación de fuente de Windows utilizada para seleccionar la tabla de asignación de fuentes utilizada para traducir puntos de código Unicode a índices de glifos en la fuente. Para algunas fuentes sin una tabla de mapeo Unicode, esto puede ser necesario para que funcione el texto en ciertos idiomas. Para las fuentes que tienen una tabla de mapeo Unicode, se podría usar para seleccionar variaciones regionales, como elegir el glifo correcto para un ideograma Han que sea diferente en chino simplificado, chino tradicional, japonés y coreano.
+Configura la codificación de fuente Windows utilizada para seleccionar la tabla de mapeo de fuentes utilizado para traducir puntos Unicode a índices de glifos en la fuente. Para algunas fuentes sin una tabla de mapeo Unicode, esto puede ser necesario para que funcione el texto en ciertos idiomas. Para las fuentes que tienen una tabla de mapeo Unicode, se podría usar para seleccionar variaciones regionales, como elegir el glifo correcto para un ideograma Han que sea diferente en chino simplificado, chino tradicional, japonés y coreano.
 
 Algunas ID de codificación de fuentes comunes son:
 
 - 0 - ANSI, Windows CP-1252 para idiomas de Europa occidental.
-- 1 - Por defecto, depende de la configuración del sistema del usuario, pero también
-   permite que el subsistema de fuentes elija dinámicamente una tabla de mapeo diferente en
-   algunas circunstancias.
-- 2 - Símbolo, los puntos de código en el rango 0-255 se traducen a definición por fuente
-   glifos de símbolos, esto se usa para fuentes como Wingdings.
+- 1 - Predeterminado, depende de la configuración del sistema del usuario, pero también permite que el subsistema de fuentes elija dinámicamente una tabla de mapeo diferente en algunas circunstancias.
+- 2 - Símbolo, los puntos de código en el rango 0-255 se traducen a definición por fuente glifos de símbolos, esto se usa para fuentes como Wingdings.
 - 128 - Shift-JIS, usado para japonés.
-- 129 y 130, respectivamenteely Hangeul y Johab, dos esquemas de codificación para coreano.
+- 129 y 130, respectivamente Hangeul y Johab, dos esquemas de codificación para coreano.
 - 134 - GB2312, utilizado para chino simplificado.
 - 136 - BIG5, usado para chino tradicional.
 - 162 - turco.
@@ -340,10 +329,9 @@ Algunas ID de codificación de fuentes comunes son:
 
 {{<todo>}}¿Es eso realmente correcto? {{</todo>}}
 
-Una lista más completa se puede ver en el [editor de estilos]({{<relref path="Styles#eleditordeestilo">}})
-caja de diálogo.
+Una lista más completa se puede ver en la caja de diálogo del [editor de estilos]({{<relref path="Styles#el-editor-de-estilo">}}).
 
-En archivos ASS almacenados en codificaciones que no son Unicode, esta etiqueta también afecta en qué página de códigos debe interpretarse el texto que le sigue. Aegisub no admite este uso y es posible que algunos renderizadores tampoco lo admitan. Se recomienda que no confíe en esto y, en su lugar, almacene siempre sus archivos en codificación Unicode. (Aegisub almacena archivos en Unicode UTF-8 de forma predeterminada).
+En archivos ASS almacenados en codificaciones que no son Unicode, esta etiqueta también afecta en qué página de códigos debe interpretarse el texto que le sigue. Aegisub no soporta este uso y es posible que algunos renderizadores tampoco lo admitan. Se recomienda que no confíe en esto y, en su lugar, almacene siempre sus archivos en codificación Unicode. (Aegisub almacena archivos en Unicode UTF-8 por defecto).
 
 {{<tag-def-box title="Establecer color" id="\c">}}
 \\c&H<i>\<bb>\<gg>\<rr></i>&
@@ -355,17 +343,15 @@ En archivos ASS almacenados en codificaciones que no son Unicode, esta etiqueta 
 Establece el color del siguiente texto. La etiqueta `\c` es una abreviatura de `\1c`.
 
 - `\1c` establece el color de relleno principal.
-- `\2c` establece el color de relleno secundario. Esto sólo se utiliza para resaltar previamente en
-   karaoke estándar.
+- `\2c` establece el color de relleno secundario. Esto sólo se utiliza para pre resaltado en karaoke estándar.
 - `\3c` establece el color del borde.
 - `\4c` establece el color de la sombra.
 
-Los códigos de color se dan en
-[hexadecimal](http://en.wikipedia.org/wiki/Hexadecimal) en orden Azul Verde Rojo. Tenga en cuenta que este es el orden opuesto a los códigos de color HTML. Los códigos de color siempre deben comenzar con `&H` y terminar con `&`.
+Los códigos de color se dan en [hexadecimal](http://en.wikipedia.org/wiki/Hexadecimal) en orden Azul Verde Rojo. Tenga en cuenta que este es el orden opuesto a los códigos de color HTML. Los códigos de color siempre deben comenzar con `&H` y terminar con `&`.
 
 Los botones de la barra de herramientas Seleccionar color ![pick-color-toolbar-buttons](/img/3.2/pick-color-toolbar-buttons.png) pueden ayudar a seleccionar colores e ingresar los códigos de color.
 
-{{<tag-def-box title="Establecer alpha" id="\alpha">}}
+{{<tag-def-box title="Establecer alfa" id="\alpha">}}
 \\alfa&H<i>\<aa></i>
 \\1a&H<i>\<aa></i>
 \\2a&H<i>\<aa></i>
@@ -376,8 +362,7 @@ Establece el alfa (transparencia) del texto.
 
 - `\alpha` establece el alfa de todos los componentes a la vez.
 - `\1a` establece el alfa de relleno primario.
-- `\2a` establece el alfa de relleno secundario. Esto sólo se utiliza para resaltar previamente en
-   karaoke estándar.
+- `\2a` establece el alfa de relleno secundario. Esto sólo se utiliza para pre resaltado en karaoke estándar.
 - `\3a` establece el borde alfa.
 - `\4a` establece la sombra alfa.
 
