@@ -465,7 +465,7 @@ Suponiendo que el estilo de línea actual es "Default", primero tiene "Hey" en e
 {{</example-box>}}
 
 {{<tag-def-box title="Fijar posición" id="\pos">}}\\pos(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
-Establece la posición de la línea. Las coordenadas _X_ y _Y_ deben ser números enteros y se proporcionan en el sistema de coordenadas de resolución de guión. El significado de _X_ y _Y_ cambia ligeramente dependiendo de [alineación]({{<relref path="ASS_Tags#\an" lang="en">}}).
+Establece la posición de la línea. Las coordenadas _X_ y _Y_ deben ser números enteros y se proporcionan en el sistema de coordenadas de resolución de guión. El significado de _X_ y _Y_ cambia ligeramente dependiendo de la [alineación]({{<relref path="ASS_Tags#\an">}}).
 
 La alineación de la línea de subtítulo se utiliza como punto de anclaje para la posición. Es decir, cuando tiene una línea con alineación arriba izquierda, la esquina superior izquierda del subtítulo se coloca en las coordenadas dadas a `\pos`, y para la alineación bajo centro, el centro inferior del subtítulo se coloca en las coordenadas dadas.
 
@@ -481,58 +481,56 @@ Las siguientes capturas de pantalla demuestran la forma de que la alineación af
 \\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i> >)
 \\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i> >,<i>\<t1</i>>,<i>\<t2</i>>)
 {{</tag-def-box>}}
-La etiqueta `\move` funciona de manera similar a [`\pos`]({{<relref path="ASS_Tags#setposition" lang="en">}}) en que posiciona la línea de subtítulo, la diferencia es que `\ move` hace que el subtítulo se mueva.
+La etiqueta `\move` funciona de manera similar a [`\pos`]({{<relref path="ASS_Tags#\pos">}}) en que posiciona la línea de subtítulo, la diferencia es que `\ move` hace que el subtítulo se mueva.
 
 Las dos versiones de `\move` se diferencian en que una hace que el movimiento se produzca durante toda la duración del subtítulo, mientras que la otra especifica el tiempo durante el cual se produce el movimiento.
 
-Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en el sistema de coordenadas de resolución del script, como `\pos`. El subtítulo comienza en el punto (_x1_,_y1_)
-y se mueve con velocidad constante por lo que termina en (_x2_,_y2_).
-[Alineación]({{<relref path="ASS_Tags#linealignment" lang="en">}}) influye en las coordenadas de movimiento de la misma manera que influye en las coordenadas `\pos`.
+Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en el sistema de coordenadas de resolución del guión, como `\pos`. El subtítulo comienza en el punto (_x1_,_y1_) y se mueve con velocidad constante por lo que termina en (_x2_,_y2_).
+[Alineación]({{<relref path="ASS_Tags#\an">}}) influye en las coordenadas de movimiento de la misma manera que influye en las coordenadas `\pos`.
 
-En la segunda versión, los tiempos _t1_ y _t2_ se dan en milisegundos, es decir. una milésima de segundo, y son relativos a la hora de inicio del subtítulo. Por ejemplo, un valor _t1_ de 1500 significa que el movimiento comienza 1,5 segundos (un segundo y medio) después de que la línea haya aparecido en pantalla. Cuando especificas tiempos para el movimiento, la posición del subtítulo es la siguiente:
+En la segunda versión, los tiempos _t1_ y _t2_ se dan en milisegundos (milésimas de segundo) y son relativos a la hora de inicio del subtítulo. Por ejemplo, un valor _t1_ de 1500 significa que el movimiento comienza 1,5 segundos (un segundo y medio) después de que la línea haya aparecido en pantalla. Cuando especificas tiempos para el movimiento, la posición del subtítulo es la siguiente:
 
-1. Antes de _t1_, el subtítulo está estacionario en el punto (_x1_,_y1_). 1. Entre _t1_ y _t2_, el subtítulo se mueve con velocidad constante desde (_x1_,_y1_) a (_x2_,_y2_). 1. Después de _t2_ el subtítulo está estacionario en el punto (_x2_,_y2_).
+1. Antes de _t1_, el subtítulo está fijado en el punto (_x1_,_y1_). 
+1. Entre _t1_ y _t2_, el subtítulo se mueve con velocidad constante desde (_x1_,_y1_) a (_x2_,_y2_). 
+1. Después de _t2_ el subtítulo está fijado en el punto (_x2_,_y2_).
 
-Tenga en cuenta que es legal que _t1_ y _t2_ especifiquen tiempos mayores que la duración de la línea, pero puede que no sea muy útil hacerlo. Especificar _t1_ y _t2_ como 0 (cero) es lo mismo que usar la primera versión de
-`\ mover`, es decir. el movimiento se producirá desde la hora de inicio de la línea to la hora de finalización de la línea.
+Tenga en cuenta que es permitido que _t1_ y _t2_ especifiquen tiempos mayores que la duración de la línea, pero puede que no sea muy útil hacerlo. Especificar _t1_ y _t2_ como 0 (cero) es lo mismo que usar la primera versión de
+`\ mover`; el movimiento se producirá desde el inicio de la línea hasta el fin de la línea.
 
-Hay algunas cosas que **`\move` no se pueden hacer**:
+Hay algunas cosas que con **`\move` no se pueden hacer**:
 
-- No es posible realizar movimientos a velocidad no constante. El movimiento no puede, por
-   Por ejemplo, comience lento y termine rápido.
-- Sólo puede haber una etiqueta de posicionamiento o movimiento en una línea. Poniendo ambos un
-   `\pos` y una etiqueta `\move` en una línea no funcionarán. Tampoco funcionará
-   coloque dos o más etiquetas `\move` en una sola línea.
+- No es posible realizar movimientos a velocidad no constante. El movimiento no puede, por ejemplo, comience lento y termine rápido.
+- Sólo puede haber una etiqueta o de posicionamiento o de movimiento en una línea. Poniendo ambos una `\pos` y una `\move` en una misma línea no funcionarán. Tampoco funciona colocar dos o más etiquetas `\move` en una sola línea.
 
 Si necesita hacer cualquiera de esos dos, deberá dividir el movimiento en segmentos que se realizan en líneas de subtítulos separadas. (Cómo hacer esto está fuera del alcance de esta página).
 
 {{<example-box>}}
 
 ```plaintext
-\mover(100,150,300,350)
+\move(100,150,300,350)
 ```
 
-Cuando aparece la línea en la pantalla, el subtítulo está en (100,150). Mientras se muestra el subtítulo, este se mueve a velocidad constante de manera que llegará al punto (300,350) al mismo tiempo que desaparece.
+Cuando aparece la línea en la pantalla, el subtítulo está en (100,150). Mientras se ve el subtítulo, este se mueve a velocidad constante de manera que llegará al punto (300,350) al mismo tiempo que desaparece.
 {{</example-box>}}
 {{<example-box>}}
 
 ```plaintext
-\mover(100,150,300,350,500,1500)
+\move(100,150,300,350,500,1500)
 ```
 
-La línea aparece en (100,150). Después de que la línea se haya mostrado durante medio segundo (500 milisegundos), comienza a moverse hacia (300,350), de modo que llegará al punto un segundo y medio (1500 milisegundos) después de que la línea apareció por primera vez en la pantalla.
+La línea aparece en (100,150). Después de que la línea haya aparecido durante medio segundo (500 milisegundos), comienza a moverse hacia (300,350), de modo que llegará al punto un segundo y medio (1500 milisegundos) después de que la línea apareció por primera vez en la pantalla.
 {{</example-box>}}
 
 {{<tag-def-box title="Origen de rotación" id="\org">}}\\org(<i>\<X></i>,<i>\<Y></i> ){{</tag-def-box>}}
-Establezca el punto de origen utilizado para [rotación]({{<relref path="ASS_Tags#textrotation" lang="en">}}). Esto afecta a todas las rotaciones de la línea. Las coordenadas _X_ e _Y_ se proporcionan en píxeles de resolución de secuencia de comandos de números enteros.
+Establece el punto de origen utilizado para [rotación]({{<relref path="ASS_Tags#\frx">}}). Esto afecta a todas las rotaciones de la línea. Las coordenadas _X_ e _Y_ se proporcionan en píxeles de resolución de secuencia de comandos de números enteros.
 
-Cuando no hay una etiqueta `\org` en una línea, el origen de rotación es implícitamente el mismo que el [punto de anclaje de posición]({{<relref path="ASS_Tags#setposition" lang="en">}}). Esto significa que el origen de la rotación se moverá si la línea se mueve y no hay un origen establecido con `\org`. Tenga en cuenta que _no_ puede animar la etiqueta `\org`, está limitado a un origen fijo si la usa.
+Cuando no hay una etiqueta `\org` en una línea, el origen de rotación es implícitamente el mismo que el [punto de anclaje de posición]({{<relref path="ASS_Tags#\pos">}}). Esto significa que el origen de la rotación se moverá si la línea se mueve y no hay un origen establecido con `\org`. Tenga en cuenta que _no_ puede animar la etiqueta `\org`, está limitado a un origen fijo si la usa.
 
 Si el origen de la rotación se coloca en el punto de fuga en una escena 3D, las rotaciones 3D de la línea de subtítulo producirán la perspectiva correcta para coincidir con la escena.
 
 Es perfectamente posible (y en ocasiones útil) colocar el punto de origen muy fuera de la imagen real; si está lo suficientemente lejos, al realizar pequeñas rotaciones calculadas adecuadamente parecerá que el texto se mueve a lo largo de una línea recta (o casi recta) a través de la imagen. Esto es algo difícil de controlar, pero se puede utilizar para solucionar las limitaciones de formato con \\move, como la incapacidad de realizar movimientos acelerados o varios movimientos por línea.
 
-Puede haber como máximo una etiqueta `\org` en una sola línea, si pones más de una en una sola línea, solo se usa la primera.
+Puede haber como máximo una etiqueta `\org` en una sola línea, si se pone más de una en una sola línea, solo se usa la primera.
 
 {{<example-box>}}
 
@@ -540,7 +538,7 @@ Puede haber como máximo una etiqueta `\org` en una sola línea, si pones más d
 \org(320,240)
 ```
 
-Fije el origen de rotación en el punto (320,240).
+Fija el origen de rotación en el punto (320,240).
 {{</example-box>}}
 {{<example-box>}}
 
@@ -552,10 +550,10 @@ Colocar el origen de rotación en un punto lejano le permite utilizar una ligera
 `\frz` rotaciones para producir efectos de "salto"; el texto se moverá hacia arriba o hacia abajo sin que parezca girar.
 {{</example-box>}}
 
-{{<tag-def-box title="Fade" id="\fad">}}\\fad(<i>\<fadein></i>,<i>\<fadeout></i>) {{</tag-def-box>}}
-Produce un efecto de aparición y desaparición gradual. Los tiempos de _fadein_ y _fadeout_ se dan en milisegundos, es decir. 1000 significa un segundo. Puede especificar _fadein_ o _fadeout_ como 0 (cero) para no tener ningún efecto de desvanecimiento en ese extremo.
+{{<tag-def-box title="Desvanecimiento" id="\fad">}}\\fad(<i>\<entrada></i>,<i>\<salida></i>) {{</tag-def-box>}}
+Produce un efecto de aparición y desaparición gradual. Los tiempos de _entrada_ y _salida_ se dan en milisegundos; es decir, 1000 significa un segundo. Puede especificar _entrada_ o _salida_ como 0 (cero) para no tener ningún efecto de desvanecimiento en ese extremo.
 
-Agregar un efecto de desvanecimiento no extiende la duración de la línea, sino que se usa el inicio o el final del tiempo de visualización de la línea para el efecto de desvanecimiento. Por esta razón, debes tener cuidado de que _fadein_+_fadeout_ no sea mayor que la duración de la línea. Por ejemplo, para una línea que se muestra durante 4 segundos, la suma de _fadein_+_fadeout_ no debe ser mayor que 4000.
+Agregar un efecto de desvanecimiento no extiende la duración de la línea, sino que se usa el inicio o el final del tiempo visible de la línea para el efecto de desvanecimiento. Por esta razón, debes tener cuidado de que _entrada_+_salida_ no sea mayor que la duración de la línea. Por ejemplo, para una línea que aparece durante 4 segundos, la suma de _entrada_+_salida_ no debe ser mayor que 4000.
 
 {{<example-box>}}
 
@@ -563,17 +561,17 @@ Agregar un efecto de desvanecimiento no extiende la duración de la línea, sino
 \fad(1200,250)
 ```
 
-Se desvanece la línea en los primeros 1,2 segundos que se va a mostrar y se desvanece durante el último cuarto de segundo que se muestra.
+Aparece gradualmente la línea en los primeros 1,2 segundos que está visible y se desvanece durante el último cuarto de segundo visible.
 {{</example-box>}}
 
 {{<tag-def-box title="Desvanecimiento (complejo)" id="\fade">}}\\fade(<i>\<a1</i>>,<i>\<a2</i>>,<i>\<a3</i>>,<i>\<t1</i>>,<i>\<t2</i>>,<i>\<t3</i>> ,<i>\<t4</i>>){{</tag-def-box>}}
-Realice un desvanecimiento de cinco partes utilizando tres valores alfa _a1_, _a2_ y _a3_ y cuatro veces _t1_, _t2_, _t3_ y _t4_.
+Realice un desvanecimiento de cinco partes utilizando tres valores alfa _a1_, _a2_ y _a3_ y cuatro tiempos _t1_, _t2_, _t3_ y _t4_.
 
 Los valores alfa se dan en _decimal_ y están entre 0 y 255, siendo 0 completamente visible y 255 invisible. Los valores de tiempo se dan en milisegundos después del inicio de la línea. Se requieren los siete parámetros.
-(Para los efectos de desvanecimiento más comunes, la etiqueta [`\fad`]({{<relref path="ASS_Tags#fade" lang="en">}}) funciona bien.)
+(Para los efectos de desvanecimiento más comunes, la etiqueta [`\fad`]({{<relref path="ASS_Tags#\fad">}}) funciona bien.)
 
 - Antes de _t1_, la línea tiene alfa _a1_.
-- Entre _t1_ y _t2_ la línea se desvanece de alfa _a1_ a alfa _a2_.
+- Entre _t1_ y _t2_ la línea transiciona de alfa _a1_ a alfa _a2_.
 - Entre _t2_ y _t3_ la línea tiene alfa _a2_ constantemente.
 - Entre _t3_ y _t4_ la línea se desvanece de alfa _a2_ a alfa _a3_.
 - Después de _t4_ la línea tiene alfa _a3_.
@@ -581,33 +579,33 @@ Los valores alfa se dan en _decimal_ y están entre 0 y 255, siendo 0 completame
 {{<example-box>}}
 
 ```plaintext
-\desvanecerse(255,32,224,0,500,2000,2200)
+\fade(255,32,224,0,500,2000,2200)
 ```
 
-Comienza invisible, se desvanece hasta volverse casi totalmente opaco y luego se desvanece hasta volverse casi totalmente invisible. El primer desvanecimiento comienza cuando comienza la línea y dura 500 milisegundos. El segundo desvanecimiento comienza a los 1500 mililitros.segundos más tarde y dura 200 milisegundos.
+Comienza invisible, se materializa hasta volverse casi totalmente opaco y luego se desvanece hasta volverse casi totalmente invisible. El primer desvanecimiento comienza cuando comienza la línea y dura 500 milisegundos. El segundo desvanecimiento comienza a los 1500 milisegundos más tarde y dura 200 milisegundos.
 {{</example-box>}}
 
 {{<tag-def-box title="Transformación animada" id="\t">}}
-\\t(<i>\<style modifiers></i>)
-\\t(<i>\<accel></i>,<i>\<style modifiers></i>)
-\\t(<i>\<t1</i>>,<i>\<t2</i>>,<i>\<style modifiers></i>)
-\\t(<i>\<t1</i>>,<i>\<t2</i>>,<i>\<accel></i>,<i>\<style modifiers></i>)
+\\t(<i>\<estilos></i>)
+\\t(<i>\<acel></i>,<i>\<estilos></i>)
+\\t(<i>\<t1</i>>,<i>\<t2</i>>,<i>\<estilos></i>)
+\\t(<i>\<t1</i>>,<i>\<t2</i>>,<i>\<acel></i>,<i>\<estilos></i>)
 {{</tag-def-box>}}
 
-Realice una transformación gradual y animada de un estilo a otro. Los _modificadores de estilo_ son otras etiquetas manuales como se especifica en esta referencia. Sólo un conjunto limitado de etiquetas manuales se pueden animar con `\t`:
+Realiza una transformación gradual y animada de un estilo a otro. Los _estilos_ son otras etiquetas manuales como se especifica en esta referencia. Sólo un conjunto limitado de etiquetas manuales se pueden animar con `\t`:
 
 | Fuente | Geometría | Otros efectos |
 | ------- | -------- | ------------- |
-| \\fs | \\fscx | \\bordar |
-| \\fsp | \\fscy | \\xbordar |
+| \\fs | \\fscx | \\bord |
+| \\fsp | \\fscy | \\xbord |
 | \\c | \\frx | \\ybord |
-| \\1c | \\freír | \\sábalo |
+| \\1c | \\fry | \\shad |
 | \\2c | \\frz | \\xshad |
 | \\3c | \\fr | \\yshad |
 | \\4c | \\fax | \\clip |
-| \\alfa | \\fay | \\iclip |
-| \\1a | | \\ ser |
-| \\2a | | \\ desenfoque |
+| \\alpha | \\fay | \\iclip |
+| \\1a | | \\be |
+| \\2a | | \\blur |
 | \\3a | | |
 | \\4a | | |
 
@@ -615,9 +613,9 @@ _Nota: Para `\clip` y `\iclip`, solo se pueden animar las versiones rectangulare
 
 _Nota: Mezclar `\clip` y `\iclip` en etiquetas `\t` tiene resultados no deseados._
 
-Los parámetros _t1_ y _t2_ especifican el intervalo de tiempo para realizar la transformación. En las versiones sin _t1_ y _t2_ la transformación se realiza a lo largo de toda la línea. Los tiempos se dan en milisegundos y son relativos a la hora de inicio de la línea. (Para el resto de la descripción de `\t`, se supone que _t1_ y _t2_ están especificados, o implícitamente son respectivamente 0 y la duración de la línea).
+Los parámetros _t1_ y _t2_ especifican el intervalo de tiempo para realizar la transformación. En las versiones sin _t1_ y _t2_ la transformación se realiza a lo largo de toda la línea. Los tiempos se dan en milisegundos y son relativos a la hora de inicio de la línea. (Para el resto de la descripción de `\t`, se supone que _t1_ y _t2_ están especificados, o implícitamente ser respectivamente 0 y la duración de la línea).
 
-El parámetro _accel_ se puede utilizar para hacer que la animación no sea lineal y, en su lugar, siga una curva exponencial. Un parámetro _accel_ de 1 (uno) hace que la velocidad de la animación sea lineal. Un valor entre 0 y 1 hace que la animación comience rápido y termine lento. Un valor mayor que 1 hace que la animación comience lentamente y termine rápido. (Para los amantes de las matemáticas, la función es _y_ = _x_ con _x_ ∈ \[0;1\] = (_t_-_t1_)/(_t2_-_t1_), siendo _t_ la hora actual.)
+El parámetro _acel_ se puede utilizar para hacer que la animación no sea lineal y, en su lugar, siga una curva exponencial. Un parámetro _acel_ de 1 (uno) hace que la velocidad de la animación sea lineal. Un valor entre 0 y 1 hace que la animación comience rápido y termine lento. Un valor mayor que 1 hace que la animación comience lentamente y termine rápido. (Para los amantes de las matemáticas, la función es _y_ = _x_ con _x_ ∈ \[0;1\] = (_t_-_t1_)/(_t2_-_t1_), siendo _t_ la hora actual.)
 
 Antes de _t1_, el estilo es el que especifican todas las etiquetas antes de la etiqueta `\t`. Después de _t2_, el estilo es como todas las etiquetas antes de la etiqueta `\t` y se anula aún más por las _anulaciones de estilo_ dadas. Entre _t1_ y _t2_ el estilo se anima gradualmente entre esos dos puntos, siguiendo la función de aceleración descrita anteriormente.
 
@@ -627,12 +625,12 @@ Antes de _t1_, el estilo es el que especifican todas las etiquetas antes de la e
 {\1c&HFF0000&\t(\1c&H0000FF&)}¡Hola!
 ```
 
-El texto comienza en azul, pero se desvanece hacia el rojo, por lo que es completamente rojo cuando termina la línea.
+El texto comienza en azul, pero desvanece hacia el rojo, por lo que es completamente rojo cuando termina la línea.
 {{</example-box>}}
 {{<example-box>}}
 
 ```ass
-{\an5\t(0,5000,\frz3600)}Waaa
+{\an5\t(0,5000,\frz3600)}Uiii
 ```
 
 Hace que el texto gire 10 veces, en sentido antihorario, con una duración de 5 segundos.
@@ -648,7 +646,7 @@ Igual que el anterior, pero comenzará rápido y disminuirá, aún haciendo las 
 {{<example-box>}}
 
 ```ass
-{\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}¡Abucheo!
+{\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}¡Bú!
 ```
 
 El texto comienza con un tamaño cero, es decir, invisible, y luego crece hasta alcanzar el 100% del tamaño tanto en la dirección X como en la Y.
@@ -658,10 +656,10 @@ El texto comienza con un tamaño cero, es decir, invisible, y luego crece hasta 
 \\clip(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i> >)
 \\iclip(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i> >)
 {{</tag-def-box>}}
-Defina un rectángulo para recortar la línea, solo la parte de la línea que está dentro del rectángulo es visible. La etiqueta `\iclip` tiene el efecto contrario, define un rectángulo donde no se muestra la línea.
+Define un rectángulo para recortar la línea, solo la parte de la línea que está dentro del rectángulo es visible. La etiqueta `\iclip` tiene el efecto contrario, define un rectángulo donde no se ve la línea.
 
-Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en píxeles de resolución de script y son relativas a la esquina superior izquierda del vídeo. Las coordenadas deben ser números enteros, no hay posibilidad de utilizar coordenadas no enteras.
-(Aumentar la resolución del script no aumentará la precisión; el recorte siempre ocurre en los límites de los píxeles del video).
+Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en píxeles de resolución de guión y son relativas a la esquina superior izquierda del vídeo. Las coordenadas deben ser números enteros, no hay posibilidad de utilizar coordenadas no enteras.
+(Aumentar la resolución del guión no aumentará la precisión; el recorte siempre ocurre en los límites de los píxeles del video).
 
 {{<example-box>}}
 
@@ -669,7 +667,7 @@ Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en píxeles de resolución de scr
 \clip(0,0,320,240)
 ```
 
-Suponiendo una resolución de script de 640x480, solo es visible la parte de la línea dentro del cuadrante superior izquierdo.
+Suponiendo una resolución de guión de 640x480, solo es visible la parte de la línea dentro del cuadrante superior izquierdo.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -685,17 +683,17 @@ Ejemplo de `\clip(0,0,704,245)` en un vídeo de 704x480:
 ![Clip_sample01](/img/3.2/Clip_sample01.jpg)
 {{</example-box>}}
 
-{{<tag-def-box title="Clip (dibujo vectorial)" id="">}}
+{{<tag-def-box title="Clip (dibujo vectorial)" id="\clip">}}
 \\clip(<i>\<comandos de dibujo></i>)
-\\clip(<i>\<scale></i>,<i>\<comandos de dibujo></i>)
+\\clip(<i>\<escala></i>,<i>\<comandos de dibujo></i>)
 \\iclip(<i>\<comandos de dibujo></i>)
-\\iclip(<i>\<scale></i>,<i>\<comandos de dibujo></i>)
+\\iclip(<i>\<escala></i>,<i>\<comandos de dibujo></i>)
 {{</tag-def-box>}}
-Utilice la forma definida por un dibujo vectorial para mostrar selectivamente (`\clip`) u ocultar (`\iclip`) partes de la línea.
+Usa la forma definida como dibujo vectorial para mostrar selectivamente (`\clip`) u ocultar (`\iclip`) partes de la línea.
 
-Los _comandos de dibujo_ son comandos de dibujo como los que se usan con la etiqueta `\p`, las coordenadas se dan en píxeles de resolución de script y son relativas a la esquina superior izquierda del video.
+Los _comandos de dibujo_ son comandos de dibujo como los que se usan con la etiqueta `\p`, las coordenadas se dan en píxeles de resolución de guión y son relativas a la esquina superior izquierda del video.
 
-Si el_scale_ no se especifica, se supone que es 1 (uno), lo que significa que las coordenadas corresponden directamente a los píxeles. La _escala_ funciona de la misma manera que la _escala_ para los dibujos `\p`.
+Si la _escala_ no se especifica, se supone que es 1 (uno), lo que significa que las coordenadas corresponden directamente a los píxeles. La _escala_ funciona de la misma manera que la _escala_ para los dibujos `\p`.
 
 A diferencia del clip rectangular, el clip de dibujo vectorial _no_ puede animarse con `\t`. Si necesita animar un clip de dibujo vectorial, debe crear varias líneas de subtítulos similares, cada una con su propio "cuadro" de la animación de recorte.
 
@@ -714,7 +712,7 @@ Advanced Substation Alpha también admite algunas etiquetas de dibujo avanzadas 
 
 ### \\p\<0/1/..> - Alternar modo de dibujo
 
-Establecer esta etiqueta en 1 o superior habilita el modo de dibujo. El texto después de este bloque de anulación se interpretará como instrucciones de dibujo y no como texto realmente visible. Establecer esto en cero desactiva el modo de dibujo, restaurando el comportamiento normal. Al activarlo, el valor puede ser cualquier número entero mayor que cero y se interpretará como la escala, en modo 2^(valor-1). Esto se hace para permitir una precisión de subpíxeles. p.ej.:
+Establecer esta etiqueta en 1 o superior habilita el modo de dibujo. El texto después de este bloque de anulación se interpretará como instrucciones de dibujo y no como texto realmente visible. Establecer esto en cero desactiva el modo de dibujo, restaurando el comportamiento normal. Al activarlo, el valor puede ser cualquier número entero mayor que cero y se interpretará como la escala, en modo `2^(valor-1)`. Esto se hace para permitir una precisión de subpíxeles. p.ej.:
 
 ```plaintext
 \p1
@@ -738,11 +736,11 @@ Establecer esta etiqueta en 1 o superior habilita el modo de dibujo. El texto de
 \p4
 ```
 
-(Permite dibujar y la resolución es 8 veces mayor (2^(4-1)). Por lo tanto, dibujar a 400,400 en realidad dibujará a 50,50)
+(Permite dibujar y la resolución es 8 veces mayor (`2^(4-1)`). Por lo tanto, dibujar a 400,400 en realidad dibujará a 50,50)
 
 ### \\pbo<y> - Desplazamiento de línea base
 
-Define el desplazamiento de la línea base para el dibujo. Esto es básicamente un desplazamiento Y para todas las coordenadas. p.ej.:
+Define el desplazamiento de la línea base para el dibujo. Esto es básicamente un desplazamiento Y para todas las coordenadas. ej:
 
 ```plaintext
 \pbo-50
@@ -758,18 +756,18 @@ Define el desplazamiento de la línea base para el dibujo. Esto es básicamente 
 
 ## Comandos de dibujo
 
-Estos comandos deberían aparecer en una etiqueta \\clip (sobrecarga vectorial) o entre \\p# y \\p0, fuera de los bloques de anulación. Por ejemplo (tomado directamente de las especificaciones de ASS):
+Estos comandos deberían aparecer en una etiqueta \\clip (sobrecarga vectorial) o entre \\p1 y \\p0, fuera de los bloques de anulación. Por ejemplo (tomado directamente de las especificaciones de ASS):
 
 - Cuadrado:
 
    ```ass
-   {\\p1}m 0 0 l 100 0 100 100 0 100{\\p0}
+   {\p1}m 0 0 l 100 0 100 100 0 100{\p0}
    ```
 
 - Cuadrado redondeado:
 
    ```ass
-   {\\p1}m 0 0 s 100 0 100 100 0 100 c{\\p0}
+   {\p1}m 0 0 s 100 0 100 100 0 100 c{\p0}
    ```
 
    (c es igual a "p 0 0 100 0 100 100" en este caso)
@@ -782,7 +780,7 @@ Estos comandos deberían aparecer en una etiqueta \\clip (sobrecarga vectorial) 
 
    (tenga en cuenta que la segunda 'b' es opcional aquí)
 
-Los comandos de dibujo utilizan el color primario para el relleno y el color de contorno para los bordes. También muestran sombra. La idea de dibujar vectores es que hay un "cursor" invisible (considérelo como el puntero del mouse en un programa de dibujo, o como un lápiz que se mueve a través de la imagen) en el cuadro de video, y usted le indica que se mueva a otras posiciones. . A medida que se mueve, dibuja el área detrás de él, y cuando cierras la línea formada, la rellena con el color primario.
+Los comandos de dibujo utilizan el color primario para el relleno y el color de contorno para los bordes. También muestran sombra. La idea de dibujar vectores es que hay un "cursor" invisible (considérelo como el puntero del ratón en un programa de dibujo, o como un lápiz que se mueve a través de la imagen) en el cuadro de video, y usted le indica que se mueva a otras posiciones. A medida que se mueve, dibuja el área detrás de él, y cuando cierras la línea formada, la rellena con el color primario.
 
 ### m \<x> \<y> - Mover
 
@@ -798,7 +796,7 @@ Dibuja una línea desde la posición actual del cursor hasta x,y y luego mueve e
 
 ### b \<x1> \<y1> \<x2> \<y2> \<x3> \<y3> - Curva de Bézier cúbica
 
-Dibuja una curva de Bézier cúbica (tercer grado) desde la posición del cursor hasta (x3,y3), utilizando (x1,y1) y (x2,y2) como puntos de control. Consulte el [artículo en Wikipedia] (http://en.wikipedia.org/wiki/B%C3%A9zier_curve) para obtener más información sobre las curvas de Bézier. En esta imagen tomada de ese artículo, P0 es la posición del cursor, P1 es x1,y1, P2 es x2,y2 y P3 es x3,y3:
+Dibuja una curva de Bézier cúbica (tercer grado) desde la posición del cursor hasta (x3,y3), utilizando (x1,y1) y (x2,y2) como puntos de control. Consulte el [artículo en Wikipedia] (http://en.wikipedia.org/wiki/B%C3%A9zier_curve) para más información sobre las curvas de Bézier. En esta imagen tomada de ese artículo, P0 es la posición del cursor, P1 es x1,y1, P2 es x2,y2 y P3 es x3,y3:
 
 ![Bézier](/img/3.2/Bezier.png)
 
