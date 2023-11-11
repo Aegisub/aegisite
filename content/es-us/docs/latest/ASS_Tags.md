@@ -638,7 +638,7 @@ Hace que el texto gire 10 veces, en sentido antihorario, con una duración de 5 
 {{<example-box>}}
 
 ```ass
-{\an5\t(0,5000,0.5,\frz3600)}Ruiii
+{\an5\t(0,5000,0.5,\frz3600)}Uiii
 ```
 
 Igual que el anterior, pero comenzará rápido y disminuirá, aún haciendo las 10 rotaciones en 5 segundos.
@@ -656,10 +656,9 @@ El texto comienza con un tamaño cero, es decir, invisible, y luego crece hasta 
 \\clip(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i> >)
 \\iclip(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i> >)
 {{</tag-def-box>}}
-Define un rectángulo para recortar la línea, solo la parte de la línea que está dentro del rectángulo es visible. La etiqueta `\iclip` tiene el efecto contrario, define un rectángulo donde no se ve la línea.
+Define un rectángulo para recortar la línea; solo la parte de la línea que está dentro del rectángulo será visible. La etiqueta `\iclip` tiene el efecto contrario: define un rectángulo donde no se ve la línea.
 
-Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en píxeles de resolución de guión y son relativas a la esquina superior izquierda del vídeo. Las coordenadas deben ser números enteros, no hay posibilidad de utilizar coordenadas no enteras.
-(Aumentar la resolución del guión no aumentará la precisión; el recorte siempre ocurre en los límites de los píxeles del video).
+Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en píxeles de resolución de guión y son relativas a la esquina superior izquierda del vídeo. Las coordenadas deben ser números enteros, no hay posibilidad de utilizar coordenadas no enteras. (Aumentar la resolución del guión no aumentará la precisión; el recorte siempre ocurre en los límites de los píxeles del video).
 
 {{<example-box>}}
 
@@ -683,7 +682,7 @@ Ejemplo de `\clip(0,0,704,245)` en un vídeo de 704x480:
 ![Clip_sample01](/img/3.2/Clip_sample01.jpg)
 {{</example-box>}}
 
-{{<tag-def-box title="Clip (dibujo vectorial)" id="\clip">}}
+{{<tag-def-box title="Clip (dibujo vectorial)" id="\clip-vector">}}
 \\clip(<i>\<comandos de dibujo></i>)
 \\clip(<i>\<escala></i>,<i>\<comandos de dibujo></i>)
 \\iclip(<i>\<comandos de dibujo></i>)
@@ -691,7 +690,7 @@ Ejemplo de `\clip(0,0,704,245)` en un vídeo de 704x480:
 {{</tag-def-box>}}
 Usa la forma definida como dibujo vectorial para mostrar selectivamente (`\clip`) u ocultar (`\iclip`) partes de la línea.
 
-Los _comandos de dibujo_ son comandos de dibujo como los que se usan con la etiqueta `\p`, las coordenadas se dan en píxeles de resolución de guión y son relativas a la esquina superior izquierda del video.
+Los _comandos de dibujo_ son comandos de dibujo como los que se usan con la etiqueta `\p`. Las coordenadas se dan en píxeles de resolución de guión y son relativas a la esquina superior izquierda del video.
 
 Si la _escala_ no se especifica, se supone que es 1 (uno), lo que significa que las coordenadas corresponden directamente a los píxeles. La _escala_ funciona de la misma manera que la _escala_ para los dibujos `\p`.
 
@@ -712,7 +711,7 @@ Advanced Substation Alpha también admite algunas etiquetas de dibujo avanzadas 
 
 ### \\p\<0/1/..> - Alternar modo de dibujo
 
-Establecer esta etiqueta en 1 o superior habilita el modo de dibujo. El texto después de este bloque de anulación se interpretará como instrucciones de dibujo y no como texto realmente visible. Establecer esto en cero desactiva el modo de dibujo, restaurando el comportamiento normal. Al activarlo, el valor puede ser cualquier número entero mayor que cero y se interpretará como la escala, en modo `2^(valor-1)`. Esto se hace para permitir una precisión de subpíxeles. p.ej.:
+Establecer esta etiqueta en 1 o superior habilita el modo de dibujo. El texto después de esta etiqueta se interpretará como instrucciones de dibujo y no como texto realmente visible. Establecer esto en cero desactiva el modo de dibujo, restaurando el comportamiento normal. Al activarlo, el valor puede ser cualquier número entero mayor que cero y se interpretará como la escala, en modo `2^(valor-1)`. Esto se hace para permitir una precisión de subpíxeles. Ej:
 
 ```plaintext
 \p1
@@ -736,7 +735,7 @@ Establecer esta etiqueta en 1 o superior habilita el modo de dibujo. El texto de
 \p4
 ```
 
-(Permite dibujar y la resolución es 8 veces mayor (`2^(4-1)`). Por lo tanto, dibujar a 400,400 en realidad dibujará a 50,50)
+(Permite dibujar y la resolución es 8 veces mayor (`2^(4-1)`). Por lo tanto, dibujar a 400,400 en realidad llegará a 50,50)
 
 ### \\pbo<y> - Desplazamiento de línea base
 
@@ -756,7 +755,7 @@ Define el desplazamiento de la línea base para el dibujo. Esto es básicamente 
 
 ## Comandos de dibujo
 
-Estos comandos deberían aparecer en una etiqueta \\clip (sobrecarga vectorial) o entre \\p1 y \\p0, fuera de los bloques de anulación. Por ejemplo (tomado directamente de las especificaciones de ASS):
+Estos comandos deben aparecer en una etiqueta \\clip (versión vectorial) o entre \\p1 y \\p0, fuera de los bloques de anulación. Por ejemplo (tomado directamente de las especificaciones de ASS):
 
 - Cuadrado:
 
@@ -770,7 +769,7 @@ Estos comandos deberían aparecer en una etiqueta \\clip (sobrecarga vectorial) 
    {\p1}m 0 0 s 100 0 100 100 0 100 c{\p0}
    ```
 
-   (c es igual a "p 0 0 100 0 100 100" en este caso)
+(c es igual a "p 0 0 100 0 100 100" en este caso)
 
 - Círculo (casi):
 
@@ -778,9 +777,9 @@ Estos comandos deberían aparecer en una etiqueta \\clip (sobrecarga vectorial) 
    {\p1}m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0{\p0}
    ```
 
-   (tenga en cuenta que la segunda 'b' es opcional aquí)
+(tenga en cuenta que la segunda 'b' es opcional aquí)
 
-Los comandos de dibujo utilizan el color primario para el relleno y el color de contorno para los bordes. También muestran sombra. La idea de dibujar vectores es que hay un "cursor" invisible (considérelo como el puntero del ratón en un programa de dibujo, o como un lápiz que se mueve a través de la imagen) en el cuadro de video, y usted le indica que se mueva a otras posiciones. A medida que se mueve, dibuja el área detrás de él, y cuando cierras la línea formada, la rellena con el color primario.
+Los comandos de dibujo utilizan el color primario para el relleno y el color de contorno para los bordes. También muestran sombra. La idea de dibujo vectorial es que hay un "cursor" invisible (considérelo como el puntero del ratón en un programa de dibujo, o como un lápiz que se mueve a través de la imagen) en el cuadro de video, y usted le indica que se mueva a otras posiciones. A medida que se mueve, dibuja el área detrás de él, y cuando cierras la línea formada, la rellena con el color primario.
 
 ### m \<x> \<y> - Mover
 
@@ -814,4 +813,4 @@ Extiende el b-spline a x,y. Esto es esencialmente lo mismo que agregar otro par 
 
 Cierra el b-spline.
 
-_Nota: La [herramienta de composición tipográfica visual de clip vectorial]({{<relref path="Visual_Typesetting#vectorial-clip" lang="en">}}) solo admite los comandos m, l y b, y puede dañar los dibujos que usan los otros comandos._
+_Nota: La [herramienta de composición tipográfica de clip vectorial]({{<relref path="Visual_Typesetting#vectorial-clip" lang="en">}}) solo admite los comandos m, l y b, y puede dañar los dibujos que usan los otros comandos._
