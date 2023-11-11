@@ -149,7 +149,7 @@ Algunos controles comunes:
 - Para selecionar múltiples renglones, pulse o `ctrl` o `shift`/`mayús` y haga clic. Ctrl-clic selecciona uno o más renglones por click; Mayús-clic selecciona todos los renglones entre el primero y último cliqueados.
 - Para cambiar el renglón activo enseñado en la caja de edición sin cambiar la selección, pulse `alt` y haga clic en el nuevo renglón.
 - Para ordenar todas las filas de la cuadrícula, abra el menú _Subtítulo_, y bajo _Ordenar renglones_ seleccione el cambio en que ordenarlas.
-- Para cambiar la manera en que [etiquetas manuales]({{<relref path="ASS_Tags" lang="en">}}) se muestran en la cuadrícula, haga clic en el botón "ojear modos de ocultar etiquetas" en la barra herramientas.
+- Para cambiar la manera en que [etiquetas manuales]({{<relref path="ASS_Tags">}}) se muestran en la cuadrícula, haga clic en el botón "ojear modos de ocultar etiquetas" en la barra herramientas.
 
 ![Subs_grid_tags](/img/3.2/Subs_grid_tags.png)
 

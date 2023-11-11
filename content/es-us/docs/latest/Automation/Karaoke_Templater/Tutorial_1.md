@@ -105,6 +105,6 @@ Esta no es la explicación completa de todo, pero debe de bastar por ahora.
 - Un poco más especial es `$mid`, que es el _tiempo intermedio_ de la sílaba, el tiempo justo en el medio de `$start` y `$end`. En nuestro ejemplo, lo usamos para hacer crecer cada sílaba durante la primera mitad de su duración, y volver a la altura normal para la segunda mitad. También es milisegundos.
 - La variable `$kdur`, sin embargo, está en centisegundos. Este es el tiempo original de la etiqueta \\k, y es casi solo útil para poner nuevamente en una etiqueta \\k, como hicimos acá.
 
-Con este conocimiento, ya debería poder crear muchos efectos. Es posible que también desee consultar la página sobre [etiquetas manuales ASS]({{<relref path="ASS_Tags" lang="en">}}).
+Con este conocimiento, ya debería poder crear muchos efectos. Es posible que también desee consultar la página sobre [etiquetas manuales ASS]({{<relref path="ASS_Tags">}}).
 
 También puede [continuar con el siguiente tutorial]({{<relref path="./Tutorial_2" lang="en">}}), donde veremos cómo hacer cálculos con variables para conseguir más variación.

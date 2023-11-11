@@ -220,7 +220,7 @@ Match video resolution on open
 ![preferences-interface](/img/3.2/preferences-interface.png#center)
 
 Enable call tips
-: When enabled, Aegisub will detect when you are writing an [override tag]({{<relref path="ASS_Tags" lang="en">}}) and display a small box with a brief reference of the syntax of
+: When enabled, Aegisub will detect when you are writing an [override tag]({{<relref path="ASS_Tags">}}) and display a small box with a brief reference of the syntax of
   the tag in question until you close the tag. This is called a "call tip" and
   the feature may be familiar to users of various programming IDEs.
 

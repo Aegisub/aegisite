@@ -7,7 +7,7 @@ weight: 4200
 ---
 
 Un **style** en formato ASS es un conjunto de reglas de estilo tipográfico que se aplica a las líneas de diálogo. Los parámetros de estilo se pueden anular con
-[etiquetas manuales]({{<relref path="ASS_Tags" lang="en">}}); los estilos existen para que no hay que especificar todas las etiquetas en cada línea.
+[etiquetas manuales]({{<relref path="ASS_Tags">}}); los estilos existen para que no hay que especificar todas las etiquetas en cada línea.
 
 ## El gestor de estilos
 
@@ -60,7 +60,7 @@ Colores
    El color principal de "relleno" del cuerpo del texto.
 
    **Secundario:**
-   Color de relleno secundario, utilizado para efectos de karaoke (consulte `\k` y sus parecidos en la [página de etiquetas manuales]({{<relref path="ASS_Tags#karaokeeffect" lang="en">}})).
+   Color de relleno secundario, utilizado para efectos de karaoke (consulte `\k` y sus parecidos en la [página de etiquetas manuales]({{<relref path="ASS_Tags#\k">}})).
 
    **Contorno:**
    El color del borde del texto.
@@ -90,7 +90,7 @@ Otro
    : Controla el estirado del texto en dirección horizontal (X) y vertical (Y) respectivamente. El valor se da como porcentaje, así que 100 significa que no se estira nada. No se debería usar esto para el ajuste de tamaño de texto; utilice mejor el valor de punto en la zona Fuente, ya que ese utiliza información indicativa de la fuente misma.
 
    Rotación
-   : Controla la rotación del texto. El valor es el ángulo de rotación en grados (360 grados en un círculo completo) y puede ser negativo o mayor que 360 (establecerlo en 360, 720, etc. es lo mismo que configurarlo en 0, excepto por cuando están involucradas las [transformaciones animadas]({{<relref path="ASS_Tags#animatedtransform" lang="en">}})).
+   : Controla la rotación del texto. El valor es el ángulo de rotación en grados (360 grados en un círculo completo) y puede ser negativo o mayor que 360 (establecerlo en 360, 720, etc. es lo mismo que configurarlo en 0, excepto por cuando están involucradas las [transformaciones animadas]({{<relref path="ASS_Tags#\t">}})).
 
    Espaciado:
    : Controla el espacio horizontal entre letras. 0 significa que se usan los valores predeterminados del tipo de letra. Puede ser negativo para menos espacio o positivo para más. El valor es la brecha adicional en píxeles entre cada carácter; si estos son píxeles de guión o píxeles de video no está definido con precisión.

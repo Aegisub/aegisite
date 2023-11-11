@@ -24,4 +24,4 @@ Las propiedades son:
   - 3 - Igual que el modo 0, pero prefiere que la línea inferior sea más ancha. Tenga en cuenta que durante mucho tiempo la implementación de esto por parte de VSFilter tuvo errores y, a veces, insertaba líneas en blanco adicionales o tenía líneas con una sola palabra.
 
 El modo de salto debería ser 0 siempre.
-Modo 2 a veces es útil para renglones largos que se deslizan con animación o tienen saltos manuales, pero es mejor ajustarlo a nivel renglón con la etiqueta [\\q]({{<relref path="ASS_Tags#\\q" lang="en">}}).
+Modo 2 a veces es útil para renglones largos que se deslizan con animación o tienen saltos manuales, pero es mejor ajustarlo a nivel renglón con la etiqueta [\\q]({{<relref path="ASS_Tags#\\q">}}).
