@@ -55,7 +55,7 @@ Para finalizar, hay tres barras en el programa: la **barra estátus** se usa par
 - [Pos-procesador de sincronía]({{<relref path="Timing_Post-Processor" lang="en">}})
 - [Sincronizador Kanji]({{<relref path="Kanji_Timer" lang="en">}})
 - [Gestor de automatización]({{<relref path="Automation" lang="en">}})
-- [Opciones]({{<relref path="Options" lang="en">}})
+- [Opciones]({{<relref path="Options">}})
 - [Propiedades de script]({{<relref path="Properties">}})
 - [Gestor de archivos adjuntos]({{<relref path="Attachment_Manager" lang="en">}})
 

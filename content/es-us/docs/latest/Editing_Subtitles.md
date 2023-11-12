@@ -153,7 +153,7 @@ Algunos controles comunes:
 
 ![Subs_grid_tags](/img/3.2/Subs_grid_tags.png)
 
-Los renglones tienen diferentes (configurables) colores representando cosas diferentes; véase la [sección cuadrícula de subtítulos de la página de opciones]({{<relref path="Options#General\_-.3E_Subtitles_grid" lang="en">}}) para detalles acerca de qué significan los colores.
+Los renglones tienen diferentes (configurables) colores representando cosas diferentes; véase la [sección cuadrícula de subtítulos de la página de opciones]({{<relref path="Options#cuadrícula-de-subtítulos">}}) para detalles acerca de qué significan los colores.
 
 Por defecto, las columnas siguientes son visibles:
 

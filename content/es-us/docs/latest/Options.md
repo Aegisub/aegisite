@@ -9,33 +9,32 @@ Aegisub es altamente configurable y por lo tanto tiene un gran número de opcion
 
 Aegisub almacena toda su configuración en un archivo de texto llamado _config.json_, lo cual por defecto se encuentra en la carpeta [?user]({{<relref path="Aegisub_path_specifiers" lang="en">}}). Si uno quere restablecer Aegisub a sus opciones predeterminadas sin volver a instalarlo, se puede simplemente eliminar _config.json_ y luego reinicar Aegisub.
 
-<!--avance traducción -->
 ## General
 
 ![preferences-general](/img/3.2/preferences-general.png#center)
 
-Auto Check for Updates
-: If enabled, Aegisub will periodically check whether there is a newer version available, and alert you if there is. Requires a working connection to the internet, naturally.
+Comprobación automática de actualizaciones
+: Si está habilitado, Aegisub comprobará periódicamente si hay una nueva versión disponible y le avisará si la hay. Requiere una conexión funcional a Internet, naturalmente.
 
-Show main toolbar
-: If disabled, Aegisub's main toolbar is hidden.
+Mostrar barra de herramientas principal
+: Si está deshabilitado, la barra de herramientas principal de Aegisub está oculta.
 
-Save UI state in subtitles files
-: By default, Aegisub saves things like the current scroll position of the subtitles grid and active row number in the subtitles file so that it can be automatically restored when you reopen the file. However, if you're using source control for your subtitle files you may want to disable this to reduce the noise in the changes.
+Guardar el estado de UI (interfaz) en archivos de subtítulos
+: De forma predeterminada, Aegisub guarda cosas como la posición de desplazamiento actual de la cuadrícula de subtítulos y el número de fila activa en el archivo de subtítulos para que pueda restaurarse automáticamente cuando vuelva a abrir el archivo. Sin embargo, si está trabajando con control de versiones para sus archivos de subtítulos, es posible que desee desactivarlo para reducir el ruido en los cambios.
 
-Toolbar icon size
-: The size of icons to use in all of the toolbars in Aegisub. Currently the only valid values are 16 and 24.
+Tamaño de ícono de barras de herramientas
+: El tamaño de los íconos a usar en todas las barras de herramientas de Aegisub. Actualmente los únicos valores válidos son 16 y 24.
 
-Automatically load linked files
-: Whenever you save a script, Aegisub also stores some information about what video, audio and timecodes files you had open while working on it, inside the script itself. This option decides what Aegisub does with these files that are "linked" to the script when opening it. If set to "ask", Aegisub will ask you if you want to load linked files. If set to "never", Aegisub will never load linked files, and likewise if set to "always", Aegisub will always try to load linked files (and report an error if the file(s) were not found).
+Cargar automáticamente archivos vinculados
+: Cada vez que guarda un guión, Aegisub también almacena información sobre qué archivos de video, audio y códigos de tiempo abrió mientras trabajaba en él, dentro del propio guión. Esta opción decide qué hace Aegisub con estos archivos que están "vinculados" al guión al abrirlo. Si está configurado en "preguntar", Aegisub le preguntará al usuario si desea cargar los archivos vinculados. Si se establece en "nunca", Aegisub nunca cargará los archivos vinculados, y del mismo modo, si se establece en "siempre", Aegisub siempre intentará cargar los archivos vinculados (e informará un error si no se encuentran los archivos).
 
-Undo levels
-: The maximum number of changes that can be undone. The higher this value, the ore memory Aegisub will use.
+Niveles de deshacer
+: El número máximo de cambios que se pueden deshacer. Cuanto mayor sea este valor, más memoria utilizará Aegisub.
 
-Recently Used Lists
-: Maximum number of items to remember for all of the various lists of recently used items in Aegisub. The memory impact from increasing these is trivial, but larger lists may get unwieldy to use.
+Listas de recién usados
+: Número máximo de elementos para recordar, aplicado a todas las listas de elementos recién usados en Aegisub. El impacto en la memoria al aumentarlos es trivial, pero las listas más grandes pueden resultar imprácticos de manejar.
 
-### Default Styles
+### Estilos predeterminados
 
 ![preferences-default-styles](/img/3.2/preferences-default-styles.png#center)
 
@@ -43,372 +42,357 @@ Recently Used Lists
 
 ![preferences-audio](/img/3.2/preferences-audio.png#center)
 
-Lock scroll on cursor
-:  When enabled, the audio waveform view will automatically scroll to follow the playback cursor if it gets too close to either of the edges.
+Anclar desplazamiento en el cursor
+: Cuando está habilitado, la vista de onda de audio se desplazará automáticamente para seguir el cursor de reproducción si se acerca demasiado a cualquiera de los bordes.
 
-Snap markers by default
-: When enabled, Aegisub will default to snapping audio markers to other markers in the audio display (such as keyframes and the start or end times of other lines) when moving them by clicking or dragging them if they are close enough. Snapping can be toggled on or off by holding down shift.
+Encasillar marcadores por defecto
+: Cuando está habilitado, Aegisub encasillará de forma predeterminada los marcadores de audio junto con otros marcadores en la visualización de audio (como fotogramas clave y los tiempos de inicio o finalización de otras líneas) al moverlos haciendo clic o arrastrándolos si están lo suficientemente cerca entre sí. El ajuste se puede activar o desactivar manteniendo presionada la tecla mayús/shift.
 
-Default mouse wheel to zoom
-: When enabled, the mouse wheel will zoom the audio display horizontally by default, and scroll the audio display when Ctrl is held down. If disabled, this is reversed.
+Rueda del mouse predeterminada de zoom
+: Cuando está habilitado, la rueda del mouse ampliará la pantalla de audio horizontalmente de forma predeterminada y desplazará la pantalla de audio cuando se mantenga presionada la tecla ctrl. Si está deshabilitado, estos dos se intercambian.
 
-Auto-focus on mouse over
-: If enabled, moving the mouse cursor over the audio waveform will automatically give it focus (as opposed to requiring a click).
+Enfoque automático al posar cursor
+: Si está habilitado, mover el cursor sobre la onda de audio le dará enfoque automáticamente (en lugar de requerir un clic).
 
-Play audio when stepping in video
-: When enabled, frame stepping plays the audio for that frame.
+Reproducir audio al entrar en vídeo
+: Cuando está habilitado, el paso entre fotogramas reproduce el audio de cada fotograma.
 
-Default timing length
-: The default length of a new untimed line, in milliseconds.
+Duración predeterminada
+: La duración predeterminada de una nueva línea sin tiempo, en milisegundos.
 
-Default lead-in length
-Default lead-out length
-: The duration added to the start of a line by the "add lead-in" and "add lead-out" functions. Also used in (and set by) the [timing postprocessor]({{<relref path="Timing_Post-Processor" lang="en">}}).
+Duración de entrada predeterminada
+Duración de salida predeterminada
+: La duración agregada al inicio de una línea mediante las funciones "agregar entrada" y "agregar salida". También se utiliza en (y es configurado por) el [postprocesador de sincronización]({{<relref path="Timing_Post-Processor" lang="en">}}).
 
-Marker drag-start sensitivity
-: The distance in pixels that a marker must be dragged for it to register as a drag. Higher values reduce the chance of accidental changes, at the cost of worse responsiveness.
+Sensibilidad de inicio de arrastre de marcador
+: La distancia en píxeles que se debe arrastrar un marcador para que se registre como arrastre. Los valores más altos reducen la posibilidad de cambios accidentales, a costa de una peor capacidad de respuesta.
 
-Left-click-drag moves end marker
-: When enabled, left clicking will set the start time of the line to the clicked point, then set the end time of the line to the point dragged to,
-  making it possible to time a line with a single click-drag movement. When disabled, left-click-drag always updates only the start time of the line, as right-click does with the end time.
+Clic y arrastre izquierdo mueve marcador final
+: Cuando está habilitado, hacer clic izquierdo fija el inicio de la línea en el punto picado, luego establecerá el fin de la línea en el punto hasta el que se arrastra, haciendo posible cronometrar una línea con un solo movimiento de clic y arrastrar. Cuando está deshabilitado, hacer clic izquierdo y arrastrar siempre actualiza solo la hora de inicio de la línea, al igual que el clic derecho con la hora de finalización.
 
-Line boundary thickness
-: The width, in pixels, of the line start and end markers.
+Grosor de línea de frontera
+: El ancho, en píxeles, de los marcadores de inicio y fin de línea.
 
-Maximum snap distance
-: Maximum distance to snap markers to other markers, in pixels.
+Distancia máxima de encasillamiento
+: Distancia máxima para encasillar marcadores con otros marcadores vecinos, en píxeles.
 
-Show inactive lines
-: Controls how lines surrounding the currently selected line are displayed in the audio waveform. "Don't show" will only display the current line. "Show previous" will show the previous line (in the grid, _not_ chronologically) in gray in addition to the current line. "Show next and previous" will show the lines before and after the current line (in the grid, _not_ chronologically). "Show all" will show all lines in gray in addition to the current line.
+Mostrar líneas inactivas
+: Controla cómo se dibujan las líneas que rodean la línea seleccionada actualmente en la onda de audio. "No mostrar" solo mostrará la línea actual. "Mostrar anterior" mostrará la línea anterior (en la cuadrícula, _no_ cronológicamente) en gris además de la línea actual. "Mostrar siguiente y anterior" mostrará las líneas antes y después de la línea actual (en la cuadrícula, _no_ cronológicamente). "Mostrar todo" mostrará todas las líneas en gris además de la línea actual.
 
-Include commented inactive lines
-: If disabled, commented lines will be skipped over when picking which inactive lines to show in the audio display (making "Show previous" into "Show last uncommented line before this line", and so on).
+Incluir líneas inactivas comentadas
+: Si está deshabilitado, las líneas comentadas se omitirán al seleccionar qué líneas inactivas mostrar en la pantalla de audio (convirtiendo "Mostrar anterior" en "Mostrar la última línea no comentada antes de esta actual", y así sucesivamente).
 
-### Display Visual Options
+### Opciones visuales
 
-keyframes
-: If enabled, lines marking the positions of keyframes in the video will be drawn on the audio waveform when in dialogue timing mode (the default).
+Fotogramas clave
+: Si está habilitado, las líneas que marcan las posiciones de los fotogramas clave en el video se dibujarán en la forma de onda de audio cuando esté en el modo de sincronización de diálogo (el valor predeterminado).
 
-Karaoke keyframes
-: If enabled, lines marking the positions of keyframes in the video will be drawn on the audio waveform when in karaoke timing mode.
+Fotogramas clave de karaoke
+: Si está habilitado, las líneas que marcan las posiciones de los fotogramas clave en el video se dibujarán en la forma de onda de audio cuando esté en el modo de sincronización de karaoke.
 
-Draw cursor time
-: If enabled, a timestamp showing the time since the start of the file will be drawn near the top of the audio waveform cursor.
+Dibujar el tiempo del cursor
+: Si está habilitado, se dibujará una marca de tiempo que enseña el tiempo desde el inicio del archivo cerca de la parte superior del cursor de la onda de audio.
 
-Video position
-: If enabled, a line is drawn in the audio display marking the start time of the current video frame.
+Posición del vídeo
+: Si está habilitado, se dibuja una línea en la pantalla de audio que marca la hora de inicio del cuadro de video actual.
 
-Waveform style
-: Selects which of the waveform rendering styles to use
+Estilo de forma de onda
+: Selecciona cuál de los estilos de representación de formas de onda usar.
 
-  Maximum + Average
-  : The waveform is two-tone, indicating both the maximum value of a sample within a pixel's time range, and in a brighter color, the average value of all samples within the time range.
+  Máximo + Promedio
+  : La forma de onda es de dos tonos, lo que indica tanto el valor máximo de una muestra dentro del intervalo un píxel como, en un color más claro, el valor promedio de todas las muestras dentro del rango de tiempo.
 
-  Maximum
-  : The waveform displays only the maximum value, as previous versions of Aegisub did.
+  Máximo
+  : La forma de onda muestra sólo el valor máximo, como lo hacían las versiones anteriores de Aegisub.
 
-### Audio labels
+### Etiquetas de audio
 
-These options control the appearance of labels drawn in the audio display for karaoke syllables.
+Estas opciones controlan la apariencia de las etiquetas dibujadas en la vista de audio para las sílabas de karaoke.
 
-Font Face
-: The font to use for audio labels.
+Tipo de fuente
+: La fuente tipográfica que se usará para las etiquetas de audio.
 
-Font Size
-: The font size to use for audio labels.
+Tamaño de fuente
+: El tamaño de fuente que se usará para las etiquetas de audio.
 
 ## Video
+<span id="revisión"></span>
 
 ![preferences-video](/img/3.2/preferences-video.png#center)
 
-Show keyframes in slider
-:  When enabled, Aegisub will draw keyframe markers on the video seek slider.
+Mostrar fotogramas clave en el control deslizante
+: Cuando está habilitado, Aegisub dibujará marcadores de fotogramas clave en el control deslizante de búsqueda de video.
 
-Seek video to line start on selection change
-: When enabled, whenever the active line is changed Aegisub will automatically seek the video to the first frame of the new line. Note that this can by done manually by double-clicking on the grid, or by pressing Ctrl-1.
+Buscar video para comenzar la línea en el cambio de selección
+: Cuando está habilitado, cada vez que se cambia la línea activa, Aegisub buscará automáticamente el video en el primer cuadro de la nueva línea. Tenga en cuenta que esto se puede hacer manualmente haciendo doble clic en la cuadrícula o presionando Ctrl-1.
 
-Always show visual tools
-: When disabled, the visual typesetting tools are only rendered when the mouse is over the video display.
+Mostrar siempre herramientas visuales
+: Cuando está deshabilitada, las herramientas de composición tipográfica visual solo se representan cuando el mouse está sobre la pantalla de video.
 
-Automatically open audio when opening video
-: When enabled, when you open a video file which also has audio data, Aegisub will automatically load the audio.
+Abrir audio automáticamente al abrir video
+: Cuando está habilitado, cuando abre un archivo de video que también tiene datos de audio, Aegisub cargará automáticamente el audio.
 
-Default zoom
-: The default video zoom level. Useful if you have a very big or very small screen.
+Zoom predeterminado
+: El nivel de zoom de vídeo predeterminado. Útil si tienes una pantalla muy grande o muy pequeña.
 
-Fast jump step in frames
-: Decides how big "jumps" Aegisub will make when you use the fast seek feature
-  (Alt-rightarrow and Alt-leftarrow). Measured in frames.
+Paso de salto rápido en fotogramas.
+: Decide qué tan grandes "saltos" hará Aegisub cuando uses la función de búsqueda rápida (Alt-flecha derecha y Alt-flecha izquierda). Medido en cuadros.
 
-Screenshot save path
-: Decides where Aegisub should save screenshots. The default is `?video`, which means they are saved to wherever the video is, but you can change it to any path you like. [Aegisub_path_specifiers]({{<relref path="Aegisub_path_specifiers" lang="en">}}) are supported; another option directly available in the dropdown is `?script`, which is wherever the script is.
+Ruta para guardar captura de pantalla
+: Decide dónde Aegisub debe guardar las capturas de pantalla. El valor predeterminado es `?video`, lo que significa que se guardan dondequiera que esté el video, pero puedes cambiarlo a la ruta que desees. [Aegisub_path_specifiers]({{<relref path="Aegisub_path_specifiers" lang="en">}}) son compatibles. Otra opción directamente disponible en el menú desplegable es `?script`, que es dondequiera que esté el script.
 
-### Script resolution
+### Resolución de guión
 
-Use resolution of first video opened
-: When enabled, Aegisub will automatically set the script resolution to the video resolution if you open a video and the script resolution is not yet set. If this is disabled, Aegisub instead sets the script resolution to a configurable default.
+Usar la resolución del primer vídeo abierto
+: Cuando está habilitado, Aegisub configurará automáticamente la resolución del guión a la resolución del video si abre un video y la resolución del guión aún no está configurada. Si esto está deshabilitado, Aegisub establece la resolución del script en un valor predeterminado configurable.
 
-Match video resolution on open
-: Controls what Aegisub will do about script resolution when you open a video. If set to "never", Aegisub will do nothing if the script resolution doesn't match the video resolution. If set to "ask", Aegisub will ask you if you want to change the script resolution to match the video resolution if they don't match. If set to "always", Aegisub will always resample the script to match the video resolution automatically.
+Igualar la resolución del vídeo al abrir
+: Controla lo que Aegisub hará con respecto a la resolución del script cuando abres un video. Si se configura en "nunca", Aegisub no hará nada si la resolución del script no coincide con la resolución del video. Si está configurado en "preguntar", Aegisub le preguntará si desea cambiar la resolución del script para que coincida con la resolución del video si no coinciden. Si se configura en "siempre", Aegisub siempre volverá a muestrear el script para que coincida con la resolución del video automáticamente.
 
-## Interface
+## Interfaz
 
 ![preferences-interface](/img/3.2/preferences-interface.png#center)
 
-Enable call tips
-: When enabled, Aegisub will detect when you are writing an [override tag]({{<relref path="ASS_Tags">}}) and display a small box with a brief reference of the syntax of the tag in question until you close the tag. This is called a "call tip" and the feature may be familiar to users of various programming IDEs.
+Habilitar sugerencias de llamadas
+: Cuando está habilitado, Aegisub detectará cuando estás escribiendo una [etiqueta de anulación]({{<relref path="ASS_Tags">}}) y mostrará un pequeño cuadro con una breve referencia de la sintaxis de la etiqueta en cuestión hasta que cierres la etiqueta. Esto se denomina "consejo de llamada" y la función puede resultar familiar para los usuarios de varios IDE de programación.
 
-Overwrite in time boxes
-: Controls the behavior of all time edit boxes in the program. By default, all time edit boxes in Aegisub behave like as if you had pressed the Insert button,
-  so every digit you type overwrites what is already there, and you cannot erase numbers that are already there, you have to overwrite them. Unticking this box disables this behavior and makes the time edit boxes behave just like normal text edit boxes (almost).
+Sobrescribir en cuadros de tiempo
+: controla el comportamiento de todos los cuadros de edición de tiempo en el programa. De forma predeterminada, todos los cuadros de edición de tiempo en Aegisub se comportan como si hubiera presionado el botón Insertar,
+   por lo que cada dígito que escriba sobrescribe lo que ya está allí, y no puede borrar los números que ya están allí, debe sobrescribirlos. Desmarcar esta casilla desactiva este comportamiento y hace que los cuadros de edición de tiempo se comporten como cuadros de edición de texto normales (casi).
 
-Enable syntax highlighting
-: Enables or disables syntax highlighting of override tags in the main edit box.
+Habilitar resaltado de sintaxis
+: habilita o deshabilita el resaltado de sintaxis de etiquetas de anulación en el cuadro de edición principal.
 
-Path to dictionary files
-: Decides where Aegisub will look for dictionary files for its spellchecker and thesaurus. By default it looks in `?data/dictionaries`, but if you have your own dictionaries in the correct format somewhere else, feel free to point Aegisub there instead.
+Ruta a archivos de diccionario
+: Decide dónde buscará Aegisub los archivos de diccionario para su corrector ortográfico y diccionario de sinónimos. De forma predeterminada, aparece en `?data/dictionaries`, pero si tiene sus propios diccionarios en el formato correcto en otro lugar, no dude en señalar a Aegisub allí.
 
-Font
-: Decides the font and fontsize used for the subtitle edit box and other edit boxes.
+Fuente
+: decide la fuente y el tamaño de fuente utilizados para el cuadro de edición de subtítulos y otros cuadros de edición.
 
-Maximum characters per line
-: If the value of the character counter is higher than this number, the background will turn red to alert you that you have exceeded the maximum line length. The maximum length is not enforced in any other way.
+Máximo de caracteres por línea
+: Si el valor del contador de caracteres es mayor que este número, el fondo se volverá rojo para alertarle que ha excedido la longitud máxima de línea. La longitud máxima no se aplica de ninguna otra manera.
 
-Characters Per Second Warning Threshold
-Characters Per Second Error Threshold
-: The thresholds at which the background CPS column begins to be colored and when the error color is reached.
+Umbral de advertencia de caracteres por segundo
+Umbral de error de caracteres por segundo
+: Los umbrales en los que la columna CPS de fondo comienza a colorearse y cuando se alcanza el color del error.
 
-Ignore whitespace
-: If enabled, whitespace will not be included in the character count.
+Ignorar espacios en blanco
+: Si está habilitado, los espacios en blanco no se incluirán en el recuento de caracteres.
 
-Ignore punctuation
-: If enabled, punctuation will not be included in the character count.
+Ignorar la puntuación
+: Si está habilitado, la puntuación no se incluirá en el recuento de caracteres.
 
-Focus grid on click
-: When enabled, the subtitles grid acts as its own area of the program and it can have focus, just like the audio or the video can, and while it does you can use the arrow keys/mouse wheel to scroll around it etc. On the other hand, if you disable this option, the focus will stay where it was before whenever you click in the grid. This means you can't use keyboard shortcuts in the grid anymore, but on the other hand it means you can click in the grid to go to a line without losing the audio focus and so on. Use at your own discretion.
+Cuadrícula de enfoque al hacer clic
+: Cuando está habilitada, la cuadrícula de subtítulos actúa como su propia área del programa y puede tener foco, al igual que el audio o el video, y mientras lo hace, puede usar las teclas de flecha/rueda del mouse para desplazarse por ella, etc. por otro lado, si desactivas esta opción, el foco permanecerá donde estaba antes cada vez que hagas clic en la cuadrícula. Esto significa que ya no puedes usar atajos de teclado en la cuadrícula, pero por otro lado significa que puedes hacer clic en la cuadrícula para ir a una línea sin perder el foco de audio, etc. Úselo a su propia discreción.
 
-Highlight visible subtitles
-: When enabled, all subtitle lines that are currently visible in the video frame (or at least _should_ be visible; Aegisub does not account for alpha and such trickery in this case; it cares only about the timing of the line) will be highlighted in the grid with a special background color (see the "Line in frame background" option below).
+Resaltar subtítulos visibles
+: Cuando está habilitado, todas las líneas de subtítulos que están visibles actualmente en el fotograma del video (o al menos _deberían_ ser visibles; Aegisub no tiene en cuenta el alfa y ese tipo de trucos en este caso; solo se preocupa por el tiempo de la línea) se resaltarán en la cuadrícula con un color de fondo especial (consulte la opción "Línea en el fondo del marco" a continuación).
 
-Hide overrides symbol
-: The character that will be shown instead of override blocks if tag hiding is active. Note that despite the name, this can be more than one character if you so desire.
+Ocultar símbolo de anulaciones
+: El carácter que se mostrará en lugar de anular bloques si la ocultación de etiquetas está activa. Tenga en cuenta que, a pesar del nombre, puede haber más de un carácter si así lo desea.
 
-Font
-: Decides the font and font size of all text in the grid.
+Fuente
+: Decide la fuente y el tamaño de fuente de todo el texto en la cuadrícula.
 
-### Colors
+### Colores
 
 ![preferences-colours](/img/3.2/preferences-colours.png#center)
 
-#### Audio Display
+#### Vista de audio
 
-Play cursor
-: The color of the playback cursor.
+Reproducir cursor
+: El color del cursor de reproducción.
 
-Line boundary start
-Line boundary end
-Line boundary inactive line
-: The respective colors of the various line boundary markers.
+Inicio del límite de la línea
+Fin del límite de línea
+Límite de línea línea inactiva
+: Los colores respectivos de los distintos marcadores de límites de línea.
 
-Syllable boundary
-: The color of a syllable boundary line in karaoke mode.
+Límite de sílaba
+: El color de la línea límite de una sílaba en el modo karaoke.
 
-### Color Schemes
+### Esquemas de color
 
-Controls the color scheme used for the waveform/spectrum and some of the UI elements. Aegisub currently does not have a UI for editing the color schemes or creating new ones, but if you're feeling adventurous they can be found in config.json.
+Controla la combinación de colores utilizada para la forma de onda/espectro y algunos de los elementos de la interfaz de usuario. Aegisub actualmente no tiene una interfaz de usuario para editar los esquemas de color o crear otros nuevos, pero si te sientes aventurero, puedes encontrarlos en config.json.
 
-#### Syntax Highlighting
+#### Resaltado de sintaxis
 
 Normal
-: The color of normal text.
+: El color del texto normal.
 
-Brackets
-: The color of brackets that start/end override blocks.
+Soportes
+: El color de los corchetes que inician/finalizan los bloques de anulación.
 
-Slashes and parentheses
-: The color of backslashes and parentheses within override blocks.
+Barras y paréntesis
+: El color de las barras invertidas y los paréntesis dentro de los bloques de anulación.
 
-Tags
-: The color of tag names within override blocks.
+Etiquetas
+: El color de los nombres de etiquetas dentro de los bloques de anulación.
 
-Parameters
-: The color of parameters to override tags.
+Parámetros
+: El color de los parámetros para anular las etiquetas.
 
 Error
-: The error color for invalid syntax within an override block.
+: el color de error para una sintaxis no válida dentro de un bloque de anulación.
 
-Error background
-: Background color for errors.
+Fondo de error
+: Color de fondo para errores.
 
-Line break
-: Color for \\N, \\n and \\h outside of override blocks.
+salto de línea
+: Color para \\N, \\n y \\h fuera de los bloques de anulación.
 
-Karaoke templates
-: Color for karaoke templater blocks on template lines.
+Plantillas de karaoke
+: Color para bloques de plantilla de karaoke en líneas de plantilla.
 
-#### Subtitle Grid
+#### Cuadrícula de subtítulos
 
-Standard foreground
-Standard background
-: The normal color of lines in the grid. "Foreground" is the text color, and "Background" is obviously the background color.
+Primer plano estándar
+Fondo estándar
+: El color normal de las líneas de la cuadrícula. "Primer plano" es el color del texto y "Fondo" es obviamente el color de fondo.
 
-Selection foreground
-Selection background
-: The color of selected lines in the grid.
+Primer plano de selección
+Fondo de selección
+: El color de las líneas seleccionadas en la cuadrícula.
 
-Comment background
-Selected comment background
-: The background color of commented-out lines and selected commented-out lines,
-respectively.
+Fondo del comentario
+Fondo del comentario seleccionado
+: El color de fondo de las líneas comentadas y de las líneas comentadas seleccionadas.
+respectivamente.
 
-Collision foreground
-: The text color of lines whose timings overlap with the currently active line.
+Primer plano de colisión
+: El color del texto de las líneas cuyos tiempos se superponen con la línea actualmente activa.
 
-Line in frame background
-: The background color of lines currently visible in the video frame.
+Línea en el fondo del marco
+: El color de fondo de las líneas actualmente visibles en el fotograma del vídeo.
 
-Header
-Left column
-Active line border
-Lines
-: The color of the grid lines and fixed columns/headers.
+Encabezamiento
+Columna izquierda
+Borde de línea activa
+Líneas
+: El color de las líneas de la cuadrícula y las columnas/encabezados fijos.
 
-## Hotkeys
+## Atajos de tecla
 
 ![preferences-hotkeys](/img/3.2/preferences-hotkeys.png#center)
 
-This page lists all hotkeys currently set in Aegisub, and allows you to add,
-remove or change them.
+Esta página enumera todas las teclas de acceso rápido configuradas actualmente en Aegisub y le permite agregar,
+eliminarlos o cambiarlos.
 
-### Hotkey Contexts
+### Contextos de atajos de tecla
 
-Aegisub supports setting different hotkeys depending on what part of the program has focus.
+Aegisub admite la configuración de diferentes teclas de acceso rápido dependiendo de qué parte del programa esté enfocada.
 
-The "Default" group is for hotkeys which should work regardless of what in Aegisub currently has keyboard focus. Hotkeys set in Default are overridden by the more specific categories when applicable.
+El grupo "Predeterminado" es para teclas de acceso rápido que deberían funcionar independientemente de lo que en Aegisub tenga actualmente el foco del teclado. Las teclas de acceso rápido configuradas de forma predeterminada se anulan por categorías más específicas cuando corresponde.
 
-The "Always" group sets hotkeys which are enabled by Medusa mode, which apply everywhere in the program and override all other keypresses, including ordinary typing in edit boxes.
+El grupo "Siempre" establece teclas de acceso rápido habilitadas por el modo Medusa, que se aplican en todas partes del programa y anulan todas las demás pulsaciones de teclas, incluida la escritura normal en cuadros de edición.
 
-All other hotkey contexts should be self-explanatory.
+Todos los demás contextos de teclas de acceso rápido deben explicarse por sí solos.
 
-### Setting hotkeys
+### Definir atajos de tecla
 
-To modify a hotkey, first click on the row to select it, then click on the hotkey field in the row, then press the key(s) that should trigger the command. Accept the new hotkey by clicking on another row.
+Para modificar una tecla de acceso rápido, primero haga clic en la fila para seleccionarla, luego haga clic en el campo de tecla de acceso rápido de la fila y luego presione las teclas que deberían activar el comando. Acepte la nueva tecla de acceso rápido haciendo clic en otra fila.
 
-To add a new hotkey, select the context you want to add the hotkey to, then click the New button. Enter the [command name]({{<relref path="Commands" lang="en">}}), then set the hotkey as when editing them.
+Para agregar una nueva tecla de acceso rápido, seleccione el contexto al que desea agregar la tecla de acceso rápido y luego haga clic en el botón Nuevo. Ingrese el [nombre del comando]({{<relref path="Commands" lang="en">}}), luego configure la tecla de acceso rápido como cuando los editó.
 
-## Backup
+## Respaldo
 
 ![preferences-backup](/img/3.2/preferences-backup.png#center)
 
-### Automatic Save
+### Guardar automático
 
-Enable
-: If enabled, Aegisub will periodically save a copy of the script you are working on to the autosave path.
+Permitir
+: Si está habilitado, Aegisub guardará periódicamente una copia del script en el que está trabajando en la ruta de guardado automático.
 
-Interval in seconds
-: How often should Aegisub autosave.
+Intervalo en segundos
+: ¿Con qué frecuencia Aegisub debe guardar automáticamente?
 
-Path
-: Decides where to save autosaved copies of scripts you are working on. By default set to `autosave` in your Aegisub `?user` directory (see the
-  [Aegisub_path_specifiers]({{<relref path="Aegisub_path_specifiers" lang="en">}}) page for details).
+Camino
+: decide dónde guardar las copias guardadas automáticamente de los scripts en los que estás trabajando. De forma predeterminada, establezca `autoguardado` en su directorio `?user` de Aegisub (consulte la
+   [Aegisub_path_specifiers]({{<relref path="Aegisub_path_specifiers" lang="en">}}) página para más detalles).
 
-Autosave after every change
-: If enabled, Aegisub will save the file after every change made to it. Note that this currently causes some problems with the undo system.
+Guardado automático después de cada cambio
+: Si está habilitado, Aegisub guardará el archivo después de cada cambio realizado. Tenga en cuenta que esto actualmente causa algunos problemas con el sistema de deshacer.
 
-### Automatic Backup
+### Respaldo automático
 
-Enable
-: If enabled, Aegisub will save a backup copy of each script you open,
-  immediately on opening it. By default, it is saved to `?user/autoback/`, but this can be changed (see below).
+Permitir
+: Si está habilitado, Aegisub guardará una copia de seguridad de cada script que abra inmediatamente al abrirlo. De forma predeterminada, se guarda en `?user/autoback/`, pero esto se puede cambiar (ver más abajo).
 
-Path
-: Decides where to save automatic backup copies of scripts. By default set to
-  `autoback` in your Aegisub `?user` directory.
+Ruta
+: Decide dónde guardar las copias de seguridad automáticas de los scripts. Por defecto está configurado en `autoback` en su directorio Aegisub `?user`.
 
-## Automation
+## Automatizar
 
 ![preferences-automation](/img/3.2/preferences-automation.png#center)
 
-Base path
-: A base directory where you put non-autoloaded automation scripts. Used only for saving paths to script files in the subtitles.
+Camino básico
+: un directorio base donde se colocan los scripts de automatización no cargados automáticamente. Se utiliza sólo para guardar rutas a archivos de script en los subtítulos.
 
-Include path
-: List of directories where include files and modules are searched for. Directories are separated with a pipe character, `|`.
+incluir ruta
+: Lista de directorios donde se buscan archivos y módulos incluidos. Los directorios están separados por un carácter de barra vertical, `|`.
 
-Auto-load path
-: List of directories that are searched for scripts on startup, which are then automatically loaded. Directories are separated with a pipe character, `|`.
+Ruta de carga automática
+: Lista de directorios en los que se buscan scripts al inicio, que luego se cargan automáticamente. Los directorios están separados por un carácter de barra vertical, `|`.
 
-Trace level
-: When a script sends a message to the debug console it can also specify a trace level. If the trace level of a message is lower than the value given here, the message is not logged. The names given to the levels are only suggestions and they don't have any effect on the execution of the script.
-  (i.e. a "Fatal" level message will not cause the script to terminate.)
+Nivel de seguimiento
+: Cuando un script envía un mensaje a la consola de depuración, también puede especificar un nivel de seguimiento. Si el nivel de seguimiento de un mensaje es inferior al valor proporcionado aquí, el mensaje no se registra. Los nombres dados a los niveles son sólo sugerencias y no tienen ningún efecto en la ejecución del script.
+   (es decir, un mensaje de nivel "Fatal" no hará que el script finalice).
 
-Thread priority
-: Priority given to the script execution thread. If you're on a single-core/single-CPU system having this on lower than normal will make other programs more responsive while long-running scripts are active.
+Tarea prioritaria
+: Prioridad dada al hilo de ejecución del script. Si está en un sistema de un solo núcleo/una sola CPU, tener esto a un nivel más bajo de lo normal hará que otros programas respondan mejor mientras los scripts de ejecución prolongada estén activos.
 
-Autoreload on Export
-: Automatically reloads the specified sets of scripts when the [Exporting]({{<relref path="Exporting" lang="en">}})
-  dialogue is opened. In that case you will have to enter the
-  [Automation/Manager]({{<relref path="Automation/Manager" lang="en">}}) window and determine the cause of the error.
+Recarga automática al exportar
+: Recarga automáticamente los conjuntos de scripts especificados al [Exportar]({{<relref path="Exporting" lang="en">}}) Se abre el diálogo. En ese caso tendrás que pasar a la ventana [Automation/Manager]({{<relref path="Automation/Manager" lang="en">}}) y determinar la causa del error.
 
-## Advanced Audio
+## Audio avanzado
 
 ![preferences-advanced-audio](/img/3.2/preferences-advanced-audio.png#center)
 
-Audio provider
-: What backend to to use for loading audio. Currently there are only two methods.
+Proveedor de audio
+: Qué backend usar para cargar audio. Actualmente sólo existen dos métodos.
 
-  _avisynth_ (Windows only)
-  : Uses [Avisynth](http://www.avisynth.org) to load audio. All file types will be loaded with DirectShowSource(), except for AVS files which will be opened with Import().
+_avisynth_ (solo Windows)
+: Utiliza [Avisynth](http://www.avisynth.org) para cargar audio. Todos los tipos de archivos se cargarán con DirectShowSource(), excepto los archivos AVS que se abrirán con Import().
 
-  _FFmpegSource_
-  : Uses [FFMS2](http://code.google.com/p/ffmpegsource/) to load audio. Generally more reliable than opening via DirectShowSource, but slower due to that it has to index files first.
+_FFmpegSource_
+: Utiliza [FFMS2](http://code.google.com/p/ffmpegsource/) para cargar audio. Generalmente es más confiable que abrir a través de DirectShowSource, pero más lento debido a que primero tiene que indexar los archivos.
 
-  Regardless of this setting, the internal PCM WAV reader will always be tried first for WAV files.
+Independientemente de esta configuración, el lector PCM WAV interno siempre se probará primero para los archivos WAV.
 
-Audio player
-: What method to use for playing back audio. The options depend on the platform.
+Reproductor de audio
+: Qué método utilizar para reproducir audio. Las opciones dependen de la plataforma.
 
-  _DirectSound_ (Windows only)
-  : Uses Microsoft DirectSound to play back audio. This is the best tested and most stable audio player.
+_DirectSound_ (solo Windows)
+: utiliza Microsoft DirectSound para reproducir audio. Este es el reproductor de audio mejor probado y más estable.
 
-  _DirectSound-old_ (Windows only)
-  : Aegisub's original implementation of the DirectSound player. If you have audio playback problems when using the DirectSound player this one may work better (but probably won't).
+_DirectSound-antiguo_ (solo Windows)
+: Implementación original de Aegisub del reproductor DirectSound. Si tiene problemas de reproducción de audio cuando utiliza el reproductor DirectSound, este puede funcionar mejor (pero probablemente no lo haga).
 
-  _alsa_ (Linux only)
-  : Uses the [Advanced Linux Sound Architecture](http://www.alsa-project.org/) to play back audio. ALSA is the native sound architecture of Linux and is not available on any other systems.
+_pulse_ (solo Linux)
+: Utiliza la [Arquitectura de sonido avanzada de Linux] (http://www.alsa-project.org/) para reproducir audio. ALSA es la arquitectura de sonido nativa de Linux y no está disponible en ningún otro sistema.
 
-  _pulse_ (Linux and other \*NIX-like systems)
-  : Plays sound back through a [PulseAudio](http://pulseaudio.org/) sound server. This is the least-tested and least likely to work of the audio players, and is only recommended if your audio setup makes non-pulse players undesirable.
+_pulse_ (Linux y otros sistemas tipo \*NIX)
+: Reproduce sonido a través de un servidor de sonido [PulseAudio](http://pulseaudio.org/). Este es el reproductor de audio menos probado y con menos probabilidades de funcionar, y solo se recomienda si su configuración de audio hace que los reproductores que no sean de pulso sean indeseables.
 
-  _portaudio_
-  : Use the [PortAudio](http://www.portaudio.com/) API to play back
-    sound. PortAudio has different playback implementations on different
-    platforms. On most Unices it uses Open Sound System (OSS) for output.
-    It is currently the only Windows audio player which supports
-    selecting the output device.
+_portaudio_
+: Utilice la API [PortAudio](http://www.portaudio.com/) para reproducir sonido. PortAudio tiene diferentes implementaciones de reproducción en diferentes plataformas. En la mayoría de los Unices utiliza Open Sound System (OSS) para la salida. Actualmente es el único reproductor de audio de Windows que admite la selección del dispositivo de salida.
 
-  _openal_
-  : Uses the [OpenAL](http://www.openal.com/) API to play back audio.
-    This is the recommended player on OS X. It is normally not included in
-    windows builds due to that it adds an extra dependency for little
-    benefit.
+_openal_
+: Utiliza la API [OpenAL](http://www.openal.com/) para reproducir audio. Este es el reproductor recomendado en OS X. Normalmente no se incluye en las compilaciones de Windows debido a que agrega una dependencia adicional con pocos beneficios.
 
-### Cache
+### Caché
 
-Cache type
-: Use RAM unless you have very little of it, then use Hard Disk. The cache is
-  not needed and not used when PCM WAV files are opened. If you disable caching,
-  audio playback might become very unreliable.
+Tipo de caché
+: Use RAM a menos que tenga muy poca, luego use el Disco Duro. El caché no es necesario ni se utiliza cuando se abren archivos PCM WAV. Si desactiva el almacenamiento en caché, la reproducción de audio puede volverse muy poco confiable.
 
-Path
-File name
-: These options determine where the hard disk audio cache will be located. Only used if cache is set to hard disk. You shouldn't need to change this unless you're low on disk space. For the name, the string expects a printf-style "%i"
-  parameter, that will be replaced with a number. "%02i" is used by default. Don't change that unless you know what you are doing.
+Camino
+Nombre del archivo
+: Estas opciones determinan dónde se ubicará el caché de audio del disco duro. Sólo se utiliza si la caché está configurada en el disco duro. No debería necesitar cambiar esto a menos que tenga poco espacio en el disco. Para el nombre, la cadena espera un parámetro "%i" de estilo printf, que será reemplazado por un número. "%02i" se utiliza de forma predeterminada. No cambies eso a menos que sepas lo que estás haciendo.
 
 ### Spectrum
 
-Spectrum quality
-: Determines the quality of the audio spectrum display. Higher quality settings result in larger CPU and RAM use. Each consecutive setting uses a bit more CPU than the previous, and double the amount of RAM.  For 48 kHz sample rate audio, one minute of audio uses this much memory at the different settings:
+Calidad del espectro
+: Determina la calidad de la visualización del espectro de audio. Una configuración de mayor calidad da como resultado un mayor uso de CPU y RAM. Cada configuración consecutiva utiliza un poco más de CPU que la anterior y el doble de RAM. Para audio con una frecuencia de muestreo de 48 kHz, un minuto de audio utiliza esta cantidad de memoria en las diferentes configuraciones:
 
 <table class="table table-bordered table-condensed">
   <tr><th>0 "regular"</th><td>11 MB</td>
@@ -417,97 +401,97 @@ Spectrum quality
   <tr><th>3 "insane"</th><td>88 MB</td>
 </table>
 
-  The amount of memory used does not depend on the number of channels
-  (Aegisub always works in mono) or the bit-depth (the spectrum is always calculated in 32 bit floating point) of the audio.
+La cantidad de memoria utilizada no depende del número de canales.
+(Aegisub siempre funciona en mono) o la profundidad de bits (el espectro siempre se calcula en punto flotante de 32 bits) del audio.
 
 {{<todo>}}this is probably wrong {{</todo>}}
 
-Cache memory max
-: The maximum amount of memory to use for audio spectrum caching. The results of the calculations to display the audio spectrum are cached to make scrolling through the audio smoother. The amount of spectrum display that can be cached in an amount of memory depends on the quality setting above. The default cache size of 128 MB results a little less than 6 minutes of audio at 48 kHz in quality 1. If you set this smaller than 5 MB, the default of 128 MB will be used instead. You probably shouldn't set this to more than 1/4 of your amount of physical RAM installed.
+Memoria caché máxima
+: la cantidad máxima de memoria que se utilizará para el almacenamiento en caché del espectro de audio. Los resultados de los cálculos para mostrar el espectro de audio se almacenan en caché para que el desplazamiento por el audio sea más fluido. La cantidad de visualización del espectro que se puede almacenar en caché en una determinada cantidad de memoria depende de la configuración de calidad anterior. El tamaño de caché predeterminado de 128 MB da como resultado un poco menos de 6 minutos de audio a 48 kHz en calidad 1. Si lo configura en menos de 5 MB, se utilizará el valor predeterminado de 128 MB. Probablemente no deberías configurar esto en más de 1/4 de la cantidad de RAM física instalada.
 
-### Avisynth (Windows only)
+### Avisynth (solo Windows)
 
-Avisynth down-mixer
-: Aegisub can only use mono (single-channel) audio. This option determines which Avisynth function to use to convert audio to mono.
+Mezclador descendente Avisynth
+: Aegisub sólo puede utilizar audio mono (un solo canal). Esta opción determina qué función de Avisynth utilizar para convertir audio a mono.
 
-Force sample rate
-: Convert all audio opened to the given sample rate. Forcing the sample rate to the sample rate used by your sound card (rather than having the audio player do it) can potentially improve audio performance and fix playback issues.
+Forzar frecuencia de muestreo
+: convierte todo el audio abierto a la frecuencia de muestreo dada. Forzar la frecuencia de muestreo a la frecuencia de muestreo utilizada por su tarjeta de sonido (en lugar de que el reproductor de audio lo haga) puede mejorar potencialmente el rendimiento del audio y solucionar problemas de reproducción.
 
 ### FFmpegSource
 
-Audio indexing error handling mode
-: What to do if an error occurs while indexing an audio track.
+Modo de manejo de errores de indexación de audio
+: Qué hacer si se produce un error al indexar una pista de audio.
 
-  _Ignore_
-  : Ignore the error and continue decoding the file. This mode can let you open some corrupted files, but can cause audio/video desync.
+   _Ignorar_
+   : Ignore el error y continúe decodificando el archivo. Este modo puede permitirle abrir algunos archivos corruptos, pero puede causar desincronización de audio/vídeo.
 
-  _Clear_
-  : Pretend that the track with the error does not exist in the file.
+   _Claro_
+   : Finge que la pista con el error no existe en el archivo.
 
-  _Stop_ (default)
-  : Stop indexing at the point of the error and return all audio data before the error. This is the default due to that corrupted audio packets at the very end of files are fairly common.
+   _Detener_ (predeterminado)
+   : Detiene la indexación en el punto del error y devuelve todos los datos de audio antes del error. Este es el valor predeterminado debido a que los paquetes de audio corruptos al final de los archivos son bastante comunes.
 
-  _Abort_
-  : Refuse to open the file at all.
+   _Abortar_
+   : Negarse a abrir el archivo en absoluto.
 
-Always index all audio tracks
-: If disabled, opening a video file will only index the video tracks, forcing you to reindex the file to open audio tracks from the same file.
+Indexar siempre todas las pistas de audio
+: Si está deshabilitado, abrir un archivo de video solo indexará las pistas de video, lo que le obligará a volver a indexar el archivo para abrir pistas de audio del mismo archivo.
 
 ### Portaudio
 
-Portaudio device
-: What output device to use when playing audio through portaudio.
+Dispositivo de portaudio
+: Qué dispositivo de salida usar al reproducir audio a través de portaudio.
 
-## Advanced Video
+## Video avanzado
 
 ![preferences-advanced-video](/img/3.2/preferences-advanced-video.png#center)
 
-Video provider
-: Decides what method Aegisub should use to load video. What options you have available here depends on how your copy of Aegisub was compiled and what operating system you are running under. The following alternatives exist:
+Proveedor de vídeo
+: Decide qué método debe utilizar Aegisub para cargar el vídeo. Las opciones que tiene disponibles aquí dependen de cómo se compiló su copia de Aegisub y del sistema operativo que esté ejecutando. Existen las siguientes alternativas:
 
-  _avisynth_ (Windows only)
-  : Uses [Avisynth](http://www.avisynth.org) to load video. Versatile, supports loading almost all common formats as well as .d2v files (indexed DVD VOBs) if the correct plugin is supplied. Note that Aegisub can install its own avisynth.dll instead of using your system installation if so desired. Requires Video for Windows decoders for AVI files for best performance. Uses DirectShow for most formats, so it isn't recommended for anything but AVI, d2v and opening Avisynth scripts.
+   _avisynth_ (solo Windows)
+   : Utiliza [Avisynth](http://www.avisynth.org) para cargar vídeo. Versátil, admite la carga de casi todos los formatos comunes, así como archivos .d2v (DVD VOB indexados) si se suministra el complemento correcto. Tenga en cuenta que Aegisub puede instalar su propio avisynth.dll en lugar de utilizar la instalación de su sistema si así lo desea. Requiere decodificadores de Video para Windows para archivos AVI para obtener el mejor rendimiento. Utiliza DirectShow para la mayoría de los formatos, por lo que no se recomienda para nada más que AVI, d2v y abrir scripts de Avisynth.
 
-  _FFmpegSource_
-  : Uses [FFMS2](http://code.google.com/p/ffmpegsource/) to load video. Generally the most reliable option.
+   _FFmpegSource_
+   : Utiliza [FFMS2](http://code.google.com/p/ffmpegsource/) para cargar videos. Generalmente la opción más confiable.
 
-Subtitles provider
-: Decides what backend Aegisub uses to render subtitles on the video. If you install additional CSRI renderers such as VSFilterMod or xy-VSFilter (by placing the dlls in the CSRI directory within Aegisub's directory), they will be listed here along with the default ones.
+Proveedor de subtítulos
+: Decide qué backend utiliza Aegisub para representar los subtítulos en el vídeo. Si instala renderizadores CSRI adicionales como VSFilterMod o xy-VSFilter (colocando los archivos dll en el directorio CSRI dentro del directorio de Aegisub), se enumerarán aquí junto con los predeterminados.
 
-  *CSRI/vsfilter_textsub* (Windows only)
-  : Use VSFilter 2.40 to render subtitles. This is the standard subtitle renderer which defines the ASS format used by Aegisub.
+   *CSRI/vsfilter_textsub* (solo Windows)
+   : Utilice VSFilter 2.40 para representar subtítulos. Este es el procesador de subtítulos estándar que define el formato ASS utilizado por Aegisub.
 
-  _libass_
-  : Use [libass](http://code.google.com/p/libass/) to render subtitles. libass is far faster than VSFilter and (somewhat) cross-platform, but unfortunately still has some rendering differences from VSFilter and font-related issues on Windows. If you are doing complex typesetting that will be [softsubbed]({{<relref path="Attaching_subtitles_to_video#softsubbing" lang="en">}}) it is a good idea to check your work with both VSFilter and libass, as an increasing number of users are using libass.
+   _libass_
+   : Utilice [libass](http://code.google.com/p/libass/) para representar subtítulos. libass es mucho más rápido que VSFilter y (en cierto modo) multiplataforma, pero desafortunadamente todavía tiene algunas diferencias de representación con respecto a VSFilter y problemas relacionados con las fuentes en Windows. Si está realizando una composición tipográfica compleja que será [softsubbed]({{<relref path="Attaching_subtitles_to_video#softsubbing" lang="en">}}), es una buena idea comprobar su trabajo tanto con VSFilter como con libass, como Un número cada vez mayor de usuarios utiliza libass.
 
-Force BT.601
-: Pretend all YUV videos are BT.601, for VSFilter compatibility.
+Fuerza BT.601
+: Suponga que todos los videos YUV son BT.601, para compatibilidad con VSFilter.
 
-  When VSFilter is used as a DirectShow filter, it always uses the BT.601 color matrix for converting the subtitles from RGB to YUV. This means that if the video uses BT.709 (as most HD video and the occasional DVD does), colors which match the video in Aegisub will not match the video in the player. This option makes Aegisub always convert videos to RGB using BT.601, making the colors shown in Aegisub incorrect, but making it so that if the colors match in Aegisub, they will match in the player.
+   Cuando VSFilter se utiliza como filtro DirectShow, siempre utiliza la matriz de color BT.601 para convertir los subtítulos de RGB a YUV. Esto significa que si el video usa BT.709 (como lo hacen la mayoría de los videos HD y ocasionalmente los DVD), los colores que coinciden con el video en Aegisub no coincidirán con el video en el reproductor. Esta opción hace que Aegisub siempre convierta videos a RGB usando BT.601, lo que hace que los colores que se muestran en Aegisub sean incorrectos, pero si los colores coinciden en Aegisub, coincidirán en el reproductor.
 
-  To make things more exciting, VSFilter will use the *correct* color space when used as the internal subtitle renderer in MPC-HC, so enabling this option will result in *mismatched* colors in that case. As the ISR is currently broken in many ways (e.g. it is impossible to accurately position subtitles with it), we recommend not worrying about it for now.
+   Para hacer las cosas más interesantes, VSFilter usará el espacio de color *correcto* cuando se use como renderizador de subtítulos interno en MPC-HC, por lo que habilitar esta opción dará como resultado colores *no coincidentes* en ese caso. Como el ISR actualmente está roto de muchas maneras (por ejemplo, es imposible colocar los subtítulos con precisión), recomendamos no preocuparse por eso por ahora.
 
-  This comparison may make this clearer:
+   Esta comparación puede aclarar esto:
 
-  ![bt601](/img/3.2/bt601.png)
+   ![bt601](/img/3.2/bt601.png)
 
-  Aegisub now writes what colorspace should be used for RGB -> YUV conversions to the subtitle file, so hopefully this mess will be resolved by renderer improvements sometime in the future.
+   Aegisub ahora escribe qué espacio de color se debe usar para las conversiones RGB -> YUV al archivo de subtítulos, por lo que esperamos que este lío se resuelva mediante mejoras en el renderizador en algún momento en el futuro.
 
 ### Avisynth
 
-Allow pre-2.56a Avisynth
-: Support using ancient versions of Avisynth that a few people refuse to upgrade past for various bad reasons.
+Permitir Avisynth anterior a 2.56a
+: Admite el uso de versiones antiguas de Avisynth que algunas personas se niegan a actualizar por varias malas razones.
 
-Avisynth memory limit
-: Frame cache memory limit for Avisynth. Raising this generally does not improve performance and should be done only if you're opening overcomplicated Avisynth scripts directly.
+Límite de memoria de Avisynth
+: Límite de memoria caché de fotogramas para Avisynth. Por lo general, aumentar esto no mejora el rendimiento y solo debe hacerse si está abriendo directamente scripts de Avisynth demasiado complicados.
 
 ### FFmpegSource
 
-Debug log verbosity
-: Set ffmpeg/libav's verbosity level. Only has an effect when you have a debugger attached to Aegisub.
+Detalle del registro de depuración
+: establece el nivel de detalle de ffmpeg/libav. Sólo tiene efecto cuando tienes un depurador adjunto a Aegisub.
 
-Decoding threads
-: Maximum number of threads to use to decode video, or -1 to choose automatically. Setting this to 1 can fix some decoding issues at the cost of performance. There is rarely any reason to set it to a value other than 1 or -1.
+Hilos de decodificación
+: Número máximo de hilos a usar para decodificar video, o -1 para elegir automáticamente. Establecer esto en 1 puede solucionar algunos problemas de decodificación a costa del rendimiento. Rara vez hay algún motivo para establecerlo en un valor distinto de 1 o -1.
 
-Enable unsafe seeking
-: Disable some of FFMS2's sanity checks when seeking in video. Makes it possible to open some files which FFMS2 cannot seek frame-accurately in.
+Habilitar búsquedas inseguras
+: deshabilite algunas de las comprobaciones de cordura de FFMS2 cuando busque en video. Hace posible abrir algunos archivos en los que FFMS2 no puede buscar cuadros con precisión.
