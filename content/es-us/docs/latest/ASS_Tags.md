@@ -109,12 +109,12 @@ Establecer el grosor del borde en 3.7 píxeles.
 {{</example-box>}}
 
 {{<tag-def-box title="Grosor de borde (extendido)" id="\xbord">}}
-\\xbord<i>\<size></i>
-\\ybord<i>\<size></i>
+\\xbord<i>\<grosor></i>
+\\ybord<i>\<grosor></i>
 {{</tag-def-box>}}
 Utilice las etiquetas `\xbord` `\ybord` para establecer el grosor del borde en las direcciones X y Y por separado. Esto puede ser útil para corregir el tamaño del borde en caso del renderizado anamórfico de subtítulos.
 
-Tenga en cuenta que si usa `\bord` después de `\xbord` o `\ybord` en una línea, las anulará a ambos.
+Tenga en cuenta que si usa `\bord` después de `\xbord` o `\ybord` en una línea, las anulará a ambas.
 
 Uno puede establecer el grosor del borde en 0 (cero) en una de las direcciones para desactivar completamente el borde en esa dirección.
 
@@ -125,8 +125,8 @@ Establece la distancia desde el texto para posicionar la sombra. Fijar la profun
 La profundidad de la sombra no puede ser negativa con esta etiqueta.
 
 {{<tag-def-box title="Distancia de sombra (extendida)" id="\xshad">}}
-\\xshad<i>\<depth></i>
-\\yshad<i>\<depth></i>
+\\xshad<i>\<profundidad></i>
+\\yshad<i>\<profundidad></i>
 {{</tag-def-box>}}
 Establece la distancia desde el texto para posicionar la sombra, con las posiciones X y Y configuradas por separado. La sombra solo se desactiva si la distancia X y Y es 0.
 
@@ -135,7 +135,7 @@ Tenga en cuenta que, a diferencia de \\shad, puede establecer la distancia negat
 {{<tag-def-box title="Bordes borrosos" id="\be">}}
 \\be0
 \\be1
-\\be<i>\<strength></i>
+\\be<i>\<fuerza></i>
 {{</tag-def-box>}}
 Habilita o deshability un efecto de suavizado sutil para los bordes del texto. El efecto no siempre es muy visible, pero en algunos casos puede hacer que el texto se vea mejor. Suele ser más visible en tamaños de texto más pequeños.
 
@@ -143,12 +143,12 @@ Fíjese que esta etiqueta difumina solo los _bordes_ del texto, no todo. Esto si
 
 En la versión extendida, _fuerza_ es la cantidad de veces que se aplica el efecto normal. Tenga en cuenta que en valores altos el efecto degenera hasta la nada y, en general, no es muy útil. Como resultado, para desenfoques fuertes, `\blur` generalmente es más útil. La _fuerza_ tiene que ser un número entero.
 
-{{<tag-def-box title="Bordes borrosos (núcleo gaussiano)" id="\blur">}}\\blur<i>\<strength></i>{{</tag-def-box >}}
-En general, tiene la misma función que la etiqueta [`\be`]({{<relref path="ASS_Tags#\be">}}), pero utiliza un algoritmo más avanzado que se ve mejor en niveles altos de fuerza. A diferencia de `\be`, la _fuerza_ aquí puede ser no entera. Establezca _strength_ en 0 (cero) para desactivar el efecto. Con cuidado, que configurar _strength_ demasiado alto puede requerir mucho tiempo de CPU para renderizar.
+{{<tag-def-box title="Bordes borrosos (núcleo gaussiano)" id="\blur">}}\\blur<i>\<fuerza></i>{{</tag-def-box >}}
+En general, tiene la misma función que la etiqueta [`\be`]({{<relref path="ASS_Tags#\be">}}), pero utiliza un algoritmo más avanzado que se ve mejor en niveles altos de fuerza. A diferencia de `\be`, la _fuerza_ aquí puede ser no entera. Establezca _fuerza_ en 0 (cero) para desactivar el efecto. Con cuidado, que configurar _fuerza_ demasiado alto puede requerir mucho tiempo de CPU para renderizar.
 
 Tenga en cuenta que esta etiqueta difumina solo los _bordes_ del texto, no todo. Esto significa que si el texto tiene un borde (establecido con [`\bord`]({{<relref path="ASS_Tags#\bord">}})) el borde se verá borroso, pero si no hay borde, el texto principal aparecerá borroso.
 
-{{<tag-def-box title="Nombre de fuente" id="\fn">}}\\fn<i>\<name></i>{{</tag-def-box>}}
+{{<tag-def-box title="Nombre de fuente" id="\fn">}}\\fn<i>\<nombre></i>{{</tag-def-box>}}
 Establece la fuente que se utilizará para el texto que sigue. No debe haber ningún espacio entre `\fn` y el nombre de la fuente, y tampoco puede poner paréntesis o algo similar alrededor del nombre de la fuente.
 
 {{<example-box>}}
@@ -168,7 +168,7 @@ El texto que sigue a esta etiqueta estará en fuente Arial.
 El texto que sigue a esta etiqueta estará en fuente Times New Roman.
 {{</example-box>}}
 
-{{<tag-def-box title="Tamaño de fuente" id="\fs">}}\\fs<i>\<size></i>{{</tag-def-box>}}
+{{<tag-def-box title="Tamaño de fuente" id="\fs">}}\\fs<i>\<tamaño></i>{{</tag-def-box>}}
 Establece el tamaño de la fuente. El tamaño especificado es la altura en píxeles de escritura, por lo que con un tamaño de fuente 40, una línea de texto tiene 40 píxeles de alto. (Nota técnica: en realidad se trata de puntos tipográficos (edición de escritorio), no de píxeles de guión, pero dado que la representación siempre se realiza a 72 DPI (según el estándar de facto), un punto termina siendo exactamente igual a un píxel de resolución de guión).
 
 Sólo puede especificar tamaños de fuente enteros.
@@ -183,8 +183,8 @@ El siguiente texto será de una fuente de tamaño 10.
 {{</example-box>}}
 
 {{<tag-def-box title="Escala de fuente" id="\fscx">}}
-\\fscx<i>\<scale></i>
-\\fscy<i>\<scale></i>
+\\fscx<i>\<escala></i>
+\\fscy<i>\<escala></i>
 {{</tag-def-box>}}
 Ajusta el tamaño del texto en dirección X (`\fscx` o Y (`\fscy`). La _escala_ dada está en porcentaje, por lo que 100 significa "tamaño original".
 
@@ -227,16 +227,16 @@ Cambia el espacio entre las letras individuales del texto. Puede utilizar esto p
 El espaciado puede ser negativo y tener decimales.
 
 {{<tag-def-box title="Rotación de texto" id="\frx">}}
-\\frx<i>\<cuánto></i>
-\\freír<i>\<cuánto></i>
-\\frz<i>\<cuánto></i>
-\\fr<i>\<cuánto></i>
+\\frx<i>\<cantidad></i>
+\\freír<i>\<cantidad></i>
+\\frz<i>\<cantidad></i>
+\\fr<i>\<cantidad></i>
 {{</tag-def-box>}}
 Gira el texto alrededor del eje X, Y o Z. La etiqueta `\fr` es un atajo para `\frz`.
 
 - El **eje X** corre horizontalmente por la pantalla. Girando sobre él (con valores positivos) provoca un efecto con que la parte superior del texto se mete hacia "adentro" de la pantalla mientras que la parte inferior sale hacia "afuera" de la pantalla.
 - El **eje Y** corre verticalmente por la pantalla. Girando sobre él (con positivo valores) hace que el texto gire de modo que la izquierda sale hacia "afuera" de la pantalla, y la derecha se mete hacia "adentro" de la pantalla.
-- El **eje Z** corre perpendicular a la pantalla. Girando sobre él (con valores positivos) hace que el texto gire en 2D, en sentido antihorario (como es estándar en la matemática).
+- El **eje Z** corre perpendicular a la pantalla. Girando sobre él (con valores positivos) hace que el texto gire en 2D, en sentido antihorario (como es estándar en las matemáticas).
 
 La _cantidad_ de rotación se da en grados matemáticos, de modo que 360 grados es una rotación completa, y rotar cualquier múltiple de 360 es lo mismo que no rotar. Se permite especificar cantidades de rotación negativas, así como cantidades mayores a 360 grados.
 
@@ -313,11 +313,11 @@ El corte se realiza después de la rotación, en las coordenadas giradas. El sis
 {{<tag-def-box title="Codificación de fuente" id="\fe">}}\\fe<i>\<id></i>{{</tag-def-box>}}
 Configura la codificación de fuente Windows utilizada para seleccionar la tabla de mapeo de fuentes utilizado para traducir puntos Unicode a índices de glifos en la fuente. Para algunas fuentes sin una tabla de mapeo Unicode, esto puede ser necesario para que funcione el texto en ciertos idiomas. Para las fuentes que tienen una tabla de mapeo Unicode, se podría usar para seleccionar variaciones regionales, como elegir el glifo correcto para un ideograma Han que sea diferente en chino simplificado, chino tradicional, japonés y coreano.
 
-Algunas ID de codificación de fuentes comunes son:
+Algunos ID de codificación de fuentes comunes son:
 
 - 0 - ANSI, Windows CP-1252 para idiomas de Europa occidental.
 - 1 - Predeterminado, depende de la configuración del sistema del usuario, pero también permite que el subsistema de fuentes elija dinámicamente una tabla de mapeo diferente en algunas circunstancias.
-- 2 - Símbolo, los puntos de código en el rango 0-255 se traducen a definición por fuente glifos de símbolos, esto se usa para fuentes como Wingdings.
+- 2 - Símbolo, los puntos de código en el rango 0-255 se traducen a glifos de símbolos definidos por cada fuente, esto se usa para fuentes como Wingdings.
 - 128 - Shift-JIS, usado para japonés.
 - 129 y 130, respectivamente Hangeul y Johab, dos esquemas de codificación para coreano.
 - 134 - GB2312, utilizado para chino simplificado.
