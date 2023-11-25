@@ -168,7 +168,7 @@ El texto que sigue a esta etiqueta estará en fuente Arial.
 El texto que sigue a esta etiqueta estará en fuente Times New Roman.
 {{</example-box>}}
 
-{{<tag-def-box title="Tamaño de fuente" id="\fs">}}\\fs<i>\<size></i>{{</tag-def-box>}}
+{{<tag-def-box title="Tamaño de fuente" id="\fs">}}\\fs<i>\<tamaño></i>{{</tag-def-box>}}
 Establece el tamaño de la fuente. El tamaño especificado es la altura en píxeles de escritura, por lo que con un tamaño de fuente 40, una línea de texto tiene 40 píxeles de alto. (Nota técnica: en realidad se trata de puntos tipográficos (edición de escritorio), no de píxeles de guión, pero dado que la representación siempre se realiza a 72 DPI (según el estándar de facto), un punto termina siendo exactamente igual a un píxel de resolución de guión).
 
 Sólo puede especificar tamaños de fuente enteros.
