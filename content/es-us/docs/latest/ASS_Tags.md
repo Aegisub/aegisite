@@ -109,8 +109,8 @@ Establecer el grosor del borde en 3.7 píxeles.
 {{</example-box>}}
 
 {{<tag-def-box title="Grosor de borde (extendido)" id="\xbord">}}
-\\xbord<i>\<size></i>
-\\ybord<i>\<size></i>
+\\xbord<i>\<grosor></i>
+\\ybord<i>\<grosor></i>
 {{</tag-def-box>}}
 Utilice las etiquetas `\xbord` `\ybord` para establecer el grosor del borde en las direcciones X y Y por separado. Esto puede ser útil para corregir el tamaño del borde en caso del renderizado anamórfico de subtítulos.
 
