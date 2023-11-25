@@ -313,7 +313,7 @@ El corte se realiza después de la rotación, en las coordenadas giradas. El sis
 {{<tag-def-box title="Codificación de fuente" id="\fe">}}\\fe<i>\<id></i>{{</tag-def-box>}}
 Configura la codificación de fuente Windows utilizada para seleccionar la tabla de mapeo de fuentes utilizado para traducir puntos Unicode a índices de glifos en la fuente. Para algunas fuentes sin una tabla de mapeo Unicode, esto puede ser necesario para que funcione el texto en ciertos idiomas. Para las fuentes que tienen una tabla de mapeo Unicode, se podría usar para seleccionar variaciones regionales, como elegir el glifo correcto para un ideograma Han que sea diferente en chino simplificado, chino tradicional, japonés y coreano.
 
-Algunas ID de codificación de fuentes comunes son:
+Algunos ID de codificación de fuentes comunes son:
 
 - 0 - ANSI, Windows CP-1252 para idiomas de Europa occidental.
 - 1 - Predeterminado, depende de la configuración del sistema del usuario, pero también permite que el subsistema de fuentes elija dinámicamente una tabla de mapeo diferente en algunas circunstancias.
