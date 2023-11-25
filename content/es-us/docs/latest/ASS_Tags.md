@@ -135,7 +135,7 @@ Tenga en cuenta que, a diferencia de \\shad, puede establecer la distancia negat
 {{<tag-def-box title="Bordes borrosos" id="\be">}}
 \\be0
 \\be1
-\\be<i>\<strength></i>
+\\be<i>\<fuerza></i>
 {{</tag-def-box>}}
 Habilita o deshability un efecto de suavizado sutil para los bordes del texto. El efecto no siempre es muy visible, pero en algunos casos puede hacer que el texto se vea mejor. Suele ser más visible en tamaños de texto más pequeños.
 
