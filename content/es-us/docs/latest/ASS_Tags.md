@@ -125,8 +125,8 @@ Establece la distancia desde el texto para posicionar la sombra. Fijar la profun
 La profundidad de la sombra no puede ser negativa con esta etiqueta.
 
 {{<tag-def-box title="Distancia de sombra (extendida)" id="\xshad">}}
-\\xshad<i>\<depth></i>
-\\yshad<i>\<depth></i>
+\\xshad<i>\<profundidad></i>
+\\yshad<i>\<profundidad></i>
 {{</tag-def-box>}}
 Establece la distancia desde el texto para posicionar la sombra, con las posiciones X y Y configuradas por separado. La sombra solo se desactiva si la distancia X y Y es 0.
 
