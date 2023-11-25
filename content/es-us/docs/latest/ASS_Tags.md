@@ -148,7 +148,7 @@ En general, tiene la misma función que la etiqueta [`\be`]({{<relref path="ASS_
 
 Tenga en cuenta que esta etiqueta difumina solo los _bordes_ del texto, no todo. Esto significa que si el texto tiene un borde (establecido con [`\bord`]({{<relref path="ASS_Tags#\bord">}})) el borde se verá borroso, pero si no hay borde, el texto principal aparecerá borroso.
 
-{{<tag-def-box title="Nombre de fuente" id="\fn">}}\\fn<i>\<name></i>{{</tag-def-box>}}
+{{<tag-def-box title="Nombre de fuente" id="\fn">}}\\fn<i>\<nombre></i>{{</tag-def-box>}}
 Establece la fuente que se utilizará para el texto que sigue. No debe haber ningún espacio entre `\fn` y el nombre de la fuente, y tampoco puede poner paréntesis o algo similar alrededor del nombre de la fuente.
 
 {{<example-box>}}
