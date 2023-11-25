@@ -317,7 +317,7 @@ Algunos ID de codificación de fuentes comunes son:
 
 - 0 - ANSI, Windows CP-1252 para idiomas de Europa occidental.
 - 1 - Predeterminado, depende de la configuración del sistema del usuario, pero también permite que el subsistema de fuentes elija dinámicamente una tabla de mapeo diferente en algunas circunstancias.
-- 2 - Símbolo, los puntos de código en el rango 0-255 se traducen a definición por fuente glifos de símbolos, esto se usa para fuentes como Wingdings.
+- 2 - Símbolo, los puntos de código en el rango 0-255 se traducen a glifos de símbolos definidos por cada fuente, esto se usa para fuentes como Wingdings.
 - 128 - Shift-JIS, usado para japonés.
 - 129 y 130, respectivamente Hangeul y Johab, dos esquemas de codificación para coreano.
 - 134 - GB2312, utilizado para chino simplificado.
