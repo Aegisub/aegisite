@@ -183,8 +183,8 @@ El siguiente texto será de una fuente de tamaño 10.
 {{</example-box>}}
 
 {{<tag-def-box title="Escala de fuente" id="\fscx">}}
-\\fscx<i>\<scale></i>
-\\fscy<i>\<scale></i>
+\\fscx<i>\<escala></i>
+\\fscy<i>\<escala></i>
 {{</tag-def-box>}}
 Ajusta el tamaño del texto en dirección X (`\fscx` o Y (`\fscy`). La _escala_ dada está en porcentaje, por lo que 100 significa "tamaño original".
 
