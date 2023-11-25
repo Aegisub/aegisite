@@ -228,7 +228,7 @@ El espaciado puede ser negativo y tener decimales.
 
 {{<tag-def-box title="Rotación de texto" id="\frx">}}
 \\frx<i>\<cantidad></i>
-\\freír<i>\<cantidad></i>
+\\fry<i>\<cantidad></i>
 \\frz<i>\<cantidad></i>
 \\fr<i>\<cantidad></i>
 {{</tag-def-box>}}
