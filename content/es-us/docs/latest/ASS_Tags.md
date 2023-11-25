@@ -227,10 +227,10 @@ Cambia el espacio entre las letras individuales del texto. Puede utilizar esto p
 El espaciado puede ser negativo y tener decimales.
 
 {{<tag-def-box title="Rotación de texto" id="\frx">}}
-\\frx<i>\<cuánto></i>
-\\freír<i>\<cuánto></i>
-\\frz<i>\<cuánto></i>
-\\fr<i>\<cuánto></i>
+\\frx<i>\<cantidad></i>
+\\freír<i>\<cantidad></i>
+\\frz<i>\<cantidad></i>
+\\fr<i>\<cantidad></i>
 {{</tag-def-box>}}
 Gira el texto alrededor del eje X, Y o Z. La etiqueta `\fr` es un atajo para `\frz`.
 
