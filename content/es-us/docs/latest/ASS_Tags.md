@@ -236,7 +236,7 @@ Gira el texto alrededor del eje X, Y o Z. La etiqueta `\fr` es un atajo para `\f
 
 - El **eje X** corre horizontalmente por la pantalla. Girando sobre él (con valores positivos) provoca un efecto con que la parte superior del texto se mete hacia "adentro" de la pantalla mientras que la parte inferior sale hacia "afuera" de la pantalla.
 - El **eje Y** corre verticalmente por la pantalla. Girando sobre él (con positivo valores) hace que el texto gire de modo que la izquierda sale hacia "afuera" de la pantalla, y la derecha se mete hacia "adentro" de la pantalla.
-- El **eje Z** corre perpendicular a la pantalla. Girando sobre él (con valores positivos) hace que el texto gire en 2D, en sentido antihorario (como es estándar en la matemática).
+- El **eje Z** corre perpendicular a la pantalla. Girando sobre él (con valores positivos) hace que el texto gire en 2D, en sentido antihorario (como es estándar en las matemáticas).
 
 La _cantidad_ de rotación se da en grados matemáticos, de modo que 360 grados es una rotación completa, y rotar cualquier múltiple de 360 es lo mismo que no rotar. Se permite especificar cantidades de rotación negativas, así como cantidades mayores a 360 grados.
 
