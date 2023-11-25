@@ -143,7 +143,7 @@ Fíjese que esta etiqueta difumina solo los _bordes_ del texto, no todo. Esto si
 
 En la versión extendida, _fuerza_ es la cantidad de veces que se aplica el efecto normal. Tenga en cuenta que en valores altos el efecto degenera hasta la nada y, en general, no es muy útil. Como resultado, para desenfoques fuertes, `\blur` generalmente es más útil. La _fuerza_ tiene que ser un número entero.
 
-{{<tag-def-box title="Bordes borrosos (núcleo gaussiano)" id="\blur">}}\\blur<i>\<strength></i>{{</tag-def-box >}}
+{{<tag-def-box title="Bordes borrosos (núcleo gaussiano)" id="\blur">}}\\blur<i>\<fuerza></i>{{</tag-def-box >}}
 En general, tiene la misma función que la etiqueta [`\be`]({{<relref path="ASS_Tags#\be">}}), pero utiliza un algoritmo más avanzado que se ve mejor en niveles altos de fuerza. A diferencia de `\be`, la _fuerza_ aquí puede ser no entera. Establezca _strength_ en 0 (cero) para desactivar el efecto. Con cuidado, que configurar _strength_ demasiado alto puede requerir mucho tiempo de CPU para renderizar.
 
 Tenga en cuenta que esta etiqueta difumina solo los _bordes_ del texto, no todo. Esto significa que si el texto tiene un borde (establecido con [`\bord`]({{<relref path="ASS_Tags#\bord">}})) el borde se verá borroso, pero si no hay borde, el texto principal aparecerá borroso.
