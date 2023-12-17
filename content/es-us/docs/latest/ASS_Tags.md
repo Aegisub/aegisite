@@ -691,7 +691,7 @@ Usa la forma definida como dibujo vectorial para mostrar selectivamente (`\clip`
 
 Los _comandos de dibujo_ son comandos de dibujo como los que se usan con la etiqueta `\p`. Las coordenadas se dan en píxeles de resolución de guión y son relativas a la esquina superior izquierda del video.
 
-Si la _escala_ no se especifica, se supone que es 1 (uno), lo que significa que las coordenadas corresponden directamente a los píxeles. La _escala_ funciona de la misma manera que la _escala_ para los dibujos `\p`.
+Si la _escala_ no se especifica, se asume que es 1 (uno), lo que significa que las coordenadas corresponden directamente a los píxeles. La _escala_ funciona de la misma manera que la _escala_ para los dibujos `\p`.
 
 A diferencia del clip rectangular, el clip de dibujo vectorial _no_ puede animarse con `\t`. Si necesita animar un clip de dibujo vectorial, debe crear varias líneas de subtítulos similares, cada una con su propio "cuadro" de la animación de recorte.
 
