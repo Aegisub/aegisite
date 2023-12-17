@@ -467,7 +467,7 @@ Suponiendo que el estilo de línea actual es "Default", primero tiene "Hey" en e
 {{<tag-def-box title="Fijar posición" id="\pos">}}\\pos(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
 Establece la posición de la línea. Las coordenadas _X_ y _Y_ deben ser números enteros y se proporcionan en el sistema de coordenadas de resolución de guión. El significado de _X_ y _Y_ cambia ligeramente dependiendo de la [alineación]({{<relref path="ASS_Tags#\an">}}).
 
-La alineación de la línea de subtítulo se utiliza como punto de anclaje para la posición. Es decir, cuando tiene una línea con alineación arriba izquierda, la esquina superior izquierda del subtítulo se coloca en las coordenadas dadas a `\pos`, y para la alineación bajo centro, el centro inferior del subtítulo se coloca en las coordenadas dadas.
+La alineación de la línea de subtítulo se utiliza como punto de anclaje para la posición. Es decir, cuando tiene una línea con alineación arriba-izquierda, la esquina superior izquierda del subtítulo se coloca en las coordenadas dadas a `\pos`, y para la alineación abajo-centro, el centro inferior del subtítulo se coloca en las coordenadas dadas.
 
 {{<example-box>}}
 Las siguientes capturas de pantalla demuestran la forma de que la alineación afecta el posicionamiento. La cruz verde señala el punto (320,240) en el vídeo.
