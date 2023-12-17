@@ -14,7 +14,7 @@ Hardsubbing es un método que "graba" subtítulos en la parte fotográfica de un
 
 ### Ventajas del Hardsubbing
 
-El hardsubbing suele ser mucho menos exigente para el dispositivo de reproducción. Dado que el texto ya es parte del video, requiere tanto procesamiente como el video sin subtítulos requisiera y nada más. A menudo también se puede crear efectos especiales que serían difíciles de replicar en un formato de subtítulos sueltos, debido a la gran cantidad de CPU necesaria para renderizarlos. Incluso en ánime con subtítulos sueltos de fansubs, los de karaoke de apertura y cierre a menudo son incrustados debido a los efectos especiales utilizados.
+El hardsubbing suele ser mucho menos exigente para el dispositivo de reproducción. Dado que el texto ya es parte del video, requiere tanto procesamiento como el video sin subtítulos requeriría y nada más. A menudo también se pueden crear efectos especiales que serían difíciles de replicar en un formato de subtítulos sueltos, debido a la gran cantidad de CPU necesaria para renderizarlos. Incluso en ánime con subtítulos sueltos de fansubs, los de karaoke de apertura y cierre a menudo son incrustados debido a los efectos especiales utilizados.
 
 Algunos argumentan que con los subtítulos incrustados, los guiones son más difíciles de robar, ya que el texto está incrustado en la imagen: los ladrones no pueden simplemente extraer los subtítulos como de un sub suelto. Sin embargo, la presencia de muy buenos extractores de subtítulos diseñados para el propósito de extraer este texto incrustado elimina gran parte del argumento de que los incrustados eviten el robo de guiones.
 
