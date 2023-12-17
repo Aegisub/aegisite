@@ -500,7 +500,7 @@ Tenga en cuenta que es permitido que _t1_ y _t2_ especifiquen tiempos mayores qu
 Hay algunas cosas que con **`\move` no se pueden hacer**:
 
 - No es posible realizar movimientos a velocidad no constante. El movimiento no puede, por ejemplo, comience lento y termine rápido.
-- Sólo puede haber una etiqueta o de posicionamiento o de movimiento en una línea. Poniendo ambos una `\pos` y una `\move` en una misma línea no funcionarán. Tampoco funciona colocar dos o más etiquetas `\move` en una sola línea.
+- Sólo puede haber una etiqueta o de posicionamiento o de movimiento en una línea. Poniendo ambas etiquetas, una `\pos` y una `\move`, en una misma línea no funcionará. Tampoco funciona colocar dos o más etiquetas `\move` en una sola línea.
 
 Si necesita hacer cualquiera de esos dos, deberá dividir el movimiento en segmentos que se realizan en líneas de subtítulos separadas. (Cómo hacer esto está fuera del alcance de esta página).
 
