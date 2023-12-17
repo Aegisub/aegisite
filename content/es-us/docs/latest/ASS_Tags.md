@@ -438,7 +438,7 @@ Las diferentes etiquetas `\k` crean varios efectos:
 - `\K` y `\kf`: Estos dos son idénticos. Tenga en cuenta que `\K` es una K mayúscula y es diferente de `\k` minúscula. El relleno de sílaba comienza en color secundario, y cuando comienza la sílaba el relleno cambia de secundario a primario con un barrido de izquierda a derecha, y el barrido termina cuando el tiempo de la sílaba termina.
 - `\ko`: Similar a `\k`, excepto que antes de resaltar, el borde/contorno de la sílaba se elimina y aparece instantáneamente cuando comienza la sílaba.
 
-_Nota: Hay una etiqueta de karaoke adicional, `\kt`, que es muy diferente a las demás. Rara vez es útil y Aegisub no soporta esa etiqueta; por lo tanto no está documentada.
+_Nota: Hay una etiqueta de karaoke adicional, `\kt`, que es muy diferente a las demás. Rara vez es útil y Aegisub no soporta esa etiqueta; por lo tanto no está documentada._
 
 {{<tag-def-box title="Estilo de salto" id="\q">}}\\q<i>\<estilo></i>{{</tag-def-box>}}
 
