@@ -442,7 +442,7 @@ _Nota: Hay una etiqueta de karaoke adicional, `\kt`, que es muy diferente a las 
 
 {{<tag-def-box title="Estilo de salto" id="\q">}}\\q<i>\<estilo></i>{{</tag-def-box>}}
 
-Determina cómo se aplica el salto de línea a la línea de subtítulo. Las siguientes \_estilo_s están disponibles:
+Determina cómo se aplica el salto de línea a la línea de subtítulo. Los siguientes \_estilo_s están disponibles:
 
 - 0: Ajuste inteligente, hace que cada línea sea aproximadamente igual de larga, pero con la línea superior más ancha cuando el ancho igualado es imposible. Sólo `\N` fuerza los saltos de línea.
 - 1: Ajuste de final de línea, completa la mayor cantidad de texto posible en una línea y luego salta a la siguiente línea. Sólo `\N` fuerza los saltos de línea.
