@@ -612,7 +612,7 @@ _Nota: Para `\clip` y `\iclip`, solo se pueden animar las versiones rectangulare
 
 _Nota: Mezclar `\clip` y `\iclip` en etiquetas `\t` tiene resultados no deseados._
 
-Los parámetros _t1_ y _t2_ especifican el intervalo de tiempo para realizar la transformación. En las versiones sin _t1_ y _t2_ la transformación se realiza a lo largo de toda la línea. Los tiempos se dan en milisegundos y son relativos a la hora de inicio de la línea. (Para el resto de la descripción de `\t`, se supone que _t1_ y _t2_ están especificados, o implícitamente ser respectivamente 0 y la duración de la línea).
+Los parámetros _t1_ y _t2_ especifican el intervalo de tiempo para realizar la transformación. En las versiones sin _t1_ y _t2_ la transformación se realiza a lo largo de toda la línea. Los tiempos se dan en milisegundos y son relativos a la hora de inicio de la línea. (Para el resto de la descripción de `\t`, se asume que _t1_ y _t2_ están especificados, o implícitamente son 0 y la duración de la línea respectivamente).
 
 El parámetro _acel_ se puede utilizar para hacer que la animación no sea lineal y, en su lugar, siga una curva exponencial. Un parámetro _acel_ de 1 (uno) hace que la velocidad de la animación sea lineal. Un valor entre 0 y 1 hace que la animación comience rápido y termine lento. Un valor mayor que 1 hace que la animación comience lentamente y termine rápido. (Para los amantes de las matemáticas, la función es _y_ = _x_ con _x_ ∈ \[0;1\] = (_t_-_t1_)/(_t2_-_t1_), siendo _t_ la hora actual.)
 
