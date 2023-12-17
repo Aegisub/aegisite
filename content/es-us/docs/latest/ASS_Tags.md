@@ -390,9 +390,9 @@ Especifica la alineación de la línea. La alineación define la posición de la
 
 La etiqueta `\an` usa valores del "teclado numérico" ("numpad") para _pos_. Es decir, los valores de alineación corresponden a las posiciones de los dígitos en el teclado numérico de cuadrícula:
 
-1. Bajo izquierda
-1. Bajo centro
-1. Bajo derecha
+1. Abajo izquierda
+1. Abajo centro
+1. Abajo derecha
 1. Centro izquierda
 1. Centro
 1. Centro derecha
