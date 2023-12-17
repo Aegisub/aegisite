@@ -546,8 +546,7 @@ Fija el origen de rotación en el punto (320,240).
 \org(10000,0)
 ```
 
-Colocar el origen de rotación en un punto lejano le permite utilizar una ligera
-`\frz` rotaciones para producir efectos de "salto"; el texto se moverá hacia arriba o hacia abajo sin que parezca girar.
+Colocar el origen de rotación en un punto lejano le permite utilizar ligeras rotaciones `\frz` para producir efectos de "salto"; el texto se moverá hacia arriba o hacia abajo sin que parezca girar.
 {{</example-box>}}
 
 {{<tag-def-box title="Desvanecimiento" id="\fad">}}\\fad(<i>\<entrada></i>,<i>\<salida></i>) {{</tag-def-box>}}
