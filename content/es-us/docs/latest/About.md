@@ -7,7 +7,7 @@ menu:
 weight: 2000
 ---
 
-Aegisub originalmente se creó como una herramienta para hacer el proceso
+Aegisub originalmente se creó como una herramienta para hacer del proceso
 de formateo, particularmente en fansubs de ánime, una experiencia menos dolorosa.
 Al inicio del proyecto, muchos otros programas que manejaban el formato
 Advanced Substation Alpha faltaban (y en muchos cases siguen faltando; desarrollo
