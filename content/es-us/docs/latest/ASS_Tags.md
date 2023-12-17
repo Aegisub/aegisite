@@ -522,7 +522,7 @@ La línea aparece en (100,150). Después de que la línea haya aparecido durante
 {{</example-box>}}
 
 {{<tag-def-box title="Origen de rotación" id="\org">}}\\org(<i>\<X></i>,<i>\<Y></i> ){{</tag-def-box>}}
-Establece el punto de origen utilizado para [rotación]({{<relref path="ASS_Tags#\frx">}}). Esto afecta a todas las rotaciones de la línea. Las coordenadas _X_ e _Y_ se proporcionan en píxeles de resolución de secuencia de comandos de números enteros.
+Establece el punto de origen utilizado para [rotación]({{<relref path="ASS_Tags#\frx">}}). Esto afecta a todas las rotaciones de la línea. Las coordenadas _X_ y _Y_ se proporcionan en píxeles de resolución de secuencia de comandos de números enteros.
 
 Cuando no hay una etiqueta `\org` en una línea, el origen de rotación es implícitamente el mismo que el [punto de anclaje de posición]({{<relref path="ASS_Tags#\pos">}}). Esto significa que el origen de la rotación se moverá si la línea se mueve y no hay un origen establecido con `\org`. Tenga en cuenta que _no_ puede animar la etiqueta `\org`, está limitado a un origen fijo si la usa.
 
