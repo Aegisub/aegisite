@@ -361,10 +361,10 @@ Los botones Seleccionar Color de la barra de herramientas ![pick-color-toolbar-b
 Establece el alfa (transparencia) del texto.
 
 - `\alpha` establece el alfa de todos los componentes a la vez.
-- `\1a` establece el alfa de relleno primario.
-- `\2a` establece el alfa de relleno secundario. Esto sólo se usa para pre resaltado en karaoke estándar.
-- `\3a` establece el borde alfa.
-- `\4a` establece la sombra alfa.
+- `\1a` establece el alfa del relleno primario.
+- `\2a` establece el alfa del relleno secundario. Esto sólo se usa para pre resaltado en karaoke estándar.
+- `\3a` establece el alfa del borde.
+- `\4a` establece el alfa de la sombra.
 
 Un alfa de 00 (cero) significa opaco/completamente visible, y un alfa de FF (es decir, 255 en decimal) es completamente transparente/invisible.
 
