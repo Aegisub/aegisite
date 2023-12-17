@@ -137,7 +137,7 @@ Tenga en cuenta que, a diferencia de \\shad, puede establecer la distancia negat
 \\be1
 \\be<i>\<fuerza></i>
 {{</tag-def-box>}}
-Habilita o deshability un efecto de suavizado sutil para los bordes del texto. El efecto no siempre es muy visible, pero en algunos casos puede hacer que el texto se vea mejor. Suele ser más visible en tamaños de texto más pequeños.
+Habilita o deshabilita un efecto de suavizado sutil para los bordes del texto. El efecto no siempre es muy visible, pero en algunos casos puede hacer que el texto se vea mejor. Suele ser más visible en tamaños de texto más pequeños.
 
 Fíjese que esta etiqueta difumina solo los _bordes_ del texto, no todo. Esto significa que si el texto tiene un borde (establecido con [\\bord]({{<relref path="ASS_Tags#\bord">}})) el borde se verá borroso, pero si no hay borde, el texto principal aparecerá borroso.
 
