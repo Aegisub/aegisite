@@ -6,7 +6,7 @@ menu:
 weight: 5000
 ---
 
-Aegisub tiene un modo audio bien avanzado y configurable, con tanto la vista tradicional de forma de onda como también una vista alternativa de espectrograma.
+Aegisub tiene un modo audio bastante avanzado y configurable, tanto con la vista tradicional de forma de onda como con una vista alternativa de espectrograma.
 Varios diferentes modos de sincronizar están disponibles para la sincronía normal de diálogo y para la de karaoke.
 
 ## Abrir audio
