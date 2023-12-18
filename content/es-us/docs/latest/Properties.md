@@ -1,20 +1,20 @@
 ---
-title: Propiedades de guión
+title: Propiedades de guion
 menu:
   docs:
     parent: miscellaneous
 weight: 7300
 ---
 
-Las **propiedades de guión** son unas cabeceras y otras opciones que afectan el guión entero de varias maneras. Se pueden acceder a través del menú _Archivo_ -> _Propiedades_.
+Las **propiedades de guion** son unas cabeceras y otras opciones que afectan el guion entero de varias maneras. Se pueden acceder a través del menú _Archivo_ -> _Propiedades_.
 
 ![Propiedades](/img/3.2/Properties.png#center)
 
 Las propiedades son:
 
-- **Título**, **Guión original**, **Traducción**, **Edición**, **Sicronización**, **Punto de sinc**, **Cambiado por** y **Detalles de cambios** - Estas son solo de propósitos informacionales y no afectan el renderizado de ninguna manera. Fíjelas en valores apropiados si a uno le parecen útiles.
+- **Título**, **Guion original**, **Traducción**, **Edición**, **Sicronización**, **Punto de sinc**, **Cambiado por** y **Detalles de cambios** - Estas son solo de propósitos informacionales y no afectan el renderizado de ninguna manera. Fíjelas en valores apropiados si a uno le parecen útiles.
 
-- **Resolución**, **Matriz YCbCr**, **Escala de contorno y sombra** - Consulte la página [Resolución de guión]({{<relref path="Script_Resolution" lang="en">}}) para el significado de estas opciones.
+- **Resolución**, **Matriz YCbCr**, **Escala de contorno y sombra** - Consulte la página [Resolución de guion]({{<relref path="Script_Resolution" lang="en">}}) para el significado de estas opciones.
 
 - **Estilo de salto** - Controla cómo el renderizador de subtítulos mete saltos en renglones demasiado largos como para caber en una sola línea. Los modos son:
 

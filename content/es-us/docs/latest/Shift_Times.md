@@ -32,7 +32,7 @@ Hacia adelante o hacia atrás
 Estos controles deciden qué renglones se procesarán.
 
 Todas las filas
-: Aplica el cambio de tiempo a todas los renglones del guión.
+: Aplica el cambio de tiempo a todas los renglones del guion.
 
 Filas seleccionadas
 : Aplica el cambio de tiempo solo a los reglones seleccionadas.
@@ -53,13 +53,13 @@ Solo tiempos de inicio
 Solo tiempos de fin
 : Solo se modificarán los tiempos de fin de los renglones afectados. Tenga en cuenta que esto hace que los renglones sean más largos (se se traslada adelante) o más cortos (si se traslada atrás) e incluso puede hacer que tengan la duración en cero.
 
-Tenga en cuenta que si una línea se desplaza de modo que su marca de tiempo de inicio o fin sea negativa, esa marca de tiempo se pone a cero. Esto se puede utilizar para borrar todos los tiempos de un guión completo, retrocediendo un tiempo mayor que la última marca de tiempo del guión.
+Tenga en cuenta que si una línea se desplaza de modo que su marca de tiempo de inicio o fin sea negativa, esa marca de tiempo se pone a cero. Esto se puede utilizar para borrar todos los tiempos de un guion completo, retrocediendo un tiempo mayor que la última marca de tiempo del guion.
 
 ### Cargar desde el historial
 
 Este es un historial de todos los ajustes de tiempo que ha realizado desde la última vez que borró el historial de ajustes (con el botón borrar). El formato es una serie de campos separados por comas. Los campos son:
 
-- Nombre de archivo del guión (ej. "ejemplo.ass")
+- Nombre de archivo del guion (ej. "ejemplo.ass")
 - Cantidad y dirección del ajuste (ej. "0:00:05.00 forward")
 - Qué tiempos se vieron afectados, "s" para inicio, "e" para fin, "s+e" para ambos
 - Qué filas se vieron afectadas; "sel start-end" para selecciones, "all" para todas las filas (ej. "sel 1-40")

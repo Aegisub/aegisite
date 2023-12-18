@@ -16,7 +16,7 @@ Documentación relacionada con el desarrollo de Aegisub y con la compilación de
 
 **Tareas comunes:**
 
-- [Sincronizar un guión traducido al audio]({{<relref path="Audio">}})
+- [Sincronizar un guion traducido al audio]({{<relref path="Audio">}})
 - [Composición tipográfica básica de señales en pantalla]({{<relref path="Tutorials#composición-tipográfica-visual">}})
 - [Poner subtítulos completados en el video]({{<relref path="Attaching_subtitles_to_video">}}) (para la reproducción o distribución)
 

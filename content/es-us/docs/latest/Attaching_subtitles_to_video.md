@@ -84,7 +84,7 @@ Si no está familiarizado con Avisynth, le recomendamos que lo investigue, ya qu
 Para permitir agregar subtítulos a la pista de video, tiene dos opciones: puede usar VSFilter (incluido con Aegisub, en la carpeta "csri"), o puede usar
 [AssRender](http://srsfckn.biz/assrender/), que utiliza `libass`. Las siguientes instrucciones suponen que está utilizando VSFilter.
 
-Para simplemente agregar subtítulos, querrá crear un archivo AVS simple que contenga los renglones del guión que necesita. Empiece con un archivo de texto sin formato en el notepad (o en su editor de texto favorito) y guárdelo con la extensión `.avs` (tenga en cuenta que Windows quizá esté ocultando su extensión y que en realidad esté creando un archivo `.avs.txt`). Aquí hay un ejemplo:
+Para simplemente agregar subtítulos, querrá crear un archivo AVS simple que contenga los renglones del guion que necesita. Empiece con un archivo de texto sin formato en el notepad (o en su editor de texto favorito) y guárdelo con la extensión `.avs` (tenga en cuenta que Windows quizá esté ocultando su extensión y que en realidad esté creando un archivo `.avs.txt`). Aquí hay un ejemplo:
 
 ```plaintext
 LoadPlugin("c:\archivos de programa\aegisub\csri\vsfilter.dll")
@@ -113,6 +113,6 @@ El subtitulado suelto de un video se puede realizar de varias formas. En Windows
 
 Matroska Video (MKV) es actualmente el mejor contenedor para este método (MP4, OGM e incluso AVI técnicamente pueden contener subs sueltos, pero ninguno admite incluir archivos de fuentes tipográficos, y todos ellos tienen varios otros problemas). Usando un conmutador que admite archivos adjuntos (es decir, [mkvmerge GUI](http://www.bunkus.org/videotools/mkvtoolnix/)), simplemente agrega sus archivos de subtítulos al archivo Matroska como pistas separadas (al igual que agrega pistas de audio y de video) y cualquier fuente tipográfica como archivo adjunto (asegúrese de que tengan el formato MIME `aplicación/x-truetype-font`). Las fuentes se instalarán temporalmente por Haali Media Splitter (en Windows) o MPlayer (en \*nix y MacOS) durante la reproducción.
 
-### Variante 2: Distribución de archivos de guión
+### Variante 2: Distribución de archivos de guion
 
 Este método funciona mejor cuando desea codificar el video en un contenedor AVI. Uno solo envía los archivos de subtítulos sin procesar junto con el video. El espectador necesita entonces cargarlos en un reproductor que admita subtítulos externos. Al usar este método, debe asegurarse de, o utilizar tipografías que todos hayan instalado, o distribuir un archivo ZIP separado con las tipografías. Por razones obvias, no se recomienda este método.

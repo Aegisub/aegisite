@@ -13,7 +13,7 @@ La edición de subtítulos es para qué sirve Aegisub. Esta página trata de edi
 En el menú _Archivo_ hay cuatro opciones que se relacionan con abrir o crear subtítulos:
 
 Nuevos subtítulos
-: Crear un nuevo guión en blanco (cierra el archivo actual).
+: Crear un nuevo guion en blanco (cierra el archivo actual).
 
 Abrir subtítulos
 : Abrir un archivo de subtítulos existente o importar subtítulos desde un [archivo contenedor Matroska](http://www.matroska.org).
@@ -39,7 +39,7 @@ Aegisub maneja la lectura de los formatos de subtítulos a continuación:
 - MPEG4 Timed Text (manejo limitado en el mejor caso; roto en el peor), alias
   ISO/IEC 14496-17, MPEG-4 Part 17 or simplemente TTXT (.ttxt)
 - MicroDVD (.sub)
-- Simple texto "guión diálogo" formateado (vea abajo)
+- Simple texto "guion diálogo" formateado (vea abajo)
 
 ### Importar subtítulos desde MKV
 
@@ -98,7 +98,7 @@ Son:
 1. Abre la [paleta de colores]({{<relref path="Colour_Picker" lang="en">}}) y le permite escoger un color; luego inserta una etiqueta manual de color de borde (`\3c`) con el color en la posición del cursor.
 1. Abre la [paleta de colores]({{<relref path="Colour_Picker" lang="en">}}) y le permite escoger un color; luego inserta una etiqueta manual de color de sombra (`\4c`) con el color en la posición del cursor.
 1. Pasar al siguiente renglón, creando uno nuevo al final del archivo cuando necesario. Ojo que a diferencia de versiones previas de Aegisub, cambios no necesitan ser entregados con este botón.
-1. Cambiar la vista entre tiempos/momentos y cuadros. Note que esto no afecta cómo los tiempos son realmente guardados en el guión.
+1. Cambiar la vista entre tiempos/momentos y cuadros. Note que esto no afecta cómo los tiempos son realmente guardados en el guion.
 
 #### Mostrar original
 
@@ -172,7 +172,7 @@ Estilo
 Texto
 : El texto del renglón (este es lo que se verá en el video).
 
-Las siguientes columnas serán vistas si cualquier renglón del guión las usa:
+Las siguientes columnas serán vistas si cualquier renglón del guion las usa:
 
 L
 : La capa del renglón (véase arriba).

@@ -26,7 +26,7 @@ Tamaño de ícono de barras de herramientas
 : El tamaño de los íconos a usar en todas las barras de herramientas de Aegisub. Actualmente los únicos valores válidos son 16 y 24.
 
 Cargar automáticamente archivos vinculados
-: Cada vez que guarda un guión, Aegisub también almacena información sobre qué archivos de video, audio y códigos de tiempo abrió mientras trabajaba en él, dentro del propio guión. Esta opción decide qué hace Aegisub con estos archivos que están "vinculados" al guión al abrirlo. Si está configurado en "preguntar", Aegisub le preguntará al usuario si desea cargar los archivos vinculados. Si se establece en "nunca", Aegisub nunca cargará los archivos vinculados, y del mismo modo, si se establece en "siempre", Aegisub siempre intentará cargar los archivos vinculados (e informará un error si no se encuentran los archivos).
+: Cada vez que guarda un guion, Aegisub también almacena información sobre qué archivos de video, audio y códigos de tiempo abrió mientras trabajaba en él, dentro del propio guion. Esta opción decide qué hace Aegisub con estos archivos que están "vinculados" al guion al abrirlo. Si está configurado en "preguntar", Aegisub le preguntará al usuario si desea cargar los archivos vinculados. Si se establece en "nunca", Aegisub nunca cargará los archivos vinculados, y del mismo modo, si se establece en "siempre", Aegisub siempre intentará cargar los archivos vinculados (e informará un error si no se encuentran los archivos).
 
 Niveles de deshacer
 : El número máximo de cambios que se pueden deshacer. Cuanto mayor sea este valor, más memoria utilizará Aegisub.
@@ -141,10 +141,10 @@ Paso de salto rápido en fotogramas.
 Ruta para guardar captura de pantalla
 : Decide dónde Aegisub debe guardar las capturas de pantalla. El valor predeterminado es `?video`, lo que significa que se guardan dondequiera que esté el video, pero puedes cambiarlo a la ruta que desees. [Aegisub_path_specifiers]({{<relref path="Aegisub_path_specifiers" lang="en">}}) son compatibles. Otra opción directamente disponible en el menú desplegable es `?script`, que es dondequiera que esté el script.
 
-### Resolución de guión
+### Resolución de guion
 
 Usar la resolución del primer vídeo abierto
-: Cuando está habilitado, Aegisub configurará automáticamente la resolución del guión a la resolución del video si abre un video y la resolución del guión aún no está configurada. Si esto está deshabilitado, Aegisub establece la resolución del script en un valor predeterminado configurable.
+: Cuando está habilitado, Aegisub configurará automáticamente la resolución del guion a la resolución del video si abre un video y la resolución del guion aún no está configurada. Si esto está deshabilitado, Aegisub establece la resolución del script en un valor predeterminado configurable.
 
 Igualar la resolución del vídeo al abrir
 : Controla lo que Aegisub hará con respecto a la resolución del script cuando abres un video. Si se configura en "nunca", Aegisub no hará nada si la resolución del script no coincide con la resolución del video. Si está configurado en "preguntar", Aegisub le preguntará si desea cambiar la resolución del script para que coincida con la resolución del video si no coinciden. Si se configura en "siempre", Aegisub siempre volverá a muestrear el script para que coincida con la resolución del video automáticamente.

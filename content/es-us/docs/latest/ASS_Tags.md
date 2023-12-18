@@ -87,7 +87,7 @@ Activa o desactiva el texto <s>tachado</s>. Utilice `\s1` para habilitar el tach
 {{<tag-def-box title="Grosor de borde" id="\bord">}}\\bord<i>\<grosor></i>{{</tag-def-box>}}
 Cambia el grosor del borde alrededor del texto. Fije el grosor en 0 (cero) para desactivar el borde por completo.
 
-Si "escalar borde y sombra" (consulte [propiedades del guión]({{<relref path="Properties">}})) está habilitado, el valor se proporciona en píxeles de resolución del guión; de lo contrario, se proporciona en píxeles de resolución de vídeo (lo cual significa que el grosor del borde variará según la resolución del vídeo en la que se renderizan los subtítulos).
+Si "escalar borde y sombra" (consulte [propiedades del guion]({{<relref path="Properties">}})) está habilitado, el valor se proporciona en píxeles de resolución del guion; de lo contrario, se proporciona en píxeles de resolución de vídeo (lo cual significa que el grosor del borde variará según la resolución del vídeo en la que se renderizan los subtítulos).
 
 El valor no se limita a píxeles enteros y puede tener decimales. El grosor del borde no puede ser negativo.
 
@@ -169,7 +169,7 @@ El texto que sigue a esta etiqueta estará en fuente Times New Roman.
 {{</example-box>}}
 
 {{<tag-def-box title="Tamaño de fuente" id="\fs">}}\\fs<i>\<tamaño></i>{{</tag-def-box>}}
-Establece el tamaño de la fuente. El tamaño especificado es la altura en píxeles de escritura, por lo que con un tamaño de fuente 40, una línea de texto tiene 40 píxeles de alto. (Nota técnica: en realidad se trata de puntos tipográficos (edición de escritorio), no de píxeles de guión, pero dado que la representación siempre se realiza a 72 DPI (según el estándar de facto), un punto termina siendo exactamente igual a un píxel de resolución de guión).
+Establece el tamaño de la fuente. El tamaño especificado es la altura en píxeles de escritura, por lo que con un tamaño de fuente 40, una línea de texto tiene 40 píxeles de alto. (Nota técnica: en realidad se trata de puntos tipográficos (edición de escritorio), no de píxeles de guion, pero dado que la representación siempre se realiza a 72 DPI (según el estándar de facto), un punto termina siendo exactamente igual a un píxel de resolución de guion).
 
 Sólo puede especificar tamaños de fuente enteros.
 
@@ -222,7 +222,7 @@ Duplica el tamaño del texto.
 {{</example-box>}}
 
 {{<tag-def-box title="Espaciado entre letras" id="\fsp">}}\\fsp<i>\<espaciado></i>{{</tag-def-box>}}
-Cambia el espacio entre las letras individuales del texto. Puede utilizar esto para separar el texto más visualmente. El _espaciado_ se proporciona en píxeles de resolución de guión.
+Cambia el espacio entre las letras individuales del texto. Puede utilizar esto para separar el texto más visualmente. El _espaciado_ se proporciona en píxeles de resolución de guion.
 
 El espaciado puede ser negativo y tener decimales.
 
@@ -465,7 +465,7 @@ Suponiendo que el estilo de línea actual es "Default", primero tiene "Hey" en e
 {{</example-box>}}
 
 {{<tag-def-box title="Fijar posición" id="\pos">}}\\pos(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
-Establece la posición de la línea. Las coordenadas _X_ y _Y_ deben ser números enteros y se proporcionan en el sistema de coordenadas de resolución de guión. El significado de _X_ y _Y_ cambia ligeramente dependiendo de la [alineación]({{<relref path="ASS_Tags#\an">}}).
+Establece la posición de la línea. Las coordenadas _X_ y _Y_ deben ser números enteros y se proporcionan en el sistema de coordenadas de resolución de guion. El significado de _X_ y _Y_ cambia ligeramente dependiendo de la [alineación]({{<relref path="ASS_Tags#\an">}}).
 
 La alineación de la línea de subtítulo se utiliza como punto de anclaje para la posición. Es decir, cuando tiene una línea con alineación arriba-izquierda, la esquina superior izquierda del subtítulo se coloca en las coordenadas dadas a `\pos`, y para la alineación abajo-centro, el centro inferior del subtítulo se coloca en las coordenadas dadas.
 
@@ -485,7 +485,7 @@ La etiqueta `\move` funciona de manera similar a [`\pos`]({{<relref path="ASS_Ta
 
 Las dos versiones de `\move` se diferencian en que una hace que el movimiento se produzca durante toda la duración del subtítulo, mientras que la otra especifica el tiempo durante el cual se produce el movimiento.
 
-Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en el sistema de coordenadas de resolución del guión, como `\pos`. El subtítulo comienza en el punto (_x1_,_y1_) y se mueve con velocidad constante por lo que termina en (_x2_,_y2_).
+Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en el sistema de coordenadas de resolución del guion, como `\pos`. El subtítulo comienza en el punto (_x1_,_y1_) y se mueve con velocidad constante por lo que termina en (_x2_,_y2_).
 [Alineación]({{<relref path="ASS_Tags#\an">}}) influye en las coordenadas de movimiento de la misma manera que influye en las coordenadas `\pos`.
 
 En la segunda versión, los tiempos _t1_ y _t2_ se dan en milisegundos (milésimas de segundo) y son relativos a la hora de inicio del subtítulo. Por ejemplo, un valor _t1_ de 1500 significa que el movimiento comienza 1,5 segundos (un segundo y medio) después de que la línea haya aparecido en pantalla. Cuando especificas tiempos para el movimiento, la posición del subtítulo es la siguiente:
@@ -522,7 +522,7 @@ La línea aparece en (100,150). Después de que la línea haya aparecido durante
 {{</example-box>}}
 
 {{<tag-def-box title="Origen de rotación" id="\org">}}\\org(<i>\<X></i>,<i>\<Y></i> ){{</tag-def-box>}}
-Establece el punto de origen utilizado para [rotación]({{<relref path="ASS_Tags#\frx">}}). Esto afecta a todas las rotaciones de la línea. Las coordenadas _X_ y _Y_ se proporcionan en números enteros de píxeles de resolución de guión.
+Establece el punto de origen utilizado para [rotación]({{<relref path="ASS_Tags#\frx">}}). Esto afecta a todas las rotaciones de la línea. Las coordenadas _X_ y _Y_ se proporcionan en números enteros de píxeles de resolución de guion.
 
 Cuando no hay una etiqueta `\org` en una línea, el origen de rotación es implícitamente el mismo que el [punto de anclaje de posición]({{<relref path="ASS_Tags#\pos">}}). Esto significa que el origen de la rotación se moverá si la línea se mueve y no hay un origen establecido con `\org`. Tenga en cuenta que _no_ puede animar la etiqueta `\org`, está limitado a un origen fijo si la usa.
 
@@ -657,7 +657,7 @@ El texto comienza con un tamaño cero, es decir, invisible, y luego crece hasta 
 {{</tag-def-box>}}
 Define un rectángulo para recortar la línea; solo la parte de la línea que está dentro del rectángulo será visible. La etiqueta `\iclip` tiene el efecto contrario: define un rectángulo donde no se ve la línea.
 
-Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en píxeles de resolución de guión y son relativas a la esquina superior izquierda del vídeo. Las coordenadas deben ser números enteros, no hay posibilidad de utilizar coordenadas no enteras. (Aumentar la resolución del guión no aumentará la precisión; el recorte siempre ocurre en los límites de los píxeles del video).
+Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en píxeles de resolución de guion y son relativas a la esquina superior izquierda del vídeo. Las coordenadas deben ser números enteros, no hay posibilidad de utilizar coordenadas no enteras. (Aumentar la resolución del guion no aumentará la precisión; el recorte siempre ocurre en los límites de los píxeles del video).
 
 {{<example-box>}}
 
@@ -665,7 +665,7 @@ Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en píxeles de resolución de gui
 \clip(0,0,320,240)
 ```
 
-Suponiendo una resolución de guión de 640x480, solo es visible la parte de la línea dentro del cuadrante superior izquierdo.
+Suponiendo una resolución de guion de 640x480, solo es visible la parte de la línea dentro del cuadrante superior izquierdo.
 {{</example-box>}}
 {{<example-box>}}
 
@@ -689,7 +689,7 @@ Ejemplo de `\clip(0,0,704,245)` en un vídeo de 704x480:
 {{</tag-def-box>}}
 Usa la forma definida como dibujo vectorial para mostrar selectivamente (`\clip`) u ocultar (`\iclip`) partes de la línea.
 
-Los _comandos de dibujo_ son comandos de dibujo como los que se usan con la etiqueta `\p`. Las coordenadas se dan en píxeles de resolución de guión y son relativas a la esquina superior izquierda del video.
+Los _comandos de dibujo_ son comandos de dibujo como los que se usan con la etiqueta `\p`. Las coordenadas se dan en píxeles de resolución de guion y son relativas a la esquina superior izquierda del video.
 
 Si la _escala_ no se especifica, se asume que es 1 (uno), lo que significa que las coordenadas corresponden directamente a los píxeles. La _escala_ funciona de la misma manera que la _escala_ para los dibujos `\p`.
 
