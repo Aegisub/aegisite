@@ -52,7 +52,7 @@ Si uno encuentra un error de subtítulado en un archivo, puede solucionarlo sin 
 
 Los subs sueltos añaden complejidad de procesamiento al video. El dispositivo de reproducción tiene que renderizar y sobreponer el texto antes de mostrar el video. Como resultado, significa que los dispositivos de baja potencia no podrán reproducir el video.
 
-Dado que los subtítulos están empaquetados como texto tal cual, son muy fáciles de extraer y usar. Esto le facilita el labor a los contrabandistas u otros ladrones de guiones. Nota que obtener subtítulos de un subtítulo incrustado es muy fácil actualmente, por lo cual este argumento no aguanta mucho peso.
+Dado que los subtítulos están empaquetados como texto tal cual, son muy fáciles de extraer y usar. Esto le facilita la labor a los contrabandistas u otros ladrones de guiones. Nota que obtener subtítulos de un subtítulo incrustado es muy fácil actualmente, por lo cual este argumento no tiene mucho peso.
 
 El dispositivo de reproducción es responsable de mostrar los subtítulos en la pantalla. Como resultado, es posible que no tengan el mismo aspecto que pretendía el subtitulador. En algunos casos, es posible que el dispositivo de reproducción no admita el formato de subtítulos o que tenga errores con él.
 
