@@ -79,7 +79,7 @@ Si desea acelerar el proceso de lanzamiento, utilice subs sueltos. Son más ráp
 
 Mucha gente usa la librería Avisynth para agregar filtros a su video para limpiarlo de defectos o manipular de otro modo la imagen de video antes de codificarla. Es una herramienta muy flexible y también se puede utilizar para agregar subtítulos directamente a la pista de video, lo que permite un método fácil y programable para substituir un video.
 
-Si no está familiarizado con Avisynth, le recomendamos que lo investigue, ya que tiene muchas características interesantes y una gran comunidad que contribuye filtros de video, lo que permite corregir videos fácilmente de cualquier fuente. Este tutorial suponer que tenga algunos conocimientos básicos de Avisynth.
+Si no está familiarizado con Avisynth, le recomendamos que lo investigue, ya que tiene muchas características interesantes y una gran comunidad que contribuye filtros de video, lo que permite corregir videos fácilmente de cualquier fuente. Este tutorial asume que tiene algunos conocimientos básicos de Avisynth.
 
 Para permitir agregar subtítulos a la pista de video, tiene dos opciones: puede usar VSFilter (incluido con Aegisub, en la carpeta "csri"), o puede usar
 [AssRender](http://srsfckn.biz/assrender/), que utiliza `libass`. Las siguientes instrucciones suponen que está utilizando VSFilter.
