@@ -111,7 +111,7 @@ El subtitulado suelto de un video se puede realizar de varias formas. En Windows
 
 ### Variante 1: Sub suave dentro del contenedor de video
 
-Matroska Video (MKV) es actualmente el mejor contenedor para este método (MP4, OGM e incluso AVI técnicamente pueden contener subs sueltos, pero ninguno admite incluir archivos de fuentes tipográficos, y todos ellos tienen varios otros problemas). Usando un conmutador que admite archivos adjuntos (es decir, [mkvmerge GUI](http://www.bunkus.org/videotools/mkvtoolnix/)), simplemente agrega sus archivos de subtítulos al archivo Matroska como pistas separadas (al igual que agrega pistas de audio y de video) y cualquier fuente tipográfico como archivo adjunto (asegúrese de que tengan el formato MIME `aplicación/x-truetype-font`). Las fuentes se instalarán temporalmente por Haali Media Splitter (en Windows) o MPlayer (en \*nix y MacOS) durante la reproducción.
+Matroska Video (MKV) es actualmente el mejor contenedor para este método (MP4, OGM e incluso AVI técnicamente pueden contener subs sueltos, pero ninguno admite incluir archivos de fuentes tipográficos, y todos ellos tienen varios otros problemas). Usando un conmutador que admite archivos adjuntos (es decir, [mkvmerge GUI](http://www.bunkus.org/videotools/mkvtoolnix/)), simplemente agrega sus archivos de subtítulos al archivo Matroska como pistas separadas (al igual que agrega pistas de audio y de video) y cualquier fuente tipográfica como archivo adjunto (asegúrese de que tengan el formato MIME `aplicación/x-truetype-font`). Las fuentes se instalarán temporalmente por Haali Media Splitter (en Windows) o MPlayer (en \*nix y MacOS) durante la reproducción.
 
 ### Variante 2: Distribución de archivos de guión
 
