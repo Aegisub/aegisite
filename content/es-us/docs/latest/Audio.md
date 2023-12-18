@@ -33,4 +33,4 @@ _r_ es la frecuencia de muestreo en Hz (usualmente 48000, o 44100 en algunos cas
 
 Por ejemplo, con un audio de 25 minutos en 48 kHz, se va a necesitar (16 * 48000 * 25 * 60)/8 = 144000000 B ~= 137 MB.
 
-Cargar y descomprimir el audio hasta el caché lleva tiempo. Una barra de progreso se enseña en la barra de traslado de la vista de audio mientras el audio esté cargando.
+Cargar y descomprimir el audio hasta el caché lleva tiempo. Una barra de progreso se muestra en la barra de desplazamiento de la vista de audio mientras el audio esté cargando.
