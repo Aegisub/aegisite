@@ -95,7 +95,7 @@ TextSub("c:\proyectos\proyecto1\subs\endkaraoke.ass")
 
 El script anterior toma un archivo AVI (`mycoolvideo.avi`) y luego dibuja el contenido de dos archivos de subtítulos en el video. Luego uno puede codificar este video en cualquier programa que admita AVS, como [VirtualDub](http://www.virtualdub.org) o `x264`. Para hacerlo, simplemente abra el archivo `.avs` en el programa y siga el procedimiento de codificación normal para ello.
 
-Tenga en cuenta que, debido a un error en VSFilter, la ruta a los archivos de subtítulos **TIENE QUE** ser absoluto.
+Tenga en cuenta que, debido a un error en VSFilter, la ruta a los archivos de subtítulos **TIENE QUE** ser absoluta.
 
 ## Hardsubbing con VirtualDub
 
