@@ -22,7 +22,7 @@ Muchos dispositivos de reproducción y plataformas informáticas no pueden mostr
 
 ### Desventajas del Hardsubbing
 
-A pesar de lo que algunos pueden llamar numerosas ventajas del hardsubbing, existen varias desventajas distintas que deben evaluarse antes de hacer una decisión.
+A pesar de lo que algunos pueden llamar numerosas ventajas del hardsubbing, existen varias desventajas distintas que deben evaluarse antes de tomar una decisión.
 
 El método de incrustación requiere que el video fuente se vuelva a codificar para que se puedan grabar los subtítulos sobre la imagen. Esto, por la naturaleza del video de codificación con pérdida, provoca una reducción en la calidad del video.
 
