@@ -6,7 +6,7 @@ menu:
 weight: 6171
 ---
 
-Bienvenido al primer tutorial acerca del uso de Karaoke Templater (plantillas Karaoke) para crear [efectos de karaoke]({{<relref path="../../Glossary/Karaoke_effect" lang="en">}}). Comenzaremos con algo simple y luego continuaremos con efectos más avanzados a lo largo de la serie.
+Bienvenido al primer tutorial acerca del uso de Karaoke Templater (plantillas de Karaoke) para crear [efectos de karaoke]({{<relref path="../../Glossary/Karaoke_effect" lang="en">}}). Comenzaremos con algo simple y luego continuaremos con efectos más avanzados a lo largo de la serie.
 
 ## Encontrar Karaoke Templater
 
