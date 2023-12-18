@@ -28,7 +28,7 @@ Si uno abre cualquier formato de audio que no es un archivo Microsoft WAV sin co
 
 La cantidad exacta de memoria usada para cualquier archivo de audio se puede calcular con la fórmula siguiente:
 s = ( b * r * l ) / 8
-donde _s_ es la cantidad de memoria (en bytes - divide por 1024 para kB), _b_ es la cantidad de bits por muestra (siempre 16 en la actual implementación),
+donde _s_ es la cantidad de memoria (en bytes - divide entre 1024 para kB), _b_ es la cantidad de bits por muestra (siempre 16 en la actual implementación),
 _r_ es la frecuencia de muestreo en Hz (usualmente 48000, o 44100 en algunos casos), y _l_ es la duración del audio (en segundos).
 
 Por ejemplo, con un audio de 25 minutos en 48 kHz, se va a necesitar (16 * 48000 * 25 * 60)/8 = 144000000 B ~= 137 MB.
