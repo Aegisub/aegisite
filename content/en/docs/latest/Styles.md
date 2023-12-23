@@ -155,13 +155,16 @@ Miscellaneous
     these are script pixels or video pixels is not well defined.
 
   Encoding:
-  : Controls which codepage is used to map codepoints to glyphs; it has
-    nothing to do with the actual text encoding of the script. This is only
-    meaningful on Windows using VSFilter, where it is used to get some old
-    (particularly Japanese) fonts without proper Unicode mappings to render
-    properly. On other systems and renderers, Freetype2 provides the proper
-    mappings. If you didn't understand a word of the above, pretend this
-    setting doesn't exist, as it is rarely important.
+  : Limits font selection to only those fonts declaring support for the set
+    legacy Windows codepage. All valid values are listed by Microsoft in
+    [this page](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-wmf/0d0b32ac-a836-4bd2-a112-b6000a1b4fc9).
+    If it is set to `1` (default charset) font selection is unlimited.<br/>
+    This may have been useful once in times long past, but today you SHOULD NOT set this to anything but `1`.
+    To select the desired fonts, specify their correct, unique name.
+    Furthermore, since libass (as of 0.17.1) does not yet fully support the Encoding field,
+    the result you get during authoring for values other than `1` might be different
+    to what viewers get during playback.<br/>
+    This has nothing to do with the encoding of the actual text.
 
   Preview:
   : Shows a preview of what the text will look like using the current style

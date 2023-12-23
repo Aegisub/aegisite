@@ -403,41 +403,9 @@ coordinate system used for shearing is not affected by the [rotation origin]({{<
 {{</example-box>}}
 
 {{<tag-def-box title="Font encoding" id="\fe">}}\\fe<i>\<id></i>{{</tag-def-box>}}
-Set the Windows font encoding used to select the font mapping table used to
-translate Unicode codepoints to glyph indices in the font. For some fonts
-without a Unicode mapping table this might be required to get text in certain
-languages to work. For fonts that do have a Unicode mapping table, it might be
-used to pick regional variations, such as picking the correct glyph for a Han
-ideogram that is different in Simplified Chinese, Traditional Chinese,
-Japanese and Korean.
-
-Some common font encoding IDs are:
-
-- 0 - ANSI, Windows CP-1252 for Western-European languages.
-- 1 - Default, depends on the configuration of the user's system, but also
-  allows the font sub-system to dynamically pick a different mapping table in
-  some circumstances.
-- 2 - Symbol, codepoints in the 0-255 range are translated to per-font defined
-  symbol glyphs, this is used for fonts such as Wingdings.
-- 128 - Shift-JIS, used for Japanese.
-- 129 and 130, respectively Hangeul and Johab, two encoding schemes for Korean.
-- 134 - GB2312, used for Simplified Chinese.
-- 136 - BIG5, used for Traditional Chinese.
-- 162 - Turkish.
-- 163 - Vietnamese.
-- 177 - Hebrew.
-- 178 - Arabic.
-
-{{<todo>}}Is that really correct? {{</todo>}}
-
-A more complete list can be seen the [style editor]({{< relref "Styles#thestyleeditor" >}})
-dialog box.
-
-In ASS files stored in non-Unicode encodings, this tag also affects what
-codepage the text following it should be interpreted in. Aegisub doesn't
-support this use and some renderers might not support it either. It is
-recommended you do not rely on this and instead always store your files in a
-Unicode encoding. (Aegisub stores files in Unicode UTF-8 by default.)
+Overrides the `Encoding` value of the style.
+This is rarely ever useful or a good idea and should thus be avoided.
+See the [style docs]({{< relref "styles/#the-style-editor" >}}) for more details.
 
 {{<tag-def-box title="Set color" id="\c">}}
 \\c&H<i>\<bb>\<gg>\<rr></i>&
