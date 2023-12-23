@@ -515,6 +515,7 @@ top-titles, add 4 to the number, to get mid-titles add 8 to the number:
 \\K<i>\<duration></i>
 \\kf<i>\<duration></i>
 \\ko<i>\<duration></i>
+\\kt<i>\<time></i>
 {{</tag-def-box>}}
 
 > _Please note that these tags alone only create some very specific effects
@@ -542,9 +543,12 @@ The different `\k` tags create various effects:
 - `\ko`: Similar to `\k`, except that before highlight, the border/outline of
   the syllable is removed, and appears instantly when the syllable starts.
 
-_Note: There is an additional karaoke tag, `\kt`, which is very different from
-the other ones. It is rarely useful and Aegisub does not support that tag, so
-it is not documented._
+> _Note: The `\kt` tag is not yet supported by all Aegisub-internal tools
+> and external scripts may also not properly handle it._
+
+Additionally the `\kt` tag sets the start time of the next karaoke syllable
+relative to the event’s start. Without `\kt` each syllable start is implicitly
+determined as the sum of all preceding syllable’s duration.
 
 {{<tag-def-box title="Wrap style" id="\q">}}\\q<i>\<style></i>{{</tag-def-box>}}
 Determine how line breaking is applied to the subtitle line. The following
