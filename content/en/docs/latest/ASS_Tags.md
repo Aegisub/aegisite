@@ -403,41 +403,9 @@ coordinate system used for shearing is not affected by the [rotation origin]({{<
 {{</example-box>}}
 
 {{<tag-def-box title="Font encoding" id="\fe">}}\\fe<i>\<id></i>{{</tag-def-box>}}
-Set the Windows font encoding used to select the font mapping table used to
-translate Unicode codepoints to glyph indices in the font. For some fonts
-without a Unicode mapping table this might be required to get text in certain
-languages to work. For fonts that do have a Unicode mapping table, it might be
-used to pick regional variations, such as picking the correct glyph for a Han
-ideogram that is different in Simplified Chinese, Traditional Chinese,
-Japanese and Korean.
-
-Some common font encoding IDs are:
-
-- 0 - ANSI, Windows CP-1252 for Western-European languages.
-- 1 - Default, depends on the configuration of the user's system, but also
-  allows the font sub-system to dynamically pick a different mapping table in
-  some circumstances.
-- 2 - Symbol, codepoints in the 0-255 range are translated to per-font defined
-  symbol glyphs, this is used for fonts such as Wingdings.
-- 128 - Shift-JIS, used for Japanese.
-- 129 and 130, respectively Hangeul and Johab, two encoding schemes for Korean.
-- 134 - GB2312, used for Simplified Chinese.
-- 136 - BIG5, used for Traditional Chinese.
-- 162 - Turkish.
-- 163 - Vietnamese.
-- 177 - Hebrew.
-- 178 - Arabic.
-
-{{<todo>}}Is that really correct? {{</todo>}}
-
-A more complete list can be seen the [style editor]({{< relref "Styles#thestyleeditor" >}})
-dialog box.
-
-In ASS files stored in non-Unicode encodings, this tag also affects what
-codepage the text following it should be interpreted in. Aegisub doesn't
-support this use and some renderers might not support it either. It is
-recommended you do not rely on this and instead always store your files in a
-Unicode encoding. (Aegisub stores files in Unicode UTF-8 by default.)
+Overrides the `Encoding` value of the style.
+This is rarely ever useful or a good idea and should thus be avoided.
+See the [style docs]({{< relref "styles/#the-style-editor" >}}) for more details.
 
 {{<tag-def-box title="Set color" id="\c">}}
 \\c&H<i>\<bb>\<gg>\<rr></i>&
@@ -547,6 +515,7 @@ top-titles, add 4 to the number, to get mid-titles add 8 to the number:
 \\K<i>\<duration></i>
 \\kf<i>\<duration></i>
 \\ko<i>\<duration></i>
+\\kt<i>\<time></i>
 {{</tag-def-box>}}
 
 > _Please note that these tags alone only create some very specific effects
@@ -574,9 +543,12 @@ The different `\k` tags create various effects:
 - `\ko`: Similar to `\k`, except that before highlight, the border/outline of
   the syllable is removed, and appears instantly when the syllable starts.
 
-_Note: There is an additional karaoke tag, `\kt`, which is very different from
-the other ones. It is rarely useful and Aegisub does not support that tag, so
-it is not documented._
+> _Note: The `\kt` tag is not yet supported by all Aegisub-internal tools
+> and external scripts may also not properly handle it._
+
+Additionally the `\kt` tag sets the start time of the next karaoke syllable
+relative to the event’s start. Without `\kt` each syllable start is implicitly
+determined as the sum of all preceding syllable’s duration.
 
 {{<tag-def-box title="Wrap style" id="\q">}}\\q<i>\<style></i>{{</tag-def-box>}}
 Determine how line breaking is applied to the subtitle line. The following
