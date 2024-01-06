@@ -198,7 +198,7 @@ Usar video suplente
 : Abre un video de suplente (véase arriba).
 
 Mostrar detalles del video
-: Demuestra alguna información sobre el video actualmente abierto. Detalles mostrados son el nombre de archivo, cuadros/fotogramas por segundo (para archivos VFR, el FPS promedio), resolución y relación de aspecto, duración y decodificador. Decodificador siendo qué filtro/método utilizó Aegisub para abrir el archivo.
+: Muestra algo de información sobre el video actualmente abierto. Los detalles mostrados son el nombre de archivo, cuadros/fotogramas por segundo (para archivos VFR, el FPS promedio), resolución y relación de aspecto, duración y decodificador. Decodificador siendo qué filtro/método utilizó Aegisub para abrir el archivo.
 
 ### Relacionado con códigos de tiempo
 
