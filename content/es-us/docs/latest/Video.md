@@ -18,7 +18,7 @@ Aegisub normalmente usa [FFMS2](http://code.google.com/p/ffmpegsource/) para abr
 video, que admite la apertura de casi todos los formatos A/V comunes y muchos poco comunes. Para obtener una lista completa de códecs compatibles, consulte la documentación de [FFmpeg](http://ffmpeg.org/) o de [Libav](http://libav.org/). Tenga en cuenta que FFMS2 actualmente tiene problemas con H.264 entrelazado.
 
 En Windows, se puede utilizar [Avisynth](http://avisynth.org/mediawiki/Main_Page)
-en lugar de FFMS2. Al abrir a través de _Avisynth_, Aegisub probará varias funciones fuentes para encontrar la mejor opción:
+en lugar de FFMS2. Al abrir a través de _Avisynth_, Aegisub probará varias funciones de fuente para encontrar la mejor opción:
 
 `Import()`
 : Función incorporada de Avisynth. Se usa para abrir scripts de Avisynth, nunca usado para cualquier otra cosa.
