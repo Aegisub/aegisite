@@ -21,7 +21,7 @@ En Windows, se puede utilizar [Avisynth](http://avisynth.org/mediawiki/Main_Page
 en lugar de FFMS2. Al abrir a través de _Avisynth_, Aegisub probará varias funciones de fuente para encontrar la mejor opción:
 
 `Import()`
-: Función incorporada de Avisynth. Se usa para abrir scripts de Avisynth, nunca usado para cualquier otra cosa.
+: Función incorporada de Avisynth. Se usa para abrir scripts de Avisynth, nunca se usa para otra cosa.
 
 `AviSource()`
 : Función incorporada de Avisynth. AviSource utiliza el decodificador Video para Windows (VfW) para abrir el video, que para algunos formatos esotéricos pueden ser la mejor o la única forma de abrir un archivo. Sólo admite archivos .avi, por razones obvias. Si AviSource no puede abrir un archivo, DSS2 se prueba, seguido de DirectShowSource.
