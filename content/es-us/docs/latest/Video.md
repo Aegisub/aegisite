@@ -249,8 +249,8 @@ Mostrar capa de sobredesviación/overscan
 Saltar a
 : Salta en el video al tiempo o fotograma indicado.
 
-Saltar al inicio del video
+Saltar video al inicio
 : Salta el video hasta el inicio del renglón actualmente activo.
 
-Saltar al final del video
-: Salta el video hasta el momento fin del renglón actualmente activo.
+Saltar video al final
+: Salta el video hasta el momento final del renglón actualmente activo.
