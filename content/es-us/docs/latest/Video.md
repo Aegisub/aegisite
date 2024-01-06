@@ -226,7 +226,7 @@ Cerrar fotogramas clave
 : Quita los datos de fotogramas clave actualmente cargados, si los hay. Tenga en cuenta que no es posible quitar datos de fotogramas clave que se cargaron directamente desde el archivo de video. Si quieres deshacerse de eso por alguna razón, cargue un archivo de fotogramas clave con solo el fotograma 0 marcado como fotograma clave.
 
 Reciente
-: Enseña la lista de archivos de fotogramas clave cargados recientemente.
+: Muestra la lista de archivos de fotogramas clave cargados recientemente.
 
 ### Relacionado con muestra/pantalla
 
