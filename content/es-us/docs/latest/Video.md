@@ -54,7 +54,7 @@ Aegisub también permite proporcionar una superficie de video falsa sobre la que
 ![Dummy_video](/img/3.2/Dummy_video.png#center)
 
 Resolución
-: La resolución del video de suplente en píxeles. Hay algunos
+: La resolución del video de suplente en píxeles. Hay algunas
   opciones predefinidas en el menú desplegable; también se puede especificar el tamaño uno mismo. Tenga en cuenta que, dado que el video de suplente es RGB, no hay restricciones particulares con respecto a anchos/altos impares.
 
 Color
