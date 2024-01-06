@@ -169,7 +169,7 @@ Ambos métodos anteriores le dan a los subtítulos la relación de aspecto adecu
 
 Tenga en cuenta que algunos renderizadores de subtítulos extraños (sobre todo el renderizador incorporado de Media Player Classic) son en realidad parte del renderizador de video y que harán el renderizado de subtítulos _después_ del estiramiento anamórfico, lo que da como resultado un estiramiento de subtítulos y mucha frustración. Con el renderizador libass de MPlayer, puede de hecho especificar si los subtítulos deben dibujarse antes o después del estirado usando el parámetro `-vf` para mover el renderizador de subtítulos dentro de la cadena de filtros.
 
-### Lectura continuada
+### Para saber más
 
 Para obtener más información sobre el video anamórfico y las relaciones de aspecto en general (un tema profundamente confuso que a primera vista parece simple) los siguientes enlaces pueden ser de interés:
 
