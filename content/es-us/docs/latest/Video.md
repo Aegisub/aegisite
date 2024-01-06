@@ -10,7 +10,7 @@ Aegisub no es un reproductor de video (ni de media), pero aún así soporta abri
 
 ## Abrir video
 
-Para abrir un archivo video, vaya al menú _Video_ y dele a _Abrir archivo de video_. Cuáles archivos uno puede abrir depende de su [proveedor de video]({{<relref path="Options#video" lang="en">}}). Para usar un video de suplente (falso, vacío), pulse _Use video de suplente_.
+Para abrir un archivo de video, vaya al menú _Video_ y dele a _Abrir archivo de video_. Cuáles archivos uno puede abrir depende de su [proveedor de video]({{<relref path="Options#video" lang="en">}}). Para usar un video de suplente (falso, vacío), pulse _Use video de suplente_.
 
 ### Formatos soportados
 
