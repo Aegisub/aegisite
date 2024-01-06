@@ -6,7 +6,7 @@ menu:
 weight: 4100
 ---
 
-Aegisub no es un reproductor de video (ni de media), pero aún así soporta abrir y trabajar con video de varias maneras. Esta página es una referencia de cómo el manejo de video de Aegisub funciona; para una intro más suave de cómo lograr que las cosas se muestren correctamente puede que quiera leer las páginas [Disposición visual de texto]({{<relref path="Visual_Typesetting" lang="en">}}).
+Aegisub no es un reproductor de video (ni de media), pero aún así soporta abrir y trabajar con video de varias maneras. Esta página es una referencia de cómo el manejo de video de Aegisub funciona; para una intro más suave de cómo simplemente lograr que las cosas se muestren correctamente puede que quiera leer las páginas [Disposición visual de texto]({{<relref path="Visual_Typesetting" lang="en">}}).
 
 ## Abrir video
 
