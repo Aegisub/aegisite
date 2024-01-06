@@ -192,7 +192,7 @@ Cerrar video
 : Cierra el video actualmente abierto.
 
 Reciente
-: Enseña la lista de videos abiertos recientemente.
+: Muestra la lista de videos abiertos recientemente.
 
 Usar video suplente
 : Abre un video de suplente (véase arriba).
