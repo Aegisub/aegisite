@@ -425,7 +425,7 @@ Modo de manejo de errores de indexación de audio
    _Ignorar_
    : Ignore el error y continúe decodificando el archivo. Este modo puede permitirle abrir algunos archivos corruptos, pero puede causar desincronización de audio/vídeo.
 
-   _Claro_
+   _Limpiar_
    : Finge que la pista con el error no existe en el archivo.
 
    _Detener_ (predeterminado)
