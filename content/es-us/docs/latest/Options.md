@@ -32,7 +32,7 @@ Niveles de deshacer
 : El número máximo de cambios que se pueden deshacer. Cuanto mayor sea este valor, más memoria utilizará Aegisub.
 
 Listas de recién usados
-: Número máximo de elementos para recordar, aplicado a todas las listas de elementos recién usados en Aegisub. El impacto en la memoria al aumentarlos es trivial, pero las listas más grandes pueden resultar imprácticos de manejar.
+: Número máximo de elementos para recordar, aplicado a todas las listas de elementos recién usados en Aegisub. El impacto en la memoria al aumentarlos es trivial, pero las listas más grandes pueden resultar imprácticas de manejar.
 
 ### Estilos predeterminados
 
