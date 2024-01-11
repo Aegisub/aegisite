@@ -26,7 +26,7 @@ Tamaño de ícono de barras de herramientas
 : El tamaño de los íconos a usar en todas las barras de herramientas de Aegisub. Actualmente los únicos valores válidos son 16 y 24.
 
 Cargar automáticamente archivos vinculados
-: Cada vez que guarda un guion, Aegisub también almacena información sobre qué archivos de video, audio y códigos de tiempo abrió mientras trabajaba en él, dentro del propio guion. Esta opción decide qué hace Aegisub con estos archivos que están "vinculados" al guion al abrirlo. Si está configurado en "preguntar", Aegisub le preguntará al usuario si desea cargar los archivos vinculados. Si se establece en "nunca", Aegisub nunca cargará los archivos vinculados, y del mismo modo, si se establece en "siempre", Aegisub siempre intentará cargar los archivos vinculados (e informará un error si no se encuentran los archivos).
+: Cada vez que guarda un guion, Aegisub también almacena información sobre qué archivos de video, audio y códigos de tiempo abrió mientras trabajaba en él, dentro del propio guion. Esta opción decide qué hace Aegisub con estos archivos que están "vinculados" al guion al abrirlo. Si está configurado en "preguntar", Aegisub le preguntará al usuario si desea cargar los archivos vinculados. Si se establece en "nunca", Aegisub nunca cargará los archivos vinculados, y del mismo modo, si se establece en "siempre", Aegisub siempre intentará cargar los archivos vinculados (y reportará un error si no se encuentran los archivos).
 
 Niveles de deshacer
 : El número máximo de cambios que se pueden deshacer. Cuanto mayor sea este valor, más memoria utilizará Aegisub.
