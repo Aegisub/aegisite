@@ -462,7 +462,7 @@ Proveedor de subtítulos
    : Utilice VSFilter 2.40 para representar subtítulos. Este es el procesador de subtítulos estándar que define el formato ASS utilizado por Aegisub.
 
    _libass_
-   : Utilice [libass](http://code.google.com/p/libass/) para representar subtítulos. libass es mucho más rápido que VSFilter y (en cierto modo) multiplataforma, pero desafortunadamente todavía tiene algunas diferencias de representación con respecto a VSFilter y problemas relacionados con las fuentes en Windows. Si está realizando una composición tipográfica compleja que será [softsubbed]({{<relref path="Attaching_subtitles_to_video#softsubbing" lang="en">}}), es una buena idea comprobar su trabajo tanto con VSFilter como con libass, como Un número cada vez mayor de usuarios utiliza libass.
+   : Utilice [libass](http://code.google.com/p/libass/) para representar subtítulos. libass es mucho más rápido que VSFilter y (en cierto modo) multiplataforma, pero desafortunadamente todavía tiene algunas diferencias de representación con respecto a VSFilter y problemas relacionados con las fuentes en Windows. Si está realizando una composición tipográfica compleja que será [softsubbed]({{<relref path="Attaching_subtitles_to_video#softsubbing" lang="en">}}), es una buena idea comprobar su trabajo tanto con VSFilter como con libass, ya que un número cada vez mayor de usuarios utiliza libass.
 
 Fuerza BT.601
 : Suponga que todos los videos YUV son BT.601, para compatibilidad con VSFilter.
