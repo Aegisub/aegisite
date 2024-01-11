@@ -488,10 +488,10 @@ Límite de memoria de Avisynth
 ### FFmpegSource
 
 Detalle del registro de depuración
-: establece el nivel de detalle de ffmpeg/libav. Sólo tiene efecto cuando tienes un depurador adjunto a Aegisub.
+: Establece el nivel de detalle de ffmpeg/libav. Sólo tiene efecto cuando tienes un depurador adjunto a Aegisub.
 
 Hilos de decodificación
 : Número máximo de hilos a usar para decodificar video, o -1 para elegir automáticamente. Establecer esto en 1 puede solucionar algunos problemas de decodificación a costa del rendimiento. Rara vez hay algún motivo para establecerlo en un valor distinto de 1 o -1.
 
-Habilitar búsquedas inseguras
-: deshabilite algunas de las comprobaciones de cordura de FFMS2 cuando busque en video. Hace posible abrir algunos archivos en los que FFMS2 no puede buscar cuadros con precisión.
+Habilitar saltos de video inseguros
+: Deshabilita algunas de las comprobaciones de cordura de FFMS2 cuando hace saltos en el video. Hace posible abrir algunos archivos en los que FFMS2 no puede saltar entre fotogramas con precisión.
