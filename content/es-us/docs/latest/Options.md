@@ -464,8 +464,8 @@ Proveedor de subtítulos
    _libass_
    : Utilice [libass](http://code.google.com/p/libass/) para representar subtítulos. libass es mucho más rápido que VSFilter y (en cierto modo) multiplataforma, pero desafortunadamente todavía tiene algunas diferencias de representación con respecto a VSFilter y problemas relacionados con las fuentes en Windows. Si está realizando una composición tipográfica compleja que será [softsubbed]({{<relref path="Attaching_subtitles_to_video#softsubbing" lang="en">}}), es una buena idea comprobar su trabajo tanto con VSFilter como con libass, ya que un número cada vez mayor de usuarios utiliza libass.
 
-Fuerza BT.601
-: Suponga que todos los videos YUV son BT.601, para compatibilidad con VSFilter.
+Forzar BT.601
+: Suponer que todos los videos YUV son BT.601, para compatibilidad con VSFilter.
 
    Cuando VSFilter se utiliza como filtro DirectShow, siempre utiliza la matriz de color BT.601 para convertir los subtítulos de RGB a YUV. Esto significa que si el video usa BT.709 (como lo hacen la mayoría de los videos HD y ocasionalmente los DVD), los colores que coinciden con el video en Aegisub no coincidirán con el video en el reproductor. Esta opción hace que Aegisub siempre convierta videos a RGB usando BT.601, lo que hace que los colores que se muestran en Aegisub sean incorrectos, pero si los colores coinciden en Aegisub, coincidirán en el reproductor.
 
