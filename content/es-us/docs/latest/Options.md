@@ -401,7 +401,7 @@ Calidad del espectro
   <tr><th>3 "insane"</th><td>88 MB</td>
 </table>
 
-La cantidad de memoria utilizada no depende del número de canales.
+La cantidad de memoria utilizada no depende del número de canales
 (Aegisub siempre funciona en mono) o la profundidad de bits (el espectro siempre se calcula en punto flotante de 32 bits) del audio.
 
 {{<todo>}}this is probably wrong {{</todo>}}
