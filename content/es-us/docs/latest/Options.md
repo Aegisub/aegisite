@@ -14,7 +14,7 @@ Aegisub almacena toda su configuración en un archivo de texto llamado _config.j
 ![preferences-general](/img/3.2/preferences-general.png#center)
 
 Comprobación automática de actualizaciones
-: Si está habilitado, Aegisub comprobará periódicamente si hay una nueva versión disponible y le avisará si la hay. Requiere una conexión funcional a Internet, naturalmente.
+: Si está habilitado, Aegisub comprobará periódicamente si hay una nueva versión disponible y le avisará si la hay. Requiere una conexión con acceso a Internet, naturalmente.
 
 Mostrar barra de herramientas principal
 : Si está deshabilitado, la barra de herramientas principal de Aegisub está oculta.
