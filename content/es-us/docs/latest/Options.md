@@ -7,7 +7,7 @@ weight: 7000
 ---
 Aegisub es altamente configurable y por lo tanto tiene un gran número de opciones configurables por el usuario. Estas están disponibles en la caja diálogo de opciones, dentro del menú Ver. Esta página es una guía de todas las opciones disponibles.
 
-Aegisub almacena toda su configuración en un archivo de texto llamado _config.json_, lo cual por defecto se encuentra en la carpeta [?user]({{<relref path="Aegisub_path_specifiers" lang="en">}}). Si uno quere restablecer Aegisub a sus opciones predeterminadas sin volver a instalarlo, se puede simplemente eliminar _config.json_ y luego reinicar Aegisub.
+Aegisub almacena toda su configuración en un archivo de texto llamado _config.json_, el cual por defecto se encuentra en la carpeta [?user]({{<relref path="Aegisub_path_specifiers" lang="en">}}). Si uno quiere restablecer Aegisub a sus opciones predeterminadas sin volver a instalarlo, se puede simplemente eliminar _config.json_ y luego reinicar Aegisub.
 
 ## General
 
