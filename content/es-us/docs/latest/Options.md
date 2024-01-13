@@ -5,6 +5,7 @@ menu:
     parent: miscellaneous
 weight: 7000
 ---
+
 Aegisub es altamente configurable y por lo tanto tiene un gran número de opciones configurables por el usuario. Estas están disponibles en la caja diálogo de opciones, dentro del menú Ver. Esta página es una guía de todas las opciones disponibles.
 
 Aegisub almacena toda su configuración en un archivo de texto llamado _config.json_, el cual por defecto se encuentra en la carpeta [?user]({{<relref path="Aegisub_path_specifiers" lang="en">}}). Si uno quiere restablecer Aegisub a sus opciones predeterminadas sin volver a instalarlo, se puede simplemente eliminar _config.json_ y luego reinicar Aegisub.
@@ -13,26 +14,26 @@ Aegisub almacena toda su configuración en un archivo de texto llamado _config.j
 
 ![preferences-general](/img/3.2/preferences-general.png#center)
 
-Comprobación automática de actualizaciones
-: Si está habilitado, Aegisub comprobará periódicamente si hay una nueva versión disponible y le avisará si la hay. Requiere una conexión con acceso a Internet, naturalmente.
+Buscar actualizaciones al inicio
+: Si está habilitado, Aegisub comprobará al arrancar si hay una nueva versión disponible y le avisará si la hay. Requiere una conexión con acceso a Internet, naturalmente.
 
 Mostrar barra de herramientas principal
 : Si está deshabilitado, la barra de herramientas principal de Aegisub está oculta.
 
-Guardar el estado de UI (interfaz) en archivos de subtítulos
-: De forma predeterminada, Aegisub guarda cosas como la posición de desplazamiento actual de la cuadrícula de subtítulos y el número de fila activa en el archivo de subtítulos para que pueda restaurarse automáticamente cuando vuelva a abrir el archivo. Sin embargo, si está trabajando con control de versiones para sus archivos de subtítulos, es posible que desee desactivarlo para reducir el ruido en los cambios.
+Guardar el estado de la interfaz de usuario en archivos de subtítulos
+: Por defecto, Aegisub guarda cosas como la posición de desplazamiento actual de la cuadrícula de subtítulos y el número de fila activa en el archivo de subtítulos para que pueda restaurarse automáticamente cuando vuelva a abrir el archivo. Sin embargo, si está trabajando con control de versiones para sus archivos de subtítulos, puede que quiera desactivarlo para reducir el ruido en los cambios.
 
-Tamaño de ícono de barras de herramientas
-: El tamaño de los íconos a usar en todas las barras de herramientas de Aegisub. Actualmente los únicos valores válidos son 16 y 24.
+Tamaño de ícono de la barra de herramientas
+: El tamaño de los íconos para usar en todas las barras de herramientas de Aegisub. Actualmente los únicos valores válidos son 16 y 24.
 
 Cargar automáticamente archivos vinculados
-: Cada vez que guarda un guion, Aegisub también almacena información sobre qué archivos de video, audio y códigos de tiempo abrió mientras trabajaba en él, dentro del propio guion. Esta opción decide qué hace Aegisub con estos archivos que están "vinculados" al guion al abrirlo. Si está configurado en "preguntar", Aegisub le preguntará al usuario si desea cargar los archivos vinculados. Si se establece en "nunca", Aegisub nunca cargará los archivos vinculados, y del mismo modo, si se establece en "siempre", Aegisub siempre intentará cargar los archivos vinculados (y reportará un error si no se encuentran los archivos).
+: Cada vez que guarda un guion, Aegisub también almacena información sobre qué archivos de video, audio y códigos de tiempo abrió mientras trabajaba en él, dentro del propio guion. Esta opción decide qué hace Aegisub con estos archivos que están "vinculados" al guion al abrirlo. Si está configurado en "preguntar", Aegisub le preguntará a uno si desea cargar los archivos vinculados. Si se establece en "nunca", Aegisub nunca cargará los archivos vinculados, y del mismo modo, si se establece en "siempre", Aegisub siempre intentará cargar los archivos vinculados (y reportará un error si no se encuentran los archivos).
 
 Niveles de deshacer
 : El número máximo de cambios que se pueden deshacer. Cuanto mayor sea este valor, más memoria utilizará Aegisub.
 
-Listas de recién usados
-: Número máximo de elementos para recordar, aplicado a todas las listas de elementos recién usados en Aegisub. El impacto en la memoria al aumentarlos es trivial, pero las listas más grandes pueden resultar imprácticas de manejar.
+Listas de usados recientemente
+: Números máximos de elementos para recordar, para todas las variaslistas de elementos recién usados en Aegisub. El impacto en la memoria al aumentarlos es trivial, pero las listas más grandes pueden resultar imprácticas de manejar.
 
 ### Estilos predeterminados
 
@@ -42,65 +43,67 @@ Listas de recién usados
 
 ![preferences-audio](/img/3.2/preferences-audio.png#center)
 
-Anclar desplazamiento en el cursor
+Bloquear desplazamiento en el cursor
 : Cuando está habilitado, la vista de onda de audio se desplazará automáticamente para seguir el cursor de reproducción si se acerca demasiado a cualquiera de los bordes.
 
-Encasillar marcadores por defecto
+Ajustar marcadores por defecto
 : Cuando está habilitado, Aegisub encasillará de forma predeterminada los marcadores de audio junto con otros marcadores en la visualización de audio (como fotogramas clave y los tiempos de inicio o finalización de otras líneas) al moverlos haciendo clic o arrastrándolos si están lo suficientemente cerca entre sí. El ajuste se puede activar o desactivar manteniendo presionada la tecla mayús/shift.
 
-Rueda del mouse predeterminada de zoom
-: Cuando está habilitado, la rueda del mouse ampliará la pantalla de audio horizontalmente de forma predeterminada y desplazará la pantalla de audio cuando se mantenga presionada la tecla ctrl. Si está deshabilitado, estos dos se intercambian.
+Rueda de ratón predeterminada para acercamiento
+: Cuando está habilitado, la rueda del mouse ampliará la vista de audio horizontalmente de forma predeterminada y desplazará la vista de audio cuando se mantenga presionada la tecla ctrl. Si está deshabilitado, estos dos se intercambian.
 
-Enfoque automático al posar cursor
-: Si está habilitado, mover el cursor sobre la onda de audio le dará enfoque automáticamente (en lugar de requerir un clic).
+Autoenfoque al pasar el ratón
+: Si está habilitado, mover el puntero sobre la onda de audio le dará enfoque automáticamente (en lugar de requerir un clic).
 
-Reproducir audio al entrar en vídeo
+Reproducir audio al recorrer el video
 : Cuando está habilitado, el paso entre fotogramas reproduce el audio de cada fotograma.
 
-Duración predeterminada
+Longitud de sincronización predeterminada
 : La duración predeterminada de una nueva línea sin tiempo, en milisegundos.
 
-Duración de entrada predeterminada
-Duración de salida predeterminada
-: La duración agregada al inicio de una línea mediante las funciones "agregar entrada" y "agregar salida". También se utiliza en (y es configurado por) el [postprocesador de sincronización]({{<relref path="Timing_Post-Processor" lang="en">}}).
+Longitud de entrada predeterminada
+Longitud de cierre predeterminada
+: La duración agregada al inicio de una línea mediante las funciones "agregar apertura/entrada" y "agregar cierre/salida". También se utiliza en (y es configurado por) el [postprocesador de sincronización]({{<relref path="Timing_Post-Processor" lang="en">}}).
 
 Sensibilidad de inicio de arrastre de marcador
 : La distancia en píxeles que se debe arrastrar un marcador para que se registre como arrastre. Los valores más altos reducen la posibilidad de cambios accidentales, a costa de una peor capacidad de respuesta.
 
-Clic y arrastre izquierdo mueve marcador final
-: Cuando está habilitado, hacer clic izquierdo fija el inicio de la línea en el punto picado, luego establecerá el fin de la línea en el punto hasta el que se arrastra, haciendo posible cronometrar una línea con un solo movimiento de clic y arrastrar. Cuando está deshabilitado, hacer clic izquierdo y arrastrar siempre actualiza solo la hora de inicio de la línea, al igual que el clic derecho con la hora de finalización.
+Clic izquierdo y arrastrar para mover marcador de cierre
+: Cuando está habilitado, hacer clic izquierdo fija el inicio de la línea en el punto presionado, luego establecerá el fin de la línea en el punto hasta el que se arrastra, haciendo posible cronometrar una línea con un solo movimiento de clic y arrastre. Cuando está deshabilitado, hacer clic izquierdo y arrastrar siempre actualiza solo el momento de inicio de la línea, al igual que el clic derecho con el momento de finalización.
 
-Grosor de línea de frontera
+Grosor del límite de línea
 : El ancho, en píxeles, de los marcadores de inicio y fin de línea.
 
-Distancia máxima de encasillamiento
+Máxima distancia de ajuste
 : Distancia máxima para encasillar marcadores con otros marcadores vecinos, en píxeles.
 
 Mostrar líneas inactivas
-: Controla cómo se dibujan las líneas que rodean la línea seleccionada actualmente en la onda de audio. "No mostrar" solo mostrará la línea actual. "Mostrar anterior" mostrará la línea anterior (en la cuadrícula, _no_ cronológicamente) en gris además de la línea actual. "Mostrar siguiente y anterior" mostrará las líneas antes y después de la línea actual (en la cuadrícula, _no_ cronológicamente). "Mostrar todo" mostrará todas las líneas en gris además de la línea actual.
+: Controla cómo se dibujan las líneas que rodean la línea seleccionada actualmente en la onda de audio. "No mostrar" solo mostrará la línea actual. "Mostrar anterior" mostrará la línea anterior (en la cuadrícula, _no_ cronológicamente) en gris además de la línea actual. "Mostrar anterior y siguiente" mostrará las líneas de antes y después de la línea actual (en la cuadrícula, _no_ cronológicamente). "Mostrar todo" mostrará todas las líneas en gris además de la línea actual.
 
 Incluir líneas inactivas comentadas
-: Si está deshabilitado, las líneas comentadas se omitirán al seleccionar qué líneas inactivas mostrar en la pantalla de audio (convirtiendo "Mostrar anterior" en "Mostrar la última línea no comentada antes de esta actual", y así sucesivamente).
+: Si está deshabilitado, las líneas comentadas se omitirán al seleccionar qué líneas inactivas mostrar en la pantalla de audio (convirtiendo "Mostrar anterior" en "Mostrar la última línea no comentada antes de la actual", y similarmente en otro caso).
 
-### Opciones visuales
+### Opciones visuales de pantalla
 
-Fotogramas clave
+Cuadros clave en modo diálogo
 : Si está habilitado, las líneas que marcan las posiciones de los fotogramas clave en el video se dibujarán en la forma de onda de audio cuando esté en el modo de sincronización de diálogo (el valor predeterminado).
 
-Fotogramas clave de karaoke
+Cuadros clave en modo karaoke
 : Si está habilitado, las líneas que marcan las posiciones de los fotogramas clave en el video se dibujarán en la forma de onda de audio cuando esté en el modo de sincronización de karaoke.
 
-Dibujar el tiempo del cursor
+Tiempo del cursor
 : Si está habilitado, se dibujará una marca de tiempo que enseña el tiempo desde el inicio del archivo cerca de la parte superior del cursor de la onda de audio.
 
-Posición del vídeo
+Posición de video
 : Si está habilitado, se dibuja una línea en la pantalla de audio que marca la hora de inicio del cuadro de video actual.
+
+<!-- TODO Límites de segundos: pendiente -->
 
 Estilo de forma de onda
 : Selecciona cuál de los estilos de representación de formas de onda usar.
 
   Máximo + Promedio
-  : La forma de onda es de dos tonos, lo que indica tanto el valor máximo de una muestra dentro del intervalo un píxel como, en un color más claro, el valor promedio de todas las muestras dentro del rango de tiempo.
+  : La forma de onda es de dos tonos, lo que indica tanto el valor máximo de una muestra dentro del intervalo de un píxel como, en un color más claro, el valor promedio de todas las muestras dentro del rango de tiempo.
 
   Máximo
   : La forma de onda muestra sólo el valor máximo, como lo hacían las versiones anteriores de Aegisub.
@@ -109,68 +112,67 @@ Estilo de forma de onda
 
 Estas opciones controlan la apariencia de las etiquetas dibujadas en la vista de audio para las sílabas de karaoke.
 
-Tipo de fuente
+Fuente
 : La fuente tipográfica que se usará para las etiquetas de audio.
 
 Tamaño de fuente
 : El tamaño de fuente que se usará para las etiquetas de audio.
 
 ## Video
-<span id="revisión"></span>
 
 ![preferences-video](/img/3.2/preferences-video.png#center)
 
-Mostrar fotogramas clave en el control deslizante
-: Cuando está habilitado, Aegisub dibujará marcadores de fotogramas clave en el control deslizante de búsqueda de video.
+Mostrar cuadros clave en desplazador
+: Cuando está habilitado, Aegisub dibujará marcadores de fotogramas clave en el deslizador de desplazamiento de video.
 
-Buscar video para comenzar la línea en el cambio de selección
-: Cuando está habilitado, cada vez que se cambia la línea activa, Aegisub buscará automáticamente el video en el primer cuadro de la nueva línea. Tenga en cuenta que esto se puede hacer manualmente haciendo doble clic en la cuadrícula o presionando Ctrl-1.
+Desplazar video al inicio de línea al cambiar selección
+: Cuando está habilitado, cada vez que se cambia la línea activa, Aegisub desplazará automáticamente el video al primer cuadro de la nueva línea activa. Tenga en cuenta que esto se puede hacer manualmente haciendo doble clic en la cuadrícula o presionando Ctrl-1.
 
-Mostrar siempre herramientas visuales
-: Cuando está deshabilitada, las herramientas de composición tipográfica visual solo se representan cuando el mouse está sobre la pantalla de video.
+Mostrar herramientas visuales solo al colocar el ratón sobre el video
+: Cuando está habilitado, las herramientas de composición tipográfica visual solo se representan cuando el puntero está sobre la pantalla de video.
 
-Abrir audio automáticamente al abrir video
+Cargar audio automáticamente al abrir video
 : Cuando está habilitado, cuando abre un archivo de video que también tiene datos de audio, Aegisub cargará automáticamente el audio.
 
-Zoom predeterminado
-: El nivel de zoom de vídeo predeterminado. Útil si tienes una pantalla muy grande o muy pequeña.
+Aumento predeterminado
+: El nivel de aumento/zoom de video predeterminado. Útil si uno tiene una pantalla muy grande o muy pequeña.
 
-Paso de salto rápido en fotogramas.
-: Decide qué tan grandes "saltos" hará Aegisub cuando uses la función de búsqueda rápida (Alt-flecha derecha y Alt-flecha izquierda). Medido en cuadros.
+Paso de salto rápido en cuadros
+: Decide qué tan grandes "saltos" hará Aegisub cuando use la función de desplazamiento rápido (Alt-flecha derecha y Alt-flecha izquierda). Medido en cuadros.
 
-Ruta para guardar captura de pantalla
-: Decide dónde Aegisub debe guardar las capturas de pantalla. El valor predeterminado es `?video`, lo que significa que se guardan dondequiera que esté el video, pero puedes cambiarlo a la ruta que desees. [Aegisub_path_specifiers]({{<relref path="Aegisub_path_specifiers" lang="en">}}) son compatibles. Otra opción directamente disponible en el menú desplegable es `?script`, que es dondequiera que esté el script.
+Ruta para capturas de pantalla
+: Decide dónde Aegisub debe guardar las capturas de pantalla. El valor predeterminado es `?video`, lo que significa que se guardan dondequiera que esté el video, pero puedes cambiarlo a la ruta que desee. [Aegisub_path_specifiers]({{<relref path="Aegisub_path_specifiers" lang="en">}}) son compatibles. Otra opción directamente disponible en el menú desplegable es `?script`, que es dondequiera que esté el guion.
 
-### Resolución de guion
+### Resolución de secuencia
 
-Usar la resolución del primer vídeo abierto
-: Cuando está habilitado, Aegisub configurará automáticamente la resolución del guion a la resolución del video si abre un video y la resolución del guion aún no está configurada. Si esto está deshabilitado, Aegisub establece la resolución del script en un valor predeterminado configurable.
+Usar resolución del primer video abierto
+: Cuando está habilitado, Aegisub configurará automáticamente la resolución del guion a la resolución del video si abre un video y la resolución del guion aún no está configurada. Si esto está deshabilitado, Aegisub establece la resolución del guion en un valor predeterminado configurable.
 
-Igualar la resolución del vídeo al abrir
-: Controla lo que Aegisub hará con respecto a la resolución del script cuando abres un video. Si se configura en "nunca", Aegisub no hará nada si la resolución del script no coincide con la resolución del video. Si está configurado en "preguntar", Aegisub le preguntará si desea cambiar la resolución del script para que coincida con la resolución del video si no coinciden. Si se configura en "siempre", Aegisub siempre volverá a muestrear el script para que coincida con la resolución del video automáticamente.
+Coincidir resolución de video al abrir
+: Controla lo que Aegisub hará con respecto a la resolución del guion cuando abre un video. Si se configura en "nunca", Aegisub no hará nada si la resolución del guion no coincide con la resolución del video. Si está configurado en "preguntar", Aegisub le preguntará si desea cambiar la resolución del guion para que coincida con la resolución del video si no coinciden. Si se configura en "Remuestrear siempre", Aegisub siempre volverá a muestrear el guion para que coincida con la resolución del video automáticamente. <!-- TODO "siempre establecido" pendiente -->
 
 ## Interfaz
 
 ![preferences-interface](/img/3.2/preferences-interface.png#center)
 
-Habilitar sugerencias de llamadas
-: Cuando está habilitado, Aegisub detectará cuando estás escribiendo una [etiqueta de anulación]({{<relref path="ASS_Tags">}}) y mostrará un pequeño cuadro con una breve referencia de la sintaxis de la etiqueta en cuestión hasta que cierres la etiqueta. Esto se denomina "consejo de llamada" y la función puede resultar familiar para los usuarios de varios IDE de programación.
+Activar consejos de llamadas
+: Cuando está habilitado, Aegisub detectará cuando está escribiendo una [etiqueta manual]({{<relref path="ASS_Tags">}}) y mostrará un pequeño cuadro con una breve referencia de la sintaxis de la etiqueta en cuestión hasta que cierre la etiqueta. Esto se denomina "consejo de llamada" y la función puede resultar familiar para los usuarios de varios IDE de programación.
 
-Sobrescribir en cuadros de tiempo
-: controla el comportamiento de todos los cuadros de edición de tiempo en el programa. De forma predeterminada, todos los cuadros de edición de tiempo en Aegisub se comportan como si hubiera presionado el botón Insertar,
-   por lo que cada dígito que escriba sobrescribe lo que ya está allí, y no puede borrar los números que ya están allí, debe sobrescribirlos. Desmarcar esta casilla desactiva este comportamiento y hace que los cuadros de edición de tiempo se comporten como cuadros de edición de texto normales (casi).
+Sobrescribir en cajas de tiempo
+: Controla el comportamiento de todas las cajas de edición de tiempo en el programa. De forma predeterminada, todas las cajas de edición de tiempo en Aegisub se comportan como si hubiera presionado el botón Insertar, por lo que cada dígito que escriba sobrescribe lo que ya está ahí, y no puede borrar los números que ya están ahí, sido debe sobrescribirlos. Desmarcar esta casilla desactiva este comportamiento y hace que las cajas de edición de tiempo se comporten como cajas de edición de texto normales (casi).
 
 Habilitar resaltado de sintaxis
 : habilita o deshabilita el resaltado de sintaxis de etiquetas de anulación en el cuadro de edición principal.
 
 Ruta a archivos de diccionario
-: Decide dónde buscará Aegisub los archivos de diccionario para su corrector ortográfico y diccionario de sinónimos. De forma predeterminada, aparece en `?data/dictionaries`, pero si tiene sus propios diccionarios en el formato correcto en otro lugar, no dude en señalar a Aegisub allí.
+: Decide dónde buscará Aegisub los archivos de diccionario para su corrector ortográfico y diccionario de sinónimos. De forma predeterminada, aparece en `?data/dictionaries`, pero si tiene sus propios diccionarios en el formato correcto en otro lugar, no dude en señalar a Aegisub ahí.
 
 Fuente
-: decide la fuente y el tamaño de fuente utilizados para el cuadro de edición de subtítulos y otros cuadros de edición.
+Tamaño de fuente
+: Decide la fuente y el tamaño de fuente utilizados para la caja de edición de subtítulos y otras cajas de edición.
 
 Máximo de caracteres por línea
-: Si el valor del contador de caracteres es mayor que este número, el fondo se volverá rojo para alertarle que ha excedido la longitud máxima de línea. La longitud máxima no se aplica de ninguna otra manera.
+: Si el valor del contador de caracteres es mayor que este número, el fondo se volverá rojo para alertar que ha excedido la longitud máxima de línea. La longitud máxima no se aplica de ninguna otra manera.
 
 Umbral de advertencia de caracteres por segundo
 Umbral de error de caracteres por segundo
@@ -182,23 +184,24 @@ Ignorar espacios en blanco
 Ignorar la puntuación
 : Si está habilitado, la puntuación no se incluirá en el recuento de caracteres.
 
-Cuadrícula de enfoque al hacer clic
-: Cuando está habilitada, la cuadrícula de subtítulos actúa como su propia área del programa y puede tener foco, al igual que el audio o el video, y mientras lo hace, puede usar las teclas de flecha/rueda del mouse para desplazarse por ella, etc. por otro lado, si desactivas esta opción, el foco permanecerá donde estaba antes cada vez que hagas clic en la cuadrícula. Esto significa que ya no puedes usar atajos de teclado en la cuadrícula, pero por otro lado significa que puedes hacer clic en la cuadrícula para ir a una línea sin perder el foco de audio, etc. Úselo a su propia discreción.
+Enfocar rejilla al hacer clic
+: Cuando está habilitado, la cuadrícula/rejilla de subtítulos actúa como su propia área del programa y puede tener enfoque, al igual que el audio o el video, y mientras lo hace, puede usar las teclas de flecha/rueda del mouse para desplazarse por ella, etc. Por otro lado, si desactiva esta opción, el enfoque permanecerá donde estaba antes cada vez que haga clic en la cuadrícula. Esto significa que ya no puede usar atajos de teclado en la cuadrícula, pero por otro lado significa que puede hacer clic en la cuadrícula para ir a una línea sin perder el enfoque de audio, etc. Úselo a su propia discreción.
 
 Resaltar subtítulos visibles
 : Cuando está habilitado, todas las líneas de subtítulos que están visibles actualmente en el fotograma del video (o al menos _deberían_ ser visibles; Aegisub no tiene en cuenta el alfa y ese tipo de trucos en este caso; solo se preocupa por el tiempo de la línea) se resaltarán en la cuadrícula con un color de fondo especial (consulte la opción "Línea en el fondo del marco" a continuación).
 
-Ocultar símbolo de anulaciones
-: El carácter que se mostrará en lugar de anular bloques si la ocultación de etiquetas está activa. Tenga en cuenta que, a pesar del nombre, puede haber más de un carácter si así lo desea.
+Símbolo para ocultar etiquetas de control
+: El carácter que se mostrará en lugar bloques de anulación/control si la ocultación de etiquetas está activa. Tenga en cuenta que, a pesar del nombre, puede haber más de un carácter si así lo desea.
 
 Fuente
+Tamaño de fuente
 : Decide la fuente y el tamaño de fuente de todo el texto en la cuadrícula.
 
 ### Colores
 
 ![preferences-colours](/img/3.2/preferences-colours.png#center)
 
-#### Vista de audio
+#### Visualización de audio
 
 Reproducir cursor
 : El color del cursor de reproducción.
@@ -211,7 +214,7 @@ Límite de línea línea inactiva
 Límite de sílaba
 : El color de la línea límite de una sílaba en el modo karaoke.
 
-### Esquemas de color
+### Esquemas de color de audio
 
 Controla la combinación de colores utilizada para la forma de onda/espectro y algunos de los elementos de la interfaz de usuario. Aegisub actualmente no tiene una interfaz de usuario para editar los esquemas de color o crear otros nuevos, pero si te sientes aventurero, puedes encontrarlos en config.json.
 
@@ -244,7 +247,7 @@ salto de línea
 Plantillas de karaoke
 : Color para bloques de plantilla de karaoke en líneas de plantilla.
 
-#### Cuadrícula de subtítulos
+#### Rejilla de subtítulos
 
 Primer plano estándar
 Fondo estándar
@@ -263,7 +266,7 @@ Primer plano de colisión
 : El color del texto de las líneas cuyos tiempos se superponen con la línea actualmente activa.
 
 Línea en el fondo del marco
-: El color de fondo de las líneas actualmente visibles en el fotograma del vídeo.
+: El color de fondo de las líneas actualmente visibles en el fotograma del video.
 
 Encabezamiento
 Columna izquierda
@@ -282,7 +285,7 @@ eliminarlos o cambiarlos.
 
 Aegisub admite la configuración de diferentes teclas de acceso rápido dependiendo de qué parte del programa esté enfocada.
 
-El grupo "Predeterminado" es para teclas de acceso rápido que deberían funcionar independientemente de lo que en Aegisub tenga actualmente el foco del teclado. Las teclas de acceso rápido configuradas de forma predeterminada se anulan por categorías más específicas cuando corresponde.
+El grupo "Predeterminado" es para teclas de acceso rápido que deberían funcionar independientemente de lo que en Aegisub tenga actualmente el enfoque del teclado. Las teclas de acceso rápido configuradas de forma predeterminada se anulan por categorías más específicas cuando corresponde.
 
 El grupo "Siempre" establece teclas de acceso rápido habilitadas por el modo Medusa, que se aplican en todas partes del programa y anulan todas las demás pulsaciones de teclas, incluida la escritura normal en cuadros de edición.
 
@@ -423,7 +426,7 @@ Modo de manejo de errores de indexación de audio
 : Qué hacer si se produce un error al indexar una pista de audio.
 
    _Ignorar_
-   : Ignore el error y continúe decodificando el archivo. Este modo puede permitirle abrir algunos archivos corruptos, pero puede causar desincronización de audio/vídeo.
+   : Ignore el error y continúe decodificando el archivo. Este modo puede permitirle abrir algunos archivos corruptos, pero puede causar desincronización de audio/video.
 
    _Limpiar_
    : Finge que la pista con el error no existe en el archivo.
@@ -446,17 +449,17 @@ Dispositivo de portaudio
 
 ![preferences-advanced-video](/img/3.2/preferences-advanced-video.png#center)
 
-Proveedor de vídeo
-: Decide qué método debe utilizar Aegisub para cargar el vídeo. Las opciones que tiene disponibles aquí dependen de cómo se compiló su copia de Aegisub y del sistema operativo que esté ejecutando. Existen las siguientes alternativas:
+Proveedor de video
+: Decide qué método debe utilizar Aegisub para cargar el video. Las opciones que tiene disponibles aquí dependen de cómo se compiló su copia de Aegisub y del sistema operativo que esté ejecutando. Existen las siguientes alternativas:
 
    _avisynth_ (solo Windows)
-   : Utiliza [Avisynth](http://www.avisynth.org) para cargar vídeo. Versátil, admite la carga de casi todos los formatos comunes, así como archivos .d2v (DVD VOB indexados) si se suministra el complemento correcto. Tenga en cuenta que Aegisub puede instalar su propio avisynth.dll en lugar de utilizar la instalación de su sistema si así lo desea. Requiere decodificadores de Video para Windows para archivos AVI para obtener el mejor rendimiento. Utiliza DirectShow para la mayoría de los formatos, por lo que no se recomienda para nada más que AVI, d2v y abrir scripts de Avisynth.
+   : Utiliza [Avisynth](http://www.avisynth.org) para cargar video. Versátil, admite la carga de casi todos los formatos comunes, así como archivos .d2v (DVD VOB indexados) si se suministra el complemento correcto. Tenga en cuenta que Aegisub puede instalar su propio avisynth.dll en lugar de utilizar la instalación de su sistema si así lo desea. Requiere decodificadores de Video para Windows para archivos AVI para obtener el mejor rendimiento. Utiliza DirectShow para la mayoría de los formatos, por lo que no se recomienda para nada más que AVI, d2v y abrir scripts de Avisynth.
 
    _FFmpegSource_
    : Utiliza [FFMS2](http://code.google.com/p/ffmpegsource/) para cargar videos. Generalmente la opción más confiable.
 
 Proveedor de subtítulos
-: Decide qué backend utiliza Aegisub para representar los subtítulos en el vídeo. Si instala renderizadores CSRI adicionales como VSFilterMod o xy-VSFilter (colocando los archivos dll en el directorio CSRI dentro del directorio de Aegisub), se enumerarán aquí junto con los predeterminados.
+: Decide qué backend utiliza Aegisub para representar los subtítulos en el video. Si instala renderizadores CSRI adicionales como VSFilterMod o xy-VSFilter (colocando los archivos dll en el directorio CSRI dentro del directorio de Aegisub), se enumerarán aquí junto con los predeterminados.
 
    *CSRI/vsfilter_textsub* (solo Windows)
    : Utilice VSFilter 2.40 para representar subtítulos. Este es el procesador de subtítulos estándar que define el formato ASS utilizado por Aegisub.
