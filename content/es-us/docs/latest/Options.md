@@ -319,54 +319,53 @@ Para agregar una nueva tecla de acceso rápido, seleccione el contexto al que de
 ### Guardado automático
 
 Permitir
-: Si está habilitado, Aegisub guardará periódicamente una copia del script en el que está trabajando en la ruta de guardado automático.
+: Si está habilitado, Aegisub guardará periódicamente una copia del guion en el que está trabajando en la ruta de guardado automático.
 
 Intervalo en segundos
-: ¿Con qué frecuencia Aegisub debe guardar automáticamente?
+: Con qué frecuencia Aegisub debe guardar automáticamente.
 
 Ruta
-: decide dónde guardar las copias guardadas automáticamente de los scripts en los que estás trabajando. De forma predeterminada, establece `autoguardado` en su directorio `?user` de Aegisub (consulte la página [Aegisub_path_specifiers]({{<relref path="Aegisub_path_specifiers" lang="en">}}) para más detalles).
+: decide dónde guardar los respaldos automáticos de los guiones en los que está trabajando. De forma predeterminada, establece `autosave` en su directorio `?user` de Aegisub (consulte la página de [variables Aegisub de rutas]({{<relref path="Aegisub_path_specifiers" lang="en">}}) para más detalles).
 
-Guardado automático después de cada cambio
+Guardar automáticamente tras cada cambio
 : Si está habilitado, Aegisub guardará el archivo después de cada cambio realizado. Tenga en cuenta que esto actualmente causa algunos problemas con el sistema de deshacer.
 
 ### Copias de seguridad automáticas
 
 Activar
-: Si está habilitado, Aegisub guardará una copia de seguridad de cada script que abra inmediatamente al abrirlo. De forma predeterminada, se guarda en `?user/autoback/`, pero esto se puede cambiar (ver más abajo).
+: Si está habilitado, Aegisub guardará una copia de seguridad de cada guion que abra inmediatamente al abrirlo. De forma predeterminada, se guarda en `?user/autoback/`, pero esto se puede cambiar (ver más abajo).
 
 Ruta
-: Decide dónde guardar las copias de seguridad automáticas de los scripts. Por defecto está configurado en `autoback` en su directorio Aegisub `?user`.
+: Decide dónde guardar las copias de seguridad automáticas de los guiones. Por defecto está configurado en `autoback` en su directorio Aegisub `?user`.
 
-## Automatizar
+## Automatización
 
 ![preferences-automation](/img/3.2/preferences-automation.png#center)
 
 Ruta base
-: un directorio base donde se colocan los scripts de automatización no cargados automáticamente. Se utiliza sólo para guardar rutas a archivos de script en los subtítulos.
+: Un directorio base donde se colocan las secuencias de automatización no cargadas automáticamente. Se utiliza sólo para guardar rutas a archivos de secuencia en los subtítulos.
 
 Ruta de inclusión
 : Lista de directorios donde se buscan archivos y módulos incluidos. Los directorios están separados por un carácter de barra vertical, `|`.
 
 Ruta de carga automática
-: Lista de directorios en los que se buscan scripts al inicio, que luego se cargan automáticamente. Los directorios están separados por un carácter de barra vertical, `|`.
+: Lista de directorios en los que se buscan secuencias al inicio, que luego se cargan automáticamente. Los directorios están separados por un carácter de barra vertical, `|`.
 
 Nivel de traza
-: Cuando un script envía un mensaje a la consola de depuración, también puede especificar un nivel de seguimiento. Si el nivel de seguimiento de un mensaje es inferior al valor proporcionado aquí, el mensaje no se registra. Los nombres dados a los niveles son sólo sugerencias y no tienen ningún efecto en la ejecución del script.
-   (es decir, un mensaje de nivel "Fatal" no hará que el script finalice).
+: Cuando una secuencia de comandos envía un mensaje a la consola de depuración, también puede especificar un nivel de seguimiento. Si el nivel de seguimiento de un mensaje es inferior al valor proporcionado aquí, el mensaje no se registra. Los nombres dados a los niveles son sólo sugerencias y no tienen ningún efecto en la ejecución de la secuencia (es decir, un mensaje de nivel "Fatal" no hará que la secuencia finalice).
 
-Tarea prioritaria
-: Prioridad dada al hilo de ejecución del script. Si está en un sistema de un solo núcleo/una sola CPU, tener esto a un nivel más bajo de lo normal hará que otros programas respondan mejor mientras los scripts de ejecución prolongada estén activos.
+Prioridad de hilo
+: Prioridad dada al hilo de ejecución de la secuencia. Si está en un sistema de un solo núcleo/una sola CPU, tener esto a un nivel más bajo de lo normal hará que otros programas respondan mejor mientras las secuencias de ejecución prolongada estén activos.
 
 Autorecargar al exportar
-: Recarga automáticamente los conjuntos de scripts especificados al [Exportar]({{<relref path="Exporting" lang="en">}}) Se abre el diálogo. En ese caso tendrás que pasar a la ventana [Automation/Manager]({{<relref path="Automation/Manager" lang="en">}}) y determinar la causa del error.
+: Recarga automáticamente los conjuntos de secuencias especificados cuando el diálogo de [Exportar]({{<relref path="Exporting" lang="en">}}) se abre. En ese caso tendrá que pasar a la ventana [Automation/Manager]({{<relref path="Automation/Manager" lang="en">}}) y determinar la causa del error.
 
 ## Audio avanzado
 
 ![preferences-advanced-audio](/img/3.2/preferences-advanced-audio.png#center)
 
 Proveedor de audio
-: Qué backend usar para cargar audio. Actualmente sólo existen dos métodos.
+: Qué proveedor usar para cargar audio. Actualmente sólo existen dos métodos.
 
 _avisynth_ (solo Windows)
 : Utiliza [Avisynth](http://www.avisynth.org) para cargar audio. Todos los tipos de archivos se cargarán con DirectShowSource(), excepto los archivos AVS que se abrirán con Import().
@@ -380,19 +379,19 @@ Reproductor de audio
 : Qué método utilizar para reproducir audio. Las opciones dependen de la plataforma.
 
 _DirectSound_ (solo Windows)
-: utiliza Microsoft DirectSound para reproducir audio. Este es el reproductor de audio mejor probado y más estable.
+: Utiliza Microsoft DirectSound para reproducir audio. Este es el reproductor de audio mejor probado y más estable.
 
 _DirectSound-antiguo_ (solo Windows)
-: Implementación original de Aegisub del reproductor DirectSound. Si tiene problemas de reproducción de audio cuando utiliza el reproductor DirectSound, este puede funcionar mejor (pero probablemente no lo haga).
+: Implementación original de Aegisub del reproductor DirectSound. Si tiene problemas de reproducción de audio cuando utiliza el reproductor DirectSound, este puede funcionar mejor (pero probablemente no).
 
-_pulse_ (solo Linux)
-: Utiliza la [Arquitectura de sonido avanzada de Linux] (http://www.alsa-project.org/) para reproducir audio. ALSA es la arquitectura de sonido nativa de Linux y no está disponible en ningún otro sistema.
+_alsa_ (solo Linux)
+: Utiliza la [Arquitectura de sonido avanzada de Linux](http://www.alsa-project.org/) para reproducir audio. ALSA es la arquitectura de sonido nativa de Linux y no está disponible en ningún otro sistema.
 
 _pulse_ (Linux y otros sistemas tipo \*NIX)
 : Reproduce sonido a través de un servidor de sonido [PulseAudio](http://pulseaudio.org/). Este es el reproductor de audio menos probado y con menos probabilidades de funcionar, y solo se recomienda si su configuración de audio hace que los reproductores que no sean de pulso sean indeseables.
 
 _portaudio_
-: Utilice la API [PortAudio](http://www.portaudio.com/) para reproducir sonido. PortAudio tiene diferentes implementaciones de reproducción en diferentes plataformas. En la mayoría de los Unices utiliza Open Sound System (OSS) para la salida. Actualmente es el único reproductor de audio de Windows que admite la selección del dispositivo de salida.
+: Utiliza la API [PortAudio](http://www.portaudio.com/) para reproducir sonido. PortAudio tiene diferentes implementaciones de reproducción en diferentes plataformas. En la mayoría de los Unices utiliza Open Sound System (OSS) para la salida. Actualmente es el único reproductor de audio de Windows que admite la selección del dispositivo de salida.
 
 _openal_
 : Utiliza la API [OpenAL](http://www.openal.com/) para reproducir audio. Este es el reproductor recomendado en OS X. Normalmente no se incluye en las compilaciones de Windows debido a que agrega una dependencia adicional con pocos beneficios.
@@ -400,31 +399,30 @@ _openal_
 ### Caché
 
 Tipo de caché
-: Use RAM a menos que tenga muy poca, luego use el Disco Duro. El caché no es necesario ni se utiliza cuando se abren archivos PCM WAV. Si desactiva el almacenamiento en caché, la reproducción de audio puede volverse muy poco confiable.
+: Usa RAM a menos que tenga muy poca, luego usa el disco duro. El caché no es necesario ni se utiliza cuando se abren archivos PCM WAV. Si desactiva el almacenamiento en caché, la reproducción de audio puede volverse muy poco confiable.
 
-Camino
-Nombre del archivo
-: Estas opciones determinan dónde se ubicará el caché de audio del disco duro. Sólo se utiliza si la caché está configurada en el disco duro. No debería necesitar cambiar esto a menos que tenga poco espacio en el disco. Para el nombre, la cadena espera un parámetro "%i" de estilo printf, que será reemplazado por un número. "%02i" se utiliza de forma predeterminada. No cambies eso a menos que sepas lo que estás haciendo.
+Ruta
+: Estas opción determina dónde se ubicará el caché de audio del disco duro. Sólo se utiliza si la caché está configurada en el disco duro. No debería necesitar cambiar esto a menos que tenga poco espacio en el disco. Para el nombre, la cadena espera un parámetro "%i" de estilo printf, que será reemplazado por un número. "%02i" se utiliza de forma predeterminada. No cambies eso a menos que sepa lo que está haciendo.
 
-### Spectrum
+### Espectro
 
-Calidad del espectro
+Calidad
 : Determina la calidad de la visualización del espectro de audio. Una configuración de mayor calidad da como resultado un mayor uso de CPU y RAM. Cada configuración consecutiva utiliza un poco más de CPU que la anterior y el doble de RAM. Para audio con una frecuencia de muestreo de 48 kHz, un minuto de audio utiliza esta cantidad de memoria en las diferentes configuraciones:
 
 <table class="table table-bordered table-condensed">
   <tr><th>0 "regular"</th><td>11 MB</td>
-  <tr><th>1 "better"</th><td>22 MB</td>
-  <tr><th>2 "high"</th><td>44 MB</td>
-  <tr><th>3 "insane"</th><td>88 MB</td>
+  <tr><th>1 "buena"</th><td>22 MB</td>
+  <tr><th>2 "alta"</th><td>44 MB</td>
+  <tr><th>3 "demente"</th><td>88 MB</td>
 </table>
 
 La cantidad de memoria utilizada no depende del número de canales
-(Aegisub siempre funciona en mono) o la profundidad de bits (el espectro siempre se calcula en punto flotante de 32 bits) del audio.
+(Aegisub siempre funciona en mono) ni de la profundidad de bits (el espectro siempre se calcula en punto flotante de 32 bits) del audio.
 
 {{<todo>}}this is probably wrong {{</todo>}}
 
-Memoria caché máxima
-: la cantidad máxima de memoria que se utilizará para el almacenamiento en caché del espectro de audio. Los resultados de los cálculos para mostrar el espectro de audio se almacenan en caché para que el desplazamiento por el audio sea más fluido. La cantidad de visualización del espectro que se puede almacenar en caché en una determinada cantidad de memoria depende de la configuración de calidad anterior. El tamaño de caché predeterminado de 128 MB da como resultado un poco menos de 6 minutos de audio a 48 kHz en calidad 1. Si lo configura en menos de 5 MB, se utilizará el valor predeterminado de 128 MB. Probablemente no deberías configurar esto en más de 1/4 de la cantidad de RAM física instalada.
+Máximo de memoria caché
+: La cantidad máxima de memoria que se utilizará para el almacenamiento en caché del espectro de audio. Los resultados de los cálculos para mostrar el espectro de audio se almacenan en caché para que el desplazamiento por el audio sea más fluido. La cantidad de visualización del espectro que se puede almacenar en caché en una determinada cantidad de memoria depende de la configuración de calidad anterior. El tamaño de caché predeterminado de 128 MB da como resultado un poco menos de 6 minutos de audio a 48 kHz en calidad 1. Si lo configura en menos de 5 MB, se utilizará el valor predeterminado de 128 MB. Probablemente no deberías configurar esto en más de 1/4 de la cantidad de RAM física instalada.
 
 ### Avisynth (solo Windows)
 
@@ -432,26 +430,26 @@ Mezclador descendente Avisynth
 : Aegisub sólo puede utilizar audio mono (un solo canal). Esta opción determina qué función de Avisynth utilizar para convertir audio a mono.
 
 Forzar frecuencia de muestreo
-: convierte todo el audio abierto a la frecuencia de muestreo dada. Forzar la frecuencia de muestreo a la frecuencia de muestreo utilizada por su tarjeta de sonido (en lugar de que el reproductor de audio lo haga) puede mejorar potencialmente el rendimiento del audio y solucionar problemas de reproducción.
+: Convierte todo el audio abierto a la frecuencia de muestreo dada. Forzar la frecuencia de muestreo a la frecuencia de muestreo utilizada por su tarjeta de sonido (en lugar de que el reproductor de audio lo haga) puede mejorar potencialmente el rendimiento del audio y solucionar problemas de reproducción.
 
 ### FFmpegSource
 
-Modo de manejo de errores de indexación de audio
+Modo de manejo de errores de indexado de audio
 : Qué hacer si se produce un error al indexar una pista de audio.
 
    _Ignorar_
-   : Ignore el error y continúe decodificando el archivo. Este modo puede permitirle abrir algunos archivos corruptos, pero puede causar desincronización de audio/video.
+   : Ignora el error y continúa decodificando el archivo. Este modo puede permitirle abrir algunos archivos corruptos, pero puede causar desincronización de audio/video.
 
    _Limpiar_
    : Finge que la pista con el error no existe en el archivo.
 
    _Detener_ (predeterminado)
-   : Detiene la indexación en el punto del error y devuelve todos los datos de audio antes del error. Este es el valor predeterminado debido a que los paquetes de audio corruptos al final de los archivos son bastante comunes.
+   : Detiene la indexación en el punto del error y devuelve todos los datos de audio antes del error. Este es el valor predeterminado debido a que los paquetes de audio corruptos al mero final de los archivos son bastante comunes.
 
    _Abortar_
-   : Negarse a abrir el archivo en absoluto.
+   : Se niega a abrir el archivo en absoluto.
 
-Indexar siempre todas las pistas de audio
+Siempre indexar todas las pistas de audio
 : Si está deshabilitado, abrir un archivo de video solo indexará las pistas de video, lo que le obligará a volver a indexar el archivo para abrir pistas de audio del mismo archivo.
 
 ### Portaudio
@@ -467,19 +465,19 @@ Proveedor de video
 : Decide qué método debe utilizar Aegisub para cargar el video. Las opciones que tiene disponibles aquí dependen de cómo se compiló su copia de Aegisub y del sistema operativo que esté ejecutando. Existen las siguientes alternativas:
 
    _avisynth_ (solo Windows)
-   : Utiliza [Avisynth](http://www.avisynth.org) para cargar video. Versátil, admite la carga de casi todos los formatos comunes, así como archivos .d2v (DVD VOB indexados) si se suministra el complemento correcto. Tenga en cuenta que Aegisub puede instalar su propio avisynth.dll en lugar de utilizar la instalación de su sistema si así lo desea. Requiere decodificadores de Video para Windows para archivos AVI para obtener el mejor rendimiento. Utiliza DirectShow para la mayoría de los formatos, por lo que no se recomienda para nada más que AVI, d2v y abrir scripts de Avisynth.
+   : Utiliza [Avisynth](http://www.avisynth.org) para cargar video. Versátil, admite la carga de casi todos los formatos comunes, así como archivos .d2v (DVD VOB indexados) si se suministra el complemento correcto. Tenga en cuenta que Aegisub puede instalar su propio `avisynth.dll` en lugar de utilizar la instalación de su sistema si así lo desea. Requiere decodificadores de Video para Windows para archivos AVI para obtener el mejor rendimiento. Utiliza DirectShow para la mayoría de los formatos, por lo que no se recomienda para nada más que AVI, d2v y abrir guiones de Avisynth.
 
    _FFmpegSource_
    : Utiliza [FFMS2](http://code.google.com/p/ffmpegsource/) para cargar videos. Generalmente la opción más confiable.
 
 Proveedor de subtítulos
-: Decide qué backend utiliza Aegisub para representar los subtítulos en el video. Si instala renderizadores CSRI adicionales como VSFilterMod o xy-VSFilter (colocando los archivos dll en el directorio CSRI dentro del directorio de Aegisub), se enumerarán aquí junto con los predeterminados.
+: Decide qué proveedor utiliza Aegisub para representar los subtítulos en el video. Si instala renderizadores CSRI adicionales como VSFilterMod o xy-VSFilter (colocando los archivos dll en el directorio CSRI dentro del directorio de Aegisub), se enumerarán aquí junto con los predeterminados.
 
    *CSRI/vsfilter_textsub* (solo Windows)
-   : Utilice VSFilter 2.40 para representar subtítulos. Este es el procesador de subtítulos estándar que define el formato ASS utilizado por Aegisub.
+   : Utiliza VSFilter 2.40 para representar subtítulos. Este es el procesador de subtítulos estándar que define el formato ASS utilizado por Aegisub.
 
    _libass_
-   : Utilice [libass](http://code.google.com/p/libass/) para representar subtítulos. libass es mucho más rápido que VSFilter y (en cierto modo) multiplataforma, pero desafortunadamente todavía tiene algunas diferencias de representación con respecto a VSFilter y problemas relacionados con las fuentes en Windows. Si está realizando una composición tipográfica compleja que será [softsubbed]({{<relref path="Attaching_subtitles_to_video#softsubbing" lang="en">}}), es una buena idea comprobar su trabajo tanto con VSFilter como con libass, ya que un número cada vez mayor de usuarios utiliza libass.
+   : Utiliza [libass](http://code.google.com/p/libass/) para representar subtítulos. libass es mucho más rápido que VSFilter y (en cierto modo) multiplataforma, pero desafortunadamente todavía tiene algunas diferencias de representación con respecto a VSFilter y problemas relacionados con las fuentes en Windows. Si está realizando una composición tipográfica compleja que será [de subtítulos sueltos]({{<relref path="Attaching_subtitles_to_video#subtítulos-sueltossoftsubbing">}}), es una buena idea comprobar su trabajo tanto con VSFilter como con libass, ya que un número cada vez mayor de usuarios utiliza libass.
 
 Forzar BT.601
 : Suponer que todos los videos YUV son BT.601, para compatibilidad con VSFilter.
@@ -500,15 +498,15 @@ Permitir Avisynth anterior a 2.56a
 : Admite el uso de versiones antiguas de Avisynth que algunas personas se niegan a actualizar por varias malas razones.
 
 Límite de memoria de Avisynth
-: Límite de memoria caché de fotogramas para Avisynth. Por lo general, aumentar esto no mejora el rendimiento y solo debe hacerse si está abriendo directamente scripts de Avisynth demasiado complicados.
+: Límite de memoria caché de fotogramas para Avisynth. Por lo general, aumentar esto no mejora el rendimiento y solo debe hacerse si está abriendo directamente guiones de Avisynth demasiado complicados.
 
 ### FFmpegSource
 
-Detalle del registro de depuración
+Nivel de detalle del registro de depuración
 : Establece el nivel de detalle de ffmpeg/libav. Sólo tiene efecto cuando tienes un depurador adjunto a Aegisub.
 
-Hilos de decodificación
+Subprocesos de decodificación
 : Número máximo de hilos a usar para decodificar video, o -1 para elegir automáticamente. Establecer esto en 1 puede solucionar algunos problemas de decodificación a costa del rendimiento. Rara vez hay algún motivo para establecerlo en un valor distinto de 1 o -1.
 
-Habilitar saltos de video inseguros
+Habilitar desplazamiento inseguro
 : Deshabilita algunas de las comprobaciones de cordura de FFMS2 cuando hace saltos en el video. Hace posible abrir algunos archivos en los que FFMS2 no puede saltar entre fotogramas con precisión.
