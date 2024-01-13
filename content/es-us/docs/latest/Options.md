@@ -203,15 +203,15 @@ Tamaño de fuente
 
 #### Visualización de audio
 
-Reproducir cursor
+Cursor de reproducción
 : El color del cursor de reproducción.
 
-Inicio del límite de la línea
-Fin del límite de línea
-Límite de línea línea inactiva
+Inicio de límite de la línea
+Fin de límite de línea
+Línea inactiva de límite de línea
 : Los colores respectivos de los distintos marcadores de límites de línea.
 
-Límite de sílaba
+Límites de sílaba
 : El color de la línea límite de una sílaba en el modo karaoke.
 
 ### Esquemas de color de audio
@@ -220,10 +220,19 @@ Controla la combinación de colores utilizada para la forma de onda/espectro y a
 
 #### Resaltado de sintaxis
 
+Fondo
+: El color de fondo.
+
 Normal
 : El color del texto normal.
 
-Soportes
+Comentarios
+: El color de texto de comentarios.
+
+Dibujos
+: El color de dibujos.
+
+Corchetes
 : El color de los corchetes que inician/finalizan los bloques de anulación.
 
 Barras y paréntesis
@@ -236,16 +245,21 @@ Parámetros
 : El color de los parámetros para anular las etiquetas.
 
 Error
-: el color de error para una sintaxis no válida dentro de un bloque de anulación.
+: El color de error para una sintaxis no válida dentro de un bloque de anulación.
 
-Fondo de error
+Fondo de errores
 : Color de fondo para errores.
 
 salto de línea
 : Color para \\N, \\n y \\h fuera de los bloques de anulación.
 
-Plantillas de karaoke
+Plantillas karaoke
 : Color para bloques de plantilla de karaoke en líneas de plantilla.
+
+<!-- TODO confirm
+Variables karaoke
+: Color de variables de karaoke en líneas de plantilla.
+-->
 
 #### Rejilla de subtítulos
 
@@ -257,35 +271,36 @@ Primer plano de selección
 Fondo de selección
 : El color de las líneas seleccionadas en la cuadrícula.
 
-Fondo del comentario
-Fondo del comentario seleccionado
-: El color de fondo de las líneas comentadas y de las líneas comentadas seleccionadas.
-respectivamente.
-
-Primer plano de colisión
+Primer plano de colisiones
 : El color del texto de las líneas cuyos tiempos se superponen con la línea actualmente activa.
 
-Línea en el fondo del marco
+Fondo en cuadro
 : El color de fondo de las líneas actualmente visibles en el fotograma del video.
 
-Encabezamiento
+Fondo de comentarios
+Fondo de comentario seleccionado
+: El color de fondo de las líneas comentadas y de las líneas comentadas seleccionadas, respectivamente.
+
+Fondo de encabezado
 Columna izquierda
 Borde de línea activa
 Líneas
 : El color de las líneas de la cuadrícula y las columnas/encabezados fijos.
 
-## Atajos de tecla
+Error de CPS
+: El color de fondo de líneas donde hay un error de caracteres por segundo.
+
+## Accesos rápidos
 
 ![preferences-hotkeys](/img/3.2/preferences-hotkeys.png#center)
 
-Esta página enumera todas las teclas de acceso rápido configuradas actualmente en Aegisub y le permite agregar,
-eliminarlos o cambiarlos.
+Esta página enumera todas las teclas de acceso rápido configuradas actualmente en Aegisub y le permite agregar, eliminar y cambiarlas.
 
 ### Contextos de atajos de tecla
 
 Aegisub admite la configuración de diferentes teclas de acceso rápido dependiendo de qué parte del programa esté enfocada.
 
-El grupo "Predeterminado" es para teclas de acceso rápido que deberían funcionar independientemente de lo que en Aegisub tenga actualmente el enfoque del teclado. Las teclas de acceso rápido configuradas de forma predeterminada se anulan por categorías más específicas cuando corresponde.
+El grupo "Predeterminado" es para teclas de acceso rápido que deben de funcionar independientemente de lo que en Aegisub tenga actualmente el foco del teclado. Las teclas de acceso rápido configuradas de forma predeterminada se reemplazan por categorías más específicas cuando corresponde.  
 
 El grupo "Siempre" establece teclas de acceso rápido habilitadas por el modo Medusa, que se aplican en todas partes del programa y anulan todas las demás pulsaciones de teclas, incluida la escritura normal en cuadros de edición.
 
@@ -295,13 +310,13 @@ Todos los demás contextos de teclas de acceso rápido deben explicarse por sí 
 
 Para modificar una tecla de acceso rápido, primero haga clic en la fila para seleccionarla, luego haga clic en el campo de tecla de acceso rápido de la fila y luego presione las teclas que deberían activar el comando. Acepte la nueva tecla de acceso rápido haciendo clic en otra fila.
 
-Para agregar una nueva tecla de acceso rápido, seleccione el contexto al que desea agregar la tecla de acceso rápido y luego haga clic en el botón Nuevo. Ingrese el [nombre del comando]({{<relref path="Commands" lang="en">}}), luego configure la tecla de acceso rápido como cuando los editó.
+Para agregar una nueva tecla de acceso rápido, seleccione el contexto al que desea agregar la tecla de acceso rápido y luego haga clic en el botón Nuevo. Ingrese el [nombre del comando]({{<relref path="Commands" lang="en">}}), luego configure la tecla de acceso rápido como cuando se las edita.
 
-## Respaldo
+## Copia de seguridad
 
 ![preferences-backup](/img/3.2/preferences-backup.png#center)
 
-### Guardar automático
+### Guardado automático
 
 Permitir
 : Si está habilitado, Aegisub guardará periódicamente una copia del script en el que está trabajando en la ruta de guardado automático.
@@ -309,16 +324,15 @@ Permitir
 Intervalo en segundos
 : ¿Con qué frecuencia Aegisub debe guardar automáticamente?
 
-Camino
-: decide dónde guardar las copias guardadas automáticamente de los scripts en los que estás trabajando. De forma predeterminada, establezca `autoguardado` en su directorio `?user` de Aegisub (consulte la
-   [Aegisub_path_specifiers]({{<relref path="Aegisub_path_specifiers" lang="en">}}) página para más detalles).
+Ruta
+: decide dónde guardar las copias guardadas automáticamente de los scripts en los que estás trabajando. De forma predeterminada, establece `autoguardado` en su directorio `?user` de Aegisub (consulte la página [Aegisub_path_specifiers]({{<relref path="Aegisub_path_specifiers" lang="en">}}) para más detalles).
 
 Guardado automático después de cada cambio
 : Si está habilitado, Aegisub guardará el archivo después de cada cambio realizado. Tenga en cuenta que esto actualmente causa algunos problemas con el sistema de deshacer.
 
-### Respaldo automático
+### Copias de seguridad automáticas
 
-Permitir
+Activar
 : Si está habilitado, Aegisub guardará una copia de seguridad de cada script que abra inmediatamente al abrirlo. De forma predeterminada, se guarda en `?user/autoback/`, pero esto se puede cambiar (ver más abajo).
 
 Ruta
@@ -328,23 +342,23 @@ Ruta
 
 ![preferences-automation](/img/3.2/preferences-automation.png#center)
 
-Camino básico
+Ruta base
 : un directorio base donde se colocan los scripts de automatización no cargados automáticamente. Se utiliza sólo para guardar rutas a archivos de script en los subtítulos.
 
-incluir ruta
+Ruta de inclusión
 : Lista de directorios donde se buscan archivos y módulos incluidos. Los directorios están separados por un carácter de barra vertical, `|`.
 
 Ruta de carga automática
 : Lista de directorios en los que se buscan scripts al inicio, que luego se cargan automáticamente. Los directorios están separados por un carácter de barra vertical, `|`.
 
-Nivel de seguimiento
+Nivel de traza
 : Cuando un script envía un mensaje a la consola de depuración, también puede especificar un nivel de seguimiento. Si el nivel de seguimiento de un mensaje es inferior al valor proporcionado aquí, el mensaje no se registra. Los nombres dados a los niveles son sólo sugerencias y no tienen ningún efecto en la ejecución del script.
    (es decir, un mensaje de nivel "Fatal" no hará que el script finalice).
 
 Tarea prioritaria
 : Prioridad dada al hilo de ejecución del script. Si está en un sistema de un solo núcleo/una sola CPU, tener esto a un nivel más bajo de lo normal hará que otros programas respondan mejor mientras los scripts de ejecución prolongada estén activos.
 
-Recarga automática al exportar
+Autorecargar al exportar
 : Recarga automáticamente los conjuntos de scripts especificados al [Exportar]({{<relref path="Exporting" lang="en">}}) Se abre el diálogo. En ese caso tendrás que pasar a la ventana [Automation/Manager]({{<relref path="Automation/Manager" lang="en">}}) y determinar la causa del error.
 
 ## Audio avanzado
