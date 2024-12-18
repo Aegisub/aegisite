@@ -90,13 +90,14 @@ degrees (360 degrees to a full circle) and may be negative or larger than
 when <a href=/docs/latest/ass_tags/#animatedtransform>animated transforms</a> are involved).</dd><dt>Spacing:</dt><dd>Controls the horizontal spacing between letters. 0 means the font
 defaults are used. May be negative for less spacing, or positive for more.
 The value is the additional gap in pixels between each character; whether
-these are script pixels or video pixels is not well defined.</dd><dt>Encoding:</dt><dd>Controls which codepage is used to map codepoints to glyphs; it has
-nothing to do with the actual text encoding of the script. This is only
-meaningful on Windows using VSFilter, where it is used to get some old
-(particularly Japanese) fonts without proper Unicode mappings to render
-properly. On other systems and renderers, Freetype2 provides the proper
-mappings. If you didn&rsquo;t understand a word of the above, pretend this
-setting doesn&rsquo;t exist, as it is rarely important.</dd><dt>Preview:</dt><dd>Shows a preview of what the text will look like using the current style
+these are script pixels or video pixels is not well defined.</dd><dt>Encoding:</dt><dd>Limits font selection to only those fonts declaring support for the set
+legacy Windows codepage. All valid values are listed by Microsoft in
+<a href=https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-wmf/0d0b32ac-a836-4bd2-a112-b6000a1b4fc9>this page</a>.
+If it is set to <code>1</code> (default charset) font selection is unlimited.<br>This may have been useful once in times long past, but today you SHOULD NOT set this to anything but <code>1</code>.
+To select the desired fonts, specify their correct, unique name.
+Furthermore, since libass (as of 0.17.1) does not yet fully support the Encoding field,
+the result you get during authoring for values other than <code>1</code> might be different
+to what viewers get during playback.<br>This has nothing to do with the encoding of the actual text.</dd><dt>Preview:</dt><dd>Shows a preview of what the text will look like using the current style
 parameters. The text field lets you input some sample text to preview, and
 the colored box controls the color of the background.</dd></dl></dd></dl><div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between"></div><div class="docs-navigation d-flex justify-content-between"><a href=/docs/latest/video/><div class="card my-1"><div class="card-body py-2">&larr; Working with Video</div></div></a><a class=ms-auto href=/docs/latest/visual_typesetting/><div class="card my-1"><div class="card-body py-2">Visual Typesetting &rarr;</div></div></a></div></main></div></div></div><footer class="footer text-muted"><div class=container-fluid><div class=row><div class="col-lg-8 order-last order-lg-first"><ul class=list-inline><li class=list-inline-item>Powered by <a class=text-muted href=https://gohugo.io/>Hugo</a> and <a class=text-muted href=https://getdoks.org/>Doks</a>.<br>Copyright (c) AegiSite <a href=https://github.com/Aegisub/aegisite/graphs/contributors>contributors</a>.</li></ul></div><div class="col-lg-8 order-first order-lg-last text-lg-end"><ul class=list-inline><li class=list-inline-item><a href=/privacy-policy/>Privacy</a></li></ul></div></div></div></footer><script src=/js/bootstrap.min.44fc78ffe68ed681865871fdec9750ca44c6febe429bf0779d114896edde0f92b92891b983ef933484a02a2c7ceb3d1fa6392c39179350ad04197a153a2db970.js integrity="sha512-RPx4/+aO1oGGWHH97JdQykTG/r5Cm/B3nRFIlu3eD5K5KJG5g++TNISgKix86z0fpjksOReTUK0EGXoVOi25cA==" crossorigin=anonymous defer></script>
 <script src=/js/highlight.min.ce39cca46643b8f4ca5d8866112a6450f305ee8373d516503859173f9f0bed10e50403f8e8b63fb61e2248e547d92ff356a1a02eb7a955bcedffff00ac246b98.js integrity="sha512-zjnMpGZDuPTKXYhmESpkUPMF7oNz1RZQOFkXP58L7RDlBAP46LY/th4iSOVH2S/zVqGgLrepVbzt//8ArCRrmA==" crossorigin=anonymous defer></script>
