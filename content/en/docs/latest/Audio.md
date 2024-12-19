@@ -30,7 +30,7 @@ playing audio results in no sound, switching to a [different audio player]({{< r
 ### Supported formats
 
 Aegisub normally uses [FFMS2](https://github.com/FFMS/ffms2) to open audio,
-which can reliably open audio is nearly any format you can think of. On
+which can reliably open audio in nearly any format you can think of. On
 Windows, Aegisub can also use DirectShow (via Avisynth), which can be faster as
 it does not have to index the audio files before opening them. However,
 DirectShow is considerably less reliable, and extremely insane things may
