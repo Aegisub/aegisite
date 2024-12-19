@@ -1,6 +1,6 @@
 {
   "redirects": [
-     {
+    {
       "source": "/:path*",
       "has": [
         {
@@ -20,7 +20,7 @@
       ],
       "destination": "https://aegisub.org/docs/:path*/"
     },
-	{
+    {
       "source": "/:path*",
       "has": [
         {
@@ -40,7 +40,7 @@
       ],
       "destination": "https://aegisub.org/blog/:path*/"
     },
-	{
+    {
       "source": "(.*)",
       "has": [
         {
@@ -50,7 +50,7 @@
       ],
       "destination": "https://aegisub.org/downloads/"
     },
-	{
+    {
       "source": "(.*)",
       "has": [
         {
@@ -58,7 +58,12 @@
           "value": "devel.aegisub.org"
         }
       ],
-      "destination": "https://github.com/Aegisub/Aegisub"
+      "destination": "https://github.com/TypesettingTools/Aegisub"
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "HUGO_VERSION": "0.110.0"
+    }
+  }
 }
