@@ -79,10 +79,10 @@ footer: >-
 # copyRight: Copyright (c) 2020-2021 Henk Verlinde
 
 # Alert
-alert: false
+alert: true
 alertDismissable: true
 alertText: >-
-  Check out the cool new Aegisub Homepage!
+  <a href="/blog/aegisub-3.4.0-released/">Aegisub 3.4.0 released!</a>
 
 # Edit Page
 # repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ] is used for building the edit link based on git hoster
