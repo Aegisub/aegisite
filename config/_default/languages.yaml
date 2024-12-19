@@ -6,6 +6,14 @@ en:
     languageISO: EN
     languageTag: en-US
 
+es-us:
+  languageName: Español
+  contentDir: content/es-us
+  weight: 15
+  params:
+    languageISO: ES
+    languageTag: es-US
+
 zh-cn:
   languageName: 简体中文
   contentDir: content/zh-cn
