@@ -58,7 +58,8 @@
           "value": "devel.aegisub.org"
         }
       ],
-      "destination": "https://github.com/Aegisub/Aegisub"
+      "destination": "https://github.com/TypesettingTools/Aegisub"
     }
-  ]
+  ],
+
 }
