@@ -23,7 +23,7 @@ As of version 3.4.0, the following information is recorded when a check for upda
 Date and time are used to group the statistics by time periods and to see trends across time. For example, to track the adoption rate of a new version.
 
 ### IP Address
-IP addresses are used to are aggregated into geographical regions to track where Aegisub is being used the most, to target localisation efforts, and possibly to select locations of download mirrors at a later point in time. IP addresses are also correlated to group all checks performed by a single user, to approximate the number of users we have. All of this is completely automated and we do not attempt to identify individuals, only count them anonymously as part of a statistics.
+IP addresses are stored and aggregated into geographical regions to track where Aegisub is being used the most, to target localisation efforts, and possibly to select locations of download mirrors at a later point in time. IP addresses are also correlated to group all checks performed by a single user, to approximate the number of users we have. All of this is completely automated and we do not attempt to identify individuals, only count them anonymously as part of a statistics.
 
 ### Version
 The Aegisub version is used primarily to send only relevant update information to you, and not send update information for, for example, an unstable pre-release version you aren't using. It is also used to gauge how new releases are adopted.
