@@ -808,6 +808,6 @@ previous_versions:
 
     - filename: aegisub-3.4.0.tar.xz
       type: Source
-      link: https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.0/aegisub-3.4.0.tar.xz
-      md5: d80e852c34811add358c06d77f5cd40d
-      sha512: 54f825e52f238fef8d5cc31c37436e21355aee27883347f905271e5d2a8ff2a77e1b67d5aef38b0f8468bd0bad851fe944e02de27ec96310b902fbe5b1086722
+      link: https://github.com/TypesettingTools/Aegisub/archive/refs/tags/v3.4.0.tar.gz
+      md5: 850643f17021294aa14891a3fb200888
+      sha512: 364f56aece74b14f37d796e364ffcc5b9d8ab5816f8e118b7f44d2d4e3bdf8afa0731c36995269dd953d2f532e7a905729bcbfa907c672a8eb91b68565c1ade0
