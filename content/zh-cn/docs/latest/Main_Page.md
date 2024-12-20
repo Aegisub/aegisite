@@ -7,7 +7,7 @@ weight: 1000
 ---
 
 欢迎来到 Aegisub 手册。要获取更多关于此程序的信息，请查看我们的 [关于]({{< relref "About" >}}) 页面，或浏览左侧栏中各个主题的文章。
-与开发、编译 Aegisub 相关的文档位于 [Bug 跟踪系统](https://github.com/Aegisub/Aegisub/issues) 上。
+与开发、编译 Aegisub 相关的文档位于 [Bug 跟踪系统](https://github.com/TypesettingTools/Aegisub/issues) 上。
 
 ## 开始
 
