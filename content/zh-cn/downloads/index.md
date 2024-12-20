@@ -4,7 +4,7 @@ type: downloads
 layout: Downloads
 ---
 
-[最新的版](https://github.com/Aegisub/Aegisub/releases/latest)本是 **{{< current-version-number >}}**，发布于 {{< current-version-date >}}
+[最新的版](https://github.com/TypesettingTools/Aegisub/releases/latest)本是 **{{< current-version-number >}}**，发布于 {{< current-version-date >}}
 
 阅读 [更新日志]({{< relref path="changelog" lang="en" >}}{{< current-version-number >}}) 了解更新内容
 
