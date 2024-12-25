@@ -558,7 +558,7 @@ Portaudio 设备
     2.40来渲染字幕。这是Aegisub针对ASS格式字幕文件使用的标准渲染器。
 
   *libass*
-  : 使用[libass](http://code.google.com/p/libass/)来渲染字幕。
+  : 使用[libass](https://github.com/libass/libass)来渲染字幕。
     libass渲染速度远快于VSFilter，并且libass一定程度上可以跨平台使用。
     它和VSFilter的渲染方式有些不同，但不幸的是，libass在Windows平台上有一些已知的字体渲染BUG。
     鉴于越来越多的人开始使用libass，如果你在制作复杂的软字幕，那么最好同时用libass和VSFilter检查一下你的字幕渲染情况。

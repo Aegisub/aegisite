@@ -645,7 +645,7 @@ Subtitles provider
     renderer which defines the ASS format used by Aegisub.
 
   _libass_
-  : Use [libass](http://code.google.com/p/libass/) to render subtitles.
+  : Use [libass](https://github.com/libass/libass) to render subtitles.
     libass is far faster than VSFilter and (somewhat) cross-platform, but
     unfortunately still has some rendering differences from VSFilter and
     font-related issues on Windows. If you are doing complex typesetting
