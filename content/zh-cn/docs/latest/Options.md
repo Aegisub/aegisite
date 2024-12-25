@@ -409,7 +409,7 @@ name]({{< relref "Commands" >}}), then set the hotkey as when editing them.
     推荐还是用下面的FFMS2载入音频。
 
   *FFmpegSource*
-  : 使用 [FFMS2](http://code.google.com/p/ffmpegsource/) 载入音频。
+  : 使用 [FFMS2](https://github.com/FFMS/ffms2) 载入音频。
     比使用DirectShowSource()方式载入更加可靠，但是载入速度相对会慢一些。缘于FFMS2需要先索引一遍媒体文件，通常这
     会花费一些时间，时间长短视文件大小以及电脑性能而异。
 
@@ -543,7 +543,7 @@ Portaudio 设备
     同样的，如果你不明觉厉的话，请下移目光↓
 
   *FFmpegSource*
-  : 使用[FFMS2](http://code.google.com/p/ffmpegsource/)来载入视频。
+  : 使用[FFMS2](https://github.com/FFMS/ffms2)来载入视频。
     如果你看不懂上面在说些什么，那么FFMS2就是你最好的选择。它支持绝大多数常见视频格式并且通常极为可靠。
     但对于较大的媒体文件可能会花费几十秒乃至几分钟的索引时间。
 

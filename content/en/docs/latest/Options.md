@@ -481,7 +481,7 @@ Audio provider
     be opened with Import().
 
   _FFmpegSource_
-  : Uses [FFMS2](http://code.google.com/p/ffmpegsource/) to load audio.
+  : Uses [FFMS2](https://github.com/FFMS/ffms2) to load audio.
     Generally more reliable than opening via DirectShowSource, but slower
     due to that it has to index files first.
 
@@ -631,7 +631,7 @@ Video provider
     scripts.
 
   _FFmpegSource_
-  : Uses [FFMS2](http://code.google.com/p/ffmpegsource/) to load video.
+  : Uses [FFMS2](https://github.com/FFMS/ffms2) to load video.
     Generally the most reliable option.
 
 Subtitles provider
