@@ -353,7 +353,7 @@ name]({{< relref "Commands" >}}), then set the hotkey as when editing them.
   对于Windows 7系统。实际的默认路径为
   `%UserProfile%\AppData\Roaming\Aegisub\autoback`
   （对于其他系统，请参考[Aegisub path
-  specifiers]({{< relref "Aegisub_path_specifiers" >}})) ）
+  specifiers]({{< relref "Aegisub_path_specifiers" >}}) ）
 
 ## 自动化
 
