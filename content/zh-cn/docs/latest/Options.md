@@ -402,7 +402,7 @@ name]({{< relref "Commands" >}}), then set the hotkey as when editing them.
 : 选择使用何种后台处理方式来载入音频。目前提供两种可选方式。
 
   *avisynth* (仅限Windows)
-  : 使用 [Avisynth](http://www.avisynth.org) 载入音频。
+  : 使用 [Avisynth](http://avisynth.nl/index.php/Main_Page) 载入音频。
     所有类型的文件都将会在Avisynth脚本中以DirectShowSource()方式被载入，但\*.avs脚本文件会以Import()方式被载入。
     译者注：如果你懂得编写AVS脚本的话，甚至可以使用LwlibavAudioSource()等五花八门的方式载入音频文件。
     但如果你不懂如何写AVS，这个方式就不要考虑了。因为DirectShowSource()这种"高级"滤镜实在是和人品有关，
@@ -532,7 +532,7 @@ Portaudio 设备
   视实际情况可能存在以下选项：
 
   *avisynth* (仅限Windows)
-  : 使用[Avisynth](http://www.avisynth.org)来载入视频。
+  : 使用[Avisynth](http://avisynth.nl/index.php/Main_Page)来载入视频。
     Avisynth支持载入绝大多数常见格式的媒体以及\*.d2v文件（注：d2v文件是DVD
     VOB媒体文件的索引文件，
     但对\*.d2v文件的支持需要正确安装相关Avisynth源滤镜，即DGSource）。

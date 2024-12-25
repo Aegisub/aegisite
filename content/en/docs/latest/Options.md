@@ -476,7 +476,7 @@ Audio provider
   methods.
 
   _avisynth_ (Windows only)
-  : Uses [Avisynth](http://www.avisynth.org) to load audio. All file types
+  : Uses [Avisynth](http://avisynth.nl/index.php/Main_Page) to load audio. All file types
     will be loaded with DirectShowSource(), except for AVS files which will
     be opened with Import().
 
@@ -621,7 +621,7 @@ Video provider
   operating system you are running under. The following alternatives exist:
 
   _avisynth_ (Windows only)
-  : Uses [Avisynth](http://www.avisynth.org) to load video. Versatile,
+  : Uses [Avisynth](http://avisynth.nl/index.php/Main_Page) to load video. Versatile,
     supports loading almost all common formats as well as .d2v files
     (indexed DVD VOBs) if the correct plugin is supplied. Note that Aegisub
     can install its own avisynth.dll instead of using your system
