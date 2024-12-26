@@ -9,7 +9,7 @@ type: simple-page
 </p>
 <p>
 <br />
-<a href="3.2/" class="btn btn-outline-secondary" role="button">3.2 手册</a> 3.2版本的用户手册，正在翻译。
+<a href="3.2/" class="btn btn-outline-secondary" role="button">3.2 手册</a> 3.2版本的用户手册。
 </p>
 <p>
 <p>
