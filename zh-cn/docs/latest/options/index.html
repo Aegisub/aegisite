@@ -81,11 +81,11 @@ active.</dd><dt>自动重新载入导出</dt><dd>Automatically reloads the speci
 <a href=/zh-cn/docs/latest/exporting/>Exporting</a> dialogue is opened. In that
 case you will have to enter the
 <a href=/zh-cn/docs/latest/automation/manager/>Automation/Manager</a> window and
-determine the cause of the error.</dd></dl><h2 id=高级音频设置>高级音频设置 <a href=#%e9%ab%98%e7%ba%a7%e9%9f%b3%e9%a2%91%e8%ae%be%e7%bd%ae class=anchor aria-hidden=true>#</a></h2><p><img class=img-fluid loading=lazy src=/img/3.2/preferences-advanced-audio.png#center width=642 height=617 alt=preferences-advanced-audio></p><dl><dt>音频来自</dt><dd>选择使用何种后台处理方式来载入音频。目前提供两种可选方式。<dl><dt><em>avisynth</em> (仅限Windows)</dt><dd>使用 <a href=http://www.avisynth.org>Avisynth</a> 载入音频。
+determine the cause of the error.</dd></dl><h2 id=高级音频设置>高级音频设置 <a href=#%e9%ab%98%e7%ba%a7%e9%9f%b3%e9%a2%91%e8%ae%be%e7%bd%ae class=anchor aria-hidden=true>#</a></h2><p><img class=img-fluid loading=lazy src=/img/3.2/preferences-advanced-audio.png#center width=642 height=617 alt=preferences-advanced-audio></p><dl><dt>音频来自</dt><dd>选择使用何种后台处理方式来载入音频。目前提供两种可选方式。<dl><dt><em>avisynth</em> (仅限Windows)</dt><dd>使用 <a href=http://avisynth.nl/index.php/Main_Page>Avisynth</a> 载入音频。
 所有类型的文件都将会在Avisynth脚本中以DirectShowSource()方式被载入，但*.avs脚本文件会以Import()方式被载入。
 译者注：如果你懂得编写AVS脚本的话，甚至可以使用LwlibavAudioSource()等五花八门的方式载入音频文件。
 但如果你不懂如何写AVS，这个方式就不要考虑了。因为DirectShowSource()这种"高级"滤镜实在是和人品有关，
-推荐还是用下面的FFMS2载入音频。</dd><dt><em>FFmpegSource</em></dt><dd>使用 <a href=http://code.google.com/p/ffmpegsource/>FFMS2</a> 载入音频。
+推荐还是用下面的FFMS2载入音频。</dd><dt><em>FFmpegSource</em></dt><dd>使用 <a href=https://github.com/FFMS/ffms2>FFMS2</a> 载入音频。
 比使用DirectShowSource()方式载入更加可靠，但是载入速度相对会慢一些。缘于FFMS2需要先索引一遍媒体文件，通常这
 会花费一些时间，时间长短视文件大小以及电脑性能而异。</dd></dl><p>值得注意的是，无论这里如何设置，对于WAV文件，PCM WAV
 Reader都将优先被使用。</p></dd><dt>音频播放器</dt><dd>使用何种方案来播放音频，选项因平台而异。<dl><dt><em>DirectSound</em> (仅限Windows)</dt><dd>使用"Microsoft
@@ -119,7 +119,7 @@ GetLeftChannel：仅提取左声道。 GetRightChannel：仅提取右声道。</
 若使用硬件声卡完成这一转换，则可潜在提升音频表现力以及修复一些播放问题。
 （原作者说软件播放器转换不行。这玄学吗？）</dd></dl><h3 id=ffmpegsource>FFmpegSource <a href=#ffmpegsource class=anchor aria-hidden=true>#</a></h3><dl><dt>音频索引错误处理模式</dt><dd>若索引音频时出现错误，则有下面几种处理模式可选~<dl><dt><em>忽略</em></dt><dd>忽略错误并且继续解码文件。这个模式可以让你打开一些受损的媒体文件，但可能导致音画不同步。</dd><dt><em>清除</em></dt><dd>假设媒体文件中不存在这条有错误的音轨。</dd><dt><em>停止</em> (默认值)</dt><dd>停止索引文件并且返回错误发生前的所有正常音轨数据。这是Aegisub的默认值，因为在音轨末端遭遇到受损的音频数据是很常见的。
 （笔者表示貌似不常见 QAQ ）</dd><dt><em>取消</em></dt><dd>直接取消打开整个媒体文件。</dd></dl></dd><dt>总是索引所有音轨</dt><dd>一旦禁用，打开视频文件只会索引视频轨道，音轨文件则还需要手动再载入一次。</dd></dl><h3 id=portaudio>Portaudio <a href=#portaudio class=anchor aria-hidden=true>#</a></h3><dl><dt>Portaudio 设备</dt><dd>当使用PortAudio输出音频时可在这里选择输出音频的设备。</dd></dl><h2 id=高级视频设置>高级视频设置 <a href=#%e9%ab%98%e7%ba%a7%e8%a7%86%e9%a2%91%e8%ae%be%e7%bd%ae class=anchor aria-hidden=true>#</a></h2><p><img class=img-fluid loading=lazy src=/img/3.2/preferences-advanced-video.png#center width=642 height=617 alt=preferences-advanced-video></p><dl><dt>视频来自</dt><dd>使用何种方式来载入视频。可用选项取决于你安装的Aegisub版本和运行Aegisub的平台。
-视实际情况可能存在以下选项：<dl><dt><em>avisynth</em> (仅限Windows)</dt><dd>使用<a href=http://www.avisynth.org>Avisynth</a>来载入视频。
+视实际情况可能存在以下选项：<dl><dt><em>avisynth</em> (仅限Windows)</dt><dd>使用<a href=http://avisynth.nl/index.php/Main_Page>Avisynth</a>来载入视频。
 Avisynth支持载入绝大多数常见格式的媒体以及*.d2v文件（注：d2v文件是DVD
 VOB媒体文件的索引文件，
 但对*.d2v文件的支持需要正确安装相关Avisynth源滤镜，即DGSource）。
@@ -127,13 +127,13 @@ VOB媒体文件的索引文件，
 最后提醒一句：若使用Avisynth载入视讯，则只推荐载入*.avi *.d2v
 *.avs文件以获(fang)得(zhi)最(ren)佳(pin)体(wen)验(ti)。
 当然，如果你会编写AVS脚本，就当上面是一堆废话吧~(=・ω・=)
-同样的，如果你不明觉厉的话，请下移目光↓</dd><dt><em>FFmpegSource</em></dt><dd>使用<a href=http://code.google.com/p/ffmpegsource/>FFMS2</a>来载入视频。
+同样的，如果你不明觉厉的话，请下移目光↓</dd><dt><em>FFmpegSource</em></dt><dd>使用<a href=https://github.com/FFMS/ffms2>FFMS2</a>来载入视频。
 如果你看不懂上面在说些什么，那么FFMS2就是你最好的选择。它支持绝大多数常见视频格式并且通常极为可靠。
 但对于较大的媒体文件可能会花费几十秒乃至几分钟的索引时间。</dd></dl></dd><dt>字幕来自</dt><dd>选择使用何种方式来渲染字幕。
 如果你自行安装了其他的CSRI字幕渲染器，例如 VSFilterMod 或
 xy-VSFilter，则它们都会自动出现在可选列表中。
 （安装这两种渲染器只需要把其对应的DLL文件放入Aegisub安装目录下的CSRI目录内即可）<dl><dt><em>CSRI/vsfilter_textsub</em> (仅限Windows)</dt><dd>使用VSFilter
-2.40来渲染字幕。这是Aegisub针对ASS格式字幕文件使用的标准渲染器。</dd><dt><em>libass</em></dt><dd>使用<a href=http://code.google.com/p/libass/>libass</a>来渲染字幕。
+2.40来渲染字幕。这是Aegisub针对ASS格式字幕文件使用的标准渲染器。</dd><dt><em>libass</em></dt><dd>使用<a href=https://github.com/libass/libass>libass</a>来渲染字幕。
 libass渲染速度远快于VSFilter，并且libass一定程度上可以跨平台使用。
 它和VSFilter的渲染方式有些不同，但不幸的是，libass在Windows平台上有一些已知的字体渲染BUG。
 鉴于越来越多的人开始使用libass，如果你在制作复杂的软字幕，那么最好同时用libass和VSFilter检查一下你的字幕渲染情况。</dd></dl></dd><dt>强制BT.601</dt><dd>由于VSFilter的兼容性问题，假定所有YUV色彩格式输入的的视频均为BT.601色域。<p>当VSFilter被用作播放器的DirectShow字幕滤镜时，VSFilter总默认将渲染好的字幕从RGB色彩格式转换为BT.601色域的YUV格式。
