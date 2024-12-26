@@ -42,7 +42,7 @@ Regular Expression match
   reading the [perlretut manual page](http://perldoc.perl.org/perlretut.html) or
   googling. For a reference of the exact syntax supported by Aegisub, see the
   [wxWidgets regular expressions reference
-  page](http://www.wxwidgets.org/manuals/stable/wx_wxresyn.html).
+  page](https://docs.wxwidgets.org/stable/overview_resyntax.html).
 
 ### In field
 

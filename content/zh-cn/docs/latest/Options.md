@@ -402,14 +402,14 @@ name]({{< relref "Commands" >}}), then set the hotkey as when editing them.
 : 选择使用何种后台处理方式来载入音频。目前提供两种可选方式。
 
   *avisynth* (仅限Windows)
-  : 使用 [Avisynth](http://www.avisynth.org) 载入音频。
+  : 使用 [Avisynth](http://avisynth.nl/index.php/Main_Page) 载入音频。
     所有类型的文件都将会在Avisynth脚本中以DirectShowSource()方式被载入，但\*.avs脚本文件会以Import()方式被载入。
     译者注：如果你懂得编写AVS脚本的话，甚至可以使用LwlibavAudioSource()等五花八门的方式载入音频文件。
     但如果你不懂如何写AVS，这个方式就不要考虑了。因为DirectShowSource()这种"高级"滤镜实在是和人品有关，
     推荐还是用下面的FFMS2载入音频。
 
   *FFmpegSource*
-  : 使用 [FFMS2](http://code.google.com/p/ffmpegsource/) 载入音频。
+  : 使用 [FFMS2](https://github.com/FFMS/ffms2) 载入音频。
     比使用DirectShowSource()方式载入更加可靠，但是载入速度相对会慢一些。缘于FFMS2需要先索引一遍媒体文件，通常这
     会花费一些时间，时间长短视文件大小以及电脑性能而异。
 
@@ -532,7 +532,7 @@ Portaudio 设备
   视实际情况可能存在以下选项：
 
   *avisynth* (仅限Windows)
-  : 使用[Avisynth](http://www.avisynth.org)来载入视频。
+  : 使用[Avisynth](http://avisynth.nl/index.php/Main_Page)来载入视频。
     Avisynth支持载入绝大多数常见格式的媒体以及\*.d2v文件（注：d2v文件是DVD
     VOB媒体文件的索引文件，
     但对\*.d2v文件的支持需要正确安装相关Avisynth源滤镜，即DGSource）。
@@ -543,7 +543,7 @@ Portaudio 设备
     同样的，如果你不明觉厉的话，请下移目光↓
 
   *FFmpegSource*
-  : 使用[FFMS2](http://code.google.com/p/ffmpegsource/)来载入视频。
+  : 使用[FFMS2](https://github.com/FFMS/ffms2)来载入视频。
     如果你看不懂上面在说些什么，那么FFMS2就是你最好的选择。它支持绝大多数常见视频格式并且通常极为可靠。
     但对于较大的媒体文件可能会花费几十秒乃至几分钟的索引时间。
 
@@ -558,7 +558,7 @@ Portaudio 设备
     2.40来渲染字幕。这是Aegisub针对ASS格式字幕文件使用的标准渲染器。
 
   *libass*
-  : 使用[libass](http://code.google.com/p/libass/)来渲染字幕。
+  : 使用[libass](https://github.com/libass/libass)来渲染字幕。
     libass渲染速度远快于VSFilter，并且libass一定程度上可以跨平台使用。
     它和VSFilter的渲染方式有些不同，但不幸的是，libass在Windows平台上有一些已知的字体渲染BUG。
     鉴于越来越多的人开始使用libass，如果你在制作复杂的软字幕，那么最好同时用libass和VSFilter检查一下你的字幕渲染情况。

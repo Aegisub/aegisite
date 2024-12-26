@@ -52,5 +52,5 @@ Note that `karaskel.lua`, `utils.lua` and `unicode.lua` do not have to be `requi
 [luabins](https://github.com/agladysh/luabins)
 : A serialization library for saving tables to extradata or config files
 
-[lfs](http://keplerproject.github.io/luafilesystem/)
+[lfs](https://lunarmodules.github.io/luafilesystem/)
 : Some assorted filesystem functionality not supported by the Lua standard library.
