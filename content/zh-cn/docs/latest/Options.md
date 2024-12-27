@@ -317,8 +317,6 @@ To add a new hotkey, select the context you want to add the hotkey to,
 then click the New button. Enter the [command
 name]({{< relref "Commands" >}}), then set the hotkey as when editing them.
 
-**译者注：由于一个Bug，3.x版本添加热键时需切换为英文界面再添加，这个Bug会在3.3版时被修复。**
-
 ## 备份
 
 ![preferences-backup](/img/3.2/preferences-backup.png#center)
