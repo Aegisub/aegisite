@@ -82,7 +82,7 @@ footer: >-
 alert: true
 alertDismissable: true
 alertText: >-
-  <a href="/blog/aegisub-3.4.0-released/">Aegisub 3.4.0 发布了！</a>
+  <a href="/zh-cn/blog/aegisub-3.4.0-发布了/">Aegisub 3.4.0 发布了！</a>
 
 # Edit Page
 # repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ] is used for building the edit link based on git hoster
