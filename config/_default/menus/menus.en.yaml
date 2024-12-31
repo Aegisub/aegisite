@@ -11,7 +11,7 @@ main:
     url: /docs/
     weight: 20
   - name: Bug Tracker
-    url: https://github.com/Aegisub/Aegisub/issues
+    url: https://github.com/TypesettingTools/Aegisub/issues
     weight: 30
   - name: Blog
     url: /blog/
@@ -39,7 +39,7 @@ social:
       0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09
       1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44
       7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-    url: 'https://github.com/Aegisub/Aegisub'
+    url: 'https://github.com/TypesettingTools/Aegisub'
     weight: 20
 
 

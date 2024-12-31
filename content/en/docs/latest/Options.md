@@ -476,12 +476,12 @@ Audio provider
   methods.
 
   _avisynth_ (Windows only)
-  : Uses [Avisynth](http://www.avisynth.org) to load audio. All file types
+  : Uses [Avisynth](http://avisynth.nl/index.php/Main_Page) to load audio. All file types
     will be loaded with DirectShowSource(), except for AVS files which will
     be opened with Import().
 
   _FFmpegSource_
-  : Uses [FFMS2](http://code.google.com/p/ffmpegsource/) to load audio.
+  : Uses [FFMS2](https://github.com/FFMS/ffms2) to load audio.
     Generally more reliable than opening via DirectShowSource, but slower
     due to that it has to index files first.
 
@@ -621,7 +621,7 @@ Video provider
   operating system you are running under. The following alternatives exist:
 
   _avisynth_ (Windows only)
-  : Uses [Avisynth](http://www.avisynth.org) to load video. Versatile,
+  : Uses [Avisynth](http://avisynth.nl/index.php/Main_Page) to load video. Versatile,
     supports loading almost all common formats as well as .d2v files
     (indexed DVD VOBs) if the correct plugin is supplied. Note that Aegisub
     can install its own avisynth.dll instead of using your system
@@ -631,7 +631,7 @@ Video provider
     scripts.
 
   _FFmpegSource_
-  : Uses [FFMS2](http://code.google.com/p/ffmpegsource/) to load video.
+  : Uses [FFMS2](https://github.com/FFMS/ffms2) to load video.
     Generally the most reliable option.
 
 Subtitles provider
@@ -645,7 +645,7 @@ Subtitles provider
     renderer which defines the ASS format used by Aegisub.
 
   _libass_
-  : Use [libass](http://code.google.com/p/libass/) to render subtitles.
+  : Use [libass](https://github.com/libass/libass) to render subtitles.
     libass is far faster than VSFilter and (somewhat) cross-platform, but
     unfortunately still has some rendering differences from VSFilter and
     font-related issues on Windows. If you are doing complex typesetting

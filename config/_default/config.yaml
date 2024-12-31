@@ -56,7 +56,7 @@ minify:
 module:
   hugoVersion:
     extended: true
-    min: 0.80.0
+    min: 0.110.0
     max: ''
   mounts:
     - source: assets

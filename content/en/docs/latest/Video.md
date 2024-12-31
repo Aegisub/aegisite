@@ -21,7 +21,7 @@ use a dummy (mockup, blank) video, press _Use dummy video_.
 
 ### Supported formats
 
-Aegisub normally uses [FFMS2](http://code.google.com/p/ffmpegsource/) to open
+Aegisub normally uses [FFMS2](https://github.com/FFMS/ffms2) to open
 video, which supports opening nearly all common A/V formats, and many uncommon
 ones. For a full list of codecs supported, see [FFmpeg](http://ffmpeg.org/) or
 [Libav](http://libav.org/) documentation. Note that FFMS2 current has issues

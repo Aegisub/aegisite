@@ -19,7 +19,7 @@ Aegisub不是一个视频（或媒体）播放器，但它依然支持载入多�
 
 ### 支持格式
 
-Aegisub通常使用[FFMS2](http://code.google.com/p/ffmpegsource/)来打开视频，它基本上支持所有常见的音频和视频格式和许多不常见的格式。如果你要查看完整的支持的编解码器的列表，请参阅[FFmpeg](http://ffmpeg.org/)
+Aegisub通常使用[FFMS2](https://github.com/FFMS/ffms2)来打开视频，它基本上支持所有常见的音频和视频格式和许多不常见的格式。如果你要查看完整的支持的编解码器的列表，请参阅[FFmpeg](http://ffmpeg.org/)
 或者[Libav](http://libav.org/)的文档。注意：FFMS2当前无法正常处理交错的H.264编码的视频。
 
 在Windows平台，您可以使用[Avisynth](http://avisynth.org/mediawiki/Main_Page)来取代FFMS2。
