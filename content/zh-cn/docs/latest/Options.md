@@ -378,13 +378,6 @@ name]({{< relref "Commands" >}}), then set the hotkey as when editing them.
   the execution of the script. (i.e. a "Fatal" level message will
   not cause the script to terminate.)
 
-线程优先级
-译者注：3.x版没这个选项。
-: Priority given to the script execution thread. If you're on a
-  single-core/single-CPU system having this on lower than normal will
-  make other programs more responsive while long-running scripts are
-  active.
-
 自动重新载入导出
 : Automatically reloads the specified sets of scripts when the
   [Exporting]({{< relref "Exporting" >}}) dialogue is opened. In that
