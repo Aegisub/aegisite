@@ -1,1 +1,1 @@
-{{ .Site.Data.version.release_date }}
+{{ .Site.Data.version.release_date | time.Format site.Params.dateFormat }}
