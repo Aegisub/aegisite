@@ -10,7 +10,7 @@ En codificación digital, existen dos métodos principales de incluir subtítulo
 
 ## Incrustación/Hardsubbing
 
-Hardsubbing es un método que "graba" subtítulos en la parte fotográfica de una película. Los subtítulos encrustados digitales son muy parecidos a las cintas VHS subtituladas; los subtítulos no pueden apagarse.
+Hardsubbing es un método que "graba" subtítulos en la parte fotográfica de una película. Los subtítulos incrustados digitales son muy parecidos a las cintas VHS subtituladas; los subtítulos no pueden apagarse.
 
 ### Ventajas del Hardsubbing
 
@@ -64,7 +64,7 @@ Subtítulos con efectos añadidos (típicamente para karaoke) requieren mucho ti
 
 El método que debe elegir depende en gran medida de su audiencia. ¿Tendrán dispositivos de reproducción relativamente nuevos y potentes? ¿Serán posiblemente capaces de instalar algo para reproducir subs sueltos si no lo tienen? ¿Es su destino un formato digital (Matroska, DVD, etc.) o se imprimirá en cinta?
 
-Si bien cada situación será diferente, puede utilizar algunos de los siguientes sugerencias como guía. Estos se basan en realizar un formato digital para reproducción en una computadora.
+Si bien cada situación será diferente, puede utilizar algunas de las siguientes sugerencias como guía. Estas se basan en realizar un formato digital para reproducción en una computadora.
 
 Si desea que su archivo se pueda reproducir en la mayor variedad de computadoras,
 sistemas y pequeños juguetes de plástico, querrá incrustar.
