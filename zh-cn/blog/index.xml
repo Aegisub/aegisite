@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aegisub 开发者博客 on</title><link>/zh-cn/blog/</link><description>Recent content in Aegisub 开发者博客 on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/zh-cn/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Aegisub 3.4.0 发布了</title><link>/zh-cn/blog/aegisub-3.4.0-%E5%8F%91%E5%B8%83%E4%BA%86/</link><pubDate>Wed, 18 Dec 2024 14:04:00 -0800</pubDate><guid>/zh-cn/blog/aegisub-3.4.0-%E5%8F%91%E5%B8%83%E4%BA%86/</guid><description>久违了！
+这是十年来第一个稳定版本，此版本在设计上与 3.2.2 版本相比，仅做了最小幅度的功能变更。我们的目标是发布一个适配现代操作系统的新版本，单是这项工作本身就已经非常艰巨了。在后续的版本中，我们将加入实际的功能更新，并提供更详细的版本变更日志。版本号之所以定为 3.4.0，是为了避免与标记为 3.3.x 的一些 fork 产生冲突。
+接下来，Aegisub 的开发工作将在 TypesettingTools/Aegisub 仓库中继续进行。在过去几年里，arch1t3cht 一直在维护 Aegisub 的一个主要 fork，并做了杰出的工作。现在他已获得 TypesettingTools 仓库的提交权限，可以在更加中心化的代码仓库中开展工作。我们非常希望能将各大 fork 中的工作成果整合回主仓库，欢迎大家提交 PR！
+我们已放弃支持 32 位系统。虽然 3.4.0 版本仍然可以在 Windows 7 上运行，但在后续的版本中，最低系统要求可能会提升至 Windows 10。
+默认情况下，安装程序不会安装 DependencyControl。不过，您可以在下拉菜单中选择“完整安装”来安装它。DependencyControl 为不熟悉它的用户提供了一种简便的方式，可以从 Github 上的多个代码仓库安装自动化脚本。许多用户可能不需要这项功能，尤其是考虑到它会拖慢启动速度。不过，高级用户仍然可以使用它。
+MacOS # 值得注意的是，本次发布的版本中，缺少已签名和公证的 MacOS 二进制文件。这是因为 Apple 无端拒绝将我纳入开发者计划。我不会再浪费时间与他们的官僚主义作斗争，因此如果您想要适用于 Sequoia 的 MacOS 二进制文件，请考虑：
+给 tcook@apple.com 写邮件，非常礼貌地请求他们解决此问题。 如果您认识 Apple 的员工，请非常礼貌地请求他们在内部提出此问题。 对于正在阅读此文的 Apple 员工，如果您愿意提供帮助并需要更多个人信息，请向我发送邮件（您可以在我的 Github 个人资料中找到我的邮箱地址）。
+我不打算注册一个公司来申请，也不会以旁人的名义为二进制文件签名。我只是一个普通的美国公民。既然 Apple 想要阻止我在其操作系统上发布运行的构建版本，并且连原因都不告知，我不会绕过他们的决定；他们应该改进自己的流程。
+致谢 # 感谢所有让此次发布得以成真的人。我要特别感谢以下几位：
+arch1t3cht：厥功甚伟，贡献不胜列举 ctrlctrlv：提供了赞助，并为 arch1t3cht 提供了 Mac 开发机 eli-schwartz：为所有与 Meson 相关的工作提供了帮助 FichteFoll：提供了各种各样的帮助 inkydragon：为构建系统及各种其他工作提供了帮助 jfs：迁移了 aegisub.</description></item></channel></rss>
