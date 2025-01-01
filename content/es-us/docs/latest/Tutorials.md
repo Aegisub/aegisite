@@ -48,7 +48,7 @@ Los siguientes tutoriales están disponibles para Aegisub:
 
 ## Tutoriales escritos
 
-- [Sincronizar karaoke]({{<relref path="Karaoke_Timing_Tutorial" lang="en">}}) (bajo construcción) — Ingresar la letra de una canción y agregarle cógigos de tiempo. 
+- [Sincronizar karaoke]({{<relref path="Karaoke_Timing_Tutorial" lang="en">}}) (en construcción) — Ingresar la letra de una canción y agregarle cógigos de tiempo. 
 - [Tutorial de efectos karaoke incorporados]({{<relref path="Karaoke_inline-fx" lang="en">}})
 - [Tutorial Karaoke Furigana]({{<relref path="Furigana_karaoke" lang="en">}})
 - [Plantillas de karaoke]({{<relref path="Automation/Karaoke_Templater" lang="en">}}) (incomplete) — Manera fácil de agregar efectos especiales a karaoke, desde los más básicos hasta los muy avanzados.
