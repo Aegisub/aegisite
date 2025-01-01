@@ -4,7 +4,7 @@ type: downloads
 layout: Downloads
 ---
 
-La versión de [última distribución](https://github.com/Aegisub/Aegisub/releases/latest) es **{{< current-version-number >}}**, estrenada {{< current-version-date >}}
+La versión de [última distribución](https://github.com/Aegisub/Aegisub/releases/latest) es **{{< current-version-number >}}**, publicada {{< current-version-date >}}
 
 Vea [changelog]({{< relref path="changelog/" lang="en" >}}{{< current-version-number >}}) para ver la lista de cambios.
 
