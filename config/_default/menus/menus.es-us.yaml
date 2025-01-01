@@ -70,21 +70,6 @@ docs:
     weight: 800
     identifier: automation-tutorials
 
-# docs-sidebar/downloads
-
-# docs-sidebar/changelog
-changelogs:
-  - name: '3.2'
-    weight: -32
-  - name: '3.1'
-    weight: -31
-  - name: '3.0'
-    weight: -30
-  - name: '2.1'
-    weight: -21
-  - name: '1'
-    weight: -10
-
 
 # footer/right side
 footer:
