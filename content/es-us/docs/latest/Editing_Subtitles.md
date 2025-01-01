@@ -6,9 +6,9 @@ menu:
 weight: 3000
 ---
 
-La edición de subtítulos es para qué sirve Aegisub. Esta página trata de edición básica de renglones de subtítulos; para más información de tipografía de subtítulos, véase [tipografía]({{<relref path="Typesetting" lang="en">}}). Para más información acerca de cronometrar renglones de subtítulos, véase [trabajar con audio]({{<relref path="Audio">}}).
+La edición de subtítulos es para lo que sirve Aegisub. Esta página trata sobre edición básica de renglones de subtítulos; para más información de tipografía de subtítulos, véase [tipografía]({{<relref path="Typesetting" lang="en">}}). Para más información acerca de cronometrar renglones de subtítulos, véase [trabajar con audio]({{<relref path="Audio">}}).
 
-## Abrir subtitles
+## Abrir subtítulos
 
 En el menú _Archivo_ hay cuatro opciones que se relacionan con abrir o crear subtítulos:
 
@@ -25,9 +25,9 @@ Abrir subtítulos desde video
 : Abrir subtítulos multiplexados en el archivo de video actualmente abierto. Esta opción actualmente solo funciona con archivos de video Matroska.
 
 Abrir [subtítulos autoguardados]({{<relref path="Autosave" lang="en">}})
-: Abrir un archivo creado por la función de autoguardado de Aegisub. Útil si Aegisub se cae a la vez que uno tenía cambios sin guardar, o si solo se quiere abrir una versión más antigua de un archivo.
+: Abrir un archivo creado por la función de autoguardado de Aegisub. Útil si Aegisub se cierra inesperadamente sin haber guardado cambios, o si solo se quiere abrir una versión más antigua de un archivo.
 
-Cuando se abre un archivo de subtítulos que no se reconoce como Unicode, Aegisub intentará adivinar con qué arreglo de caracteres de ha codificado. Si no está seguro, le pedirá que escoja entre dos o más alternativas probables. Si el resultado se ve revuelto mal o incorrecto de alguna manera, intente volver a abrirlo con otro arreglo de caracteres.
+Cuando se abre un archivo de subtítulos que no se reconoce como Unicode, Aegisub intentará adivinar con qué arreglo de caracteres se ha codificado. Si no está seguro, le pedirá que escoja entre dos o más alternativas probables. Si el resultado se ve revuelto o incorrecto de alguna manera, intente volver a abrirlo con otro arreglo de caracteres.
 
 ### Formatos soportados
 
@@ -49,12 +49,12 @@ Importar subítulos directamente desde archivos Matroska se puede hacer. Se sopo
 - S_TEXT/ASS (ASS/SSA v4+)
 - S_TEXT/SSA (SSA v4)
 
-### Importar guiones de texto sin formato (plain text)
+### Importar guiones de texto simple (texto plano)
 
-Aegisub también soporta la importación de guiones de texto sin formato "formato diálogo". Por ejemplo:
+Aegisub también soporta la importación de guiones de texto simple con formato de diálogo. Por ejemplo:
 
 ```plaintext
-Actor 1: Pues, sí comprendo su habla, pero yo como comprenden pocos extranjeros.
+Actor 1: Pues, sí comprendo su habla, pero pocos extraños comprenden como yo.
          ¿Por qué no habla entonces en la Lengua común,
          según es típico en el Occidente, si desea una respuesta?
 # TL check: Arriba parece ser una cita de Señor de los anillos, lo busco luego
@@ -67,49 +67,49 @@ Cuando se abre un archivo con la extensión .txt, Aegisub le pedirá qué caract
 
 ## Editar subtítulos
 
-Edición de subtítulos en Aegisub se hace en dos áreas: la caja edición de subtítulos (en donde se ingresa y edita texto) y la cuadrícula de subtítulos. Cambios realizados tanto en la caja edición como la cuadrícula por lo general modifican todos los renglones seleccionados, y no solo el renglón que aparece en la caja edición.
+Edición de subtítulos en Aegisub se hace en dos áreas: la caja de edición de subtítulos (en donde se ingresa y edita texto) y la cuadrícula de subtítulos. Cambios realizados tanto en la caja de edición como la cuadrícula por lo general modifican todos los renglones seleccionados, y no solo el renglón que aparece en la caja de edición.
 
-### La caja edición de subtítulos
+### La caja de edición de subtítulos
 
 ![subs_edit_box](/img/3.2/subs_edit_box.png)
 
-La caja edición es sencillamente una zona en que editar texto sin formato, con una cantidad de controles asociados.
+La caja de edición es sencillamente una zona en la cual editar texto sin formato, con una cantidad de controles asociados.
 Son:
 
 1. Marcar el renglón como comentario. Renglones de comentario no aparecerán en el video.
 1. El [estilo]({{<relref path="Styles">}}) usado en este renglón.
 1. El actor hablando en este renglón. No tiene efecto real en la muestra de subtítulos pero puede ser útil para propósitos de edición.
-1. Efecto para este renglón. Har un par de efectos predefinidos que pueden ser aplicados con este campo, pero compatibilidad con renderizadores es inconsistente y usar [etiquetas manuales]({{<relref path="ASS_Tags">}}) es casi siempre más recomendable. Este campo se usa comunmente como metadatos para scripts automatizadas.
+1. Efecto para este renglón. Hay unos cuantos efectos predefinidos que pueden ser aplicados con este campo, pero la compatibilidad con renderizadores es inconsistente y usar [etiquetas manuales]({{<relref path="ASS_Tags">}}) es casi siempre más recomendable. Este campo se usa comúnmente como metadatos para scripts automatizados.
 1. El número de caracteres en el renglón más largo del subtítulo.
-1. Capa para el renglón. Si fija posiciona con una [etiqueta manual]({{<relref path="ASS_Tags">}}) para que dos o más renglones se muestran encima uno del otro, este campo controla cuál se dibuja dónde; números de capa mayores se dibujan encima de menores.
+1. Capa para el renglón. Si fija posicionamiento con una [etiqueta manual]({{<relref path="ASS_Tags">}}) para que dos o más renglones se muestren encima uno del otro, este campo controla cuál se dibuja dónde; números de capa mayores se dibujan encima de menores.
 1. Momento de inicio del renglón.
 1. Momento de fin del renglón.
 1. Duración del renglón. Si se modifica, el momento final será cambiado como resultado.
-1. Márgen izquierda del renglón. 0 significa usar el márgen especificado en el estilo.
-1. Márgen derecha del renglón. 0 significa usar el márgen especificado en el estilo.
-1. Márgen vertical del renglón. 0 significa usar el márgen especificado en el estilo.
+1. Margen izquierdo del renglón. 0 significa usar el margen especificado en el estilo.
+1. Margen derecho del renglón. 0 significa usar el margen especificado en el estilo.
+1. Margen vertical del renglón. 0 significa usar el margen especificado en el estilo.
 1. Inserta una etiqueta manual **negritas** (`\b1`) en la posición del cursor. Si el texto ya está en negritas, inserta una etiqueta de cierre correspondiente (`\b0`).
 1. Inserta una etiqueta manual _cursiva_ (`\i1`) en la posición del cursor. Si el texto ya está en cursiva, inserta una etiqueta de cierre correspondiente (`\i0`).
 1. Inserta una etiqueta manual _subrayado_ (`\u1`) en la posición del cursor. Si el texto ya está subrayado, inserta una etiqueta de cierre correspondiente (`\u0`).
 1. Inserta una etiqueta manual ~~tachado~~ (`\s1`) en la posición del cursor. Si el texto ya está tachado, inserta una etiqueta de cierre correspondiente (`\s0`).
-1. Abre una ventana de elegir tipografía e inserta una etiqueta de nombre de fuente tipográfico (`\fnFontName`) con el nombre de fuente elegido, además de las elegidas etiquetas de efectos.
-1. Abre el [paleta de colores]({{<relref path="Colour_Picker" lang="en">}}) y le permite escoger un color; luego inserta una etiqueta manual de color principal (`\c`) con el color en la posición del cursor.
+1. Abre una ventana de elegir tipografía e inserta una etiqueta de nombre de fuente tipográfica (`\fnFontName`) con el nombre de fuente elegida, además de las etiquetas de efectos elegidas.
+1. Abre la [paleta de colores]({{<relref path="Colour_Picker" lang="en">}}) y le permite escoger un color; luego inserta una etiqueta manual de color principal (`\c`) con el color en la posición del cursor.
 1. Abre la [paleta de colores]({{<relref path="Colour_Picker" lang="en">}}) y le permite escoger un color; luego inserta una etiqueta manual de color secundario (`\2c`) con el color en la posición del cursor.
 1. Abre la [paleta de colores]({{<relref path="Colour_Picker" lang="en">}}) y le permite escoger un color; luego inserta una etiqueta manual de color de borde (`\3c`) con el color en la posición del cursor.
 1. Abre la [paleta de colores]({{<relref path="Colour_Picker" lang="en">}}) y le permite escoger un color; luego inserta una etiqueta manual de color de sombra (`\4c`) con el color en la posición del cursor.
-1. Pasar al siguiente renglón, creando uno nuevo al final del archivo cuando necesario. Ojo que a diferencia de versiones previas de Aegisub, cambios no necesitan ser entregados con este botón.
+1. Pasar al siguiente renglón, creando uno nuevo al final del archivo cuando es necesario. Ojo que a diferencia de versiones previas de Aegisub, los cambios no necesitan ser registrados (committed) con este botón.
 1. Cambiar la vista entre tiempos/momentos y cuadros. Note que esto no afecta cómo los tiempos son realmente guardados en el guion.
 
 #### Mostrar original
 
-Habilitar la opción "Mostrar Original" cambia la caja edición al siguiente modo:
+Habilitar la opción "Mostrar Original" cambia la caja de edición al siguiente modo:
 
 ![subs_edit_box_original](/img/3.2/subs_edit_box_original.png)
 
 La mitad superior de la caja edición es solo lectura, y enseña el texto que el renglón actualmente seleccionado tenía cuando por primera vez se seleccionó. Esta puede ser útil para traducir, o también sólo para editar subtítulos.
 
 Revertir
-: Reemplaza el texto de renglón con el texto enseñado en la caja superior. Es una manera sencilla de deshacer todos los cambios que se hicieron en el renglón si se cambia de idea.
+: Reemplaza el texto de renglón con el texto mostrado en la caja superior. Es una manera sencilla de deshacer todos los cambios que se hicieron en el renglón si se cambia de idea.
 
 Borrar
 : Borrar el renglón.
@@ -120,22 +120,22 @@ Borrar texto
 Insertar original
 : Insertar el texto original del renglón en la posición del cursor.
 
-#### Menú contexto
+#### Menú de contexto
 
-Si hace clic derecho en cualquier parte de la caja edición, aparece el menú siguiente:
+Si hace clic derecho en cualquier parte de la caja de edición, aparece el menú siguiente:
 
 ![Subs_Edit_Context](/img/3.2/Subs_Edit_Context.png)
 
-Seleccionar todo, copiar, cortar y pegar se portan todos igual que uno esperaría.
+Seleccionar todo, copiar, cortar y pegar se comportan todos como uno esperaría.
 
 Corrector ortográfico
-: Si se hace clic derecho en una palabra que se ha detectado como mal escrito, el corrector ortográfico sugerirá unos alternativos probables. Se puede también fijar cuál idioma usará para la corrección en este menú, o agregar palabras que no reconoce pero que uno sabe que son correctos al diccionario. Para más información acerca de la corrección ortográfica en Aegisub, véase la página del [Corrector de ortografía]({{<relref path="Spell_Checker" lang="en">}}).
+: Si se hace clic derecho en una palabra que se ha detectado como mal escrita, el corrector ortográfico sugerirá unas alternativas probables. Se puede también fijar cuál idioma usará para la corrección en este menú, o agregar palabras que no reconoce pero que uno sabe que son correctas al diccionario. Para más información acerca de la corrección ortográfica en Aegisub, véase la página del [Corrector de ortografía]({{<relref path="Spell_Checker" lang="en">}}).
 
 Tesauro
 : Sugiere palabras alternativas similares a la palabra resaltada.
 
 Dividir renglón
-: Divide el renglón dos nuevos a la posición del cursor. "Preservar tiempos" mantiene la sincronía del renglón original para ambos renglones nuevos. "Estimar tiempos" intenta adivinar dónde/cuándo está la división basado en la longitud del texto a cada costado del cursor. "En cuadro de video" hace que la primera mitad del renglón termine en el cuadro anterior, y que la segunda mitad empiece en el cuadro actual. 
+: Divide el renglón en dos nuevos a la posición del cursor. "Preservar tiempos" mantiene la sincronía del renglón original para ambos renglones nuevos. "Estimar tiempos" intenta adivinar dónde/cuándo está la división basado en la longitud del texto a cada costado del cursor. "En cuadro de video" hace que la primera mitad del renglón termine en el cuadro anterior, y que la segunda mitad empiece en el cuadro actual. 
 
 ### Cuadrícula de subtítulos
 
@@ -147,8 +147,8 @@ Algunos controles comunes:
 
 - Para mover renglones arriba o abajo en la lista, selecciónelos, pulse la tecla `alt` a la vez que las teclas de mover arriba o abajo.
 - Para selecionar múltiples renglones, pulse o `ctrl` o `shift`/`mayús` y haga clic. Ctrl-clic selecciona uno o más renglones por click; Mayús-clic selecciona todos los renglones entre el primero y último cliqueados.
-- Para cambiar el renglón activo enseñado en la caja de edición sin cambiar la selección, pulse `alt` y haga clic en el nuevo renglón.
-- Para ordenar todas las filas de la cuadrícula, abra el menú _Subtítulo_, y bajo _Ordenar renglones_ seleccione el cambio en que ordenarlas.
+- Para cambiar el renglón activo mostrado en la caja de edición sin cambiar la selección, pulse `alt` y haga clic en el nuevo renglón.
+- Para ordenar todas las filas de la cuadrícula, abra el menú _Subtítulo_, y bajo _Ordenar renglones_ seleccione el campo en el cual ordenarlas.
 - Para cambiar la manera en que [etiquetas manuales]({{<relref path="ASS_Tags">}}) se muestran en la cuadrícula, haga clic en el botón "ojear modos de ocultar etiquetas" en la barra herramientas.
 
 ![Subs_grid_tags](/img/3.2/Subs_grid_tags.png)
@@ -184,18 +184,18 @@ Efecto
 : El efecto de este renglón.
 
 Izquierda
-: El márgen izquierda.
+: El margen izquierdo.
 
 Derecha
-: El márgen derecha.
+: El margen derecho.
 
 Vert
-: El márgen vertical.
+: El margen vertical.
 
-Se puede también hacer clic-derecho en la primera fila de la cuadrícula (la con los nombres de columna) para seleccionar manualmente cuáles se quiere ver.
+Se puede también hacer clic-derecho en la primera fila de la cuadrícula (la que tiene los nombres de columna) para seleccionar manualmente cuáles se quiere ver.
 
 Clic-derecho en cualquier otra fila en la cuadrícula le abre el menú siguiente
-(muchas de las opciones están también disponibles en otros menúes):
+(muchas de las opciones están también disponibles en otros menús):
 
 ![grid_context_menu](/img/3.2/grid_context_menu.png)
 
@@ -215,13 +215,13 @@ Dividir renglones después del cuadro actual
 : Lo mismo que lo de arriba, pero parte la porción del renglón hasta después del cuadro actual, en lugar de la porción antes del cuadro actual, para cuando se fija texto cuadro por cuadro desde el último hasta el primer cuadro de un renglón.
 
 Dividir (por karaoke)
-: Divide el renglón en uno por sílaba, como se señala por etiquetas manuales de karaoke (`\k` y sus parientes). El primer renglón empezará en el tiempo inicio del renglón original, y terminar en en ese tiempo más la duración de la primera sílaba; los siguientes renglones empezarán al final del anterior y durar según sus sílabas.
+: Divide el renglón en uno por sílaba, como se señala por etiquetas manuales de karaoke (`\k` y sus parientes). El primer renglón empezará en el tiempo inicio del renglón original, y terminará en ese tiempo más la duración de la primera sílaba; los siguientes renglones empezarán al final del anterior y durarán según sus sílabas.
 
 Intercambiar
 : Intercambia los lugares (en la cuadrícula) de dos renglones seleccionados.
 
 Unir (mantener primero)
-: Combina dos o más renglones, desechando el texto de todos menos el primero. El nuevo renglón iniciará en el inicio del primer renglón y terminará al final del último renglón. Solo se habilita si estén seleccionados más que un renglón.
+: Combina dos o más renglones, desechando el texto de todos menos el primero. El nuevo renglón iniciará en el inicio del primer renglón y terminará al final del último renglón. Solo se habilita si está seleccionado más que un renglón.
 
 Unir (concatenar)
 : Lo mismo que lo de arriba, pero concatena/encadena el texto de todos los renglones seleccionados. Un espacio se inserta entre el texto de cada renglón fuente.
@@ -230,7 +230,7 @@ Unir (como karaoke)
 : Hace la inversa de _Dividir (por karaoke)_– lo mismo que _Unir (concatenar)_ pero inserta etiquetas `\k` con el tiempo de cada renglón fuente en el renglón unificado.
 
 Hacer tiempos continuos (cambar inicio/cambiar fin)
-: Modifica la sincronía de renglones seleccionados para que el tiempo final de cada renglón es lo mismo que el tiempo de inicio del próximo. "Cambar inicio/cambiar fin" determina si la funcion cambia los tiempos de fin o de inicio de cada renglón. Solo se habilita si estén seleccionados más que un renglón.
+: Modifica la sincronía de renglones seleccionados para que el tiempo final de cada renglón sea el mismo que el tiempo de inicio del próximo. "Cambar inicio/cambiar fin" determina si la función cambia los tiempos de fin o de inicio de cada renglón. Solo se habilita si está seleccionado más que un renglón.
 
 Recombinar renglones
 : Dados dos o más renglones con el mismo texto estando parcialmente presente en todos, crea un renglón por fragmento de texto en su lugar. Esta función es mayormente útil para corregir subtítulos extraídos de DVDs, que con frecuencia se ven algo así:
