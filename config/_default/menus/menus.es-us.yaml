@@ -11,7 +11,7 @@ main:
     url: /docs/
     weight: 20
   - name: Rastreo de errores
-    url: https://github.com/Aegisub/Aegisub/issues
+    url: https://github.com/TypesettingTools/Aegisub/issues
     weight: 30
   - name: Blog
     url: /blog/
