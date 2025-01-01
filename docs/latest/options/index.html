@@ -144,16 +144,14 @@ default set to <code>autosave</code> in your Aegisub <code>?user</code> director
 that this currently causes some problems with the undo system.</dd></dl><h3 id=automatic-backup>Automatic Backup <a href=#automatic-backup class=anchor aria-hidden=true>#</a></h3><dl><dt>Enable</dt><dd>If enabled, Aegisub will save a backup copy of each script you open,
 immediately on opening it. By default, it is saved to <code>?user/autoback/</code>, but
 this can be changed (see below).</dd><dt>Path</dt><dd>Decides where to save automatic backup copies of scripts. By default set to
-<code>autoback</code> in your Aegisub <code>?user</code> directory.</dd></dl><h2 id=automation>Automation <a href=#automation class=anchor aria-hidden=true>#</a></h2><p><img class=img-fluid loading=lazy src=/img/3.2/preferences-automation.png#center width=642 height=617 alt=preferences-automation></p><dl><dt>Base path</dt><dd>A base directory where you put non-autoloaded automation scripts. Used only
+<code>autoback</code> in your Aegisub <code>?user</code> directory.</dd></dl><h2 id=automation>Automation <a href=#automation class=anchor aria-hidden=true>#</a></h2><p><img class=img-fluid loading=lazy src=/img/3.2/preferences-automation.png#center width=643 height=618 alt=preferences-automation></p><dl><dt>Base path</dt><dd>A base directory where you put non-autoloaded automation scripts. Used only
 for saving paths to script files in the subtitles.</dd><dt>Include path</dt><dd>List of directories where include files and modules are searched for.
 Directories are separated with a pipe character, <code>|</code>.</dd><dt>Auto-load path</dt><dd>List of directories that are searched for scripts on startup, which are then
 automatically loaded. Directories are separated with a pipe character, <code>|</code>.</dd><dt>Trace level</dt><dd>When a script sends a message to the debug console it can also specify a
 trace level. If the trace level of a message is lower than the value given
 here, the message is not logged. The names given to the levels are only
 suggestions and they don&rsquo;t have any effect on the execution of the script.
-(i.e. a &ldquo;Fatal&rdquo; level message will not cause the script to terminate.)</dd><dt>Thread priority</dt><dd>Priority given to the script execution thread. If you&rsquo;re on a
-single-core/single-CPU system having this on lower than normal will make other
-programs more responsive while long-running scripts are active.</dd><dt>Autoreload on Export</dt><dd>Automatically reloads the specified sets of scripts when the <a href=/docs/latest/exporting/>Exporting</a>
+(i.e. a &ldquo;Fatal&rdquo; level message will not cause the script to terminate.)</dd><dt>Autoreload on Export</dt><dd>Automatically reloads the specified sets of scripts when the <a href=/docs/latest/exporting/>Exporting</a>
 dialogue is opened. In that case you will have to enter the
 <a href=/docs/latest/automation/manager/>Automation/Manager</a> window and determine the cause of the error.</dd></dl><h2 id=advanced-audio>Advanced Audio <a href=#advanced-audio class=anchor aria-hidden=true>#</a></h2><p><img class=img-fluid loading=lazy src=/img/3.2/preferences-advanced-audio.png#center width=642 height=617 alt=preferences-advanced-audio></p><dl><dt>Audio provider</dt><dd>What backend to to use for loading audio. Currently there are only two
 methods.<dl><dt><em>avisynth</em> (Windows only)</dt><dd>Uses <a href=http://avisynth.nl/index.php/Main_Page>Avisynth</a> to load audio. All file types
