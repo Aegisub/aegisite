@@ -88,7 +88,7 @@ color; then inserts a shadow color override tag (<code>\4c</code>) with the chos
 color at the cursor position.</li><li>Move to the next line, creating a new one at the end of the file if
 needed. Note that unlike in previous versions of Aegisub, changes do
 not need to be committed using this button.</li><li>Changes display between times and frames. Note that this does not change
-how times are actually stored in the script.</li></ol><h4 id=show-original>Show Original <a href=#show-original class=anchor aria-hidden=true>#</a></h4><p>Checking the Show Original box switches the edit box to the following mode:</p><p><img class=img-fluid loading=lazy src=/img/3.2/subs_edit_box_original.png width=853 height=196 alt=subs_edit_box_original></p><p>The top half of the edit box is read-only, and show the text that the currently
+how times are actually stored in the script.</li></ol><h4 id=show-original>Show Original <a href=#show-original class=anchor aria-hidden=true>#</a></h4><p>Checking the Show Original box switches the edit box to the following mode:</p><p><img class=img-fluid loading=lazy src=/img/3.2/subs_edit_box_original.png width=853 height=196 alt=subs_edit_box_original></p><p>The top half of the edit box is read-only, and shows the text that the currently
 selected line had when it was first selected. This can be useful for
 translating subtitles into another language, or just for editing subtitles.</p><dl><dt>Revert</dt><dd>Replace the text of the line with the text shown in the upper box. A simple
 way to undo all the changes you made to the line if you change your mind.</dd><dt>Clear</dt><dd>Clear the line.</dd><dt>Clear Text</dt><dd>Clear the text of the line, but leave all override tags in place. Can help
@@ -120,7 +120,7 @@ the copy to the current video frame. Useful for frame-by-frame
 typesetting and for splitting a line at a scene change to let it move
 down if it collided with a no-longer-visible line. Only enabled if you
 have video loaded.</dd><dt>Split lines after current frame</dt><dd>As above, but it splits off the portion of the line after the current
-frame rather than the potion before the current frame, for when doing
+frame rather than the portion before the current frame, for when doing
 frame-by-frame typesetting from the last to the first frame of a line.</dd><dt>Split (by karaoke)</dt><dd>Splits the line into one new line per syllable, as delimited by karaoke
 override tags (<code>\k</code> and its relatives). The timing of the first line will
 start at the original line&rsquo;s start time and end at that time plus the

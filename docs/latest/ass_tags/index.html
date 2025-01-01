@@ -36,7 +36,7 @@ Alpha format. This is basically a detailed version of ass-quickref.txt. See
 the <a href=/docs/latest/visual_typesetting/>tutorial</a> for an introduction to typesetting,
 using some basic tags.</p><h2 id=special-characters>Special characters <a href=#special-characters class=anchor aria-hidden=true>#</a></h2><p>The following tags are written in the middle of the text, and not inside
 override blocks (i.e. not between { and }).</p><p><h3 id=\n>Soft line break</h3><pre><code class=language-plaintext>\n</code></pre>Insert a forced line break, but only when in wrapping mode 2. (See
-<a href=/docs/latest/ass_tags/#wrapstyle>the \q tag</a>). Note that this is a lowercase n.</p><p>In all other wrapping modes, this is replaced by a regular space. This is
+<a href=/docs/latest/ass_tags/#\q>the \q tag</a>). Note that this is a lowercase n.</p><p>In all other wrapping modes, this is replaced by a regular space. This is
 rarely (if ever) actually useful. If you&rsquo;re not sure whether you want this or
 \N, you probably want \N.</p><p><h3 id=\N>Hard line break</h3><pre><code class=language-plaintext>\N</code></pre>Insert a forced line break, regardless of wrapping mode. Note that this is an
 uppercase N.</p><p><h3 id=\h>Hard space</h3><pre><code class=language-plaintext>\h</code></pre>Insert a non-breaking &ldquo;hard&rdquo; space. The line will never break automatically
@@ -52,7 +52,8 @@ once in a line, and where in the line they appear is unimportant. In addition,
 some of them are mutally exclusive: <code>\pos</code> and <code>\move</code>; <code>\clip</code> and <code>\iclip</code>;
 <code>\fad</code> and <code>\fade</code>. The result of inluding multiple instances of these tags or
 mutally exclusive tags will vary between renderers and is not recommended.</p><p>Tags in the second category modify all text after the tag until the end of the
-line or until the property is re-overridden by another tag.</p><p>Override tags always follow the same form: They start with a backslash<br>character, then a name, and after the name the parameter to the tag. If the
+line or until the property is re-overridden by another tag.</p><p>Override tags always follow the same form: They start with a backslash \
+character, then a name, and after the name the parameter to the tag. If the
 parameter is omitted, the default value from the line&rsquo;s style is used.</p><p>Some tags are &ldquo;complex&rdquo; and take more than one parameter. In these cases,
 parameters are put inside parentheses with commas between the parameters.</p><p><strong>Note on typography:</strong>
 On this page, everything written in <em>italics</em> with <code>&lt;</code> angle brackets <code>></code>
@@ -88,7 +89,7 @@ separately. This can be useful for correcting the border size for anamorphic
 rendering of subtitles.</p><p>Note that if you use <code>\bord</code> after <code>\xbord</code> or <code>\ybord</code> on a line, it will
 override both of them.</p><p>You can set the border width to 0 (zero) in one of the directions to entirely
 disable border in that direction.</p><p><h3 id=\shad>Shadow distance</h3><pre><code class=language-plaintext>\shad<i>&lt;depth&gt;</i></code></pre>Set the distance from the text to position the shadow. Set the depth to 0
-(zero) to disable shadow entirely. Works similar to <a href=/docs/latest/ass_tags/#bordersize>\bord</a>.</p><p>The shadow distance can not be negative with this tag.</p><p><h3 id=\xshad>Shadow distance (extended)</h3><pre><code class=language-plaintext>\xshad<i>&lt;depth&gt;</i>
+(zero) to disable shadow entirely. Works similar to <a href=/docs/latest/ass_tags/#\bord>\bord</a>.</p><p>The shadow distance can not be negative with this tag.</p><p><h3 id=\xshad>Shadow distance (extended)</h3><pre><code class=language-plaintext>\xshad<i>&lt;depth&gt;</i>
 \yshad<i>&lt;depth&gt;</i></code></pre>Set the distance from the text to position the shadow at, with X and Y
 position set separately. Shadow is only disabled if both X and Y distance is
 0.</p><p>Note that unlike \shad, you can set the distance negative with these tags to
@@ -97,17 +98,17 @@ position the shadow to the top or left of the text.</p><p><h3 id=\be>Blur edges<
 \be<i>&lt;strength&gt;</i></code></pre>Enable or disable a subtle softening-effect for the edges of the text. The
 effect isn&rsquo;t always very visible, but it can in some cases make the text look
 better. It is usually more visible at smaller text sizes.</p><p>Be aware that this tag blurs the <em>edges</em> of the text, not everything. This
-means that if the text has a border (set with <a href=/docs/latest/ass_tags/#borderwidth>\bord</a>) the
+means that if the text has a border (set with <a href=/docs/latest/ass_tags/#\bord>\bord</a>) the
 border will be blurred, but if there is no border, the main text will be
 blurred instead.</p><p>In the extended version, <em>strength</em> is the number of times to apply the
 regular effect. Note that at high values the effect de-generates into
 nothingness, and generally isn&rsquo;t very useful. For strong blurs, <code>\blur</code> is
-generally more useful as a result. The <em>strength</em> must be an integer number.</p><p><h3 id=\blur>Blur edges (Gaussian kernel)</h3><pre><code class=language-plaintext>\blur<i>&lt;strength&gt;</i></code></pre>In general, this has the same function as the <a href=/docs/latest/ass_tags/#bluredges><code>\be</code></a> tag, but
+generally more useful as a result. The <em>strength</em> must be an integer number.</p><p><h3 id=\blur>Blur edges (Gaussian kernel)</h3><pre><code class=language-plaintext>\blur<i>&lt;strength&gt;</i></code></pre>In general, this has the same function as the <a href=/docs/latest/ass_tags/#\be><code>\be</code></a> tag, but
 uses a more advanced algorithm that looks better at high strengths. Unlike
 <code>\be</code>, the <em>strength</em> can be non-integer here. Set <em>strength</em> to 0 (zero) to
 disable the effect. Be careful, setting <em>strength</em> too high can take a lot of
 CPU time to render.</p><p>Be aware that this tag blurs the <em>edges</em> of the text, not everything. This
-means that if the text has a border (set with <a href=/docs/latest/ass_tags/#borderwidth><code>\bord</code></a>) the
+means that if the text has a border (set with <a href=/docs/latest/ass_tags/#\bord><code>\bord</code></a>) the
 border will be blurred, but if there is no border, the main text will be
 blurred instead.</p><p><h3 id=\fn>Font name</h3><pre><code class=language-plaintext>\fn<i>&lt;name&gt;</i></code></pre>Set the font face to use for the following text. There should be no space
 between <code>\fn</code> and the font name, and you should not put parentheses or similar
@@ -125,7 +126,7 @@ to <a href=http://en.wikipedia.org/wiki/Font_hinting>font hinting</a> while scal
 text modifies the text shape after hinting. As a result, this should always be
 used with <code>\t</code> rather than <code>\fs</code>, as animating changing font hinting is very
 rarely desirable.</p><p>These tags also affect <a href=/docs/latest/ass_tags/#drawing-commands>vector drawings</a>.</p><p>You can use font scaling to correct for anamorphic rendering and to specify
-text size more precisely than with <a href=/docs/latest/ass_tags/#fontsize>\fs</a>.</p><p>Note that older versions of VSFitler will truncate non-integer scales.</p><p><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-plaintext>\fscx150
+text size more precisely than with <a href=/docs/latest/ass_tags/#\fs>\fs</a>.</p><p>Note that older versions of VSFitler will truncate non-integer scales.</p><p><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-plaintext>\fscx150
 </code></pre><p>Make the text 50% wider than normal.</p></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-plaintext>\fscy50
 </code></pre><p>Make the text half height.</p></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-plaintext>\fscx200\fscy200
 </code></pre><p>Make the text double size.</p></div></div></p><p><h3 id=\fsp>Letter spacing</h3><pre><code class=language-plaintext>\fsp<i>&lt;spacing&gt;</i></code></pre>Changes the spacing between the individual letters in the text. You can use
@@ -143,17 +144,17 @@ standard for degrees).</li></ul><p>The rotation <em>amount</em> is given in math
 is a full rotation, and rotating any multiple of 360 is the same as not
 rotating. It is legal to specify negative rotation amounts, as well as amounts
 larger than 360 degrees.</p><p>The rotation is performed around the subtitle line origin point, this is
-described with the <a href=/docs/latest/ass_tags/#rotationorigin>\org</a> tag.</p><p>These tags also affect <a href=/docs/latest/ass_tags/#vectordrawings>vector drawings</a>.</p><p><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-plaintext>\frx45
+described with the <a href=/docs/latest/ass_tags/#\org>\org</a> tag.</p><p>These tags also affect <a href=/docs/latest/ass_tags/#drawing-commands>vector drawings</a>.</p><p><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-plaintext>\frx45
 </code></pre><p>Rotate the text 45 degrees on the X axis.</p></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-plaintext>\fry-45
 </code></pre><p>Rotate the text 45 degrees in opposite direction on the Y axis.</p></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-plaintext>\frz180
 </code></pre><p>Rotate the text 180 degrees on the Z axis, making it upside-down.</p></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><p>The following two rotations produce the same result:</p><pre><code class=language-plaintext>\frz-30
 \frz330
 </code></pre><p>This is because 330 degrees is 30 degrees less than a full rotation of 360 degrees.</p></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-plaintext>\t(\frz3600)
-</code></pre><p>Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the <a href=/docs/latest/ass_tags/#animatedtransform>\t</a> tag.</p></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><p>The following screenshots illustrate the effect of rotating on the different axes:</p><p><img class=img-fluid loading=lazy src=/img/3.2/Fr_sample01.jpg width=352 height=240 alt=Fr_sample01></p><p><img class=img-fluid loading=lazy src=/img/3.2/Fr_sample02.jpg width=352 height=240 alt=Fr_sample02></p><p><img class=img-fluid loading=lazy src=/img/3.2/Fr_sample03.jpg width=352 height=240 alt=Fr_sample03></p></div></div></p><p><h3 id=\fax>Text shearing</h3><pre><code class=language-plaintext>\fax<i>&lt;factor&gt;</i>
+</code></pre><p>Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the <a href=/docs/latest/ass_tags/#%5Ct>\t</a> tag.</p></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><p>The following screenshots illustrate the effect of rotating on the different axes:</p><p><img class=img-fluid loading=lazy src=/img/3.2/Fr_sample01.jpg width=352 height=240 alt=Fr_sample01></p><p><img class=img-fluid loading=lazy src=/img/3.2/Fr_sample02.jpg width=352 height=240 alt=Fr_sample02></p><p><img class=img-fluid loading=lazy src=/img/3.2/Fr_sample03.jpg width=352 height=240 alt=Fr_sample03></p></div></div></p><p><h3 id=\fax>Text shearing</h3><pre><code class=language-plaintext>\fax<i>&lt;factor&gt;</i>
 \fay<i>&lt;factor&gt;</i></code></pre>Perform a shearing (perspective distortion) transformation of the text. A
 <em>factor</em> of 0 (zero) means no distortion.</p><p>Usually <em>factor</em> will be a small number; values outside the range -2 to 2 are
 unlikely to have desireable results.</p><p>Shearing is performed after rotation, on the rotated coordinates. The
-coordinate system used for shearing is not affected by the <a href=/docs/latest/ass_tags/#rotationorigin>rotation origin</a>.</p><div class=card><strong class=card-header>Example</strong><div class=card-body><img class=img-fluid loading=lazy src=/img/3.2/shearing.png width=451 height=341 alt=shearing></div></div><p><h3 id=\fe>Font encoding</h3><pre><code class=language-plaintext>\fe<i>&lt;id&gt;</i></code></pre>Overrides the <code>Encoding</code> value of the style.
+coordinate system used for shearing is not affected by the <a href=/docs/latest/ass_tags/#\org>rotation origin</a>.</p><div class=card><strong class=card-header>Example</strong><div class=card-body><img class=img-fluid loading=lazy src=/img/3.2/shearing.png width=451 height=341 alt=shearing></div></div><p><h3 id=\fe>Font encoding</h3><pre><code class=language-plaintext>\fe<i>&lt;id&gt;</i></code></pre>Overrides the <code>Encoding</code> value of the style.
 This is rarely ever useful or a good idea and should thus be avoided.
 See the <a href=/docs/latest/styles/#the-style-editor>style docs</a> for more details.</p><p><h3 id=\c>Set color</h3><pre><code class=language-plaintext>\c&amp;H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&amp;
 \1c&amp;H<i>&lt;bb&gt;&lt;gg&gt;&lt;rr&gt;</i>&amp;
@@ -177,8 +178,8 @@ in decimal) is fully transparent/invisible.</p><p><div class=card><strong class=
 text 50% transparent in general.</p></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-plaintext>\1a&amp;HFF&amp;
 </code></pre><p>Set the primary fill alpha to hexadecimal FF, decimal 255, making it invisible
 and effectively leaving only the border and shadow.</p></div></div></p><p><h3 id=\an>Line alignment</h3><pre><code class=language-plaintext>\an<i>&lt;pos&gt;</i></code></pre>Specify the alignment of the line. The alignment specifies the position of the
-line when no <a href=/docs/latest/ass_tags/#setposition>position override</a> or
-<a href=/docs/latest/ass_tags/#movement>movement</a> is in effect, and otherwise specifies the
+line when no <a href=/docs/latest/ass_tags/#\pos>position override</a> or
+<a href=/docs/latest/ass_tags/#\move>movement</a> is in effect, and otherwise specifies the
 anchor point of positioning and rotation.</p><p>The <code>\an</code> tag uses &ldquo;numpad&rdquo; values for the <em>pos</em>, ie. the alignment values
 correspond to the positions of the digits on the numeric keypad on a regular
 keyboard:</p><ol><li>Bottom left</li><li>Bottom center</li><li>Bottom right</li><li>Middle left</li><li>Middle center</li><li>Middle right</li><li>Top left</li><li>Top center</li><li>Top right</li></ol><p><h3 id=\a>Line alignment (legacy)</h3><pre><code class=language-plaintext>\a<i>&lt;pos&gt;</i></code></pre>Specify the alignment of the line using legacy alignment codes from SubStation
@@ -196,7 +197,7 @@ tags.</em></p></blockquote><p>The <code>\k</code> family of tags mark up subtitl
 the duration of each syllable. You place a <code>\k</code> tag before each syllable in
 the line.</p><p>The <em>duration</em> is given in centiseconds, ie. a <em>duration</em> of 100 is equivalent
 to 1 second. You generally don&rsquo;t enter <code>\k</code> tags manually but rather use
-karaoke timing tools such as <a href=/docs/latest/tutorials/#karaoketiming>Aegisub&rsquo;s karaoke mode</a>.</p><p>The different <code>\k</code> tags create various effects:</p><ul><li><code>\k</code>: Before highlight, the syllable is filled with the secondary color and
+karaoke timing tools such as <a href=/docs/latest/tutorials/#karaoke-timing>Aegisub&rsquo;s karaoke mode</a>.</p><p>The different <code>\k</code> tags create various effects:</p><ul><li><code>\k</code>: Before highlight, the syllable is filled with the secondary color and
 alpha. When the syllable starts, the fill is instantly changed to use
 primary color and alpha.</li><li><code>\K</code> and <code>\kf</code>: These two are identical. Note that <code>\K</code> is an uppercase K
 and is different from lowercase <code>\k</code>. The syllable fill starts out secondary
@@ -207,11 +208,11 @@ the syllable is removed, and appears instantly when the syllable starts.</li></u
 and external scripts may also not properly handle it.</em></p></blockquote><p>Additionally the <code>\kt</code> tag sets the start time of the next karaoke syllable
 relative to the event’s start. Without <code>\kt</code> each syllable start is implicitly
 determined as the sum of all preceding syllable’s duration.</p><p><h3 id=\q>Wrap style</h3><pre><code class=language-plaintext>\q<i>&lt;style&gt;</i></code></pre>Determine how line breaking is applied to the subtitle line. The following
-_style_s are available:</p><ul><li>0: Smart wrapping, make each line approximately equally long, but top line
+<em>style</em> values are available:</p><ul><li>0: Smart wrapping, make each line approximately equally long, but top line
 wider when equal width is impossible. Only <code>\N</code> forces line breaks.</li><li>1: End-of-line wrapping, fill as much text in a line as possible, then break
 to next line. Only <code>\N</code> forces line breaks.</li><li>2: No word wrapping, wide lines will extend beyound the edges of the screen.
 Both <code>\n</code> and <code>\N</code> force line breaks.</li><li>3: Smart wrapping, similar to style 0, but bottom lines are made wider.</li></ul><p><h3 id=\r>Reset style</h3><pre><code class=language-plaintext>\r<br>\r<i>&lt;style&gt;</i></code></pre>Reset the style. This cancels all style overrides in effect, including
-<a href=/docs/latest/ass_tags/#animatedtransform>animations</a>, for all following text.</p><p>The first form that does not specify a <em>style</em> will reset to the style defined
+<a href=/docs/latest/ass_tags/#\t>animations</a>, for all following text.</p><p>The first form that does not specify a <em>style</em> will reset to the style defined
 for the entire line, while the second form, that specifies the name of a
 <em>style</em>, will reset the style to that specific style.</p><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-ass>-Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?
 </code></pre><p>Assuming the current line style is &ldquo;Default&rdquo;, this has first &ldquo;Hey&rdquo; in the
@@ -219,7 +220,7 @@ Default style, then follows on next line &ldquo;Huh?&rdquo; in the style &ldquo;
 on the third line the style is reset to &ldquo;Default&rdquo; for the &ldquo;Who are you?&rdquo;
 text.</p></div></div><p><h3 id=\pos>Set position</h3><pre><code class=language-plaintext>\pos(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>)</code></pre>Set the position of the line. The <em>X</em> and <em>Y</em> coordinates must be integers and
 are given in the script resolution coordinate system. The meaning of <em>X</em> and
-<em>Y</em> changes slightly depending on <a href=/docs/latest/ass_tags/#linealignment>alignment</a>.</p><p>The alignment of the subtitle line is used as anchor point for the position.
+<em>Y</em> changes slightly depending on <a href=/docs/latest/ass_tags/#\an>alignment</a>.</p><p>The alignment of the subtitle line is used as anchor point for the position.
 I.e. when you have a line with alignment top-left, the top-left corner of the
 subtitle is placed at the coordinates given to <code>\pos</code>, and for bottom-center
 alignment, the bottom center of the subtitle is placed at the coordinates
@@ -227,14 +228,14 @@ given.</p><div class=card><strong class=card-header>Example</strong><div class=c
 The green cross marks the point (320,240) on the video.</p><p><img class=img-fluid loading=lazy src=/img/3.2/Pos_sample01.jpg width=480 height=360 alt=Pos_sample01>
 <img class=img-fluid loading=lazy src=/img/3.2/Pos_sample02.jpg width=480 height=360 alt=Pos_sample02>
 <img class=img-fluid loading=lazy src=/img/3.2/Pos_sample03.jpg width=480 height=360 alt=Pos_sample03></p></div></div><p><h3 id=\move>Movement</h3><pre><code class=language-plaintext>\move(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)
-\move(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;,<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;)</code></pre>The <code>\move</code> tag works similar to <a href=/docs/latest/ass_tags/#setposition><code>\pos</code></a> in that it
+\move(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;,<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;)</code></pre>The <code>\move</code> tag works similar to <a href=/docs/latest/ass_tags/#\pos><code>\pos</code></a> in that it
 positions the subtitle line, the difference is that <code>\move</code> makes the subtitle
 move.</p><p>The two versions of <code>\move</code> differ in that one makes the movement occur over
 the entire duration of the subtitle, while on the other you specify the time
 over which the movement occurs.</p><p>The coordinates <em>x1</em>, <em>y1</em>, <em>x2</em> and <em>y2</em> are given in the script resolution
 coordinate system, like <code>\pos</code>. The subtitle starts out at point (<em>x1</em>,<em>y1</em>)
 and moves with constant speed so it ends up at (<em>x2</em>,<em>y2</em>).
-<a href=/docs/latest/ass_tags/#linealignment>Alignment</a> influences movement coordinates the same
+<a href=/docs/latest/ass_tags/#\an>Alignment</a> influences movement coordinates the same
 way as it influences <code>\pos</code> coordinates.</p><p>In the second version, the times <em>t1</em> and <em>t2</em> are given in milliseconds, ie.
 one thousandth of a second, and are relative to the start time of the
 subtitle. For example, a <em>t1</em> value of 1500 means that the movement begins 1.5
@@ -256,10 +257,10 @@ point (300,350) at the same time it disappears.</p></div></div><div class=card><
 </code></pre><p>The line appears at (100,150). After the line has been displayed for half a
 second (500 milliseconds) it begins moving towards (300,350) such that it will
 arrive at the point a second and a half (1500 milliseconds) after the line
-first appeared on screen.</p></div></div></p><p><h3 id=\org>Rotation origin</h3><pre><code class=language-plaintext>\org(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>)</code></pre>Set the origin point used for <a href=/docs/latest/ass_tags/#textrotation>rotation</a>. This
+first appeared on screen.</p></div></div></p><p><h3 id=\org>Rotation origin</h3><pre><code class=language-plaintext>\org(<i>&lt;X&gt;</i>,<i>&lt;Y&gt;</i>)</code></pre>Set the origin point used for <a href=/docs/latest/ass_tags/#\frx>rotation</a>. This
 affects all rotations of the line. The <em>X</em> and <em>Y</em> coordinates are given in
 integer script resolution pixels.</p><p>When there is no <code>\org</code> tag in a line, the rotation origin is implicitly the
-same as the <a href=/docs/latest/ass_tags/#setposition>position anchor point</a>. This means that
+same as the <a href=/docs/latest/ass_tags/#\pos>position anchor point</a>. This means that
 the rotation origin will move if the line moves and there is no origin set
 with <code>\org</code>. Note that you can <em>not</em> animate the <code>\org</code> tag, you are limited
 to a fixed origin if you use it.</p><p>If the rotation origin is placed on the vanishing point in a 3D scene, 3D
@@ -286,7 +287,7 @@ out for the last one quarter second it is displayed.</p></div></div><p><h3 id=\f
 times <em>t1</em>, <em>t2</em>, <em>t3</em> and <em>t4</em>.</p><p>The alpha values are given in <em>decimal</em> and are between 0 and 255, with 0
 being fully visible and 255 being invisible. The time values are given in
 milliseconds after the start of the line. All seven parameters are required.
-(For most common fade effects the <a href=/docs/latest/ass_tags/#fade><code>\fad</code></a> tag works fine.)</p><ul><li>Before <em>t1</em>, the line has alpha <em>a1</em>.</li><li>Between <em>t1</em> and <em>t2</em> the line fades from alpha <em>a1</em> to alpha <em>a2</em>.</li><li>Between <em>t2</em> and <em>t3</em> the line has alpha <em>a2</em> constantly.</li><li>Between <em>t3</em> and <em>t4</em> the line fades from alpha <em>a2</em> to alpha <em>a3</em>.</li><li>After <em>t4</em> the line has alpha <em>a3</em>.</li></ul><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-plaintext>\fade(255,32,224,0,500,2000,2200)
+(For most common fade effects the <a href=/docs/latest/ass_tags/#\fad><code>\fad</code></a> tag works fine.)</p><ul><li>Before <em>t1</em>, the line has alpha <em>a1</em>.</li><li>Between <em>t1</em> and <em>t2</em> the line fades from alpha <em>a1</em> to alpha <em>a2</em>.</li><li>Between <em>t2</em> and <em>t3</em> the line has alpha <em>a2</em> constantly.</li><li>Between <em>t3</em> and <em>t4</em> the line fades from alpha <em>a2</em> to alpha <em>a3</em>.</li><li>After <em>t4</em> the line has alpha <em>a3</em>.</li></ul><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-plaintext>\fade(255,32,224,0,500,2000,2200)
 </code></pre><p>Starts invisible, fades to almost totally opaque, then fades to almost totally
 invisible. First fade starts when the line starts and lasts 500 milliseconds.
 Second fade starts 1500 milliseconds later, and lasts 200 milliseconds.</p></div></div><h3 id=\t>Animated transform</h3><pre><code class=language-plaintext>\t(<i>&lt;style modifiers&gt;</i>)
