@@ -11,7 +11,7 @@ aliases:
 Welcome to the Aegisub manual. See our [about]({{< relref "About" >}}) page for more
 information on the program, or browse the topics on the left bar.
 
-Documentation related to delopment of Aegisub and building Aegisub is located
+Documentation related to development of Aegisub and building Aegisub is located
 at [the bug tracker](https://github.com/TypesettingTools/Aegisub/issues).
 
 ## Starting points
@@ -27,7 +27,7 @@ at [the bug tracker](https://github.com/TypesettingTools/Aegisub/issues).
 <!-- -->
 
 - [Translating a subtitle file from one language to another]({{< relref "Translation_Assistant" >}})
-- [Correcting a subtitle that's not properly synchronised to the video]({{< relref "Fix_Timing_Tutorial" >}})
+- [Correcting a subtitle that's not properly synchronised to the video]({{< relref "Fix_Timing_Tutorial" >}})<!--TODO replace w Shift_Times?-->
 
 <!-- -->
 

@@ -20,7 +20,7 @@ override blocks (i.e. not between { and }).
 
 {{<tag-def-box title="Soft line break" id="\n">}}\\n{{</tag-def-box>}}
 Insert a forced line break, but only when in wrapping mode 2. (See
-[the \\q tag]({{< relref "ASS_Tags#wrapstyle" >}})). Note that this is a lowercase n.
+[the \\q tag]({{< relref "ASS_Tags#\q" >}})). Note that this is a lowercase n.
 
 In all other wrapping modes, this is replaced by a regular space. This is
 rarely (if ever) actually useful. If you're not sure whether you want this or
@@ -54,7 +54,7 @@ mutally exclusive tags will vary between renderers and is not recommended.
 Tags in the second category modify all text after the tag until the end of the
 line or until the property is re-overridden by another tag.
 
-Override tags always follow the same form: They start with a backslash \
+Override tags always follow the same form: They start with a backslash \\
 character, then a name, and after the name the parameter to the tag. If the
 parameter is omitted, the default value from the line's style is used.
 
@@ -167,7 +167,7 @@ disable border in that direction.
 
 {{<tag-def-box title="Shadow distance" id="\shad">}}\\shad<i>\<depth></i>{{</tag-def-box>}}
 Set the distance from the text to position the shadow. Set the depth to 0
-(zero) to disable shadow entirely. Works similar to [\\bord]({{< relref "ASS_Tags#bordersize" >}}).
+(zero) to disable shadow entirely. Works similar to [\\bord]({{< relref "ASS_Tags#\bord" >}}).
 
 The shadow distance can not be negative with this tag.
 
@@ -192,7 +192,7 @@ effect isn't always very visible, but it can in some cases make the text look
 better. It is usually more visible at smaller text sizes.
 
 Be aware that this tag blurs the _edges_ of the text, not everything. This
-means that if the text has a border (set with [\\bord]({{< relref "ASS_Tags#borderwidth" >}})) the
+means that if the text has a border (set with [\\bord]({{< relref "ASS_Tags#\bord" >}})) the
 border will be blurred, but if there is no border, the main text will be
 blurred instead.
 
@@ -202,14 +202,14 @@ nothingness, and generally isn't very useful. For strong blurs, `\blur` is
 generally more useful as a result. The _strength_ must be an integer number.
 
 {{<tag-def-box title="Blur edges (Gaussian kernel)" id="\blur">}}\\blur<i>\<strength></i>{{</tag-def-box>}}
-In general, this has the same function as the [`\be`]({{< relref "ASS_Tags#bluredges" >}}) tag, but
+In general, this has the same function as the [`\be`]({{< relref "ASS_Tags#\be" >}}) tag, but
 uses a more advanced algorithm that looks better at high strengths. Unlike
 `\be`, the _strength_ can be non-integer here. Set _strength_ to 0 (zero) to
 disable the effect. Be careful, setting _strength_ too high can take a lot of
 CPU time to render.
 
 Be aware that this tag blurs the _edges_ of the text, not everything. This
-means that if the text has a border (set with [`\bord`]({{< relref "ASS_Tags#borderwidth" >}})) the
+means that if the text has a border (set with [`\bord`]({{< relref "ASS_Tags#\bord" >}})) the
 border will be blurred, but if there is no border, the main text will be
 blurred instead.
 
@@ -269,7 +269,7 @@ rarely desirable.
 These tags also affect [vector drawings]({{< relref "ASS_Tags#drawing-commands" >}}).
 
 You can use font scaling to correct for anamorphic rendering and to specify
-text size more precisely than with [\\fs]({{< relref "ASS_Tags#fontsize" >}}).
+text size more precisely than with [\\fs]({{< relref "ASS_Tags#\fs" >}}).
 
 Note that older versions of VSFitler will truncate non-integer scales.
 
@@ -329,9 +329,9 @@ rotating. It is legal to specify negative rotation amounts, as well as amounts
 larger than 360 degrees.
 
 The rotation is performed around the subtitle line origin point, this is
-described with the [\\org]({{< relref "ASS_Tags#rotationorigin" >}}) tag.
+described with the [\\org]({{< relref "ASS_Tags#\org" >}}) tag.
 
-These tags also affect [vector drawings]({{< relref "ASS_Tags#vectordrawings" >}}).
+These tags also affect [vector drawings]({{< relref "ASS_Tags#drawing-commands" >}}).
 
 {{<example-box>}}
 
@@ -373,7 +373,7 @@ This is because 330 degrees is 30 degrees less than a full rotation of 360 degre
 \t(\frz3600)
 ```
 
-Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the [\\t]({{< relref "ASS_Tags#animatedtransform" >}}) tag.
+Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the [\\t]({{< relref "ASS_Tags#\t" >}}) tag.
 {{</example-box>}}
 {{<example-box>}}
 The following screenshots illustrate the effect of rotating on the different axes:
@@ -396,7 +396,7 @@ Usually _factor_ will be a small number; values outside the range -2 to 2 are
 unlikely to have desireable results.
 
 Shearing is performed after rotation, on the rotated coordinates. The
-coordinate system used for shearing is not affected by the [rotation origin]({{< relref "ASS_Tags#rotationorigin" >}}).
+coordinate system used for shearing is not affected by the [rotation origin]({{< relref "ASS_Tags#\org" >}}).
 
 {{<example-box>}}
 ![shearing](/img/3.2/shearing.png)
@@ -405,7 +405,7 @@ coordinate system used for shearing is not affected by the [rotation origin]({{<
 {{<tag-def-box title="Font encoding" id="\fe">}}\\fe<i>\<id></i>{{</tag-def-box>}}
 Overrides the `Encoding` value of the style.
 This is rarely ever useful or a good idea and should thus be avoided.
-See the [style docs]({{< relref "styles/#the-style-editor" >}}) for more details.
+See the [style docs]({{< relref "Styles#the-style-editor" >}}) for more details.
 
 {{<tag-def-box title="Set color" id="\c">}}
 \\c&H<i>\<bb>\<gg>\<rr></i>&
@@ -470,8 +470,8 @@ and effectively leaving only the border and shadow.
 
 {{<tag-def-box title="Line alignment" id="\an">}}\\an<i>\<pos></i>{{</tag-def-box>}}
 Specify the alignment of the line. The alignment specifies the position of the
-line when no [position override]({{< relref "ASS_Tags#setposition" >}}) or
-[movement]({{< relref "ASS_Tags#movement" >}}) is in effect, and otherwise specifies the
+line when no [position override]({{< relref "ASS_Tags#\pos" >}}) or
+[movement]({{< relref "ASS_Tags#\move" >}}) is in effect, and otherwise specifies the
 anchor point of positioning and rotation.
 
 The `\an` tag uses "numpad" values for the _pos_, ie. the alignment values
@@ -528,7 +528,7 @@ the line.
 
 The _duration_ is given in centiseconds, ie. a _duration_ of 100 is equivalent
 to 1 second. You generally don't enter `\k` tags manually but rather use
-karaoke timing tools such as [Aegisub's karaoke mode]({{< relref "Tutorials#karaoketiming" >}}).
+karaoke timing tools such as [Aegisub's karaoke mode]({{< relref "Tutorials#karaoke-timing" >}}).
 
 The different `\k` tags create various effects:
 
@@ -551,8 +551,8 @@ relative to the event’s start. Without `\kt` each syllable start is implicitly
 determined as the sum of all preceding syllable’s duration.
 
 {{<tag-def-box title="Wrap style" id="\q">}}\\q<i>\<style></i>{{</tag-def-box>}}
-Determine how line breaking is applied to the subtitle line. The following
-\_style_s are available:
+Determine how line breaking is applied to the subtitle line. The following 
+_style_ values are available:
 
 - 0: Smart wrapping, make each line approximately equally long, but top line
   wider when equal width is impossible. Only `\N` forces line breaks.
@@ -564,7 +564,7 @@ Determine how line breaking is applied to the subtitle line. The following
 
 {{<tag-def-box title="Reset style" id="\r">}}\\r<br>\\r<i>\<style></i>{{</tag-def-box>}}
 Reset the style. This cancels all style overrides in effect, including
-[animations]({{< relref "ASS_Tags#animatedtransform" >}}), for all following text.
+[animations]({{< relref "ASS_Tags#\t" >}}), for all following text.
 
 The first form that does not specify a _style_ will reset to the style defined
 for the entire line, while the second form, that specifies the name of a
@@ -585,7 +585,7 @@ text.
 {{<tag-def-box title="Set position" id="\pos">}}\\pos(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
 Set the position of the line. The _X_ and _Y_ coordinates must be integers and
 are given in the script resolution coordinate system. The meaning of _X_ and
-_Y_ changes slightly depending on [alignment]({{< relref "ASS_Tags#linealignment" >}}).
+_Y_ changes slightly depending on [alignment]({{< relref "ASS_Tags#\an" >}}).
 
 The alignment of the subtitle line is used as anchor point for the position.
 I.e. when you have a line with alignment top-left, the top-left corner of the
@@ -606,7 +606,7 @@ The green cross marks the point (320,240) on the video.
 \\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i>>)
 \\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i>>,<i>\<t1</i>>,<i>\<t2</i>>)
 {{</tag-def-box>}}
-The `\move` tag works similar to [`\pos`]({{< relref "ASS_Tags#setposition" >}}) in that it
+The `\move` tag works similar to [`\pos`]({{< relref "ASS_Tags#\pos" >}}) in that it
 positions the subtitle line, the difference is that `\move` makes the subtitle
 move.
 
@@ -617,7 +617,7 @@ over which the movement occurs.
 The coordinates _x1_, _y1_, _x2_ and _y2_ are given in the script resolution
 coordinate system, like `\pos`. The subtitle starts out at point (_x1_,_y1_)
 and moves with constant speed so it ends up at (_x2_,_y2_).
-[Alignment]({{< relref "ASS_Tags#linealignment" >}}) influences movement coordinates the same
+[Alignment]({{< relref "ASS_Tags#\an" >}}) influences movement coordinates the same
 way as it influences `\pos` coordinates.
 
 In the second version, the times _t1_ and _t2_ are given in milliseconds, ie.
@@ -672,12 +672,12 @@ first appeared on screen.
 {{</example-box>}}
 
 {{<tag-def-box title="Rotation origin" id="\org">}}\\org(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
-Set the origin point used for [rotation]({{< relref "ASS_Tags#textrotation" >}}). This
+Set the origin point used for [rotation]({{< relref "ASS_Tags#\frx" >}}). This
 affects all rotations of the line. The _X_ and _Y_ coordinates are given in
 integer script resolution pixels.
 
 When there is no `\org` tag in a line, the rotation origin is implicitly the
-same as the [position anchor point]({{< relref "ASS_Tags#setposition" >}}). This means that
+same as the [position anchor point]({{< relref "ASS_Tags#\pos" >}}). This means that
 the rotation origin will move if the line moves and there is no origin set
 with `\org`. Note that you can _not_ animate the `\org` tag, you are limited
 to a fixed origin if you use it.
@@ -743,7 +743,7 @@ times _t1_, _t2_, _t3_ and _t4_.
 The alpha values are given in _decimal_ and are between 0 and 255, with 0
 being fully visible and 255 being invisible. The time values are given in
 milliseconds after the start of the line. All seven parameters are required.
-(For most common fade effects the [`\fad`]({{< relref "ASS_Tags#fade" >}}) tag works fine.)
+(For most common fade effects the [`\fad`]({{< relref "ASS_Tags#\fad" >}}) tag works fine.)
 
 - Before _t1_, the line has alpha _a1_.
 - Between _t1_ and _t2_ the line fades from alpha _a1_ to alpha _a2_.
