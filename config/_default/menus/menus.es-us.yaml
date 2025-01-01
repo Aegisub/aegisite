@@ -42,7 +42,8 @@ social:
     url: 'https://github.com/TypesettingTools/Aegisub'
     weight: 20
 
-
+# Pages not yet translated are added as references to English originals. Once pages are added,
+# corresponding menu placeholders can be removed
 # docs-sidebar/docs
 docs:
   - name: Navegación
@@ -66,6 +67,52 @@ docs:
   - name: Otro
     weight: 700
     identifier: miscellaneous
+
+  # placeholders
+
+  # introduction/
+  - name: Destacados
+    weight: 2200
+    identifier: highlights
+    parent: introduction
+    url: /docs/latest/Highlights
+  - name: Créditos
+    weight: 2300
+    identifier: credits
+    parent: introduction
+    url: /docs/latest/Credits
+  - name: Aviso general
+    weight: 2400
+    identifier: general_disclaimer
+    parent: introduction
+    url: /docs/latest/General_disclaimer
+  - name: Apoyar Aegisub
+    weight: 2500
+    identifier: support-aegisub
+    parent: introduction
+    url: /docs/latest/Support
+  - name: Preguntas frecuentes
+    weight: 2600
+    identifier: faq
+    parent: introduction
+    url: /docs/latest/FAQ
+  # introduction/tutorials
+  - name: Tutorial de sincronizar Karaoke
+    weight: 2710
+    identifier: karaoke-timing-tutorial
+    parent: tutorials
+    url: /docs/latest/Karaoke_Timing_Tutorial
+  - name: Tutorial de efectos en línea
+    weight: 2720
+    identifier: karaoke-inline-fx
+    parent: tutorials
+    url: Karaoke_inline-fx
+  - name: Tutorial de Furigana
+    weight: 2730
+    identifier: furigana-karaoke
+    parent: tutorials
+    url: /docs/latest/Furigana_karaoke
+  # TODO quitar tutoriales-automatización y sustituir por subpáginas de automatizar
   - name: Tutoriales-automatización
     weight: 800
     identifier: automation-tutorials
