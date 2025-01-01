@@ -7,7 +7,7 @@ weight: 4200
 ---
 
 Un **style** en formato ASS es un conjunto de reglas de estilo tipográfico que se aplica a las líneas de diálogo. Los parámetros de estilo se pueden anular con
-[etiquetas manuales]({{<relref path="ASS_Tags">}}); los estilos existen para que no hay que especificar todas las etiquetas en cada línea.
+[etiquetas manuales]({{<relref path="ASS_Tags">}}); los estilos existen para que no haya que especificar todas las etiquetas en cada línea.
 
 ## El gestor de estilos
 
@@ -41,7 +41,7 @@ Al presionar Ctrl-C en el gestor de estilos se copiarán los estilos seleccionad
 
 ## El editor de estilo
 
-Al presionar el botón "Editar" o hacer doble clic en el nombre de un estilo, aparecerá el editor de estilo, que le permite modificar todos los parámetros disponibles. **Ojo**: algunos de los parámetros que están disponibles como etiquetas manuales (ej. `\be`) _no_ están disponibles como parámetros de estilo; por la otra mano, algunos parámetros que están disponibles en el editor de estilos (ej. la opción de contorno "cuadro opaco") _no_ están disponibles para etiquetas manuales. Este es una desafortunada y a veces molesta limitación del formato.
+Al presionar el botón "Editar" o hacer doble clic en el nombre de un estilo, aparecerá el editor de estilo, que le permite modificar todos los parámetros disponibles. **Ojo**: algunos de los parámetros que están disponibles como etiquetas manuales (ej. `\be`) _no_ están disponibles como parámetros de estilo; por otra parte, algunos parámetros que están disponibles en el editor de estilos (ej. la opción de contorno "cuadro opaco") _no_ están disponibles para etiquetas manuales. Esta es una desafortunada y a veces molesta limitación del formato.
 
 Volviendo al editor de estilos:
 
@@ -51,7 +51,7 @@ Nombre de estilo
 : El nombre del estilo. No se puede tener dos estilos con el mismo nombre en el mismo guion.
 
 Fuente
-: Esta sección controla la configuración de fuente tipográfica. El menú desplegable le permite elegir el tipo de letra (cualquier fuente instalada en su sistema aparecerá en esta lista) y el número de la derecha controla el tamaño en puntos. Las casillas de opciones abajo configuran los parámetros negrita/cursiva/subrayado/tachado.
+: Esta sección controla la configuración de fuente tipográfica. El menú desplegable le permite elegir el tipo de letra (cualquier fuente instalada en su sistema aparecerá en esta lista) y el número de la derecha controla el tamaño en puntos. Las casillas de opciones de abajo configuran los parámetros negrita/cursiva/subrayado/tachado.
 
 Colores
 : Esto controla los cuatro colores del texto (primario, secundario, contorno y sombra). El significado de cada uno de ellos es el siguiente:
@@ -60,7 +60,7 @@ Colores
    El color principal de "relleno" del cuerpo del texto.
 
    **Secundario:**
-   Color de relleno secundario, utilizado para efectos de karaoke (consulte `\k` y sus parecidos en la [página de etiquetas manuales]({{<relref path="ASS_Tags#\k">}})).
+   Color de relleno secundario, utilizado para efectos de karaoke (consulte `\k` y sus relativos en la [página de etiquetas manuales]({{<relref path="ASS_Tags#\k">}})).
 
    **Contorno:**
    El color del borde del texto.
@@ -74,14 +74,14 @@ Márgenes
 : Controla qué tan cerca de los bordes del marco de video estará el texto posicionado (y por lo tanto también cuándo se activará el salto de línea automático; pero tenga en cuenta que no hay opción para la justificación del texto). Cada valor (izquierda, derecha, vertical) se proporciona en píxeles de resolución de guion (consulte [propiedades de guion] ({{<relref path="Properties">}})). Para alineaciones (`\an`) 1-3, el margen vertical es relativo al pie del marco de video; para 4-6 no tiene ningún significado, y para 7-9 es relativo a la cima del marco de video.
 
 Alineación
-: Controla la alineación del texto. Los números corresponden a los argumentos a la etiqueta `\an`. Las alineaciones 1, 4 y 7 están al ras a la izquierda; 3, 6 y 9 están al ras a la derecha; 2, 5 y 8 están centrados. 1, 2 y 3 son "subtítulos" (es decir, dibujados abajo en el marco); 4, 5 y 6 son "títulos intermedios" (es decir, centrados verticalmente en el marco); 7, 8 y 9 son "sobretítulos" (es decir, dibujados arriba en el marco). Tenga en cuenta que no existe tal cosa como la alineación justificada; esta es una limitación del formato.
+: Controla la alineación del texto. Los números corresponden a los argumentos de la etiqueta `\an`. Las alineaciones 1, 4 y 7 están al ras de la izquierda; 3, 6 y 9 están al ras de la derecha; 2, 5 y 8 están centrados. 1, 2 y 3 son "subtítulos" (es decir, dibujados abajo en el marco); 4, 5 y 6 son "títulos intermedios" (es decir, centrados verticalmente en el marco); 7, 8 y 9 son "sobretítulos" (es decir, dibujados arriba en el marco). Tenga en cuenta que no existe tal cosa como la alineación justificada; esta es una limitación del formato.
 
 Contorno
 : Controla el grosor (y el estilo) del contorno (borde) y el desplazamiento de la sombra.
 
    - Para el contorno, el número es el grosor del borde en píxeles de guion si ScaledBorderAndShadow está habilitado (consulte [propiedades del guion]({{<relref path="Properties">}})); si está deshabilitado el grosor se da en píxeles de video en cambio. Fijarlo en 0 desactiva el contorno.
    - La sombra, por otro lado, es una copia del texto principal, desplazada hacia abajo derecha por la distancia especificada. La distancia está en píxeles de guion si ScaledBorderAndShadow está habilitado y, en caso contrario, en píxeles de vídeo. Fijarlo en 0 desactiva la sombra.
-   - Finalmente, la casilla de opción etiquetada como "Cuadro opaco" controla si el contorno debe dibujarse como se describe arriba (lo que sucede si no está habilitada), o reemplazado por un cuadro delimitador de fondo opaco. Tenga en cuenta que la representación de los contornos de cuadros opacos se quiebra cuando la escala de fuente es diferente a 100%.
+   - Finalmente, la casilla de opción etiquetada como "Cuadro opaco" controla si el contorno debe dibujarse como se describe arriba (lo que sucede si no está habilitada), o reemplazado por un cuadro delimitador de fondo opaco. Tenga en cuenta que la representación de los contornos de cuadros opacos no funciona cuando la escala de fuente es diferente a 100%.
 
 Otro
 : Esta sección tiene varios otros parámetros enumerados:
@@ -99,5 +99,5 @@ Otro
    : Controla qué página de códigos se utiliza para mapear puntos de código a glifos. No tiene nada que ver con la codificación de texto del guion. Esto es sólo significativo en Windows usando VSFilter, donde se usa para que algunas fuentes antiguas (particularmente japonesas) sin asignaciones Unicode debidas se rendericen adecuadamente. En otros sistemas y renderizadores, Freetype2 proporciona el mapeo adecuado. Si no entendió ni una palabra de lo anterior, finja como que esta configuración no exista, ya que rara vez es importante.
 
    Vista previa:
-   : Muestra una vista previa de cómo se verá el texto usando los parámetros de estilo actuales. El campo de texto le permite ingresar texto de muestra para ensayar de vista previa y el cuadro coloreado controla el color de fondo.
+   : Muestra una vista previa de cómo se verá el texto usando los parámetros de estilo actuales. El campo de texto le permite ingresar texto de muestra para ver una vista previa y el cuadro coloreado controla el color de fondo.
    
