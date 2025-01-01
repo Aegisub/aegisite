@@ -38,7 +38,7 @@ weight: 2700
 
 - 作者：Niels Martin Hansen
 
-### 可视化排版g
+### 可视化排版
 
 - 简介：演示如何使用 Aegisub 2 全新的可视化排版功能。
 - 作者：Rodrigo Braz Monteiro

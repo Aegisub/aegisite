@@ -457,11 +457,6 @@ Trace level
   suggestions and they don't have any effect on the execution of the script.
   (i.e. a "Fatal" level message will not cause the script to terminate.)
 
-Thread priority
-: Priority given to the script execution thread. If you're on a
-  single-core/single-CPU system having this on lower than normal will make other
-  programs more responsive while long-running scripts are active.
-
 Autoreload on Export
 : Automatically reloads the specified sets of scripts when the [Exporting]({{< relref "Exporting" >}})
   dialogue is opened. In that case you will have to enter the

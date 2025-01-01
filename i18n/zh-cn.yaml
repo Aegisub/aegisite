@@ -1,11 +1,11 @@
 - id: get-started
-  translation: "Get Started"
+  translation: "快速上手"
 
 - id: on-this-page
-  translation: "On this page"
+  translation: "本页目录"
 
 - id: menu-overview
-  translation: "Overview"
+  translation: "概述"
 
 - id: search-text
   translation: "Search docs..."
@@ -26,16 +26,16 @@
   translation: "Example"
 
 - id: language
-  translation: "Language"
+  translation: "语言"
 
 - id: type
-  translation: "Type"
+  translation: "类别"
 
 - id: notes
-  translation: "Notes"
+  translation: "说明"
 
 - id: file
-  translation: "File"
+  translation: "文件"
 
 - id: md5
   translation: "MD5"
