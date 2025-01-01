@@ -23,7 +23,7 @@ Documentación relacionada con el desarrollo de Aegisub y con la compilación de
 <!-- -->
 
 - [Traducir un archivo de subtítulos de un idioma a otro]({{<relref path="Translation_Assistant">}})
-- [Corregir subtítulo que no está correctamente sincronizado al video]({{<relref path="Shift_Times">}})
+- [Corregir un subtítulo que no está correctamente sincronizado al video]({{<relref path="Shift_Times">}})
 
 <!-- -->
 
