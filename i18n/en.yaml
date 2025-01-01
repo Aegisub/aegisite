@@ -39,3 +39,12 @@
 
 - id: md5
   translation: "MD5"
+
+- id: and
+  translation: "and"
+
+- id: comma
+  translation: ", "
+
+- id: post-metainfo
+  translation: "Posted {{ .date }} by {{ .authors }} – <strong>{{ .readingTime }} min read</strong>"

@@ -1,2 +1,23 @@
-{{ $last := sub (len .Params.contributors) 1 }}
-<p><small>Posted {{ .PublishDate.Format "January 2, 2006" }} by {{ if .Params.contributors -}}{{ range $index, $contributor := .Params.contributors }}{{ if gt $index 0 }}{{ if eq $index $last }} and {{ else }}, {{ end }}{{ end }}<a class="stretched-link position-relative" href="{{ "/contributors/" | relURL }}{{ . | urlize }}/">{{ . }}</a>{{ end -}}{{ end -}}&nbsp;&hyphen;&nbsp;<strong>{{ .ReadingTime -}}&nbsp;min read</strong></small><p>
+{{ $localizedDate := .PublishDate | time.Format site.Params.dateFormat -}}
+
+{{ $ctbs := .Params.contributors -}}
+{{ $last := sub (len $ctbs) 1 }}
+{{ $ctbStr := "" -}}
+{{ if $ctbs -}}
+  {{ range $index, $contributor := $ctbs -}}
+    {{ if gt $index 0 -}}
+      {{ if eq $index $last -}}
+        {{ $ctbStr = printf "%s %s " $ctbStr (T "and") -}}
+      {{ else -}}
+        {{ $ctbStr = printf "%s%s" $ctbStr (T "comma") -}}
+      {{ end -}}
+    {{ end -}}
+    {{ $ctbURL := printf "%s%s/" ("/contributors/" | relURL) ($contributor | urlize) -}}
+    {{ if eq site.Params.languageTag "zh-CN" -}}
+      {{ $ctbURL = printf "%s%s" ("/zh-cn" | relURL) $ctbURL -}}
+    {{ end -}}
+    {{ $ctbStr = printf "%s<a class=\"stretched-link position-relative\" href=\"%s\">%s</a>" $ctbStr $ctbURL $contributor -}}
+  {{ end -}}
+{{ end -}}
+
+<p><small>{{ T "post-metainfo" (dict "date" $localizedDate "authors" $ctbStr "readingTime" .ReadingTime) | safeHTML }}</small></p>

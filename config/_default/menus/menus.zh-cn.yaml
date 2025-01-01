@@ -13,8 +13,8 @@ main:
   - name: Bug 追踪
     url: https://github.com/TypesettingTools/Aegisub/issues
     weight: 30
-  - name: Blog
-    url: ../blog/
+  - name: 博客
+    url: /blog/
     weight: 40
 
 # header-bar/right side: social menus

@@ -39,3 +39,12 @@
 
 - id: md5
   translation: "MD5"
+
+- id: and
+  translation: "与"
+
+- id: comma
+  translation: "，"
+
+- id: post-metainfo
+  translation: "{{ .authors }} 发布于 {{ .date }} — <strong>阅读需 {{ .readingTime }} 分钟</strong>"
