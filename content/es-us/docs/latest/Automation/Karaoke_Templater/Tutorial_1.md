@@ -10,7 +10,7 @@ Bienvenido al primer tutorial acerca del uso de Karaoke Templater (plantillas de
 
 ## Encontrar Karaoke Templater
 
-Puede ejecutar Karaoke Templater de dos maneras diferentes. Por ahora sólo nos enfocaremos en uno de ellos.
+Puede ejecutar Karaoke Templater de dos maneras diferentes. Por ahora sólo nos enfocaremos en una de ellos.
 
 Busque bajo el menú Automatización en Aegisub.
 
@@ -20,7 +20,7 @@ Debe de verse la opción llamada _Aplicar plantilla karaoke_, aunque no estará 
 
 Si no tiene la opción _Aplicar plantilla karaoke_, su instalación de Aegisub está incompleta o dañada. En ese caso, deberá reparar su instalación para poder utilizar Karaoke Templater.
 
-Pero hay algo más de que asegurarnos primero.
+Pero hay algo más de qué asegurarnos primero.
 
 ## Karaoke sincronizado
 
@@ -28,7 +28,7 @@ Karaoke Templater puede hacer muchas cosas por usted, pero no puede adivinar la 
 
 Llamaremos a las letras de canciones con sincronización básica de karaoke (\\k timing), pero sin otros efectos, _karaoke sincronizado_. Cuando se ha aplicado un efecto al karaoke lo llamaremos _karaoke estilizado_.
 
-Si no tiene ninguna canción con la que trabajar, acá abajo hay dos líneas de una canción. Puede seleccionarlas en su navegador, darle a _Editar_→_Copiar_, luego ir a Aegisub y _Editar_→_Pegar_, para pegarlos en Aegisub.
+Si no tiene ninguna canción con la cual trabajar, acá abajo hay dos líneas de una canción. Puede seleccionarlas en su navegador, darle a _Editar_→_Copiar_, luego ir a Aegisub y _Editar_→_Pegar_, para pegarlos en Aegisub.
 
 ```ass
 Dialogue: 0,0:00:01.85,0:00:09.06,Default,,0000,0000,0000,,{\k97}shi{\k41}ta{\k0} {\k20}no{\k10} {\k30}u{\k80}e{\k53} {\k23}a{\k21}ma{\k39}ku{\k7}  {\k24}to{\k24}ke{\k31}ru{\k0} {\k37}wa{\k23}ta{\k92}gu{\k69}mo
@@ -44,18 +44,18 @@ No es necesario cargar ningún audio, pero puede ser buena idea tener algún vid
 ## Escribir plantilla estilo _k-replacer_
 
 Ahora que tenemos todo lo demás configurado, es hora de crear la plantilla misma.
-Primero, aquí se explica cómo agregarlo. A continuación se explicará lo que significa cada paso.
+Primero, aquí se explica cómo agregarla. A continuación, se explicará lo que significa cada paso.
 
 1. Seleccione el primer renglón de subtítulo del archivo.
-1. Seleccione _Subtítulos_→_Insertar renglones_→_Antes del actual_ para crear un nuevo renglón anterior. Este se convertirá en nuestra línea de plantilla de karaoke. No es necesario que sea el primero, pero generalmente hace que sea más fácil de encontrar en adelante.
-1. Asegúrese de que la línea recién creada tenga el mismo _estilo_ que su karaoke sincronizado.
-1. Haga clic en la casilla para _Comentario_ para la nueva línea. Debe de cambiar de color en la cuadrícula de subtítulos.
-1. Busque el campo _Efecto_, que está a la derecha de los campos _Estilo_ y _Actor_. Coloque el texto "`template line`" en él (¡Sin las comillas!). Presione la tecla _Enter_ en su teclado para guardar el campo Efecto.
-1. Finalmente, ingrese este texto como texto principal de la línea de su plantilla. Termine con _Enter_ nuevamente. `{\r\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)}`
+2. Seleccione _Subtítulos_→_Insertar renglones_→_Antes del actual_ para crear un nuevo renglón antes del seleccionado. Este se convertirá en nuestra línea de plantilla de karaoke. No es necesario que sea el primero, pero generalmente hace que sea más fácil de encontrar en adelante.
+3. Asegúrese de que la línea recién creada tenga el mismo _estilo_ que su karaoke sincronizado.
+4. Haga clic en la casilla de _Comentario_ de la nueva línea. Debe de cambiar de color en la cuadrícula de subtítulos.
+5. Busque el campo _Efecto_, que está a la derecha de los campos _Estilo_ y _Actor_. Coloque el texto "`template line`" en él (¡Sin las comillas!). Presione la tecla _Enter_ en su teclado para guardar el campo Efecto.
+6. Finalmente, ingrese este texto como texto principal de la línea de su plantilla. Termine con _Enter_ nuevamente. `{\r\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)}`
 
 {{<todo>}}Pantallazo de cómo se ve después de los pasos. {{</todo>}}
 
-Ahora mire al menú _Automatización_ de nuevo. Si creó la línea plantilla correctamente, ahora estará disponible _Aplicar plantilla de karaoke_. Si no es así, revise los pasos anteriores de nuevo.
+Ahora mire al menú _Automatización_ de nuevo. Si creó la línea de plantilla correctamente, ahora estará disponible _Aplicar plantilla de karaoke_. Si no es así, revise los pasos anteriores de nuevo.
 
 Seleccione _Aplicar plantillas de karaoke_ y observe cómo Karaoke Templater hace efecto.
 
@@ -71,7 +71,7 @@ Karaoke Templater conserva su karaoke sincronizado dentro del karaoke con estilo
 Continuando desde arriba, ahora intente lo siguiente:
 
 1. Cambie el texto de la línea de plantilla a: `{\r\k$kdur\t($start,$end,\1c&H00FF00&)\t($start,$mid,\fscy120)\t($mid,$end,\fscy100)}`
-1. Aplicar plantillas nuevamente
+2. Aplicar plantillas nuevamente
 
 {{<todo>}}Más pantallazos {{</todo>}}
 
@@ -94,7 +94,7 @@ Esta no es la explicación completa de todo, pero debe de bastar por ahora.
 
 <!-- -->
 
-- Todo karaoke con estilo producido por Karaoke Templater tiene `fx` en el campo Efecto. Esto se utiliza como recordatorio para Karaoke Templater de que esta línea deben ser reemplazado, si las plantillas se aplican otra vez.
+- Todo karaoke con estilo producido por Karaoke Templater tiene `fx` en el campo Efecto. Esto se utiliza como recordatorio para Karaoke Templater de que esta línea debe ser reemplazada, si las plantillas se aplican otra vez.
 
 <!-- -->
 
