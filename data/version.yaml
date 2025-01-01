@@ -1,5 +1,5 @@
-current: 3.4.0
-release_date: 2024-12-18
+current: 3.4.1
+release_date: 2025-01-01
 
 previous_versions:
  - version: 1.07.0
@@ -811,3 +811,33 @@ previous_versions:
       link: https://github.com/TypesettingTools/Aegisub/archive/refs/tags/v3.4.0.tar.gz
       md5: 850643f17021294aa14891a3fb200888
       sha512: 364f56aece74b14f37d796e364ffcc5b9d8ab5816f8e118b7f44d2d4e3bdf8afa0731c36995269dd953d2f532e7a905729bcbfa907c672a8eb91b68565c1ade0
+
+ - version: 3.4.1
+   svnRevision: 9418
+   artifacts:
+    - filename: Aegisub-3.4.1.exe
+      type: Windows
+      notes: Regular Install
+      link: https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.1/Aegisub-3.4.1.exe
+      md5: 8b95a0194f1a74837aac4c7d0b471098
+      sha512: 1ca79c113296182cf468756ffe3472d4dde46f9c05d0465a14a2ce4ec09a7fa5fd899271e86b46839fb3663fe10cfac685f1c19fb5b7dd88e3549b81b5fff438
+
+    - filename: Aegisub-3.4.1.dmg
+      type: OS X
+      notes: Full Install
+      link: https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.1/Aegisub-3.4.1.dmg
+      md5: 3648881c0512d6bd00af05fdf35fc017
+      sha512: 0954eb3f4ab3184116e4727f7c7a788ecc3816ca751f75bfef2a1cef927cea4f021e9fe4dd5a277dfe2dcc3b07409295fe96f2633393f249817ea939b11bfe00
+
+    - filename: aegisub-3.4.1-portable.zip
+      type: Windows
+      notes: Portable
+      link: https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.1/aegisub-3.4.1-portable.zip
+      md5: f6d64a6be4c7c2a4493c6ebef5ac6599
+      sha512: 6965076f76c596cd18f135a0fcf5e9573d7fbfcafe3eeca210fe946394bfc2fbca75a65ac1984ecd743302abc84ecae07ca1f65ddeeb6ae87dd912156715be23
+
+    - filename: Aegisub-3.4.1.tar.gz
+      type: Source
+      link: https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.1/Aegisub-3.4.1.tar.gz
+      md5: 968c7f79f9110ebac558a6526d35895c
+      sha512: bcd1638e66936fd131b26636ca89f78c98b4ab279f2dc6bde7f0bf2c99193da54d0bc7d0eb55719dd22e2ad441273538a3f9af8bfb5040a3065deb6fb4f2abcf
