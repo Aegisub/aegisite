@@ -72,6 +72,8 @@ docs:
 # docs-sidebar/changelog
 changelogs:
   - name: '3.2'
+    weight: -34
+  - name: '3.2'
     weight: -32
   - name: '3.1'
     weight: -31
