@@ -96,7 +96,7 @@ docs:
     identifier: faq
     parent: introduction
     url: /docs/latest/FAQ
-  # introduction/tutorials
+  # introduction/tutorials/
   - name: Tutorial de sincronizar Karaoke
     weight: 2710
     identifier: karaoke-timing-tutorial
@@ -174,12 +174,145 @@ docs:
     weight: 5400
     identifier: kanji-timer
     parent: timing
-    url: /docs/latest/
-  # TODO quitar tutoriales-automatización y sustituir por subpáginas de automatizar
-  - name: Tutoriales-automatización
-    weight: 800
-    identifier: automation-tutorials
-
+    url: /docs/latest/Kanji_Timer
+  # automation/
+  - name: Resumen de automatización
+    weight: 6000
+    identifier: automation-overview
+    parent: automation
+    url: /docs/latest/Automation
+  - name: Plantillas de Karaoke
+    weight: 6100
+    identifier: karaoke-templater
+    parent: automation
+    url: /docs/latest/Automation/Karaoke_Templater
+  # automation/karaoke-templater/
+  - name: Declarar plantillas
+    weight: 6110
+    identifier: declaring-templates
+    parent: karaoke-templater
+    url: /docs/latest/Automation/Karaoke_Templater/Declaring_template_and_code_lines
+  - name: Secuencia de ejecución
+    weight: 6120
+    identifier: execution-order
+    parent: karaoke-templater
+    url: /docs/latest/Automation/Karaoke_Templater/Template_execution_rules_and_order
+  - name: Modificadores
+    weight: 6130
+    identifier: template-modifiers
+    parent: karaoke-templater
+    url: /docs/latest/Automation/Karaoke_Templater/Template_modifiers
+  - name: Variables en línea ($-variables)
+    weight: 6140
+    identifier: inline-variables
+    parent: karaoke-templater
+    url: /docs/latest/Automation/Karaoke_Templater/Inline_variables
+  - name: Líneas y bloques de código
+    weight: 6150
+    identifier: code-lines-and-blocks
+    parent: karaoke-templater
+    url: /docs/latest/Automation/Karaoke_Templater/Code_lines_and_blocks
+  - name: Entorno de ejecución
+    weight: 6160
+    identifier: code-execution-environment
+    parent: karaoke-templater
+    url: /docs/latest/Automation/Karaoke_Templater/Code_execution_environment
+  # automation/karaoke-templater/automation-tutorials/
+  - name: Usar expresiones matemáticas
+    weight: 6172
+    identifier: tutorial-2
+    parent: automation-tutorials
+    url: /docs/latest/Automation/Karaoke_Templater/Tutorial_2
+  # automation/
+  - name: Guía de Lua
+    weight: 6200
+    identifier: lua-reference
+    parent: automation
+    url: /docs/latest/Automation/Lua
+  # automation/lua-reference/
+  - name: Registración
+    weight: 6210
+    identifier: registration
+    parent: lua-reference
+    url: /docs/latest/Automation/Lua/Registration
+  - name: Objeto subtítulos
+    weight: 6220
+    identifier: subtitle-file-interface
+    parent: lua-reference
+    url: /docs/latest/Automation/Lua/Subtitle_file_interface
+  - name: Informar progreso
+    weight: 6230
+    identifier: progress-reporting
+    parent: lua-reference
+    url: /docs/latest/Automation/Lua/Progress_reporting
+  - name: Diálogos
+    weight: 6240
+    identifier: dialogs
+    parent: lua-reference
+    url: docs/latest/Automation/Lua/Dialogs
+  - name: APIs misc.
+    weight: 6250
+    identifier: miscellaneous-apis
+    parent: lua-reference
+    url: /docs/latest/Automation/Lua/Miscellaneous_APIs
+  - name: Módulos Lua
+    weight: 6260
+    identifier: lua-modules
+    parent: lua-reference
+    url: /docs/latest/Automation/Lua/Modules
+  # automation/lua-reference/lua-modules/
+  - name: karaskel.lua
+    weight: 6261
+    identifier: karaskel
+    parent: lua-modules
+    url: /docs/latest/Automation/Lua/Modules/karaskel.lua
+  - name: utils.lua
+    weight: 6262
+    identifier: util
+    parent: lua-modules
+    url: /docs/latest/Automation/Lua/Modules/util
+  - name: unicode.lua
+    weight: 6263
+    identifier: unicode
+    parent: lua-modules
+    url: /docs/latest/Automation/Lua/Modules/unicode
+  - name: cleantags.lua
+    weight: 6264
+    identifier: cleantags
+    parent: lua-modules
+    url: /docs/latest/Automation/Lua/Modules/cleantags
+  - name: clipboard
+    weight: 6265
+    identifier: clipboard
+    parent: lua-modules
+    url: /docs/latest/Automation/Lua/Modules/clipboard
+  - name: re
+    weight: 6266
+    identifier: re
+    parent: lua-modules
+    url: /docs/latest/Automation/Lua/Modules/re
+  # automation/
+  - name: Gestor de automatización
+    weight: 6300
+    identifier: automation-manager
+    parent: automation
+    url: /docs/latest/Automation/Manager
+  - name: Ejecutar macros
+    weight: 6400
+    identifier: running-macros
+    parent: automation
+    url: /docs/latest/Automation/Running_macros
+  - name: Macros estándares
+    weight: 6500
+    identifier: included-macros
+    parent: automation
+    url: /docs/latest/Automation/Included_macros
+  - name: Historia de automatización
+    weight: 6600
+    identifier: history-of-automation
+    parent: automation
+    url: /docs/latest/History_of_Automation
+  # miscellaneous/
 
 # footer/right side
 footer:
