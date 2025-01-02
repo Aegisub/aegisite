@@ -313,6 +313,31 @@ docs:
     parent: automation
     url: /docs/latest/History_of_Automation
   # miscellaneous/
+  - name: Autoguardado
+    weight: 7100
+    identifier: autosave
+    parent: miscellaneous
+    url: /docs/latest/Autosave
+  - name: Rutas de archivos
+    weight: 7200
+    identifier: path-specifiers
+    parent: miscellaneous
+    url: /docs/latest/Aegisub_path_specifiers
+  - name: Resolución de guion
+    weight: 7400
+    identifier: script-resolution
+    parent: miscellaneous
+    url: /docs/latest/Script_Resolution
+  - name: Gestor de adjuntos
+    weight: 7500
+    identifier: attachment-manager
+    parent: miscellaneous
+    url: /docs/latest/Attachment_Manager
+  - name: Comandos
+    weight: 7600
+    identifier: commands
+    parent: miscellaneous
+    url: /docs/latest/Commands
 
 # footer/right side
 footer:
