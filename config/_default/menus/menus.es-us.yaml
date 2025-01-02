@@ -112,6 +112,33 @@ docs:
     identifier: furigana-karaoke
     parent: tutorials
     url: /docs/latest/Furigana_karaoke
+  # working-with-subtitles/
+  - name: Exportar subtítulos
+    weight: 3100
+    identifier: exporting-subtitles
+    parent: working-with-subtitles
+    url: /docs/latest/Exporting
+  - name: Corrector ortográfico
+    weight: 3300
+    identifier: spell-checker
+    parent: working-with-subtitles
+    url: /docs/latest/Spell_Checker
+  - name: Pegar encima
+    weight: 3500
+    identifier: paste-over
+    parent: working-with-subtitles
+    url: /docs/latest/Paste_Over
+  - name: Seleccionar líneas
+    weight: 3600
+    identifier: select-lines
+    parent: working-with-subtitles
+    url: /docs/latest/Select_Lines
+  # typesetting/
+  - name: Composición tipográfica visual
+    weight: 4300
+    identifier: visual-typesetting
+    parent: typesetting
+    url: /docs/latest/Visual_Typesetting
   # TODO quitar tutoriales-automatización y sustituir por subpáginas de automatizar
   - name: Tutoriales-automatización
     weight: 800
