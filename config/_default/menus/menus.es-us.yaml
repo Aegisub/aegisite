@@ -118,7 +118,7 @@ docs:
     identifier: exporting-subtitles
     parent: working-with-subtitles
     url: /docs/latest/Exporting
-  - name: Corrector ortográfico
+  - name: Corrector de ortografía
     weight: 3300
     identifier: spell-checker
     parent: working-with-subtitles
@@ -128,7 +128,7 @@ docs:
     identifier: paste-over
     parent: working-with-subtitles
     url: /docs/latest/Paste_Over
-  - name: Seleccionar líneas
+  - name: Seleccionar renglones
     weight: 3600
     identifier: select-lines
     parent: working-with-subtitles
@@ -139,6 +139,26 @@ docs:
     identifier: visual-typesetting
     parent: typesetting
     url: /docs/latest/Visual_Typesetting
+  - name: Paleta de colores
+    weight: 4500
+    identifier: colour-picker
+    parent: typesetting
+    url: /docs/latest/Colour_Picker
+  - name: Gestor de estilos
+    weight: 4600
+    identifier: styling-assistant
+    parent: typesetting
+    url: /docs/latest/Styling_Assistant
+  - name: Remuestreo de resolución
+    weight: 4700
+    identifier: resolution-resampler
+    parent: typesetting
+    url: /docs/latest/Resolution_Resampler
+  - name: Colección de fuentes
+    weight: 4800
+    identifier: fonts-collector
+    parent: typesetting
+    url: /docs/latest/Fonts_Collector
   # TODO quitar tutoriales-automatización y sustituir por subpáginas de automatizar
   - name: Tutoriales-automatización
     weight: 800
