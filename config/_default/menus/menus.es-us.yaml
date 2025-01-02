@@ -159,6 +159,22 @@ docs:
     identifier: fonts-collector
     parent: typesetting
     url: /docs/latest/Fonts_Collector
+  # timing/
+  - name: Sincronizar subtítulos con audio
+    weight: 5100
+    identifier: timing-subtitles-to-audio
+    parent: timing
+    url: /docs/latest/Timing
+  - name: Pos-procesador de sincronía
+    weight: 5300
+    identifier: timing-post-processor
+    parent: timing
+    url: /docs/latest/Timing_Post-Processor
+  - name: Sincronizador Kanji
+    weight: 5400
+    identifier: kanji-timer
+    parent: timing
+    url: /docs/latest/
   # TODO quitar tutoriales-automatización y sustituir por subpáginas de automatizar
   - name: Tutoriales-automatización
     weight: 800
