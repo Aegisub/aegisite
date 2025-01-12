@@ -5,8 +5,16 @@
 # header-bar/left side: main menus
 main:
   - name: 下载
-    url: /downloads/
     weight: 10
+    identifier: downloads
+  - name: 下载
+    url: /downloads/
+    parent: downloads
+    weight: 11
+  - name: 更新日志
+    url: ../changelog/
+    parent: downloads
+    weight: 15
   - name: 文档
     url: /docs/
     weight: 20

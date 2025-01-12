@@ -4,18 +4,18 @@
     <article>
       <h1 class="text-center">{{ .Title }}</h1>
       <div class="text-center">{{ .Content }}</div>
-			<div class="card-list">
-				{{ $currentSection := .CurrentSection }}
-				{{ range where .Site.RegularPages.ByWeight "Section" .Section }}
-					{{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
-						<div class="card my-3">
-							<div class="card-body">
-								<a class="stretched-link" href="{{ .RelPermalink }}">{{ .Params.title | title }} &rarr;</a>
-							</div>
-						</div>
-					{{ end }}
-				{{ end }}
-			</div>
+      {{ range .Site.Menus.changelogs -}}
+        <h3>{{ .Name }}</h3>
+        {{ if .HasChildren -}}
+        <ul class="list-unstyled">
+          {{ range .Children -}}
+            <li><a href="{{ .URL | relLangURL }}">Changelog for {{ .Name }}</a>
+              {{ if .Page.Date }} <small>({{ .Page.Date.Format "January 2, 2006" }})</small>{{ end }}
+            </li>
+          {{ end -}}
+        </ul>
+        {{ end -}}
+      {{ end -}}
     </article>
   </div>
 </div>
