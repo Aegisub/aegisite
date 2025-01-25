@@ -13,7 +13,7 @@
       {{ if in (slice         
         (and (eq $pageLang "en") (eq .locale "en_US"))
         (and (eq $pageLang "zh-cn") (eq .locale "zh_CN"))
-        (and (eq $pageLang "es-us") (eq .locale "es_US"))
+        (and (eq $pageLang "es-us") (eq .locale "es"))
         (eq $pageLang .locale)) true}}
         {{ range .commands }}
         <tr>

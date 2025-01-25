@@ -333,11 +333,6 @@ docs:
     identifier: attachment-manager
     parent: miscellaneous
     url: /docs/latest/Attachment_Manager
-  - name: Comandos
-    weight: 7600
-    identifier: commands
-    parent: miscellaneous
-    url: /docs/latest/Commands
 
 # footer/right side
 footer:
