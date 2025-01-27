@@ -15,3 +15,12 @@ zh-cn:
     languageISO: ZH
     languageTag: zh-CN
     dateFormat: "2006年1月2日"
+
+tr:
+  languageName: Türkçe
+  contentDir: content/tr
+  weight: 20
+  params:
+    languageISO: TR
+    languageTag: tr-TR
+    dateFormat: "2 Ocak 2006"
