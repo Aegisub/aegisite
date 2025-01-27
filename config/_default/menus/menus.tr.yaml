@@ -52,7 +52,7 @@ docs:
   - name: Altyazı Hazırlama
     weight: 300
     identifier: working-with-subtitles
-  - name: Biçimlendirme
+  - name: Dizgi
     weight: 400
     identifier: typesetting
   - name: Zamanlama
