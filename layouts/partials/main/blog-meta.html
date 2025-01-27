@@ -15,6 +15,8 @@
     {{ $ctbURL := printf "%s%s/" ("/contributors/" | relURL) ($contributor | urlize) -}}
     {{ if eq site.Params.languageTag "zh-CN" -}}
       {{ $ctbURL = printf "%s%s" ("/zh-cn" | relURL) $ctbURL -}}
+    {{ else if eq site.Params.languageTag "tr-TR" -}}
+      {{ $ctbURL = printf "%s%s" ("/tr-tr" | relURL) $ctbURL -}}
     {{ end -}}
     {{ $ctbStr = printf "%s<a class=\"stretched-link position-relative\" href=\"%s\">%s</a>" $ctbStr $ctbURL $contributor -}}
   {{ end -}}
