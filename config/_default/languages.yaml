@@ -14,6 +14,7 @@ es-us:
   params:
     languageISO: ES
     languageTag: es-US
+    dateFormat: "January 2, 2006"
 
 zh-cn:
   languageName: 简体中文
