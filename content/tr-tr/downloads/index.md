@@ -12,7 +12,7 @@ layout: Downloads
 
 ## Yaklaşan Sürümler
 
-Check CI build
+CI derlemesini kontrol edin
 
 ## Sözlükler
 
