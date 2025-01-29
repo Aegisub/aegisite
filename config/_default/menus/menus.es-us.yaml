@@ -1,0 +1,341 @@
+# Menus - Doks: https://getdoks.org/docs/recipes/menus/
+# Menus | Hugo: https://gohugo.io/content-management/menus/
+
+
+# header-bar/left side: main menus
+main:
+  - name: Descargas
+    url: /downloads/
+    weight: 10
+  - name: Docs
+    url: /docs/
+    weight: 20
+  - name: Rastreo de errores
+    url: https://github.com/TypesettingTools/Aegisub/issues
+    weight: 30
+  - name: Blog
+    url: ../blog/
+    weight: 40
+
+# header-bar/right side: social menus
+social:
+  # - name: Twitter
+  #   pre: >-
+  #     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0
+  #     0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+  #     stroke-linecap="round" stroke-linejoin="round" class="feather
+  #     feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0
+  #     0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0
+  #     20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+  #   url: 'https://twitter.com/aegisub'
+  #   weight: 10
+  - name: GitHub
+    pre: >-
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0
+      0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather
+      feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0
+      0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0
+      0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09
+      1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44
+      7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+    url: 'https://github.com/TypesettingTools/Aegisub'
+    weight: 20
+
+# Pages not yet translated are added as references to English originals. Once pages are added,
+# corresponding menu placeholders can be removed
+# docs-sidebar/docs
+docs:
+  - name: Navegación
+    weight: 110
+    identifier: navigation
+  - name: Introducción
+    weight: 200
+    identifier: introduction
+  - name: Trabajando con subtítulos
+    weight: 300
+    identifier: working-with-subtitles
+  - name: Formatear
+    weight: 400
+    identifier: typesetting
+  - name: Sincronizar
+    weight: 500
+    identifier: timing
+  - name: Automatizar
+    weight: 600
+    identifier: automation
+  - name: Otro
+    weight: 700
+    identifier: miscellaneous
+
+  # placeholders
+
+  # introduction/
+  - name: Destacados
+    weight: 2200
+    identifier: highlights
+    parent: introduction
+    url: /docs/latest/Highlights
+  - name: Créditos
+    weight: 2300
+    identifier: credits
+    parent: introduction
+    url: /docs/latest/Credits
+  - name: Aviso general
+    weight: 2400
+    identifier: general_disclaimer
+    parent: introduction
+    url: /docs/latest/General_disclaimer
+  - name: Apoyar Aegisub
+    weight: 2500
+    identifier: support-aegisub
+    parent: introduction
+    url: /docs/latest/Support
+  - name: Preguntas frecuentes
+    weight: 2600
+    identifier: faq
+    parent: introduction
+    url: /docs/latest/FAQ
+  # introduction/tutorials/
+  - name: Tutorial de sincronizar Karaoke
+    weight: 2710
+    identifier: karaoke-timing-tutorial
+    parent: tutorials
+    url: /docs/latest/Karaoke_Timing_Tutorial
+  - name: Tutorial de efectos en línea
+    weight: 2720
+    identifier: karaoke-inline-fx
+    parent: tutorials
+    url: Karaoke_inline-fx
+  - name: Tutorial de Furigana
+    weight: 2730
+    identifier: furigana-karaoke
+    parent: tutorials
+    url: /docs/latest/Furigana_karaoke
+  # working-with-subtitles/
+  - name: Exportar subtítulos
+    weight: 3100
+    identifier: exporting-subtitles
+    parent: working-with-subtitles
+    url: /docs/latest/Exporting
+  - name: Corrector de ortografía
+    weight: 3300
+    identifier: spell-checker
+    parent: working-with-subtitles
+    url: /docs/latest/Spell_Checker
+  - name: Pegar encima
+    weight: 3500
+    identifier: paste-over
+    parent: working-with-subtitles
+    url: /docs/latest/Paste_Over
+  - name: Seleccionar renglones
+    weight: 3600
+    identifier: select-lines
+    parent: working-with-subtitles
+    url: /docs/latest/Select_Lines
+  # typesetting/
+  - name: Composición tipográfica visual
+    weight: 4300
+    identifier: visual-typesetting
+    parent: typesetting
+    url: /docs/latest/Visual_Typesetting
+  - name: Paleta de colores
+    weight: 4500
+    identifier: colour-picker
+    parent: typesetting
+    url: /docs/latest/Colour_Picker
+  - name: Gestor de estilos
+    weight: 4600
+    identifier: styling-assistant
+    parent: typesetting
+    url: /docs/latest/Styling_Assistant
+  - name: Remuestreo de resolución
+    weight: 4700
+    identifier: resolution-resampler
+    parent: typesetting
+    url: /docs/latest/Resolution_Resampler
+  - name: Colección de fuentes
+    weight: 4800
+    identifier: fonts-collector
+    parent: typesetting
+    url: /docs/latest/Fonts_Collector
+  # timing/
+  - name: Sincronizar subtítulos con audio
+    weight: 5100
+    identifier: timing-subtitles-to-audio
+    parent: timing
+    url: /docs/latest/Timing
+  - name: Pos-procesador de sincronía
+    weight: 5300
+    identifier: timing-post-processor
+    parent: timing
+    url: /docs/latest/Timing_Post-Processor
+  - name: Sincronizador Kanji
+    weight: 5400
+    identifier: kanji-timer
+    parent: timing
+    url: /docs/latest/Kanji_Timer
+  # automation/
+  - name: Resumen de automatización
+    weight: 6000
+    identifier: automation-overview
+    parent: automation
+    url: /docs/latest/Automation
+  - name: Plantillas de Karaoke
+    weight: 6100
+    identifier: karaoke-templater
+    parent: automation
+    url: /docs/latest/Automation/Karaoke_Templater
+  # automation/karaoke-templater/
+  - name: Declarar plantillas
+    weight: 6110
+    identifier: declaring-templates
+    parent: karaoke-templater
+    url: /docs/latest/Automation/Karaoke_Templater/Declaring_template_and_code_lines
+  - name: Secuencia de ejecución
+    weight: 6120
+    identifier: execution-order
+    parent: karaoke-templater
+    url: /docs/latest/Automation/Karaoke_Templater/Template_execution_rules_and_order
+  - name: Modificadores
+    weight: 6130
+    identifier: template-modifiers
+    parent: karaoke-templater
+    url: /docs/latest/Automation/Karaoke_Templater/Template_modifiers
+  - name: Variables en línea ($-variables)
+    weight: 6140
+    identifier: inline-variables
+    parent: karaoke-templater
+    url: /docs/latest/Automation/Karaoke_Templater/Inline_variables
+  - name: Líneas y bloques de código
+    weight: 6150
+    identifier: code-lines-and-blocks
+    parent: karaoke-templater
+    url: /docs/latest/Automation/Karaoke_Templater/Code_lines_and_blocks
+  - name: Entorno de ejecución
+    weight: 6160
+    identifier: code-execution-environment
+    parent: karaoke-templater
+    url: /docs/latest/Automation/Karaoke_Templater/Code_execution_environment
+  # automation/karaoke-templater/automation-tutorials/
+  - name: Usar expresiones matemáticas
+    weight: 6172
+    identifier: tutorial-2
+    parent: automation-tutorials
+    url: /docs/latest/Automation/Karaoke_Templater/Tutorial_2
+  # automation/
+  - name: Guía de Lua
+    weight: 6200
+    identifier: lua-reference
+    parent: automation
+    url: /docs/latest/Automation/Lua
+  # automation/lua-reference/
+  - name: Registración
+    weight: 6210
+    identifier: registration
+    parent: lua-reference
+    url: /docs/latest/Automation/Lua/Registration
+  - name: Objeto subtítulos
+    weight: 6220
+    identifier: subtitle-file-interface
+    parent: lua-reference
+    url: /docs/latest/Automation/Lua/Subtitle_file_interface
+  - name: Informar progreso
+    weight: 6230
+    identifier: progress-reporting
+    parent: lua-reference
+    url: /docs/latest/Automation/Lua/Progress_reporting
+  - name: Diálogos
+    weight: 6240
+    identifier: dialogs
+    parent: lua-reference
+    url: docs/latest/Automation/Lua/Dialogs
+  - name: APIs misc.
+    weight: 6250
+    identifier: miscellaneous-apis
+    parent: lua-reference
+    url: /docs/latest/Automation/Lua/Miscellaneous_APIs
+  - name: Módulos Lua
+    weight: 6260
+    identifier: lua-modules
+    parent: lua-reference
+    url: /docs/latest/Automation/Lua/Modules
+  # automation/lua-reference/lua-modules/
+  - name: karaskel.lua
+    weight: 6261
+    identifier: karaskel
+    parent: lua-modules
+    url: /docs/latest/Automation/Lua/Modules/karaskel.lua
+  - name: utils.lua
+    weight: 6262
+    identifier: util
+    parent: lua-modules
+    url: /docs/latest/Automation/Lua/Modules/util
+  - name: unicode.lua
+    weight: 6263
+    identifier: unicode
+    parent: lua-modules
+    url: /docs/latest/Automation/Lua/Modules/unicode
+  - name: cleantags.lua
+    weight: 6264
+    identifier: cleantags
+    parent: lua-modules
+    url: /docs/latest/Automation/Lua/Modules/cleantags
+  - name: clipboard
+    weight: 6265
+    identifier: clipboard
+    parent: lua-modules
+    url: /docs/latest/Automation/Lua/Modules/clipboard
+  - name: re
+    weight: 6266
+    identifier: re
+    parent: lua-modules
+    url: /docs/latest/Automation/Lua/Modules/re
+  # automation/
+  - name: Gestor de automatización
+    weight: 6300
+    identifier: automation-manager
+    parent: automation
+    url: /docs/latest/Automation/Manager
+  - name: Ejecutar macros
+    weight: 6400
+    identifier: running-macros
+    parent: automation
+    url: /docs/latest/Automation/Running_macros
+  - name: Macros estándares
+    weight: 6500
+    identifier: included-macros
+    parent: automation
+    url: /docs/latest/Automation/Included_macros
+  - name: Historia de automatización
+    weight: 6600
+    identifier: history-of-automation
+    parent: automation
+    url: /docs/latest/History_of_Automation
+  # miscellaneous/
+  - name: Autoguardado
+    weight: 7100
+    identifier: autosave
+    parent: miscellaneous
+    url: /docs/latest/Autosave
+  - name: Rutas de archivos
+    weight: 7200
+    identifier: path-specifiers
+    parent: miscellaneous
+    url: /docs/latest/Aegisub_path_specifiers
+  - name: Resolución de guion
+    weight: 7400
+    identifier: script-resolution
+    parent: miscellaneous
+    url: /docs/latest/Script_Resolution
+  - name: Gestor de adjuntos
+    weight: 7500
+    identifier: attachment-manager
+    parent: miscellaneous
+    url: /docs/latest/Attachment_Manager
+
+# footer/right side
+footer:
+  - name: Privacidad
+    url: /privacy-policy/
+    weight: 10

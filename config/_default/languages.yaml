@@ -7,6 +7,15 @@ en:
     languageTag: en-US
     dateFormat: "January 2, 2006"
 
+es-us:
+  languageName: Español
+  contentDir: content/es-us
+  weight: 15
+  params:
+    languageISO: ES
+    languageTag: es-US
+    dateFormat: "January 2, 2006"
+
 zh-cn:
   languageName: 简体中文
   contentDir: content/zh-cn

@@ -1,0 +1,41 @@
+- id: get-started
+  translation: "Empezar"
+
+- id: on-this-page
+  translation: "En esta página"
+
+- id: menu-overview
+  translation: "Resumen"
+
+- id: search-text
+  translation: "Buscar en docs..."
+
+- id: 404-title
+  translation: "Página no se encuentra :("
+
+- id: 404-text
+  translation: "La página que busca no existe o se ha movido."
+
+- id: browse
+  translation: "Explorar"
+
+- id: bsd-license
+  translation: "Licencias estilo BSD open-source."
+
+- id: example
+  translation: "Ejemplo"
+
+- id: language
+  translation: "Idioma"
+
+- id: type
+  translation: "Tipo"
+
+- id: notes
+  translation: "Notas"
+
+- id: file
+  translation: "Archivo"
+
+- id: md5
+  translation: "MD5"
