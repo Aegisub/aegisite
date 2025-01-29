@@ -47,4 +47,4 @@
   translation: ", "
 
 - id: post-metainfo
-  translation: "{{ .date }} tarihinde {{ .authors }} tarafından yayınlandı – <strong>{{ .readingTime }} dakikalık okuma</strong>"
+  translation: "Yazar: {{ .authors }} – Tarih: {{ .date }} – <strong>{{ .readingTime }} dakikalık okuma</strong>"
