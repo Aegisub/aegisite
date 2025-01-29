@@ -28,7 +28,7 @@ zh-cn:
 tr-tr:
   languageName: Türkçe
   contentDir: content/tr-tr
-  weight: 20
+  weight: 15
   params:
     languageISO: TR
     languageTag: tr-TR
