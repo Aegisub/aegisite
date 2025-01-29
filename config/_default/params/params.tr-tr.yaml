@@ -72,7 +72,7 @@ smallLimit: '300'
 footer: >-
   Altyapı <a class="text-muted" href="https://gohugo.io/">Hugo</a> ve <a
   class="text-muted" href="https://getdoks.org/">Doks</a>. <br/>
-  Copyright (c) AegiSite <a href="https://github.com/Aegisub/aegisite/graphs/contributors">katkıda bulunanlar</a>.
+  Copyright (c) AegiSite için <a href="https://github.com/Aegisub/aegisite/graphs/contributors">katkıda bulunanlar</a>.
 
 # Feed
 # copyRight: Copyright (c) 2020-2021 Henk Verlinde
