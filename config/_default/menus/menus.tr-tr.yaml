@@ -4,8 +4,16 @@
 # header-bar/left side: main menus
 main:
   - name: İndir
-    url: /downloads/
     weight: 10
+    identifier: downloads
+  - name: İndir
+    url: /downloads/
+    parent: downloads
+    weight: 11
+  - name: Değişiklikler Günlüğü
+    url: ../changelog/
+    parent: downloads
+    weight: 15
   - name: Belgeler
     url: /docs/
     weight: 20
