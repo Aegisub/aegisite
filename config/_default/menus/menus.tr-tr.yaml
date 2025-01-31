@@ -15,7 +15,7 @@ main:
     parent: downloads
     weight: 15
   - name: Belgeler
-    url: ../docs/
+    url: /docs/
     weight: 20
   - name: Hata Takibi
     url: https://github.com/TypesettingTools/Aegisub/issues
