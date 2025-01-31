@@ -1,11 +1,11 @@
 ---
-title: Kullanıcı Kılavuzu
+title: Aegisub Belgeleri
 type: simple-page
 ---
 
 <p>
 <br />
-<a href="{{< relref path="docs" lang="en">}}latest/" class="btn btn-primary" role="button">3.4 Kılavuz</a> 3.4 sürümünün kullanıcı kılavuzu (İngilizce).
+<a href="{{< relref path="docs" lang="en">}}latest/" class="btn btn-primary" role="button">3.4 Kılavuz</a> Son sürümün kullanıcı kılavuzu (İngilizce).
 </p>
 <p>
 <br />
