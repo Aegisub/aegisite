@@ -1,0 +1,50 @@
+- id: get-started
+  translation: "Başla"
+
+- id: on-this-page
+  translation: "Bu sayfada"
+
+- id: menu-overview
+  translation: "Genel Bakış"
+
+- id: search-text
+  translation: "Belgelerde ara..."
+
+- id: 404-title
+  translation: "Sayfa bulunamadı :("
+
+- id: 404-text
+  translation: "Aradığınız sayfa mevcut değil veya taşınmış."
+
+- id: browse
+  translation: "Göz at"
+
+- id: bsd-license
+  translation: "Açık kaynak BSD tarzı lisanslar."
+
+- id: example
+  translation: "Örnek"
+
+- id: language
+  translation: "Dil"
+
+- id: type
+  translation: "Tür"
+
+- id: notes
+  translation: "Notlar"
+
+- id: file
+  translation: "Dosya"
+
+- id: md5
+  translation: "MD5"
+
+- id: and
+  translation: "ve"
+
+- id: comma
+  translation: ", "
+
+- id: post-metainfo
+  translation: "Yazar: {{ .authors }} – Tarih: {{ .date }} – <strong>{{ .readingTime }} dakikalık okuma</strong>"
