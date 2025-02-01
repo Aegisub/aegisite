@@ -32,4 +32,4 @@ tr-tr:
   params:
     languageISO: TR
     languageTag: tr-TR
-    dateFormat: "2 Ocak 2006"
+    dateFormat: "2 January 2006"
