@@ -76,5 +76,5 @@ docs:
 # footer/right side
 footer:
   - name: Gizlilik
-    url: /privacy-policy/
+    url: /tr-tr/privacy-policy/
     weight: 10
