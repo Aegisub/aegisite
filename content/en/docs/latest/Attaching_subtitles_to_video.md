@@ -154,7 +154,7 @@ have some basic knowledge of Avisynth.
 
 To allow adding subtitles to the video stream, you have two options: you can
 use VSFilter (included with Aegisub, in the "csri" folder), or you can use
-[AssRender](http://srsfckn.biz/assrender/), which uses libass. The following
+[AssRender](https://srsfckn.biz/assrender/), which uses libass. The following
 instructions assume that you are using VSFilter.
 
 To just add subtitles, you will want to make a simple AVS file containing the
@@ -172,7 +172,7 @@ TextSub("c:\projects\project1\subs\endkaraoke.ass")
 
 The above script will take an AVI file (mycoolvideo.avi), and then draw the
 contents of two subtitle files on the video. You can then encode this video in
-any program that supports AVS, such as [VirtualDub](http://www.virtualdub.org)
+any program that supports AVS, such as [VirtualDub](https://www.virtualdub.org)
 or x264. To do so, just open the .avs file in the program, and follow the
 normal encoding procedure for it.
 
@@ -205,7 +205,7 @@ Matroska Video (MKV) is currently the best container for this method (MP4, OGM
 and even AVI can technically contain softsubs, but none supports font
 attachments, and all of them has various other issues). Using a muxer that
 supports attachments (i.e. [mkvmerge
-GUI](http://www.bunkus.org/videotools/mkvtoolnix/)), you simply add your
+GUI](https://www.bunkus.org/videotools/mkvtoolnix/)), you simply add your
 subtitle files to the Matroska file as separate tracks (just like you add audio
 and video tracks), and any fonts as attachments (make sure they have the MIME
 type application/x-truetype-font). The fonts will then be installed temporarily

@@ -471,7 +471,7 @@ Audio provider
   methods.
 
   _avisynth_ (Windows only)
-  : Uses [Avisynth](http://avisynth.nl/index.php/Main_Page) to load audio. All file types
+  : Uses [Avisynth](https://avisynth.nl/index.php/Main_Page) to load audio. All file types
     will be loaded with DirectShowSource(), except for AVS files which will
     be opened with Import().
 
@@ -497,25 +497,25 @@ Audio player
 
   _alsa_ (Linux only)
   : Uses the [Advanced Linux Sound
-    Architecture](http://www.alsa-project.org/) to play back audio. ALSA is
+    Architecture](https://www.alsa-project.org/) to play back audio. ALSA is
     the native sound architecture of Linux and is not available on any
     other systems.
 
   _pulse_ (Linux and other \*NIX-like systems)
-  : Plays sound back through a [PulseAudio](http://pulseaudio.org/)
+  : Plays sound back through a [PulseAudio](https://pulseaudio.org/)
     sound server. This is the least-tested and least likely to work of the
     audio players, and is only recommended if your audio setup makes
     non-pulse players undesirable.
 
   _portaudio_
-  : Use the [PortAudio](http://www.portaudio.com/) API to play back
+  : Use the [PortAudio](https://www.portaudio.com/) API to play back
     sound. PortAudio has different playback implementations on different
     platforms. On most Unices it uses Open Sound System (OSS) for output.
     It is currently the only Windows audio player which supports
     selecting the output device.
 
   _openal_
-  : Uses the [OpenAL](http://www.openal.com/) API to play back audio.
+  : Uses the [OpenAL](https://www.openal.com/) API to play back audio.
     This is the recommended player on OS X. It is normally not included in
     windows builds due to that it adds an extra dependency for little
     benefit.
@@ -616,7 +616,7 @@ Video provider
   operating system you are running under. The following alternatives exist:
 
   _avisynth_ (Windows only)
-  : Uses [Avisynth](http://avisynth.nl/index.php/Main_Page) to load video. Versatile,
+  : Uses [Avisynth](https://avisynth.nl/index.php/Main_Page) to load video. Versatile,
     supports loading almost all common formats as well as .d2v files
     (indexed DVD VOBs) if the correct plugin is supplied. Note that Aegisub
     can install its own avisynth.dll instead of using your system

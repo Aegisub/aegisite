@@ -23,7 +23,7 @@ New subtitles
 
 Open subtitles
 : Open an existing subtitles file or import subtitles from a [Matroska
-  container file](http://www.matroska.org).
+  container file](https://www.matroska.org).
 
 Open subtitles with charset
 : Opens subtitles but lets you choose what character set Aegisub will
@@ -50,7 +50,7 @@ Aegisub supports reading the following subtitle formats:
 
 - Advanced Substation Alpha, also known as SSA v4+ (.ass)
 - Substation Alpha v4 (.ssa)
-- [SubRip](http://zuggy.wz.cz/) Text (.srt)
+- [SubRip](https://zuggy.wz.cz/) Text (.srt)
 - MPEG4 Timed Text (limited support at best; broken at worst), also known as
   ISO/IEC 14496-17, MPEG-4 Part 17 or just TTXT (.ttxt)
 - MicroDVD (.sub)

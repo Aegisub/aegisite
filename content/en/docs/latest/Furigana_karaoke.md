@@ -15,7 +15,7 @@ guide characters written along the main text in Japanese, specifically using
 the hiragana phonetic alphabet to describe how the ideographic kanji characters
 should be pronounced. Putting smaller text next to a main line of text is in
 general referred to as [_ruby
-text_](http://en.wikipedia.org/wiki/Ruby_character), but since the
+text_](https://en.wikipedia.org/wiki/Ruby_character), but since the
 implementation discussed here is designed specifically with Japanese furigana
 in mind, the ruby text is also referred to as furigana everywhere.
 

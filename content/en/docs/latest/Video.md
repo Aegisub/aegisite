@@ -23,11 +23,11 @@ use a dummy (mockup, blank) video, press _Use dummy video_.
 
 Aegisub normally uses [FFMS2](https://github.com/FFMS/ffms2) to open
 video, which supports opening nearly all common A/V formats, and many uncommon
-ones. For a full list of codecs supported, see [FFmpeg](http://ffmpeg.org/) or
-[Libav](http://libav.org/) documentation. Note that FFMS2 current has issues
+ones. For a full list of codecs supported, see [FFmpeg](https://ffmpeg.org/) or
+[Libav](https://libav.org/) documentation. Note that FFMS2 current has issues
 with interlaced H.264.
 
-On Windows, [Avisynth](http://avisynth.org/mediawiki/Main_Page) can be used
+On Windows, [Avisynth](https://avisynth.org/mediawiki/Main_Page) can be used
 instead of FFMS2. When opening via _Avisynth_, Aegisub will try several source
 functions to find the best choice:
 
@@ -45,15 +45,15 @@ AviSource()
 MPEG2Source()
 : Only used to load .d2v files (DVD2AVI project files; otherwise known
   as indexed .VOB's ripped from DVD's). Tries to use neuron2's
-  [DGDecode](http://neuron2.net/dgmpgdec/dgmpgdec.html) to open the file;
+  [DGDecode](https://neuron2.net/dgmpgdec/dgmpgdec.html) to open the file;
   if Aegisub can't find or load that it'll try the old mpeg2dec3.dll
   instead; if that too fails, returns an error. This is the most
   reliable way to open DVD video in Aegisub.
 
 DSS2()
 : Tries to find, load and use Haali's DirectShowSource2 plugin (comes
-  with the [Haali Media Splitter](http://haali.cs.msu.ru/mkv/) package
-  and with the [CCCP](http://cccp-project.net); the Avisynth plugin is
+  with the [Haali Media Splitter](https://haali.cs.msu.ru/mkv/) package
+  and with the [CCCP](https://cccp-project.net); the Avisynth plugin is
   _avss.dll_, you need to manually put it somewhere where Aegisub or
   Avisynth can find it, see below). That will in turn try to use your
   computer's DirectShow environment to open the file. Theoretically any
@@ -198,8 +198,8 @@ first frame of the video is frame number 0.
 
 Aegisub supports loading and working with variable framerate video. The how's
 and why's of VFR is far outside the scope of this manual (see for example [the
-VFR thread on AnimeSuki](http://forums.animesuki.com/showthread.php?t=34738) or
-the [Avisynth manual page](http://avisynth.org/mediawiki/VFR) for more
+VFR thread on AnimeSuki](https://forums.animesuki.com/showthread.php?t=34738) or
+the [Avisynth manual page](https://avisynth.org/mediawiki/VFR) for more
 information about VFR), but we will cover what you need to know about how
 Aegisub handles it.
 
@@ -238,7 +238,7 @@ going to hardsub the subtitles on.
 The following paragraphs assumes that you have a working knowledge of what
 anamorphic video is and how aspect ratios work. If you feel unsure, you may
 want to consult a [gentle but fairly complete
-introduction](http://www.hometheaterhifi.com/volume_6_4/feature-article-enhanced-widescreen-november-99.html).
+introduction](https://www.hometheaterhifi.com/volume_6_4/feature-article-enhanced-widescreen-november-99.html).
 
 ### Image stretching and subtitle rendering
 
@@ -313,15 +313,15 @@ deeply obfuscated topic that appears simple at a glance) the following links
 may be of interest:
 
 - [A Quick Guide to Digital Video Resolution and Aspect Ratio
-  Conversions](http://lipas.uwasa.fi/~f76998/video/conversion/) - Absolutely
+  Conversions](https://lipas.uwasa.fi/~f76998/video/conversion/) - Absolutely
   essential reading for anyone who wants to really understand the topic, but
   unfortunately far more than everything most people ever wanted to know about
   it.
   [Widescreen.org: Aspect
-  Ratios](http://www.widescreen.org/aspect_ratios.shtml) - the history and
+  Ratios](https://www.widescreen.org/aspect_ratios.shtml) - the history and
   reasons for some common aspect ratios
-- [Wikipedia: Aspect Ratio (image)](<http://en.wikipedia.org/wiki/Aspect_ratio_(image)>)
-- [Wikipedia: Anamorphic Widescreen](http://en.wikipedia.org/wiki/Anamorphic_widescreen)
+- [Wikipedia: Aspect Ratio (image)](<https://en.wikipedia.org/wiki/Aspect_ratio_(image)>)
+- [Wikipedia: Anamorphic Widescreen](https://en.wikipedia.org/wiki/Anamorphic_widescreen)
 
 ## The video menu
 
@@ -401,11 +401,11 @@ Show overscan mask
   action safe (dark blue) and title safe (light blue) areas. Useful if
   you plan on showing your subtitles on a TV without adjustable overscan
   correction. For more information, see the Wikipedia pages on
-  [overscan](http://en.wikipedia.org/wiki/Overscan), [safe
-  areas](http://en.wikipedia.org/wiki/Safe_area) and [overscan
-  amounts](http://en.wikipedia.org/wiki/Overscan_amounts). Aegisub
+  [overscan](https://en.wikipedia.org/wiki/Overscan), [safe
+  areas](https://en.wikipedia.org/wiki/Safe_area) and [overscan
+  amounts](https://en.wikipedia.org/wiki/Overscan_amounts). Aegisub
   follows the [BBC
-  guidelines](http://www.bbc.co.uk/guidelines/dq/pdf/tv/tv_standards_london.pdf)
+  guidelines](https://www.bbc.co.uk/guidelines/dq/pdf/tv/tv_standards_london.pdf)
   on how big the safe areas should be.
 
 ### Seeking-related

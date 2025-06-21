@@ -10,7 +10,7 @@ aliases:
 ---
 
 Wikipedia's definition of
-[typesetting](http://en.wikipedia.org/wiki/Typesetting): "**Typesetting**
+[typesetting](https://en.wikipedia.org/wiki/Typesetting): "**Typesetting**
 involves the presentation of textual material in graphic form on paper or some
 other medium." In a subtitling context, this means three things:
 
@@ -54,7 +54,7 @@ so ease of recognition is vital. Some guidelines for good legibility:
   be bigger than you think to be easily readable, particularly on a TV screen
   (since the viewing distance on a TV is usually 2-3 meters, compared to
   0.3-0.6m for a computer screen). If you plan on showing your subtitles on a
-  TV you also need to take [overscan](http://en.wikipedia.org/wiki/Overscan)
+  TV you also need to take [overscan](https://en.wikipedia.org/wiki/Overscan)
   into account; Aegisub has an overscan mask feature (see [working with video]({{< relref "Video" >}})) that can help you with this. Even if the end result isn't
   going to be viewed on a TV, subtitles which are in the overscan area are
   usually not very readable anyway. Also consider the aspect ratio of the
@@ -93,5 +93,5 @@ but here are some pointers:
 
 ## Further reading
 
-The Wikipedia page on [typography](http://en.wikipedia.org/wiki/Typography) has
+The Wikipedia page on [typography](https://en.wikipedia.org/wiki/Typography) has
 a lot of useful links and explanation of various typesetting-related terms.

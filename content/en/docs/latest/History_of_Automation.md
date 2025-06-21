@@ -16,7 +16,7 @@ The Automation system in Aegisub has evolved from a very basic and hardly useful
 
 The _Karaoke Effector_ program was originally created for making karaoke effects for a small translation project, that later died. It was written in Borland Delphi and used Lua 5.0 for scripting. This use of Lua is the primary reason I even call it "Automation 1" today. It basically allowed creating effects similar to what the _simple-k-replacer_ script from Automation 3 does, but in a more complicated and not as usable way.
 
-If you want to try this relic from the museum, you can download it here: <http://www.animereactor.dk/aegisub/effector.rar>
+If you want to try this relic from the museum, you can download it here: <https://www.animereactor.dk/aegisub/effector.rar>
 
 ## Automation 2, the Python engine that never happened
 

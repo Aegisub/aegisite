@@ -37,9 +37,9 @@ Contains
 
 Regular Expression match
 : Treats the string as a [regular
-  expression](http://en.wikipedia.org/wiki/Regular_expression) or "regex", and
+  expression](https://en.wikipedia.org/wiki/Regular_expression) or "regex", and
   matches if said expression matches. For a regular expressions tutorial, try
-  reading the [perlretut manual page](http://perldoc.perl.org/perlretut.html) or
+  reading the [perlretut manual page](https://perldoc.perl.org/perlretut.html) or
   googling. For a reference of the exact syntax supported by Aegisub, see the
   [wxWidgets regular expressions reference
   page](https://docs.wxwidgets.org/stable/overview_resyntax.html).

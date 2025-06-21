@@ -67,7 +67,7 @@ checker language.
 
 The Windows version of Aegisub comes with a US English dictionary.
 Installers for many other languages are available [on our
-website](http://www.aegisub.org/downloads/#dictionaries). If we don't
+website](https://www.aegisub.org/downloads/#dictionaries). If we don't
 supply a dictionary for your language, check [Mozilla's set of
 dictionaries](https://wiki.mozilla.org/L10n:Dictionaries), or simply
 Google for "hunspell <i>\<language></i> dictionary". We welcome

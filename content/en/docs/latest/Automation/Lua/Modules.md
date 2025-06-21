@@ -44,9 +44,9 @@ Note that `karaskel.lua`, `utils.lua` and `unicode.lua` do not have to be `requi
 : Functions for copying and pasting text.
 
 [re]({{< relref "Modules/re" >}})
-: Bindings for ICU regular expressions via [boost.regex](http://www.boost.org/doc/libs/1_53_0/libs/regex/doc/html/index.html), which has full Unicode support and more features than Lua's built in regular expression.
+: Bindings for ICU regular expressions via [boost.regex](https://www.boost.org/doc/libs/1_53_0/libs/regex/doc/html/index.html), which has full Unicode support and more features than Lua's built in regular expression.
 
-[lpeg](http://www.inf.puc-rio.br/~roberto/lpeg/)
+[lpeg](https://www.inf.puc-rio.br/~roberto/lpeg/)
 : PEG library for writing parsers.
 
 [luabins](https://github.com/agladysh/luabins)
