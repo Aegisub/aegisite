@@ -10,8 +10,6 @@ aliases:
 
 {{<todo>}}Screenshots need to be updated {{</todo>}}
 
-**A video tutorial for this feature is available at [the tutorials section]({{< relref "Tutorials" >}}).**
-
 ## Overview
 
 ![video_display](/img/3.2/video_display.png#center)
