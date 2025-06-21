@@ -86,12 +86,12 @@ Register a macro feature.
   characters.
 
 - **processing_function** (function) - The function that is called when the
-  user selects the menu item. This must be a function with the [macro processing function API]({{< relref "Registration#macroprocessingfunction" >}}).
+  user selects the menu item. This must be a function with the [macro processing function API]({{< relref "Registration#macro-processing-function" >}}).
 
 - **validation_function** (function, optional) - This function is called to
   determine whether the menu item should be available to the user or not.
   (Grayed out or not.) If no validation function is provided the macro is
-  always available. This function must follow the [macro validation function API]({{< relref "Registration#macrovalidationfunction" >}}).
+  always available. This function must follow the [macro validation function API]({{< relref "Registration#macro-validation-function" >}}).
 
 - **is_active_function** (function, optional) - This function is called to
   determine whether the menu item should be shown with a check mark next to it.
@@ -123,12 +123,12 @@ Register an export filter feature.
 
 - **processing_function** (function) - The function that is called when the
   user initiates the export operation. This must be a function with the
-  [export filter processing function API]({{< relref "Registration#exportfilterprocessingfunction" >}}).
+  [export filter processing function API]({{< relref "Registration#export-filter-processing-function" >}}).
 
 - **configuration_panel_provider** (function, optional) - A function that
   provides a configuration panel for the export filter. If this function is
   not provided the export filter will not have a configuration panel. This
-  function must follow the [export filter configuration panel provider API]({{< relref "Registration#exportfilterconfigurationpanelprovider" >}}).
+  function must follow the [export filter configuration panel provider API]({{< relref "Registration#export-filter-configuration-panel-provider" >}}).
 
 ## Feature callback functions
 
@@ -139,7 +139,7 @@ These are the callback functions you provide to the registration functions.
 Signature: `process_macro(subtitles, selected_lines, active_line)`
 
 Macro processing functions passed to
-[`aegisub.register_macro`]({{< relref "Registration#aegisub.register_macro" >}})
+[`aegisub.register_macro`]({{< relref "Registration#aegisubregister_macro" >}})
 must have this signature. The name `process_macro` is a placeholder for your
 own function name.
 
@@ -165,7 +165,7 @@ set, the new active line index must be one of the lines in the new
 Signature: `validate_macro(subtitles, selected_lines, active_line)`
 
 Macro validation functions passed to
-[`aegisub.register_macro`]({{< relref "Registration#aegisub.register_macro" >}})
+[`aegisub.register_macro`]({{< relref "Registration#aegisubregister_macro" >}})
 must have this signature. The name `validate_macro` is a placeholder for
 your own function name.
 
@@ -200,7 +200,7 @@ cannot be run, but there may be more uses for it.
 Signature: `process_filter(subtitles, settings)`
 
 Export filter processing functions passed to
-[`aegisub.register_filter`]({{< relref "Registration#aegisub.register_filter" >}})
+[`aegisub.register_filter`]({{< relref "Registration#aegisubregister_filter" >}})
 must have this signature. The name `process_filter` is a placeholder for
 your own function name.
 
@@ -224,7 +224,7 @@ Nothing.
 Signature: `get_filter_configuration_panel(subtitles, old_settings)`
 
 Export filter configuration panel providers passed to
-[`aegisub.register_filter`]({{< relref "Registration#aegisub.register_filter" >}})
+[`aegisub.register_filter`]({{< relref "Registration#aegisubregister_filter" >}})
 must have this signature. The name `get_filter_configuration_panel` is a
 placeholder for your own function name.
 

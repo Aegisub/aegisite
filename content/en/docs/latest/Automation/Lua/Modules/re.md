@@ -394,7 +394,7 @@ single match along with the captured subgroups.
 
 Synopsis: {{< lua `iter = re.gmatch(str, pattern)` >}}
 
-Iterator version of [`re.match`]({{< relref "re#re.match" >}}).
+Iterator version of [`re.match`]({{< relref "re#rematch" >}}).
 
 `@str` (`string`)
 : String to search for the pattern in.

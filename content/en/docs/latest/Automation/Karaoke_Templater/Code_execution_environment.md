@@ -1,5 +1,5 @@
 ---
-title: Execution envirionment
+title: Execution environment
 menu:
   docs:
     parent: karaoke-templater
@@ -37,7 +37,7 @@ You should treat all of these except `line` as read-only. If you change the
 other ones, the kara-templater script might start misbehaving.
 
 - **line** - The line currently being produced. Changing this will affect
-  the resulting line in the file. See the **[reference for dialogue line tables]({{< relref "../Lua/Modules/karaskel.lua.md#dialoguelinetable" >}})**.
+  the resulting line in the file. See the **[reference for dialogue line tables]({{< relref "../Lua/Modules/karaskel.lua.md#dialogue-line-table" >}})**.
 - **orgline** - The original line. This is the source line the current
   syllable is located on.
 - **syl** - The current syllable structure. If the current template is a
@@ -45,7 +45,7 @@ other ones, the kara-templater script might start misbehaving.
   template has one or both of the _char_ or _multi_ modifiers, this is a
   pseudo-syllable structure, a copy of the original syllable structure with
   several values changed to look like the current part of the syllable
-  being processed. Also see the **[reference for syllable tables]({{< relref "../Lua/Modules/karaskel.lua.md#karaokeandfuriganasyllabletables" >}})**.
+  being processed. Also see the **[reference for syllable tables]({{< relref "../Lua/Modules/karaskel.lua.md#karaoke-and-furigana-syllable-tables" >}})**.
 - **basesyl** - Usually the same as `syl`, except when the template has the
   _char_ or _multi_ modifier, then this is the original syllable. (If `syl == basesyl` is true, then the current template is neither _char_ nor
   _multi_.)

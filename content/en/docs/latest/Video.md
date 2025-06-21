@@ -70,12 +70,12 @@ DirectShowSource()
   doesn't convert VFR to CFR. Warning: DSS is known to have problems with
   frame-accurate seeking. Do not use it if you can avoid it.
 
-Note that [VFR]({{< relref "Video#variableframeratevideo" >}}) is not supported by the
+Note that [VFR]({{< relref "Video#variable-framerate-video" >}}) is not supported by the
 Avisynth provider. In some cases loading [external timecodes]({{< relref "Video#timecodes" >}})
 may work, but in practice it will often result in a broken mess.
 
 Aegisub will look for Avisynth plugins in its
-[?data]({{< relref "Aegisub_path_specifiers#?data" >}}) directory (generally the folder where
+[?data]({{< relref "Aegisub_path_specifiers" >}}) directory (generally the folder where
 aegisub32.exe is, on Windows). You can also put them directly in your Avisynth
 plugins folder to get them autoloaded.
 

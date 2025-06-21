@@ -8,7 +8,7 @@ aliases:
   - /docs/latest/Karaoke_inline-fx/
 ---
 
-Karaoke inline-fx (inline effects) is a way of marking up [timed karaoke]({{< relref "Timing#karaoketiming" >}}) to assign different effects to different
+Karaoke inline-fx (inline effects) is a way of marking up [timed karaoke]({{< relref "Timing#karaoke-timing" >}}) to assign different effects to different
 parts of a line.
 
 By itself, inline-fx markup doesn't do anything, it only has an effect when
@@ -90,7 +90,7 @@ any per-syllable templates that must use it.
 ## Usage in Lua scripts
 
 The inline-fx tags are parsed by
-[`karaskel.preproc_line_text`]({{< relref "Automation/Lua/Modules/karaskel.lua.md#karaskel.preproc_line_text" >}})
+[`karaskel.preproc_line_text`]({{< relref "Automation/Lua/Modules/karaskel.lua.md#karaskelpreproc_line_text" >}})
 so they will only work if you have applied at least that much karaskel
 pre-processing on your subtitle lines.
 

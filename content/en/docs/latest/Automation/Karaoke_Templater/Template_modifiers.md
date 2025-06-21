@@ -208,7 +208,7 @@ All other template lines that don't have _fx_ specified will still be applied as
 Declare template to be in the named effect group. Specifying an effect group name is required; the name may also overlap with template modifier names and Lua reserved words, though this is not recommended.
 
 {{<example-box>}}
-There is an example of _fxgroup_ on the [Code execution environment]({{< relref "./Code_execution_environment#conditionaltemplateswithfxgroup" >}}) page.
+There is an example of _fxgroup_ on the [Code execution environment]({{< relref "./Code_execution_environment#conditional-templates-with-fxgroup" >}}) page.
 {{</example-box>}}
 
 ### keeptags

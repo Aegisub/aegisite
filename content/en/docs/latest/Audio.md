@@ -44,7 +44,7 @@ two channels.
 
 If you're loading any audio format that isn't an uncompressed (PCM)
 Microsoft WAV file, Aegisub needs to decode and cache it first. When loaded,
-the audio is downmixed to mono (see the [audio downmixer option]({{< relref "Options#avisynthwindowsonly" >}}) if you want to grab one channel only
+the audio is downmixed to mono (see the [audio downmixer option]({{< relref "Options#avisynth-windows-only" >}}) if you want to grab one channel only
 instead), decompressed to PCM (a.k.a. WAV), and (by default) loaded into a
 RAM cache. This means that you will need a _large amount_ of RAM to open a
 long compressed audio file. If your computer doesn't have a lot of RAM, or

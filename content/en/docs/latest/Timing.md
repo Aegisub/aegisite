@@ -20,7 +20,7 @@ the audio waveform/spectrum display.
 Green and red buttons are toggle buttons. A green background indicates that
 the option is turned on, while a red background indicates that the option is
 turned off. The buttons and controls are as follows (many of these have
-[keyboard shortcuts]({{< relref "Keyboard_shortcuts" >}}) associated with them by default):
+[keyboard shortcuts]({{< relref "Options#hotkeys" >}}) associated with them by default):
 
 1. Go to previous line, discarding any unsaved changes (previous syllable
    when in [karaoke mode]({{< relref "Audio#karaokemode" >}}))
