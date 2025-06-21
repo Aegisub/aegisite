@@ -19,13 +19,13 @@ The following tutorials are available for Aegisub:
 
 - By: Karl Blomster
 
-- Link: <http://mod16.org/aegisub/timingtutorialimprovisation.mkv>
+- Link: <https://mod16.org/aegisub/timingtutorialimprovisation.mkv>
 
 - Description: A video showing an experienced user timing at full speed in Aegisub.
 
 - By: Karl Blomster
 
-- Link: <http://mod16.org/aegisub/timing-fullspeed.mkv>
+- Link: <https://mod16.org/aegisub/timing-fullspeed.mkv>
 
 ### Karaoke Timing
 

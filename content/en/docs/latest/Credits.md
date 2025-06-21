@@ -98,7 +98,7 @@ Development was lead by Monteiro through 2008, Hansen through 2010, and by Thoma
 
 ## Additional thanks
 
-- [Combined Community Codec Pack](http://www.cccp-project.net) staff
+- [Combined Community Codec Pack](https://www.cccp-project.net) staff
 - Gabest for VSFilter
 - squid_80 for the x64 builds of Avisynth and CSRI-enabled VSFilter
 - Firebird for some of the toolbar icons

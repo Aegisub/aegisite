@@ -10,12 +10,12 @@ aliases:
 ---
 
 The Automation 4 Lua scripting engine is based on the version 5.1 series of
-[the Lua scripting language](http://www.lua.org).
+[the Lua scripting language](https://www.lua.org).
 
 This manual will not deal with the Lua language itself nor the standard
 libraries shipping with Lua, but only the additional functions and data
 structures provided by the Aegisub Automation 4 Lua interface. Please see
-[the Lua 5.1 manual](http://www.lua.org/manual/5.1/) for details on the
+[the Lua 5.1 manual](https://www.lua.org/manual/5.1/) for details on the
 language itself and its standard libraries.
 
 ## General overview of the organisation of Automation 4 Lua

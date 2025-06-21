@@ -18,7 +18,7 @@ See the [Karaoke Templater tutorials]({{< relref "Automation/Karaoke_Templater/T
 ### Can I create DVD subtitles with Aegisub?
 
 Not directly, but there's a nifty program called
-[MaestroSBT](http://sourceforge.net/projects/maestrosbt/) that can
+[MaestroSBT](https://sourceforge.net/projects/maestrosbt/) that can
 convert SSA to VOBSubs. It does have quite a bunch of restrictions on
 what tags and other things may be used, so reading its manual first is
 advised. Also note that it does not accept ASS - only SSA. You can use
@@ -51,8 +51,8 @@ the [IRC channel](irc://irc.rizon.net/aegisub) are good places to ask
 questions.
 
 For general video-related
-questions, [Doom9.org](http://www.doom9.org) and [its
-forums](http://forum.doom9.org) is generally the place to go.
+questions, [Doom9.org](https://www.doom9.org) and [its
+forums](https://forum.doom9.org) is generally the place to go.
 
 ### Are there any VSFilter bugs I should know about?
 

@@ -62,8 +62,8 @@ are `nil`. In _code once_ templates, all of the variables except `meta` are
 
 ## Standard libraries and related things
 
-Both the [**string**](http://www.lua.org/manual/5.1/manual.html#5.4) and
-[**math**](http://www.lua.org/manual/5.1/manual.html#5.6) Lua standard
+Both the [**string**](https://www.lua.org/manual/5.1/manual.html#5.4) and
+[**math**](https://www.lua.org/manual/5.1/manual.html#5.6) Lua standard
 libraries are imported into the execution environment, as they are
 generally useful.
 
@@ -71,7 +71,7 @@ You can also access the main execution environment of the kara-templater
 script itself using the **`_G`** (underscore capital-G) variable and
 through that access the rest of the Lua standard library and any [loaded modules]({{< relref "../Lua/Modules" >}}). For example, `_G.table.sort` refers to
 the regular `table.sort` function. See the [Lua 5.1
-manual](http://www.lua.org/manual/5.1/manual.html#5) for details on the
+manual](https://www.lua.org/manual/5.1/manual.html#5) for details on the
 available libraries.
 
 For backwards compatibility, several of the included modules
@@ -375,7 +375,7 @@ template syl loop 20: {\move($x,$y,!$x+15\*math.cos(math.pi\*2\*j/maxj)!,!$y+15\
 ```
 
 Here looping is used to [calculate several points on a
-circle](http://en.wikipedia.org/wiki/Unit_circle#Trigonometric_functions_on_the_unit_circle)
+circle](https://en.wikipedia.org/wiki/Unit_circle#Trigonometric_functions_on_the_unit_circle)
 with radius 15 and make the syllables move out to those. Just by changing
 the number of loops in the Effect field you can make a more detailed circle
 because `j/maxj` is used to calculate how large a portion of the total

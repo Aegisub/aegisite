@@ -261,7 +261,7 @@ Adjust the size of the text in X (`\fscx` or Y (`\fscy`) direction. The
 _scale_ given is in percent, so 100 means "original size".
 
 This is not the same as setting the font size, as setting the size is subject
-to [font hinting](http://en.wikipedia.org/wiki/Font_hinting) while scaling the
+to [font hinting](https://en.wikipedia.org/wiki/Font_hinting) while scaling the
 text modifies the text shape after hinting. As a result, this should always be
 used with `\t` rather than `\fs`, as animating changing font hinting is very
 rarely desirable.
@@ -423,7 +423,7 @@ Set the color of the following text. The `\c` tag is an abbreviation of `\1c`.
 - `\4c` sets the shadow color.
 
 The color codes are given in
-[hexadecimal](http://en.wikipedia.org/wiki/Hexadecimal) in Blue Green Red
+[hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) in Blue Green Red
 order. Note that this is the opposite order of HTML color codes. Color codes
 must always start with `&H` and end with `&`.
 
@@ -551,7 +551,7 @@ relative to the event’s start. Without `\kt` each syllable start is implicitly
 determined as the sum of all preceding syllable’s duration.
 
 {{<tag-def-box title="Wrap style" id="\q">}}\\q<i>\<style></i>{{</tag-def-box>}}
-Determine how line breaking is applied to the subtitle line. The following 
+Determine how line breaking is applied to the subtitle line. The following
 _style_ values are available:
 
 - 0: Smart wrapping, make each line approximately equally long, but top line
@@ -1027,7 +1027,7 @@ there afterwards.
 ### b \<x1> \<y1> \<x2> \<y2> \<x3> \<y3> - Cubic Bézier curve
 
 Draws a cubic (3rd degree) Bézier curve from the cursor position to (x3,y3),
-using (x1,y1) and (x2,y2) as the control points. Check the [article on Wikipedia](http://en.wikipedia.org/wiki/B%C3%A9zier_curve) for more
+using (x1,y1) and (x2,y2) as the control points. Check the [article on Wikipedia](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) for more
 information about Bézier curves. In this picture taken from that article, P0
 is the cursor position, P1 is x1,y1, P2 is x2,y2 and P3 is x3,y3:
 

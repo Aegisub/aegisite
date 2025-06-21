@@ -25,7 +25,7 @@ over Lua's:
 Import this module with {{< lua `re = require 'aegisub.re'` >}}.
 
 See [boost.regex's
-documentation](http://www.boost.org/doc/libs/1_53_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html)
+documentation](https://www.boost.org/doc/libs/1_53_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html)
 for information about the regular expression syntax. In general any resources
 on the web that refer to Perl regular expressions or PCRE will apply to
 this module's regular expressions.
