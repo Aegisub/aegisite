@@ -34,7 +34,7 @@ all the checkboxes (clean script info, VFR transform etc.).
 
 ### I've found a bug!?
 
-Report it on the [bug tracker](http://devel.aegisub.org/). Please
+Report it on the [bug tracker](https://github.com/TypesettingTools/Aegisub/issues). Please
 include as many details as possible in your report! Remember that if a
 bug is not on the bug tracker, it _does not exist_ as far as we are
 concerned.
@@ -42,15 +42,15 @@ concerned.
 ### Why doesn't Aegisub have \<feature X>? \<Program Y> has it!
 
 Quite possibly because we didn't know you wanted it. Request it on the
-[bug tracker](http://devel.aegisub.org/) and see what happens.
+[bug tracker](https://github.com/TypesettingTools/Aegisub/issues) and see what happens.
 
 ### Where can I find more information and/or get help?
 
-For Aegisub-related stuff, the [forums](http://forums.aegisub.org) and
+For Aegisub-related stuff, the [Discord server](https://discord.gg/AZaVyPr) and
 the [IRC channel](irc://irc.rizon.net/aegisub) are good places to ask
-questions. The Aegisub [devel wiki](http://devel.aegisub.org) also
-contains some more obscure information not included in the manual for
-various reasons, and so does the forums.  For general video-related
+questions.
+
+For general video-related
 questions, [Doom9.org](http://www.doom9.org) and [its
 forums](http://forum.doom9.org) is generally the place to go.
 
