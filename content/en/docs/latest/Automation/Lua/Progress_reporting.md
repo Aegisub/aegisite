@@ -61,7 +61,7 @@ Synopsis: `cancelled = aegisub.progress.is_cancelled()`
 Tells whether the user has clicked on the Cancel button.
 
 You should call this function regularly during long operations, and if it's
-true call [`aegisub.cancel()`]({{< relref "Miscellaneous_APIs#aegisub.cancel" >}}) to
+true call [`aegisub.cancel()`]({{< relref "Miscellaneous_APIs#aegisubcancel" >}}) to
 rollback all changes and immediately end execution of the script.
 
 `cancelled` (`boolean`)
@@ -112,7 +112,7 @@ The following severity levels are suggested:
 0: "fatal"
 : Something really bad happened and the script can't continue. Level 0 messages
   are always shown. Note that Aegisub does not automatically terminate your
-  script. Call [`aegisub.cancel()`]({{< relref "Miscellaneous_APIs#aegisub.cancel" >}})
+  script. Call [`aegisub.cancel()`]({{< relref "Miscellaneous_APIs#aegisubcancel" >}})
   afterwards if you want it to.
 
 1: "error"

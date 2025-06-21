@@ -21,15 +21,15 @@ at [the bug tracker](https://github.com/TypesettingTools/Aegisub/issues).
 **Common tasks:**
 
 - [Timing a translated script to audio]({{< relref "Audio" >}})
-- [Basic typesetting of on-screen signs]({{< relref "Tutorials#visualtypesetting" >}})
+- [Basic typesetting of on-screen signs]({{< relref "Tutorials#visual-typesetting" >}})
 - [Putting your finished subtitles onto the video]({{< relref "Attaching_subtitles_to_video" >}}) (for viewing or distribution)
 
 <!-- -->
 
 - [Translating a subtitle file from one language to another]({{< relref "Translation_Assistant" >}})
-- [Correcting a subtitle that's not properly synchronised to the video]({{< relref "Fix_Timing_Tutorial" >}})<!--TODO replace w Shift_Times?-->
+- [Correcting a subtitle that's not properly synchronised to the video]({{< relref "Shift_Times" >}})
 
 <!-- -->
 
-- [Timing karaoke to a song]({{< relref "Tutorials#karaoketiming" >}})
+- [Timing karaoke to a song]({{< relref "Tutorials#karaoke-timing" >}})
 - [Creating fancy karaoke effects]({{< relref "Automation/Karaoke_Templater/Tutorial_1" >}})

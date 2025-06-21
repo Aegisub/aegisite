@@ -69,7 +69,7 @@ table. See below for more information.
 Synopsis: {{< lua `karaskel.preproc_line_text(meta, styles, line)` >}}
 
 Preprocess the text of a single line. `meta` and `styles` are the tables
-returned by [`karaskel.collect_head`]({{< relref "karaskel.lua.md#karaskel.collect_head" >}}).
+returned by [`karaskel.collect_head`]({{< relref "karaskel.lua.md#karaskelcollect_head" >}}).
 
 This function does not return a value, but rather modifies the `line`
 table. The following fields are added:
@@ -101,7 +101,7 @@ table. The following fields are added:
   this field is `false` instead.
 - `line.width`, `line.height`, `line.descent` and `line.extlead` - Sizing
 - information for the stripped line text, as returned by
-- [`aegisub.text_extents`]({{< relref "../Miscellaneous_APIs#aegisub.text_extents" >}}).
+- [`aegisub.text_extents`]({{< relref "../Miscellaneous_APIs#aegisubtext_extents" >}}).
 
 Also, this function modifies the `line.kara` and `line.furi` tables, adding
 sizing information.
@@ -153,7 +153,7 @@ table. The following fields are added:
 Furthermore, the `line.kara` and `line.furi` tables are modified by the
 layout function called, adding positioning information.
 
-See the part on [data structures]({{< relref "karaskel.lua.md#datastructures" >}}) later on
+See the part on [data structures]({{< relref "karaskel.lua.md#data-structures" >}}) later on
 this page for more details on the various fields that are added.
 
 If no line sizing information is found, `karaskel.preproc_line_size` will
@@ -311,7 +311,7 @@ Full list of fields:
 - `style.fontsize` - Font size for the style.
 - `style.color1`, `style.color2`, `style.color3` and `style.color4` - The
   four colours used by the style, in regular order. Use
-  [`extract_color`]({{< relref "../Modules#extractcolor" >}}) and family to
+  [`extract_color`]({{< relref "util#extract_color" >}}) and family to
   manipulate these.
 - `style.bold` - `true`/`false` to specify bold/non-bold font face. Can
   also be a number to specify font weight, but this is not well supported

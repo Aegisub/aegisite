@@ -38,7 +38,7 @@ Filters the script through the automation script "karaoke templater" to generate
 
 In "constant" output mode, recalculates every single timestamp in the script (including ones contained in [override tags]({{< relref "ASS_Tags" >}})) to work with a new framerate. Note that this means that the entire script will be "sped up" or "slowed down". Can be used for NTSC->PAL conversions or vice versa.
 
-In "variable" output mode, uses the framerate of the loaded video (or the specified one, if different from the video's) and the loaded timecodes to recalculate every single timestamp in the script so that the exported subtitles can be hardsubbed on the loaded video and still sync up after timecodes are taken into account. Does nothing if you do not have timecodes loaded. See [variable framerate video]({{< relref "Video#variableframeratevideo" >}}) for further details.
+In "variable" output mode, uses the framerate of the loaded video (or the specified one, if different from the video's) and the loaded timecodes to recalculate every single timestamp in the script so that the exported subtitles can be hardsubbed on the loaded video and still sync up after timecodes are taken into account. Does nothing if you do not have timecodes loaded. See [variable framerate video]({{< relref "Video#variable-framerate-video" >}}) for further details.
 
 ### Clean tags
 

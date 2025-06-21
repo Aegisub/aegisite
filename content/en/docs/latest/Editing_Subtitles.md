@@ -226,7 +226,7 @@ Some common controls:
 ![Subs_grid_tags](/img/3.2/Subs_grid_tags.png)
 
 The lines have different (configurable) colors representing different
-things; see the [subtitles grid section of the options page]({{< relref "Options#General\_-.3E_Subtitles_grid" >}}) for details on what the colors
+things; see the [subtitles grid section of the options page]({{< relref "Options#subtitle-grid" >}}) for details on what the colors
 mean.
 
 By default, the following columns are visible:

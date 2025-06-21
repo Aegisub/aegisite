@@ -48,7 +48,7 @@ syllable. You can have multiple number sign syllables in a row, adding up
 multiple timings in that way.
 
 The timings of the individual number sign syllables are still stored in the
-[highlight table]({{< relref "Automation/Lua/Modules/karaskel.lua.md#highlighttable" >}}) of the
+[highlight table]({{< relref "Automation/Lua/Modules/karaskel.lua.md#highlight-table" >}}) of the
 generated syllable structure, but the main timing (`start_time` and `end_time`)
 of the syllable structure reflects only the added-together timings of the
 number sign syllables.

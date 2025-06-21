@@ -143,7 +143,7 @@ the path to the selected file, or nil if the user canceled.
 ## Configuration Dialog interface
 
 This section describes the tables passed to and received from
-`aegisub.dialog.display` and the [export filter configuration panel]({{< relref "Registration#exportfilterconfigurationpanelprovider" >}}).
+`aegisub.dialog.display` and the [export filter configuration panel]({{< relref "Registration#export-filter-configuration-panel-provider" >}}).
 
 This file describes the functions and data structures used for the
 Configuration Dialog functionality in Automation 4.
