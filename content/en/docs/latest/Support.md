@@ -14,8 +14,8 @@ Do you want to support Aegisub? Well, it's easy!
 
 You can give us feedback - comments, critiques, suggestions, etc. Bug
 reports and feature requests are always welcome. Check out our
-[forums](http://forums.aegisub.org) and the [bug
-tracker](http://devel.aegisub.org/), or stop by for a chat in the [IRC
+[Discord server](https://discord.gg/AZaVyPr) and the [bug
+tracker](https://github.com/TypesettingTools/Aegisub/issues), or stop by for a chat in the [IRC
 channel](irc://irc.rizon.net/aegisub).
 
 ### Spreading the word
