@@ -69,7 +69,7 @@ Code区要求是一个单独的Lua表达式，因为
 code区的插入方式是使用一对半角感叹号(!)，两个感叹号中间的区域即code区，如下:
 
 ```ass
-{\t($start,**!syl.start_time+20!**,\bord0)}
+{\t($start,!syl.start_time+20!,\bord0)}
 ```
 
 在code区中可以使用内联变量。它们在code区执行前就已经被赋值，所以对于Lua解释器来说，它们就是常量。
@@ -84,7 +84,7 @@ Code区总是返回一串字符或者数学数值，如果要求它返回一个�
 想要在code区进行简单的逻辑判断需要使用 `and` 和 `or`，例如:
 
 ```ass
-{\k**!syl.duration > 100 and "f" or ""!**$kdur}
+{\k!syl.duration > 100 and "f" or ""!$kdur}
 ```
 
 如果音节持续时间大于 100 ms ，子表达式1为真，code区会返回 "f"

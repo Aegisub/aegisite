@@ -185,9 +185,9 @@
 
 <p>下面是一个在模板中使用内联变量的例子：</p>
 
-<div class="highlight"><pre class="highlight plaintext"><code>{\pos(**$x**,**$y**)\t(**$start**,**$end**,\bord0)}
+<div class="highlight"><pre class="highlight plaintext"><code>{\pos($x,$y)\t($start,$end,\bord0)}
 </code></pre></div>
-<p>高亮部分为内联变量。</p>
+<p><code>$x</code> <code>$y</code> <code>$start</code> <code>$end</code>部分为内联变量。</p>
 
 <p>当一个模板被应用时，首先要做的就是把所有的内联变量都找到，然后把它们替换成对应的值。例如在上面的模板中<code>$x</code>和<code>$y</code>就被每个音节的位置属性(坐标x,y)替代, <code>$start</code>和<code>$end</code>分别被音节的开始时间和结束时间替代。</p>
 
