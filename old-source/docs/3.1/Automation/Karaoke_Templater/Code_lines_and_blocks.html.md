@@ -76,7 +76,7 @@ do basic conditionals in code blocks though, see below.)
 You create a code block by surrounding the code by exclamation marks, like
 this:
 
-    {\t($start,**!syl.start_time+20!**,\bord0)}
+    {\t($start,!syl.start_time+20!,\bord0)}
 
 It is possible to use inline variables within code blocks. They are expanded
 before the code block is parsed, so to the Lua interpreter the inline variables
@@ -94,7 +94,7 @@ line containing the wrong output.
 To create simple conditionals within code blocks you can use the `and` and `or`
 operators to chain values and conditions. For example:
 
-    {\k**!syl.duration > 100 and "f" or ""!**$kdur}
+    {\k!syl.duration > 100 and "f" or ""!$kdur}
 
 If the syllable duration is longer than 100 ms the first sub-expression is
 true, and the code block returns <tt>"f"</tt>, otherwise the entire `and`

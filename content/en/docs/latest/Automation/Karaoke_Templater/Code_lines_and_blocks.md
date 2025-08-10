@@ -84,7 +84,7 @@ You create a code block by surrounding the code by exclamation marks, like
 this:
 
 ```ass
-{\t($start,**!syl.start_time+20!**,\bord0)}
+{\t($start,!syl.start_time+20!,\bord0)}
 ```
 
 It is possible to use inline variables within code blocks. They are expanded
@@ -104,7 +104,7 @@ To create simple conditionals within code blocks you can use the `and` and `or`
 operators to chain values and conditions. For example:
 
 ```ass
-{\k**!syl.duration > 100 and "f" or ""!**$kdur}
+{\k!syl.duration > 100 and "f" or ""!$kdur}
 ```
 
 If the syllable duration is longer than 100 ms the first sub-expression is

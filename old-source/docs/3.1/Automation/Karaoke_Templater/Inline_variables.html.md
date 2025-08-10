@@ -9,9 +9,9 @@ lines.
 
 Here is an example of how a template text using inline variables could look:
 
-    {\pos(**$x**,**$y**)\t(**$start**,**$end**,\bord0)}
+    {\pos($x,$y)\t($start,$end,\bord0)}
 
-The highlighted parts are the inline variables in the template.
+The `$x` `$y` `$start` `$end` parts are the inline variables in the template.
 
 When a template is applied, the first thing that happens is that all inline
 variables are found and replaced with their value. E.g. in the above example
