@@ -15,7 +15,7 @@ weight: 6140
 下面是一个在模板中使用内联变量的例子：
 
 ```ass
-{\pos($x,$y)\t($start,$en,\bord0)}
+{\pos($x,$y)\t($start,$end,\bord0)}
 ```
 
 `$x` `$y` `$start` `$end`部分为内联变量。
