@@ -228,7 +228,7 @@
 
 <p>code区的插入方式是使用一对半角感叹号(!)，两个感叹号中间的区域即code区，如下:</p>
 
-<div class="highlight"><pre class="highlight plaintext"><code>{\t($start,**!syl.start_time+20!**,\bord0)}
+<div class="highlight"><pre class="highlight plaintext"><code>{\t($start,!syl.start_time+20!,\bord0)}
 </code></pre></div>
 <p>在code区中可以使用内联变量。它们在code区执行前就已经被赋值，所以对于Lua解释器来说，它们就是常量。</p>
 
@@ -241,7 +241,7 @@
 
 <p>想要在code区进行简单的逻辑判断需要使用 <code>and</code> 和 <code>or</code>，例如:</p>
 
-<div class="highlight"><pre class="highlight plaintext"><code>{\k**!syl.duration &gt; 100 and "f" or ""!**$kdur}
+<div class="highlight"><pre class="highlight plaintext"><code>{\k!syl.duration &gt; 100 and "f" or ""!$kdur}
 </code></pre></div>
 <p>如果音节持续时间大于 100 ms ，子表达式1为真，code区会返回 <tt>"f"</tt> 作为结果。否则整个 <code>and</code>
 表达为false，右边的参数 <code>or</code> 表达式会被执行并返回空。</p>

@@ -46,7 +46,7 @@ _syl_ and _furi_, the first only available for code templates.
 **`modifier`**
 : Modifiers affect how and when templates are executed.
 
-**`template text** or just **text`**
+**`template text`** or just **`text`**
 : The "text" part of a template, either the Lua code in a code template or the
 template code in output templates. _line_ class output templates also have a
 _pre-line text_.
