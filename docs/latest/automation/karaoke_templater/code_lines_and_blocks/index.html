@@ -60,14 +60,14 @@ statement is automatically prepended to the code. This means you (among other
 things) can&rsquo;t do assignments or use <code>if</code> statements within code blocks, you
 must use a code line if you want to do any of those things. (There is a way to
 do basic conditionals in code blocks though, see below.)</p><p>You create a code block by surrounding the code by exclamation marks, like
-this:</p><pre><code class=language-ass>{\t($start,**!syl.start_time+20!**,\bord0)}
+this:</p><pre><code class=language-ass>{\t($start,!syl.start_time+20!,\bord0)}
 </code></pre><p>It is possible to use inline variables within code blocks. They are expanded
 before the code block is parsed, so to the Lua interpreter the inline variables
 look like regular constants.</p><h3 id=hints-for-using-code-blocks>Hints for using code blocks <a href=#hints-for-using-code-blocks class=anchor aria-hidden=true>#</a></h3><p>Most simple mathematical expressions work just like you&rsquo;d expect them to.
 Operator precedence rules are those of regular arithmetic.</p><p>A code block should always return a string or numeric value, if it returns a
 boolean, a table or something else it might cause a warning and the resulting
 line containing the wrong output.</p><p>To create simple conditionals within code blocks you can use the <code>and</code> and <code>or</code>
-operators to chain values and conditions. For example:</p><pre><code class=language-ass>{\k**!syl.duration &gt; 100 and &quot;f&quot; or &quot;&quot;!**$kdur}
+operators to chain values and conditions. For example:</p><pre><code class=language-ass>{\k!syl.duration &gt; 100 and &quot;f&quot; or &quot;&quot;!$kdur}
 </code></pre><p>If the syllable duration is longer than 100 ms the first sub-expression is
 true, and the code block returns <code>"f"</code>, otherwise the entire <code>and</code>
 expression is false, and the right-hand argument of the <code>or</code> expression is

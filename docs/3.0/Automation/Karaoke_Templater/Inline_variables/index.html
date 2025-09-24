@@ -28,10 +28,10 @@
 
 <p>Here is an example of how a template text using inline variables could look:</p>
 
-<pre><code>{\pos(**$x**,**$y**)\t(**$start**,**$end**,\bord0)}
+<pre><code>{\pos($x,$y)\t($start,$end,\bord0)}
 </code></pre>
 
-<p>The highlighted parts are the inline variables in the template.</p>
+<p>The <code>$x</code> <code>$y</code> <code>$start</code> <code>$end</code> parts are the inline variables in the template.</p>
 
 <p>When a template is applied, the first thing that happens is that all inline variables are found and replaced with their value. Eg. in the above example <code>$x</code> and <code>$y</code> are replaced with the X and Y coordinates of the syllable the template is being applied to, and <code>$start</code> and <code>$end</code> are replaced by the start and end times of the syllable.</p>
 

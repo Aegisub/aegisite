@@ -45,9 +45,9 @@ line来生成这个随机数，然后再在template行中使用它。</p><p>另�
 <a href=/zh-cn/docs/latest/automation/karaoke_templater/inline_variables/>内联变量</a>。</p><p>Code区要求是一个单独的Lua表达式，因为
 <code>return</code>这种步骤已经预先包含在了code区的规则中。
 这意味着你无法在code区中使用类似 <code>if</code>
-这种表达式，如果你一定要使用，只能在code行中进行。(虽然有一种方式可以在code区基本实现if逻辑，请继续阅读)</p><p>code区的插入方式是使用一对半角感叹号(!)，两个感叹号中间的区域即code区，如下:</p><pre><code class=language-ass>{\t($start,**!syl.start_time+20!**,\bord0)}
+这种表达式，如果你一定要使用，只能在code行中进行。(虽然有一种方式可以在code区基本实现if逻辑，请继续阅读)</p><p>code区的插入方式是使用一对半角感叹号(!)，两个感叹号中间的区域即code区，如下:</p><pre><code class=language-ass>{\t($start,!syl.start_time+20!,\bord0)}
 </code></pre><p>在code区中可以使用内联变量。它们在code区执行前就已经被赋值，所以对于Lua解释器来说，它们就是常量。</p><h3 id=code区使用的小提示>code区使用的小提示 <a href=#code%e5%8c%ba%e4%bd%bf%e7%94%a8%e7%9a%84%e5%b0%8f%e6%8f%90%e7%a4%ba class=anchor aria-hidden=true>#</a></h3><p>大多数的简单数学表达式都像你所想的一样正常执行。
-因为执行顺序就和我们学习的算术顺序一致。</p><p>Code区总是返回一串字符或者数学数值，如果要求它返回一个布尔型(boolean)或者一个表(table)或者其它乱七八糟的东西，它就会报错或者在生成的行中包含一些错误的信息。</p><p>想要在code区进行简单的逻辑判断需要使用 <code>and</code> 和 <code>or</code>，例如:</p><pre><code class=language-ass>{\k**!syl.duration &gt; 100 and &quot;f&quot; or &quot;&quot;!**$kdur}
+因为执行顺序就和我们学习的算术顺序一致。</p><p>Code区总是返回一串字符或者数学数值，如果要求它返回一个布尔型(boolean)或者一个表(table)或者其它乱七八糟的东西，它就会报错或者在生成的行中包含一些错误的信息。</p><p>想要在code区进行简单的逻辑判断需要使用 <code>and</code> 和 <code>or</code>，例如:</p><pre><code class=language-ass>{\k!syl.duration &gt; 100 and &quot;f&quot; or &quot;&quot;!$kdur}
 </code></pre><p>如果音节持续时间大于 100 ms ，子表达式1为真，code区会返回 &ldquo;f&rdquo;
 作为结果。否则整个 <code>and</code> 表达为false，右边的参数 <code>or</code>
 表达式会被执行并返回空。</p><p>在Lua中， <code>and</code> 的优先级高于 <code>or</code> ，这意味着 <code>and</code>

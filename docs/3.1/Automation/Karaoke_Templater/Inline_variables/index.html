@@ -186,9 +186,9 @@ lines.</p>
 
 <p>Here is an example of how a template text using inline variables could look:</p>
 
-<pre class="highlight text">{\pos(**$x**,**$y**)\t(**$start**,**$end**,\bord0)}
+<pre class="highlight text">{\pos($x,$y)\t($start,$end,\bord0)}
 </pre>
-<p>The highlighted parts are the inline variables in the template.</p>
+<p>The <code>$x</code> <code>$y</code> <code>$start</code> <code>$end</code> parts are the inline variables in the template.</p>
 
 <p>When a template is applied, the first thing that happens is that all inline
 variables are found and replaced with their value. E.g. in the above example
