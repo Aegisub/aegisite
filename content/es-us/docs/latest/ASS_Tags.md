@@ -12,16 +12,16 @@ La siguiente es una lista de todas las etiquetas admitidas por el formato Advanc
 
 Las siguientes etiquetas están escritas en el medio del texto y no dentro de bloques de anulación (es decir, no entre { y }).
 
-{{<tag-def-box title="Salto de línea suave" id="\n">}}\\n{{</tag-def-box>}}
+{{%tag-def-box title="Salto de línea suave"%}}\\n{{%/tag-def-box%}}
 Inserta un salto de línea forzado, pero solo cuando esté en el modo de salto 2. (Ver
 [la etiqueta \\q]({{<relref path="ASS_Tags#\q" >}})). Fíjese que es una n minúscula.
 
 En todos los demás modos de salto, esto se reemplaza por un espacio normal. Rara vez (o nunca) es realmente útil. Si no está seguro de si quiere esto o \\N, probablemente quiere \\N.
 
-{{<tag-def-box title="Salto de línea duro" id="\N">}}\\N{{</tag-def-box>}}
+{{%tag-def-box title="Salto de línea duro"%}}\\N{{%/tag-def-box%}}
 Inserta un salto de línea forzado, independientemente del modo de ajuste. Fíjese que es una N mayúscula.
 
-{{<tag-def-box title="Espacio duro" id="\h">}}\\h{{</tag-def-box>}}
+{{%tag-def-box title="Espacio duro"%}}\\h{{%/tag-def-box%}}
 Inserta un espacio "duro" que no se rompa. La línea nunca se dividirá automáticamente justo antes ni después de un espacio duro, y los espacios no se colapsan cuando aparecen al principio o al final de una línea dibujada.
 
 ## Etiquetas manuales
@@ -39,17 +39,17 @@ Algunas etiquetas son "complejas" y aceptan más de un parámetro. En estos caso
 **Nota sobre tipografía:**
 En esta página, todo lo escrito en _cursiva_ rodeado por `<` corchetes angulares `>` es un parámetro y uno tiene que ingresar un valor en su lugar. Los corchetes angulares no forman parte del valor que debe ingresar. Utilice los ejemplos como guía sobre cómo se deben escribir las etiquetas. En general, se aplican las mismas reglas a todas las etiquetas en cuanto a su apariencia.
 
-{{<tag-def-box title="Cursiva" id="\i">}}
+{{%tag-def-box title="Cursiva"%}}
 \\i1
 \\i0
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Activa o desactiva el texto en _cursiva_. Utilice `\i1` para habilitar la cursiva para el siguiente texto y `\i0` para deshabilitarla nuevamente.
 
-{{<tag-def-box title="Negrita" id="\b">}}
+{{%tag-def-box title="Negrita"%}}
 \\b1
 \\b0
 \\b<i>\<peso></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Activa o desactiva el texto en **negrita**. Utilice `\b1` para habilitar la negrita para el siguiente texto y `\b0` para desactivarla nuevamente.
 
 La versión <code>\\b<i>\<peso></i></code> permite especificar un peso explícito para usar. Tenga en cuenta que la mayoría de las fuentes sólo admiten uno o dos pesos, por lo que rara vez necesitará utilizarlo. Los pesos de las fuentes son múltiplos de 100, de modo que 100 es el más bajo, 400 es "normal", 700 es "negrita" y 900 es el más pesado.
@@ -72,19 +72,19 @@ La palabra "no" está escrita en negrita.
 Las palabras se escriben con cada vez mayor peso. Tenga en cuenta que la mayoría de las fuentes no tienen más de uno o dos pesos diferentes y en ese caso solo podrá ver "sin negrita" y "negrita".
 {{</example-box>}}
 
-{{<tag-def-box title="Subrayado" id="\u">}}
+{{%tag-def-box title="Subrayado"%}}
 \\u1
 \\u0
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Activa o desactiva el texto <u>subrayado</u>. Utilice `\u1` para habilitar el subrayado en el siguiente texto y `\u0` para desactivarlo nuevamente.
 
-{{<tag-def-box title="Tachado" id="\s">}}
+{{%tag-def-box title="Tachado"%}}
 \\s1
 \\s0
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Activa o desactiva el texto <s>tachado</s>. Utilice `\s1` para habilitar el tachado del siguiente texto y `\s0` para desactivarlo nuevamente.
 
-{{<tag-def-box title="Grosor de borde" id="\bord">}}\\bord<i>\<grosor></i>{{</tag-def-box>}}
+{{%tag-def-box title="Grosor de borde"%}}\\bord<i>\<grosor></i>{{%/tag-def-box%}}
 Cambia el grosor del borde alrededor del texto. Fije el grosor en 0 (cero) para desactivar el borde por completo.
 
 Si "escalar borde y sombra" (consulte [propiedades del guion]({{<relref path="Properties">}})) está habilitado, el valor se proporciona en píxeles de resolución del guion; de lo contrario, se proporciona en píxeles de resolución de vídeo (lo cual significa que el grosor del borde variará según la resolución del vídeo en la que se renderizan los subtítulos).
@@ -108,47 +108,47 @@ Deshabilitar el borde por completo.
 Establecer el grosor del borde en 3.7 píxeles.
 {{</example-box>}}
 
-{{<tag-def-box title="Grosor de borde (extendido)" id="\xbord">}}
+{{%tag-def-box title="Grosor de borde (extendido)"%}}
 \\xbord<i>\<grosor></i>
 \\ybord<i>\<grosor></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Utilice las etiquetas `\xbord` `\ybord` para establecer el grosor del borde en las direcciones X y Y por separado. Esto puede ser útil para corregir el tamaño del borde en caso del renderizado anamórfico de subtítulos.
 
 Tenga en cuenta que si usa `\bord` después de `\xbord` o `\ybord` en una línea, las anulará a ambas.
 
 Uno puede establecer el grosor del borde en 0 (cero) en una de las direcciones para desactivar completamente el borde en esa dirección.
 
-{{<tag-def-box title="Distancia de sombra" id="\shad">}}\\shad<i>\<profundidad></i>{{</tag-def-box>}}
+{{%tag-def-box title="Distancia de sombra"%}}\\shad<i>\<profundidad></i>{{%/tag-def-box%}}
 Establece la distancia desde el texto para posicionar la sombra. Fijar la profundidad en 0
 (cero) desactiva la sombra por completo. Funciona de manera similar a [\\bord]({{<relref path="ASS_Tags#\bord">}}).
 
 La profundidad de la sombra no puede ser negativa con esta etiqueta.
 
-{{<tag-def-box title="Distancia de sombra (extendida)" id="\xshad">}}
+{{%tag-def-box title="Distancia de sombra (extendida)"%}}
 \\xshad<i>\<profundidad></i>
 \\yshad<i>\<profundidad></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Establece la distancia desde el texto para posicionar la sombra, con las posiciones X y Y configuradas por separado. La sombra solo se desactiva si la distancia X y Y es 0.
 
 Tenga en cuenta que, a diferencia de \\shad, puede establecer la distancia negativa con estas etiquetas para colocar la sombra arriba o izquierda del texto.
 
-{{<tag-def-box title="Bordes borrosos" id="\be">}}
+{{%tag-def-box title="Bordes borrosos"%}}
 \\be0
 \\be1
 \\be<i>\<fuerza></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Habilita o deshabilita un efecto de suavizado sutil para los bordes del texto. El efecto no siempre es muy visible, pero en algunos casos puede hacer que el texto se vea mejor. Suele ser más visible en tamaños de texto más pequeños.
 
 Fíjese que esta etiqueta difumina solo los _bordes_ del texto, no todo. Esto significa que si el texto tiene un borde (establecido con [\\bord]({{<relref path="ASS_Tags#\bord">}})) el borde se verá borroso, pero si no hay borde, el texto principal aparecerá borroso.
 
 En la versión extendida, _fuerza_ es la cantidad de veces que se aplica el efecto normal. Tenga en cuenta que en valores altos el efecto degenera hasta la nada y, en general, no es muy útil. Como resultado, para desenfoques fuertes, `\blur` generalmente es más útil. La _fuerza_ tiene que ser un número entero.
 
-{{<tag-def-box title="Bordes borrosos (núcleo gaussiano)" id="\blur">}}\\blur<i>\<fuerza></i>{{</tag-def-box >}}
+{{%tag-def-box title="Bordes borrosos (núcleo gaussiano)"%}}\\blur<i>\<fuerza></i>{{</tag-def-box >}}
 En general, tiene la misma función que la etiqueta [`\be`]({{<relref path="ASS_Tags#\be">}}), pero utiliza un algoritmo más avanzado que se ve mejor en niveles altos de fuerza. A diferencia de `\be`, la _fuerza_ aquí puede ser no entera. Establezca _fuerza_ en 0 (cero) para desactivar el efecto. Con cuidado, que configurar _fuerza_ demasiado alto puede requerir mucho tiempo de CPU para renderizar.
 
 Tenga en cuenta que esta etiqueta difumina solo los _bordes_ del texto, no todo. Esto significa que si el texto tiene un borde (establecido con [`\bord`]({{<relref path="ASS_Tags#\bord">}})) el borde se verá borroso, pero si no hay borde, el texto principal aparecerá borroso.
 
-{{<tag-def-box title="Nombre de fuente" id="\fn">}}\\fn<i>\<nombre></i>{{</tag-def-box>}}
+{{%tag-def-box title="Nombre de fuente"%}}\\fn<i>\<nombre></i>{{%/tag-def-box%}}
 Establece la fuente que se utilizará para el texto que sigue. No debe haber ningún espacio entre `\fn` y el nombre de la fuente, y tampoco puede poner paréntesis o algo similar alrededor del nombre de la fuente.
 
 {{<example-box>}}
@@ -168,7 +168,7 @@ El texto que sigue a esta etiqueta estará en fuente Arial.
 El texto que sigue a esta etiqueta estará en fuente Times New Roman.
 {{</example-box>}}
 
-{{<tag-def-box title="Tamaño de fuente" id="\fs">}}\\fs<i>\<tamaño></i>{{</tag-def-box>}}
+{{%tag-def-box title="Tamaño de fuente"%}}\\fs<i>\<tamaño></i>{{%/tag-def-box%}}
 Establece el tamaño de la fuente. El tamaño especificado es la altura en píxeles de escritura, por lo que con un tamaño de fuente 40, una línea de texto tiene 40 píxeles de alto. (Nota técnica: en realidad se trata de puntos tipográficos (edición de escritorio), no de píxeles de guion, pero dado que la representación siempre se realiza a 72 DPI (según el estándar de facto), un punto termina siendo exactamente igual a un píxel de resolución de guion).
 
 Sólo puede especificar tamaños de fuente enteros.
@@ -182,10 +182,10 @@ Sólo puede especificar tamaños de fuente enteros.
 El siguiente texto será de una fuente de tamaño 10.
 {{</example-box>}}
 
-{{<tag-def-box title="Escala de fuente" id="\fscx">}}
+{{%tag-def-box title="Escala de fuente"%}}
 \\fscx<i>\<escala></i>
 \\fscy<i>\<escala></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Ajusta el tamaño del texto en dirección X (`\fscx` o Y (`\fscy`). La _escala_ dada está en porcentaje, por lo que 100 significa "tamaño original".
 
 Esto no es lo mismo que configurar el tamaño de fuente, ya que configurar el tamaño está sujeto a [sugerencias de fuente](http://en.wikipedia.org/wiki/Font_hinting), mientras que escalar el texto modifica la forma del texto después de la sugerencia. Como resultado, esto siempre debe usarse con `\t` en lugar de `\fs`, ya que la animación de cambio de sugerencias para fuentes muy rara vez es deseable.
@@ -221,17 +221,17 @@ Disminuye el texto a media altura.
 Duplica el tamaño del texto.
 {{</example-box>}}
 
-{{<tag-def-box title="Espaciado entre letras" id="\fsp">}}\\fsp<i>\<espaciado></i>{{</tag-def-box>}}
+{{%tag-def-box title="Espaciado entre letras"%}}\\fsp<i>\<espaciado></i>{{%/tag-def-box%}}
 Cambia el espacio entre las letras individuales del texto. Puede utilizar esto para separar el texto más visualmente. El _espaciado_ se proporciona en píxeles de resolución de guion.
 
 El espaciado puede ser negativo y tener decimales.
 
-{{<tag-def-box title="Rotación de texto" id="\frx">}}
+{{%tag-def-box title="Rotación de texto"%}}
 \\frx<i>\<cantidad></i>
 \\fry<i>\<cantidad></i>
 \\frz<i>\<cantidad></i>
 \\fr<i>\<cantidad></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Gira el texto alrededor del eje X, Y o Z. La etiqueta `\fr` es un atajo para `\frz`.
 
 - El **eje X** corre horizontalmente por la pantalla. Girando sobre él (con valores positivos) provoca un efecto con que la parte superior del texto se mete hacia "adentro" de la pantalla mientras que la parte inferior sale hacia "afuera" de la pantalla.
@@ -296,10 +296,10 @@ Los siguientes pantallazos demuestran el efecto de girar sobre los diferentes ej
 ![Fr_sample03](/img/3.2/Fr_sample03.jpg)
 {{</example-box>}}
 
-{{<tag-def-box title="Cizallamiento de texto" id="\fax">}}
+{{%tag-def-box title="Cizallamiento de texto"%}}
 \\fax<i>\<factor></i>
 \\fay<i>\<factor></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Realiza una transformación de cizallamiento (corte, transvección) del texto. Un _factor_ de 0 (cero) significa que no hay distorsión.
 
 Por lo general, _factor_ será un número pequeño; es poco probable que los valores fuera del rango -2 a 2 produzcan resultados deseables.
@@ -310,7 +310,7 @@ El corte se realiza después de la rotación, en las coordenadas giradas. El sis
 ![cizallamiento](/img/3.2/shearing.png)
 {{</example-box>}}
 
-{{<tag-def-box title="Codificación de fuente" id="\fe">}}\\fe<i>\<id></i>{{</tag-def-box>}}
+{{%tag-def-box title="Codificación de fuente"%}}\\fe<i>\<id></i>{{%/tag-def-box%}}
 Configura la codificación de fuente Windows utilizada para seleccionar la tabla de mapeo de fuentes utilizado para traducir puntos Unicode a índices de glifos en la fuente. Para algunas fuentes sin una tabla de mapeo Unicode, esto puede ser necesario para que funcione el texto en ciertos idiomas. Para las fuentes que tienen una tabla de mapeo Unicode, se podría usar para seleccionar variaciones regionales, como elegir el glifo correcto para un ideograma Han que sea diferente en chino simplificado, chino tradicional, japonés y coreano.
 
 Algunos ID de codificación de fuentes comunes son:
@@ -333,13 +333,13 @@ Una lista más completa se puede ver en la caja de diálogo del [editor de estil
 
 En archivos ASS almacenados en codificaciones que no son Unicode, esta etiqueta también afecta en qué página de códigos debe interpretarse el texto que le sigue. Aegisub no soporta este uso y es posible que algunos renderizadores tampoco lo admitan. Se recomienda que no confíe en esto y, en su lugar, almacene siempre sus archivos en codificación Unicode. (Aegisub almacena archivos en Unicode UTF-8 por defecto).
 
-{{<tag-def-box title="Establecer color" id="\c">}}
+{{%tag-def-box title="Establecer color"%}}
 \\c&H<i>\<bb>\<gg>\<rr></i>&
 \\1c&H<i>\<bb>\<gg>\<rr></i>&
 \\2c&H<i>\<bb>\<gg>\<rr></i>&
 \\3c&H<i>\<bb>\<gg>\<rr></i>&
 \\4c&H<i>\<bb>\<gg>\<rr></i>&
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Establece el color del siguiente texto. La etiqueta `\c` es una abreviatura de `\1c`.
 
 - `\1c` establece el color de relleno principal.
@@ -351,13 +351,13 @@ Los códigos de color se dan en [hexadecimal](http://en.wikipedia.org/wiki/Hexad
 
 Los botones Seleccionar Color de la barra de herramientas ![pick-color-toolbar-buttons](/img/3.2/pick-color-toolbar-buttons.png) pueden ayudar a seleccionar colores e ingresar los códigos de color.
 
-{{<tag-def-box title="Establecer alfa" id="\alpha">}}
+{{%tag-def-box title="Establecer alfa"%}}
 \\alpha&H<i>\<aa></i>
 \\1a&H<i>\<aa></i>
 \\2a&H<i>\<aa></i>
 \\3a&H<i>\<aa></i>
 \\4a&H<i>\<aa></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Establece el alfa (transparencia) del texto.
 
 - `\alpha` establece el alfa de todos los componentes a la vez.
@@ -385,7 +385,7 @@ Fija el alfa de todos los componentes en hexadecimal 80, decimal 128, para que e
 Fija el alfa de relleno principal en hexadecimal FF, decimal 255, para que resulte efectivamente invisible dejando solo el borde y la sombra.
 {{</example-box>}}
 
-{{<tag-def-box title="Alineación de línea" id="\an">}}\\an<i>\<pos></i>{{</tag-def-box>}}
+{{%tag-def-box title="Alineación de línea"%}}\\an<i>\<pos></i>{{%/tag-def-box%}}
 Especifica la alineación de la línea. La alineación define la posición de la línea cuando no hay ni [anulación de posición]({{<relref path="ASS_Tags#\pos">}}) ni [movimiento]({{<relref path="ASS_Tags#\move">}}) en efecto. De lo contrario, especifica el punto de anclaje de posicionamiento y rotación.
 
 La etiqueta `\an` usa valores del "teclado numérico" ("numpad") para _pos_. Es decir, los valores de alineación corresponden a las posiciones de los dígitos en el teclado numérico de cuadrícula:
@@ -400,7 +400,7 @@ La etiqueta `\an` usa valores del "teclado numérico" ("numpad") para _pos_. Es 
 1. Arriba centro
 1. Arriba derecha
 
-{{<tag-def-box title="Alineación de línea (antigua)" id="\a">}}\\a<i>\<pos></i>{{</tag-def-box>}}
+{{%tag-def-box title="Alineación de línea (antigua)"%}}\\a<i>\<pos></i>{{%/tag-def-box%}}
 Especifica la alineación de la línea utilizando códigos de alineación heredados de SubStation Alpha. Esta etiqueta es compatible pero se considera obsoleta; normalmente uno debe usar `\an` en nuevos guiones, ya que es más intuitivo.
 
 La excepción es que `\a6` debería usarse para la traducción perezosa de signos, porque si uno va a ser holgazán ha de hacerlo bien y ahorrar la letra extra.
@@ -417,12 +417,12 @@ Calcule _pos_ de la siguiente manera: use 1 para alineación a la izquierda, 2 p
 - 10: Centro
 - 11: Centro derecha
 
-{{<tag-def-box title="Efecto Karaoke" id="\k">}}
+{{%tag-def-box title="Efecto Karaoke"%}}
 \\k<i>\<duración></i>
 \\K<i>\<duración></i>
 \\kf<i>\<duración></i>
 \\ko<i>\<duración></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 
 > _Tenga en cuenta que estas etiquetas por sí solas solo crean algunos efectos muy específicos
 > y todos los demás efectos se crean con una combinación de múltiples diferentes
@@ -440,7 +440,7 @@ Las diferentes etiquetas `\k` crean varios efectos:
 
 _Nota: Hay una etiqueta de karaoke adicional, `\kt`, que es muy diferente a las demás. Rara vez es útil y Aegisub no soporta esa etiqueta; por lo tanto no está documentada._
 
-{{<tag-def-box title="Estilo de salto" id="\q">}}\\q<i>\<estilo></i>{{</tag-def-box>}}
+{{%tag-def-box title="Estilo de salto"%}}\\q<i>\<estilo></i>{{%/tag-def-box%}}
 
 Determina cómo se aplica el salto de línea a la línea de subtítulo. Los siguientes \_estilo_s están disponibles:
 
@@ -449,7 +449,7 @@ Determina cómo se aplica el salto de línea a la línea de subtítulo. Los sigu
 - 2: Sin ajuste, las líneas anchas se extenderán más allá de los bordes de la pantalla. Tanto `\n` como `\N` fuerzan saltos de línea.
 - 3: Salto/ajuste inteligente, similar al estilo 0, pero las líneas inferiores se hacen más anchas.
 
-{{<tag-def-box title="Restablecer estilo" id="\r">}}\\r<br>\\r<i>\<estilo></i>{{</tag-def-box>}}
+{{%tag-def-box title="Restablecer estilo"%}}\\r<br>\\r<i>\<estilo></i>{{%/tag-def-box%}}
 Restablece el estilo. Esto cancela todas las anulaciones de estilo vigentes, incluidas
 [animaciones]({{<relref path="ASS_Tags#\t">}}), para todo el texto siguiente.
 
@@ -464,7 +464,7 @@ La primera forma que no especifica un _estilo_ restablecerá al estilo definido 
 Suponiendo que el estilo de línea actual es "Default", primero tiene "Hey" en el estilo predeterminado y luego sigue en la siguiente línea "Huh?" en el estilo "Alternate", y en la tercera línea el estilo se restablece a "Default" para "Who are you?"
 {{</example-box>}}
 
-{{<tag-def-box title="Fijar posición" id="\pos">}}\\pos(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
+{{%tag-def-box title="Fijar posición"%}}\\pos(<i>\<X></i>,<i>\<Y></i>){{%/tag-def-box%}}
 Establece la posición de la línea. Las coordenadas _X_ y _Y_ deben ser números enteros y se proporcionan en el sistema de coordenadas de resolución de guion. El significado de _X_ y _Y_ cambia ligeramente dependiendo de la [alineación]({{<relref path="ASS_Tags#\an">}}).
 
 La alineación de la línea de subtítulo se utiliza como punto de anclaje para la posición. Es decir, cuando tiene una línea con alineación arriba-izquierda, la esquina superior izquierda del subtítulo se coloca en las coordenadas dadas a `\pos`, y para la alineación abajo-centro, el centro inferior del subtítulo se coloca en las coordenadas dadas.
@@ -477,10 +477,10 @@ Las siguientes capturas de pantalla demuestran la forma de que la alineación af
 ![Pos_sample03](/img/3.2/Pos_sample03.jpg)
 {{</example-box>}}
 
-{{<tag-def-box title="Movimiento" id="\move">}}
+{{%tag-def-box title="Movimiento"%}}
 \\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i> >)
 \\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i> >,<i>\<t1</i>>,<i>\<t2</i>>)
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 La etiqueta `\move` funciona de manera similar a [`\pos`]({{<relref path="ASS_Tags#\pos">}}) en que posiciona la línea de subtítulo, la diferencia es que `\ move` hace que el subtítulo se mueva.
 
 Las dos versiones de `\move` se diferencian en que una hace que el movimiento se produzca durante toda la duración del subtítulo, mientras que la otra especifica el tiempo durante el cual se produce el movimiento.
@@ -521,7 +521,7 @@ Cuando aparece la línea en la pantalla, el subtítulo está en (100,150). Mient
 La línea aparece en (100,150). Después de que la línea haya aparecido durante medio segundo (500 milisegundos), comienza a moverse hacia (300,350), de modo que llegará al punto un segundo y medio (1500 milisegundos) después de que la línea apareció por primera vez en la pantalla.
 {{</example-box>}}
 
-{{<tag-def-box title="Origen de rotación" id="\org">}}\\org(<i>\<X></i>,<i>\<Y></i> ){{</tag-def-box>}}
+{{%tag-def-box title="Origen de rotación"%}}\\org(<i>\<X></i>,<i>\<Y></i> ){{%/tag-def-box%}}
 Establece el punto de origen utilizado para [rotación]({{<relref path="ASS_Tags#\frx">}}). Esto afecta a todas las rotaciones de la línea. Las coordenadas _X_ y _Y_ se proporcionan en números enteros de píxeles de resolución de guion.
 
 Cuando no hay una etiqueta `\org` en una línea, el origen de rotación es implícitamente el mismo que el [punto de anclaje de posición]({{<relref path="ASS_Tags#\pos">}}). Esto significa que el origen de la rotación se moverá si la línea se mueve y no hay un origen establecido con `\org`. Tenga en cuenta que _no_ puede animar la etiqueta `\org`, está limitado a un origen fijo si la usa.
@@ -549,7 +549,7 @@ Fija el origen de rotación en el punto (320,240).
 Colocar el origen de rotación en un punto lejano le permite utilizar ligeras rotaciones `\frz` para producir efectos de "salto"; el texto se moverá hacia arriba o hacia abajo sin que parezca girar.
 {{</example-box>}}
 
-{{<tag-def-box title="Desvanecimiento" id="\fad">}}\\fad(<i>\<entrada></i>,<i>\<salida></i>) {{</tag-def-box>}}
+{{%tag-def-box title="Desvanecimiento"%}}\\fad(<i>\<entrada></i>,<i>\<salida></i>) {{%/tag-def-box%}}
 Produce un efecto de aparición y desaparición gradual. Los tiempos de _entrada_ y _salida_ se dan en milisegundos; es decir, 1000 significa un segundo. Puede especificar _entrada_ o _salida_ como 0 (cero) para no tener ningún efecto de desvanecimiento en ese extremo.
 
 Agregar un efecto de desvanecimiento no extiende la duración de la línea, sino que se usa el inicio o el final del tiempo visible de la línea para el efecto de desvanecimiento. Por esta razón, debes tener cuidado de que _entrada_+_salida_ no sea mayor que la duración de la línea. Por ejemplo, para una línea que aparece durante 4 segundos, la suma de _entrada_+_salida_ no debe ser mayor que 4000.
@@ -563,7 +563,7 @@ Agregar un efecto de desvanecimiento no extiende la duración de la línea, sino
 Aparece gradualmente la línea en los primeros 1,2 segundos que está visible y se desvanece durante el último cuarto de segundo visible.
 {{</example-box>}}
 
-{{<tag-def-box title="Desvanecimiento (complejo)" id="\fade">}}\\fade(<i>\<a1</i>>,<i>\<a2</i>>,<i>\<a3</i>>,<i>\<t1</i>>,<i>\<t2</i>>,<i>\<t3</i>> ,<i>\<t4</i>>){{</tag-def-box>}}
+{{%tag-def-box title="Desvanecimiento (complejo)"%}}\\fade(<i>\<a1</i>>,<i>\<a2</i>>,<i>\<a3</i>>,<i>\<t1</i>>,<i>\<t2</i>>,<i>\<t3</i>> ,<i>\<t4</i>>){{%/tag-def-box%}}
 Realice un desvanecimiento de cinco partes utilizando tres valores alfa _a1_, _a2_ y _a3_ y cuatro tiempos _t1_, _t2_, _t3_ y _t4_.
 
 Los valores alfa se dan en _decimal_ y están entre 0 y 255, siendo 0 completamente visible y 255 invisible. Los valores de tiempo se dan en milisegundos después del inicio de la línea. Se requieren los siete parámetros.
@@ -584,12 +584,12 @@ Los valores alfa se dan en _decimal_ y están entre 0 y 255, siendo 0 completame
 Comienza invisible, se materializa hasta volverse casi totalmente opaco y luego se desvanece hasta volverse casi totalmente invisible. El primer desvanecimiento comienza cuando comienza la línea y dura 500 milisegundos. El segundo desvanecimiento comienza a los 1500 milisegundos más tarde y dura 200 milisegundos.
 {{</example-box>}}
 
-{{<tag-def-box title="Transformación animada" id="\t">}}
+{{%tag-def-box title="Transformación animada"%}}
 \\t(<i>\<estilos></i>)
 \\t(<i>\<acel></i>,<i>\<estilos></i>)
 \\t(<i>\<t1</i>>,<i>\<t2</i>>,<i>\<estilos></i>)
 \\t(<i>\<t1</i>>,<i>\<t2</i>>,<i>\<acel></i>,<i>\<estilos></i>)
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 
 Realiza una transformación gradual y animada de un estilo a otro. Los _estilos_ son otras etiquetas manuales como se especifica en esta referencia. Sólo un conjunto limitado de etiquetas manuales se pueden animar con `\t`:
 
@@ -651,10 +651,10 @@ Igual que el anterior, pero comenzará rápido y disminuirá, aún haciendo las 
 El texto comienza con un tamaño cero, es decir, invisible, y luego crece hasta alcanzar el 100% del tamaño tanto en la dirección X como en la Y.
 {{</example-box>}}
 
-{{<tag-def-box title="Clip (rectángulo)" id="\clip">}}
+{{%tag-def-box title="Clip (rectángulo)"%}}
 \\clip(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i> >)
 \\iclip(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i> >)
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Define un rectángulo para recortar la línea; solo la parte de la línea que está dentro del rectángulo será visible. La etiqueta `\iclip` tiene el efecto contrario: define un rectángulo donde no se ve la línea.
 
 Las coordenadas _x1_, _y1_, _x2_ y _y2_ se dan en píxeles de resolución de guion y son relativas a la esquina superior izquierda del vídeo. Las coordenadas deben ser números enteros, no hay posibilidad de utilizar coordenadas no enteras. (Aumentar la resolución del guion no aumentará la precisión; el recorte siempre ocurre en los límites de los píxeles del video).
@@ -681,12 +681,12 @@ Ejemplo de `\clip(0,0,704,245)` en un vídeo de 704x480:
 ![Clip_sample01](/img/3.2/Clip_sample01.jpg)
 {{</example-box>}}
 
-{{<tag-def-box title="Clip (dibujo vectorial)" id="\clip-vector">}}
+{{%tag-def-box title="Clip (dibujo vectorial)"%}}
 \\clip(<i>\<comandos de dibujo></i>)
 \\clip(<i>\<escala></i>,<i>\<comandos de dibujo></i>)
 \\iclip(<i>\<comandos de dibujo></i>)
 \\iclip(<i>\<escala></i>,<i>\<comandos de dibujo></i>)
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Usa la forma definida como dibujo vectorial para mostrar selectivamente (`\clip`) u ocultar (`\iclip`) partes de la línea.
 
 Los _comandos de dibujo_ son comandos de dibujo como los que se usan con la etiqueta `\p`. Las coordenadas se dan en píxeles de resolución de guion y son relativas a la esquina superior izquierda del video.
