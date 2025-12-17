@@ -7852,7 +7852,7 @@
     display: 'Σμίκρυνση'
     help: 'Σμίκρυνση βίντεο'
 - locale: en
-  name: en
+  name: English
   commands:
   - name: am/manager
     display: 'Automation'
@@ -15716,7 +15716,7 @@
     display: 'Kicsinyítés'
     help: 'Kicsinyíti a videót.'
 - locale: id
-  name: id
+  name: Indonesian
   commands:
   - name: am/manager
     display: 'Otomatisasi'
@@ -26468,7 +26468,7 @@
     display: 'Umanji'
     help: 'Umanjite video-snimak.'
 - locale: tr
-  name: tr
+  name: Turkish
   commands:
   - name: am/manager
     display: 'Otomasyon'
@@ -27450,7 +27450,7 @@
     display: 'Uzaklaş'
     help: 'Videodan uzaklaş'
 - locale: uk_UA
-  name: uk_UA
+  name: Ukrainian
   commands:
   - name: am/manager
     display: 'Автоматизація'
