@@ -177,7 +177,6 @@ def build_yaml(commands, locale_po_map, output_path: Path):
     """
 
     locale_names = {
-        "aegisub"     : "English",
         "ar"          : "Arabic",
         "be"          : "Belarusian",
         "bg"          : "Bulgarian",
@@ -186,6 +185,7 @@ def build_yaml(commands, locale_po_map, output_path: Path):
         "da"          : "Danish",
         "de"          : "German",
         "el"          : "Greek",
+        "en"          : "English",
         "es"          : "Spanish",
         "eu"          : "Basque",
         "fa"          : "Farsi",
@@ -193,6 +193,7 @@ def build_yaml(commands, locale_po_map, output_path: Path):
         "fr_FR"       : "French",
         "gl"          : "Galician",
         "hu"          : "Hungarian",
+        "id"          : "Indonesian",
         "it"          : "Italian",
         "ja"          : "Japanese",
         "ko"          : "Korean",
@@ -285,10 +286,10 @@ def build_yaml(commands, locale_po_map, output_path: Path):
 
 def main():
     parser = argparse.ArgumentParser(description="Generate commands.yml from Aegisub source & PO files.")
-    parser.add_argument("--cmd-dir", default="C:/COMPILE/Aegisub/src/command", help="Directory containing src/command/*.cpp")
-    parser.add_argument("--lua-dir", default="C:/COMPILE/Aegisub/automation/autoload", help="Directory containing automation/autoload/*.lua|moon")
-    parser.add_argument("--po-dir", default="C:/COMPILE/Aegisub/po", help="Directory containing locale *.po files (e.g. en_US.po)")
-    parser.add_argument("--output", default="C:/projects/aegisite/data/commands_32.yaml", help="Output YAML file name")
+    parser.add_argument("--cmd-dir", required=True, help="Directory containing src/command/*.cpp")
+    parser.add_argument("--lua-dir", required=True, help="Directory containing automation/autoload/*.lua|moon")
+    parser.add_argument("--po-dir", required=True, help="Directory containing po/*.po")
+    parser.add_argument("--output", default="commands_32.yaml", help="Output YAML file name")
     args = parser.parse_args()
 
     cmd_dir = Path(args.cmd_dir).resolve()
@@ -303,7 +304,7 @@ def main():
             locale_po_map["en"] = f
 
         if f.suffix == ".po":
-            loc_code = f.stem  # e.g. ar, be...
+            loc_code = f.stem
             locale_po_map[loc_code] = f
 
     if not locale_po_map:
