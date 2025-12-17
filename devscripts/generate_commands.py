@@ -204,6 +204,8 @@ def build_yaml(commands, locale_po_map, output_path: Path):
         "ru"          : "Russian",
         "sr_RS"       : "Serbian (Cyrillic)",
         "sr_RS@latin" : "Serbian (Latin)",
+        "tr"          : "Turkish",
+        "uk_UA"       : "Ukrainian",
         "vi"          : "Vietnamese",
         "zh_CN"       : "Chinese (Simplified)",
         "zh_TW"       : "Chinese (Traditional)"
