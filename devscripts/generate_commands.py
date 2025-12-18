@@ -22,6 +22,7 @@ STRUCT_RE = re.compile(r'\sstruct\s+(\w+)\s+final\s*:\s*public')
 STRUCT_RECENT_RE = re.compile(r'\sstruct\s+(\w+)\s*:\s*public')
 CLASS_RE = re.compile(r'class\s+(\w+):\s*public\s+([\w:]+)\s*\{')
 LUA_RE = re.compile('tr"([^"]*)"')
+LUA_MACRO_RE = re.compile('register_macro\(tr"([^"]*)",\str"([^"]*)"')
 
 STRING_RE = re.compile(r'(\w+)\("([^"]+)"\)')
 CMD_NAME_RE = re.compile(r'CMD_NAME\("([^"]+)"\)')
@@ -37,9 +38,14 @@ def parse_scripts(source_dir: Path) -> dict:
         text = lua_file.read_text(encoding="utf-8")
         filename = lua_file.stem
 
-        search = LUA_RE.findall(text)
-        script_name = search[0]
-        script_description = search[1]
+        if "register_macro(tr" in text:
+            search = LUA_MACRO_RE.search(text)
+            script_name = search.group(1)
+            script_description = search.group(2)
+        else:
+            search = LUA_RE.findall(text)
+            script_name = search[0]
+            script_description = search[1]
 
         cmd_name = f"automation/lua/{filename}/{script_name}"
         
@@ -257,6 +263,12 @@ def build_yaml(commands, locale_po_map, output_path: Path):
                 for index in range(0, 16):
                     # Append 'recent/audio' first, then 'recent/audio/0'
                     if index == 0:
+                        # Change 'recent/keyframes' to 'recent/keyframe'
+                        if "keyframes" in cmd_name:
+                            entry = {"name": f"{cmd_name[:-2]}", "display": f"'{display}'", "help": f"'{help_text}'"}
+                            cmd_list.append(entry)
+                            continue
+
                         entry = {"name": f"{cmd_name[:-1]}", "display": f"'{display}'", "help": f"'{help_text}'"}
                         cmd_list.append(entry)
 
