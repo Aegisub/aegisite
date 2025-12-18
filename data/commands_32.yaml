@@ -160,19 +160,18 @@
     display: 'محو الوسوم'
     help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within
       the lines'
-  - name: automation/lua/kara-templater/قولبة الكاروكي
-    display: 'قولبة الكاروكي'
-    help: 'Macro and export filter to apply karaoke effects using the template language'
+  - name: automation/lua/kara-templater/تطبيق قالب الكاروكي
+    display: 'تطبيق قالب الكاروكي'
+    help: 'يطبّق تأثيرات الكاروكي من القوالب'
   - name: automation/lua/karaoke-auto-leadin/وقت بداية كاروكي تلقائي
     display: 'وقت بداية كاروكي تلقائي'
   - name: automation/lua/macro-1-edgeblur/إضافة حد غشاوي
     display: 'إضافة حد غشاوي'
     help: 'A demo macro showing how to do simple line modification in Automation
       4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Make fullwidth
+    display: 'Make fullwidth'
+    help: 'Convert Latin letters to SJIS fullwidth letters'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -415,10 +414,7 @@
   - name: recent/audio/9
     display: 'الأخيرة'
     help: 'فتح الصوت الأخير'
-  - name: recent/keyframes
-    display: 'الأخيرة'
-    help: 'فتح الإطارات المفتاحية الأخيرة'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'الأخيرة'
     help: 'فتح الإطارات المفتاحية الأخيرة'
   - name: recent/keyframes/1
@@ -1130,20 +1126,18 @@
     display: 'Ачысціць тэгі'
     help: 'Ачысціць радкі субтытраў перастаноўкай ASS-тэгаў і блокаў перавызначэння
       ўнутры радкоў'
-  - name: automation/lua/kara-templater/Шабланізатар караоке
-    display: 'Шабланізатар караоке'
-    help: 'Макрас і фільтр экспарту для стварэння эфектаў караоке з дапамогай мовы
-      шаблонаў'
+  - name: automation/lua/kara-templater/Дастасаваць шаблон караоке
+    display: 'Дастасаваць шаблон караоке'
+    help: 'Дастасоўвае эфекты караоке з шаблонаў'
   - name: automation/lua/karaoke-auto-leadin/Аўтаматычны ўступ для караоке
     display: 'Аўтаматычны ўступ для караоке'
     help: 'Аб''яднаць вылучаныя радкі і дадаць тэгі \k для зрушэння караоке'
   - name: automation/lua/macro-1-edgeblur/Дадаць размыццё краёў
     display: 'Дадаць размыццё краёў'
     help: 'Прыклад макрас аўтаматызацыі 4 версіі для звычайнай мадыфікацыі радкоў'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Зрабіць на ўсю шырыню
+    display: 'Зрабіць на ўсю шырыню'
+    help: 'Канвертаваць лацінскія літары ў літары на ўсю шырыню SJIS '
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -1398,10 +1392,7 @@
   - name: recent/audio/9
     display: 'Нядаўнія'
     help: 'Адкрыць нядаўняе аўдыя'
-  - name: recent/keyframes
-    display: 'Нядаўнія'
-    help: 'Адкрыць нядаўнія ключкадры'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Нядаўнія'
     help: 'Адкрыць нядаўнія ключкадры'
   - name: recent/keyframes/1
@@ -2113,10 +2104,9 @@
     display: 'Изчисти таговете'
     help: 'Изчисти редовете на субтитрите и преорганизирай ASS таговете и замени
       блоковете в редовете'
-  - name: automation/lua/kara-templater/Шаблонизатор за караоке
-    display: 'Шаблонизатор за караоке'
-    help: 'Макро и филтър за експорт за създаване на ефекти на караокето с помощта
-      на езика за щаблони'
+  - name: automation/lua/kara-templater/Приложи шаблон за караоке
+    display: 'Приложи шаблон за караоке'
+    help: 'Приложи караоке ефектите от шаблоните'
   - name: automation/lua/karaoke-auto-leadin/Автоматично встъпление на караокето
     display: 'Автоматично встъпление на караокето'
     help: 'Съедини избраните редове и добави таг, \k за да промени караокето'
@@ -2124,10 +2114,9 @@
     display: 'Добави размити краища'
     help: 'Премери макроса на автоматизацията - 4 версии за проста модификация на
       редове'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Направи пълно ширина
+    display: 'Направи пълно ширина'
+    help: 'Преобразувай латиницата в пълна латиница SJIS'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -2377,10 +2366,7 @@
   - name: recent/audio/9
     display: 'Скорошен'
     help: 'Отвори последното аудио'
-  - name: recent/keyframes
-    display: 'Скорошен'
-    help: 'Отвори последни ключови кадри'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Скорошен'
     help: 'Отвори последни ключови кадри'
   - name: recent/keyframes/1
@@ -3091,10 +3077,9 @@
     display: 'Neteja les etiquetes'
     help: 'Neteja les línies de subtítols recol·locant les etiquetes ASS i els blocs
       d’etiquetes d’estils entre les línies'
-  - name: automation/lua/kara-templater/Creador de plantilles de karaoke
-    display: 'Creador de plantilles de karaoke'
-    help: 'Macro i filtre d’exportació per a aplicar efectes de karaoke utilitzant
-      el llenguatge de plantilles'
+  - name: automation/lua/kara-templater/Aplica les plantilles de karaoke
+    display: 'Aplica les plantilles de karaoke'
+    help: 'Aplica els efectes de karaoke a partir de les plantilles'
   - name: automation/lua/karaoke-auto-leadin/Temps d’entrada automàtic al karaoke
     display: 'Temps d’entrada automàtic al karaoke'
     help: 'Uneix els finals de les línies seleccionades i afegeix etiquetes \k per
@@ -3103,10 +3088,9 @@
     display: 'Afegeix desenfocament a les vores'
     help: 'Una macro de demostració que mostra com fer una modificació simple d’una
       línia amb Automation 4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Fes d’amplada completa
+    display: 'Fes d’amplada completa'
+    help: 'Converteix les lletres llatines a lletres SJIS d’amplada completa'
   - name: automation/lua/select-overlaps/Selecciona els encavalcaments
     display: 'Selecciona els encavalcaments'
     help: 'Selecciona les línies que comencin mentre una altra línia que no sigui
@@ -3363,10 +3347,7 @@
   - name: recent/audio/9
     display: 'Recents'
     help: 'Obre l’àudio recent'
-  - name: recent/keyframes
-    display: 'Recents'
-    help: 'Obre els fotogrames clau recents'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Recents'
     help: 'Obre els fotogrames clau recents'
   - name: recent/keyframes/1
@@ -4083,9 +4064,9 @@
   - name: automation/lua/cleantags-autoload/Vyčistit tagy
     display: 'Vyčistit tagy'
     help: 'Vyčistí řádky titulků tak, že přeuspořádá ASS tagy a bloky na řádcích'
-  - name: automation/lua/kara-templater/Šablona karaoke
-    display: 'Šablona karaoke'
-    help: 'Makro a exportní filtr pro použití karaoke efektů pomocí šablon'
+  - name: automation/lua/kara-templater/Použít šablonu karaoke
+    display: 'Použít šablonu karaoke'
+    help: 'Použije karaoke efekty z šablon'
   - name: automation/lua/karaoke-auto-leadin/Automatický nástup karaoke
     display: 'Automatický nástup karaoke'
     help: 'Spojí konce zvolených řádků a přidá tagy \k pro posun karaoke'
@@ -4093,10 +4074,9 @@
     display: 'Přidat edgeblur'
     help: 'Ukázkové makro předvádí, jak pomocí Automation 4 dosáhnout jednoduché
       úpravy řádku'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Převést na plnou šířku
+    display: 'Převést na plnou šířku'
+    help: 'Konvertuje písmena latinky na písmena SJIS v plné šířce.'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -4339,10 +4319,7 @@
   - name: recent/audio/9
     display: 'Naposledy otevřené'
     help: 'Otevřít nedávné audio'
-  - name: recent/keyframes
-    display: 'Naposledy otevřené'
-    help: 'Otevřít nedávné klíčové snímky'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Naposledy otevřené'
     help: 'Otevřít nedávné klíčové snímky'
   - name: recent/keyframes/1
@@ -5051,19 +5028,18 @@
     display: 'Clean Tags'
     help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within
       the lines'
-  - name: automation/lua/kara-templater/Karaoke Templater
-    display: 'Karaoke Templater'
-    help: 'Macro and export filter to apply karaoke effects using the template language'
+  - name: automation/lua/kara-templater/Apply karaoke template
+    display: 'Apply karaoke template'
+    help: 'Applies karaoke effects from templates'
   - name: automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in
     display: 'Automatic karaoke lead-in'
   - name: automation/lua/macro-1-edgeblur/Add edgeblur
     display: 'Add edgeblur'
     help: 'A demo macro showing how to do simple line modification in Automation
       4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Make fullwidth
+    display: 'Make fullwidth'
+    help: 'Convert Latin letters to SJIS fullwidth letters'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -5307,10 +5283,7 @@
   - name: recent/audio/9
     display: 'Nyligt &brugte'
     help: 'Open recent audio'
-  - name: recent/keyframes
-    display: 'Nyligt &brugte'
-    help: 'Open recent keyframes'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Nyligt &brugte'
     help: 'Open recent keyframes'
   - name: recent/keyframes/1
@@ -6031,9 +6004,9 @@
   - name: automation/lua/cleantags-autoload/Tags säubern
     display: 'Tags säubern'
     help: 'Füge benachbarte Tag-Blöcke zusammen und sortiere die Tags darin'
-  - name: automation/lua/kara-templater/Karaoke-Vorlagenumsetzer
-    display: 'Karaoke-Vorlagenumsetzer'
-    help: 'Makro und Export-Filter, der Karaoke-Vorlagen anwendet'
+  - name: automation/lua/kara-templater/Karaoke-Vorlage anwenden
+    display: 'Karaoke-Vorlage anwenden'
+    help: 'Wendet Karaoke-Vorlagen an'
   - name: automation/lua/karaoke-auto-leadin/Automatischer Karaoke-Einlaufbereich
     display: 'Automatischer Karaoke-Einlaufbereich'
     help: 'Lücken zwischen gewählten Zeilen mit Einlaufber. füllen; füge \k-Tags
@@ -6042,10 +6015,9 @@
     display: 'Füge \be-Tags hinzu'
     help: 'Makro zur Veranschaulichung einfacher Zeilenmodifikation in Automation
       4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Zu Vollbreite konvertieren
+    display: 'Zu Vollbreite konvertieren'
+    help: 'Ersetze lateinische Buchstaben durch ihre SJIS-Vollbreitenform'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -6296,10 +6268,7 @@
   - name: recent/audio/9
     display: 'Zuletzt geöffnet'
     help: 'Letzte Audiodatei öffnen'
-  - name: recent/keyframes
-    display: 'Zuletzt geöffnet'
-    help: 'Letzte Keyframes öffnen'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Zuletzt geöffnet'
     help: 'Letzte Keyframes öffnen'
   - name: recent/keyframes/1
@@ -7017,10 +6986,9 @@
     display: 'Καθάρισμα Ετικετών'
     help: 'Καθάρισμα των γραμμών υποτίτλων, με ανα-ταξινόμηση των ετικετών ASS μέσα
       στις γραμμές'
-  - name: automation/lua/kara-templater/Εφαρμογή προτύπων καραόκε
-    display: 'Εφαρμογή προτύπων καραόκε'
-    help: 'Μακροεντολή και φίλτρο εξαγωγής που εφαρμόζει εφφέ καραόκε με χρήση της
-      γλώσσας προτύπων'
+  - name: automation/lua/kara-templater/Εφαρμογή πρότυπου καραόκε
+    display: 'Εφαρμογή πρότυπου καραόκε'
+    help: 'Εφαρμόζει εφφέ καραόκε από πρότυπα'
   - name: automation/lua/karaoke-auto-leadin/Αυτόματη lead-in στο καραόκε
     display: 'Αυτόματη lead-in στο καραόκε'
     help: 'Ενώνει τους χρόνους λήξης των επιλεγμένων γραμμών και προσθέτει ετικέτες
@@ -7029,10 +6997,9 @@
     display: 'Προσθήκη θόλωσης στις άκρες'
     help: 'Μία μακροεντολή επίδειξης που δείχνει πώς γίνεται μία απλή μεταβολή γραμμής
       στην Αυτοματοποίηση 4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Μετατροπή σε πλήρες πλάτος
+    display: 'Μετατροπή σε πλήρες πλάτος'
+    help: 'Μετατροπή Λατινικής γραφής σε γράμματα SJIS πλήρους πλάτους'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -7291,10 +7258,7 @@
   - name: recent/audio/9
     display: 'Πρόσφατα'
     help: 'Άνοιγμα πρόσφατου αρχείου ήχου'
-  - name: recent/keyframes
-    display: 'Πρόσφατα'
-    help: 'Άνοιγμα πρόσφατου αρχείου keyframe'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Πρόσφατα'
     help: 'Άνοιγμα πρόσφατου αρχείου keyframe'
   - name: recent/keyframes/1
@@ -8013,9 +7977,9 @@
     display: 'Clean Tags'
     help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within
       the lines'
-  - name: automation/lua/kara-templater/Karaoke Templater
-    display: 'Karaoke Templater'
-    help: 'Macro and export filter to apply karaoke effects using the template language'
+  - name: automation/lua/kara-templater/Apply karaoke template
+    display: 'Apply karaoke template'
+    help: 'Applies karaoke effects from templates'
   - name: automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in
     display: 'Automatic karaoke lead-in'
     help: 'Join up the ends of selected lines and add \k tags to shift karaoke'
@@ -8023,10 +7987,9 @@
     display: 'Add edgeblur'
     help: 'A demo macro showing how to do simple line modification in Automation
       4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Make fullwidth
+    display: 'Make fullwidth'
+    help: 'Convert Latin letters to SJIS fullwidth letters'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -8280,10 +8243,7 @@
   - name: recent/audio/9
     display: 'Recent'
     help: 'Open recent audio'
-  - name: recent/keyframes
-    display: 'Recent'
-    help: 'Open recent keyframes'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Recent'
     help: 'Open recent keyframes'
   - name: recent/keyframes/1
@@ -9000,10 +8960,9 @@
     display: 'Limpiar etiquetas'
     help: 'Limpia líneas de subtítulos reorganizando etiquetas ASS y bloques de
       etiquetas de control entre las líneas'
-  - name: automation/lua/kara-templater/Plantillas karaoke
-    display: 'Plantillas karaoke'
-    help: 'Macro y filtro de exportación para aplicar efectos karaoke usando el
-      lenguaje de plantillas'
+  - name: automation/lua/kara-templater/Aplicar plantilla karaoke
+    display: 'Aplicar plantilla karaoke'
+    help: 'Aplica efectos karaoke desde plantillas'
   - name: automation/lua/karaoke-auto-leadin/Entrada de karaoke automática
     display: 'Entrada de karaoke automática'
     help: 'Une los extremos de las líneas seleccionadas y añade etiquetas \k para
@@ -9012,10 +8971,9 @@
     display: 'Añadir difuminado de bordes'
     help: 'Una macro de demostración que muestra como hacer modificaciones simples
       de líneas en Automatización 4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Fijar a ancho completo
+    display: 'Fijar a ancho completo'
+    help: 'Convierte letras latinas a letras SJIS de ancho completo'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -9275,10 +9233,7 @@
   - name: recent/audio/9
     display: 'Reciente'
     help: 'Abrir audio reciente'
-  - name: recent/keyframes
-    display: 'Reciente'
-    help: 'Abrir cuadros clave recientes'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Reciente'
     help: 'Abrir cuadros clave recientes'
   - name: recent/keyframes/1
@@ -10005,10 +9960,9 @@
     display: 'Garbitu Etiketak'
     help: 'Garbitu azpidatzi lerroak ASS etiketak berrantolatuz eta ezeztatu lerro
       gabeko blokeak'
-  - name: automation/lua/kara-templater/Karaoke Eredua
-    display: 'Karaoke Eredua'
-    help: 'Makro eta esportazio iragazkia karaoke eraginak ezartzeko hizkuntza eredua
-      erabiliz'
+  - name: automation/lua/kara-templater/Ezarri karaoke eredua
+    display: 'Ezarri karaoke eredua'
+    help: 'Karaoke eragina ezertzen ditu ereduetatik'
   - name: automation/lua/karaoke-auto-leadin/Berezgaitasunezko karaoke sarrera
     display: 'Berezgaitasunezko karaoke sarrera'
     help: 'Batu hautaturiko lerroen amaierak eta gehitu \k etiketak karaokea aldatzeko'
@@ -10016,10 +9970,9 @@
     display: 'Gehitu hertz-lausopena'
     help: 'Makro erakusgarri batek Berezgaitasuna 4-n lerro aldaketa arrunt bat
       nola egin erakusten du.'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Egin zabalera-osoa
+    display: 'Egin zabalera-osoa'
+    help: 'Bihurtu Latinerako hizkiak SJIS zalabera-osoko hizki'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -10273,10 +10226,7 @@
   - name: recent/audio/9
     display: 'Azkenak'
     help: 'Ireki berrikiko audio agiria'
-  - name: recent/keyframes
-    display: 'Azkenak'
-    help: 'Ireki berrikiko giltzaframeak'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Azkenak'
     help: 'Ireki berrikiko giltzaframeak'
   - name: recent/keyframes/1
@@ -10984,19 +10934,18 @@
     display: 'Clean Tags'
     help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within
       the lines'
-  - name: automation/lua/kara-templater/Karaoke Templater
-    display: 'Karaoke Templater'
-    help: 'Macro and export filter to apply karaoke effects using the template language'
+  - name: automation/lua/kara-templater/Apply karaoke template
+    display: 'Apply karaoke template'
+    help: 'Applies karaoke effects from templates'
   - name: automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in
     display: 'Automatic karaoke lead-in'
   - name: automation/lua/macro-1-edgeblur/Add edgeblur
     display: 'Add edgeblur'
     help: 'A demo macro showing how to do simple line modification in Automation
       4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Make fullwidth
+    display: 'Make fullwidth'
+    help: 'Convert Latin letters to SJIS fullwidth letters'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -11240,10 +11189,7 @@
   - name: recent/audio/9
     display: 'اخیر'
     help: 'Open recent audio'
-  - name: recent/keyframes
-    display: 'اخیر'
-    help: 'Open recent keyframes'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'اخیر'
     help: 'Open recent keyframes'
   - name: recent/keyframes/1
@@ -11954,9 +11900,9 @@
   - name: automation/lua/cleantags-autoload/Siivoa tagit
     display: 'Siivoa tagit'
     help: 'Siivoa tekstitysrivit järjestämällä ASS-tagit ja korvauslohkot uudelleen'
-  - name: automation/lua/kara-templater/Karaokemallien toteutus
-    display: 'Karaokemallien toteutus'
-    help: 'Makro ja vientisuodatin karaokemallien toteuttamiseen mallikieltä käyttäen'
+  - name: automation/lua/kara-templater/Toteuta karaokemalleja
+    display: 'Toteuta karaokemalleja'
+    help: 'Toteuttaa malleissa kuvattuja karaoketehosteita'
   - name: automation/lua/karaoke-auto-leadin/Automaattinen karaoken etuaika
     display: 'Automaattinen karaoken etuaika'
     help: 'Muuta valittujen rivien loppuajat samoiksi ja siirrä karaokea lisäämällä
@@ -11965,10 +11911,9 @@
     display: 'Sumenna reunaviiva'
     help: 'Demomakro, joka näyttää, miten tehdä yksinkertaisia muutoksia riveihin
       Automation 4:ää käyttämällä'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Muuta kirjaimet täysleveiksi
+    display: 'Muuta kirjaimet täysleveiksi'
+    help: 'Muunna latinalaiset kirjaimet SJIS-täysleveiksi kirjaimiksi'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -12219,10 +12164,7 @@
   - name: recent/audio/9
     display: 'Äskeiset'
     help: 'Avaa äskettäinen äänitiedosto'
-  - name: recent/keyframes
-    display: 'Äskeiset'
-    help: 'Avaa äskettäinen avainkuvatiedosto'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Äskeiset'
     help: 'Avaa äskettäinen avainkuvatiedosto'
   - name: recent/keyframes/1
@@ -12933,10 +12875,9 @@
     display: 'Nettoyage des balises'
     help: 'Nettoyage des lignes de sous-titres en réarrangeant les balises ASS et
       en écrasant les blocs dans les lignes'
-  - name: automation/lua/kara-templater/Création modèle karaoké
-    display: 'Création modèle karaoké'
-    help: 'Macro et filtres d''export pour appliquer les effets karaoké en utilisant
-      le modèle de langue'
+  - name: automation/lua/kara-templater/Appliquer le modèle karaoké
+    display: 'Appliquer le modèle karaoké'
+    help: 'Appliquer les effets karaoké depuis les modèles'
   - name: automation/lua/karaoke-auto-leadin/Introduction karaoké automatique
     display: 'Introduction karaoké automatique'
     help: 'Joindre la fin des lignes sélectionnées et ajouter des balises \k pour
@@ -12945,10 +12886,9 @@
     display: 'Ajouter flou de contour'
     help: 'Macro de démo montrant comment faire une modification simple de ligne
       en Automation 4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Remplacer par du pleine chasse
+    display: 'Remplacer par du pleine chasse'
+    help: 'Convertir les caractères latins en caractères SJIS pleine chasse'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -13208,10 +13148,7 @@
   - name: recent/audio/9
     display: 'Fichiers récents'
     help: 'Ouvrir un fichier audio récent'
-  - name: recent/keyframes
-    display: 'Fichiers récents'
-    help: 'Ouvrir les images clés récentes'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Fichiers récents'
     help: 'Ouvrir les images clés récentes'
   - name: recent/keyframes/1
@@ -13929,10 +13866,9 @@
     display: 'Borrar etiquetas'
     help: 'Limpar subtítulos reorganizando etiquetas ASS e bloques de formato nas
       liñas'
-  - name: automation/lua/kara-templater/Crear modelos de karaoke
-    display: 'Crear modelos de karaoke'
-    help: 'Macro e filtro de exportación para aplicar efectos de karaoe utilizando
-      a linguaxe do modelo'
+  - name: automation/lua/kara-templater/Aplicar modelos de karaoke
+    display: 'Aplicar modelos de karaoke'
+    help: 'Aplica efectos de karaoke dos modelos'
   - name: automation/lua/karaoke-auto-leadin/Entrada automática de karaoke
     display: 'Entrada automática de karaoke'
     help: 'Unir os extremos das liñas seleccionadas e engadir etiquetas \k para
@@ -13941,10 +13877,9 @@
     display: 'Desenfocar os bordos'
     help: 'Unha macro de demostración amosa como facer cambios simples de liña en
       Automation 4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Largura completa
+    display: 'Largura completa'
+    help: 'Converter letras latinas a letras SJIS de largura completa'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -14189,10 +14124,7 @@
   - name: recent/audio/9
     display: 'Recentes'
     help: 'Abrir audio recente'
-  - name: recent/keyframes
-    display: 'Recentes'
-    help: 'Abrir fotogramas clave recentes'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Recentes'
     help: 'Abrir fotogramas clave recentes'
   - name: recent/keyframes/1
@@ -14902,10 +14834,9 @@
   - name: automation/lua/cleantags-autoload/Rendezett címkék
     display: 'Rendezett címkék'
     help: 'Rendbe szedi a feliratsorokban lévő ASS címkéket.'
-  - name: automation/lua/kara-templater/Karaoke sablon
-    display: 'Karaoke sablon'
-    help: 'Makró és exportáló szűrő, amivel megadott szabálynyelv szerint karaoke
-      effekteket lehet készíteni.'
+  - name: automation/lua/kara-templater/Karaoke sablon alkalmazása
+    display: 'Karaoke sablon alkalmazása'
+    help: 'Karaoke effektek alkalmazása sablonból.'
   - name: automation/lua/karaoke-auto-leadin/Automatikus karaoke bevezetés
     display: 'Automatikus karaoke bevezetés'
     help: 'A kiválasztott sorok végeit összeillesztve \k címkékkel karaokeként eltolja
@@ -14913,10 +14844,9 @@
   - name: automation/lua/macro-1-edgeblur/Homályosítás
     display: 'Homályosítás'
     help: 'Egy demó makró, ami egy egyszerű Automation 4 sormanipulációt szemléltet.'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Teljes szélességűvé alakítás
+    display: 'Teljes szélességűvé alakítás'
+    help: 'A latin betűket teljes szélességű SJIS betűkké alakítja.'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -15167,10 +15097,7 @@
   - name: recent/audio/9
     display: 'Mostanában megnyitott'
     help: 'Legutóbbi hangfájl megnyitása'
-  - name: recent/keyframes
-    display: 'Mostanában megnyitott'
-    help: 'Legutóbbi kulcskocka-fájl megnyitása'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Mostanában megnyitott'
     help: 'Legutóbbi kulcskocka-fájl megnyitása'
   - name: recent/keyframes/1
@@ -15875,9 +15802,9 @@
   - name: automation/lua/cleantags-autoload/Bersihkan Label
     display: 'Bersihkan Label'
     help: 'Bersihkan baris takarir dengan mengatur ulang label ASS yang ada di baris'
-  - name: automation/lua/kara-templater/Karaoke Templater
-    display: 'Karaoke Templater'
-    help: 'Macro and export filter to apply karaoke effects using the template language'
+  - name: automation/lua/kara-templater/Apply karaoke template
+    display: 'Apply karaoke template'
+    help: 'Applies karaoke effects from templates'
   - name: automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in
     display: 'Automatic karaoke lead-in'
     help: 'Join up the ends of selected lines and add \k tags to shift karaoke'
@@ -15885,10 +15812,9 @@
     display: 'Add edgeblur'
     help: 'A demo macro showing how to do simple line modification in Automation
       4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Make fullwidth
+    display: 'Make fullwidth'
+    help: 'Convert Latin letters to SJIS fullwidth letters'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -16144,10 +16070,7 @@
   - name: recent/audio/9
     display: 'Riwayat'
     help: 'Buka riwayat audio'
-  - name: recent/keyframes
-    display: 'Riwayat'
-    help: 'Buka riwayat keyframe'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Riwayat'
     help: 'Buka riwayat keyframe'
   - name: recent/keyframes/1
@@ -16856,10 +16779,9 @@
     display: 'Cancella Tag'
     help: 'Cancella righe sottotitoli riarrangiando i tag ASS e sovrascrivendo i
       blocchi dentro le righe'
-  - name: automation/lua/kara-templater/Templater Karaoke
-    display: 'Templater Karaoke'
-    help: 'Macro e esporta filtro per applicare effetti karaoke usando il template
-      della lingua'
+  - name: automation/lua/kara-templater/Applica Template Karaoke
+    display: 'Applica Template Karaoke'
+    help: 'Applica effetto karaoke da template'
   - name: automation/lua/karaoke-auto-leadin/Lead-in karaoke automatico
     display: 'Lead-in karaoke automatico'
     help: 'Unisce la fine delle righe selezionate e aggiunge i tag \k per cambiare
@@ -16868,10 +16790,9 @@
     display: 'Aggiungi edgeblur'
     help: 'Una demo macro che mostra come fare una semplice modifica a una riga
       su Automation 4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Rendi fullwidth
+    display: 'Rendi fullwidth'
+    help: 'Converti caratteri Latini in caratteri fullwidth SJIS'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -17116,10 +17037,7 @@
   - name: recent/audio/9
     display: 'Recenti'
     help: 'Apri audio recente'
-  - name: recent/keyframes
-    display: 'Recenti'
-    help: 'Apri keyframe recenti'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Recenti'
     help: 'Apri keyframe recenti'
   - name: recent/keyframes/1
@@ -17829,19 +17747,18 @@
     display: 'Clean Tags'
     help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within
       the lines'
-  - name: automation/lua/kara-templater/Karaoke Templater
-    display: 'Karaoke Templater'
-    help: 'Macro and export filter to apply karaoke effects using the template language'
+  - name: automation/lua/kara-templater/Apply karaoke template
+    display: 'Apply karaoke template'
+    help: 'Applies karaoke effects from templates'
   - name: automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in
     display: 'Automatic karaoke lead-in'
   - name: automation/lua/macro-1-edgeblur/Add edgeblur
     display: 'Add edgeblur'
     help: 'A demo macro showing how to do simple line modification in Automation
       4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Make fullwidth
+    display: 'Make fullwidth'
+    help: 'Convert Latin letters to SJIS fullwidth letters'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -18084,10 +18001,7 @@
   - name: recent/audio/9
     display: '履歴'
     help: 'Open recent audio'
-  - name: recent/keyframes
-    display: '履歴'
-    help: 'Open recent keyframes'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: '履歴'
     help: 'Open recent keyframes'
   - name: recent/keyframes/1
@@ -18796,19 +18710,18 @@
     display: 'Clean Tags'
     help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within
       the lines'
-  - name: automation/lua/kara-templater/Karaoke Templater
-    display: 'Karaoke Templater'
-    help: 'Macro and export filter to apply karaoke effects using the template language'
+  - name: automation/lua/kara-templater/Apply karaoke template
+    display: 'Apply karaoke template'
+    help: 'Applies karaoke effects from templates'
   - name: automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in
     display: 'Automatic karaoke lead-in'
   - name: automation/lua/macro-1-edgeblur/Add edgeblur
     display: 'Add edgeblur'
     help: 'A demo macro showing how to do simple line modification in Automation
       4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Make fullwidth
+    display: 'Make fullwidth'
+    help: 'Convert Latin letters to SJIS fullwidth letters'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -19051,10 +18964,7 @@
   - name: recent/audio/9
     display: '최근 사용 목록'
     help: 'Open recent audio'
-  - name: recent/keyframes
-    display: '최근 사용 목록'
-    help: 'Open recent keyframes'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: '최근 사용 목록'
     help: 'Open recent keyframes'
   - name: recent/keyframes/1
@@ -19766,10 +19676,9 @@
     display: 'Labels opruimen'
     help: 'Ondertitelregels opruimen door ASS-labels opnieuw te ordenen en blokken
       binnen de regels te overschrijven'
-  - name: automation/lua/kara-templater/Karaoke-templater
-    display: 'Karaoke-templater'
-    help: 'Macro en exportfilter om karaoke-effecten toe te passen door de sjabloontaal
-      te gebruiken'
+  - name: automation/lua/kara-templater/Karaokesjabloon toepassen
+    display: 'Karaokesjabloon toepassen'
+    help: 'Past karaoke-effecten toe uit sjablonen'
   - name: automation/lua/karaoke-auto-leadin/Automatische karaoke-lead-in
     display: 'Automatische karaoke-lead-in'
     help: 'Het einde van de geselecteerde regels samenvoegen en \k labels toevoegen
@@ -19778,10 +19687,9 @@
     display: 'Randvervaging toevoegen'
     help: 'Een demomacro die toont hoe simpele regelmodificatie gebeurt in Automation
       4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Letters breed maken
+    display: 'Letters breed maken'
+    help: 'Latijnse letters converteren naar SJIS brede letters (halfwidth -> fullwidth)'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -20027,10 +19935,7 @@
   - name: recent/audio/9
     display: 'Recent'
     help: 'Recente audio openen'
-  - name: recent/keyframes
-    display: 'Recent'
-    help: 'Recente keyframes openen'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Recent'
     help: 'Recente keyframes openen'
   - name: recent/keyframes/1
@@ -20742,19 +20647,18 @@
     display: 'Clean Tags'
     help: 'Clean subtitle lines by re-arranging ASS tags and override blocks within
       the lines'
-  - name: automation/lua/kara-templater/Karaoke Templater
-    display: 'Karaoke Templater'
-    help: 'Macro and export filter to apply karaoke effects using the template language'
+  - name: automation/lua/kara-templater/Apply karaoke template
+    display: 'Apply karaoke template'
+    help: 'Applies karaoke effects from templates'
   - name: automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in
     display: 'Automatic karaoke lead-in'
   - name: automation/lua/macro-1-edgeblur/Add edgeblur
     display: 'Add edgeblur'
     help: 'A demo macro showing how to do simple line modification in Automation
       4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Make fullwidth
+    display: 'Make fullwidth'
+    help: 'Convert Latin letters to SJIS fullwidth letters'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -20997,10 +20901,7 @@
   - name: recent/audio/9
     display: 'Ostatnie'
     help: 'Open recent audio'
-  - name: recent/keyframes
-    display: 'Ostatnie'
-    help: 'Open recent keyframes'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Ostatnie'
     help: 'Open recent keyframes'
   - name: recent/keyframes/1
@@ -21717,10 +21618,9 @@
     display: 'Limpar Tags'
     help: 'Limpa as linhas reorganizando as tags ASS e substituindo os blocos dentro
       das linhas'
-  - name: automation/lua/kara-templater/Editor de Macros de Karaokê
-    display: 'Editor de Macros de Karaokê'
-    help: 'Macro e filtro de exportação para aplicar efeitos de karaokê usando a
-      linguagem de macro'
+  - name: automation/lua/kara-templater/Aplicar macro de karaokê
+    display: 'Aplicar macro de karaokê'
+    help: 'Aplica os efeitos de karaokê dos macros'
   - name: automation/lua/karaoke-auto-leadin/Tempo de entrada automático para karaokê
     display: 'Tempo de entrada automático para karaokê'
     help: 'Une os fins das linhas selecionadas e adicione a tag \k para ajustar
@@ -21729,10 +21629,9 @@
     display: 'Inserir blur de borda'
     help: 'Uma macro de demonstração mostrando como fazer uma modificação simples
       em linha com Automation 4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Tornar Largura Total
+    display: 'Tornar Largura Total'
+    help: 'Converte letras em Latim em letras SJIS de largura total'
   - name: automation/lua/select-overlaps/Selecionar sobrepostas
     display: 'Selecionar sobrepostas'
     help: 'Seleciona as linhas cujos inícios coincidem com linhas não-comentadas
@@ -21990,10 +21889,7 @@
   - name: recent/audio/9
     display: 'Recente'
     help: 'Abrir arquivos de áudio recentes'
-  - name: recent/keyframes
-    display: 'Recente'
-    help: 'Abrir arquivos de quadros-chave recentes'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Recente'
     help: 'Abrir arquivos de quadros-chave recentes'
   - name: recent/keyframes/1
@@ -22713,10 +22609,9 @@
     display: 'Corrigir Expressões'
     help: 'Corrigir as linhas das legendas ao reescrever correctamente as expressões
       ASS e as chavetas no meio das linhas.'
-  - name: automation/lua/kara-templater/Criador de modelos de karaoke
-    display: 'Criador de modelos de karaoke'
-    help: 'Macro e filtro de exportação para aplicar efeitos de karaoke usando a
-      linguagem dos modelos'
+  - name: automation/lua/kara-templater/Aplicar Modelos de Karaoke
+    display: 'Aplicar Modelos de Karaoke'
+    help: 'Aplica efeito de karaokes a partir de modelos'
   - name: automation/lua/karaoke-auto-leadin/Inserir Tempo de Entrada Automático no
       Karaoke
     display: 'Inserir Tempo de Entrada Automático no Karaoke'
@@ -22725,10 +22620,9 @@
     display: 'Adicionar \be1'
     help: 'Uma macro de teste que explica como fazer uma simples modificação de
       linha  em "Automation 4"'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Converter em Largura Total
+    display: 'Converter em Largura Total'
+    help: 'Converte letras romanas em equivalentes SJIS largura total'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -22984,10 +22878,7 @@
   - name: recent/audio/9
     display: 'Recente'
     help: 'Abrir ficheiro de áudio recente'
-  - name: recent/keyframes
-    display: 'Recente'
-    help: 'Abrir keyframes recente'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Recente'
     help: 'Abrir keyframes recente'
   - name: recent/keyframes/1
@@ -23706,10 +23597,9 @@
     display: 'Очистить теги'
     help: 'Очищение строк субтитров перестановкой тегов ASS и блоков переопределения
       внутри строк'
-  - name: automation/lua/kara-templater/Шаблонизатор караоке
-    display: 'Шаблонизатор караоке'
-    help: 'Макрос и фильтр экспорта для создания эффектов караоке с помощью языка
-      шаблонов'
+  - name: automation/lua/kara-templater/Применить шаблон караоке
+    display: 'Применить шаблон караоке'
+    help: 'Применяет эффекты караоке из шаблонов'
   - name: automation/lua/karaoke-auto-leadin/Автоматическое вступление для караоке
     display: 'Автоматическое вступление для караоке'
     help: 'Объединение концов выбранных строк и добавление тегов \k для смещения
@@ -23720,8 +23610,7 @@
       изменение строки'
   - name: automation/lua/macro-2-mkfullwitdh/Преобразовать в формат полной ширины
     display: 'Преобразовать в формат полной ширины'
-    help: 'Показывает, как использовать «unicode.lua» из папки «include» для перебора
-      символов и заменяющую таблицу для конвертирования этих символов во что-то другое.'
+    help: 'Преобразование латинских букв в японскую кодировку полной ширины SJIS'
   - name: automation/lua/select-overlaps/Выбрать пересечения
     display: 'Выбрать пересечения'
     help: 'Выбор строк, начинающихся одновременно с другой незакомментированной
@@ -23980,10 +23869,7 @@
   - name: recent/audio/9
     display: 'Недавно открытые'
     help: 'Открытие недавнего аудио'
-  - name: recent/keyframes
-    display: 'Недавно открытые'
-    help: 'Открытие недавних файлов с ключевыми кадрами'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Недавно открытые'
     help: 'Открытие недавних файлов с ключевыми кадрами'
   - name: recent/keyframes/1
@@ -24692,10 +24578,9 @@
     display: 'Чишћење ознака'
     help: 'Очистите титлове тако што ћете прераспоредити ASS ознаке и заобићи блокове
       унутар титлова.'
-  - name: automation/lua/kara-templater/Шаблони за караоке
-    display: 'Шаблони за караоке'
-    help: 'Користите макро и филтер за извоз да бисте применили караоке ефекте уз
-      помоћ шаблонског језика.'
+  - name: automation/lua/kara-templater/Примени шаблон за караоке
+    display: 'Примени шаблон за караоке'
+    help: 'Примените караоке ефекте из шаблона.'
   - name: automation/lua/karaoke-auto-leadin/Самопроширивање почетног времена караока
     display: 'Самопроширивање почетног времена караока'
     help: 'Спојте крајеве изабраних титлова и додајте \k ознаке ради померања караока.'
@@ -24703,10 +24588,9 @@
     display: 'Додавање замућења ивицама'
     help: 'Демонстрациони макро који показује како да измените титл у Аутоматизацији
       4.'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Пуна ширина
+    display: 'Пуна ширина'
+    help: 'Претворите латиничка слова у SJIS слова пуне ширине.'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -24949,10 +24833,7 @@
   - name: recent/audio/9
     display: 'Исто&рија'
     help: 'Отвори скорашњи звучни снимак'
-  - name: recent/keyframes
-    display: 'Исто&рија'
-    help: 'Отвори скорашње кључне кадрове'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Исто&рија'
     help: 'Отвори скорашње кључне кадрове'
   - name: recent/keyframes/1
@@ -25661,10 +25542,9 @@
     display: 'Čišćenje oznaka'
     help: 'Očistite titlove tako što ćete prerasporediti ASS oznake i zaobići blokove
       unutar titlova.'
-  - name: automation/lua/kara-templater/Šabloni za karaoke
-    display: 'Šabloni za karaoke'
-    help: 'Koristite makro i filter za izvoz da biste primenili karaoke efekte uz
-      pomoć šablonskog jezika.'
+  - name: automation/lua/kara-templater/Primeni šablon za karaoke
+    display: 'Primeni šablon za karaoke'
+    help: 'Primenite karaoke efekte iz šablona.'
   - name: automation/lua/karaoke-auto-leadin/Samoproširivanje početnog vremena karaoka
     display: 'Samoproširivanje početnog vremena karaoka'
     help: 'Spojte krajeve izabranih titlova i dodajte \k oznake radi pomeranja karaoka.'
@@ -25672,10 +25552,9 @@
     display: 'Dodavanje zamućenja ivicama'
     help: 'Demonstracioni makro koji pokazuje kako da izmenite titl u Automatizaciji
       4.'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Puna širina
+    display: 'Puna širina'
+    help: 'Pretvorite latinička slova u SJIS slova pune širine.'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -25918,10 +25797,7 @@
   - name: recent/audio/9
     display: 'Isto&rija'
     help: 'Otvori skorašnji zvučni snimak'
-  - name: recent/keyframes
-    display: 'Isto&rija'
-    help: 'Otvori skorašnje ključne kadrove'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Isto&rija'
     help: 'Otvori skorašnje ključne kadrove'
   - name: recent/keyframes/1
@@ -26634,10 +26510,9 @@
     display: 'Etiketleri Sil'
     help: 'ASS etiketlerini yeniden düzenleyerek altyazı satırlarını sil ve satırlardaki
       blokları geçersiz kıl'
-  - name: automation/lua/kara-templater/Karaoke Şablonlayıcı
-    display: 'Karaoke Şablonlayıcı'
-    help: 'Şablon dili kullanarak karaoke efektlerini uygulamak için makro ve dışa
-      aktarım filtresi'
+  - name: automation/lua/kara-templater/Karaoke şablonunu uygula
+    display: 'Karaoke şablonunu uygula'
+    help: 'Şablonlardan karaoke efektleri uygular'
   - name: automation/lua/karaoke-auto-leadin/Otomatik karaoke başlangıcı
     display: 'Otomatik karaoke başlangıcı'
     help: 'Seçilen satırların sonlarını birleştir ve karaoke''yi kaydırmak için
@@ -26645,10 +26520,9 @@
   - name: automation/lua/macro-1-edgeblur/Kenar bulanıklığı ekle
     display: 'Kenar bulanıklığı ekle'
     help: 'Automation 4''te basit satır değişikliği yapmayı gösteren bir demo makro'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Tam genişlik yap
+    display: 'Tam genişlik yap'
+    help: 'Latin harflerini SJIS tam genişlikli harflere dönüştür'
   - name: automation/lua/select-overlaps/Çakışanları seç
     display: 'Çakışanları seç'
     help: 'Başka bir yorum olmayan satır aktifken başlayan satırları seç.'
@@ -26901,10 +26775,7 @@
   - name: recent/audio/9
     display: 'Geçerli'
     help: 'Son sesi aç'
-  - name: recent/keyframes
-    display: 'Geçerli'
-    help: 'Son anahtar kareyi aç'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Geçerli'
     help: 'Son anahtar kareyi aç'
   - name: recent/keyframes/1
@@ -27613,20 +27484,18 @@
   - name: automation/lua/cleantags-autoload/Впорядкувати теґи
     display: 'Впорядкувати теґи'
     help: 'Впорядковує теґи ASS і збирає блоки з ними всередині рядка в один'
-  - name: automation/lua/kara-templater/Шаблонувальник караоке
-    display: 'Шаблонувальник караоке'
-    help: 'Макрос і фільтр експорту, що застосовує ефекти до караоке, використовуючи
-      мову шаблонів'
+  - name: automation/lua/kara-templater/Застосувати шаблон караоке
+    display: 'Застосувати шаблон караоке'
+    help: 'Застосовує ефекти караоке з шаблонів'
   - name: automation/lua/karaoke-auto-leadin/Автоматичний вступ караоке
     display: 'Автоматичний вступ караоке'
     help: 'З''єднує кінці виділених рядків і додає теґ \k, щоб зсунути караоке'
   - name: automation/lua/macro-1-edgeblur/Додати розмивання країв
     display: 'Додати розмивання країв'
     help: 'Макрос, що демонструє, як робити прості зміни рядка в Automation 4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Зробити літери широкими
+    display: 'Зробити літери широкими'
+    help: 'Конвертувати латинські літери у широкі літери SJIS'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -27878,10 +27747,7 @@
   - name: recent/audio/9
     display: 'Останні'
     help: 'Відкрити останні аудіофайли'
-  - name: recent/keyframes
-    display: 'Останні'
-    help: 'Відкрити останні ключові кадри'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Останні'
     help: 'Відкрити останні ключові кадри'
   - name: recent/keyframes/1
@@ -28588,10 +28454,9 @@
   - name: automation/lua/cleantags-autoload/Dọn dẹp các thẻ
     display: 'Dọn dẹp các thẻ'
     help: 'Xóa các dòng phụ đề bằng cách sắp xếp lại các thẻ ASS trong chúng'
-  - name: automation/lua/kara-templater/Khuôn mẫu Karaoke
-    display: 'Khuôn mẫu Karaoke'
-    help: 'Macro và các bộ lọc xuất dùng để áp dụng hiệu ứng karaoke sử dụng ngôn
-      ngữ khuôn mẫu karaoke'
+  - name: automation/lua/kara-templater/Áp dụng khuôn mẫu Karaoke
+    display: 'Áp dụng khuôn mẫu Karaoke'
+    help: 'Áp dụng hiệu ứng karaoke từ các khuôn mẫu'
   - name: automation/lua/karaoke-auto-leadin/Tự động thêm dẫn vào karaoke
     display: 'Tự động thêm dẫn vào karaoke'
     help: 'Ghép lại điểm kết thúc của các dòng đã chọn và thêm thẻ \k vào để dịch
@@ -28600,10 +28465,9 @@
     display: 'Thêm làm mờ cạnh'
     help: 'Một macro làm mẫu thể hiện cách biến đổi đơn giản một dòng bằng Tự động
       hóa 4'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Tạo kí tự fullwidth
+    display: 'Tạo kí tự fullwidth'
+    help: 'Chuyển các kí tự Latin sang kí tự fullwidth SJIS'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -28862,10 +28726,7 @@
   - name: recent/audio/9
     display: 'Gần đâ&y'
     help: 'Mở âm thanh gần đây'
-  - name: recent/keyframes
-    display: 'Gần đâ&y'
-    help: 'Mở khung chính gần đây'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: 'Gần đâ&y'
     help: 'Mở khung chính gần đây'
   - name: recent/keyframes/1
@@ -29580,19 +29441,18 @@
   - name: automation/lua/cleantags-autoload/Clean Tags - 整理特效标签
     display: 'Clean Tags - 整理特效标签'
     help: '通过对行内重新排列ASS标签以及覆盖模块，来清理字幕行。'
-  - name: automation/lua/kara-templater/卡拉OK模版执行器
-    display: '卡拉OK模版执行器'
-    help: '宏和导出滤镜通过模版语言来应用卡拉OK特效'
+  - name: automation/lua/kara-templater/Apply karaoke template - 应用卡拉OK模版
+    display: 'Apply karaoke template - 应用卡拉OK模版'
+    help: '通过已有模版套用卡拉OK特效'
   - name: automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in
     display: 'Automatic karaoke lead-in'
     help: '连接两相邻的行，并在行首添加一个长度为相对原开始时间的\k标签'
   - name: automation/lua/macro-1-edgeblur/Add edgeblur - 添加边角模糊
     display: 'Add edgeblur - 添加边角模糊'
     help: '此demo展示了如何用 Automation 4 编写一个简单的对行进行修改的脚本'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Make fullwidth - 转换为全角字符
+    display: 'Make fullwidth - 转换为全角字符'
+    help: '转换拉丁字母为SJIS全角字母'
   - name: automation/lua/select-overlaps/Select overlaps
     display: 'Select overlaps'
     help: 'Select lines which begin while another non-comment line is active'
@@ -29836,10 +29696,7 @@
   - name: recent/audio/9
     display: '最近打开'
     help: '打开最近打开的音频文件'
-  - name: recent/keyframes
-    display: '最近打开'
-    help: '打开最近打开的关键帧'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: '最近打开'
     help: '打开最近打开的关键帧'
   - name: recent/keyframes/1
@@ -30537,19 +30394,18 @@
   - name: automation/lua/cleantags-autoload/Clean Tags - 整理特效標籤
     display: 'Clean Tags - 整理特效標籤'
     help: '夠過對行內重新排列ASS標籤以及覆蓋模組，來清理字幕行。'
-  - name: automation/lua/kara-templater/卡拉OK範本
-    display: '卡拉OK範本'
-    help: '巨集和匯出濾鏡夠過範本語言來套用卡拉OK特效'
+  - name: automation/lua/kara-templater/Apply karaoke template - 套用卡拉OK範本
+    display: 'Apply karaoke template - 套用卡拉OK範本'
+    help: '夠過已有範本套用卡拉OK特效'
   - name: automation/lua/karaoke-auto-leadin/Automatic karaoke lead-in
     display: 'Automatic karaoke lead-in'
     help: '連接所選行的兩端，並新增\K標籤偏移卡拉OK'
   - name: automation/lua/macro-1-edgeblur/Add edgeblur - 新增邊角模糊
     display: 'Add edgeblur - 新增邊角模糊'
     help: '此demo展示了如何用 Automation 4 編寫一個簡單的對行進行修改的腳本'
-  - name: automation/lua/macro-2-mkfullwitdh/Make text fullwidth
-    display: 'Make text fullwidth'
-    help: 'Shows how to use the unicode include to iterate over characters and a
-      lookup table to convert those characters to something else.'
+  - name: automation/lua/macro-2-mkfullwitdh/Make fullwidth - 轉換為全形字元
+    display: 'Make fullwidth - 轉換為全形字元'
+    help: '轉換拉丁字母為SJIS全形字母'
   - name: automation/lua/select-overlaps/選取重疊
     display: '選取重疊'
     help: '選取開始時間落在其他行（非註解）運行期間內的行句'
@@ -30793,10 +30649,7 @@
   - name: recent/audio/9
     display: '最近打開'
     help: '打開最近打開的音訊檔案'
-  - name: recent/keyframes
-    display: '最近打開'
-    help: '打開最近打開的關鍵影格'
-  - name: recent/keyframes/0
+  - name: recent/keyframe
     display: '最近打開'
     help: '打開最近打開的關鍵影格'
   - name: recent/keyframes/1
