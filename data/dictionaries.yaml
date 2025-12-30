@@ -77,6 +77,9 @@ dict_languages:
  - name:  Thai
    lang:  th_TH
 
+ - name:  Turkish
+   lang:  tr_TR
+
  - name:  Vietnamese
    lang:  vi_VN
 
@@ -373,4 +376,12 @@ dict_files:
       link: https://web.archive.org/web/20190708011321if_/http://ftp.aegisub.org/pub/releases/dictionaries/Aegisub-3.0-dict-ms_MY.exe
       md5: 666b027194c1af3ee56c069f12cb1576
       sha512: 574bf0e7246ff42b0bd31c01420e2a721b5ac0433b514c4c0f69a97d0b3a957f03099b7ca1d95e212104d4b4aadca2eb70001bacf55a0370e6a51f8d99a1b456
+
+ - version: "3.4"
+   artifacts:
+    - filename: Aegisub-3.4.2-dict-tr_TR.exe
+      language: tr_TR
+      link: https://github.com/KerimDemirkaynak/Aegisub-Turkish-Language-Patch/releases/download/v2.3.0/Aegisub-3.4.2-dict-tr_TR.exe
+      md5: ebc39bb2f16481bbe8b436b8c49c2fbe
+      sha512: 961B3B01CB4CBFA935F7A53C09184365ECEFF05C4B4519766EA062FB167E7EBE9C5EE6DDE1F6672883FFE736D18FB3D9B2A03DA57B0DFAF17E198CD549B4272F
 
