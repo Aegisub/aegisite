@@ -1,4 +1,5 @@
 baseurl: /
+title: Aegisub
 contentTypes:
   text/asciidoc: {}
   text/markdown: {}
