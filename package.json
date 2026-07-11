@@ -43,7 +43,6 @@
     "highlight.js": "^11.11.1",
     "highlightjs-ass": "github:TypesettingTools/highlightjs-ass",
     "hugo-extended": "0.164.0",
-    "instant.page": "^5.1",
     "katex": "^0.16.47",
     "markdownlint-cli2": "^0.6.0",
     "netlify-plugin-submit-sitemap": "^0.4.0",

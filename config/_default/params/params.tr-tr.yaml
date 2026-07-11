@@ -94,7 +94,6 @@ lastMod: false
 
 options:
   clipBoard: true
-  instantPage: true
   flexSearch: false
   darkMode: true
   bootStrapJs: true

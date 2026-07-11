@@ -22,12 +22,6 @@
   {{ $slice = $slice | append $clipBoard -}}
 {{ end -}}
 
-{{ if .Site.Params.options.instantPage -}}
-  {{ $instantPage := resources.Get "js/instant.page.js" -}}
-  {{ $instantPage := $instantPage | js.Build -}}
-  {{ $slice = $slice | append $instantPage -}}
-{{ end -}}
-
 {{ if .Site.Params.options.flexSearch -}}
   {{ $flexSearch := resources.Get "js/vendor/flexsearch/dist/flexsearch.bundle.js" -}}
   {{ $slice = $slice | append $flexSearch -}}
