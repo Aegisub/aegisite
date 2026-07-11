@@ -25,8 +25,7 @@
     "test": "npm run build",
     "env": "env",
     "precheck": "npm version",
-    "check": "hugo version",
-    "copy:katex-fonts": "shx cp ./node_modules/katex/dist/fonts/* ./static/fonts/"
+    "check": "hugo version"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^8.0.0",
