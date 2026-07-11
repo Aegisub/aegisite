@@ -1,6 +1,5 @@
 ---
 title: Documentación Aegisub
-type: simple-page
 ---
 
 <p>

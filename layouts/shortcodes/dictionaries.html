@@ -1,6 +1,6 @@
 {{ $firstEntry := true }}
-{{ $dictLanguages := .Site.Data.dictionaries.dict_languages }}
-{{ range (sort .Site.Data.dictionaries.dict_files "version" "desc" ) }}
+{{ $dictLanguages := hugo.Data.dictionaries.dict_languages }}
+{{ range (sort hugo.Data.dictionaries.dict_files "version" "desc" ) }}
   {{if eq $firstEntry true }}
   <h3>{{ .version }}</h3>
   <table class="table table-striped">

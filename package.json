@@ -4,7 +4,7 @@
   "version": "0.5.0",
   "private": true,
   "engines": {
-    "node": ">=16.16.0"
+    "node": ">=24.0.0"
   },
   "browserslist": [
     "defaults"
@@ -13,11 +13,11 @@
   "license": "MIT",
   "scripts": {
     "init": "shx rm -rf .git && git init -b main",
-    "create": "exec-bin node_modules/.bin/hugo/hugo new",
+    "create": "hugo new",
     "prestart": "npm run clean",
-    "start": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender",
+    "start": "hugo server --bind=0.0.0.0 --disableFastRender",
     "prebuild": "npm run clean",
-    "build": "exec-bin node_modules/.bin/hugo/hugo --gc --minify",
+    "build": "hugo --gc --minify",
     "build:preview": "npm run build -D -F",
     "clean": "shx rm -rf public resources",
     "clean:install": "shx rm -rf package-lock.json node_modules ",
@@ -26,13 +26,12 @@
     "lint:styles": "stylelint \"assets/scss/**/*.{css,sass,scss,sss,less}\"",
     "lint:markdown": "markdownlint-cli2 \"*.md\" \"content/**/*.md\"",
     "lint:markdown-fix": "markdownlint-cli2-fix \"*.md\" \"content/**/*.md\"",
-    "server": "exec-bin node_modules/.bin/hugo/hugo server",
+    "server": "hugo server",
     "test": "npm run -s lint",
     "env": "env",
     "precheck": "npm version",
-    "check": "exec-bin node_modules/.bin/hugo/hugo version",
+    "check": "hugo version",
     "copy:katex-fonts": "shx cp ./node_modules/katex/dist/fonts/* ./static/fonts/",
-    "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination node_modules/.bin/hugo",
     "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "devDependencies": {
@@ -45,11 +44,10 @@
     "bootstrap": "^5.2.3",
     "clipboard": "^2.0",
     "eslint": "^8.35",
-    "exec-bin": "^1.0.0",
     "flexsearch": "^0.7.31",
     "highlight.js": "^11.7",
     "highlightjs-ass": "github:TypesettingTools/highlightjs-ass",
-    "hugo-installer": "^4.0.1",
+    "hugo-extended": "0.164.0",
     "instant.page": "^5.1",
     "katex": "^0.16",
     "markdownlint-cli2": "^0.6.0",
@@ -61,8 +59,5 @@
     "shx": "^0.3.4",
     "stylelint": "^15.2",
     "stylelint-config-standard-scss": "^7.0"
-  },
-  "otherDependencies": {
-    "hugo": "0.110.0"
   }
 }

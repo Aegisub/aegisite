@@ -1,6 +1,5 @@
 ---
 title: Aegisub Belgeleri
-type: simple-page
 ---
 
 <p>
