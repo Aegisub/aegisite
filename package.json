@@ -12,7 +12,6 @@
   "repository": "https://github.com/Aegisub/aegisite",
   "license": "MIT",
   "scripts": {
-    "init": "shx rm -rf .git && git init -b main",
     "create": "hugo new",
     "prestart": "npm run clean",
     "start": "hugo server --bind=0.0.0.0 --disableFastRender",
@@ -20,12 +19,8 @@
     "build": "hugo --gc --minify",
     "build:preview": "npm run build -D -F",
     "clean": "shx rm -rf public resources",
-    "clean:install": "shx rm -rf package-lock.json node_modules ",
     "server": "hugo server",
-    "test": "npm run build",
-    "env": "env",
-    "precheck": "npm version",
-    "check": "hugo version"
+    "test": "npm run build"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^8.0.0",
