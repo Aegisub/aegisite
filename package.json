@@ -38,8 +38,6 @@
     "highlightjs-ass": "github:TypesettingTools/highlightjs-ass",
     "hugo-extended": "0.164.0",
     "katex": "^0.16.47",
-    "netlify-plugin-submit-sitemap": "^0.4.0",
-    "node-fetch": "^3.3",
     "postcss": "^8.5.16",
     "postcss-cli": "^11.0.1",
     "shx": "^0.4.0"
