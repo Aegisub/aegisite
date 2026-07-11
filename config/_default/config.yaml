@@ -72,5 +72,3 @@ module:
       target: assets/js/vendor/katex
     - source: node_modules/katex/dist/fonts
       target: static/fonts
-    - source: node_modules/mermaid
-      target: assets/js/vendor/mermaid

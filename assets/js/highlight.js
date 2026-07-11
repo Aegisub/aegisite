@@ -27,10 +27,10 @@ hljs.registerLanguage('lua', lua);
 hljs.registerLanguage('ass', ass);
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('pre code:not(.language-mermaid)').forEach((block) => {
+  document.querySelectorAll('pre code').forEach((block) => {
     hljs.highlightElement(block);
   });
-  document.querySelectorAll('code.inline-code:not(.language-mermaid)').forEach((block) => {
+  document.querySelectorAll('code.inline-code').forEach((block) => {
     hljs.highlightElement(block);
   });
 });
