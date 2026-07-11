@@ -32,7 +32,7 @@
     "autoprefixer": "^10.5.2",
     "bootstrap": "^5.3.8",
     "clipboard": "^2.0",
-    "flexsearch": "^0.7.43",
+    "flexsearch": "^0.8.212",
     "highlight.js": "^11.11.1",
     "highlightjs-ass": "github:TypesettingTools/highlightjs-ass",
     "hugo-extended": "0.164.0",
