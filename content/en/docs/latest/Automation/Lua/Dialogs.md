@@ -66,7 +66,7 @@ end
 
 ### aegisub.dialog.open
 
-Synopsis: `file_name = aegisub.dialog.open(title, default_file, default_dir, wildcards, allow_multiple=false, must_exist=true)`
+Synopsis: `file_name = aegisub.dialog.open(title, default_dir, default_file, wildcards, allow_multiple=false, must_exist=true)`
 
 Open a standard file open dialog to ask the user for a filename. Returns
 the path to the selected file(s), or nil if the user canceled.
@@ -74,12 +74,12 @@ the path to the selected file(s), or nil if the user canceled.
 `@title` (`string`)
 : Title of the dialog
 
-`@default_file` (`string`)
-: Default filename to preselect. May be empty.
-
 `@default_dir` (`string`)
 : Initial directory to show in the open dialog. If empty, the
   last used directory is shown.
+
+`@default_file` (`string`)
+: Default filename to preselect. May be empty.
 
 `@wildcards` (`string`)
 : File filters to show. If empty, a sane default will be used.
@@ -113,7 +113,7 @@ file = io.open(filename, 'rb')
 
 ### aegisub.dialog.save
 
-Synopsis: `file_name = aegisub.dialog.save(title, default_file, default_dir, wildcards, dont_prompt_for_overwrite=false)`
+Synopsis: `file_name = aegisub.dialog.save(title, default_dir, default_file, wildcards, dont_prompt_for_overwrite=false)`
 
 Open a standard file save dialog to ask the user for a filename.  Returns
 the path to the selected file, or nil if the user canceled.
@@ -121,12 +121,12 @@ the path to the selected file, or nil if the user canceled.
 `@title` (`string`)
 : Title of the dialog
 
-`@default_file` (`string`)
-: Default filename to preselect. May be empty.
-
 `@default_dir` (`string`)
 : Initial directory to show in the open dialog. If empty, the
   last used directory is shown.
+
+`@default_file` (`string`)
+: Default filename to preselect. May be empty.
 
 `@wildcards` (`string`)
 : File filters to show. If empty, a sane default will be used.
