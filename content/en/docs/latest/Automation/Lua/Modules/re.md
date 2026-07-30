@@ -89,7 +89,7 @@ re.MOD_X:
 : Ignore unescaped whitespace in the expression, making it possible to write
   regular expressions that *aren't* write-only.
 
-re.NO_EMPTY_SUBEXPRESSION:
+re.NO_EMPTY_SUBEXPRESSIONS:
 : Don't match empty expressions/alternatives.
 
 {{<example-box>}}
@@ -253,7 +253,7 @@ c
 
 ```lua
 >>> for str in re.gsplit("a,,b,c", ",", false, 1) do
->>>     print str
+>>>     print(str)
 >>> end
 a
 ,b,c
@@ -383,7 +383,7 @@ single match along with the captured subgroups.
         ["last"] = 9,
     },
     {
-        ["str"] = "380"
+        ["str"] = "380",
         ["first"] = 11,
         ["last"] = 13
     }
@@ -422,9 +422,9 @@ Replace each occurrence of `pattern` in `str` with `replace`.
 : Replacement for matches. This may be either a string which is inserted, or a
   function which is called for each match.
 
-  If `replace` is a string, it may contain references to the matches. `&` and
-  `\0` are replaced with the full match, and `\<number>` is replaced with the
-  appropriate captured subexpression.
+  If `replace` is a string, it uses Boost.Regex's Perl-style replacement
+  format. `$&` is replaced with the full match. `$1`, `$2`, etc. and `\1`
+  through `\9` are replaced with the corresponding captured subexpression.
 
   If `replace` is a function, it is called for either the entire match (if
   there are no capturing subexpressions), or for each captured subexpression.
@@ -470,18 +470,6 @@ end
 
 {{</example-box>}}
 {{<example-box>}}
-Add one to each \\k duration:
-
-```lua
-function add_one(str)
-    return tostring(tonumber(str) + 1)
-end
->>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k(\\d+)", add_one)
-{\k11}a{\k16}b{\k31}c
-```
-
-{{</example-box>}}
-{{<example-box>}}
 Consider these examples:
 
 ```lua
@@ -493,45 +481,31 @@ re.sub("{\\y10}a{\\y15}b{\\y30}c", "\\\\y", "\\yf")
 re.sub("{\\y10}a{\\y15}b{\\y30}c", "\\\\y", function(str) return "\\yf" end)
 ```
 
-Among these, **Examples 1 and 3 are correct and yield identical output. Example 2 is incorrect and may yield unpredictable results** (such as unexpected replacements or errors, depending on the regex engine).
+Examples 1 and 3 both produce `{\yf10}a{\yf15}b{\yf30}c`. Example 2
+produces `{yf10}a{yf15}b{yf30}c`, without the backslashes.
 
 Why do the number of backslashes differ?
 
-For the `re` module, both `pattern` and `replace` undergo Lua escaping and regex escaping. However, if `replace` is a function, only Lua escaping is required.
+Each quoted Lua string is interpreted by Lua first, so a literal backslash in
+the string must be written as `\\`. The resulting pattern is then parsed as a
+regular expression. A string replacement is separately parsed using
+Boost.Regex's replacement format, while the value returned by a replacement
+function is inserted directly.
 
-In Lua, a backslash character `\` in a string literal must be written as `\\`. Otherwise, it is interpreted as an escape character (e.g., `\n` for newline). To represent the literal characters `\` and `n`, you would write `\\n`.
+After Lua interprets the strings above:
 
-<br>
-During Lua interpretation, the above examples are interpreted as:
+- The source string is `{\y10}a{\y15}b{\y30}c`.
+- The pattern is `\\y`, which matches the literal text `\y`.
+- Example 1's replacement is `\\yf`. The replacement formatter converts `\\`
+  to a literal backslash, producing `\yf`.
+- Example 2's replacement is `\yf`. In a Boost replacement string, an
+  unrecognized escape such as `\y` emits the escaped character without the
+  backslash, producing `yf`.
+- Example 3's function returns `\yf`. Function results do not pass through the
+  replacement formatter, so the backslash is retained.
 
-*Source string (1st arg)*: `"{\\y10}a{\\y15}b{\\y30}c" → {\y10}a{\y15}b{\y30}c`
-
-*Pattern (2nd arg)*: `"\\\\y" → \\y`
-
-*Replacement (3rd arg)*:
-
- - *Example 1*: `"\\\\yf" → \\yf`
-
- - *Example 2*: `"\\yf" → \yf`
-
- - *Example 3 (string inside the function)*: `"\\yf" → \yf`
-
-<br>
-The interpreted content is then passed to the regex engine, where regex escaping occurs:
-
-*Source string*: No regex escaping applied. Remains `{\y10}a{\y15}b{\y30}c`
-
-*Pattern*: `\\y → \y`
-
-*Replacement*:
-
- - *Example 1*: `\\yf → \yf`
-
- - *Example 2*: `\yf → ??` (Since `\y` is not a valid single-character regex class (e.g. `\d` represent digits `0-9`), the regex engine may throw an error, or ignore the `\` and treat it as `yf`.)
-
- - *Example 3*: No regex escaping is applied for it is a function. The string inside the function remains `\yf`.
-
-Of course, we can use the long bracket format to define the string. Lua will not interpret any escape sequences in such a string (regex escaping will still apply). The examples above are equivalent to:
+Lua's long-bracket strings do not process escape sequences. The examples above
+can equivalently be written as:
 
 ```lua
 -- Example 1

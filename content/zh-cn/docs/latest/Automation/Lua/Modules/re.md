@@ -4,8 +4,6 @@ menu:
   docs:
     parent: lua-modules
 weight: 6266
-aliases:
-  - /docs/latest/Automation/Lua/Modules/re/
 ---
 
 `re`模块是对 boost::regex 的封装，旨在完全替代 Lua 内置的正则表达式。相比 Lua 的内置正则表达式，它具有两个主要优势：
