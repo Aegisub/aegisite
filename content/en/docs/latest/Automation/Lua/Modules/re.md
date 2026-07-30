@@ -51,7 +51,7 @@ the following fields:
 {{<example-box>}}
 
 ```lua
->>> re.match("b", "abc")
+>>> re.match("abc", "b")
 {
     {
         ["str"] = "b",
@@ -77,27 +77,27 @@ re.NOSUB:
   they aren't needed.
 
 re.NEWLINE_ALT:
-: Treat newline characters as the alternation operator (|).
+: Treat newline characters as the alternation operator `|`.
 
 re.NO_MOD_M:
-: ^ and $ only match the beginning and end of the string rather than newlines.
+: `^` and `$` only match the beginning and end of the string rather than newlines.
 
 re.MOD_S:
-: Treat newlines as normal characters, matched by '.'.
+: Treat newlines as normal characters, matched by `.`.
 
 re.MOD_X:
 : Ignore unescaped whitespace in the expression, making it possible to write
   regular expressions that *aren't* write-only.
 
-re.NO_EMPTY_SUBEXPRESSION:
+re.NO_EMPTY_SUBEXPRESSIONS:
 : Don't match empty expressions/alternatives.
 
 {{<example-box>}}
 
 ```lua
->>> re.match("a", "A")
+>>> re.match("A", "a")
 nil
->>> re.match("a", "A", re.ICASE, re.NOSUB)
+>>> re.match("A", "a", re.ICASE, re.NOSUB)
 {
     {
         ["str"] = "A",
@@ -127,11 +127,13 @@ than recompiling it each time it is used, and is usually more readable as well.
 
 ```lua
 >>> expr = re.compile("a")
->>> expr:split("banana")
+>>> expr:split("eat banana")
 {
-    "b",
+    "e",
+    "t b",
     "n",
-    "n"
+    "n",
+    ""
 }
 ```
 
@@ -164,7 +166,7 @@ Split the string at each of the occurrences of `pattern`.
 {{<example-box>}}
 
 ```lua
->>> re.split(",", "a,,b,c")
+>>> re.split("a,,b,c", ",")
 {
     "a",
     "",
@@ -177,7 +179,7 @@ Split the string at each of the occurrences of `pattern`.
 {{<example-box>}}
 
 ```lua
->>> re.split(",", "a,,b,c", true)
+>>> re.split("a,,b,c", ",", true)
 {
     "a",
     "b",
@@ -189,7 +191,7 @@ Split the string at each of the occurrences of `pattern`.
 {{<example-box>}}
 
 ```lua
->>> re.split(",", "a,,b,c", false, 1)
+>>> re.split("a,,b,c", ",", false, 1)
 {
     "a",
     ",b,c",
@@ -202,7 +204,7 @@ Split the string at each of the occurrences of `pattern`.
 
 Synopsis: {{< lua `iter = re.gsplit(str, pattern, skip_empty=false, max_splits=0)` >}}
 
-Iterator version of re.split.
+Iterator version of `re.split`.
 
 `@str` (`string`)
 : String to split.
@@ -225,8 +227,8 @@ Iterator version of re.split.
 {{<example-box>}}
 
 ```lua
->>> for str in re.gsplit(",", "a,,b,c") do
->>>     print str
+>>> for str in re.gsplit("a,,b,c", ",") do
+>>>     print(str)
 >>> end
 a
 
@@ -238,8 +240,8 @@ c
 {{<example-box>}}
 
 ```lua
->>> for str in re.gsplit(",", "a,,b,c", true) do
->>>     print str
+>>> for str in re.gsplit("a,,b,c", ",", true) do
+>>>     print(str)
 >>> end
 a
 b
@@ -250,8 +252,8 @@ c
 {{<example-box>}}
 
 ```lua
->>> for str in re.gsplit(",", "a,,b,c", false, 1) do
->>>     print str
+>>> for str in re.gsplit("a,,b,c", ",", false, 1) do
+>>>     print(str)
 >>> end
 a
 ,b,c
@@ -278,7 +280,7 @@ Find all non-overlapping substrings of `str` which match `pattern`.
 {{<example-box>}}
 
 ```lua
->>> re.find(".", "☃☃")
+>>> re.find("☃☃", ".")
 {
     {
         ["str"] = "☃",
@@ -298,10 +300,10 @@ Find all non-overlapping substrings of `str` which match `pattern`.
 
 ```lua
 function contains_an_a(str)
-    if re.find("a", str)
-        print "Has an a"
+    if re.find(str, "a") then
+        print("Has an a")
     else
-        print "Doesn't have an a"
+        print("Doesn't have an a")
     end
 end
 >>> contains_an_a("abc")
@@ -332,8 +334,8 @@ Iterate over all non-overlapping substrings of `str` which match `pattern`.
 {{<example-box>}}
 
 ```lua
->>> for str, start_idx, end_idx in re.gfind(".", "☃☃") do
->>>     print string.format("%d-%d: %s", start_idx, end_idx, str)
+>>> for str, start_idx, end_idx in re.gfind("☃☃", ".") do
+>>>     print(string.format("%d-%d: %s", start_idx, end_idx, str))
 >>> end
 1-3: ☃
 4-6: ☃
@@ -363,7 +365,7 @@ single match along with the captured subgroups.
 {{<example-box>}}
 
 ```lua
->>> re.match("(\d+) (\d+) (\d+)", "{250 1173 380}Help!")
+>>> re.match("{250 1173 380}Help!", "(\\d+) (\\d+) (\\d+)")
 {
     {
         ["str"] = "250 1173 380",
@@ -381,7 +383,7 @@ single match along with the captured subgroups.
         ["last"] = 9,
     },
     {
-        ["str"] = "380"
+        ["str"] = "380",
         ["first"] = 11,
         ["last"] = 13
     }
@@ -409,7 +411,7 @@ Iterator version of [`re.match`]({{< relref "re#rematch" >}}).
 
 ### re.sub
 
-Synopsis: {{< lua `out_str, rep_count = re.sub(str, replace, pattern, max_count=0)` >}}
+Synopsis: {{< lua `out_str = re.sub(str, pattern, replace, max_count=0)` >}}
 
 Replace each occurrence of `pattern` in `str` with `replace`.
 
@@ -420,9 +422,9 @@ Replace each occurrence of `pattern` in `str` with `replace`.
 : Replacement for matches. This may be either a string which is inserted, or a
   function which is called for each match.
 
-  If `replace` is a string, it may contain references to the matches. `&` and
-  `\0` are replaced with the full match, and `\<number>` is replaced with the
-  appropriate captured subexpression.
+  If `replace` is a string, it uses Boost.Regex's Perl-style replacement
+  format. `$&` is replaced with the full match. `$1`, `$2`, etc. and `\1`
+  through `\9` are replaced with the corresponding captured subexpression.
 
   If `replace` is a function, it is called for either the entire match (if
   there are no capturing subexpressions), or for each captured subexpression.
@@ -437,14 +439,11 @@ Replace each occurrence of `pattern` in `str` with `replace`.
 `out_str` (`string`)
 : The input string, with replacements applied.
 
-`rep_count` (`number`)
-: The number of replacements that were made.
-
 {{<example-box>}}
 Replace all instances of \\k with \\kf:
 
 ```lua
->>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k", "\\kf")
+>>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k", "\\\\kf")
 {\kf10}a{\kf15}b{\kf30}c
 ```
 
@@ -453,7 +452,7 @@ Replace all instances of \\k with \\kf:
 Replace all instances of \\k and \\K with \\kf:
 
 ```lua
->>> re.sub("{\\K10}a{\\K15}b{\\k30}c", "\\\\k", "\\kf", re.ICASE)
+>>> re.sub("{\\K10}a{\\K15}b{\\k30}c", "\\\\k", "\\\\kf", re.ICASE)
 {\kf10}a{\kf15}b{\kf30}c
 ```
 
@@ -465,8 +464,56 @@ Add one to each \\k duration:
 function add_one(str)
     return tostring(tonumber(str) + 1)
 end
->>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k(\[[:digit:]]+)", add_one)
+>>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k(\\d+)", add_one)
 {\k11}a{\k16}b{\k31}c
+```
+
+{{</example-box>}}
+{{<example-box>}}
+Consider these examples:
+
+```lua
+-- Example 1
+re.sub("{\\y10}a{\\y15}b{\\y30}c", "\\\\y", "\\\\yf")
+-- Example 2
+re.sub("{\\y10}a{\\y15}b{\\y30}c", "\\\\y", "\\yf")
+-- Example 3
+re.sub("{\\y10}a{\\y15}b{\\y30}c", "\\\\y", function(str) return "\\yf" end)
+```
+
+Examples 1 and 3 both produce `{\yf10}a{\yf15}b{\yf30}c`. Example 2
+produces `{yf10}a{yf15}b{yf30}c`, without the backslashes.
+
+Why do the number of backslashes differ?
+
+Each quoted Lua string is interpreted by Lua first, so a literal backslash in
+the string must be written as `\\`. The resulting pattern is then parsed as a
+regular expression. A string replacement is separately parsed using
+Boost.Regex's replacement format, while the value returned by a replacement
+function is inserted directly.
+
+After Lua interprets the strings above:
+
+- The source string is `{\y10}a{\y15}b{\y30}c`.
+- The pattern is `\\y`, which matches the literal text `\y`.
+- Example 1's replacement is `\\yf`. The replacement formatter converts `\\`
+  to a literal backslash, producing `\yf`.
+- Example 2's replacement is `\yf`. In a Boost replacement string, an
+  unrecognized escape such as `\y` emits the escaped character without the
+  backslash, producing `yf`.
+- Example 3's function returns `\yf`. Function results do not pass through the
+  replacement formatter, so the backslash is retained.
+
+Lua's long-bracket strings do not process escape sequences. The examples above
+can equivalently be written as:
+
+```lua
+-- Example 1
+re.sub([[{\y10}a{\y15}b{\y30}c]], [[\\y]], [[\\yf]])
+-- Example 2
+re.sub([[{\y10}a{\y15}b{\y30}c]], [[\\y]], [[\yf]])
+-- Example 3
+re.sub([[{\y10}a{\y15}b{\y30}c]], [[\\y]], function(str) return [[\yf]] end)
 ```
 
 {{</example-box>}}

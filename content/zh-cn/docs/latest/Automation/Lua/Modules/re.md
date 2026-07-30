@@ -6,41 +6,34 @@ menu:
 weight: 6266
 ---
 
-`re` 模块是封装过的
-boost::regex，加入它的意图是为了取代Lua内置的正则表达式。相比Lua内置的正则，它有两个主要优点:
+`re`模块是对 boost::regex 的封装，旨在完全替代 Lua 内置的正则表达式。相比 Lua 的内置正则表达式，它具有两个主要优势：
 
-1. 完整的 Unicode 支持。Lua
-   正则对字节进行操作，而不是字符，这在我们处理多字节字符时时常引起问题。
-1. 更强大和灵活的表达式。严格地说，Lua
-   不支持正则表达式；它只是拥有一个较小的模式匹配语言，只能实现正则表达式的部分功能。
-   boost::regex 则完整兼容PRCE标准的正则表达式。
+1. 完整的 Unicode 支持。Lua 正则表达式操作的是字节而非字符，这在使用多字节字符时经常引发问题。
+1. 更强大、更灵活的语法。严格来说，Lua 并不支持正则表达式；它只具备一种基础的模式匹配语言，仅支持正则表达式功能的一小部分子集。而 boost::regex 则支持 Perl 兼容的正则表达式。
 
 ## 用法
 
-使用 `re = require 'aegisub.re'` 导入该模块。
+通过 {{< lua `re = require 'aegisub.re'` >}} 导入此模块。
 
-查阅 [boost.regex's
-documentation](http://www.boost.org/doc/libs/1_53_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html)
-以获取更多有关正则表达式的信息。总地来说，你在互联网上能找到的任何有关PRCE正则表达式的教程都可以作为这个模块的使用参考。
+关于正则表达式语法，请参阅 [boost.regex 文档](https://www.boost.org/doc/libs/1_53_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html)。通常，网络上任何提及 Perl 正则表达式或 PCRE 的资料均适用于此模块的正则表达式。
 
-### 匹配表
+### 匹配表（Match Tables）
 
-以下的几个函数会返回匹配表(以表的形式返回匹配)，表的结构如下：
+下文中的几个函数会返回匹配表(以表的形式返回匹配)，表的结构如下：
 
 `str` (`string`)
-: 匹配到的文本。
+: 模式或捕获表达式匹配到的文本。
 
 `first` (`number`)
-: 匹配到的 `str` 在原字符串中首次出现的位置。
-  这个位置是基于字节计算的，从1开始记，而不是按字符算，这是为了与Lua的字符串计数相匹配。
+: `str`在源字符串中的起始索引。注意，此索引从 1 开始，且以字节而非字符为单位，以便与 Lua 的字符串索引保持一致。
 
 `last` (`number`)
-: 匹配到的 `str` 在原字符串中最后出现的位置。
+: `str`在源字符串中的结束索引。注意，此索引从 1 开始、包含结束位置，且以字节而非字符为单位，以便与 Lua 的字符串索引保持一致。
 
 {{<example-box>}}
 
 ```lua
->>> re.match("b", "abc")
+>>> re.match("abc", "b")
 {
     {
         ["str"] = "b",
@@ -52,41 +45,37 @@ documentation](http://www.boost.org/doc/libs/1_53_0/libs/regex/doc/html/boost_re
 
 {{</example-box>}}
 
-### Flags
+### 标志（Flags）
 
-The following flags may be passed to all of the static functions (including
-`re.compile`).  Flags must come after all supplied non-flag arguments, but
-optional arguments can be skipped.
+下列标志可传递给所有静态函数（包括 `re.compile`）。标志必须位于所有非标志参数之后，但可选参数可以跳过。
 
 re.ICASE
-: Ignore case when matching.
+: 匹配时忽略大小写。
 
 re.NOSUB:
-: Don't set backreferences and capture groups. Can improve performance when
-  they aren't needed.
+: 不设置反向引用和捕获组。当不需要它们时，可以提高性能。
 
 re.NEWLINE_ALT:
-: Treat newline characters as the alternation operator (|).
+: 将换行符视为交替操作符（the alternation operator）`|`。
 
 re.NO_MOD_M:
-: ^ and $ only match the beginning and end of the string rather than newlines.
+: `^`和`$`仅匹配字符串的开始和结束，而不是换行处。
 
 re.MOD_S:
-: Treat newlines as normal characters, matched by '.'.
+: 将换行符视为普通字符，由`.`匹配。
 
 re.MOD_X:
-: Ignore unescaped whitespace in the expression, making it possible to write
-  regular expressions that *aren't* write-only.
+: 忽略表达式中未转义的空白字符，便于编写可读性更好的正则表达式。
 
 re.NO_EMPTY_SUBEXPRESSION:
-: Don't match empty expressions/alternatives.
+: 不匹配空表达式/空分支。
 
 {{<example-box>}}
 
 ```lua
->>> re.match("a", "A")
+>>> re.match("A", "a")
 nil
->>> re.match("a", "A", re.ICASE, re.NOSUB)
+>>> re.match("A", "a", re.ICASE, re.NOSUB)
 {
     {
         ["str"] = "A",
@@ -100,27 +89,27 @@ nil
 
 ### re.compile
 
-Synopsis: {{< lua `expr = re.compile(pattern, [FLAGS])` >}}
+语法概要：{{< lua `expr = re.compile(pattern, [FLAGS])` >}}
 
-Compile a regular expression. Reusing a compiled regular expression is faster
-than recompiling it each time it is used, and is usually more readable as well.
+编译一个正则表达式。重复使用已编译的正则表达式比每次使用时重新编译更快，通常也更具可读性。
 
 `@pattern` (`string`)
-: Regular expression to compile.
+: 要编译的正则表达式。
 
 `expr` (`table`)
-: A table with all of the functions listed below, except without the pattern
-  and flags arguments.
+: 一个包含下文中所有函数的表，但不包含`pattern`和`flags`参数。
 
 {{<example-box>}}
 
 ```lua
 >>> expr = re.compile("a")
->>> expr:split("banana")
+>>> expr:split("eat banana")
 {
-    "b",
+    "e",
+    "t b",
     "n",
-    "n"
+    "n",
+    ""
 }
 ```
 
@@ -128,32 +117,29 @@ than recompiling it each time it is used, and is usually more readable as well.
 
 ### re.split
 
-Synopsis: {{< lua `chunks = re.split(str, pattern, skip_empty=false, max_splits=0)` >}}
+语法概要：{{< lua `chunks = re.split(str, pattern, skip_empty=false, max_splits=0)` >}}
 
-Split the string at each of the occurrences of `pattern`.
+在每次出现`pattern`的位置拆分字符串。
 
 `@str` (`string`)
-: String to split.
+: 要拆分的字符串。
 
 `@pattern` (`string`)
-: Regular expression to split the string on. Capturing groups in the pattern
-  are ignored.
+: 用于拆分的正则表达式。其捕获组会被忽略。
 
 `@skip_empty` (`boolean`)
-: Do not include zero-length chunks in the results.
+: 在结果中不要包含长度为零的分段。
 
 `@max_splits` (`number`)
-: If greater than zero, the maximum numbers of times to split the string (i.e.
-  `#chunks` will be at most `max_splits + 1`).
+: 若大于零，表示拆分字符串的最大次数（即`#chunks`最多为`max_splits + 1`）。
 
 `chunks` (`table`)
-: A table containing each of the sections of `str` between the matches of
-  `pattern`.
+: 一个表，包含了字符串`str`根据`pattern`每次匹配拆分后的各个部分。
 
 {{<example-box>}}
 
 ```lua
->>> re.split(",", "a,,b,c")
+>>> re.split("a,,b,c", ",")
 {
     "a",
     "",
@@ -166,7 +152,7 @@ Split the string at each of the occurrences of `pattern`.
 {{<example-box>}}
 
 ```lua
->>> re.split(",", "a,,b,c", true)
+>>> re.split("a,,b,c", ",", true)
 {
     "a",
     "b",
@@ -178,7 +164,7 @@ Split the string at each of the occurrences of `pattern`.
 {{<example-box>}}
 
 ```lua
->>> re.split(",", "a,,b,c", false, 1)
+>>> re.split("a,,b,c", ",", false, 1)
 {
     "a",
     ",b,c",
@@ -189,33 +175,30 @@ Split the string at each of the occurrences of `pattern`.
 
 ### re.gsplit
 
-Synopsis: {{< lua `iter = re.gsplit(str, pattern, skip_empty=false, max_splits=0)` >}}
+语法概要：{{< lua `iter = re.gsplit(str, pattern, skip_empty=false, max_splits=0)` >}}
 
-Iterator version of re.split.
+`re.split`的迭代器版本。
 
 `@str` (`string`)
-: String to split.
+: 要拆分的字符串。
 
 `@pattern` (`string`)
-: Regular expression to split the string on. Capturing groups in the pattern
-  are ignored.
+: 用于拆分的正则表达式。其捕获组会被忽略。
 
 `@skip_empty` (`boolean`)
-: Do not include zero-length chunks in the results.
+: 在结果中不要包含长度为零的分段。
 
 `@max_splits` (`number`)
-: If greater than zero, the maximum numbers of times to split the string (i.e.
-  `#chunks` will be at most `max_splits + 1`).
+: 若大于零，表示拆分字符串的最大次数（即`#chunks`最多为`max_splits + 1`）。
 
 `iter` (`iterator over strings`)
-: An iterator over each of the sections of `str` between the matches of
-  `pattern`.
+: 一个迭代器，用于遍历字符串`str`根据模式`pattern`每次匹配拆分后的各个部分。
 
 {{<example-box>}}
 
 ```lua
->>> for str in re.gsplit(",", "a,,b,c") do
->>>     print str
+>>> for str in re.gsplit("a,,b,c", ",") do
+>>>     print(str)
 >>> end
 a
 
@@ -227,8 +210,8 @@ c
 {{<example-box>}}
 
 ```lua
->>> for str in re.gsplit(",", "a,,b,c", true) do
->>>     print str
+>>> for str in re.gsplit("a,,b,c", ",", true) do
+>>>     print(str)
 >>> end
 a
 b
@@ -239,8 +222,8 @@ c
 {{<example-box>}}
 
 ```lua
->>> for str in re.gsplit(",", "a,,b,c", false, 1) do
->>>     print str
+>>> for str in re.gsplit("a,,b,c", ",", false, 1) do
+>>>     print(str)
 >>> end
 a
 ,b,c
@@ -250,24 +233,23 @@ a
 
 ### re.find
 
-Synopsis: {{< lua `matches = re.find(str, pattern)` >}}
+语法概要：{{< lua `matches = re.find(str, pattern)` >}}
 
-Find all non-overlapping substrings of `str` which match `pattern`.
+查找字符串`str`中所有匹配`pattern`的非重叠子串。
 
 `@str` (`string`)
-: String to search for the pattern in.
+: 要搜索的字符串。
 
 `@pattern` (`string`)
-: Pattern to search for. Capturing groups in the pattern are ignored.
+: 用于搜索的正则表达式。其捕获组将被忽略。
 
-`matches` (`table` or `nil`)
-: A table of [Match Tables]({{< relref "re#match-tables" >}}) for all matches, or `nil` if
-  there were none.
+`matches` (`table` 或 `nil`)
+: 一个包含所有匹配项（每个匹配项都是一个[匹配表]({{< relref "re#match-tables" >}})）的表，若未找到任何匹配则返回 `nil`。
 
 {{<example-box>}}
 
 ```lua
->>> re.find(".", "☃☃")
+>>> re.find("☃☃", ".")
 {
     {
         ["str"] = "☃",
@@ -286,10 +268,10 @@ Find all non-overlapping substrings of `str` which match `pattern`.
 
 ```lua
 function contains_an_a(str)
-    if re.find("a", str)
-        print "Has an a"
+    if re.find(str, "a")
+        print("Has an a")
     else
-        print "Doesn't have an a"
+        print("Doesn't have an a")
     end
 end
 >>> contains_an_a("abc")
@@ -302,26 +284,24 @@ Doesn't have an a
 
 ### re.gfind
 
-Synopsis: {{< lua `iter = re.gfind(str, pattern)` >}}
+语法概要：{{< lua `iter = re.gfind(str, pattern)` >}}
 
-Iterate over all non-overlapping substrings of `str` which match `pattern`.
+迭代遍历`str`中所有匹配`pattern`的非重叠子串。
 
 `@str` (`string`)
-: String to search for the pattern in.
+: 要搜索的字符串。
 
 `@pattern` (`string`)
-: Pattern to search for. Capturing groups in the pattern are ignored.
+: 用于搜索的正则表达式。其捕获组将被忽略。
 
 `iter` (`iterator over string, number, number`)
-: An iterator which produces three values at each step: a matched string, the
-  started index of the match in the source string, and the inclusive end index of
-  the match in the source string.
+: 一个迭代器，每次迭代产生三个值：匹配到的字符串、该匹配在源字符串中的起始索引、匹配在源字符串中的结束索引（结束索引包含结束位置）。
 
 {{<example-box>}}
 
 ```lua
->>> for str, start_idx, end_idx in re.gfind(".", "☃☃") do
->>>     print string.format("%d-%d: %s", start_idx, end_idx, str)
+>>> for str, start_idx, end_idx in re.gfind("☃☃", ".") do
+>>>     print(string.format("%d-%d: %s", start_idx, end_idx, str))
 >>> end
 1-3: ☃
 4-6: ☃
@@ -331,27 +311,23 @@ Iterate over all non-overlapping substrings of `str` which match `pattern`.
 
 ### re.match
 
-Synopsis: {{< lua `matches = re.match(str, pattern)` >}}
+语法概要：{{< lua `matches = re.match(str, pattern)` >}}
 
-Match a pattern against a string. This differs from `find` in that `find`
-returns all matches and does not capture subgroups, while this returns only a
-single match along with the captured subgroups.
+将模式串`pattern`与字符串进行匹配。与`find`不同，`find`返回所有匹配且不捕获子组，而此函数仅返回单个匹配及其捕获的子组。
 
 `@str` (`string`)
-: String to search for the pattern in.
+: 要搜索的字符串。
 
 `@pattern` (`string`)
-: Pattern to search for.
+: 用于搜索的正则表达式。
 
-`matches` (`table` or `nil`)
-: `nil` if the pattern did not match the string. Otherwise, a table containing
-  a [Match Table]({{< relref "re#match-tables" >}}) for the full match, followed by a [Match Table]({{< relref "re#match-tables" >}}) for each capturing subexpression in the pattern (if
-  any).
+`matches` (`table` 或 `nil`)
+: 若未找到任何匹配则返回`nil`。否则，返回一个表，第一项是一个完整匹配的[匹配表]({{< relref "re#match-tables" >}})，随后的项是每个捕获子表达式（如果有）对应的[匹配表]({{< relref "re#match-tables" >}})。
 
 {{<example-box>}}
 
 ```lua
->>> re.match("(\d+) (\d+) (\d+)", "{250 1173 380}Help!")
+>>> re.match("{250 1173 380}Help!", "(\\d+) (\\d+) (\\d+)")
 {
     {
         ["str"] = "250 1173 380",
@@ -380,81 +356,131 @@ single match along with the captured subgroups.
 
 ### re.gmatch
 
-Synopsis: {{< lua `iter = re.gmatch(str, pattern)` >}}
+语法概要：{{< lua `iter = re.gmatch(str, pattern)` >}}
 
-Iterator version of [`re.match`]({{< relref "re#re.match" >}}).
+[`re.match`]({{< relref "re#re.match" >}})的迭代器版本。
 
 `@str` (`string`)
-: String to search for the pattern in.
+: 要搜索的字符串。
 
 `@pattern` (`string`)
-: Pattern to search for.
+: 用于搜索的正则表达式。
 
 `matches` (`iterator over table`)
-: An iterator which returns a table containing a [Match Table]({{< relref "re#match-tables" >}}) for the full match (if it matched), followed by a
-  [Match Table]({{< relref "re#match-tables" >}}) for each capturing subexpression in the pattern
-  (if any).
+: 一个迭代器，用于遍历一个表。该表第一项是一个完整匹配的[匹配表]({{< relref "re#match-tables" >}})，随后的项是每个捕获子表达式（如果有）对应的[匹配表]({{< relref "re#match-tables" >}})。
 
 ### re.sub
 
-Synopsis: {{< lua `out_str, rep_count = re.sub(str, replace, pattern, max_count=0)` >}}
+语法概要：{{< lua `out_str = re.sub(str, pattern, replace, max_count=0)` >}}
 
-Replace each occurrence of `pattern` in `str` with `replace`.
+将`str`中每次出现的`pattern`替换为`replace`。
 
 `@pattern` (`string`)
-: Pattern to search for.
+: 用于搜索的正则表达式。
 
-`@replace` (`string` or `function`)
-: Replacement for matches. This may be either a string which is inserted, or a
-  function which is called for each match.
+`@replace` (`string` 或 `function`)
+: 匹配项的替换内容。可以是要插入的字符串，也可以是针对每个匹配调用的函数。
 
-  If `replace` is a string, it may contain references to the matches. `&` and
-  `\0` are replaced with the full match, and `\<number>` is replaced with the
-  appropriate captured subexpression.
+  如果`replace`是字符串，它可以包含对匹配项的引用。`&`和`\0`会被替换为整个模式匹配到的文本，`\<number>`会被替换为相应的捕获子表达式。
 
-  If `replace` is a function, it is called for either the entire match (if
-  there are no capturing subexpressions), or for each captured subexpression.
-  It is passed the match string, start index of the match, and end index of
-  the match. If it returns a string, the match is replaced with the return
-  value. If it returns anything else, then the source string is left
-  unchanged.
+  如果`replace`是函数，当模式中没有捕获子表达式时，它将接收整个模式匹配到的文本作为参数进行调用；当存在捕获子表达式时，则为每个捕获的子表达式分别调用。该函数会接收三个参数：匹配到的字符串、匹配在源字符串中的起始索引、匹配在源字符串中的结束索引（结束索引包含结束位置）。如果函数返回一个字符串，则匹配项会被替换为该返回值；如果函数返回任何其他类型的值，则源字符串中对应的部分保持原样不变。
 
 `@max_count` (`number`)
-: If greater than zero, the maximum number of replacements to make.
+: 如果大于零，表示要进行的最大替换次数。
 
 `out_str` (`string`)
-: The input string, with replacements applied.
-
-`rep_count` (`number`)
-: The number of replacements that were made.
+: 替换后的输入字符串。
 
 {{<example-box>}}
-Replace all instances of \\k with \\kf:
+替换所有的`\\k`为`\\kf`：
 
 ```lua
->>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k", "\\kf")
+>>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k", "\\\\kf")
 {\kf10}a{\kf15}b{\kf30}c
 ```
 
 {{</example-box>}}
 {{<example-box>}}
-Replace all instances of \\k and \\K with \\kf:
+替换所有的`\\k`和`\\K`为`\\kf`：
 
 ```lua
->>> re.sub("{\\K10}a{\\K15}b{\\k30}c", "\\\\k", "\\kf", re.ICASE)
+>>> re.sub("{\\K10}a{\\K15}b{\\k30}c", "\\\\k", "\\\\kf", re.ICASE)
 {\kf10}a{\kf15}b{\kf30}c
 ```
 
 {{</example-box>}}
 {{<example-box>}}
-Add one to each \\k duration:
+对每个`\\k`的时长加1：
 
 ```lua
 function add_one(str)
     return tostring(tonumber(str) + 1)
 end
->>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k(\[[:digit:]]+)", add_one)
+>>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k(\\d+)", add_one)
 {\k11}a{\k16}b{\k31}c
+```
+
+{{</example-box>}}
+
+{{<example-box>}}
+考虑以下例子：
+
+```lua
+-- 例子 1
+re.sub("{\\y10}a{\\y15}b{\\y30}c", "\\\\y", "\\\\yf")
+-- 例子 2
+re.sub("{\\y10}a{\\y15}b{\\y30}c", "\\\\y", "\\yf")
+-- 例子 3
+re.sub("{\\y10}a{\\y15}b{\\y30}c", "\\\\y", function(str) return "\\yf" end)
+```
+
+其中，**例子1和例子3是正确的，且输出结果相同。例子2是错误的，可能导致非预期结果**（可能产生非预想的替换结果或者程序抛错，取决于正则引擎的实现）。
+
+为什么几个例子反斜杠的数量会不同？
+
+对于`re`模块，模式字符串`pattern`和替换内容`replace`都需要经过 Lua 转义和正则转义。但如果`replace`是函数，则`replace`仅需 Lua 转义。
+
+在 Lua 字符串字面量中，反斜杠`\`必须写作`\\`，否则会被解释为转义字符（例如`\n`代表换行符）。要表示字面意义的两个字符`\`和`n`，需写为`\\n`。
+
+<br>
+在 Lua 解释过程中，上述例子被解释为：
+
+*源字符串（第1个参数）*：`"{\\y10}a{\\y15}b{\\y30}c" → {\y10}a{\y15}b{\y30}c`
+
+*模式串（第2个参数）*：`"\\\\y" → \\y`
+
+*替换内容（第3个参数）*：
+
+ - *例子1*：`"\\\\yf" → \\yf`
+
+ - *例子2*：`"\\yf" → \yf`
+
+ - *例子3（函数内的字符串）*：`"\\yf" → \yf`
+
+<br>
+解释后的内容被传递给正则引擎。此时进行了正则转义：
+
+*源字符串*：不进行正则转义。依旧为`{\y10}a{\y15}b{\y30}c`
+
+*模式串*：`\\y → \y`
+
+*替换内容*：
+
+ - *例子1*：`\\yf → \yf`
+
+ - *例子2*：`\yf → ??` （由于`\y`不是有效的单字符正则类（例：字符正则类`\d`代表数字`0-9`），正则引擎可能抛出错误，或忽略`\`而将其视为`yf`）
+
+ - *例子3*：由于是函数，不进行正则转义。函数内的字符串依旧为`\yf`
+
+当然，我们可以用长格式中括号来定义字符串，Lua 不会对这样定义的字符串解释任何转义序列（但还是会正则转义），上面的例子等价于：
+
+```lua
+-- 例子 1
+re.sub([[{\y10}a{\y15}b{\y30}c]], [[\\y]], [[\\yf]])
+-- 例子 2
+re.sub([[{\y10}a{\y15}b{\y30}c]], [[\\y]], [[\yf]])
+-- 例子 3
+re.sub([[{\y10}a{\y15}b{\y30}c]], [[\\y]], function(str) return [[\yf]] end)
 ```
 
 {{</example-box>}}
