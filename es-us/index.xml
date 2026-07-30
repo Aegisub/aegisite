@@ -1,4 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Editor de subtítulos avanzado on</title><link>/es-us/</link><description>Recent content in Editor de subtítulos avanzado on</description><generator>Hugo -- gohugo.io</generator><language>es-US</language><lastBuildDate>Tue, 05 Sep 2023 23:30:00 -0400</lastBuildDate><atom:link href="/es-us/index.xml" rel="self" type="application/rss+xml"/><item><title>Descargas</title><link>/es-us/downloads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/downloads/</guid><description>La versión de última distribución es 3.4.2, publicada enero 12, 2025
-Vea changelog para ver la lista de cambios.
-Tipo Notas Archivo MD5 OS X Full Install Aegisub-3.4.2.dmg e99131baf41e298b1b4dc543ace38892 Source Aegisub-3.4.2.tar.gz d60c9942d1c211b266e29fdde689e3e8 Windows Regular Install Aegisub-3.4.2.exe 609ccaff7804453416966e6bbcc90ed0 Windows Portable aegisub-3.4.2-portable.zip a37ff3c3ac3f42e70dcdb0f2718e4fea Versiones pendientes # Revise la CI build
-Diccionarios # Para reducir el tamaño de descarga, la instalación &amp;ldquo;completa&amp;rdquo; Windows incluye solo un diccionario de inglés estadounidense para el corrector ortográfico.</description></item><item><title>Documentación Aegisub</title><link>/es-us/docs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/</guid><description> Manual 3.4 Manual de usuario actual. Manual 3.2 Manual de usuario versión 3.2. Manual 3.1 Manual de usuario versión 3.1. Manual 3.0 Manual de usuario versiones 3.0.0 - 3.0.4. Manual 2.1 Manual de usuario versiones 2.1.6 - 2.1.9. Manual 1.10 Manual de usuario versión 1.10.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Editor de subtítulos avanzado on Aegisub</title><link>/es-us/</link><description>Recent content in Editor de subtítulos avanzado on Aegisub</description><generator>Hugo -- gohugo.io</generator><language>es-US</language><lastBuildDate>Tue, 05 Sep 2023 23:30:00 -0400</lastBuildDate><atom:link href="/es-us/index.xml" rel="self" type="application/rss+xml"/><item><title>Descargas</title><link>/es-us/downloads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/downloads/</guid><description>&lt;p&gt;La versión de &lt;a href="https://github.com/Aegisub/Aegisub/releases/latest"&gt;última distribución&lt;/a&gt; es &lt;strong&gt;3.4.2&lt;/strong&gt;, publicada enero 12, 2025&lt;/p&gt;
+&lt;p&gt;Vea &lt;a href="/changelog/3.4.2"&gt;changelog&lt;/a&gt; para ver la lista de cambios.&lt;/p&gt;
+&lt;table class="table table-striped"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col"&gt;Tipo&lt;/th&gt;
+&lt;th scope="col"&gt;Notas&lt;/th&gt;
+&lt;th scope="col"&gt;Archivo&lt;/th&gt;
+&lt;th scope="col"&gt;MD5&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;OS X&lt;/td&gt;
+&lt;td&gt;Full Install&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.2/Aegisub-3.4.2.dmg"&gt;Aegisub-3.4.2.dmg&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;e99131baf41e298b1b4dc543ace38892&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Source&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.2/Aegisub-3.4.2.tar.gz"&gt;Aegisub-3.4.2.tar.gz&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;d60c9942d1c211b266e29fdde689e3e8&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows&lt;/td&gt;
+&lt;td&gt;Regular Install&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.2/Aegisub-3.4.2.exe"&gt;Aegisub-3.4.2.exe&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;609ccaff7804453416966e6bbcc90ed0&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows&lt;/td&gt;
+&lt;td&gt;Portable&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.2/aegisub-3.4.2-portable.zip"&gt;aegisub-3.4.2-portable.zip&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;a37ff3c3ac3f42e70dcdb0f2718e4fea&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="versiones-pendientes"&gt;Versiones pendientes &lt;a href="#versiones-pendientes" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Revise la CI build&lt;/p&gt;
+&lt;h2 id="diccionarios"&gt;Diccionarios &lt;a href="#diccionarios" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Para reducir el tamaño de descarga, la instalación &amp;ldquo;completa&amp;rdquo; Windows incluye solo
+un diccionario de inglés estadounidense para el corrector ortográfico. Todos los
+demás diccionarios deben descargarse por separado:&lt;/p&gt;</description></item><item><title>Documentación Aegisub</title><link>/es-us/docs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/</guid><description>&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="/es-us/docs/latest/" class="btn btn-primary" role="button"&gt;Manual 3.4&lt;/a&gt; Manual de usuario actual.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="/docs/3.2/" class="btn btn-outline-secondary" role="button"&gt;Manual 3.2&lt;/a&gt; Manual de usuario versión 3.2.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="/docs/3.1/" class="btn btn-outline-secondary" role="button"&gt;Manual 3.1&lt;/a&gt; Manual de usuario versión 3.1.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="/docs/3.0/" class="btn btn-outline-secondary" role="button"&gt;Manual 3.0&lt;/a&gt; Manual de usuario versiones 3.0.0 - 3.0.4.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="/docs/manual/" class="btn btn-outline-secondary" role="button"&gt;Manual 2.1&lt;/a&gt; Manual de usuario versiones 2.1.6 - 2.1.9.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="/docs/1.10/" class="btn btn-outline-secondary" role="button"&gt;Manual 1.10&lt;/a&gt; Manual de usuario versión 1.10.
+&lt;/p&gt;
+&lt;br /&gt;</description></item></channel></rss>

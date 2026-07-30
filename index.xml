@@ -1,6 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Advanced Subtitle Editor on</title><link>/</link><description>Recent content in Advanced Subtitle Editor on</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Tue, 06 Oct 2020 08:47:36 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Changelogs</title><link>/changelog/</link><pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate><guid>/changelog/</guid><description/></item><item><title>Aegisub dev Blog</title><link>/blog/</link><pubDate>Tue, 06 Oct 2020 08:49:55 +0000</pubDate><guid>/blog/</guid><description/></item><item><title>Privacy Policy</title><link>/privacy-policy/</link><pubDate>Thu, 27 Aug 2020 19:23:18 +0200</pubDate><guid>/privacy-policy/</guid><description>Full disclosure: Statistics collected by the update checker # We are aware that some of our users care a lot about their privacy.
-First, the short version: If you do not want to participate in anonymous data collection, do not enable the built-in update checker. If you want to know what information is collected, read on.
-Aegisub&amp;rsquo;s update checker function retrieves a file describing any potential updates available for your installed version of Aegisub.</description></item><item><title>Aegisub Docs</title><link>/docs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/</guid><description> 3.4 Manual Latest user manual 3.2 Manual User manual for 3.2. 3.1 Manual User manual for 3.1. 3.0 Manual User manual for 3.0.0 - 3.0.4. 2.1 Manual User manual for 2.1.6 - 2.1.9 releases. 1.10 Manual User manual for 1.10.</description></item><item><title>Downloads</title><link>/downloads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/downloads/</guid><description>The Latest Release version is 3.4.2, released January 12, 2025
-See the changelog for a list of changes.
-Type Notes File MD5 OS X Full Install Aegisub-3.4.2.dmg e99131baf41e298b1b4dc543ace38892 Source Aegisub-3.4.2.tar.gz d60c9942d1c211b266e29fdde689e3e8 Windows Regular Install Aegisub-3.4.2.exe 609ccaff7804453416966e6bbcc90ed0 Windows Portable aegisub-3.4.2-portable.zip a37ff3c3ac3f42e70dcdb0f2718e4fea Upcoming Versions # Check CI build
-Dictionaries # To cut down on the download size, the Windows &amp;ldquo;Full&amp;rdquo; Install includes only a US English dictionary for the spell checker. All others must be downloaded separately:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Advanced Subtitle Editor on Aegisub</title><link>/</link><description>Recent content in Advanced Subtitle Editor on Aegisub</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Tue, 06 Oct 2020 08:47:36 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Changelogs</title><link>/changelog/</link><pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate><guid>/changelog/</guid><description/></item><item><title>Aegisub dev Blog</title><link>/blog/</link><pubDate>Tue, 06 Oct 2020 08:49:55 +0000</pubDate><guid>/blog/</guid><description/></item><item><title>Privacy Policy</title><link>/privacy-policy/</link><pubDate>Thu, 27 Aug 2020 19:23:18 +0200</pubDate><guid>/privacy-policy/</guid><description>&lt;h2 id="full-disclosure-statistics-collected-by-the-update-checker"&gt;Full disclosure: Statistics collected by the update checker &lt;a href="#full-disclosure-statistics-collected-by-the-update-checker" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We are aware that some of our users care a lot about their privacy.&lt;/p&gt;
+&lt;p&gt;First, the short version: If you do not want to participate in anonymous data collection, do not enable the built-in update checker. If you want to know what information is collected, read on.&lt;/p&gt;
+&lt;p&gt;Aegisub&amp;rsquo;s update checker function retrieves a file describing any potential updates available for your installed version of Aegisub. Along with this request, some anonymous information about your operating environment are sent, to allow us as developers to better target our efforts, and to loosely gauge how large the Aegisub user base is.&lt;/p&gt;</description></item><item><title>Aegisub Docs</title><link>/docs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/</guid><description>&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="latest/" class="btn btn-primary" role="button"&gt;3.4 Manual&lt;/a&gt; Latest user manual
+&lt;/p&gt;
+&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="3.2/" class="btn btn-outline-secondary" role="button"&gt;3.2 Manual&lt;/a&gt; User manual for 3.2.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="3.1/" class="btn btn-outline-secondary" role="button"&gt;3.1 Manual&lt;/a&gt; User manual for 3.1.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="3.0/" class="btn btn-outline-secondary" role="button"&gt;3.0 Manual&lt;/a&gt; User manual for 3.0.0 - 3.0.4.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="manual/" class="btn btn-outline-secondary" role="button"&gt;2.1 Manual&lt;/a&gt; User manual for 2.1.6 - 2.1.9 releases.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="1.10/" class="btn btn-outline-secondary" role="button"&gt;1.10 Manual&lt;/a&gt; User manual for 1.10.
+&lt;/p&gt;
+&lt;br /&gt;</description></item><item><title>Downloads</title><link>/downloads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/downloads/</guid><description>&lt;p&gt;The &lt;a href="https://github.com/TypesettingTools/Aegisub/releases/latest"&gt;Latest Release&lt;/a&gt; version is &lt;strong&gt;3.4.2&lt;/strong&gt;, released January 12, 2025&lt;/p&gt;
+&lt;p&gt;See the &lt;a href="/changelog/3.4.2"&gt;changelog&lt;/a&gt; for a list of changes.&lt;/p&gt;
+&lt;table class="table table-striped"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col"&gt;Type&lt;/th&gt;
+&lt;th scope="col"&gt;Notes&lt;/th&gt;
+&lt;th scope="col"&gt;File&lt;/th&gt;
+&lt;th scope="col"&gt;MD5&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;OS X&lt;/td&gt;
+&lt;td&gt;Full Install&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.2/Aegisub-3.4.2.dmg"&gt;Aegisub-3.4.2.dmg&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;e99131baf41e298b1b4dc543ace38892&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Source&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.2/Aegisub-3.4.2.tar.gz"&gt;Aegisub-3.4.2.tar.gz&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;d60c9942d1c211b266e29fdde689e3e8&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows&lt;/td&gt;
+&lt;td&gt;Regular Install&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.2/Aegisub-3.4.2.exe"&gt;Aegisub-3.4.2.exe&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;609ccaff7804453416966e6bbcc90ed0&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows&lt;/td&gt;
+&lt;td&gt;Portable&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.2/aegisub-3.4.2-portable.zip"&gt;aegisub-3.4.2-portable.zip&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;a37ff3c3ac3f42e70dcdb0f2718e4fea&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="upcoming-versions"&gt;Upcoming Versions &lt;a href="#upcoming-versions" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Check CI build&lt;/p&gt;
+&lt;h2 id="dictionaries"&gt;Dictionaries &lt;a href="#dictionaries" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To cut down on the download size, the Windows &amp;ldquo;Full&amp;rdquo; Install includes only a US English dictionary for the spell checker. All others must be downloaded separately:&lt;/p&gt;</description></item></channel></rss>

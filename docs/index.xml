@@ -1,24 +1,991 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aegisub Docs on</title><link>/docs/</link><description>Recent content in Aegisub Docs on</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Main Page</title><link>/docs/latest/main_page/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/main_page/</guid><description>Welcome to the Aegisub manual. See our about page for more information on the program, or browse the topics on the left bar.
-Documentation related to development of Aegisub and building Aegisub is located at the bug tracker.
-Starting points # Quick overview of Aegisub
-Common tasks:
-Timing a translated script to audio Basic typesetting of on-screen signs Putting your finished subtitles onto the video (for viewing or distribution) Translating a subtitle file from one language to another Correcting a subtitle that&amp;rsquo;s not properly synchronised to the video Timing karaoke to a song Creating fancy karaoke effects</description></item><item><title>What is Aegisub?</title><link>/docs/latest/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/about/</guid><description>Aegisub was originally created as a tool to make typesetting, particularly in anime fansubs, a less painful experience. At the time of the start of the project, many other programs that supported the Advanced Substation Alpha format lacked (and in many cases, still lack; development on several competing programs have since been dropped for various reasons completely unrelated to Aegisub) many vital functions, or were too buggy and/or unreliable to be really useful.</description></item><item><title>Overview</title><link>/docs/latest/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/overview/</guid><description>This screenshot shows the Aegisub main window with everything open:
-The two most important areas are the Subtitles Grid and Edit Box.
-The grid shows all the subtitle lines in the file you&amp;rsquo;re working with. Lines are marked with different colours depending on their properties. For example, lines with green background are selected. Lines with blue background are marked as comments and won&amp;rsquo;t be shown on screen. Lines with a light yellow background are visible on the current video frame.</description></item><item><title>Highlights</title><link>/docs/latest/highlights/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/highlights/</guid><description>Some highlights of Aegisub:
-Simple and intuitive yet powerful interface for editing subtitles With help from such features as spell checking/thesaurus, a translation assistant, call tips for override tags, syntax highlighting and various macros, translating, editing and quality assuring subtitles is now easier than ever. Made a mistake? Had a system crash? Don&amp;rsquo;t worry, Aegisub saves your .ass with features like multi-level undo/redo, auto saving, backups and emergency recovery saving in case of system or program crashes.</description></item><item><title>Credits</title><link>/docs/latest/credits/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/credits/</guid><description>Aegisub was originally written by Rodrigo Braz Monteiro with significant contributions from Niels Martin Hansen. Development was lead by Monteiro through 2008, Hansen through 2010, and by Thomas Goyne from 2011 onward.
-Programming # Main Programmers: Rodrigo Braz Monteiro (ArchMage ZeratuL) - Lead developer, video system, audio system, subtitles I/O, tools Niels Martin Hansen (jfs) - Automation, Lua automation, audio system, tools Thomas Goyne (Plorkyeran) - Lead developer for 3.0 onwards.</description></item><item><title>General Disclaimer</title><link>/docs/latest/general_disclaimer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/general_disclaimer/</guid><description>This manual is a work in progress. It is at present incomplete and no information in it can be taken for granted. We attempt to be accurate on every point, to a reasonable degree.
-Aegisub is software under constant development. While it is a goal to provide up-to-date documentation there will almost always be cases where the actual functionality of the program has changed since this documentation was last updated.</description></item><item><title>Support Aegisub</title><link>/docs/latest/support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/support/</guid><description>Do you want to support Aegisub? Well, it&amp;rsquo;s easy!
-Feedback # You can give us feedback - comments, critiques, suggestions, etc. Bug reports and feature requests are always welcome. Check out our Discord server and the bug tracker, or stop by for a chat in the IRC channel.
-Spreading the word # Like Aegisub? Tell your friends about it! Spreading the word is a good way of helping Aegisub to be the best subtitle editor around.</description></item><item><title>FAQ</title><link>/docs/latest/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/faq/</guid><description>A small collection of Frequently Asked Questions about Aegisub - mostly stuff that didn&amp;rsquo;t fit anywhere else.
-Karaoke effects? # See the Karaoke Templater tutorials.
-Can I create DVD subtitles with Aegisub? # Not directly, but there&amp;rsquo;s a nifty program called MaestroSBT that can convert SSA to VOBSubs. It does have quite a bunch of restrictions on what tags and other things may be used, so reading its manual first is advised.</description></item><item><title>Tutorials</title><link>/docs/latest/tutorials/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/tutorials/</guid><description>The following tutorials are available for Aegisub:
-Video Tutorials (Screencasts) # Dialogue Timing # Description: A video describing how to time using Aegisub.
-By: Karl Blomster
-Link: https://mod16.org/aegisub/timingtutorialimprovisation.mkv
-Description: A video showing an experienced user timing at full speed in Aegisub.
-By: Karl Blomster
-Link: https://mod16.org/aegisub/timing-fullspeed.mkv
-Karaoke Timing # TODO: Actually do this By: Niels Martin Hansen Text tutorials # Karaoke timing (work in progress) — Enter the words for a song and add time-codes to the words Karaoke Inline effects Tutorial Karaoke Furigana Tutorial Karaoke Templater (incomplete) — Easy way to add special effects to karaoke, ranging from the most basic effects to very advanced ones.</description></item><item><title>Karaoke Timing Tutorial</title><link>/docs/latest/karaoke_timing_tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/karaoke_timing_tutorial/</guid><description>This tutorial will teach you how to load a song into Aegisub, how to enter the words for the song and how to add time-codes to the words to synchronise them with the song.
-You don&amp;rsquo;t need to have used Aegisub before to follow this tutorial.
-Before we begin # There&amp;rsquo;s a few things you need to have ready before starting:
-The song itself. This can for example be as an MP3 file or inside a video.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aegisub Docs on Aegisub</title><link>/docs/</link><description>Recent content in Aegisub Docs on Aegisub</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Main Page</title><link>/docs/latest/main_page/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/main_page/</guid><description>&lt;p&gt;Welcome to the Aegisub manual. See our &lt;a href="/docs/latest/about/"&gt;about&lt;/a&gt; page for more
+information on the program, or browse the topics on the left bar.&lt;/p&gt;
+&lt;p&gt;Documentation related to development of Aegisub and building Aegisub is located
+at &lt;a href="https://github.com/TypesettingTools/Aegisub/issues"&gt;the bug tracker&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="starting-points"&gt;Starting points &lt;a href="#starting-points" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href="/docs/latest/overview/"&gt;Quick overview of Aegisub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Common tasks:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/docs/latest/audio/"&gt;Timing a translated script to audio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/tutorials/#visual-typesetting"&gt;Basic typesetting of on-screen signs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/attaching_subtitles_to_video/"&gt;Putting your finished subtitles onto the video&lt;/a&gt; (for viewing or distribution)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/docs/latest/translation_assistant/"&gt;Translating a subtitle file from one language to another&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/shift_times/"&gt;Correcting a subtitle that&amp;rsquo;s not properly synchronised to the video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/docs/latest/tutorials/#karaoke-timing"&gt;Timing karaoke to a song&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/automation/karaoke_templater/tutorial_1/"&gt;Creating fancy karaoke effects&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>What is Aegisub?</title><link>/docs/latest/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/about/</guid><description>&lt;p&gt;Aegisub was originally created as a tool to make typesetting,
+particularly in anime fansubs, a less painful experience. At the time
+of the start of the project, many other programs that supported the
+Advanced Substation Alpha format lacked (and in many cases, still lack;
+development on several competing programs have since been dropped for
+various reasons completely unrelated to Aegisub) many vital functions,
+or were too buggy and/or unreliable to be really useful.&lt;/p&gt;</description></item><item><title>Overview</title><link>/docs/latest/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/overview/</guid><description>&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Main-window-overview.png" width="1018" height="784" alt="Main-window-overview"&gt;
+&lt;/p&gt;
+&lt;p&gt;This screenshot shows the Aegisub main window with everything open:&lt;/p&gt;
+&lt;p&gt;The two most important areas are the &lt;strong&gt;Subtitles Grid&lt;/strong&gt; and &lt;strong&gt;Edit Box&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The grid&lt;/strong&gt; shows all the subtitle lines in the file you&amp;rsquo;re working with. Lines are marked with different colours depending on their properties. For example, lines with green background are selected. Lines with blue background are marked as comments and won&amp;rsquo;t be shown on screen. Lines with a light yellow background are visible on the current video frame. Lines with red text overlap in time with a currently selected line. Click a line here to select it for editing.&lt;/p&gt;</description></item><item><title>Highlights</title><link>/docs/latest/highlights/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/highlights/</guid><description>&lt;p&gt;Some highlights of Aegisub:&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;Simple and intuitive yet powerful interface for editing subtitles&lt;/dt&gt;
+&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;With help from such features as spell checking/thesaurus, a translation assistant, call tips for override tags, syntax highlighting and various macros, translating, editing and quality assuring subtitles is now easier than ever.&lt;/li&gt;
+&lt;li&gt;Made a mistake? Had a system crash? Don&amp;rsquo;t worry, Aegisub saves your .ass with features like multi-level undo/redo, auto saving, backups and emergency recovery saving in case of system or program crashes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;Support for many formats and character sets&lt;/dt&gt;
+&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;Aegisub doesn&amp;rsquo;t lock you into using any specific format; importing and exporting from and to several different formats (ranging from MPEG-4 Timed Text to MicroDVD) is supported.&lt;/li&gt;
+&lt;li&gt;Multiple language subtitles? Legacy programs without Unicode support? No problem, Aegisub has full support for both Unicode and most common legacy encodings; both reading and writing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;Powerful video mode&lt;/dt&gt;
+&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;Nearly all video formats are supported out of the box, but if that isn&amp;rsquo;t enough, Aegisub can also use your system&amp;rsquo;s DirectShow environment to open any format you can play in Windows Media Player.&lt;/li&gt;
+&lt;li&gt;Automatic live preview of subtitles updated as you type, showing you exactly what the subtitles will look like in the player.&lt;/li&gt;
+&lt;li&gt;Full support for variable framerate video and Matroska timecodes. Capable of reading timecodes directly from Matroska files for seamless VFR work.&lt;/li&gt;
+&lt;li&gt;Problems with anamorphic video? Overscan? Aegisub has the tools to handle it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;Visual typesetting tools&lt;/dt&gt;
+&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;Typesetting on easy mode! No need to manually edit override tags; drag, rotate or clip the subtitles directly on the video frame using your mouse.&lt;/li&gt;
+&lt;li&gt;Want to re-use typesetting on a video of different resolution or aspect ratio? Can&amp;rsquo;t figure out what color that sign is using? Aegisub has the tools to help you deal with it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;Intuitive and customizable audio timing mode&lt;/dt&gt;
+&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;Time dialogue or karaoke in any way you want with the heavily customizable audio interface; less painful than ever! Use features such as the spectrum analyzer mode or the automatic timing post-processor for even more efficient timing.&lt;/li&gt;
+&lt;li&gt;Support for nearly every audio format in existence, and DirectShow support for if you manage to find one too obscure for libavcodec.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;Fully scriptable through the Automation module&lt;/dt&gt;
+&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;Is all the above not enough? Extend the program with your own macros or export filters using scripting in Lua.&lt;/li&gt;
+&lt;li&gt;Comes with several ready-made scripts for quick and easy generation of your very own karaoke effects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;</description></item><item><title>Credits</title><link>/docs/latest/credits/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/credits/</guid><description>&lt;p&gt;Aegisub was originally written by Rodrigo Braz Monteiro with significant contributions from Niels Martin Hansen.
+Development was lead by Monteiro through 2008, Hansen through 2010, and by Thomas Goyne from 2011 onward.&lt;/p&gt;
+&lt;h2 id="programming"&gt;Programming &lt;a href="#programming" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Main Programmers:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rodrigo Braz Monteiro&lt;/strong&gt; (ArchMage ZeratuL) - Lead developer, video system, audio system, subtitles I/O, tools&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Niels Martin Hansen&lt;/strong&gt; (jfs) - Automation, Lua automation, audio system, tools&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Thomas Goyne (Plorkyeran)&lt;/strong&gt; - Lead developer for 3.0 onwards.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Staff Contributors:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Karl Blomster&lt;/strong&gt; (TheFluff) - General code, FFmpegSource video provider&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fredrik Mellbin&lt;/strong&gt; (Myrsloik) - FFmpegSource and Avisynth-related code&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Amar Takhar&lt;/strong&gt; (verm) - New unix build system&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;David Lamparter&lt;/strong&gt; (equinox) - Unix port&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Alysson Souza e Silva&lt;/strong&gt; (demi_alucard) - General code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Other contributors:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dan Donovan&lt;/strong&gt; (Dansolo) - Miscellaneous tools&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Patryk Pomykalski&lt;/strong&gt; (Pomyk) - Miscellaneous patching&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ai-chan&lt;/strong&gt; - ASSDraw3&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Evgeniy Stepanov&lt;/strong&gt; (Azzy) - Some Linux patches, libass&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mike Matsnev&lt;/strong&gt; (Haali) - Some DirectShow code and Matroska Parser library&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2points&lt;/strong&gt; - Linux patches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;p-static&lt;/strong&gt; - Linux patches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;David Conrad&lt;/strong&gt; (Yuvi) - Mac patches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Daniel Moscoviter&lt;/strong&gt; (Mosc) - General patches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Harukalover&lt;/strong&gt; - Usability, various patches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SAPikachu&lt;/strong&gt; - General patches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;tophf&lt;/strong&gt; - General patches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;nodame&lt;/strong&gt; - General patches&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="installer"&gt;Installer &lt;a href="#installer" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2.x:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Niels Martin Hansen&lt;/strong&gt; (jfs)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fredrik Mellbin&lt;/strong&gt; (Myrsloik)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rodrigo Braz Monteiro&lt;/strong&gt; (ArchMage ZeratuL)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Previous:
+&lt;ul&gt;
+&lt;li&gt;movax&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="manual"&gt;Manual &lt;a href="#manual" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;3.x:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Thomas Goyne (Plorkyeran)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2.x:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Karl Blomster&lt;/strong&gt; (TheFluff)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Niels Martin Hansen&lt;/strong&gt; (jfs)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rodrigo Braz Monteiro&lt;/strong&gt; (ArchMage ZeratuL)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Previous:
+&lt;ul&gt;
+&lt;li&gt;Motoko-chan&lt;/li&gt;
+&lt;li&gt;Kobi&lt;/li&gt;
+&lt;li&gt;movax&lt;/li&gt;
+&lt;li&gt;Jcubed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="hosting"&gt;Hosting &lt;a href="#hosting" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Current:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DeathWolf&lt;/strong&gt;: SVN repository for versions 2.1.2+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sigurd Tao Lyngse&lt;/strong&gt; (Bot1): Forums and Main Wiki&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Niels Martin Hansen&lt;/strong&gt; (jfs): Bug Tracker&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Marcello Bastéa-Forte&lt;/strong&gt;: Documentation Wiki&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rodrigo Braz Monteiro&lt;/strong&gt; (ArchMage ZeratuL): Domain administration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Previous:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;David Lamparter&lt;/strong&gt; (equinox): SVN repository for versions 2.00 - 2.1.2&lt;/li&gt;
+&lt;li&gt;BerliOS: SVN repository for version 1.10&lt;/li&gt;
+&lt;li&gt;Mentar: SVN repository up to version 1.09&lt;/li&gt;
+&lt;li&gt;Bot1: Bug Tracker&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="localization-files"&gt;Localization files &lt;a href="#localization-files" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2.00 translations:
+&lt;ul&gt;
+&lt;li&gt;ArchMage ZeratuL: Brazilian Portuguese&lt;/li&gt;
+&lt;li&gt;Ereza: Catalan&lt;/li&gt;
+&lt;li&gt;Yuri: Hungarian&lt;/li&gt;
+&lt;li&gt;Hiroshi: Japanese&lt;/li&gt;
+&lt;li&gt;Jeroi: Finnish&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;1.11 translations:
+&lt;ul&gt;
+&lt;li&gt;Karasu: Traditional Chinese&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;1.10 translations:
+&lt;ul&gt;
+&lt;li&gt;TechNiko: French&lt;/li&gt;
+&lt;li&gt;Crysral: French&lt;/li&gt;
+&lt;li&gt;thrash-sensei: Russian&lt;/li&gt;
+&lt;li&gt;equinox: German&lt;/li&gt;
+&lt;li&gt;Nesukun: Spanish&lt;/li&gt;
+&lt;li&gt;EmBolo: Italian&lt;/li&gt;
+&lt;li&gt;Mazinga: Italian&lt;/li&gt;
+&lt;li&gt;oblisk: Korean&lt;/li&gt;
+&lt;li&gt;mulrich: Danish&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="additional-thanks"&gt;Additional thanks &lt;a href="#additional-thanks" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.cccp-project.net"&gt;Combined Community Codec Pack&lt;/a&gt; staff&lt;/li&gt;
+&lt;li&gt;Gabest for VSFilter&lt;/li&gt;
+&lt;li&gt;squid_80 for the x64 builds of Avisynth and CSRI-enabled VSFilter&lt;/li&gt;
+&lt;li&gt;Firebird for some of the toolbar icons&lt;/li&gt;
+&lt;li&gt;Kayle for help with Win32 VfW interface&lt;/li&gt;
+&lt;li&gt;ender for yawning a lot&lt;/li&gt;
+&lt;li&gt;Alpha testers: b0nk, Bot1, deathbygirl, DoGfOoD, grimlock, Jagobah, Jcubed, Kintaro, Kobi, kodachrome, maxx-, mASSIVe, Maya, Mentar, movax, msb, neo2sonic, nich, nwa, omgifos, SOzuken, TheFluff, thrash_sensei, Vincent, zegnat&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="about"&gt;About &lt;a href="#about" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Aegisub includes portions from the following other projects:&lt;/p&gt;</description></item><item><title>General Disclaimer</title><link>/docs/latest/general_disclaimer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/general_disclaimer/</guid><description>&lt;p&gt;&lt;strong&gt;This manual is a work in progress.&lt;/strong&gt; It is at present incomplete and no information in it can be taken for granted. We attempt to be accurate on every point, to a reasonable degree.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Aegisub is software under constant development.&lt;/strong&gt; While it is a goal to provide up-to-date documentation there will almost always be cases where the actual functionality of the program has changed since this documentation was last updated.&lt;/p&gt;</description></item><item><title>Support Aegisub</title><link>/docs/latest/support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/support/</guid><description>&lt;p&gt;Do you want to support Aegisub? Well, it&amp;rsquo;s easy!&lt;/p&gt;
+&lt;h3 id="feedback"&gt;Feedback &lt;a href="#feedback" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;You can give us feedback - comments, critiques, suggestions, etc. Bug
+reports and feature requests are always welcome. Check out our
+&lt;a href="https://discord.gg/AZaVyPr"&gt;Discord server&lt;/a&gt; and the &lt;a href="https://github.com/TypesettingTools/Aegisub/issues"&gt;bug
+tracker&lt;/a&gt;, or stop by for a chat in the &lt;a href="#ZgotmplZ"&gt;IRC
+channel&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="spreading-the-word"&gt;Spreading the word &lt;a href="#spreading-the-word" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Like Aegisub? Tell your friends about it! Spreading the word is a good
+way of helping Aegisub to be the best subtitle editor around.&lt;/p&gt;</description></item><item><title>FAQ</title><link>/docs/latest/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/faq/</guid><description>&lt;p&gt;A small collection of Frequently Asked Questions about Aegisub - mostly
+stuff that didn&amp;rsquo;t fit anywhere else.&lt;/p&gt;
+&lt;h3 id="karaoke-effects"&gt;Karaoke effects? &lt;a href="#karaoke-effects" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;See the &lt;a href="/docs/latest/automation/karaoke_templater/tutorial_1/"&gt;Karaoke Templater tutorials&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="can-i-create-dvd-subtitles-with-aegisub"&gt;Can I create DVD subtitles with Aegisub? &lt;a href="#can-i-create-dvd-subtitles-with-aegisub" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Not directly, but there&amp;rsquo;s a nifty program called
+&lt;a href="https://sourceforge.net/projects/maestrosbt/"&gt;MaestroSBT&lt;/a&gt; that can
+convert SSA to VOBSubs. It does have quite a bunch of restrictions on
+what tags and other things may be used, so reading its manual first is
+advised. Also note that it does not accept ASS - only SSA. You can use
+Aegisub&amp;rsquo;s File -&amp;gt; Export&amp;hellip; dialog to save real SSA files.&lt;/p&gt;</description></item><item><title>Tutorials</title><link>/docs/latest/tutorials/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/tutorials/</guid><description>&lt;p&gt;The following tutorials are available for Aegisub:&lt;/p&gt;
+&lt;h2 id="video-tutorials-screencasts"&gt;Video Tutorials (Screencasts) &lt;a href="#video-tutorials-screencasts" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="dialogue-timing"&gt;Dialogue Timing &lt;a href="#dialogue-timing" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Description: A video describing how to time using Aegisub.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;By: Karl Blomster&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Link: &lt;a href="https://mod16.org/aegisub/timingtutorialimprovisation.mkv"&gt;https://mod16.org/aegisub/timingtutorialimprovisation.mkv&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Description: A video showing an experienced user timing at full speed in Aegisub.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;By: Karl Blomster&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Link: &lt;a href="https://mod16.org/aegisub/timing-fullspeed.mkv"&gt;https://mod16.org/aegisub/timing-fullspeed.mkv&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="karaoke-timing"&gt;Karaoke Timing &lt;a href="#karaoke-timing" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="alert alert-warning" role="alert"&gt;
+&lt;strong&gt;TODO: &lt;/strong&gt;Actually do this
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;By: Niels Martin Hansen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="text-tutorials"&gt;Text tutorials &lt;a href="#text-tutorials" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/docs/latest/karaoke_timing_tutorial/"&gt;Karaoke timing&lt;/a&gt; (work in progress) — Enter the words for a song and add time-codes to the words&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/karaoke_inline-fx/"&gt;Karaoke Inline effects Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/furigana_karaoke/"&gt;Karaoke Furigana Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/automation/karaoke_templater/"&gt;Karaoke Templater&lt;/a&gt; (incomplete) — Easy way to add special effects to karaoke, ranging from the most basic effects to very advanced ones.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Karaoke Timing Tutorial</title><link>/docs/latest/karaoke_timing_tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/karaoke_timing_tutorial/</guid><description>&lt;p&gt;This tutorial will teach you how to load a song into Aegisub, how to enter the words for the song and how to add time-codes to the words to synchronise them with the song.&lt;/p&gt;
+&lt;p&gt;You don&amp;rsquo;t need to have used Aegisub before to follow this tutorial.&lt;/p&gt;
+&lt;h2 id="before-we-begin"&gt;Before we begin &lt;a href="#before-we-begin" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;There&amp;rsquo;s a few things you need to have ready before starting:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The song itself. This can for example be as an MP3 file or inside a video. Aegisub can read the sound from video files, you don&amp;rsquo;t need to create a separate sound file if the song is on a video.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;The words for the song. It&amp;rsquo;s easiest if you have them in a plain text file (.txt file) broken into verses and stanzas already.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;p&gt;I am using an English song for demonstration here, but many of the more advanced functions in Aegisub are designed for use with songs in Japanese and other languages that often need transcription or transliteration into Latin script. I will show how to use those in a video tutorial.&lt;/p&gt;</description></item><item><title>Inline effects Tutorial</title><link>/docs/latest/karaoke_inline-fx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/karaoke_inline-fx/</guid><description>&lt;p&gt;Karaoke inline-fx (inline effects) is a way of marking up &lt;a href="/docs/latest/timing/#karaoke-timing"&gt;timed karaoke&lt;/a&gt; to assign different effects to different
+parts of a line.&lt;/p&gt;
+&lt;p&gt;By itself, inline-fx markup doesn&amp;rsquo;t do anything, it only has an effect when
+a &lt;a href="/docs/latest/automation/"&gt;karaoke effect script&lt;/a&gt; that understands it is applied to
+the timed karaoke.&lt;/p&gt;
+&lt;h2 id="the-markup"&gt;The markup &lt;a href="#the-markup" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Inline-fx tags are (otherwise invalid) ASS override tags of the form
+&lt;code&gt;\-effectname&lt;/code&gt;, where &lt;em&gt;effectname&lt;/em&gt; is the name of the inline-fx defined.&lt;/p&gt;</description></item><item><title>Furigana Tutorial</title><link>/docs/latest/furigana_karaoke/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/furigana_karaoke/</guid><description>&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Furigana-demo-1.png" width="256" height="72" alt="Furigana-demo-1"&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Furigana&lt;/em&gt; (in Aegisub often shortened to &lt;em&gt;furi&lt;/em&gt;) refers to little phonetic
+guide characters written along the main text in Japanese, specifically using
+the hiragana phonetic alphabet to describe how the ideographic kanji characters
+should be pronounced. Putting smaller text next to a main line of text is in
+general referred to as &lt;a href="https://en.wikipedia.org/wiki/Ruby_character"&gt;&lt;em&gt;ruby
+text&lt;/em&gt;&lt;/a&gt;, but since the
+implementation discussed here is designed specifically with Japanese furigana
+in mind, the ruby text is also referred to as furigana everywhere.&lt;/p&gt;</description></item><item><title>Editing Subtitles</title><link>/docs/latest/editing_subtitles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/editing_subtitles/</guid><description>&lt;p&gt;Editing subtitles is what Aegisub is made for. This page will deal with basic
+text editing of subtitle lines; for more information on the typography of
+subtitles, see &lt;a href="/docs/latest/typesetting/"&gt;typesetting&lt;/a&gt;. For information on the timing of
+subtitle lines, see &lt;a href="/docs/latest/audio/"&gt;working with audio&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="opening-subtitles"&gt;Opening subtitles &lt;a href="#opening-subtitles" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In the &lt;em&gt;File&lt;/em&gt; menu, there are four menu choices that relate to opening or
+creating subtitles:&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;New subtitles&lt;/dt&gt;
+&lt;dd&gt;Create a new, blank script (i.e. close the current file).&lt;/dd&gt;
+&lt;dt&gt;Open subtitles&lt;/dt&gt;
+&lt;dd&gt;Open an existing subtitles file or import subtitles from a &lt;a href="https://www.matroska.org"&gt;Matroska
+container file&lt;/a&gt;.&lt;/dd&gt;
+&lt;dt&gt;Open subtitles with charset&lt;/dt&gt;
+&lt;dd&gt;Opens subtitles but lets you choose what character set Aegisub will
+use to interpret the file. Usually not needed, but if you have a file
+in an unusual charset Aegisub will occasionally misdetect it.&lt;/dd&gt;
+&lt;dt&gt;Open subtitles from video&lt;/dt&gt;
+&lt;dd&gt;Open the subtitles muxed into the currently open video file. This
+currently only works with Matroska video files.&lt;/dd&gt;
+&lt;dt&gt;Open &lt;a href="/docs/latest/autosave/"&gt;Autosaved Subtitles&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Open a file created by Aegisub&amp;rsquo;s autosave. Useful if Aegisub crashes when you
+had unsaved changes or just if you want to open an older version of a file.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;When you open a subtitles file that is not detected as Unicode, Aegisub will
+attempt to guess what character set it is encoded with. If it is unsure, it
+will ask you to choose from two or more likely alternatives. If the result
+looks garbled or otherwise incorrect, try reopening it with another character
+set.&lt;/p&gt;</description></item><item><title>Exporting Subtitles</title><link>/docs/latest/exporting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/exporting/</guid><description>&lt;p&gt;In addition to the normal &amp;ldquo;Save&amp;rdquo; and &amp;ldquo;Save as&amp;rdquo; functions, Aegisub also has an &amp;ldquo;Export&amp;rdquo; feature, which can transform the entire script through various export filters. This is used for a number of things ranging from framerate conversions over karaoke effect generation to just saving to other formats and/or character sets.&lt;/p&gt;
+&lt;h2 id="the-export-dialog"&gt;The export dialog &lt;a href="#the-export-dialog" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Export.png#center" width="676" height="310" alt="Export"&gt;
+&lt;/p&gt;
+&lt;p&gt;The upper half of the window contains the available filters. Ticking one or more of them will apply them in the order they are listed; use the move up/down buttons to change the order. The lower half contains a brief description of the selected filter.&lt;/p&gt;</description></item><item><title>Applying Subtitles</title><link>/docs/latest/attaching_subtitles_to_video/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/attaching_subtitles_to_video/</guid><description>&lt;p&gt;In digital encoding, there are two main ways of including subtitles in a video:
+softsubbing and hardsubbing. Both methods has unique advantages and
+disadvantages, along with various arguments both for and against each method.&lt;/p&gt;
+&lt;h2 id="hardsubbing"&gt;Hardsubbing &lt;a href="#hardsubbing" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Hardsubbing is a method that &amp;ldquo;burns in&amp;rdquo; subtitles into the actual video portion
+of a movie. Digital hardsubs are much like subtitled VHS tapes; the subtitles
+cannot be turned off.&lt;/p&gt;
+&lt;h3 id="advantages-of-hardsubbing"&gt;Advantages of Hardsubbing &lt;a href="#advantages-of-hardsubbing" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Hardsubbing is usually much less demanding on the playback device. Since the
+text is already part of the video, it will only take as much processing as the
+unsubtitled video would. You are also often able to make special effects that
+would be difficult to replicate in a soft subtitle format, because of the large
+amount of CPU usage required to renderer them. Even in softsubbed anime
+fansubs, the opening and closing karaoke are often hardsubbed because of the
+special effects used.&lt;/p&gt;</description></item><item><title>Spell Checker</title><link>/docs/latest/spell_checker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/spell_checker/</guid><description>&lt;p&gt;To help you with quality assurance of your subtitle scripts, Aegisub
+features a complete spell checker. It uses the Hunspell library, which is
+based on OpenOffice.org&amp;rsquo;s MySpell, which means it&amp;rsquo;s at least as good as one
+you&amp;rsquo;d find in a sophisticated word processing program. It can be found in
+the &lt;em&gt;Subtitles&lt;/em&gt; menu -&amp;gt; &lt;em&gt;Spell Checker&lt;/em&gt;. It also spell-checks as you type
+and can to some degree be controlled from the subtitle edit box&amp;rsquo;s
+right-click menu (see &lt;a href="/docs/latest/editing_subtitles/"&gt;editing subtitles&lt;/a&gt;).&lt;/p&gt;</description></item><item><title>Translation Assistant</title><link>/docs/latest/translation_assistant/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/translation_assistant/</guid><description>&lt;p&gt;The translation assistant is a valuable tool for translating subtitles from one language to the other. It allows you to translate in the most efficient possible manner, by letting you type the translated text without having to worry about selecting the original, or forgetting what was written in it. It also parses ASS override tags, and will skip over them.&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Translation_Assistant.png#center" width="383" height="546" alt="Translation_Assistant"&gt;
+&lt;/p&gt;
+&lt;p&gt;The assistant window is simple: it shows you the original raw line, and a box where you can type the translation. There is also a list of hotkeys specific to this window, and a checkbox to enable previewing, if you have the corresponding video set up. Having this option enabled will automatically jump to the current line when you change it.&lt;/p&gt;</description></item><item><title>Paste Over</title><link>/docs/latest/paste_over/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/paste_over/</guid><description>&lt;p&gt;The &lt;strong&gt;paste over&lt;/strong&gt; tool is a &amp;ldquo;smart&amp;rdquo; variant of the good old &lt;code&gt;Ctrl&lt;/code&gt;+&lt;code&gt;C&lt;/code&gt; &amp;amp; &lt;code&gt;Ctrl&lt;/code&gt;+&lt;code&gt;V&lt;/code&gt;
+combo. It allows you to paste any given field(s) of one or more lines to the
+corresponding fields of other lines, without affecting the other fields. It can
+be found under the &lt;em&gt;Edit&lt;/em&gt; menu -&amp;gt; &lt;em&gt;Paste lines over&lt;/em&gt;, or by right-clicking on
+the subtitles grid.&lt;/p&gt;
+&lt;p&gt;To use it, first copy one or more lines with the familiar copy function
+(right-click -&amp;gt; copy, or &lt;code&gt;Ctrl&lt;/code&gt;+&lt;code&gt;C&lt;/code&gt;). Then select the line(s) you want to paste to,
+and click &lt;em&gt;paste lines over&lt;/em&gt; (or press &lt;code&gt;Ctrl&lt;/code&gt;+&lt;code&gt;Shift&lt;/code&gt;+&lt;code&gt;V&lt;/code&gt;. You will then get a
+dialog box that looks like this:&lt;/p&gt;</description></item><item><title>Select Lines</title><link>/docs/latest/select_lines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/select_lines/</guid><description>&lt;p&gt;The &lt;strong&gt;select lines&lt;/strong&gt; tool is useful for finding and selecting all lines in the
+script that matches certain criteria. This can be useful from a number of
+things ranging from deleting all comment lines to finding all lines said by a
+certain actor. The tool can be found in the &lt;em&gt;Subtitles&lt;/em&gt; menu -&amp;gt; &lt;em&gt;Select lines&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Select_lines.png#center" width="345" height="541" alt="Select_lines"&gt;
+&lt;/p&gt;
+&lt;h3 id="match"&gt;Match &lt;a href="#match" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;These controls what criteria will be used for selecting the lines.&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;Match&lt;/dt&gt;
+&lt;dd&gt;Select all lines that match the criteria.&lt;/dd&gt;
+&lt;dt&gt;Doesn&amp;rsquo;t match&lt;/dt&gt;
+&lt;dd&gt;Select all lines that &lt;em&gt;don&amp;rsquo;t&lt;/em&gt; match the criteria.&lt;/dd&gt;
+&lt;dt&gt;Match case&lt;/dt&gt;
+&lt;dd&gt;Controls case sensitivity, i.e. if the tool should care about the difference
+between lower and upper case or not.&lt;/dd&gt;
+&lt;dt&gt;Exact match&lt;/dt&gt;
+&lt;dd&gt;Matches the lines that matches the given string &lt;em&gt;exactly&lt;/em&gt;.&lt;/dd&gt;
+&lt;dt&gt;Contains&lt;/dt&gt;
+&lt;dd&gt;Matches the lines that &lt;em&gt;contains&lt;/em&gt; the given string.&lt;/dd&gt;
+&lt;dt&gt;Regular Expression match&lt;/dt&gt;
+&lt;dd&gt;Treats the string as a &lt;a href="https://en.wikipedia.org/wiki/Regular_expression"&gt;regular
+expression&lt;/a&gt; or &amp;ldquo;regex&amp;rdquo;, and
+matches if said expression matches. For a regular expressions tutorial, try
+reading the &lt;a href="https://perldoc.perl.org/perlretut.html"&gt;perlretut manual page&lt;/a&gt; or
+googling. For a reference of the exact syntax supported by Aegisub, see the
+&lt;a href="https://docs.wxwidgets.org/stable/overview_resyntax.html"&gt;wxWidgets regular expressions reference
+page&lt;/a&gt;.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h3 id="in-field"&gt;In field &lt;a href="#in-field" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This option controls what field of each line will be used for the matching
+mentioned above. Possible alternatives are:&lt;/p&gt;</description></item><item><title>Typesetting Introduction</title><link>/docs/latest/typesetting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/typesetting/</guid><description>&lt;p&gt;Wikipedia&amp;rsquo;s definition of
+&lt;a href="https://en.wikipedia.org/wiki/Typesetting"&gt;typesetting&lt;/a&gt;: &amp;ldquo;&lt;strong&gt;Typesetting&lt;/strong&gt;
+involves the presentation of textual material in graphic form on paper or some
+other medium.&amp;rdquo; In a subtitling context, this means three things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Presenting (a translation of) the spoken dialogue to the viewer in an easily
+readable and visually pleasing form.&lt;/li&gt;
+&lt;li&gt;Translating any foreign-language background texts (such as episode titles,
+scene information like time/place and other plot-important writings on things
+in the background) and presenting the translation to the viewer, preferably
+so that it appears that the translation was there all along (yet retaining
+readability).&lt;/li&gt;
+&lt;li&gt;Designing other texts (logotypes, karaoke, etc. etc.) that should be
+displayed on the video.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Particularly in the fansub community, the word &amp;ldquo;typesetting&amp;rdquo; usually refers to
+the second or third of these three.&lt;/p&gt;</description></item><item><title>Working with Video</title><link>/docs/latest/video/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/video/</guid><description>&lt;p&gt;Aegisub isn&amp;rsquo;t a video (or media) player, but it still supports loading and
+working with video in various ways. This page is a reference of how Aegisub&amp;rsquo;s
+loading and handling of video works; for a gentler introduction on how to just
+get things to display properly you may want to read the &lt;a href="/docs/latest/visual_typesetting/"&gt;Visual_Typesetting&lt;/a&gt; pages.&lt;/p&gt;
+&lt;h2 id="opening-video"&gt;Opening video &lt;a href="#opening-video" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To load a video file, go to the &lt;em&gt;Video&lt;/em&gt; menu and press &lt;em&gt;Open video file&lt;/em&gt;. What
+video files you can open depends on your &lt;a href="/docs/latest/options/#video"&gt;video provider&lt;/a&gt;. To
+use a dummy (mockup, blank) video, press &lt;em&gt;Use dummy video&lt;/em&gt;.&lt;/p&gt;</description></item><item><title>Editing styles</title><link>/docs/latest/styles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/styles/</guid><description>&lt;p&gt;A &lt;strong&gt;style&lt;/strong&gt; in the ASS format is a set of typographic formatting rules that is
+applied to dialogue lines. The style parameters can be overridden with
+&lt;a href="/docs/latest/ass_tags/"&gt;override tags&lt;/a&gt;; the styles exist so that you won&amp;rsquo;t have to type out
+all the overrides for each line.&lt;/p&gt;
+&lt;h2 id="the-styles-manager"&gt;The styles manager &lt;a href="#the-styles-manager" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Aegisub&amp;rsquo;s styles manager tool (accessed from the Subtitles menu) provides
+various means of organizing, saving and editing styles. It looks like this:&lt;/p&gt;</description></item><item><title>Visual Typesetting</title><link>/docs/latest/visual_typesetting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/visual_typesetting/</guid><description>&lt;div class="alert alert-warning" role="alert"&gt;
+&lt;strong&gt;TODO: &lt;/strong&gt;Screenshots need to be updated
+&lt;/div&gt;
+&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/video_display.png#center" width="716" height="618" alt="video_display"&gt;
+&lt;/p&gt;
+&lt;h3 id="play"&gt;Play &lt;a href="#play" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Play the video and, starting at the currently displayed frame. See
+&lt;a href="/docs/latest/video/#playing-video"&gt;Video&lt;/a&gt; for comments on playing video in Aegisub.&lt;/p&gt;
+&lt;h3 id="play-line"&gt;Play line &lt;a href="#play-line" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Play the video starting at the first frame of the currently active line,
+stopping at the end of the line.&lt;/p&gt;
+&lt;h3 id="video-autoseek"&gt;Video autoseek &lt;a href="#video-autoseek" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Toggles automatic seeking of the video to the first frame of a line whenever
+a new line is selected.&lt;/p&gt;</description></item><item><title>ASS Override Tags</title><link>/docs/latest/ass_tags/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/ass_tags/</guid><description>&lt;p&gt;The following is a list of every tag supported by the Advanced Substation
+Alpha format. This is basically a detailed version of ass-quickref.txt. See
+the &lt;a href="/docs/latest/visual_typesetting/"&gt;tutorial&lt;/a&gt; for an introduction to typesetting,
+using some basic tags.&lt;/p&gt;
+&lt;h2 id="special-characters"&gt;Special characters &lt;a href="#special-characters" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The following tags are written in the middle of the text, and not inside
+override blocks (i.e. not between { and }).&lt;/p&gt;
+&lt;p&gt;&lt;h3 id="\n"&gt;Soft line break&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="language-plaintext"&gt;\n&lt;/code&gt;&lt;/pre&gt;
+Insert a forced line break, but only when in wrapping mode 2. (See
+&lt;a href="/docs/latest/ass_tags/#\q"&gt;the \q tag&lt;/a&gt;). Note that this is a lowercase n.&lt;/p&gt;</description></item><item><title>Colour Picker</title><link>/docs/latest/colour_picker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/colour_picker/</guid><description>&lt;p&gt;Aegisub introduces a more advanced color picker than the default Windows one. It allows you to enter color values using various color spaces, in both HTML and ASS hex, pick colors from a mini-screenshot and use three different color spectrums for graphically picking colors.&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Colour_picker.png#center" width="668" height="413" alt="Colour_picker"&gt;
+&lt;/p&gt;
+&lt;p&gt;The color picker has the following components:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Color spectrum&lt;/li&gt;
+&lt;li&gt;Parametric settings for four color-spaces&lt;/li&gt;
+&lt;li&gt;HEX input for ASS and HTML formats&lt;/li&gt;
+&lt;li&gt;Pick-from-screen control, for taking a mini-screenshot and picking a color from it&lt;/li&gt;
+&lt;li&gt;List of 32 last picked colors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The last used mode of the color spectrum is remembered.&lt;/p&gt;</description></item><item><title>Styling Assistant</title><link>/docs/latest/styling_assistant/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/styling_assistant/</guid><description>&lt;p&gt;The Styling assistant is a powerful tool for subtitles that have multiple
+styles, such as cases when several actors have their own style, or for some
+other reason you have many different styles for dialog lines.&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/styling_assistant.png#center" width="424" height="479" alt="styling_assistant"&gt;
+&lt;/p&gt;
+&lt;p&gt;As seen from the image above, the assistant is composed of the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Current line field&lt;/li&gt;
+&lt;li&gt;Styles available field&lt;/li&gt;
+&lt;li&gt;Set style window&lt;/li&gt;
+&lt;li&gt;Keys field&lt;/li&gt;
+&lt;li&gt;Seek video to line start time checkbox&lt;/li&gt;
+&lt;li&gt;Play audio button&lt;/li&gt;
+&lt;li&gt;Play video button&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The Current line field displays the line in the subtitles for which the
+style will be set. The text in it cannot be edited.&lt;/p&gt;</description></item><item><title>Resolution Resampler</title><link>/docs/latest/resolution_resampler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/resolution_resampler/</guid><description>&lt;p&gt;The Resolution Resampler is a built-in tool designed to change the &lt;a href="/docs/latest/script_resolution/"&gt;resolution of the script&lt;/a&gt; while transforming all affected tags so it
+ends up looking the same. It can also offset all margins (and absolute
+positions) by a specific value. Uses include merging two scripts with different
+resolutions, converting a script for a 4:3 video to its 16:9 equivalent, and
+converting between 1:1 and anamorphic pixel formats.&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/resolution_resampler.png#center" width="345" height="540" alt="resolution_resampler"&gt;
+&lt;/p&gt;
+&lt;p&gt;There are three main parts to the resolution resampler: the source
+resolution, destination resolution, and what to do if the source and
+destination have different aspect ratios.&lt;/p&gt;</description></item><item><title>Fonts Collector</title><link>/docs/latest/fonts_collector/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/fonts_collector/</guid><description>&lt;p&gt;The fonts collector is an automated tool that finds all fonts used in the
+current script, scans your system&amp;rsquo;s fonts folder(s) and copies all the
+relevant fonts to a destination of your choosing. The dialog box looks like
+so:&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/fonts_collector.png#center" width="678" height="646" alt="fonts_collector"&gt;
+&lt;/p&gt;
+&lt;p&gt;The collector can perform any of the following actions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check fonts for availability&lt;/strong&gt; - Checks the fonts folder(s) to see if
+you have all the fonts used in the current script, and that all fonts
+contain all of the required glyphs. Do note that for technical reasons, the
+collector can&amp;rsquo;t detect or collect fonts that aren&amp;rsquo;t actually installed (like
+for example fonts temporarily loaded by a Matroska splitter or a font
+viewing program).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Copy fonts to folder&lt;/strong&gt; - Copies all the fonts used on the current script
+to the given folder.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Copy fonts to subtitle file&amp;rsquo;s folder&lt;/strong&gt; - Copies all the fonts used on the
+current script to the folder containing the subtitle file. This is
+equivalent to using the above option with the destination set to ?script.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Copy fonts to zipped archive&lt;/strong&gt; - Copies all the fonts used on the
+current script to a compressed .ZIP archive.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The fonts collector will output diagnostic information about its doings in
+the lower half of the window.&lt;/p&gt;</description></item><item><title>Working with Audio</title><link>/docs/latest/audio/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/audio/</guid><description>&lt;p&gt;Aegisub has a fairly advanced, customizable audio mode with both the
+traditional waveform display as well as an alternative spectrum display.
+Several different timing modes are available for both normal dialog timing
+and karaoke timing.&lt;/p&gt;
+&lt;h2 id="opening-audio"&gt;Opening audio &lt;a href="#opening-audio" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To load an audio file into Aegisub, just go to the &lt;em&gt;Audio&lt;/em&gt; menu and press
+&lt;em&gt;Open audio file&lt;/em&gt;. If you have a video file (with an included audio track)
+already loaded, you can use &lt;em&gt;Open audio from video&lt;/em&gt; instead, which obviously
+will load the audio track from the video file you currently have loaded. You
+can open any type of audio file that your &lt;a href="/docs/latest/options/#advancedaudio"&gt;audio provider&lt;/a&gt; can decode (more on this below). In
+addition, if you simply wish to use the audio display without loading any
+real audio, you can choose &lt;em&gt;Open 2h30 Blank Audio&lt;/em&gt; or &lt;em&gt;Open 2h30 Noise
+Audio&lt;/em&gt;.&lt;/p&gt;</description></item><item><title>Timing subtitles to audio</title><link>/docs/latest/timing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/timing/</guid><description>&lt;h2 id="the-main-audio-view"&gt;The main audio view &lt;a href="#the-main-audio-view" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When your audio file has loaded, Aegisub will transform into something like
+the screenshot below:
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/audio_display.png" width="723" height="200" alt="audio_display"&gt;
+&lt;/p&gt;
+&lt;p&gt;You can click and drag just below the audio timeline to change the height of
+the audio waveform/spectrum display.&lt;/p&gt;
+&lt;p&gt;Green and red buttons are toggle buttons. A green background indicates that
+the option is turned on, while a red background indicates that the option is
+turned off. The buttons and controls are as follows (many of these have
+&lt;a href="/docs/latest/options/#hotkeys"&gt;keyboard shortcuts&lt;/a&gt; associated with them by default):&lt;/p&gt;</description></item><item><title>Shift times</title><link>/docs/latest/shift_times/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/shift_times/</guid><description>&lt;p&gt;The &lt;strong&gt;shift times&lt;/strong&gt; tool is a batch processor for timestamps; it adjusts the
+start/end timestamps of many subtitle lines at once in various ways. It is
+located under &lt;em&gt;Timing&lt;/em&gt; -&amp;gt; &lt;em&gt;Shift Times&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;It looks like this:&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/shift_times.png#center" width="614" height="417" alt="shift_times"&gt;
+&lt;/p&gt;
+&lt;p&gt;The left part of the window contain the options.&lt;/p&gt;
+&lt;h3 id="shift-by"&gt;Shift by &lt;a href="#shift-by" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;These controls decide in which direction and by how much each timestamp will
+be modified.&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;Time&lt;/dt&gt;
+&lt;dd&gt;How much you want to adjust each timestamp, in
+hours:minutes:seconds.centiseconds.&lt;/dd&gt;
+&lt;dt&gt;Frames&lt;/dt&gt;
+&lt;dd&gt;If you have video loaded, you can specify the adjustment time as a
+number of frames instead. Note that shifting by zero frames will snap
+the timestamps to the frame times without doing any shifting.&lt;/dd&gt;
+&lt;dt&gt;Forward or Backward&lt;/dt&gt;
+&lt;dd&gt;Controls in which direction the timestamps are adjusted.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h3 id="affect"&gt;Affect &lt;a href="#affect" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;These controls decide what lines will be processed.&lt;/p&gt;</description></item><item><title>Timing Post-Processor</title><link>/docs/latest/timing_post-processor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/timing_post-processor/</guid><description>&lt;p&gt;The timing postprocessor is a highly useful tool for automatically correcting
+timing in various ways.&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;As shown in the screenshot, there are three functions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add lead-in and/or lead-out&lt;/li&gt;
+&lt;li&gt;Make lines that start close to each other continuous by extending or
+contracting their start and/or end times&lt;/li&gt;
+&lt;li&gt;Snapping line starts/ends to video keyframes (only available if a video is
+loaded)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Dialog_timing_processor.png#center" width="654" height="355" alt="Dialog_timing_processor"&gt;
+&lt;/p&gt;
+&lt;p&gt;The processing gets applied in the order it is displayed in the dialogue box.
+That is to say, first lead-in/outs are added, then a check for adjascent lines
+is performed and lines that are closer than the given threshold are made
+continuous, and lastly, line start/ends get snapped to keyframes.&lt;/p&gt;</description></item><item><title>Kanji Timer</title><link>/docs/latest/kanji_timer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/kanji_timer/</guid><description>&lt;p&gt;The kanji timer makes it easy to copy timed karaoke from one set of already karaoke timed lines to another set of yet untimed lines. Primarily intended for adding karaoke to Japanese songs.&lt;/p&gt;
+&lt;h2 id="before-you-start"&gt;Before you start &lt;a href="#before-you-start" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The kanji timer attempts to pair syllables in one (timed) input line with a given style with syllables in a corresponding (untimed) line with another style. In other words, the timed input lines should all have same style (&amp;ldquo;romaji&amp;rdquo; for example) and the untimed ones another (&amp;ldquo;kanji&amp;rdquo; for example). Having more timed source lines than untimed destination ones or vice versa can confuse the tool, but it&amp;rsquo;s usually possible to un-confuse it, see below. In order to correctly pair source lines with destination ones, both sets must be in the same order in the grid. For example, this works:&lt;/p&gt;</description></item><item><title>Automation Overview</title><link>/docs/latest/automation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/</guid><description>&lt;p&gt;The name &lt;strong&gt;Automation&lt;/strong&gt; covers the entire scripting functionality of Aegisub.&lt;/p&gt;
+&lt;h2 id="about-automation"&gt;About Automation &lt;a href="#about-automation" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The single purpose of Automation is — as the name implies — to automate various aspects of subtitle creation and editing.
+This was originally used mainly for creating &lt;a href="/docs/latest/glossary/karaoke_effect/"&gt;karaoke effects&lt;/a&gt;, but over time it has expanded in scope to support more general purpose &lt;a href="/docs/latest/glossary/macro/"&gt;macros&lt;/a&gt; which add arbitrary new functionaly to Aegisub.&lt;/p&gt;
+&lt;p&gt;Some of the goals of Automation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Macros to automate complex subtitle editing tasks&lt;/li&gt;
+&lt;li&gt;Export filters to generate complex effects from simpler input
+&lt;ul&gt;
+&lt;li&gt;Karaoke effects&lt;/li&gt;
+&lt;li&gt;Translation note boxes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Probably several yet-undiscovered uses&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="using-automation"&gt;Using Automation &lt;a href="#using-automation" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Aegisub comes with several Automation scripts already packaged and ready to use.
+This includes the advanced &lt;strong&gt;&lt;a href="/docs/latest/automation/karaoke_templater/"&gt;Karaoke_Templater&lt;/a&gt;&lt;/strong&gt; script and a &lt;strong&gt;&lt;a href="/docs/latest/automation/included_macros/"&gt;collection of macros&lt;/a&gt;&lt;/strong&gt; to simplify some editing tasks.&lt;/p&gt;</description></item><item><title>Karaoke Templater</title><link>/docs/latest/automation/karaoke_templater/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/karaoke_templater/</guid><description>&lt;p&gt;&lt;strong&gt;Karaoke Templater&lt;/strong&gt; is an &lt;a href="/docs/latest/automation/"&gt;Automation&lt;/a&gt; script that ships with Aegisub. Its
+primary purpose is to help creating &lt;a href="/docs/latest/glossary/karaoke_effect/"&gt;karaoke effects&lt;/a&gt;
+with a specially designed template language. Karaoke Templater is already
+installed and ready to use along with Aegisub.&lt;/p&gt;
+&lt;h2 id="tutorials-introducing-karaoke-templater"&gt;Tutorials: Introducing Karaoke Templater &lt;a href="#tutorials-introducing-karaoke-templater" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/docs/latest/automation/karaoke_templater/tutorial_1/"&gt;A simple example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/automation/karaoke_templater/tutorial_2/"&gt;Using math expressions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=""&gt;Using multiple template lines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=""&gt;More advanced effects with positioned syllables&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="alert alert-warning" role="alert"&gt;
+&lt;strong&gt;TODO: &lt;/strong&gt;Plan more tutorials. Also actually write those above.
+&lt;/div&gt;
+&lt;h2 id="reference"&gt;Reference &lt;a href="#reference" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/docs/latest/automation/karaoke_templater/declaring_template_and_code_lines/"&gt;Declaring template and code lines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/automation/karaoke_templater/template_execution_rules_and_order/"&gt;Rules for when and in what order templates are run&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/automation/karaoke_templater/template_modifiers/"&gt;Template modifiers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/automation/karaoke_templater/inline_variables/"&gt;Inline variables (dollar-variables)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/automation/karaoke_templater/code_lines_and_blocks/"&gt;Rules for code blocks and code lines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/automation/karaoke_templater/code_execution_environment/"&gt;Contents of the code block/line execution environment&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Also see the &lt;a href="/docs/latest/automation/lua/modules/karaskel.lua/"&gt;&lt;code&gt;Automation/Lua/Modules/karaskel.lua&lt;/code&gt;&lt;/a&gt; section for more
+information on what&amp;rsquo;s in the &lt;code&gt;line&lt;/code&gt; and &lt;code&gt;syl&lt;/code&gt; variables, and more.&lt;/p&gt;</description></item><item><title>Declaring templates</title><link>/docs/latest/automation/karaoke_templater/declaring_template_and_code_lines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/karaoke_templater/declaring_template_and_code_lines/</guid><description>&lt;p&gt;This page describes how a template line or code line is declared.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Template lines and code lines are always marked Comment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;The first space-separated word in the Effect field determines whether a line is a template line, a code line, a timed karaoke line, a styled karaoke line or something otherwise undetermined.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;If the first word in the Effect field is &lt;code&gt;template&lt;/code&gt;, the line is a template line.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;If the first word in the Effect field is &lt;code&gt;code&lt;/code&gt;, the line is a code line.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;If the Effect field is exactly equal to &lt;code&gt;fx&lt;/code&gt;, the line is a styled karaoke line. Styled karaoke lines are deleted during execution of Karaoke Templater.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;If the Effect field is &lt;code&gt;Karaoke&lt;/code&gt;, &lt;code&gt;karaoke&lt;/code&gt; or empty, the line is a timed karaoke line.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;If the Effect field contains anything else, the line is an undetermined type and is not touched by Karaoke Templater.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;p&gt;Template lines and code lines can have additional text after the &lt;code&gt;template&lt;/code&gt; or &lt;code&gt;code&lt;/code&gt; keywords. This text is parsed as a series of space-separated words and is called modifiers. See &lt;a href="/docs/latest/automation/karaoke_templater/template_modifiers/"&gt;Template modifiers&lt;/a&gt; for more information on this.&lt;/p&gt;</description></item><item><title>Execution order</title><link>/docs/latest/automation/karaoke_templater/template_execution_rules_and_order/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/karaoke_templater/template_execution_rules_and_order/</guid><description>&lt;p&gt;This page describes various technical details about how Karaoke Templater
+(&lt;em&gt;kara-templater&lt;/em&gt;) works and will try to explain why various things work as
+they do and why some things can&amp;rsquo;t and won&amp;rsquo;t work.&lt;/p&gt;
+&lt;p&gt;Most of this is technical details you don&amp;rsquo;t need to know to use kara-templater,
+but if you see some behaviour you don&amp;rsquo;t understand this page might explain it.&lt;/p&gt;
+&lt;h2 id="concepts"&gt;Concepts &lt;a href="#concepts" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;These are some terms and concepts used throughout the description. The names
+are close to or the same as those used in the actual script.&lt;/p&gt;</description></item><item><title>Modifiers</title><link>/docs/latest/automation/karaoke_templater/template_modifiers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/karaoke_templater/template_modifiers/</guid><description>&lt;p&gt;Template lines and code lines can take a number of modifiers.&lt;/p&gt;
+&lt;p&gt;This is a space-separated list of words in the Effect field following the &lt;code&gt;template&lt;/code&gt; or &lt;code&gt;code&lt;/code&gt; keyword.&lt;/p&gt;
+&lt;p&gt;While modifiers can be combined to some extent, not all are compatible, and not all work on both code lines and for templates.&lt;/p&gt;
+&lt;p&gt;There is a special set of modifiers that declare the class of the template line or code line.&lt;/p&gt;
+&lt;h2 id="class-declaring-modifiers"&gt;Class declaring modifiers &lt;a href="#class-declaring-modifiers" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Both template lines and code lines can be produced without having a class modifier. Having one is still recommended for clarity, however.&lt;/p&gt;</description></item><item><title>Inline-variables ($-variables)</title><link>/docs/latest/automation/karaoke_templater/inline_variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/karaoke_templater/inline_variables/</guid><description>&lt;p&gt;This page describes the &lt;strong&gt;inline variables&lt;/strong&gt; also known as &lt;strong&gt;dollar variables&lt;/strong&gt;
+available in Karaoke Templater.&lt;/p&gt;
+&lt;h2 id="how-to-use-inline-variables"&gt;How to use inline variables &lt;a href="#how-to-use-inline-variables" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;All inline variables start with a dollar-sign. They only work in template
+lines, not in code lines. You can, however, use them in code blocks on template
+lines.&lt;/p&gt;
+&lt;p&gt;Here is an example of how a template text using inline variables could look:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-ass"&gt;{\pos($x,$y)\t($start,$end,\bord0)}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;$x&lt;/code&gt; &lt;code&gt;$y&lt;/code&gt; &lt;code&gt;$start&lt;/code&gt; &lt;code&gt;$end&lt;/code&gt; parts are the inline variables in the template.&lt;/p&gt;</description></item><item><title>Code lines and blocks</title><link>/docs/latest/automation/karaoke_templater/code_lines_and_blocks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/karaoke_templater/code_lines_and_blocks/</guid><description>&lt;p&gt;Code lines and blocks in Karaoke Templater allows you to create advanced
+effects by incorporating small snippets of Lua code. This can range from simple
+mathematical expressions adding two numbers to complex functions that for
+example could generate various shapes in cycling colours.&lt;/p&gt;
+&lt;p&gt;Both code lines and code blocks are run in a separate semi-closed execution
+environment, meaning they are mostly undisturbed by the primary Lua environment
+the Karaoke Templater script itself runs in. For an overview of what variables
+are available in the code line/block execution environment see: &lt;a href="/docs/latest/automation/karaoke_templater/code_execution_environment/"&gt;Code execution environment&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Execution environment</title><link>/docs/latest/automation/karaoke_templater/code_execution_environment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/karaoke_templater/code_execution_environment/</guid><description>&lt;p&gt;The Lua code in code blocks and on code lines is run in a separate global
+environment such that it won&amp;rsquo;t accidentally disturb the main script
+function.&lt;/p&gt;
+&lt;p&gt;You can store your own data in this environment for use later, for example
+pre-compute some values on code-lines and later insert them using code
+blocks, but it also contains several pre-defined variables and functions
+designed to make it easier writing effect templates.&lt;/p&gt;</description></item><item><title>Automation Tutorials</title><link>/docs/latest/automation/karaoke_templater/tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/karaoke_templater/tutorial/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="/docs/latest/automation/karaoke_templater/tutorial_1/"&gt;A simple example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/automation/karaoke_templater/tutorial_2/"&gt;Using math expressions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>A simple example</title><link>/docs/latest/automation/karaoke_templater/tutorial_1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/karaoke_templater/tutorial_1/</guid><description>&lt;p&gt;Welcome to the first tutorial in using Karaoke Templater to create &lt;a href="/docs/latest/glossary/karaoke_effect/"&gt;karaoke effects&lt;/a&gt;. We&amp;rsquo;ll start out with something simple and
+then continue on to more advanced effects throughout the series.&lt;/p&gt;
+&lt;h2 id="finding-karaoke-templater"&gt;Finding Karaoke Templater &lt;a href="#finding-karaoke-templater" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can run Karaoke Templater in two different ways. For now we&amp;rsquo;ll just
+concentrate on one of them.&lt;/p&gt;
+&lt;p&gt;Look under the Automation menu in Aegisub.&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Automation-menu-kara-templater-gray.png" width="173" height="113" alt="Automation-menu-kara-templater-gray"&gt;
+&lt;/p&gt;
+&lt;p&gt;You should see the option called &lt;em&gt;Apply karaoke template&lt;/em&gt;, though it will be
+unavailable. This is what you&amp;rsquo;ll select to use the &amp;ldquo;templates&amp;rdquo; we&amp;rsquo;ll be writing
+throughout these tutorials. Right now it&amp;rsquo;s unavailable because you haven&amp;rsquo;t
+entered any templates. We&amp;rsquo;ll get to that in a moment.&lt;/p&gt;</description></item><item><title>Using math expressions</title><link>/docs/latest/automation/karaoke_templater/tutorial_2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/karaoke_templater/tutorial_2/</guid><description>&lt;p&gt;In &lt;a href="/docs/latest/automation/karaoke_templater/tutorial_1/"&gt;the previous tutorial&lt;/a&gt; we saw how to use the basic features of Karaoke Templater to make simple karaoke effects. We&amp;rsquo;ll continue where we left off here, by expanding on the basics from last tutorial.&lt;/p&gt;
+&lt;div class="alert alert-warning" role="alert"&gt;
+&lt;strong&gt;TODO: &lt;/strong&gt;make and insert screenshots
+&lt;/div&gt;
+&lt;h2 id="preparations"&gt;Preparations &lt;a href="#preparations" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;As before, you&amp;rsquo;ll still need some timed karaoke and a video to preview the effects. I won&amp;rsquo;t go into further details with that here.&lt;/p&gt;
+&lt;h2 id="adding-a-fadeout"&gt;Adding a fadeout &lt;a href="#adding-a-fadeout" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To recap, here&amp;rsquo;s the effect from the end of last tutorial:&lt;/p&gt;</description></item><item><title>Lua Reference</title><link>/docs/latest/automation/lua/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/</guid><description>&lt;p&gt;The Automation 4 Lua scripting engine is based on the version 5.1 series of
+&lt;a href="https://www.lua.org"&gt;the Lua scripting language&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This manual will not deal with the Lua language itself nor the standard
+libraries shipping with Lua, but only the additional functions and data
+structures provided by the Aegisub Automation 4 Lua interface. Please see
+&lt;a href="https://www.lua.org/manual/5.1/"&gt;the Lua 5.1 manual&lt;/a&gt; for details on the
+language itself and its standard libraries.&lt;/p&gt;
+&lt;h2 id="general-overview-of-the-organisation-of-automation-4-lua"&gt;General overview of the organisation of Automation 4 Lua &lt;a href="#general-overview-of-the-organisation-of-automation-4-lua" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The smallest legal Automation 4 Lua script is an empty file, but that won&amp;rsquo;t
+be able to do anything interesting.&lt;/p&gt;</description></item><item><title>Registration</title><link>/docs/latest/automation/lua/registration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/registration/</guid><description>&lt;p&gt;&lt;strong&gt;Registration&lt;/strong&gt; covers presenting your &lt;a href="/docs/latest/automation/lua/"&gt;Automation 4 Lua&lt;/a&gt;
+script to Aegisub, providing information about it and registering what
+&lt;em&gt;features&lt;/em&gt; it provides.&lt;/p&gt;
+&lt;h2 id="features-explained"&gt;Features explained &lt;a href="#features-explained" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;One of the primary concepts in Automation 4 is the &lt;em&gt;feature&lt;/em&gt;. A feature is
+something a script makes available for Aegisub to call back in response to a
+user action.&lt;/p&gt;
+&lt;p&gt;A feature is not a plain callback. Rather, it&amp;rsquo;s usually a set of several
+callback functions as well as some information on how they should be
+presented to the user in the GUI.&lt;/p&gt;</description></item><item><title>Subtitles object</title><link>/docs/latest/automation/lua/subtitle_file_interface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/subtitle_file_interface/</guid><description>&lt;p&gt;This page describes the &lt;strong&gt;subtitle file interface&lt;/strong&gt; use in Automation 4 Lua
+scripts to manipulate subtitle files.&lt;/p&gt;
+&lt;p&gt;There is one special object (the &lt;strong&gt;subtitles&lt;/strong&gt; user data object) which has a
+number of functions, and a number of table formats defined.&lt;/p&gt;
+&lt;h2 id="the-subtitles-object"&gt;The subtitles object &lt;a href="#the-subtitles-object" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Most Automation 4 Lua feature functions are passed a &lt;strong&gt;subtitles object&lt;/strong&gt; when
+called. This object is used to obtain data from and manipulate the subtitles
+the feature is being applied on.&lt;/p&gt;</description></item><item><title>Progress reporting</title><link>/docs/latest/automation/lua/progress_reporting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/progress_reporting/</guid><description>&lt;p&gt;There functions are used to report various status and progress back to the GUI
+while a script is running.&lt;/p&gt;
+&lt;h2 id="progress-reporting"&gt;Progress reporting &lt;a href="#progress-reporting" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A progress dialogue box is always shown when an Automation 4 Lua script is
+running. You can use these functions to control what is displayed in it.&lt;/p&gt;
+&lt;h3 id="aegisubprogressset"&gt;aegisub.progress.set &lt;a href="#aegisubprogressset" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Synopsis: &lt;code&gt;aegisub.progress.set(percent)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Set the position of the percent-done bar in the progress window.&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;code&gt;percent&lt;/code&gt; (&lt;code&gt;number&lt;/code&gt;)&lt;/dt&gt;
+&lt;dd&gt;Number from 0 to 100.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h3 id="aegisubprogresstask"&gt;aegisub.progress.task &lt;a href="#aegisubprogresstask" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Synopsis: &lt;code&gt;aegisub.progress.task(msg, ...)&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Dialogs</title><link>/docs/latest/automation/lua/dialogs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/dialogs/</guid><description>&lt;p&gt;These functions are used to display dialogs for the user to interact with.&lt;/p&gt;
+&lt;h2 id="display-dialog-functions"&gt;Display dialog functions &lt;a href="#display-dialog-functions" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="aegisubdialogdisplay"&gt;aegisub.dialog.display &lt;a href="#aegisubdialogdisplay" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Synopsis: &lt;code&gt;button, result_table = aegisub.dialog.display(dialog, buttons, button_ids)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This function displays a configuration dialog to the user and waits for it to
+close. It then returns whether the user accepted or cancelled the dialog, and
+what values were input.&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;code&gt;@dialog&lt;/code&gt; (&lt;code&gt;table&lt;/code&gt;)&lt;/dt&gt;
+&lt;dd&gt;A &lt;a href="/docs/latest/automation/lua/dialogs/#dialog-definition-table-format"&gt;Dialog Definition table&lt;/a&gt; containing
+the controls to be in the dialog.&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;@buttons&lt;/code&gt; (&lt;code&gt;table&lt;/code&gt;)&lt;/dt&gt;
+&lt;dd&gt;Optional. This is an array of strings defining the buttons that appear in
+the dialog. If this is left out, empty or is otherwise not a table, the
+standard Ok and Cancel buttons appear.
+The strings in this table are used as labels on the buttons, and for
+identifying them in the return values of the function.&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;@button_ids&lt;/code&gt; (&lt;code&gt;table&lt;/code&gt;)&lt;/dt&gt;
+&lt;dd&gt;Optional. A table which specifies which buttons in the dialog correspond to
+which &lt;a href="/docs/latest/automation/lua/dialogs/#dialog-button-ids"&gt;platform button IDs&lt;/a&gt;, making it possible to
+specify which button will be triggered if the user hits Enter or ESC.&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;button&lt;/code&gt; (&lt;code&gt;boolean&lt;/code&gt; or &lt;code&gt;string&lt;/code&gt;)&lt;/dt&gt;
+&lt;dd&gt;If no custom buttons were specified, this is a boolean telling whether
+Ok (true) or Cancel (false) were clicked in the dialog. If custom buttons
+were specified, this is the text on the button clicked by the user. Even if
+custom buttons were specified, this can still be boolean false if the user
+closes the dialog without pressing any button.&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;result_table&lt;/code&gt; (&lt;code&gt;table&lt;/code&gt;)&lt;/dt&gt;
+&lt;dd&gt;The &lt;a href="/docs/latest/automation/lua/dialogs/#dialog-result-table-format"&gt;Dialog Result table&lt;/a&gt; corresponding to
+the values the user input in the dialog.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;div class="card"&gt;
+&lt;strong class="card-header"&gt;Example&lt;/strong&gt;
+&lt;div class="card-body"&gt;
+&lt;pre&gt;&lt;code class="language-lua"&gt;config = {
+{class=&amp;quot;label&amp;quot;, text=&amp;quot;Times to frobulate&amp;quot;, x=0, y=0},
+{class=&amp;quot;intedit&amp;quot;, name=&amp;quot;times&amp;quot;, value=20, x=0, y=1}
+}
+btn, result = aegisub.dialog.display(config,
+{&amp;quot;Frobulate&amp;quot;, &amp;quot;Nevermind&amp;quot;},
+{&amp;quot;ok&amp;quot;=&amp;quot;Frobulate&amp;quot;, &amp;quot;cancel&amp;quot;=&amp;quot;Nevermind&amp;quot;})
+if btn then
+frobulate(result.times)
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="aegisubdialogopen"&gt;aegisub.dialog.open &lt;a href="#aegisubdialogopen" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Synopsis: &lt;code&gt;file_name = aegisub.dialog.open(title, default_file, default_dir, wildcards, allow_multiple=false, must_exist=true)&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Misc. APIs</title><link>/docs/latest/automation/lua/miscellaneous_apis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/miscellaneous_apis/</guid><description>&lt;p&gt;This page documents &lt;strong&gt;miscellaneous APIs useful for working with
+subtitles&lt;/strong&gt;. These can&amp;rsquo;t be clearly placed into any of the other main
+categories and there&amp;rsquo;s too few of each kind to warrant a separate category.&lt;/p&gt;
+&lt;h2 id="aegisubcancel"&gt;aegisub.cancel &lt;a href="#aegisubcancel" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Synopsis: &lt;code&gt;aegisub.cancel()&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Immediately end execution of the current script, rolling back any changes
+that have been made in it.&lt;/p&gt;
+&lt;p&gt;This function never returns.&lt;/p&gt;
+&lt;h2 id="aegisubtext_extents"&gt;aegisub.text_extents &lt;a href="#aegisubtext_extents" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Synopsis: &lt;code&gt;width, height, descent, ext_lead = aegisub.text_extents(style, text)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Obtain system font metrics and determine the rendered size in pixels of the
+given &lt;strong&gt;text&lt;/strong&gt; when using the &lt;strong&gt;style&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Lua Modules</title><link>/docs/latest/automation/lua/modules/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/modules/</guid><description>&lt;p&gt;A number of Lua modules are included with Aegisub.
+Some of these, such as &lt;a href="/docs/latest/automation/lua/modules/karaskel.lua/"&gt;&lt;code&gt;karaskel.lua&lt;/code&gt;&lt;/a&gt; implement subtitle-specific functionality, while others such as &lt;a href="/docs/latest/automation/lua/modules/re/"&gt;re&lt;/a&gt; fill holes in the Lua standard library.&lt;/p&gt;
+&lt;h2 id="using-modules"&gt;Using modules &lt;a href="#using-modules" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Simply write &lt;code&gt;modulename = require 'aegisub.modulename'&lt;/code&gt; at the top level of a script.
+For example, to include the &lt;a href="/docs/latest/automation/lua/modules/re/"&gt;re&lt;/a&gt; modules, &lt;code&gt;re = require 'aegisub.re'&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Note that if you look at older scripts you will probably see several other methods for including modules, such as &lt;code&gt;include&lt;/code&gt;.
+These have been deprecated in favor of following the modern lua module style introduced with Lua 5.2.&lt;/p&gt;</description></item><item><title>karaskel.lua</title><link>/docs/latest/automation/lua/modules/karaskel.lua/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/modules/karaskel.lua/</guid><description>&lt;p&gt;The Automation 4 &lt;code&gt;karaskel.lua&lt;/code&gt; include file contains several functions
+intended to help the development of karaoke effects with Automation 4 Lua.
+It also defines several new data structures, and extensions to those
+defined by Automation 4 Lua itself.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;karaskel.lua&lt;/code&gt; itself includes
+&lt;a href="/docs/latest/automation/lua/modules/util/"&gt;&lt;code&gt;utils.lua&lt;/code&gt;&lt;/a&gt; and
+&lt;a href="/docs/latest/automation/lua/modules/unicode/"&gt;&lt;code&gt;unicode.lua&lt;/code&gt;&lt;/a&gt; so you do not need to
+include those yourself when using &lt;code&gt;karaskel.lua&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Using &lt;code&gt;karaskel.lua&lt;/code&gt; is strongly recommended when creating karaoke effects,
+and it can also be useful for other tasks as it contains several text
+layouting functions.&lt;/p&gt;</description></item><item><title>utils.lua</title><link>/docs/latest/automation/lua/modules/util/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/modules/util/</guid><description>&lt;p&gt;The Automation 4 Lua include file &lt;code&gt;utils.lua&lt;/code&gt; contains various support functions to aid writing Lua scripts.
+There is no general theme for the file.&lt;/p&gt;
+&lt;h2 id="usage"&gt;Usage &lt;a href="#usage" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Import this module with &lt;code class="inline-code language-lua"&gt;util = require 'aegisub.util'&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="table-functions"&gt;Table functions &lt;a href="#table-functions" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Duplicating tables in various ways is a common task.
+&lt;code&gt;util&lt;/code&gt; provides some functions to handle the most common cases.&lt;/p&gt;
+&lt;h3 id="copy"&gt;copy &lt;a href="#copy" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Synopsis: &lt;code class="inline-code language-lua"&gt;newtable = util.copy(oldtable)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Makes a shallow copy of the table passed as parameter.
+Shallow here means that it does not dive into contained tables and copy those as well.
+For example, if &lt;code&gt;oldtable.st&lt;/code&gt; refers to a table, &lt;code&gt;newtable.st&lt;/code&gt; will refer to the same table, and changes made to &lt;code&gt;newtable.st&lt;/code&gt; will also be reflected in &lt;code&gt;oldtable.st&lt;/code&gt; and vice versa.&lt;/p&gt;</description></item><item><title>unicode.lua</title><link>/docs/latest/automation/lua/modules/unicode/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/modules/unicode/</guid><description>&lt;p&gt;The &lt;code&gt;unicode&lt;/code&gt; module for Automation 4 Lua contains various helper functions for working with UTF-8 encoded text.&lt;/p&gt;
+&lt;h2 id="usage"&gt;Usage &lt;a href="#usage" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Import this module with &lt;code class="inline-code language-lua"&gt;unicode = require 'aegisub.unicode'&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="unicodecharwidth"&gt;unicode.charwidth &lt;a href="#unicodecharwidth" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Synopsis: &lt;code class="inline-code language-lua"&gt;width = unicode.charwidth(instring, index=1)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Returns the number of bytes occupied by the UTF-8 encoded code points starting at position &lt;code&gt;index&lt;/code&gt; in &lt;code&gt;instring&lt;/code&gt;.
+The character pointed to is assumed to be a prefix byte (i.e. the first byte of the code points).&lt;/p&gt;</description></item><item><title>cleantags.lua</title><link>/docs/latest/automation/lua/modules/cleantags/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/modules/cleantags/</guid><description>&lt;div class="alert alert-warning" role="alert"&gt;
+&lt;strong&gt;TODO: &lt;/strong&gt;Write documentation
+&lt;/div&gt;</description></item><item><title>clipboard</title><link>/docs/latest/automation/lua/modules/clipboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/modules/clipboard/</guid><description>&lt;p&gt;The &lt;code&gt;clipboard&lt;/code&gt; module supplies functions for reading from and writing to the clipboard.&lt;/p&gt;
+&lt;h2 id="usage"&gt;Usage &lt;a href="#usage" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Import this module with &lt;code class="inline-code language-lua"&gt;clipboard = require 'aegisub.clipboard'&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="clipboardget"&gt;clipboard.get() &lt;a href="#clipboardget" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Synopsis: &lt;code class="inline-code language-lua"&gt;text = clipboard.get()&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Get the current contents of the clipboard as a string.
+Returns &lt;code&gt;nil&lt;/code&gt; if the clipboard does not currently contain text or if an error occurs.&lt;/p&gt;
+&lt;h3 id="clipboardget-1"&gt;clipboard.get() &lt;a href="#clipboardget-1" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Synopsis: &lt;code class="inline-code language-lua"&gt;clipboard.set(new_text)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Set the clipboard contents to a string.
+Returns true if the clipboard could be set, and false if an error occurred.&lt;/p&gt;</description></item><item><title>re</title><link>/docs/latest/automation/lua/modules/re/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/modules/re/</guid><description>&lt;p&gt;The &lt;code&gt;re&lt;/code&gt; module is a wrapper around boost::regex, intended as a full
+replacement for Lua&amp;rsquo;s built in regular expressions. It has two main advantages
+over Lua&amp;rsquo;s:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Full Unicode support. Lua regular expressions operate on bytes rather than
+characters, which frequently causes problems with multibyte characters.&lt;/li&gt;
+&lt;li&gt;A more powerful and flexible syntax. Properly speaking, Lua does not support
+regular expressions; rather it has a basic pattern matching language that
+supports a small subset of what can be done with regular expressions.
+boost::regex, on the other hand, supports perl-compatible regular
+expressions.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="usage"&gt;Usage &lt;a href="#usage" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Import this module with &lt;code class="inline-code language-lua"&gt;re = require 'aegisub.re'&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Automation Manager</title><link>/docs/latest/automation/manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/manager/</guid><description>&lt;p&gt;The Automation Manager window is used to view, load and unload
+&lt;a href="/docs/latest/automation/"&gt;Automation&lt;/a&gt; scripts.&lt;/p&gt;
+&lt;p&gt;The Automation Manager window is opened from the &lt;em&gt;Automation&lt;/em&gt; menu or with
+the
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Automation-toolbar-icon.png" width="16" height="15" alt="Automation-toolbar-icon"&gt;
+toolbar button.&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/automation_manager.png" width="850" height="559" alt="automation_manager"&gt;
+&lt;/p&gt;
+&lt;h2 id="the-script-list"&gt;The script list &lt;a href="#the-script-list" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The main area of the window is a list of all &lt;em&gt;script files&lt;/em&gt; loaded. It&amp;rsquo;s
+important to remember that one script file can contain several
+&lt;a href="/docs/latest/glossary/automation_script_feature/"&gt;features&lt;/a&gt;, for example one script file
+can define two &lt;a href="/docs/latest/glossary/macro/"&gt;macros&lt;/a&gt; and one export filter.&lt;/p&gt;
+&lt;p&gt;Scripts can be loaded in one of two ways. In the screenshot above, most of
+the scripts are &lt;em&gt;global&lt;/em&gt; (autoloaded), as indicated by the &amp;ldquo;G&amp;rdquo; in the
+leftmost column. Global scripts are automatically loaded along with Aegisub.
+They are put in one of the &lt;a href=""&gt;Automation_autoload_folders&lt;/a&gt;. You can not
+unload global scripts; you must remove them from the autoload directory, and
+then rescan the autoload directory.&lt;/p&gt;</description></item><item><title>Running macros</title><link>/docs/latest/automation/running_macros/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/running_macros/</guid><description>&lt;p&gt;&lt;a href="/docs/latest/automation/"&gt;Automation&lt;/a&gt; &lt;a href="/docs/latest/glossary/macro/"&gt;macros&lt;/a&gt; appear as options in the Automation
+menu.&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/automation_menu.png" width="272" height="228" alt="automation_menu"&gt;
+&lt;/p&gt;
+&lt;p&gt;The first option in the Automation menu, before the separator, always opens
+the &lt;a href="/docs/latest/automation/manager/"&gt;Automation/Manager&lt;/a&gt; window.&lt;/p&gt;
+&lt;p&gt;Below the separator is a list of all macros loaded. In the example above
+seven macros are loaded. The third, &lt;a href="/docs/latest/automation/karaoke_templater/"&gt;Karaoke_Templater&lt;/a&gt; is unavailable
+though, because the macro has determined it can&amp;rsquo;t be run on the subtitles.
+In this case, because the subtitle file has no karaoke templates. Other
+macros might be unavailable for other reasons. The fourth has had a hotkey
+set in the &lt;a href="/docs/latest/options/#hotkeys"&gt;preferences dialog&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Standard macros</title><link>/docs/latest/automation/included_macros/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/included_macros/</guid><description>&lt;p&gt;Aegisub includes several macros. Here&amp;rsquo;s a line-up of them.&lt;/p&gt;
+&lt;h2 id="apply-karaoke-template"&gt;Apply karaoke template &lt;a href="#apply-karaoke-template" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This is the macro incantation of Karaoke Templater. See the page on
+&lt;a href="/docs/latest/automation/karaoke_templater/"&gt;Karaoke_Templater&lt;/a&gt; for how to use this.&lt;/p&gt;
+&lt;p&gt;This macro is only available when there is at least one template line in the
+subtitle file.&lt;/p&gt;
+&lt;h2 id="make-full-width"&gt;Make full-width &lt;a href="#make-full-width" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Converts all ASCII characters to Japanese &amp;ldquo;full-width&amp;rdquo; variations of them.&lt;/p&gt;
+&lt;p&gt;This can be useful if you need to typeset a sign translation vertically,
+such that the letters are &amp;ldquo;stacked&amp;rdquo;.&lt;/p&gt;</description></item><item><title>History of Automation</title><link>/docs/latest/history_of_automation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/history_of_automation/</guid><description>&lt;p&gt;The Automation system in Aegisub has evolved from a very basic and hardly useful stand-alone system for creating basic karaoke effects into a very powerful extension mechanism. Here&amp;rsquo;s a short account of its history, from the principal author of the systems.&lt;/p&gt;
+&lt;h2 id="automation-1-really-just-karaoke-effector"&gt;Automation 1, really just Karaoke Effector &lt;a href="#automation-1-really-just-karaoke-effector" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Effector_screenshot.png" width="664" height="574" alt="Effector_screenshot"&gt;
+&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Karaoke Effector&lt;/em&gt; program was originally created for making karaoke effects for a small translation project, that later died. It was written in Borland Delphi and used Lua 5.0 for scripting. This use of Lua is the primary reason I even call it &amp;ldquo;Automation 1&amp;rdquo; today. It basically allowed creating effects similar to what the &lt;em&gt;simple-k-replacer&lt;/em&gt; script from Automation 3 does, but in a more complicated and not as usable way.&lt;/p&gt;</description></item><item><title>Aegisub Options</title><link>/docs/latest/options/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/options/</guid><description>&lt;p&gt;Aegisub is highly customizable and hence has a large amount of user-changeable
+options. These are available in the options dialog box, found in the View menu.
+This page is a reference of all the available options.&lt;/p&gt;
+&lt;p&gt;Aegisub stores all its configuration in a plain text file called &lt;em&gt;config.json&lt;/em&gt;
+which by default is stored in the &lt;a href="/docs/latest/aegisub_path_specifiers/"&gt;?user&lt;/a&gt; directory.
+If you want to reset Aegisub to its default options without reinstalling the
+program, you can just delete config.json and restart Aegisub.&lt;/p&gt;</description></item><item><title>Autosave</title><link>/docs/latest/autosave/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/autosave/</guid><description>&lt;p&gt;By default Aegisub automatically saves a backup copy of every subtitle file you
+open, along with another copy every minute (if any changes have been made in
+the last minute). These copies can be found in &lt;code&gt;%APPDATA%\Aegisub\autosave&lt;/code&gt; on
+Windows, &lt;code&gt;~/.aegisub/autosave&lt;/code&gt; on Linux, and
+&lt;code&gt;~/Library/Application Support/Aegisub/autosave&lt;/code&gt; on OS X.
+In addition, they can be browsed directly
+within Aegisub at File → Open Autosaved File&amp;hellip;&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/autosave-menu.png#center" width="321" height="355" alt="autosave-menu"&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/autosave-dialog.png#center" width="800" height="350" alt="autosave-dialog"&gt;
+&lt;/p&gt;
+&lt;p&gt;Aegisub automatically cleans up old files in the autosave directory, so the
+automatic backups should not be used for long-term storage of files.&lt;/p&gt;</description></item><item><title>Path Specifiers</title><link>/docs/latest/aegisub_path_specifiers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/aegisub_path_specifiers/</guid><description>&lt;p&gt;Aegisub uses a simple system for denoting file locations. Most pathnames in
+Aegisub can be written starting with special variables that each refer to
+specific locations. Note that path specifiers should always have a trailing
+slash unless they are the entire path (i.e. ?scripta doesn&amp;rsquo;t work).&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;?data&lt;/dt&gt;
+&lt;dd&gt;The location where application data are stored. On Windows this is the
+installation directory (the location of the .exe). On Mac OS X this is
+inside the application bundle. On other POSIX-like systems this is
+&lt;code&gt;$prefix/share/aegisub/&lt;/code&gt;.&lt;/dd&gt;
+&lt;dt&gt;?user&lt;/dt&gt;
+&lt;dd&gt;The location for user data files, such as configuration
+files, automatic back-ups and some additional things. On Windows this
+&lt;code&gt;%APPDATA%\Aegisub\&lt;/code&gt;, on Mac OS X this is &lt;code&gt;$HOME/Library/Application Support/Aegisub/&lt;/code&gt; and on other POSIX-like systems this is
+&lt;code&gt;$HOME/.aegisub/&lt;/code&gt;. In portable mode this is changed to ?data.&lt;/dd&gt;
+&lt;dt&gt;?temp&lt;/dt&gt;
+&lt;dd&gt;The system temp directory. Audio cache and any required temporary
+subtitle files are stored here.&lt;/dd&gt;
+&lt;dt&gt;?local&lt;/dt&gt;
+&lt;dd&gt;The local user settings directory. Cache files which should be
+persisted across runs, such as FFMS2 indexes and the fontconfig cache are
+stored here. &lt;code&gt;%LOCALAPPDATA%\Aegisub&lt;/code&gt; on recent versions of Windows, and
+equal to ?user everywhere else.&lt;/dd&gt;
+&lt;dt&gt;?script&lt;/dt&gt;
+&lt;dd&gt;Only defined if a subtitles file is open and saved somewhere, in which
+case it points to the directory the script is in.&lt;/dd&gt;
+&lt;dt&gt;?video&lt;/dt&gt;
+&lt;dd&gt;Only defined if a video file is loaded. Points to the directory the
+video file in is. Do note that this is not a good place to save things with
+dummy video loaded.&lt;/dd&gt;
+&lt;dt&gt;?audio&lt;/dt&gt;
+&lt;dd&gt;Only defined if an audio file is loaded. Points to the directory the
+audio file in is. Do note that this is not a good place to save things with
+dummy audio loaded.&lt;/dd&gt;
+&lt;/dl&gt;</description></item><item><title>Script Properties</title><link>/docs/latest/properties/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/properties/</guid><description>&lt;p&gt;The &lt;strong&gt;script properties&lt;/strong&gt; are some headers and other options that affect the
+entire script in various ways. They can be accessed from the &lt;em&gt;File menu&lt;/em&gt; -&amp;gt;
+&lt;em&gt;Properties&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Properties.png#center" width="400" height="482" alt="Properties"&gt;
+&lt;/p&gt;
+&lt;p&gt;The properties are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt;, &lt;strong&gt;Original script&lt;/strong&gt;, &lt;strong&gt;Translation&lt;/strong&gt;, &lt;strong&gt;Editing&lt;/strong&gt;, &lt;strong&gt;Timing&lt;/strong&gt;, &lt;strong&gt;Synch point&lt;/strong&gt;, &lt;strong&gt;Updated by&lt;/strong&gt; and &lt;strong&gt;Update details&lt;/strong&gt; - These are for informational purposes only and do not affect rendering in any way. Set them to appropriate values if you find them useful.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Resolution&lt;/strong&gt;, &lt;strong&gt;YCbCr Matrix&lt;/strong&gt;, &lt;strong&gt;Scale border and shadow&lt;/strong&gt; - See the &lt;a href="/docs/latest/script_resolution/"&gt;Script Resolution&lt;/a&gt; page for the meaning of these fields.&lt;/p&gt;</description></item><item><title>Script Resolution</title><link>/docs/latest/script_resolution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/script_resolution/</guid><description>&lt;p&gt;ASS subtitle files are, to some extent, video independant and can be used with video files other than the one they were created with.
+This is achieved by using a virtual video resolution which controls how font sizes and coordinates are interpreted, which is commonly known as the &amp;ldquo;script resolution&amp;rdquo;.
+Unfortunately, due to some bugs in the reference implementation of the subtitle format (VSFilter), rendering subtitles whose script resolution is not equal to the actual video resolution works poorly.&lt;/p&gt;</description></item><item><title>Attachment Manager</title><link>/docs/latest/attachment_manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/attachment_manager/</guid><description>&lt;p&gt;The attachment manager allows you to attach fonts and/or pictures to your
+script (by encoding them as text). This is occasionally useful for sharing
+fonts between everyone who is working on a script without having to send the
+fonts as separate files. However, it is quite limited and is prone to causing
+problems.&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Attachment_list.png#center" width="596" height="274" alt="Attachment_list"&gt;
+&lt;/p&gt;
+&lt;p&gt;The entire dialogue is fairly self-explanatory. The two &amp;ldquo;Attach &amp;hellip;&amp;rdquo; buttons
+add attachments, &amp;ldquo;Extract&amp;rdquo; extracts existing attachments into separate files,
+and &amp;ldquo;Delete&amp;rdquo; deletes attachments from the subtitles file.&lt;/p&gt;</description></item><item><title>Commands</title><link>/docs/latest/commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/commands/</guid><description/></item><item><title/><link>/docs/latest/audio_timing_tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/audio_timing_tutorial/</guid><description>&lt;ol&gt;
+&lt;li&gt;REDIRECT &lt;a href="/docs/latest/audio/#basicaudiotiming"&gt;Audio#basicaudiotiming&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title/><link>/docs/latest/fix_timing_tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/fix_timing_tutorial/</guid><description>&lt;ol&gt;
+&lt;li&gt;REDIRECT &lt;a href="/docs/latest/shift_times/"&gt;Shift_Times&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title/><link>/docs/latest/keyboard_shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/keyboard_shortcuts/</guid><description>&lt;ol&gt;
+&lt;li&gt;REDIRECT &lt;a href="/docs/latest/options/#hotkeys"&gt;Options#hotkeys&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Automation script feature</title><link>/docs/latest/glossary/automation_script_feature/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/glossary/automation_script_feature/</guid><description>&lt;p&gt;In Automation 4 a &lt;strong&gt;feature&lt;/strong&gt; is a function a script makes available to Aegisub. Currently two kinds of features are specified: Export filters and macros.&lt;/p&gt;
+&lt;p&gt;If a script defines two macros and one export filter, it is said to have defined three features in total.&lt;/p&gt;</description></item><item><title>Karaoke Effect</title><link>/docs/latest/glossary/karaoke_effect/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/glossary/karaoke_effect/</guid><description>&lt;p&gt;&lt;strong&gt;Karaoke&lt;/strong&gt; is (amateur) singing along to a song, usually a version of the song with the main vocals removed. When singing karaoke the lyrics to the song are usually presented on a TV screen and highlighted as they are to be sung.&lt;/p&gt;
+&lt;p&gt;In subtitling however, karaoke usually refers to those lyrics themselves. The &lt;strong&gt;karaoke effect&lt;/strong&gt; refers to the way they are highlighted.&lt;/p&gt;
+&lt;p&gt;So, a karaoke effect is a visual effect synchronised with a song, used to help singing karaoke.&lt;/p&gt;</description></item><item><title>Macro</title><link>/docs/latest/glossary/macro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/glossary/macro/</guid><description>&lt;p&gt;In computer programs, a &lt;strong&gt;macro&lt;/strong&gt; is a (usually relatively small) snippet of program code that can easily be added to the program, to add a new function or such, intended to automate some aspect of using the program.&lt;/p&gt;</description></item></channel></rss>

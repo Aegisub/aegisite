@@ -1,2 +1,567 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>用户手册 on</title><link>/zh-cn/docs/</link><description>Recent content in 用户手册 on</description><generator>Hugo -- gohugo.io</generator><atom:link href="/zh-cn/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>主页</title><link>/zh-cn/docs/latest/main_page/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/main_page/</guid><description>欢迎来到 Aegisub 手册。要获取更多关于此程序的信息，请查看我们的 关于 页面，或浏览左侧栏中各个主题的文章。 与开发、编译 Aegisub 相关的文档位于 Bug 跟踪系统 上。 开</description></item><item><title>关于</title><link>/zh-cn/docs/latest/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/about/</guid><description>开发 Aegisub 的初衷是让字幕排版的工作（尤其是对动漫字幕组而言）不再那么痛苦。在这个项目诞生之初，许多支持 ASS 格式的字幕软件都因缺少一些关键功能（时至</description></item><item><title>概述</title><link>/zh-cn/docs/latest/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/overview/</guid><description>这张截图展示的是打开所有面板的Aegisub主窗口： 两个最重要的区域是字幕栏和编辑框。 字幕栏显示您正在编辑的文件中的所有字幕行。所有行标有不</description></item><item><title>亮点</title><link>/zh-cn/docs/latest/highlights/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/highlights/</guid><description>Aegisub 的一些亮点： 简单易用却不失强大的编辑界面 在拼写检查／词典、翻译助手、特效标签提示、语法高亮以及各种脚本宏的协助下，字幕的翻译、编辑与校对将</description></item><item><title>贡献者名单</title><link>/zh-cn/docs/latest/credits/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/credits/</guid><description>Aegisub 最初由 Rodrigo Braz Monteiro 所编写，Niels Martin Hansen 在此过程中也做出了重要贡献。开发工作在 2008 年由 Monteiro 主导，2010 年由 Hansen 接替，2011 年以后则由 Thomas Goyne 负责。 主程</description></item><item><title>General Disclaimer</title><link>/zh-cn/docs/latest/general_disclaimer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/general_disclaimer/</guid><description>This manual is a work in progress. It is at present incomplete and no information in it can be taken for granted. We attempt to be accurate on every point, to a reasonable degree.
-Aegisub is software under constant development. While it is a goal to provide up-to-date documentation there will almost always be cases where the actual functionality of the program has changed since this documentation was last updated.</description></item><item><title>支持</title><link>/zh-cn/docs/latest/support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/support/</guid><description>您想支持 Aegisub 吗？这很简单！ 反馈 # 您可以向我们提交反馈——通过意见、评论、建议等形式，也随时欢迎您报告 bug 或提出增添新功能的要求。您可以访问我们的</description></item><item><title>FAQ</title><link>/zh-cn/docs/latest/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/faq/</guid><description>Aegisub 的常见疑问小整合——大多是其他页面没有涉及的问题。 制作卡拉OK特效？ # 请阅读 卡拉OK模版教程。 我能用 Aegisub 制作 DVD 字幕吗？ # 不能直接做，不过有一</description></item><item><title>教程</title><link>/zh-cn/docs/latest/tutorials/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/tutorials/</guid><description>以下教程可供学习 Aegisub（视频使用英语讲解）： 视频教程（录屏） # 对白计时 # 简介：讲解如何使用 Aegisub 制作时间轴。 作者：Karl Blomster 链接：htt</description></item><item><title>卡拉OK计时</title><link>/zh-cn/docs/latest/karaoke_timing_tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/karaoke_timing_tutorial/</guid><description>本篇教程将介绍如何用Aegisub读取一首歌, 将歌词划分成音节并添加时间码。 这篇教程基本是为零起点的人准备的。 开始之前 # 开始之前我们要准备好</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>用户手册 on Aegisub</title><link>/zh-cn/docs/</link><description>Recent content in 用户手册 on Aegisub</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><atom:link href="/zh-cn/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>主页</title><link>/zh-cn/docs/latest/main_page/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/main_page/</guid><description>&lt;p&gt;欢迎来到 Aegisub 手册。要获取更多关于此程序的信息，请查看我们的 &lt;a href="/zh-cn/docs/latest/about/"&gt;关于&lt;/a&gt; 页面，或浏览左侧栏中各个主题的文章。
+与开发、编译 Aegisub 相关的文档位于 &lt;a href="https://github.com/TypesettingTools/Aegisub/issues"&gt;Bug 跟踪系统&lt;/a&gt; 上。&lt;/p&gt;
+&lt;h2 id="开始"&gt;开始 &lt;a href="#%e5%bc%80%e5%a7%8b" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href="/zh-cn/docs/latest/overview/"&gt;Aegisub 快速概览&lt;/a&gt;&lt;/p&gt;</description></item><item><title>关于</title><link>/zh-cn/docs/latest/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/about/</guid><description>&lt;p&gt;开发 Aegisub 的初衷是让字幕排版的工作（尤其是对动漫字幕组而言）不再那么痛苦。在这个项目诞生之初，许多支持 ASS 格式的字幕软件都因缺少一些关键功能（时至今日，它们中的多数依然没有改善；此外，几款竞品的开发进程也出于各种原因而中止，当然这与 Aegisub 没有任何联系），或是 bug 太多、不够可靠，导致它们并不真正实用。&lt;/p&gt;</description></item><item><title>概述</title><link>/zh-cn/docs/latest/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/overview/</guid><description>&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/zh/Main-window-overview.png" width="1018" height="784" alt="Main-window-overview"&gt;
+&lt;/p&gt;
+&lt;p&gt;这张截图展示的是打开所有面板的Aegisub主窗口：&lt;/p&gt;
+&lt;p&gt;两个最重要的区域是&lt;strong&gt;字幕栏&lt;/strong&gt;和&lt;strong&gt;编辑框&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;字幕栏&lt;/strong&gt;显示您正在编辑的文件中的所有字幕行。所有行标有不同的颜色，这取决于他们的属性。例如，背景色为绿色的行是所选行。蓝色背景的行是注释行且不会显示在屏幕上。黄色背景的行是在当前帧能看见的行。红色字的行是与当前所选行时间重叠的行。从这里点击一行来编辑它。&lt;/p&gt;</description></item><item><title>亮点</title><link>/zh-cn/docs/latest/highlights/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/highlights/</guid><description>&lt;p&gt;Aegisub 的一些亮点：&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;简单易用却不失强大的编辑界面&lt;/dt&gt;
+&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;在拼写检查／词典、翻译助手、特效标签提示、语法高亮以及各种脚本宏的协助下，字幕的翻译、编辑与校对将变得前所未有地简单。&lt;/li&gt;
+&lt;li&gt;误操作了？系统崩溃了？不用担心！Aegisub 的多级撤销／重做、自动保存、备份和应急恢复等特性帮您挽救您的字幕文件，从容应对系统崩溃、程序崩溃等诸多不测。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;多种格式与字符集的支持&lt;/dt&gt;
+&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;Aegisub 并不限制您使用某种特定的格式，它支持多种字幕格式（无论是 TTXT 还是 MicroDVD）的导入与导出操作。&lt;/li&gt;
+&lt;li&gt;多语言字幕？使用不支持 Unicode 的旧软件生成的字幕？完全没问题！Aegisub 对 Unicode 和大多数常见的过时编码方案都有完善的读取、写入支持。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;强大的视频输入模式&lt;/dt&gt;
+&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;Aegisub 原生支持几乎所有的视频格式，但如果这仍然无法满足需求，Aegisub 还可以调用您系统中的 DirectShow 环境来打开任何能够使用 Windows Media Player 播放的格式。&lt;/li&gt;
+&lt;li&gt;在您输入内容的同时，预览画面将会自动、实时地更新，让您能够直观地看到字幕在播放器中的实际样式。&lt;/li&gt;
+&lt;li&gt;完全支持可变帧率（&lt;strong&gt;v&lt;/strong&gt;ariable &lt;strong&gt;f&lt;/strong&gt;rame &lt;strong&gt;r&lt;/strong&gt;ate）视频与 Matroska 时间码。Aegisub 能够直接读取 Matroska 媒体文件中的时间码，无缝集成于 VFR 视频的工作中。&lt;/li&gt;
+&lt;li&gt;长宽比变形？过扫描？Aegisub 拥有专门处理这类视频的工具。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;可视化排版工具&lt;/dt&gt;
+&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;为排版工作减负！无需手动编辑特效标签，您可以直接使用鼠标对画面上的字幕进行拖动、旋转和裁剪。&lt;/li&gt;
+&lt;li&gt;想要在不同分辨率或长宽比的视频中复用您的排版？无法辨别出视频中字符所使用的颜色？Aegisub 的相关工具可为您化解难题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;直观且可定制的音频打轴模式&lt;/dt&gt;
+&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;利用高度可定制的音频工作界面，您将能以任何您喜欢的方式来制作对白或卡拉OK的时间轴。打轴从未如此轻松！频谱分析模式、时间后续处理器等功能甚至可以让这个过程更为高效。&lt;/li&gt;
+&lt;li&gt;支持几乎所有现存的音频格式。如果您恰好遇到了 libavcodec 无法识别的格式，还有 DirectShow 作为备选方案。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;通过自动化脚本解决一切问题&lt;/dt&gt;
+&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;上述功能还不能让您满意？您可以使用 Lua 语言来编写宏或导出滤镜来扩展软件的功能。&lt;/li&gt;
+&lt;li&gt;Aegisub 内置了一些现成的脚本，便于您快速地生成属于您自己的卡拉OK字幕特效。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;</description></item><item><title>贡献者名单</title><link>/zh-cn/docs/latest/credits/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/credits/</guid><description>&lt;p&gt;Aegisub 最初由 Rodrigo Braz Monteiro 所编写，Niels Martin Hansen
+在此过程中也做出了重要贡献。开发工作在 2008 年由 Monteiro 主导，2010
+年由 Hansen 接替，2011 年以后则由 Thomas Goyne 负责。&lt;/p&gt;
+&lt;h2 id="主程序"&gt;主程序 &lt;a href="#%e4%b8%bb%e7%a8%8b%e5%ba%8f" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;主要开发者：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rodrigo Braz Monteiro&lt;/strong&gt; (ArchMage ZeratuL) - Lead developer, video system, audio system, subtitles I/O, tools&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Niels Martin Hansen&lt;/strong&gt; (jfs) - Automation, Lua automation, audio system, tools&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Thomas Goyne (Plorkyeran)&lt;/strong&gt; - Lead developer for 3.0 onwards.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;开发组成员：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Karl Blomster&lt;/strong&gt; (TheFluff) - General code, FFmpegSource video provider&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fredrik Mellbin&lt;/strong&gt; (Myrsloik) - FFmpegSource and Avisynth-related code&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Amar Takhar&lt;/strong&gt; (verm) - New unix build system&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;David Lamparter&lt;/strong&gt; (equinox) - Unix port&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Alysson Souza e Silva&lt;/strong&gt; (demi_alucard) - General code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;其他贡献者：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dan Donovan&lt;/strong&gt; (Dansolo) - Miscellaneous tools&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Patryk Pomykalski&lt;/strong&gt; (Pomyk) - Miscellaneous patching&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ai-chan&lt;/strong&gt; - ASSDraw3&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Evgeniy Stepanov&lt;/strong&gt; (Azzy) - Some Linux patches, libass&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mike Matsnev&lt;/strong&gt; (Haali) - Some DirectShow code and Matroska Parser library&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2points&lt;/strong&gt; - Linux patches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;p-static&lt;/strong&gt; - Linux patches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;David Conrad&lt;/strong&gt; (Yuvi) - Mac patches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Daniel Moscoviter&lt;/strong&gt; (Mosc) - General patches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Harukalover&lt;/strong&gt; - Usability, various patches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SAPikachu&lt;/strong&gt; - General patches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;tophf&lt;/strong&gt; - General patches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;nodame&lt;/strong&gt; - General patches&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="安装程序"&gt;安装程序 &lt;a href="#%e5%ae%89%e8%a3%85%e7%a8%8b%e5%ba%8f" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2.x：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Niels Martin Hansen&lt;/strong&gt; (jfs)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fredrik Mellbin&lt;/strong&gt; (Myrsloik)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rodrigo Braz Monteiro&lt;/strong&gt; (ArchMage ZeratuL)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;早期：
+&lt;ul&gt;
+&lt;li&gt;movax&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="用户手册"&gt;用户手册 &lt;a href="#%e7%94%a8%e6%88%b7%e6%89%8b%e5%86%8c" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;3.x：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Thomas Goyne (Plorkyeran)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2.x：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Karl Blomster&lt;/strong&gt; (TheFluff)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Niels Martin Hansen&lt;/strong&gt; (jfs)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rodrigo Braz Monteiro&lt;/strong&gt; (ArchMage ZeratuL)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;早期：
+&lt;ul&gt;
+&lt;li&gt;Motoko-chan&lt;/li&gt;
+&lt;li&gt;Kobi&lt;/li&gt;
+&lt;li&gt;movax&lt;/li&gt;
+&lt;li&gt;Jcubed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="内容托管"&gt;内容托管 &lt;a href="#%e5%86%85%e5%ae%b9%e6%89%98%e7%ae%a1" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;当前：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DeathWolf&lt;/strong&gt;: SVN repository for versions 2.1.2+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sigurd Tao Lyngse&lt;/strong&gt; (Bot1): Forums and Main Wiki&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Niels Martin Hansen&lt;/strong&gt; (jfs): Bug Tracker&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Marcello Bastéa-Forte&lt;/strong&gt;: Documentation Wiki&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rodrigo Braz Monteiro&lt;/strong&gt; (ArchMage ZeratuL): Domain administration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;早期：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;David Lamparter&lt;/strong&gt; (equinox): SVN repository for versions 2.00 - 2.1.2&lt;/li&gt;
+&lt;li&gt;BerliOS: SVN repository for version 1.10&lt;/li&gt;
+&lt;li&gt;Mentar: SVN repository up to version 1.09&lt;/li&gt;
+&lt;li&gt;Bot1: Bug Tracker&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="本地化"&gt;本地化 &lt;a href="#%e6%9c%ac%e5%9c%b0%e5%8c%96" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2.00 翻译：
+&lt;ul&gt;
+&lt;li&gt;ArchMage ZeratuL: Brazilian Portuguese&lt;/li&gt;
+&lt;li&gt;Ereza: Catalan&lt;/li&gt;
+&lt;li&gt;Yuri: Hungarian&lt;/li&gt;
+&lt;li&gt;Hiroshi: Japanese&lt;/li&gt;
+&lt;li&gt;Jeroi: Finnish&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;1.11 翻译：
+&lt;ul&gt;
+&lt;li&gt;Karasu: Traditional Chinese&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;1.10 翻译：
+&lt;ul&gt;
+&lt;li&gt;TechNiko: French&lt;/li&gt;
+&lt;li&gt;Crysral: French&lt;/li&gt;
+&lt;li&gt;thrash-sensei: Russian&lt;/li&gt;
+&lt;li&gt;equinox: German&lt;/li&gt;
+&lt;li&gt;Nesukun: Spanish&lt;/li&gt;
+&lt;li&gt;EmBolo: Italian&lt;/li&gt;
+&lt;li&gt;Mazinga: Italian&lt;/li&gt;
+&lt;li&gt;oblisk: Korean&lt;/li&gt;
+&lt;li&gt;mulrich: Danish&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="额外致谢"&gt;额外致谢 &lt;a href="#%e9%a2%9d%e5%a4%96%e8%87%b4%e8%b0%a2" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.cccp-project.net"&gt;Combined Community Codec Pack&lt;/a&gt; staff&lt;/li&gt;
+&lt;li&gt;Gabest for VSFilter&lt;/li&gt;
+&lt;li&gt;squid_80 for the x64 builds of Avisynth and CSRI-enabled VSFilter&lt;/li&gt;
+&lt;li&gt;Firebird for some of the toolbar icons&lt;/li&gt;
+&lt;li&gt;Kayle for help with Win32 VfW interface&lt;/li&gt;
+&lt;li&gt;ender for yawning a lot&lt;/li&gt;
+&lt;li&gt;Alpha testers: b0nk, Bot1, deathbygirl, DoGfOoD, grimlock, Jagobah, Jcubed, Kintaro, Kobi, kodachrome, maxx-, mASSIVe, Maya, Mentar, movax, msb, neo2sonic, nich, nwa, omgifos, SOzuken, TheFluff, thrash_sensei, Vincent, zegnat&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="相关项目"&gt;相关项目 &lt;a href="#%e7%9b%b8%e5%85%b3%e9%a1%b9%e7%9b%ae" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Aegisub 包含了以下项目的部分内容：&lt;/p&gt;</description></item><item><title>General Disclaimer</title><link>/zh-cn/docs/latest/general_disclaimer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/general_disclaimer/</guid><description>&lt;p&gt;&lt;strong&gt;This manual is a work in progress.&lt;/strong&gt; It is at present incomplete and no information in it can be taken for granted. We attempt to be accurate on every point, to a reasonable degree.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Aegisub is software under constant development.&lt;/strong&gt; While it is a goal to provide up-to-date documentation there will almost always be cases where the actual functionality of the program has changed since this documentation was last updated.&lt;/p&gt;</description></item><item><title>支持</title><link>/zh-cn/docs/latest/support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/support/</guid><description>&lt;p&gt;您想支持 Aegisub 吗？这很简单！&lt;/p&gt;
+&lt;h3 id="反馈"&gt;反馈 &lt;a href="#%e5%8f%8d%e9%a6%88" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;您可以向我们提交反馈——通过意见、评论、建议等形式，也随时欢迎您报告 bug 或提出增添新功能的要求。您可以访问我们的
+&lt;a href="http://forums.aegisub.org"&gt;论坛&lt;/a&gt; 和 &lt;a href="http://devel.aegisub.org/"&gt;Bug 跟踪系统&lt;/a&gt;，或是到 &lt;a href="#ZgotmplZ"&gt;IRC 频道&lt;/a&gt; 上和我们聊聊。&lt;/p&gt;</description></item><item><title>FAQ</title><link>/zh-cn/docs/latest/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/faq/</guid><description>&lt;p&gt;Aegisub 的常见疑问小整合——大多是其他页面没有涉及的问题。&lt;/p&gt;
+&lt;h3 id="制作卡拉ok特效"&gt;制作卡拉OK特效？ &lt;a href="#%e5%88%b6%e4%bd%9c%e5%8d%a1%e6%8b%89ok%e7%89%b9%e6%95%88" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;请阅读 &lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/tutorial_1/"&gt;卡拉OK模版教程&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id="我能用-aegisub-制作-dvd-字幕吗"&gt;我能用 Aegisub 制作 DVD 字幕吗？ &lt;a href="#%e6%88%91%e8%83%bd%e7%94%a8-aegisub-%e5%88%b6%e4%bd%9c-dvd-%e5%ad%97%e5%b9%95%e5%90%97" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;不能直接做，不过有一款实用的软件叫作 &lt;a href="http://sourceforge.net/projects/maestrosbt/"&gt;MaestroSBT&lt;/a&gt;，它可以将 SSA 转换为 VOBsub。由于这款软件在特效标签以及其他方面有着诸多限制，所以建议您先阅读一下它的使用说明。还需特别注意，它不支持 ASS——只支持 SSA。您可以在 Aegisub 的“文件 -&amp;gt; 导出字幕…”对话框中将字幕另存为 SSA 格式。&lt;/p&gt;</description></item><item><title>教程</title><link>/zh-cn/docs/latest/tutorials/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/tutorials/</guid><description>&lt;p&gt;以下教程可供学习 Aegisub（视频使用英语讲解）：&lt;/p&gt;
+&lt;h2 id="视频教程录屏"&gt;视频教程（录屏） &lt;a href="#%e8%a7%86%e9%a2%91%e6%95%99%e7%a8%8b%e5%bd%95%e5%b1%8f" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="对白计时"&gt;对白计时 &lt;a href="#%e5%af%b9%e7%99%bd%e8%ae%a1%e6%97%b6" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;简介：讲解如何使用 Aegisub 制作时间轴。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;作者：Karl Blomster&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;链接：&lt;a href="http://mod16.org/aegisub/timingtutorialimprovisation.mkv"&gt;http://mod16.org/aegisub/timingtutorialimprovisation.mkv&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;简介：展示一位经验丰富的用户使用 Aegisub 全速打轴。&lt;/p&gt;</description></item><item><title>卡拉OK计时</title><link>/zh-cn/docs/latest/karaoke_timing_tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/karaoke_timing_tutorial/</guid><description>&lt;p&gt;本篇教程将介绍如何用Aegisub读取一首歌, 将歌词划分成音节并添加时间码。&lt;/p&gt;
+&lt;p&gt;这篇教程基本是为零起点的人准备的。&lt;/p&gt;
+&lt;h2 id="开始之前"&gt;开始之前 &lt;a href="#%e5%bc%80%e5%a7%8b%e4%b9%8b%e5%89%8d" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;开始之前我们要准备好一些东西:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一首歌的音频文件。文件的格式可以是 MP3 或者
+在视频文件中。Aegisub能从视频中读取音频，在不出意外的情况下，你无须从视频中提取音轨出来。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;这首歌的歌词。如果是已经分好段的纯文本(.txt
+文件)，后续工作会更简单。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;p&gt;这里使用一首日文歌作为例子。但是不得不提一下，Aegisub的大多数高级歌词功能都是为日语或者其它语言设计的。这些语言最终可以被体现为西文字母(罗马音、汉语拼音)。具体用法见视频教程。&lt;/p&gt;</description></item><item><title>卡拉OK内联特效</title><link>/zh-cn/docs/latest/karaoke_inline-fx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/karaoke_inline-fx/</guid><description>&lt;p&gt;卡拉OK inline-fx（内联特效）可以用来给&lt;a href="/zh-cn/docs/latest/timing/#karaoketiming"&gt;打过k的时间轴&lt;/a&gt;的不同部分分配不同的特效。&lt;/p&gt;
+&lt;p&gt;inline-fx标记本身并不会有任何影响，只有当应用可以识别它的&lt;a href="/zh-cn/docs/latest/automation/"&gt;卡拉ok特效脚本&lt;/a&gt;时才会应用于打了k的轴。&lt;/p&gt;
+&lt;h2 id="标记"&gt;标记 &lt;a href="#%e6%a0%87%e8%ae%b0" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;内联特效标签是一个（无效的）ASS特效标签，格式是&lt;code&gt;\-特效名&lt;/code&gt;，其中 &lt;em&gt;特效名&lt;/em&gt;
+是内联特效所定义的。&lt;/p&gt;</description></item><item><title>注音卡拉OK</title><link>/zh-cn/docs/latest/furigana_karaoke/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/furigana_karaoke/</guid><description>&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Furigana-demo-1.png" width="256" height="72" alt="Furigana-demo-1"&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Furigana&lt;/em&gt; (in Aegisub often shortened to &lt;em&gt;furi&lt;/em&gt;) refers to little phonetic
+guide characters written along the main text in Japanese, specifically using
+the hiragana phonetic alphabet to describe how the ideographic kanji characters
+should be pronounced. Putting smaller text next to a main line of text is in
+general referred to as &lt;a href="http://en.wikipedia.org/wiki/Ruby_character"&gt;&lt;em&gt;ruby
+text&lt;/em&gt;&lt;/a&gt;, but since the
+implementation discussed here is designed specifically with Japanese furigana
+in mind, the ruby text is also referred to as furigana everywhere.&lt;/p&gt;</description></item><item><title>编辑字幕</title><link>/zh-cn/docs/latest/editing_subtitles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/editing_subtitles/</guid><description>&lt;p&gt;开发Aegisub的目的是编辑字幕。本页面将会就字幕的基本文本编辑进行一系列的讲解；若想了解更多关于字幕排版的信息，请看
+&lt;a href="/zh-cn/docs/latest/typesetting/"&gt;排版&lt;/a&gt;。关于字幕的时间轴编辑，另见
+&lt;a href="/zh-cn/docs/latest/audio/"&gt;载入音频&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id="打开字幕"&gt;打开字幕 &lt;a href="#%e6%89%93%e5%bc%80%e5%ad%97%e5%b9%95" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在 &lt;em&gt;文件&lt;/em&gt; 菜单中，提供了4种打开/创建字幕的方式：&lt;/p&gt;</description></item><item><title>导出</title><link>/zh-cn/docs/latest/exporting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/exporting/</guid><description>&lt;p&gt;在常见的 &amp;ldquo;保存字幕&amp;rdquo; 和 &amp;ldquo;另存为字幕&amp;rdquo; 功能外，Aegisub还有一项
+&amp;ldquo;导出字幕&amp;quot;功能，
+它可以通过输出滤镜筛选保存你想要的信息。它可以达到许多目的，例如
+输出帧率转换后的脚本、卡拉OK特效脚本为其他支持的格式。&lt;/p&gt;</description></item><item><title>将字幕加到视频上</title><link>/zh-cn/docs/latest/attaching_subtitles_to_video/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/attaching_subtitles_to_video/</guid><description>&lt;p&gt;在数字化编码中，有两种方式可以把字幕融入到视频文件中:
+软字幕和硬字幕。两种方法都有其独特的优缺点，有关两种方式优劣的讨论也未曾停止过。&lt;/p&gt;
+&lt;h2 id="硬字幕"&gt;硬字幕 &lt;a href="#%e7%a1%ac%e5%ad%97%e5%b9%95" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;硬字幕是一种把字幕 &amp;ldquo;烧录&amp;rdquo;
+在视频部分中的方法。数字硬字幕更像是VHS录像带；字幕是不能被关闭的。&lt;/p&gt;</description></item><item><title>拼写检查器</title><link>/zh-cn/docs/latest/spell_checker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/spell_checker/</guid><description>&lt;p&gt;为了保障字幕的质量，Aegisub
+特意为您准备了一个完善的拼写检查器。它采用了由 OpenOffice.org 的 MySpell
+发展而来的 Hunspell 拼写检查库，这意味着 Aegisub
+的纠错能力将不亚于同样使用了 Hunspell 的高级文字处理软件
+（※译者注：例如 WPS Office、印象笔记等）
+。您可以通过&amp;quot;&lt;em&gt;字幕 -&amp;gt; 拼写检查器&lt;/em&gt;
+&amp;ldquo;打开它，它会在您输入内容的同时进行检查。此外，字幕编辑框的右键菜单中也有与之相关的选项（详见
+&lt;a href="/zh-cn/docs/latest/editing_subtitles/"&gt;编辑字幕&lt;/a&gt;）。&lt;/p&gt;</description></item><item><title>翻译助手</title><link>/zh-cn/docs/latest/translation_assistant/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/translation_assistant/</guid><description>&lt;p&gt;翻译助手是一个很有用的翻译辅助工具。它可以让您以最高效的方式翻译字幕，而不必为选取文字的事情费心，也无需担心忘记原文的内容。在您翻译时，它还能从文本中识别出
+ASS 特效标签并自动略过它们。&lt;/p&gt;</description></item><item><title>选择性粘贴</title><link>/zh-cn/docs/latest/paste_over/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/paste_over/</guid><description>&lt;p&gt;&lt;strong&gt;选择性粘贴&lt;/strong&gt;是传统的 &lt;code&gt;Ctrl&lt;/code&gt;+&lt;code&gt;C&lt;/code&gt; &amp;amp; &lt;code&gt;Ctrl&lt;/code&gt;+&lt;code&gt;V&lt;/code&gt;
+组合键的&amp;quot;智能&amp;quot;升级版。它可以在不影响其他字段的情况下，将一行或多行字幕中特定字段的内容粘贴至对应的区域。您可以通过&amp;quot;&lt;em&gt;编辑
+-&amp;gt; 选择性粘贴&lt;/em&gt; &amp;ldquo;来打开，也可以在字幕栏的鼠标右键菜单中找到它。&lt;/p&gt;</description></item><item><title>选择多行</title><link>/zh-cn/docs/latest/select_lines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/select_lines/</guid><description>&lt;p&gt;&lt;strong&gt;选择多行&lt;/strong&gt;用于选取符合特定标准的字幕行，是一个非常实用的工具。它有许多应用场景，从删除所有注释行到查找某个说话人的全部台词，不一而足。您可以从&amp;quot;&lt;em&gt;字幕
+-&amp;gt; 选择多行&lt;/em&gt;&amp;quot; 打开它。&lt;/p&gt;</description></item><item><title>排版</title><link>/zh-cn/docs/latest/typesetting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/typesetting/</guid><description>&lt;p&gt;维基上关于 &lt;a href="http://en.wikipedia.org/wiki/Typesetting"&gt;排版&lt;/a&gt;的定义:
+&amp;ldquo;&lt;strong&gt;排版&lt;/strong&gt;可以指文字材料在纸或其它一些介质上的可视化呈现。&amp;rdquo;
+在字幕工作的环境里，它意味着下面的三件事：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;把对话以一种更易于阅读和更佳的视觉效果形式呈现给观众。&lt;/li&gt;
+&lt;li&gt;翻译背景里所有外语文字（如选段标题，背景里的时间/地点和其他推动情节发展的重要文字），并且把翻译呈现给观众，最好让翻译和原文一起出现（但保留可读性）。&lt;/li&gt;
+&lt;li&gt;在视频里面设计其他文字（如logo，卡拉OK特效等等）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;尤其在一些字幕组里，&amp;ldquo;排版&amp;quot;通常意味着第二点或者第三点&lt;/p&gt;</description></item><item><title>视频</title><link>/zh-cn/docs/latest/video/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/video/</guid><description>&lt;p&gt;Aegisub不是一个视频（或媒体）播放器，但它依然支持载入多种视频文件。
+这一篇就是关于Aegisub是如何载入和处理视频文件的，如果你只是想做一个安静的美男子（萌妹子），
+建议您还是直接参考排版教程 或
+&lt;a href="/zh-cn/docs/latest/visual_typesetting/"&gt;可视化排版&lt;/a&gt; .&lt;/p&gt;</description></item><item><title>样式</title><link>/zh-cn/docs/latest/styles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/styles/</guid><description>&lt;p&gt;&lt;strong&gt;样式&lt;/strong&gt; 在ASS格式中是指一套固定的字幕排版方案。样式可以在单独的行里被
+&lt;a href="/zh-cn/docs/latest/ass_tags/"&gt;特效标签&lt;/a&gt;覆写;由于样式的存在，你不必再单独为每一行进行排版。&lt;/p&gt;
+&lt;h2 id="样式管理器"&gt;样式管理器 &lt;a href="#%e6%a0%b7%e5%bc%8f%e7%ae%a1%e7%90%86%e5%99%a8" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Aegisub的样式管理器工具 (字幕菜单下可找到)
+提供了多种多样的方式以便组织保存和编辑字幕样式，它看起来是这个样子:&lt;/p&gt;</description></item><item><title>可视化排版</title><link>/zh-cn/docs/latest/visual_typesetting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/visual_typesetting/</guid><description>&lt;p&gt;&lt;strong&gt;关于这个功能，你能在 &lt;a href="/zh-cn/docs/latest/tutorials/"&gt;视频教程&lt;/a&gt;中找到。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="总览"&gt;总览 &lt;a href="#%e6%80%bb%e8%a7%88" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/zh/video_display.png#center" width="839" height="546" alt="video_display"&gt;
+&lt;/p&gt;
+&lt;h3 id="播放"&gt;播放 &lt;a href="#%e6%92%ad%e6%94%be" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;播放视频, 从当前帧开始。查看
+&lt;a href="/zh-cn/docs/latest/video/#playingvideo"&gt;使用视频&lt;/a&gt; 来获取Aegisub中有关的信息。&lt;/p&gt;
+&lt;h3 id="播放当前行"&gt;播放当前行 &lt;a href="#%e6%92%ad%e6%94%be%e5%bd%93%e5%89%8d%e8%a1%8c" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;从当前活动行的开始帧播放视频，到该行结束帧停止。&lt;/p&gt;
+&lt;h3 id="自动定位视频至行开始帧"&gt;自动定位视频至行开始帧 &lt;a href="#%e8%87%aa%e5%8a%a8%e5%ae%9a%e4%bd%8d%e8%a7%86%e9%a2%91%e8%87%b3%e8%a1%8c%e5%bc%80%e5%a7%8b%e5%b8%a7" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;当选择新一行时，视频自动定位到该行的开始帧。&lt;/p&gt;</description></item><item><title>ASS标签</title><link>/zh-cn/docs/latest/ass_tags/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/ass_tags/</guid><description>&lt;p&gt;The following is a list of every tag supported by the Advanced Substation
+Alpha format. This is basically a detailed version of ass-quickref.txt. See
+the &lt;a href="/zh-cn/docs/latest/visual_typesetting/"&gt;tutorial&lt;/a&gt; for an introduction to typesetting,
+using some basic tags.&lt;/p&gt;
+&lt;p&gt;下面列出所有ASS格式支持的标签。这基本上算是ass-quickref.txt的一个详细版本。你可以在本教程手册的排版教程获取关于使用一些基本标签来排版文本的教程。&lt;/p&gt;</description></item><item><title>颜色选择器</title><link>/zh-cn/docs/latest/colour_picker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/colour_picker/</guid><description>&lt;p&gt;Aegisub引入了一个比Windows自带取色器高端很多的颜色选择器。它允许你使用不同的色彩空间输入颜色值，可以直接输入16进制的HTML和ASS颜色值，也可以从迷你截屏中取色或者使用三种不同的色彩光谱取色。&lt;/p&gt;</description></item><item><title>样式助手</title><link>/zh-cn/docs/latest/styling_assistant/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/styling_assistant/</guid><description>&lt;p&gt;样式助手对于处理多样式字幕文件是一个有用的工具，例如碰到几个说话人都拥有各自的样式的时候，或者其他一个字幕中含有很多样式的情况。&lt;/p&gt;
+&lt;h2 id="总览"&gt;总览 &lt;a href="#%e6%80%bb%e8%a7%88" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/styling_assistant.png#center" width="424" height="479" alt="styling_assistant"&gt;
+&lt;/p&gt;
+&lt;p&gt;从上图我们能看到，样式助手由以下区域组成:&lt;/p&gt;</description></item><item><title>重设分辨率</title><link>/zh-cn/docs/latest/resolution_resampler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/resolution_resampler/</guid><description>&lt;p&gt;重设分辨率是一个Aegisub自带的工具，用来修改
+&lt;a href="/zh-cn/docs/latest/script_resolution/"&gt;脚本分辨率&lt;/a&gt;
+同时修改所有与脚本分辨率相关的特效标签，所以应用过后看起来的效果能保持一致。它能根据分辨率修正所有边距的偏移量(甚至绝对位置)。它的用途包括：合并两个不同分辨率的脚本文件；对一个脚本进行4:3到16:9的比例适配；也能在像素宽高比1:1和变形像素比例之间进行转化。&lt;/p&gt;</description></item><item><title>字体收集器</title><link>/zh-cn/docs/latest/fonts_collector/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/fonts_collector/</guid><description>&lt;p&gt;字体收集器是一个自动化工具，它可以收集目前脚本中的所有字体，扫描系统的字体文件夹，并复制字体文件到你所选择的指定目录下。对话框看起来是这个样子：&lt;/p&gt;</description></item><item><title>音频</title><link>/zh-cn/docs/latest/audio/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/audio/</guid><description>&lt;p&gt;毫不夸张的说，Aegisub有着很先进的、可定制的音频模式，它既能显示波形也能显示频谱。
+有几种方式可以进行整句时间轴编辑和卡拉OK时间轴编辑。&lt;/p&gt;</description></item><item><title>制作时间轴</title><link>/zh-cn/docs/latest/timing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/timing/</guid><description>&lt;h2 id="主音频视图"&gt;主音频视图 &lt;a href="#%e4%b8%bb%e9%9f%b3%e9%a2%91%e8%a7%86%e5%9b%be" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;当你加载了音频文件，Aegisub将会出现如下图的界面：
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/zh/audio_display.png" width="796" height="207" alt="audio_display"&gt;
+&lt;/p&gt;
+&lt;p&gt;你可以按住并拖动该视图底部来改变音频波形/频谱显示的高度。&lt;/p&gt;
+&lt;p&gt;右边那几个能按下去的是切换按钮。按下去表示启用。按钮和控制按键的功能如下（许多默认都有&lt;a href="/zh-cn/docs/latest/keyboard_shortcuts/"&gt;快捷键&lt;/a&gt;）：&lt;/p&gt;</description></item><item><title>平移时间</title><link>/zh-cn/docs/latest/shift_times/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/shift_times/</guid><description>&lt;p&gt;&lt;strong&gt;平移时间&lt;/strong&gt;
+工具用来批量处理时间轴；它可以以不同的方式调整行的开始/结束时间。你可以在
+&lt;em&gt;计时&lt;/em&gt; -&amp;gt; &lt;em&gt;平移时间&lt;/em&gt; 中使用。&lt;/p&gt;
+&lt;p&gt;它看起来是这个样子:&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/shift_times.png#center" width="614" height="417" alt="shift_times"&gt;
+&lt;/p&gt;
+&lt;p&gt;窗口的左侧包含几个选项。&lt;/p&gt;</description></item><item><title>时间后续处理器</title><link>/zh-cn/docs/latest/timing_post-processor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/timing_post-processor/</guid><description>&lt;p&gt;时间后续处理器是很有用的工具，它可以通过各种方式来自动修正时间。&lt;/p&gt;
+&lt;h2 id="总览"&gt;总览 &lt;a href="#%e6%80%bb%e8%a7%88" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;正如截图所示，该工具具有三个功能:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提前开始/延后结束&lt;/li&gt;
+&lt;li&gt;使相邻字幕行连续，通过延后或者提前它们的开始和(或)结束时间&lt;/li&gt;
+&lt;li&gt;使行的开始/结束时间紧贴关键帧(只有在读取了视频的情况下才有效)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Dialog_timing_processor.png#center" width="654" height="355" alt="Dialog_timing_processor"&gt;
+&lt;/p&gt;</description></item><item><title>汉字计时器</title><link>/zh-cn/docs/latest/kanji_timer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/kanji_timer/</guid><description>&lt;p&gt;汉字计时器使得把打好K值的时间轴快速赋予到一条未打K值的时间轴非常方便。它多用于日文歌曲的卡拉OK时间轴制作。(常用于快速对应日文和罗马音)&lt;/p&gt;
+&lt;p&gt;这里有个汉字计时器的实际操作演示视频:
+&lt;a href="http://www.animereactor.dk/aegisub/demovids/kanji-timer.avi"&gt;下载演示视频&lt;/a&gt;
+(XviD MP3 AVI, 5 min 20 sec, 12 MB)&lt;/p&gt;</description></item><item><title>自动化</title><link>/zh-cn/docs/latest/automation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/</guid><description>&lt;p&gt;&lt;strong&gt;自动化&lt;/strong&gt;这个名词涵盖了Aegisub全部的脚本功能。&lt;/p&gt;
+&lt;h2 id="关于自动化"&gt;关于自动化 &lt;a href="#%e5%85%b3%e4%ba%8e%e8%87%aa%e5%8a%a8%e5%8c%96" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;自动化的目的单纯得就像名字一样&amp;mdash;&amp;mdash;能够自动完成字幕创作和编辑的不同的功能。
+原本主要用于创作&lt;a href="/zh-cn/docs/latest/glossary/karaoke_effect/"&gt;卡拉OK特效&lt;/a&gt;，但随着时间推移，用法也变得多样，支持更多的通用&lt;a href="/zh-cn/docs/latest/glossary/macro/"&gt;宏&lt;/a&gt;来向Aegisub添加新的功能。&lt;/p&gt;</description></item><item><title>卡拉OK模版执行器</title><link>/zh-cn/docs/latest/automation/karaoke_templater/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/karaoke_templater/</guid><description>&lt;p&gt;&lt;strong&gt;卡拉OK模版执行器&lt;/strong&gt;是一个Aegisub自带的&lt;a href="/zh-cn/docs/latest/automation/"&gt;自动化&lt;/a&gt;脚本。它的主要目的是帮助你使用特别设计的模版语言来制作&lt;a href="/zh-cn/docs/latest/glossary/karaoke_effect/"&gt;卡拉OK特效&lt;/a&gt;。卡拉OK模版执行器已随Aegisub安装并可以使用。&lt;/p&gt;
+&lt;h2 id="教程卡拉ok模版执行器介绍"&gt;教程：卡拉OK模版执行器介绍 &lt;a href="#%e6%95%99%e7%a8%8b%e5%8d%a1%e6%8b%89ok%e6%a8%a1%e7%89%88%e6%89%a7%e8%a1%8c%e5%99%a8%e4%bb%8b%e7%bb%8d" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/tutorial_1/"&gt;一个简单的例子&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/tutorial_2/"&gt;使用数学表达式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Using multiple template lines&lt;/li&gt;
+&lt;li&gt;More advanced effects with positioned syllables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="alert alert-warning" role="alert"&gt;
+&lt;strong&gt;TODO: &lt;/strong&gt;计划制作更多教程，并补完上面的教程。
+&lt;/div&gt;
+&lt;h2 id="相关"&gt;相关 &lt;a href="#%e7%9b%b8%e5%85%b3" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/declaring_template_and_code_lines/"&gt;声明template和code行&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/template_execution_rules_and_order/"&gt;模版执行器将在何时以及以何种顺序执行&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/template_modifiers/"&gt;template修饰语&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/inline_variables/"&gt;内联变量（$变量）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/code_lines_and_blocks/"&gt;code区和code行的规则&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/code_execution_environment/"&gt;code区/行的执行环境的内容&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;也请看一下&lt;a href="/zh-cn/docs/latest/automation/lua/modules/karaskel.lua/"&gt;Automation/Lua/Modules/karaskel.lua&lt;/a&gt;，有更多关于&lt;code&gt;line&lt;/code&gt;和&lt;code&gt;syl&lt;/code&gt;变量的内容，以及其他内容。&lt;/p&gt;
+&lt;h2 id="对于使用过-multi-template-的用户"&gt;对于使用过 &lt;em&gt;multi-template&lt;/em&gt; 的用户 &lt;a href="#%e5%af%b9%e4%ba%8e%e4%bd%bf%e7%94%a8%e8%bf%87-multi-template-%e7%9a%84%e7%94%a8%e6%88%b7" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;译者注：从2.x或是3.x版本入门的用户可以无视下面这块&amp;hellip;&amp;hellip;&lt;/p&gt;</description></item><item><title>声明template行和code行</title><link>/zh-cn/docs/latest/automation/karaoke_templater/declaring_template_and_code_lines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/karaoke_templater/declaring_template_and_code_lines/</guid><description>&lt;p&gt;本文档讲解如何声明template行和code行&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;template行和code行要把注释（Comment）左边的方框打上√&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;在特效栏，第一个被空格分隔的单词决定了该行是template行还是code行，是打好时间的karaoke行，还是设置好样式（被应用模板后）的karaoke行抑或其他的东西。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;如果在特效栏填入的第一个单词是&lt;code&gt;template&lt;/code&gt;，这行就是template行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;如果在特效栏填入的第一个单词是&lt;code&gt;code&lt;/code&gt;，这行就是code行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;如果在特效栏看到
+&lt;code&gt;fx&lt;/code&gt;，这行就是karaoke行被应用模板后生成的行，执行自动化模板时，这些行首先会被删除。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;如果在特效栏看到&lt;code&gt;Karaoke&lt;/code&gt;，&lt;code&gt;karaoke &lt;/code&gt;或者是空白的，这行就是打好时间的karaoke行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;如果特效栏含有其它的东西，这行就是未声明类型，不会被自动化模板执行器处理。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;p&gt;Template行和code行可以在template或code之后添加额外的文本，这些文本用一系列的被空格分隔的单词组成，被称作修饰语。欲了解更多请阅读&lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/template_modifiers/"&gt;Template修饰语&lt;/a&gt;。&lt;/p&gt;</description></item><item><title>卡拉OK模板执行环境和顺序</title><link>/zh-cn/docs/latest/automation/karaoke_templater/template_execution_rules_and_order/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/karaoke_templater/template_execution_rules_and_order/</guid><description>&lt;p&gt;本页描述了许多有关 卡拉OK模板执行器(&lt;em&gt;kara-templater&lt;/em&gt;)
+的工作方式，并且会解释为什么许多东西起作用，而另一些不起作用。&lt;/p&gt;
+&lt;p&gt;大多数的细节你在卡拉OK模板执行器中是不需要用到的，但是如果你在某些脚本中看到了你不理解的行为，那么本页面可能会解释它。&lt;/p&gt;</description></item><item><title>模版修饰语</title><link>/zh-cn/docs/latest/automation/karaoke_templater/template_modifiers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/karaoke_templater/template_modifiers/</guid><description>&lt;p&gt;template行和code行都可以带上几种修饰语&lt;/p&gt;
+&lt;p&gt;在修饰语和模板行类型中间请留一个半角空格，即在&lt;code&gt;template&lt;/code&gt; 或 &lt;code&gt;code&lt;/code&gt;
+后面添加空格后再添加修饰语。&lt;/p&gt;</description></item><item><title>内联变量</title><link>/zh-cn/docs/latest/automation/karaoke_templater/inline_variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/karaoke_templater/inline_variables/</guid><description>&lt;p&gt;本文档讲解在卡拉OK模板自动化时可用的&lt;strong&gt;内联变量&lt;/strong&gt;（&lt;strong&gt;$变量&lt;/strong&gt;）。&lt;/p&gt;
+&lt;h2 id="如何使用内联变量inline-variables"&gt;如何使用内联变量（inline variables） &lt;a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8%e5%86%85%e8%81%94%e5%8f%98%e9%87%8finline-variables" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;所有的内联变量头部都是一个$符号。内联变量只能用在template行，而不能用于code行。不过你可以在模板行的code区使用它们。&lt;/p&gt;</description></item><item><title>Code行 和 Code区</title><link>/zh-cn/docs/latest/automation/karaoke_templater/code_lines_and_blocks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/karaoke_templater/code_lines_and_blocks/</guid><description>&lt;p&gt;Code行和Code区是由卡拉OK模板执行器产生的概念，它们允许你使用小段的Lua代码来创作高级特效。
+代码可以是几个数字之间的简单运算，也可以是复杂的函数，例如生成各种各样的图形和颜色。&lt;/p&gt;</description></item><item><title>Execution envirionment</title><link>/zh-cn/docs/latest/automation/karaoke_templater/code_execution_environment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/karaoke_templater/code_execution_environment/</guid><description>&lt;p&gt;在code区和code行的Lua代码运行在一个隔离的全局环境，这让它们不会意外地影响到主脚本函数。&lt;/p&gt;
+&lt;p&gt;为了后期使用，你可以把你的数据存放到这个环境里，例如先在code行预先计算一些数值，然后后期再用code区把它们添加进模板。
+这个环境也可以包含许多预先定义的变量和函数，它们可以让特效模板书写起更加方便。&lt;/p&gt;</description></item><item><title>Automation Tutorials</title><link>/zh-cn/docs/latest/automation/karaoke_templater/tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/karaoke_templater/tutorial/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/tutorial_1/"&gt;教程一&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/tutorial_2/"&gt;教程二&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>教程一</title><link>/zh-cn/docs/latest/automation/karaoke_templater/tutorial_1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/karaoke_templater/tutorial_1/</guid><description>&lt;p&gt;欢迎来到这里！这是有关卡拉OK模板执行器的第一篇教程，它可以帮助你创作
+&lt;a href="/zh-cn/docs/latest/glossary/karaoke_effect/"&gt;卡拉OK特效&lt;/a&gt;。在一系列教程里，我们由简单到复杂来进行教学。&lt;/p&gt;
+&lt;h2 id="找到卡拉ok模板执行器karaoke-templater"&gt;找到卡拉OK模板执行器(Karaoke Templater) &lt;a href="#%e6%89%be%e5%88%b0%e5%8d%a1%e6%8b%89ok%e6%a8%a1%e6%9d%bf%e6%89%a7%e8%a1%8c%e5%99%a8karaoke-templater" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;你可以用两种方式运行卡拉OK模板应用器。我们主要讲解其中一种。&lt;/p&gt;
+&lt;p&gt;在Aegisub中的自动化菜单下找到卡拉OK模板应用器。&lt;/p&gt;</description></item><item><title>教程二</title><link>/zh-cn/docs/latest/automation/karaoke_templater/tutorial_2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/karaoke_templater/tutorial_2/</guid><description>&lt;p&gt;在 &lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/tutorial_1/"&gt;前一篇教程&lt;/a&gt;
+中，我们了解了如何使用卡拉OK模板执行器的基本特性，并且能创作简单的卡拉OK效果。
+本篇中，我们将继续走下去，拓展一些知识。&lt;/p&gt;
+&lt;div class="alert alert-warning" role="alert"&gt;
+&lt;strong&gt;TODO: &lt;/strong&gt;制作并插入截屏
+&lt;/div&gt;
+&lt;h2 id="准备"&gt;准备 &lt;a href="#%e5%87%86%e5%a4%87" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;就像前篇一样，准备好打好K值的行和用来预览效果的视频。在此不赘述有关细节。&lt;/p&gt;</description></item><item><title>Lua 相关</title><link>/zh-cn/docs/latest/automation/lua/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/lua/</guid><description>&lt;p&gt;Automation 4 Lua脚本引擎基于5.1版本的&lt;a href="http://www.lua.org"&gt;Lua脚本语言&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;此手册不会涉及Lua语言本身与Lua附带的标准库，而只会介绍Aegisub Automation
+4附加的功能和数据结构。请参阅&lt;a href="http://www.lua.org/manual/5.1/"&gt;Lua 5.1
+手册&lt;/a&gt;来了解语言本身和它的标准库。&lt;/p&gt;</description></item><item><title>注册</title><link>/zh-cn/docs/latest/automation/lua/registration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/lua/registration/</guid><description>&lt;p&gt;&lt;strong&gt;注册&lt;/strong&gt; 涵盖了以下内容：使你自己编写的Lua脚本&lt;a href="/zh-cn/docs/latest/automation/lua/"&gt;Automation 4
+Lua&lt;/a&gt;出现在Aegisub中、
+提供和脚本有关的信息、该脚本提供了什么样的 &lt;em&gt;特性&lt;/em&gt;。&lt;/p&gt;
+&lt;h2 id="有关特性feature的解释"&gt;有关特性(Feature)的解释 &lt;a href="#%e6%9c%89%e5%85%b3%e7%89%b9%e6%80%a7feature%e7%9a%84%e8%a7%a3%e9%87%8a" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Automation 4 中的一个最基础的概念就是 &lt;em&gt;特性&lt;/em&gt;
+。特性决定了Aegisub如何响应用户的动作去调用脚本。&lt;/p&gt;</description></item><item><title>字幕文件接口</title><link>/zh-cn/docs/latest/automation/lua/subtitle_file_interface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/lua/subtitle_file_interface/</guid><description>&lt;p&gt;This page describes the &lt;strong&gt;subtitle file interface&lt;/strong&gt; use in Automation 4
+Lua scripts to manipulate subtitle files.&lt;/p&gt;
+&lt;p&gt;此页面描述了用于 Automation 4 Lua 脚本中操作字幕文件的&lt;strong&gt;字幕文件接口&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;There is one special object (the &lt;strong&gt;subtitles&lt;/strong&gt; user data object) which
+has a number of functions, and a number of table formats defined.&lt;/p&gt;
+&lt;p&gt;这里定义了一个拥有多个方法（function）、表格式（table
+format）定义的特殊对象（&lt;strong&gt;subtitles&lt;/strong&gt;用户数据对象）。&lt;/p&gt;</description></item><item><title>进度报告</title><link>/zh-cn/docs/latest/automation/lua/progress_reporting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/lua/progress_reporting/</guid><description>&lt;p&gt;There functions are used to report various status and progress back to the GUI
+while a script is running.&lt;/p&gt;
+&lt;h2 id="progress-reporting"&gt;Progress reporting &lt;a href="#progress-reporting" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A progress dialogue box is always shown when an Automation 4 Lua script is
+running. You can use these functions to control what is displayed in it.&lt;/p&gt;
+&lt;h3 id="aegisubprogressset"&gt;aegisub.progress.set &lt;a href="#aegisubprogressset" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Synopsis: &lt;code&gt;aegisub.progress.set(percent)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Set the position of the percent-done bar in the progress window.&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;code&gt;percent&lt;/code&gt; (&lt;code&gt;number&lt;/code&gt;)&lt;/dt&gt;
+&lt;dd&gt;Number from 0 to 100.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h3 id="aegisubprogresstask"&gt;aegisub.progress.task &lt;a href="#aegisubprogresstask" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Synopsis: &lt;code&gt;aegisub.progress.task(msg, ...)&lt;/code&gt;&lt;/p&gt;</description></item><item><title>对话框</title><link>/zh-cn/docs/latest/automation/lua/dialogs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/lua/dialogs/</guid><description>&lt;p&gt;These functions are used to display dialogs for the user to interact with.&lt;/p&gt;
+&lt;h2 id="display-dialog-functions"&gt;Display dialog functions &lt;a href="#display-dialog-functions" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="aegisubdialogdisplay"&gt;aegisub.dialog.display &lt;a href="#aegisubdialogdisplay" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Synopsis: &lt;code&gt;button, result_table = aegisub.dialog.display(dialog, buttons, button_ids)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This function displays a configuration dialog to the user and waits for it to
+close. It then returns whether the user accepted or cancelled the dialog, and
+what values were input.&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;code&gt;@dialog&lt;/code&gt; (&lt;code&gt;table&lt;/code&gt;)&lt;/dt&gt;
+&lt;dd&gt;A &lt;a href="/zh-cn/docs/latest/automation/lua/dialogs/#dialog-definition-table-format"&gt;Dialog Definition table&lt;/a&gt; containing
+the controls to be in the dialog.&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;@buttons&lt;/code&gt; (&lt;code&gt;table&lt;/code&gt;)&lt;/dt&gt;
+&lt;dd&gt;Optional. This is an array of strings defining the buttons that appear in
+the dialog. If this is left out, empty or is otherwise not a table, the
+standard Ok and Cancel buttons appear.
+The strings in this table are used as labels on the buttons, and for
+identifying them in the return values of the function.&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;@button_ids&lt;/code&gt; (&lt;code&gt;table&lt;/code&gt;)&lt;/dt&gt;
+&lt;dd&gt;Optional. A table which specifies which buttons in the dialog correspond to
+which &lt;a href="/zh-cn/docs/latest/automation/lua/dialogs/#dialog-button-ids"&gt;platform button IDs&lt;/a&gt;, making it possible to
+specify which button will be triggered if the user hits Enter or ESC.&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;button&lt;/code&gt; (&lt;code&gt;boolean&lt;/code&gt; or &lt;code&gt;string&lt;/code&gt;)&lt;/dt&gt;
+&lt;dd&gt;If no custom buttons were specified, this is a boolean telling whether
+Ok (true) or Cancel (false) were clicked in the dialog. If custom buttons
+were specified, this is the text on the button clicked by the user. Even if
+custom buttons were specified, this can still be boolean false if the user
+closes the dialog without pressing any button.&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;result_table&lt;/code&gt; (&lt;code&gt;table&lt;/code&gt;)&lt;/dt&gt;
+&lt;dd&gt;The &lt;a href="/zh-cn/docs/latest/automation/lua/dialogs/#dialog-result-table-format"&gt;Dialog Result table&lt;/a&gt; corresponding to
+the values the user input in the dialog.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;div class="card"&gt;
+&lt;strong class="card-header"&gt;Example&lt;/strong&gt;
+&lt;div class="card-body"&gt;
+&lt;pre&gt;&lt;code class="language-lua"&gt;config = {
+{class=&amp;quot;label&amp;quot;, text=&amp;quot;Times to frobulate&amp;quot;, x=0, y=0},
+{class=&amp;quot;intedit&amp;quot;, name=&amp;quot;times&amp;quot;, value=20, x=0, y=1}
+}
+btn, result = aegisub.dialog.display(config,
+{&amp;quot;Frobulate&amp;quot;, &amp;quot;Nevermind&amp;quot;},
+{&amp;quot;ok&amp;quot;=&amp;quot;Frobulate&amp;quot;, &amp;quot;cancel&amp;quot;=&amp;quot;Nevermind&amp;quot;})
+if btn then
+frobulate(result.times)
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="aegisubdialogopen"&gt;aegisub.dialog.open &lt;a href="#aegisubdialogopen" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Synopsis: &lt;code&gt;file_name = aegisub.dialog.open(title, default_file, default_dir, wildcards, allow_multiple=false, must_exist=true)&lt;/code&gt;&lt;/p&gt;</description></item><item><title>杂项API</title><link>/zh-cn/docs/latest/automation/lua/miscellaneous_apis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/lua/miscellaneous_apis/</guid><description>&lt;p&gt;This page documents &lt;strong&gt;miscellaneous APIs useful for working with
+subtitles&lt;/strong&gt;. These can&amp;rsquo;t be clearly placed into any of the other main
+categories and there&amp;rsquo;s too few of each kind to warrant a separate category.&lt;/p&gt;
+&lt;h2 id="aegisubcancel"&gt;aegisub.cancel &lt;a href="#aegisubcancel" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Synopsis: &lt;code&gt;aegisub.cancel()&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Immediately end execution of the current script, rolling back any changes
+that have been made in it.&lt;/p&gt;
+&lt;p&gt;This function never returns.&lt;/p&gt;
+&lt;h2 id="aegisubtext_extents"&gt;aegisub.text_extents &lt;a href="#aegisubtext_extents" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Synopsis: &lt;code&gt;width, height, descent, ext_lead = aegisub.text_extents(style, text)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Obtain system font metrics and determine the rendered size in pixels of the
+given &lt;strong&gt;text&lt;/strong&gt; when using the &lt;strong&gt;style&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Lua模块</title><link>/zh-cn/docs/latest/automation/lua/modules/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/lua/modules/</guid><description>&lt;p&gt;Aegisub内置了许多lua模块。 一些模块例如
+&lt;a href="/zh-cn/docs/latest/automation/lua/modules/karaskel.lua/"&gt;karaskel.lua&lt;/a&gt;
+用来实现字幕特效功能，而其他的模块例如 &lt;a href="/zh-cn/docs/latest/automation/lua/modules/re/"&gt;re&lt;/a&gt;
+则补充了Lua标准库缺少的部分内容。&lt;/p&gt;
+&lt;h2 id="使用模块"&gt;使用模块 &lt;a href="#%e4%bd%bf%e7%94%a8%e6%a8%a1%e5%9d%97" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在脚本顶部添加&lt;code&gt;modulename = require 'aegisub.modulename'&lt;/code&gt;
+格式的代码即可。 例如，想要包含 &lt;a href="/zh-cn/docs/latest/automation/lua/modules/re/"&gt;re&lt;/a&gt;
+模块，就添加一句:&lt;code&gt;re = require 'aegisub.re'&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>karaskel.lua</title><link>/zh-cn/docs/latest/automation/lua/modules/karaskel.lua/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/lua/modules/karaskel.lua/</guid><description>&lt;p&gt;Automation 4的核心文件 &lt;code&gt;karaskel.lua&lt;/code&gt; 内置了许多函数，用来协助Automation
+4 Lua方面的卡拉OK特效制作 它定义了几种新的数据结构，也拓展了Automation 4
+本身定义的一些。&lt;/p&gt;</description></item><item><title>utils.lua</title><link>/zh-cn/docs/latest/automation/lua/modules/util/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/lua/modules/util/</guid><description>&lt;p&gt;Automation 4 Lua include的文件 &lt;code&gt;utils.lua&lt;/code&gt;
+包括了多种不同的辅助函数来帮助你写Lua脚本。 这个文件并没有统一的主题。&lt;/p&gt;
+&lt;h2 id="用法"&gt;用法 &lt;a href="#%e7%94%a8%e6%b3%95" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;使用 &lt;code&gt;util = require 'aegisub.util'&lt;/code&gt; 来导入这个模块。&lt;/p&gt;
+&lt;h2 id="table-functions"&gt;Table functions &lt;a href="#table-functions" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;以多种方式复制一个table是经常要做的工作之一。 &lt;code&gt;util&lt;/code&gt;
+提供了一些函数来解决这些问题。&lt;/p&gt;</description></item><item><title>unicode.lua</title><link>/zh-cn/docs/latest/automation/lua/modules/unicode/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/lua/modules/unicode/</guid><description>&lt;p&gt;&lt;code&gt;unicode&lt;/code&gt;模块包含一系列为Auto4设置的辅助函数，主要用来处理 UTF-8
+编码的文本。&lt;/p&gt;
+&lt;h2 id="用法"&gt;用法 &lt;a href="#%e7%94%a8%e6%b3%95" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;用 &lt;code&gt;unicode = require 'aegisub.unicode'&lt;/code&gt;导入模块。&lt;/p&gt;
+&lt;h2 id="unicodecharwidth"&gt;unicode.charwidth &lt;a href="#unicodecharwidth" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;摘要：&lt;code&gt;width = unicode.charwidth(instring, index=1)&lt;/code&gt;&lt;/p&gt;</description></item><item><title>cleantags.lua</title><link>/zh-cn/docs/latest/automation/lua/modules/cleantags/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/lua/modules/cleantags/</guid><description>&lt;div class="alert alert-warning" role="alert"&gt;
+&lt;strong&gt;TODO: &lt;/strong&gt;Write documentation
+&lt;/div&gt;</description></item><item><title>剪贴板</title><link>/zh-cn/docs/latest/automation/lua/modules/clipboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/lua/modules/clipboard/</guid><description>&lt;p&gt;&lt;code&gt;clipboard&lt;/code&gt;模块提供读取和写入剪贴板的函数。&lt;/p&gt;
+&lt;h2 id="section"&gt;使用 &lt;a href="#section" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;使用&lt;code&gt;clipboard = require 'aegisub.clipboard'&lt;/code&gt;导入此模块。&lt;/p&gt;
+&lt;h3 id="clipboardget"&gt;clipboard.get() &lt;a href="#clipboardget" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;示例：&lt;code&gt;text = clipboard.get()&lt;/code&gt;&lt;/p&gt;</description></item><item><title>re</title><link>/zh-cn/docs/latest/automation/lua/modules/re/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/lua/modules/re/</guid><description>&lt;p&gt;&lt;code&gt;re&lt;/code&gt; 模块是封装过的
+boost::regex，加入它的意图是为了取代Lua内置的正则表达式。相比Lua内置的正则，它有两个主要优点:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;完整的 Unicode 支持。Lua
+正则对字节进行操作，而不是字符，这在我们处理多字节字符时时常引起问题。&lt;/li&gt;
+&lt;li&gt;更强大和灵活的表达式。严格地说，Lua
+不支持正则表达式；它只是拥有一个较小的模式匹配语言，只能实现正则表达式的部分功能。
+boost::regex 则完整兼容PRCE标准的正则表达式。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="用法"&gt;用法 &lt;a href="#%e7%94%a8%e6%b3%95" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;使用 &lt;code&gt;re = require 'aegisub.re'&lt;/code&gt; 导入该模块。&lt;/p&gt;</description></item><item><title>自动化脚本管理器</title><link>/zh-cn/docs/latest/automation/manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/manager/</guid><description>&lt;p&gt;自动化管理器窗口被用来查看，读取和卸载 &lt;a href="/zh-cn/docs/latest/automation/"&gt;自动化&lt;/a&gt;脚本。&lt;/p&gt;
+&lt;p&gt;自动化管理器窗口从自动化菜单或者
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Automation-toolbar-icon.png" width="16" height="15" alt="Automation-toolbar-icon"&gt;
+按键打开。&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/automation_manager.png" width="850" height="559" alt="automation_manager"&gt;
+&lt;/p&gt;
+&lt;h2 id="脚本列表"&gt;脚本列表 &lt;a href="#%e8%84%9a%e6%9c%ac%e5%88%97%e8%a1%a8" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;窗口的主要区域是已经被挂载的脚本文件.记住一个脚本文件可能含有几个
+&lt;a href="/zh-cn/docs/latest/glossary/automation_script_feature/"&gt;features&lt;/a&gt;，例如一个脚本文件能定义两个&lt;a href="/zh-cn/docs/latest/glossary/macro/"&gt;宏&lt;/a&gt;和一个输出过滤器。&lt;/p&gt;</description></item><item><title>运行宏</title><link>/zh-cn/docs/latest/automation/running_macros/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/running_macros/</guid><description>&lt;p&gt;&lt;a href="/zh-cn/docs/latest/automation/"&gt;自动化&lt;/a&gt;的&lt;a href="/zh-cn/docs/latest/glossary/macro/"&gt;宏&lt;/a&gt;是以选项的形式出现在自动化菜单中的。&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/automation_menu.png" width="272" height="228" alt="automation_menu"&gt;
+&lt;/p&gt;
+&lt;p&gt;通常可以使用自动化菜单中的，在分隔线前的第一个选项来打开&lt;a href="/zh-cn/docs/latest/automation/manager/"&gt;自动化脚本管理器&lt;/a&gt;窗口。&lt;/p&gt;
+&lt;p&gt;分隔线以下是所有已加载宏的列表。在上面示例图中共加载了七个宏。第三个，&lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/"&gt;卡拉OK模版执行器&lt;/a&gt;是不可用状态，因为这个宏不能在当前的字幕文件里运行，这是因为当前字幕文件中没有卡拉OK模版行。其它的宏也可能因其他一些原因而不可用。第四个宏在&lt;a href="/zh-cn/docs/latest/options/#hotkeys"&gt;选项对话框&lt;/a&gt;中设置了快捷键。&lt;/p&gt;
+&lt;p&gt;如果想运行一个宏，只需在自动化菜单中点击一个即可。一些宏可能还会找你要一些参数信息，还有些只会作用于所选的字幕行。当你从网上下到一个宏之后，一定要记得看一下附带的说明。&lt;/p&gt;</description></item><item><title>附带的宏</title><link>/zh-cn/docs/latest/automation/included_macros/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/automation/included_macros/</guid><description>&lt;p&gt;这里列出了Aegisub自带了几个宏。&lt;/p&gt;
+&lt;h2 id="应用卡拉ok模版"&gt;应用卡拉OK模版 &lt;a href="#%e5%ba%94%e7%94%a8%e5%8d%a1%e6%8b%89ok%e6%a8%a1%e7%89%88" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;这个是卡拉OK脚本执行器的宏，用法请参见&lt;a href="/zh-cn/docs/latest/automation/karaoke_templater/"&gt;卡拉OK脚本执行器&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;这个宏只有在字幕文件中至少有一行模版行时才可用。&lt;/p&gt;
+&lt;h2 id="转换为全角字符"&gt;转换为全角字符 &lt;a href="#%e8%bd%ac%e6%8d%a2%e4%b8%ba%e5%85%a8%e8%a7%92%e5%ad%97%e7%ac%a6" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;将所有ASCII半角字符转为日文的全角字符。&lt;/p&gt;</description></item><item><title>History of Automation</title><link>/zh-cn/docs/latest/history_of_automation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/history_of_automation/</guid><description>&lt;p&gt;The Automation system in Aegisub has evolved from a very basic and hardly useful stand-alone system for creating basic karaoke effects into a very powerful extension mechanism. Here&amp;rsquo;s a short account of its history, from the principal author of the systems.&lt;/p&gt;
+&lt;h2 id="automation-1-really-just-karaoke-effector"&gt;Automation 1, really just Karaoke Effector &lt;a href="#automation-1-really-just-karaoke-effector" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Effector_screenshot.png" width="664" height="574" alt="Effector_screenshot"&gt;
+&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Karaoke Effector&lt;/em&gt; program was originally created for making karaoke effects for a small translation project, that later died. It was written in Borland Delphi and used Lua 5.0 for scripting. This use of Lua is the primary reason I even call it &amp;ldquo;Automation 1&amp;rdquo; today. It basically allowed creating effects similar to what the &lt;em&gt;simple-k-replacer&lt;/em&gt; script from Automation 3 does, but in a more complicated and not as usable way.&lt;/p&gt;</description></item><item><title>选项</title><link>/zh-cn/docs/latest/options/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/options/</guid><description>&lt;p&gt;Aegisub是可高度定制的软件，因而它有大量的选项供用户选择。这些选项都在选项对话框中，您可以在&amp;quot;查看&amp;quot;菜单里找到。这个页面提供可用选项的说明。&lt;/p&gt;</description></item><item><title>自动保存</title><link>/zh-cn/docs/latest/autosave/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/autosave/</guid><description>&lt;p&gt;默认情况下Aegisub每隔固定的时间就会自动保存一份当前正在编辑的字幕文件的备份(如果在这几分钟内有更改文件内容)。这些备份文件在 Windows 系统中位于 &lt;code&gt;%APPDATA%\Aegisub\autosave&lt;/code&gt;，在 Linux 系统中位于 &lt;code&gt;~/.aegisub/autosave&lt;/code&gt;，在 OS X 系统中则位于 &lt;code&gt;~/Library/Application Support/Aegisub/autosave&lt;/code&gt;。您还可以直接在 Aegisub 中通过 “文件” → “打开自动保存的字幕&amp;hellip;” 浏览这些备份。&lt;/p&gt;</description></item><item><title>Aegisub路径变量</title><link>/zh-cn/docs/latest/aegisub_path_specifiers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/aegisub_path_specifiers/</guid><description>&lt;p&gt;Aegisub使用一个简单的系统来表示文件的位置。大部分Aegisub表示的路径可以用一个特殊变量表示，每个变量都对应一个路径。注意，路径说明符号末尾应该有，除非它是一个完整路径(例如 ?scripta 就是一个错误写法)。&lt;/p&gt;</description></item><item><title>脚本配置</title><link>/zh-cn/docs/latest/properties/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/properties/</guid><description>&lt;p&gt;&lt;strong&gt;脚本配置&lt;/strong&gt; 是指一些头部信息和其他选项，它们会以不同的方式影响整个字幕脚本。在
+&lt;em&gt;文件&lt;/em&gt; -&amp;gt; &lt;em&gt;配置&lt;/em&gt; 中查看和更改。&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Properties.png#center" width="400" height="482" alt="Properties"&gt;
+&lt;/p&gt;
+&lt;p&gt;脚本配置的内容有:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;标题&lt;/strong&gt;, &lt;strong&gt;脚本原作&lt;/strong&gt;, &lt;strong&gt;翻译&lt;/strong&gt;, &lt;strong&gt;编辑&lt;/strong&gt;, &lt;strong&gt;计时&lt;/strong&gt;, &lt;strong&gt;同步点&lt;/strong&gt;,
+&lt;strong&gt;编修者&lt;/strong&gt; 和 &lt;strong&gt;更新摘要&lt;/strong&gt; -
+这些信息不会影响到任何显示字幕的渲染(只用来填写脚本作者)。如果觉得它们有用就填上合适的内容。&lt;/p&gt;</description></item><item><title>脚本分辨率</title><link>/zh-cn/docs/latest/script_resolution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/script_resolution/</guid><description>&lt;p&gt;ASS字幕文件，在某种程度上可以独立于视频文件使用。
+这就需要使用虚拟视频分辨率来控制字体大小和坐标，这个分辨率这就是&amp;quot;脚本分辨率&amp;quot;。
+不幸的是，由于VSFilter的一些BUG，渲染和视频分辨率不同的字幕脚本时这是不可靠的。&lt;/p&gt;</description></item><item><title>附件管理器</title><link>/zh-cn/docs/latest/attachment_manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/attachment_manager/</guid><description>&lt;p&gt;附件管理器允许你把字体或者图片附在字幕脚本文件中(通过将它们编码为文本)。有时候用于多人共同工作的脚本上，这样生成的字幕文件和字体是一个整体，免去了小伙伴之间单独传输字体文件的麻烦。然而它的功能有限并且容易引起问题。&lt;/p&gt;</description></item><item><title>Commands</title><link>/zh-cn/docs/latest/commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/commands/</guid><description/></item><item><title/><link>/zh-cn/docs/latest/audio_timing_tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/audio_timing_tutorial/</guid><description>&lt;ol&gt;
+&lt;li&gt;REDIRECT &lt;a href="/zh-cn/docs/latest/audio/#basicaudiotiming"&gt;Audio#basicaudiotiming&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title/><link>/zh-cn/docs/latest/fix_timing_tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/fix_timing_tutorial/</guid><description>&lt;ol&gt;
+&lt;li&gt;REDIRECT &lt;a href="/zh-cn/docs/latest/shift_times/"&gt;Shift_Times&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title/><link>/zh-cn/docs/latest/keyboard_shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/keyboard_shortcuts/</guid><description>&lt;ol&gt;
+&lt;li&gt;REDIRECT &lt;a href="/zh-cn/docs/latest/options/#hotkeys"&gt;Options#hotkeys&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Automation script feature</title><link>/zh-cn/docs/latest/glossary/automation_script_feature/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/glossary/automation_script_feature/</guid><description>&lt;p&gt;In Automation 4 a &lt;strong&gt;feature&lt;/strong&gt; is a function a script makes available to Aegisub. Currently two kinds of features are specified: Export filters and macros.&lt;/p&gt;
+&lt;p&gt;If a script defines two macros and one export filter, it is said to have defined three features in total.&lt;/p&gt;</description></item><item><title>宏</title><link>/zh-cn/docs/latest/glossary/macro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/glossary/macro/</guid><description>&lt;p&gt;In computer programs, a &lt;strong&gt;macro&lt;/strong&gt; is a (usually relatively small) snippet of program code that can easily be added to the program, to add a new function or such, intended to automate some aspect of using the program.&lt;/p&gt;</description></item><item><title>卡拉OK特效</title><link>/zh-cn/docs/latest/glossary/karaoke_effect/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/latest/glossary/karaoke_effect/</guid><description>&lt;p&gt;&lt;strong&gt;卡拉OK&lt;/strong&gt;就是（业余爱好者）跟着唱一首歌，通常是只有伴奏的版本。当唱卡拉OK时歌词通常会显示在电视屏幕上，并且会把唱过的部分高亮显示。&lt;/p&gt;
+&lt;p&gt;而在字幕制作中，卡拉OK通常是指那些歌词本身。&lt;strong&gt;卡拉OK特效&lt;/strong&gt;是指它们被高亮的方式。&lt;/p&gt;</description></item></channel></rss>

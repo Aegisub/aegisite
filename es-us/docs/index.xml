@@ -1,21 +1,163 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentación Aegisub on</title><link>/es-us/docs/</link><description>Recent content in Documentación Aegisub on</description><generator>Hugo -- gohugo.io</generator><atom:link href="/es-us/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Página de inicio</title><link>/es-us/docs/latest/main_page/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/main_page/</guid><description>Bienvenido al manual Aegisub. Vea nuestra página Acerca de para más info del programa, o explore los temas en el panel a la izquierda.
-Documentación relacionada con el desarrollo de Aegisub y con la compilación del mismo está ubicada en el rastreo de errores.
-Puntos de partida # Resumen breve de Aegisub
-Tareas comunes:
-Sincronizar un guion traducido al audio Composición tipográfica básica de señales en pantalla Poner subtítulos completados en el video (para la reproducción o distribución) Traducir un archivo de subtítulos de un idioma a otro Corregir un subtítulo que no está correctamente sincronizado al video Sincronizar karaoke con una canción Crear efectos al estilo karaoke</description></item><item><title>¿Qué es Aegisub?</title><link>/es-us/docs/latest/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/about/</guid><description>Aegisub originalmente se creó como una herramienta para hacer del proceso de formateo, particularmente en fansubs de ánime, una experiencia menos dolorosa. Al inicio del proyecto, a muchos otros programas que manejaban el formato Advanced Substation Alpha les faltaban (y en muchos casos les siguen faltando; desarrollo en varios programas competidores desde entonces se ha abandonado por razones completamente ajenas a Aegisub) varias funciones esenciales, o tenían demasiados errores o poca fiabilidad como para ser realmente útiles.</description></item><item><title>Resumen general</title><link>/es-us/docs/latest/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/overview/</guid><description>Este pantallazo demuestra la ventana principal Aegisub con todo abierto:
-Las dos zonas más importantes son la Cuadrícula de subtítulos y la Caja de edición.
-La cuadrícula enseña todos los renglones de subtítulos del archivo con el que uno esté trabajando. Los renglones se resaltan con colores diferentes según sus propiedades. Por ejemplo, renglones con fondo verde están seleccionados. Renglones de fondo azul son comentarios que no aparecerán en la pantalla.</description></item><item><title>Tutoriales</title><link>/es-us/docs/latest/tutorials/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/tutorials/</guid><description>Los siguientes tutoriales están disponibles para Aegisub:
-Tutoriales en video # Sincronización de diálogo # Descripción: Un video que describe cómo sincronizar usando Aegisub.
-Por: Karl Blomster
-Enlace: http://mod16.org/aegisub/timingtutorialimprovisation.mkv
-Descripción: Un video demostrando sincronización por un usuario experimentado a toda velocidad en Aegisub.
-Por: Karl Blomster
-Enlace: http://mod16.org/aegisub/timing-fullspeed.mkv
-Sincronizador Kanji # Descripción: Un tutorial en video que demuestra cómo usar el sincronizador kanji para sincronizar kanji con romaji. Por: Niels Martin Hansen Detalles: XviD MP3 AVI, 5 min 20 seg, 12 MB Enlace: http://jfs.</description></item><item><title>Editar subtítulos</title><link>/es-us/docs/latest/editing_subtitles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/editing_subtitles/</guid><description>La edición de subtítulos es para lo que sirve Aegisub. Esta página trata sobre edición básica de renglones de subtítulos; para más información de tipografía de subtítulos, véase tipografía. Para más información acerca de cronometrar renglones de subtítulos, véase trabajar con audio.
-Abrir subtítulos # En el menú Archivo hay cuatro opciones que se relacionan con abrir o crear subtítulos:
-Nuevos subtítulos Crear un nuevo guion en blanco (cierra el archivo actual).</description></item><item><title>Aplicar subtítulos</title><link>/es-us/docs/latest/attaching_subtitles_to_video/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/attaching_subtitles_to_video/</guid><description>En codificación digital, existen dos métodos principales de incluir subtítulos en un video: subtítulos soft/sueltos y subtítulos hard/incrustados. Ambos métodos tienen ventajas y desventajas distintas, junto con varios argumentos a favor y en contra de cada método.
-Incrustación/Hardsubbing # Hardsubbing es un método que &amp;ldquo;graba&amp;rdquo; subtítulos en la parte fotográfica de una película. Los subtítulos incrustados digitales son muy parecidos a las cintas VHS subtituladas; los subtítulos no pueden apagarse.</description></item><item><title>Asistente de traducción</title><link>/es-us/docs/latest/translation_assistant/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/translation_assistant/</guid><description>El asistente de traducción es una herramienta valiosa para traducir subtítulos de un idioma a otro. Le permite traducir de la manera más eficiente posible, permitiéndole escribir el texto traducido sin tener que preocuparse por seleccionar el original u olvidar lo que estaba escrito en él. También analiza las etiquetas manuales de ASS y se las salta.
-Resumen # La ventana del asistente es sencillo: le enseña el renglón original sin formato y una caja donde puede escribir la traducción.</description></item><item><title>Introducción a la composición tipográfica/Typesetting</title><link>/es-us/docs/latest/typesetting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/typesetting/</guid><description>La definición (traducida) de Wikipedia de typesetting/composición tipográfica: &amp;ldquo;Typesetting es la presentación de texto en forma gráfica en papel u otro medio.&amp;rdquo; En el contexto del subtitulado, significa tres cosas:
-Presentar (una traducción del) diálogo hablado al espectador de una manera legible y visualmente agradable. Traducir cualquier texto de fondo de idioma extranjero (títulos de episodios, información de la escena como tiempo/lugar y otros escritos importantes para la trama sobre cosas en el trasfondo) y presentar la traducción al espectador, preferiblemente de modo que parece que la traducción estuviera ahí todo el tiempo (pero siempre conservando legibilidad).</description></item><item><title>Trabajando con video</title><link>/es-us/docs/latest/video/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/video/</guid><description>Aegisub no es un reproductor de video (ni de media), pero aún así soporta abrir y trabajar con video de varias maneras. Esta página es una referencia de cómo el manejo de video de Aegisub funciona; para una intro más suave de cómo simplemente lograr que las cosas se muestren correctamente puede que quiera leer las páginas Disposición visual de texto.
-Abrir video # Para abrir un archivo de video, vaya al menú Video y dele a Abrir archivo de video.</description></item><item><title>Editar estilos</title><link>/es-us/docs/latest/styles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/styles/</guid><description>Un style en formato ASS es un conjunto de reglas de estilo tipográfico que se aplica a las líneas de diálogo. Los parámetros de estilo se pueden anular con etiquetas manuales; los estilos existen para que no haya que especificar todas las etiquetas en cada línea.
-El gestor de estilos # La herramienta de gestión de estilos de Aegisub (que se accede desde el menú Subtítulos) proporciona diversos medios para organizar, guardar y editar estilos.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentación Aegisub on Aegisub</title><link>/es-us/docs/</link><description>Recent content in Documentación Aegisub on Aegisub</description><generator>Hugo -- gohugo.io</generator><language>es-US</language><atom:link href="/es-us/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Página de inicio</title><link>/es-us/docs/latest/main_page/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/main_page/</guid><description>&lt;p&gt;Bienvenido al manual Aegisub. Vea nuestra página &lt;a href="/es-us/docs/latest/about/"&gt;Acerca de&lt;/a&gt; para más info del programa, o explore los temas en el panel a la izquierda.&lt;/p&gt;
+&lt;p&gt;Documentación relacionada con el desarrollo de Aegisub y con la compilación del mismo está ubicada en el &lt;a href="https://github.com/Aegisub/Aegisub/issues"&gt;rastreo de errores&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="puntos-de-partida"&gt;Puntos de partida &lt;a href="#puntos-de-partida" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href="/es-us/docs/latest/overview/"&gt;Resumen breve de Aegisub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tareas comunes:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/es-us/docs/latest/audio/"&gt;Sincronizar un guion traducido al audio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/es-us/docs/latest/tutorials/#composición-tipográfica-visual"&gt;Composición tipográfica básica de señales en pantalla&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/es-us/docs/latest/attaching_subtitles_to_video/"&gt;Poner subtítulos completados en el video&lt;/a&gt; (para la reproducción o distribución)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/es-us/docs/latest/translation_assistant/"&gt;Traducir un archivo de subtítulos de un idioma a otro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/es-us/docs/latest/shift_times/"&gt;Corregir un subtítulo que no está correctamente sincronizado al video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/es-us/docs/latest/tutorials/#sincronizador-kanji"&gt;Sincronizar karaoke con una canción&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/es-us/docs/latest/automation/karaoke_templater/tutorial_1/"&gt;Crear efectos al estilo karaoke&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>¿Qué es Aegisub?</title><link>/es-us/docs/latest/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/about/</guid><description>&lt;p&gt;Aegisub originalmente se creó como una herramienta para hacer del proceso
+de formateo, particularmente en fansubs de ánime, una experiencia menos dolorosa.
+Al inicio del proyecto, a muchos otros programas que manejaban el formato
+Advanced Substation Alpha les faltaban (y en muchos casos les siguen faltando; desarrollo
+en varios programas competidores desde entonces se ha abandonado por razones completamente ajenas a Aegisub) varias funciones esenciales, o tenían demasiados errores o poca fiabilidad como para ser realmente útiles.&lt;/p&gt;</description></item><item><title>Resumen general</title><link>/es-us/docs/latest/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/overview/</guid><description>&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Main-window-overview.png" width="1018" height="784" alt="Main-window-overview"&gt;
+&lt;/p&gt;
+&lt;p&gt;Este pantallazo demuestra la ventana principal Aegisub con todo abierto:&lt;/p&gt;
+&lt;p&gt;Las dos zonas más importantes son la &lt;strong&gt;Cuadrícula de subtítulos&lt;/strong&gt; y la &lt;strong&gt;Caja de edición&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;La &lt;strong&gt;cuadrícula&lt;/strong&gt; enseña todos los renglones de subtítulos del archivo con el que uno esté
+trabajando. Los renglones se resaltan con colores diferentes según sus propiedades.
+Por ejemplo, renglones con fondo verde están seleccionados. Renglones de fondo azul son
+comentarios que no aparecerán en la pantalla. Renglones de fondo amarillo claro son visibles en el cuadro de video actual. Renglones con texto rojo se solapan en tiempo con el renglón actualmente seleccionado. Dele clic a un renglón aquí para seleccionarlo para la edición.&lt;/p&gt;</description></item><item><title>Tutoriales</title><link>/es-us/docs/latest/tutorials/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/tutorials/</guid><description>&lt;p&gt;Los siguientes tutoriales están disponibles para Aegisub:&lt;/p&gt;
+&lt;h2 id="tutoriales-en-video"&gt;Tutoriales en video &lt;a href="#tutoriales-en-video" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="sincronización-de-diálogo"&gt;Sincronización de diálogo &lt;a href="#sincronizaci%c3%b3n-de-di%c3%a1logo" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Descripción: Un video que describe cómo sincronizar usando Aegisub.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Por: Karl Blomster&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enlace: &lt;a href="http://mod16.org/aegisub/timingtutorialimprovisation.mkv"&gt;http://mod16.org/aegisub/timingtutorialimprovisation.mkv&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Descripción: Un video demostrando sincronización por un usuario experimentado a toda velocidad en Aegisub.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Por: Karl Blomster&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enlace: &lt;a href="http://mod16.org/aegisub/timing-fullspeed.mkv"&gt;http://mod16.org/aegisub/timing-fullspeed.mkv&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="sincronizador-kanji"&gt;Sincronizador Kanji &lt;a href="#sincronizador-kanji" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Descripción: Un tutorial en video que demuestra cómo usar el sincronizador kanji para sincronizar kanji con romaji.&lt;/li&gt;
+&lt;li&gt;Por: Niels Martin Hansen&lt;/li&gt;
+&lt;li&gt;Detalles: XviD MP3 AVI, 5 min 20 seg, 12 MB&lt;/li&gt;
+&lt;li&gt;Enlace: &lt;a href="http://jfs.itcamefromjapan.net/aegisub/demovids/kanji-timer.avi"&gt;http://jfs.itcamefromjapan.net/aegisub/demovids/kanji-timer.avi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="sincronizar-karaoke"&gt;Sincronizar Karaoke &lt;a href="#sincronizar-karaoke" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="alert alert-warning" role="alert"&gt;
+&lt;strong&gt;TODO: &lt;/strong&gt;Video pendiente
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Por: Niels Martin Hansen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="composición-tipográfica-visual"&gt;Composición tipográfica visual &lt;a href="#composici%c3%b3n-tipogr%c3%a1fica-visual" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Descripción: Un tutorial en video que demuestra cómo usar las nuevas funciones de composición tipográfica (Visual Typesetting) de Aegisub 2.&lt;/li&gt;
+&lt;li&gt;Por: Rodrigo Braz Monteiro&lt;/li&gt;
+&lt;li&gt;Detalles: Matroska/XviD/Vorbis, 10 min 22 seg, 25 MB&lt;/li&gt;
+&lt;li&gt;Subtítulos: inglés, portugués (Brazil) (por amz), francés (por shawurai), alemán (por Sqall)&lt;/li&gt;
+&lt;li&gt;Enlace: &lt;a href="http://www.malakith.net/amz/blah/screencast/%5bAegisub%5d_Visual_Typesetting_Tutorial_%5b8B24834E%5d.mkv"&gt;malakith.net&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="tutoriales-escritos"&gt;Tutoriales escritos &lt;a href="#tutoriales-escritos" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/docs/latest/karaoke_timing_tutorial/"&gt;Sincronizar karaoke&lt;/a&gt; (en construcción) — Ingresar la letra de una canción y agregarle cógigos de tiempo.&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/karaoke_inline-fx/"&gt;Tutorial de efectos karaoke incorporados&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/furigana_karaoke/"&gt;Tutorial Karaoke Furigana&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/automation/karaoke_templater/"&gt;Plantillas de karaoke&lt;/a&gt; (incomplete) — Manera fácil de agregar efectos especiales a karaoke, desde los más básicos hasta los muy avanzados.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Editar subtítulos</title><link>/es-us/docs/latest/editing_subtitles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/editing_subtitles/</guid><description>&lt;p&gt;La edición de subtítulos es para lo que sirve Aegisub. Esta página trata sobre edición básica de renglones de subtítulos; para más información de tipografía de subtítulos, véase &lt;a href="/docs/latest/typesetting/"&gt;tipografía&lt;/a&gt;. Para más información acerca de cronometrar renglones de subtítulos, véase &lt;a href="/es-us/docs/latest/audio/"&gt;trabajar con audio&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="abrir-subtítulos"&gt;Abrir subtítulos &lt;a href="#abrir-subt%c3%adtulos" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;En el menú &lt;em&gt;Archivo&lt;/em&gt; hay cuatro opciones que se relacionan con abrir o crear subtítulos:&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;Nuevos subtítulos&lt;/dt&gt;
+&lt;dd&gt;Crear un nuevo guion en blanco (cierra el archivo actual).&lt;/dd&gt;
+&lt;dt&gt;Abrir subtítulos&lt;/dt&gt;
+&lt;dd&gt;Abrir un archivo de subtítulos existente o importar subtítulos desde un &lt;a href="http://www.matroska.org"&gt;archivo contenedor Matroska&lt;/a&gt;.&lt;/dd&gt;
+&lt;dt&gt;Abrir subtítulos con charset&lt;/dt&gt;
+&lt;dd&gt;Abre subtítulos pero le permite elegir el arreglo de caracteres (character set) que Aegisub usará para interpretar el archivo. Típicamente no se necesita, pero si se tiene un archivo de charset inusual, Aegisub de vez en cuando lo puede malinterpretar.&lt;/dd&gt;
+&lt;dt&gt;Abrir subtítulos desde video&lt;/dt&gt;
+&lt;dd&gt;Abrir subtítulos multiplexados en el archivo de video actualmente abierto. Esta opción actualmente solo funciona con archivos de video Matroska.&lt;/dd&gt;
+&lt;dt&gt;Abrir &lt;a href="/docs/latest/autosave/"&gt;subtítulos autoguardados&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;Abrir un archivo creado por la función de autoguardado de Aegisub. Útil si Aegisub se cierra inesperadamente sin haber guardado cambios, o si solo se quiere abrir una versión más antigua de un archivo.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;Cuando se abre un archivo de subtítulos que no se reconoce como Unicode, Aegisub intentará adivinar con qué arreglo de caracteres se ha codificado. Si no está seguro, le pedirá que escoja entre dos o más alternativas probables. Si el resultado se ve revuelto o incorrecto de alguna manera, intente volver a abrirlo con otro arreglo de caracteres.&lt;/p&gt;</description></item><item><title>Aplicar subtítulos</title><link>/es-us/docs/latest/attaching_subtitles_to_video/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/attaching_subtitles_to_video/</guid><description>&lt;p&gt;En codificación digital, existen dos métodos principales de incluir subtítulos en un video: subtítulos &lt;em&gt;soft/sueltos&lt;/em&gt; y subtítulos &lt;em&gt;hard/incrustados&lt;/em&gt;. Ambos métodos tienen ventajas y desventajas distintas, junto con varios argumentos a favor y en contra de cada método.&lt;/p&gt;
+&lt;h2 id="incrustaciónhardsubbing"&gt;Incrustación/Hardsubbing &lt;a href="#incrustaci%c3%b3nhardsubbing" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Hardsubbing es un método que &amp;ldquo;graba&amp;rdquo; subtítulos en la parte fotográfica de una película. Los subtítulos incrustados digitales son muy parecidos a las cintas VHS subtituladas; los subtítulos no pueden apagarse.&lt;/p&gt;</description></item><item><title>Asistente de traducción</title><link>/es-us/docs/latest/translation_assistant/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/translation_assistant/</guid><description>&lt;p&gt;El asistente de traducción es una herramienta valiosa para traducir subtítulos de un idioma a otro. Le permite traducir de la manera más eficiente posible, permitiéndole escribir el texto traducido sin tener que preocuparse por seleccionar el original u olvidar lo que estaba escrito en él. También analiza las etiquetas manuales de ASS y se las salta.&lt;/p&gt;
+&lt;h2 id="resumen"&gt;Resumen &lt;a href="#resumen" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Translation_Assistant.png#center" width="383" height="546" alt="Asistente_de_traducción"&gt;
+&lt;/p&gt;
+&lt;p&gt;La ventana del asistente es sencillo: le enseña el renglón original sin formato y una caja donde puede escribir la traducción. También hay una lista de atajos de teclas específicas para esta ventana y una casilla para habilitar la vista previa, si tiene configurado el video correspondiente. Tener esta opción habilitada saltará automáticamente a la línea actual cuando la cambie.&lt;/p&gt;</description></item><item><title>Introducción a la composición tipográfica/Typesetting</title><link>/es-us/docs/latest/typesetting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/typesetting/</guid><description>&lt;p&gt;La definición (traducida) de Wikipedia de
+&lt;a href="http://en.wikipedia.org/wiki/Typesetting"&gt;typesetting/composición tipográfica&lt;/a&gt;: &amp;ldquo;&lt;strong&gt;Typesetting&lt;/strong&gt; es la presentación de texto en forma gráfica en papel u otro medio.&amp;rdquo; En el contexto del subtitulado, significa tres cosas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Presentar (una traducción del) diálogo hablado al espectador de una manera legible y visualmente agradable.&lt;/li&gt;
+&lt;li&gt;Traducir cualquier texto de fondo de idioma extranjero (títulos de episodios, información de la escena como tiempo/lugar y otros escritos importantes para la trama sobre cosas en el trasfondo) y presentar la traducción al espectador, preferiblemente de modo que parece que la traducción estuviera ahí todo el tiempo (pero siempre conservando legibilidad).&lt;/li&gt;
+&lt;li&gt;Diseñar otros textos (logotipos, karaoke, etc.) que deben aparecer en el vídeo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Particularmente en la comunidad fansub, la palabra &amp;ldquo;typesetting&amp;rdquo; generalmente se refiere al segundo o tercero de estos tres.&lt;/p&gt;</description></item><item><title>Trabajando con video</title><link>/es-us/docs/latest/video/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/video/</guid><description>&lt;p&gt;Aegisub no es un reproductor de video (ni de media), pero aún así soporta abrir y trabajar con video de varias maneras. Esta página es una referencia de cómo el manejo de video de Aegisub funciona; para una intro más suave de cómo simplemente lograr que las cosas se muestren correctamente puede que quiera leer las páginas &lt;a href="/docs/latest/visual_typesetting/"&gt;Disposición visual de texto&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="abrir-video"&gt;Abrir video &lt;a href="#abrir-video" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Para abrir un archivo de video, vaya al menú &lt;em&gt;Video&lt;/em&gt; y dele a &lt;em&gt;Abrir archivo de video&lt;/em&gt;. Cuáles archivos uno puede abrir depende de su &lt;a href="/docs/latest/options/#video"&gt;proveedor de video&lt;/a&gt;. Para usar un video de suplente (falso, vacío), pulse &lt;em&gt;Use video de suplente&lt;/em&gt;.&lt;/p&gt;</description></item><item><title>Editar estilos</title><link>/es-us/docs/latest/styles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/styles/</guid><description>&lt;p&gt;Un &lt;strong&gt;style&lt;/strong&gt; en formato ASS es un conjunto de reglas de estilo tipográfico que se aplica a las líneas de diálogo. Los parámetros de estilo se pueden anular con
+&lt;a href="/es-us/docs/latest/ass_tags/"&gt;etiquetas manuales&lt;/a&gt;; los estilos existen para que no haya que especificar todas las etiquetas en cada línea.&lt;/p&gt;
+&lt;h2 id="el-gestor-de-estilos"&gt;El gestor de estilos &lt;a href="#el-gestor-de-estilos" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;La herramienta de gestión de estilos de Aegisub (que se accede desde el menú Subtítulos) proporciona diversos medios para organizar, guardar y editar estilos. Se ve así:&lt;/p&gt;</description></item><item><title>Etiquetas manuales ASS</title><link>/es-us/docs/latest/ass_tags/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/ass_tags/</guid><description>&lt;p&gt;La siguiente es una lista de todas las etiquetas admitidas por el formato Advanced Substation Alpha. Esta es básicamente una versión detallada de &lt;code&gt;ass-quickref.txt&lt;/code&gt;. Consulte el &lt;a href="/docs/latest/visual_typesetting/"&gt;tutorial&lt;/a&gt; para obtener una introducción a la composición tipográfica, utilizando algunas etiquetas básicas.&lt;/p&gt;
+&lt;h2 id="caracteres-especiales"&gt;Caracteres especiales &lt;a href="#caracteres-especiales" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Las siguientes etiquetas están escritas en el medio del texto y no dentro de bloques de anulación (es decir, no entre { y }).&lt;/p&gt;
+&lt;p&gt;&lt;h3 id="\n"&gt;Salto de línea suave&lt;/h3&gt;
+&lt;pre&gt;&lt;code class="language-plaintext"&gt;\n&lt;/code&gt;&lt;/pre&gt;
+Inserta un salto de línea forzado, pero solo cuando esté en el modo de salto 2. (Ver
+&lt;a href="/es-us/docs/latest/ass_tags/#\q"&gt;la etiqueta \q&lt;/a&gt;). Fíjese que es una n minúscula.&lt;/p&gt;</description></item><item><title>Trabajando con audio</title><link>/es-us/docs/latest/audio/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/audio/</guid><description>&lt;p&gt;Aegisub tiene un modo audio bastante avanzado y configurable, tanto con la vista tradicional de forma de onda como con una vista alternativa de espectrograma.
+Varios modos diferentes de sincronización están disponibles para la sincronía normal de diálogo y para la de karaoke.&lt;/p&gt;
+&lt;h2 id="abrir-audio"&gt;Abrir audio &lt;a href="#abrir-audio" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Para abrir un archivo de audio en Aegisub, solo pase al menú &lt;em&gt;Audio&lt;/em&gt; y dele a &lt;em&gt;Abrir archivo de audio&lt;/em&gt;. Si tiene un archivo de video (con pista de audio incluído) ya abierto, se puede usar &lt;em&gt;Abrir audio desde video&lt;/em&gt; en su lugar, el cual obviamente abre la pista de audio desde el archivo de video que tiene actualmente abierto. Podrá abrir cualquier tipo de archivo de audio que su &lt;a href="/es-us/docs/latest/options/#audio-avanzado"&gt;proveedor de audio&lt;/a&gt; puede decodificar (más info de esto abajo). Además, si simplemente quiere usar la vista de audio sin cargar ningún audio de verdad, puede elegir &lt;em&gt;Abrir audio 2h30 silencio&lt;/em&gt; o &lt;em&gt;Abrir audio 2h30 ruido&lt;/em&gt;.&lt;/p&gt;</description></item><item><title>Ajustar tiempos</title><link>/es-us/docs/latest/shift_times/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/shift_times/</guid><description>&lt;p&gt;La herramienta &lt;strong&gt;ajustar tiempos&lt;/strong&gt; es un procesador por lote para códigos de tiempo; ajusta los tiempos de inicio/fin de muchas líneas de subtítulos a la vez de varias maneras. Se encuentra en &lt;em&gt;Timing&lt;/em&gt; -&amp;gt; &lt;em&gt;Shift Times&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Se ve así:&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/shift_times.png#center" width="614" height="417" alt="shift_times"&gt;
+&lt;/p&gt;
+&lt;p&gt;La parte izquierda de la ventana contiene las opciones.&lt;/p&gt;
+&lt;h3 id="ajustar-por"&gt;Ajustar por &lt;a href="#ajustar-por" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Estos controles deciden en qué dirección y cuánto se modificará cada marca de tiempo.&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;Tiempo&lt;/dt&gt;
+&lt;dd&gt;Cuánto quiere ajustar cada marca de tiempo, en horas:minutos:segundos.centisegundos.&lt;/dd&gt;
+&lt;dt&gt;Fotogramas&lt;/dt&gt;
+&lt;dd&gt;Si tiene un video cargado, puede especificar el tiempo de ajuste como un número de fotogramas en su lugar. Tenga en cuenta que cambiar a cero fotogramas ajustará las marcas de tiempo a los tiempos de fotograma correspondientes sin realizar ningún traslado.&lt;/dd&gt;
+&lt;dt&gt;Hacia adelante o hacia atrás&lt;/dt&gt;
+&lt;dd&gt;controla en qué dirección se ajustan las marcas de tiempo.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h3 id="afectar"&gt;Afectar &lt;a href="#afectar" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Estos controles deciden qué renglones se procesarán.&lt;/p&gt;</description></item><item><title>Tutoriales de automatizar</title><link>/es-us/docs/latest/automation/karaoke_templater/tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/automation/karaoke_templater/tutorial/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="/es-us/docs/latest/automation/karaoke_templater/tutorial_1/"&gt;Un ejemplo sencillo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/docs/latest/automation/karaoke_templater/tutorial_2/"&gt;Usar expresiones matemáticas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Un ejemplo sencillo</title><link>/es-us/docs/latest/automation/karaoke_templater/tutorial_1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/automation/karaoke_templater/tutorial_1/</guid><description>&lt;p&gt;Bienvenido al primer tutorial acerca del uso de Karaoke Templater (plantillas de Karaoke) para crear &lt;a href="/docs/latest/glossary/karaoke_effect/"&gt;efectos de karaoke&lt;/a&gt;. Comenzaremos con algo simple y luego continuaremos con efectos más avanzados a lo largo de la serie.&lt;/p&gt;
+&lt;h2 id="encontrar-karaoke-templater"&gt;Encontrar Karaoke Templater &lt;a href="#encontrar-karaoke-templater" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Puede ejecutar Karaoke Templater de dos maneras diferentes. Por ahora sólo nos enfocaremos en una de ellos.&lt;/p&gt;
+&lt;p&gt;Busque bajo el menú Automatización en Aegisub.&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Automation-menu-kara-templater-gray.png" width="173" height="113" alt="Automation-menu-kara-templater-gray"&gt;
+&lt;/p&gt;
+&lt;p&gt;Debe de verse la opción llamada &lt;em&gt;Aplicar plantilla karaoke&lt;/em&gt;, aunque no estará disponible. Esto es lo que uno seleccionará para usar las &amp;ldquo;plantillas&amp;rdquo; que escribiremos a lo largo de estos tutoriales. En este momento no está disponible porque no se ha creado ninguna plantilla. Llegaremos a eso en un momento.&lt;/p&gt;</description></item><item><title>Opciones de Aegisub</title><link>/es-us/docs/latest/options/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/options/</guid><description>&lt;p&gt;Aegisub es altamente configurable y por lo tanto tiene un gran número de opciones configurables por el usuario. Estas están disponibles en la caja diálogo de opciones, dentro del menú Ver. Esta página es una guía de todas las opciones disponibles.&lt;/p&gt;
+&lt;p&gt;Aegisub almacena toda su configuración en un archivo de texto llamado &lt;em&gt;config.json&lt;/em&gt;, el cual por defecto se encuentra en la carpeta &lt;a href="/docs/latest/aegisub_path_specifiers/"&gt;?user&lt;/a&gt;. Si uno quiere restablecer Aegisub a sus opciones predeterminadas sin volver a instalarlo, se puede simplemente eliminar &lt;em&gt;config.json&lt;/em&gt; y luego reinicar Aegisub.&lt;/p&gt;</description></item><item><title>Propiedades de guion</title><link>/es-us/docs/latest/properties/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/properties/</guid><description>&lt;p&gt;Las &lt;strong&gt;propiedades de guion&lt;/strong&gt; son unas cabeceras y otras opciones que afectan el guion entero de varias maneras. Se pueden acceder a través del menú &lt;em&gt;Archivo&lt;/em&gt; -&amp;gt; &lt;em&gt;Propiedades&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;
+&lt;img class="img-fluid" loading="lazy" src="/img/3.2/Properties.png#center" width="400" height="482" alt="Propiedades"&gt;
+&lt;/p&gt;
+&lt;p&gt;Las propiedades son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Título&lt;/strong&gt;, &lt;strong&gt;Guion original&lt;/strong&gt;, &lt;strong&gt;Traducción&lt;/strong&gt;, &lt;strong&gt;Edición&lt;/strong&gt;, &lt;strong&gt;Sicronización&lt;/strong&gt;, &lt;strong&gt;Punto de sinc&lt;/strong&gt;, &lt;strong&gt;Cambiado por&lt;/strong&gt; y &lt;strong&gt;Detalles de cambios&lt;/strong&gt; - Estas son solo de propósitos informacionales y no afectan el renderizado de ninguna manera. Fíjelas en valores apropiados si a uno le parecen útiles.&lt;/p&gt;</description></item><item><title>Comandos</title><link>/es-us/docs/latest/commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/commands/</guid><description/></item><item><title/><link>/es-us/docs/latest/fix_timing_tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/es-us/docs/latest/fix_timing_tutorial/</guid><description>&lt;ol&gt;
+&lt;li&gt;REDIRECT &lt;a href="/es-us/docs/latest/shift_times/"&gt;Shift_Times&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>

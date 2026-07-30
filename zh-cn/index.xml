@@ -1,3 +1,62 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>高级字幕编辑器 on</title><link>/zh-cn/</link><description>Recent content in 高级字幕编辑器 on</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 06 Oct 2020 08:47:36 +0000</lastBuildDate><atom:link href="/zh-cn/index.xml" rel="self" type="application/rss+xml"/><item><title>Aegisub 开发者博客</title><link>/zh-cn/blog/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>/zh-cn/blog/</guid><description/></item><item><title>Privacy Policy</title><link>/zh-cn/privacy-policy/</link><pubDate>Thu, 27 Aug 2020 19:23:18 +0200</pubDate><guid>/zh-cn/privacy-policy/</guid><description>Full disclosure: Statistics collected by the update checker # We are aware that some of our users care a lot about their privacy.
-First, the short version: If you do not want to participate in anonymous data collection, do not enable the built-in update checker. If you want to know what information is collected, read on.
-Aegisub&amp;rsquo;s update checker function retrieves a file describing any potential updates available for your installed version of Aegisub.</description></item><item><title>下载</title><link>/zh-cn/downloads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/downloads/</guid><description>最新的版本是 3.4.2，发布于 2025年1月12日 阅读 更新日志 了解更新内容 类别 说明 文件 MD5 OS X Full Install Aegisub-3.4.2.dmg e99131baf41e298b1b4dc543ace38892 Source Aegisub-3.4.2.tar.gz d60c9942d1c211b266e29fdde689e3e8 Windows Regular Install Aegisub-3.4.2.exe 609ccaff7804453416966e6bbcc90ed0 Windows Portable aegisub-3.4.2-portable.zip a37ff3c3ac3f42e70dcdb0f2718e4fea 即将推出的版本 #</description></item><item><title>用户手册</title><link>/zh-cn/docs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/</guid><description>3.4 手册 3.4版本的用户手册，正在翻译。 3.2 手册 3.2版本的用户手册。 3.1 手册 3.1版本的用户手册（英文）。 3.0 手册 3.0.0 - 3.0.4版本的用户手册（英</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>高级字幕编辑器 on Aegisub</title><link>/zh-cn/</link><description>Recent content in 高级字幕编辑器 on Aegisub</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 06 Oct 2020 08:47:36 +0000</lastBuildDate><atom:link href="/zh-cn/index.xml" rel="self" type="application/rss+xml"/><item><title>Aegisub 开发者博客</title><link>/zh-cn/blog/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>/zh-cn/blog/</guid><description/></item><item><title>Privacy Policy</title><link>/zh-cn/privacy-policy/</link><pubDate>Thu, 27 Aug 2020 19:23:18 +0200</pubDate><guid>/zh-cn/privacy-policy/</guid><description>&lt;h2 id="full-disclosure-statistics-collected-by-the-update-checker"&gt;Full disclosure: Statistics collected by the update checker &lt;a href="#full-disclosure-statistics-collected-by-the-update-checker" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We are aware that some of our users care a lot about their privacy.&lt;/p&gt;
+&lt;p&gt;First, the short version: If you do not want to participate in anonymous data collection, do not enable the built-in update checker. If you want to know what information is collected, read on.&lt;/p&gt;
+&lt;p&gt;Aegisub&amp;rsquo;s update checker function retrieves a file describing any potential updates available for your installed version of Aegisub. Along with this request, some anonymous information about your operating environment are sent, to allow us as developers to better target our efforts, and to loosely gauge how large the Aegisub user base is.&lt;/p&gt;</description></item><item><title>下载</title><link>/zh-cn/downloads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/downloads/</guid><description>&lt;p&gt;&lt;a href="https://github.com/TypesettingTools/Aegisub/releases/latest"&gt;最新的版本&lt;/a&gt;是 &lt;strong&gt;3.4.2&lt;/strong&gt;，发布于 2025年1月12日&lt;/p&gt;
+&lt;p&gt;阅读 &lt;a href="/changelog/3.4.2"&gt;更新日志&lt;/a&gt; 了解更新内容&lt;/p&gt;
+&lt;table class="table table-striped"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col"&gt;类别&lt;/th&gt;
+&lt;th scope="col"&gt;说明&lt;/th&gt;
+&lt;th scope="col"&gt;文件&lt;/th&gt;
+&lt;th scope="col"&gt;MD5&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;OS X&lt;/td&gt;
+&lt;td&gt;Full Install&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.2/Aegisub-3.4.2.dmg"&gt;Aegisub-3.4.2.dmg&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;e99131baf41e298b1b4dc543ace38892&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Source&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.2/Aegisub-3.4.2.tar.gz"&gt;Aegisub-3.4.2.tar.gz&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;d60c9942d1c211b266e29fdde689e3e8&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows&lt;/td&gt;
+&lt;td&gt;Regular Install&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.2/Aegisub-3.4.2.exe"&gt;Aegisub-3.4.2.exe&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;609ccaff7804453416966e6bbcc90ed0&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows&lt;/td&gt;
+&lt;td&gt;Portable&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://github.com/TypesettingTools/Aegisub/releases/download/v3.4.2/aegisub-3.4.2-portable.zip"&gt;aegisub-3.4.2-portable.zip&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;a37ff3c3ac3f42e70dcdb0f2718e4fea&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="即将推出的版本"&gt;即将推出的版本 &lt;a href="#%e5%8d%b3%e5%b0%86%e6%8e%a8%e5%87%ba%e7%9a%84%e7%89%88%e6%9c%ac" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Check CI build&lt;/p&gt;
+&lt;h2 id="词典"&gt;词典 &lt;a href="#%e8%af%8d%e5%85%b8" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;为了减小安装包的体积，Windows 安装程序中仅包含了用于拼写检查的英语(美国)词典，其它语种的词典则需单独下载：&lt;/p&gt;</description></item><item><title>用户手册</title><link>/zh-cn/docs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/zh-cn/docs/</guid><description>&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="latest/" class="btn btn-primary" role="button"&gt;3.4 手册&lt;/a&gt; 3.4版本的用户手册，正在翻译。
+&lt;/p&gt;
+&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="3.2/" class="btn btn-outline-secondary" role="button"&gt;3.2 手册&lt;/a&gt; 3.2版本的用户手册。
+&lt;/p&gt;
+&lt;p&gt;
+&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="/docs/3.1/" class="btn btn-outline-secondary" role="button"&gt;3.1 手册&lt;/a&gt; 3.1版本的用户手册（英文）。
+&lt;/p&gt;
+&lt;p&gt;
+&lt;p&gt;
+&lt;br /&gt;
+&lt;a href="/docs/3.0/" class="btn btn-outline-secondary" role="button"&gt;3.0 手册&lt;/a&gt; 3.0.0 - 3.0.4版本的用户手册（英文）。
+&lt;/p&gt;</description></item></channel></rss>
