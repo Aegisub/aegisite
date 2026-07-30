@@ -786,7 +786,7 @@ end
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3 id="aegisubdialogopen"&gt;aegisub.dialog.open &lt;a href="#aegisubdialogopen" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Synopsis: &lt;code&gt;file_name = aegisub.dialog.open(title, default_file, default_dir, wildcards, allow_multiple=false, must_exist=true)&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Misc. APIs</title><link>/docs/latest/automation/lua/miscellaneous_apis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/miscellaneous_apis/</guid><description>&lt;p&gt;This page documents &lt;strong&gt;miscellaneous APIs useful for working with
+&lt;p&gt;Synopsis: &lt;code&gt;file_name = aegisub.dialog.open(title, default_dir, default_file, wildcards, allow_multiple=false, must_exist=true)&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Misc. APIs</title><link>/docs/latest/automation/lua/miscellaneous_apis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/latest/automation/lua/miscellaneous_apis/</guid><description>&lt;p&gt;This page documents &lt;strong&gt;miscellaneous APIs useful for working with
 subtitles&lt;/strong&gt;. These can&amp;rsquo;t be clearly placed into any of the other main
 categories and there&amp;rsquo;s too few of each kind to warrant a separate category.&lt;/p&gt;
 &lt;h2 id="aegisubcancel"&gt;aegisub.cancel &lt;a href="#aegisubcancel" class="anchor" aria-hidden="true"&gt;#&lt;/a&gt;&lt;/h2&gt;
