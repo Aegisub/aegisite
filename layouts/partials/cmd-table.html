@@ -8,7 +8,7 @@
   </thead>
   <tbody>
     {{ $pageLang := .Page.Lang}}
-    {{ range .Site.Data.commands_32 }}
+    {{ range hugo.Data.commands_32 }}
       <!-- TODO: check "eq $pageLang .locale" for all lang -->
       {{ if in (slice         
         (and (eq $pageLang "en") (eq .locale "en_US"))

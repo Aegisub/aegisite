@@ -383,6 +383,11 @@ $navbar-dark-active-color:          $link-color-dark;
 [data-dark-mode] body .card {
   background: $body-bg-dark;
   border: 1px solid $border-dark;
+  color: $body-color-dark;
+}
+
+[data-dark-mode] body .docs-navigation .card {
+  color: inherit;
 }
 
 [data-dark-mode] body .card.bg-light {
@@ -459,6 +464,7 @@ $navbar-dark-active-color:          $link-color-dark;
 
 [data-dark-mode] body .offcanvas {
   background-color: $body-bg-dark;
+  color: $body-color-dark;
 }
 
 [data-dark-mode] body .btn-close {
@@ -522,7 +528,7 @@ $navbar-dark-active-color:          $link-color-dark;
   }
 
   &.disabled .page-link {
-    color: $pagination-disabled-color;
+    color: $gray-600;
     background-color: $body-overlay-dark;
     border-color: $border-dark;
   }

@@ -1,6 +1,5 @@
 ---
 title: Aegisub Docs
-type: simple-page
 ---
 
 <p>

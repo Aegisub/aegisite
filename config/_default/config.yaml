@@ -1,11 +1,19 @@
 baseurl: /
+title: Aegisub
+contentTypes:
+  text/asciidoc: {}
+  text/markdown: {}
+  text/org: {}
+  text/pandoc: {}
+  text/rst: {}
 canonifyURLs: false
 disableAliases: false
 disableHugoGeneratorInject: true
 enableEmoji: true
 enableGitInfo: false
 enableRobotsTXT: true
-paginate: 7
+pagination:
+  pagerSize: 7
 rssLimit: 10
 
 # Multilingual
@@ -32,11 +40,6 @@ outputFormats:
     noUgly: true
     rel: sitemap
 
-caches:
-  getjson:
-    dir: ':cacheDir/:project'
-    maxAge: 10s
-
 sitemap:
   changefreq: weekly
   filename: sitemap.xml
@@ -55,8 +58,7 @@ minify:
 
 module:
   hugoVersion:
-    extended: true
-    min: 0.110.0
+    min: 0.164.0
     max: ''
   mounts:
     - source: assets
@@ -69,5 +71,5 @@ module:
       target: assets/js/vendor/flexsearch
     - source: node_modules/katex
       target: assets/js/vendor/katex
-    - source: node_modules/mermaid
-      target: assets/js/vendor/mermaid
+    - source: node_modules/katex/dist/fonts
+      target: static/fonts

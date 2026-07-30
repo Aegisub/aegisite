@@ -1,6 +1,5 @@
 ---
 title: 用户手册
-type: simple-page
 ---
 
 <p>

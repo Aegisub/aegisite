@@ -200,6 +200,10 @@ body {
   font-size: $font-size-base * 0.9;
 }
 
+.docs-navigation .card {
+  color: inherit;
+}
+
 @include media-breakpoint-up(lg) {
   .docs-navigation {
     margin-bottom: -1rem;

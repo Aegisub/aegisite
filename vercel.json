@@ -63,7 +63,7 @@
   ],
   "build": {
     "env": {
-      "HUGO_VERSION": "0.110.0"
+      "HUGO_VERSION": "0.164.0"
     }
   }
 }
