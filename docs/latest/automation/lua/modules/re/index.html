@@ -63,7 +63,7 @@ the following fields:</p><dl><dt><code>str</code> (<code>string</code>)</dt><dd>
 expression applied to it. Note that this index is one-based and is in bytes,
 rather than characters, to match Lua&rsquo;s string indexing.</dd><dt><code>last</code> (<code>number</code>)</dt><dd>The end index of <code>str</code> in the original string which had a regular expression
 applied to it. Note that this index is one-based, inclusive, and is in bytes,
-rather than characters, to match Lua&rsquo;s string indexing.</dd></dl><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; re.match(&quot;b&quot;, &quot;abc&quot;)
+rather than characters, to match Lua&rsquo;s string indexing.</dd></dl><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; re.match(&quot;abc&quot;, &quot;b&quot;)
 {
     {
         [&quot;str&quot;] = &quot;b&quot;,
@@ -74,10 +74,10 @@ rather than characters, to match Lua&rsquo;s string indexing.</dd></dl><div clas
 </code></pre></div></div><h3 id=flags>Flags <a href=#flags class=anchor aria-hidden=true>#</a></h3><p>The following flags may be passed to all of the static functions (including
 <code>re.compile</code>). Flags must come after all supplied non-flag arguments, but
 optional arguments can be skipped.</p><dl><dt>re.ICASE</dt><dd>Ignore case when matching.</dd><dt>re.NOSUB:</dt><dd>Don&rsquo;t set backreferences and capture groups. Can improve performance when
-they aren&rsquo;t needed.</dd><dt>re.NEWLINE_ALT:</dt><dd>Treat newline characters as the alternation operator (|).</dd><dt>re.NO_MOD_M:</dt><dd>^ and $ only match the beginning and end of the string rather than newlines.</dd><dt>re.MOD_S:</dt><dd>Treat newlines as normal characters, matched by &lsquo;.&rsquo;.</dd><dt>re.MOD_X:</dt><dd>Ignore unescaped whitespace in the expression, making it possible to write
-regular expressions that <em>aren&rsquo;t</em> write-only.</dd><dt>re.NO_EMPTY_SUBEXPRESSION:</dt><dd>Don&rsquo;t match empty expressions/alternatives.</dd></dl><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; re.match(&quot;a&quot;, &quot;A&quot;)
+they aren&rsquo;t needed.</dd><dt>re.NEWLINE_ALT:</dt><dd>Treat newline characters as the alternation operator <code>|</code>.</dd><dt>re.NO_MOD_M:</dt><dd><code>^</code> and <code>$</code> only match the beginning and end of the string rather than newlines.</dd><dt>re.MOD_S:</dt><dd>Treat newlines as normal characters, matched by <code>.</code>.</dd><dt>re.MOD_X:</dt><dd>Ignore unescaped whitespace in the expression, making it possible to write
+regular expressions that <em>aren&rsquo;t</em> write-only.</dd><dt>re.NO_EMPTY_SUBEXPRESSIONS:</dt><dd>Don&rsquo;t match empty expressions/alternatives.</dd></dl><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; re.match(&quot;A&quot;, &quot;a&quot;)
 nil
-&gt;&gt;&gt; re.match(&quot;a&quot;, &quot;A&quot;, re.ICASE, re.NOSUB)
+&gt;&gt;&gt; re.match(&quot;A&quot;, &quot;a&quot;, re.ICASE, re.NOSUB)
 {
     {
         [&quot;str&quot;] = &quot;A&quot;,
@@ -88,56 +88,58 @@ nil
 </code></pre></div></div><h3 id=recompile>re.compile <a href=#recompile class=anchor aria-hidden=true>#</a></h3><p>Synopsis: <code class="inline-code language-lua">expr = re.compile(pattern, [FLAGS])</code></p><p>Compile a regular expression. Reusing a compiled regular expression is faster
 than recompiling it each time it is used, and is usually more readable as well.</p><dl><dt><code>@pattern</code> (<code>string</code>)</dt><dd>Regular expression to compile.</dd><dt><code>expr</code> (<code>table</code>)</dt><dd>A table with all of the functions listed below, except without the pattern
 and flags arguments.</dd></dl><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; expr = re.compile(&quot;a&quot;)
-&gt;&gt;&gt; expr:split(&quot;banana&quot;)
+&gt;&gt;&gt; expr:split(&quot;eat banana&quot;)
 {
-    &quot;b&quot;,
+    &quot;e&quot;,
+    &quot;t b&quot;,
     &quot;n&quot;,
-    &quot;n&quot;
+    &quot;n&quot;,
+    &quot;&quot;
 }
 </code></pre></div></div><h3 id=resplit>re.split <a href=#resplit class=anchor aria-hidden=true>#</a></h3><p>Synopsis: <code class="inline-code language-lua">chunks = re.split(str, pattern, skip_empty=false, max_splits=0)</code></p><p>Split the string at each of the occurrences of <code>pattern</code>.</p><dl><dt><code>@str</code> (<code>string</code>)</dt><dd>String to split.</dd><dt><code>@pattern</code> (<code>string</code>)</dt><dd>Regular expression to split the string on. Capturing groups in the pattern
 are ignored.</dd><dt><code>@skip_empty</code> (<code>boolean</code>)</dt><dd>Do not include zero-length chunks in the results.</dd><dt><code>@max_splits</code> (<code>number</code>)</dt><dd>If greater than zero, the maximum numbers of times to split the string (i.e.
 <code>#chunks</code> will be at most <code>max_splits + 1</code>).</dd><dt><code>chunks</code> (<code>table</code>)</dt><dd>A table containing each of the sections of <code>str</code> between the matches of
-<code>pattern</code>.</dd></dl><p><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; re.split(&quot;,&quot;, &quot;a,,b,c&quot;)
+<code>pattern</code>.</dd></dl><p><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; re.split(&quot;a,,b,c&quot;, &quot;,&quot;)
 {
     &quot;a&quot;,
     &quot;&quot;,
     &quot;b&quot;,
     &quot;c&quot;
 }
-</code></pre></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; re.split(&quot;,&quot;, &quot;a,,b,c&quot;, true)
+</code></pre></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; re.split(&quot;a,,b,c&quot;, &quot;,&quot;, true)
 {
     &quot;a&quot;,
     &quot;b&quot;,
     &quot;c&quot;
 }
-</code></pre></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; re.split(&quot;,&quot;, &quot;a,,b,c&quot;, false, 1)
+</code></pre></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; re.split(&quot;a,,b,c&quot;, &quot;,&quot;, false, 1)
 {
     &quot;a&quot;,
     &quot;,b,c&quot;,
 }
-</code></pre></div></div></p><h3 id=regsplit>re.gsplit <a href=#regsplit class=anchor aria-hidden=true>#</a></h3><p>Synopsis: <code class="inline-code language-lua">iter = re.gsplit(str, pattern, skip_empty=false, max_splits=0)</code></p><p>Iterator version of re.split.</p><dl><dt><code>@str</code> (<code>string</code>)</dt><dd>String to split.</dd><dt><code>@pattern</code> (<code>string</code>)</dt><dd>Regular expression to split the string on. Capturing groups in the pattern
+</code></pre></div></div></p><h3 id=regsplit>re.gsplit <a href=#regsplit class=anchor aria-hidden=true>#</a></h3><p>Synopsis: <code class="inline-code language-lua">iter = re.gsplit(str, pattern, skip_empty=false, max_splits=0)</code></p><p>Iterator version of <code>re.split</code>.</p><dl><dt><code>@str</code> (<code>string</code>)</dt><dd>String to split.</dd><dt><code>@pattern</code> (<code>string</code>)</dt><dd>Regular expression to split the string on. Capturing groups in the pattern
 are ignored.</dd><dt><code>@skip_empty</code> (<code>boolean</code>)</dt><dd>Do not include zero-length chunks in the results.</dd><dt><code>@max_splits</code> (<code>number</code>)</dt><dd>If greater than zero, the maximum numbers of times to split the string (i.e.
 <code>#chunks</code> will be at most <code>max_splits + 1</code>).</dd><dt><code>iter</code> (<code>iterator over strings</code>)</dt><dd>An iterator over each of the sections of <code>str</code> between the matches of
-<code>pattern</code>.</dd></dl><p><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; for str in re.gsplit(&quot;,&quot;, &quot;a,,b,c&quot;) do
-&gt;&gt;&gt;     print str
+<code>pattern</code>.</dd></dl><p><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; for str in re.gsplit(&quot;a,,b,c&quot;, &quot;,&quot;) do
+&gt;&gt;&gt;     print(str)
 &gt;&gt;&gt; end
 a
 
 b
 c
-</code></pre></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; for str in re.gsplit(&quot;,&quot;, &quot;a,,b,c&quot;, true) do
-&gt;&gt;&gt;     print str
+</code></pre></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; for str in re.gsplit(&quot;a,,b,c&quot;, &quot;,&quot;, true) do
+&gt;&gt;&gt;     print(str)
 &gt;&gt;&gt; end
 a
 b
 c
-</code></pre></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; for str in re.gsplit(&quot;,&quot;, &quot;a,,b,c&quot;, false, 1) do
-&gt;&gt;&gt;     print str
+</code></pre></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; for str in re.gsplit(&quot;a,,b,c&quot;, &quot;,&quot;, false, 1) do
+&gt;&gt;&gt;     print(str)
 &gt;&gt;&gt; end
 a
 ,b,c
 </code></pre></div></div></p><h3 id=refind>re.find <a href=#refind class=anchor aria-hidden=true>#</a></h3><p>Synopsis: <code class="inline-code language-lua">matches = re.find(str, pattern)</code></p><p>Find all non-overlapping substrings of <code>str</code> which match <code>pattern</code>.</p><dl><dt><code>@str</code> (<code>string</code>)</dt><dd>String to search for the pattern in.</dd><dt><code>@pattern</code> (<code>string</code>)</dt><dd>Pattern to search for. Capturing groups in the pattern are ignored.</dd><dt><code>matches</code> (<code>table</code> or <code>nil</code>)</dt><dd>A table of <a href=/docs/latest/automation/lua/modules/re/#match-tables>Match Tables</a> for all matches, or <code>nil</code> if
-there were none.</dd></dl><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; re.find(&quot;.&quot;, &quot;☃☃&quot;)
+there were none.</dd></dl><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; re.find(&quot;☃☃&quot;, &quot;.&quot;)
 {
     {
         [&quot;str&quot;] = &quot;☃&quot;,
@@ -151,10 +153,10 @@ there were none.</dd></dl><div class=card><strong class=card-header>Example</str
     }
 }
 </code></pre></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>function contains_an_a(str)
-    if re.find(&quot;a&quot;, str)
-        print &quot;Has an a&quot;
+    if re.find(str, &quot;a&quot;) then
+        print(&quot;Has an a&quot;)
     else
-        print &quot;Doesn't have an a&quot;
+        print(&quot;Doesn't have an a&quot;)
     end
 end
 &gt;&gt;&gt; contains_an_a(&quot;abc&quot;)
@@ -163,8 +165,8 @@ Has an a
 Doesn't have an a
 </code></pre></div></div><h3 id=regfind>re.gfind <a href=#regfind class=anchor aria-hidden=true>#</a></h3><p>Synopsis: <code class="inline-code language-lua">iter = re.gfind(str, pattern)</code></p><p>Iterate over all non-overlapping substrings of <code>str</code> which match <code>pattern</code>.</p><dl><dt><code>@str</code> (<code>string</code>)</dt><dd>String to search for the pattern in.</dd><dt><code>@pattern</code> (<code>string</code>)</dt><dd>Pattern to search for. Capturing groups in the pattern are ignored.</dd><dt><code>iter</code> (<code>iterator over string, number, number</code>)</dt><dd>An iterator which produces three values at each step: a matched string, the
 started index of the match in the source string, and the inclusive end index of
-the match in the source string.</dd></dl><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; for str, start_idx, end_idx in re.gfind(&quot;.&quot;, &quot;☃☃&quot;) do
-&gt;&gt;&gt;     print string.format(&quot;%d-%d: %s&quot;, start_idx, end_idx, str)
+the match in the source string.</dd></dl><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; for str, start_idx, end_idx in re.gfind(&quot;☃☃&quot;, &quot;.&quot;) do
+&gt;&gt;&gt;     print(string.format(&quot;%d-%d: %s&quot;, start_idx, end_idx, str))
 &gt;&gt;&gt; end
 1-3: ☃
 4-6: ☃
@@ -172,7 +174,7 @@ the match in the source string.</dd></dl><div class=card><strong class=card-head
 returns all matches and does not capture subgroups, while this returns only a
 single match along with the captured subgroups.</p><dl><dt><code>@str</code> (<code>string</code>)</dt><dd>String to search for the pattern in.</dd><dt><code>@pattern</code> (<code>string</code>)</dt><dd>Pattern to search for.</dd><dt><code>matches</code> (<code>table</code> or <code>nil</code>)</dt><dd><code>nil</code> if the pattern did not match the string. Otherwise, a table containing
 a <a href=/docs/latest/automation/lua/modules/re/#match-tables>Match Table</a> for the full match, followed by a <a href=/docs/latest/automation/lua/modules/re/#match-tables>Match Table</a> for each capturing subexpression in the pattern (if
-any).</dd></dl><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; re.match(&quot;(\d+) (\d+) (\d+)&quot;, &quot;{250 1173 380}Help!&quot;)
+any).</dd></dl><div class=card><strong class=card-header>Example</strong><div class=card-body><pre><code class=language-lua>&gt;&gt;&gt; re.match(&quot;{250 1173 380}Help!&quot;, &quot;(\\d+) (\\d+) (\\d+)&quot;)
 {
     {
         [&quot;str&quot;] = &quot;250 1173 380&quot;,
@@ -190,28 +192,50 @@ any).</dd></dl><div class=card><strong class=card-header>Example</strong><div cl
         [&quot;last&quot;] = 9,
     },
     {
-        [&quot;str&quot;] = &quot;380&quot;
+        [&quot;str&quot;] = &quot;380&quot;,
         [&quot;first&quot;] = 11,
         [&quot;last&quot;] = 13
     }
 }
 </code></pre></div></div><h3 id=regmatch>re.gmatch <a href=#regmatch class=anchor aria-hidden=true>#</a></h3><p>Synopsis: <code class="inline-code language-lua">iter = re.gmatch(str, pattern)</code></p><p>Iterator version of <a href=/docs/latest/automation/lua/modules/re/#rematch><code>re.match</code></a>.</p><dl><dt><code>@str</code> (<code>string</code>)</dt><dd>String to search for the pattern in.</dd><dt><code>@pattern</code> (<code>string</code>)</dt><dd>Pattern to search for.</dd><dt><code>matches</code> (<code>iterator over table</code>)</dt><dd>An iterator which returns a table containing a <a href=/docs/latest/automation/lua/modules/re/#match-tables>Match Table</a> for the full match (if it matched), followed by a
 <a href=/docs/latest/automation/lua/modules/re/#match-tables>Match Table</a> for each capturing subexpression in the pattern
-(if any).</dd></dl><h3 id=resub>re.sub <a href=#resub class=anchor aria-hidden=true>#</a></h3><p>Synopsis: <code class="inline-code language-lua">out_str, rep_count = re.sub(str, replace, pattern, max_count=0)</code></p><p>Replace each occurrence of <code>pattern</code> in <code>str</code> with <code>replace</code>.</p><dl><dt><code>@pattern</code> (<code>string</code>)</dt><dd>Pattern to search for.</dd><dt><code>@replace</code> (<code>string</code> or <code>function</code>)</dt><dd>Replacement for matches. This may be either a string which is inserted, or a
-function which is called for each match.<p>If <code>replace</code> is a string, it may contain references to the matches. <code>&</code> and
-<code>\0</code> are replaced with the full match, and <code>\&lt;number></code> is replaced with the
-appropriate captured subexpression.</p><p>If <code>replace</code> is a function, it is called for either the entire match (if
+(if any).</dd></dl><h3 id=resub>re.sub <a href=#resub class=anchor aria-hidden=true>#</a></h3><p>Synopsis: <code class="inline-code language-lua">out_str = re.sub(str, pattern, replace, max_count=0)</code></p><p>Replace each occurrence of <code>pattern</code> in <code>str</code> with <code>replace</code>.</p><dl><dt><code>@pattern</code> (<code>string</code>)</dt><dd>Pattern to search for.</dd><dt><code>@replace</code> (<code>string</code> or <code>function</code>)</dt><dd>Replacement for matches. This may be either a string which is inserted, or a
+function which is called for each match.<p>If <code>replace</code> is a string, it uses Boost.Regex&rsquo;s Perl-style replacement
+format. <code>$&</code> is replaced with the full match. <code>$1</code>, <code>$2</code>, etc. and <code>\1</code>
+through <code>\9</code> are replaced with the corresponding captured subexpression.</p><p>If <code>replace</code> is a function, it is called for either the entire match (if
 there are no capturing subexpressions), or for each captured subexpression.
 It is passed the match string, start index of the match, and end index of
 the match. If it returns a string, the match is replaced with the return
 value. If it returns anything else, then the source string is left
-unchanged.</p></dd><dt><code>@max_count</code> (<code>number</code>)</dt><dd>If greater than zero, the maximum number of replacements to make.</dd><dt><code>out_str</code> (<code>string</code>)</dt><dd>The input string, with replacements applied.</dd><dt><code>rep_count</code> (<code>number</code>)</dt><dd>The number of replacements that were made.</dd></dl><p><div class=card><strong class=card-header>Example</strong><div class=card-body><p>Replace all instances of \k with \kf:</p><pre><code class=language-lua>&gt;&gt;&gt; re.sub(&quot;{\\k10}a{\\k15}b{\\k30}c&quot;, &quot;\\\\k&quot;, &quot;\\kf&quot;)
+unchanged.</p></dd><dt><code>@max_count</code> (<code>number</code>)</dt><dd>If greater than zero, the maximum number of replacements to make.</dd><dt><code>out_str</code> (<code>string</code>)</dt><dd>The input string, with replacements applied.</dd></dl><p><div class=card><strong class=card-header>Example</strong><div class=card-body><p>Replace all instances of \k with \kf:</p><pre><code class=language-lua>&gt;&gt;&gt; re.sub(&quot;{\\k10}a{\\k15}b{\\k30}c&quot;, &quot;\\\\k&quot;, &quot;\\\\kf&quot;)
 {\kf10}a{\kf15}b{\kf30}c
-</code></pre></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><p>Replace all instances of \k and \K with \kf:</p><pre><code class=language-lua>&gt;&gt;&gt; re.sub(&quot;{\\K10}a{\\K15}b{\\k30}c&quot;, &quot;\\\\k&quot;, &quot;\\kf&quot;, re.ICASE)
+</code></pre></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><p>Replace all instances of \k and \K with \kf:</p><pre><code class=language-lua>&gt;&gt;&gt; re.sub(&quot;{\\K10}a{\\K15}b{\\k30}c&quot;, &quot;\\\\k&quot;, &quot;\\\\kf&quot;, re.ICASE)
 {\kf10}a{\kf15}b{\kf30}c
 </code></pre></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><p>Add one to each \k duration:</p><pre><code class=language-lua>function add_one(str)
     return tostring(tonumber(str) + 1)
 end
-&gt;&gt;&gt; re.sub(&quot;{\\k10}a{\\k15}b{\\k30}c&quot;, &quot;\\\\k(\[[:digit:]]+)&quot;, add_one)
+&gt;&gt;&gt; re.sub(&quot;{\\k10}a{\\k15}b{\\k30}c&quot;, &quot;\\\\k(\\d+)&quot;, add_one)
 {\k11}a{\k16}b{\k31}c
+</code></pre></div></div><div class=card><strong class=card-header>Example</strong><div class=card-body><p>Consider these examples:</p><pre><code class=language-lua>-- Example 1
+re.sub(&quot;{\\y10}a{\\y15}b{\\y30}c&quot;, &quot;\\\\y&quot;, &quot;\\\\yf&quot;)
+-- Example 2
+re.sub(&quot;{\\y10}a{\\y15}b{\\y30}c&quot;, &quot;\\\\y&quot;, &quot;\\yf&quot;)
+-- Example 3
+re.sub(&quot;{\\y10}a{\\y15}b{\\y30}c&quot;, &quot;\\\\y&quot;, function(str) return &quot;\\yf&quot; end)
+</code></pre><p>Examples 1 and 3 both produce <code>{\yf10}a{\yf15}b{\yf30}c</code>. Example 2
+produces <code>{yf10}a{yf15}b{yf30}c</code>, without the backslashes.</p><p>Why do the number of backslashes differ?</p><p>Each quoted Lua string is interpreted by Lua first, so a literal backslash in
+the string must be written as <code>\\</code>. The resulting pattern is then parsed as a
+regular expression. A string replacement is separately parsed using
+Boost.Regex&rsquo;s replacement format, while the value returned by a replacement
+function is inserted directly.</p><p>After Lua interprets the strings above:</p><ul><li>The source string is <code>{\y10}a{\y15}b{\y30}c</code>.</li><li>The pattern is <code>\\y</code>, which matches the literal text <code>\y</code>.</li><li>Example 1&rsquo;s replacement is <code>\\yf</code>. The replacement formatter converts <code>\\</code>
+to a literal backslash, producing <code>\yf</code>.</li><li>Example 2&rsquo;s replacement is <code>\yf</code>. In a Boost replacement string, an
+unrecognized escape such as <code>\y</code> emits the escaped character without the
+backslash, producing <code>yf</code>.</li><li>Example 3&rsquo;s function returns <code>\yf</code>. Function results do not pass through the
+replacement formatter, so the backslash is retained.</li></ul><p>Lua&rsquo;s long-bracket strings do not process escape sequences. The examples above
+can equivalently be written as:</p><pre><code class=language-lua>-- Example 1
+re.sub([[{\y10}a{\y15}b{\y30}c]], [[\\y]], [[\\yf]])
+-- Example 2
+re.sub([[{\y10}a{\y15}b{\y30}c]], [[\\y]], [[\yf]])
+-- Example 3
+re.sub([[{\y10}a{\y15}b{\y30}c]], [[\\y]], function(str) return [[\yf]] end)
 </code></pre></div></div></p><div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between"></div><div class="docs-navigation d-flex justify-content-between"><a href=/docs/latest/automation/lua/modules/clipboard/><div class="card my-1"><div class="card-body py-2">&larr; clipboard</div></div></a><a class=ms-auto href=/docs/latest/automation/manager/><div class="card my-1"><div class="card-body py-2">Automation Manager &rarr;</div></div></a></div></main></div></div></div><footer class="footer text-muted"><div class=container-fluid><div class=row><div class="col-lg-8 order-last order-lg-first"><ul class=list-inline><li class=list-inline-item>Powered by <a class=text-muted href=https://gohugo.io/>Hugo</a> and <a class=text-muted href=https://getdoks.org/>Doks</a>.<br>Copyright (c) AegiSite <a href=https://github.com/Aegisub/aegisite/graphs/contributors>contributors</a>.</li></ul></div><div class="col-lg-8 order-first order-lg-last text-lg-end"><ul class=list-inline><li class=list-inline-item><a href=/privacy-policy/>Privacy</a></li></ul></div></div></div></footer><script src=/js/bootstrap.min.2d163d4ded59a8c0f3da8841b92ed2d9704c8b95f58f2b2a155c22cdd00435156a85dae6d60e99bc99453a696faf91eadef75e33b2957a5731188122af562691.js integrity="sha512-LRY9Te1ZqMDz2ohBuS7S2XBMi5X1jysqFVwizdAENRVqhdrm1g6ZvJlFOmlvr5Hq3vdeM7KVelcxGIEir1YmkQ==" crossorigin=anonymous defer></script><script src=/js/highlight.min.c77914035d19b5b85096bd93fb3e6dac9cb21ede7978ecb4c3e3f6541cb1ce73f8e3dddbb8d85490c561499db7f0a0c835c26d142438d14e2612b74800620844.js integrity="sha512-x3kUA10ZtbhQlr2T+z5trJyyHt55eOy0w+P2VByxznP4493buNhUkMVhSZ238KDINcJtFCQ40U4mErdIAGIIRA==" crossorigin=anonymous defer></script><script src=/main.min.9416a0776305e2136c1e5404993eb51a912141d81ee9de8e2ed895741309913b6e6482ebc5493ca0e236e29b820532565384ef858e3abae749e6d90d4bf0b681.js integrity="sha512-lBagd2MF4hNsHlQEmT61GpEhQdge6d6OLtiVdBMJkTtuZILrxUk8oOI24puCBTJWU4TvhY46uudJ5tkNS/C2gQ==" crossorigin=anonymous defer></script></body></html>
