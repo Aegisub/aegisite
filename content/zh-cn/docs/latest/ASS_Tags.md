@@ -20,7 +20,7 @@ override blocks (i.e. not between { and }).
 
 下列标签写在文本中，而不是特效区域中（即不在 { 和 } 中）。
 
-{{<tag-def-box title="软换行（软空格)" id="\n">}}\\n{{</tag-def-box>}}
+{{%tag-def-box title="软换行（软空格)"%}}\\n{{%/tag-def-box%}}
 Insert a forced line break, but only when in wrapping mode 2. (See
 [the \\q tag]({{< relref "ASS_Tags#wrapstyle" >}})). Note that this is a lowercase n.
 
@@ -34,13 +34,13 @@ rarely (if ever) actually useful. If you're not sure whether you want this or
 在所有其他的换行方式下，它被当作一个空格对待。这个真的不常用（即使用过）。如果你不确定你想要的效果的是
 \\n 还是 \\N ，那么十有八九是 \\N。
 
-{{<tag-def-box title="硬换行符" id="\N">}}\\N{{</tag-def-box>}}
+{{%tag-def-box title="硬换行符"%}}\\N{{%/tag-def-box%}}
 Insert a forced line break, regardless of wrapping mode. Note that this is an
 uppercase N.
 
 插入一个强制换行符，在所有换行方式下都生效。注意这是一个大写的 N。
 
-{{<tag-def-box title="硬空格" id="\h">}}\\h{{</tag-def-box>}}
+{{%tag-def-box title="硬空格"%}}\\h{{%/tag-def-box%}}
 Insert a non-breaking "hard" space. The line will never break automatically
 right before or after a hard space, and hard spaces are not folded when they
 appear at the start or end of a displayed line.
@@ -103,21 +103,21 @@ all tags in how they look.
 在这一页，所有在 `<`尖括号`>` 中的 *斜体*
 文字都是参数，需要你用数值代替。尖括号不需要输入，直接输入数值即可。下面的例子将引导你来了解如何设定这些标签的参数。通常情况下，在它们的外观上，相同的规则应用于所有的标签。（译者注：这里的规则指的应该就是数值要写在标签的后面）
 
-{{<tag-def-box title="斜体" id="\i">}}
+{{%tag-def-box title="斜体"%}}
 \\i1
 \\i0
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Switch _italics_ text on or off. Use `\i1` to enable italics for the following
 text and `\i0` to disable italics again.
 
 打开或关闭 *斜体*
 选项。利用`\i1`对后面的字符应用斜体，并且可以用`\i0`使后面的字符取消斜体。
 
-{{<tag-def-box title="粗体" id="\b">}}
+{{%tag-def-box title="粗体"%}}
 \\b1
 \\b0
 \\b<i>\<weight></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Switch **boldface** text on or off. Use `\b1` to enable boldface for the
 following text and `\b0` to disable boldface again.
 
@@ -157,27 +157,27 @@ to see "not bold" and "bold" in that case.
 
 {{</example-box>}}
 
-{{<tag-def-box title="下划线" id="\u">}}
+{{%tag-def-box title="下划线"%}}
 \\u1
 \\u0
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Switch <u>underlined</u> text on or off. Use `\u1` to enable underlining for
 the following text and `\u0` to disable underlining again.
 
 打开或关闭 <u>\_\_下划线</u>
 选项。利用`\u1`对后面的字符应用下划线，并且可以用`\u0`使后面的字符取消下划线。
 
-{{<tag-def-box title="删除线" id="\s">}}
+{{%tag-def-box title="删除线"%}}
 \\s1
 \\s0
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Switch <s>striked out</s> text on or off. Use `\s1` to enable strikeout for
 the following text and `\s0` to disable strikeout again.
 
 打开或关闭 ~~删除线~~
 选项。利用`\s1`对后面的字符应用删除线，并且可以用`\s0`使后面的字符取消删除线。
 
-{{<tag-def-box title="边框宽度" id="\bord">}}\\bord<i>\<size></i>{{</tag-def-box>}}
+{{%tag-def-box title="边框宽度"%}}\\bord<i>\<size></i>{{%/tag-def-box%}}
 Change the width of the border around the text. Set the size to 0 (zero) to
 disable the border entirely.
 
@@ -213,10 +213,10 @@ Disable border entirely. 完全隐藏边框。
 Set the border width to 3.7 pixels 设置边框宽度为3.7个像素
 {{</example-box>}}
 
-{{<tag-def-box title="边框宽度 (补充)" id="\xbord">}}
+{{%tag-def-box title="边框宽度 (补充)"%}}
 \\xbord<i>\<size></i>
 \\ybord<i>\<size></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Use the `\xbord` `\ybord` tags to set the border size in X and Y direction
 separately. This can be useful for correcting the border size for anamorphic
 rendering of subtitles.
@@ -235,7 +235,7 @@ disable border in that direction.
 
 你可以把某个方向上的边框宽度设为0，这个方向的边框就完全消失。
 
-{{<tag-def-box title="阴影距离" id="\shad">}}\\shad<i>\<depth></i>{{</tag-def-box>}}
+{{%tag-def-box title="阴影距离"%}}\\shad<i>\<depth></i>{{%/tag-def-box%}}
 Set the distance from the text to position the shadow. Set the depth to 0
 (zero) to disable shadow entirely. Works similar to [\\bord]({{< relref "ASS_Tags#bordersize" >}}).
 
@@ -245,10 +245,10 @@ The shadow distance can not be negative with this tag.
 
 阴影距离也不能设置为负数值。
 
-{{<tag-def-box title="阴影距离 (补充)" id="\xshad">}}
+{{%tag-def-box title="阴影距离 (补充)"%}}
 \\xshad<i>\<depth></i>
 \\yshad<i>\<depth></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Set the distance from the text to position the shadow at, with X and Y
 position set separately. Shadow is only disabled if both X and Y distance is
 0\.
@@ -260,11 +260,11 @@ position the shadow to the top or left of the text.
 
 注意它和`\shad`不同，你可以设置距离值为负数让阴影显示在字符的上方或者左方。
 
-{{<tag-def-box title="边框模糊" id="\be">}}
+{{%tag-def-box title="边框模糊"%}}
 \\be0
 \\be1
 \\be<i>\<strength></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Enable or disable a subtle softening-effect for the edges of the text. The
 effect isn't always very visible, but it can in some cases make the text look
 better. It is usually more visible at smaller text sizes.
@@ -289,7 +289,7 @@ generally more useful as a result. The _strength_ must be an integer number.
 是循环叠加效果的次数。注意数值给的比较大的时候就会把边框整个糊掉，并且通常情况下并没有什么卵用。对于高强度模糊，`\blur`通常结果更有用。
 *strength* 必须是一个整数。
 
-{{<tag-def-box title="边缘模糊 (高斯函数)" id="\blur">}}\\blur<i>\<strength></i>{{</tag-def-box>}}
+{{%tag-def-box title="边缘模糊 (高斯函数)"%}}\\blur<i>\<strength></i>{{%/tag-def-box%}}
 In general, this has the same function as the [`\be`]({{< relref "ASS_Tags#bluredges" >}}) tag, but
 uses a more advanced algorithm that looks better at high strengths. Unlike
 `\be`, the _strength_ can be non-integer here. Set _strength_ to 0 (zero) to
@@ -308,7 +308,7 @@ blurred instead.
 注意，这个标签会模糊文本的 *边框*
 ，不是全部。也就是说，如果文本有边框（用[\`\\bord\`]({{< relref "ASS_Tags#borderwidth" >}})标签进行设置），那么边框会被模糊，但是如果没有边框，那么文本的主体就会被模糊。
 
-{{<tag-def-box title="字体名称" id="\fn">}}\\fn<i>\<字体名称></i>{{</tag-def-box>}}
+{{%tag-def-box title="字体名称"%}}\\fn<i>\<字体名称></i>{{%/tag-def-box%}}
 Set the font face to use for the following text. There should be no space
 between `\fn` and the font name, and you should not put parentheses or similar
 around the font name either.
@@ -338,7 +338,7 @@ The text following this tag will be in Times New Roman font.
 
 {{</example-box>}}
 
-{{<tag-def-box title="字体大小" id="\fs">}}\\fs<i>\<大小></i>{{</tag-def-box>}}
+{{%tag-def-box title="字体大小"%}}\\fs<i>\<大小></i>{{%/tag-def-box%}}
 Set the size of the font. The size specified is the height in script pixels,
 so at font size 40 one line of text is 40 pixels tall. (Technical note: it's
 really typographic (desktop publishing) points, not script pixels, but since
@@ -364,10 +364,10 @@ The following text will use a size 10 font.
 
 {{</example-box>}}
 
-{{<tag-def-box title="Font scale" id="\fscx">}}
+{{%tag-def-box title="Font scale"%}}
 \\fscx<i>\<scale></i>
 \\fscy<i>\<scale></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Adjust the size of the text in X (`\fscx` or Y (`\fscy`) direction. The
 _scale_ given is in percent, so 100 means "original size".
 
@@ -431,7 +431,7 @@ Make the text double size.
 
 {{</example-box>}}
 
-{{<tag-def-box title="Letter spacing" id="\fsp">}}\\fsp<i>\<spacing></i>{{</tag-def-box>}}
+{{%tag-def-box title="Letter spacing"%}}\\fsp<i>\<spacing></i>{{%/tag-def-box%}}
 Changes the spacing between the individual letters in the text. You can use
 this to spread the text more out visually. The _spacing_ is given in script
 resolution pixels.
@@ -443,12 +443,12 @@ Spacing can be negative and can have decimals.
 
 间距可以是负值，也可以含有小数。
 
-{{<tag-def-box title="文本旋转" id="\frx">}}
+{{%tag-def-box title="文本旋转"%}}
 \\frx<i>\<amount></i>
 \\fry<i>\<amount></i>
 \\frz<i>\<amount></i>
 \\fr<i>\<amount></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Rotates the text along the X, Y or Z axis. The `\fr` tag is a shortcut for `\frz`.
 
 沿 X，Y，Z 轴旋转文本。`\fr`标签是`\frz`的简写。
@@ -545,10 +545,10 @@ The following screenshots illustrate the effect of rotating on the different axe
 ![Fr_sample03](/img/3.2/Fr_sample03.jpg)
 {{</example-box>}}
 
-{{<tag-def-box title="文本剪切变换" id="\fax">}}
+{{%tag-def-box title="文本剪切变换"%}}
 \\fax<i>\<factor></i>
 \\fay<i>\<factor></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Perform a shearing (perspective distortion) transformation of the text. A
 _factor_ of 0 (zero) means no distortion.
 
@@ -570,7 +570,7 @@ coordinate system used for shearing is not affected by the [rotation origin]({{<
 ![shearing](/img/3.2/shearing.png)
 {{</example-box>}}
 
-{{<tag-def-box title="字体字符集" id="\fe">}}\\fe<i>\<id></i>{{</tag-def-box>}}
+{{%tag-def-box title="字体字符集"%}}\\fe<i>\<id></i>{{%/tag-def-box%}}
 Set the Windows font encoding used to select the font mapping table used to
 translate Unicode codepoints to glyph indices in the font. For some fonts
 without a Unicode mapping table this might be required to get text in certain
@@ -633,13 +633,13 @@ Unicode encoding. (Aegisub stores files in Unicode UTF-8 by default.)
 不支持这个用法，一些渲染器可能也不支持。所以建议你不要依赖这个功能，而是始终以
 Unicode 编码保存 ASS 文件。（Aegisub 保存 ASS 文件的默认编码是 UTF-8）
 
-{{<tag-def-box title="设置颜色" id="\c">}}
+{{%tag-def-box title="设置颜色"%}}
 \\c&H<i>\<bb>\<gg>\<rr></i>&
 \\1c&H<i>\<bb>\<gg>\<rr></i>&
 \\2c&H<i>\<bb>\<gg>\<rr></i>&
 \\3c&H<i>\<bb>\<gg>\<rr></i>&
 \\4c&H<i>\<bb>\<gg>\<rr></i>&
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Set the color of the following text. The `\c` tag is an abbreviation of `\1c`.
 
 设置其后字符的颜色。`\c` 标签是 `\1c` 的缩写。
@@ -667,13 +667,13 @@ assist in picking colors and entering the color codes.
 
 取色器工具栏按钮![pick-color-toolbar-buttons](/img/3.2/pick-color-toolbar-buttons.png)可以帮助你选择颜色和填写颜色代码。
 
-{{<tag-def-box title="设置透明度" id="\alpha">}}
+{{%tag-def-box title="设置透明度"%}}
 \\alpha&H<i>\<aa></i>
 \\1a&H<i>\<aa></i>
 \\2a&H<i>\<aa></i>
 \\3a&H<i>\<aa></i>
 \\4a&H<i>\<aa></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Set the alpha (transparency) of the text. 设置字符的透明度。
 
 - `\alpha` sets the alpha of all components at once.
@@ -716,7 +716,7 @@ and effectively leaving only the border and shadow.
 设置主要填充透明度为十六进制的FF，十进制的255，即完全不透明。这时只能看见边框和阴影。
 {{</example-box>}}
 
-{{<tag-def-box title="行对齐方式" id="\an">}}\\an<i>\<pos></i>{{</tag-def-box>}}
+{{%tag-def-box title="行对齐方式"%}}\\an<i>\<pos></i>{{%/tag-def-box%}}
 Specify the alignment of the line. The alignment specifies the position of the
 line when no [position override]({{< relref "ASS_Tags#setposition" >}}) or
 [movement]({{< relref "ASS_Tags#movement" >}}) is in effect, and otherwise specifies the
@@ -755,7 +755,7 @@ keyboard:
 1. 屏幕顶部中间
 1. 屏幕右上角
 
-{{<tag-def-box title="行对齐方式 (传统)" id="\a">}}\\a<i>\<pos></i>{{</tag-def-box>}}
+{{%tag-def-box title="行对齐方式 (传统)"%}}\\a<i>\<pos></i>{{%/tag-def-box%}}
 Specify the alignment of the line using legacy alignment codes from SubStation
 Alpha. This tag is supported but considered deprecated; you should usually use
 `\an` in new scripts instead, as it is more intuitive.
@@ -799,12 +799,12 @@ top-titles, add 4 to the number, to get mid-titles add 8 to the number:
 - 10：屏幕正中央
 - 11：屏幕中间右侧
 
-{{<tag-def-box title="卡拉OK 效果" id="\k">}}
+{{%tag-def-box title="卡拉OK 效果"%}}
 \\k<i>\<duration></i>
 \\K<i>\<duration></i>
 \\kf<i>\<duration></i>
 \\ko<i>\<duration></i>
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 
 > _Please note that these tags alone only create some very specific effects
 > and all other effects are created with a combination of multiple different
@@ -852,7 +852,7 @@ it is not documented._
 *注意：还有一个额外的卡拉OK 标签，`\kt`。它和其他卡拉OK
 标签十分不同。因为它很少用到，Aegisub 也不支持它，所以这里就不说他了。*
 
-{{<tag-def-box title="换行风格" id="\q">}}\\q<i>\<style></i>{{</tag-def-box>}}
+{{%tag-def-box title="换行风格"%}}\\q<i>\<style></i>{{%/tag-def-box%}}
 Determine how line breaking is applied to the subtitle line. The following
 \_style_s are available:
 
@@ -870,7 +870,7 @@ Determine how line breaking is applied to the subtitle line. The following
 - 2：不换行，多余的字符会超过屏幕边缘。遇到`\n`和`\N`都会强制换行。
 - 3：智能换行，与参数1相似，但是会选择让靠近底部的行更宽。
 
-{{<tag-def-box title="重置样式" id="\r">}}\\r<br>\\r<i>\<style></i>{{</tag-def-box>}}
+{{%tag-def-box title="重置样式"%}}\\r<br>\\r<i>\<style></i>{{%/tag-def-box%}}
 Reset the style. This cancels all style overrides in effect, including
 [animations]({{< relref "ASS_Tags#animatedtransform" >}}), for all following text.
 
@@ -901,7 +901,7 @@ are you?"又被重设为 Default 样式。
 
 {{</example-box>}}
 
-{{<tag-def-box title="位置设定" id="\pos">}}\\pos(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
+{{%tag-def-box title="位置设定"%}}\\pos(<i>\<X></i>,<i>\<Y></i>){{%/tag-def-box%}}
 Set the position of the line. The _X_ and _Y_ coordinates must be integers and
 are given in the script resolution coordinate system. The meaning of _X_ and
 _Y_ changes slightly depending on [alignment]({{< relref "ASS_Tags#linealignment" >}}).
@@ -932,10 +932,10 @@ The green cross marks the point (320,240) on the video.
 ![Pos_sample03](/img/3.2/Pos_sample03.jpg)
 {{</example-box>}}
 
-{{<tag-def-box title="移动设定" id="\move">}}
+{{%tag-def-box title="移动设定"%}}
 \\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i>>)
 \\move(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i>>,<i>\<t1</i>>,<i>\<t2</i>>)
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 The `\move` tag works similar to [`\pos`]({{< relref "ASS_Tags#setposition" >}}) in that it
 positions the subtitle line, the difference is that `\move` makes the subtitle
 move.
@@ -1036,7 +1036,7 @@ first appeared on screen.
 150)。在被显示0.5秒后，它开始移动，在被显示1.5秒时移动到 (300, 350)。
 {{</example-box>}}
 
-{{<tag-def-box title="旋转中心" id="\org">}}\\org(<i>\<X></i>,<i>\<Y></i>){{</tag-def-box>}}
+{{%tag-def-box title="旋转中心"%}}\\org(<i>\<X></i>,<i>\<Y></i>){{%/tag-def-box%}}
 Set the origin point used for [rotation]({{< relref "ASS_Tags#textrotation" >}}). This
 affects all rotations of the line. The _X_ and _Y_ coordinates are given in
 integer script resolution pixels.
@@ -1099,7 +1099,7 @@ without seeming to rotate.
 旋转会看起来像"跳跃"效果，文本将上下移动，但是看起来并不像旋转。
 {{</example-box>}}
 
-{{<tag-def-box title="渐变" id="\fad">}}\\fad(<i>\<fadein></i>,<i>\<fadeout></i>){{</tag-def-box>}}
+{{%tag-def-box title="渐变"%}}\\fad(<i>\<fadein></i>,<i>\<fadeout></i>){{%/tag-def-box%}}
 Produce a fade-in and fade-out effect. The _fadein_ and _fadeout_ times are
 given in milliseconds, ie. 1000 means one second. You can specify _fadein_ or
 _fadeout_ as 0 (zero) to not have any fade effect on that end.
@@ -1131,7 +1131,7 @@ out for the last one quarter second it is displayed.
 在字幕显示时间的头1.2秒淡入，在尾部0.25秒淡出。
 {{</example-box>}}
 
-{{<tag-def-box title="渐变（复杂）" id="\fade">}}\\fade(<i>\<a1</i>>,<i>\<a2</i>>,<i>\<a3</i>>,<i>\<t1</i>>,<i>\<t2</i>>,<i>\<t3</i>>,<i>\<t4</i>>){{</tag-def-box>}}
+{{%tag-def-box title="渐变（复杂）"%}}\\fade(<i>\<a1</i>>,<i>\<a2</i>>,<i>\<a3</i>>,<i>\<t1</i>>,<i>\<t2</i>>,<i>\<t3</i>>,<i>\<t4</i>>){{%/tag-def-box%}}
 Perform a five-part fade using three alpha values _a1_, _a2_ and _a3_ and four
 times _t1_, _t2_, _t3_ and _t4_.
 
@@ -1170,12 +1170,12 @@ Second fade starts 1500 milliseconds later, and lasts 200 milliseconds.
 从完全透明，渐变到几乎完全不透明，然后渐变到几乎完全透明。第一个渐变开始于字幕开始时，持续500毫秒。第二个渐变开始于1500毫秒后，持续200毫秒。
 {{</example-box>}}
 
-{{<tag-def-box title="动画效果" id="\t">}}
+{{%tag-def-box title="动画效果"%}}
 \\t(<i>\<style modifiers></i>)
 \\t(<i>\<accel></i>,<i>\<style modifiers></i>)
 \\t(<i>\<t1</i>>,<i>\<t2</i>>,<i>\<style modifiers></i>)
 \\t(<i>\<t1</i>>,<i>\<t2</i>>,<i>\<accel></i>,<i>\<style modifiers></i>)
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 
 Perform a gradual, animated transformation from one style to another. The
 _style modifiers_ are other override tags as specified in this reference. Only
@@ -1298,10 +1298,10 @@ Text starts at zero size, i.e. invisible, then grows to 100% size in both X and 
 字符开始尺寸是0，然后在 X 和 Y方向同时变化到正常大小。
 {{</example-box>}}
 
-{{<tag-def-box title="遮罩（方形" id="\clip">}}
+{{%tag-def-box title="遮罩（方形"%}}
 \\clip(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i>>)
 \\iclip(<i>\<x1</i>>,<i>\<y1</i>>,<i>\<x2</i>>,<i>\<y2</i>>)
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Define a rectangle to clip the line, only the part of the line that is inside
 the rectangle is visible. The `\iclip` tag has the opposite effect, it defines
 a rectangle where the line is not shown.
@@ -1353,7 +1353,7 @@ Example of `\clip(0,0,704,245)` on a 704x480 video:
 \\clip(<i>\<scale></i>,<i>\<drawing commands></i>)
 \\iclip(<i>\<drawing commands></i>)
 \\iclip(<i>\<scale></i>,<i>\<drawing commands></i>)
-{{</tag-def-box>}}
+{{%/tag-def-box%}}
 Use the shape defined by a vector drawing to selectively display (`\clip`) or
 hide (`\iclip`) parts of the line.
 
