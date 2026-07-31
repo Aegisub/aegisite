@@ -51,12 +51,12 @@ what values were input.
 
 ```lua
 config = {
-    {class="label", text="Times to frobulate", x=0, y=0},
+    {class="label", label="Times to frobulate", x=0, y=0},
     {class="intedit", name="times", value=20, x=0, y=1}
 }
 btn, result = aegisub.dialog.display(config,
         {"Frobulate", "Nevermind"},
-        {"ok"="Frobulate", "cancel"="Nevermind"})
+        {ok="Frobulate", cancel="Nevermind"})
 if btn then
     frobulate(result.times)
 end
